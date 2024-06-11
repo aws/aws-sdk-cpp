@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The push notification configuration of a message.</p>
      */
     inline const PushNotificationPreferences& GetPushNotifications() const{ return m_pushNotifications; }
-
-    /**
-     * <p>The push notification configuration of a message.</p>
-     */
     inline bool PushNotificationsHasBeenSet() const { return m_pushNotificationsHasBeenSet; }
-
-    /**
-     * <p>The push notification configuration of a message.</p>
-     */
     inline void SetPushNotifications(const PushNotificationPreferences& value) { m_pushNotificationsHasBeenSet = true; m_pushNotifications = value; }
-
-    /**
-     * <p>The push notification configuration of a message.</p>
-     */
     inline void SetPushNotifications(PushNotificationPreferences&& value) { m_pushNotificationsHasBeenSet = true; m_pushNotifications = std::move(value); }
-
-    /**
-     * <p>The push notification configuration of a message.</p>
-     */
     inline ChannelMembershipPreferences& WithPushNotifications(const PushNotificationPreferences& value) { SetPushNotifications(value); return *this;}
-
-    /**
-     * <p>The push notification configuration of a message.</p>
-     */
     inline ChannelMembershipPreferences& WithPushNotifications(PushNotificationPreferences&& value) { SetPushNotifications(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PushNotificationPreferences m_pushNotifications;

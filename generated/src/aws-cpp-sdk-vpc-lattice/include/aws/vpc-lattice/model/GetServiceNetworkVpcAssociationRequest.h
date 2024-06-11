@@ -32,46 +32,19 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
      */
     inline const Aws::String& GetServiceNetworkVpcAssociationIdentifier() const{ return m_serviceNetworkVpcAssociationIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline bool ServiceNetworkVpcAssociationIdentifierHasBeenSet() const { return m_serviceNetworkVpcAssociationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline void SetServiceNetworkVpcAssociationIdentifier(const char* value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { SetServiceNetworkVpcAssociationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-     */
     inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const char* value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceNetworkVpcAssociationIdentifier;

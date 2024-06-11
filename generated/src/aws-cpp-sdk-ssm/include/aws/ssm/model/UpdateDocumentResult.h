@@ -33,53 +33,27 @@ namespace Model
     AWS_SSM_API UpdateDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the document that was updated.</p>
      */
     inline const DocumentDescription& GetDocumentDescription() const{ return m_documentDescription; }
-
-    /**
-     * <p>A description of the document that was updated.</p>
-     */
     inline void SetDocumentDescription(const DocumentDescription& value) { m_documentDescription = value; }
-
-    /**
-     * <p>A description of the document that was updated.</p>
-     */
     inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = std::move(value); }
-
-    /**
-     * <p>A description of the document that was updated.</p>
-     */
     inline UpdateDocumentResult& WithDocumentDescription(const DocumentDescription& value) { SetDocumentDescription(value); return *this;}
-
-    /**
-     * <p>A description of the document that was updated.</p>
-     */
     inline UpdateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DocumentDescription m_documentDescription;

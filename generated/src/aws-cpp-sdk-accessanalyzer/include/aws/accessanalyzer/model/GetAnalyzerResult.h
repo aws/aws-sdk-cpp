@@ -38,58 +38,28 @@ namespace Model
     AWS_ACCESSANALYZER_API GetAnalyzerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An <code>AnalyzerSummary</code> object that contains information about the
      * analyzer.</p>
      */
     inline const AnalyzerSummary& GetAnalyzer() const{ return m_analyzer; }
-
-    /**
-     * <p>An <code>AnalyzerSummary</code> object that contains information about the
-     * analyzer.</p>
-     */
     inline void SetAnalyzer(const AnalyzerSummary& value) { m_analyzer = value; }
-
-    /**
-     * <p>An <code>AnalyzerSummary</code> object that contains information about the
-     * analyzer.</p>
-     */
     inline void SetAnalyzer(AnalyzerSummary&& value) { m_analyzer = std::move(value); }
-
-    /**
-     * <p>An <code>AnalyzerSummary</code> object that contains information about the
-     * analyzer.</p>
-     */
     inline GetAnalyzerResult& WithAnalyzer(const AnalyzerSummary& value) { SetAnalyzer(value); return *this;}
-
-    /**
-     * <p>An <code>AnalyzerSummary</code> object that contains information about the
-     * analyzer.</p>
-     */
     inline GetAnalyzerResult& WithAnalyzer(AnalyzerSummary&& value) { SetAnalyzer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAnalyzerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAnalyzerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAnalyzerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AnalyzerSummary m_analyzer;

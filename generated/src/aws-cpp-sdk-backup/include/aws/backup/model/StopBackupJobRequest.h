@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline bool BackupJobIdHasBeenSet() const { return m_backupJobIdHasBeenSet; }
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = value; }
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline void SetBackupJobId(Aws::String&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::move(value); }
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline void SetBackupJobId(const char* value) { m_backupJobIdHasBeenSet = true; m_backupJobId.assign(value); }
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline StopBackupJobRequest& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline StopBackupJobRequest& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
-     */
     inline StopBackupJobRequest& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupJobId;

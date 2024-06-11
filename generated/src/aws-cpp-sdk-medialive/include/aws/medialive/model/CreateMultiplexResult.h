@@ -38,53 +38,27 @@ namespace Model
     AWS_MEDIALIVE_API CreateMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The newly created multiplex.
      */
     inline const Multiplex& GetMultiplex() const{ return m_multiplex; }
-
-    /**
-     * The newly created multiplex.
-     */
     inline void SetMultiplex(const Multiplex& value) { m_multiplex = value; }
-
-    /**
-     * The newly created multiplex.
-     */
     inline void SetMultiplex(Multiplex&& value) { m_multiplex = std::move(value); }
-
-    /**
-     * The newly created multiplex.
-     */
     inline CreateMultiplexResult& WithMultiplex(const Multiplex& value) { SetMultiplex(value); return *this;}
-
-    /**
-     * The newly created multiplex.
-     */
     inline CreateMultiplexResult& WithMultiplex(Multiplex&& value) { SetMultiplex(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMultiplexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMultiplexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMultiplexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Multiplex m_multiplex;

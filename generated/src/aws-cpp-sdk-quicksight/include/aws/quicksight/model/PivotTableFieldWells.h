@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field well for the pivot table.</p>
      */
     inline const PivotTableAggregatedFieldWells& GetPivotTableAggregatedFieldWells() const{ return m_pivotTableAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field well for the pivot table.</p>
-     */
     inline bool PivotTableAggregatedFieldWellsHasBeenSet() const { return m_pivotTableAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field well for the pivot table.</p>
-     */
     inline void SetPivotTableAggregatedFieldWells(const PivotTableAggregatedFieldWells& value) { m_pivotTableAggregatedFieldWellsHasBeenSet = true; m_pivotTableAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field well for the pivot table.</p>
-     */
     inline void SetPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWells&& value) { m_pivotTableAggregatedFieldWellsHasBeenSet = true; m_pivotTableAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field well for the pivot table.</p>
-     */
     inline PivotTableFieldWells& WithPivotTableAggregatedFieldWells(const PivotTableAggregatedFieldWells& value) { SetPivotTableAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field well for the pivot table.</p>
-     */
     inline PivotTableFieldWells& WithPivotTableAggregatedFieldWells(PivotTableAggregatedFieldWells&& value) { SetPivotTableAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PivotTableAggregatedFieldWells m_pivotTableAggregatedFieldWells;

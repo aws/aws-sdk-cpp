@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Data associated with the QUERY RecommendationTriggerType.</p>
      */
     inline const QueryRecommendationTriggerData& GetQuery() const{ return m_query; }
-
-    /**
-     * <p>Data associated with the QUERY RecommendationTriggerType.</p>
-     */
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-
-    /**
-     * <p>Data associated with the QUERY RecommendationTriggerType.</p>
-     */
     inline void SetQuery(const QueryRecommendationTriggerData& value) { m_queryHasBeenSet = true; m_query = value; }
-
-    /**
-     * <p>Data associated with the QUERY RecommendationTriggerType.</p>
-     */
     inline void SetQuery(QueryRecommendationTriggerData&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-
-    /**
-     * <p>Data associated with the QUERY RecommendationTriggerType.</p>
-     */
     inline RecommendationTriggerData& WithQuery(const QueryRecommendationTriggerData& value) { SetQuery(value); return *this;}
-
-    /**
-     * <p>Data associated with the QUERY RecommendationTriggerType.</p>
-     */
     inline RecommendationTriggerData& WithQuery(QueryRecommendationTriggerData&& value) { SetQuery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     QueryRecommendationTriggerData m_query;

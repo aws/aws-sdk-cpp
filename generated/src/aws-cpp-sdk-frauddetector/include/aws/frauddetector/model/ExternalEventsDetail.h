@@ -38,95 +38,34 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket location for the data.</p>
      */
     inline const Aws::String& GetDataLocation() const{ return m_dataLocation; }
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline bool DataLocationHasBeenSet() const { return m_dataLocationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline void SetDataLocation(const Aws::String& value) { m_dataLocationHasBeenSet = true; m_dataLocation = value; }
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline void SetDataLocation(Aws::String&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline void SetDataLocation(const char* value) { m_dataLocationHasBeenSet = true; m_dataLocation.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline ExternalEventsDetail& WithDataLocation(const Aws::String& value) { SetDataLocation(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline ExternalEventsDetail& WithDataLocation(Aws::String&& value) { SetDataLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket location for the data.</p>
-     */
     inline ExternalEventsDetail& WithDataLocation(const char* value) { SetDataLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
      * location.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline ExternalEventsDetail& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline ExternalEventsDetail& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the role that provides Amazon Fraud Detector access to the data
-     * location.</p>
-     */
     inline ExternalEventsDetail& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataLocation;

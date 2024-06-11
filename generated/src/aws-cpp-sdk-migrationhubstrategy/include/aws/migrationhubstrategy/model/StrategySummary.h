@@ -38,57 +38,27 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The count of recommendations per strategy. </p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p> The count of recommendations per strategy. </p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p> The count of recommendations per strategy. </p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p> The count of recommendations per strategy. </p>
-     */
     inline StrategySummary& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name of recommended strategy. </p>
      */
     inline const Strategy& GetStrategy() const{ return m_strategy; }
-
-    /**
-     * <p> The name of recommended strategy. </p>
-     */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-
-    /**
-     * <p> The name of recommended strategy. </p>
-     */
     inline void SetStrategy(const Strategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-
-    /**
-     * <p> The name of recommended strategy. </p>
-     */
     inline void SetStrategy(Strategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-
-    /**
-     * <p> The name of recommended strategy. </p>
-     */
     inline StrategySummary& WithStrategy(const Strategy& value) { SetStrategy(value); return *this;}
-
-    /**
-     * <p> The name of recommended strategy. </p>
-     */
     inline StrategySummary& WithStrategy(Strategy&& value) { SetStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_count;

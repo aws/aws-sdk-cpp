@@ -32,6 +32,7 @@ namespace Model
     AWS_SFN_API GetActivityTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token that identifies the scheduled task. This token must be copied and
      * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
@@ -39,120 +40,38 @@ namespace Model
      * task.</p>
      */
     inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline void SetTaskToken(const Aws::String& value) { m_taskToken = value; }
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline void SetTaskToken(Aws::String&& value) { m_taskToken = std::move(value); }
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline void SetTaskToken(const char* value) { m_taskToken.assign(value); }
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline GetActivityTaskResult& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline GetActivityTaskResult& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that identifies the scheduled task. This token must be copied and
-     * included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a>
-     * or <a>SendTaskFailure</a> in order to report the progress or completion of the
-     * task.</p>
-     */
     inline GetActivityTaskResult& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string that contains the JSON input data for the task. Length constraints
      * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetInput(const Aws::String& value) { m_input = value; }
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetInput(const char* value) { m_input.assign(value); }
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline GetActivityTaskResult& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that contains the JSON input data for the task. Length constraints
-     * apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline GetActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetActivityTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetActivityTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetActivityTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskToken;

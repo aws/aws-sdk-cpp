@@ -40,87 +40,33 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the AMI in Amazon EC2.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline Ec2AmiResource& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline Ec2AmiResource& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the AMI in Amazon EC2.</p>
-     */
     inline Ec2AmiResource& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the AMI on the Snow device.</p>
      */
     inline const Aws::String& GetSnowballAmiId() const{ return m_snowballAmiId; }
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline bool SnowballAmiIdHasBeenSet() const { return m_snowballAmiIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline void SetSnowballAmiId(const Aws::String& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = value; }
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline void SetSnowballAmiId(Aws::String&& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = std::move(value); }
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline void SetSnowballAmiId(const char* value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId.assign(value); }
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline Ec2AmiResource& WithSnowballAmiId(const Aws::String& value) { SetSnowballAmiId(value); return *this;}
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline Ec2AmiResource& WithSnowballAmiId(Aws::String&& value) { SetSnowballAmiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the AMI on the Snow device.</p>
-     */
     inline Ec2AmiResource& WithSnowballAmiId(const char* value) { SetSnowballAmiId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_amiId;

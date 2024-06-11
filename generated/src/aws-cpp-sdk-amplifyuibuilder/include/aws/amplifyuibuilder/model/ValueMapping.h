@@ -39,67 +39,29 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value to display for the complex object.</p>
      */
     inline const FormInputValueProperty& GetDisplayValue() const{ return m_displayValue; }
-
-    /**
-     * <p>The value to display for the complex object.</p>
-     */
     inline bool DisplayValueHasBeenSet() const { return m_displayValueHasBeenSet; }
-
-    /**
-     * <p>The value to display for the complex object.</p>
-     */
     inline void SetDisplayValue(const FormInputValueProperty& value) { m_displayValueHasBeenSet = true; m_displayValue = value; }
-
-    /**
-     * <p>The value to display for the complex object.</p>
-     */
     inline void SetDisplayValue(FormInputValueProperty&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::move(value); }
-
-    /**
-     * <p>The value to display for the complex object.</p>
-     */
     inline ValueMapping& WithDisplayValue(const FormInputValueProperty& value) { SetDisplayValue(value); return *this;}
-
-    /**
-     * <p>The value to display for the complex object.</p>
-     */
     inline ValueMapping& WithDisplayValue(FormInputValueProperty&& value) { SetDisplayValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The complex object.</p>
      */
     inline const FormInputValueProperty& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The complex object.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The complex object.</p>
-     */
     inline void SetValue(const FormInputValueProperty& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The complex object.</p>
-     */
     inline void SetValue(FormInputValueProperty&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The complex object.</p>
-     */
     inline ValueMapping& WithValue(const FormInputValueProperty& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The complex object.</p>
-     */
     inline ValueMapping& WithValue(FormInputValueProperty&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FormInputValueProperty m_displayValue;

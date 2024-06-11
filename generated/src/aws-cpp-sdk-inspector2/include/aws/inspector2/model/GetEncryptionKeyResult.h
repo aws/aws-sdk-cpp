@@ -32,63 +32,29 @@ namespace Model
     AWS_INSPECTOR2_API GetEncryptionKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A kms key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline GetEncryptionKeyResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline GetEncryptionKeyResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>A kms key ID.</p>
-     */
     inline GetEncryptionKeyResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEncryptionKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEncryptionKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEncryptionKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

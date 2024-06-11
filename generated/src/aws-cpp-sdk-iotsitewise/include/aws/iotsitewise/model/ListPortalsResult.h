@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTSITEWISE_API ListPortalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that summarizes each portal.</p>
      */
     inline const Aws::Vector<PortalSummary>& GetPortalSummaries() const{ return m_portalSummaries; }
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline void SetPortalSummaries(const Aws::Vector<PortalSummary>& value) { m_portalSummaries = value; }
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline void SetPortalSummaries(Aws::Vector<PortalSummary>&& value) { m_portalSummaries = std::move(value); }
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline ListPortalsResult& WithPortalSummaries(const Aws::Vector<PortalSummary>& value) { SetPortalSummaries(value); return *this;}
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline ListPortalsResult& WithPortalSummaries(Aws::Vector<PortalSummary>&& value) { SetPortalSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline ListPortalsResult& AddPortalSummaries(const PortalSummary& value) { m_portalSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list that summarizes each portal.</p>
-     */
     inline ListPortalsResult& AddPortalSummaries(PortalSummary&& value) { m_portalSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPortalsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPortalsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPortalsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPortalsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPortalsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPortalsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PortalSummary> m_portalSummaries;

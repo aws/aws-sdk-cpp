@@ -38,185 +38,63 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
      * same request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateRuleSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateRuleSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique token that Amazon SES uses to recognize subsequent retries of the
-     * same request.</p>
-     */
     inline CreateRuleSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-friendly name for the rule set.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline CreateRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline CreateRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline CreateRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Conditional rules that are evaluated for determining actions on email.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline CreateRuleSetRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline CreateRuleSetRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline CreateRuleSetRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>Conditional rules that are evaluated for determining actions on email.</p>
-     */
     inline CreateRuleSetRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateRuleSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateRuleSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateRuleSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateRuleSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

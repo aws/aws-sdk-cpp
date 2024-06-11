@@ -39,71 +39,38 @@ namespace Model
     AWS_WELLARCHITECTED_API ListLensesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::Vector<LensSummary>& GetLensSummaries() const{ return m_lensSummaries; }
-
-    
     inline void SetLensSummaries(const Aws::Vector<LensSummary>& value) { m_lensSummaries = value; }
-
-    
     inline void SetLensSummaries(Aws::Vector<LensSummary>&& value) { m_lensSummaries = std::move(value); }
-
-    
     inline ListLensesResult& WithLensSummaries(const Aws::Vector<LensSummary>& value) { SetLensSummaries(value); return *this;}
-
-    
     inline ListLensesResult& WithLensSummaries(Aws::Vector<LensSummary>&& value) { SetLensSummaries(std::move(value)); return *this;}
-
-    
     inline ListLensesResult& AddLensSummaries(const LensSummary& value) { m_lensSummaries.push_back(value); return *this; }
-
-    
     inline ListLensesResult& AddLensSummaries(LensSummary&& value) { m_lensSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline ListLensesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListLensesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListLensesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLensesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLensesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLensesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LensSummary> m_lensSummaries;

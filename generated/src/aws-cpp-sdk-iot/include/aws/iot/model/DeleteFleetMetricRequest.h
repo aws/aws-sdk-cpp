@@ -38,67 +38,29 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the fleet metric to delete.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline DeleteFleetMetricRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline DeleteFleetMetricRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the fleet metric to delete.</p>
-     */
     inline DeleteFleetMetricRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expected version of the fleet metric to delete.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
-
-    /**
-     * <p>The expected version of the fleet metric to delete.</p>
-     */
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
-
-    /**
-     * <p>The expected version of the fleet metric to delete.</p>
-     */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
-
-    /**
-     * <p>The expected version of the fleet metric to delete.</p>
-     */
     inline DeleteFleetMetricRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricName;

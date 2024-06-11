@@ -34,113 +34,44 @@ namespace Model
     AWS_REKOGNITION_API ListStreamProcessorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
      * that you can use in the subsequent request to retrieve the next set of stream
      * processors. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline ListStreamProcessorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline ListStreamProcessorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of stream
-     * processors. </p>
-     */
     inline ListStreamProcessorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of stream processors that you have created.</p>
      */
     inline const Aws::Vector<StreamProcessor>& GetStreamProcessors() const{ return m_streamProcessors; }
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline void SetStreamProcessors(const Aws::Vector<StreamProcessor>& value) { m_streamProcessors = value; }
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline void SetStreamProcessors(Aws::Vector<StreamProcessor>&& value) { m_streamProcessors = std::move(value); }
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline ListStreamProcessorsResult& WithStreamProcessors(const Aws::Vector<StreamProcessor>& value) { SetStreamProcessors(value); return *this;}
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline ListStreamProcessorsResult& WithStreamProcessors(Aws::Vector<StreamProcessor>&& value) { SetStreamProcessors(std::move(value)); return *this;}
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline ListStreamProcessorsResult& AddStreamProcessors(const StreamProcessor& value) { m_streamProcessors.push_back(value); return *this; }
-
-    /**
-     * <p>List of stream processors that you have created.</p>
-     */
     inline ListStreamProcessorsResult& AddStreamProcessors(StreamProcessor&& value) { m_streamProcessors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListStreamProcessorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListStreamProcessorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListStreamProcessorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

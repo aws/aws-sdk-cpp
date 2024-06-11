@@ -40,178 +40,68 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
      * it.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline TrafficPolicySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline TrafficPolicySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
-     * it.</p>
-     */
     inline TrafficPolicySummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline TrafficPolicySummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline TrafficPolicySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name that you specified for the traffic policy when you created it.</p>
-     */
     inline TrafficPolicySummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
     inline const RRType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
-     * you use a traffic policy to create a traffic policy instance.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
-     * you use a traffic policy to create a traffic policy instance.</p>
-     */
     inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
-     * you use a traffic policy to create a traffic policy instance.</p>
-     */
     inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
-     * you use a traffic policy to create a traffic policy instance.</p>
-     */
     inline TrafficPolicySummary& WithType(const RRType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
-     * you use a traffic policy to create a traffic policy instance.</p>
-     */
     inline TrafficPolicySummary& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the latest version of the traffic policy.</p>
      */
     inline int GetLatestVersion() const{ return m_latestVersion; }
-
-    /**
-     * <p>The version number of the latest version of the traffic policy.</p>
-     */
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
-
-    /**
-     * <p>The version number of the latest version of the traffic policy.</p>
-     */
     inline void SetLatestVersion(int value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
-
-    /**
-     * <p>The version number of the latest version of the traffic policy.</p>
-     */
     inline TrafficPolicySummary& WithLatestVersion(int value) { SetLatestVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of traffic policies that are associated with the current Amazon
      * Web Services account.</p>
      */
     inline int GetTrafficPolicyCount() const{ return m_trafficPolicyCount; }
-
-    /**
-     * <p>The number of traffic policies that are associated with the current Amazon
-     * Web Services account.</p>
-     */
     inline bool TrafficPolicyCountHasBeenSet() const { return m_trafficPolicyCountHasBeenSet; }
-
-    /**
-     * <p>The number of traffic policies that are associated with the current Amazon
-     * Web Services account.</p>
-     */
     inline void SetTrafficPolicyCount(int value) { m_trafficPolicyCountHasBeenSet = true; m_trafficPolicyCount = value; }
-
-    /**
-     * <p>The number of traffic policies that are associated with the current Amazon
-     * Web Services account.</p>
-     */
     inline TrafficPolicySummary& WithTrafficPolicyCount(int value) { SetTrafficPolicyCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

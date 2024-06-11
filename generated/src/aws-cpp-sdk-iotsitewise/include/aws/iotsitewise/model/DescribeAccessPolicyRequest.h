@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the access policy.</p>
      */
     inline const Aws::String& GetAccessPolicyId() const{ return m_accessPolicyId; }
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline bool AccessPolicyIdHasBeenSet() const { return m_accessPolicyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline void SetAccessPolicyId(const Aws::String& value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId = value; }
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline void SetAccessPolicyId(Aws::String&& value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId = std::move(value); }
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline void SetAccessPolicyId(const char* value) { m_accessPolicyIdHasBeenSet = true; m_accessPolicyId.assign(value); }
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline DescribeAccessPolicyRequest& WithAccessPolicyId(const Aws::String& value) { SetAccessPolicyId(value); return *this;}
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline DescribeAccessPolicyRequest& WithAccessPolicyId(Aws::String&& value) { SetAccessPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the access policy.</p>
-     */
     inline DescribeAccessPolicyRequest& WithAccessPolicyId(const char* value) { SetAccessPolicyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessPolicyId;

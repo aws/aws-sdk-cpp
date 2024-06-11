@@ -37,36 +37,17 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Pricing details of the purchase recommendation.</p>
      */
     inline const ReservedInstancesPricing& GetPricing() const{ return m_pricing; }
-
-    /**
-     * <p>Pricing details of the purchase recommendation.</p>
-     */
     inline bool PricingHasBeenSet() const { return m_pricingHasBeenSet; }
-
-    /**
-     * <p>Pricing details of the purchase recommendation.</p>
-     */
     inline void SetPricing(const ReservedInstancesPricing& value) { m_pricingHasBeenSet = true; m_pricing = value; }
-
-    /**
-     * <p>Pricing details of the purchase recommendation.</p>
-     */
     inline void SetPricing(ReservedInstancesPricing&& value) { m_pricingHasBeenSet = true; m_pricing = std::move(value); }
-
-    /**
-     * <p>Pricing details of the purchase recommendation.</p>
-     */
     inline ReservedInstancesCostCalculation& WithPricing(const ReservedInstancesPricing& value) { SetPricing(value); return *this;}
-
-    /**
-     * <p>Pricing details of the purchase recommendation.</p>
-     */
     inline ReservedInstancesCostCalculation& WithPricing(ReservedInstancesPricing&& value) { SetPricing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReservedInstancesPricing m_pricing;

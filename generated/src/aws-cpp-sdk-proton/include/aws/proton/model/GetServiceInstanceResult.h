@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API GetServiceInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the requested service instance.</p>
      */
     inline const ServiceInstance& GetServiceInstance() const{ return m_serviceInstance; }
-
-    /**
-     * <p>The detailed data of the requested service instance.</p>
-     */
     inline void SetServiceInstance(const ServiceInstance& value) { m_serviceInstance = value; }
-
-    /**
-     * <p>The detailed data of the requested service instance.</p>
-     */
     inline void SetServiceInstance(ServiceInstance&& value) { m_serviceInstance = std::move(value); }
-
-    /**
-     * <p>The detailed data of the requested service instance.</p>
-     */
     inline GetServiceInstanceResult& WithServiceInstance(const ServiceInstance& value) { SetServiceInstance(value); return *this;}
-
-    /**
-     * <p>The detailed data of the requested service instance.</p>
-     */
     inline GetServiceInstanceResult& WithServiceInstance(ServiceInstance&& value) { SetServiceInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServiceInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServiceInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServiceInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceInstance m_serviceInstance;

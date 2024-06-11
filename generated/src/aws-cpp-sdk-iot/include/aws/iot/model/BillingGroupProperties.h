@@ -37,46 +37,19 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The description of the billing group.</p>
      */
     inline const Aws::String& GetBillingGroupDescription() const{ return m_billingGroupDescription; }
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline bool BillingGroupDescriptionHasBeenSet() const { return m_billingGroupDescriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline void SetBillingGroupDescription(const Aws::String& value) { m_billingGroupDescriptionHasBeenSet = true; m_billingGroupDescription = value; }
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline void SetBillingGroupDescription(Aws::String&& value) { m_billingGroupDescriptionHasBeenSet = true; m_billingGroupDescription = std::move(value); }
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline void SetBillingGroupDescription(const char* value) { m_billingGroupDescriptionHasBeenSet = true; m_billingGroupDescription.assign(value); }
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline BillingGroupProperties& WithBillingGroupDescription(const Aws::String& value) { SetBillingGroupDescription(value); return *this;}
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline BillingGroupProperties& WithBillingGroupDescription(Aws::String&& value) { SetBillingGroupDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the billing group.</p>
-     */
     inline BillingGroupProperties& WithBillingGroupDescription(const char* value) { SetBillingGroupDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_billingGroupDescription;

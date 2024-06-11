@@ -37,46 +37,19 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline DescribeLocationS3Request& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline DescribeLocationS3Request& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-     */
     inline DescribeLocationS3Request& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_locationArn;

@@ -42,103 +42,35 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
      */
     inline const Aws::String& GetTimestreamTableArn() const{ return m_timestreamTableArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline bool TimestreamTableArnHasBeenSet() const { return m_timestreamTableArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline void SetTimestreamTableArn(const Aws::String& value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline void SetTimestreamTableArn(Aws::String&& value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline void SetTimestreamTableArn(const char* value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline TimestreamConfig& WithTimestreamTableArn(const Aws::String& value) { SetTimestreamTableArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline TimestreamConfig& WithTimestreamTableArn(Aws::String&& value) { SetTimestreamTableArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-     */
     inline TimestreamConfig& WithTimestreamTableArn(const char* value) { SetTimestreamTableArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
      * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
      * table.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline TimestreamConfig& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline TimestreamConfig& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon
-     * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
-     * table.</p>
-     */
     inline TimestreamConfig& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timestreamTableArn;

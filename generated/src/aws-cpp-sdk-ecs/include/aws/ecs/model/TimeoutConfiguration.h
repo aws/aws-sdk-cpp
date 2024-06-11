@@ -39,6 +39,7 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of time in seconds a connection will stay active while idle. A
      * value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
@@ -47,35 +48,12 @@ namespace Model
      * <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
      */
     inline int GetIdleTimeoutSeconds() const{ return m_idleTimeoutSeconds; }
-
-    /**
-     * <p>The amount of time in seconds a connection will stay active while idle. A
-     * value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
-     * <p>The <code>idleTimeout</code> default for
-     * <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p> <p>The
-     * <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
-     */
     inline bool IdleTimeoutSecondsHasBeenSet() const { return m_idleTimeoutSecondsHasBeenSet; }
-
-    /**
-     * <p>The amount of time in seconds a connection will stay active while idle. A
-     * value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
-     * <p>The <code>idleTimeout</code> default for
-     * <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p> <p>The
-     * <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
-     */
     inline void SetIdleTimeoutSeconds(int value) { m_idleTimeoutSecondsHasBeenSet = true; m_idleTimeoutSeconds = value; }
-
-    /**
-     * <p>The amount of time in seconds a connection will stay active while idle. A
-     * value of <code>0</code> can be set to disable <code>idleTimeout</code>.</p>
-     * <p>The <code>idleTimeout</code> default for
-     * <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p> <p>The
-     * <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
-     */
     inline TimeoutConfiguration& WithIdleTimeoutSeconds(int value) { SetIdleTimeoutSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time waiting for the upstream to respond with a complete
      * response per request. A value of <code>0</code> can be set to disable
@@ -85,37 +63,10 @@ namespace Model
      * <code>appProtocol</code>.</p>
      */
     inline int GetPerRequestTimeoutSeconds() const{ return m_perRequestTimeoutSeconds; }
-
-    /**
-     * <p>The amount of time waiting for the upstream to respond with a complete
-     * response per request. A value of <code>0</code> can be set to disable
-     * <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set
-     * if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only
-     * <code>idleTimeout</code> is allowed for <code>TCP</code>
-     * <code>appProtocol</code>.</p>
-     */
     inline bool PerRequestTimeoutSecondsHasBeenSet() const { return m_perRequestTimeoutSecondsHasBeenSet; }
-
-    /**
-     * <p>The amount of time waiting for the upstream to respond with a complete
-     * response per request. A value of <code>0</code> can be set to disable
-     * <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set
-     * if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only
-     * <code>idleTimeout</code> is allowed for <code>TCP</code>
-     * <code>appProtocol</code>.</p>
-     */
     inline void SetPerRequestTimeoutSeconds(int value) { m_perRequestTimeoutSecondsHasBeenSet = true; m_perRequestTimeoutSeconds = value; }
-
-    /**
-     * <p>The amount of time waiting for the upstream to respond with a complete
-     * response per request. A value of <code>0</code> can be set to disable
-     * <code>perRequestTimeout</code>. <code>perRequestTimeout</code> can only be set
-     * if Service Connect <code>appProtocol</code> isn't <code>TCP</code>. Only
-     * <code>idleTimeout</code> is allowed for <code>TCP</code>
-     * <code>appProtocol</code>.</p>
-     */
     inline TimeoutConfiguration& WithPerRequestTimeoutSeconds(int value) { SetPerRequestTimeoutSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_idleTimeoutSeconds;

@@ -33,53 +33,27 @@ namespace Model
     AWS_S3CRT_API GetObjectLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The current legal hold status for the specified object.</p>
      */
     inline const ObjectLockLegalHold& GetLegalHold() const{ return m_legalHold; }
-
-    /**
-     * <p>The current legal hold status for the specified object.</p>
-     */
     inline void SetLegalHold(const ObjectLockLegalHold& value) { m_legalHold = value; }
-
-    /**
-     * <p>The current legal hold status for the specified object.</p>
-     */
     inline void SetLegalHold(ObjectLockLegalHold&& value) { m_legalHold = std::move(value); }
-
-    /**
-     * <p>The current legal hold status for the specified object.</p>
-     */
     inline GetObjectLegalHoldResult& WithLegalHold(const ObjectLockLegalHold& value) { SetLegalHold(value); return *this;}
-
-    /**
-     * <p>The current legal hold status for the specified object.</p>
-     */
     inline GetObjectLegalHoldResult& WithLegalHold(ObjectLockLegalHold&& value) { SetLegalHold(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetObjectLegalHoldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetObjectLegalHoldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetObjectLegalHoldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ObjectLockLegalHold m_legalHold;

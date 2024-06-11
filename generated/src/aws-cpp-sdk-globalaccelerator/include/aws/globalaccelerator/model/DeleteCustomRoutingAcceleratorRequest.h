@@ -34,54 +34,20 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
      * delete.</p>
      */
     inline const Aws::String& GetAcceleratorArn() const{ return m_acceleratorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline void SetAcceleratorArn(Aws::String&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline void SetAcceleratorArn(const char* value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(const Aws::String& value) { SetAcceleratorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(Aws::String&& value) { SetAcceleratorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the custom routing accelerator to
-     * delete.</p>
-     */
     inline DeleteCustomRoutingAcceleratorRequest& WithAcceleratorArn(const char* value) { SetAcceleratorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_acceleratorArn;

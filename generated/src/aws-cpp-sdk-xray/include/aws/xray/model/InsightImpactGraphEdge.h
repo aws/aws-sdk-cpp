@@ -36,26 +36,15 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifier of the edge. Unique within a service map.</p>
      */
     inline int GetReferenceId() const{ return m_referenceId; }
-
-    /**
-     * <p>Identifier of the edge. Unique within a service map.</p>
-     */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-
-    /**
-     * <p>Identifier of the edge. Unique within a service map.</p>
-     */
     inline void SetReferenceId(int value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-
-    /**
-     * <p>Identifier of the edge. Unique within a service map.</p>
-     */
     inline InsightImpactGraphEdge& WithReferenceId(int value) { SetReferenceId(value); return *this;}
-
+    ///@}
   private:
 
     int m_referenceId;

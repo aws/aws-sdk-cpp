@@ -35,46 +35,19 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline bool MountTargetIdHasBeenSet() const { return m_mountTargetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
-     */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mountTargetId;

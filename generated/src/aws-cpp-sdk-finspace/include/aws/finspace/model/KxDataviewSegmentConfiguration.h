@@ -42,111 +42,38 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The database path of the data that you want to place on each selected volume
      * for the segment. Each segment must have a unique database path for each
      * volume.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDbPaths() const{ return m_dbPaths; }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline bool DbPathsHasBeenSet() const { return m_dbPathsHasBeenSet; }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline void SetDbPaths(const Aws::Vector<Aws::String>& value) { m_dbPathsHasBeenSet = true; m_dbPaths = value; }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline void SetDbPaths(Aws::Vector<Aws::String>&& value) { m_dbPathsHasBeenSet = true; m_dbPaths = std::move(value); }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline KxDataviewSegmentConfiguration& WithDbPaths(const Aws::Vector<Aws::String>& value) { SetDbPaths(value); return *this;}
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline KxDataviewSegmentConfiguration& WithDbPaths(Aws::Vector<Aws::String>&& value) { SetDbPaths(std::move(value)); return *this;}
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline KxDataviewSegmentConfiguration& AddDbPaths(const Aws::String& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline KxDataviewSegmentConfiguration& AddDbPaths(Aws::String&& value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The database path of the data that you want to place on each selected volume
-     * for the segment. Each segment must have a unique database path for each
-     * volume.</p>
-     */
     inline KxDataviewSegmentConfiguration& AddDbPaths(const char* value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name of the volume where you want to add data. </p>
      */
     inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline KxDataviewSegmentConfiguration& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline KxDataviewSegmentConfiguration& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the volume where you want to add data. </p>
-     */
     inline KxDataviewSegmentConfiguration& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables on-demand caching on the selected database path when a particular
      * file or a column of the database is accessed. When on demand caching is
@@ -155,34 +82,10 @@ namespace Model
      * is <b>False</b>. </p>
      */
     inline bool GetOnDemand() const{ return m_onDemand; }
-
-    /**
-     * <p>Enables on-demand caching on the selected database path when a particular
-     * file or a column of the database is accessed. When on demand caching is
-     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
-     * needed. When it is set to <b>False</b>, everything is cached. The default value
-     * is <b>False</b>. </p>
-     */
     inline bool OnDemandHasBeenSet() const { return m_onDemandHasBeenSet; }
-
-    /**
-     * <p>Enables on-demand caching on the selected database path when a particular
-     * file or a column of the database is accessed. When on demand caching is
-     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
-     * needed. When it is set to <b>False</b>, everything is cached. The default value
-     * is <b>False</b>. </p>
-     */
     inline void SetOnDemand(bool value) { m_onDemandHasBeenSet = true; m_onDemand = value; }
-
-    /**
-     * <p>Enables on-demand caching on the selected database path when a particular
-     * file or a column of the database is accessed. When on demand caching is
-     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
-     * needed. When it is set to <b>False</b>, everything is cached. The default value
-     * is <b>False</b>. </p>
-     */
     inline KxDataviewSegmentConfiguration& WithOnDemand(bool value) { SetOnDemand(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dbPaths;

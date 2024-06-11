@@ -33,53 +33,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API GetUICustomizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The UI customization information.</p>
      */
     inline const UICustomizationType& GetUICustomization() const{ return m_uICustomization; }
-
-    /**
-     * <p>The UI customization information.</p>
-     */
     inline void SetUICustomization(const UICustomizationType& value) { m_uICustomization = value; }
-
-    /**
-     * <p>The UI customization information.</p>
-     */
     inline void SetUICustomization(UICustomizationType&& value) { m_uICustomization = std::move(value); }
-
-    /**
-     * <p>The UI customization information.</p>
-     */
     inline GetUICustomizationResult& WithUICustomization(const UICustomizationType& value) { SetUICustomization(value); return *this;}
-
-    /**
-     * <p>The UI customization information.</p>
-     */
     inline GetUICustomizationResult& WithUICustomization(UICustomizationType&& value) { SetUICustomization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetUICustomizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetUICustomizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetUICustomizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UICustomizationType m_uICustomization;

@@ -34,79 +34,38 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateSafetyRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The assertion rule updated.</p>
      */
     inline const AssertionRule& GetAssertionRule() const{ return m_assertionRule; }
-
-    /**
-     * <p>The assertion rule updated.</p>
-     */
     inline void SetAssertionRule(const AssertionRule& value) { m_assertionRule = value; }
-
-    /**
-     * <p>The assertion rule updated.</p>
-     */
     inline void SetAssertionRule(AssertionRule&& value) { m_assertionRule = std::move(value); }
-
-    /**
-     * <p>The assertion rule updated.</p>
-     */
     inline UpdateSafetyRuleResult& WithAssertionRule(const AssertionRule& value) { SetAssertionRule(value); return *this;}
-
-    /**
-     * <p>The assertion rule updated.</p>
-     */
     inline UpdateSafetyRuleResult& WithAssertionRule(AssertionRule&& value) { SetAssertionRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The gating rule updated.</p>
      */
     inline const GatingRule& GetGatingRule() const{ return m_gatingRule; }
-
-    /**
-     * <p>The gating rule updated.</p>
-     */
     inline void SetGatingRule(const GatingRule& value) { m_gatingRule = value; }
-
-    /**
-     * <p>The gating rule updated.</p>
-     */
     inline void SetGatingRule(GatingRule&& value) { m_gatingRule = std::move(value); }
-
-    /**
-     * <p>The gating rule updated.</p>
-     */
     inline UpdateSafetyRuleResult& WithGatingRule(const GatingRule& value) { SetGatingRule(value); return *this;}
-
-    /**
-     * <p>The gating rule updated.</p>
-     */
     inline UpdateSafetyRuleResult& WithGatingRule(GatingRule&& value) { SetGatingRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSafetyRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSafetyRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSafetyRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AssertionRule m_assertionRule;

@@ -32,63 +32,29 @@ namespace Model
     AWS_CONFIGSERVICE_API PutOrganizationConformancePackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>ARN of the organization conformance pack.</p>
      */
     inline const Aws::String& GetOrganizationConformancePackArn() const{ return m_organizationConformancePackArn; }
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline void SetOrganizationConformancePackArn(const Aws::String& value) { m_organizationConformancePackArn = value; }
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline void SetOrganizationConformancePackArn(Aws::String&& value) { m_organizationConformancePackArn = std::move(value); }
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline void SetOrganizationConformancePackArn(const char* value) { m_organizationConformancePackArn.assign(value); }
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline PutOrganizationConformancePackResult& WithOrganizationConformancePackArn(const Aws::String& value) { SetOrganizationConformancePackArn(value); return *this;}
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline PutOrganizationConformancePackResult& WithOrganizationConformancePackArn(Aws::String&& value) { SetOrganizationConformancePackArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the organization conformance pack.</p>
-     */
     inline PutOrganizationConformancePackResult& WithOrganizationConformancePackArn(const char* value) { SetOrganizationConformancePackArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutOrganizationConformancePackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutOrganizationConformancePackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutOrganizationConformancePackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationConformancePackArn;

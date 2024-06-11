@@ -39,95 +39,34 @@ namespace Model
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>ID of the agent that is running on an EC2 instance that is already
      * participating in another started assessment run.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the agent that is running on an EC2 instance that is already
-     * participating in another started assessment run.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the assessment run that has already been started.</p>
      */
     inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline void SetAssessmentRunArn(Aws::String&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline void SetAssessmentRunArn(const char* value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn.assign(value); }
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(const Aws::String& value) { SetAssessmentRunArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(Aws::String&& value) { SetAssessmentRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the assessment run that has already been started.</p>
-     */
     inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

@@ -34,120 +34,45 @@ namespace Model
     AWS_PROTON_API ListEnvironmentTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token that indicates the location of the next major or minor version in the
      * array of major or minor versions of an environment template, after the list of
      * major or minor versions that was previously requested.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next major or minor version in the
-     * array of major or minor versions of an environment template, after the list of
-     * major or minor versions that was previously requested.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of major or minor versions of an environment template detail
      * data.</p>
      */
     inline const Aws::Vector<EnvironmentTemplateVersionSummary>& GetTemplateVersions() const{ return m_templateVersions; }
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline void SetTemplateVersions(const Aws::Vector<EnvironmentTemplateVersionSummary>& value) { m_templateVersions = value; }
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline void SetTemplateVersions(Aws::Vector<EnvironmentTemplateVersionSummary>&& value) { m_templateVersions = std::move(value); }
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& WithTemplateVersions(const Aws::Vector<EnvironmentTemplateVersionSummary>& value) { SetTemplateVersions(value); return *this;}
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& WithTemplateVersions(Aws::Vector<EnvironmentTemplateVersionSummary>&& value) { SetTemplateVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& AddTemplateVersions(const EnvironmentTemplateVersionSummary& value) { m_templateVersions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of major or minor versions of an environment template detail
-     * data.</p>
-     */
     inline ListEnvironmentTemplateVersionsResult& AddTemplateVersions(EnvironmentTemplateVersionSummary&& value) { m_templateVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEnvironmentTemplateVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEnvironmentTemplateVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEnvironmentTemplateVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -39,107 +39,43 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The partition object.</p>
      */
     inline const Partition& GetPartition() const{ return m_partition; }
-
-    /**
-     * <p>The partition object.</p>
-     */
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
-
-    /**
-     * <p>The partition object.</p>
-     */
     inline void SetPartition(const Partition& value) { m_partitionHasBeenSet = true; m_partition = value; }
-
-    /**
-     * <p>The partition object.</p>
-     */
     inline void SetPartition(Partition&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
-
-    /**
-     * <p>The partition object.</p>
-     */
     inline UnfilteredPartition& WithPartition(const Partition& value) { SetPartition(value); return *this;}
-
-    /**
-     * <p>The partition object.</p>
-     */
     inline UnfilteredPartition& WithPartition(Partition&& value) { SetPartition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of columns the user has permissions to access.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedColumns() const{ return m_authorizedColumns; }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline bool AuthorizedColumnsHasBeenSet() const { return m_authorizedColumnsHasBeenSet; }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline void SetAuthorizedColumns(const Aws::Vector<Aws::String>& value) { m_authorizedColumnsHasBeenSet = true; m_authorizedColumns = value; }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline void SetAuthorizedColumns(Aws::Vector<Aws::String>&& value) { m_authorizedColumnsHasBeenSet = true; m_authorizedColumns = std::move(value); }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline UnfilteredPartition& WithAuthorizedColumns(const Aws::Vector<Aws::String>& value) { SetAuthorizedColumns(value); return *this;}
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline UnfilteredPartition& WithAuthorizedColumns(Aws::Vector<Aws::String>&& value) { SetAuthorizedColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline UnfilteredPartition& AddAuthorizedColumns(const Aws::String& value) { m_authorizedColumnsHasBeenSet = true; m_authorizedColumns.push_back(value); return *this; }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline UnfilteredPartition& AddAuthorizedColumns(Aws::String&& value) { m_authorizedColumnsHasBeenSet = true; m_authorizedColumns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of columns the user has permissions to access.</p>
-     */
     inline UnfilteredPartition& AddAuthorizedColumns(const char* value) { m_authorizedColumnsHasBeenSet = true; m_authorizedColumns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value indicating that the partition location is registered with
      * Lake Formation.</p>
      */
     inline bool GetIsRegisteredWithLakeFormation() const{ return m_isRegisteredWithLakeFormation; }
-
-    /**
-     * <p>A Boolean value indicating that the partition location is registered with
-     * Lake Formation.</p>
-     */
     inline bool IsRegisteredWithLakeFormationHasBeenSet() const { return m_isRegisteredWithLakeFormationHasBeenSet; }
-
-    /**
-     * <p>A Boolean value indicating that the partition location is registered with
-     * Lake Formation.</p>
-     */
     inline void SetIsRegisteredWithLakeFormation(bool value) { m_isRegisteredWithLakeFormationHasBeenSet = true; m_isRegisteredWithLakeFormation = value; }
-
-    /**
-     * <p>A Boolean value indicating that the partition location is registered with
-     * Lake Formation.</p>
-     */
     inline UnfilteredPartition& WithIsRegisteredWithLakeFormation(bool value) { SetIsRegisteredWithLakeFormation(value); return *this;}
-
+    ///@}
   private:
 
     Partition m_partition;

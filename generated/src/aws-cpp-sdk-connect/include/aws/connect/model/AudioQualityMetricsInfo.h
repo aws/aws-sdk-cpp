@@ -39,27 +39,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number measuring the estimated quality of the media connection.</p>
      */
     inline double GetQualityScore() const{ return m_qualityScore; }
-
-    /**
-     * <p>Number measuring the estimated quality of the media connection.</p>
-     */
     inline bool QualityScoreHasBeenSet() const { return m_qualityScoreHasBeenSet; }
-
-    /**
-     * <p>Number measuring the estimated quality of the media connection.</p>
-     */
     inline void SetQualityScore(double value) { m_qualityScoreHasBeenSet = true; m_qualityScore = value; }
-
-    /**
-     * <p>Number measuring the estimated quality of the media connection.</p>
-     */
     inline AudioQualityMetricsInfo& WithQualityScore(double value) { SetQualityScore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of potential issues causing degradation of quality on a media
      * connection. If the service did not detect any potential quality issues the list
@@ -67,71 +57,15 @@ namespace Model
      * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetPotentialQualityIssues() const{ return m_potentialQualityIssues; }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline bool PotentialQualityIssuesHasBeenSet() const { return m_potentialQualityIssuesHasBeenSet; }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline void SetPotentialQualityIssues(const Aws::Vector<Aws::String>& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues = value; }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline void SetPotentialQualityIssues(Aws::Vector<Aws::String>&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues = std::move(value); }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline AudioQualityMetricsInfo& WithPotentialQualityIssues(const Aws::Vector<Aws::String>& value) { SetPotentialQualityIssues(value); return *this;}
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline AudioQualityMetricsInfo& WithPotentialQualityIssues(Aws::Vector<Aws::String>&& value) { SetPotentialQualityIssues(std::move(value)); return *this;}
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline AudioQualityMetricsInfo& AddPotentialQualityIssues(const Aws::String& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(value); return *this; }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline AudioQualityMetricsInfo& AddPotentialQualityIssues(Aws::String&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of potential issues causing degradation of quality on a media
-     * connection. If the service did not detect any potential quality issues the list
-     * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
-     * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
-     */
     inline AudioQualityMetricsInfo& AddPotentialQualityIssues(const char* value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     double m_qualityScore;

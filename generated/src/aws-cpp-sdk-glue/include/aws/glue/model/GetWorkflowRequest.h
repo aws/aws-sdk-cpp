@@ -34,71 +34,30 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the workflow to retrieve.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline GetWorkflowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline GetWorkflowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workflow to retrieve.</p>
-     */
     inline GetWorkflowRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to include a graph when returning the workflow resource
      * metadata.</p>
      */
     inline bool GetIncludeGraph() const{ return m_includeGraph; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline bool IncludeGraphHasBeenSet() const { return m_includeGraphHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline void SetIncludeGraph(bool value) { m_includeGraphHasBeenSet = true; m_includeGraph = value; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline GetWorkflowRequest& WithIncludeGraph(bool value) { SetIncludeGraph(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

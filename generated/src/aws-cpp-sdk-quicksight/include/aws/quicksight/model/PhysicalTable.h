@@ -42,98 +42,41 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A physical table type for relational data sources.</p>
      */
     inline const RelationalTable& GetRelationalTable() const{ return m_relationalTable; }
-
-    /**
-     * <p>A physical table type for relational data sources.</p>
-     */
     inline bool RelationalTableHasBeenSet() const { return m_relationalTableHasBeenSet; }
-
-    /**
-     * <p>A physical table type for relational data sources.</p>
-     */
     inline void SetRelationalTable(const RelationalTable& value) { m_relationalTableHasBeenSet = true; m_relationalTable = value; }
-
-    /**
-     * <p>A physical table type for relational data sources.</p>
-     */
     inline void SetRelationalTable(RelationalTable&& value) { m_relationalTableHasBeenSet = true; m_relationalTable = std::move(value); }
-
-    /**
-     * <p>A physical table type for relational data sources.</p>
-     */
     inline PhysicalTable& WithRelationalTable(const RelationalTable& value) { SetRelationalTable(value); return *this;}
-
-    /**
-     * <p>A physical table type for relational data sources.</p>
-     */
     inline PhysicalTable& WithRelationalTable(RelationalTable&& value) { SetRelationalTable(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A physical table type built from the results of the custom SQL query.</p>
      */
     inline const CustomSql& GetCustomSql() const{ return m_customSql; }
-
-    /**
-     * <p>A physical table type built from the results of the custom SQL query.</p>
-     */
     inline bool CustomSqlHasBeenSet() const { return m_customSqlHasBeenSet; }
-
-    /**
-     * <p>A physical table type built from the results of the custom SQL query.</p>
-     */
     inline void SetCustomSql(const CustomSql& value) { m_customSqlHasBeenSet = true; m_customSql = value; }
-
-    /**
-     * <p>A physical table type built from the results of the custom SQL query.</p>
-     */
     inline void SetCustomSql(CustomSql&& value) { m_customSqlHasBeenSet = true; m_customSql = std::move(value); }
-
-    /**
-     * <p>A physical table type built from the results of the custom SQL query.</p>
-     */
     inline PhysicalTable& WithCustomSql(const CustomSql& value) { SetCustomSql(value); return *this;}
-
-    /**
-     * <p>A physical table type built from the results of the custom SQL query.</p>
-     */
     inline PhysicalTable& WithCustomSql(CustomSql&& value) { SetCustomSql(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A physical table type for as S3 data source.</p>
      */
     inline const S3Source& GetS3Source() const{ return m_s3Source; }
-
-    /**
-     * <p>A physical table type for as S3 data source.</p>
-     */
     inline bool S3SourceHasBeenSet() const { return m_s3SourceHasBeenSet; }
-
-    /**
-     * <p>A physical table type for as S3 data source.</p>
-     */
     inline void SetS3Source(const S3Source& value) { m_s3SourceHasBeenSet = true; m_s3Source = value; }
-
-    /**
-     * <p>A physical table type for as S3 data source.</p>
-     */
     inline void SetS3Source(S3Source&& value) { m_s3SourceHasBeenSet = true; m_s3Source = std::move(value); }
-
-    /**
-     * <p>A physical table type for as S3 data source.</p>
-     */
     inline PhysicalTable& WithS3Source(const S3Source& value) { SetS3Source(value); return *this;}
-
-    /**
-     * <p>A physical table type for as S3 data source.</p>
-     */
     inline PhysicalTable& WithS3Source(S3Source&& value) { SetS3Source(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RelationalTable m_relationalTable;

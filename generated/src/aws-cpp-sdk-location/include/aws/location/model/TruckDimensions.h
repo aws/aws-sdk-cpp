@@ -40,129 +40,54 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
      * </li> </ul>  <p> For routes calculated with a HERE resource, this value
      * must be between 0 and 300 meters. </p> 
      */
     inline double GetLength() const{ return m_length; }
-
-    /**
-     * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 300 meters. </p> 
-     */
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-
-    /**
-     * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 300 meters. </p> 
-     */
     inline void SetLength(double value) { m_lengthHasBeenSet = true; m_length = value; }
-
-    /**
-     * <p>The length of the truck.</p> <ul> <li> <p>For example, <code>15.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 300 meters. </p> 
-     */
     inline TruckDimensions& WithLength(double value) { SetLength(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
      * </li> </ul>  <p> For routes calculated with a HERE resource, this value
      * must be between 0 and 50 meters. </p> 
      */
     inline double GetHeight() const{ return m_height; }
-
-    /**
-     * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
-
-    /**
-     * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline void SetHeight(double value) { m_heightHasBeenSet = true; m_height = value; }
-
-    /**
-     * <p>The height of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline TruckDimensions& WithHeight(double value) { SetHeight(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
      * </li> </ul>  <p> For routes calculated with a HERE resource, this value
      * must be between 0 and 50 meters. </p> 
      */
     inline double GetWidth() const{ return m_width; }
-
-    /**
-     * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-
-    /**
-     * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
-
-    /**
-     * <p>The width of the truck.</p> <ul> <li> <p>For example, <code>4.5</code>.</p>
-     * </li> </ul>  <p> For routes calculated with a HERE resource, this value
-     * must be between 0 and 50 meters. </p> 
-     */
     inline TruckDimensions& WithWidth(double value) { SetWidth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
      * Value: <code>Meters</code> </p>
      */
     inline const DimensionUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
-     * Value: <code>Meters</code> </p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
-     * Value: <code>Meters</code> </p>
-     */
     inline void SetUnit(const DimensionUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
-     * Value: <code>Meters</code> </p>
-     */
     inline void SetUnit(DimensionUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
-     * Value: <code>Meters</code> </p>
-     */
     inline TruckDimensions& WithUnit(const DimensionUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p> Specifies the unit of measurement for the truck dimensions.</p> <p>Default
-     * Value: <code>Meters</code> </p>
-     */
     inline TruckDimensions& WithUnit(DimensionUnit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_length;

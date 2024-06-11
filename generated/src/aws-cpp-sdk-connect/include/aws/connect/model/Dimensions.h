@@ -41,127 +41,53 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the queue for which metrics are returned.</p>
      */
     inline const QueueReference& GetQueue() const{ return m_queue; }
-
-    /**
-     * <p>Information about the queue for which metrics are returned.</p>
-     */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-
-    /**
-     * <p>Information about the queue for which metrics are returned.</p>
-     */
     inline void SetQueue(const QueueReference& value) { m_queueHasBeenSet = true; m_queue = value; }
-
-    /**
-     * <p>Information about the queue for which metrics are returned.</p>
-     */
     inline void SetQueue(QueueReference&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-
-    /**
-     * <p>Information about the queue for which metrics are returned.</p>
-     */
     inline Dimensions& WithQueue(const QueueReference& value) { SetQueue(value); return *this;}
-
-    /**
-     * <p>Information about the queue for which metrics are returned.</p>
-     */
     inline Dimensions& WithQueue(QueueReference&& value) { SetQueue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The channel used for grouping and filters.</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
-
-    /**
-     * <p>The channel used for grouping and filters.</p>
-     */
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-
-    /**
-     * <p>The channel used for grouping and filters.</p>
-     */
     inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-
-    /**
-     * <p>The channel used for grouping and filters.</p>
-     */
     inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-
-    /**
-     * <p>The channel used for grouping and filters.</p>
-     */
     inline Dimensions& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-
-    /**
-     * <p>The channel used for grouping and filters.</p>
-     */
     inline Dimensions& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const RoutingProfileReference& GetRoutingProfile() const{ return m_routingProfile; }
-
-    
     inline bool RoutingProfileHasBeenSet() const { return m_routingProfileHasBeenSet; }
-
-    
     inline void SetRoutingProfile(const RoutingProfileReference& value) { m_routingProfileHasBeenSet = true; m_routingProfile = value; }
-
-    
     inline void SetRoutingProfile(RoutingProfileReference&& value) { m_routingProfileHasBeenSet = true; m_routingProfile = std::move(value); }
-
-    
     inline Dimensions& WithRoutingProfile(const RoutingProfileReference& value) { SetRoutingProfile(value); return *this;}
-
-    
     inline Dimensions& WithRoutingProfile(RoutingProfileReference&& value) { SetRoutingProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expression of a step in a routing criteria.</p>
      */
     inline const Aws::String& GetRoutingStepExpression() const{ return m_routingStepExpression; }
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline bool RoutingStepExpressionHasBeenSet() const { return m_routingStepExpressionHasBeenSet; }
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline void SetRoutingStepExpression(const Aws::String& value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression = value; }
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline void SetRoutingStepExpression(Aws::String&& value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression = std::move(value); }
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline void SetRoutingStepExpression(const char* value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression.assign(value); }
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline Dimensions& WithRoutingStepExpression(const Aws::String& value) { SetRoutingStepExpression(value); return *this;}
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline Dimensions& WithRoutingStepExpression(Aws::String&& value) { SetRoutingStepExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>The expression of a step in a routing criteria.</p>
-     */
     inline Dimensions& WithRoutingStepExpression(const char* value) { SetRoutingStepExpression(value); return *this;}
-
+    ///@}
   private:
 
     QueueReference m_queue;

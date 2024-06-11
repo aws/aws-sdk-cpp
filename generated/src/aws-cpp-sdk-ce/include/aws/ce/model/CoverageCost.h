@@ -37,46 +37,19 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>How much an On-Demand Instance costs.</p>
      */
     inline const Aws::String& GetOnDemandCost() const{ return m_onDemandCost; }
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline bool OnDemandCostHasBeenSet() const { return m_onDemandCostHasBeenSet; }
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline void SetOnDemandCost(const Aws::String& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = value; }
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline void SetOnDemandCost(Aws::String&& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = std::move(value); }
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline void SetOnDemandCost(const char* value) { m_onDemandCostHasBeenSet = true; m_onDemandCost.assign(value); }
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline CoverageCost& WithOnDemandCost(const Aws::String& value) { SetOnDemandCost(value); return *this;}
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline CoverageCost& WithOnDemandCost(Aws::String&& value) { SetOnDemandCost(std::move(value)); return *this;}
-
-    /**
-     * <p>How much an On-Demand Instance costs.</p>
-     */
     inline CoverageCost& WithOnDemandCost(const char* value) { SetOnDemandCost(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_onDemandCost;

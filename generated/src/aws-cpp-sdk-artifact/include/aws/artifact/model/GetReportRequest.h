@@ -38,108 +38,43 @@ namespace Model
     AWS_ARTIFACT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Unique resource ID for the report resource.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline GetReportRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline GetReportRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique resource ID for the report resource.</p>
-     */
     inline GetReportRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Version for the report resource.</p>
      */
     inline long long GetReportVersion() const{ return m_reportVersion; }
-
-    /**
-     * <p>Version for the report resource.</p>
-     */
     inline bool ReportVersionHasBeenSet() const { return m_reportVersionHasBeenSet; }
-
-    /**
-     * <p>Version for the report resource.</p>
-     */
     inline void SetReportVersion(long long value) { m_reportVersionHasBeenSet = true; m_reportVersion = value; }
-
-    /**
-     * <p>Version for the report resource.</p>
-     */
     inline GetReportRequest& WithReportVersion(long long value) { SetReportVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Unique download token provided by GetTermForReport API.</p>
      */
     inline const Aws::String& GetTermToken() const{ return m_termToken; }
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline bool TermTokenHasBeenSet() const { return m_termTokenHasBeenSet; }
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline void SetTermToken(const Aws::String& value) { m_termTokenHasBeenSet = true; m_termToken = value; }
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline void SetTermToken(Aws::String&& value) { m_termTokenHasBeenSet = true; m_termToken = std::move(value); }
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline void SetTermToken(const char* value) { m_termTokenHasBeenSet = true; m_termToken.assign(value); }
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline GetReportRequest& WithTermToken(const Aws::String& value) { SetTermToken(value); return *this;}
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline GetReportRequest& WithTermToken(Aws::String&& value) { SetTermToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique download token provided by GetTermForReport API.</p>
-     */
     inline GetReportRequest& WithTermToken(const char* value) { SetTermToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

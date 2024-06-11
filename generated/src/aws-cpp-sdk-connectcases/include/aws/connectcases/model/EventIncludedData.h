@@ -39,73 +39,30 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details of what case data is published through the case event stream.</p>
      */
     inline const CaseEventIncludedData& GetCaseData() const{ return m_caseData; }
-
-    /**
-     * <p>Details of what case data is published through the case event stream.</p>
-     */
     inline bool CaseDataHasBeenSet() const { return m_caseDataHasBeenSet; }
-
-    /**
-     * <p>Details of what case data is published through the case event stream.</p>
-     */
     inline void SetCaseData(const CaseEventIncludedData& value) { m_caseDataHasBeenSet = true; m_caseData = value; }
-
-    /**
-     * <p>Details of what case data is published through the case event stream.</p>
-     */
     inline void SetCaseData(CaseEventIncludedData&& value) { m_caseDataHasBeenSet = true; m_caseData = std::move(value); }
-
-    /**
-     * <p>Details of what case data is published through the case event stream.</p>
-     */
     inline EventIncludedData& WithCaseData(const CaseEventIncludedData& value) { SetCaseData(value); return *this;}
-
-    /**
-     * <p>Details of what case data is published through the case event stream.</p>
-     */
     inline EventIncludedData& WithCaseData(CaseEventIncludedData&& value) { SetCaseData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details of what related item data is published through the case event
      * stream.</p>
      */
     inline const RelatedItemEventIncludedData& GetRelatedItemData() const{ return m_relatedItemData; }
-
-    /**
-     * <p>Details of what related item data is published through the case event
-     * stream.</p>
-     */
     inline bool RelatedItemDataHasBeenSet() const { return m_relatedItemDataHasBeenSet; }
-
-    /**
-     * <p>Details of what related item data is published through the case event
-     * stream.</p>
-     */
     inline void SetRelatedItemData(const RelatedItemEventIncludedData& value) { m_relatedItemDataHasBeenSet = true; m_relatedItemData = value; }
-
-    /**
-     * <p>Details of what related item data is published through the case event
-     * stream.</p>
-     */
     inline void SetRelatedItemData(RelatedItemEventIncludedData&& value) { m_relatedItemDataHasBeenSet = true; m_relatedItemData = std::move(value); }
-
-    /**
-     * <p>Details of what related item data is published through the case event
-     * stream.</p>
-     */
     inline EventIncludedData& WithRelatedItemData(const RelatedItemEventIncludedData& value) { SetRelatedItemData(value); return *this;}
-
-    /**
-     * <p>Details of what related item data is published through the case event
-     * stream.</p>
-     */
     inline EventIncludedData& WithRelatedItemData(RelatedItemEventIncludedData&& value) { SetRelatedItemData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CaseEventIncludedData m_caseData;

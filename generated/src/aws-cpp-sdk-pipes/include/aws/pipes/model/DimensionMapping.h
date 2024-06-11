@@ -41,134 +41,47 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Dynamic path to the dimension value in the source event.</p>
      */
     inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline void SetDimensionValue(const Aws::String& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline void SetDimensionValue(Aws::String&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::move(value); }
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline void SetDimensionValue(const char* value) { m_dimensionValueHasBeenSet = true; m_dimensionValue.assign(value); }
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline DimensionMapping& WithDimensionValue(const Aws::String& value) { SetDimensionValue(value); return *this;}
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline DimensionMapping& WithDimensionValue(Aws::String&& value) { SetDimensionValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Dynamic path to the dimension value in the source event.</p>
-     */
     inline DimensionMapping& WithDimensionValue(const char* value) { SetDimensionValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data type of the dimension for the time-series data.</p>
      */
     inline const DimensionValueType& GetDimensionValueType() const{ return m_dimensionValueType; }
-
-    /**
-     * <p>The data type of the dimension for the time-series data.</p>
-     */
     inline bool DimensionValueTypeHasBeenSet() const { return m_dimensionValueTypeHasBeenSet; }
-
-    /**
-     * <p>The data type of the dimension for the time-series data.</p>
-     */
     inline void SetDimensionValueType(const DimensionValueType& value) { m_dimensionValueTypeHasBeenSet = true; m_dimensionValueType = value; }
-
-    /**
-     * <p>The data type of the dimension for the time-series data.</p>
-     */
     inline void SetDimensionValueType(DimensionValueType&& value) { m_dimensionValueTypeHasBeenSet = true; m_dimensionValueType = std::move(value); }
-
-    /**
-     * <p>The data type of the dimension for the time-series data.</p>
-     */
     inline DimensionMapping& WithDimensionValueType(const DimensionValueType& value) { SetDimensionValueType(value); return *this;}
-
-    /**
-     * <p>The data type of the dimension for the time-series data.</p>
-     */
     inline DimensionMapping& WithDimensionValueType(DimensionValueType&& value) { SetDimensionValueType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata attributes of the time series. For example, the name and
      * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
      * wind turbine are dimensions.</p>
      */
     inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline DimensionMapping& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline DimensionMapping& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata attributes of the time series. For example, the name and
-     * Availability Zone of an Amazon EC2 instance or the name of the manufacturer of a
-     * wind turbine are dimensions.</p>
-     */
     inline DimensionMapping& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dimensionValue;

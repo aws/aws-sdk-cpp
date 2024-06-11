@@ -39,67 +39,29 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline const MultiPolygonGeometryInput& GetMultiPolygonGeometry() const{ return m_multiPolygonGeometry; }
-
-    /**
-     * <p>The structure representing the MultiPolygon Geometry.</p>
-     */
     inline bool MultiPolygonGeometryHasBeenSet() const { return m_multiPolygonGeometryHasBeenSet; }
-
-    /**
-     * <p>The structure representing the MultiPolygon Geometry.</p>
-     */
     inline void SetMultiPolygonGeometry(const MultiPolygonGeometryInput& value) { m_multiPolygonGeometryHasBeenSet = true; m_multiPolygonGeometry = value; }
-
-    /**
-     * <p>The structure representing the MultiPolygon Geometry.</p>
-     */
     inline void SetMultiPolygonGeometry(MultiPolygonGeometryInput&& value) { m_multiPolygonGeometryHasBeenSet = true; m_multiPolygonGeometry = std::move(value); }
-
-    /**
-     * <p>The structure representing the MultiPolygon Geometry.</p>
-     */
     inline AreaOfInterestGeometry& WithMultiPolygonGeometry(const MultiPolygonGeometryInput& value) { SetMultiPolygonGeometry(value); return *this;}
-
-    /**
-     * <p>The structure representing the MultiPolygon Geometry.</p>
-     */
     inline AreaOfInterestGeometry& WithMultiPolygonGeometry(MultiPolygonGeometryInput&& value) { SetMultiPolygonGeometry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The structure representing Polygon Geometry.</p>
      */
     inline const PolygonGeometryInput& GetPolygonGeometry() const{ return m_polygonGeometry; }
-
-    /**
-     * <p>The structure representing Polygon Geometry.</p>
-     */
     inline bool PolygonGeometryHasBeenSet() const { return m_polygonGeometryHasBeenSet; }
-
-    /**
-     * <p>The structure representing Polygon Geometry.</p>
-     */
     inline void SetPolygonGeometry(const PolygonGeometryInput& value) { m_polygonGeometryHasBeenSet = true; m_polygonGeometry = value; }
-
-    /**
-     * <p>The structure representing Polygon Geometry.</p>
-     */
     inline void SetPolygonGeometry(PolygonGeometryInput&& value) { m_polygonGeometryHasBeenSet = true; m_polygonGeometry = std::move(value); }
-
-    /**
-     * <p>The structure representing Polygon Geometry.</p>
-     */
     inline AreaOfInterestGeometry& WithPolygonGeometry(const PolygonGeometryInput& value) { SetPolygonGeometry(value); return *this;}
-
-    /**
-     * <p>The structure representing Polygon Geometry.</p>
-     */
     inline AreaOfInterestGeometry& WithPolygonGeometry(PolygonGeometryInput&& value) { SetPolygonGeometry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MultiPolygonGeometryInput m_multiPolygonGeometry;

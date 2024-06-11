@@ -35,42 +35,20 @@ namespace Model
     AWS_CLOUDFORMATION_API ListResourceScansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The list of scans returned.</p>
      */
     inline const Aws::Vector<ResourceScanSummary>& GetResourceScanSummaries() const{ return m_resourceScanSummaries; }
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline void SetResourceScanSummaries(const Aws::Vector<ResourceScanSummary>& value) { m_resourceScanSummaries = value; }
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline void SetResourceScanSummaries(Aws::Vector<ResourceScanSummary>&& value) { m_resourceScanSummaries = std::move(value); }
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline ListResourceScansResult& WithResourceScanSummaries(const Aws::Vector<ResourceScanSummary>& value) { SetResourceScanSummaries(value); return *this;}
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline ListResourceScansResult& WithResourceScanSummaries(Aws::Vector<ResourceScanSummary>&& value) { SetResourceScanSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline ListResourceScansResult& AddResourceScanSummaries(const ResourceScanSummary& value) { m_resourceScanSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>The list of scans returned.</p>
-     */
     inline ListResourceScansResult& AddResourceScanSummaries(ResourceScanSummary&& value) { m_resourceScanSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
@@ -79,77 +57,22 @@ namespace Model
      * <code>NextToken</code> is set to an empty string.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline ListResourceScansResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline ListResourceScansResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the request doesn't return all the remaining results,
-     * <code>NextToken</code> is set to a token. To retrieve the next set of results,
-     * call <code>ListResourceScans</code> again and use that value for the
-     * <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
-     */
     inline ListResourceScansResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ListResourceScansResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ListResourceScansResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ResourceScanSummary> m_resourceScanSummaries;

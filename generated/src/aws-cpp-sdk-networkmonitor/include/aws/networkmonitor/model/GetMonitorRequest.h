@@ -32,46 +32,19 @@ namespace Model
     AWS_NETWORKMONITOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the monitor that details are returned for.</p>
      */
     inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline GetMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline GetMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the monitor that details are returned for.</p>
-     */
     inline GetMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorName;

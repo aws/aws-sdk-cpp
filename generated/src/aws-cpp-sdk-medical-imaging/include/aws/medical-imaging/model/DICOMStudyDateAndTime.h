@@ -38,87 +38,33 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
      */
     inline const Aws::String& GetDICOMStudyDate() const{ return m_dICOMStudyDate; }
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline bool DICOMStudyDateHasBeenSet() const { return m_dICOMStudyDateHasBeenSet; }
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline void SetDICOMStudyDate(const Aws::String& value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate = value; }
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline void SetDICOMStudyDate(Aws::String&& value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate = std::move(value); }
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline void SetDICOMStudyDate(const char* value) { m_dICOMStudyDateHasBeenSet = true; m_dICOMStudyDate.assign(value); }
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyDate(const Aws::String& value) { SetDICOMStudyDate(value); return *this;}
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyDate(Aws::String&& value) { SetDICOMStudyDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The DICOM study date provided in <code>yyMMdd</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyDate(const char* value) { SetDICOMStudyDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
      */
     inline const Aws::String& GetDICOMStudyTime() const{ return m_dICOMStudyTime; }
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline bool DICOMStudyTimeHasBeenSet() const { return m_dICOMStudyTimeHasBeenSet; }
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline void SetDICOMStudyTime(const Aws::String& value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime = value; }
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline void SetDICOMStudyTime(Aws::String&& value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime = std::move(value); }
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline void SetDICOMStudyTime(const char* value) { m_dICOMStudyTimeHasBeenSet = true; m_dICOMStudyTime.assign(value); }
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyTime(const Aws::String& value) { SetDICOMStudyTime(value); return *this;}
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyTime(Aws::String&& value) { SetDICOMStudyTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The DICOM study time provided in <code>HHmmss.FFFFFF</code> format.</p>
-     */
     inline DICOMStudyDateAndTime& WithDICOMStudyTime(const char* value) { SetDICOMStudyTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dICOMStudyDate;

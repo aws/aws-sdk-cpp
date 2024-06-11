@@ -37,46 +37,19 @@ namespace Model
     AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The text of a readiness check message.</p>
      */
     inline const Aws::String& GetMessageText() const{ return m_messageText; }
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline bool MessageTextHasBeenSet() const { return m_messageTextHasBeenSet; }
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline void SetMessageText(const Aws::String& value) { m_messageTextHasBeenSet = true; m_messageText = value; }
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline void SetMessageText(Aws::String&& value) { m_messageTextHasBeenSet = true; m_messageText = std::move(value); }
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline void SetMessageText(const char* value) { m_messageTextHasBeenSet = true; m_messageText.assign(value); }
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline Message& WithMessageText(const Aws::String& value) { SetMessageText(value); return *this;}
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline Message& WithMessageText(Aws::String&& value) { SetMessageText(std::move(value)); return *this;}
-
-    /**
-     * <p>The text of a readiness check message.</p>
-     */
     inline Message& WithMessageText(const char* value) { SetMessageText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageText;

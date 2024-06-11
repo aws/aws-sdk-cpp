@@ -38,53 +38,27 @@ namespace Model
     AWS_MGN_API StartImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Start import response import task.</p>
      */
     inline const ImportTask& GetImportTask() const{ return m_importTask; }
-
-    /**
-     * <p>Start import response import task.</p>
-     */
     inline void SetImportTask(const ImportTask& value) { m_importTask = value; }
-
-    /**
-     * <p>Start import response import task.</p>
-     */
     inline void SetImportTask(ImportTask&& value) { m_importTask = std::move(value); }
-
-    /**
-     * <p>Start import response import task.</p>
-     */
     inline StartImportResult& WithImportTask(const ImportTask& value) { SetImportTask(value); return *this;}
-
-    /**
-     * <p>Start import response import task.</p>
-     */
     inline StartImportResult& WithImportTask(ImportTask&& value) { SetImportTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartImportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartImportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartImportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ImportTask m_importTask;

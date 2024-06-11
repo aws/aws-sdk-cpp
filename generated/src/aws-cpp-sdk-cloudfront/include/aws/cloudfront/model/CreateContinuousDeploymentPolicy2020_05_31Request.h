@@ -32,36 +32,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Contains the configuration for a continuous deployment policy.</p>
      */
     inline const ContinuousDeploymentPolicyConfig& GetContinuousDeploymentPolicyConfig() const{ return m_continuousDeploymentPolicyConfig; }
-
-    /**
-     * <p>Contains the configuration for a continuous deployment policy.</p>
-     */
     inline bool ContinuousDeploymentPolicyConfigHasBeenSet() const { return m_continuousDeploymentPolicyConfigHasBeenSet; }
-
-    /**
-     * <p>Contains the configuration for a continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicyConfig(const ContinuousDeploymentPolicyConfig& value) { m_continuousDeploymentPolicyConfigHasBeenSet = true; m_continuousDeploymentPolicyConfig = value; }
-
-    /**
-     * <p>Contains the configuration for a continuous deployment policy.</p>
-     */
     inline void SetContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfig&& value) { m_continuousDeploymentPolicyConfigHasBeenSet = true; m_continuousDeploymentPolicyConfig = std::move(value); }
-
-    /**
-     * <p>Contains the configuration for a continuous deployment policy.</p>
-     */
     inline CreateContinuousDeploymentPolicy2020_05_31Request& WithContinuousDeploymentPolicyConfig(const ContinuousDeploymentPolicyConfig& value) { SetContinuousDeploymentPolicyConfig(value); return *this;}
-
-    /**
-     * <p>Contains the configuration for a continuous deployment policy.</p>
-     */
     inline CreateContinuousDeploymentPolicy2020_05_31Request& WithContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfig&& value) { SetContinuousDeploymentPolicyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContinuousDeploymentPolicyConfig m_continuousDeploymentPolicyConfig;

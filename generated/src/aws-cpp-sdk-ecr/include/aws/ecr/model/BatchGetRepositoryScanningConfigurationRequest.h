@@ -35,51 +35,20 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>One or more repository names to get the scanning configuration for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline BatchGetRepositoryScanningConfigurationRequest& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline BatchGetRepositoryScanningConfigurationRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline BatchGetRepositoryScanningConfigurationRequest& AddRepositoryNames(const Aws::String& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline BatchGetRepositoryScanningConfigurationRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more repository names to get the scanning configuration for.</p>
-     */
     inline BatchGetRepositoryScanningConfigurationRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_repositoryNames;

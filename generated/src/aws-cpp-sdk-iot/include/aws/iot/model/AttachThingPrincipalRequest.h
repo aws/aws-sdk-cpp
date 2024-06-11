@@ -38,95 +38,34 @@ namespace Model
     AWS_IOT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the thing.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline AttachThingPrincipalRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline AttachThingPrincipalRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing.</p>
-     */
     inline AttachThingPrincipalRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal, which can be a certificate ARN (as returned from the
      * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline AttachThingPrincipalRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline AttachThingPrincipalRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal, which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or an Amazon Cognito ID.</p>
-     */
     inline AttachThingPrincipalRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingName;

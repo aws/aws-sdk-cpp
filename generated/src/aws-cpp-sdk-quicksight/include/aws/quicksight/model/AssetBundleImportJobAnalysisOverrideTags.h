@@ -40,101 +40,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of analysis IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all analyses in this asset bundle.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAnalysisIds() const{ return m_analysisIds; }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline bool AnalysisIdsHasBeenSet() const { return m_analysisIdsHasBeenSet; }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline void SetAnalysisIds(const Aws::Vector<Aws::String>& value) { m_analysisIdsHasBeenSet = true; m_analysisIds = value; }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline void SetAnalysisIds(Aws::Vector<Aws::String>&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds = std::move(value); }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& WithAnalysisIds(const Aws::Vector<Aws::String>& value) { SetAnalysisIds(value); return *this;}
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& WithAnalysisIds(Aws::Vector<Aws::String>&& value) { SetAnalysisIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& AddAnalysisIds(const Aws::String& value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& AddAnalysisIds(Aws::String&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of analysis IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all analyses in this asset bundle.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& AddAnalysisIds(const char* value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags for the analyses that you want to apply overrides to.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags for the analyses that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobAnalysisOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_analysisIds;

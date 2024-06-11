@@ -37,36 +37,17 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a tool that the model is requesting to use.</p>
      */
     inline const ToolUseBlockStart& GetToolUse() const{ return m_toolUse; }
-
-    /**
-     * <p>Information about a tool that the model is requesting to use.</p>
-     */
     inline bool ToolUseHasBeenSet() const { return m_toolUseHasBeenSet; }
-
-    /**
-     * <p>Information about a tool that the model is requesting to use.</p>
-     */
     inline void SetToolUse(const ToolUseBlockStart& value) { m_toolUseHasBeenSet = true; m_toolUse = value; }
-
-    /**
-     * <p>Information about a tool that the model is requesting to use.</p>
-     */
     inline void SetToolUse(ToolUseBlockStart&& value) { m_toolUseHasBeenSet = true; m_toolUse = std::move(value); }
-
-    /**
-     * <p>Information about a tool that the model is requesting to use.</p>
-     */
     inline ContentBlockStart& WithToolUse(const ToolUseBlockStart& value) { SetToolUse(value); return *this;}
-
-    /**
-     * <p>Information about a tool that the model is requesting to use.</p>
-     */
     inline ContentBlockStart& WithToolUse(ToolUseBlockStart&& value) { SetToolUse(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ToolUseBlockStart m_toolUse;

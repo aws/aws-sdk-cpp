@@ -34,115 +34,51 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API PutChannelMembershipPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the channel.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a user.</p>
      */
     inline const Identity& GetMember() const{ return m_member; }
-
-    /**
-     * <p>The details of a user.</p>
-     */
     inline void SetMember(const Identity& value) { m_member = value; }
-
-    /**
-     * <p>The details of a user.</p>
-     */
     inline void SetMember(Identity&& value) { m_member = std::move(value); }
-
-    /**
-     * <p>The details of a user.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithMember(const Identity& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>The details of a user.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN and metadata of the member being added.</p>
      */
     inline const ChannelMembershipPreferences& GetPreferences() const{ return m_preferences; }
-
-    /**
-     * <p>The ARN and metadata of the member being added.</p>
-     */
     inline void SetPreferences(const ChannelMembershipPreferences& value) { m_preferences = value; }
-
-    /**
-     * <p>The ARN and metadata of the member being added.</p>
-     */
     inline void SetPreferences(ChannelMembershipPreferences&& value) { m_preferences = std::move(value); }
-
-    /**
-     * <p>The ARN and metadata of the member being added.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithPreferences(const ChannelMembershipPreferences& value) { SetPreferences(value); return *this;}
-
-    /**
-     * <p>The ARN and metadata of the member being added.</p>
-     */
     inline PutChannelMembershipPreferencesResult& WithPreferences(ChannelMembershipPreferences&& value) { SetPreferences(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutChannelMembershipPreferencesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutChannelMembershipPreferencesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutChannelMembershipPreferencesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelArn;

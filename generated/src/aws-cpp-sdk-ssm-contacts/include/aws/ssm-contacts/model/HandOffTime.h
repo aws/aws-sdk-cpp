@@ -36,47 +36,25 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The hour when an on-call rotation shift begins or ends.</p>
      */
     inline int GetHourOfDay() const{ return m_hourOfDay; }
-
-    /**
-     * <p>The hour when an on-call rotation shift begins or ends.</p>
-     */
     inline bool HourOfDayHasBeenSet() const { return m_hourOfDayHasBeenSet; }
-
-    /**
-     * <p>The hour when an on-call rotation shift begins or ends.</p>
-     */
     inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
-
-    /**
-     * <p>The hour when an on-call rotation shift begins or ends.</p>
-     */
     inline HandOffTime& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minute when an on-call rotation shift begins or ends.</p>
      */
     inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
-
-    /**
-     * <p>The minute when an on-call rotation shift begins or ends.</p>
-     */
     inline bool MinuteOfHourHasBeenSet() const { return m_minuteOfHourHasBeenSet; }
-
-    /**
-     * <p>The minute when an on-call rotation shift begins or ends.</p>
-     */
     inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
-
-    /**
-     * <p>The minute when an on-call rotation shift begins or ends.</p>
-     */
     inline HandOffTime& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
-
+    ///@}
   private:
 
     int m_hourOfDay;

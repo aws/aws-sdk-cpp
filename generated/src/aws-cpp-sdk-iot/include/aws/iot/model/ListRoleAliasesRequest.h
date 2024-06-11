@@ -38,88 +38,39 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of results to return at one time.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return at one time.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of results to return at one time.</p>
-     */
     inline ListRoleAliasesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A marker used to get the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListRoleAliasesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListRoleAliasesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListRoleAliasesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return the list of role aliases in ascending alphabetical order.</p>
      */
     inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
-
-    /**
-     * <p>Return the list of role aliases in ascending alphabetical order.</p>
-     */
     inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
-
-    /**
-     * <p>Return the list of role aliases in ascending alphabetical order.</p>
-     */
     inline void SetAscendingOrder(bool value) { m_ascendingOrderHasBeenSet = true; m_ascendingOrder = value; }
-
-    /**
-     * <p>Return the list of role aliases in ascending alphabetical order.</p>
-     */
     inline ListRoleAliasesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
-
+    ///@}
   private:
 
     int m_pageSize;

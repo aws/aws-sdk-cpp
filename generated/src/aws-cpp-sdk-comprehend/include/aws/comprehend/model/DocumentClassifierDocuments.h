@@ -39,103 +39,35 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 URI location of the training documents specified in the S3Uri CSV
      * file.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline DocumentClassifierDocuments& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline DocumentClassifierDocuments& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 URI location of the training documents specified in the S3Uri CSV
-     * file.</p>
-     */
     inline DocumentClassifierDocuments& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
      * This field is not required if you do not specify a test CSV file.</p>
      */
     inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline DocumentClassifierDocuments& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline DocumentClassifierDocuments& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 URI location of the test documents included in the TestS3Uri CSV file.
-     * This field is not required if you do not specify a test CSV file.</p>
-     */
     inline DocumentClassifierDocuments& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3Uri;

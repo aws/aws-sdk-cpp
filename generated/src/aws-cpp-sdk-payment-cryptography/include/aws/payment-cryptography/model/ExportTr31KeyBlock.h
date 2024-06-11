@@ -39,91 +39,33 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
      * the key under export for TR-31 key block generation.</p>
      */
     inline const Aws::String& GetWrappingKeyIdentifier() const{ return m_wrappingKeyIdentifier; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline bool WrappingKeyIdentifierHasBeenSet() const { return m_wrappingKeyIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline void SetWrappingKeyIdentifier(const Aws::String& value) { m_wrappingKeyIdentifierHasBeenSet = true; m_wrappingKeyIdentifier = value; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline void SetWrappingKeyIdentifier(Aws::String&& value) { m_wrappingKeyIdentifierHasBeenSet = true; m_wrappingKeyIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline void SetWrappingKeyIdentifier(const char* value) { m_wrappingKeyIdentifierHasBeenSet = true; m_wrappingKeyIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline ExportTr31KeyBlock& WithWrappingKeyIdentifier(const Aws::String& value) { SetWrappingKeyIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline ExportTr31KeyBlock& WithWrappingKeyIdentifier(Aws::String&& value) { SetWrappingKeyIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps
-     * the key under export for TR-31 key block generation.</p>
-     */
     inline ExportTr31KeyBlock& WithWrappingKeyIdentifier(const char* value) { SetWrappingKeyIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional metadata for export associated with the key material. This data is
      * signed but transmitted in clear text.</p>
      */
     inline const KeyBlockHeaders& GetKeyBlockHeaders() const{ return m_keyBlockHeaders; }
-
-    /**
-     * <p>Optional metadata for export associated with the key material. This data is
-     * signed but transmitted in clear text.</p>
-     */
     inline bool KeyBlockHeadersHasBeenSet() const { return m_keyBlockHeadersHasBeenSet; }
-
-    /**
-     * <p>Optional metadata for export associated with the key material. This data is
-     * signed but transmitted in clear text.</p>
-     */
     inline void SetKeyBlockHeaders(const KeyBlockHeaders& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = value; }
-
-    /**
-     * <p>Optional metadata for export associated with the key material. This data is
-     * signed but transmitted in clear text.</p>
-     */
     inline void SetKeyBlockHeaders(KeyBlockHeaders&& value) { m_keyBlockHeadersHasBeenSet = true; m_keyBlockHeaders = std::move(value); }
-
-    /**
-     * <p>Optional metadata for export associated with the key material. This data is
-     * signed but transmitted in clear text.</p>
-     */
     inline ExportTr31KeyBlock& WithKeyBlockHeaders(const KeyBlockHeaders& value) { SetKeyBlockHeaders(value); return *this;}
-
-    /**
-     * <p>Optional metadata for export associated with the key material. This data is
-     * signed but transmitted in clear text.</p>
-     */
     inline ExportTr31KeyBlock& WithKeyBlockHeaders(KeyBlockHeaders&& value) { SetKeyBlockHeaders(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_wrappingKeyIdentifier;

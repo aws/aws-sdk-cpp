@@ -36,34 +36,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If set to <code>true</code>, then instances in the group launch with detailed
      * monitoring.</p> <p>If set to <code>false</code>, then instances in the group
      * launch with basic monitoring.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>If set to <code>true</code>, then instances in the group launch with detailed
-     * monitoring.</p> <p>If set to <code>false</code>, then instances in the group
-     * launch with basic monitoring.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>If set to <code>true</code>, then instances in the group launch with detailed
-     * monitoring.</p> <p>If set to <code>false</code>, then instances in the group
-     * launch with basic monitoring.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>If set to <code>true</code>, then instances in the group launch with detailed
-     * monitoring.</p> <p>If set to <code>false</code>, then instances in the group
-     * launch with basic monitoring.</p>
-     */
     inline AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

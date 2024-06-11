@@ -42,6 +42,7 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The type of the grantee to which access has been granted. It can be one of
      * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
@@ -55,78 +56,14 @@ namespace Model
      * Grants instance.</p> </li> </ul>
      */
     inline const GranteeType& GetGranteeType() const{ return m_granteeType; }
-
-    /**
-     * <p>The type of the grantee to which access has been granted. It can be one of
-     * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
-     * role.</p> </li> <li> <p> <code>DIRECTORY_USER</code> - Your corporate directory
-     * user. You can use this option if you have added your corporate identity
-     * directory to IAM Identity Center and associated the IAM Identity Center instance
-     * with your S3 Access Grants instance.</p> </li> <li> <p>
-     * <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this
-     * option if you have added your corporate identity directory to IAM Identity
-     * Center and associated the IAM Identity Center instance with your S3 Access
-     * Grants instance.</p> </li> </ul>
-     */
     inline bool GranteeTypeHasBeenSet() const { return m_granteeTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the grantee to which access has been granted. It can be one of
-     * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
-     * role.</p> </li> <li> <p> <code>DIRECTORY_USER</code> - Your corporate directory
-     * user. You can use this option if you have added your corporate identity
-     * directory to IAM Identity Center and associated the IAM Identity Center instance
-     * with your S3 Access Grants instance.</p> </li> <li> <p>
-     * <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this
-     * option if you have added your corporate identity directory to IAM Identity
-     * Center and associated the IAM Identity Center instance with your S3 Access
-     * Grants instance.</p> </li> </ul>
-     */
     inline void SetGranteeType(const GranteeType& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
-
-    /**
-     * <p>The type of the grantee to which access has been granted. It can be one of
-     * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
-     * role.</p> </li> <li> <p> <code>DIRECTORY_USER</code> - Your corporate directory
-     * user. You can use this option if you have added your corporate identity
-     * directory to IAM Identity Center and associated the IAM Identity Center instance
-     * with your S3 Access Grants instance.</p> </li> <li> <p>
-     * <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this
-     * option if you have added your corporate identity directory to IAM Identity
-     * Center and associated the IAM Identity Center instance with your S3 Access
-     * Grants instance.</p> </li> </ul>
-     */
     inline void SetGranteeType(GranteeType&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = std::move(value); }
-
-    /**
-     * <p>The type of the grantee to which access has been granted. It can be one of
-     * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
-     * role.</p> </li> <li> <p> <code>DIRECTORY_USER</code> - Your corporate directory
-     * user. You can use this option if you have added your corporate identity
-     * directory to IAM Identity Center and associated the IAM Identity Center instance
-     * with your S3 Access Grants instance.</p> </li> <li> <p>
-     * <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this
-     * option if you have added your corporate identity directory to IAM Identity
-     * Center and associated the IAM Identity Center instance with your S3 Access
-     * Grants instance.</p> </li> </ul>
-     */
     inline Grantee& WithGranteeType(const GranteeType& value) { SetGranteeType(value); return *this;}
-
-    /**
-     * <p>The type of the grantee to which access has been granted. It can be one of
-     * the following values:</p> <ul> <li> <p> <code>IAM</code> - An IAM user or
-     * role.</p> </li> <li> <p> <code>DIRECTORY_USER</code> - Your corporate directory
-     * user. You can use this option if you have added your corporate identity
-     * directory to IAM Identity Center and associated the IAM Identity Center instance
-     * with your S3 Access Grants instance.</p> </li> <li> <p>
-     * <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this
-     * option if you have added your corporate identity directory to IAM Identity
-     * Center and associated the IAM Identity Center instance with your S3 Access
-     * Grants instance.</p> </li> </ul>
-     */
     inline Grantee& WithGranteeType(GranteeType&& value) { SetGranteeType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
      * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
@@ -136,77 +73,14 @@ namespace Model
      * your Amazon Web Services IAM Identity Center instance.</p>
      */
     inline const Aws::String& GetGranteeIdentifier() const{ return m_granteeIdentifier; }
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline bool GranteeIdentifierHasBeenSet() const { return m_granteeIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline void SetGranteeIdentifier(const Aws::String& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline void SetGranteeIdentifier(Aws::String&& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline void SetGranteeIdentifier(const char* value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline Grantee& WithGranteeIdentifier(const Aws::String& value) { SetGranteeIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline Grantee& WithGranteeIdentifier(Aws::String&& value) { SetGranteeIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the <code>Grantee</code>. If the grantee type is
-     * <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the
-     * user or role. If the grantee type is a directory user or group, the identifier
-     * is 128-bit universally unique identifier (UUID) in the format
-     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
-     * your Amazon Web Services IAM Identity Center instance.</p>
-     */
     inline Grantee& WithGranteeIdentifier(const char* value) { SetGranteeIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     GranteeType m_granteeType;

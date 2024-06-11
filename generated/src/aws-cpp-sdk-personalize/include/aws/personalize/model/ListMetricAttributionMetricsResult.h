@@ -34,113 +34,44 @@ namespace Model
     AWS_PERSONALIZE_API ListMetricAttributionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The metrics for the specified metric attribution.</p>
      */
     inline const Aws::Vector<MetricAttribute>& GetMetrics() const{ return m_metrics; }
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline void SetMetrics(const Aws::Vector<MetricAttribute>& value) { m_metrics = value; }
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline void SetMetrics(Aws::Vector<MetricAttribute>&& value) { m_metrics = std::move(value); }
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline ListMetricAttributionMetricsResult& WithMetrics(const Aws::Vector<MetricAttribute>& value) { SetMetrics(value); return *this;}
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline ListMetricAttributionMetricsResult& WithMetrics(Aws::Vector<MetricAttribute>&& value) { SetMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline ListMetricAttributionMetricsResult& AddMetrics(const MetricAttribute& value) { m_metrics.push_back(value); return *this; }
-
-    /**
-     * <p>The metrics for the specified metric attribution.</p>
-     */
     inline ListMetricAttributionMetricsResult& AddMetrics(MetricAttribute&& value) { m_metrics.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the pagination token from a previous
      * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
      * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline ListMetricAttributionMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline ListMetricAttributionMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the pagination token from a previous
-     * <code>ListMetricAttributionMetricsResponse</code> request to retrieve the next
-     * page of results.</p>
-     */
     inline ListMetricAttributionMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMetricAttributionMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMetricAttributionMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMetricAttributionMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MetricAttribute> m_metrics;

@@ -38,54 +38,20 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
      * to recognize intents.</p>
      */
     inline const Aws::String& GetUtterance() const{ return m_utterance; }
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline bool UtteranceHasBeenSet() const { return m_utteranceHasBeenSet; }
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline void SetUtterance(const Aws::String& value) { m_utteranceHasBeenSet = true; m_utterance = value; }
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline void SetUtterance(Aws::String&& value) { m_utteranceHasBeenSet = true; m_utterance = std::move(value); }
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline void SetUtterance(const char* value) { m_utteranceHasBeenSet = true; m_utterance.assign(value); }
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline SampleUtterance& WithUtterance(const Aws::String& value) { SetUtterance(value); return *this;}
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline SampleUtterance& WithUtterance(Aws::String&& value) { SetUtterance(std::move(value)); return *this;}
-
-    /**
-     * <p>The sample utterance that Amazon Lex uses to build its machine-learning model
-     * to recognize intents.</p>
-     */
     inline SampleUtterance& WithUtterance(const char* value) { SetUtterance(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_utterance;

@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
      * running version of the container with the latest version.</p> <p>The blue/green
@@ -50,98 +51,14 @@ namespace Model
      * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline AwsEcsServiceDeploymentControllerDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline AwsEcsServiceDeploymentControllerDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The rolling update (<code>ECS</code>) deployment type replaces the current
-     * running version of the container with the latest version.</p> <p>The blue/green
-     * (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model
-     * that is powered by CodeDeploy. This deployment model a new deployment of a
-     * service can be verified before production traffic is sent to it.</p> <p>The
-     * external (<code>EXTERNAL</code>) deployment type allows the use of any
-     * third-party deployment controller for full control over the deployment process
-     * for an Amazon ECS service.</p> <p>Valid values: <code>ECS</code> |
-     * <code>CODE_DEPLOY</code> | <code>EXTERNAL</code> </p>
-     */
     inline AwsEcsServiceDeploymentControllerDetails& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

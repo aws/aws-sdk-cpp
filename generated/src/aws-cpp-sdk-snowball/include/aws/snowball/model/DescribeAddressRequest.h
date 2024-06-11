@@ -34,46 +34,19 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline void SetAddressId(const char* value) { m_addressIdHasBeenSet = true; m_addressId.assign(value); }
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline DescribeAddressRequest& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline DescribeAddressRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
-
-    /**
-     * <p>The automatically generated ID for a specific address.</p>
-     */
     inline DescribeAddressRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addressId;

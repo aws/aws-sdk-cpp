@@ -39,133 +39,48 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A key that can be used to sort results.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline Filter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline Filter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline Filter& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values of the key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operator used to compare the fields.</p>
      */
     inline const Aws::String& GetComparisonOperator() const{ return m_comparisonOperator; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline void SetComparisonOperator(const Aws::String& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline void SetComparisonOperator(Aws::String&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline void SetComparisonOperator(const char* value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator.assign(value); }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline Filter& WithComparisonOperator(const Aws::String& value) { SetComparisonOperator(value); return *this;}
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline Filter& WithComparisonOperator(Aws::String&& value) { SetComparisonOperator(std::move(value)); return *this;}
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline Filter& WithComparisonOperator(const char* value) { SetComparisonOperator(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

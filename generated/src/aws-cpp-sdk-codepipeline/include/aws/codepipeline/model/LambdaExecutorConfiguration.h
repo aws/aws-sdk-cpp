@@ -38,46 +38,19 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Lambda function used by the action engine.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline LambdaExecutorConfiguration& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline LambdaExecutorConfiguration& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda function used by the action engine.</p>
-     */
     inline LambdaExecutorConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lambdaFunctionArn;

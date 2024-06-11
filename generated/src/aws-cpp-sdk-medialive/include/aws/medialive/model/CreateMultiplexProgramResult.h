@@ -39,53 +39,27 @@ namespace Model
     AWS_MEDIALIVE_API CreateMultiplexProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The newly created multiplex program.
      */
     inline const MultiplexProgram& GetMultiplexProgram() const{ return m_multiplexProgram; }
-
-    /**
-     * The newly created multiplex program.
-     */
     inline void SetMultiplexProgram(const MultiplexProgram& value) { m_multiplexProgram = value; }
-
-    /**
-     * The newly created multiplex program.
-     */
     inline void SetMultiplexProgram(MultiplexProgram&& value) { m_multiplexProgram = std::move(value); }
-
-    /**
-     * The newly created multiplex program.
-     */
     inline CreateMultiplexProgramResult& WithMultiplexProgram(const MultiplexProgram& value) { SetMultiplexProgram(value); return *this;}
-
-    /**
-     * The newly created multiplex program.
-     */
     inline CreateMultiplexProgramResult& WithMultiplexProgram(MultiplexProgram&& value) { SetMultiplexProgram(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMultiplexProgramResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMultiplexProgramResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMultiplexProgramResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MultiplexProgram m_multiplexProgram;

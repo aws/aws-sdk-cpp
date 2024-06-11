@@ -51,6 +51,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
@@ -59,150 +60,41 @@ namespace Model
      * for the condition.</p>
      */
     inline const Aws::String& GetConditionDocumentAttributeKey() const{ return m_conditionDocumentAttributeKey; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline bool ConditionDocumentAttributeKeyHasBeenSet() const { return m_conditionDocumentAttributeKeyHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline void SetConditionDocumentAttributeKey(const Aws::String& value) { m_conditionDocumentAttributeKeyHasBeenSet = true; m_conditionDocumentAttributeKey = value; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline void SetConditionDocumentAttributeKey(Aws::String&& value) { m_conditionDocumentAttributeKeyHasBeenSet = true; m_conditionDocumentAttributeKey = std::move(value); }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline void SetConditionDocumentAttributeKey(const char* value) { m_conditionDocumentAttributeKeyHasBeenSet = true; m_conditionDocumentAttributeKey.assign(value); }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithConditionDocumentAttributeKey(const Aws::String& value) { SetConditionDocumentAttributeKey(value); return *this;}
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithConditionDocumentAttributeKey(Aws::String&& value) { SetConditionDocumentAttributeKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Kendra
-     * currently does not support <code>_document_body</code> as an attribute key used
-     * for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithConditionDocumentAttributeKey(const char* value) { SetConditionDocumentAttributeKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
      * partially match a string.</p>
      */
     inline const ConditionOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
-     * partially match a string.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
-     * partially match a string.</p>
-     */
     inline void SetOperator(const ConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
-     * partially match a string.</p>
-     */
     inline void SetOperator(ConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
-     * partially match a string.</p>
-     */
     inline DocumentAttributeCondition& WithOperator(const ConditionOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The condition operator.</p> <p>For example, you can use 'Contains' to
-     * partially match a string.</p>
-     */
     inline DocumentAttributeCondition& WithOperator(ConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value used by the operator.</p> <p>For example, you can specify the value
      * 'financial' for strings in the 'Source_URI' field that partially match or
      * contain this value.</p>
      */
     inline const DocumentAttributeValue& GetConditionOnValue() const{ return m_conditionOnValue; }
-
-    /**
-     * <p>The value used by the operator.</p> <p>For example, you can specify the value
-     * 'financial' for strings in the 'Source_URI' field that partially match or
-     * contain this value.</p>
-     */
     inline bool ConditionOnValueHasBeenSet() const { return m_conditionOnValueHasBeenSet; }
-
-    /**
-     * <p>The value used by the operator.</p> <p>For example, you can specify the value
-     * 'financial' for strings in the 'Source_URI' field that partially match or
-     * contain this value.</p>
-     */
     inline void SetConditionOnValue(const DocumentAttributeValue& value) { m_conditionOnValueHasBeenSet = true; m_conditionOnValue = value; }
-
-    /**
-     * <p>The value used by the operator.</p> <p>For example, you can specify the value
-     * 'financial' for strings in the 'Source_URI' field that partially match or
-     * contain this value.</p>
-     */
     inline void SetConditionOnValue(DocumentAttributeValue&& value) { m_conditionOnValueHasBeenSet = true; m_conditionOnValue = std::move(value); }
-
-    /**
-     * <p>The value used by the operator.</p> <p>For example, you can specify the value
-     * 'financial' for strings in the 'Source_URI' field that partially match or
-     * contain this value.</p>
-     */
     inline DocumentAttributeCondition& WithConditionOnValue(const DocumentAttributeValue& value) { SetConditionOnValue(value); return *this;}
-
-    /**
-     * <p>The value used by the operator.</p> <p>For example, you can specify the value
-     * 'financial' for strings in the 'Source_URI' field that partially match or
-     * contain this value.</p>
-     */
     inline DocumentAttributeCondition& WithConditionOnValue(DocumentAttributeValue&& value) { SetConditionOnValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_conditionDocumentAttributeKey;

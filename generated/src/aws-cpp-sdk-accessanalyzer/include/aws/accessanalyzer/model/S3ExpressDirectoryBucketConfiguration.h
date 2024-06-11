@@ -49,46 +49,19 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
      */
     inline const Aws::String& GetBucketPolicy() const{ return m_bucketPolicy; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(const Aws::String& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(Aws::String&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline void SetBucketPolicy(const char* value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy.assign(value); }
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const Aws::String& value) { SetBucketPolicy(value); return *this;}
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(Aws::String&& value) { SetBucketPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
-     */
     inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const char* value) { SetBucketPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketPolicy;

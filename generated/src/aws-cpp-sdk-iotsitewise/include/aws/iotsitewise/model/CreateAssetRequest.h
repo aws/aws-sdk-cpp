@@ -34,47 +34,21 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A friendly name for the asset.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A friendly name for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetName(const char* value) { SetAssetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the asset model from which to create the asset. This can be either
      * the actual ID in UUID format, or else <code>externalId:</code> followed by the
@@ -83,128 +57,32 @@ namespace Model
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset model from which to create the asset. This can be either
-     * the actual ID in UUID format, or else <code>externalId:</code> followed by the
-     * external ID, if it has one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreateAssetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreateAssetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline CreateAssetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key-value pairs that contain metadata for the asset. For more
      * information, see <a
@@ -212,145 +90,35 @@ namespace Model
      * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that contain metadata for the asset. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description for the asset.</p>
      */
     inline const Aws::String& GetAssetDescription() const{ return m_assetDescription; }
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline bool AssetDescriptionHasBeenSet() const { return m_assetDescriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline void SetAssetDescription(const Aws::String& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = value; }
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline void SetAssetDescription(Aws::String&& value) { m_assetDescriptionHasBeenSet = true; m_assetDescription = std::move(value); }
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline void SetAssetDescription(const char* value) { m_assetDescriptionHasBeenSet = true; m_assetDescription.assign(value); }
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetDescription(const Aws::String& value) { SetAssetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetDescription(Aws::String&& value) { SetAssetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the asset.</p>
-     */
     inline CreateAssetRequest& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
      * generates a unique ID for you, so this parameter is never required. However, if
@@ -358,64 +126,16 @@ namespace Model
      * format. If you specify your own ID, it must be globally unique.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline CreateAssetRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline CreateAssetRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID to assign to the asset, if desired. IoT SiteWise automatically
-     * generates a unique ID for you, so this parameter is never required. However, if
-     * you prefer to supply your own ID instead, you can specify it here in UUID
-     * format. If you specify your own ID, it must be globally unique.</p>
-     */
     inline CreateAssetRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An external ID to assign to the asset. The external ID must be unique within
      * your Amazon Web Services account. For more information, see <a
@@ -423,63 +143,14 @@ namespace Model
      * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetExternalId() const{ return m_assetExternalId; }
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetExternalId(const Aws::String& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = value; }
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetExternalId(Aws::String&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::move(value); }
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetExternalId(const char* value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId.assign(value); }
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetExternalId(const Aws::String& value) { SetAssetExternalId(value); return *this;}
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetExternalId(Aws::String&& value) { SetAssetExternalId(std::move(value)); return *this;}
-
-    /**
-     * <p>An external ID to assign to the asset. The external ID must be unique within
-     * your Amazon Web Services account. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline CreateAssetRequest& WithAssetExternalId(const char* value) { SetAssetExternalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetName;

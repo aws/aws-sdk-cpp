@@ -36,72 +36,36 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The score percentage for an item in a contact evaluation.</p>
      */
     inline double GetPercentage() const{ return m_percentage; }
-
-    /**
-     * <p>The score percentage for an item in a contact evaluation.</p>
-     */
     inline bool PercentageHasBeenSet() const { return m_percentageHasBeenSet; }
-
-    /**
-     * <p>The score percentage for an item in a contact evaluation.</p>
-     */
     inline void SetPercentage(double value) { m_percentageHasBeenSet = true; m_percentage = value; }
-
-    /**
-     * <p>The score percentage for an item in a contact evaluation.</p>
-     */
     inline EvaluationScore& WithPercentage(double value) { SetPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The flag to mark the item as not applicable for scoring.</p>
      */
     inline bool GetNotApplicable() const{ return m_notApplicable; }
-
-    /**
-     * <p>The flag to mark the item as not applicable for scoring.</p>
-     */
     inline bool NotApplicableHasBeenSet() const { return m_notApplicableHasBeenSet; }
-
-    /**
-     * <p>The flag to mark the item as not applicable for scoring.</p>
-     */
     inline void SetNotApplicable(bool value) { m_notApplicableHasBeenSet = true; m_notApplicable = value; }
-
-    /**
-     * <p>The flag to mark the item as not applicable for scoring.</p>
-     */
     inline EvaluationScore& WithNotApplicable(bool value) { SetNotApplicable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The flag that marks the item as automatic fail. If the item or a child item
      * gets an automatic fail answer, this flag will be true.</p>
      */
     inline bool GetAutomaticFail() const{ return m_automaticFail; }
-
-    /**
-     * <p>The flag that marks the item as automatic fail. If the item or a child item
-     * gets an automatic fail answer, this flag will be true.</p>
-     */
     inline bool AutomaticFailHasBeenSet() const { return m_automaticFailHasBeenSet; }
-
-    /**
-     * <p>The flag that marks the item as automatic fail. If the item or a child item
-     * gets an automatic fail answer, this flag will be true.</p>
-     */
     inline void SetAutomaticFail(bool value) { m_automaticFailHasBeenSet = true; m_automaticFail = value; }
-
-    /**
-     * <p>The flag that marks the item as automatic fail. If the item or a child item
-     * gets an automatic fail answer, this flag will be true.</p>
-     */
     inline EvaluationScore& WithAutomaticFail(bool value) { SetAutomaticFail(value); return *this;}
-
+    ///@}
   private:
 
     double m_percentage;

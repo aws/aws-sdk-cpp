@@ -38,77 +38,31 @@ namespace Model
     AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A unique identifier representing a specific request to the GenerateDataSet
      * operation. This identifier can be used to correlate a request with notifications
      * from the SNS topic.
      */
     inline const Aws::String& GetDataSetRequestId() const{ return m_dataSetRequestId; }
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline void SetDataSetRequestId(const Aws::String& value) { m_dataSetRequestId = value; }
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline void SetDataSetRequestId(Aws::String&& value) { m_dataSetRequestId = std::move(value); }
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline void SetDataSetRequestId(const char* value) { m_dataSetRequestId.assign(value); }
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline GenerateDataSetResult& WithDataSetRequestId(const Aws::String& value) { SetDataSetRequestId(value); return *this;}
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline GenerateDataSetResult& WithDataSetRequestId(Aws::String&& value) { SetDataSetRequestId(std::move(value)); return *this;}
-
-    /**
-     * A unique identifier representing a specific request to the GenerateDataSet
-     * operation. This identifier can be used to correlate a request with notifications
-     * from the SNS topic.
-     */
     inline GenerateDataSetResult& WithDataSetRequestId(const char* value) { SetDataSetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GenerateDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GenerateDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GenerateDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetRequestId;

@@ -41,46 +41,19 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The application manifest.</p>
      */
     inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline ManifestPayload& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline ManifestPayload& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
-
-    /**
-     * <p>The application manifest.</p>
-     */
     inline ManifestPayload& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_payloadData;

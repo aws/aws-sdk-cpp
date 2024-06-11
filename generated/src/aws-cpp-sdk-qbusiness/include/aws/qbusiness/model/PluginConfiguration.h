@@ -44,46 +44,19 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The identifier of the plugin you want to use.</p>
      */
     inline const Aws::String& GetPluginId() const{ return m_pluginId; }
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline PluginConfiguration& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline PluginConfiguration& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the plugin you want to use.</p>
-     */
     inline PluginConfiguration& WithPluginId(const char* value) { SetPluginId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pluginId;

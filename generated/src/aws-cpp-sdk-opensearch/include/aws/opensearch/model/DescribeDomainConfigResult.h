@@ -39,53 +39,27 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Container for the configuration of the OpenSearch Service domain.</p>
      */
     inline const DomainConfig& GetDomainConfig() const{ return m_domainConfig; }
-
-    /**
-     * <p>Container for the configuration of the OpenSearch Service domain.</p>
-     */
     inline void SetDomainConfig(const DomainConfig& value) { m_domainConfig = value; }
-
-    /**
-     * <p>Container for the configuration of the OpenSearch Service domain.</p>
-     */
     inline void SetDomainConfig(DomainConfig&& value) { m_domainConfig = std::move(value); }
-
-    /**
-     * <p>Container for the configuration of the OpenSearch Service domain.</p>
-     */
     inline DescribeDomainConfigResult& WithDomainConfig(const DomainConfig& value) { SetDomainConfig(value); return *this;}
-
-    /**
-     * <p>Container for the configuration of the OpenSearch Service domain.</p>
-     */
     inline DescribeDomainConfigResult& WithDomainConfig(DomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDomainConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDomainConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDomainConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainConfig m_domainConfig;

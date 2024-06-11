@@ -43,6 +43,7 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
      * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
@@ -50,47 +51,12 @@ namespace Model
      * size limit of 250 attendees.</p> 
      */
     inline const ContentResolution& GetMaxResolution() const{ return m_maxResolution; }
-
-    /**
-     * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
-     * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
-     * <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default
-     * size limit of 250 attendees.</p> 
-     */
     inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }
-
-    /**
-     * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
-     * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
-     * <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default
-     * size limit of 250 attendees.</p> 
-     */
     inline void SetMaxResolution(const ContentResolution& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = value; }
-
-    /**
-     * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
-     * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
-     * <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default
-     * size limit of 250 attendees.</p> 
-     */
     inline void SetMaxResolution(ContentResolution&& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = std::move(value); }
-
-    /**
-     * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
-     * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
-     * <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default
-     * size limit of 250 attendees.</p> 
-     */
     inline ContentFeatures& WithMaxResolution(const ContentResolution& value) { SetMaxResolution(value); return *this;}
-
-    /**
-     * <p>The maximum resolution for the meeting content.</p>  <p>Defaults to
-     * <code>FHD</code>. To use <code>UHD</code>, you must also provide a
-     * <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default
-     * size limit of 250 attendees.</p> 
-     */
     inline ContentFeatures& WithMaxResolution(ContentResolution&& value) { SetMaxResolution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContentResolution m_maxResolution;

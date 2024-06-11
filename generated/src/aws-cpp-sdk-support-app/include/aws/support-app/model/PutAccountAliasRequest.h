@@ -32,46 +32,19 @@ namespace Model
     AWS_SUPPORTAPP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An alias or short name for an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline bool AccountAliasHasBeenSet() const { return m_accountAliasHasBeenSet; }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline PutAccountAliasRequest& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline PutAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>An alias or short name for an Amazon Web Services account.</p>
-     */
     inline PutAccountAliasRequest& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountAlias;

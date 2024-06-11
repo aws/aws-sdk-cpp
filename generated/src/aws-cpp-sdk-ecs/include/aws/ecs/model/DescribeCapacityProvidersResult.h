@@ -35,78 +35,33 @@ namespace Model
     AWS_ECS_API DescribeCapacityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of capacity providers.</p>
      */
     inline const Aws::Vector<CapacityProvider>& GetCapacityProviders() const{ return m_capacityProviders; }
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline void SetCapacityProviders(const Aws::Vector<CapacityProvider>& value) { m_capacityProviders = value; }
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline void SetCapacityProviders(Aws::Vector<CapacityProvider>&& value) { m_capacityProviders = std::move(value); }
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline DescribeCapacityProvidersResult& WithCapacityProviders(const Aws::Vector<CapacityProvider>& value) { SetCapacityProviders(value); return *this;}
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline DescribeCapacityProvidersResult& WithCapacityProviders(Aws::Vector<CapacityProvider>&& value) { SetCapacityProviders(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline DescribeCapacityProvidersResult& AddCapacityProviders(const CapacityProvider& value) { m_capacityProviders.push_back(value); return *this; }
-
-    /**
-     * <p>The list of capacity providers.</p>
-     */
     inline DescribeCapacityProvidersResult& AddCapacityProviders(CapacityProvider&& value) { m_capacityProviders.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline DescribeCapacityProvidersResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline DescribeCapacityProvidersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline DescribeCapacityProvidersResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline DescribeCapacityProvidersResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> value to include in a future
      * <code>DescribeCapacityProviders</code> request. When the results of a
@@ -115,83 +70,24 @@ namespace Model
      * <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeCapacityProvidersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeCapacityProvidersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>DescribeCapacityProviders</code> request. When the results of a
-     * <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>,
-     * this value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeCapacityProvidersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCapacityProvidersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCapacityProvidersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCapacityProvidersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CapacityProvider> m_capacityProviders;

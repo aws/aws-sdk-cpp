@@ -37,61 +37,28 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Lambda function associated with this data connector.</p>
      */
     inline const LambdaFunction& GetLambda() const{ return m_lambda; }
-
-    /**
-     * <p>The Lambda function associated with this data connector.</p>
-     */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
-
-    /**
-     * <p>The Lambda function associated with this data connector.</p>
-     */
     inline void SetLambda(const LambdaFunction& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
-
-    /**
-     * <p>The Lambda function associated with this data connector.</p>
-     */
     inline void SetLambda(LambdaFunction&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
-
-    /**
-     * <p>The Lambda function associated with this data connector.</p>
-     */
     inline DataConnector& WithLambda(const LambdaFunction& value) { SetLambda(value); return *this;}
-
-    /**
-     * <p>The Lambda function associated with this data connector.</p>
-     */
     inline DataConnector& WithLambda(LambdaFunction&& value) { SetLambda(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value that specifies whether the data connector is native to IoT
      * TwinMaker.</p>
      */
     inline bool GetIsNative() const{ return m_isNative; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
     inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
     inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
     inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}
-
+    ///@}
   private:
 
     LambdaFunction m_lambda;

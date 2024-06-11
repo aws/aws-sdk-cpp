@@ -33,53 +33,27 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RegisterIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Metadata that describes the results of an identity provider operation.</p>
      */
     inline const IdentityProviderSummary& GetIdentityProviderSummary() const{ return m_identityProviderSummary; }
-
-    /**
-     * <p>Metadata that describes the results of an identity provider operation.</p>
-     */
     inline void SetIdentityProviderSummary(const IdentityProviderSummary& value) { m_identityProviderSummary = value; }
-
-    /**
-     * <p>Metadata that describes the results of an identity provider operation.</p>
-     */
     inline void SetIdentityProviderSummary(IdentityProviderSummary&& value) { m_identityProviderSummary = std::move(value); }
-
-    /**
-     * <p>Metadata that describes the results of an identity provider operation.</p>
-     */
     inline RegisterIdentityProviderResult& WithIdentityProviderSummary(const IdentityProviderSummary& value) { SetIdentityProviderSummary(value); return *this;}
-
-    /**
-     * <p>Metadata that describes the results of an identity provider operation.</p>
-     */
     inline RegisterIdentityProviderResult& WithIdentityProviderSummary(IdentityProviderSummary&& value) { SetIdentityProviderSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterIdentityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterIdentityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterIdentityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IdentityProviderSummary m_identityProviderSummary;

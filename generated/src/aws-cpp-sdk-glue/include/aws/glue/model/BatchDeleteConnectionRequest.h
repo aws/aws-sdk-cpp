@@ -35,100 +35,35 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
      * provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline BatchDeleteConnectionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline BatchDeleteConnectionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * provided, the Amazon Web Services account ID is used by default.</p>
-     */
     inline BatchDeleteConnectionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of names of the connections to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionNameList() const{ return m_connectionNameList; }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline bool ConnectionNameListHasBeenSet() const { return m_connectionNameListHasBeenSet; }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline void SetConnectionNameList(const Aws::Vector<Aws::String>& value) { m_connectionNameListHasBeenSet = true; m_connectionNameList = value; }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline void SetConnectionNameList(Aws::Vector<Aws::String>&& value) { m_connectionNameListHasBeenSet = true; m_connectionNameList = std::move(value); }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline BatchDeleteConnectionRequest& WithConnectionNameList(const Aws::Vector<Aws::String>& value) { SetConnectionNameList(value); return *this;}
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline BatchDeleteConnectionRequest& WithConnectionNameList(Aws::Vector<Aws::String>&& value) { SetConnectionNameList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline BatchDeleteConnectionRequest& AddConnectionNameList(const Aws::String& value) { m_connectionNameListHasBeenSet = true; m_connectionNameList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline BatchDeleteConnectionRequest& AddConnectionNameList(Aws::String&& value) { m_connectionNameListHasBeenSet = true; m_connectionNameList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of the connections to delete.</p>
-     */
     inline BatchDeleteConnectionRequest& AddConnectionNameList(const char* value) { m_connectionNameListHasBeenSet = true; m_connectionNameList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_catalogId;

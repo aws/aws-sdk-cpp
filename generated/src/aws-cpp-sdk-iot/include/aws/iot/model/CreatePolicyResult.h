@@ -37,171 +37,68 @@ namespace Model
     AWS_IOT_API CreatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The policy name.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyName = std::move(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy ARN.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline CreatePolicyResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline CreatePolicyResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy ARN.</p>
-     */
     inline CreatePolicyResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The JSON document that describes the policy.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON document that describes the policy.</p>
-     */
     inline CreatePolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy version ID.</p>
      */
     inline const Aws::String& GetPolicyVersionId() const{ return m_policyVersionId; }
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline void SetPolicyVersionId(const Aws::String& value) { m_policyVersionId = value; }
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline void SetPolicyVersionId(Aws::String&& value) { m_policyVersionId = std::move(value); }
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline void SetPolicyVersionId(const char* value) { m_policyVersionId.assign(value); }
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline CreatePolicyResult& WithPolicyVersionId(const Aws::String& value) { SetPolicyVersionId(value); return *this;}
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline CreatePolicyResult& WithPolicyVersionId(Aws::String&& value) { SetPolicyVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy version ID.</p>
-     */
     inline CreatePolicyResult& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

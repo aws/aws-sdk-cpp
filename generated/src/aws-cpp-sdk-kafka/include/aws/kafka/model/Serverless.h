@@ -41,6 +41,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>The configuration of the Amazon VPCs for the cluster.</p>
@@ -48,106 +49,28 @@ namespace Model
      *   
      */
     inline const Aws::Vector<VpcConfig>& GetVpcConfigs() const{ return m_vpcConfigs; }
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline bool VpcConfigsHasBeenSet() const { return m_vpcConfigsHasBeenSet; }
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline void SetVpcConfigs(const Aws::Vector<VpcConfig>& value) { m_vpcConfigsHasBeenSet = true; m_vpcConfigs = value; }
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline void SetVpcConfigs(Aws::Vector<VpcConfig>&& value) { m_vpcConfigsHasBeenSet = true; m_vpcConfigs = std::move(value); }
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline Serverless& WithVpcConfigs(const Aws::Vector<VpcConfig>& value) { SetVpcConfigs(value); return *this;}
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline Serverless& WithVpcConfigs(Aws::Vector<VpcConfig>&& value) { SetVpcConfigs(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline Serverless& AddVpcConfigs(const VpcConfig& value) { m_vpcConfigsHasBeenSet = true; m_vpcConfigs.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>The configuration of the Amazon VPCs for the cluster.</p>
-      
-     *   
-     */
     inline Serverless& AddVpcConfigs(VpcConfig&& value) { m_vpcConfigsHasBeenSet = true; m_vpcConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>Includes all client authentication information.</p>
          
      */
     inline const ServerlessClientAuthentication& GetClientAuthentication() const{ return m_clientAuthentication; }
-
-    /**
-     * 
-            <p>Includes all client authentication information.</p>
-         
-     */
     inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
-
-    /**
-     * 
-            <p>Includes all client authentication information.</p>
-         
-     */
     inline void SetClientAuthentication(const ServerlessClientAuthentication& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
-
-    /**
-     * 
-            <p>Includes all client authentication information.</p>
-         
-     */
     inline void SetClientAuthentication(ServerlessClientAuthentication&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
-
-    /**
-     * 
-            <p>Includes all client authentication information.</p>
-         
-     */
     inline Serverless& WithClientAuthentication(const ServerlessClientAuthentication& value) { SetClientAuthentication(value); return *this;}
-
-    /**
-     * 
-            <p>Includes all client authentication information.</p>
-         
-     */
     inline Serverless& WithClientAuthentication(ServerlessClientAuthentication&& value) { SetClientAuthentication(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<VpcConfig> m_vpcConfigs;

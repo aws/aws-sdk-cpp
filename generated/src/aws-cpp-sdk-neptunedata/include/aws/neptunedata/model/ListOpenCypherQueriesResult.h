@@ -34,98 +34,48 @@ namespace Model
     AWS_NEPTUNEDATA_API ListOpenCypherQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of queries that have been accepted but not yet completed,
      * including queries in the queue.</p>
      */
     inline int GetAcceptedQueryCount() const{ return m_acceptedQueryCount; }
-
-    /**
-     * <p>The number of queries that have been accepted but not yet completed,
-     * including queries in the queue.</p>
-     */
     inline void SetAcceptedQueryCount(int value) { m_acceptedQueryCount = value; }
-
-    /**
-     * <p>The number of queries that have been accepted but not yet completed,
-     * including queries in the queue.</p>
-     */
     inline ListOpenCypherQueriesResult& WithAcceptedQueryCount(int value) { SetAcceptedQueryCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of currently running openCypher queries.</p>
      */
     inline int GetRunningQueryCount() const{ return m_runningQueryCount; }
-
-    /**
-     * <p>The number of currently running openCypher queries.</p>
-     */
     inline void SetRunningQueryCount(int value) { m_runningQueryCount = value; }
-
-    /**
-     * <p>The number of currently running openCypher queries.</p>
-     */
     inline ListOpenCypherQueriesResult& WithRunningQueryCount(int value) { SetRunningQueryCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of current openCypher queries.</p>
      */
     inline const Aws::Vector<GremlinQueryStatus>& GetQueries() const{ return m_queries; }
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline void SetQueries(const Aws::Vector<GremlinQueryStatus>& value) { m_queries = value; }
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline void SetQueries(Aws::Vector<GremlinQueryStatus>&& value) { m_queries = std::move(value); }
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline ListOpenCypherQueriesResult& WithQueries(const Aws::Vector<GremlinQueryStatus>& value) { SetQueries(value); return *this;}
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline ListOpenCypherQueriesResult& WithQueries(Aws::Vector<GremlinQueryStatus>&& value) { SetQueries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline ListOpenCypherQueriesResult& AddQueries(const GremlinQueryStatus& value) { m_queries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of current openCypher queries.</p>
-     */
     inline ListOpenCypherQueriesResult& AddQueries(GremlinQueryStatus&& value) { m_queries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListOpenCypherQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListOpenCypherQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListOpenCypherQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_acceptedQueryCount;

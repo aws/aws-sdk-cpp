@@ -34,46 +34,19 @@ namespace Model
     AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
      */
     inline const Aws::String& GetActivityArn() const{ return m_activityArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline bool ActivityArnHasBeenSet() const { return m_activityArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline void SetActivityArn(const Aws::String& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline void SetActivityArn(Aws::String&& value) { m_activityArnHasBeenSet = true; m_activityArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline void SetActivityArn(const char* value) { m_activityArnHasBeenSet = true; m_activityArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline DescribeActivityRequest& WithActivityArn(const Aws::String& value) { SetActivityArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline DescribeActivityRequest& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-     */
     inline DescribeActivityRequest& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_activityArn;

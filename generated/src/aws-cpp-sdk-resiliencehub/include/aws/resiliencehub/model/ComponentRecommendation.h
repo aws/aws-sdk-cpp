@@ -42,118 +42,45 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline ComponentRecommendation& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline ComponentRecommendation& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the Application Component.</p>
-     */
     inline ComponentRecommendation& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of recommendations.</p>
      */
     inline const Aws::Vector<ConfigRecommendation>& GetConfigRecommendations() const{ return m_configRecommendations; }
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline bool ConfigRecommendationsHasBeenSet() const { return m_configRecommendationsHasBeenSet; }
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline void SetConfigRecommendations(const Aws::Vector<ConfigRecommendation>& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations = value; }
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline void SetConfigRecommendations(Aws::Vector<ConfigRecommendation>&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations = std::move(value); }
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline ComponentRecommendation& WithConfigRecommendations(const Aws::Vector<ConfigRecommendation>& value) { SetConfigRecommendations(value); return *this;}
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline ComponentRecommendation& WithConfigRecommendations(Aws::Vector<ConfigRecommendation>&& value) { SetConfigRecommendations(std::move(value)); return *this;}
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline ComponentRecommendation& AddConfigRecommendations(const ConfigRecommendation& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations.push_back(value); return *this; }
-
-    /**
-     * <p>List of recommendations.</p>
-     */
     inline ComponentRecommendation& AddConfigRecommendations(ConfigRecommendation&& value) { m_configRecommendationsHasBeenSet = true; m_configRecommendations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Status of the recommendation.</p>
      */
     inline const RecommendationComplianceStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
-
-    /**
-     * <p>Status of the recommendation.</p>
-     */
     inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
-
-    /**
-     * <p>Status of the recommendation.</p>
-     */
     inline void SetRecommendationStatus(const RecommendationComplianceStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
-
-    /**
-     * <p>Status of the recommendation.</p>
-     */
     inline void SetRecommendationStatus(RecommendationComplianceStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
-
-    /**
-     * <p>Status of the recommendation.</p>
-     */
     inline ComponentRecommendation& WithRecommendationStatus(const RecommendationComplianceStatus& value) { SetRecommendationStatus(value); return *this;}
-
-    /**
-     * <p>Status of the recommendation.</p>
-     */
     inline ComponentRecommendation& WithRecommendationStatus(RecommendationComplianceStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appComponentName;

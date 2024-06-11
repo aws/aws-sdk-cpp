@@ -32,40 +32,24 @@ namespace Model
     AWS_EC2_API CancelCapacityReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
      * error.</p>
      */
     inline bool GetReturn() const{ return m_return; }
-
-    /**
-     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
-     * error.</p>
-     */
     inline void SetReturn(bool value) { m_return = value; }
-
-    /**
-     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
-     * error.</p>
-     */
     inline CancelCapacityReservationResponse& WithReturn(bool value) { SetReturn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CancelCapacityReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CancelCapacityReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_return;

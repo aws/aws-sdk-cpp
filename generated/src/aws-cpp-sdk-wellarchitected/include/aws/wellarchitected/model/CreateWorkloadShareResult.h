@@ -37,71 +37,38 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-
-    
     inline CreateWorkloadShareResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    
     inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-
-    
     inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-
-    
     inline void SetShareId(const char* value) { m_shareId.assign(value); }
-
-    
     inline CreateWorkloadShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateWorkloadShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

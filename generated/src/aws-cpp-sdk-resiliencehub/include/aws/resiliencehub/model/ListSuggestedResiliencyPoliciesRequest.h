@@ -38,75 +38,31 @@ namespace Model
     AWS_RESILIENCEHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Maximum number of results to include in the response. If more results exist
      * than the specified <code>MaxResults</code> value, a token is included in the
      * response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of results to include in the response. If more results exist
-     * than the specified <code>MaxResults</code> value, a token is included in the
-     * response so that the remaining results can be retrieved.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of results to include in the response. If more results exist
-     * than the specified <code>MaxResults</code> value, a token is included in the
-     * response so that the remaining results can be retrieved.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of results to include in the response. If more results exist
-     * than the specified <code>MaxResults</code> value, a token is included in the
-     * response so that the remaining results can be retrieved.</p>
-     */
     inline ListSuggestedResiliencyPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline ListSuggestedResiliencyPoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline ListSuggestedResiliencyPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Null, or the token from a previous call to get the next set of results.</p>
-     */
     inline ListSuggestedResiliencyPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

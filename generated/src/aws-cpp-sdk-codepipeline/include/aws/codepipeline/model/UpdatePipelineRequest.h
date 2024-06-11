@@ -38,36 +38,17 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
     inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>The name of the pipeline to be updated.</p>
-     */
     inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
-
-    /**
-     * <p>The name of the pipeline to be updated.</p>
-     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
-
-    /**
-     * <p>The name of the pipeline to be updated.</p>
-     */
     inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
-
-    /**
-     * <p>The name of the pipeline to be updated.</p>
-     */
     inline UpdatePipelineRequest& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>The name of the pipeline to be updated.</p>
-     */
     inline UpdatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PipelineDeclaration m_pipeline;

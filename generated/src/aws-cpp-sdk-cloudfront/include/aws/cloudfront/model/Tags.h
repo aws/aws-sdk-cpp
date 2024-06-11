@@ -39,46 +39,19 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A complex type that contains <code>Tag</code> elements.</p>
      */
     inline const Aws::Vector<Tag>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline void SetItems(const Aws::Vector<Tag>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline void SetItems(Aws::Vector<Tag>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline Tags& WithItems(const Aws::Vector<Tag>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline Tags& WithItems(Aws::Vector<Tag>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline Tags& AddItems(const Tag& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A complex type that contains <code>Tag</code> elements.</p>
-     */
     inline Tags& AddItems(Tag&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_items;

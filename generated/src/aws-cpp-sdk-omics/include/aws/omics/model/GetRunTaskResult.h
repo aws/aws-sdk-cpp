@@ -34,395 +34,165 @@ namespace Model
     AWS_OMICS_API GetRunTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The task's ID.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline GetRunTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline GetRunTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
     inline GetRunTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's status.</p>
      */
     inline const TaskStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The task's status.</p>
-     */
     inline void SetStatus(const TaskStatus& value) { m_status = value; }
-
-    /**
-     * <p>The task's status.</p>
-     */
     inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The task's status.</p>
-     */
     inline GetRunTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The task's status.</p>
-     */
     inline GetRunTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline GetRunTaskResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline GetRunTaskResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's name.</p>
-     */
     inline GetRunTaskResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's CPU usage.</p>
      */
     inline int GetCpus() const{ return m_cpus; }
-
-    /**
-     * <p>The task's CPU usage.</p>
-     */
     inline void SetCpus(int value) { m_cpus = value; }
-
-    /**
-     * <p>The task's CPU usage.</p>
-     */
     inline GetRunTaskResult& WithCpus(int value) { SetCpus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's memory use in gigabytes.</p>
      */
     inline int GetMemory() const{ return m_memory; }
-
-    /**
-     * <p>The task's memory use in gigabytes.</p>
-     */
     inline void SetMemory(int value) { m_memory = value; }
-
-    /**
-     * <p>The task's memory use in gigabytes.</p>
-     */
     inline GetRunTaskResult& WithMemory(int value) { SetMemory(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When the task was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the task was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the task was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the task was created.</p>
-     */
     inline GetRunTaskResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the task was created.</p>
-     */
     inline GetRunTaskResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The task's start time.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-
-    /**
-     * <p>The task's start time.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-
-    /**
-     * <p>The task's start time.</p>
-     */
     inline GetRunTaskResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The task's start time.</p>
-     */
     inline GetRunTaskResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's stop time.</p>
      */
     inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
-
-    /**
-     * <p>The task's stop time.</p>
-     */
     inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTime = value; }
-
-    /**
-     * <p>The task's stop time.</p>
-     */
     inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTime = std::move(value); }
-
-    /**
-     * <p>The task's stop time.</p>
-     */
     inline GetRunTaskResult& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
-
-    /**
-     * <p>The task's stop time.</p>
-     */
     inline GetRunTaskResult& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline GetRunTaskResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline GetRunTaskResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's status message.</p>
-     */
     inline GetRunTaskResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task's log stream.</p>
      */
     inline const Aws::String& GetLogStream() const{ return m_logStream; }
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline void SetLogStream(const Aws::String& value) { m_logStream = value; }
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline void SetLogStream(Aws::String&& value) { m_logStream = std::move(value); }
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline void SetLogStream(const char* value) { m_logStream.assign(value); }
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline GetRunTaskResult& WithLogStream(const Aws::String& value) { SetLogStream(value); return *this;}
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline GetRunTaskResult& WithLogStream(Aws::String&& value) { SetLogStream(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's log stream.</p>
-     */
     inline GetRunTaskResult& WithLogStream(const char* value) { SetLogStream(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
      */
     inline int GetGpus() const{ return m_gpus; }
-
-    /**
-     * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
-     */
     inline void SetGpus(int value) { m_gpus = value; }
-
-    /**
-     * <p>The number of Graphics Processing Units (GPU) specified in the task.</p>
-     */
     inline GetRunTaskResult& WithGpus(int value) { SetGpus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instance type for a task.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline void SetInstanceType(Aws::String&& value) { m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline GetRunTaskResult& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline GetRunTaskResult& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance type for a task.</p>
-     */
     inline GetRunTaskResult& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason a task has failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline GetRunTaskResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline GetRunTaskResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason a task has failed.</p>
-     */
     inline GetRunTaskResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRunTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRunTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRunTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskId;

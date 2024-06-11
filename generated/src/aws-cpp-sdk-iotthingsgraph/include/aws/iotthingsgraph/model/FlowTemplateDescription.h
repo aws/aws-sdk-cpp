@@ -39,92 +39,40 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains summary information about a workflow.</p>
      */
     inline const FlowTemplateSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>An object that contains summary information about a workflow.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>An object that contains summary information about a workflow.</p>
-     */
     inline void SetSummary(const FlowTemplateSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>An object that contains summary information about a workflow.</p>
-     */
     inline void SetSummary(FlowTemplateSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>An object that contains summary information about a workflow.</p>
-     */
     inline FlowTemplateDescription& WithSummary(const FlowTemplateSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>An object that contains summary information about a workflow.</p>
-     */
     inline FlowTemplateDescription& WithSummary(FlowTemplateSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A workflow's definition document.</p>
      */
     inline const DefinitionDocument& GetDefinition() const{ return m_definition; }
-
-    /**
-     * <p>A workflow's definition document.</p>
-     */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-
-    /**
-     * <p>A workflow's definition document.</p>
-     */
     inline void SetDefinition(const DefinitionDocument& value) { m_definitionHasBeenSet = true; m_definition = value; }
-
-    /**
-     * <p>A workflow's definition document.</p>
-     */
     inline void SetDefinition(DefinitionDocument&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-
-    /**
-     * <p>A workflow's definition document.</p>
-     */
     inline FlowTemplateDescription& WithDefinition(const DefinitionDocument& value) { SetDefinition(value); return *this;}
-
-    /**
-     * <p>A workflow's definition document.</p>
-     */
     inline FlowTemplateDescription& WithDefinition(DefinitionDocument&& value) { SetDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the user's namespace against which the workflow was validated.
      * Use this value in your system instance.</p>
      */
     inline long long GetValidatedNamespaceVersion() const{ return m_validatedNamespaceVersion; }
-
-    /**
-     * <p>The version of the user's namespace against which the workflow was validated.
-     * Use this value in your system instance.</p>
-     */
     inline bool ValidatedNamespaceVersionHasBeenSet() const { return m_validatedNamespaceVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the user's namespace against which the workflow was validated.
-     * Use this value in your system instance.</p>
-     */
     inline void SetValidatedNamespaceVersion(long long value) { m_validatedNamespaceVersionHasBeenSet = true; m_validatedNamespaceVersion = value; }
-
-    /**
-     * <p>The version of the user's namespace against which the workflow was validated.
-     * Use this value in your system instance.</p>
-     */
     inline FlowTemplateDescription& WithValidatedNamespaceVersion(long long value) { SetValidatedNamespaceVersion(value); return *this;}
-
+    ///@}
   private:
 
     FlowTemplateSummary m_summary;

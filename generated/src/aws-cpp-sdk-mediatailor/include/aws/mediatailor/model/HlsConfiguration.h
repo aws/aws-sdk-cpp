@@ -37,54 +37,20 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL that is used to initiate a playback session for devices that support
      * Apple HLS. The session uses server-side reporting.</p>
      */
     inline const Aws::String& GetManifestEndpointPrefix() const{ return m_manifestEndpointPrefix; }
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline bool ManifestEndpointPrefixHasBeenSet() const { return m_manifestEndpointPrefixHasBeenSet; }
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline void SetManifestEndpointPrefix(const Aws::String& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = value; }
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline void SetManifestEndpointPrefix(Aws::String&& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = std::move(value); }
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline void SetManifestEndpointPrefix(const char* value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix.assign(value); }
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline HlsConfiguration& WithManifestEndpointPrefix(const Aws::String& value) { SetManifestEndpointPrefix(value); return *this;}
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline HlsConfiguration& WithManifestEndpointPrefix(Aws::String&& value) { SetManifestEndpointPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL that is used to initiate a playback session for devices that support
-     * Apple HLS. The session uses server-side reporting.</p>
-     */
     inline HlsConfiguration& WithManifestEndpointPrefix(const char* value) { SetManifestEndpointPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_manifestEndpointPrefix;

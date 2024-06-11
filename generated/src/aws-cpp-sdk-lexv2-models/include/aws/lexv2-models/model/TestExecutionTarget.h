@@ -38,36 +38,17 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the bot alias used for the test execution.</p>
      */
     inline const BotAliasTestExecutionTarget& GetBotAliasTarget() const{ return m_botAliasTarget; }
-
-    /**
-     * <p>Contains information about the bot alias used for the test execution.</p>
-     */
     inline bool BotAliasTargetHasBeenSet() const { return m_botAliasTargetHasBeenSet; }
-
-    /**
-     * <p>Contains information about the bot alias used for the test execution.</p>
-     */
     inline void SetBotAliasTarget(const BotAliasTestExecutionTarget& value) { m_botAliasTargetHasBeenSet = true; m_botAliasTarget = value; }
-
-    /**
-     * <p>Contains information about the bot alias used for the test execution.</p>
-     */
     inline void SetBotAliasTarget(BotAliasTestExecutionTarget&& value) { m_botAliasTargetHasBeenSet = true; m_botAliasTarget = std::move(value); }
-
-    /**
-     * <p>Contains information about the bot alias used for the test execution.</p>
-     */
     inline TestExecutionTarget& WithBotAliasTarget(const BotAliasTestExecutionTarget& value) { SetBotAliasTarget(value); return *this;}
-
-    /**
-     * <p>Contains information about the bot alias used for the test execution.</p>
-     */
     inline TestExecutionTarget& WithBotAliasTarget(BotAliasTestExecutionTarget&& value) { SetBotAliasTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BotAliasTestExecutionTarget m_botAliasTarget;

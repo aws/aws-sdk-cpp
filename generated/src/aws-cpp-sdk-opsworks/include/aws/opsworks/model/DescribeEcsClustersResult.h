@@ -40,49 +40,21 @@ namespace Model
     AWS_OPSWORKS_API DescribeEcsClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>EcsCluster</code> objects containing the cluster
      * descriptions.</p>
      */
     inline const Aws::Vector<EcsCluster>& GetEcsClusters() const{ return m_ecsClusters; }
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline void SetEcsClusters(const Aws::Vector<EcsCluster>& value) { m_ecsClusters = value; }
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline void SetEcsClusters(Aws::Vector<EcsCluster>&& value) { m_ecsClusters = std::move(value); }
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline DescribeEcsClustersResult& WithEcsClusters(const Aws::Vector<EcsCluster>& value) { SetEcsClusters(value); return *this;}
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline DescribeEcsClustersResult& WithEcsClusters(Aws::Vector<EcsCluster>&& value) { SetEcsClusters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline DescribeEcsClustersResult& AddEcsClusters(const EcsCluster& value) { m_ecsClusters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>EcsCluster</code> objects containing the cluster
-     * descriptions.</p>
-     */
     inline DescribeEcsClustersResult& AddEcsClusters(EcsCluster&& value) { m_ecsClusters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If a paginated request does not return all of the remaining results, this
      * parameter is set to a token that you can assign to the request object's
@@ -91,83 +63,24 @@ namespace Model
      * is set to <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline DescribeEcsClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline DescribeEcsClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If a paginated request does not return all of the remaining results, this
-     * parameter is set to a token that you can assign to the request object's
-     * <code>NextToken</code> parameter to retrieve the next set of results. If the
-     * previous paginated request returned all of the remaining results, this parameter
-     * is set to <code>null</code>.</p>
-     */
     inline DescribeEcsClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEcsClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEcsClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEcsClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EcsCluster> m_ecsClusters;

@@ -33,159 +33,58 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The tracker resource containing the requested devices.</p>
      */
     inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline ListDevicePositionsRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline ListDevicePositionsRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The tracker resource containing the requested devices.</p>
-     */
     inline ListDevicePositionsRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional limit for the number of entries returned in a single call.</p>
      * <p>Default value: <code>100</code> </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>An optional limit for the number of entries returned in a single call.</p>
-     * <p>Default value: <code>100</code> </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>An optional limit for the number of entries returned in a single call.</p>
-     * <p>Default value: <code>100</code> </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>An optional limit for the number of entries returned in a single call.</p>
-     * <p>Default value: <code>100</code> </p>
-     */
     inline ListDevicePositionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token specifying which page of results to return in the
      * response. If no token is provided, the default page is the first page.</p>
      * <p>Default value: <code>null</code> </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline ListDevicePositionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline ListDevicePositionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token specifying which page of results to return in the
-     * response. If no token is provided, the default page is the first page.</p>
-     * <p>Default value: <code>null</code> </p>
-     */
     inline ListDevicePositionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The geometry used to filter device positions.</p>
      */
     inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
-
-    /**
-     * <p>The geometry used to filter device positions.</p>
-     */
     inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
-
-    /**
-     * <p>The geometry used to filter device positions.</p>
-     */
     inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
-
-    /**
-     * <p>The geometry used to filter device positions.</p>
-     */
     inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
-
-    /**
-     * <p>The geometry used to filter device positions.</p>
-     */
     inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
-
-    /**
-     * <p>The geometry used to filter device positions.</p>
-     */
     inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trackerName;

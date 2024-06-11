@@ -35,62 +35,21 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The protocols used to send notifications, such as <code>Email</code>, or
      * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
      * return information about a specific contact method protocol.</p>
      */
     inline const Aws::Vector<ContactProtocol>& GetProtocols() const{ return m_protocols; }
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline void SetProtocols(const Aws::Vector<ContactProtocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline void SetProtocols(Aws::Vector<ContactProtocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline GetContactMethodsRequest& WithProtocols(const Aws::Vector<ContactProtocol>& value) { SetProtocols(value); return *this;}
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline GetContactMethodsRequest& WithProtocols(Aws::Vector<ContactProtocol>&& value) { SetProtocols(std::move(value)); return *this;}
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline GetContactMethodsRequest& AddProtocols(const ContactProtocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-
-    /**
-     * <p>The protocols used to send notifications, such as <code>Email</code>, or
-     * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
-     * return information about a specific contact method protocol.</p>
-     */
     inline GetContactMethodsRequest& AddProtocols(ContactProtocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContactProtocol> m_protocols;

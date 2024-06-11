@@ -40,67 +40,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of instances.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of instances.</p>
-     */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
-
-    /**
-     * <p>The number of instances.</p>
-     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of instances.</p>
-     */
     inline PurchaseRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The purchase token.</p>
      */
     inline const Aws::String& GetPurchaseToken() const{ return m_purchaseToken; }
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline bool PurchaseTokenHasBeenSet() const { return m_purchaseTokenHasBeenSet; }
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline void SetPurchaseToken(const Aws::String& value) { m_purchaseTokenHasBeenSet = true; m_purchaseToken = value; }
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline void SetPurchaseToken(Aws::String&& value) { m_purchaseTokenHasBeenSet = true; m_purchaseToken = std::move(value); }
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline void SetPurchaseToken(const char* value) { m_purchaseTokenHasBeenSet = true; m_purchaseToken.assign(value); }
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline PurchaseRequest& WithPurchaseToken(const Aws::String& value) { SetPurchaseToken(value); return *this;}
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline PurchaseRequest& WithPurchaseToken(Aws::String&& value) { SetPurchaseToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The purchase token.</p>
-     */
     inline PurchaseRequest& WithPurchaseToken(const char* value) { SetPurchaseToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_instanceCount;

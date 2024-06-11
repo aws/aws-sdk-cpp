@@ -35,55 +35,22 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID for a job that you want to create the return shipping label for; for
      * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline CreateReturnShippingLabelRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline CreateReturnShippingLabelRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for a job that you want to create the return shipping label for; for
-     * example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline CreateReturnShippingLabelRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
      * the device is returned to Amazon Web Services. This speed represents how quickly
@@ -91,47 +58,12 @@ namespace Model
      * follows:</p>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
-
-    /**
-     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to Amazon Web Services. This speed represents how quickly
-     * it moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p>
-     */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
-
-    /**
-     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to Amazon Web Services. This speed represents how quickly
-     * it moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p>
-     */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
-
-    /**
-     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to Amazon Web Services. This speed represents how quickly
-     * it moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p>
-     */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
-
-    /**
-     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to Amazon Web Services. This speed represents how quickly
-     * it moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p>
-     */
     inline CreateReturnShippingLabelRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
-
-    /**
-     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to Amazon Web Services. This speed represents how quickly
-     * it moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p>
-     */
     inline CreateReturnShippingLabelRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

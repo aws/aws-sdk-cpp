@@ -39,6 +39,7 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
      * container or Parquet file, this is the path to the field in the record
@@ -53,113 +54,16 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline Record& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline Record& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object
-     * container or Parquet file, this is the path to the field in the record
-     * (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the
-     * path to the field or array that contains the data. If the data is a value in an
-     * array, the path also indicates which value contains the data.</p> <p>If Amazon
-     * Macie detects sensitive data in the name of any element in the path, Macie omits
-     * this field. If the name of an element exceeds 240 characters, Macie truncates
-     * the name by removing characters from the beginning of the name. If the resulting
-     * full path exceeds 250 characters, Macie also truncates the path, starting with
-     * the first element in the path, until the path contains 250 or fewer
-     * characters.</p>
-     */
     inline Record& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>For an Avro object container or Parquet file, the record index, starting from
      * 0, for the record that contains the sensitive data. For a JSON Lines file, the
@@ -167,31 +71,10 @@ namespace Model
      * value is always 0 for JSON files.</p>
      */
     inline long long GetRecordIndex() const{ return m_recordIndex; }
-
-    /**
-     * <p>For an Avro object container or Parquet file, the record index, starting from
-     * 0, for the record that contains the sensitive data. For a JSON Lines file, the
-     * line index, starting from 0, for the line that contains the sensitive data. This
-     * value is always 0 for JSON files.</p>
-     */
     inline bool RecordIndexHasBeenSet() const { return m_recordIndexHasBeenSet; }
-
-    /**
-     * <p>For an Avro object container or Parquet file, the record index, starting from
-     * 0, for the record that contains the sensitive data. For a JSON Lines file, the
-     * line index, starting from 0, for the line that contains the sensitive data. This
-     * value is always 0 for JSON files.</p>
-     */
     inline void SetRecordIndex(long long value) { m_recordIndexHasBeenSet = true; m_recordIndex = value; }
-
-    /**
-     * <p>For an Avro object container or Parquet file, the record index, starting from
-     * 0, for the record that contains the sensitive data. For a JSON Lines file, the
-     * line index, starting from 0, for the line that contains the sensitive data. This
-     * value is always 0 for JSON files.</p>
-     */
     inline Record& WithRecordIndex(long long value) { SetRecordIndex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jsonPath;

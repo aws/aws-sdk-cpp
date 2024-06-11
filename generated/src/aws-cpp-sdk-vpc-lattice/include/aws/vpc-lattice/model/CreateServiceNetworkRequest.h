@@ -35,6 +35,7 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
      * does not use an IAM policy. This is the default.</p> </li> <li> <p>
@@ -42,48 +43,14 @@ namespace Model
      * auth is enabled and an auth policy is required.</p> </li> </ul>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline CreateServiceNetworkRequest& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-
-    /**
-     * <p>The type of IAM policy.</p> <ul> <li> <p> <code>NONE</code>: The resource
-     * does not use an IAM policy. This is the default.</p> </li> <li> <p>
-     * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
-     * auth is enabled and an auth policy is required.</p> </li> </ul>
-     */
     inline CreateServiceNetworkRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If you retry a request that completed successfully
@@ -91,186 +58,49 @@ namespace Model
      * performing any actions. If the parameters aren't identical, the retry fails.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateServiceNetworkRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateServiceNetworkRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If you retry a request that completed successfully
-     * using the same client token and parameters, the retry succeeds without
-     * performing any actions. If the parameters aren't identical, the retry fails.</p>
-     */
     inline CreateServiceNetworkRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service network. The name must be unique to the account. The
      * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
      * first or last character, or immediately after another hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateServiceNetworkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateServiceNetworkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service network. The name must be unique to the account. The
-     * valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the
-     * first or last character, or immediately after another hyphen.</p>
-     */
     inline CreateServiceNetworkRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags for the service network.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags for the service network.</p>
-     */
     inline CreateServiceNetworkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     AuthType m_authType;

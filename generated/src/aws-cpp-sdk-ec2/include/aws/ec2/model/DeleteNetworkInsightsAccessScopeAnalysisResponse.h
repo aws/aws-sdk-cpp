@@ -33,57 +33,27 @@ namespace Model
     AWS_EC2_API DeleteNetworkInsightsAccessScopeAnalysisResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the Network Access Scope analysis.</p>
      */
     inline const Aws::String& GetNetworkInsightsAccessScopeAnalysisId() const{ return m_networkInsightsAccessScopeAnalysisId; }
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline void SetNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { m_networkInsightsAccessScopeAnalysisId = value; }
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline void SetNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { m_networkInsightsAccessScopeAnalysisId = std::move(value); }
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline void SetNetworkInsightsAccessScopeAnalysisId(const char* value) { m_networkInsightsAccessScopeAnalysisId.assign(value); }
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline DeleteNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline DeleteNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { SetNetworkInsightsAccessScopeAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Network Access Scope analysis.</p>
-     */
     inline DeleteNetworkInsightsAccessScopeAnalysisResponse& WithNetworkInsightsAccessScopeAnalysisId(const char* value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteNetworkInsightsAccessScopeAnalysisResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteNetworkInsightsAccessScopeAnalysisResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;

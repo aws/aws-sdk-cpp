@@ -34,54 +34,20 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the container that the object lifecycle policy is assigned
      * to.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline GetLifecyclePolicyRequest& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline GetLifecyclePolicyRequest& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container that the object lifecycle policy is assigned
-     * to.</p>
-     */
     inline GetLifecyclePolicyRequest& WithContainerName(const char* value) { SetContainerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_containerName;

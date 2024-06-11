@@ -42,150 +42,63 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline LiteralArrayOptions& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline LiteralArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-
-    /**
-     * A value to use for the field if the field isn't specified for a document.
-     */
     inline LiteralArrayOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of source fields to map to the field. </p>
      */
     inline const Aws::String& GetSourceFields() const{ return m_sourceFields; }
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline bool SourceFieldsHasBeenSet() const { return m_sourceFieldsHasBeenSet; }
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline void SetSourceFields(const Aws::String& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = value; }
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::move(value); }
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline void SetSourceFields(const char* value) { m_sourceFieldsHasBeenSet = true; m_sourceFields.assign(value); }
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline LiteralArrayOptions& WithSourceFields(const Aws::String& value) { SetSourceFields(value); return *this;}
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline LiteralArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of source fields to map to the field. </p>
-     */
     inline LiteralArrayOptions& WithSourceFields(const char* value) { SetSourceFields(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
     inline bool GetFacetEnabled() const{ return m_facetEnabled; }
-
-    /**
-     * <p>Whether facet information can be returned for the field.</p>
-     */
     inline bool FacetEnabledHasBeenSet() const { return m_facetEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether facet information can be returned for the field.</p>
-     */
     inline void SetFacetEnabled(bool value) { m_facetEnabledHasBeenSet = true; m_facetEnabled = value; }
-
-    /**
-     * <p>Whether facet information can be returned for the field.</p>
-     */
     inline LiteralArrayOptions& WithFacetEnabled(bool value) { SetFacetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the contents of the field are searchable.</p>
      */
     inline bool GetSearchEnabled() const{ return m_searchEnabled; }
-
-    /**
-     * <p>Whether the contents of the field are searchable.</p>
-     */
     inline bool SearchEnabledHasBeenSet() const { return m_searchEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether the contents of the field are searchable.</p>
-     */
     inline void SetSearchEnabled(bool value) { m_searchEnabledHasBeenSet = true; m_searchEnabled = value; }
-
-    /**
-     * <p>Whether the contents of the field are searchable.</p>
-     */
     inline LiteralArrayOptions& WithSearchEnabled(bool value) { SetSearchEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
     inline bool GetReturnEnabled() const{ return m_returnEnabled; }
-
-    /**
-     * <p>Whether the contents of the field can be returned in the search results.</p>
-     */
     inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether the contents of the field can be returned in the search results.</p>
-     */
     inline void SetReturnEnabled(bool value) { m_returnEnabledHasBeenSet = true; m_returnEnabled = value; }
-
-    /**
-     * <p>Whether the contents of the field can be returned in the search results.</p>
-     */
     inline LiteralArrayOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_defaultValue;

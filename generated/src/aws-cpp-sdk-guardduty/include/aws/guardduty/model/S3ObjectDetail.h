@@ -38,218 +38,76 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the S3 object.</p>
      */
     inline const Aws::String& GetObjectArn() const{ return m_objectArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline bool ObjectArnHasBeenSet() const { return m_objectArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline void SetObjectArn(const Aws::String& value) { m_objectArnHasBeenSet = true; m_objectArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline void SetObjectArn(Aws::String&& value) { m_objectArnHasBeenSet = true; m_objectArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline void SetObjectArn(const char* value) { m_objectArnHasBeenSet = true; m_objectArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithObjectArn(const Aws::String& value) { SetObjectArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithObjectArn(Aws::String&& value) { SetObjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithObjectArn(const char* value) { SetObjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key of the S3 object.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>Key of the S3 object.</p>
-     */
     inline S3ObjectDetail& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
      * the contents of an object, and not its metadata.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline S3ObjectDetail& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline S3ObjectDetail& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The entity tag is a hash of the S3 object. The ETag reflects changes only to
-     * the contents of an object, and not its metadata.</p>
-     */
     inline S3ObjectDetail& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Hash of the threat detected in this finding.</p>
      */
     inline const Aws::String& GetHash() const{ return m_hash; }
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline void SetHash(Aws::String&& value) { m_hashHasBeenSet = true; m_hash = std::move(value); }
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline void SetHash(const char* value) { m_hashHasBeenSet = true; m_hash.assign(value); }
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline S3ObjectDetail& WithHash(const Aws::String& value) { SetHash(value); return *this;}
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline S3ObjectDetail& WithHash(Aws::String&& value) { SetHash(std::move(value)); return *this;}
-
-    /**
-     * <p>Hash of the threat detected in this finding.</p>
-     */
     inline S3ObjectDetail& WithHash(const char* value) { SetHash(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Version ID of the object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline S3ObjectDetail& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline S3ObjectDetail& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>Version ID of the object.</p>
-     */
     inline S3ObjectDetail& WithVersionId(const char* value) { SetVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_objectArn;

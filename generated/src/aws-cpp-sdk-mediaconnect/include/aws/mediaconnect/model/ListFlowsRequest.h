@@ -38,6 +38,7 @@ namespace Model
     AWS_MEDIACONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * The maximum number of results to return per API request. For example, you submit
      * a ListFlows request with MaxResults set at 5. Although 20 items match your
@@ -48,41 +49,12 @@ namespace Model
      * maximum of 10 results per page.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListFlows request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListFlows request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * The maximum number of results to return per API request. For example, you submit
-     * a ListFlows request with MaxResults set at 5. Although 20 items match your
-     * request, the service returns no more than the first 5 items. (The service also
-     * returns a NextToken value that you can use to fetch the next batch of results.)
-     * The service might return fewer results than the MaxResults value. If MaxResults
-     * is not included in the request, the service defaults to pagination with a
-     * maximum of 10 results per page.
-     */
     inline ListFlowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The token that identifies which batch of results that you want to see. For
      * example, you submit a ListFlows request with MaxResults set at 5. The service
@@ -91,70 +63,14 @@ namespace Model
      * specify the NextToken value.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline ListFlowsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline ListFlowsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * The token that identifies which batch of results that you want to see. For
-     * example, you submit a ListFlows request with MaxResults set at 5. The service
-     * returns the first batch of results (up to 5) and a NextToken value. To see the
-     * next batch of results, you can submit the ListFlows request a second time and
-     * specify the NextToken value.
-     */
     inline ListFlowsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

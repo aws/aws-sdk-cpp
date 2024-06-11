@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API ListTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const TemplateVersionsResponse& GetTemplateVersionsResponse() const{ return m_templateVersionsResponse; }
-
-    
     inline void SetTemplateVersionsResponse(const TemplateVersionsResponse& value) { m_templateVersionsResponse = value; }
-
-    
     inline void SetTemplateVersionsResponse(TemplateVersionsResponse&& value) { m_templateVersionsResponse = std::move(value); }
-
-    
     inline ListTemplateVersionsResult& WithTemplateVersionsResponse(const TemplateVersionsResponse& value) { SetTemplateVersionsResponse(value); return *this;}
-
-    
     inline ListTemplateVersionsResult& WithTemplateVersionsResponse(TemplateVersionsResponse&& value) { SetTemplateVersionsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTemplateVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTemplateVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTemplateVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemplateVersionsResponse m_templateVersionsResponse;

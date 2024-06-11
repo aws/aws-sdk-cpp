@@ -40,95 +40,34 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The types of usage that are included in the estimate, such as costs, usage,
      * or data transfer.</p>
      */
     inline const Aws::String& GetUsageType() const{ return m_usageType; }
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline CostEstimate& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline CostEstimate& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-
-    /**
-     * <p>The types of usage that are included in the estimate, such as costs, usage,
-     * or data transfer.</p>
-     */
     inline CostEstimate& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cost estimate result that's associated with a time period.</p>
      */
     inline const Aws::Vector<EstimateByTime>& GetResultsByTime() const{ return m_resultsByTime; }
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline bool ResultsByTimeHasBeenSet() const { return m_resultsByTimeHasBeenSet; }
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline void SetResultsByTime(const Aws::Vector<EstimateByTime>& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = value; }
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline void SetResultsByTime(Aws::Vector<EstimateByTime>&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = std::move(value); }
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline CostEstimate& WithResultsByTime(const Aws::Vector<EstimateByTime>& value) { SetResultsByTime(value); return *this;}
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline CostEstimate& WithResultsByTime(Aws::Vector<EstimateByTime>&& value) { SetResultsByTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline CostEstimate& AddResultsByTime(const EstimateByTime& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.push_back(value); return *this; }
-
-    /**
-     * <p>The cost estimate result that's associated with a time period.</p>
-     */
     inline CostEstimate& AddResultsByTime(EstimateByTime&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_usageType;

@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the bulk deployment.
      */
     inline const Aws::String& GetBulkDeploymentId() const{ return m_bulkDeploymentId; }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline bool BulkDeploymentIdHasBeenSet() const { return m_bulkDeploymentIdHasBeenSet; }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = value; }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(Aws::String&& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = std::move(value); }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(const char* value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId.assign(value); }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline GetBulkDeploymentStatusRequest& WithBulkDeploymentId(const Aws::String& value) { SetBulkDeploymentId(value); return *this;}
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline GetBulkDeploymentStatusRequest& WithBulkDeploymentId(Aws::String&& value) { SetBulkDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline GetBulkDeploymentStatusRequest& WithBulkDeploymentId(const char* value) { SetBulkDeploymentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bulkDeploymentId;

@@ -32,46 +32,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the import to delete.</p>
      */
     inline const Aws::String& GetImportId() const{ return m_importId; }
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline DeleteImportRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline DeleteImportRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the import to delete.</p>
-     */
     inline DeleteImportRequest& WithImportId(const char* value) { SetImportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_importId;

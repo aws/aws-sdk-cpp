@@ -40,107 +40,51 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API GetPackageVersionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
-
-    
     inline void SetPackageID(const Aws::String& value) { m_packageID = value; }
-
-    
     inline void SetPackageID(Aws::String&& value) { m_packageID = std::move(value); }
-
-    
     inline void SetPackageID(const char* value) { m_packageID.assign(value); }
-
-    
     inline GetPackageVersionHistoryResult& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of <code>PackageVersionHistory</code> objects.</p>
      */
     inline const Aws::Vector<PackageVersionHistory>& GetPackageVersionHistoryList() const{ return m_packageVersionHistoryList; }
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline void SetPackageVersionHistoryList(const Aws::Vector<PackageVersionHistory>& value) { m_packageVersionHistoryList = value; }
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline void SetPackageVersionHistoryList(Aws::Vector<PackageVersionHistory>&& value) { m_packageVersionHistoryList = std::move(value); }
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline GetPackageVersionHistoryResult& WithPackageVersionHistoryList(const Aws::Vector<PackageVersionHistory>& value) { SetPackageVersionHistoryList(value); return *this;}
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline GetPackageVersionHistoryResult& WithPackageVersionHistoryList(Aws::Vector<PackageVersionHistory>&& value) { SetPackageVersionHistoryList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline GetPackageVersionHistoryResult& AddPackageVersionHistoryList(const PackageVersionHistory& value) { m_packageVersionHistoryList.push_back(value); return *this; }
-
-    /**
-     * <p>List of <code>PackageVersionHistory</code> objects.</p>
-     */
     inline GetPackageVersionHistoryResult& AddPackageVersionHistoryList(PackageVersionHistory&& value) { m_packageVersionHistoryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline GetPackageVersionHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPackageVersionHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPackageVersionHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageID;

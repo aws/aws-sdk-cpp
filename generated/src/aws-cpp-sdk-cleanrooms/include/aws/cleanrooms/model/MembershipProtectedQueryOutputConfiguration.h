@@ -38,24 +38,15 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ProtectedQueryS3OutputConfiguration& GetS3() const{ return m_s3; }
-
-    
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    
     inline void SetS3(const ProtectedQueryS3OutputConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    
     inline void SetS3(ProtectedQueryS3OutputConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    
     inline MembershipProtectedQueryOutputConfiguration& WithS3(const ProtectedQueryS3OutputConfiguration& value) { SetS3(value); return *this;}
-
-    
     inline MembershipProtectedQueryOutputConfiguration& WithS3(ProtectedQueryS3OutputConfiguration&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProtectedQueryS3OutputConfiguration m_s3;

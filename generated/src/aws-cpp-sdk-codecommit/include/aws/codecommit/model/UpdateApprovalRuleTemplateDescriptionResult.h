@@ -33,53 +33,27 @@ namespace Model
     AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The structure and content of the updated approval rule template.</p>
      */
     inline const ApprovalRuleTemplate& GetApprovalRuleTemplate() const{ return m_approvalRuleTemplate; }
-
-    /**
-     * <p>The structure and content of the updated approval rule template.</p>
-     */
     inline void SetApprovalRuleTemplate(const ApprovalRuleTemplate& value) { m_approvalRuleTemplate = value; }
-
-    /**
-     * <p>The structure and content of the updated approval rule template.</p>
-     */
     inline void SetApprovalRuleTemplate(ApprovalRuleTemplate&& value) { m_approvalRuleTemplate = std::move(value); }
-
-    /**
-     * <p>The structure and content of the updated approval rule template.</p>
-     */
     inline UpdateApprovalRuleTemplateDescriptionResult& WithApprovalRuleTemplate(const ApprovalRuleTemplate& value) { SetApprovalRuleTemplate(value); return *this;}
-
-    /**
-     * <p>The structure and content of the updated approval rule template.</p>
-     */
     inline UpdateApprovalRuleTemplateDescriptionResult& WithApprovalRuleTemplate(ApprovalRuleTemplate&& value) { SetApprovalRuleTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateApprovalRuleTemplateDescriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateApprovalRuleTemplateDescriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateApprovalRuleTemplateDescriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApprovalRuleTemplate m_approvalRuleTemplate;

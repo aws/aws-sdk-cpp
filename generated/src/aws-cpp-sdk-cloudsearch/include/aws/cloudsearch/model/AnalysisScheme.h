@@ -46,68 +46,37 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetAnalysisSchemeName() const{ return m_analysisSchemeName; }
-
-    
     inline bool AnalysisSchemeNameHasBeenSet() const { return m_analysisSchemeNameHasBeenSet; }
-
-    
     inline void SetAnalysisSchemeName(const Aws::String& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = value; }
-
-    
     inline void SetAnalysisSchemeName(Aws::String&& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = std::move(value); }
-
-    
     inline void SetAnalysisSchemeName(const char* value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName.assign(value); }
-
-    
     inline AnalysisScheme& WithAnalysisSchemeName(const Aws::String& value) { SetAnalysisSchemeName(value); return *this;}
-
-    
     inline AnalysisScheme& WithAnalysisSchemeName(Aws::String&& value) { SetAnalysisSchemeName(std::move(value)); return *this;}
-
-    
     inline AnalysisScheme& WithAnalysisSchemeName(const char* value) { SetAnalysisSchemeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AnalysisSchemeLanguage& GetAnalysisSchemeLanguage() const{ return m_analysisSchemeLanguage; }
-
-    
     inline bool AnalysisSchemeLanguageHasBeenSet() const { return m_analysisSchemeLanguageHasBeenSet; }
-
-    
     inline void SetAnalysisSchemeLanguage(const AnalysisSchemeLanguage& value) { m_analysisSchemeLanguageHasBeenSet = true; m_analysisSchemeLanguage = value; }
-
-    
     inline void SetAnalysisSchemeLanguage(AnalysisSchemeLanguage&& value) { m_analysisSchemeLanguageHasBeenSet = true; m_analysisSchemeLanguage = std::move(value); }
-
-    
     inline AnalysisScheme& WithAnalysisSchemeLanguage(const AnalysisSchemeLanguage& value) { SetAnalysisSchemeLanguage(value); return *this;}
-
-    
     inline AnalysisScheme& WithAnalysisSchemeLanguage(AnalysisSchemeLanguage&& value) { SetAnalysisSchemeLanguage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AnalysisOptions& GetAnalysisOptions() const{ return m_analysisOptions; }
-
-    
     inline bool AnalysisOptionsHasBeenSet() const { return m_analysisOptionsHasBeenSet; }
-
-    
     inline void SetAnalysisOptions(const AnalysisOptions& value) { m_analysisOptionsHasBeenSet = true; m_analysisOptions = value; }
-
-    
     inline void SetAnalysisOptions(AnalysisOptions&& value) { m_analysisOptionsHasBeenSet = true; m_analysisOptions = std::move(value); }
-
-    
     inline AnalysisScheme& WithAnalysisOptions(const AnalysisOptions& value) { SetAnalysisOptions(value); return *this;}
-
-    
     inline AnalysisScheme& WithAnalysisOptions(AnalysisOptions&& value) { SetAnalysisOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analysisSchemeName;

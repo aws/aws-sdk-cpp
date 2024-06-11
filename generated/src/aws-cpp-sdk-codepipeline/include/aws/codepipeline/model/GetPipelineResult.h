@@ -40,89 +40,40 @@ namespace Model
     AWS_CODEPIPELINE_API GetPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the structure of actions and stages to be performed in the
      * pipeline. </p>
      */
     inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>Represents the structure of actions and stages to be performed in the
-     * pipeline. </p>
-     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipeline = value; }
-
-    /**
-     * <p>Represents the structure of actions and stages to be performed in the
-     * pipeline. </p>
-     */
     inline void SetPipeline(PipelineDeclaration&& value) { m_pipeline = std::move(value); }
-
-    /**
-     * <p>Represents the structure of actions and stages to be performed in the
-     * pipeline. </p>
-     */
     inline GetPipelineResult& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>Represents the structure of actions and stages to be performed in the
-     * pipeline. </p>
-     */
     inline GetPipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the pipeline metadata information returned as part of the output
      * of a <code>GetPipeline</code> action.</p>
      */
     inline const PipelineMetadata& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>Represents the pipeline metadata information returned as part of the output
-     * of a <code>GetPipeline</code> action.</p>
-     */
     inline void SetMetadata(const PipelineMetadata& value) { m_metadata = value; }
-
-    /**
-     * <p>Represents the pipeline metadata information returned as part of the output
-     * of a <code>GetPipeline</code> action.</p>
-     */
     inline void SetMetadata(PipelineMetadata&& value) { m_metadata = std::move(value); }
-
-    /**
-     * <p>Represents the pipeline metadata information returned as part of the output
-     * of a <code>GetPipeline</code> action.</p>
-     */
     inline GetPipelineResult& WithMetadata(const PipelineMetadata& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>Represents the pipeline metadata information returned as part of the output
-     * of a <code>GetPipeline</code> action.</p>
-     */
     inline GetPipelineResult& WithMetadata(PipelineMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PipelineDeclaration m_pipeline;

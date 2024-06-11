@@ -38,6 +38,7 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
      * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
@@ -49,112 +50,24 @@ namespace Model
      * increments of 6000 GB.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline KxCacheStorageConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline KxCacheStorageConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of cache storage. The valid values are: </p> <ul> <li> <p>CACHE_1000
-     * – This type provides at least 1000 MB/s disk access throughput. </p> </li> <li>
-     * <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p>
-     * </li> <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access
-     * throughput. </p> </li> </ul> <p>For cache type <code>CACHE_1000</code> and
-     * <code>CACHE_250</code> you can select cache size as 1200 GB or increments of
-     * 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in
-     * increments of 6000 GB.</p>
-     */
     inline KxCacheStorageConfiguration& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size of cache in Gigabytes.</p>
      */
     inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of cache in Gigabytes.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size of cache in Gigabytes.</p>
-     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of cache in Gigabytes.</p>
-     */
     inline KxCacheStorageConfiguration& WithSize(int value) { SetSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

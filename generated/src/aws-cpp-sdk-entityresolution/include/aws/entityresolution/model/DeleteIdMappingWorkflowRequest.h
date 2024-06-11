@@ -32,46 +32,19 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the workflow to be deleted.</p>
      */
     inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline DeleteIdMappingWorkflowRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline DeleteIdMappingWorkflowRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workflow to be deleted.</p>
-     */
     inline DeleteIdMappingWorkflowRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workflowName;

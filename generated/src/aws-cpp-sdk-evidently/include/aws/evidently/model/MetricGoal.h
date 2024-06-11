@@ -39,79 +39,31 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> <code>INCREASE</code> means that a variation with a higher number for this
      * metric is performing better.</p> <p> <code>DECREASE</code> means that a
      * variation with a lower number for this metric is performing better.</p>
      */
     inline const ChangeDirectionEnum& GetDesiredChange() const{ return m_desiredChange; }
-
-    /**
-     * <p> <code>INCREASE</code> means that a variation with a higher number for this
-     * metric is performing better.</p> <p> <code>DECREASE</code> means that a
-     * variation with a lower number for this metric is performing better.</p>
-     */
     inline bool DesiredChangeHasBeenSet() const { return m_desiredChangeHasBeenSet; }
-
-    /**
-     * <p> <code>INCREASE</code> means that a variation with a higher number for this
-     * metric is performing better.</p> <p> <code>DECREASE</code> means that a
-     * variation with a lower number for this metric is performing better.</p>
-     */
     inline void SetDesiredChange(const ChangeDirectionEnum& value) { m_desiredChangeHasBeenSet = true; m_desiredChange = value; }
-
-    /**
-     * <p> <code>INCREASE</code> means that a variation with a higher number for this
-     * metric is performing better.</p> <p> <code>DECREASE</code> means that a
-     * variation with a lower number for this metric is performing better.</p>
-     */
     inline void SetDesiredChange(ChangeDirectionEnum&& value) { m_desiredChangeHasBeenSet = true; m_desiredChange = std::move(value); }
-
-    /**
-     * <p> <code>INCREASE</code> means that a variation with a higher number for this
-     * metric is performing better.</p> <p> <code>DECREASE</code> means that a
-     * variation with a lower number for this metric is performing better.</p>
-     */
     inline MetricGoal& WithDesiredChange(const ChangeDirectionEnum& value) { SetDesiredChange(value); return *this;}
-
-    /**
-     * <p> <code>INCREASE</code> means that a variation with a higher number for this
-     * metric is performing better.</p> <p> <code>DECREASE</code> means that a
-     * variation with a lower number for this metric is performing better.</p>
-     */
     inline MetricGoal& WithDesiredChange(ChangeDirectionEnum&& value) { SetDesiredChange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that contains details about the metric.</p>
      */
     inline const MetricDefinition& GetMetricDefinition() const{ return m_metricDefinition; }
-
-    /**
-     * <p>A structure that contains details about the metric.</p>
-     */
     inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
-
-    /**
-     * <p>A structure that contains details about the metric.</p>
-     */
     inline void SetMetricDefinition(const MetricDefinition& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = value; }
-
-    /**
-     * <p>A structure that contains details about the metric.</p>
-     */
     inline void SetMetricDefinition(MetricDefinition&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the metric.</p>
-     */
     inline MetricGoal& WithMetricDefinition(const MetricDefinition& value) { SetMetricDefinition(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the metric.</p>
-     */
     inline MetricGoal& WithMetricDefinition(MetricDefinition&& value) { SetMetricDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeDirectionEnum m_desiredChange;

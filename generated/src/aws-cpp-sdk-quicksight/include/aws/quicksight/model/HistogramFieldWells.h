@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a histogram.</p>
      */
     inline const HistogramAggregatedFieldWells& GetHistogramAggregatedFieldWells() const{ return m_histogramAggregatedFieldWells; }
-
-    /**
-     * <p>The field well configuration of a histogram.</p>
-     */
     inline bool HistogramAggregatedFieldWellsHasBeenSet() const { return m_histogramAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a histogram.</p>
-     */
     inline void SetHistogramAggregatedFieldWells(const HistogramAggregatedFieldWells& value) { m_histogramAggregatedFieldWellsHasBeenSet = true; m_histogramAggregatedFieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a histogram.</p>
-     */
     inline void SetHistogramAggregatedFieldWells(HistogramAggregatedFieldWells&& value) { m_histogramAggregatedFieldWellsHasBeenSet = true; m_histogramAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a histogram.</p>
-     */
     inline HistogramFieldWells& WithHistogramAggregatedFieldWells(const HistogramAggregatedFieldWells& value) { SetHistogramAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a histogram.</p>
-     */
     inline HistogramFieldWells& WithHistogramAggregatedFieldWells(HistogramAggregatedFieldWells&& value) { SetHistogramAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HistogramAggregatedFieldWells m_histogramAggregatedFieldWells;

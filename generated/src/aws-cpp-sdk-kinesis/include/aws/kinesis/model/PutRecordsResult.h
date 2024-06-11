@@ -40,25 +40,17 @@ namespace Model
     AWS_KINESIS_API PutRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
      * request.</p>
      */
     inline int GetFailedRecordCount() const{ return m_failedRecordCount; }
-
-    /**
-     * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
-     * request.</p>
-     */
     inline void SetFailedRecordCount(int value) { m_failedRecordCount = value; }
-
-    /**
-     * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
-     * request.</p>
-     */
     inline PutRecordsResult& WithFailedRecordCount(int value) { SetFailedRecordCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of successfully and unsuccessfully processed record results. A
      * record that is successfully added to a stream includes
@@ -67,62 +59,15 @@ namespace Model
      * <code>ErrorMessage</code> in the result.</p>
      */
     inline const Aws::Vector<PutRecordsResultEntry>& GetRecords() const{ return m_records; }
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline void SetRecords(const Aws::Vector<PutRecordsResultEntry>& value) { m_records = value; }
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline void SetRecords(Aws::Vector<PutRecordsResultEntry>&& value) { m_records = std::move(value); }
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline PutRecordsResult& WithRecords(const Aws::Vector<PutRecordsResultEntry>& value) { SetRecords(value); return *this;}
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline PutRecordsResult& WithRecords(Aws::Vector<PutRecordsResultEntry>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline PutRecordsResult& AddRecords(const PutRecordsResultEntry& value) { m_records.push_back(value); return *this; }
-
-    /**
-     * <p>An array of successfully and unsuccessfully processed record results. A
-     * record that is successfully added to a stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
-     * that fails to be added to a stream includes <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> in the result.</p>
-     */
     inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encryption type used on the records. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
@@ -130,61 +75,22 @@ namespace Model
      * records using a customer-managed Amazon Web Services KMS key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
-
-    /**
-     * <p>The encryption type used on the records. This parameter can be one of the
-     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
-     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
-     * records using a customer-managed Amazon Web Services KMS key.</p> </li> </ul>
-     */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
-
-    /**
-     * <p>The encryption type used on the records. This parameter can be one of the
-     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
-     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
-     * records using a customer-managed Amazon Web Services KMS key.</p> </li> </ul>
-     */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
-
-    /**
-     * <p>The encryption type used on the records. This parameter can be one of the
-     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
-     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
-     * records using a customer-managed Amazon Web Services KMS key.</p> </li> </ul>
-     */
     inline PutRecordsResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-
-    /**
-     * <p>The encryption type used on the records. This parameter can be one of the
-     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
-     * records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the
-     * records using a customer-managed Amazon Web Services KMS key.</p> </li> </ul>
-     */
     inline PutRecordsResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_failedRecordCount;

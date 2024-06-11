@@ -38,67 +38,29 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the video artifact is enabled or disabled.</p>
      */
     inline const ArtifactsState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Indicates whether the video artifact is enabled or disabled.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the video artifact is enabled or disabled.</p>
-     */
     inline void SetState(const ArtifactsState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>Indicates whether the video artifact is enabled or disabled.</p>
-     */
     inline void SetState(ArtifactsState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>Indicates whether the video artifact is enabled or disabled.</p>
-     */
     inline VideoArtifactsConfiguration& WithState(const ArtifactsState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Indicates whether the video artifact is enabled or disabled.</p>
-     */
     inline VideoArtifactsConfiguration& WithState(ArtifactsState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The MUX type of the video artifact configuration object.</p>
      */
     inline const VideoMuxType& GetMuxType() const{ return m_muxType; }
-
-    /**
-     * <p>The MUX type of the video artifact configuration object.</p>
-     */
     inline bool MuxTypeHasBeenSet() const { return m_muxTypeHasBeenSet; }
-
-    /**
-     * <p>The MUX type of the video artifact configuration object.</p>
-     */
     inline void SetMuxType(const VideoMuxType& value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
-
-    /**
-     * <p>The MUX type of the video artifact configuration object.</p>
-     */
     inline void SetMuxType(VideoMuxType&& value) { m_muxTypeHasBeenSet = true; m_muxType = std::move(value); }
-
-    /**
-     * <p>The MUX type of the video artifact configuration object.</p>
-     */
     inline VideoArtifactsConfiguration& WithMuxType(const VideoMuxType& value) { SetMuxType(value); return *this;}
-
-    /**
-     * <p>The MUX type of the video artifact configuration object.</p>
-     */
     inline VideoArtifactsConfiguration& WithMuxType(VideoMuxType&& value) { SetMuxType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArtifactsState m_state;

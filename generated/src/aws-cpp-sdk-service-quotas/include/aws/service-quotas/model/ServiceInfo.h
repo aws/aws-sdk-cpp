@@ -37,95 +37,34 @@ namespace Model
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the service identifier. To find the service code value for an
      * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceInfo& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceInfo& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the service identifier. To find the service code value for an
-     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
-     */
     inline ServiceInfo& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the service name.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceInfo& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceInfo& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the service name.</p>
-     */
     inline ServiceInfo& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceCode;

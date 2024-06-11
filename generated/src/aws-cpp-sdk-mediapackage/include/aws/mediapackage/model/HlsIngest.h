@@ -39,46 +39,19 @@ namespace Model
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of endpoints to which the source stream should be sent.
      */
     inline const Aws::Vector<IngestEndpoint>& GetIngestEndpoints() const{ return m_ingestEndpoints; }
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline bool IngestEndpointsHasBeenSet() const { return m_ingestEndpointsHasBeenSet; }
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline void SetIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = value; }
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline void SetIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = std::move(value); }
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline HlsIngest& WithIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { SetIngestEndpoints(value); return *this;}
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline HlsIngest& WithIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { SetIngestEndpoints(std::move(value)); return *this;}
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline HlsIngest& AddIngestEndpoints(const IngestEndpoint& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.push_back(value); return *this; }
-
-    /**
-     * A list of endpoints to which the source stream should be sent.
-     */
     inline HlsIngest& AddIngestEndpoints(IngestEndpoint&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<IngestEndpoint> m_ingestEndpoints;

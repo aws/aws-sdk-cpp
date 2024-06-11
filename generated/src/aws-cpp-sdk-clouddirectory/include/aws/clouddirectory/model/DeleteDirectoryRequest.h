@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the directory to delete.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline DeleteDirectoryRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline DeleteDirectoryRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the directory to delete.</p>
-     */
     inline DeleteDirectoryRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

@@ -34,280 +34,99 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline CreateInstanceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline CreateInstanceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The idempotency token.</p>
-     */
     inline CreateInstanceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of identity management for your Amazon Connect users.</p>
      */
     inline const DirectoryType& GetIdentityManagementType() const{ return m_identityManagementType; }
-
-    /**
-     * <p>The type of identity management for your Amazon Connect users.</p>
-     */
     inline bool IdentityManagementTypeHasBeenSet() const { return m_identityManagementTypeHasBeenSet; }
-
-    /**
-     * <p>The type of identity management for your Amazon Connect users.</p>
-     */
     inline void SetIdentityManagementType(const DirectoryType& value) { m_identityManagementTypeHasBeenSet = true; m_identityManagementType = value; }
-
-    /**
-     * <p>The type of identity management for your Amazon Connect users.</p>
-     */
     inline void SetIdentityManagementType(DirectoryType&& value) { m_identityManagementTypeHasBeenSet = true; m_identityManagementType = std::move(value); }
-
-    /**
-     * <p>The type of identity management for your Amazon Connect users.</p>
-     */
     inline CreateInstanceRequest& WithIdentityManagementType(const DirectoryType& value) { SetIdentityManagementType(value); return *this;}
-
-    /**
-     * <p>The type of identity management for your Amazon Connect users.</p>
-     */
     inline CreateInstanceRequest& WithIdentityManagementType(DirectoryType&& value) { SetIdentityManagementType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name for your instance.</p>
      */
     inline const Aws::String& GetInstanceAlias() const{ return m_instanceAlias; }
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline bool InstanceAliasHasBeenSet() const { return m_instanceAliasHasBeenSet; }
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline void SetInstanceAlias(const Aws::String& value) { m_instanceAliasHasBeenSet = true; m_instanceAlias = value; }
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline void SetInstanceAlias(Aws::String&& value) { m_instanceAliasHasBeenSet = true; m_instanceAlias = std::move(value); }
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline void SetInstanceAlias(const char* value) { m_instanceAliasHasBeenSet = true; m_instanceAlias.assign(value); }
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline CreateInstanceRequest& WithInstanceAlias(const Aws::String& value) { SetInstanceAlias(value); return *this;}
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline CreateInstanceRequest& WithInstanceAlias(Aws::String&& value) { SetInstanceAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for your instance.</p>
-     */
     inline CreateInstanceRequest& WithInstanceAlias(const char* value) { SetInstanceAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the directory.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline CreateInstanceRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline CreateInstanceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the directory.</p>
-     */
     inline CreateInstanceRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Your contact center handles incoming contacts.</p>
      */
     inline bool GetInboundCallsEnabled() const{ return m_inboundCallsEnabled; }
-
-    /**
-     * <p>Your contact center handles incoming contacts.</p>
-     */
     inline bool InboundCallsEnabledHasBeenSet() const { return m_inboundCallsEnabledHasBeenSet; }
-
-    /**
-     * <p>Your contact center handles incoming contacts.</p>
-     */
     inline void SetInboundCallsEnabled(bool value) { m_inboundCallsEnabledHasBeenSet = true; m_inboundCallsEnabled = value; }
-
-    /**
-     * <p>Your contact center handles incoming contacts.</p>
-     */
     inline CreateInstanceRequest& WithInboundCallsEnabled(bool value) { SetInboundCallsEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Your contact center allows outbound calls.</p>
      */
     inline bool GetOutboundCallsEnabled() const{ return m_outboundCallsEnabled; }
-
-    /**
-     * <p>Your contact center allows outbound calls.</p>
-     */
     inline bool OutboundCallsEnabledHasBeenSet() const { return m_outboundCallsEnabledHasBeenSet; }
-
-    /**
-     * <p>Your contact center allows outbound calls.</p>
-     */
     inline void SetOutboundCallsEnabled(bool value) { m_outboundCallsEnabledHasBeenSet = true; m_outboundCallsEnabled = value; }
-
-    /**
-     * <p>Your contact center allows outbound calls.</p>
-     */
     inline CreateInstanceRequest& WithOutboundCallsEnabled(bool value) { SetOutboundCallsEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
-     */
     inline CreateInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

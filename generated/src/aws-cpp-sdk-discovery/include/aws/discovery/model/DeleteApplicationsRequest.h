@@ -35,51 +35,20 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Configuration ID of an application to be deleted.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline void SetConfigurationIds(Aws::Vector<Aws::String>&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::move(value); }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline DeleteApplicationsRequest& WithConfigurationIds(const Aws::Vector<Aws::String>& value) { SetConfigurationIds(value); return *this;}
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline DeleteApplicationsRequest& WithConfigurationIds(Aws::Vector<Aws::String>&& value) { SetConfigurationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline DeleteApplicationsRequest& AddConfigurationIds(const Aws::String& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline DeleteApplicationsRequest& AddConfigurationIds(Aws::String&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Configuration ID of an application to be deleted.</p>
-     */
     inline DeleteApplicationsRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configurationIds;

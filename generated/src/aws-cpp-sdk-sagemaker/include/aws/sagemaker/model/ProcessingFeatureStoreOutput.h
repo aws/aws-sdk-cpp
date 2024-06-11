@@ -38,62 +38,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
      * processing job output. Note that your processing script is responsible for
      * putting records into your Feature Store.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline ProcessingFeatureStoreOutput& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline ProcessingFeatureStoreOutput& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon SageMaker FeatureGroup to use as the destination for
-     * processing job output. Note that your processing script is responsible for
-     * putting records into your Feature Store.</p>
-     */
     inline ProcessingFeatureStoreOutput& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_featureGroupName;

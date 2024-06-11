@@ -33,54 +33,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Updates the enablement status of a security control in a specified standard.
      * </p>
      */
     inline const Aws::Vector<StandardsControlAssociationUpdate>& GetStandardsControlAssociationUpdates() const{ return m_standardsControlAssociationUpdates; }
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline bool StandardsControlAssociationUpdatesHasBeenSet() const { return m_standardsControlAssociationUpdatesHasBeenSet; }
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline void SetStandardsControlAssociationUpdates(const Aws::Vector<StandardsControlAssociationUpdate>& value) { m_standardsControlAssociationUpdatesHasBeenSet = true; m_standardsControlAssociationUpdates = value; }
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline void SetStandardsControlAssociationUpdates(Aws::Vector<StandardsControlAssociationUpdate>&& value) { m_standardsControlAssociationUpdatesHasBeenSet = true; m_standardsControlAssociationUpdates = std::move(value); }
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline BatchUpdateStandardsControlAssociationsRequest& WithStandardsControlAssociationUpdates(const Aws::Vector<StandardsControlAssociationUpdate>& value) { SetStandardsControlAssociationUpdates(value); return *this;}
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline BatchUpdateStandardsControlAssociationsRequest& WithStandardsControlAssociationUpdates(Aws::Vector<StandardsControlAssociationUpdate>&& value) { SetStandardsControlAssociationUpdates(std::move(value)); return *this;}
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline BatchUpdateStandardsControlAssociationsRequest& AddStandardsControlAssociationUpdates(const StandardsControlAssociationUpdate& value) { m_standardsControlAssociationUpdatesHasBeenSet = true; m_standardsControlAssociationUpdates.push_back(value); return *this; }
-
-    /**
-     * <p> Updates the enablement status of a security control in a specified standard.
-     * </p>
-     */
     inline BatchUpdateStandardsControlAssociationsRequest& AddStandardsControlAssociationUpdates(StandardsControlAssociationUpdate&& value) { m_standardsControlAssociationUpdatesHasBeenSet = true; m_standardsControlAssociationUpdates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StandardsControlAssociationUpdate> m_standardsControlAssociationUpdates;

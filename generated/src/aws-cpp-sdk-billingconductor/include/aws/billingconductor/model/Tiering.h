@@ -38,36 +38,17 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The possible Amazon Web Services Free Tier configurations. </p>
      */
     inline const FreeTierConfig& GetFreeTier() const{ return m_freeTier; }
-
-    /**
-     * <p> The possible Amazon Web Services Free Tier configurations. </p>
-     */
     inline bool FreeTierHasBeenSet() const { return m_freeTierHasBeenSet; }
-
-    /**
-     * <p> The possible Amazon Web Services Free Tier configurations. </p>
-     */
     inline void SetFreeTier(const FreeTierConfig& value) { m_freeTierHasBeenSet = true; m_freeTier = value; }
-
-    /**
-     * <p> The possible Amazon Web Services Free Tier configurations. </p>
-     */
     inline void SetFreeTier(FreeTierConfig&& value) { m_freeTierHasBeenSet = true; m_freeTier = std::move(value); }
-
-    /**
-     * <p> The possible Amazon Web Services Free Tier configurations. </p>
-     */
     inline Tiering& WithFreeTier(const FreeTierConfig& value) { SetFreeTier(value); return *this;}
-
-    /**
-     * <p> The possible Amazon Web Services Free Tier configurations. </p>
-     */
     inline Tiering& WithFreeTier(FreeTierConfig&& value) { SetFreeTier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FreeTierConfig m_freeTier;

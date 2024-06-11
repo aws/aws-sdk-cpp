@@ -38,67 +38,29 @@ namespace Model
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The instance type of the hosts.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline InstanceTypeCapacity& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline InstanceTypeCapacity& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance type of the hosts.</p>
-     */
     inline InstanceTypeCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of instances for the specified instance type.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of instances for the specified instance type.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of instances for the specified instance type.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of instances for the specified instance type.</p>
-     */
     inline InstanceTypeCapacity& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceType;

@@ -42,144 +42,64 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline ListWorkloadSharesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline ListWorkloadSharesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline ListWorkloadSharesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID, organization ID, or organizational unit
      * (OU) ID with which the workload is shared.</p>
      */
     inline const Aws::String& GetSharedWithPrefix() const{ return m_sharedWithPrefix; }
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline bool SharedWithPrefixHasBeenSet() const { return m_sharedWithPrefixHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline void SetSharedWithPrefix(const Aws::String& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline void SetSharedWithPrefix(Aws::String&& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline void SetSharedWithPrefix(const char* value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(const Aws::String& value) { SetSharedWithPrefix(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(Aws::String&& value) { SetSharedWithPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID, organization ID, or organizational unit
-     * (OU) ID with which the workload is shared.</p>
-     */
     inline ListWorkloadSharesRequest& WithSharedWithPrefix(const char* value) { SetSharedWithPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline ListWorkloadSharesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListWorkloadSharesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListWorkloadSharesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return for this request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return for this request.</p>
-     */
     inline ListWorkloadSharesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ShareStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const ShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(ShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline ListWorkloadSharesRequest& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-
-    
     inline ListWorkloadSharesRequest& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

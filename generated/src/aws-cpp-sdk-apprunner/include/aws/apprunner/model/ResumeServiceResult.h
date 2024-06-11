@@ -33,103 +33,42 @@ namespace Model
     AWS_APPRUNNER_API ResumeServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the App Runner service that this request just resumed.</p>
      */
     inline const Service& GetService() const{ return m_service; }
-
-    /**
-     * <p>A description of the App Runner service that this request just resumed.</p>
-     */
     inline void SetService(const Service& value) { m_service = value; }
-
-    /**
-     * <p>A description of the App Runner service that this request just resumed.</p>
-     */
     inline void SetService(Service&& value) { m_service = std::move(value); }
-
-    /**
-     * <p>A description of the App Runner service that this request just resumed.</p>
-     */
     inline ResumeServiceResult& WithService(const Service& value) { SetService(value); return *this;}
-
-    /**
-     * <p>A description of the App Runner service that this request just resumed.</p>
-     */
     inline ResumeServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the asynchronous operation that this request started. You
      * can use it combined with the <a>ListOperations</a> call to track the operation's
      * progress.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline ResumeServiceResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline ResumeServiceResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the asynchronous operation that this request started. You
-     * can use it combined with the <a>ListOperations</a> call to track the operation's
-     * progress.</p>
-     */
     inline ResumeServiceResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ResumeServiceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ResumeServiceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ResumeServiceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Service m_service;

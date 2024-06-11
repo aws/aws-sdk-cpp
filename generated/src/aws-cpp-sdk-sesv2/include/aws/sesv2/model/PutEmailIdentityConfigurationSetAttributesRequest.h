@@ -36,87 +36,33 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The email address or domain to associate with a configuration set.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address or domain to associate with a configuration set.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration set to associate with an email identity.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration set to associate with an email identity.</p>
-     */
     inline PutEmailIdentityConfigurationSetAttributesRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailIdentity;

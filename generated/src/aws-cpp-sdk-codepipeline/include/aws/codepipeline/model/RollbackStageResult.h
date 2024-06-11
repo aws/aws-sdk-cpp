@@ -32,70 +32,30 @@ namespace Model
     AWS_CODEPIPELINE_API RollbackStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The execution ID of the pipeline execution for the stage that has been rolled
      * back.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionId = value; }
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = std::move(value); }
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionId.assign(value); }
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline RollbackStageResult& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline RollbackStageResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The execution ID of the pipeline execution for the stage that has been rolled
-     * back.</p>
-     */
     inline RollbackStageResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RollbackStageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RollbackStageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RollbackStageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineExecutionId;

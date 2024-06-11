@@ -40,91 +40,33 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The RPC protection setting configured on the HDFS cluster. This setting
      * corresponds to your <code>hadoop.rpc.protection</code> setting in your
      * <code>core-site.xml</code> file on your Hadoop cluster.</p>
      */
     inline const HdfsRpcProtection& GetRpcProtection() const{ return m_rpcProtection; }
-
-    /**
-     * <p>The RPC protection setting configured on the HDFS cluster. This setting
-     * corresponds to your <code>hadoop.rpc.protection</code> setting in your
-     * <code>core-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline bool RpcProtectionHasBeenSet() const { return m_rpcProtectionHasBeenSet; }
-
-    /**
-     * <p>The RPC protection setting configured on the HDFS cluster. This setting
-     * corresponds to your <code>hadoop.rpc.protection</code> setting in your
-     * <code>core-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline void SetRpcProtection(const HdfsRpcProtection& value) { m_rpcProtectionHasBeenSet = true; m_rpcProtection = value; }
-
-    /**
-     * <p>The RPC protection setting configured on the HDFS cluster. This setting
-     * corresponds to your <code>hadoop.rpc.protection</code> setting in your
-     * <code>core-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline void SetRpcProtection(HdfsRpcProtection&& value) { m_rpcProtectionHasBeenSet = true; m_rpcProtection = std::move(value); }
-
-    /**
-     * <p>The RPC protection setting configured on the HDFS cluster. This setting
-     * corresponds to your <code>hadoop.rpc.protection</code> setting in your
-     * <code>core-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline QopConfiguration& WithRpcProtection(const HdfsRpcProtection& value) { SetRpcProtection(value); return *this;}
-
-    /**
-     * <p>The RPC protection setting configured on the HDFS cluster. This setting
-     * corresponds to your <code>hadoop.rpc.protection</code> setting in your
-     * <code>core-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline QopConfiguration& WithRpcProtection(HdfsRpcProtection&& value) { SetRpcProtection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data transfer protection setting configured on the HDFS cluster. This
      * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
      * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
      */
     inline const HdfsDataTransferProtection& GetDataTransferProtection() const{ return m_dataTransferProtection; }
-
-    /**
-     * <p>The data transfer protection setting configured on the HDFS cluster. This
-     * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
-     * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline bool DataTransferProtectionHasBeenSet() const { return m_dataTransferProtectionHasBeenSet; }
-
-    /**
-     * <p>The data transfer protection setting configured on the HDFS cluster. This
-     * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
-     * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline void SetDataTransferProtection(const HdfsDataTransferProtection& value) { m_dataTransferProtectionHasBeenSet = true; m_dataTransferProtection = value; }
-
-    /**
-     * <p>The data transfer protection setting configured on the HDFS cluster. This
-     * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
-     * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline void SetDataTransferProtection(HdfsDataTransferProtection&& value) { m_dataTransferProtectionHasBeenSet = true; m_dataTransferProtection = std::move(value); }
-
-    /**
-     * <p>The data transfer protection setting configured on the HDFS cluster. This
-     * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
-     * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline QopConfiguration& WithDataTransferProtection(const HdfsDataTransferProtection& value) { SetDataTransferProtection(value); return *this;}
-
-    /**
-     * <p>The data transfer protection setting configured on the HDFS cluster. This
-     * setting corresponds to your <code>dfs.data.transfer.protection</code> setting in
-     * the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-     */
     inline QopConfiguration& WithDataTransferProtection(HdfsDataTransferProtection&& value) { SetDataTransferProtection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     HdfsRpcProtection m_rpcProtection;

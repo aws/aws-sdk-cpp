@@ -40,128 +40,53 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to an object that represents a client's TLS certificate.</p>
      */
     inline const ClientTlsCertificate& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>A reference to an object that represents a client's TLS certificate.</p>
-     */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents a client's TLS certificate.</p>
-     */
     inline void SetCertificate(const ClientTlsCertificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-
-    /**
-     * <p>A reference to an object that represents a client's TLS certificate.</p>
-     */
     inline void SetCertificate(ClientTlsCertificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents a client's TLS certificate.</p>
-     */
     inline ClientPolicyTls& WithCertificate(const ClientTlsCertificate& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents a client's TLS certificate.</p>
-     */
     inline ClientPolicyTls& WithCertificate(ClientTlsCertificate&& value) { SetCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
      * isn't specified.</p>
      */
     inline bool GetEnforce() const{ return m_enforce; }
-
-    /**
-     * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
-     */
     inline bool EnforceHasBeenSet() const { return m_enforceHasBeenSet; }
-
-    /**
-     * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
-     */
     inline void SetEnforce(bool value) { m_enforceHasBeenSet = true; m_enforce = value; }
-
-    /**
-     * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
-     */
     inline ClientPolicyTls& WithEnforce(bool value) { SetEnforce(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more ports that the policy is enforced for.</p>
      */
     inline const Aws::Vector<int>& GetPorts() const{ return m_ports; }
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline void SetPorts(const Aws::Vector<int>& value) { m_portsHasBeenSet = true; m_ports = value; }
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline void SetPorts(Aws::Vector<int>&& value) { m_portsHasBeenSet = true; m_ports = std::move(value); }
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline ClientPolicyTls& WithPorts(const Aws::Vector<int>& value) { SetPorts(value); return *this;}
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline ClientPolicyTls& WithPorts(Aws::Vector<int>&& value) { SetPorts(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more ports that the policy is enforced for.</p>
-     */
     inline ClientPolicyTls& AddPorts(int value) { m_portsHasBeenSet = true; m_ports.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to an object that represents a TLS validation context.</p>
      */
     inline const TlsValidationContext& GetValidation() const{ return m_validation; }
-
-    /**
-     * <p>A reference to an object that represents a TLS validation context.</p>
-     */
     inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
-
-    /**
-     * <p>A reference to an object that represents a TLS validation context.</p>
-     */
     inline void SetValidation(const TlsValidationContext& value) { m_validationHasBeenSet = true; m_validation = value; }
-
-    /**
-     * <p>A reference to an object that represents a TLS validation context.</p>
-     */
     inline void SetValidation(TlsValidationContext&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
-
-    /**
-     * <p>A reference to an object that represents a TLS validation context.</p>
-     */
     inline ClientPolicyTls& WithValidation(const TlsValidationContext& value) { SetValidation(value); return *this;}
-
-    /**
-     * <p>A reference to an object that represents a TLS validation context.</p>
-     */
     inline ClientPolicyTls& WithValidation(TlsValidationContext&& value) { SetValidation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClientTlsCertificate m_certificate;

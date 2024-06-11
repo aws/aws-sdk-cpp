@@ -32,63 +32,29 @@ namespace Model
     AWS_DIRECTORYSERVICE_API UpdateTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTrustResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTrustResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTrustResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifier of the trust relationship.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(const Aws::String& value) { m_trustId = value; }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(Aws::String&& value) { m_trustId = std::move(value); }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline void SetTrustId(const char* value) { m_trustId.assign(value); }
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustResult& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the trust relationship.</p>
-     */
     inline UpdateTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestId;

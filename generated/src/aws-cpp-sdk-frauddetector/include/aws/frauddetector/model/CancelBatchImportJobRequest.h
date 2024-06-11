@@ -34,62 +34,21 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
      * Detector will throw an error if the batch import job is in <code>FAILED</code>,
      * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline CancelBatchImportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline CancelBatchImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of an in-progress batch import job to cancel. </p> <p>Amazon Fraud
-     * Detector will throw an error if the batch import job is in <code>FAILED</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
-     */
     inline CancelBatchImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

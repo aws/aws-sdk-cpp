@@ -34,6 +34,7 @@ namespace Model
     AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of results to include in each response (result page). It's
      * used for a paginated request.</p> <p>If you don't specify
@@ -41,32 +42,12 @@ namespace Model
      * response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to include in each response (result page). It's
-     * used for a paginated request.</p> <p>If you don't specify
-     * <code>MaxResults</code>, the request retrieves all available results in a single
-     * response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to include in each response (result page). It's
-     * used for a paginated request.</p> <p>If you don't specify
-     * <code>MaxResults</code>, the request retrieves all available results in a single
-     * response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to include in each response (result page). It's
-     * used for a paginated request.</p> <p>If you don't specify
-     * <code>MaxResults</code>, the request retrieves all available results in a single
-     * response.</p>
-     */
     inline ListVpcConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token from a previous result page. It's used for a paginated request. The
      * request retrieves the next result page. All other parameter values must be
@@ -75,70 +56,14 @@ namespace Model
      * page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline ListVpcConnectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline ListVpcConnectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
     inline ListVpcConnectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

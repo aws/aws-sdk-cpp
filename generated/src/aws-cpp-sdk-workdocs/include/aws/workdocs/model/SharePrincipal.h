@@ -40,108 +40,43 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the recipient.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline SharePrincipal& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline SharePrincipal& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the recipient.</p>
-     */
     inline SharePrincipal& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the recipient.</p>
      */
     inline const PrincipalType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the recipient.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the recipient.</p>
-     */
     inline void SetType(const PrincipalType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the recipient.</p>
-     */
     inline void SetType(PrincipalType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the recipient.</p>
-     */
     inline SharePrincipal& WithType(const PrincipalType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the recipient.</p>
-     */
     inline SharePrincipal& WithType(PrincipalType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The role of the recipient.</p>
      */
     inline const RoleType& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role of the recipient.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role of the recipient.</p>
-     */
     inline void SetRole(const RoleType& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role of the recipient.</p>
-     */
     inline void SetRole(RoleType&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role of the recipient.</p>
-     */
     inline SharePrincipal& WithRole(const RoleType& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role of the recipient.</p>
-     */
     inline SharePrincipal& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

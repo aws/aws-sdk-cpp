@@ -34,54 +34,20 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of an external resource (for example, a CloudFormation stack
      * ID) that is linked to one or more CodeDeploy resources.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline DeleteResourcesByExternalIdRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline DeleteResourcesByExternalIdRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of an external resource (for example, a CloudFormation stack
-     * ID) that is linked to one or more CodeDeploy resources.</p>
-     */
     inline DeleteResourcesByExternalIdRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_externalId;

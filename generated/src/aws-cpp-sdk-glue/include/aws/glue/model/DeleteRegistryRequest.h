@@ -34,42 +34,18 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>This is a wrapper structure that may contain the registry name and Amazon
      * Resource Name (ARN).</p>
      */
     inline const RegistryId& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetRegistryId(const RegistryId& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetRegistryId(RegistryId&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline DeleteRegistryRequest& WithRegistryId(const RegistryId& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>This is a wrapper structure that may contain the registry name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline DeleteRegistryRequest& WithRegistryId(RegistryId&& value) { SetRegistryId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RegistryId m_registryId;

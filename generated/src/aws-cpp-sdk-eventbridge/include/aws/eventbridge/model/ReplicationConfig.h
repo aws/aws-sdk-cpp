@@ -38,36 +38,17 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state of event replication.</p>
      */
     inline const ReplicationState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of event replication.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of event replication.</p>
-     */
     inline void SetState(const ReplicationState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of event replication.</p>
-     */
     inline void SetState(ReplicationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of event replication.</p>
-     */
     inline ReplicationConfig& WithState(const ReplicationState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of event replication.</p>
-     */
     inline ReplicationConfig& WithState(ReplicationState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplicationState m_state;

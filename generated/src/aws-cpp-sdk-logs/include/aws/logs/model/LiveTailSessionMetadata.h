@@ -39,6 +39,7 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If this is <code>true</code>, then more than 500 log events matched the
      * request for this update, and the <code>sessionResults</code> includes a sample
@@ -48,37 +49,10 @@ namespace Model
      * matched your request during this time.</p>
      */
     inline bool GetSampled() const{ return m_sampled; }
-
-    /**
-     * <p>If this is <code>true</code>, then more than 500 log events matched the
-     * request for this update, and the <code>sessionResults</code> includes a sample
-     * of 500 of those events.</p> <p>If this is <code>false</code>, then 500 or fewer
-     * log events matched the request for this update, so no sampling was necessary. In
-     * this case, the <code>sessionResults</code> array includes all log events that
-     * matched your request during this time.</p>
-     */
     inline bool SampledHasBeenSet() const { return m_sampledHasBeenSet; }
-
-    /**
-     * <p>If this is <code>true</code>, then more than 500 log events matched the
-     * request for this update, and the <code>sessionResults</code> includes a sample
-     * of 500 of those events.</p> <p>If this is <code>false</code>, then 500 or fewer
-     * log events matched the request for this update, so no sampling was necessary. In
-     * this case, the <code>sessionResults</code> array includes all log events that
-     * matched your request during this time.</p>
-     */
     inline void SetSampled(bool value) { m_sampledHasBeenSet = true; m_sampled = value; }
-
-    /**
-     * <p>If this is <code>true</code>, then more than 500 log events matched the
-     * request for this update, and the <code>sessionResults</code> includes a sample
-     * of 500 of those events.</p> <p>If this is <code>false</code>, then 500 or fewer
-     * log events matched the request for this update, so no sampling was necessary. In
-     * this case, the <code>sessionResults</code> array includes all log events that
-     * matched your request during this time.</p>
-     */
     inline LiveTailSessionMetadata& WithSampled(bool value) { SetSampled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_sampled;

@@ -39,103 +39,35 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
      * format.</p>
      */
     inline const Aws::String& GetDateOfBirth() const{ return m_dateOfBirth; }
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline bool DateOfBirthHasBeenSet() const { return m_dateOfBirthHasBeenSet; }
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline void SetDateOfBirth(const Aws::String& value) { m_dateOfBirthHasBeenSet = true; m_dateOfBirth = value; }
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline void SetDateOfBirth(Aws::String&& value) { m_dateOfBirthHasBeenSet = true; m_dateOfBirth = std::move(value); }
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline void SetDateOfBirth(const char* value) { m_dateOfBirthHasBeenSet = true; m_dateOfBirth.assign(value); }
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline VerificationDetails& WithDateOfBirth(const Aws::String& value) { SetDateOfBirth(value); return *this;}
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline VerificationDetails& WithDateOfBirth(Aws::String&& value) { SetDateOfBirth(std::move(value)); return *this;}
-
-    /**
-     * <p>Date of birth to verify your submitted TRN. Use the <code>YYYY-MM-DD</code>
-     * format.</p>
-     */
     inline VerificationDetails& WithDateOfBirth(const char* value) { SetDateOfBirth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tax registration document, which is required for specific countries such
      * as Bangladesh, Kenya, South Korea and Spain.</p>
      */
     inline const Aws::Vector<TaxRegistrationDocument>& GetTaxRegistrationDocuments() const{ return m_taxRegistrationDocuments; }
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline bool TaxRegistrationDocumentsHasBeenSet() const { return m_taxRegistrationDocumentsHasBeenSet; }
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline void SetTaxRegistrationDocuments(const Aws::Vector<TaxRegistrationDocument>& value) { m_taxRegistrationDocumentsHasBeenSet = true; m_taxRegistrationDocuments = value; }
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline void SetTaxRegistrationDocuments(Aws::Vector<TaxRegistrationDocument>&& value) { m_taxRegistrationDocumentsHasBeenSet = true; m_taxRegistrationDocuments = std::move(value); }
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline VerificationDetails& WithTaxRegistrationDocuments(const Aws::Vector<TaxRegistrationDocument>& value) { SetTaxRegistrationDocuments(value); return *this;}
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline VerificationDetails& WithTaxRegistrationDocuments(Aws::Vector<TaxRegistrationDocument>&& value) { SetTaxRegistrationDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline VerificationDetails& AddTaxRegistrationDocuments(const TaxRegistrationDocument& value) { m_taxRegistrationDocumentsHasBeenSet = true; m_taxRegistrationDocuments.push_back(value); return *this; }
-
-    /**
-     * <p>The tax registration document, which is required for specific countries such
-     * as Bangladesh, Kenya, South Korea and Spain.</p>
-     */
     inline VerificationDetails& AddTaxRegistrationDocuments(TaxRegistrationDocument&& value) { m_taxRegistrationDocumentsHasBeenSet = true; m_taxRegistrationDocuments.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_dateOfBirth;

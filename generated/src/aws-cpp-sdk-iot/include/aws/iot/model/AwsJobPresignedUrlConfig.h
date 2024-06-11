@@ -36,34 +36,17 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,
      * the default value is 1800 seconds. Pre-signed URLs are generated when a request
      * for the job document is received.</p>
      */
     inline long long GetExpiresInSec() const{ return m_expiresInSec; }
-
-    /**
-     * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,
-     * the default value is 1800 seconds. Pre-signed URLs are generated when a request
-     * for the job document is received.</p>
-     */
     inline bool ExpiresInSecHasBeenSet() const { return m_expiresInSecHasBeenSet; }
-
-    /**
-     * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,
-     * the default value is 1800 seconds. Pre-signed URLs are generated when a request
-     * for the job document is received.</p>
-     */
     inline void SetExpiresInSec(long long value) { m_expiresInSecHasBeenSet = true; m_expiresInSec = value; }
-
-    /**
-     * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,
-     * the default value is 1800 seconds. Pre-signed URLs are generated when a request
-     * for the job document is received.</p>
-     */
     inline AwsJobPresignedUrlConfig& WithExpiresInSec(long long value) { SetExpiresInSec(value); return *this;}
-
+    ///@}
   private:
 
     long long m_expiresInSec;

@@ -34,125 +34,52 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const DataLakePrincipal& GetPrincipal() const{ return m_principal; }
-
-    
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-
-    
     inline void SetPrincipal(const DataLakePrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-
-    
     inline void SetPrincipal(DataLakePrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-
-    
     inline ListLakeFormationOptInsRequest& WithPrincipal(const DataLakePrincipal& value) { SetPrincipal(value); return *this;}
-
-    
     inline ListLakeFormationOptInsRequest& WithPrincipal(DataLakePrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure for the resource.</p>
      */
     inline const Resource& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>A structure for the resource.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>A structure for the resource.</p>
-     */
     inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>A structure for the resource.</p>
-     */
     inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>A structure for the resource.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>A structure for the resource.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, if this is not the first call to retrieve this
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, if this is not the first call to retrieve this
-     * list.</p>
-     */
     inline ListLakeFormationOptInsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     DataLakePrincipal m_principal;

@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the bot from which the conversation logs are
      * sourced.</p>
      */
     inline const ConversationLogsDataSource& GetConversationLogsDataSource() const{ return m_conversationLogsDataSource; }
-
-    /**
-     * <p>Contains information about the bot from which the conversation logs are
-     * sourced.</p>
-     */
     inline bool ConversationLogsDataSourceHasBeenSet() const { return m_conversationLogsDataSourceHasBeenSet; }
-
-    /**
-     * <p>Contains information about the bot from which the conversation logs are
-     * sourced.</p>
-     */
     inline void SetConversationLogsDataSource(const ConversationLogsDataSource& value) { m_conversationLogsDataSourceHasBeenSet = true; m_conversationLogsDataSource = value; }
-
-    /**
-     * <p>Contains information about the bot from which the conversation logs are
-     * sourced.</p>
-     */
     inline void SetConversationLogsDataSource(ConversationLogsDataSource&& value) { m_conversationLogsDataSourceHasBeenSet = true; m_conversationLogsDataSource = std::move(value); }
-
-    /**
-     * <p>Contains information about the bot from which the conversation logs are
-     * sourced.</p>
-     */
     inline TestSetGenerationDataSource& WithConversationLogsDataSource(const ConversationLogsDataSource& value) { SetConversationLogsDataSource(value); return *this;}
-
-    /**
-     * <p>Contains information about the bot from which the conversation logs are
-     * sourced.</p>
-     */
     inline TestSetGenerationDataSource& WithConversationLogsDataSource(ConversationLogsDataSource&& value) { SetConversationLogsDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConversationLogsDataSource m_conversationLogsDataSource;

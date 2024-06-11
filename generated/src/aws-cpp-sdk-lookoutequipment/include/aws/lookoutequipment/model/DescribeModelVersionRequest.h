@@ -34,67 +34,29 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the machine learning model that this version belongs to.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline DescribeModelVersionRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline DescribeModelVersionRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the machine learning model that this version belongs to.</p>
-     */
     inline DescribeModelVersionRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the machine learning model.</p>
      */
     inline long long GetModelVersion() const{ return m_modelVersion; }
-
-    /**
-     * <p>The version of the machine learning model.</p>
-     */
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the machine learning model.</p>
-     */
     inline void SetModelVersion(long long value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-
-    /**
-     * <p>The version of the machine learning model.</p>
-     */
     inline DescribeModelVersionRequest& WithModelVersion(long long value) { SetModelVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelName;

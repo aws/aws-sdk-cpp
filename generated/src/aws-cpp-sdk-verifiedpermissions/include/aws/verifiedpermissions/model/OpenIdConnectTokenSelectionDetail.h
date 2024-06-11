@@ -44,91 +44,33 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The OIDC configuration for processing access tokens. Contains allowed
      * audience claims, for example <code>https://auth.example.com</code>, and the
      * claim that you want to map to the principal, for example <code>sub</code>.</p>
      */
     inline const OpenIdConnectAccessTokenConfigurationDetail& GetAccessTokenOnly() const{ return m_accessTokenOnly; }
-
-    /**
-     * <p>The OIDC configuration for processing access tokens. Contains allowed
-     * audience claims, for example <code>https://auth.example.com</code>, and the
-     * claim that you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline bool AccessTokenOnlyHasBeenSet() const { return m_accessTokenOnlyHasBeenSet; }
-
-    /**
-     * <p>The OIDC configuration for processing access tokens. Contains allowed
-     * audience claims, for example <code>https://auth.example.com</code>, and the
-     * claim that you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline void SetAccessTokenOnly(const OpenIdConnectAccessTokenConfigurationDetail& value) { m_accessTokenOnlyHasBeenSet = true; m_accessTokenOnly = value; }
-
-    /**
-     * <p>The OIDC configuration for processing access tokens. Contains allowed
-     * audience claims, for example <code>https://auth.example.com</code>, and the
-     * claim that you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline void SetAccessTokenOnly(OpenIdConnectAccessTokenConfigurationDetail&& value) { m_accessTokenOnlyHasBeenSet = true; m_accessTokenOnly = std::move(value); }
-
-    /**
-     * <p>The OIDC configuration for processing access tokens. Contains allowed
-     * audience claims, for example <code>https://auth.example.com</code>, and the
-     * claim that you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline OpenIdConnectTokenSelectionDetail& WithAccessTokenOnly(const OpenIdConnectAccessTokenConfigurationDetail& value) { SetAccessTokenOnly(value); return *this;}
-
-    /**
-     * <p>The OIDC configuration for processing access tokens. Contains allowed
-     * audience claims, for example <code>https://auth.example.com</code>, and the
-     * claim that you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline OpenIdConnectTokenSelectionDetail& WithAccessTokenOnly(OpenIdConnectAccessTokenConfigurationDetail&& value) { SetAccessTokenOnly(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
      * client ID claims, for example <code>1example23456789</code>, and the claim that
      * you want to map to the principal, for example <code>sub</code>.</p>
      */
     inline const OpenIdConnectIdentityTokenConfigurationDetail& GetIdentityTokenOnly() const{ return m_identityTokenOnly; }
-
-    /**
-     * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
-     * client ID claims, for example <code>1example23456789</code>, and the claim that
-     * you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline bool IdentityTokenOnlyHasBeenSet() const { return m_identityTokenOnlyHasBeenSet; }
-
-    /**
-     * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
-     * client ID claims, for example <code>1example23456789</code>, and the claim that
-     * you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline void SetIdentityTokenOnly(const OpenIdConnectIdentityTokenConfigurationDetail& value) { m_identityTokenOnlyHasBeenSet = true; m_identityTokenOnly = value; }
-
-    /**
-     * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
-     * client ID claims, for example <code>1example23456789</code>, and the claim that
-     * you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline void SetIdentityTokenOnly(OpenIdConnectIdentityTokenConfigurationDetail&& value) { m_identityTokenOnlyHasBeenSet = true; m_identityTokenOnly = std::move(value); }
-
-    /**
-     * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
-     * client ID claims, for example <code>1example23456789</code>, and the claim that
-     * you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline OpenIdConnectTokenSelectionDetail& WithIdentityTokenOnly(const OpenIdConnectIdentityTokenConfigurationDetail& value) { SetIdentityTokenOnly(value); return *this;}
-
-    /**
-     * <p>The OIDC configuration for processing identity (ID) tokens. Contains allowed
-     * client ID claims, for example <code>1example23456789</code>, and the claim that
-     * you want to map to the principal, for example <code>sub</code>.</p>
-     */
     inline OpenIdConnectTokenSelectionDetail& WithIdentityTokenOnly(OpenIdConnectIdentityTokenConfigurationDetail&& value) { SetIdentityTokenOnly(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OpenIdConnectAccessTokenConfigurationDetail m_accessTokenOnly;

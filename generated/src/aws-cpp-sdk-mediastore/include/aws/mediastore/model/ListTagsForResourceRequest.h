@@ -34,46 +34,19 @@ namespace Model
     AWS_MEDIASTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the container.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline ListTagsForResourceRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline ListTagsForResourceRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the container.</p>
-     */
     inline ListTagsForResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resource;

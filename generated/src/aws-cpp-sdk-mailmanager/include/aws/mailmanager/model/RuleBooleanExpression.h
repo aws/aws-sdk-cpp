@@ -39,67 +39,29 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operand on which to perform a boolean condition operation.</p>
      */
     inline const RuleBooleanToEvaluate& GetEvaluate() const{ return m_evaluate; }
-
-    /**
-     * <p>The operand on which to perform a boolean condition operation.</p>
-     */
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-
-    /**
-     * <p>The operand on which to perform a boolean condition operation.</p>
-     */
     inline void SetEvaluate(const RuleBooleanToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-
-    /**
-     * <p>The operand on which to perform a boolean condition operation.</p>
-     */
     inline void SetEvaluate(RuleBooleanToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-
-    /**
-     * <p>The operand on which to perform a boolean condition operation.</p>
-     */
     inline RuleBooleanExpression& WithEvaluate(const RuleBooleanToEvaluate& value) { SetEvaluate(value); return *this;}
-
-    /**
-     * <p>The operand on which to perform a boolean condition operation.</p>
-     */
     inline RuleBooleanExpression& WithEvaluate(RuleBooleanToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The matching operator for a boolean condition expression.</p>
      */
     inline const RuleBooleanOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The matching operator for a boolean condition expression.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The matching operator for a boolean condition expression.</p>
-     */
     inline void SetOperator(const RuleBooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The matching operator for a boolean condition expression.</p>
-     */
     inline void SetOperator(RuleBooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The matching operator for a boolean condition expression.</p>
-     */
     inline RuleBooleanExpression& WithOperator(const RuleBooleanOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The matching operator for a boolean condition expression.</p>
-     */
     inline RuleBooleanExpression& WithOperator(RuleBooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleBooleanToEvaluate m_evaluate;

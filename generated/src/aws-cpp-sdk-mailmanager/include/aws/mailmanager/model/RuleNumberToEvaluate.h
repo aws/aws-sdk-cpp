@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An email attribute that is used as the number to evaluate.</p>
      */
     inline const RuleNumberEmailAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>An email attribute that is used as the number to evaluate.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>An email attribute that is used as the number to evaluate.</p>
-     */
     inline void SetAttribute(const RuleNumberEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>An email attribute that is used as the number to evaluate.</p>
-     */
     inline void SetAttribute(RuleNumberEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>An email attribute that is used as the number to evaluate.</p>
-     */
     inline RuleNumberToEvaluate& WithAttribute(const RuleNumberEmailAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>An email attribute that is used as the number to evaluate.</p>
-     */
     inline RuleNumberToEvaluate& WithAttribute(RuleNumberEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleNumberEmailAttribute m_attribute;

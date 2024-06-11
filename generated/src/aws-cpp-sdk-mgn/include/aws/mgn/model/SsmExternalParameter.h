@@ -38,46 +38,19 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>AWS Systems Manager Document external parameters dynamic path.</p>
      */
     inline const Aws::String& GetDynamicPath() const{ return m_dynamicPath; }
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline bool DynamicPathHasBeenSet() const { return m_dynamicPathHasBeenSet; }
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline void SetDynamicPath(const Aws::String& value) { m_dynamicPathHasBeenSet = true; m_dynamicPath = value; }
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline void SetDynamicPath(Aws::String&& value) { m_dynamicPathHasBeenSet = true; m_dynamicPath = std::move(value); }
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline void SetDynamicPath(const char* value) { m_dynamicPathHasBeenSet = true; m_dynamicPath.assign(value); }
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline SsmExternalParameter& WithDynamicPath(const Aws::String& value) { SetDynamicPath(value); return *this;}
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline SsmExternalParameter& WithDynamicPath(Aws::String&& value) { SetDynamicPath(std::move(value)); return *this;}
-
-    /**
-     * <p>AWS Systems Manager Document external parameters dynamic path.</p>
-     */
     inline SsmExternalParameter& WithDynamicPath(const char* value) { SetDynamicPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dynamicPath;

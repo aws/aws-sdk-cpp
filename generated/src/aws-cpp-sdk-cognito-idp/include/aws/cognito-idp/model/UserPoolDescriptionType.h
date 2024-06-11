@@ -39,204 +39,73 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID in a user pool description.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name in a user pool description.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Lambda configuration information in a user pool description.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
-
-    /**
-     * <p>The Lambda configuration information in a user pool description.</p>
-     */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
-
-    /**
-     * <p>The Lambda configuration information in a user pool description.</p>
-     */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
-
-    /**
-     * <p>The Lambda configuration information in a user pool description.</p>
-     */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
-
-    /**
-     * <p>The Lambda configuration information in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
-
-    /**
-     * <p>The Lambda configuration information in a user pool description.</p>
-     */
     inline UserPoolDescriptionType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the item was modified. Amazon Cognito returns this
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline UserPoolDescriptionType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline UserPoolDescriptionType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the item was created. Amazon Cognito returns this
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The date and time when the item was created. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the item was created. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The date and time when the item was created. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the item was created. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline UserPoolDescriptionType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the item was created. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline UserPoolDescriptionType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

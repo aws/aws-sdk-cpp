@@ -38,6 +38,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The setting in a field-level encryption content type-profile mapping that
      * specifies what to do when an unknown content type is provided for the profile.
@@ -46,65 +47,22 @@ namespace Model
      * unknown.</p>
      */
     inline bool GetForwardWhenContentTypeIsUnknown() const{ return m_forwardWhenContentTypeIsUnknown; }
-
-    /**
-     * <p>The setting in a field-level encryption content type-profile mapping that
-     * specifies what to do when an unknown content type is provided for the profile.
-     * If true, content is forwarded without being encrypted when the content type is
-     * unknown. If false (the default), an error is returned when the content type is
-     * unknown.</p>
-     */
     inline bool ForwardWhenContentTypeIsUnknownHasBeenSet() const { return m_forwardWhenContentTypeIsUnknownHasBeenSet; }
-
-    /**
-     * <p>The setting in a field-level encryption content type-profile mapping that
-     * specifies what to do when an unknown content type is provided for the profile.
-     * If true, content is forwarded without being encrypted when the content type is
-     * unknown. If false (the default), an error is returned when the content type is
-     * unknown.</p>
-     */
     inline void SetForwardWhenContentTypeIsUnknown(bool value) { m_forwardWhenContentTypeIsUnknownHasBeenSet = true; m_forwardWhenContentTypeIsUnknown = value; }
-
-    /**
-     * <p>The setting in a field-level encryption content type-profile mapping that
-     * specifies what to do when an unknown content type is provided for the profile.
-     * If true, content is forwarded without being encrypted when the content type is
-     * unknown. If false (the default), an error is returned when the content type is
-     * unknown.</p>
-     */
     inline ContentTypeProfileConfig& WithForwardWhenContentTypeIsUnknown(bool value) { SetForwardWhenContentTypeIsUnknown(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for a field-level encryption content type-profile.</p>
      */
     inline const ContentTypeProfiles& GetContentTypeProfiles() const{ return m_contentTypeProfiles; }
-
-    /**
-     * <p>The configuration for a field-level encryption content type-profile.</p>
-     */
     inline bool ContentTypeProfilesHasBeenSet() const { return m_contentTypeProfilesHasBeenSet; }
-
-    /**
-     * <p>The configuration for a field-level encryption content type-profile.</p>
-     */
     inline void SetContentTypeProfiles(const ContentTypeProfiles& value) { m_contentTypeProfilesHasBeenSet = true; m_contentTypeProfiles = value; }
-
-    /**
-     * <p>The configuration for a field-level encryption content type-profile.</p>
-     */
     inline void SetContentTypeProfiles(ContentTypeProfiles&& value) { m_contentTypeProfilesHasBeenSet = true; m_contentTypeProfiles = std::move(value); }
-
-    /**
-     * <p>The configuration for a field-level encryption content type-profile.</p>
-     */
     inline ContentTypeProfileConfig& WithContentTypeProfiles(const ContentTypeProfiles& value) { SetContentTypeProfiles(value); return *this;}
-
-    /**
-     * <p>The configuration for a field-level encryption content type-profile.</p>
-     */
     inline ContentTypeProfileConfig& WithContentTypeProfiles(ContentTypeProfiles&& value) { SetContentTypeProfiles(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_forwardWhenContentTypeIsUnknown;

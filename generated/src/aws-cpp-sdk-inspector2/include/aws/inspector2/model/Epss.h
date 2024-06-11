@@ -36,26 +36,15 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Exploit Prediction Scoring System (EPSS) score.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>The Exploit Prediction Scoring System (EPSS) score.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The Exploit Prediction Scoring System (EPSS) score.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The Exploit Prediction Scoring System (EPSS) score.</p>
-     */
     inline Epss& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     double m_score;

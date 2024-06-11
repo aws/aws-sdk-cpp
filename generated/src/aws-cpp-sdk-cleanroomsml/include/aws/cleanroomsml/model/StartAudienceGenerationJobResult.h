@@ -32,63 +32,29 @@ namespace Model
     AWS_CLEANROOMSML_API StartAudienceGenerationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
      */
     inline const Aws::String& GetAudienceGenerationJobArn() const{ return m_audienceGenerationJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline void SetAudienceGenerationJobArn(const Aws::String& value) { m_audienceGenerationJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline void SetAudienceGenerationJobArn(Aws::String&& value) { m_audienceGenerationJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline void SetAudienceGenerationJobArn(const char* value) { m_audienceGenerationJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline StartAudienceGenerationJobResult& WithAudienceGenerationJobArn(const Aws::String& value) { SetAudienceGenerationJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline StartAudienceGenerationJobResult& WithAudienceGenerationJobArn(Aws::String&& value) { SetAudienceGenerationJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-     */
     inline StartAudienceGenerationJobResult& WithAudienceGenerationJobArn(const char* value) { SetAudienceGenerationJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartAudienceGenerationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartAudienceGenerationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartAudienceGenerationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_audienceGenerationJobArn;

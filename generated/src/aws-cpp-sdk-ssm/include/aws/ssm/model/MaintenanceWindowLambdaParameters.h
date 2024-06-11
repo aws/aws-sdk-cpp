@@ -55,63 +55,23 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Pass client-specific information to the Lambda function that you are
      * invoking. You can then process the client information in your Lambda function as
      * you choose through the context variable.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
-
-    /**
-     * <p>Pass client-specific information to the Lambda function that you are
-     * invoking. You can then process the client information in your Lambda function as
-     * you choose through the context variable.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithClientContext(const char* value) { SetClientContext(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
      * function version, the operation uses the qualified function Amazon Resource Name
@@ -120,101 +80,26 @@ namespace Model
      * alias points.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) Specify an Lambda function version or alias name. If you specify a
-     * function version, the operation uses the qualified function Amazon Resource Name
-     * (ARN) to invoke a specific Lambda function. If you specify an alias name, the
-     * operation uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const char* value) { SetQualifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>JSON to provide to your Lambda function as input.</p>
-     */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-
-    /**
-     * <p>JSON to provide to your Lambda function as input.</p>
-     */
     inline void SetPayload(const Aws::Utils::CryptoBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    /**
-     * <p>JSON to provide to your Lambda function as input.</p>
-     */
     inline void SetPayload(Aws::Utils::CryptoBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    /**
-     * <p>JSON to provide to your Lambda function as input.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithPayload(const Aws::Utils::CryptoBuffer& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>JSON to provide to your Lambda function as input.</p>
-     */
     inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::CryptoBuffer&& value) { SetPayload(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientContext;

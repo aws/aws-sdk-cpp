@@ -48,54 +48,20 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed resource policy defining who can access or manage the DynamoDB
      * stream.</p>
      */
     inline const Aws::String& GetStreamPolicy() const{ return m_streamPolicy; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline bool StreamPolicyHasBeenSet() const { return m_streamPolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline void SetStreamPolicy(const Aws::String& value) { m_streamPolicyHasBeenSet = true; m_streamPolicy = value; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline void SetStreamPolicy(Aws::String&& value) { m_streamPolicyHasBeenSet = true; m_streamPolicy = std::move(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline void SetStreamPolicy(const char* value) { m_streamPolicyHasBeenSet = true; m_streamPolicy.assign(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline DynamodbStreamConfiguration& WithStreamPolicy(const Aws::String& value) { SetStreamPolicy(value); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline DynamodbStreamConfiguration& WithStreamPolicy(Aws::String&& value) { SetStreamPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * stream.</p>
-     */
     inline DynamodbStreamConfiguration& WithStreamPolicy(const char* value) { SetStreamPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamPolicy;

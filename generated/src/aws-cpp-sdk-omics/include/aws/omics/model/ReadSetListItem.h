@@ -43,562 +43,203 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The read set's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline ReadSetListItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline ReadSetListItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline ReadSetListItem& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline ReadSetListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline ReadSetListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's ARN.</p>
-     */
     inline ReadSetListItem& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline ReadSetListItem& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline ReadSetListItem& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline ReadSetListItem& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's subject ID.</p>
      */
     inline const Aws::String& GetSubjectId() const{ return m_subjectId; }
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline bool SubjectIdHasBeenSet() const { return m_subjectIdHasBeenSet; }
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline void SetSubjectId(const Aws::String& value) { m_subjectIdHasBeenSet = true; m_subjectId = value; }
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline void SetSubjectId(Aws::String&& value) { m_subjectIdHasBeenSet = true; m_subjectId = std::move(value); }
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline void SetSubjectId(const char* value) { m_subjectIdHasBeenSet = true; m_subjectId.assign(value); }
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline ReadSetListItem& WithSubjectId(const Aws::String& value) { SetSubjectId(value); return *this;}
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline ReadSetListItem& WithSubjectId(Aws::String&& value) { SetSubjectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's subject ID.</p>
-     */
     inline ReadSetListItem& WithSubjectId(const char* value) { SetSubjectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's sample ID.</p>
      */
     inline const Aws::String& GetSampleId() const{ return m_sampleId; }
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline bool SampleIdHasBeenSet() const { return m_sampleIdHasBeenSet; }
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline void SetSampleId(const Aws::String& value) { m_sampleIdHasBeenSet = true; m_sampleId = value; }
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline void SetSampleId(Aws::String&& value) { m_sampleIdHasBeenSet = true; m_sampleId = std::move(value); }
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline void SetSampleId(const char* value) { m_sampleIdHasBeenSet = true; m_sampleId.assign(value); }
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline ReadSetListItem& WithSampleId(const Aws::String& value) { SetSampleId(value); return *this;}
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline ReadSetListItem& WithSampleId(Aws::String&& value) { SetSampleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's sample ID.</p>
-     */
     inline ReadSetListItem& WithSampleId(const char* value) { SetSampleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's status.</p>
      */
     inline const ReadSetStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The read set's status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The read set's status.</p>
-     */
     inline void SetStatus(const ReadSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The read set's status.</p>
-     */
     inline void SetStatus(ReadSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The read set's status.</p>
-     */
     inline ReadSetListItem& WithStatus(const ReadSetStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The read set's status.</p>
-     */
     inline ReadSetListItem& WithStatus(ReadSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline ReadSetListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline ReadSetListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's name.</p>
-     */
     inline ReadSetListItem& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline ReadSetListItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline ReadSetListItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's description.</p>
-     */
     inline ReadSetListItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's genome reference ARN.</p>
      */
     inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline ReadSetListItem& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline ReadSetListItem& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's genome reference ARN.</p>
-     */
     inline ReadSetListItem& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's file type.</p>
      */
     inline const FileType& GetFileType() const{ return m_fileType; }
-
-    /**
-     * <p>The read set's file type.</p>
-     */
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-
-    /**
-     * <p>The read set's file type.</p>
-     */
     inline void SetFileType(const FileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-
-    /**
-     * <p>The read set's file type.</p>
-     */
     inline void SetFileType(FileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
-
-    /**
-     * <p>The read set's file type.</p>
-     */
     inline ReadSetListItem& WithFileType(const FileType& value) { SetFileType(value); return *this;}
-
-    /**
-     * <p>The read set's file type.</p>
-     */
     inline ReadSetListItem& WithFileType(FileType&& value) { SetFileType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SequenceInformation& GetSequenceInformation() const{ return m_sequenceInformation; }
-
-    
     inline bool SequenceInformationHasBeenSet() const { return m_sequenceInformationHasBeenSet; }
-
-    
     inline void SetSequenceInformation(const SequenceInformation& value) { m_sequenceInformationHasBeenSet = true; m_sequenceInformation = value; }
-
-    
     inline void SetSequenceInformation(SequenceInformation&& value) { m_sequenceInformationHasBeenSet = true; m_sequenceInformation = std::move(value); }
-
-    
     inline ReadSetListItem& WithSequenceInformation(const SequenceInformation& value) { SetSequenceInformation(value); return *this;}
-
-    
     inline ReadSetListItem& WithSequenceInformation(SequenceInformation&& value) { SetSequenceInformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When the read set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the read set was created.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the read set was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the read set was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the read set was created.</p>
-     */
     inline ReadSetListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the read set was created.</p>
-     */
     inline ReadSetListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The status for a read set. It provides more detail as to why the read set
      * has a status. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline ReadSetListItem& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline ReadSetListItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p> The status for a read set. It provides more detail as to why the read set
-     * has a status. </p>
-     */
     inline ReadSetListItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The creation type of the read set. </p>
      */
     inline const CreationType& GetCreationType() const{ return m_creationType; }
-
-    /**
-     * <p> The creation type of the read set. </p>
-     */
     inline bool CreationTypeHasBeenSet() const { return m_creationTypeHasBeenSet; }
-
-    /**
-     * <p> The creation type of the read set. </p>
-     */
     inline void SetCreationType(const CreationType& value) { m_creationTypeHasBeenSet = true; m_creationType = value; }
-
-    /**
-     * <p> The creation type of the read set. </p>
-     */
     inline void SetCreationType(CreationType&& value) { m_creationTypeHasBeenSet = true; m_creationType = std::move(value); }
-
-    /**
-     * <p> The creation type of the read set. </p>
-     */
     inline ReadSetListItem& WithCreationType(const CreationType& value) { SetCreationType(value); return *this;}
-
-    /**
-     * <p> The creation type of the read set. </p>
-     */
     inline ReadSetListItem& WithCreationType(CreationType&& value) { SetCreationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The entity tag (ETag) is a hash of the object representing its semantic
      * content.</p>
      */
     inline const ETag& GetEtag() const{ return m_etag; }
-
-    /**
-     * <p>The entity tag (ETag) is a hash of the object representing its semantic
-     * content.</p>
-     */
     inline bool EtagHasBeenSet() const { return m_etagHasBeenSet; }
-
-    /**
-     * <p>The entity tag (ETag) is a hash of the object representing its semantic
-     * content.</p>
-     */
     inline void SetEtag(const ETag& value) { m_etagHasBeenSet = true; m_etag = value; }
-
-    /**
-     * <p>The entity tag (ETag) is a hash of the object representing its semantic
-     * content.</p>
-     */
     inline void SetEtag(ETag&& value) { m_etagHasBeenSet = true; m_etag = std::move(value); }
-
-    /**
-     * <p>The entity tag (ETag) is a hash of the object representing its semantic
-     * content.</p>
-     */
     inline ReadSetListItem& WithEtag(const ETag& value) { SetEtag(value); return *this;}
-
-    /**
-     * <p>The entity tag (ETag) is a hash of the object representing its semantic
-     * content.</p>
-     */
     inline ReadSetListItem& WithEtag(ETag&& value) { SetEtag(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

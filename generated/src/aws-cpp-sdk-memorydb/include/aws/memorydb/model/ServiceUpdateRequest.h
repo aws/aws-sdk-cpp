@@ -37,46 +37,19 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique ID of the service update</p>
      */
     inline const Aws::String& GetServiceUpdateNameToApply() const{ return m_serviceUpdateNameToApply; }
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline bool ServiceUpdateNameToApplyHasBeenSet() const { return m_serviceUpdateNameToApplyHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline void SetServiceUpdateNameToApply(const Aws::String& value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply = value; }
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline void SetServiceUpdateNameToApply(Aws::String&& value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply = std::move(value); }
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline void SetServiceUpdateNameToApply(const char* value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply.assign(value); }
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline ServiceUpdateRequest& WithServiceUpdateNameToApply(const Aws::String& value) { SetServiceUpdateNameToApply(value); return *this;}
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline ServiceUpdateRequest& WithServiceUpdateNameToApply(Aws::String&& value) { SetServiceUpdateNameToApply(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the service update</p>
-     */
     inline ServiceUpdateRequest& WithServiceUpdateNameToApply(const char* value) { SetServiceUpdateNameToApply(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceUpdateNameToApply;

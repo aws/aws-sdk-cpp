@@ -51,6 +51,7 @@ namespace Model
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA. A CRL is typically updated approximately 30 minutes after a
@@ -58,90 +59,26 @@ namespace Model
      * Services Private CA makes further attempts every 15 minutes.</p>
      */
     inline const CrlConfiguration& GetCrlConfiguration() const{ return m_crlConfiguration; }
-
-    /**
-     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
-     * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
-     */
     inline bool CrlConfigurationHasBeenSet() const { return m_crlConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
-     * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
-     */
     inline void SetCrlConfiguration(const CrlConfiguration& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = value; }
-
-    /**
-     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
-     * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
-     */
     inline void SetCrlConfiguration(CrlConfiguration&& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
-     * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
-     */
     inline RevocationConfiguration& WithCrlConfiguration(const CrlConfiguration& value) { SetCrlConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
-     * your private CA. A CRL is typically updated approximately 30 minutes after a
-     * certificate is revoked. If for any reason a CRL update fails, Amazon Web
-     * Services Private CA makes further attempts every 15 minutes.</p>
-     */
     inline RevocationConfiguration& WithCrlConfiguration(CrlConfiguration&& value) { SetCrlConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
      * maintained by your private CA. When you revoke a certificate, OCSP responses may
      * take up to 60 minutes to reflect the new status.</p>
      */
     inline const OcspConfiguration& GetOcspConfiguration() const{ return m_ocspConfiguration; }
-
-    /**
-     * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
-     * maintained by your private CA. When you revoke a certificate, OCSP responses may
-     * take up to 60 minutes to reflect the new status.</p>
-     */
     inline bool OcspConfigurationHasBeenSet() const { return m_ocspConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
-     * maintained by your private CA. When you revoke a certificate, OCSP responses may
-     * take up to 60 minutes to reflect the new status.</p>
-     */
     inline void SetOcspConfiguration(const OcspConfiguration& value) { m_ocspConfigurationHasBeenSet = true; m_ocspConfiguration = value; }
-
-    /**
-     * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
-     * maintained by your private CA. When you revoke a certificate, OCSP responses may
-     * take up to 60 minutes to reflect the new status.</p>
-     */
     inline void SetOcspConfiguration(OcspConfiguration&& value) { m_ocspConfigurationHasBeenSet = true; m_ocspConfiguration = std::move(value); }
-
-    /**
-     * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
-     * maintained by your private CA. When you revoke a certificate, OCSP responses may
-     * take up to 60 minutes to reflect the new status.</p>
-     */
     inline RevocationConfiguration& WithOcspConfiguration(const OcspConfiguration& value) { SetOcspConfiguration(value); return *this;}
-
-    /**
-     * <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any,
-     * maintained by your private CA. When you revoke a certificate, OCSP responses may
-     * take up to 60 minutes to reflect the new status.</p>
-     */
     inline RevocationConfiguration& WithOcspConfiguration(OcspConfiguration&& value) { SetOcspConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CrlConfiguration m_crlConfiguration;

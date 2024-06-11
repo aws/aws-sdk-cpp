@@ -38,54 +38,20 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
      * input.</p>
      */
     inline const Aws::String& GetWildCardValue() const{ return m_wildCardValue; }
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline bool WildCardValueHasBeenSet() const { return m_wildCardValueHasBeenSet; }
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline void SetWildCardValue(const Aws::String& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = value; }
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline void SetWildCardValue(Aws::String&& value) { m_wildCardValueHasBeenSet = true; m_wildCardValue = std::move(value); }
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline void SetWildCardValue(const char* value) { m_wildCardValueHasBeenSet = true; m_wildCardValue.assign(value); }
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline OfferBuyerAccountsFilter& WithWildCardValue(const Aws::String& value) { SetWildCardValue(value); return *this;}
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline OfferBuyerAccountsFilter& WithWildCardValue(Aws::String&& value) { SetWildCardValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card
-     * input.</p>
-     */
     inline OfferBuyerAccountsFilter& WithWildCardValue(const char* value) { SetWildCardValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_wildCardValue;

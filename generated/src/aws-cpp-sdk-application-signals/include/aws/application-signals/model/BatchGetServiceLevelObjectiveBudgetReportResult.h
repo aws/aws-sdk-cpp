@@ -36,137 +36,55 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The date and time that the report is for. It is expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The date and time that the report is for. It is expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-
-    /**
-     * <p>The date and time that the report is for. It is expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-
-    /**
-     * <p>The date and time that the report is for. It is expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time that the report is for. It is expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of structures, where each structure is one budget report.</p>
      */
     inline const Aws::Vector<ServiceLevelObjectiveBudgetReport>& GetReports() const{ return m_reports; }
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline void SetReports(const Aws::Vector<ServiceLevelObjectiveBudgetReport>& value) { m_reports = value; }
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline void SetReports(Aws::Vector<ServiceLevelObjectiveBudgetReport>&& value) { m_reports = std::move(value); }
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithReports(const Aws::Vector<ServiceLevelObjectiveBudgetReport>& value) { SetReports(value); return *this;}
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithReports(Aws::Vector<ServiceLevelObjectiveBudgetReport>&& value) { SetReports(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& AddReports(const ServiceLevelObjectiveBudgetReport& value) { m_reports.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures, where each structure is one budget report.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& AddReports(ServiceLevelObjectiveBudgetReport&& value) { m_reports.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of structures, where each structure includes an error indicating
      * that one of the requests in the array was not valid.</p>
      */
     inline const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline void SetErrors(const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& value) { m_errors = value; }
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline void SetErrors(Aws::Vector<ServiceLevelObjectiveBudgetReportError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithErrors(const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithErrors(Aws::Vector<ServiceLevelObjectiveBudgetReportError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& AddErrors(const ServiceLevelObjectiveBudgetReportError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures, where each structure includes an error indicating
-     * that one of the requests in the array was not valid.</p>
-     */
     inline BatchGetServiceLevelObjectiveBudgetReportResult& AddErrors(ServiceLevelObjectiveBudgetReportError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;

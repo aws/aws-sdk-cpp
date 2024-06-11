@@ -38,87 +38,33 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The base path for the S3 bucket.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The base path for the S3 bucket.</p>
-     */
     inline S3ContentBaseLocation& WithBasePath(const char* value) { SetBasePath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketARN;

@@ -41,62 +41,21 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of the backtests performed to evaluate the accuracy of the predictor
      * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
      * the object determines the number of windows in the array.</p>
      */
     inline const Aws::Vector<PredictorExecution>& GetPredictorExecutions() const{ return m_predictorExecutions; }
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline bool PredictorExecutionsHasBeenSet() const { return m_predictorExecutionsHasBeenSet; }
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline void SetPredictorExecutions(const Aws::Vector<PredictorExecution>& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions = value; }
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline void SetPredictorExecutions(Aws::Vector<PredictorExecution>&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions = std::move(value); }
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline PredictorExecutionDetails& WithPredictorExecutions(const Aws::Vector<PredictorExecution>& value) { SetPredictorExecutions(value); return *this;}
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline PredictorExecutionDetails& WithPredictorExecutions(Aws::Vector<PredictorExecution>&& value) { SetPredictorExecutions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline PredictorExecutionDetails& AddPredictorExecutions(const PredictorExecution& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the backtests performed to evaluate the accuracy of the predictor
-     * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
-     * the object determines the number of windows in the array.</p>
-     */
     inline PredictorExecutionDetails& AddPredictorExecutions(PredictorExecution&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PredictorExecution> m_predictorExecutions;

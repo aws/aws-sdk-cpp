@@ -35,46 +35,19 @@ namespace Model
     AWS_PINPOINTSMSVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The name that you want to give the configuration set.
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * The name that you want to give the configuration set.
-     */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

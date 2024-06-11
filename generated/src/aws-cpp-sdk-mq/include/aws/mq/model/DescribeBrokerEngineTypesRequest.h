@@ -38,120 +38,45 @@ namespace Model
     AWS_MQ_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Filter response by engine type.</p>
      */
     inline const Aws::String& GetEngineType() const{ return m_engineType; }
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline void SetEngineType(const Aws::String& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline void SetEngineType(Aws::String&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline void SetEngineType(const char* value) { m_engineTypeHasBeenSet = true; m_engineType.assign(value); }
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithEngineType(const Aws::String& value) { SetEngineType(value); return *this;}
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithEngineType(Aws::String&& value) { SetEngineType(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter response by engine type.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithEngineType(const char* value) { SetEngineType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
      * default). This value must be an integer from 5 to 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token that specifies the next page of results Amazon MQ should return. To
      * request the first page, leave nextToken empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.</p>
-     */
     inline DescribeBrokerEngineTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_engineType;

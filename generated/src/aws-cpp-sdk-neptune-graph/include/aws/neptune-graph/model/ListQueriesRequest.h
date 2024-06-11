@@ -45,98 +45,41 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline ListQueriesRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline ListQueriesRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline ListQueriesRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to be fetched by the API.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to be fetched by the API.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to be fetched by the API.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to be fetched by the API.</p>
-     */
     inline ListQueriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filtered list of queries based on state.</p>
      */
     inline const QueryStateInput& GetState() const{ return m_state; }
-
-    /**
-     * <p>Filtered list of queries based on state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>Filtered list of queries based on state.</p>
-     */
     inline void SetState(const QueryStateInput& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>Filtered list of queries based on state.</p>
-     */
     inline void SetState(QueryStateInput&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>Filtered list of queries based on state.</p>
-     */
     inline ListQueriesRequest& WithState(const QueryStateInput& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Filtered list of queries based on state.</p>
-     */
     inline ListQueriesRequest& WithState(QueryStateInput&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphIdentifier;

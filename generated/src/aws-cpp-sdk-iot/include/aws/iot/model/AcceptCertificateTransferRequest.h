@@ -42,75 +42,30 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline AcceptCertificateTransferRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline AcceptCertificateTransferRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline AcceptCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline AcceptCertificateTransferRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateId;

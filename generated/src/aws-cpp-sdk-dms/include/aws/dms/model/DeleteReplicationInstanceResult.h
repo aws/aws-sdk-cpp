@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The replication instance that was deleted.</p>
      */
     inline const ReplicationInstance& GetReplicationInstance() const{ return m_replicationInstance; }
-
-    /**
-     * <p>The replication instance that was deleted.</p>
-     */
     inline void SetReplicationInstance(const ReplicationInstance& value) { m_replicationInstance = value; }
-
-    /**
-     * <p>The replication instance that was deleted.</p>
-     */
     inline void SetReplicationInstance(ReplicationInstance&& value) { m_replicationInstance = std::move(value); }
-
-    /**
-     * <p>The replication instance that was deleted.</p>
-     */
     inline DeleteReplicationInstanceResult& WithReplicationInstance(const ReplicationInstance& value) { SetReplicationInstance(value); return *this;}
-
-    /**
-     * <p>The replication instance that was deleted.</p>
-     */
     inline DeleteReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteReplicationInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteReplicationInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteReplicationInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReplicationInstance m_replicationInstance;

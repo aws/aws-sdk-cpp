@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEDEPLOY_API GetOnPremisesInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Information about the on-premises instance. </p>
      */
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
-
-    /**
-     * <p> Information about the on-premises instance. </p>
-     */
     inline void SetInstanceInfo(const InstanceInfo& value) { m_instanceInfo = value; }
-
-    /**
-     * <p> Information about the on-premises instance. </p>
-     */
     inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = std::move(value); }
-
-    /**
-     * <p> Information about the on-premises instance. </p>
-     */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
-
-    /**
-     * <p> Information about the on-premises instance. </p>
-     */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOnPremisesInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOnPremisesInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOnPremisesInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceInfo m_instanceInfo;

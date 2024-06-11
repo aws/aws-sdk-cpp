@@ -38,105 +38,49 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
      */
     inline long long GetBytesTransferred() const{ return m_bytesTransferred; }
-
-    /**
-     * <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
-     */
     inline bool BytesTransferredHasBeenSet() const { return m_bytesTransferredHasBeenSet; }
-
-    /**
-     * <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
-     */
     inline void SetBytesTransferred(long long value) { m_bytesTransferredHasBeenSet = true; m_bytesTransferred = value; }
-
-    /**
-     * <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
-     */
     inline DataTransfer& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of objects transferred between a Snow device and Amazon S3.</p>
      */
     inline long long GetObjectsTransferred() const{ return m_objectsTransferred; }
-
-    /**
-     * <p>The number of objects transferred between a Snow device and Amazon S3.</p>
-     */
     inline bool ObjectsTransferredHasBeenSet() const { return m_objectsTransferredHasBeenSet; }
-
-    /**
-     * <p>The number of objects transferred between a Snow device and Amazon S3.</p>
-     */
     inline void SetObjectsTransferred(long long value) { m_objectsTransferredHasBeenSet = true; m_objectsTransferred = value; }
-
-    /**
-     * <p>The number of objects transferred between a Snow device and Amazon S3.</p>
-     */
     inline DataTransfer& WithObjectsTransferred(long long value) { SetObjectsTransferred(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total bytes of data for a transfer between a Snow device and Amazon S3.
      * This value is set to 0 (zero) until all the keys that will be transferred have
      * been listed.</p>
      */
     inline long long GetTotalBytes() const{ return m_totalBytes; }
-
-    /**
-     * <p>The total bytes of data for a transfer between a Snow device and Amazon S3.
-     * This value is set to 0 (zero) until all the keys that will be transferred have
-     * been listed.</p>
-     */
     inline bool TotalBytesHasBeenSet() const { return m_totalBytesHasBeenSet; }
-
-    /**
-     * <p>The total bytes of data for a transfer between a Snow device and Amazon S3.
-     * This value is set to 0 (zero) until all the keys that will be transferred have
-     * been listed.</p>
-     */
     inline void SetTotalBytes(long long value) { m_totalBytesHasBeenSet = true; m_totalBytes = value; }
-
-    /**
-     * <p>The total bytes of data for a transfer between a Snow device and Amazon S3.
-     * This value is set to 0 (zero) until all the keys that will be transferred have
-     * been listed.</p>
-     */
     inline DataTransfer& WithTotalBytes(long long value) { SetTotalBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects for a transfer between a Snow device and Amazon
      * S3. This value is set to 0 (zero) until all the keys that will be transferred
      * have been listed.</p>
      */
     inline long long GetTotalObjects() const{ return m_totalObjects; }
-
-    /**
-     * <p>The total number of objects for a transfer between a Snow device and Amazon
-     * S3. This value is set to 0 (zero) until all the keys that will be transferred
-     * have been listed.</p>
-     */
     inline bool TotalObjectsHasBeenSet() const { return m_totalObjectsHasBeenSet; }
-
-    /**
-     * <p>The total number of objects for a transfer between a Snow device and Amazon
-     * S3. This value is set to 0 (zero) until all the keys that will be transferred
-     * have been listed.</p>
-     */
     inline void SetTotalObjects(long long value) { m_totalObjectsHasBeenSet = true; m_totalObjects = value; }
-
-    /**
-     * <p>The total number of objects for a transfer between a Snow device and Amazon
-     * S3. This value is set to 0 (zero) until all the keys that will be transferred
-     * have been listed.</p>
-     */
     inline DataTransfer& WithTotalObjects(long long value) { SetTotalObjects(value); return *this;}
-
+    ///@}
   private:
 
     long long m_bytesTransferred;

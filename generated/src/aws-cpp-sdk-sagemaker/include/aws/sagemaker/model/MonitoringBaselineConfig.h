@@ -42,120 +42,45 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the job that performs baselining for the monitoring job.</p>
      */
     inline const Aws::String& GetBaseliningJobName() const{ return m_baseliningJobName; }
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline bool BaseliningJobNameHasBeenSet() const { return m_baseliningJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline void SetBaseliningJobName(const Aws::String& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = value; }
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline void SetBaseliningJobName(Aws::String&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::move(value); }
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline void SetBaseliningJobName(const char* value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName.assign(value); }
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline MonitoringBaselineConfig& WithBaseliningJobName(const Aws::String& value) { SetBaseliningJobName(value); return *this;}
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline MonitoringBaselineConfig& WithBaseliningJobName(Aws::String&& value) { SetBaseliningJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the job that performs baselining for the monitoring job.</p>
-     */
     inline MonitoringBaselineConfig& WithBaseliningJobName(const char* value) { SetBaseliningJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The baseline constraint file in Amazon S3 that the current monitoring job
      * should validated against.</p>
      */
     inline const MonitoringConstraintsResource& GetConstraintsResource() const{ return m_constraintsResource; }
-
-    /**
-     * <p>The baseline constraint file in Amazon S3 that the current monitoring job
-     * should validated against.</p>
-     */
     inline bool ConstraintsResourceHasBeenSet() const { return m_constraintsResourceHasBeenSet; }
-
-    /**
-     * <p>The baseline constraint file in Amazon S3 that the current monitoring job
-     * should validated against.</p>
-     */
     inline void SetConstraintsResource(const MonitoringConstraintsResource& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = value; }
-
-    /**
-     * <p>The baseline constraint file in Amazon S3 that the current monitoring job
-     * should validated against.</p>
-     */
     inline void SetConstraintsResource(MonitoringConstraintsResource&& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = std::move(value); }
-
-    /**
-     * <p>The baseline constraint file in Amazon S3 that the current monitoring job
-     * should validated against.</p>
-     */
     inline MonitoringBaselineConfig& WithConstraintsResource(const MonitoringConstraintsResource& value) { SetConstraintsResource(value); return *this;}
-
-    /**
-     * <p>The baseline constraint file in Amazon S3 that the current monitoring job
-     * should validated against.</p>
-     */
     inline MonitoringBaselineConfig& WithConstraintsResource(MonitoringConstraintsResource&& value) { SetConstraintsResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The baseline statistics file in Amazon S3 that the current monitoring job
      * should be validated against.</p>
      */
     inline const MonitoringStatisticsResource& GetStatisticsResource() const{ return m_statisticsResource; }
-
-    /**
-     * <p>The baseline statistics file in Amazon S3 that the current monitoring job
-     * should be validated against.</p>
-     */
     inline bool StatisticsResourceHasBeenSet() const { return m_statisticsResourceHasBeenSet; }
-
-    /**
-     * <p>The baseline statistics file in Amazon S3 that the current monitoring job
-     * should be validated against.</p>
-     */
     inline void SetStatisticsResource(const MonitoringStatisticsResource& value) { m_statisticsResourceHasBeenSet = true; m_statisticsResource = value; }
-
-    /**
-     * <p>The baseline statistics file in Amazon S3 that the current monitoring job
-     * should be validated against.</p>
-     */
     inline void SetStatisticsResource(MonitoringStatisticsResource&& value) { m_statisticsResourceHasBeenSet = true; m_statisticsResource = std::move(value); }
-
-    /**
-     * <p>The baseline statistics file in Amazon S3 that the current monitoring job
-     * should be validated against.</p>
-     */
     inline MonitoringBaselineConfig& WithStatisticsResource(const MonitoringStatisticsResource& value) { SetStatisticsResource(value); return *this;}
-
-    /**
-     * <p>The baseline statistics file in Amazon S3 that the current monitoring job
-     * should be validated against.</p>
-     */
     inline MonitoringBaselineConfig& WithStatisticsResource(MonitoringStatisticsResource&& value) { SetStatisticsResource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baseliningJobName;

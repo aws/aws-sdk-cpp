@@ -41,87 +41,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the account attribute.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline AccountAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline AccountAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the account attribute.</p>
-     */
     inline AccountAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values for the account attribute.</p>
      */
     inline const Aws::Vector<AccountAttributeValue>& GetAttributeValues() const{ return m_attributeValues; }
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline void SetAttributeValues(const Aws::Vector<AccountAttributeValue>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline void SetAttributeValues(Aws::Vector<AccountAttributeValue>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline AccountAttribute& WithAttributeValues(const Aws::Vector<AccountAttributeValue>& value) { SetAttributeValues(value); return *this;}
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline AccountAttribute& WithAttributeValues(Aws::Vector<AccountAttributeValue>&& value) { SetAttributeValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline AccountAttribute& AddAttributeValues(const AccountAttributeValue& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
-
-    /**
-     * <p>The values for the account attribute.</p>
-     */
     inline AccountAttribute& AddAttributeValues(AccountAttributeValue&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

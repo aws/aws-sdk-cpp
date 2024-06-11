@@ -45,6 +45,7 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
@@ -53,119 +54,29 @@ namespace Model
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline WebACLSummary& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline WebACLSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
-     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
-     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
-     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
-     */
     inline WebACLSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
      * name of a <code>WebACL</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline WebACLSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline WebACLSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
-     * name of a <code>WebACL</code> after you create it.</p>
-     */
     inline WebACLSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_webACLId;

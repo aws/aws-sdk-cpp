@@ -36,51 +36,26 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The zero-based index number of the segment. For example, if the total number
      * of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
      */
     inline int GetSegmentNumber() const{ return m_segmentNumber; }
-
-    /**
-     * <p>The zero-based index number of the segment. For example, if the total number
-     * of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
-     */
     inline bool SegmentNumberHasBeenSet() const { return m_segmentNumberHasBeenSet; }
-
-    /**
-     * <p>The zero-based index number of the segment. For example, if the total number
-     * of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
-     */
     inline void SetSegmentNumber(int value) { m_segmentNumberHasBeenSet = true; m_segmentNumber = value; }
-
-    /**
-     * <p>The zero-based index number of the segment. For example, if the total number
-     * of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
-     */
     inline Segment& WithSegmentNumber(int value) { SetSegmentNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of segments.</p>
      */
     inline int GetTotalSegments() const{ return m_totalSegments; }
-
-    /**
-     * <p>The total number of segments.</p>
-     */
     inline bool TotalSegmentsHasBeenSet() const { return m_totalSegmentsHasBeenSet; }
-
-    /**
-     * <p>The total number of segments.</p>
-     */
     inline void SetTotalSegments(int value) { m_totalSegmentsHasBeenSet = true; m_totalSegments = value; }
-
-    /**
-     * <p>The total number of segments.</p>
-     */
     inline Segment& WithTotalSegments(int value) { SetTotalSegments(value); return *this;}
-
+    ///@}
   private:
 
     int m_segmentNumber;

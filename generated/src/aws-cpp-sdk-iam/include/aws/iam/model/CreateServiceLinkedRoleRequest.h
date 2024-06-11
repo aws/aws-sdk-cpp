@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The service principal for the Amazon Web Services service to which this role
      * is attached. You use a string similar to a URL but without the http:// in front.
@@ -49,147 +50,30 @@ namespace Model
      * that service.</p>
      */
     inline const Aws::String& GetAWSServiceName() const{ return m_aWSServiceName; }
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline bool AWSServiceNameHasBeenSet() const { return m_aWSServiceNameHasBeenSet; }
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline void SetAWSServiceName(const Aws::String& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = value; }
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline void SetAWSServiceName(Aws::String&& value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName = std::move(value); }
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline void SetAWSServiceName(const char* value) { m_aWSServiceNameHasBeenSet = true; m_aWSServiceName.assign(value); }
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const Aws::String& value) { SetAWSServiceName(value); return *this;}
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(Aws::String&& value) { SetAWSServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The service principal for the Amazon Web Services service to which this role
-     * is attached. You use a string similar to a URL but without the http:// in front.
-     * For example: <code>elasticbeanstalk.amazonaws.com</code>. </p> <p>Service
-     * principals are unique and case-sensitive. To find the exact service principal
-     * for your service-linked role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon
-     * Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look
-     * for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column.
-     * Choose the <b>Yes</b> link to view the service-linked role documentation for
-     * that service.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithAWSServiceName(const char* value) { SetAWSServiceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the role.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the role.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/> <p>A string that you provide, which is combined with the service-provided
      * prefix to form the complete role name. If you make multiple requests for the
@@ -201,91 +85,14 @@ namespace Model
      * without the suffix.</p>
      */
     inline const Aws::String& GetCustomSuffix() const{ return m_customSuffix; }
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline bool CustomSuffixHasBeenSet() const { return m_customSuffixHasBeenSet; }
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline void SetCustomSuffix(const Aws::String& value) { m_customSuffixHasBeenSet = true; m_customSuffix = value; }
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline void SetCustomSuffix(Aws::String&& value) { m_customSuffixHasBeenSet = true; m_customSuffix = std::move(value); }
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline void SetCustomSuffix(const char* value) { m_customSuffixHasBeenSet = true; m_customSuffix.assign(value); }
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithCustomSuffix(const Aws::String& value) { SetCustomSuffix(value); return *this;}
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithCustomSuffix(Aws::String&& value) { SetCustomSuffix(std::move(value)); return *this;}
-
-    /**
-     * <p/> <p>A string that you provide, which is combined with the service-provided
-     * prefix to form the complete role name. If you make multiple requests for the
-     * same service, then you must supply a different <code>CustomSuffix</code> for
-     * each request. Otherwise the request fails with a duplicate role name error. For
-     * example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>
-     * <p>Some services do not support the <code>CustomSuffix</code> parameter. If you
-     * provide an optional suffix and the operation fails, try the operation again
-     * without the suffix.</p>
-     */
     inline CreateServiceLinkedRoleRequest& WithCustomSuffix(const char* value) { SetCustomSuffix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aWSServiceName;

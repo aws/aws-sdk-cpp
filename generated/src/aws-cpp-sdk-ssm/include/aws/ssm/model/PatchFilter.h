@@ -52,106 +52,35 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
      * to view lists of valid keys for each operating system type.</p>
      */
     inline const PatchFilterKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
-     * to view lists of valid keys for each operating system type.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
-     * to view lists of valid keys for each operating system type.</p>
-     */
     inline void SetKey(const PatchFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
-     * to view lists of valid keys for each operating system type.</p>
-     */
     inline void SetKey(PatchFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
-     * to view lists of valid keys for each operating system type.</p>
-     */
     inline PatchFilter& WithKey(const PatchFilterKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key for the filter.</p> <p>Run the <a>DescribePatchProperties</a> command
-     * to view lists of valid keys for each operating system type.</p>
-     */
     inline PatchFilter& WithKey(PatchFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
      * command to view lists of valid values for each key based on operating system
      * type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline PatchFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline PatchFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline PatchFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline PatchFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The value for the filter key.</p> <p>Run the <a>DescribePatchProperties</a>
-     * command to view lists of valid values for each key based on operating system
-     * type.</p>
-     */
     inline PatchFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     PatchFilterKey m_key;

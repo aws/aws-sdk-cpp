@@ -39,46 +39,19 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about a reviewer's response to a document review request.</p>
      */
     inline const Aws::Vector<DocumentReviewerResponseSource>& GetReviewerResponse() const{ return m_reviewerResponse; }
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline bool ReviewerResponseHasBeenSet() const { return m_reviewerResponseHasBeenSet; }
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline void SetReviewerResponse(const Aws::Vector<DocumentReviewerResponseSource>& value) { m_reviewerResponseHasBeenSet = true; m_reviewerResponse = value; }
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline void SetReviewerResponse(Aws::Vector<DocumentReviewerResponseSource>&& value) { m_reviewerResponseHasBeenSet = true; m_reviewerResponse = std::move(value); }
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline DocumentMetadataResponseInfo& WithReviewerResponse(const Aws::Vector<DocumentReviewerResponseSource>& value) { SetReviewerResponse(value); return *this;}
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline DocumentMetadataResponseInfo& WithReviewerResponse(Aws::Vector<DocumentReviewerResponseSource>&& value) { SetReviewerResponse(std::move(value)); return *this;}
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline DocumentMetadataResponseInfo& AddReviewerResponse(const DocumentReviewerResponseSource& value) { m_reviewerResponseHasBeenSet = true; m_reviewerResponse.push_back(value); return *this; }
-
-    /**
-     * <p>Details about a reviewer's response to a document review request.</p>
-     */
     inline DocumentMetadataResponseInfo& AddReviewerResponse(DocumentReviewerResponseSource&& value) { m_reviewerResponseHasBeenSet = true; m_reviewerResponse.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DocumentReviewerResponseSource> m_reviewerResponse;

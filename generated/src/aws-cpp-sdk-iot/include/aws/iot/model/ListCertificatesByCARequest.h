@@ -42,141 +42,55 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate.</p>
      */
     inline const Aws::String& GetCaCertificateId() const{ return m_caCertificateId; }
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline bool CaCertificateIdHasBeenSet() const { return m_caCertificateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline void SetCaCertificateId(const Aws::String& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline void SetCaCertificateId(const char* value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId.assign(value); }
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline ListCertificatesByCARequest& WithCaCertificateId(const Aws::String& value) { SetCaCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline ListCertificatesByCARequest& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the CA certificate. This operation will list all registered device
-     * certificate that were signed by this CA certificate.</p>
-     */
     inline ListCertificatesByCARequest& WithCaCertificateId(const char* value) { SetCaCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The result page size.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline ListCertificatesByCARequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListCertificatesByCARequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListCertificatesByCARequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListCertificatesByCARequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the order for results. If True, the results are returned in
      * ascending order, based on the creation date.</p>
      */
     inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
-
-    /**
-     * <p>Specifies the order for results. If True, the results are returned in
-     * ascending order, based on the creation date.</p>
-     */
     inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
-
-    /**
-     * <p>Specifies the order for results. If True, the results are returned in
-     * ascending order, based on the creation date.</p>
-     */
     inline void SetAscendingOrder(bool value) { m_ascendingOrderHasBeenSet = true; m_ascendingOrder = value; }
-
-    /**
-     * <p>Specifies the order for results. If True, the results are returned in
-     * ascending order, based on the creation date.</p>
-     */
     inline ListCertificatesByCARequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_caCertificateId;

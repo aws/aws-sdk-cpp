@@ -41,128 +41,47 @@ namespace Model
     AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains additional header parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionHeaderParameter>& GetHeaderParameters() const{ return m_headerParameters; }
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline bool HeaderParametersHasBeenSet() const { return m_headerParametersHasBeenSet; }
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline void SetHeaderParameters(const Aws::Vector<ConnectionHeaderParameter>& value) { m_headerParametersHasBeenSet = true; m_headerParameters = value; }
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline void SetHeaderParameters(Aws::Vector<ConnectionHeaderParameter>&& value) { m_headerParametersHasBeenSet = true; m_headerParameters = std::move(value); }
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithHeaderParameters(const Aws::Vector<ConnectionHeaderParameter>& value) { SetHeaderParameters(value); return *this;}
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithHeaderParameters(Aws::Vector<ConnectionHeaderParameter>&& value) { SetHeaderParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddHeaderParameters(const ConnectionHeaderParameter& value) { m_headerParametersHasBeenSet = true; m_headerParameters.push_back(value); return *this; }
-
-    /**
-     * <p>Contains additional header parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddHeaderParameters(ConnectionHeaderParameter&& value) { m_headerParametersHasBeenSet = true; m_headerParameters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains additional query string parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionQueryStringParameter>& GetQueryStringParameters() const{ return m_queryStringParameters; }
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline bool QueryStringParametersHasBeenSet() const { return m_queryStringParametersHasBeenSet; }
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline void SetQueryStringParameters(const Aws::Vector<ConnectionQueryStringParameter>& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters = value; }
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline void SetQueryStringParameters(Aws::Vector<ConnectionQueryStringParameter>&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters = std::move(value); }
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithQueryStringParameters(const Aws::Vector<ConnectionQueryStringParameter>& value) { SetQueryStringParameters(value); return *this;}
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithQueryStringParameters(Aws::Vector<ConnectionQueryStringParameter>&& value) { SetQueryStringParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddQueryStringParameters(const ConnectionQueryStringParameter& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.push_back(value); return *this; }
-
-    /**
-     * <p>Contains additional query string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddQueryStringParameters(ConnectionQueryStringParameter&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains additional body string parameters for the connection.</p>
      */
     inline const Aws::Vector<ConnectionBodyParameter>& GetBodyParameters() const{ return m_bodyParameters; }
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline bool BodyParametersHasBeenSet() const { return m_bodyParametersHasBeenSet; }
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline void SetBodyParameters(const Aws::Vector<ConnectionBodyParameter>& value) { m_bodyParametersHasBeenSet = true; m_bodyParameters = value; }
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline void SetBodyParameters(Aws::Vector<ConnectionBodyParameter>&& value) { m_bodyParametersHasBeenSet = true; m_bodyParameters = std::move(value); }
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithBodyParameters(const Aws::Vector<ConnectionBodyParameter>& value) { SetBodyParameters(value); return *this;}
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& WithBodyParameters(Aws::Vector<ConnectionBodyParameter>&& value) { SetBodyParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddBodyParameters(const ConnectionBodyParameter& value) { m_bodyParametersHasBeenSet = true; m_bodyParameters.push_back(value); return *this; }
-
-    /**
-     * <p>Contains additional body string parameters for the connection.</p>
-     */
     inline ConnectionHttpParameters& AddBodyParameters(ConnectionBodyParameter&& value) { m_bodyParametersHasBeenSet = true; m_bodyParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ConnectionHeaderParameter> m_headerParameters;

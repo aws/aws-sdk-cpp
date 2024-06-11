@@ -34,54 +34,20 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
      * Services account ID.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline ImportCatalogToGlueRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline ImportCatalogToGlueRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the catalog to import. Currently, this should be the Amazon Web
-     * Services account ID.</p>
-     */
     inline ImportCatalogToGlueRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalogId;

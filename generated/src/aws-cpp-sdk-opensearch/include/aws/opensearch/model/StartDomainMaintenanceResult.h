@@ -38,63 +38,29 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request ID of requested action.</p>
      */
     inline const Aws::String& GetMaintenanceId() const{ return m_maintenanceId; }
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline void SetMaintenanceId(const Aws::String& value) { m_maintenanceId = value; }
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline void SetMaintenanceId(Aws::String&& value) { m_maintenanceId = std::move(value); }
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline void SetMaintenanceId(const char* value) { m_maintenanceId.assign(value); }
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline StartDomainMaintenanceResult& WithMaintenanceId(const Aws::String& value) { SetMaintenanceId(value); return *this;}
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline StartDomainMaintenanceResult& WithMaintenanceId(Aws::String&& value) { SetMaintenanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID of requested action.</p>
-     */
     inline StartDomainMaintenanceResult& WithMaintenanceId(const char* value) { SetMaintenanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartDomainMaintenanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartDomainMaintenanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartDomainMaintenanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_maintenanceId;

@@ -37,67 +37,29 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Region of the video stream.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline KinesisVideoStreamConfiguration& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline KinesisVideoStreamConfiguration& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region of the video stream.</p>
-     */
     inline KinesisVideoStreamConfiguration& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time that data is retained.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
-
-    /**
-     * <p>The amount of time that data is retained.</p>
-     */
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
-
-    /**
-     * <p>The amount of time that data is retained.</p>
-     */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
-
-    /**
-     * <p>The amount of time that data is retained.</p>
-     */
     inline KinesisVideoStreamConfiguration& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_region;

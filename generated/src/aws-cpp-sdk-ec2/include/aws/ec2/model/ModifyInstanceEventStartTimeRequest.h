@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -44,144 +45,50 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the instance with the scheduled event.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance with the scheduled event.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the event whose date and time you are modifying.</p>
      */
     inline const Aws::String& GetInstanceEventId() const{ return m_instanceEventId; }
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline bool InstanceEventIdHasBeenSet() const { return m_instanceEventIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline void SetInstanceEventId(const Aws::String& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = value; }
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline void SetInstanceEventId(Aws::String&& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = std::move(value); }
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline void SetInstanceEventId(const char* value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId.assign(value); }
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceEventId(const Aws::String& value) { SetInstanceEventId(value); return *this;}
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceEventId(Aws::String&& value) { SetInstanceEventId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the event whose date and time you are modifying.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithInstanceEventId(const char* value) { SetInstanceEventId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new date and time when the event will take place.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
-
-    /**
-     * <p>The new date and time when the event will take place.</p>
-     */
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
-
-    /**
-     * <p>The new date and time when the event will take place.</p>
-     */
     inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-
-    /**
-     * <p>The new date and time when the event will take place.</p>
-     */
     inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-
-    /**
-     * <p>The new date and time when the event will take place.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
-
-    /**
-     * <p>The new date and time when the event will take place.</p>
-     */
     inline ModifyInstanceEventStartTimeRequest& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

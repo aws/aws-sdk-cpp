@@ -37,42 +37,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
      * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
      */
     inline const VectorConfig& GetVectorConfig() const{ return m_vectorConfig; }
-
-    /**
-     * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
-     * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
-     */
     inline bool VectorConfigHasBeenSet() const { return m_vectorConfigHasBeenSet; }
-
-    /**
-     * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
-     * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
-     */
     inline void SetVectorConfig(const VectorConfig& value) { m_vectorConfigHasBeenSet = true; m_vectorConfig = value; }
-
-    /**
-     * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
-     * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
-     */
     inline void SetVectorConfig(VectorConfig&& value) { m_vectorConfigHasBeenSet = true; m_vectorConfig = std::move(value); }
-
-    /**
-     * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
-     * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
-     */
     inline CollectionConfig& WithVectorConfig(const VectorConfig& value) { SetVectorConfig(value); return *this;}
-
-    /**
-     * <p>Configuration for your vector collection type.</p> <ul> <li> <p>
-     * <code>Dimension</code>: The number of elements in your vector.</p> </li> </ul>
-     */
     inline CollectionConfig& WithVectorConfig(VectorConfig&& value) { SetVectorConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VectorConfig m_vectorConfig;

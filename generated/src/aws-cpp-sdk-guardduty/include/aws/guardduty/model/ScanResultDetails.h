@@ -37,36 +37,17 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An enum value representing possible scan results.</p>
      */
     inline const ScanResult& GetScanResult() const{ return m_scanResult; }
-
-    /**
-     * <p>An enum value representing possible scan results.</p>
-     */
     inline bool ScanResultHasBeenSet() const { return m_scanResultHasBeenSet; }
-
-    /**
-     * <p>An enum value representing possible scan results.</p>
-     */
     inline void SetScanResult(const ScanResult& value) { m_scanResultHasBeenSet = true; m_scanResult = value; }
-
-    /**
-     * <p>An enum value representing possible scan results.</p>
-     */
     inline void SetScanResult(ScanResult&& value) { m_scanResultHasBeenSet = true; m_scanResult = std::move(value); }
-
-    /**
-     * <p>An enum value representing possible scan results.</p>
-     */
     inline ScanResultDetails& WithScanResult(const ScanResult& value) { SetScanResult(value); return *this;}
-
-    /**
-     * <p>An enum value representing possible scan results.</p>
-     */
     inline ScanResultDetails& WithScanResult(ScanResult&& value) { SetScanResult(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScanResult m_scanResult;

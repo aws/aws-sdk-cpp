@@ -39,108 +39,43 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options to configure the title visibility, name, and font size.</p>
      */
     inline const LabelOptions& GetTitleOptions() const{ return m_titleOptions; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline bool TitleOptionsHasBeenSet() const { return m_titleOptionsHasBeenSet; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(const LabelOptions& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = value; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(LabelOptions&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::move(value); }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithTitleOptions(const LabelOptions& value) { SetTitleOptions(value); return *this;}
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithTitleOptions(LabelOptions&& value) { SetTitleOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Customize how dates are formatted in controls.</p>
      */
     inline const Aws::String& GetDateTimeFormat() const{ return m_dateTimeFormat; }
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline bool DateTimeFormatHasBeenSet() const { return m_dateTimeFormatHasBeenSet; }
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline void SetDateTimeFormat(const Aws::String& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = value; }
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline void SetDateTimeFormat(Aws::String&& value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat = std::move(value); }
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline void SetDateTimeFormat(const char* value) { m_dateTimeFormatHasBeenSet = true; m_dateTimeFormat.assign(value); }
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(const Aws::String& value) { SetDateTimeFormat(value); return *this;}
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(Aws::String&& value) { SetDateTimeFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>Customize how dates are formatted in controls.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithDateTimeFormat(const char* value) { SetDateTimeFormat(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of info icon label options.</p>
      */
     inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const{ return m_infoIconLabelOptions; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline bool InfoIconLabelOptionsHasBeenSet() const { return m_infoIconLabelOptionsHasBeenSet; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = value; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::move(value); }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline RelativeDateTimeControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LabelOptions m_titleOptions;

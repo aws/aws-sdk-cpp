@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API AssociateOpsItemRelatedItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The association ID.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline AssociateOpsItemRelatedItemResult& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline AssociateOpsItemRelatedItemResult& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The association ID.</p>
-     */
     inline AssociateOpsItemRelatedItemResult& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateOpsItemRelatedItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateOpsItemRelatedItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateOpsItemRelatedItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

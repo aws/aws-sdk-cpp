@@ -34,47 +34,21 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the fleet that the compute is registered to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline GetComputeAuthTokenRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline GetComputeAuthTokenRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the fleet that the compute is registered to.</p>
-     */
     inline GetComputeAuthTokenRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the compute resource you are requesting the authentication token
      * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
@@ -84,77 +58,14 @@ namespace Model
      * or the compute ARN.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline GetComputeAuthTokenRequest& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline GetComputeAuthTokenRequest& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the compute resource you are requesting the authentication token
-     * for. For an Anywhere fleet compute, use the registered compute name. For an EC2
-     * fleet instance, use the instance ID. For a container fleet, use the compute name
-     * (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
-     */
     inline GetComputeAuthTokenRequest& WithComputeName(const char* value) { SetComputeName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fleetId;

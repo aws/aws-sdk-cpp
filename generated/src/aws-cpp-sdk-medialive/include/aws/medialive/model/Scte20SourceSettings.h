@@ -37,73 +37,30 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
      * fields of the 708 wrapper as well as translated into 708. 708 data present in
      * the source content will be discarded.
      */
     inline const Scte20Convert608To708& GetConvert608To708() const{ return m_convert608To708; }
-
-    /**
-     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
-     * fields of the 708 wrapper as well as translated into 708. 708 data present in
-     * the source content will be discarded.
-     */
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
-
-    /**
-     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
-     * fields of the 708 wrapper as well as translated into 708. 708 data present in
-     * the source content will be discarded.
-     */
     inline void SetConvert608To708(const Scte20Convert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
-
-    /**
-     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
-     * fields of the 708 wrapper as well as translated into 708. 708 data present in
-     * the source content will be discarded.
-     */
     inline void SetConvert608To708(Scte20Convert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
-
-    /**
-     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
-     * fields of the 708 wrapper as well as translated into 708. 708 data present in
-     * the source content will be discarded.
-     */
     inline Scte20SourceSettings& WithConvert608To708(const Scte20Convert608To708& value) { SetConvert608To708(value); return *this;}
-
-    /**
-     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
-     * fields of the 708 wrapper as well as translated into 708. 708 data present in
-     * the source content will be discarded.
-     */
     inline Scte20SourceSettings& WithConvert608To708(Scte20Convert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specifies the 608/708 channel number within the video track from which to
      * extract captions. Unused for passthrough.
      */
     inline int GetSource608ChannelNumber() const{ return m_source608ChannelNumber; }
-
-    /**
-     * Specifies the 608/708 channel number within the video track from which to
-     * extract captions. Unused for passthrough.
-     */
     inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
-
-    /**
-     * Specifies the 608/708 channel number within the video track from which to
-     * extract captions. Unused for passthrough.
-     */
     inline void SetSource608ChannelNumber(int value) { m_source608ChannelNumberHasBeenSet = true; m_source608ChannelNumber = value; }
-
-    /**
-     * Specifies the 608/708 channel number within the video track from which to
-     * extract captions. Unused for passthrough.
-     */
     inline Scte20SourceSettings& WithSource608ChannelNumber(int value) { SetSource608ChannelNumber(value); return *this;}
-
+    ///@}
   private:
 
     Scte20Convert608To708 m_convert608To708;

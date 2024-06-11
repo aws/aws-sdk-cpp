@@ -47,121 +47,51 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The month to use for time alignment during aggregation. The month must be in
      * uppercase.</p>
      */
     inline const Month& GetMonth() const{ return m_month; }
-
-    /**
-     * <p>The month to use for time alignment during aggregation. The month must be in
-     * uppercase.</p>
-     */
     inline bool MonthHasBeenSet() const { return m_monthHasBeenSet; }
-
-    /**
-     * <p>The month to use for time alignment during aggregation. The month must be in
-     * uppercase.</p>
-     */
     inline void SetMonth(const Month& value) { m_monthHasBeenSet = true; m_month = value; }
-
-    /**
-     * <p>The month to use for time alignment during aggregation. The month must be in
-     * uppercase.</p>
-     */
     inline void SetMonth(Month&& value) { m_monthHasBeenSet = true; m_month = std::move(value); }
-
-    /**
-     * <p>The month to use for time alignment during aggregation. The month must be in
-     * uppercase.</p>
-     */
     inline TimeAlignmentBoundary& WithMonth(const Month& value) { SetMonth(value); return *this;}
-
-    /**
-     * <p>The month to use for time alignment during aggregation. The month must be in
-     * uppercase.</p>
-     */
     inline TimeAlignmentBoundary& WithMonth(Month&& value) { SetMonth(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The day of the month to use for time alignment during aggregation.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
-
-    /**
-     * <p>The day of the month to use for time alignment during aggregation.</p>
-     */
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-
-    /**
-     * <p>The day of the month to use for time alignment during aggregation.</p>
-     */
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
-
-    /**
-     * <p>The day of the month to use for time alignment during aggregation.</p>
-     */
     inline TimeAlignmentBoundary& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The day of week to use for time alignment during aggregation. The day must be
      * in uppercase.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
-
-    /**
-     * <p>The day of week to use for time alignment during aggregation. The day must be
-     * in uppercase.</p>
-     */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-
-    /**
-     * <p>The day of week to use for time alignment during aggregation. The day must be
-     * in uppercase.</p>
-     */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-
-    /**
-     * <p>The day of week to use for time alignment during aggregation. The day must be
-     * in uppercase.</p>
-     */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-
-    /**
-     * <p>The day of week to use for time alignment during aggregation. The day must be
-     * in uppercase.</p>
-     */
     inline TimeAlignmentBoundary& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-
-    /**
-     * <p>The day of week to use for time alignment during aggregation. The day must be
-     * in uppercase.</p>
-     */
     inline TimeAlignmentBoundary& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The hour of day to use for time alignment during aggregation.</p>
      */
     inline int GetHour() const{ return m_hour; }
-
-    /**
-     * <p>The hour of day to use for time alignment during aggregation.</p>
-     */
     inline bool HourHasBeenSet() const { return m_hourHasBeenSet; }
-
-    /**
-     * <p>The hour of day to use for time alignment during aggregation.</p>
-     */
     inline void SetHour(int value) { m_hourHasBeenSet = true; m_hour = value; }
-
-    /**
-     * <p>The hour of day to use for time alignment during aggregation.</p>
-     */
     inline TimeAlignmentBoundary& WithHour(int value) { SetHour(value); return *this;}
-
+    ///@}
   private:
 
     Month m_month;

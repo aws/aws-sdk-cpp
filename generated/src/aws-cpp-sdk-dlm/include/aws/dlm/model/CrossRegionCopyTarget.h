@@ -38,46 +38,19 @@ namespace Model
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The target Region, for example <code>us-east-1</code>.</p>
      */
     inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline CrossRegionCopyTarget& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline CrossRegionCopyTarget& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The target Region, for example <code>us-east-1</code>.</p>
-     */
     inline CrossRegionCopyTarget& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetRegion;

@@ -40,103 +40,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
      * </p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster identifier to detach from the Amazon DocumentDB global cluster.
-     * </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
      * the Amazon DocumentDB global cluster. </p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline void SetDbClusterIdentifier(const Aws::String& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline void SetDbClusterIdentifier(Aws::String&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline void SetDbClusterIdentifier(const char* value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithDbClusterIdentifier(const Aws::String& value) { SetDbClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithDbClusterIdentifier(Aws::String&& value) { SetDbClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from
-     * the Amazon DocumentDB global cluster. </p>
-     */
     inline RemoveFromGlobalClusterRequest& WithDbClusterIdentifier(const char* value) { SetDbClusterIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalClusterIdentifier;

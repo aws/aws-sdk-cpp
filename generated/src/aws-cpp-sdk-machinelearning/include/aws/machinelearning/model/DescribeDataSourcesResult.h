@@ -41,106 +41,43 @@ namespace Model
     AWS_MACHINELEARNING_API DescribeDataSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
      */
     inline const Aws::Vector<DataSource>& GetResults() const{ return m_results; }
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline void SetResults(const Aws::Vector<DataSource>& value) { m_results = value; }
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline void SetResults(Aws::Vector<DataSource>&& value) { m_results = std::move(value); }
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline DescribeDataSourcesResult& WithResults(const Aws::Vector<DataSource>& value) { SetResults(value); return *this;}
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline DescribeDataSourcesResult& WithResults(Aws::Vector<DataSource>&& value) { SetResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline DescribeDataSourcesResult& AddResults(const DataSource& value) { m_results.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-     */
     inline DescribeDataSourcesResult& AddResults(DataSource&& value) { m_results.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline DescribeDataSourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline DescribeDataSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An ID of the next page in the paginated results that indicates at least one
-     * more page follows.</p>
-     */
     inline DescribeDataSourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDataSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDataSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDataSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DataSource> m_results;

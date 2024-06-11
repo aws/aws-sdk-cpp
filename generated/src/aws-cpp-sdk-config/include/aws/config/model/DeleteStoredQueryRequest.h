@@ -34,46 +34,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the query that you want to delete.</p>
      */
     inline const Aws::String& GetQueryName() const{ return m_queryName; }
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline bool QueryNameHasBeenSet() const { return m_queryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline void SetQueryName(const Aws::String& value) { m_queryNameHasBeenSet = true; m_queryName = value; }
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline void SetQueryName(Aws::String&& value) { m_queryNameHasBeenSet = true; m_queryName = std::move(value); }
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline void SetQueryName(const char* value) { m_queryNameHasBeenSet = true; m_queryName.assign(value); }
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline DeleteStoredQueryRequest& WithQueryName(const Aws::String& value) { SetQueryName(value); return *this;}
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline DeleteStoredQueryRequest& WithQueryName(Aws::String&& value) { SetQueryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the query that you want to delete.</p>
-     */
     inline DeleteStoredQueryRequest& WithQueryName(const char* value) { SetQueryName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queryName;

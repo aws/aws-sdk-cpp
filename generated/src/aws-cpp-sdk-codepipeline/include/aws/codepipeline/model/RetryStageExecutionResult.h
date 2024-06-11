@@ -38,63 +38,29 @@ namespace Model
     AWS_CODEPIPELINE_API RetryStageExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the current workflow execution in the failed stage.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionId = value; }
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = std::move(value); }
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionId.assign(value); }
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline RetryStageExecutionResult& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline RetryStageExecutionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the current workflow execution in the failed stage.</p>
-     */
     inline RetryStageExecutionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RetryStageExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RetryStageExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RetryStageExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineExecutionId;

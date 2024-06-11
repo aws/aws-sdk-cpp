@@ -41,6 +41,7 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action the service insertion takes for traffic. <code>send-via</code>
      * sends east-west traffic between attachments. <code>send-to</code> sends
@@ -48,48 +49,14 @@ namespace Model
      * Internet or to an on-premesis location. </p>
      */
     inline const SegmentActionServiceInsertion& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action the service insertion takes for traffic. <code>send-via</code>
-     * sends east-west traffic between attachments. <code>send-to</code> sends
-     * north-south traffic to the security appliance, and then from that to either the
-     * Internet or to an on-premesis location. </p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action the service insertion takes for traffic. <code>send-via</code>
-     * sends east-west traffic between attachments. <code>send-to</code> sends
-     * north-south traffic to the security appliance, and then from that to either the
-     * Internet or to an on-premesis location. </p>
-     */
     inline void SetAction(const SegmentActionServiceInsertion& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action the service insertion takes for traffic. <code>send-via</code>
-     * sends east-west traffic between attachments. <code>send-to</code> sends
-     * north-south traffic to the security appliance, and then from that to either the
-     * Internet or to an on-premesis location. </p>
-     */
     inline void SetAction(SegmentActionServiceInsertion&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action the service insertion takes for traffic. <code>send-via</code>
-     * sends east-west traffic between attachments. <code>send-to</code> sends
-     * north-south traffic to the security appliance, and then from that to either the
-     * Internet or to an on-premesis location. </p>
-     */
     inline ServiceInsertionAction& WithAction(const SegmentActionServiceInsertion& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action the service insertion takes for traffic. <code>send-via</code>
-     * sends east-west traffic between attachments. <code>send-to</code> sends
-     * north-south traffic to the security appliance, and then from that to either the
-     * Internet or to an on-premesis location. </p>
-     */
     inline ServiceInsertionAction& WithAction(SegmentActionServiceInsertion&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the mode packets take for the <code>send-via</code> action. This is
      * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
@@ -100,142 +67,39 @@ namespace Model
      * <code>EdgeOverride</code> to specify a specific edge to use. </p>
      */
     inline const SendViaMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Describes the mode packets take for the <code>send-via</code> action. This is
-     * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
-     * traverse attachments in both the source to the destination core network edges.
-     * This mode requires that an inspection attachment must be present in all Regions
-     * of the service insertion-enabled segments. For <code>single-hop</code>, packets
-     * traverse a single intermediate inserted attachment. You can use
-     * <code>EdgeOverride</code> to specify a specific edge to use. </p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Describes the mode packets take for the <code>send-via</code> action. This is
-     * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
-     * traverse attachments in both the source to the destination core network edges.
-     * This mode requires that an inspection attachment must be present in all Regions
-     * of the service insertion-enabled segments. For <code>single-hop</code>, packets
-     * traverse a single intermediate inserted attachment. You can use
-     * <code>EdgeOverride</code> to specify a specific edge to use. </p>
-     */
     inline void SetMode(const SendViaMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Describes the mode packets take for the <code>send-via</code> action. This is
-     * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
-     * traverse attachments in both the source to the destination core network edges.
-     * This mode requires that an inspection attachment must be present in all Regions
-     * of the service insertion-enabled segments. For <code>single-hop</code>, packets
-     * traverse a single intermediate inserted attachment. You can use
-     * <code>EdgeOverride</code> to specify a specific edge to use. </p>
-     */
     inline void SetMode(SendViaMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Describes the mode packets take for the <code>send-via</code> action. This is
-     * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
-     * traverse attachments in both the source to the destination core network edges.
-     * This mode requires that an inspection attachment must be present in all Regions
-     * of the service insertion-enabled segments. For <code>single-hop</code>, packets
-     * traverse a single intermediate inserted attachment. You can use
-     * <code>EdgeOverride</code> to specify a specific edge to use. </p>
-     */
     inline ServiceInsertionAction& WithMode(const SendViaMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Describes the mode packets take for the <code>send-via</code> action. This is
-     * not used when the action is <code>send-to</code>. <code>dual-hop</code> packets
-     * traverse attachments in both the source to the destination core network edges.
-     * This mode requires that an inspection attachment must be present in all Regions
-     * of the service insertion-enabled segments. For <code>single-hop</code>, packets
-     * traverse a single intermediate inserted attachment. You can use
-     * <code>EdgeOverride</code> to specify a specific edge to use. </p>
-     */
     inline ServiceInsertionAction& WithMode(SendViaMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of destination segments if the service insertion action is
      * <code>send-via</code>.</p>
      */
     inline const WhenSentTo& GetWhenSentTo() const{ return m_whenSentTo; }
-
-    /**
-     * <p>The list of destination segments if the service insertion action is
-     * <code>send-via</code>.</p>
-     */
     inline bool WhenSentToHasBeenSet() const { return m_whenSentToHasBeenSet; }
-
-    /**
-     * <p>The list of destination segments if the service insertion action is
-     * <code>send-via</code>.</p>
-     */
     inline void SetWhenSentTo(const WhenSentTo& value) { m_whenSentToHasBeenSet = true; m_whenSentTo = value; }
-
-    /**
-     * <p>The list of destination segments if the service insertion action is
-     * <code>send-via</code>.</p>
-     */
     inline void SetWhenSentTo(WhenSentTo&& value) { m_whenSentToHasBeenSet = true; m_whenSentTo = std::move(value); }
-
-    /**
-     * <p>The list of destination segments if the service insertion action is
-     * <code>send-via</code>.</p>
-     */
     inline ServiceInsertionAction& WithWhenSentTo(const WhenSentTo& value) { SetWhenSentTo(value); return *this;}
-
-    /**
-     * <p>The list of destination segments if the service insertion action is
-     * <code>send-via</code>.</p>
-     */
     inline ServiceInsertionAction& WithWhenSentTo(WhenSentTo&& value) { SetWhenSentTo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of network function groups and any edge overrides for the chosen
      * service insertion action. Used for both <code>send-to</code> or
      * <code>send-via</code>.</p>
      */
     inline const Via& GetVia() const{ return m_via; }
-
-    /**
-     * <p>The list of network function groups and any edge overrides for the chosen
-     * service insertion action. Used for both <code>send-to</code> or
-     * <code>send-via</code>.</p>
-     */
     inline bool ViaHasBeenSet() const { return m_viaHasBeenSet; }
-
-    /**
-     * <p>The list of network function groups and any edge overrides for the chosen
-     * service insertion action. Used for both <code>send-to</code> or
-     * <code>send-via</code>.</p>
-     */
     inline void SetVia(const Via& value) { m_viaHasBeenSet = true; m_via = value; }
-
-    /**
-     * <p>The list of network function groups and any edge overrides for the chosen
-     * service insertion action. Used for both <code>send-to</code> or
-     * <code>send-via</code>.</p>
-     */
     inline void SetVia(Via&& value) { m_viaHasBeenSet = true; m_via = std::move(value); }
-
-    /**
-     * <p>The list of network function groups and any edge overrides for the chosen
-     * service insertion action. Used for both <code>send-to</code> or
-     * <code>send-via</code>.</p>
-     */
     inline ServiceInsertionAction& WithVia(const Via& value) { SetVia(value); return *this;}
-
-    /**
-     * <p>The list of network function groups and any edge overrides for the chosen
-     * service insertion action. Used for both <code>send-to</code> or
-     * <code>send-via</code>.</p>
-     */
     inline ServiceInsertionAction& WithVia(Via&& value) { SetVia(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SegmentActionServiceInsertion m_action;

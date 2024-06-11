@@ -34,70 +34,30 @@ namespace Model
     AWS_MANAGEDGRAFANA_API UpdatePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of structures that contain the errors from the operation, if
      * any.</p>
      */
     inline const Aws::Vector<UpdateError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline void SetErrors(const Aws::Vector<UpdateError>& value) { m_errors = value; }
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline void SetErrors(Aws::Vector<UpdateError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline UpdatePermissionsResult& WithErrors(const Aws::Vector<UpdateError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline UpdatePermissionsResult& WithErrors(Aws::Vector<UpdateError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline UpdatePermissionsResult& AddErrors(const UpdateError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that contain the errors from the operation, if
-     * any.</p>
-     */
     inline UpdatePermissionsResult& AddErrors(UpdateError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UpdateError> m_errors;

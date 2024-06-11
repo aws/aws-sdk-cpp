@@ -37,54 +37,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
      * information about.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline DescribeTaskRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline DescribeTaskRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want
-     * information about.</p>
-     */
     inline DescribeTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskArn;

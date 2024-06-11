@@ -40,87 +40,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Custom actions for the rule group.</p>
      */
     inline const Aws::Vector<RuleGroupSourceCustomActionsDetails>& GetCustomActions() const{ return m_customActions; }
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline bool CustomActionsHasBeenSet() const { return m_customActionsHasBeenSet; }
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline void SetCustomActions(const Aws::Vector<RuleGroupSourceCustomActionsDetails>& value) { m_customActionsHasBeenSet = true; m_customActions = value; }
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline void SetCustomActions(Aws::Vector<RuleGroupSourceCustomActionsDetails>&& value) { m_customActionsHasBeenSet = true; m_customActions = std::move(value); }
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithCustomActions(const Aws::Vector<RuleGroupSourceCustomActionsDetails>& value) { SetCustomActions(value); return *this;}
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithCustomActions(Aws::Vector<RuleGroupSourceCustomActionsDetails>&& value) { SetCustomActions(std::move(value)); return *this;}
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddCustomActions(const RuleGroupSourceCustomActionsDetails& value) { m_customActionsHasBeenSet = true; m_customActions.push_back(value); return *this; }
-
-    /**
-     * <p>Custom actions for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddCustomActions(RuleGroupSourceCustomActionsDetails&& value) { m_customActionsHasBeenSet = true; m_customActions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stateless rules for the rule group.</p>
      */
     inline const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& GetStatelessRules() const{ return m_statelessRules; }
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline bool StatelessRulesHasBeenSet() const { return m_statelessRulesHasBeenSet; }
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline void SetStatelessRules(const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& value) { m_statelessRulesHasBeenSet = true; m_statelessRules = value; }
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline void SetStatelessRules(Aws::Vector<RuleGroupSourceStatelessRulesDetails>&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules = std::move(value); }
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithStatelessRules(const Aws::Vector<RuleGroupSourceStatelessRulesDetails>& value) { SetStatelessRules(value); return *this;}
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& WithStatelessRules(Aws::Vector<RuleGroupSourceStatelessRulesDetails>&& value) { SetStatelessRules(std::move(value)); return *this;}
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddStatelessRules(const RuleGroupSourceStatelessRulesDetails& value) { m_statelessRulesHasBeenSet = true; m_statelessRules.push_back(value); return *this; }
-
-    /**
-     * <p>Stateless rules for the rule group.</p>
-     */
     inline RuleGroupSourceStatelessRulesAndCustomActionsDetails& AddStatelessRules(RuleGroupSourceStatelessRulesDetails&& value) { m_statelessRulesHasBeenSet = true; m_statelessRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RuleGroupSourceCustomActionsDetails> m_customActions;

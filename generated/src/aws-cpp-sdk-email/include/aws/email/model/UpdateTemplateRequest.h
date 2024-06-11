@@ -36,24 +36,15 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Template& GetTemplate() const{ return m_template; }
-
-    
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-
-    
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-
-    
     inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-
-    
     inline UpdateTemplateRequest& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-
-    
     inline UpdateTemplateRequest& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Template m_template;

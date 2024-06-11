@@ -40,128 +40,47 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the currency for the prices mentioned in the term. </p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline UsageBasedPricingTerm& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline UsageBasedPricingTerm& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the currency for the prices mentioned in the term. </p>
-     */
     inline UsageBasedPricingTerm& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of rate cards.</p>
      */
     inline const Aws::Vector<UsageBasedRateCardItem>& GetRateCards() const{ return m_rateCards; }
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline bool RateCardsHasBeenSet() const { return m_rateCardsHasBeenSet; }
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline void SetRateCards(const Aws::Vector<UsageBasedRateCardItem>& value) { m_rateCardsHasBeenSet = true; m_rateCards = value; }
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline void SetRateCards(Aws::Vector<UsageBasedRateCardItem>&& value) { m_rateCardsHasBeenSet = true; m_rateCards = std::move(value); }
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline UsageBasedPricingTerm& WithRateCards(const Aws::Vector<UsageBasedRateCardItem>& value) { SetRateCards(value); return *this;}
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline UsageBasedPricingTerm& WithRateCards(Aws::Vector<UsageBasedRateCardItem>&& value) { SetRateCards(std::move(value)); return *this;}
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline UsageBasedPricingTerm& AddRateCards(const UsageBasedRateCardItem& value) { m_rateCardsHasBeenSet = true; m_rateCards.push_back(value); return *this; }
-
-    /**
-     * <p>List of rate cards.</p>
-     */
     inline UsageBasedPricingTerm& AddRateCards(UsageBasedRateCardItem&& value) { m_rateCardsHasBeenSet = true; m_rateCards.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Category of the term.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline UsageBasedPricingTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline UsageBasedPricingTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Category of the term.</p>
-     */
     inline UsageBasedPricingTerm& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_currencyCode;

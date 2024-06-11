@@ -32,46 +32,19 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Connect peer.</p>
      */
     inline const Aws::String& GetConnectPeerId() const{ return m_connectPeerId; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline bool ConnectPeerIdHasBeenSet() const { return m_connectPeerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(const Aws::String& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = value; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(Aws::String&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(const char* value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId.assign(value); }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline GetConnectPeerRequest& WithConnectPeerId(const Aws::String& value) { SetConnectPeerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline GetConnectPeerRequest& WithConnectPeerId(Aws::String&& value) { SetConnectPeerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline GetConnectPeerRequest& WithConnectPeerId(const char* value) { SetConnectPeerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectPeerId;

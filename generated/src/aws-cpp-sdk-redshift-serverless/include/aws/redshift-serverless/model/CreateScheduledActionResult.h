@@ -33,58 +33,28 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API CreateScheduledActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The returned <code>ScheduledAction</code> object that describes the
      * properties of a scheduled action.</p>
      */
     inline const ScheduledActionResponse& GetScheduledAction() const{ return m_scheduledAction; }
-
-    /**
-     * <p>The returned <code>ScheduledAction</code> object that describes the
-     * properties of a scheduled action.</p>
-     */
     inline void SetScheduledAction(const ScheduledActionResponse& value) { m_scheduledAction = value; }
-
-    /**
-     * <p>The returned <code>ScheduledAction</code> object that describes the
-     * properties of a scheduled action.</p>
-     */
     inline void SetScheduledAction(ScheduledActionResponse&& value) { m_scheduledAction = std::move(value); }
-
-    /**
-     * <p>The returned <code>ScheduledAction</code> object that describes the
-     * properties of a scheduled action.</p>
-     */
     inline CreateScheduledActionResult& WithScheduledAction(const ScheduledActionResponse& value) { SetScheduledAction(value); return *this;}
-
-    /**
-     * <p>The returned <code>ScheduledAction</code> object that describes the
-     * properties of a scheduled action.</p>
-     */
     inline CreateScheduledActionResult& WithScheduledAction(ScheduledActionResponse&& value) { SetScheduledAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateScheduledActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateScheduledActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateScheduledActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ScheduledActionResponse m_scheduledAction;

@@ -38,36 +38,17 @@ namespace Model
     AWS_TIMESTREAMINFLUXDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration for S3 bucket log delivery.</p>
      */
     inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
-
-    /**
-     * <p>Configuration for S3 bucket log delivery.</p>
-     */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-
-    /**
-     * <p>Configuration for S3 bucket log delivery.</p>
-     */
     inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-
-    /**
-     * <p>Configuration for S3 bucket log delivery.</p>
-     */
     inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-
-    /**
-     * <p>Configuration for S3 bucket log delivery.</p>
-     */
     inline LogDeliveryConfiguration& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-
-    /**
-     * <p>Configuration for S3 bucket log delivery.</p>
-     */
     inline LogDeliveryConfiguration& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Configuration m_s3Configuration;

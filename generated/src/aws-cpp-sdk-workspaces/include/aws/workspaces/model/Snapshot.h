@@ -37,36 +37,17 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time when the snapshot was created.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotTime() const{ return m_snapshotTime; }
-
-    /**
-     * <p>The time when the snapshot was created.</p>
-     */
     inline bool SnapshotTimeHasBeenSet() const { return m_snapshotTimeHasBeenSet; }
-
-    /**
-     * <p>The time when the snapshot was created.</p>
-     */
     inline void SetSnapshotTime(const Aws::Utils::DateTime& value) { m_snapshotTimeHasBeenSet = true; m_snapshotTime = value; }
-
-    /**
-     * <p>The time when the snapshot was created.</p>
-     */
     inline void SetSnapshotTime(Aws::Utils::DateTime&& value) { m_snapshotTimeHasBeenSet = true; m_snapshotTime = std::move(value); }
-
-    /**
-     * <p>The time when the snapshot was created.</p>
-     */
     inline Snapshot& WithSnapshotTime(const Aws::Utils::DateTime& value) { SetSnapshotTime(value); return *this;}
-
-    /**
-     * <p>The time when the snapshot was created.</p>
-     */
     inline Snapshot& WithSnapshotTime(Aws::Utils::DateTime&& value) { SetSnapshotTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_snapshotTime;

@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ArchiveS3Settings& GetArchiveS3Settings() const{ return m_archiveS3Settings; }
-
-    
     inline bool ArchiveS3SettingsHasBeenSet() const { return m_archiveS3SettingsHasBeenSet; }
-
-    
     inline void SetArchiveS3Settings(const ArchiveS3Settings& value) { m_archiveS3SettingsHasBeenSet = true; m_archiveS3Settings = value; }
-
-    
     inline void SetArchiveS3Settings(ArchiveS3Settings&& value) { m_archiveS3SettingsHasBeenSet = true; m_archiveS3Settings = std::move(value); }
-
-    
     inline ArchiveCdnSettings& WithArchiveS3Settings(const ArchiveS3Settings& value) { SetArchiveS3Settings(value); return *this;}
-
-    
     inline ArchiveCdnSettings& WithArchiveS3Settings(ArchiveS3Settings&& value) { SetArchiveS3Settings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArchiveS3Settings m_archiveS3Settings;

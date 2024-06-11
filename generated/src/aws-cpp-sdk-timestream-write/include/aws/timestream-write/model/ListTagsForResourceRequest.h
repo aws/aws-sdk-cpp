@@ -34,54 +34,20 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The Timestream resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). </p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p> The Timestream resource with tags to be listed. This value is an Amazon
-     * Resource Name (ARN). </p>
-     */
     inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

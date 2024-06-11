@@ -34,95 +34,34 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the load balancer to which you want to associate the SSL/TLS
      * certificate.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the load balancer to which you want to associate the SSL/TLS
-     * certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of your SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your SSL/TLS certificate.</p>
-     */
     inline AttachLoadBalancerTlsCertificateRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerName;

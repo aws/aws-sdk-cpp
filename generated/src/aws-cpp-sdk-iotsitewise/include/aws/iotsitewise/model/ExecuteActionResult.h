@@ -32,63 +32,29 @@ namespace Model
     AWS_IOTSITEWISE_API ExecuteActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the action.</p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(const Aws::String& value) { m_actionId = value; }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(Aws::String&& value) { m_actionId = std::move(value); }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline void SetActionId(const char* value) { m_actionId.assign(value); }
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline ExecuteActionResult& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline ExecuteActionResult& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the action.</p>
-     */
     inline ExecuteActionResult& WithActionId(const char* value) { SetActionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionId;

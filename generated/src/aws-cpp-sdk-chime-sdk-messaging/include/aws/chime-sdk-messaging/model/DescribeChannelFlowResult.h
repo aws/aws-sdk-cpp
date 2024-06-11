@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API DescribeChannelFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The channel flow details.</p>
      */
     inline const ChannelFlow& GetChannelFlow() const{ return m_channelFlow; }
-
-    /**
-     * <p>The channel flow details.</p>
-     */
     inline void SetChannelFlow(const ChannelFlow& value) { m_channelFlow = value; }
-
-    /**
-     * <p>The channel flow details.</p>
-     */
     inline void SetChannelFlow(ChannelFlow&& value) { m_channelFlow = std::move(value); }
-
-    /**
-     * <p>The channel flow details.</p>
-     */
     inline DescribeChannelFlowResult& WithChannelFlow(const ChannelFlow& value) { SetChannelFlow(value); return *this;}
-
-    /**
-     * <p>The channel flow details.</p>
-     */
     inline DescribeChannelFlowResult& WithChannelFlow(ChannelFlow&& value) { SetChannelFlow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeChannelFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeChannelFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeChannelFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChannelFlow m_channelFlow;

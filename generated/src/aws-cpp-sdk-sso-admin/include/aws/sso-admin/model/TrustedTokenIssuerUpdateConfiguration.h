@@ -39,42 +39,18 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that describes an updated configuration for a trusted token
      * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
      */
     inline const OidcJwtUpdateConfiguration& GetOidcJwtConfiguration() const{ return m_oidcJwtConfiguration; }
-
-    /**
-     * <p>A structure that describes an updated configuration for a trusted token
-     * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
-     */
     inline bool OidcJwtConfigurationHasBeenSet() const { return m_oidcJwtConfigurationHasBeenSet; }
-
-    /**
-     * <p>A structure that describes an updated configuration for a trusted token
-     * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
-     */
     inline void SetOidcJwtConfiguration(const OidcJwtUpdateConfiguration& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = value; }
-
-    /**
-     * <p>A structure that describes an updated configuration for a trusted token
-     * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
-     */
     inline void SetOidcJwtConfiguration(OidcJwtUpdateConfiguration&& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = std::move(value); }
-
-    /**
-     * <p>A structure that describes an updated configuration for a trusted token
-     * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
-     */
     inline TrustedTokenIssuerUpdateConfiguration& WithOidcJwtConfiguration(const OidcJwtUpdateConfiguration& value) { SetOidcJwtConfiguration(value); return *this;}
-
-    /**
-     * <p>A structure that describes an updated configuration for a trusted token
-     * issuer that uses OpenID Connect (OIDC) with JSON web tokens (JWT).</p>
-     */
     inline TrustedTokenIssuerUpdateConfiguration& WithOidcJwtConfiguration(OidcJwtUpdateConfiguration&& value) { SetOidcJwtConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OidcJwtUpdateConfiguration m_oidcJwtConfiguration;

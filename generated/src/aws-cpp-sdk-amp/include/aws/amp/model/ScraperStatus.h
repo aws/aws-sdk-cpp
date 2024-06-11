@@ -38,36 +38,17 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the scraper.</p>
      */
     inline const ScraperStatusCode& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline void SetStatusCode(const ScraperStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline void SetStatusCode(ScraperStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline ScraperStatus& WithStatusCode(const ScraperStatusCode& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The current status of the scraper.</p>
-     */
     inline ScraperStatus& WithStatusCode(ScraperStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScraperStatusCode m_statusCode;

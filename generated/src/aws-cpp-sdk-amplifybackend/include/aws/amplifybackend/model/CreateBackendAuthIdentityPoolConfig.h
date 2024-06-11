@@ -38,71 +38,30 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
     inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline bool IdentityPoolNameHasBeenSet() const { return m_identityPoolNameHasBeenSet; }
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::move(value); }
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline void SetIdentityPoolName(const char* value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName.assign(value); }
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-     */
     inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to true or false based on whether you want to enable guest authorization
      * to your Amplify app.</p>
      */
     inline bool GetUnauthenticatedLogin() const{ return m_unauthenticatedLogin; }
-
-    /**
-     * <p>Set to true or false based on whether you want to enable guest authorization
-     * to your Amplify app.</p>
-     */
     inline bool UnauthenticatedLoginHasBeenSet() const { return m_unauthenticatedLoginHasBeenSet; }
-
-    /**
-     * <p>Set to true or false based on whether you want to enable guest authorization
-     * to your Amplify app.</p>
-     */
     inline void SetUnauthenticatedLogin(bool value) { m_unauthenticatedLoginHasBeenSet = true; m_unauthenticatedLogin = value; }
-
-    /**
-     * <p>Set to true or false based on whether you want to enable guest authorization
-     * to your Amplify app.</p>
-     */
     inline CreateBackendAuthIdentityPoolConfig& WithUnauthenticatedLogin(bool value) { SetUnauthenticatedLogin(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityPoolName;

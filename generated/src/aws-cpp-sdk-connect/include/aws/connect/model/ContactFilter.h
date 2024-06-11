@@ -41,62 +41,21 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of up to 9 <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
      * states</a>.</p>
      */
     inline const Aws::Vector<ContactState>& GetContactStates() const{ return m_contactStates; }
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline bool ContactStatesHasBeenSet() const { return m_contactStatesHasBeenSet; }
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline void SetContactStates(const Aws::Vector<ContactState>& value) { m_contactStatesHasBeenSet = true; m_contactStates = value; }
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline void SetContactStates(Aws::Vector<ContactState>&& value) { m_contactStatesHasBeenSet = true; m_contactStates = std::move(value); }
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline ContactFilter& WithContactStates(const Aws::Vector<ContactState>& value) { SetContactStates(value); return *this;}
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline ContactFilter& WithContactStates(Aws::Vector<ContactState>&& value) { SetContactStates(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline ContactFilter& AddContactStates(const ContactState& value) { m_contactStatesHasBeenSet = true; m_contactStates.push_back(value); return *this; }
-
-    /**
-     * <p>A list of up to 9 <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">contact
-     * states</a>.</p>
-     */
     inline ContactFilter& AddContactStates(ContactState&& value) { m_contactStatesHasBeenSet = true; m_contactStates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContactState> m_contactStates;

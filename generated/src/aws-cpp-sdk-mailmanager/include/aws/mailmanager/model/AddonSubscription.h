@@ -39,159 +39,59 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Add On.</p>
      */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline AddonSubscription& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline AddonSubscription& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Add On.</p>
-     */
     inline AddonSubscription& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
      */
     inline const Aws::String& GetAddonSubscriptionArn() const{ return m_addonSubscriptionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline bool AddonSubscriptionArnHasBeenSet() const { return m_addonSubscriptionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionArn(const Aws::String& value) { m_addonSubscriptionArnHasBeenSet = true; m_addonSubscriptionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionArn(Aws::String&& value) { m_addonSubscriptionArnHasBeenSet = true; m_addonSubscriptionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionArn(const char* value) { m_addonSubscriptionArnHasBeenSet = true; m_addonSubscriptionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionArn(const Aws::String& value) { SetAddonSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionArn(Aws::String&& value) { SetAddonSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionArn(const char* value) { SetAddonSubscriptionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the Add On subscription.</p>
      */
     inline const Aws::String& GetAddonSubscriptionId() const{ return m_addonSubscriptionId; }
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline bool AddonSubscriptionIdHasBeenSet() const { return m_addonSubscriptionIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionId(const Aws::String& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = value; }
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionId(Aws::String&& value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline void SetAddonSubscriptionId(const char* value) { m_addonSubscriptionIdHasBeenSet = true; m_addonSubscriptionId.assign(value); }
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionId(const Aws::String& value) { SetAddonSubscriptionId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionId(Aws::String&& value) { SetAddonSubscriptionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the Add On subscription.</p>
-     */
     inline AddonSubscription& WithAddonSubscriptionId(const char* value) { SetAddonSubscriptionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp of when the Add On subscription was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-
-    /**
-     * <p>The timestamp of when the Add On subscription was created.</p>
-     */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp of when the Add On subscription was created.</p>
-     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-
-    /**
-     * <p>The timestamp of when the Add On subscription was created.</p>
-     */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of when the Add On subscription was created.</p>
-     */
     inline AddonSubscription& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of when the Add On subscription was created.</p>
-     */
     inline AddonSubscription& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addonName;

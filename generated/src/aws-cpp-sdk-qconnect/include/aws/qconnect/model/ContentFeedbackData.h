@@ -37,36 +37,17 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the feedback for a generative target type.</p>
      */
     inline const GenerativeContentFeedbackData& GetGenerativeContentFeedbackData() const{ return m_generativeContentFeedbackData; }
-
-    /**
-     * <p>Information about the feedback for a generative target type.</p>
-     */
     inline bool GenerativeContentFeedbackDataHasBeenSet() const { return m_generativeContentFeedbackDataHasBeenSet; }
-
-    /**
-     * <p>Information about the feedback for a generative target type.</p>
-     */
     inline void SetGenerativeContentFeedbackData(const GenerativeContentFeedbackData& value) { m_generativeContentFeedbackDataHasBeenSet = true; m_generativeContentFeedbackData = value; }
-
-    /**
-     * <p>Information about the feedback for a generative target type.</p>
-     */
     inline void SetGenerativeContentFeedbackData(GenerativeContentFeedbackData&& value) { m_generativeContentFeedbackDataHasBeenSet = true; m_generativeContentFeedbackData = std::move(value); }
-
-    /**
-     * <p>Information about the feedback for a generative target type.</p>
-     */
     inline ContentFeedbackData& WithGenerativeContentFeedbackData(const GenerativeContentFeedbackData& value) { SetGenerativeContentFeedbackData(value); return *this;}
-
-    /**
-     * <p>Information about the feedback for a generative target type.</p>
-     */
     inline ContentFeedbackData& WithGenerativeContentFeedbackData(GenerativeContentFeedbackData&& value) { SetGenerativeContentFeedbackData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GenerativeContentFeedbackData m_generativeContentFeedbackData;

@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
      */
     inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline DescribeMonitorRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline DescribeMonitorRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
-     */
     inline DescribeMonitorRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorArn;

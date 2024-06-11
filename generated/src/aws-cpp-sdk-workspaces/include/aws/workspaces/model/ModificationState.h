@@ -38,67 +38,29 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource.</p>
      */
     inline const ModificationResourceEnum& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The resource.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The resource.</p>
-     */
     inline void SetResource(const ModificationResourceEnum& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The resource.</p>
-     */
     inline void SetResource(ModificationResourceEnum&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The resource.</p>
-     */
     inline ModificationState& WithResource(const ModificationResourceEnum& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The resource.</p>
-     */
     inline ModificationState& WithResource(ModificationResourceEnum&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The modification state.</p>
      */
     inline const ModificationStateEnum& GetState() const{ return m_state; }
-
-    /**
-     * <p>The modification state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The modification state.</p>
-     */
     inline void SetState(const ModificationStateEnum& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The modification state.</p>
-     */
     inline void SetState(ModificationStateEnum&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The modification state.</p>
-     */
     inline ModificationState& WithState(const ModificationStateEnum& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The modification state.</p>
-     */
     inline ModificationState& WithState(ModificationStateEnum&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ModificationResourceEnum m_resource;

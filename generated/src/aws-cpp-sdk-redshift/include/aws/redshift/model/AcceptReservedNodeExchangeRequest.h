@@ -36,111 +36,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A string representing the node identifier of the DC1 Reserved Node to be
      * exchanged.</p>
      */
     inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
-
-    /**
-     * <p>A string representing the node identifier of the DC1 Reserved Node to be
-     * exchanged.</p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
      * exchange. You can obtain the value for the parameter by calling
      * <a>GetReservedNodeExchangeOfferings</a> </p>
      */
     inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
-     * exchange. You can obtain the value for the parameter by calling
-     * <a>GetReservedNodeExchangeOfferings</a> </p>
-     */
     inline AcceptReservedNodeExchangeRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reservedNodeId;

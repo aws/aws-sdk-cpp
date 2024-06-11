@@ -39,85 +39,32 @@ namespace Model
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The set of accepted encryption algorithms that are allowed in a code-signing
      * job.</p>
      */
     inline const Aws::Vector<EncryptionAlgorithm>& GetAllowedValues() const{ return m_allowedValues; }
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline void SetAllowedValues(const Aws::Vector<EncryptionAlgorithm>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline void SetAllowedValues(Aws::Vector<EncryptionAlgorithm>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline EncryptionAlgorithmOptions& WithAllowedValues(const Aws::Vector<EncryptionAlgorithm>& value) { SetAllowedValues(value); return *this;}
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline EncryptionAlgorithmOptions& WithAllowedValues(Aws::Vector<EncryptionAlgorithm>&& value) { SetAllowedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline EncryptionAlgorithmOptions& AddAllowedValues(const EncryptionAlgorithm& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-
-    /**
-     * <p>The set of accepted encryption algorithms that are allowed in a code-signing
-     * job.</p>
-     */
     inline EncryptionAlgorithmOptions& AddAllowedValues(EncryptionAlgorithm&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default encryption algorithm that is used by a code-signing job.</p>
      */
     inline const EncryptionAlgorithm& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p>The default encryption algorithm that is used by a code-signing job.</p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p>The default encryption algorithm that is used by a code-signing job.</p>
-     */
     inline void SetDefaultValue(const EncryptionAlgorithm& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p>The default encryption algorithm that is used by a code-signing job.</p>
-     */
     inline void SetDefaultValue(EncryptionAlgorithm&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * <p>The default encryption algorithm that is used by a code-signing job.</p>
-     */
     inline EncryptionAlgorithmOptions& WithDefaultValue(const EncryptionAlgorithm& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * <p>The default encryption algorithm that is used by a code-signing job.</p>
-     */
     inline EncryptionAlgorithmOptions& WithDefaultValue(EncryptionAlgorithm&& value) { SetDefaultValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EncryptionAlgorithm> m_allowedValues;

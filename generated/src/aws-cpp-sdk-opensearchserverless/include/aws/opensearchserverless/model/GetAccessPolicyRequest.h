@@ -35,83 +35,32 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the access policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline GetAccessPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline GetAccessPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the access policy.</p>
-     */
     inline GetAccessPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tye type of policy. Currently, the only supported value is
      * <code>data</code>.</p>
      */
     inline const AccessPolicyType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
     inline void SetType(const AccessPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
     inline void SetType(AccessPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
     inline GetAccessPolicyRequest& WithType(const AccessPolicyType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Tye type of policy. Currently, the only supported value is
-     * <code>data</code>.</p>
-     */
     inline GetAccessPolicyRequest& WithType(AccessPolicyType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

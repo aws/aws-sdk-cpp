@@ -34,36 +34,17 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The address that you want the Snow device shipped to.</p>
      */
     inline const Address& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The address that you want the Snow device shipped to.</p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The address that you want the Snow device shipped to.</p>
-     */
     inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The address that you want the Snow device shipped to.</p>
-     */
     inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The address that you want the Snow device shipped to.</p>
-     */
     inline CreateAddressRequest& WithAddress(const Address& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The address that you want the Snow device shipped to.</p>
-     */
     inline CreateAddressRequest& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Address m_address;

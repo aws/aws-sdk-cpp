@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,62 +44,22 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline GetDefaultCreditSpecificationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instance family.</p>
      */
     inline const UnlimitedSupportedInstanceFamily& GetInstanceFamily() const{ return m_instanceFamily; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline void SetInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline void SetInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline GetDefaultCreditSpecificationRequest& WithInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { SetInstanceFamily(value); return *this;}
-
-    /**
-     * <p>The instance family.</p>
-     */
     inline GetDefaultCreditSpecificationRequest& WithInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { SetInstanceFamily(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

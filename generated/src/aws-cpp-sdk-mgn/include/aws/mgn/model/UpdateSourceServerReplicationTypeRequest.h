@@ -33,118 +33,45 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Account ID on which to update replication type.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Account ID on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Replication type to which to update source server.</p>
      */
     inline const ReplicationType& GetReplicationType() const{ return m_replicationType; }
-
-    /**
-     * <p>Replication type to which to update source server.</p>
-     */
     inline bool ReplicationTypeHasBeenSet() const { return m_replicationTypeHasBeenSet; }
-
-    /**
-     * <p>Replication type to which to update source server.</p>
-     */
     inline void SetReplicationType(const ReplicationType& value) { m_replicationTypeHasBeenSet = true; m_replicationType = value; }
-
-    /**
-     * <p>Replication type to which to update source server.</p>
-     */
     inline void SetReplicationType(ReplicationType&& value) { m_replicationTypeHasBeenSet = true; m_replicationType = std::move(value); }
-
-    /**
-     * <p>Replication type to which to update source server.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithReplicationType(const ReplicationType& value) { SetReplicationType(value); return *this;}
-
-    /**
-     * <p>Replication type to which to update source server.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithReplicationType(ReplicationType&& value) { SetReplicationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ID of source server on which to update replication type.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of source server on which to update replication type.</p>
-     */
     inline UpdateSourceServerReplicationTypeRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

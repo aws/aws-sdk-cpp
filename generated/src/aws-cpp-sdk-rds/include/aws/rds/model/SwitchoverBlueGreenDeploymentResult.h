@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API SwitchoverBlueGreenDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const BlueGreenDeployment& GetBlueGreenDeployment() const{ return m_blueGreenDeployment; }
-
-    
     inline void SetBlueGreenDeployment(const BlueGreenDeployment& value) { m_blueGreenDeployment = value; }
-
-    
     inline void SetBlueGreenDeployment(BlueGreenDeployment&& value) { m_blueGreenDeployment = std::move(value); }
-
-    
     inline SwitchoverBlueGreenDeploymentResult& WithBlueGreenDeployment(const BlueGreenDeployment& value) { SetBlueGreenDeployment(value); return *this;}
-
-    
     inline SwitchoverBlueGreenDeploymentResult& WithBlueGreenDeployment(BlueGreenDeployment&& value) { SetBlueGreenDeployment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline SwitchoverBlueGreenDeploymentResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline SwitchoverBlueGreenDeploymentResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BlueGreenDeployment m_blueGreenDeployment;

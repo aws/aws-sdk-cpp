@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
      */
     inline const Aws::String& GetPipelineExecutionArn() const{ return m_pipelineExecutionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline bool PipelineExecutionArnHasBeenSet() const { return m_pipelineExecutionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionArn(const Aws::String& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionArn(Aws::String&& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline void SetPipelineExecutionArn(const char* value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline DescribePipelineExecutionRequest& WithPipelineExecutionArn(const Aws::String& value) { SetPipelineExecutionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline DescribePipelineExecutionRequest& WithPipelineExecutionArn(Aws::String&& value) { SetPipelineExecutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
     inline DescribePipelineExecutionRequest& WithPipelineExecutionArn(const char* value) { SetPipelineExecutionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineExecutionArn;

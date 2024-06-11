@@ -40,103 +40,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
      * delete.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline DeleteChangeSetRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline DeleteChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
-     * delete.</p>
-     */
     inline DeleteChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
      * or Amazon Resource Name (ARN) that's associated with it.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline DeleteChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline DeleteChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>If you specified the name of a change set to delete, specify the stack name
-     * or Amazon Resource Name (ARN) that's associated with it.</p>
-     */
     inline DeleteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_changeSetName;

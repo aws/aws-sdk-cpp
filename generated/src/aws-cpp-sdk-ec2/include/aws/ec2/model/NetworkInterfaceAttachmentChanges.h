@@ -39,71 +39,30 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the network interface attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface attachment.</p>
-     */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the network interface is deleted when the instance is
-     * terminated.</p>
-     */
     inline NetworkInterfaceAttachmentChanges& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentId;

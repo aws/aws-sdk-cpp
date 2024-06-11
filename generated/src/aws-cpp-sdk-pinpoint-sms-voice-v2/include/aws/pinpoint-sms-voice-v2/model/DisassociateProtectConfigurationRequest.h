@@ -34,87 +34,33 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
     inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the protect configuration.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the ConfigurationSet.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the ConfigurationSet.</p>
-     */
     inline DisassociateProtectConfigurationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_protectConfigurationId;

@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the display mode of the negative value configuration.</p>
      */
     inline const NegativeValueDisplayMode& GetDisplayMode() const{ return m_displayMode; }
-
-    /**
-     * <p>Determines the display mode of the negative value configuration.</p>
-     */
     inline bool DisplayModeHasBeenSet() const { return m_displayModeHasBeenSet; }
-
-    /**
-     * <p>Determines the display mode of the negative value configuration.</p>
-     */
     inline void SetDisplayMode(const NegativeValueDisplayMode& value) { m_displayModeHasBeenSet = true; m_displayMode = value; }
-
-    /**
-     * <p>Determines the display mode of the negative value configuration.</p>
-     */
     inline void SetDisplayMode(NegativeValueDisplayMode&& value) { m_displayModeHasBeenSet = true; m_displayMode = std::move(value); }
-
-    /**
-     * <p>Determines the display mode of the negative value configuration.</p>
-     */
     inline NegativeValueConfiguration& WithDisplayMode(const NegativeValueDisplayMode& value) { SetDisplayMode(value); return *this;}
-
-    /**
-     * <p>Determines the display mode of the negative value configuration.</p>
-     */
     inline NegativeValueConfiguration& WithDisplayMode(NegativeValueDisplayMode&& value) { SetDisplayMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NegativeValueDisplayMode m_displayMode;

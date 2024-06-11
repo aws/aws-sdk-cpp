@@ -32,87 +32,33 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the managed endpoint.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline DeleteManagedEndpointRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline DeleteManagedEndpointRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the managed endpoint.</p>
-     */
     inline DeleteManagedEndpointRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the endpoint's virtual cluster.</p>
      */
     inline const Aws::String& GetVirtualClusterId() const{ return m_virtualClusterId; }
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline bool VirtualClusterIdHasBeenSet() const { return m_virtualClusterIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline void SetVirtualClusterId(const Aws::String& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = value; }
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline void SetVirtualClusterId(Aws::String&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::move(value); }
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline void SetVirtualClusterId(const char* value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId.assign(value); }
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline DeleteManagedEndpointRequest& WithVirtualClusterId(const Aws::String& value) { SetVirtualClusterId(value); return *this;}
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline DeleteManagedEndpointRequest& WithVirtualClusterId(Aws::String&& value) { SetVirtualClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the endpoint's virtual cluster.</p>
-     */
     inline DeleteManagedEndpointRequest& WithVirtualClusterId(const char* value) { SetVirtualClusterId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

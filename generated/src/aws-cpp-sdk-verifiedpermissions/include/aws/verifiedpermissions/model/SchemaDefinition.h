@@ -41,6 +41,7 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A JSON string representation of the schema supported by applications that use
      * this policy store. For more information, see <a
@@ -48,63 +49,14 @@ namespace Model
      * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
      */
     inline const Aws::String& GetCedarJson() const{ return m_cedarJson; }
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline bool CedarJsonHasBeenSet() const { return m_cedarJsonHasBeenSet; }
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline void SetCedarJson(const Aws::String& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = value; }
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline void SetCedarJson(Aws::String&& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = std::move(value); }
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline void SetCedarJson(const char* value) { m_cedarJsonHasBeenSet = true; m_cedarJson.assign(value); }
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline SchemaDefinition& WithCedarJson(const Aws::String& value) { SetCedarJson(value); return *this;}
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline SchemaDefinition& WithCedarJson(Aws::String&& value) { SetCedarJson(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON string representation of the schema supported by applications that use
-     * this policy store. For more information, see <a
-     * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy
-     * store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
-     */
     inline SchemaDefinition& WithCedarJson(const char* value) { SetCedarJson(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cedarJson;

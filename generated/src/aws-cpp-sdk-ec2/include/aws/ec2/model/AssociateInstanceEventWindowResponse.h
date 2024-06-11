@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API AssociateInstanceEventWindowResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the event window.</p>
      */
     inline const InstanceEventWindow& GetInstanceEventWindow() const{ return m_instanceEventWindow; }
-
-    /**
-     * <p>Information about the event window.</p>
-     */
     inline void SetInstanceEventWindow(const InstanceEventWindow& value) { m_instanceEventWindow = value; }
-
-    /**
-     * <p>Information about the event window.</p>
-     */
     inline void SetInstanceEventWindow(InstanceEventWindow&& value) { m_instanceEventWindow = std::move(value); }
-
-    /**
-     * <p>Information about the event window.</p>
-     */
     inline AssociateInstanceEventWindowResponse& WithInstanceEventWindow(const InstanceEventWindow& value) { SetInstanceEventWindow(value); return *this;}
-
-    /**
-     * <p>Information about the event window.</p>
-     */
     inline AssociateInstanceEventWindowResponse& WithInstanceEventWindow(InstanceEventWindow&& value) { SetInstanceEventWindow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AssociateInstanceEventWindowResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AssociateInstanceEventWindowResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceEventWindow m_instanceEventWindow;

@@ -37,130 +37,59 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Request to query data replication backlog size in bytes.</p>
      */
     inline long long GetBackloggedStorageBytes() const{ return m_backloggedStorageBytes; }
-
-    /**
-     * <p>Request to query data replication backlog size in bytes.</p>
-     */
     inline bool BackloggedStorageBytesHasBeenSet() const { return m_backloggedStorageBytesHasBeenSet; }
-
-    /**
-     * <p>Request to query data replication backlog size in bytes.</p>
-     */
     inline void SetBackloggedStorageBytes(long long value) { m_backloggedStorageBytesHasBeenSet = true; m_backloggedStorageBytes = value; }
-
-    /**
-     * <p>Request to query data replication backlog size in bytes.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithBackloggedStorageBytes(long long value) { SetBackloggedStorageBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request to query device name.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>Request to query device name.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request to query amount of data replicated in bytes.</p>
      */
     inline long long GetReplicatedStorageBytes() const{ return m_replicatedStorageBytes; }
-
-    /**
-     * <p>Request to query amount of data replicated in bytes.</p>
-     */
     inline bool ReplicatedStorageBytesHasBeenSet() const { return m_replicatedStorageBytesHasBeenSet; }
-
-    /**
-     * <p>Request to query amount of data replicated in bytes.</p>
-     */
     inline void SetReplicatedStorageBytes(long long value) { m_replicatedStorageBytesHasBeenSet = true; m_replicatedStorageBytes = value; }
-
-    /**
-     * <p>Request to query amount of data replicated in bytes.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithReplicatedStorageBytes(long long value) { SetReplicatedStorageBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request to query amount of data rescanned in bytes.</p>
      */
     inline long long GetRescannedStorageBytes() const{ return m_rescannedStorageBytes; }
-
-    /**
-     * <p>Request to query amount of data rescanned in bytes.</p>
-     */
     inline bool RescannedStorageBytesHasBeenSet() const { return m_rescannedStorageBytesHasBeenSet; }
-
-    /**
-     * <p>Request to query amount of data rescanned in bytes.</p>
-     */
     inline void SetRescannedStorageBytes(long long value) { m_rescannedStorageBytesHasBeenSet = true; m_rescannedStorageBytes = value; }
-
-    /**
-     * <p>Request to query amount of data rescanned in bytes.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithRescannedStorageBytes(long long value) { SetRescannedStorageBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request to query total amount of data replicated in bytes.</p>
      */
     inline long long GetTotalStorageBytes() const{ return m_totalStorageBytes; }
-
-    /**
-     * <p>Request to query total amount of data replicated in bytes.</p>
-     */
     inline bool TotalStorageBytesHasBeenSet() const { return m_totalStorageBytesHasBeenSet; }
-
-    /**
-     * <p>Request to query total amount of data replicated in bytes.</p>
-     */
     inline void SetTotalStorageBytes(long long value) { m_totalStorageBytesHasBeenSet = true; m_totalStorageBytes = value; }
-
-    /**
-     * <p>Request to query total amount of data replicated in bytes.</p>
-     */
     inline DataReplicationInfoReplicatedDisk& WithTotalStorageBytes(long long value) { SetTotalStorageBytes(value); return *this;}
-
+    ///@}
   private:
 
     long long m_backloggedStorageBytes;

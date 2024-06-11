@@ -39,85 +39,32 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon S3 URL in the format
      * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline ImportDataSource& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline ImportDataSource& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon S3 URL in the format
-     * s3://<i>&lt;bucket_name&gt;</i>/<i>&lt;object&gt;</i>.</p>
-     */
     inline ImportDataSource& WithS3Url(const char* value) { SetS3Url(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data format of the import job's data source.</p>
      */
     inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
-
-    /**
-     * <p>The data format of the import job's data source.</p>
-     */
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-
-    /**
-     * <p>The data format of the import job's data source.</p>
-     */
     inline void SetDataFormat(const DataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-
-    /**
-     * <p>The data format of the import job's data source.</p>
-     */
     inline void SetDataFormat(DataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-
-    /**
-     * <p>The data format of the import job's data source.</p>
-     */
     inline ImportDataSource& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
-
-    /**
-     * <p>The data format of the import job's data source.</p>
-     */
     inline ImportDataSource& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3Url;

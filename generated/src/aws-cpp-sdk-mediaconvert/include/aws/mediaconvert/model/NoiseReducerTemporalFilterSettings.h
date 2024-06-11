@@ -38,35 +38,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Use Aggressive mode for content that has complex motion. Higher values produce
      * stronger temporal filtering. This filters highly complex scenes more
      * aggressively and creates better VQ for low bitrate outputs.
      */
     inline int GetAggressiveMode() const{ return m_aggressiveMode; }
-
-    /**
-     * Use Aggressive mode for content that has complex motion. Higher values produce
-     * stronger temporal filtering. This filters highly complex scenes more
-     * aggressively and creates better VQ for low bitrate outputs.
-     */
     inline bool AggressiveModeHasBeenSet() const { return m_aggressiveModeHasBeenSet; }
-
-    /**
-     * Use Aggressive mode for content that has complex motion. Higher values produce
-     * stronger temporal filtering. This filters highly complex scenes more
-     * aggressively and creates better VQ for low bitrate outputs.
-     */
     inline void SetAggressiveMode(int value) { m_aggressiveModeHasBeenSet = true; m_aggressiveMode = value; }
-
-    /**
-     * Use Aggressive mode for content that has complex motion. Higher values produce
-     * stronger temporal filtering. This filters highly complex scenes more
-     * aggressively and creates better VQ for low bitrate outputs.
-     */
     inline NoiseReducerTemporalFilterSettings& WithAggressiveMode(int value) { SetAggressiveMode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
      * output is reduced. You can optionally use Post temporal sharpening to apply
@@ -79,145 +63,40 @@ namespace Model
      * sharpening.
      */
     inline const NoiseFilterPostTemporalSharpening& GetPostTemporalSharpening() const{ return m_postTemporalSharpening; }
-
-    /**
-     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
-     * output is reduced. You can optionally use Post temporal sharpening to apply
-     * sharpening to the edges of your output. Note that Post temporal sharpening will
-     * also make the bandwidth reduction from the Noise reducer smaller. The default
-     * behavior, Auto, allows the transcoder to determine whether to apply sharpening,
-     * depending on your input type and quality. When you set Post temporal sharpening
-     * to Enabled, specify how much sharpening is applied using Post temporal
-     * sharpening strength. Set Post temporal sharpening to Disabled to not apply
-     * sharpening.
-     */
     inline bool PostTemporalSharpeningHasBeenSet() const { return m_postTemporalSharpeningHasBeenSet; }
-
-    /**
-     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
-     * output is reduced. You can optionally use Post temporal sharpening to apply
-     * sharpening to the edges of your output. Note that Post temporal sharpening will
-     * also make the bandwidth reduction from the Noise reducer smaller. The default
-     * behavior, Auto, allows the transcoder to determine whether to apply sharpening,
-     * depending on your input type and quality. When you set Post temporal sharpening
-     * to Enabled, specify how much sharpening is applied using Post temporal
-     * sharpening strength. Set Post temporal sharpening to Disabled to not apply
-     * sharpening.
-     */
     inline void SetPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
-
-    /**
-     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
-     * output is reduced. You can optionally use Post temporal sharpening to apply
-     * sharpening to the edges of your output. Note that Post temporal sharpening will
-     * also make the bandwidth reduction from the Noise reducer smaller. The default
-     * behavior, Auto, allows the transcoder to determine whether to apply sharpening,
-     * depending on your input type and quality. When you set Post temporal sharpening
-     * to Enabled, specify how much sharpening is applied using Post temporal
-     * sharpening strength. Set Post temporal sharpening to Disabled to not apply
-     * sharpening.
-     */
     inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = std::move(value); }
-
-    /**
-     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
-     * output is reduced. You can optionally use Post temporal sharpening to apply
-     * sharpening to the edges of your output. Note that Post temporal sharpening will
-     * also make the bandwidth reduction from the Noise reducer smaller. The default
-     * behavior, Auto, allows the transcoder to determine whether to apply sharpening,
-     * depending on your input type and quality. When you set Post temporal sharpening
-     * to Enabled, specify how much sharpening is applied using Post temporal
-     * sharpening strength. Set Post temporal sharpening to Disabled to not apply
-     * sharpening.
-     */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { SetPostTemporalSharpening(value); return *this;}
-
-    /**
-     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your
-     * output is reduced. You can optionally use Post temporal sharpening to apply
-     * sharpening to the edges of your output. Note that Post temporal sharpening will
-     * also make the bandwidth reduction from the Noise reducer smaller. The default
-     * behavior, Auto, allows the transcoder to determine whether to apply sharpening,
-     * depending on your input type and quality. When you set Post temporal sharpening
-     * to Enabled, specify how much sharpening is applied using Post temporal
-     * sharpening strength. Set Post temporal sharpening to Disabled to not apply
-     * sharpening.
-     */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { SetPostTemporalSharpening(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Use Post temporal sharpening strength to define the amount of sharpening the
      * transcoder applies to your output. Set Post temporal sharpening strength to Low,
      * Medium, or High to indicate the amount of sharpening.
      */
     inline const NoiseFilterPostTemporalSharpeningStrength& GetPostTemporalSharpeningStrength() const{ return m_postTemporalSharpeningStrength; }
-
-    /**
-     * Use Post temporal sharpening strength to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low,
-     * Medium, or High to indicate the amount of sharpening.
-     */
     inline bool PostTemporalSharpeningStrengthHasBeenSet() const { return m_postTemporalSharpeningStrengthHasBeenSet; }
-
-    /**
-     * Use Post temporal sharpening strength to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low,
-     * Medium, or High to indicate the amount of sharpening.
-     */
     inline void SetPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = value; }
-
-    /**
-     * Use Post temporal sharpening strength to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low,
-     * Medium, or High to indicate the amount of sharpening.
-     */
     inline void SetPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = std::move(value); }
-
-    /**
-     * Use Post temporal sharpening strength to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low,
-     * Medium, or High to indicate the amount of sharpening.
-     */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { SetPostTemporalSharpeningStrength(value); return *this;}
-
-    /**
-     * Use Post temporal sharpening strength to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low,
-     * Medium, or High to indicate the amount of sharpening.
-     */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { SetPostTemporalSharpeningStrength(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The speed of the filter (higher number is faster). Low setting reduces bit rate
      * at the cost of transcode time, high setting improves transcode time at the cost
      * of bit rate.
      */
     inline int GetSpeed() const{ return m_speed; }
-
-    /**
-     * The speed of the filter (higher number is faster). Low setting reduces bit rate
-     * at the cost of transcode time, high setting improves transcode time at the cost
-     * of bit rate.
-     */
     inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
-
-    /**
-     * The speed of the filter (higher number is faster). Low setting reduces bit rate
-     * at the cost of transcode time, high setting improves transcode time at the cost
-     * of bit rate.
-     */
     inline void SetSpeed(int value) { m_speedHasBeenSet = true; m_speed = value; }
-
-    /**
-     * The speed of the filter (higher number is faster). Low setting reduces bit rate
-     * at the cost of transcode time, high setting improves transcode time at the cost
-     * of bit rate.
-     */
     inline NoiseReducerTemporalFilterSettings& WithSpeed(int value) { SetSpeed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify the strength of the noise reducing filter on this output. Higher values
      * produce stronger filtering. We recommend the following value ranges, depending
@@ -226,34 +105,10 @@ namespace Model
      * a high level of complexity reduction
      */
     inline int GetStrength() const{ return m_strength; }
-
-    /**
-     * Specify the strength of the noise reducing filter on this output. Higher values
-     * produce stronger filtering. We recommend the following value ranges, depending
-     * on the result that you want: * 0-2 for complexity reduction with minimal
-     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
-     * a high level of complexity reduction
-     */
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-
-    /**
-     * Specify the strength of the noise reducing filter on this output. Higher values
-     * produce stronger filtering. We recommend the following value ranges, depending
-     * on the result that you want: * 0-2 for complexity reduction with minimal
-     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
-     * a high level of complexity reduction
-     */
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
-
-    /**
-     * Specify the strength of the noise reducing filter on this output. Higher values
-     * produce stronger filtering. We recommend the following value ranges, depending
-     * on the result that you want: * 0-2 for complexity reduction with minimal
-     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
-     * a high level of complexity reduction
-     */
     inline NoiseReducerTemporalFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
-
+    ///@}
   private:
 
     int m_aggressiveMode;

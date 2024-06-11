@@ -32,79 +32,38 @@ namespace Model
     AWS_KINESISANALYTICSV2_API DeleteApplicationOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline DeleteApplicationOutputResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline DeleteApplicationOutputResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The application Amazon Resource Name (ARN).</p>
-     */
     inline DeleteApplicationOutputResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current application version ID.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>The current application version ID.</p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
-
-    /**
-     * <p>The current application version ID.</p>
-     */
     inline DeleteApplicationOutputResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteApplicationOutputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteApplicationOutputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteApplicationOutputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationARN;

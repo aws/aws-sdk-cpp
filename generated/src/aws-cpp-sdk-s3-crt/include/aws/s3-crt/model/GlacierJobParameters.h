@@ -37,36 +37,17 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
-
-    /**
-     * <p>Retrieval tier at which the restore will be processed.</p>
-     */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-
-    /**
-     * <p>Retrieval tier at which the restore will be processed.</p>
-     */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
-
-    /**
-     * <p>Retrieval tier at which the restore will be processed.</p>
-     */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-
-    /**
-     * <p>Retrieval tier at which the restore will be processed.</p>
-     */
     inline GlacierJobParameters& WithTier(const Tier& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>Retrieval tier at which the restore will be processed.</p>
-     */
     inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Tier m_tier;

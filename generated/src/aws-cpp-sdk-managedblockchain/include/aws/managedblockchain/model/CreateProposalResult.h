@@ -32,63 +32,29 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API CreateProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the proposal.</p>
      */
     inline const Aws::String& GetProposalId() const{ return m_proposalId; }
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline void SetProposalId(const Aws::String& value) { m_proposalId = value; }
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline void SetProposalId(Aws::String&& value) { m_proposalId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline void SetProposalId(const char* value) { m_proposalId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline CreateProposalResult& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline CreateProposalResult& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the proposal.</p>
-     */
     inline CreateProposalResult& WithProposalId(const char* value) { SetProposalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProposalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProposalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProposalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_proposalId;

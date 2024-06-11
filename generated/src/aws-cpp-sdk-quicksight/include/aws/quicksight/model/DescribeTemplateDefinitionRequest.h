@@ -38,117 +38,46 @@ namespace Model
     AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account that contains the template. You
      * must be using the Amazon Web Services account that the template is in.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the template. You
-     * must be using the Amazon Web Services account that the template is in.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the template that you're describing.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the template that you're describing.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the template.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The version number of the template.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The version number of the template.</p>
-     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The version number of the template.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alias of the template that you want to describe. If you name a specific
      * alias, you describe the version that the alias points to. You can specify the
@@ -157,70 +86,14 @@ namespace Model
      * doesn't apply to templates.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias of the template that you want to describe. If you name a specific
-     * alias, you describe the version that the alias points to. You can specify the
-     * latest version of the template by providing the keyword <code>$LATEST</code> in
-     * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     * doesn't apply to templates.</p>
-     */
     inline DescribeTemplateDefinitionRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

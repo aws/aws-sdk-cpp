@@ -36,47 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The reason for canceling the task.</p>
      */
     inline const Aws::String& GetCancelReason() const{ return m_cancelReason; }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline bool CancelReasonHasBeenSet() const { return m_cancelReasonHasBeenSet; }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline void SetCancelReason(const Aws::String& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline void SetCancelReason(Aws::String&& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = std::move(value); }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline void SetCancelReason(const char* value) { m_cancelReasonHasBeenSet = true; m_cancelReason.assign(value); }
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline CancelImportTaskRequest& WithCancelReason(const Aws::String& value) { SetCancelReason(value); return *this;}
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline CancelImportTaskRequest& WithCancelReason(Aws::String&& value) { SetCancelReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for canceling the task.</p>
-     */
     inline CancelImportTaskRequest& WithCancelReason(const char* value) { SetCancelReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -84,72 +58,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CancelImportTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline void SetImportTaskId(const char* value) { m_importTaskIdHasBeenSet = true; m_importTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline CancelImportTaskRequest& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline CancelImportTaskRequest& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the import image or import snapshot task to be canceled.</p>
-     */
     inline CancelImportTaskRequest& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cancelReason;

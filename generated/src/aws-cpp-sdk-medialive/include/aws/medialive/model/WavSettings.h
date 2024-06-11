@@ -37,84 +37,38 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Bits per sample.
      */
     inline double GetBitDepth() const{ return m_bitDepth; }
-
-    /**
-     * Bits per sample.
-     */
     inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
-
-    /**
-     * Bits per sample.
-     */
     inline void SetBitDepth(double value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
-
-    /**
-     * Bits per sample.
-     */
     inline WavSettings& WithBitDepth(double value) { SetBitDepth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The audio coding mode for the WAV audio. The mode determines the number of
      * channels in the audio.
      */
     inline const WavCodingMode& GetCodingMode() const{ return m_codingMode; }
-
-    /**
-     * The audio coding mode for the WAV audio. The mode determines the number of
-     * channels in the audio.
-     */
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
-
-    /**
-     * The audio coding mode for the WAV audio. The mode determines the number of
-     * channels in the audio.
-     */
     inline void SetCodingMode(const WavCodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
-
-    /**
-     * The audio coding mode for the WAV audio. The mode determines the number of
-     * channels in the audio.
-     */
     inline void SetCodingMode(WavCodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
-
-    /**
-     * The audio coding mode for the WAV audio. The mode determines the number of
-     * channels in the audio.
-     */
     inline WavSettings& WithCodingMode(const WavCodingMode& value) { SetCodingMode(value); return *this;}
-
-    /**
-     * The audio coding mode for the WAV audio. The mode determines the number of
-     * channels in the audio.
-     */
     inline WavSettings& WithCodingMode(WavCodingMode&& value) { SetCodingMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Sample rate in Hz.
      */
     inline double GetSampleRate() const{ return m_sampleRate; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline void SetSampleRate(double value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline WavSettings& WithSampleRate(double value) { SetSampleRate(value); return *this;}
-
+    ///@}
   private:
 
     double m_bitDepth;

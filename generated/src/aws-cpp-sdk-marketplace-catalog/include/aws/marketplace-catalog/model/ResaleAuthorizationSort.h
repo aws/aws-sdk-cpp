@@ -38,67 +38,29 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows to sort ResaleAuthorization.</p>
      */
     inline const ResaleAuthorizationSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline void SetSortBy(const ResaleAuthorizationSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline void SetSortBy(ResaleAuthorizationSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline ResaleAuthorizationSort& WithSortBy(const ResaleAuthorizationSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline ResaleAuthorizationSort& WithSortBy(ResaleAuthorizationSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows to sort ResaleAuthorization.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline ResaleAuthorizationSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>Allows to sort ResaleAuthorization.</p>
-     */
     inline ResaleAuthorizationSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResaleAuthorizationSortBy m_sortBy;

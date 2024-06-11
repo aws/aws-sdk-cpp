@@ -34,106 +34,43 @@ namespace Model
     AWS_SCHEDULER_API ListScheduleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether there are additional results to retrieve. If the value is
      * null, there are no more results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline ListScheduleGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline ListScheduleGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates whether there are additional results to retrieve. If the value is
-     * null, there are no more results.</p>
-     */
     inline ListScheduleGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The schedule groups that match the specified criteria.</p>
      */
     inline const Aws::Vector<ScheduleGroupSummary>& GetScheduleGroups() const{ return m_scheduleGroups; }
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline void SetScheduleGroups(const Aws::Vector<ScheduleGroupSummary>& value) { m_scheduleGroups = value; }
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline void SetScheduleGroups(Aws::Vector<ScheduleGroupSummary>&& value) { m_scheduleGroups = std::move(value); }
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline ListScheduleGroupsResult& WithScheduleGroups(const Aws::Vector<ScheduleGroupSummary>& value) { SetScheduleGroups(value); return *this;}
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline ListScheduleGroupsResult& WithScheduleGroups(Aws::Vector<ScheduleGroupSummary>&& value) { SetScheduleGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline ListScheduleGroupsResult& AddScheduleGroups(const ScheduleGroupSummary& value) { m_scheduleGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The schedule groups that match the specified criteria.</p>
-     */
     inline ListScheduleGroupsResult& AddScheduleGroups(ScheduleGroupSummary&& value) { m_scheduleGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListScheduleGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListScheduleGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListScheduleGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

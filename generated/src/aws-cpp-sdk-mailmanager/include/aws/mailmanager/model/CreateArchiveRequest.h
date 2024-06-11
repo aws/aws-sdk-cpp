@@ -41,216 +41,75 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique name for the new archive.</p>
      */
     inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline bool ArchiveNameHasBeenSet() const { return m_archiveNameHasBeenSet; }
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline void SetArchiveName(const Aws::String& value) { m_archiveNameHasBeenSet = true; m_archiveName = value; }
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline void SetArchiveName(Aws::String&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::move(value); }
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline void SetArchiveName(const char* value) { m_archiveNameHasBeenSet = true; m_archiveName.assign(value); }
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline CreateArchiveRequest& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline CreateArchiveRequest& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique name for the new archive.</p>
-     */
     inline CreateArchiveRequest& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline CreateArchiveRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline CreateArchiveRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique token Amazon SES uses to recognize retries of this request.</p>
-     */
     inline CreateArchiveRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
      * archive.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline CreateArchiveRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline CreateArchiveRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key for encrypting emails in the
-     * archive.</p>
-     */
     inline CreateArchiveRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The period for retaining emails in the archive before automatic deletion.</p>
      */
     inline const ArchiveRetention& GetRetention() const{ return m_retention; }
-
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
-
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
     inline void SetRetention(const ArchiveRetention& value) { m_retentionHasBeenSet = true; m_retention = value; }
-
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
     inline void SetRetention(ArchiveRetention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
-
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
     inline CreateArchiveRequest& WithRetention(const ArchiveRetention& value) { SetRetention(value); return *this;}
-
-    /**
-     * <p>The period for retaining emails in the archive before automatic deletion.</p>
-     */
     inline CreateArchiveRequest& WithRetention(ArchiveRetention&& value) { SetRetention(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for the resource. For
      * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateArchiveRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateArchiveRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateArchiveRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for the resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateArchiveRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_archiveName;

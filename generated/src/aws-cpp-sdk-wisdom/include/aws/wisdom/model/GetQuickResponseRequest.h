@@ -32,95 +32,34 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
      * knowledge base.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline GetQuickResponseRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline GetQuickResponseRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type
-     * knowledge base.</p>
-     */
     inline GetQuickResponseRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the quick response.</p>
      */
     inline const Aws::String& GetQuickResponseId() const{ return m_quickResponseId; }
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline bool QuickResponseIdHasBeenSet() const { return m_quickResponseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline void SetQuickResponseId(const Aws::String& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = value; }
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline void SetQuickResponseId(Aws::String&& value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline void SetQuickResponseId(const char* value) { m_quickResponseIdHasBeenSet = true; m_quickResponseId.assign(value); }
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline GetQuickResponseRequest& WithQuickResponseId(const Aws::String& value) { SetQuickResponseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline GetQuickResponseRequest& WithQuickResponseId(Aws::String&& value) { SetQuickResponseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the quick response.</p>
-     */
     inline GetQuickResponseRequest& WithQuickResponseId(const char* value) { SetQuickResponseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_knowledgeBaseId;

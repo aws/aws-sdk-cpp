@@ -37,46 +37,19 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Link to the asset object.</p>
      */
     inline const Aws::String& GetHref() const{ return m_href; }
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline bool HrefHasBeenSet() const { return m_hrefHasBeenSet; }
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline void SetHref(const Aws::String& value) { m_hrefHasBeenSet = true; m_href = value; }
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline void SetHref(Aws::String&& value) { m_hrefHasBeenSet = true; m_href = std::move(value); }
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline void SetHref(const char* value) { m_hrefHasBeenSet = true; m_href.assign(value); }
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline AssetValue& WithHref(const Aws::String& value) { SetHref(value); return *this;}
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline AssetValue& WithHref(Aws::String&& value) { SetHref(std::move(value)); return *this;}
-
-    /**
-     * <p>Link to the asset object.</p>
-     */
     inline AssetValue& WithHref(const char* value) { SetHref(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_href;

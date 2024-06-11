@@ -35,26 +35,15 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to enable "Bring your own license" or not.</p>
      */
     inline bool GetOsByol() const{ return m_osByol; }
-
-    /**
-     * <p>Whether to enable "Bring your own license" or not.</p>
-     */
     inline bool OsByolHasBeenSet() const { return m_osByolHasBeenSet; }
-
-    /**
-     * <p>Whether to enable "Bring your own license" or not.</p>
-     */
     inline void SetOsByol(bool value) { m_osByolHasBeenSet = true; m_osByol = value; }
-
-    /**
-     * <p>Whether to enable "Bring your own license" or not.</p>
-     */
     inline Licensing& WithOsByol(bool value) { SetOsByol(value); return *this;}
-
+    ///@}
   private:
 
     bool m_osByol;

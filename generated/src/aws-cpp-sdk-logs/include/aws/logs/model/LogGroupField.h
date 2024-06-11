@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a log field.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline LogGroupField& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline LogGroupField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a log field.</p>
-     */
     inline LogGroupField& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of log events queried that contained the field.</p>
      */
     inline int GetPercent() const{ return m_percent; }
-
-    /**
-     * <p>The percentage of log events queried that contained the field.</p>
-     */
     inline bool PercentHasBeenSet() const { return m_percentHasBeenSet; }
-
-    /**
-     * <p>The percentage of log events queried that contained the field.</p>
-     */
     inline void SetPercent(int value) { m_percentHasBeenSet = true; m_percent = value; }
-
-    /**
-     * <p>The percentage of log events queried that contained the field.</p>
-     */
     inline LogGroupField& WithPercent(int value) { SetPercent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

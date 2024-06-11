@@ -37,87 +37,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A list of connectivity info.
      */
     inline const Aws::Vector<ConnectivityInfo>& GetConnectivityInfo() const{ return m_connectivityInfo; }
-
-    /**
-     * A list of connectivity info.
-     */
     inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
-
-    /**
-     * A list of connectivity info.
-     */
     inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
-
-    /**
-     * A list of connectivity info.
-     */
     inline void SetConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
-
-    /**
-     * A list of connectivity info.
-     */
     inline UpdateConnectivityInfoRequest& WithConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { SetConnectivityInfo(value); return *this;}
-
-    /**
-     * A list of connectivity info.
-     */
     inline UpdateConnectivityInfoRequest& WithConnectivityInfo(Aws::Vector<ConnectivityInfo>&& value) { SetConnectivityInfo(std::move(value)); return *this;}
-
-    /**
-     * A list of connectivity info.
-     */
     inline UpdateConnectivityInfoRequest& AddConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.push_back(value); return *this; }
-
-    /**
-     * A list of connectivity info.
-     */
     inline UpdateConnectivityInfoRequest& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The thing name.
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * The thing name.
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * The thing name.
-     */
     inline UpdateConnectivityInfoRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline UpdateConnectivityInfoRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline UpdateConnectivityInfoRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;

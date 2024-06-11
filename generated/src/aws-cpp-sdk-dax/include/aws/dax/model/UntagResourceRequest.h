@@ -35,101 +35,35 @@ namespace Model
     AWS_DAX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the DAX resource from which the tags should be removed.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline UntagResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline UntagResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DAX resource from which the tags should be removed.</p>
-     */
     inline UntagResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
      * tags are removed from the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
-     * tags are removed from the cluster.</p>
-     */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeServiceErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>ServiceError</code> objects that describe the specified
      * service errors.</p>
      */
     inline const Aws::Vector<ServiceError>& GetServiceErrors() const{ return m_serviceErrors; }
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline void SetServiceErrors(const Aws::Vector<ServiceError>& value) { m_serviceErrors = value; }
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline void SetServiceErrors(Aws::Vector<ServiceError>&& value) { m_serviceErrors = std::move(value); }
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline DescribeServiceErrorsResult& WithServiceErrors(const Aws::Vector<ServiceError>& value) { SetServiceErrors(value); return *this;}
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline DescribeServiceErrorsResult& WithServiceErrors(Aws::Vector<ServiceError>&& value) { SetServiceErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline DescribeServiceErrorsResult& AddServiceErrors(const ServiceError& value) { m_serviceErrors.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>ServiceError</code> objects that describe the specified
-     * service errors.</p>
-     */
     inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServiceErrorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServiceErrorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServiceErrorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ServiceError> m_serviceErrors;

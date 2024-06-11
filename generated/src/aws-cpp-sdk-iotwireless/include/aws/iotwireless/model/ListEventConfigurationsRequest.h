@@ -39,106 +39,41 @@ namespace Model
     AWS_IOTWIRELESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Resource type to filter event configurations.</p>
      */
     inline const EventNotificationResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>Resource type to filter event configurations.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>Resource type to filter event configurations.</p>
-     */
     inline void SetResourceType(const EventNotificationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>Resource type to filter event configurations.</p>
-     */
     inline void SetResourceType(EventNotificationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>Resource type to filter event configurations.</p>
-     */
     inline ListEventConfigurationsRequest& WithResourceType(const EventNotificationResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>Resource type to filter event configurations.</p>
-     */
     inline ListEventConfigurationsRequest& WithResourceType(EventNotificationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    
     inline ListEventConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListEventConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListEventConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListEventConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     EventNotificationResourceType m_resourceType;

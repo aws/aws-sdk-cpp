@@ -39,79 +39,38 @@ namespace Model
     AWS_KINESISANALYTICS_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of <code>ApplicationSummary</code> objects. </p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplicationSummaries() const{ return m_applicationSummaries; }
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline void SetApplicationSummaries(const Aws::Vector<ApplicationSummary>& value) { m_applicationSummaries = value; }
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline void SetApplicationSummaries(Aws::Vector<ApplicationSummary>&& value) { m_applicationSummaries = std::move(value); }
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline ListApplicationsResult& WithApplicationSummaries(const Aws::Vector<ApplicationSummary>& value) { SetApplicationSummaries(value); return *this;}
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline ListApplicationsResult& WithApplicationSummaries(Aws::Vector<ApplicationSummary>&& value) { SetApplicationSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline ListApplicationsResult& AddApplicationSummaries(const ApplicationSummary& value) { m_applicationSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>List of <code>ApplicationSummary</code> objects. </p>
-     */
     inline ListApplicationsResult& AddApplicationSummaries(ApplicationSummary&& value) { m_applicationSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns true if there are more applications to retrieve.</p>
      */
     inline bool GetHasMoreApplications() const{ return m_hasMoreApplications; }
-
-    /**
-     * <p>Returns true if there are more applications to retrieve.</p>
-     */
     inline void SetHasMoreApplications(bool value) { m_hasMoreApplications = value; }
-
-    /**
-     * <p>Returns true if there are more applications to retrieve.</p>
-     */
     inline ListApplicationsResult& WithHasMoreApplications(bool value) { SetHasMoreApplications(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ApplicationSummary> m_applicationSummaries;

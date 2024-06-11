@@ -40,6 +40,7 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of seconds a response should be cached for. The default is 0
      * seconds, which disables caching. If you don't specify a value for
@@ -48,35 +49,12 @@ namespace Model
      * by returning a <code>ttlOverride</code> key in its response.</p>
      */
     inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
-
-    /**
-     * <p>The number of seconds a response should be cached for. The default is 0
-     * seconds, which disables caching. If you don't specify a value for
-     * <code>authorizerResultTtlInSeconds</code>, the default value is used. The
-     * maximum value is one hour (3600 seconds). The Lambda function can override this
-     * by returning a <code>ttlOverride</code> key in its response.</p>
-     */
     inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
-
-    /**
-     * <p>The number of seconds a response should be cached for. The default is 0
-     * seconds, which disables caching. If you don't specify a value for
-     * <code>authorizerResultTtlInSeconds</code>, the default value is used. The
-     * maximum value is one hour (3600 seconds). The Lambda function can override this
-     * by returning a <code>ttlOverride</code> key in its response.</p>
-     */
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
-
-    /**
-     * <p>The number of seconds a response should be cached for. The default is 0
-     * seconds, which disables caching. If you don't specify a value for
-     * <code>authorizerResultTtlInSeconds</code>, the default value is used. The
-     * maximum value is one hour (3600 seconds). The Lambda function can override this
-     * by returning a <code>ttlOverride</code> key in its response.</p>
-     */
     inline LambdaAuthorizerConfig& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
      * authorization. This can be a standard Lambda ARN, a version ARN
@@ -90,154 +68,29 @@ namespace Model
      * lambda:InvokeFunction</code> </p>
      */
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline LambdaAuthorizerConfig& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline LambdaAuthorizerConfig& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
-     * authorization. This can be a standard Lambda ARN, a version ARN
-     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
-     * function must have the following resource-based policy assigned to it. When
-     * configuring Lambda authorizers in the console, this is done for you. To use the
-     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
-     * add-permission --function-name
-     * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
-     * "appsync" --principal appsync.amazonaws.com --action
-     * lambda:InvokeFunction</code> </p>
-     */
     inline LambdaAuthorizerConfig& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>A regular expression for validation of tokens before the Lambda function is
-     * called.</p>
-     */
     inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
-
+    ///@}
   private:
 
     int m_authorizerResultTtlInSeconds;

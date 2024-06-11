@@ -35,54 +35,20 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARNS for the training dataset and test dataset that you want to use. The
      * datasets must belong to the same project. The test dataset must be empty. </p>
      */
     inline const Aws::Vector<DistributeDataset>& GetDatasets() const{ return m_datasets; }
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline bool DatasetsHasBeenSet() const { return m_datasetsHasBeenSet; }
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline void SetDatasets(const Aws::Vector<DistributeDataset>& value) { m_datasetsHasBeenSet = true; m_datasets = value; }
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline void SetDatasets(Aws::Vector<DistributeDataset>&& value) { m_datasetsHasBeenSet = true; m_datasets = std::move(value); }
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline DistributeDatasetEntriesRequest& WithDatasets(const Aws::Vector<DistributeDataset>& value) { SetDatasets(value); return *this;}
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline DistributeDatasetEntriesRequest& WithDatasets(Aws::Vector<DistributeDataset>&& value) { SetDatasets(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline DistributeDatasetEntriesRequest& AddDatasets(const DistributeDataset& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(value); return *this; }
-
-    /**
-     * <p>The ARNS for the training dataset and test dataset that you want to use. The
-     * datasets must belong to the same project. The test dataset must be empty. </p>
-     */
     inline DistributeDatasetEntriesRequest& AddDatasets(DistributeDataset&& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DistributeDataset> m_datasets;

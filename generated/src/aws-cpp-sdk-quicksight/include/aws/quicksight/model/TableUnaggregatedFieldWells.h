@@ -38,54 +38,20 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The values field well for a pivot table. Values are unaggregated for an
      * unaggregated table.</p>
      */
     inline const Aws::Vector<UnaggregatedField>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline void SetValues(const Aws::Vector<UnaggregatedField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline void SetValues(Aws::Vector<UnaggregatedField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline TableUnaggregatedFieldWells& WithValues(const Aws::Vector<UnaggregatedField>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline TableUnaggregatedFieldWells& WithValues(Aws::Vector<UnaggregatedField>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline TableUnaggregatedFieldWells& AddValues(const UnaggregatedField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values field well for a pivot table. Values are unaggregated for an
-     * unaggregated table.</p>
-     */
     inline TableUnaggregatedFieldWells& AddValues(UnaggregatedField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<UnaggregatedField> m_values;

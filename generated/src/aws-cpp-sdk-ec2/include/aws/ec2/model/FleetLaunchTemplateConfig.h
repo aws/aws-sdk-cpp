@@ -41,85 +41,32 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The launch template.</p>
      */
     inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
-
-    /**
-     * <p>The launch template.</p>
-     */
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-
-    /**
-     * <p>The launch template.</p>
-     */
     inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-
-    /**
-     * <p>The launch template.</p>
-     */
     inline void SetLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-
-    /**
-     * <p>The launch template.</p>
-     */
     inline FleetLaunchTemplateConfig& WithLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
-
-    /**
-     * <p>The launch template.</p>
-     */
     inline FleetLaunchTemplateConfig& WithLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
      * template.</p>
      */
     inline const Aws::Vector<FleetLaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline void SetOverrides(const Aws::Vector<FleetLaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline void SetOverrides(Aws::Vector<FleetLaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline FleetLaunchTemplateConfig& WithOverrides(const Aws::Vector<FleetLaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline FleetLaunchTemplateConfig& WithOverrides(Aws::Vector<FleetLaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline FleetLaunchTemplateConfig& AddOverrides(const FleetLaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-
-    /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template.</p>
-     */
     inline FleetLaunchTemplateConfig& AddOverrides(FleetLaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     FleetLaunchTemplateSpecification m_launchTemplateSpecification;

@@ -36,103 +36,35 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the WorkSpaces resource. The supported resource types are
      * WorkSpaces, registered directories, images, custom bundles, IP access control
      * groups, and connection aliases.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline CreateTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline CreateTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpaces resource. The supported resource types are
-     * WorkSpaces, registered directories, images, custom bundles, IP access control
-     * groups, and connection aliases.</p>
-     */
     inline CreateTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline CreateTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline CreateTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-     */
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

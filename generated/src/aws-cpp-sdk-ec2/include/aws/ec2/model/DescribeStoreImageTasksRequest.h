@@ -38,61 +38,23 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
      * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline DescribeStoreImageTasksRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline DescribeStoreImageTasksRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a
-     * request.</p>
-     */
     inline DescribeStoreImageTasksRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -100,32 +62,12 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
      * certain state (<code>InProgress</code> | <code>Completed</code> |
@@ -137,141 +79,31 @@ namespace Model
      * 
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline DescribeStoreImageTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline DescribeStoreImageTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline DescribeStoreImageTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>task-state</code> - Returns tasks in a
-     * certain state (<code>InProgress</code> | <code>Completed</code> |
-     * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
-     * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
-     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
-     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
-     * 
-     */
     inline DescribeStoreImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output. For more
@@ -281,37 +113,10 @@ namespace Model
      * the same call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
-     * the same call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
-     * the same call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
-     * the same call.</p>
-     */
     inline DescribeStoreImageTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_imageIds;

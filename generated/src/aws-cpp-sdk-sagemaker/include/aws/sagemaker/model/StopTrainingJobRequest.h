@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the training job to stop.</p>
      */
     inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline bool TrainingJobNameHasBeenSet() const { return m_trainingJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline void SetTrainingJobName(Aws::String&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::move(value); }
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline void SetTrainingJobName(const char* value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName.assign(value); }
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline StopTrainingJobRequest& WithTrainingJobName(const Aws::String& value) { SetTrainingJobName(value); return *this;}
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline StopTrainingJobRequest& WithTrainingJobName(Aws::String&& value) { SetTrainingJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the training job to stop.</p>
-     */
     inline StopTrainingJobRequest& WithTrainingJobName(const char* value) { SetTrainingJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trainingJobName;

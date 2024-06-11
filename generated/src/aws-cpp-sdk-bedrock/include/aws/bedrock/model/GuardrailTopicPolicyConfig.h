@@ -44,46 +44,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of policies related to topics that the guardrail should deny.</p>
      */
     inline const Aws::Vector<GuardrailTopicConfig>& GetTopicsConfig() const{ return m_topicsConfig; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline bool TopicsConfigHasBeenSet() const { return m_topicsConfigHasBeenSet; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline void SetTopicsConfig(const Aws::Vector<GuardrailTopicConfig>& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig = value; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline void SetTopicsConfig(Aws::Vector<GuardrailTopicConfig>&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig = std::move(value); }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicyConfig& WithTopicsConfig(const Aws::Vector<GuardrailTopicConfig>& value) { SetTopicsConfig(value); return *this;}
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicyConfig& WithTopicsConfig(Aws::Vector<GuardrailTopicConfig>&& value) { SetTopicsConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicyConfig& AddTopicsConfig(const GuardrailTopicConfig& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.push_back(value); return *this; }
-
-    /**
-     * <p>A list of policies related to topics that the guardrail should deny.</p>
-     */
     inline GuardrailTopicPolicyConfig& AddTopicsConfig(GuardrailTopicConfig&& value) { m_topicsConfigHasBeenSet = true; m_topicsConfig.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailTopicConfig> m_topicsConfig;

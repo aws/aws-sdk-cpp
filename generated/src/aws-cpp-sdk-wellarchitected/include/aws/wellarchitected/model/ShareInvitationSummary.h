@@ -39,426 +39,171 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID assigned to the share invitation.</p>
      */
     inline const Aws::String& GetShareInvitationId() const{ return m_shareInvitationId; }
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline bool ShareInvitationIdHasBeenSet() const { return m_shareInvitationIdHasBeenSet; }
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline void SetShareInvitationId(const Aws::String& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = value; }
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline void SetShareInvitationId(Aws::String&& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = std::move(value); }
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline void SetShareInvitationId(const char* value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId.assign(value); }
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline ShareInvitationSummary& WithShareInvitationId(const Aws::String& value) { SetShareInvitationId(value); return *this;}
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline ShareInvitationSummary& WithShareInvitationId(Aws::String&& value) { SetShareInvitationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID assigned to the share invitation.</p>
-     */
     inline ShareInvitationSummary& WithShareInvitationId(const char* value) { SetShareInvitationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetSharedBy() const{ return m_sharedBy; }
-
-    
     inline bool SharedByHasBeenSet() const { return m_sharedByHasBeenSet; }
-
-    
     inline void SetSharedBy(const Aws::String& value) { m_sharedByHasBeenSet = true; m_sharedBy = value; }
-
-    
     inline void SetSharedBy(Aws::String&& value) { m_sharedByHasBeenSet = true; m_sharedBy = std::move(value); }
-
-    
     inline void SetSharedBy(const char* value) { m_sharedByHasBeenSet = true; m_sharedBy.assign(value); }
-
-    
     inline ShareInvitationSummary& WithSharedBy(const Aws::String& value) { SetSharedBy(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithSharedBy(Aws::String&& value) { SetSharedBy(std::move(value)); return *this;}
-
-    
     inline ShareInvitationSummary& WithSharedBy(const char* value) { SetSharedBy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetSharedWith() const{ return m_sharedWith; }
-
-    
     inline bool SharedWithHasBeenSet() const { return m_sharedWithHasBeenSet; }
-
-    
     inline void SetSharedWith(const Aws::String& value) { m_sharedWithHasBeenSet = true; m_sharedWith = value; }
-
-    
     inline void SetSharedWith(Aws::String&& value) { m_sharedWithHasBeenSet = true; m_sharedWith = std::move(value); }
-
-    
     inline void SetSharedWith(const char* value) { m_sharedWithHasBeenSet = true; m_sharedWith.assign(value); }
-
-    
     inline ShareInvitationSummary& WithSharedWith(const Aws::String& value) { SetSharedWith(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithSharedWith(Aws::String&& value) { SetSharedWith(std::move(value)); return *this;}
-
-    
     inline ShareInvitationSummary& WithSharedWith(const char* value) { SetSharedWith(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const PermissionType& GetPermissionType() const{ return m_permissionType; }
-
-    
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
-
-    
     inline void SetPermissionType(const PermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
-
-    
     inline void SetPermissionType(PermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
-
-    
     inline ShareInvitationSummary& WithPermissionType(const PermissionType& value) { SetPermissionType(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource type of the share invitation.</p>
      */
     inline const ShareResourceType& GetShareResourceType() const{ return m_shareResourceType; }
-
-    /**
-     * <p>The resource type of the share invitation.</p>
-     */
     inline bool ShareResourceTypeHasBeenSet() const { return m_shareResourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type of the share invitation.</p>
-     */
     inline void SetShareResourceType(const ShareResourceType& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = value; }
-
-    /**
-     * <p>The resource type of the share invitation.</p>
-     */
     inline void SetShareResourceType(ShareResourceType&& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = std::move(value); }
-
-    /**
-     * <p>The resource type of the share invitation.</p>
-     */
     inline ShareInvitationSummary& WithShareResourceType(const ShareResourceType& value) { SetShareResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type of the share invitation.</p>
-     */
     inline ShareInvitationSummary& WithShareResourceType(ShareResourceType&& value) { SetShareResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
-
-    
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-
-    
     inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-
-    
     inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-
-    
     inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-
-    
     inline ShareInvitationSummary& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-
-    
     inline ShareInvitationSummary& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline ShareInvitationSummary& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline ShareInvitationSummary& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetLensName() const{ return m_lensName; }
-
-    
     inline bool LensNameHasBeenSet() const { return m_lensNameHasBeenSet; }
-
-    
     inline void SetLensName(const Aws::String& value) { m_lensNameHasBeenSet = true; m_lensName = value; }
-
-    
     inline void SetLensName(Aws::String&& value) { m_lensNameHasBeenSet = true; m_lensName = std::move(value); }
-
-    
     inline void SetLensName(const char* value) { m_lensNameHasBeenSet = true; m_lensName.assign(value); }
-
-    
     inline ShareInvitationSummary& WithLensName(const Aws::String& value) { SetLensName(value); return *this;}
-
-    
     inline ShareInvitationSummary& WithLensName(Aws::String&& value) { SetLensName(std::move(value)); return *this;}
-
-    
     inline ShareInvitationSummary& WithLensName(const char* value) { SetLensName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN for the lens.</p>
      */
     inline const Aws::String& GetLensArn() const{ return m_lensArn; }
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline ShareInvitationSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline ShareInvitationSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for the lens.</p>
-     */
     inline ShareInvitationSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The profile name.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline ShareInvitationSummary& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline ShareInvitationSummary& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The profile name.</p>
-     */
     inline ShareInvitationSummary& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The profile ARN.</p>
      */
     inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline ShareInvitationSummary& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline ShareInvitationSummary& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline ShareInvitationSummary& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the review template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline ShareInvitationSummary& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline ShareInvitationSummary& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the review template.</p>
-     */
     inline ShareInvitationSummary& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The review template ARN.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline ShareInvitationSummary& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline ShareInvitationSummary& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline ShareInvitationSummary& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareInvitationId;

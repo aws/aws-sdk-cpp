@@ -34,46 +34,19 @@ namespace Model
     AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the system-assigned unique identifier for the transformer.</p>
      */
     inline const Aws::String& GetTransformerId() const{ return m_transformerId; }
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(const Aws::String& value) { m_transformerIdHasBeenSet = true; m_transformerId = value; }
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(Aws::String&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::move(value); }
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(const char* value) { m_transformerIdHasBeenSet = true; m_transformerId.assign(value); }
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline GetTransformerRequest& WithTransformerId(const Aws::String& value) { SetTransformerId(value); return *this;}
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline GetTransformerRequest& WithTransformerId(Aws::String&& value) { SetTransformerId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
     inline GetTransformerRequest& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformerId;

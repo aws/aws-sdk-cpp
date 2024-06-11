@@ -50,6 +50,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The content of the model card. The content must follow the schema described
      * in <a
@@ -57,64 +58,16 @@ namespace Model
      * Package Model Card Schema</a>.</p>
      */
     inline const Aws::String& GetModelCardContent() const{ return m_modelCardContent; }
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline bool ModelCardContentHasBeenSet() const { return m_modelCardContentHasBeenSet; }
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline void SetModelCardContent(const Aws::String& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = value; }
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline void SetModelCardContent(Aws::String&& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = std::move(value); }
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline void SetModelCardContent(const char* value) { m_modelCardContentHasBeenSet = true; m_modelCardContent.assign(value); }
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline ModelPackageModelCard& WithModelCardContent(const Aws::String& value) { SetModelCardContent(value); return *this;}
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline ModelPackageModelCard& WithModelCardContent(Aws::String&& value) { SetModelCardContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the model card. The content must follow the schema described
-     * in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
-     * Package Model Card Schema</a>.</p>
-     */
     inline ModelPackageModelCard& WithModelCardContent(const char* value) { SetModelCardContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The approval status of the model card within your organization. Different
      * organizations might have different criteria for model card review and
@@ -127,72 +80,12 @@ namespace Model
      * state</code>.</p> </li> </ul>
      */
     inline const ModelCardStatus& GetModelCardStatus() const{ return m_modelCardStatus; }
-
-    /**
-     * <p>The approval status of the model card within your organization. Different
-     * organizations might have different criteria for model card review and
-     * approval.</p> <ul> <li> <p> <code>Draft</code>: The model card is a work in
-     * progress.</p> </li> <li> <p> <code>PendingReview</code>: The model card is
-     * pending review.</p> </li> <li> <p> <code>Approved</code>: The model card is
-     * approved.</p> </li> <li> <p> <code>Archived</code>: The model card is archived.
-     * No more updates can be made to the model card content. If you try to update the
-     * model card content, you will receive the message <code>Model Card is in Archived
-     * state</code>.</p> </li> </ul>
-     */
     inline bool ModelCardStatusHasBeenSet() const { return m_modelCardStatusHasBeenSet; }
-
-    /**
-     * <p>The approval status of the model card within your organization. Different
-     * organizations might have different criteria for model card review and
-     * approval.</p> <ul> <li> <p> <code>Draft</code>: The model card is a work in
-     * progress.</p> </li> <li> <p> <code>PendingReview</code>: The model card is
-     * pending review.</p> </li> <li> <p> <code>Approved</code>: The model card is
-     * approved.</p> </li> <li> <p> <code>Archived</code>: The model card is archived.
-     * No more updates can be made to the model card content. If you try to update the
-     * model card content, you will receive the message <code>Model Card is in Archived
-     * state</code>.</p> </li> </ul>
-     */
     inline void SetModelCardStatus(const ModelCardStatus& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
-
-    /**
-     * <p>The approval status of the model card within your organization. Different
-     * organizations might have different criteria for model card review and
-     * approval.</p> <ul> <li> <p> <code>Draft</code>: The model card is a work in
-     * progress.</p> </li> <li> <p> <code>PendingReview</code>: The model card is
-     * pending review.</p> </li> <li> <p> <code>Approved</code>: The model card is
-     * approved.</p> </li> <li> <p> <code>Archived</code>: The model card is archived.
-     * No more updates can be made to the model card content. If you try to update the
-     * model card content, you will receive the message <code>Model Card is in Archived
-     * state</code>.</p> </li> </ul>
-     */
     inline void SetModelCardStatus(ModelCardStatus&& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = std::move(value); }
-
-    /**
-     * <p>The approval status of the model card within your organization. Different
-     * organizations might have different criteria for model card review and
-     * approval.</p> <ul> <li> <p> <code>Draft</code>: The model card is a work in
-     * progress.</p> </li> <li> <p> <code>PendingReview</code>: The model card is
-     * pending review.</p> </li> <li> <p> <code>Approved</code>: The model card is
-     * approved.</p> </li> <li> <p> <code>Archived</code>: The model card is archived.
-     * No more updates can be made to the model card content. If you try to update the
-     * model card content, you will receive the message <code>Model Card is in Archived
-     * state</code>.</p> </li> </ul>
-     */
     inline ModelPackageModelCard& WithModelCardStatus(const ModelCardStatus& value) { SetModelCardStatus(value); return *this;}
-
-    /**
-     * <p>The approval status of the model card within your organization. Different
-     * organizations might have different criteria for model card review and
-     * approval.</p> <ul> <li> <p> <code>Draft</code>: The model card is a work in
-     * progress.</p> </li> <li> <p> <code>PendingReview</code>: The model card is
-     * pending review.</p> </li> <li> <p> <code>Approved</code>: The model card is
-     * approved.</p> </li> <li> <p> <code>Archived</code>: The model card is archived.
-     * No more updates can be made to the model card content. If you try to update the
-     * model card content, you will receive the message <code>Model Card is in Archived
-     * state</code>.</p> </li> </ul>
-     */
     inline ModelPackageModelCard& WithModelCardStatus(ModelCardStatus&& value) { SetModelCardStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelCardContent;

@@ -41,85 +41,32 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The state of the client certificate revocation list.</p>
      */
     inline const ClientCertificateRevocationListStatusCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The state of the client certificate revocation list.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The state of the client certificate revocation list.</p>
-     */
     inline void SetCode(const ClientCertificateRevocationListStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The state of the client certificate revocation list.</p>
-     */
     inline void SetCode(ClientCertificateRevocationListStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The state of the client certificate revocation list.</p>
-     */
     inline ClientCertificateRevocationListStatus& WithCode(const ClientCertificateRevocationListStatusCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The state of the client certificate revocation list.</p>
-     */
     inline ClientCertificateRevocationListStatus& WithCode(ClientCertificateRevocationListStatusCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message about the status of the client certificate revocation list, if
      * applicable.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline ClientCertificateRevocationListStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline ClientCertificateRevocationListStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message about the status of the client certificate revocation list, if
-     * applicable.</p>
-     */
     inline ClientCertificateRevocationListStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     ClientCertificateRevocationListStatusCode m_code;

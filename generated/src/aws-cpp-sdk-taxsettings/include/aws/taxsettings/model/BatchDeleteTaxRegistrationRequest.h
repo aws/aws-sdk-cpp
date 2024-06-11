@@ -33,51 +33,20 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>List of unique account identifiers. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline BatchDeleteTaxRegistrationRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline BatchDeleteTaxRegistrationRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline BatchDeleteTaxRegistrationRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline BatchDeleteTaxRegistrationRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of unique account identifiers. </p>
-     */
     inline BatchDeleteTaxRegistrationRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

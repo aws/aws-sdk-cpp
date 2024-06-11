@@ -34,87 +34,33 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the service instance with the deployment to cancel.</p>
      */
     inline const Aws::String& GetServiceInstanceName() const{ return m_serviceInstanceName; }
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline bool ServiceInstanceNameHasBeenSet() const { return m_serviceInstanceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline void SetServiceInstanceName(const Aws::String& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = value; }
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline void SetServiceInstanceName(Aws::String&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::move(value); }
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline void SetServiceInstanceName(const char* value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName.assign(value); }
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceInstanceName(const Aws::String& value) { SetServiceInstanceName(value); return *this;}
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceInstanceName(Aws::String&& value) { SetServiceInstanceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service instance with the deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceInstanceName(const char* value) { SetServiceInstanceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service with the service instance deployment to cancel.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service with the service instance deployment to cancel.</p>
-     */
     inline CancelServiceInstanceDeploymentRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceInstanceName;

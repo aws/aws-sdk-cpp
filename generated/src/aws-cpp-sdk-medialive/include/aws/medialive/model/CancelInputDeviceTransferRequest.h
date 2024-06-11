@@ -36,46 +36,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
      */
     inline const Aws::String& GetInputDeviceId() const{ return m_inputDeviceId; }
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline bool InputDeviceIdHasBeenSet() const { return m_inputDeviceIdHasBeenSet; }
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline void SetInputDeviceId(const Aws::String& value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId = value; }
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline void SetInputDeviceId(Aws::String&& value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId = std::move(value); }
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline void SetInputDeviceId(const char* value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId.assign(value); }
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline CancelInputDeviceTransferRequest& WithInputDeviceId(const Aws::String& value) { SetInputDeviceId(value); return *this;}
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline CancelInputDeviceTransferRequest& WithInputDeviceId(Aws::String&& value) { SetInputDeviceId(std::move(value)); return *this;}
-
-    /**
-     * The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-     */
     inline CancelInputDeviceTransferRequest& WithInputDeviceId(const char* value) { SetInputDeviceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputDeviceId;

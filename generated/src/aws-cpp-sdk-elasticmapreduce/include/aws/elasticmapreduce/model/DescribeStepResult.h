@@ -39,53 +39,27 @@ namespace Model
     AWS_EMR_API DescribeStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The step details for the requested step identifier.</p>
      */
     inline const Step& GetStep() const{ return m_step; }
-
-    /**
-     * <p>The step details for the requested step identifier.</p>
-     */
     inline void SetStep(const Step& value) { m_step = value; }
-
-    /**
-     * <p>The step details for the requested step identifier.</p>
-     */
     inline void SetStep(Step&& value) { m_step = std::move(value); }
-
-    /**
-     * <p>The step details for the requested step identifier.</p>
-     */
     inline DescribeStepResult& WithStep(const Step& value) { SetStep(value); return *this;}
-
-    /**
-     * <p>The step details for the requested step identifier.</p>
-     */
     inline DescribeStepResult& WithStep(Step&& value) { SetStep(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeStepResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeStepResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeStepResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Step m_step;

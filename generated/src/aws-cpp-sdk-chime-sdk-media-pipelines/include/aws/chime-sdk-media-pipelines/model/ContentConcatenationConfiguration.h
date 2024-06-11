@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables or disables the configuration object.</p>
      */
     inline const ArtifactsConcatenationState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Enables or disables the configuration object.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>Enables or disables the configuration object.</p>
-     */
     inline void SetState(const ArtifactsConcatenationState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>Enables or disables the configuration object.</p>
-     */
     inline void SetState(ArtifactsConcatenationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>Enables or disables the configuration object.</p>
-     */
     inline ContentConcatenationConfiguration& WithState(const ArtifactsConcatenationState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Enables or disables the configuration object.</p>
-     */
     inline ContentConcatenationConfiguration& WithState(ArtifactsConcatenationState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArtifactsConcatenationState m_state;

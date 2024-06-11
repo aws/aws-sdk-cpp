@@ -36,103 +36,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The unique identifier of a cluster whose database revision you want to
      * modify. </p> <p>Example: <code>examplecluster</code> </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of a cluster whose database revision you want to
-     * modify. </p> <p>Example: <code>examplecluster</code> </p>
-     */
     inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the database revision. You can retrieve this value from the
      * response to the <a>DescribeClusterDbRevisions</a> request.</p>
      */
     inline const Aws::String& GetRevisionTarget() const{ return m_revisionTarget; }
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline bool RevisionTargetHasBeenSet() const { return m_revisionTargetHasBeenSet; }
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline void SetRevisionTarget(const Aws::String& value) { m_revisionTargetHasBeenSet = true; m_revisionTarget = value; }
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline void SetRevisionTarget(Aws::String&& value) { m_revisionTargetHasBeenSet = true; m_revisionTarget = std::move(value); }
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline void SetRevisionTarget(const char* value) { m_revisionTargetHasBeenSet = true; m_revisionTarget.assign(value); }
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline ModifyClusterDbRevisionRequest& WithRevisionTarget(const Aws::String& value) { SetRevisionTarget(value); return *this;}
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline ModifyClusterDbRevisionRequest& WithRevisionTarget(Aws::String&& value) { SetRevisionTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the database revision. You can retrieve this value from the
-     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
-     */
     inline ModifyClusterDbRevisionRequest& WithRevisionTarget(const char* value) { SetRevisionTarget(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

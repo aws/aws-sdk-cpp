@@ -32,136 +32,48 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the resource to be shared.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline CreateShareRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline CreateShareRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource to be shared.</p>
-     */
     inline CreateShareRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal subscriber is the account being offered shared access to the
      * resource. </p>
      */
     inline const Aws::String& GetPrincipalSubscriber() const{ return m_principalSubscriber; }
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline bool PrincipalSubscriberHasBeenSet() const { return m_principalSubscriberHasBeenSet; }
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline void SetPrincipalSubscriber(const Aws::String& value) { m_principalSubscriberHasBeenSet = true; m_principalSubscriber = value; }
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline void SetPrincipalSubscriber(Aws::String&& value) { m_principalSubscriberHasBeenSet = true; m_principalSubscriber = std::move(value); }
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline void SetPrincipalSubscriber(const char* value) { m_principalSubscriberHasBeenSet = true; m_principalSubscriber.assign(value); }
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline CreateShareRequest& WithPrincipalSubscriber(const Aws::String& value) { SetPrincipalSubscriber(value); return *this;}
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline CreateShareRequest& WithPrincipalSubscriber(Aws::String&& value) { SetPrincipalSubscriber(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal subscriber is the account being offered shared access to the
-     * resource. </p>
-     */
     inline CreateShareRequest& WithPrincipalSubscriber(const char* value) { SetPrincipalSubscriber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name that the owner defines for the share.</p>
      */
     inline const Aws::String& GetShareName() const{ return m_shareName; }
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline bool ShareNameHasBeenSet() const { return m_shareNameHasBeenSet; }
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline void SetShareName(const Aws::String& value) { m_shareNameHasBeenSet = true; m_shareName = value; }
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline void SetShareName(Aws::String&& value) { m_shareNameHasBeenSet = true; m_shareName = std::move(value); }
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline void SetShareName(const char* value) { m_shareNameHasBeenSet = true; m_shareName.assign(value); }
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline CreateShareRequest& WithShareName(const Aws::String& value) { SetShareName(value); return *this;}
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline CreateShareRequest& WithShareName(Aws::String&& value) { SetShareName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name that the owner defines for the share.</p>
-     */
     inline CreateShareRequest& WithShareName(const char* value) { SetShareName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

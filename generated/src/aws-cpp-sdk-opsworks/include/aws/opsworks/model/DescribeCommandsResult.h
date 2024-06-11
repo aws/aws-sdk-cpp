@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeCommandsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>Command</code> objects that describe each of the specified
      * commands.</p>
      */
     inline const Aws::Vector<Command>& GetCommands() const{ return m_commands; }
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline void SetCommands(const Aws::Vector<Command>& value) { m_commands = value; }
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline void SetCommands(Aws::Vector<Command>&& value) { m_commands = std::move(value); }
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline DescribeCommandsResult& WithCommands(const Aws::Vector<Command>& value) { SetCommands(value); return *this;}
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline DescribeCommandsResult& WithCommands(Aws::Vector<Command>&& value) { SetCommands(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline DescribeCommandsResult& AddCommands(const Command& value) { m_commands.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>Command</code> objects that describe each of the specified
-     * commands.</p>
-     */
     inline DescribeCommandsResult& AddCommands(Command&& value) { m_commands.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCommandsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCommandsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCommandsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Command> m_commands;

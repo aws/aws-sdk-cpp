@@ -33,58 +33,28 @@ namespace Model
     AWS_DYNAMODB_API DescribeContinuousBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the continuous backups and point in time recovery settings on the
      * table.</p>
      */
     inline const ContinuousBackupsDescription& GetContinuousBackupsDescription() const{ return m_continuousBackupsDescription; }
-
-    /**
-     * <p>Represents the continuous backups and point in time recovery settings on the
-     * table.</p>
-     */
     inline void SetContinuousBackupsDescription(const ContinuousBackupsDescription& value) { m_continuousBackupsDescription = value; }
-
-    /**
-     * <p>Represents the continuous backups and point in time recovery settings on the
-     * table.</p>
-     */
     inline void SetContinuousBackupsDescription(ContinuousBackupsDescription&& value) { m_continuousBackupsDescription = std::move(value); }
-
-    /**
-     * <p>Represents the continuous backups and point in time recovery settings on the
-     * table.</p>
-     */
     inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(const ContinuousBackupsDescription& value) { SetContinuousBackupsDescription(value); return *this;}
-
-    /**
-     * <p>Represents the continuous backups and point in time recovery settings on the
-     * table.</p>
-     */
     inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(ContinuousBackupsDescription&& value) { SetContinuousBackupsDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeContinuousBackupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeContinuousBackupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeContinuousBackupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ContinuousBackupsDescription m_continuousBackupsDescription;

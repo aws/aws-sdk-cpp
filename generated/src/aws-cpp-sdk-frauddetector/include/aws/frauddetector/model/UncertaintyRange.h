@@ -37,47 +37,25 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The lower bound value of the area under curve (auc). </p>
      */
     inline double GetLowerBoundValue() const{ return m_lowerBoundValue; }
-
-    /**
-     * <p> The lower bound value of the area under curve (auc). </p>
-     */
     inline bool LowerBoundValueHasBeenSet() const { return m_lowerBoundValueHasBeenSet; }
-
-    /**
-     * <p> The lower bound value of the area under curve (auc). </p>
-     */
     inline void SetLowerBoundValue(double value) { m_lowerBoundValueHasBeenSet = true; m_lowerBoundValue = value; }
-
-    /**
-     * <p> The lower bound value of the area under curve (auc). </p>
-     */
     inline UncertaintyRange& WithLowerBoundValue(double value) { SetLowerBoundValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The upper bound value of the area under curve (auc). </p>
      */
     inline double GetUpperBoundValue() const{ return m_upperBoundValue; }
-
-    /**
-     * <p> The upper bound value of the area under curve (auc). </p>
-     */
     inline bool UpperBoundValueHasBeenSet() const { return m_upperBoundValueHasBeenSet; }
-
-    /**
-     * <p> The upper bound value of the area under curve (auc). </p>
-     */
     inline void SetUpperBoundValue(double value) { m_upperBoundValueHasBeenSet = true; m_upperBoundValue = value; }
-
-    /**
-     * <p> The upper bound value of the area under curve (auc). </p>
-     */
     inline UncertaintyRange& WithUpperBoundValue(double value) { SetUpperBoundValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_lowerBoundValue;

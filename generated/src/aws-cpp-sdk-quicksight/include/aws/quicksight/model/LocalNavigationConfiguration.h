@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sheet that is targeted for navigation in the same analysis.</p>
      */
     inline const Aws::String& GetTargetSheetId() const{ return m_targetSheetId; }
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline bool TargetSheetIdHasBeenSet() const { return m_targetSheetIdHasBeenSet; }
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline void SetTargetSheetId(const Aws::String& value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId = value; }
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline void SetTargetSheetId(Aws::String&& value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId = std::move(value); }
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline void SetTargetSheetId(const char* value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId.assign(value); }
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline LocalNavigationConfiguration& WithTargetSheetId(const Aws::String& value) { SetTargetSheetId(value); return *this;}
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline LocalNavigationConfiguration& WithTargetSheetId(Aws::String&& value) { SetTargetSheetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The sheet that is targeted for navigation in the same analysis.</p>
-     */
     inline LocalNavigationConfiguration& WithTargetSheetId(const char* value) { SetTargetSheetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetSheetId;

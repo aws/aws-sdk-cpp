@@ -36,118 +36,45 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * Name of the reservation
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * Name of the reservation
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * Name of the reservation
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * Name of the reservation
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * Name of the reservation
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * Name of the reservation
-     */
     inline UpdateReservationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * Name of the reservation
-     */
     inline UpdateReservationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * Name of the reservation
-     */
     inline UpdateReservationRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Renewal settings for the reservation
      */
     inline const RenewalSettings& GetRenewalSettings() const{ return m_renewalSettings; }
-
-    /**
-     * Renewal settings for the reservation
-     */
     inline bool RenewalSettingsHasBeenSet() const { return m_renewalSettingsHasBeenSet; }
-
-    /**
-     * Renewal settings for the reservation
-     */
     inline void SetRenewalSettings(const RenewalSettings& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = value; }
-
-    /**
-     * Renewal settings for the reservation
-     */
     inline void SetRenewalSettings(RenewalSettings&& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = std::move(value); }
-
-    /**
-     * Renewal settings for the reservation
-     */
     inline UpdateReservationRequest& WithRenewalSettings(const RenewalSettings& value) { SetRenewalSettings(value); return *this;}
-
-    /**
-     * Renewal settings for the reservation
-     */
     inline UpdateReservationRequest& WithRenewalSettings(RenewalSettings&& value) { SetRenewalSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Unique reservation ID, e.g. '1234567'
      */
     inline const Aws::String& GetReservationId() const{ return m_reservationId; }
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline void SetReservationId(Aws::String&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::move(value); }
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline void SetReservationId(const char* value) { m_reservationIdHasBeenSet = true; m_reservationId.assign(value); }
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline UpdateReservationRequest& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline UpdateReservationRequest& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
-
-    /**
-     * Unique reservation ID, e.g. '1234567'
-     */
     inline UpdateReservationRequest& WithReservationId(const char* value) { SetReservationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

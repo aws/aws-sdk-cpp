@@ -39,180 +39,69 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain ID.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline UserProfileDetails& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline UserProfileDetails& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline UserProfileDetails& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user profile name.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline UserProfileDetails& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline UserProfileDetails& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The user profile name.</p>
-     */
     inline UserProfileDetails& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status.</p>
      */
     inline const UserProfileStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(const UserProfileStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status.</p>
-     */
     inline void SetStatus(UserProfileStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status.</p>
-     */
     inline UserProfileDetails& WithStatus(const UserProfileStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status.</p>
-     */
     inline UserProfileDetails& WithStatus(UserProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline UserProfileDetails& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline UserProfileDetails& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last modified time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-
-    /**
-     * <p>The last modified time.</p>
-     */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-
-    /**
-     * <p>The last modified time.</p>
-     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-
-    /**
-     * <p>The last modified time.</p>
-     */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-
-    /**
-     * <p>The last modified time.</p>
-     */
     inline UserProfileDetails& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-
-    /**
-     * <p>The last modified time.</p>
-     */
     inline UserProfileDetails& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

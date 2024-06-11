@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Error type.</p>
      */
     inline const DataSourceErrorInfoType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Error type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Error type.</p>
-     */
     inline void SetType(const DataSourceErrorInfoType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Error type.</p>
-     */
     inline void SetType(DataSourceErrorInfoType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Error type.</p>
-     */
     inline DataSourceErrorInfo& WithType(const DataSourceErrorInfoType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Error type.</p>
-     */
     inline DataSourceErrorInfo& WithType(DataSourceErrorInfoType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Error message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Error message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Error message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Error message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Error message.</p>
-     */
     inline DataSourceErrorInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Error message.</p>
-     */
     inline DataSourceErrorInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Error message.</p>
-     */
     inline DataSourceErrorInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     DataSourceErrorInfoType m_type;

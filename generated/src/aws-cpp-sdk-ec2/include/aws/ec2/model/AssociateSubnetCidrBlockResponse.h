@@ -34,83 +34,38 @@ namespace Model
     AWS_EC2_API AssociateSubnetCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the IPv6 association.</p>
      */
     inline const SubnetIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
-
-    /**
-     * <p>Information about the IPv6 association.</p>
-     */
     inline void SetIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
-
-    /**
-     * <p>Information about the IPv6 association.</p>
-     */
     inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
-
-    /**
-     * <p>Information about the IPv6 association.</p>
-     */
     inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
-
-    /**
-     * <p>Information about the IPv6 association.</p>
-     */
     inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const char* value) { m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline AssociateSubnetCidrBlockResponse& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline AssociateSubnetCidrBlockResponse& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline AssociateSubnetCidrBlockResponse& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AssociateSubnetCidrBlockResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AssociateSubnetCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;

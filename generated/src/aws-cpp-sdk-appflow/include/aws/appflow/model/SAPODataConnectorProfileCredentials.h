@@ -39,67 +39,29 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The SAPOData basic authentication credentials. </p>
      */
     inline const BasicAuthCredentials& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
-
-    /**
-     * <p> The SAPOData basic authentication credentials. </p>
-     */
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
-
-    /**
-     * <p> The SAPOData basic authentication credentials. </p>
-     */
     inline void SetBasicAuthCredentials(const BasicAuthCredentials& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
-
-    /**
-     * <p> The SAPOData basic authentication credentials. </p>
-     */
     inline void SetBasicAuthCredentials(BasicAuthCredentials&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
-
-    /**
-     * <p> The SAPOData basic authentication credentials. </p>
-     */
     inline SAPODataConnectorProfileCredentials& WithBasicAuthCredentials(const BasicAuthCredentials& value) { SetBasicAuthCredentials(value); return *this;}
-
-    /**
-     * <p> The SAPOData basic authentication credentials. </p>
-     */
     inline SAPODataConnectorProfileCredentials& WithBasicAuthCredentials(BasicAuthCredentials&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The SAPOData OAuth type authentication credentials. </p>
      */
     inline const OAuthCredentials& GetOAuthCredentials() const{ return m_oAuthCredentials; }
-
-    /**
-     * <p> The SAPOData OAuth type authentication credentials. </p>
-     */
     inline bool OAuthCredentialsHasBeenSet() const { return m_oAuthCredentialsHasBeenSet; }
-
-    /**
-     * <p> The SAPOData OAuth type authentication credentials. </p>
-     */
     inline void SetOAuthCredentials(const OAuthCredentials& value) { m_oAuthCredentialsHasBeenSet = true; m_oAuthCredentials = value; }
-
-    /**
-     * <p> The SAPOData OAuth type authentication credentials. </p>
-     */
     inline void SetOAuthCredentials(OAuthCredentials&& value) { m_oAuthCredentialsHasBeenSet = true; m_oAuthCredentials = std::move(value); }
-
-    /**
-     * <p> The SAPOData OAuth type authentication credentials. </p>
-     */
     inline SAPODataConnectorProfileCredentials& WithOAuthCredentials(const OAuthCredentials& value) { SetOAuthCredentials(value); return *this;}
-
-    /**
-     * <p> The SAPOData OAuth type authentication credentials. </p>
-     */
     inline SAPODataConnectorProfileCredentials& WithOAuthCredentials(OAuthCredentials&& value) { SetOAuthCredentials(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BasicAuthCredentials m_basicAuthCredentials;

@@ -38,42 +38,18 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains details about the state of the Amazon EC2 scan
      * mode.</p>
      */
     inline const Ec2ScanModeState& GetScanModeState() const{ return m_scanModeState; }
-
-    /**
-     * <p>An object that contains details about the state of the Amazon EC2 scan
-     * mode.</p>
-     */
     inline bool ScanModeStateHasBeenSet() const { return m_scanModeStateHasBeenSet; }
-
-    /**
-     * <p>An object that contains details about the state of the Amazon EC2 scan
-     * mode.</p>
-     */
     inline void SetScanModeState(const Ec2ScanModeState& value) { m_scanModeStateHasBeenSet = true; m_scanModeState = value; }
-
-    /**
-     * <p>An object that contains details about the state of the Amazon EC2 scan
-     * mode.</p>
-     */
     inline void SetScanModeState(Ec2ScanModeState&& value) { m_scanModeStateHasBeenSet = true; m_scanModeState = std::move(value); }
-
-    /**
-     * <p>An object that contains details about the state of the Amazon EC2 scan
-     * mode.</p>
-     */
     inline Ec2ConfigurationState& WithScanModeState(const Ec2ScanModeState& value) { SetScanModeState(value); return *this;}
-
-    /**
-     * <p>An object that contains details about the state of the Amazon EC2 scan
-     * mode.</p>
-     */
     inline Ec2ConfigurationState& WithScanModeState(Ec2ScanModeState&& value) { SetScanModeState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ec2ScanModeState m_scanModeState;

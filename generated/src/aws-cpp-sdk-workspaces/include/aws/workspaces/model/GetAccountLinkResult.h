@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACES_API GetAccountLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The account link of the account link to retrieve.</p>
      */
     inline const AccountLink& GetAccountLink() const{ return m_accountLink; }
-
-    /**
-     * <p>The account link of the account link to retrieve.</p>
-     */
     inline void SetAccountLink(const AccountLink& value) { m_accountLink = value; }
-
-    /**
-     * <p>The account link of the account link to retrieve.</p>
-     */
     inline void SetAccountLink(AccountLink&& value) { m_accountLink = std::move(value); }
-
-    /**
-     * <p>The account link of the account link to retrieve.</p>
-     */
     inline GetAccountLinkResult& WithAccountLink(const AccountLink& value) { SetAccountLink(value); return *this;}
-
-    /**
-     * <p>The account link of the account link to retrieve.</p>
-     */
     inline GetAccountLinkResult& WithAccountLink(AccountLink&& value) { SetAccountLink(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccountLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccountLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccountLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountLink m_accountLink;

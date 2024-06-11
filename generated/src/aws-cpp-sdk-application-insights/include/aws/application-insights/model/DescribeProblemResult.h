@@ -33,53 +33,27 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API DescribeProblemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the problem. </p>
      */
     inline const Problem& GetProblem() const{ return m_problem; }
-
-    /**
-     * <p>Information about the problem. </p>
-     */
     inline void SetProblem(const Problem& value) { m_problem = value; }
-
-    /**
-     * <p>Information about the problem. </p>
-     */
     inline void SetProblem(Problem&& value) { m_problem = std::move(value); }
-
-    /**
-     * <p>Information about the problem. </p>
-     */
     inline DescribeProblemResult& WithProblem(const Problem& value) { SetProblem(value); return *this;}
-
-    /**
-     * <p>Information about the problem. </p>
-     */
     inline DescribeProblemResult& WithProblem(Problem&& value) { SetProblem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeProblemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeProblemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeProblemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Problem m_problem;

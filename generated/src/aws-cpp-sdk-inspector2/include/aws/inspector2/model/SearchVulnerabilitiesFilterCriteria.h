@@ -39,51 +39,20 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IDs for specific vulnerabilities.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVulnerabilityIds() const{ return m_vulnerabilityIds; }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline bool VulnerabilityIdsHasBeenSet() const { return m_vulnerabilityIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline void SetVulnerabilityIds(const Aws::Vector<Aws::String>& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds = value; }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline void SetVulnerabilityIds(Aws::Vector<Aws::String>&& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds = std::move(value); }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline SearchVulnerabilitiesFilterCriteria& WithVulnerabilityIds(const Aws::Vector<Aws::String>& value) { SetVulnerabilityIds(value); return *this;}
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline SearchVulnerabilitiesFilterCriteria& WithVulnerabilityIds(Aws::Vector<Aws::String>&& value) { SetVulnerabilityIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline SearchVulnerabilitiesFilterCriteria& AddVulnerabilityIds(const Aws::String& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline SearchVulnerabilitiesFilterCriteria& AddVulnerabilityIds(Aws::String&& value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs for specific vulnerabilities.</p>
-     */
     inline SearchVulnerabilitiesFilterCriteria& AddVulnerabilityIds(const char* value) { m_vulnerabilityIdsHasBeenSet = true; m_vulnerabilityIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_vulnerabilityIds;

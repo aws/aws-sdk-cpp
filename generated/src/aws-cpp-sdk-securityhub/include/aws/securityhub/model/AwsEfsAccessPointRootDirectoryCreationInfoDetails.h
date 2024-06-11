@@ -39,136 +39,48 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the POSIX group ID to apply to the root directory. </p>
      */
     inline const Aws::String& GetOwnerGid() const{ return m_ownerGid; }
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline bool OwnerGidHasBeenSet() const { return m_ownerGidHasBeenSet; }
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline void SetOwnerGid(const Aws::String& value) { m_ownerGidHasBeenSet = true; m_ownerGid = value; }
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline void SetOwnerGid(Aws::String&& value) { m_ownerGidHasBeenSet = true; m_ownerGid = std::move(value); }
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline void SetOwnerGid(const char* value) { m_ownerGidHasBeenSet = true; m_ownerGid.assign(value); }
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerGid(const Aws::String& value) { SetOwnerGid(value); return *this;}
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerGid(Aws::String&& value) { SetOwnerGid(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the POSIX group ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerGid(const char* value) { SetOwnerGid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the POSIX user ID to apply to the root directory. </p>
      */
     inline const Aws::String& GetOwnerUid() const{ return m_ownerUid; }
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline bool OwnerUidHasBeenSet() const { return m_ownerUidHasBeenSet; }
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline void SetOwnerUid(const Aws::String& value) { m_ownerUidHasBeenSet = true; m_ownerUid = value; }
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline void SetOwnerUid(Aws::String&& value) { m_ownerUidHasBeenSet = true; m_ownerUid = std::move(value); }
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline void SetOwnerUid(const char* value) { m_ownerUidHasBeenSet = true; m_ownerUid.assign(value); }
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerUid(const Aws::String& value) { SetOwnerUid(value); return *this;}
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerUid(Aws::String&& value) { SetOwnerUid(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the POSIX user ID to apply to the root directory. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithOwnerUid(const char* value) { SetOwnerUid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the POSIX permissions to apply to the root directory, in the format
      * of an octal number representing the file's mode bits. </p>
      */
     inline const Aws::String& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline void SetPermissions(const Aws::String& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline void SetPermissions(Aws::String&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline void SetPermissions(const char* value) { m_permissionsHasBeenSet = true; m_permissions.assign(value); }
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithPermissions(const Aws::String& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithPermissions(Aws::String&& value) { SetPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the POSIX permissions to apply to the root directory, in the format
-     * of an octal number representing the file's mode bits. </p>
-     */
     inline AwsEfsAccessPointRootDirectoryCreationInfoDetails& WithPermissions(const char* value) { SetPermissions(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ownerGid;

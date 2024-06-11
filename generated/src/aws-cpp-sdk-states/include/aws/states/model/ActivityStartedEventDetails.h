@@ -38,54 +38,20 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the worker that the task is assigned to. These names are provided
      * by the workers when calling <a>GetActivityTask</a>.</p>
      */
     inline const Aws::String& GetWorkerName() const{ return m_workerName; }
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline bool WorkerNameHasBeenSet() const { return m_workerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline void SetWorkerName(const Aws::String& value) { m_workerNameHasBeenSet = true; m_workerName = value; }
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline void SetWorkerName(Aws::String&& value) { m_workerNameHasBeenSet = true; m_workerName = std::move(value); }
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline void SetWorkerName(const char* value) { m_workerNameHasBeenSet = true; m_workerName.assign(value); }
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline ActivityStartedEventDetails& WithWorkerName(const Aws::String& value) { SetWorkerName(value); return *this;}
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline ActivityStartedEventDetails& WithWorkerName(Aws::String&& value) { SetWorkerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the worker that the task is assigned to. These names are provided
-     * by the workers when calling <a>GetActivityTask</a>.</p>
-     */
     inline ActivityStartedEventDetails& WithWorkerName(const char* value) { SetWorkerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workerName;

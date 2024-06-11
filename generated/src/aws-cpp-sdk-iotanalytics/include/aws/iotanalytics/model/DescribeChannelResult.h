@@ -34,84 +34,39 @@ namespace Model
     AWS_IOTANALYTICS_API DescribeChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about the channel.</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
-
-    /**
-     * <p>An object that contains information about the channel.</p>
-     */
     inline void SetChannel(const Channel& value) { m_channel = value; }
-
-    /**
-     * <p>An object that contains information about the channel.</p>
-     */
     inline void SetChannel(Channel&& value) { m_channel = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the channel.</p>
-     */
     inline DescribeChannelResult& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the channel.</p>
-     */
     inline DescribeChannelResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
      * parameter is set to <code>true</code> in the request.</p>
      */
     inline const ChannelStatistics& GetStatistics() const{ return m_statistics; }
-
-    /**
-     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
-     * parameter is set to <code>true</code> in the request.</p>
-     */
     inline void SetStatistics(const ChannelStatistics& value) { m_statistics = value; }
-
-    /**
-     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
-     * parameter is set to <code>true</code> in the request.</p>
-     */
     inline void SetStatistics(ChannelStatistics&& value) { m_statistics = std::move(value); }
-
-    /**
-     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
-     * parameter is set to <code>true</code> in the request.</p>
-     */
     inline DescribeChannelResult& WithStatistics(const ChannelStatistics& value) { SetStatistics(value); return *this;}
-
-    /**
-     * <p>Statistics about the channel. Included if the <code>includeStatistics</code>
-     * parameter is set to <code>true</code> in the request.</p>
-     */
     inline DescribeChannelResult& WithStatistics(ChannelStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Channel m_channel;

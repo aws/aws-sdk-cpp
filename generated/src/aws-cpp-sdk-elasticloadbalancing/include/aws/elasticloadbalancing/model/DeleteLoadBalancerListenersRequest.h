@@ -41,82 +41,32 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client port numbers of the listeners.</p>
      */
     inline const Aws::Vector<int>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline bool LoadBalancerPortsHasBeenSet() const { return m_loadBalancerPortsHasBeenSet; }
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline void SetLoadBalancerPorts(const Aws::Vector<int>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline void SetLoadBalancerPorts(Aws::Vector<int>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = std::move(value); }
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<int>& value) { SetLoadBalancerPorts(value); return *this;}
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<int>&& value) { SetLoadBalancerPorts(std::move(value)); return *this;}
-
-    /**
-     * <p>The client port numbers of the listeners.</p>
-     */
     inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(int value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerName;

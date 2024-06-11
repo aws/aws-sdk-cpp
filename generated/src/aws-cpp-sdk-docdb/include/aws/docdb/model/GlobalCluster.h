@@ -42,407 +42,141 @@ namespace Model
     AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Contains a user-supplied global cluster identifier. This identifier is the
      * unique key that identifies a global cluster. </p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline GlobalCluster& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline GlobalCluster& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains a user-supplied global cluster identifier. This identifier is the
-     * unique key that identifies a global cluster. </p>
-     */
     inline GlobalCluster& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in CloudTrail log entries whenever
      * the KMS customer master key (CMK) for the cluster is accessed. </p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const{ return m_globalClusterResourceId; }
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline void SetGlobalClusterResourceId(const Aws::String& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = value; }
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline void SetGlobalClusterResourceId(Aws::String&& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline void SetGlobalClusterResourceId(const char* value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline GlobalCluster& WithGlobalClusterResourceId(const Aws::String& value) { SetGlobalClusterResourceId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline GlobalCluster& WithGlobalClusterResourceId(Aws::String&& value) { SetGlobalClusterResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region-unique, immutable identifier for the global
-     * database cluster. This identifier is found in CloudTrail log entries whenever
-     * the KMS customer master key (CMK) for the cluster is accessed. </p>
-     */
     inline GlobalCluster& WithGlobalClusterResourceId(const char* value) { SetGlobalClusterResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
      */
     inline const Aws::String& GetGlobalClusterArn() const{ return m_globalClusterArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline bool GlobalClusterArnHasBeenSet() const { return m_globalClusterArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline void SetGlobalClusterArn(const Aws::String& value) { m_globalClusterArnHasBeenSet = true; m_globalClusterArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline void SetGlobalClusterArn(Aws::String&& value) { m_globalClusterArnHasBeenSet = true; m_globalClusterArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline void SetGlobalClusterArn(const char* value) { m_globalClusterArnHasBeenSet = true; m_globalClusterArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline GlobalCluster& WithGlobalClusterArn(const Aws::String& value) { SetGlobalClusterArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline GlobalCluster& WithGlobalClusterArn(Aws::String&& value) { SetGlobalClusterArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the global cluster.</p>
-     */
     inline GlobalCluster& WithGlobalClusterArn(const char* value) { SetGlobalClusterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the current state of this global cluster.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline GlobalCluster& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline GlobalCluster& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the current state of this global cluster.</p>
-     */
     inline GlobalCluster& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline GlobalCluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline GlobalCluster& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon DocumentDB database engine used by the global cluster. </p>
-     */
     inline GlobalCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the database engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline GlobalCluster& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline GlobalCluster& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the database engine version.</p>
-     */
     inline GlobalCluster& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default database name within the new global cluster.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline GlobalCluster& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline GlobalCluster& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The default database name within the new global cluster.</p>
-     */
     inline GlobalCluster& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The storage encryption setting for the global cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
-
-    /**
-     * <p>The storage encryption setting for the global cluster.</p>
-     */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
-
-    /**
-     * <p>The storage encryption setting for the global cluster.</p>
-     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
-
-    /**
-     * <p>The storage encryption setting for the global cluster.</p>
-     */
     inline GlobalCluster& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The deletion protection setting for the new global cluster.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
-
-    /**
-     * <p>The deletion protection setting for the new global cluster.</p>
-     */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
-
-    /**
-     * <p>The deletion protection setting for the new global cluster.</p>
-     */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
-
-    /**
-     * <p>The deletion protection setting for the new global cluster.</p>
-     */
     inline GlobalCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of cluster IDs for secondary clusters within the global cluster.
      * Currently limited to one item. </p>
      */
     inline const Aws::Vector<GlobalClusterMember>& GetGlobalClusterMembers() const{ return m_globalClusterMembers; }
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline bool GlobalClusterMembersHasBeenSet() const { return m_globalClusterMembersHasBeenSet; }
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline void SetGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = value; }
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline void SetGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers = std::move(value); }
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline GlobalCluster& WithGlobalClusterMembers(const Aws::Vector<GlobalClusterMember>& value) { SetGlobalClusterMembers(value); return *this;}
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline GlobalCluster& WithGlobalClusterMembers(Aws::Vector<GlobalClusterMember>&& value) { SetGlobalClusterMembers(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline GlobalCluster& AddGlobalClusterMembers(const GlobalClusterMember& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(value); return *this; }
-
-    /**
-     * <p>The list of cluster IDs for secondary clusters within the global cluster.
-     * Currently limited to one item. </p>
-     */
     inline GlobalCluster& AddGlobalClusterMembers(GlobalClusterMember&& value) { m_globalClusterMembersHasBeenSet = true; m_globalClusterMembers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_globalClusterIdentifier;

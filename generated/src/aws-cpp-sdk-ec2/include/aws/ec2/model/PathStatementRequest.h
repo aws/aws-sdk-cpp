@@ -40,67 +40,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The packet header statement.</p>
      */
     inline const PacketHeaderStatementRequest& GetPacketHeaderStatement() const{ return m_packetHeaderStatement; }
-
-    /**
-     * <p>The packet header statement.</p>
-     */
     inline bool PacketHeaderStatementHasBeenSet() const { return m_packetHeaderStatementHasBeenSet; }
-
-    /**
-     * <p>The packet header statement.</p>
-     */
     inline void SetPacketHeaderStatement(const PacketHeaderStatementRequest& value) { m_packetHeaderStatementHasBeenSet = true; m_packetHeaderStatement = value; }
-
-    /**
-     * <p>The packet header statement.</p>
-     */
     inline void SetPacketHeaderStatement(PacketHeaderStatementRequest&& value) { m_packetHeaderStatementHasBeenSet = true; m_packetHeaderStatement = std::move(value); }
-
-    /**
-     * <p>The packet header statement.</p>
-     */
     inline PathStatementRequest& WithPacketHeaderStatement(const PacketHeaderStatementRequest& value) { SetPacketHeaderStatement(value); return *this;}
-
-    /**
-     * <p>The packet header statement.</p>
-     */
     inline PathStatementRequest& WithPacketHeaderStatement(PacketHeaderStatementRequest&& value) { SetPacketHeaderStatement(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource statement.</p>
      */
     inline const ResourceStatementRequest& GetResourceStatement() const{ return m_resourceStatement; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline bool ResourceStatementHasBeenSet() const { return m_resourceStatementHasBeenSet; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline void SetResourceStatement(const ResourceStatementRequest& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = value; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline void SetResourceStatement(ResourceStatementRequest&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::move(value); }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline PathStatementRequest& WithResourceStatement(const ResourceStatementRequest& value) { SetResourceStatement(value); return *this;}
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline PathStatementRequest& WithResourceStatement(ResourceStatementRequest&& value) { SetResourceStatement(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PacketHeaderStatementRequest m_packetHeaderStatement;

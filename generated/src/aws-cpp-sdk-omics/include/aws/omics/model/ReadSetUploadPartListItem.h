@@ -41,189 +41,76 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The number identifying the part in an upload. </p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
-
-    /**
-     * <p> The number identifying the part in an upload. </p>
-     */
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
-
-    /**
-     * <p> The number identifying the part in an upload. </p>
-     */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
-
-    /**
-     * <p> The number identifying the part in an upload. </p>
-     */
     inline ReadSetUploadPartListItem& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The size of the the part in an upload. </p>
      */
     inline long long GetPartSize() const{ return m_partSize; }
-
-    /**
-     * <p> The size of the the part in an upload. </p>
-     */
     inline bool PartSizeHasBeenSet() const { return m_partSizeHasBeenSet; }
-
-    /**
-     * <p> The size of the the part in an upload. </p>
-     */
     inline void SetPartSize(long long value) { m_partSizeHasBeenSet = true; m_partSize = value; }
-
-    /**
-     * <p> The size of the the part in an upload. </p>
-     */
     inline ReadSetUploadPartListItem& WithPartSize(long long value) { SetPartSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The origin of the part being direct uploaded. </p>
      */
     inline const ReadSetPartSource& GetPartSource() const{ return m_partSource; }
-
-    /**
-     * <p> The origin of the part being direct uploaded. </p>
-     */
     inline bool PartSourceHasBeenSet() const { return m_partSourceHasBeenSet; }
-
-    /**
-     * <p> The origin of the part being direct uploaded. </p>
-     */
     inline void SetPartSource(const ReadSetPartSource& value) { m_partSourceHasBeenSet = true; m_partSource = value; }
-
-    /**
-     * <p> The origin of the part being direct uploaded. </p>
-     */
     inline void SetPartSource(ReadSetPartSource&& value) { m_partSourceHasBeenSet = true; m_partSource = std::move(value); }
-
-    /**
-     * <p> The origin of the part being direct uploaded. </p>
-     */
     inline ReadSetUploadPartListItem& WithPartSource(const ReadSetPartSource& value) { SetPartSource(value); return *this;}
-
-    /**
-     * <p> The origin of the part being direct uploaded. </p>
-     */
     inline ReadSetUploadPartListItem& WithPartSource(ReadSetPartSource&& value) { SetPartSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A unique identifier used to confirm that parts are being added to the
      * correct upload. </p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline ReadSetUploadPartListItem& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline ReadSetUploadPartListItem& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-
-    /**
-     * <p> A unique identifier used to confirm that parts are being added to the
-     * correct upload. </p>
-     */
     inline ReadSetUploadPartListItem& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The time stamp for when a direct upload was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p> The time stamp for when a direct upload was created. </p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p> The time stamp for when a direct upload was created. </p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p> The time stamp for when a direct upload was created. </p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p> The time stamp for when a direct upload was created. </p>
-     */
     inline ReadSetUploadPartListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p> The time stamp for when a direct upload was created. </p>
-     */
     inline ReadSetUploadPartListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The time stamp for the most recent update to an uploaded part. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-
-    /**
-     * <p> The time stamp for the most recent update to an uploaded part. </p>
-     */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-
-    /**
-     * <p> The time stamp for the most recent update to an uploaded part. </p>
-     */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-
-    /**
-     * <p> The time stamp for the most recent update to an uploaded part. </p>
-     */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-
-    /**
-     * <p> The time stamp for the most recent update to an uploaded part. </p>
-     */
     inline ReadSetUploadPartListItem& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-
-    /**
-     * <p> The time stamp for the most recent update to an uploaded part. </p>
-     */
     inline ReadSetUploadPartListItem& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_partNumber;

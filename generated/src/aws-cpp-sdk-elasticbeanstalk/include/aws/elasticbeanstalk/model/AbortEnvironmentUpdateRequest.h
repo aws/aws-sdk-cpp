@@ -39,103 +39,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>This specifies the ID of the environment with the in-progress update that you
-     * want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This specifies the name of the environment with the in-progress update that
      * you want to cancel.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>This specifies the name of the environment with the in-progress update that
-     * you want to cancel.</p>
-     */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

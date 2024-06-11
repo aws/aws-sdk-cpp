@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DescribeTargetGroupAttributesRequest& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DescribeTargetGroupAttributesRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DescribeTargetGroupAttributesRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetGroupArn;

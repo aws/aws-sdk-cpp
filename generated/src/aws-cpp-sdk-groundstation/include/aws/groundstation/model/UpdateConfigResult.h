@@ -38,125 +38,53 @@ namespace Model
     AWS_GROUNDSTATION_API UpdateConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>ARN of a <code>Config</code>.</p>
      */
     inline const Aws::String& GetConfigArn() const{ return m_configArn; }
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline void SetConfigArn(const Aws::String& value) { m_configArn = value; }
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline void SetConfigArn(Aws::String&& value) { m_configArn = std::move(value); }
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline void SetConfigArn(const char* value) { m_configArn.assign(value); }
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigArn(const Aws::String& value) { SetConfigArn(value); return *this;}
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigArn(Aws::String&& value) { SetConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigArn(const char* value) { SetConfigArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>UUID of a <code>Config</code>.</p>
      */
     inline const Aws::String& GetConfigId() const{ return m_configId; }
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline void SetConfigId(const Aws::String& value) { m_configId = value; }
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline void SetConfigId(Aws::String&& value) { m_configId = std::move(value); }
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline void SetConfigId(const char* value) { m_configId.assign(value); }
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigId(const Aws::String& value) { SetConfigId(value); return *this;}
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigId(Aws::String&& value) { SetConfigId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigId(const char* value) { SetConfigId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Type of a <code>Config</code>.</p>
      */
     inline const ConfigCapabilityType& GetConfigType() const{ return m_configType; }
-
-    /**
-     * <p>Type of a <code>Config</code>.</p>
-     */
     inline void SetConfigType(const ConfigCapabilityType& value) { m_configType = value; }
-
-    /**
-     * <p>Type of a <code>Config</code>.</p>
-     */
     inline void SetConfigType(ConfigCapabilityType&& value) { m_configType = std::move(value); }
-
-    /**
-     * <p>Type of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigType(const ConfigCapabilityType& value) { SetConfigType(value); return *this;}
-
-    /**
-     * <p>Type of a <code>Config</code>.</p>
-     */
     inline UpdateConfigResult& WithConfigType(ConfigCapabilityType&& value) { SetConfigType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configArn;

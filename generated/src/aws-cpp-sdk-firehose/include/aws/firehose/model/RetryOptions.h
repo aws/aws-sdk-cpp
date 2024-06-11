@@ -36,30 +36,16 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The period of time during which Firehose retries to deliver data to the
      * specified Amazon S3 prefix.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-
-    /**
-     * <p>The period of time during which Firehose retries to deliver data to the
-     * specified Amazon S3 prefix.</p>
-     */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-
-    /**
-     * <p>The period of time during which Firehose retries to deliver data to the
-     * specified Amazon S3 prefix.</p>
-     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-
-    /**
-     * <p>The period of time during which Firehose retries to deliver data to the
-     * specified Amazon S3 prefix.</p>
-     */
     inline RetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_durationInSeconds;

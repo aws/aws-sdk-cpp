@@ -38,95 +38,34 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A reference to a design token to use to bind the form's style properties to
      * an existing theme.</p>
      */
     inline const Aws::String& GetTokenReference() const{ return m_tokenReference; }
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline bool TokenReferenceHasBeenSet() const { return m_tokenReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline void SetTokenReference(const Aws::String& value) { m_tokenReferenceHasBeenSet = true; m_tokenReference = value; }
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline void SetTokenReference(Aws::String&& value) { m_tokenReferenceHasBeenSet = true; m_tokenReference = std::move(value); }
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline void SetTokenReference(const char* value) { m_tokenReferenceHasBeenSet = true; m_tokenReference.assign(value); }
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline FormStyleConfig& WithTokenReference(const Aws::String& value) { SetTokenReference(value); return *this;}
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline FormStyleConfig& WithTokenReference(Aws::String&& value) { SetTokenReference(std::move(value)); return *this;}
-
-    /**
-     * <p>A reference to a design token to use to bind the form's style properties to
-     * an existing theme.</p>
-     */
     inline FormStyleConfig& WithTokenReference(const char* value) { SetTokenReference(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the style setting.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline FormStyleConfig& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline FormStyleConfig& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the style setting.</p>
-     */
     inline FormStyleConfig& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tokenReference;

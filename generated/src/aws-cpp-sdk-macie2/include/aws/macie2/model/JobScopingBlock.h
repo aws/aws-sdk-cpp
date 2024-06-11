@@ -40,62 +40,21 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of conditions, one for each property- or tag-based condition that
      * determines which objects to include or exclude from the job. If you specify more
      * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
      */
     inline const Aws::Vector<JobScopeTerm>& GetAnd() const{ return m_and; }
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline void SetAnd(const Aws::Vector<JobScopeTerm>& value) { m_andHasBeenSet = true; m_and = value; }
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline void SetAnd(Aws::Vector<JobScopeTerm>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline JobScopingBlock& WithAnd(const Aws::Vector<JobScopeTerm>& value) { SetAnd(value); return *this;}
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline JobScopingBlock& WithAnd(Aws::Vector<JobScopeTerm>&& value) { SetAnd(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline JobScopingBlock& AddAnd(const JobScopeTerm& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-
-    /**
-     * <p>An array of conditions, one for each property- or tag-based condition that
-     * determines which objects to include or exclude from the job. If you specify more
-     * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-     */
     inline JobScopingBlock& AddAnd(JobScopeTerm&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<JobScopeTerm> m_and;

@@ -33,37 +33,23 @@ namespace Model
     AWS_DOCDB_API ModifyDBInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const DBInstance& GetDBInstance() const{ return m_dBInstance; }
-
-    
     inline void SetDBInstance(const DBInstance& value) { m_dBInstance = value; }
-
-    
     inline void SetDBInstance(DBInstance&& value) { m_dBInstance = std::move(value); }
-
-    
     inline ModifyDBInstanceResult& WithDBInstance(const DBInstance& value) { SetDBInstance(value); return *this;}
-
-    
     inline ModifyDBInstanceResult& WithDBInstance(DBInstance&& value) { SetDBInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyDBInstanceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyDBInstanceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBInstance m_dBInstance;

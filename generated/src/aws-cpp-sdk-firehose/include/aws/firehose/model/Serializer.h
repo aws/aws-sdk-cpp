@@ -44,91 +44,33 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A serializer to use for converting data to the Parquet format before storing
      * it in Amazon S3. For more information, see <a
      * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
      */
     inline const ParquetSerDe& GetParquetSerDe() const{ return m_parquetSerDe; }
-
-    /**
-     * <p>A serializer to use for converting data to the Parquet format before storing
-     * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-     */
     inline bool ParquetSerDeHasBeenSet() const { return m_parquetSerDeHasBeenSet; }
-
-    /**
-     * <p>A serializer to use for converting data to the Parquet format before storing
-     * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-     */
     inline void SetParquetSerDe(const ParquetSerDe& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = value; }
-
-    /**
-     * <p>A serializer to use for converting data to the Parquet format before storing
-     * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-     */
     inline void SetParquetSerDe(ParquetSerDe&& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = std::move(value); }
-
-    /**
-     * <p>A serializer to use for converting data to the Parquet format before storing
-     * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-     */
     inline Serializer& WithParquetSerDe(const ParquetSerDe& value) { SetParquetSerDe(value); return *this;}
-
-    /**
-     * <p>A serializer to use for converting data to the Parquet format before storing
-     * it in Amazon S3. For more information, see <a
-     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
-     */
     inline Serializer& WithParquetSerDe(ParquetSerDe&& value) { SetParquetSerDe(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A serializer to use for converting data to the ORC format before storing it
      * in Amazon S3. For more information, see <a
      * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
      */
     inline const OrcSerDe& GetOrcSerDe() const{ return m_orcSerDe; }
-
-    /**
-     * <p>A serializer to use for converting data to the ORC format before storing it
-     * in Amazon S3. For more information, see <a
-     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-     */
     inline bool OrcSerDeHasBeenSet() const { return m_orcSerDeHasBeenSet; }
-
-    /**
-     * <p>A serializer to use for converting data to the ORC format before storing it
-     * in Amazon S3. For more information, see <a
-     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-     */
     inline void SetOrcSerDe(const OrcSerDe& value) { m_orcSerDeHasBeenSet = true; m_orcSerDe = value; }
-
-    /**
-     * <p>A serializer to use for converting data to the ORC format before storing it
-     * in Amazon S3. For more information, see <a
-     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-     */
     inline void SetOrcSerDe(OrcSerDe&& value) { m_orcSerDeHasBeenSet = true; m_orcSerDe = std::move(value); }
-
-    /**
-     * <p>A serializer to use for converting data to the ORC format before storing it
-     * in Amazon S3. For more information, see <a
-     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-     */
     inline Serializer& WithOrcSerDe(const OrcSerDe& value) { SetOrcSerDe(value); return *this;}
-
-    /**
-     * <p>A serializer to use for converting data to the ORC format before storing it
-     * in Amazon S3. For more information, see <a
-     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
-     */
     inline Serializer& WithOrcSerDe(OrcSerDe&& value) { SetOrcSerDe(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ParquetSerDe m_parquetSerDe;

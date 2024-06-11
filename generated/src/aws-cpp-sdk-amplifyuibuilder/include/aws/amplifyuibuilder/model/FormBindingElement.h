@@ -38,87 +38,33 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the component to retrieve a value from.</p>
      */
     inline const Aws::String& GetElement() const{ return m_element; }
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline bool ElementHasBeenSet() const { return m_elementHasBeenSet; }
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline void SetElement(const Aws::String& value) { m_elementHasBeenSet = true; m_element = value; }
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline void SetElement(Aws::String&& value) { m_elementHasBeenSet = true; m_element = std::move(value); }
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline void SetElement(const char* value) { m_elementHasBeenSet = true; m_element.assign(value); }
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithElement(const Aws::String& value) { SetElement(value); return *this;}
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithElement(Aws::String&& value) { SetElement(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the component to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithElement(const char* value) { SetElement(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property to retrieve a value from.</p>
      */
     inline const Aws::String& GetProperty() const{ return m_property; }
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
-
-    /**
-     * <p>The property to retrieve a value from.</p>
-     */
     inline FormBindingElement& WithProperty(const char* value) { SetProperty(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_element;

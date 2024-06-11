@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API CreateConnectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The response to a Connect attachment request.</p>
      */
     inline const ConnectAttachment& GetConnectAttachment() const{ return m_connectAttachment; }
-
-    /**
-     * <p>The response to a Connect attachment request.</p>
-     */
     inline void SetConnectAttachment(const ConnectAttachment& value) { m_connectAttachment = value; }
-
-    /**
-     * <p>The response to a Connect attachment request.</p>
-     */
     inline void SetConnectAttachment(ConnectAttachment&& value) { m_connectAttachment = std::move(value); }
-
-    /**
-     * <p>The response to a Connect attachment request.</p>
-     */
     inline CreateConnectAttachmentResult& WithConnectAttachment(const ConnectAttachment& value) { SetConnectAttachment(value); return *this;}
-
-    /**
-     * <p>The response to a Connect attachment request.</p>
-     */
     inline CreateConnectAttachmentResult& WithConnectAttachment(ConnectAttachment&& value) { SetConnectAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateConnectAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateConnectAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateConnectAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConnectAttachment m_connectAttachment;

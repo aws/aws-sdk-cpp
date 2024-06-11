@@ -34,99 +34,42 @@ namespace Model
     AWS_MIGRATIONHUBREFACTORSPACES_API ListEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of <code>EnvironmentSummary</code> objects. </p>
      */
     inline const Aws::Vector<EnvironmentSummary>& GetEnvironmentSummaryList() const{ return m_environmentSummaryList; }
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline void SetEnvironmentSummaryList(const Aws::Vector<EnvironmentSummary>& value) { m_environmentSummaryList = value; }
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline void SetEnvironmentSummaryList(Aws::Vector<EnvironmentSummary>&& value) { m_environmentSummaryList = std::move(value); }
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline ListEnvironmentsResult& WithEnvironmentSummaryList(const Aws::Vector<EnvironmentSummary>& value) { SetEnvironmentSummaryList(value); return *this;}
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline ListEnvironmentsResult& WithEnvironmentSummaryList(Aws::Vector<EnvironmentSummary>&& value) { SetEnvironmentSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline ListEnvironmentsResult& AddEnvironmentSummaryList(const EnvironmentSummary& value) { m_environmentSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of <code>EnvironmentSummary</code> objects. </p>
-     */
     inline ListEnvironmentsResult& AddEnvironmentSummaryList(EnvironmentSummary&& value) { m_environmentSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListEnvironmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline ListEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEnvironmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEnvironmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEnvironmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EnvironmentSummary> m_environmentSummaryList;

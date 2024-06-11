@@ -34,46 +34,19 @@ namespace Model
     AWS_SMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetAppReplicationConfigurationRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetAppReplicationConfigurationRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetAppReplicationConfigurationRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

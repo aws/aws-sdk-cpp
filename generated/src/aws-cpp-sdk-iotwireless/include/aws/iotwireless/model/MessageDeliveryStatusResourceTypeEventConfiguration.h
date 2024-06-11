@@ -38,24 +38,15 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const SidewalkResourceTypeEventConfiguration& GetSidewalk() const{ return m_sidewalk; }
-
-    
     inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
-
-    
     inline void SetSidewalk(const SidewalkResourceTypeEventConfiguration& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
-
-    
     inline void SetSidewalk(SidewalkResourceTypeEventConfiguration&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
-
-    
     inline MessageDeliveryStatusResourceTypeEventConfiguration& WithSidewalk(const SidewalkResourceTypeEventConfiguration& value) { SetSidewalk(value); return *this;}
-
-    
     inline MessageDeliveryStatusResourceTypeEventConfiguration& WithSidewalk(SidewalkResourceTypeEventConfiguration&& value) { SetSidewalk(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SidewalkResourceTypeEventConfiguration m_sidewalk;

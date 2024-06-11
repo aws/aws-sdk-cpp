@@ -33,58 +33,28 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DeleteVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deleted endpoint, including its current status
      * (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
      */
     inline const VpcEndpointSummary& GetVpcEndpointSummary() const{ return m_vpcEndpointSummary; }
-
-    /**
-     * <p>Information about the deleted endpoint, including its current status
-     * (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-     */
     inline void SetVpcEndpointSummary(const VpcEndpointSummary& value) { m_vpcEndpointSummary = value; }
-
-    /**
-     * <p>Information about the deleted endpoint, including its current status
-     * (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-     */
     inline void SetVpcEndpointSummary(VpcEndpointSummary&& value) { m_vpcEndpointSummary = std::move(value); }
-
-    /**
-     * <p>Information about the deleted endpoint, including its current status
-     * (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-     */
     inline DeleteVpcEndpointResult& WithVpcEndpointSummary(const VpcEndpointSummary& value) { SetVpcEndpointSummary(value); return *this;}
-
-    /**
-     * <p>Information about the deleted endpoint, including its current status
-     * (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-     */
     inline DeleteVpcEndpointResult& WithVpcEndpointSummary(VpcEndpointSummary&& value) { SetVpcEndpointSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcEndpointSummary m_vpcEndpointSummary;

@@ -39,88 +39,39 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Set to true if the recommendation is set as preferred. </p>
      */
     inline bool GetIsPreferred() const{ return m_isPreferred; }
-
-    /**
-     * <p> Set to true if the recommendation is set as preferred. </p>
-     */
     inline bool IsPreferredHasBeenSet() const { return m_isPreferredHasBeenSet; }
-
-    /**
-     * <p> Set to true if the recommendation is set as preferred. </p>
-     */
     inline void SetIsPreferred(bool value) { m_isPreferredHasBeenSet = true; m_isPreferred = value; }
-
-    /**
-     * <p> Set to true if the recommendation is set as preferred. </p>
-     */
     inline ApplicationComponentStrategy& WithIsPreferred(bool value) { SetIsPreferred(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Strategy recommendation for the application component. </p>
      */
     inline const RecommendationSet& GetRecommendation() const{ return m_recommendation; }
-
-    /**
-     * <p> Strategy recommendation for the application component. </p>
-     */
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-
-    /**
-     * <p> Strategy recommendation for the application component. </p>
-     */
     inline void SetRecommendation(const RecommendationSet& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-
-    /**
-     * <p> Strategy recommendation for the application component. </p>
-     */
     inline void SetRecommendation(RecommendationSet&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-
-    /**
-     * <p> Strategy recommendation for the application component. </p>
-     */
     inline ApplicationComponentStrategy& WithRecommendation(const RecommendationSet& value) { SetRecommendation(value); return *this;}
-
-    /**
-     * <p> Strategy recommendation for the application component. </p>
-     */
     inline ApplicationComponentStrategy& WithRecommendation(RecommendationSet&& value) { SetRecommendation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The recommendation status of a strategy for an application component. </p>
      */
     inline const StrategyRecommendation& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The recommendation status of a strategy for an application component. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The recommendation status of a strategy for an application component. </p>
-     */
     inline void SetStatus(const StrategyRecommendation& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The recommendation status of a strategy for an application component. </p>
-     */
     inline void SetStatus(StrategyRecommendation&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The recommendation status of a strategy for an application component. </p>
-     */
     inline ApplicationComponentStrategy& WithStatus(const StrategyRecommendation& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The recommendation status of a strategy for an application component. </p>
-     */
     inline ApplicationComponentStrategy& WithStatus(StrategyRecommendation&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_isPreferred;

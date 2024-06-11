@@ -40,69 +40,22 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
      * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetStackNames() const{ return m_stackNames; }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline bool StackNamesHasBeenSet() const { return m_stackNamesHasBeenSet; }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline void SetStackNames(const Aws::Vector<Aws::String>& value) { m_stackNamesHasBeenSet = true; m_stackNames = value; }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline void SetStackNames(Aws::Vector<Aws::String>&& value) { m_stackNamesHasBeenSet = true; m_stackNames = std::move(value); }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline UpdateCloudFormationCollectionFilter& WithStackNames(const Aws::Vector<Aws::String>& value) { SetStackNames(value); return *this;}
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline UpdateCloudFormationCollectionFilter& WithStackNames(Aws::Vector<Aws::String>&& value) { SetStackNames(std::move(value)); return *this;}
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline UpdateCloudFormationCollectionFilter& AddStackNames(const Aws::String& value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(value); return *this; }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline UpdateCloudFormationCollectionFilter& AddStackNames(Aws::String&& value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> An array of the names of the Amazon Web Services CloudFormation stacks to
-     * update. You can specify up to 500 Amazon Web Services CloudFormation stacks.
-     * </p>
-     */
     inline UpdateCloudFormationCollectionFilter& AddStackNames(const char* value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_stackNames;

@@ -38,54 +38,20 @@ namespace Model
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
      * field.</p>
      */
     inline const Aws::String& GetSpecifier() const{ return m_specifier; }
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline bool SpecifierHasBeenSet() const { return m_specifierHasBeenSet; }
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline void SetSpecifier(const Aws::String& value) { m_specifierHasBeenSet = true; m_specifier = value; }
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline void SetSpecifier(Aws::String&& value) { m_specifierHasBeenSet = true; m_specifier = std::move(value); }
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline void SetSpecifier(const char* value) { m_specifierHasBeenSet = true; m_specifier.assign(value); }
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline MappingRule& WithSpecifier(const Aws::String& value) { SetSpecifier(value); return *this;}
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline MappingRule& WithSpecifier(Aws::String&& value) { SetSpecifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifier within a certificate field, such as CN, OU, or UID from the Subject
-     * field.</p>
-     */
     inline MappingRule& WithSpecifier(const char* value) { SetSpecifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_specifier;

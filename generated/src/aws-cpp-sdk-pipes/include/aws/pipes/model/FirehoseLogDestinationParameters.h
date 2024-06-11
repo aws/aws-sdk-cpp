@@ -38,54 +38,20 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
      * which EventBridge delivers the pipe log records.</p>
      */
     inline const Aws::String& GetDeliveryStreamArn() const{ return m_deliveryStreamArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline void SetDeliveryStreamArn(const Aws::String& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline void SetDeliveryStreamArn(Aws::String&& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline void SetDeliveryStreamArn(const char* value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline FirehoseLogDestinationParameters& WithDeliveryStreamArn(const Aws::String& value) { SetDeliveryStreamArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline FirehoseLogDestinationParameters& WithDeliveryStreamArn(Aws::String&& value) { SetDeliveryStreamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Firehose delivery stream to
-     * which EventBridge delivers the pipe log records.</p>
-     */
     inline FirehoseLogDestinationParameters& WithDeliveryStreamArn(const char* value) { SetDeliveryStreamArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryStreamArn;

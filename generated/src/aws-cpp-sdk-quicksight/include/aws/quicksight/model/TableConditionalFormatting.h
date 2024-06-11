@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
      */
     inline const Aws::Vector<TableConditionalFormattingOption>& GetConditionalFormattingOptions() const{ return m_conditionalFormattingOptions; }
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline bool ConditionalFormattingOptionsHasBeenSet() const { return m_conditionalFormattingOptionsHasBeenSet; }
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline void SetConditionalFormattingOptions(const Aws::Vector<TableConditionalFormattingOption>& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = value; }
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline void SetConditionalFormattingOptions(Aws::Vector<TableConditionalFormattingOption>&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::move(value); }
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline TableConditionalFormatting& WithConditionalFormattingOptions(const Aws::Vector<TableConditionalFormattingOption>& value) { SetConditionalFormattingOptions(value); return *this;}
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline TableConditionalFormatting& WithConditionalFormattingOptions(Aws::Vector<TableConditionalFormattingOption>&& value) { SetConditionalFormattingOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline TableConditionalFormatting& AddConditionalFormattingOptions(const TableConditionalFormattingOption& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(value); return *this; }
-
-    /**
-     * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
-     */
     inline TableConditionalFormatting& AddConditionalFormattingOptions(TableConditionalFormattingOption&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TableConditionalFormattingOption> m_conditionalFormattingOptions;

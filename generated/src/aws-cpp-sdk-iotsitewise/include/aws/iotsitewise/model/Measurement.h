@@ -39,48 +39,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The processing configuration for the given measurement property. You can
      * configure measurements to be kept at the edge or forwarded to the Amazon Web
      * Services Cloud. By default, measurements are forwarded to the cloud.</p>
      */
     inline const MeasurementProcessingConfig& GetProcessingConfig() const{ return m_processingConfig; }
-
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
     inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
-
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
     inline void SetProcessingConfig(const MeasurementProcessingConfig& value) { m_processingConfigHasBeenSet = true; m_processingConfig = value; }
-
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
     inline void SetProcessingConfig(MeasurementProcessingConfig&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::move(value); }
-
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
     inline Measurement& WithProcessingConfig(const MeasurementProcessingConfig& value) { SetProcessingConfig(value); return *this;}
-
-    /**
-     * <p>The processing configuration for the given measurement property. You can
-     * configure measurements to be kept at the edge or forwarded to the Amazon Web
-     * Services Cloud. By default, measurements are forwarded to the cloud.</p>
-     */
     inline Measurement& WithProcessingConfig(MeasurementProcessingConfig&& value) { SetProcessingConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MeasurementProcessingConfig m_processingConfig;

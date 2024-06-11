@@ -40,113 +40,44 @@ namespace Model
     AWS_FSX_API DescribeBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of backups.</p>
      */
     inline const Aws::Vector<Backup>& GetBackups() const{ return m_backups; }
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline void SetBackups(const Aws::Vector<Backup>& value) { m_backups = value; }
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline void SetBackups(Aws::Vector<Backup>&& value) { m_backups = std::move(value); }
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline DescribeBackupsResult& WithBackups(const Aws::Vector<Backup>& value) { SetBackups(value); return *this;}
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline DescribeBackupsResult& WithBackups(Aws::Vector<Backup>&& value) { SetBackups(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline DescribeBackupsResult& AddBackups(const Backup& value) { m_backups.push_back(value); return *this; }
-
-    /**
-     * <p>An array of backups.</p>
-     */
     inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>NextToken</code> value is present if there are more backups than
      * returned in the response. You can use the <code>NextToken</code> value in the
      * subsequent request to fetch the backups. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline DescribeBackupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline DescribeBackupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A <code>NextToken</code> value is present if there are more backups than
-     * returned in the response. You can use the <code>NextToken</code> value in the
-     * subsequent request to fetch the backups. </p>
-     */
     inline DescribeBackupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBackupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBackupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBackupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Backup> m_backups;

@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API AssociateTransitGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the association.</p>
      */
     inline const TransitGatewayAssociation& GetAssociation() const{ return m_association; }
-
-    /**
-     * <p>The ID of the association.</p>
-     */
     inline void SetAssociation(const TransitGatewayAssociation& value) { m_association = value; }
-
-    /**
-     * <p>The ID of the association.</p>
-     */
     inline void SetAssociation(TransitGatewayAssociation&& value) { m_association = std::move(value); }
-
-    /**
-     * <p>The ID of the association.</p>
-     */
     inline AssociateTransitGatewayRouteTableResponse& WithAssociation(const TransitGatewayAssociation& value) { SetAssociation(value); return *this;}
-
-    /**
-     * <p>The ID of the association.</p>
-     */
     inline AssociateTransitGatewayRouteTableResponse& WithAssociation(TransitGatewayAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AssociateTransitGatewayRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AssociateTransitGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayAssociation m_association;

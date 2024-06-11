@@ -38,46 +38,19 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The new information to store.</p>
      */
     inline const Aws::String& GetNewValue() const{ return m_newValue; }
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline bool NewValueHasBeenSet() const { return m_newValueHasBeenSet; }
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline void SetNewValue(const Aws::String& value) { m_newValueHasBeenSet = true; m_newValue = value; }
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline void SetNewValue(Aws::String&& value) { m_newValueHasBeenSet = true; m_newValue = std::move(value); }
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline void SetNewValue(const char* value) { m_newValueHasBeenSet = true; m_newValue.assign(value); }
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline PutMetadataFlagBody& WithNewValue(const Aws::String& value) { SetNewValue(value); return *this;}
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline PutMetadataFlagBody& WithNewValue(Aws::String&& value) { SetNewValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The new information to store.</p>
-     */
     inline PutMetadataFlagBody& WithNewValue(const char* value) { SetNewValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_newValue;

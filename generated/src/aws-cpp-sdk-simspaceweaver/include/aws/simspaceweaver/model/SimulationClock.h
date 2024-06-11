@@ -38,67 +38,29 @@ namespace Model
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the simulation clock.</p>
      */
     inline const ClockStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the simulation clock.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the simulation clock.</p>
-     */
     inline void SetStatus(const ClockStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the simulation clock.</p>
-     */
     inline void SetStatus(ClockStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the simulation clock.</p>
-     */
     inline SimulationClock& WithStatus(const ClockStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the simulation clock.</p>
-     */
     inline SimulationClock& WithStatus(ClockStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The desired status of the simulation clock.</p>
      */
     inline const ClockTargetStatus& GetTargetStatus() const{ return m_targetStatus; }
-
-    /**
-     * <p>The desired status of the simulation clock.</p>
-     */
     inline bool TargetStatusHasBeenSet() const { return m_targetStatusHasBeenSet; }
-
-    /**
-     * <p>The desired status of the simulation clock.</p>
-     */
     inline void SetTargetStatus(const ClockTargetStatus& value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
-
-    /**
-     * <p>The desired status of the simulation clock.</p>
-     */
     inline void SetTargetStatus(ClockTargetStatus&& value) { m_targetStatusHasBeenSet = true; m_targetStatus = std::move(value); }
-
-    /**
-     * <p>The desired status of the simulation clock.</p>
-     */
     inline SimulationClock& WithTargetStatus(const ClockTargetStatus& value) { SetTargetStatus(value); return *this;}
-
-    /**
-     * <p>The desired status of the simulation clock.</p>
-     */
     inline SimulationClock& WithTargetStatus(ClockTargetStatus&& value) { SetTargetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClockStatus m_status;

@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DeleteCoreNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deleted core network.</p>
      */
     inline const CoreNetwork& GetCoreNetwork() const{ return m_coreNetwork; }
-
-    /**
-     * <p>Information about the deleted core network.</p>
-     */
     inline void SetCoreNetwork(const CoreNetwork& value) { m_coreNetwork = value; }
-
-    /**
-     * <p>Information about the deleted core network.</p>
-     */
     inline void SetCoreNetwork(CoreNetwork&& value) { m_coreNetwork = std::move(value); }
-
-    /**
-     * <p>Information about the deleted core network.</p>
-     */
     inline DeleteCoreNetworkResult& WithCoreNetwork(const CoreNetwork& value) { SetCoreNetwork(value); return *this;}
-
-    /**
-     * <p>Information about the deleted core network.</p>
-     */
     inline DeleteCoreNetworkResult& WithCoreNetwork(CoreNetwork&& value) { SetCoreNetwork(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteCoreNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteCoreNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteCoreNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CoreNetwork m_coreNetwork;

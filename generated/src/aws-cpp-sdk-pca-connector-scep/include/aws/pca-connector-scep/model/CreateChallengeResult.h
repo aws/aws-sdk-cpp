@@ -33,53 +33,27 @@ namespace Model
     AWS_PCACONNECTORSCEP_API CreateChallengeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the challenge details for the specified connector.</p>
      */
     inline const Challenge& GetChallenge() const{ return m_challenge; }
-
-    /**
-     * <p>Returns the challenge details for the specified connector.</p>
-     */
     inline void SetChallenge(const Challenge& value) { m_challenge = value; }
-
-    /**
-     * <p>Returns the challenge details for the specified connector.</p>
-     */
     inline void SetChallenge(Challenge&& value) { m_challenge = std::move(value); }
-
-    /**
-     * <p>Returns the challenge details for the specified connector.</p>
-     */
     inline CreateChallengeResult& WithChallenge(const Challenge& value) { SetChallenge(value); return *this;}
-
-    /**
-     * <p>Returns the challenge details for the specified connector.</p>
-     */
     inline CreateChallengeResult& WithChallenge(Challenge&& value) { SetChallenge(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateChallengeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateChallengeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateChallengeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Challenge m_challenge;

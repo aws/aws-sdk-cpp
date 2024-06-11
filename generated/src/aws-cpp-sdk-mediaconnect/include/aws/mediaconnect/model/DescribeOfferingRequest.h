@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the offering.
      */
     inline const Aws::String& GetOfferingArn() const{ return m_offeringArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline void SetOfferingArn(const Aws::String& value) { m_offeringArnHasBeenSet = true; m_offeringArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline void SetOfferingArn(Aws::String&& value) { m_offeringArnHasBeenSet = true; m_offeringArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline void SetOfferingArn(const char* value) { m_offeringArnHasBeenSet = true; m_offeringArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline DescribeOfferingRequest& WithOfferingArn(const Aws::String& value) { SetOfferingArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline DescribeOfferingRequest& WithOfferingArn(Aws::String&& value) { SetOfferingArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the offering.
-     */
     inline DescribeOfferingRequest& WithOfferingArn(const char* value) { SetOfferingArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_offeringArn;

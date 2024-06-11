@@ -38,77 +38,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The role of the participant being added.</p>
      */
     inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
-
-    /**
-     * <p>The role of the participant being added.</p>
-     */
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-
-    /**
-     * <p>The role of the participant being added.</p>
-     */
     inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-
-    /**
-     * <p>The role of the participant being added.</p>
-     */
     inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-
-    /**
-     * <p>The role of the participant being added.</p>
-     */
     inline ParticipantDetailsToAdd& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-
-    /**
-     * <p>The role of the participant being added.</p>
-     */
     inline ParticipantDetailsToAdd& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The display name of the participant.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline ParticipantDetailsToAdd& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline ParticipantDetailsToAdd& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The display name of the participant.</p>
-     */
     inline ParticipantDetailsToAdd& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
+    ///@}
   private:
 
     ParticipantRole m_participantRole;

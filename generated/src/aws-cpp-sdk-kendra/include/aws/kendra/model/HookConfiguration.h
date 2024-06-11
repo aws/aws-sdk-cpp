@@ -50,6 +50,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
      * example, you can specify a condition that if there are empty date-time values,
@@ -57,48 +58,14 @@ namespace Model
      * date-time.</p>
      */
     inline const DocumentAttributeCondition& GetInvocationCondition() const{ return m_invocationCondition; }
-
-    /**
-     * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
-     * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Kendra should invoke a function that inserts the current
-     * date-time.</p>
-     */
     inline bool InvocationConditionHasBeenSet() const { return m_invocationConditionHasBeenSet; }
-
-    /**
-     * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
-     * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Kendra should invoke a function that inserts the current
-     * date-time.</p>
-     */
     inline void SetInvocationCondition(const DocumentAttributeCondition& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = value; }
-
-    /**
-     * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
-     * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Kendra should invoke a function that inserts the current
-     * date-time.</p>
-     */
     inline void SetInvocationCondition(DocumentAttributeCondition&& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = std::move(value); }
-
-    /**
-     * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
-     * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Kendra should invoke a function that inserts the current
-     * date-time.</p>
-     */
     inline HookConfiguration& WithInvocationCondition(const DocumentAttributeCondition& value) { SetInvocationCondition(value); return *this;}
-
-    /**
-     * <p>The condition used for when a Lambda function should be invoked.</p> <p>For
-     * example, you can specify a condition that if there are empty date-time values,
-     * then Amazon Kendra should invoke a function that inserts the current
-     * date-time.</p>
-     */
     inline HookConfiguration& WithInvocationCondition(DocumentAttributeCondition&& value) { SetInvocationCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
      * function during ingestion. For more information, see <a
@@ -106,64 +73,16 @@ namespace Model
      * Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline HookConfiguration& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline HookConfiguration& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
-     * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
-     */
     inline HookConfiguration& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stores the original, raw documents or the structured, parsed documents before
      * and after altering them. For more information, see <a
@@ -171,63 +90,14 @@ namespace Model
      * contracts for Lambda functions</a>.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline HookConfiguration& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline HookConfiguration& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-
-    /**
-     * <p>Stores the original, raw documents or the structured, parsed documents before
-     * and after altering them. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
-     * contracts for Lambda functions</a>.</p>
-     */
     inline HookConfiguration& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
-
+    ///@}
   private:
 
     DocumentAttributeCondition m_invocationCondition;

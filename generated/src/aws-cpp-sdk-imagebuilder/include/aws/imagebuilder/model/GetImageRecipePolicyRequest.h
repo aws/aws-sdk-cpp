@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetImageRecipeArn() const{ return m_imageRecipeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline bool ImageRecipeArnHasBeenSet() const { return m_imageRecipeArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageRecipeArn(const Aws::String& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageRecipeArn(Aws::String&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageRecipeArn(const char* value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImageRecipePolicyRequest& WithImageRecipeArn(const Aws::String& value) { SetImageRecipeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImageRecipePolicyRequest& WithImageRecipeArn(Aws::String&& value) { SetImageRecipeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImageRecipePolicyRequest& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageRecipeArn;

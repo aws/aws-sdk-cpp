@@ -43,120 +43,46 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     
     inline const Aws::String& GetId() const{ return m_id; }
-
-    
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
     inline QueueConfigurationDeprecated& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
     inline QueueConfigurationDeprecated& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
     inline QueueConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A collection of bucket events for which to send notifications.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline QueueConfigurationDeprecated& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline QueueConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline QueueConfigurationDeprecated& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
-    /**
-     * <p>A collection of bucket events for which to send notifications.</p>
-     */
     inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
      * publishes a message when it detects events of the specified type. </p>
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline QueueConfigurationDeprecated& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline QueueConfigurationDeprecated& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
-     * publishes a message when it detects events of the specified type. </p>
-     */
     inline QueueConfigurationDeprecated& WithQueue(const char* value) { SetQueue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

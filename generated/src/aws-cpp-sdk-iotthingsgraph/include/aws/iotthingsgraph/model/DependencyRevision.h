@@ -38,67 +38,29 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the workflow or system.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline DependencyRevision& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline DependencyRevision& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workflow or system.</p>
-     */
     inline DependencyRevision& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revision number of the workflow or system.</p>
      */
     inline long long GetRevisionNumber() const{ return m_revisionNumber; }
-
-    /**
-     * <p>The revision number of the workflow or system.</p>
-     */
     inline bool RevisionNumberHasBeenSet() const { return m_revisionNumberHasBeenSet; }
-
-    /**
-     * <p>The revision number of the workflow or system.</p>
-     */
     inline void SetRevisionNumber(long long value) { m_revisionNumberHasBeenSet = true; m_revisionNumber = value; }
-
-    /**
-     * <p>The revision number of the workflow or system.</p>
-     */
     inline DependencyRevision& WithRevisionNumber(long long value) { SetRevisionNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

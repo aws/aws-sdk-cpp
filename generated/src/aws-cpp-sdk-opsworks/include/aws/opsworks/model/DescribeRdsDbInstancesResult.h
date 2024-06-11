@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeRdsDbInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
      * instances.</p>
      */
     inline const Aws::Vector<RdsDbInstance>& GetRdsDbInstances() const{ return m_rdsDbInstances; }
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline void SetRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { m_rdsDbInstances = value; }
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline void SetRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { m_rdsDbInstances = std::move(value); }
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline DescribeRdsDbInstancesResult& WithRdsDbInstances(const Aws::Vector<RdsDbInstance>& value) { SetRdsDbInstances(value); return *this;}
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline DescribeRdsDbInstancesResult& WithRdsDbInstances(Aws::Vector<RdsDbInstance>&& value) { SetRdsDbInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(const RdsDbInstance& value) { m_rdsDbInstances.push_back(value); return *this; }
-
-    /**
-     * <p>An a array of <code>RdsDbInstance</code> objects that describe the
-     * instances.</p>
-     */
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRdsDbInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRdsDbInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRdsDbInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RdsDbInstance> m_rdsDbInstances;

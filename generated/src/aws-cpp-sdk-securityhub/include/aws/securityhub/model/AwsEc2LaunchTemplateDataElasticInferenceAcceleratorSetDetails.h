@@ -38,67 +38,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The number of Elastic Inference accelerators to attach to the instance. </p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-     */
     inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The type of Elastic Inference accelerator. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p> The type of Elastic Inference accelerator. </p>
-     */
     inline AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     int m_count;

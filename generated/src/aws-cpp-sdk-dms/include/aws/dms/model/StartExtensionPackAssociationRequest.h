@@ -34,46 +34,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The migration project name or Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetMigrationProjectIdentifier() const{ return m_migrationProjectIdentifier; }
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline bool MigrationProjectIdentifierHasBeenSet() const { return m_migrationProjectIdentifierHasBeenSet; }
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline void SetMigrationProjectIdentifier(const Aws::String& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = value; }
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline void SetMigrationProjectIdentifier(Aws::String&& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = std::move(value); }
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline void SetMigrationProjectIdentifier(const char* value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier.assign(value); }
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline StartExtensionPackAssociationRequest& WithMigrationProjectIdentifier(const Aws::String& value) { SetMigrationProjectIdentifier(value); return *this;}
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline StartExtensionPackAssociationRequest& WithMigrationProjectIdentifier(Aws::String&& value) { SetMigrationProjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The migration project name or Amazon Resource Name (ARN).</p>
-     */
     inline StartExtensionPackAssociationRequest& WithMigrationProjectIdentifier(const char* value) { SetMigrationProjectIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_migrationProjectIdentifier;

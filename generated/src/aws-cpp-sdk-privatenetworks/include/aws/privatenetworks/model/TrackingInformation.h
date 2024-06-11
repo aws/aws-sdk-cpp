@@ -37,46 +37,19 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tracking number of the shipment.</p>
      */
     inline const Aws::String& GetTrackingNumber() const{ return m_trackingNumber; }
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline bool TrackingNumberHasBeenSet() const { return m_trackingNumberHasBeenSet; }
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline void SetTrackingNumber(const Aws::String& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = value; }
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline void SetTrackingNumber(Aws::String&& value) { m_trackingNumberHasBeenSet = true; m_trackingNumber = std::move(value); }
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline void SetTrackingNumber(const char* value) { m_trackingNumberHasBeenSet = true; m_trackingNumber.assign(value); }
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline TrackingInformation& WithTrackingNumber(const Aws::String& value) { SetTrackingNumber(value); return *this;}
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline TrackingInformation& WithTrackingNumber(Aws::String&& value) { SetTrackingNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The tracking number of the shipment.</p>
-     */
     inline TrackingInformation& WithTrackingNumber(const char* value) { SetTrackingNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trackingNumber;

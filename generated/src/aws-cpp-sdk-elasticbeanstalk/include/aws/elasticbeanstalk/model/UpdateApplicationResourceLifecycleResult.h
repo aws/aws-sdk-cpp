@@ -34,83 +34,38 @@ namespace Model
     AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline UpdateApplicationResourceLifecycleResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline UpdateApplicationResourceLifecycleResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline UpdateApplicationResourceLifecycleResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The lifecycle configuration.</p>
      */
     inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
-
-    /**
-     * <p>The lifecycle configuration.</p>
-     */
     inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfig = value; }
-
-    /**
-     * <p>The lifecycle configuration.</p>
-     */
     inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfig = std::move(value); }
-
-    /**
-     * <p>The lifecycle configuration.</p>
-     */
     inline UpdateApplicationResourceLifecycleResult& WithResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { SetResourceLifecycleConfig(value); return *this;}
-
-    /**
-     * <p>The lifecycle configuration.</p>
-     */
     inline UpdateApplicationResourceLifecycleResult& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

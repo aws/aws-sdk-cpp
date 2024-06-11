@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the drift detection results of this operation.</p>
      * <p>CloudFormation generates new results, with a new drift detection ID, each
@@ -43,63 +44,14 @@ namespace Model
      * retains for any given stack, and for how long, may vary.</p>
      */
     inline const Aws::String& GetStackDriftDetectionId() const{ return m_stackDriftDetectionId; }
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline bool StackDriftDetectionIdHasBeenSet() const { return m_stackDriftDetectionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline void SetStackDriftDetectionId(const Aws::String& value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId = value; }
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline void SetStackDriftDetectionId(Aws::String&& value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline void SetStackDriftDetectionId(const char* value) { m_stackDriftDetectionIdHasBeenSet = true; m_stackDriftDetectionId.assign(value); }
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(const Aws::String& value) { SetStackDriftDetectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(Aws::String&& value) { SetStackDriftDetectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the drift detection results of this operation.</p>
-     * <p>CloudFormation generates new results, with a new drift detection ID, each
-     * time this operation is run. However, the number of drift results CloudFormation
-     * retains for any given stack, and for how long, may vary.</p>
-     */
     inline DescribeStackDriftDetectionStatusRequest& WithStackDriftDetectionId(const char* value) { SetStackDriftDetectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackDriftDetectionId;

@@ -36,157 +36,59 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The IDs of the snapshots that you want to retrieve. This parameter value
      * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
      * error occurs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the snapshots that you want to retrieve. This parameter value
-     * overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code>
-     * error occurs.</p>
-     */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filters structure. The supported names are <code>file-system-id</code> or
      * <code>volume-id</code>.</p>
      */
     inline const Aws::Vector<SnapshotFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline void SetFilters(const Aws::Vector<SnapshotFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline void SetFilters(Aws::Vector<SnapshotFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<SnapshotFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<SnapshotFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline DescribeSnapshotsRequest& AddFilters(const SnapshotFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters structure. The supported names are <code>file-system-id</code> or
-     * <code>volume-id</code>.</p>
-     */
     inline DescribeSnapshotsRequest& AddFilters(SnapshotFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline DescribeSnapshotsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline DescribeSnapshotsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>false</code> (default) if you want to only see the snapshots
      * owned by your Amazon Web Services account. Set to <code>true</code> if you want
@@ -194,31 +96,10 @@ namespace Model
      * account.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
-
-    /**
-     * <p>Set to <code>false</code> (default) if you want to only see the snapshots
-     * owned by your Amazon Web Services account. Set to <code>true</code> if you want
-     * to see the snapshots in your account and the ones shared with you from another
-     * account.</p>
-     */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
-
-    /**
-     * <p>Set to <code>false</code> (default) if you want to only see the snapshots
-     * owned by your Amazon Web Services account. Set to <code>true</code> if you want
-     * to see the snapshots in your account and the ones shared with you from another
-     * account.</p>
-     */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
-
-    /**
-     * <p>Set to <code>false</code> (default) if you want to only see the snapshots
-     * owned by your Amazon Web Services account. Set to <code>true</code> if you want
-     * to see the snapshots in your account and the ones shared with you from another
-     * account.</p>
-     */
     inline DescribeSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_snapshotIds;

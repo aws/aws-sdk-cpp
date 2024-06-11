@@ -34,46 +34,19 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
      */
     inline const Aws::String& GetTrustedTokenIssuerArn() const{ return m_trustedTokenIssuerArn; }
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline bool TrustedTokenIssuerArnHasBeenSet() const { return m_trustedTokenIssuerArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline void SetTrustedTokenIssuerArn(const Aws::String& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline void SetTrustedTokenIssuerArn(Aws::String&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline void SetTrustedTokenIssuerArn(const char* value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline DeleteTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(const Aws::String& value) { SetTrustedTokenIssuerArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline DeleteTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(Aws::String&& value) { SetTrustedTokenIssuerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-     */
     inline DeleteTrustedTokenIssuerRequest& WithTrustedTokenIssuerArn(const char* value) { SetTrustedTokenIssuerArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustedTokenIssuerArn;

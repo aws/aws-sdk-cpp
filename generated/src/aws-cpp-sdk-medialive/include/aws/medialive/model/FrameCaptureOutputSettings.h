@@ -37,54 +37,20 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Required if the output group contains more than one output. This modifier forms
      * part of the output file name.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline FrameCaptureOutputSettings& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline FrameCaptureOutputSettings& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
-
-    /**
-     * Required if the output group contains more than one output. This modifier forms
-     * part of the output file name.
-     */
     inline FrameCaptureOutputSettings& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nameModifier;

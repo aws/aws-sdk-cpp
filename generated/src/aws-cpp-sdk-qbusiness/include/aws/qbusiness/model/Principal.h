@@ -40,67 +40,29 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user associated with the principal.</p>
      */
     inline const PrincipalUser& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline void SetUser(const PrincipalUser& value) { m_userHasBeenSet = true; m_user = value; }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline void SetUser(PrincipalUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline Principal& WithUser(const PrincipalUser& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The user associated with the principal.</p>
-     */
     inline Principal& WithUser(PrincipalUser&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The group associated with the principal.</p>
      */
     inline const PrincipalGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
     inline void SetGroup(const PrincipalGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
     inline void SetGroup(PrincipalGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
     inline Principal& WithGroup(const PrincipalGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p> The group associated with the principal.</p>
-     */
     inline Principal& WithGroup(PrincipalGroup&& value) { SetGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PrincipalUser m_user;

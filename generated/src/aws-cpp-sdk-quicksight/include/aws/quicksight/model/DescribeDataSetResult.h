@@ -33,69 +33,36 @@ namespace Model
     AWS_QUICKSIGHT_API DescribeDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information on the dataset.</p>
      */
     inline const DataSet& GetDataSet() const{ return m_dataSet; }
-
-    /**
-     * <p>Information on the dataset.</p>
-     */
     inline void SetDataSet(const DataSet& value) { m_dataSet = value; }
-
-    /**
-     * <p>Information on the dataset.</p>
-     */
     inline void SetDataSet(DataSet&& value) { m_dataSet = std::move(value); }
-
-    /**
-     * <p>Information on the dataset.</p>
-     */
     inline DescribeDataSetResult& WithDataSet(const DataSet& value) { SetDataSet(value); return *this;}
-
-    /**
-     * <p>Information on the dataset.</p>
-     */
     inline DescribeDataSetResult& WithDataSet(DataSet&& value) { SetDataSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline DescribeDataSetResult& WithStatus(int value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     DataSet m_dataSet;

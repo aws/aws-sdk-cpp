@@ -45,112 +45,44 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Valid storage options for your DB instance.</p>
      */
     inline const Aws::Vector<ValidStorageOptions>& GetStorage() const{ return m_storage; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline void SetStorage(const Aws::Vector<ValidStorageOptions>& value) { m_storageHasBeenSet = true; m_storage = value; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline void SetStorage(Aws::Vector<ValidStorageOptions>&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithStorage(const Aws::Vector<ValidStorageOptions>& value) { SetStorage(value); return *this;}
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithStorage(Aws::Vector<ValidStorageOptions>&& value) { SetStorage(std::move(value)); return *this;}
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddStorage(const ValidStorageOptions& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
-
-    /**
-     * <p>Valid storage options for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddStorage(ValidStorageOptions&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Valid processor features for your DB instance.</p>
      */
     inline const Aws::Vector<AvailableProcessorFeature>& GetValidProcessorFeatures() const{ return m_validProcessorFeatures; }
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline bool ValidProcessorFeaturesHasBeenSet() const { return m_validProcessorFeaturesHasBeenSet; }
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline void SetValidProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures = value; }
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline void SetValidProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures = std::move(value); }
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithValidProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { SetValidProcessorFeatures(value); return *this;}
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithValidProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { SetValidProcessorFeatures(std::move(value)); return *this;}
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddValidProcessorFeatures(const AvailableProcessorFeature& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures.push_back(value); return *this; }
-
-    /**
-     * <p>Valid processor features for your DB instance.</p>
-     */
     inline ValidDBInstanceModificationsMessage& AddValidProcessorFeatures(AvailableProcessorFeature&& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether a DB instance supports using a dedicated log volume
      * (DLV).</p>
      */
     inline bool GetSupportsDedicatedLogVolume() const{ return m_supportsDedicatedLogVolume; }
-
-    /**
-     * <p>Indicates whether a DB instance supports using a dedicated log volume
-     * (DLV).</p>
-     */
     inline bool SupportsDedicatedLogVolumeHasBeenSet() const { return m_supportsDedicatedLogVolumeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether a DB instance supports using a dedicated log volume
-     * (DLV).</p>
-     */
     inline void SetSupportsDedicatedLogVolume(bool value) { m_supportsDedicatedLogVolumeHasBeenSet = true; m_supportsDedicatedLogVolume = value; }
-
-    /**
-     * <p>Indicates whether a DB instance supports using a dedicated log volume
-     * (DLV).</p>
-     */
     inline ValidDBInstanceModificationsMessage& WithSupportsDedicatedLogVolume(bool value) { SetSupportsDedicatedLogVolume(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;

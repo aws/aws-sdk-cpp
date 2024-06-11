@@ -37,24 +37,15 @@ namespace Model
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Server& GetServer() const{ return m_server; }
-
-    
     inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
-
-    
     inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
-
-    
     inline void SetServer(Server&& value) { m_serverHasBeenSet = true; m_server = std::move(value); }
-
-    
     inline ServerValidationOutput& WithServer(const Server& value) { SetServer(value); return *this;}
-
-    
     inline ServerValidationOutput& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Server m_server;

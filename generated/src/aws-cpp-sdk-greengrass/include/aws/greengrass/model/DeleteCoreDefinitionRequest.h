@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the core definition.
      */
     inline const Aws::String& GetCoreDefinitionId() const{ return m_coreDefinitionId; }
-
-    /**
-     * The ID of the core definition.
-     */
     inline bool CoreDefinitionIdHasBeenSet() const { return m_coreDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the core definition.
-     */
     inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
-
-    /**
-     * The ID of the core definition.
-     */
     inline void SetCoreDefinitionId(Aws::String&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the core definition.
-     */
     inline void SetCoreDefinitionId(const char* value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId.assign(value); }
-
-    /**
-     * The ID of the core definition.
-     */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(const Aws::String& value) { SetCoreDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the core definition.
-     */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(Aws::String&& value) { SetCoreDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the core definition.
-     */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_coreDefinitionId;

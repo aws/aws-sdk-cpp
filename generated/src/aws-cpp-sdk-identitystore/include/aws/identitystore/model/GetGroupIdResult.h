@@ -32,99 +32,42 @@ namespace Model
     AWS_IDENTITYSTORE_API GetGroupIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier for a group in the identity store.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupId = std::move(value); }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupId.assign(value); }
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupIdResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupIdResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for a group in the identity store.</p>
-     */
     inline GetGroupIdResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The globally unique identifier for the identity store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreId = value; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreId = std::move(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreId.assign(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupIdResult& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupIdResult& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetGroupIdResult& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGroupIdResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGroupIdResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGroupIdResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupId;

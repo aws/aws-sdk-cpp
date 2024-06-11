@@ -37,36 +37,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The explainability report for a model.</p>
      */
     inline const MetricsSource& GetReport() const{ return m_report; }
-
-    /**
-     * <p>The explainability report for a model.</p>
-     */
     inline bool ReportHasBeenSet() const { return m_reportHasBeenSet; }
-
-    /**
-     * <p>The explainability report for a model.</p>
-     */
     inline void SetReport(const MetricsSource& value) { m_reportHasBeenSet = true; m_report = value; }
-
-    /**
-     * <p>The explainability report for a model.</p>
-     */
     inline void SetReport(MetricsSource&& value) { m_reportHasBeenSet = true; m_report = std::move(value); }
-
-    /**
-     * <p>The explainability report for a model.</p>
-     */
     inline Explainability& WithReport(const MetricsSource& value) { SetReport(value); return *this;}
-
-    /**
-     * <p>The explainability report for a model.</p>
-     */
     inline Explainability& WithReport(MetricsSource&& value) { SetReport(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MetricsSource m_report;

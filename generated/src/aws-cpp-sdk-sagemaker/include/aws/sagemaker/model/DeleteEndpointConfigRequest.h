@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the endpoint configuration that you want to delete.</p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = std::move(value); }
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline void SetEndpointConfigName(const char* value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName.assign(value); }
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline DeleteEndpointConfigRequest& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline DeleteEndpointConfigRequest& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the endpoint configuration that you want to delete.</p>
-     */
     inline DeleteEndpointConfigRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointConfigName;

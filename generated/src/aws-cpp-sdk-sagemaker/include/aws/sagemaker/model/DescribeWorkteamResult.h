@@ -33,58 +33,28 @@ namespace Model
     AWS_SAGEMAKER_API DescribeWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>Workteam</code> instance that contains information about the work
      * team. </p>
      */
     inline const Workteam& GetWorkteam() const{ return m_workteam; }
-
-    /**
-     * <p>A <code>Workteam</code> instance that contains information about the work
-     * team. </p>
-     */
     inline void SetWorkteam(const Workteam& value) { m_workteam = value; }
-
-    /**
-     * <p>A <code>Workteam</code> instance that contains information about the work
-     * team. </p>
-     */
     inline void SetWorkteam(Workteam&& value) { m_workteam = std::move(value); }
-
-    /**
-     * <p>A <code>Workteam</code> instance that contains information about the work
-     * team. </p>
-     */
     inline DescribeWorkteamResult& WithWorkteam(const Workteam& value) { SetWorkteam(value); return *this;}
-
-    /**
-     * <p>A <code>Workteam</code> instance that contains information about the work
-     * team. </p>
-     */
     inline DescribeWorkteamResult& WithWorkteam(Workteam&& value) { SetWorkteam(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeWorkteamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeWorkteamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeWorkteamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Workteam m_workteam;

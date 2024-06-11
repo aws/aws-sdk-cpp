@@ -38,63 +38,29 @@ namespace Model
     AWS_CODECOMMIT_API DeleteRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the repository that was deleted.</p>
      */
     inline const Aws::String& GetRepositoryId() const{ return m_repositoryId; }
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline void SetRepositoryId(const Aws::String& value) { m_repositoryId = value; }
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline void SetRepositoryId(Aws::String&& value) { m_repositoryId = std::move(value); }
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline void SetRepositoryId(const char* value) { m_repositoryId.assign(value); }
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline DeleteRepositoryResult& WithRepositoryId(const Aws::String& value) { SetRepositoryId(value); return *this;}
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline DeleteRepositoryResult& WithRepositoryId(Aws::String&& value) { SetRepositoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the repository that was deleted.</p>
-     */
     inline DeleteRepositoryResult& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryId;

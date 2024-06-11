@@ -32,46 +32,19 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The review template ARN.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

@@ -40,254 +40,104 @@ namespace Model
     AWS_MEDIALIVE_API UpdateCloudWatchAlarmTemplateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A cloudwatch alarm template group's ARN (Amazon Resource Name)
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * A cloudwatch alarm template group's ARN (Amazon Resource Name)
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-
-    
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A resource's optional description.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A cloudwatch alarm template group's id. AWS provided template groups have ids
      * that start with `aws-`
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * A cloudwatch alarm template group's id. AWS provided template groups have ids
-     * that start with `aws-`
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-
-    
     inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-
-    
     inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A resource's name. Names must be unique within the scope of a resource type in a
      * specific region.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * A resource's name. Names must be unique within the scope of a resource type in a
-     * specific region.
-     */
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCloudWatchAlarmTemplateGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

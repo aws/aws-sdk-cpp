@@ -38,67 +38,29 @@ namespace Model
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>How long it took to process the request, in milliseconds.</p>
      */
     inline long long GetTimems() const{ return m_timems; }
-
-    /**
-     * <p>How long it took to process the request, in milliseconds.</p>
-     */
     inline bool TimemsHasBeenSet() const { return m_timemsHasBeenSet; }
-
-    /**
-     * <p>How long it took to process the request, in milliseconds.</p>
-     */
     inline void SetTimems(long long value) { m_timemsHasBeenSet = true; m_timems = value; }
-
-    /**
-     * <p>How long it took to process the request, in milliseconds.</p>
-     */
     inline SuggestStatus& WithTimems(long long value) { SetTimems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encrypted resource ID for the request.</p>
      */
     inline const Aws::String& GetRid() const{ return m_rid; }
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline bool RidHasBeenSet() const { return m_ridHasBeenSet; }
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline void SetRid(const Aws::String& value) { m_ridHasBeenSet = true; m_rid = value; }
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline void SetRid(Aws::String&& value) { m_ridHasBeenSet = true; m_rid = std::move(value); }
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline void SetRid(const char* value) { m_ridHasBeenSet = true; m_rid.assign(value); }
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline SuggestStatus& WithRid(const Aws::String& value) { SetRid(value); return *this;}
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline SuggestStatus& WithRid(Aws::String&& value) { SetRid(std::move(value)); return *this;}
-
-    /**
-     * <p>The encrypted resource ID for the request.</p>
-     */
     inline SuggestStatus& WithRid(const char* value) { SetRid(value); return *this;}
-
+    ///@}
   private:
 
     long long m_timems;

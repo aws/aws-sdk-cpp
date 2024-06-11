@@ -40,87 +40,33 @@ namespace Model
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A descriptive name for the action.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline Action& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline Action& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A descriptive name for the action.</p>
-     */
     inline Action& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule for copying shared snapshots across Regions.</p>
      */
     inline const Aws::Vector<CrossRegionCopyAction>& GetCrossRegionCopy() const{ return m_crossRegionCopy; }
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline bool CrossRegionCopyHasBeenSet() const { return m_crossRegionCopyHasBeenSet; }
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline void SetCrossRegionCopy(const Aws::Vector<CrossRegionCopyAction>& value) { m_crossRegionCopyHasBeenSet = true; m_crossRegionCopy = value; }
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline void SetCrossRegionCopy(Aws::Vector<CrossRegionCopyAction>&& value) { m_crossRegionCopyHasBeenSet = true; m_crossRegionCopy = std::move(value); }
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline Action& WithCrossRegionCopy(const Aws::Vector<CrossRegionCopyAction>& value) { SetCrossRegionCopy(value); return *this;}
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline Action& WithCrossRegionCopy(Aws::Vector<CrossRegionCopyAction>&& value) { SetCrossRegionCopy(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline Action& AddCrossRegionCopy(const CrossRegionCopyAction& value) { m_crossRegionCopyHasBeenSet = true; m_crossRegionCopy.push_back(value); return *this; }
-
-    /**
-     * <p>The rule for copying shared snapshots across Regions.</p>
-     */
     inline Action& AddCrossRegionCopy(CrossRegionCopyAction&& value) { m_crossRegionCopyHasBeenSet = true; m_crossRegionCopy.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

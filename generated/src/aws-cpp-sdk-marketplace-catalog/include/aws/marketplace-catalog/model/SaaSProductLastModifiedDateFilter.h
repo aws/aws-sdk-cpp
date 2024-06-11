@@ -38,36 +38,17 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Dates between which the SaaS product was last modified.</p>
      */
     inline const SaaSProductLastModifiedDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
-
-    /**
-     * <p>Dates between which the SaaS product was last modified.</p>
-     */
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-
-    /**
-     * <p>Dates between which the SaaS product was last modified.</p>
-     */
     inline void SetDateRange(const SaaSProductLastModifiedDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-
-    /**
-     * <p>Dates between which the SaaS product was last modified.</p>
-     */
     inline void SetDateRange(SaaSProductLastModifiedDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-
-    /**
-     * <p>Dates between which the SaaS product was last modified.</p>
-     */
     inline SaaSProductLastModifiedDateFilter& WithDateRange(const SaaSProductLastModifiedDateFilterDateRange& value) { SetDateRange(value); return *this;}
-
-    /**
-     * <p>Dates between which the SaaS product was last modified.</p>
-     */
     inline SaaSProductLastModifiedDateFilter& WithDateRange(SaaSProductLastModifiedDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SaaSProductLastModifiedDateFilterDateRange m_dateRange;

@@ -32,87 +32,33 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the API key to delete.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the API key to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace to delete.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace to delete.</p>
-     */
     inline DeleteWorkspaceApiKeyRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyName;

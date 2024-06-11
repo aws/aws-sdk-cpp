@@ -39,77 +39,31 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The camera node's name, from the application manifest.</p>
      */
     inline const Aws::String& GetNodeInstanceId() const{ return m_nodeInstanceId; }
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline bool NodeInstanceIdHasBeenSet() const { return m_nodeInstanceIdHasBeenSet; }
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline void SetNodeInstanceId(const Aws::String& value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId = value; }
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline void SetNodeInstanceId(Aws::String&& value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId = std::move(value); }
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline void SetNodeInstanceId(const char* value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId.assign(value); }
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline NodeSignal& WithNodeInstanceId(const Aws::String& value) { SetNodeInstanceId(value); return *this;}
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline NodeSignal& WithNodeInstanceId(Aws::String&& value) { SetNodeInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The camera node's name, from the application manifest.</p>
-     */
     inline NodeSignal& WithNodeInstanceId(const char* value) { SetNodeInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The signal value.</p>
      */
     inline const NodeSignalValue& GetSignal() const{ return m_signal; }
-
-    /**
-     * <p>The signal value.</p>
-     */
     inline bool SignalHasBeenSet() const { return m_signalHasBeenSet; }
-
-    /**
-     * <p>The signal value.</p>
-     */
     inline void SetSignal(const NodeSignalValue& value) { m_signalHasBeenSet = true; m_signal = value; }
-
-    /**
-     * <p>The signal value.</p>
-     */
     inline void SetSignal(NodeSignalValue&& value) { m_signalHasBeenSet = true; m_signal = std::move(value); }
-
-    /**
-     * <p>The signal value.</p>
-     */
     inline NodeSignal& WithSignal(const NodeSignalValue& value) { SetSignal(value); return *this;}
-
-    /**
-     * <p>The signal value.</p>
-     */
     inline NodeSignal& WithSignal(NodeSignalValue&& value) { SetSignal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nodeInstanceId;

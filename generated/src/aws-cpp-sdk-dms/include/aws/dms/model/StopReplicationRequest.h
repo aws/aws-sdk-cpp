@@ -37,46 +37,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name of the replication to stop.</p>
      */
     inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline StopReplicationRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline StopReplicationRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the replication to stop.</p>
-     */
     inline StopReplicationRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationConfigArn;

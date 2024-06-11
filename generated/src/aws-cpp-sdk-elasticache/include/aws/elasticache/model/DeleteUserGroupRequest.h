@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the user group.</p>
      */
     inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline void SetUserGroupId(const Aws::String& value) { m_userGroupIdHasBeenSet = true; m_userGroupId = value; }
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline void SetUserGroupId(Aws::String&& value) { m_userGroupIdHasBeenSet = true; m_userGroupId = std::move(value); }
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline void SetUserGroupId(const char* value) { m_userGroupIdHasBeenSet = true; m_userGroupId.assign(value); }
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline DeleteUserGroupRequest& WithUserGroupId(const Aws::String& value) { SetUserGroupId(value); return *this;}
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline DeleteUserGroupRequest& WithUserGroupId(Aws::String&& value) { SetUserGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the user group.</p>
-     */
     inline DeleteUserGroupRequest& WithUserGroupId(const char* value) { SetUserGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userGroupId;

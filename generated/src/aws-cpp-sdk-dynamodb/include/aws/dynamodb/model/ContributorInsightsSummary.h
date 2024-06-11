@@ -39,124 +39,46 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the table associated with the summary.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline ContributorInsightsSummary& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline ContributorInsightsSummary& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the table associated with the summary.</p>
-     */
     inline ContributorInsightsSummary& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of the index associated with the summary, if any.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline ContributorInsightsSummary& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline ContributorInsightsSummary& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the index associated with the summary, if any.</p>
-     */
     inline ContributorInsightsSummary& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the current status for contributor insights for the given table and
      * index, if applicable.</p>
      */
     inline const ContributorInsightsStatus& GetContributorInsightsStatus() const{ return m_contributorInsightsStatus; }
-
-    /**
-     * <p>Describes the current status for contributor insights for the given table and
-     * index, if applicable.</p>
-     */
     inline bool ContributorInsightsStatusHasBeenSet() const { return m_contributorInsightsStatusHasBeenSet; }
-
-    /**
-     * <p>Describes the current status for contributor insights for the given table and
-     * index, if applicable.</p>
-     */
     inline void SetContributorInsightsStatus(const ContributorInsightsStatus& value) { m_contributorInsightsStatusHasBeenSet = true; m_contributorInsightsStatus = value; }
-
-    /**
-     * <p>Describes the current status for contributor insights for the given table and
-     * index, if applicable.</p>
-     */
     inline void SetContributorInsightsStatus(ContributorInsightsStatus&& value) { m_contributorInsightsStatusHasBeenSet = true; m_contributorInsightsStatus = std::move(value); }
-
-    /**
-     * <p>Describes the current status for contributor insights for the given table and
-     * index, if applicable.</p>
-     */
     inline ContributorInsightsSummary& WithContributorInsightsStatus(const ContributorInsightsStatus& value) { SetContributorInsightsStatus(value); return *this;}
-
-    /**
-     * <p>Describes the current status for contributor insights for the given table and
-     * index, if applicable.</p>
-     */
     inline ContributorInsightsSummary& WithContributorInsightsStatus(ContributorInsightsStatus&& value) { SetContributorInsightsStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

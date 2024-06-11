@@ -38,71 +38,30 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables managed logging and defaults to true. If set to false, managed
      * logging will be turned off.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Enables managed logging and defaults to true. If set to false, managed
-     * logging will be turned off.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Enables managed logging and defaults to true. If set to false, managed
-     * logging will be turned off.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Enables managed logging and defaults to true. If set to false, managed
-     * logging will be turned off.</p>
-     */
     inline ManagedPersistenceMonitoringConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-     */
     inline ManagedPersistenceMonitoringConfiguration& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

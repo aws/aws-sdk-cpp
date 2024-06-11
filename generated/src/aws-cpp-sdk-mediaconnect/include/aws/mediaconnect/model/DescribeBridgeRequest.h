@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the bridge that you want to describe.
      */
     inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline DescribeBridgeRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline DescribeBridgeRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the bridge that you want to describe.
-     */
     inline DescribeBridgeRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bridgeArn;

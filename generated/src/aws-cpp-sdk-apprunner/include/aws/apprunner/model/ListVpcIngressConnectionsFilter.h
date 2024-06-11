@@ -39,87 +39,33 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of a VPC Endpoint to filter by. </p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of a VPC Endpoint to filter by. </p>
-     */
     inline ListVpcIngressConnectionsFilter& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceArn;

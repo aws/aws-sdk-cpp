@@ -41,63 +41,28 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Level of confidence that the faces match.</p>
      */
     inline double GetSimilarity() const{ return m_similarity; }
-
-    /**
-     * <p>Level of confidence that the faces match.</p>
-     */
     inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
-
-    /**
-     * <p>Level of confidence that the faces match.</p>
-     */
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
-
-    /**
-     * <p>Level of confidence that the faces match.</p>
-     */
     inline CompareFacesMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides face metadata (bounding box and confidence that the bounding box
      * actually contains a face).</p>
      */
     inline const ComparedFace& GetFace() const{ return m_face; }
-
-    /**
-     * <p>Provides face metadata (bounding box and confidence that the bounding box
-     * actually contains a face).</p>
-     */
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-
-    /**
-     * <p>Provides face metadata (bounding box and confidence that the bounding box
-     * actually contains a face).</p>
-     */
     inline void SetFace(const ComparedFace& value) { m_faceHasBeenSet = true; m_face = value; }
-
-    /**
-     * <p>Provides face metadata (bounding box and confidence that the bounding box
-     * actually contains a face).</p>
-     */
     inline void SetFace(ComparedFace&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-
-    /**
-     * <p>Provides face metadata (bounding box and confidence that the bounding box
-     * actually contains a face).</p>
-     */
     inline CompareFacesMatch& WithFace(const ComparedFace& value) { SetFace(value); return *this;}
-
-    /**
-     * <p>Provides face metadata (bounding box and confidence that the bounding box
-     * actually contains a face).</p>
-     */
     inline CompareFacesMatch& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_similarity;

@@ -32,36 +32,17 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The list of setting attribute enum values. </p>
      */
     inline const SettingAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p> The list of setting attribute enum values. </p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p> The list of setting attribute enum values. </p>
-     */
     inline void SetAttribute(const SettingAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p> The list of setting attribute enum values. </p>
-     */
     inline void SetAttribute(SettingAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p> The list of setting attribute enum values. </p>
-     */
     inline GetSettingsRequest& WithAttribute(const SettingAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p> The list of setting attribute enum values. </p>
-     */
     inline GetSettingsRequest& WithAttribute(SettingAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SettingAttribute m_attribute;

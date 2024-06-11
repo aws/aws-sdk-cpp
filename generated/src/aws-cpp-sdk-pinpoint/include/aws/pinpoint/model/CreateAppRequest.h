@@ -32,24 +32,15 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const CreateApplicationRequest& GetCreateApplicationRequest() const{ return m_createApplicationRequest; }
-
-    
     inline bool CreateApplicationRequestHasBeenSet() const { return m_createApplicationRequestHasBeenSet; }
-
-    
     inline void SetCreateApplicationRequest(const CreateApplicationRequest& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = value; }
-
-    
     inline void SetCreateApplicationRequest(CreateApplicationRequest&& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = std::move(value); }
-
-    
     inline CreateAppRequest& WithCreateApplicationRequest(const CreateApplicationRequest& value) { SetCreateApplicationRequest(value); return *this;}
-
-    
     inline CreateAppRequest& WithCreateApplicationRequest(CreateApplicationRequest&& value) { SetCreateApplicationRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateApplicationRequest m_createApplicationRequest;

@@ -38,95 +38,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DeregisterTargetsRequest& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DeregisterTargetsRequest& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline DeregisterTargetsRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The targets. If you specified a port override when you registered a target,
      * you must specify both the target ID and the port when you deregister it.</p>
      */
     inline const Aws::Vector<TargetDescription>& GetTargets() const{ return m_targets; }
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline void SetTargets(const Aws::Vector<TargetDescription>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline void SetTargets(Aws::Vector<TargetDescription>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline DeregisterTargetsRequest& WithTargets(const Aws::Vector<TargetDescription>& value) { SetTargets(value); return *this;}
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline DeregisterTargetsRequest& WithTargets(Aws::Vector<TargetDescription>&& value) { SetTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline DeregisterTargetsRequest& AddTargets(const TargetDescription& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-
-    /**
-     * <p>The targets. If you specified a port override when you registered a target,
-     * you must specify both the target ID and the port when you deregister it.</p>
-     */
     inline DeregisterTargetsRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_targetGroupArn;

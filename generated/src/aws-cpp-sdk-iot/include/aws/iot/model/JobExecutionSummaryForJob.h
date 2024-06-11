@@ -39,77 +39,31 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the thing on which the job execution is running.</p>
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline JobExecutionSummaryForJob& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline JobExecutionSummaryForJob& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the thing on which the job execution is running.</p>
-     */
     inline JobExecutionSummaryForJob& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains a subset of information about a job execution.</p>
      */
     inline const JobExecutionSummary& GetJobExecutionSummary() const{ return m_jobExecutionSummary; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline bool JobExecutionSummaryHasBeenSet() const { return m_jobExecutionSummaryHasBeenSet; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline void SetJobExecutionSummary(const JobExecutionSummary& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = value; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline void SetJobExecutionSummary(JobExecutionSummary&& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = std::move(value); }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline JobExecutionSummaryForJob& WithJobExecutionSummary(const JobExecutionSummary& value) { SetJobExecutionSummary(value); return *this;}
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline JobExecutionSummaryForJob& WithJobExecutionSummary(JobExecutionSummary&& value) { SetJobExecutionSummary(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingArn;

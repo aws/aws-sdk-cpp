@@ -36,30 +36,16 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether an image resource that was identified for a lifecycle
      * action has associated resources that are also impacted.</p>
      */
     inline bool GetHasImpactedResources() const{ return m_hasImpactedResources; }
-
-    /**
-     * <p>Indicates whether an image resource that was identified for a lifecycle
-     * action has associated resources that are also impacted.</p>
-     */
     inline bool HasImpactedResourcesHasBeenSet() const { return m_hasImpactedResourcesHasBeenSet; }
-
-    /**
-     * <p>Indicates whether an image resource that was identified for a lifecycle
-     * action has associated resources that are also impacted.</p>
-     */
     inline void SetHasImpactedResources(bool value) { m_hasImpactedResourcesHasBeenSet = true; m_hasImpactedResources = value; }
-
-    /**
-     * <p>Indicates whether an image resource that was identified for a lifecycle
-     * action has associated resources that are also impacted.</p>
-     */
     inline LifecycleExecutionResourcesImpactedSummary& WithHasImpactedResources(bool value) { SetHasImpactedResources(value); return *this;}
-
+    ///@}
   private:
 
     bool m_hasImpactedResources;

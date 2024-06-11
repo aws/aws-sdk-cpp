@@ -40,47 +40,21 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline DynamoDBv2Action& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline DynamoDBv2Action& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-     */
     inline DynamoDBv2Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the DynamoDB table to which the message data will be written. For
      * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
@@ -89,52 +63,12 @@ namespace Model
      * database.</p>
      */
     inline const PutItemInput& GetPutItem() const{ return m_putItem; }
-
-    /**
-     * <p>Specifies the DynamoDB table to which the message data will be written. For
-     * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
-     * "putItem": { "tableName": "my-table" } } }</code> </p> <p>Each attribute in the
-     * message payload will be written to a separate column in the DynamoDB
-     * database.</p>
-     */
     inline bool PutItemHasBeenSet() const { return m_putItemHasBeenSet; }
-
-    /**
-     * <p>Specifies the DynamoDB table to which the message data will be written. For
-     * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
-     * "putItem": { "tableName": "my-table" } } }</code> </p> <p>Each attribute in the
-     * message payload will be written to a separate column in the DynamoDB
-     * database.</p>
-     */
     inline void SetPutItem(const PutItemInput& value) { m_putItemHasBeenSet = true; m_putItem = value; }
-
-    /**
-     * <p>Specifies the DynamoDB table to which the message data will be written. For
-     * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
-     * "putItem": { "tableName": "my-table" } } }</code> </p> <p>Each attribute in the
-     * message payload will be written to a separate column in the DynamoDB
-     * database.</p>
-     */
     inline void SetPutItem(PutItemInput&& value) { m_putItemHasBeenSet = true; m_putItem = std::move(value); }
-
-    /**
-     * <p>Specifies the DynamoDB table to which the message data will be written. For
-     * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
-     * "putItem": { "tableName": "my-table" } } }</code> </p> <p>Each attribute in the
-     * message payload will be written to a separate column in the DynamoDB
-     * database.</p>
-     */
     inline DynamoDBv2Action& WithPutItem(const PutItemInput& value) { SetPutItem(value); return *this;}
-
-    /**
-     * <p>Specifies the DynamoDB table to which the message data will be written. For
-     * example:</p> <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role"
-     * "putItem": { "tableName": "my-table" } } }</code> </p> <p>Each attribute in the
-     * message payload will be written to a separate column in the DynamoDB
-     * database.</p>
-     */
     inline DynamoDBv2Action& WithPutItem(PutItemInput&& value) { SetPutItem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

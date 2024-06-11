@@ -37,36 +37,17 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The estimated size of the channel.</p>
      */
     inline const EstimatedResourceSize& GetSize() const{ return m_size; }
-
-    /**
-     * <p>The estimated size of the channel.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The estimated size of the channel.</p>
-     */
     inline void SetSize(const EstimatedResourceSize& value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The estimated size of the channel.</p>
-     */
     inline void SetSize(EstimatedResourceSize&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-
-    /**
-     * <p>The estimated size of the channel.</p>
-     */
     inline ChannelStatistics& WithSize(const EstimatedResourceSize& value) { SetSize(value); return *this;}
-
-    /**
-     * <p>The estimated size of the channel.</p>
-     */
     inline ChannelStatistics& WithSize(EstimatedResourceSize&& value) { SetSize(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EstimatedResourceSize m_size;

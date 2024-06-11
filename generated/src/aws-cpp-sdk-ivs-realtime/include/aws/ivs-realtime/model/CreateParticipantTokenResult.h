@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API CreateParticipantTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The participant token that was created.</p>
      */
     inline const ParticipantToken& GetParticipantToken() const{ return m_participantToken; }
-
-    /**
-     * <p>The participant token that was created.</p>
-     */
     inline void SetParticipantToken(const ParticipantToken& value) { m_participantToken = value; }
-
-    /**
-     * <p>The participant token that was created.</p>
-     */
     inline void SetParticipantToken(ParticipantToken&& value) { m_participantToken = std::move(value); }
-
-    /**
-     * <p>The participant token that was created.</p>
-     */
     inline CreateParticipantTokenResult& WithParticipantToken(const ParticipantToken& value) { SetParticipantToken(value); return *this;}
-
-    /**
-     * <p>The participant token that was created.</p>
-     */
     inline CreateParticipantTokenResult& WithParticipantToken(ParticipantToken&& value) { SetParticipantToken(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateParticipantTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateParticipantTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateParticipantTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ParticipantToken m_participantToken;

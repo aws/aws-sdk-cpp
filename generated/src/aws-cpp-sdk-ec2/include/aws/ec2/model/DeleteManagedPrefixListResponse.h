@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteManagedPrefixListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the prefix list.</p>
      */
     inline const ManagedPrefixList& GetPrefixList() const{ return m_prefixList; }
-
-    /**
-     * <p>Information about the prefix list.</p>
-     */
     inline void SetPrefixList(const ManagedPrefixList& value) { m_prefixList = value; }
-
-    /**
-     * <p>Information about the prefix list.</p>
-     */
     inline void SetPrefixList(ManagedPrefixList&& value) { m_prefixList = std::move(value); }
-
-    /**
-     * <p>Information about the prefix list.</p>
-     */
     inline DeleteManagedPrefixListResponse& WithPrefixList(const ManagedPrefixList& value) { SetPrefixList(value); return *this;}
-
-    /**
-     * <p>Information about the prefix list.</p>
-     */
     inline DeleteManagedPrefixListResponse& WithPrefixList(ManagedPrefixList&& value) { SetPrefixList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteManagedPrefixListResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteManagedPrefixListResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ManagedPrefixList m_prefixList;

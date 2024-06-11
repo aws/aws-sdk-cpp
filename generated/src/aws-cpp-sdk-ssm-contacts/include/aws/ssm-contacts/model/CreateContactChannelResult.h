@@ -32,63 +32,29 @@ namespace Model
     AWS_SSMCONTACTS_API CreateContactChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
     inline const Aws::String& GetContactChannelArn() const{ return m_contactChannelArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline void SetContactChannelArn(const Aws::String& value) { m_contactChannelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline void SetContactChannelArn(Aws::String&& value) { m_contactChannelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline void SetContactChannelArn(const char* value) { m_contactChannelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline CreateContactChannelResult& WithContactChannelArn(const Aws::String& value) { SetContactChannelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline CreateContactChannelResult& WithContactChannelArn(Aws::String&& value) { SetContactChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-     */
     inline CreateContactChannelResult& WithContactChannelArn(const char* value) { SetContactChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateContactChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateContactChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateContactChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactChannelArn;

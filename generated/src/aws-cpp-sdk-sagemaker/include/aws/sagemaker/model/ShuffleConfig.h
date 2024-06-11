@@ -49,26 +49,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
     inline long long GetSeed() const{ return m_seed; }
-
-    /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-     */
     inline bool SeedHasBeenSet() const { return m_seedHasBeenSet; }
-
-    /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-     */
     inline void SetSeed(long long value) { m_seedHasBeenSet = true; m_seed = value; }
-
-    /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-     */
     inline ShuffleConfig& WithSeed(long long value) { SetSeed(value); return *this;}
-
+    ///@}
   private:
 
     long long m_seed;

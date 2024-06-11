@@ -38,24 +38,15 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
-
-    
     inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
-
-    
     inline void SetPortMapping(const PortMapping& value) { m_portMappingHasBeenSet = true; m_portMapping = value; }
-
-    
     inline void SetPortMapping(PortMapping&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::move(value); }
-
-    
     inline VirtualRouterListener& WithPortMapping(const PortMapping& value) { SetPortMapping(value); return *this;}
-
-    
     inline VirtualRouterListener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PortMapping m_portMapping;

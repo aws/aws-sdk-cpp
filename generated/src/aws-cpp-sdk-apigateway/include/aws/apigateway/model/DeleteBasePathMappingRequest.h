@@ -36,95 +36,34 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline DeleteBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline DeleteBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name of the BasePathMapping resource to delete.</p>
-     */
     inline DeleteBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
      * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline DeleteBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline DeleteBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
-     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-     */
     inline DeleteBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

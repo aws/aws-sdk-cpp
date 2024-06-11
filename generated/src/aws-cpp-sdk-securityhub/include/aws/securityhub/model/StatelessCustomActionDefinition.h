@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about metrics to publish to CloudWatch.</p>
      */
     inline const StatelessCustomPublishMetricAction& GetPublishMetricAction() const{ return m_publishMetricAction; }
-
-    /**
-     * <p>Information about metrics to publish to CloudWatch.</p>
-     */
     inline bool PublishMetricActionHasBeenSet() const { return m_publishMetricActionHasBeenSet; }
-
-    /**
-     * <p>Information about metrics to publish to CloudWatch.</p>
-     */
     inline void SetPublishMetricAction(const StatelessCustomPublishMetricAction& value) { m_publishMetricActionHasBeenSet = true; m_publishMetricAction = value; }
-
-    /**
-     * <p>Information about metrics to publish to CloudWatch.</p>
-     */
     inline void SetPublishMetricAction(StatelessCustomPublishMetricAction&& value) { m_publishMetricActionHasBeenSet = true; m_publishMetricAction = std::move(value); }
-
-    /**
-     * <p>Information about metrics to publish to CloudWatch.</p>
-     */
     inline StatelessCustomActionDefinition& WithPublishMetricAction(const StatelessCustomPublishMetricAction& value) { SetPublishMetricAction(value); return *this;}
-
-    /**
-     * <p>Information about metrics to publish to CloudWatch.</p>
-     */
     inline StatelessCustomActionDefinition& WithPublishMetricAction(StatelessCustomPublishMetricAction&& value) { SetPublishMetricAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StatelessCustomPublishMetricAction m_publishMetricAction;

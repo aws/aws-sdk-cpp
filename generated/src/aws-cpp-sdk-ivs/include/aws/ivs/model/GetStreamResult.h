@@ -33,53 +33,27 @@ namespace Model
     AWS_IVS_API GetStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Stream& GetStream() const{ return m_stream; }
-
-    /**
-     * <p/>
-     */
     inline void SetStream(const Stream& value) { m_stream = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetStream(Stream&& value) { m_stream = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline GetStreamResult& WithStream(const Stream& value) { SetStream(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline GetStreamResult& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Stream m_stream;

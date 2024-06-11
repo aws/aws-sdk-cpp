@@ -40,108 +40,43 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action of the Guardrail filter to identify and remove PII.</p>
      */
     inline const GuardrailSensitiveInformationPolicyAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action of the Guardrail filter to identify and remove PII.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action of the Guardrail filter to identify and remove PII.</p>
-     */
     inline void SetAction(const GuardrailSensitiveInformationPolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action of the Guardrail filter to identify and remove PII.</p>
-     */
     inline void SetAction(GuardrailSensitiveInformationPolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action of the Guardrail filter to identify and remove PII.</p>
-     */
     inline GuardrailPiiEntityFilter& WithAction(const GuardrailSensitiveInformationPolicyAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action of the Guardrail filter to identify and remove PII.</p>
-     */
     inline GuardrailPiiEntityFilter& WithAction(GuardrailSensitiveInformationPolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
      */
     inline const Aws::String& GetMatch() const{ return m_match; }
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline void SetMatch(const Aws::String& value) { m_matchHasBeenSet = true; m_match = value; }
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline void SetMatch(Aws::String&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline void SetMatch(const char* value) { m_matchHasBeenSet = true; m_match.assign(value); }
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline GuardrailPiiEntityFilter& WithMatch(const Aws::String& value) { SetMatch(value); return *this;}
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline GuardrailPiiEntityFilter& WithMatch(Aws::String&& value) { SetMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The match to settings in the Guardrail filter to identify and remove PII.</p>
-     */
     inline GuardrailPiiEntityFilter& WithMatch(const char* value) { SetMatch(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of PII the Guardrail filter has identified and removed.</p>
      */
     inline const GuardrailPiiEntityType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of PII the Guardrail filter has identified and removed.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of PII the Guardrail filter has identified and removed.</p>
-     */
     inline void SetType(const GuardrailPiiEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of PII the Guardrail filter has identified and removed.</p>
-     */
     inline void SetType(GuardrailPiiEntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of PII the Guardrail filter has identified and removed.</p>
-     */
     inline GuardrailPiiEntityFilter& WithType(const GuardrailPiiEntityType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of PII the Guardrail filter has identified and removed.</p>
-     */
     inline GuardrailPiiEntityFilter& WithType(GuardrailPiiEntityType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GuardrailSensitiveInformationPolicyAction m_action;

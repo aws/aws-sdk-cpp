@@ -39,55 +39,29 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-
-    
     inline ResourceNotFoundException& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    
     inline ResourceNotFoundException& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    
     inline ResourceNotFoundException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    
     inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    
     inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    
     inline ResourceNotFoundException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceType;

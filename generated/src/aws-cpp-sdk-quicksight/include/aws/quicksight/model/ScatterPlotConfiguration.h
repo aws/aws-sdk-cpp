@@ -45,370 +45,141 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field wells of the visual.</p>
      */
     inline const ScatterPlotFieldWells& GetFieldWells() const{ return m_fieldWells; }
-
-    /**
-     * <p>The field wells of the visual.</p>
-     */
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field wells of the visual.</p>
-     */
     inline void SetFieldWells(const ScatterPlotFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-
-    /**
-     * <p>The field wells of the visual.</p>
-     */
     inline void SetFieldWells(ScatterPlotFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-
-    /**
-     * <p>The field wells of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithFieldWells(const ScatterPlotFieldWells& value) { SetFieldWells(value); return *this;}
-
-    /**
-     * <p>The field wells of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithFieldWells(ScatterPlotFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort configuration of a scatter plot.</p>
      */
     inline const ScatterPlotSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
-
-    /**
-     * <p>The sort configuration of a scatter plot.</p>
-     */
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-
-    /**
-     * <p>The sort configuration of a scatter plot.</p>
-     */
     inline void SetSortConfiguration(const ScatterPlotSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-
-    /**
-     * <p>The sort configuration of a scatter plot.</p>
-     */
     inline void SetSortConfiguration(ScatterPlotSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-
-    /**
-     * <p>The sort configuration of a scatter plot.</p>
-     */
     inline ScatterPlotConfiguration& WithSortConfiguration(const ScatterPlotSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-
-    /**
-     * <p>The sort configuration of a scatter plot.</p>
-     */
     inline ScatterPlotConfiguration& WithSortConfiguration(ScatterPlotSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * the scatter plot's x-axis.</p>
      */
     inline const ChartAxisLabelOptions& GetXAxisLabelOptions() const{ return m_xAxisLabelOptions; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's x-axis.</p>
-     */
     inline bool XAxisLabelOptionsHasBeenSet() const { return m_xAxisLabelOptionsHasBeenSet; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's x-axis.</p>
-     */
     inline void SetXAxisLabelOptions(const ChartAxisLabelOptions& value) { m_xAxisLabelOptionsHasBeenSet = true; m_xAxisLabelOptions = value; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's x-axis.</p>
-     */
     inline void SetXAxisLabelOptions(ChartAxisLabelOptions&& value) { m_xAxisLabelOptionsHasBeenSet = true; m_xAxisLabelOptions = std::move(value); }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's x-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithXAxisLabelOptions(const ChartAxisLabelOptions& value) { SetXAxisLabelOptions(value); return *this;}
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's x-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithXAxisLabelOptions(ChartAxisLabelOptions&& value) { SetXAxisLabelOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label display options (grid line, range, scale, and axis step) of the
      * scatter plot's x-axis.</p>
      */
     inline const AxisDisplayOptions& GetXAxisDisplayOptions() const{ return m_xAxisDisplayOptions; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's x-axis.</p>
-     */
     inline bool XAxisDisplayOptionsHasBeenSet() const { return m_xAxisDisplayOptionsHasBeenSet; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's x-axis.</p>
-     */
     inline void SetXAxisDisplayOptions(const AxisDisplayOptions& value) { m_xAxisDisplayOptionsHasBeenSet = true; m_xAxisDisplayOptions = value; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's x-axis.</p>
-     */
     inline void SetXAxisDisplayOptions(AxisDisplayOptions&& value) { m_xAxisDisplayOptionsHasBeenSet = true; m_xAxisDisplayOptions = std::move(value); }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's x-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithXAxisDisplayOptions(const AxisDisplayOptions& value) { SetXAxisDisplayOptions(value); return *this;}
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's x-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithXAxisDisplayOptions(AxisDisplayOptions&& value) { SetXAxisDisplayOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * the scatter plot's y-axis.</p>
      */
     inline const ChartAxisLabelOptions& GetYAxisLabelOptions() const{ return m_yAxisLabelOptions; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's y-axis.</p>
-     */
     inline bool YAxisLabelOptionsHasBeenSet() const { return m_yAxisLabelOptionsHasBeenSet; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's y-axis.</p>
-     */
     inline void SetYAxisLabelOptions(const ChartAxisLabelOptions& value) { m_yAxisLabelOptionsHasBeenSet = true; m_yAxisLabelOptions = value; }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's y-axis.</p>
-     */
     inline void SetYAxisLabelOptions(ChartAxisLabelOptions&& value) { m_yAxisLabelOptionsHasBeenSet = true; m_yAxisLabelOptions = std::move(value); }
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's y-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithYAxisLabelOptions(const ChartAxisLabelOptions& value) { SetYAxisLabelOptions(value); return *this;}
-
-    /**
-     * <p>The label options (label text, label visibility, and sort icon visibility) of
-     * the scatter plot's y-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetYAxisLabelOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The label display options (grid line, range, scale, and axis step) of the
      * scatter plot's y-axis.</p>
      */
     inline const AxisDisplayOptions& GetYAxisDisplayOptions() const{ return m_yAxisDisplayOptions; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's y-axis.</p>
-     */
     inline bool YAxisDisplayOptionsHasBeenSet() const { return m_yAxisDisplayOptionsHasBeenSet; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's y-axis.</p>
-     */
     inline void SetYAxisDisplayOptions(const AxisDisplayOptions& value) { m_yAxisDisplayOptionsHasBeenSet = true; m_yAxisDisplayOptions = value; }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's y-axis.</p>
-     */
     inline void SetYAxisDisplayOptions(AxisDisplayOptions&& value) { m_yAxisDisplayOptionsHasBeenSet = true; m_yAxisDisplayOptions = std::move(value); }
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's y-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithYAxisDisplayOptions(const AxisDisplayOptions& value) { SetYAxisDisplayOptions(value); return *this;}
-
-    /**
-     * <p>The label display options (grid line, range, scale, and axis step) of the
-     * scatter plot's y-axis.</p>
-     */
     inline ScatterPlotConfiguration& WithYAxisDisplayOptions(AxisDisplayOptions&& value) { SetYAxisDisplayOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
     inline const LegendOptions& GetLegend() const{ return m_legend; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options that determine if visual data labels are displayed.</p>
      */
     inline const DataLabelOptions& GetDataLabels() const{ return m_dataLabels; }
-
-    /**
-     * <p>The options that determine if visual data labels are displayed.</p>
-     */
     inline bool DataLabelsHasBeenSet() const { return m_dataLabelsHasBeenSet; }
-
-    /**
-     * <p>The options that determine if visual data labels are displayed.</p>
-     */
     inline void SetDataLabels(const DataLabelOptions& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = value; }
-
-    /**
-     * <p>The options that determine if visual data labels are displayed.</p>
-     */
     inline void SetDataLabels(DataLabelOptions&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::move(value); }
-
-    /**
-     * <p>The options that determine if visual data labels are displayed.</p>
-     */
     inline ScatterPlotConfiguration& WithDataLabels(const DataLabelOptions& value) { SetDataLabels(value); return *this;}
-
-    /**
-     * <p>The options that determine if visual data labels are displayed.</p>
-     */
     inline ScatterPlotConfiguration& WithDataLabels(DataLabelOptions&& value) { SetDataLabels(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
     inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-
-    /**
-     * <p>The legend display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The palette (chart color) display setup of the visual.</p>
      */
     inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
-
-    /**
-     * <p>The palette (chart color) display setup of the visual.</p>
-     */
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-
-    /**
-     * <p>The palette (chart color) display setup of the visual.</p>
-     */
     inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-
-    /**
-     * <p>The palette (chart color) display setup of the visual.</p>
-     */
     inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-
-    /**
-     * <p>The palette (chart color) display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-
-    /**
-     * <p>The palette (chart color) display setup of the visual.</p>
-     */
     inline ScatterPlotConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
     inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline ScatterPlotConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline ScatterPlotConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScatterPlotFieldWells m_fieldWells;

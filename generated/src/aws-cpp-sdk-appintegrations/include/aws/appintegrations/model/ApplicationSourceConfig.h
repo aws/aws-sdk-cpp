@@ -38,36 +38,17 @@ namespace Model
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The external URL source for the application.</p>
      */
     inline const ExternalUrlConfig& GetExternalUrlConfig() const{ return m_externalUrlConfig; }
-
-    /**
-     * <p>The external URL source for the application.</p>
-     */
     inline bool ExternalUrlConfigHasBeenSet() const { return m_externalUrlConfigHasBeenSet; }
-
-    /**
-     * <p>The external URL source for the application.</p>
-     */
     inline void SetExternalUrlConfig(const ExternalUrlConfig& value) { m_externalUrlConfigHasBeenSet = true; m_externalUrlConfig = value; }
-
-    /**
-     * <p>The external URL source for the application.</p>
-     */
     inline void SetExternalUrlConfig(ExternalUrlConfig&& value) { m_externalUrlConfigHasBeenSet = true; m_externalUrlConfig = std::move(value); }
-
-    /**
-     * <p>The external URL source for the application.</p>
-     */
     inline ApplicationSourceConfig& WithExternalUrlConfig(const ExternalUrlConfig& value) { SetExternalUrlConfig(value); return *this;}
-
-    /**
-     * <p>The external URL source for the application.</p>
-     */
     inline ApplicationSourceConfig& WithExternalUrlConfig(ExternalUrlConfig&& value) { SetExternalUrlConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExternalUrlConfig m_externalUrlConfig;

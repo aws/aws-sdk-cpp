@@ -40,87 +40,33 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the offer in AWS Marketplace.</p>
      */
     inline const Aws::String& GetOfferId() const{ return m_offerId; }
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline bool OfferIdHasBeenSet() const { return m_offerIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline void SetOfferId(const Aws::String& value) { m_offerIdHasBeenSet = true; m_offerId = value; }
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline void SetOfferId(Aws::String&& value) { m_offerIdHasBeenSet = true; m_offerId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline void SetOfferId(const char* value) { m_offerIdHasBeenSet = true; m_offerId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline ProposalSummary& WithOfferId(const Aws::String& value) { SetOfferId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline ProposalSummary& WithOfferId(Aws::String&& value) { SetOfferId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the offer in AWS Marketplace.</p>
-     */
     inline ProposalSummary& WithOfferId(const char* value) { SetOfferId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of resources involved in the agreement.</p>
      */
     inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline ProposalSummary& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline ProposalSummary& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline ProposalSummary& AddResources(const Resource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * <p>The list of resources involved in the agreement.</p>
-     */
     inline ProposalSummary& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_offerId;

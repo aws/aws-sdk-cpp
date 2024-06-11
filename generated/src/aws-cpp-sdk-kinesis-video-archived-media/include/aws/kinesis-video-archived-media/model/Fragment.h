@@ -39,168 +39,66 @@ namespace Model
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the fragment. This value monotonically increases
      * based on the ingestion order.</p>
      */
     inline const Aws::String& GetFragmentNumber() const{ return m_fragmentNumber; }
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline void SetFragmentNumber(Aws::String&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline void SetFragmentNumber(const char* value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber.assign(value); }
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline Fragment& WithFragmentNumber(const Aws::String& value) { SetFragmentNumber(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline Fragment& WithFragmentNumber(Aws::String&& value) { SetFragmentNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the fragment. This value monotonically increases
-     * based on the ingestion order.</p>
-     */
     inline Fragment& WithFragmentNumber(const char* value) { SetFragmentNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total fragment size, including information about the fragment and
      * contained media data.</p>
      */
     inline long long GetFragmentSizeInBytes() const{ return m_fragmentSizeInBytes; }
-
-    /**
-     * <p>The total fragment size, including information about the fragment and
-     * contained media data.</p>
-     */
     inline bool FragmentSizeInBytesHasBeenSet() const { return m_fragmentSizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The total fragment size, including information about the fragment and
-     * contained media data.</p>
-     */
     inline void SetFragmentSizeInBytes(long long value) { m_fragmentSizeInBytesHasBeenSet = true; m_fragmentSizeInBytes = value; }
-
-    /**
-     * <p>The total fragment size, including information about the fragment and
-     * contained media data.</p>
-     */
     inline Fragment& WithFragmentSizeInBytes(long long value) { SetFragmentSizeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetProducerTimestamp() const{ return m_producerTimestamp; }
-
-    /**
-     * <p>The timestamp from the producer corresponding to the fragment.</p>
-     */
     inline bool ProducerTimestampHasBeenSet() const { return m_producerTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp from the producer corresponding to the fragment.</p>
-     */
     inline void SetProducerTimestamp(const Aws::Utils::DateTime& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = value; }
-
-    /**
-     * <p>The timestamp from the producer corresponding to the fragment.</p>
-     */
     inline void SetProducerTimestamp(Aws::Utils::DateTime&& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp from the producer corresponding to the fragment.</p>
-     */
     inline Fragment& WithProducerTimestamp(const Aws::Utils::DateTime& value) { SetProducerTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp from the producer corresponding to the fragment.</p>
-     */
     inline Fragment& WithProducerTimestamp(Aws::Utils::DateTime&& value) { SetProducerTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp from the Amazon Web Services server corresponding to the
      * fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetServerTimestamp() const{ return m_serverTimestamp; }
-
-    /**
-     * <p>The timestamp from the Amazon Web Services server corresponding to the
-     * fragment.</p>
-     */
     inline bool ServerTimestampHasBeenSet() const { return m_serverTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp from the Amazon Web Services server corresponding to the
-     * fragment.</p>
-     */
     inline void SetServerTimestamp(const Aws::Utils::DateTime& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = value; }
-
-    /**
-     * <p>The timestamp from the Amazon Web Services server corresponding to the
-     * fragment.</p>
-     */
     inline void SetServerTimestamp(Aws::Utils::DateTime&& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp from the Amazon Web Services server corresponding to the
-     * fragment.</p>
-     */
     inline Fragment& WithServerTimestamp(const Aws::Utils::DateTime& value) { SetServerTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp from the Amazon Web Services server corresponding to the
-     * fragment.</p>
-     */
     inline Fragment& WithServerTimestamp(Aws::Utils::DateTime&& value) { SetServerTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The playback duration or other time value associated with the fragment.</p>
      */
     inline long long GetFragmentLengthInMilliseconds() const{ return m_fragmentLengthInMilliseconds; }
-
-    /**
-     * <p>The playback duration or other time value associated with the fragment.</p>
-     */
     inline bool FragmentLengthInMillisecondsHasBeenSet() const { return m_fragmentLengthInMillisecondsHasBeenSet; }
-
-    /**
-     * <p>The playback duration or other time value associated with the fragment.</p>
-     */
     inline void SetFragmentLengthInMilliseconds(long long value) { m_fragmentLengthInMillisecondsHasBeenSet = true; m_fragmentLengthInMilliseconds = value; }
-
-    /**
-     * <p>The playback duration or other time value associated with the fragment.</p>
-     */
     inline Fragment& WithFragmentLengthInMilliseconds(long long value) { SetFragmentLengthInMilliseconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fragmentNumber;

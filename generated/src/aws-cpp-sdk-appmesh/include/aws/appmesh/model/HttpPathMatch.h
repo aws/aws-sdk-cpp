@@ -38,87 +38,33 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The exact path to match on.</p>
      */
     inline const Aws::String& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline HttpPathMatch& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline HttpPathMatch& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>The exact path to match on.</p>
-     */
     inline HttpPathMatch& WithExact(const char* value) { SetExact(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The regex used to match the path.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline HttpPathMatch& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline HttpPathMatch& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-
-    /**
-     * <p>The regex used to match the path.</p>
-     */
     inline HttpPathMatch& WithRegex(const char* value) { SetRegex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exact;

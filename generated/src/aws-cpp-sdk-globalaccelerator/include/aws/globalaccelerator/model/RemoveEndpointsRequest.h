@@ -36,87 +36,33 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifiers of the endpoints that you want to remove.</p>
      */
     inline const Aws::Vector<EndpointIdentifier>& GetEndpointIdentifiers() const{ return m_endpointIdentifiers; }
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline bool EndpointIdentifiersHasBeenSet() const { return m_endpointIdentifiersHasBeenSet; }
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline void SetEndpointIdentifiers(const Aws::Vector<EndpointIdentifier>& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers = value; }
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline void SetEndpointIdentifiers(Aws::Vector<EndpointIdentifier>&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers = std::move(value); }
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline RemoveEndpointsRequest& WithEndpointIdentifiers(const Aws::Vector<EndpointIdentifier>& value) { SetEndpointIdentifiers(value); return *this;}
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline RemoveEndpointsRequest& WithEndpointIdentifiers(Aws::Vector<EndpointIdentifier>&& value) { SetEndpointIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline RemoveEndpointsRequest& AddEndpointIdentifiers(const EndpointIdentifier& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p>The identifiers of the endpoints that you want to remove.</p>
-     */
     inline RemoveEndpointsRequest& AddEndpointIdentifiers(EndpointIdentifier&& value) { m_endpointIdentifiersHasBeenSet = true; m_endpointIdentifiers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
     inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline RemoveEndpointsRequest& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline RemoveEndpointsRequest& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline RemoveEndpointsRequest& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EndpointIdentifier> m_endpointIdentifiers;

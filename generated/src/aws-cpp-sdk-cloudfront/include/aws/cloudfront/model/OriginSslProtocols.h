@@ -40,71 +40,30 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
      * establishing an HTTPS connection with this origin.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin.</p>
-     */
     inline OriginSslProtocols& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
      */
     inline const Aws::Vector<SslProtocol>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline void SetItems(const Aws::Vector<SslProtocol>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline void SetItems(Aws::Vector<SslProtocol>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline OriginSslProtocols& WithItems(const Aws::Vector<SslProtocol>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline OriginSslProtocols& WithItems(Aws::Vector<SslProtocol>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline OriginSslProtocols& AddItems(const SslProtocol& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
-     */
     inline OriginSslProtocols& AddItems(SslProtocol&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

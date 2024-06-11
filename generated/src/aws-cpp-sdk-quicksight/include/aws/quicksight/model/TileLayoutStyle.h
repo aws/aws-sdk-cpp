@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The gutter settings that apply between tiles. </p>
      */
     inline const GutterStyle& GetGutter() const{ return m_gutter; }
-
-    /**
-     * <p>The gutter settings that apply between tiles. </p>
-     */
     inline bool GutterHasBeenSet() const { return m_gutterHasBeenSet; }
-
-    /**
-     * <p>The gutter settings that apply between tiles. </p>
-     */
     inline void SetGutter(const GutterStyle& value) { m_gutterHasBeenSet = true; m_gutter = value; }
-
-    /**
-     * <p>The gutter settings that apply between tiles. </p>
-     */
     inline void SetGutter(GutterStyle&& value) { m_gutterHasBeenSet = true; m_gutter = std::move(value); }
-
-    /**
-     * <p>The gutter settings that apply between tiles. </p>
-     */
     inline TileLayoutStyle& WithGutter(const GutterStyle& value) { SetGutter(value); return *this;}
-
-    /**
-     * <p>The gutter settings that apply between tiles. </p>
-     */
     inline TileLayoutStyle& WithGutter(GutterStyle&& value) { SetGutter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The margin settings that apply around the outside edge of sheets.</p>
      */
     inline const MarginStyle& GetMargin() const{ return m_margin; }
-
-    /**
-     * <p>The margin settings that apply around the outside edge of sheets.</p>
-     */
     inline bool MarginHasBeenSet() const { return m_marginHasBeenSet; }
-
-    /**
-     * <p>The margin settings that apply around the outside edge of sheets.</p>
-     */
     inline void SetMargin(const MarginStyle& value) { m_marginHasBeenSet = true; m_margin = value; }
-
-    /**
-     * <p>The margin settings that apply around the outside edge of sheets.</p>
-     */
     inline void SetMargin(MarginStyle&& value) { m_marginHasBeenSet = true; m_margin = std::move(value); }
-
-    /**
-     * <p>The margin settings that apply around the outside edge of sheets.</p>
-     */
     inline TileLayoutStyle& WithMargin(const MarginStyle& value) { SetMargin(value); return *this;}
-
-    /**
-     * <p>The margin settings that apply around the outside edge of sheets.</p>
-     */
     inline TileLayoutStyle& WithMargin(MarginStyle&& value) { SetMargin(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GutterStyle m_gutter;

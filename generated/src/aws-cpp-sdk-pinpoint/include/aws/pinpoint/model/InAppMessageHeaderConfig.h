@@ -38,118 +38,45 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
      */
     inline const Alignment& GetAlignment() const{ return m_alignment; }
-
-    /**
-     * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-     */
     inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
-
-    /**
-     * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-     */
     inline void SetAlignment(const Alignment& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
-
-    /**
-     * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-     */
     inline void SetAlignment(Alignment&& value) { m_alignmentHasBeenSet = true; m_alignment = std::move(value); }
-
-    /**
-     * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-     */
     inline InAppMessageHeaderConfig& WithAlignment(const Alignment& value) { SetAlignment(value); return *this;}
-
-    /**
-     * <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-     */
     inline InAppMessageHeaderConfig& WithAlignment(Alignment&& value) { SetAlignment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Message Header.</p>
      */
     inline const Aws::String& GetHeader() const{ return m_header; }
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline InAppMessageHeaderConfig& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline InAppMessageHeaderConfig& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-
-    /**
-     * <p>Message Header.</p>
-     */
     inline InAppMessageHeaderConfig& WithHeader(const char* value) { SetHeader(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text color.</p>
      */
     inline const Aws::String& GetTextColor() const{ return m_textColor; }
-
-    /**
-     * <p>The text color.</p>
-     */
     inline bool TextColorHasBeenSet() const { return m_textColorHasBeenSet; }
-
-    /**
-     * <p>The text color.</p>
-     */
     inline void SetTextColor(const Aws::String& value) { m_textColorHasBeenSet = true; m_textColor = value; }
-
-    /**
-     * <p>The text color.</p>
-     */
     inline void SetTextColor(Aws::String&& value) { m_textColorHasBeenSet = true; m_textColor = std::move(value); }
-
-    /**
-     * <p>The text color.</p>
-     */
     inline void SetTextColor(const char* value) { m_textColorHasBeenSet = true; m_textColor.assign(value); }
-
-    /**
-     * <p>The text color.</p>
-     */
     inline InAppMessageHeaderConfig& WithTextColor(const Aws::String& value) { SetTextColor(value); return *this;}
-
-    /**
-     * <p>The text color.</p>
-     */
     inline InAppMessageHeaderConfig& WithTextColor(Aws::String&& value) { SetTextColor(std::move(value)); return *this;}
-
-    /**
-     * <p>The text color.</p>
-     */
     inline InAppMessageHeaderConfig& WithTextColor(const char* value) { SetTextColor(value); return *this;}
-
+    ///@}
   private:
 
     Alignment m_alignment;

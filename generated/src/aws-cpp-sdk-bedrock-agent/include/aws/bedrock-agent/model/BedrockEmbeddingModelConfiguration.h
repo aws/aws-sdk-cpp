@@ -36,30 +36,16 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The dimensions details for the vector configuration used on the Bedrock
      * embeddings model.</p>
      */
     inline int GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p>The dimensions details for the vector configuration used on the Bedrock
-     * embeddings model.</p>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p>The dimensions details for the vector configuration used on the Bedrock
-     * embeddings model.</p>
-     */
     inline void SetDimensions(int value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p>The dimensions details for the vector configuration used on the Bedrock
-     * embeddings model.</p>
-     */
     inline BedrockEmbeddingModelConfiguration& WithDimensions(int value) { SetDimensions(value); return *this;}
-
+    ///@}
   private:
 
     int m_dimensions;

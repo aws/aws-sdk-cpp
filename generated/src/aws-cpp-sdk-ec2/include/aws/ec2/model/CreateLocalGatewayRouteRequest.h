@@ -36,137 +36,50 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The CIDR range used for destination matches. Routing decisions are based on
      * the most specific match.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the local gateway route table.</p>
      */
     inline const Aws::String& GetLocalGatewayRouteTableId() const{ return m_localGatewayRouteTableId; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline bool LocalGatewayRouteTableIdHasBeenSet() const { return m_localGatewayRouteTableIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(const Aws::String& value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId = value; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(Aws::String&& value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(const char* value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId.assign(value); }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(const Aws::String& value) { SetLocalGatewayRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(Aws::String&& value) { SetLocalGatewayRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(const char* value) { SetLocalGatewayRouteTableId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the virtual interface group.</p>
      */
     inline const Aws::String& GetLocalGatewayVirtualInterfaceGroupId() const{ return m_localGatewayVirtualInterfaceGroupId; }
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline bool LocalGatewayVirtualInterfaceGroupIdHasBeenSet() const { return m_localGatewayVirtualInterfaceGroupIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline void SetLocalGatewayVirtualInterfaceGroupId(const Aws::String& value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId = value; }
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline void SetLocalGatewayVirtualInterfaceGroupId(Aws::String&& value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId = std::move(value); }
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline void SetLocalGatewayVirtualInterfaceGroupId(const char* value) { m_localGatewayVirtualInterfaceGroupIdHasBeenSet = true; m_localGatewayVirtualInterfaceGroupId.assign(value); }
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(const Aws::String& value) { SetLocalGatewayVirtualInterfaceGroupId(value); return *this;}
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(Aws::String&& value) { SetLocalGatewayVirtualInterfaceGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the virtual interface group.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithLocalGatewayVirtualInterfaceGroupId(const char* value) { SetLocalGatewayVirtualInterfaceGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -174,73 +87,26 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network interface.</p>
-     */
     inline CreateLocalGatewayRouteRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ID of the prefix list. Use a prefix list in place of
      * <code>DestinationCidrBlock</code>. You cannot use
@@ -248,63 +114,14 @@ namespace Model
      * the same request. </p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the prefix list. Use a prefix list in place of
-     * <code>DestinationCidrBlock</code>. You cannot use
-     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in
-     * the same request. </p>
-     */
     inline CreateLocalGatewayRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;

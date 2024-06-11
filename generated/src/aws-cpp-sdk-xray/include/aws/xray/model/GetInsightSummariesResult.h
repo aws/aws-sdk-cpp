@@ -34,6 +34,7 @@ namespace Model
     AWS_XRAY_API GetInsightSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The summary of each insight within the group matching the provided filters.
      * The summary contains the InsightID, start and end time, the root cause service,
@@ -41,113 +42,37 @@ namespace Model
      * status of the insight.</p>
      */
     inline const Aws::Vector<InsightSummary>& GetInsightSummaries() const{ return m_insightSummaries; }
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline void SetInsightSummaries(const Aws::Vector<InsightSummary>& value) { m_insightSummaries = value; }
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline void SetInsightSummaries(Aws::Vector<InsightSummary>&& value) { m_insightSummaries = std::move(value); }
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline GetInsightSummariesResult& WithInsightSummaries(const Aws::Vector<InsightSummary>& value) { SetInsightSummaries(value); return *this;}
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline GetInsightSummariesResult& WithInsightSummaries(Aws::Vector<InsightSummary>&& value) { SetInsightSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline GetInsightSummariesResult& AddInsightSummaries(const InsightSummary& value) { m_insightSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>The summary of each insight within the group matching the provided filters.
-     * The summary contains the InsightID, start and end time, the root cause service,
-     * the root cause and client impact statistics, the top anomalous services, and the
-     * status of the insight.</p>
-     */
     inline GetInsightSummariesResult& AddInsightSummaries(InsightSummary&& value) { m_insightSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetInsightSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetInsightSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetInsightSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInsightSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInsightSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInsightSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<InsightSummary> m_insightSummaries;

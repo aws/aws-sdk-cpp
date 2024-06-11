@@ -33,68 +33,30 @@ namespace Model
     AWS_EFS_API DescribeMountTargetSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroups = value; }
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroups = std::move(value); }
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline DescribeMountTargetSecurityGroupsResult& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline DescribeMountTargetSecurityGroupsResult& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(const Aws::String& value) { m_securityGroups.push_back(value); return *this; }
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(Aws::String&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of security groups.</p>
-     */
     inline DescribeMountTargetSecurityGroupsResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMountTargetSecurityGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMountTargetSecurityGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMountTargetSecurityGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityGroups;

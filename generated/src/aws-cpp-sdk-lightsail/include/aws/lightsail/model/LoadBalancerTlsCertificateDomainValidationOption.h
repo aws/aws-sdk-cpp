@@ -39,77 +39,31 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The fully qualified domain name in the certificate request.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The fully qualified domain name in the certificate request.</p>
-     */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the domain validation. Valid values are listed below.</p>
      */
     inline const LoadBalancerTlsCertificateDomainStatus& GetValidationStatus() const{ return m_validationStatus; }
-
-    /**
-     * <p>The status of the domain validation. Valid values are listed below.</p>
-     */
     inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the domain validation. Valid values are listed below.</p>
-     */
     inline void SetValidationStatus(const LoadBalancerTlsCertificateDomainStatus& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
-
-    /**
-     * <p>The status of the domain validation. Valid values are listed below.</p>
-     */
     inline void SetValidationStatus(LoadBalancerTlsCertificateDomainStatus&& value) { m_validationStatusHasBeenSet = true; m_validationStatus = std::move(value); }
-
-    /**
-     * <p>The status of the domain validation. Valid values are listed below.</p>
-     */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithValidationStatus(const LoadBalancerTlsCertificateDomainStatus& value) { SetValidationStatus(value); return *this;}
-
-    /**
-     * <p>The status of the domain validation. Valid values are listed below.</p>
-     */
     inline LoadBalancerTlsCertificateDomainValidationOption& WithValidationStatus(LoadBalancerTlsCertificateDomainStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

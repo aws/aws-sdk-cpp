@@ -42,79 +42,31 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the API operation that the agent predicts should
      * be called.</p>
      */
     inline const ApiInvocationInput& GetApiInvocationInput() const{ return m_apiInvocationInput; }
-
-    /**
-     * <p>Contains information about the API operation that the agent predicts should
-     * be called.</p>
-     */
     inline bool ApiInvocationInputHasBeenSet() const { return m_apiInvocationInputHasBeenSet; }
-
-    /**
-     * <p>Contains information about the API operation that the agent predicts should
-     * be called.</p>
-     */
     inline void SetApiInvocationInput(const ApiInvocationInput& value) { m_apiInvocationInputHasBeenSet = true; m_apiInvocationInput = value; }
-
-    /**
-     * <p>Contains information about the API operation that the agent predicts should
-     * be called.</p>
-     */
     inline void SetApiInvocationInput(ApiInvocationInput&& value) { m_apiInvocationInputHasBeenSet = true; m_apiInvocationInput = std::move(value); }
-
-    /**
-     * <p>Contains information about the API operation that the agent predicts should
-     * be called.</p>
-     */
     inline InvocationInputMember& WithApiInvocationInput(const ApiInvocationInput& value) { SetApiInvocationInput(value); return *this;}
-
-    /**
-     * <p>Contains information about the API operation that the agent predicts should
-     * be called.</p>
-     */
     inline InvocationInputMember& WithApiInvocationInput(ApiInvocationInput&& value) { SetApiInvocationInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the function that the agent predicts should be
      * called.</p>
      */
     inline const FunctionInvocationInput& GetFunctionInvocationInput() const{ return m_functionInvocationInput; }
-
-    /**
-     * <p>Contains information about the function that the agent predicts should be
-     * called.</p>
-     */
     inline bool FunctionInvocationInputHasBeenSet() const { return m_functionInvocationInputHasBeenSet; }
-
-    /**
-     * <p>Contains information about the function that the agent predicts should be
-     * called.</p>
-     */
     inline void SetFunctionInvocationInput(const FunctionInvocationInput& value) { m_functionInvocationInputHasBeenSet = true; m_functionInvocationInput = value; }
-
-    /**
-     * <p>Contains information about the function that the agent predicts should be
-     * called.</p>
-     */
     inline void SetFunctionInvocationInput(FunctionInvocationInput&& value) { m_functionInvocationInputHasBeenSet = true; m_functionInvocationInput = std::move(value); }
-
-    /**
-     * <p>Contains information about the function that the agent predicts should be
-     * called.</p>
-     */
     inline InvocationInputMember& WithFunctionInvocationInput(const FunctionInvocationInput& value) { SetFunctionInvocationInput(value); return *this;}
-
-    /**
-     * <p>Contains information about the function that the agent predicts should be
-     * called.</p>
-     */
     inline InvocationInputMember& WithFunctionInvocationInput(FunctionInvocationInput&& value) { SetFunctionInvocationInput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApiInvocationInput m_apiInvocationInput;

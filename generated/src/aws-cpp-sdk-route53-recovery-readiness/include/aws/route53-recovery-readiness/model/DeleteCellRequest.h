@@ -32,46 +32,19 @@ namespace Model
     AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the cell.</p>
      */
     inline const Aws::String& GetCellName() const{ return m_cellName; }
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline bool CellNameHasBeenSet() const { return m_cellNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline void SetCellName(const Aws::String& value) { m_cellNameHasBeenSet = true; m_cellName = value; }
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline void SetCellName(Aws::String&& value) { m_cellNameHasBeenSet = true; m_cellName = std::move(value); }
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline void SetCellName(const char* value) { m_cellNameHasBeenSet = true; m_cellName.assign(value); }
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline DeleteCellRequest& WithCellName(const Aws::String& value) { SetCellName(value); return *this;}
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline DeleteCellRequest& WithCellName(Aws::String&& value) { SetCellName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cell.</p>
-     */
     inline DeleteCellRequest& WithCellName(const char* value) { SetCellName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cellName;

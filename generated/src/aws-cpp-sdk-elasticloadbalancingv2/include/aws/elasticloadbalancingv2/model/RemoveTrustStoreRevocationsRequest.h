@@ -37,82 +37,32 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
     inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the trust store.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revocation IDs of the revocation files you want to remove.</p>
      */
     inline const Aws::Vector<long long>& GetRevocationIds() const{ return m_revocationIds; }
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline bool RevocationIdsHasBeenSet() const { return m_revocationIdsHasBeenSet; }
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline void SetRevocationIds(const Aws::Vector<long long>& value) { m_revocationIdsHasBeenSet = true; m_revocationIds = value; }
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline void SetRevocationIds(Aws::Vector<long long>&& value) { m_revocationIdsHasBeenSet = true; m_revocationIds = std::move(value); }
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& WithRevocationIds(const Aws::Vector<long long>& value) { SetRevocationIds(value); return *this;}
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& WithRevocationIds(Aws::Vector<long long>&& value) { SetRevocationIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The revocation IDs of the revocation files you want to remove.</p>
-     */
     inline RemoveTrustStoreRevocationsRequest& AddRevocationIds(long long value) { m_revocationIdsHasBeenSet = true; m_revocationIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_trustStoreArn;

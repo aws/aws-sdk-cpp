@@ -36,47 +36,25 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
     inline int GetWidth() const{ return m_width; }
-
-    /**
-     * <p>The screen resolution's width, expressed in pixels.</p>
-     */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-
-    /**
-     * <p>The screen resolution's width, expressed in pixels.</p>
-     */
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
-
-    /**
-     * <p>The screen resolution's width, expressed in pixels.</p>
-     */
     inline Resolution& WithWidth(int value) { SetWidth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
     inline int GetHeight() const{ return m_height; }
-
-    /**
-     * <p>The screen resolution's height, expressed in pixels.</p>
-     */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
-
-    /**
-     * <p>The screen resolution's height, expressed in pixels.</p>
-     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
-
-    /**
-     * <p>The screen resolution's height, expressed in pixels.</p>
-     */
     inline Resolution& WithHeight(int value) { SetHeight(value); return *this;}
-
+    ///@}
   private:
 
     int m_width;

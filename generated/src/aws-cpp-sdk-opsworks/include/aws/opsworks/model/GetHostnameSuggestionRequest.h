@@ -34,46 +34,19 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The layer ID.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The layer ID.</p>
-     */
     inline GetHostnameSuggestionRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerId;

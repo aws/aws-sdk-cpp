@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a waterfall visual.</p>
      */
     inline const WaterfallChartAggregatedFieldWells& GetWaterfallChartAggregatedFieldWells() const{ return m_waterfallChartAggregatedFieldWells; }
-
-    /**
-     * <p>The field well configuration of a waterfall visual.</p>
-     */
     inline bool WaterfallChartAggregatedFieldWellsHasBeenSet() const { return m_waterfallChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a waterfall visual.</p>
-     */
     inline void SetWaterfallChartAggregatedFieldWells(const WaterfallChartAggregatedFieldWells& value) { m_waterfallChartAggregatedFieldWellsHasBeenSet = true; m_waterfallChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a waterfall visual.</p>
-     */
     inline void SetWaterfallChartAggregatedFieldWells(WaterfallChartAggregatedFieldWells&& value) { m_waterfallChartAggregatedFieldWellsHasBeenSet = true; m_waterfallChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a waterfall visual.</p>
-     */
     inline WaterfallChartFieldWells& WithWaterfallChartAggregatedFieldWells(const WaterfallChartAggregatedFieldWells& value) { SetWaterfallChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a waterfall visual.</p>
-     */
     inline WaterfallChartFieldWells& WithWaterfallChartAggregatedFieldWells(WaterfallChartAggregatedFieldWells&& value) { SetWaterfallChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WaterfallChartAggregatedFieldWells m_waterfallChartAggregatedFieldWells;

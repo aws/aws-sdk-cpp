@@ -38,36 +38,17 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifiers of the provider service, from Data Exchange.</p>
      */
     inline const ProviderMarketplaceConfiguration& GetMarketplaceConfiguration() const{ return m_marketplaceConfiguration; }
-
-    /**
-     * <p>The identifiers of the provider service, from Data Exchange.</p>
-     */
     inline bool MarketplaceConfigurationHasBeenSet() const { return m_marketplaceConfigurationHasBeenSet; }
-
-    /**
-     * <p>The identifiers of the provider service, from Data Exchange.</p>
-     */
     inline void SetMarketplaceConfiguration(const ProviderMarketplaceConfiguration& value) { m_marketplaceConfigurationHasBeenSet = true; m_marketplaceConfiguration = value; }
-
-    /**
-     * <p>The identifiers of the provider service, from Data Exchange.</p>
-     */
     inline void SetMarketplaceConfiguration(ProviderMarketplaceConfiguration&& value) { m_marketplaceConfigurationHasBeenSet = true; m_marketplaceConfiguration = std::move(value); }
-
-    /**
-     * <p>The identifiers of the provider service, from Data Exchange.</p>
-     */
     inline ProviderEndpointConfiguration& WithMarketplaceConfiguration(const ProviderMarketplaceConfiguration& value) { SetMarketplaceConfiguration(value); return *this;}
-
-    /**
-     * <p>The identifiers of the provider service, from Data Exchange.</p>
-     */
     inline ProviderEndpointConfiguration& WithMarketplaceConfiguration(ProviderMarketplaceConfiguration&& value) { SetMarketplaceConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProviderMarketplaceConfiguration m_marketplaceConfiguration;

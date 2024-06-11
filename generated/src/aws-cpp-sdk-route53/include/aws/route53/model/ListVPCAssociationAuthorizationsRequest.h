@@ -42,55 +42,22 @@ namespace Model
     AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
      * associated with the hosted zone.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the hosted zone for which you want a list of VPCs that can be
-     * associated with the hosted zone.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
      * there are more VPCs that can be associated with the specified hosted zone. To
@@ -99,127 +66,30 @@ namespace Model
      * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element,
-     * there are more VPCs that can be associated with the specified hosted zone. To
-     * get the next page of results, submit another request, and include the value of
-     * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
-     * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
      * you want Amazon Route 53 to return. If you don't specify a value for
      * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-
-    /**
-     * <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that
-     * you want Amazon Route 53 to return. If you don't specify a value for
-     * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-     */
     inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostedZoneId;

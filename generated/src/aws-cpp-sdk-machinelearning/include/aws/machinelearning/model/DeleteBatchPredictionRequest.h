@@ -34,54 +34,20 @@ namespace Model
     AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
     inline const Aws::String& GetBatchPredictionId() const{ return m_batchPredictionId; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = std::move(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline void SetBatchPredictionId(const char* value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId.assign(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline DeleteBatchPredictionRequest& WithBatchPredictionId(const Aws::String& value) { SetBatchPredictionId(value); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline DeleteBatchPredictionRequest& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the
-     * <code>BatchPrediction</code>.</p>
-     */
     inline DeleteBatchPredictionRequest& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_batchPredictionId;

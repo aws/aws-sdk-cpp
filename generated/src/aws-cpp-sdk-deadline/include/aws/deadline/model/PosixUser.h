@@ -37,87 +37,33 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the POSIX user's group.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline PosixUser& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline PosixUser& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the POSIX user's group.</p>
-     */
     inline PosixUser& WithGroup(const char* value) { SetGroup(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the POSIX user.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline PosixUser& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline PosixUser& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the POSIX user.</p>
-     */
     inline PosixUser& WithUser(const char* value) { SetUser(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_group;

@@ -38,26 +38,15 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
      */
     inline int GetMaximumEfaInterfaces() const{ return m_maximumEfaInterfaces; }
-
-    /**
-     * <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-     */
     inline bool MaximumEfaInterfacesHasBeenSet() const { return m_maximumEfaInterfacesHasBeenSet; }
-
-    /**
-     * <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-     */
     inline void SetMaximumEfaInterfaces(int value) { m_maximumEfaInterfacesHasBeenSet = true; m_maximumEfaInterfaces = value; }
-
-    /**
-     * <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-     */
     inline EfaInfo& WithMaximumEfaInterfaces(int value) { SetMaximumEfaInterfaces(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumEfaInterfaces;

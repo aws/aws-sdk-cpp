@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
      */
     inline const Aws::String& GetDataDeletionJobArn() const{ return m_dataDeletionJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline bool DataDeletionJobArnHasBeenSet() const { return m_dataDeletionJobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline void SetDataDeletionJobArn(const Aws::String& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline void SetDataDeletionJobArn(Aws::String&& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline void SetDataDeletionJobArn(const char* value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(const Aws::String& value) { SetDataDeletionJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(Aws::String&& value) { SetDataDeletionJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
-     */
     inline DescribeDataDeletionJobRequest& WithDataDeletionJobArn(const char* value) { SetDataDeletionJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataDeletionJobArn;

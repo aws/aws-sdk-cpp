@@ -40,6 +40,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status code for the deletion state.</p> <p>Following are the possible
      * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
@@ -49,98 +50,26 @@ namespace Model
      * deletion started.</p> </li> </ul>
      */
     inline const R53HostedZoneDeletionStateCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The status code for the deletion state.</p> <p>Following are the possible
-     * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
-     * successfully deleted.</p> </li> <li> <p> <code>PENDING</code> - The hosted zone
-     * deletion is in progress.</p> </li> <li> <p> <code>FAILED</code> - The hosted
-     * zone deletion failed.</p> </li> <li> <p> <code>STARTED</code> - The hosted zone
-     * deletion started.</p> </li> </ul>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The status code for the deletion state.</p> <p>Following are the possible
-     * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
-     * successfully deleted.</p> </li> <li> <p> <code>PENDING</code> - The hosted zone
-     * deletion is in progress.</p> </li> <li> <p> <code>FAILED</code> - The hosted
-     * zone deletion failed.</p> </li> <li> <p> <code>STARTED</code> - The hosted zone
-     * deletion started.</p> </li> </ul>
-     */
     inline void SetCode(const R53HostedZoneDeletionStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The status code for the deletion state.</p> <p>Following are the possible
-     * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
-     * successfully deleted.</p> </li> <li> <p> <code>PENDING</code> - The hosted zone
-     * deletion is in progress.</p> </li> <li> <p> <code>FAILED</code> - The hosted
-     * zone deletion failed.</p> </li> <li> <p> <code>STARTED</code> - The hosted zone
-     * deletion started.</p> </li> </ul>
-     */
     inline void SetCode(R53HostedZoneDeletionStateCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The status code for the deletion state.</p> <p>Following are the possible
-     * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
-     * successfully deleted.</p> </li> <li> <p> <code>PENDING</code> - The hosted zone
-     * deletion is in progress.</p> </li> <li> <p> <code>FAILED</code> - The hosted
-     * zone deletion failed.</p> </li> <li> <p> <code>STARTED</code> - The hosted zone
-     * deletion started.</p> </li> </ul>
-     */
     inline R53HostedZoneDeletionState& WithCode(const R53HostedZoneDeletionStateCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The status code for the deletion state.</p> <p>Following are the possible
-     * values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The hosted zone was
-     * successfully deleted.</p> </li> <li> <p> <code>PENDING</code> - The hosted zone
-     * deletion is in progress.</p> </li> <li> <p> <code>FAILED</code> - The hosted
-     * zone deletion failed.</p> </li> <li> <p> <code>STARTED</code> - The hosted zone
-     * deletion started.</p> </li> </ul>
-     */
     inline R53HostedZoneDeletionState& WithCode(R53HostedZoneDeletionStateCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message that describes the reason for the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline R53HostedZoneDeletionState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline R53HostedZoneDeletionState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline R53HostedZoneDeletionState& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     R53HostedZoneDeletionStateCode m_code;

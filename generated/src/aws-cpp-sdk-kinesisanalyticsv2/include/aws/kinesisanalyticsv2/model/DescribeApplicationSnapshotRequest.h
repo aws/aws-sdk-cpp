@@ -34,95 +34,34 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an existing application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of an application snapshot. You can retrieve this value using
      * .</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an application snapshot. You can retrieve this value using
-     * .</p>
-     */
     inline DescribeApplicationSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

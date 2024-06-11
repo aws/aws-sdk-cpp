@@ -36,46 +36,19 @@ namespace Model
     AWS_MOBILE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Unique bundle identifier. </p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline DescribeBundleRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline DescribeBundleRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-
-    /**
-     * <p> Unique bundle identifier. </p>
-     */
     inline DescribeBundleRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bundleId;

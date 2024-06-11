@@ -33,43 +33,25 @@ namespace Model
     AWS_S3CONTROL_API GetAccessPointPolicyStatusForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const PolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
-
-    
     inline void SetPolicyStatus(const PolicyStatus& value) { m_policyStatus = value; }
-
-    
     inline void SetPolicyStatus(PolicyStatus&& value) { m_policyStatus = std::move(value); }
-
-    
     inline GetAccessPointPolicyStatusForObjectLambdaResult& WithPolicyStatus(const PolicyStatus& value) { SetPolicyStatus(value); return *this;}
-
-    
     inline GetAccessPointPolicyStatusForObjectLambdaResult& WithPolicyStatus(PolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessPointPolicyStatusForObjectLambdaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PolicyStatus m_policyStatus;

@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the model packaging job. </p>
      */
     inline const ModelPackagingDescription& GetModelPackagingDescription() const{ return m_modelPackagingDescription; }
-
-    /**
-     * <p>The description of the model packaging job. </p>
-     */
     inline void SetModelPackagingDescription(const ModelPackagingDescription& value) { m_modelPackagingDescription = value; }
-
-    /**
-     * <p>The description of the model packaging job. </p>
-     */
     inline void SetModelPackagingDescription(ModelPackagingDescription&& value) { m_modelPackagingDescription = std::move(value); }
-
-    /**
-     * <p>The description of the model packaging job. </p>
-     */
     inline DescribeModelPackagingJobResult& WithModelPackagingDescription(const ModelPackagingDescription& value) { SetModelPackagingDescription(value); return *this;}
-
-    /**
-     * <p>The description of the model packaging job. </p>
-     */
     inline DescribeModelPackagingJobResult& WithModelPackagingDescription(ModelPackagingDescription&& value) { SetModelPackagingDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeModelPackagingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeModelPackagingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeModelPackagingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ModelPackagingDescription m_modelPackagingDescription;

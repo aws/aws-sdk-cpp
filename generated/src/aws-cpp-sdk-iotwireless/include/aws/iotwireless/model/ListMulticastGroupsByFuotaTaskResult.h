@@ -34,99 +34,42 @@ namespace Model
     AWS_IOTWIRELESS_API ListMulticastGroupsByFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>To retrieve the next set of results, the <code>nextToken</code> value from a
-     * previous response; otherwise <b>null</b> to receive the first set of
-     * results.</p>
-     */
     inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<MulticastGroupByFuotaTask>& GetMulticastGroupList() const{ return m_multicastGroupList; }
-
-    
     inline void SetMulticastGroupList(const Aws::Vector<MulticastGroupByFuotaTask>& value) { m_multicastGroupList = value; }
-
-    
     inline void SetMulticastGroupList(Aws::Vector<MulticastGroupByFuotaTask>&& value) { m_multicastGroupList = std::move(value); }
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& WithMulticastGroupList(const Aws::Vector<MulticastGroupByFuotaTask>& value) { SetMulticastGroupList(value); return *this;}
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& WithMulticastGroupList(Aws::Vector<MulticastGroupByFuotaTask>&& value) { SetMulticastGroupList(std::move(value)); return *this;}
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& AddMulticastGroupList(const MulticastGroupByFuotaTask& value) { m_multicastGroupList.push_back(value); return *this; }
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& AddMulticastGroupList(MulticastGroupByFuotaTask&& value) { m_multicastGroupList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

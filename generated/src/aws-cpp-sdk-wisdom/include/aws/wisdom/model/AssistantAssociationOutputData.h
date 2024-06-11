@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The knowledge base where output data is sent.</p>
      */
     inline const KnowledgeBaseAssociationData& GetKnowledgeBaseAssociation() const{ return m_knowledgeBaseAssociation; }
-
-    /**
-     * <p>The knowledge base where output data is sent.</p>
-     */
     inline bool KnowledgeBaseAssociationHasBeenSet() const { return m_knowledgeBaseAssociationHasBeenSet; }
-
-    /**
-     * <p>The knowledge base where output data is sent.</p>
-     */
     inline void SetKnowledgeBaseAssociation(const KnowledgeBaseAssociationData& value) { m_knowledgeBaseAssociationHasBeenSet = true; m_knowledgeBaseAssociation = value; }
-
-    /**
-     * <p>The knowledge base where output data is sent.</p>
-     */
     inline void SetKnowledgeBaseAssociation(KnowledgeBaseAssociationData&& value) { m_knowledgeBaseAssociationHasBeenSet = true; m_knowledgeBaseAssociation = std::move(value); }
-
-    /**
-     * <p>The knowledge base where output data is sent.</p>
-     */
     inline AssistantAssociationOutputData& WithKnowledgeBaseAssociation(const KnowledgeBaseAssociationData& value) { SetKnowledgeBaseAssociation(value); return *this;}
-
-    /**
-     * <p>The knowledge base where output data is sent.</p>
-     */
     inline AssistantAssociationOutputData& WithKnowledgeBaseAssociation(KnowledgeBaseAssociationData&& value) { SetKnowledgeBaseAssociation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KnowledgeBaseAssociationData m_knowledgeBaseAssociation;

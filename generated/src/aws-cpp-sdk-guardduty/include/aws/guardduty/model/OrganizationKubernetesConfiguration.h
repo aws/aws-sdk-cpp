@@ -38,42 +38,18 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
      * members joining the organization.</p>
      */
     inline const OrganizationKubernetesAuditLogsConfiguration& GetAuditLogs() const{ return m_auditLogs; }
-
-    /**
-     * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
-     * members joining the organization.</p>
-     */
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-
-    /**
-     * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
-     * members joining the organization.</p>
-     */
     inline void SetAuditLogs(const OrganizationKubernetesAuditLogsConfiguration& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-
-    /**
-     * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
-     * members joining the organization.</p>
-     */
     inline void SetAuditLogs(OrganizationKubernetesAuditLogsConfiguration&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-
-    /**
-     * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
-     * members joining the organization.</p>
-     */
     inline OrganizationKubernetesConfiguration& WithAuditLogs(const OrganizationKubernetesAuditLogsConfiguration& value) { SetAuditLogs(value); return *this;}
-
-    /**
-     * <p>Whether Kubernetes audit logs data source should be auto-enabled for new
-     * members joining the organization.</p>
-     */
     inline OrganizationKubernetesConfiguration& WithAuditLogs(OrganizationKubernetesAuditLogsConfiguration&& value) { SetAuditLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OrganizationKubernetesAuditLogsConfiguration m_auditLogs;

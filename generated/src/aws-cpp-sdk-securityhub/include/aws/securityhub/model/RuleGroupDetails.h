@@ -38,37 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Additional settings to use in the specified rules.</p>
      */
     inline const RuleGroupVariables& GetRuleVariables() const{ return m_ruleVariables; }
-
-    /**
-     * <p>Additional settings to use in the specified rules.</p>
-     */
     inline bool RuleVariablesHasBeenSet() const { return m_ruleVariablesHasBeenSet; }
-
-    /**
-     * <p>Additional settings to use in the specified rules.</p>
-     */
     inline void SetRuleVariables(const RuleGroupVariables& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = value; }
-
-    /**
-     * <p>Additional settings to use in the specified rules.</p>
-     */
     inline void SetRuleVariables(RuleGroupVariables&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::move(value); }
-
-    /**
-     * <p>Additional settings to use in the specified rules.</p>
-     */
     inline RuleGroupDetails& WithRuleVariables(const RuleGroupVariables& value) { SetRuleVariables(value); return *this;}
-
-    /**
-     * <p>Additional settings to use in the specified rules.</p>
-     */
     inline RuleGroupDetails& WithRuleVariables(RuleGroupVariables&& value) { SetRuleVariables(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
      * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
@@ -76,47 +58,12 @@ namespace Model
      * <code>StatelessRulesAndCustomActions</code>.</p>
      */
     inline const RuleGroupSource& GetRulesSource() const{ return m_rulesSource; }
-
-    /**
-     * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
-     * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
-     * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
-     * <code>StatelessRulesAndCustomActions</code>.</p>
-     */
     inline bool RulesSourceHasBeenSet() const { return m_rulesSourceHasBeenSet; }
-
-    /**
-     * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
-     * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
-     * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
-     * <code>StatelessRulesAndCustomActions</code>.</p>
-     */
     inline void SetRulesSource(const RuleGroupSource& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = value; }
-
-    /**
-     * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
-     * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
-     * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
-     * <code>StatelessRulesAndCustomActions</code>.</p>
-     */
     inline void SetRulesSource(RuleGroupSource&& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = std::move(value); }
-
-    /**
-     * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
-     * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
-     * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
-     * <code>StatelessRulesAndCustomActions</code>.</p>
-     */
     inline RuleGroupDetails& WithRulesSource(const RuleGroupSource& value) { SetRulesSource(value); return *this;}
-
-    /**
-     * <p>The rules and actions for the rule group.</p> <p>For stateful rule groups,
-     * can contain <code>RulesString</code>, <code>RulesSourceList</code>, or
-     * <code>StatefulRules</code>.</p> <p>For stateless rule groups, contains
-     * <code>StatelessRulesAndCustomActions</code>.</p>
-     */
     inline RuleGroupDetails& WithRulesSource(RuleGroupSource&& value) { SetRulesSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleGroupVariables m_ruleVariables;

@@ -38,103 +38,35 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string that contains the time in seconds since epoch. Accepts substitution
      * templates.</p>
      */
     inline const Aws::String& GetTimeInSeconds() const{ return m_timeInSeconds; }
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline bool TimeInSecondsHasBeenSet() const { return m_timeInSecondsHasBeenSet; }
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline void SetTimeInSeconds(const Aws::String& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = value; }
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline void SetTimeInSeconds(Aws::String&& value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds = std::move(value); }
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline void SetTimeInSeconds(const char* value) { m_timeInSecondsHasBeenSet = true; m_timeInSeconds.assign(value); }
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(const Aws::String& value) { SetTimeInSeconds(value); return *this;}
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(Aws::String&& value) { SetTimeInSeconds(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that contains the time in seconds since epoch. Accepts substitution
-     * templates.</p>
-     */
     inline AssetPropertyTimestamp& WithTimeInSeconds(const char* value) { SetTimeInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional. A string that contains the nanosecond time offset. Accepts
      * substitution templates.</p>
      */
     inline const Aws::String& GetOffsetInNanos() const{ return m_offsetInNanos; }
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline bool OffsetInNanosHasBeenSet() const { return m_offsetInNanosHasBeenSet; }
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline void SetOffsetInNanos(const Aws::String& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = value; }
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline void SetOffsetInNanos(Aws::String&& value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos = std::move(value); }
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline void SetOffsetInNanos(const char* value) { m_offsetInNanosHasBeenSet = true; m_offsetInNanos.assign(value); }
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(const Aws::String& value) { SetOffsetInNanos(value); return *this;}
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(Aws::String&& value) { SetOffsetInNanos(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional. A string that contains the nanosecond time offset. Accepts
-     * substitution templates.</p>
-     */
     inline AssetPropertyTimestamp& WithOffsetInNanos(const char* value) { SetOffsetInNanos(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timeInSeconds;

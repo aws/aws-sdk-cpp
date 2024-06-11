@@ -40,98 +40,41 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-     */
     inline AggregatedValue& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-     */
     inline AggregatedValue& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The quality of the aggregated data.</p>
      */
     inline const Quality& GetQuality() const{ return m_quality; }
-
-    /**
-     * <p>The quality of the aggregated data.</p>
-     */
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-
-    /**
-     * <p>The quality of the aggregated data.</p>
-     */
     inline void SetQuality(const Quality& value) { m_qualityHasBeenSet = true; m_quality = value; }
-
-    /**
-     * <p>The quality of the aggregated data.</p>
-     */
     inline void SetQuality(Quality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-
-    /**
-     * <p>The quality of the aggregated data.</p>
-     */
     inline AggregatedValue& WithQuality(const Quality& value) { SetQuality(value); return *this;}
-
-    /**
-     * <p>The quality of the aggregated data.</p>
-     */
     inline AggregatedValue& WithQuality(Quality&& value) { SetQuality(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the aggregates.</p>
      */
     inline const Aggregates& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the aggregates.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the aggregates.</p>
-     */
     inline void SetValue(const Aggregates& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the aggregates.</p>
-     */
     inline void SetValue(Aggregates&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the aggregates.</p>
-     */
     inline AggregatedValue& WithValue(const Aggregates& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the aggregates.</p>
-     */
     inline AggregatedValue& WithValue(Aggregates&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;

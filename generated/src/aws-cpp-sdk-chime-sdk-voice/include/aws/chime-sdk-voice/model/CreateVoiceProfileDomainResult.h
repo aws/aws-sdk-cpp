@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API CreateVoiceProfileDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested voice profile domain.</p>
      */
     inline const VoiceProfileDomain& GetVoiceProfileDomain() const{ return m_voiceProfileDomain; }
-
-    /**
-     * <p>The requested voice profile domain.</p>
-     */
     inline void SetVoiceProfileDomain(const VoiceProfileDomain& value) { m_voiceProfileDomain = value; }
-
-    /**
-     * <p>The requested voice profile domain.</p>
-     */
     inline void SetVoiceProfileDomain(VoiceProfileDomain&& value) { m_voiceProfileDomain = std::move(value); }
-
-    /**
-     * <p>The requested voice profile domain.</p>
-     */
     inline CreateVoiceProfileDomainResult& WithVoiceProfileDomain(const VoiceProfileDomain& value) { SetVoiceProfileDomain(value); return *this;}
-
-    /**
-     * <p>The requested voice profile domain.</p>
-     */
     inline CreateVoiceProfileDomainResult& WithVoiceProfileDomain(VoiceProfileDomain&& value) { SetVoiceProfileDomain(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateVoiceProfileDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateVoiceProfileDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateVoiceProfileDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VoiceProfileDomain m_voiceProfileDomain;

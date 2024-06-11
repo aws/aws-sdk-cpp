@@ -39,85 +39,32 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The UTC timing mode.</p>
      */
     inline const DashUtcTimingMode& GetTimingMode() const{ return m_timingMode; }
-
-    /**
-     * <p>The UTC timing mode.</p>
-     */
     inline bool TimingModeHasBeenSet() const { return m_timingModeHasBeenSet; }
-
-    /**
-     * <p>The UTC timing mode.</p>
-     */
     inline void SetTimingMode(const DashUtcTimingMode& value) { m_timingModeHasBeenSet = true; m_timingMode = value; }
-
-    /**
-     * <p>The UTC timing mode.</p>
-     */
     inline void SetTimingMode(DashUtcTimingMode&& value) { m_timingModeHasBeenSet = true; m_timingMode = std::move(value); }
-
-    /**
-     * <p>The UTC timing mode.</p>
-     */
     inline DashUtcTiming& WithTimingMode(const DashUtcTimingMode& value) { SetTimingMode(value); return *this;}
-
-    /**
-     * <p>The UTC timing mode.</p>
-     */
     inline DashUtcTiming& WithTimingMode(DashUtcTimingMode&& value) { SetTimingMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The the method that the player uses to synchronize to coordinated universal
      * time (UTC) wall clock time.</p>
      */
     inline const Aws::String& GetTimingSource() const{ return m_timingSource; }
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline bool TimingSourceHasBeenSet() const { return m_timingSourceHasBeenSet; }
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline void SetTimingSource(const Aws::String& value) { m_timingSourceHasBeenSet = true; m_timingSource = value; }
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline void SetTimingSource(Aws::String&& value) { m_timingSourceHasBeenSet = true; m_timingSource = std::move(value); }
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline void SetTimingSource(const char* value) { m_timingSourceHasBeenSet = true; m_timingSource.assign(value); }
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline DashUtcTiming& WithTimingSource(const Aws::String& value) { SetTimingSource(value); return *this;}
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline DashUtcTiming& WithTimingSource(Aws::String&& value) { SetTimingSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The the method that the player uses to synchronize to coordinated universal
-     * time (UTC) wall clock time.</p>
-     */
     inline DashUtcTiming& WithTimingSource(const char* value) { SetTimingSource(value); return *this;}
-
+    ///@}
   private:
 
     DashUtcTimingMode m_timingMode;

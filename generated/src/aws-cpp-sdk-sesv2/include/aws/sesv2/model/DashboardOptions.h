@@ -38,6 +38,7 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
      * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
@@ -46,52 +47,12 @@ namespace Model
      * configuration set.</p> </li> </ul>
      */
     inline const FeatureStatus& GetEngagementMetrics() const{ return m_engagementMetrics; }
-
-    /**
-     * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
-     * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for the configuration set.</p> </li> <li> <p>
-     * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
-     * configuration set.</p> </li> </ul>
-     */
     inline bool EngagementMetricsHasBeenSet() const { return m_engagementMetricsHasBeenSet; }
-
-    /**
-     * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
-     * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for the configuration set.</p> </li> <li> <p>
-     * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
-     * configuration set.</p> </li> </ul>
-     */
     inline void SetEngagementMetrics(const FeatureStatus& value) { m_engagementMetricsHasBeenSet = true; m_engagementMetrics = value; }
-
-    /**
-     * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
-     * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for the configuration set.</p> </li> <li> <p>
-     * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
-     * configuration set.</p> </li> </ul>
-     */
     inline void SetEngagementMetrics(FeatureStatus&& value) { m_engagementMetricsHasBeenSet = true; m_engagementMetrics = std::move(value); }
-
-    /**
-     * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
-     * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for the configuration set.</p> </li> <li> <p>
-     * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
-     * configuration set.</p> </li> </ul>
-     */
     inline DashboardOptions& WithEngagementMetrics(const FeatureStatus& value) { SetEngagementMetrics(value); return *this;}
-
-    /**
-     * <p>Specifies the status of your VDM engagement metrics collection. Can be one of
-     * the following:</p> <ul> <li> <p> <code>ENABLED</code> – Amazon SES enables
-     * engagement metrics for the configuration set.</p> </li> <li> <p>
-     * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
-     * configuration set.</p> </li> </ul>
-     */
     inline DashboardOptions& WithEngagementMetrics(FeatureStatus&& value) { SetEngagementMetrics(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FeatureStatus m_engagementMetrics;

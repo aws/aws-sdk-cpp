@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the audio quality of the Agent</p>
      */
     inline const AudioQualityMetricsInfo& GetAudio() const{ return m_audio; }
-
-    /**
-     * <p>Information about the audio quality of the Agent</p>
-     */
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-
-    /**
-     * <p>Information about the audio quality of the Agent</p>
-     */
     inline void SetAudio(const AudioQualityMetricsInfo& value) { m_audioHasBeenSet = true; m_audio = value; }
-
-    /**
-     * <p>Information about the audio quality of the Agent</p>
-     */
     inline void SetAudio(AudioQualityMetricsInfo&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-
-    /**
-     * <p>Information about the audio quality of the Agent</p>
-     */
     inline AgentQualityMetrics& WithAudio(const AudioQualityMetricsInfo& value) { SetAudio(value); return *this;}
-
-    /**
-     * <p>Information about the audio quality of the Agent</p>
-     */
     inline AgentQualityMetrics& WithAudio(AudioQualityMetricsInfo&& value) { SetAudio(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AudioQualityMetricsInfo m_audio;

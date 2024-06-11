@@ -33,53 +33,27 @@ namespace Model
     AWS_ECRPUBLIC_API GetRepositoryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The catalog metadata for the repository.</p>
      */
     inline const RepositoryCatalogData& GetCatalogData() const{ return m_catalogData; }
-
-    /**
-     * <p>The catalog metadata for the repository.</p>
-     */
     inline void SetCatalogData(const RepositoryCatalogData& value) { m_catalogData = value; }
-
-    /**
-     * <p>The catalog metadata for the repository.</p>
-     */
     inline void SetCatalogData(RepositoryCatalogData&& value) { m_catalogData = std::move(value); }
-
-    /**
-     * <p>The catalog metadata for the repository.</p>
-     */
     inline GetRepositoryCatalogDataResult& WithCatalogData(const RepositoryCatalogData& value) { SetCatalogData(value); return *this;}
-
-    /**
-     * <p>The catalog metadata for the repository.</p>
-     */
     inline GetRepositoryCatalogDataResult& WithCatalogData(RepositoryCatalogData&& value) { SetCatalogData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRepositoryCatalogDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRepositoryCatalogDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRepositoryCatalogDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RepositoryCatalogData m_catalogData;

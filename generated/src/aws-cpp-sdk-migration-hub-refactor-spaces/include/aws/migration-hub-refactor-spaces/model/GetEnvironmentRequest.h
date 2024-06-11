@@ -32,46 +32,19 @@ namespace Model
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the environment.</p>
      */
     inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment.</p>
-     */
     inline GetEnvironmentRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentIdentifier;

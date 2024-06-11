@@ -47,159 +47,59 @@ namespace Model
     AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the identity store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline LaunchProfileMembership& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline LaunchProfileMembership& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the identity store.</p>
-     */
     inline LaunchProfileMembership& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The persona.</p>
      */
     inline const LaunchProfilePersona& GetPersona() const{ return m_persona; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline bool PersonaHasBeenSet() const { return m_personaHasBeenSet; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline void SetPersona(const LaunchProfilePersona& value) { m_personaHasBeenSet = true; m_persona = value; }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline void SetPersona(LaunchProfilePersona&& value) { m_personaHasBeenSet = true; m_persona = std::move(value); }
-
-    /**
-     * <p>The persona.</p>
-     */
     inline LaunchProfileMembership& WithPersona(const LaunchProfilePersona& value) { SetPersona(value); return *this;}
-
-    /**
-     * <p>The persona.</p>
-     */
     inline LaunchProfileMembership& WithPersona(LaunchProfilePersona&& value) { SetPersona(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal ID.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline LaunchProfileMembership& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline LaunchProfileMembership& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal ID.</p>
-     */
     inline LaunchProfileMembership& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Active Directory Security Identifier for this user, if available.</p>
      */
     inline const Aws::String& GetSid() const{ return m_sid; }
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline void SetSid(const Aws::String& value) { m_sidHasBeenSet = true; m_sid = value; }
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline void SetSid(Aws::String&& value) { m_sidHasBeenSet = true; m_sid = std::move(value); }
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline void SetSid(const char* value) { m_sidHasBeenSet = true; m_sid.assign(value); }
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline LaunchProfileMembership& WithSid(const Aws::String& value) { SetSid(value); return *this;}
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline LaunchProfileMembership& WithSid(Aws::String&& value) { SetSid(std::move(value)); return *this;}
-
-    /**
-     * <p>The Active Directory Security Identifier for this user, if available.</p>
-     */
     inline LaunchProfileMembership& WithSid(const char* value) { SetSid(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityStoreId;

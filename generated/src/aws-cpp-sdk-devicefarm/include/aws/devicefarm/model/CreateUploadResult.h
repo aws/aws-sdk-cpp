@@ -39,53 +39,27 @@ namespace Model
     AWS_DEVICEFARM_API CreateUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created upload.</p>
      */
     inline const Upload& GetUpload() const{ return m_upload; }
-
-    /**
-     * <p>The newly created upload.</p>
-     */
     inline void SetUpload(const Upload& value) { m_upload = value; }
-
-    /**
-     * <p>The newly created upload.</p>
-     */
     inline void SetUpload(Upload&& value) { m_upload = std::move(value); }
-
-    /**
-     * <p>The newly created upload.</p>
-     */
     inline CreateUploadResult& WithUpload(const Upload& value) { SetUpload(value); return *this;}
-
-    /**
-     * <p>The newly created upload.</p>
-     */
     inline CreateUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Upload m_upload;

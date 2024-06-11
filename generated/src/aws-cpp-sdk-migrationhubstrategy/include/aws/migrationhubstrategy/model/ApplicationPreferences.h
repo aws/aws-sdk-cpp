@@ -37,36 +37,17 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Application preferences that you specify to prefer managed environment. </p>
      */
     inline const ManagementPreference& GetManagementPreference() const{ return m_managementPreference; }
-
-    /**
-     * <p> Application preferences that you specify to prefer managed environment. </p>
-     */
     inline bool ManagementPreferenceHasBeenSet() const { return m_managementPreferenceHasBeenSet; }
-
-    /**
-     * <p> Application preferences that you specify to prefer managed environment. </p>
-     */
     inline void SetManagementPreference(const ManagementPreference& value) { m_managementPreferenceHasBeenSet = true; m_managementPreference = value; }
-
-    /**
-     * <p> Application preferences that you specify to prefer managed environment. </p>
-     */
     inline void SetManagementPreference(ManagementPreference&& value) { m_managementPreferenceHasBeenSet = true; m_managementPreference = std::move(value); }
-
-    /**
-     * <p> Application preferences that you specify to prefer managed environment. </p>
-     */
     inline ApplicationPreferences& WithManagementPreference(const ManagementPreference& value) { SetManagementPreference(value); return *this;}
-
-    /**
-     * <p> Application preferences that you specify to prefer managed environment. </p>
-     */
     inline ApplicationPreferences& WithManagementPreference(ManagementPreference&& value) { SetManagementPreference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ManagementPreference m_managementPreference;

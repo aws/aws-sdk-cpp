@@ -39,57 +39,27 @@ namespace Model
     AWS_ELASTICLOADBALANCING_API DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the tags.</p>
      */
     inline const Aws::Vector<TagDescription>& GetTagDescriptions() const{ return m_tagDescriptions; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline void SetTagDescriptions(const Aws::Vector<TagDescription>& value) { m_tagDescriptions = value; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline void SetTagDescriptions(Aws::Vector<TagDescription>&& value) { m_tagDescriptions = std::move(value); }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& WithTagDescriptions(const Aws::Vector<TagDescription>& value) { SetTagDescriptions(value); return *this;}
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& WithTagDescriptions(Aws::Vector<TagDescription>&& value) { SetTagDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& AddTagDescriptions(const TagDescription& value) { m_tagDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& AddTagDescriptions(TagDescription&& value) { m_tagDescriptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeTagsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeTagsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TagDescription> m_tagDescriptions;

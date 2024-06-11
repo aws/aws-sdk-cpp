@@ -36,34 +36,17 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An integer value to indicate the number of availability zones for a domain
      * when zone awareness is enabled. This should be equal to number of subnets if VPC
      * endpoints is enabled</p>
      */
     inline int GetAvailabilityZoneCount() const{ return m_availabilityZoneCount; }
-
-    /**
-     * <p>An integer value to indicate the number of availability zones for a domain
-     * when zone awareness is enabled. This should be equal to number of subnets if VPC
-     * endpoints is enabled</p>
-     */
     inline bool AvailabilityZoneCountHasBeenSet() const { return m_availabilityZoneCountHasBeenSet; }
-
-    /**
-     * <p>An integer value to indicate the number of availability zones for a domain
-     * when zone awareness is enabled. This should be equal to number of subnets if VPC
-     * endpoints is enabled</p>
-     */
     inline void SetAvailabilityZoneCount(int value) { m_availabilityZoneCountHasBeenSet = true; m_availabilityZoneCount = value; }
-
-    /**
-     * <p>An integer value to indicate the number of availability zones for a domain
-     * when zone awareness is enabled. This should be equal to number of subnets if VPC
-     * endpoints is enabled</p>
-     */
     inline ZoneAwarenessConfig& WithAvailabilityZoneCount(int value) { SetAvailabilityZoneCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_availabilityZoneCount;

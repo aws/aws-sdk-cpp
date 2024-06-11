@@ -41,118 +41,45 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of one or more subnet IDs in your VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline VPCConfig& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline VPCConfig& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of one or more security groups IDs in your VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline VPCConfig& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline VPCConfig& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
-     */
     inline VPCConfig& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A boolean indicating whether to assign a public IP address.</p>
      */
     inline bool GetAssignPublicIp() const{ return m_assignPublicIp; }
-
-    /**
-     * <p>A boolean indicating whether to assign a public IP address.</p>
-     */
     inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
-
-    /**
-     * <p>A boolean indicating whether to assign a public IP address.</p>
-     */
     inline void SetAssignPublicIp(bool value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
-
-    /**
-     * <p>A boolean indicating whether to assign a public IP address.</p>
-     */
     inline VPCConfig& WithAssignPublicIp(bool value) { SetAssignPublicIp(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnets;

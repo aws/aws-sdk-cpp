@@ -36,124 +36,46 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>ARN of the scheduled query.</p>
      */
     inline const Aws::String& GetScheduledQueryArn() const{ return m_scheduledQueryArn; }
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline bool ScheduledQueryArnHasBeenSet() const { return m_scheduledQueryArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline void SetScheduledQueryArn(const Aws::String& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = value; }
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline void SetScheduledQueryArn(Aws::String&& value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn = std::move(value); }
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline void SetScheduledQueryArn(const char* value) { m_scheduledQueryArnHasBeenSet = true; m_scheduledQueryArn.assign(value); }
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(const Aws::String& value) { SetScheduledQueryArn(value); return *this;}
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(Aws::String&& value) { SetScheduledQueryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the scheduled query.</p>
-     */
     inline ExecuteScheduledQueryRequest& WithScheduledQueryArn(const char* value) { SetScheduledQueryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp in UTC. Query will be run as if it was invoked at this
      * timestamp. </p>
      */
     inline const Aws::Utils::DateTime& GetInvocationTime() const{ return m_invocationTime; }
-
-    /**
-     * <p>The timestamp in UTC. Query will be run as if it was invoked at this
-     * timestamp. </p>
-     */
     inline bool InvocationTimeHasBeenSet() const { return m_invocationTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp in UTC. Query will be run as if it was invoked at this
-     * timestamp. </p>
-     */
     inline void SetInvocationTime(const Aws::Utils::DateTime& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = value; }
-
-    /**
-     * <p>The timestamp in UTC. Query will be run as if it was invoked at this
-     * timestamp. </p>
-     */
     inline void SetInvocationTime(Aws::Utils::DateTime&& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = std::move(value); }
-
-    /**
-     * <p>The timestamp in UTC. Query will be run as if it was invoked at this
-     * timestamp. </p>
-     */
     inline ExecuteScheduledQueryRequest& WithInvocationTime(const Aws::Utils::DateTime& value) { SetInvocationTime(value); return *this;}
-
-    /**
-     * <p>The timestamp in UTC. Query will be run as if it was invoked at this
-     * timestamp. </p>
-     */
     inline ExecuteScheduledQueryRequest& WithInvocationTime(Aws::Utils::DateTime&& value) { SetInvocationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Not used. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Not used. </p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Not used. </p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Not used. </p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Not used. </p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Not used. </p>
-     */
     inline ExecuteScheduledQueryRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Not used. </p>
-     */
     inline ExecuteScheduledQueryRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Not used. </p>
-     */
     inline ExecuteScheduledQueryRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduledQueryArn;

@@ -36,68 +36,35 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Value representing eye direction on the yaw axis.</p>
      */
     inline double GetYaw() const{ return m_yaw; }
-
-    /**
-     * <p>Value representing eye direction on the yaw axis.</p>
-     */
     inline bool YawHasBeenSet() const { return m_yawHasBeenSet; }
-
-    /**
-     * <p>Value representing eye direction on the yaw axis.</p>
-     */
     inline void SetYaw(double value) { m_yawHasBeenSet = true; m_yaw = value; }
-
-    /**
-     * <p>Value representing eye direction on the yaw axis.</p>
-     */
     inline EyeDirection& WithYaw(double value) { SetYaw(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value representing eye direction on the pitch axis.</p>
      */
     inline double GetPitch() const{ return m_pitch; }
-
-    /**
-     * <p>Value representing eye direction on the pitch axis.</p>
-     */
     inline bool PitchHasBeenSet() const { return m_pitchHasBeenSet; }
-
-    /**
-     * <p>Value representing eye direction on the pitch axis.</p>
-     */
     inline void SetPitch(double value) { m_pitchHasBeenSet = true; m_pitch = value; }
-
-    /**
-     * <p>Value representing eye direction on the pitch axis.</p>
-     */
     inline EyeDirection& WithPitch(double value) { SetPitch(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The confidence that the service has in its predicted eye direction.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The confidence that the service has in its predicted eye direction.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The confidence that the service has in its predicted eye direction.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The confidence that the service has in its predicted eye direction.</p>
-     */
     inline EyeDirection& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     double m_yaw;

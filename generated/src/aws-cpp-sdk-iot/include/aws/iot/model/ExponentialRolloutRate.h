@@ -38,94 +38,41 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum number of things that will be notified of a pending job, per
      * minute at the start of job rollout. This parameter allows you to define the
      * initial rate of rollout.</p>
      */
     inline int GetBaseRatePerMinute() const{ return m_baseRatePerMinute; }
-
-    /**
-     * <p>The minimum number of things that will be notified of a pending job, per
-     * minute at the start of job rollout. This parameter allows you to define the
-     * initial rate of rollout.</p>
-     */
     inline bool BaseRatePerMinuteHasBeenSet() const { return m_baseRatePerMinuteHasBeenSet; }
-
-    /**
-     * <p>The minimum number of things that will be notified of a pending job, per
-     * minute at the start of job rollout. This parameter allows you to define the
-     * initial rate of rollout.</p>
-     */
     inline void SetBaseRatePerMinute(int value) { m_baseRatePerMinuteHasBeenSet = true; m_baseRatePerMinute = value; }
-
-    /**
-     * <p>The minimum number of things that will be notified of a pending job, per
-     * minute at the start of job rollout. This parameter allows you to define the
-     * initial rate of rollout.</p>
-     */
     inline ExponentialRolloutRate& WithBaseRatePerMinute(int value) { SetBaseRatePerMinute(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The exponential factor to increase the rate of rollout for a job.</p>
      * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
      * example, 1.5, but not 1.55).</p>
      */
     inline double GetIncrementFactor() const{ return m_incrementFactor; }
-
-    /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p>
-     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
-     * example, 1.5, but not 1.55).</p>
-     */
     inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
-
-    /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p>
-     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
-     * example, 1.5, but not 1.55).</p>
-     */
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
-
-    /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p>
-     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
-     * example, 1.5, but not 1.55).</p>
-     */
     inline ExponentialRolloutRate& WithIncrementFactor(double value) { SetIncrementFactor(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
      */
     inline const RateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
-
-    /**
-     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     */
     inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
-
-    /**
-     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     */
     inline void SetRateIncreaseCriteria(const RateIncreaseCriteria& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = value; }
-
-    /**
-     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     */
     inline void SetRateIncreaseCriteria(RateIncreaseCriteria&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::move(value); }
-
-    /**
-     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     */
     inline ExponentialRolloutRate& WithRateIncreaseCriteria(const RateIncreaseCriteria& value) { SetRateIncreaseCriteria(value); return *this;}
-
-    /**
-     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     */
     inline ExponentialRolloutRate& WithRateIncreaseCriteria(RateIncreaseCriteria&& value) { SetRateIncreaseCriteria(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_baseRatePerMinute;

@@ -34,141 +34,62 @@ namespace Model
     AWS_SCHEMAS_API DescribeCodeBindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The time and date that the code binding was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The time and date that the code binding was created.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-
-    /**
-     * <p>The time and date that the code binding was created.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-
-    /**
-     * <p>The time and date that the code binding was created.</p>
-     */
     inline DescribeCodeBindingResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The time and date that the code binding was created.</p>
-     */
     inline DescribeCodeBindingResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that code bindings were modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-
-    /**
-     * <p>The date and time that code bindings were modified.</p>
-     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
-
-    /**
-     * <p>The date and time that code bindings were modified.</p>
-     */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
-
-    /**
-     * <p>The date and time that code bindings were modified.</p>
-     */
     inline DescribeCodeBindingResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-
-    /**
-     * <p>The date and time that code bindings were modified.</p>
-     */
     inline DescribeCodeBindingResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the schema.</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersion = value; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersion = std::move(value); }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline void SetSchemaVersion(const char* value) { m_schemaVersion.assign(value); }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline DescribeCodeBindingResult& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline DescribeCodeBindingResult& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline DescribeCodeBindingResult& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of code binding generation.</p>
      */
     inline const CodeGenerationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of code binding generation.</p>
-     */
     inline void SetStatus(const CodeGenerationStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current status of code binding generation.</p>
-     */
     inline void SetStatus(CodeGenerationStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current status of code binding generation.</p>
-     */
     inline DescribeCodeBindingResult& WithStatus(const CodeGenerationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of code binding generation.</p>
-     */
     inline DescribeCodeBindingResult& WithStatus(CodeGenerationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCodeBindingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCodeBindingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCodeBindingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationDate;

@@ -38,67 +38,29 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
      * issued.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
-     * issued.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
-     * issued.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
-     * issued.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
-     * issued.</p>
-     */
     inline SessionContextAttributes& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
-     * issued.</p>
-     */
     inline SessionContextAttributes& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the credentials were authenticated with a multi-factor
      * authentication (MFA) device.</p>
      */
     inline bool GetMfaAuthenticated() const{ return m_mfaAuthenticated; }
-
-    /**
-     * <p>Specifies whether the credentials were authenticated with a multi-factor
-     * authentication (MFA) device.</p>
-     */
     inline bool MfaAuthenticatedHasBeenSet() const { return m_mfaAuthenticatedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the credentials were authenticated with a multi-factor
-     * authentication (MFA) device.</p>
-     */
     inline void SetMfaAuthenticated(bool value) { m_mfaAuthenticatedHasBeenSet = true; m_mfaAuthenticated = value; }
-
-    /**
-     * <p>Specifies whether the credentials were authenticated with a multi-factor
-     * authentication (MFA) device.</p>
-     */
     inline SessionContextAttributes& WithMfaAuthenticated(bool value) { SetMfaAuthenticated(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationDate;

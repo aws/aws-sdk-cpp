@@ -38,75 +38,30 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-     */
     inline ListAppInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token passed by previous API requests until you reach the maximum number
      * of <code>AppInstances</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline ListAppInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline ListAppInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token passed by previous API requests until you reach the maximum number
-     * of <code>AppInstances</code>.</p>
-     */
     inline ListAppInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

@@ -40,37 +40,19 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time of the event.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
-
-    /**
-     * <p>The date and time of the event.</p>
-     */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-
-    /**
-     * <p>The date and time of the event.</p>
-     */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-
-    /**
-     * <p>The date and time of the event.</p>
-     */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-
-    /**
-     * <p>The date and time of the event.</p>
-     */
     inline PutPartnerEventsRequestEntry& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the event.</p>
-     */
     inline PutPartnerEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The event source that is generating the entry.</p>  <p>
      * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
@@ -81,149 +63,33 @@ namespace Model
      * </p> 
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The event source that is generating the entry.</p>  <p>
-     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are
-     * required for EventBridge to successfully send an event to an event bus. If you
-     * include event entries in a request that do not include each of those properties,
-     * EventBridge fails that entry. If you submit a request in which <i>none</i> of
-     * the entries have each of these properties, EventBridge fails the entire request.
-     * </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
      * which the event primarily concerns. Any number, including zero, may be
      * present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline PutPartnerEventsRequestEntry& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline PutPartnerEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline PutPartnerEventsRequestEntry& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline PutPartnerEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN),
-     * which the event primarily concerns. Any number, including zero, may be
-     * present.</p>
-     */
     inline PutPartnerEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A free-form string, with a maximum of 128 characters, used to decide what
      * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
@@ -234,85 +100,16 @@ namespace Model
      * these properties, EventBridge fails the entire request. </p> 
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
-
-    /**
-     * <p>A free-form string, with a maximum of 128 characters, used to decide what
-     * fields to expect in the event detail.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
@@ -323,84 +120,14 @@ namespace Model
      * these properties, EventBridge fails the entire request. </p> 
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
-
-    /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
-     * contain fields and nested sub-objects.</p>  <p> <code>Detail</code>,
-     * <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
-     * successfully send an event to an event bus. If you include event entries in a
-     * request that do not include each of those properties, EventBridge fails that
-     * entry. If you submit a request in which <i>none</i> of the entries have each of
-     * these properties, EventBridge fails the entire request. </p> 
-     */
     inline PutPartnerEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_time;

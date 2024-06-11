@@ -32,99 +32,42 @@ namespace Model
     AWS_MANAGEDGRAFANA_API DeleteWorkspaceServiceAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the service account deleted.</p>
      */
     inline const Aws::String& GetServiceAccountId() const{ return m_serviceAccountId; }
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline void SetServiceAccountId(const Aws::String& value) { m_serviceAccountId = value; }
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline void SetServiceAccountId(Aws::String&& value) { m_serviceAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline void SetServiceAccountId(const char* value) { m_serviceAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithServiceAccountId(const Aws::String& value) { SetServiceAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithServiceAccountId(Aws::String&& value) { SetServiceAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the service account deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithServiceAccountId(const char* value) { SetServiceAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace where the service account was deleted.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace where the service account was deleted.</p>
-     */
     inline DeleteWorkspaceServiceAccountResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteWorkspaceServiceAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteWorkspaceServiceAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteWorkspaceServiceAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceAccountId;

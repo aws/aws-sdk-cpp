@@ -36,95 +36,34 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A resource's optional description.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * A resource's optional description.
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * A resource's optional description.
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * A resource's optional description.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * An eventbridge rule template group's identifier. Can be either be its id or
      * current name.
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * An eventbridge rule template group's identifier. Can be either be its id or
-     * current name.
-     */
     inline UpdateEventBridgeRuleTemplateGroupRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

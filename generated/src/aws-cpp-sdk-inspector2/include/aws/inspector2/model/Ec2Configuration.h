@@ -38,36 +38,17 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The scan method that is applied to the instance.</p>
      */
     inline const Ec2ScanMode& GetScanMode() const{ return m_scanMode; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline void SetScanMode(const Ec2ScanMode& value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline void SetScanMode(Ec2ScanMode&& value) { m_scanModeHasBeenSet = true; m_scanMode = std::move(value); }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline Ec2Configuration& WithScanMode(const Ec2ScanMode& value) { SetScanMode(value); return *this;}
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline Ec2Configuration& WithScanMode(Ec2ScanMode&& value) { SetScanMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ec2ScanMode m_scanMode;

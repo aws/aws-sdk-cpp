@@ -41,47 +41,21 @@ namespace Model
     AWS_APPMESH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the service mesh to delete the virtual service in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service mesh to delete the virtual service in.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
      * account ID is not your own, then it's the ID of the account that shared the mesh
@@ -90,111 +64,28 @@ namespace Model
      * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services IAM account ID of the service mesh owner. If the
-     * account ID is not your own, then it's the ID of the account that shared the mesh
-     * with your account. For more information about mesh sharing, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with shared meshes</a>.</p>
-     */
     inline DeleteVirtualServiceRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the virtual service to delete.</p>
      */
     inline const Aws::String& GetVirtualServiceName() const{ return m_virtualServiceName; }
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline bool VirtualServiceNameHasBeenSet() const { return m_virtualServiceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline void SetVirtualServiceName(const Aws::String& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = value; }
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline void SetVirtualServiceName(Aws::String&& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = std::move(value); }
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline void SetVirtualServiceName(const char* value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName.assign(value); }
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline DeleteVirtualServiceRequest& WithVirtualServiceName(const Aws::String& value) { SetVirtualServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline DeleteVirtualServiceRequest& WithVirtualServiceName(Aws::String&& value) { SetVirtualServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the virtual service to delete.</p>
-     */
     inline DeleteVirtualServiceRequest& WithVirtualServiceName(const char* value) { SetVirtualServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_meshName;

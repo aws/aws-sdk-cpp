@@ -42,6 +42,7 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An enum value representing possible scan properties to match with given scan
      * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
@@ -49,78 +50,24 @@ namespace Model
      * deprecated.</p> 
      */
     inline const CriterionKey& GetCriterionKey() const{ return m_criterionKey; }
-
-    /**
-     * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
-     */
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
-
-    /**
-     * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
-     */
     inline void SetCriterionKey(const CriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
-
-    /**
-     * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
-     */
     inline void SetCriterionKey(CriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
-
-    /**
-     * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
-     */
     inline FilterCriterion& WithCriterionKey(const CriterionKey& value) { SetCriterionKey(value); return *this;}
-
-    /**
-     * <p>An enum value representing possible scan properties to match with given scan
-     * entries.</p>  <p>Replace the enum value <code>CLUSTER_NAME</code> with
-     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
-     * deprecated.</p> 
-     */
     inline FilterCriterion& WithCriterionKey(CriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the condition.</p>
      */
     inline const FilterCondition& GetFilterCondition() const{ return m_filterCondition; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline bool FilterConditionHasBeenSet() const { return m_filterConditionHasBeenSet; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline void SetFilterCondition(const FilterCondition& value) { m_filterConditionHasBeenSet = true; m_filterCondition = value; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline void SetFilterCondition(FilterCondition&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::move(value); }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline FilterCriterion& WithFilterCondition(const FilterCondition& value) { SetFilterCondition(value); return *this;}
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline FilterCriterion& WithFilterCondition(FilterCondition&& value) { SetFilterCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CriterionKey m_criterionKey;

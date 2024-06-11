@@ -32,46 +32,19 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The ID of the insight for which the feedback was provided. </p>
      */
     inline const Aws::String& GetInsightId() const{ return m_insightId; }
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline bool InsightIdHasBeenSet() const { return m_insightIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline void SetInsightId(const Aws::String& value) { m_insightIdHasBeenSet = true; m_insightId = value; }
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline void SetInsightId(Aws::String&& value) { m_insightIdHasBeenSet = true; m_insightId = std::move(value); }
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline void SetInsightId(const char* value) { m_insightIdHasBeenSet = true; m_insightId.assign(value); }
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline DescribeFeedbackRequest& WithInsightId(const Aws::String& value) { SetInsightId(value); return *this;}
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline DescribeFeedbackRequest& WithInsightId(Aws::String&& value) { SetInsightId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the insight for which the feedback was provided. </p>
-     */
     inline DescribeFeedbackRequest& WithInsightId(const char* value) { SetInsightId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_insightId;

@@ -34,95 +34,34 @@ namespace Model
     AWS_PERSONALIZEEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
      * or items to.</p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline PutItemsRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline PutItemsRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item
-     * or items to.</p>
-     */
     inline PutItemsRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of item data.</p>
      */
     inline const Aws::Vector<Item>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline void SetItems(const Aws::Vector<Item>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline void SetItems(Aws::Vector<Item>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline PutItemsRequest& WithItems(const Aws::Vector<Item>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline PutItemsRequest& WithItems(Aws::Vector<Item>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline PutItemsRequest& AddItems(const Item& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A list of item data.</p>
-     */
     inline PutItemsRequest& AddItems(Item&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_datasetArn;

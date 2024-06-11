@@ -42,79 +42,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
      * encryption and decryption use.</p>
      */
     inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline RegisteredCustomerManagedKey& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline RegisteredCustomerManagedKey& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is registered to a Amazon QuickSight account for
-     * encryption and decryption use.</p>
-     */
     inline RegisteredCustomerManagedKey& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether a <code>RegisteredCustomerManagedKey</code> is set as the
      * default key for encryption and decryption use.</p>
      */
     inline bool GetDefaultKey() const{ return m_defaultKey; }
-
-    /**
-     * <p>Indicates whether a <code>RegisteredCustomerManagedKey</code> is set as the
-     * default key for encryption and decryption use.</p>
-     */
     inline bool DefaultKeyHasBeenSet() const { return m_defaultKeyHasBeenSet; }
-
-    /**
-     * <p>Indicates whether a <code>RegisteredCustomerManagedKey</code> is set as the
-     * default key for encryption and decryption use.</p>
-     */
     inline void SetDefaultKey(bool value) { m_defaultKeyHasBeenSet = true; m_defaultKey = value; }
-
-    /**
-     * <p>Indicates whether a <code>RegisteredCustomerManagedKey</code> is set as the
-     * default key for encryption and decryption use.</p>
-     */
     inline RegisteredCustomerManagedKey& WithDefaultKey(bool value) { SetDefaultKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyArn;

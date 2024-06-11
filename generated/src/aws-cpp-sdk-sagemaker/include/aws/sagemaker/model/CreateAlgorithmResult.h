@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateAlgorithmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
      */
     inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline void SetAlgorithmArn(const char* value) { m_algorithmArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline CreateAlgorithmResult& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline CreateAlgorithmResult& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-     */
     inline CreateAlgorithmResult& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAlgorithmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAlgorithmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAlgorithmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_algorithmArn;

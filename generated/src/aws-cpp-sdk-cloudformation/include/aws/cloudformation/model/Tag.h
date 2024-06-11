@@ -40,111 +40,36 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
      * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
      * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
-     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify
      * a maximum of 256 characters for a tag value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
-     * a maximum of 256 characters for a tag value.</p>
-     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

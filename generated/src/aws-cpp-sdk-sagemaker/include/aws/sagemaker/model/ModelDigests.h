@@ -38,54 +38,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides a hash value that uniquely identifies the stored model
      * artifacts.</p>
      */
     inline const Aws::String& GetArtifactDigest() const{ return m_artifactDigest; }
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline bool ArtifactDigestHasBeenSet() const { return m_artifactDigestHasBeenSet; }
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline void SetArtifactDigest(const Aws::String& value) { m_artifactDigestHasBeenSet = true; m_artifactDigest = value; }
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline void SetArtifactDigest(Aws::String&& value) { m_artifactDigestHasBeenSet = true; m_artifactDigest = std::move(value); }
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline void SetArtifactDigest(const char* value) { m_artifactDigestHasBeenSet = true; m_artifactDigest.assign(value); }
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline ModelDigests& WithArtifactDigest(const Aws::String& value) { SetArtifactDigest(value); return *this;}
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline ModelDigests& WithArtifactDigest(Aws::String&& value) { SetArtifactDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides a hash value that uniquely identifies the stored model
-     * artifacts.</p>
-     */
     inline ModelDigests& WithArtifactDigest(const char* value) { SetArtifactDigest(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_artifactDigest;

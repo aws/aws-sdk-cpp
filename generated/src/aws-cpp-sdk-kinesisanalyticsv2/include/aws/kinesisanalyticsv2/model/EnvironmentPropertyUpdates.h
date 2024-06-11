@@ -39,46 +39,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes updates to the execution property groups.</p>
      */
     inline const Aws::Vector<PropertyGroup>& GetPropertyGroups() const{ return m_propertyGroups; }
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline void SetPropertyGroups(const Aws::Vector<PropertyGroup>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline void SetPropertyGroups(Aws::Vector<PropertyGroup>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline EnvironmentPropertyUpdates& WithPropertyGroups(const Aws::Vector<PropertyGroup>& value) { SetPropertyGroups(value); return *this;}
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline EnvironmentPropertyUpdates& WithPropertyGroups(Aws::Vector<PropertyGroup>&& value) { SetPropertyGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline EnvironmentPropertyUpdates& AddPropertyGroups(const PropertyGroup& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Describes updates to the execution property groups.</p>
-     */
     inline EnvironmentPropertyUpdates& AddPropertyGroups(PropertyGroup&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PropertyGroup> m_propertyGroups;

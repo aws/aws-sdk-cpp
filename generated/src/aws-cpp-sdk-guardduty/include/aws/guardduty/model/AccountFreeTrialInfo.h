@@ -40,87 +40,33 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The account identifier of the GuardDuty member account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline AccountFreeTrialInfo& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline AccountFreeTrialInfo& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The account identifier of the GuardDuty member account.</p>
-     */
     inline AccountFreeTrialInfo& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of features enabled for the GuardDuty account.</p>
      */
     inline const Aws::Vector<FreeTrialFeatureConfigurationResult>& GetFeatures() const{ return m_features; }
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline void SetFeatures(const Aws::Vector<FreeTrialFeatureConfigurationResult>& value) { m_featuresHasBeenSet = true; m_features = value; }
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline void SetFeatures(Aws::Vector<FreeTrialFeatureConfigurationResult>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline AccountFreeTrialInfo& WithFeatures(const Aws::Vector<FreeTrialFeatureConfigurationResult>& value) { SetFeatures(value); return *this;}
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline AccountFreeTrialInfo& WithFeatures(Aws::Vector<FreeTrialFeatureConfigurationResult>&& value) { SetFeatures(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline AccountFreeTrialInfo& AddFeatures(const FreeTrialFeatureConfigurationResult& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-
-    /**
-     * <p>A list of features enabled for the GuardDuty account.</p>
-     */
     inline AccountFreeTrialInfo& AddFeatures(FreeTrialFeatureConfigurationResult&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_accountId;

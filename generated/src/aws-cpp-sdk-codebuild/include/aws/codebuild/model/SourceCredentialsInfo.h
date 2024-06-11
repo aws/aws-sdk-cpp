@@ -40,169 +40,60 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the token. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline SourceCredentialsInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline SourceCredentialsInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the token. </p>
-     */
     inline SourceCredentialsInfo& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The type of source provider. The valid options are GITHUB,
      * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
      */
     inline const ServerType& GetServerType() const{ return m_serverType; }
-
-    /**
-     * <p> The type of source provider. The valid options are GITHUB,
-     * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
-     */
     inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-
-    /**
-     * <p> The type of source provider. The valid options are GITHUB,
-     * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
-     */
     inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-
-    /**
-     * <p> The type of source provider. The valid options are GITHUB,
-     * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
-     */
     inline void SetServerType(ServerType&& value) { m_serverTypeHasBeenSet = true; m_serverType = std::move(value); }
-
-    /**
-     * <p> The type of source provider. The valid options are GITHUB,
-     * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
-     */
     inline SourceCredentialsInfo& WithServerType(const ServerType& value) { SetServerType(value); return *this;}
-
-    /**
-     * <p> The type of source provider. The valid options are GITHUB,
-     * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
-     */
     inline SourceCredentialsInfo& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The type of authentication used by the credentials. Valid options are OAUTH,
      * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
-
-    /**
-     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
-     */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-
-    /**
-     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
-     */
     inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-
-    /**
-     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
-     */
     inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-
-    /**
-     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
-     */
     inline SourceCredentialsInfo& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-
-    /**
-     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
-     * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS. </p>
-     */
     inline SourceCredentialsInfo& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
      * and your authType is CODECONNECTIONS.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline SourceCredentialsInfo& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline SourceCredentialsInfo& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED
-     * and your authType is CODECONNECTIONS.</p>
-     */
     inline SourceCredentialsInfo& WithResource(const char* value) { SetResource(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

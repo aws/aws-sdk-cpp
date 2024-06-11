@@ -31,46 +31,19 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "PostToConnection"; }
 
 
+    ///@{
     /**
      * <p>The identifier of the connection that a specific client is using.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline PostToConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline PostToConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the connection that a specific client is using.</p>
-     */
     inline PostToConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
-
+    ///@}
   private:
 
 

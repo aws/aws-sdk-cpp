@@ -39,60 +39,21 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The security groups used with the connector. You can use a maximum of 4
      * security groups with a connector.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline VpcInformation& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline VpcInformation& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline VpcInformation& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline VpcInformation& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The security groups used with the connector. You can use a maximum of 4
-     * security groups with a connector.</p>
-     */
     inline VpcInformation& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;

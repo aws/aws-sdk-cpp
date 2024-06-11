@@ -33,53 +33,27 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API UpdateEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated VPC endpoint.</p>
      */
     inline const EndpointAccess& GetEndpoint() const{ return m_endpoint; }
-
-    /**
-     * <p>The updated VPC endpoint.</p>
-     */
     inline void SetEndpoint(const EndpointAccess& value) { m_endpoint = value; }
-
-    /**
-     * <p>The updated VPC endpoint.</p>
-     */
     inline void SetEndpoint(EndpointAccess&& value) { m_endpoint = std::move(value); }
-
-    /**
-     * <p>The updated VPC endpoint.</p>
-     */
     inline UpdateEndpointAccessResult& WithEndpoint(const EndpointAccess& value) { SetEndpoint(value); return *this;}
-
-    /**
-     * <p>The updated VPC endpoint.</p>
-     */
     inline UpdateEndpointAccessResult& WithEndpoint(EndpointAccess&& value) { SetEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEndpointAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEndpointAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEndpointAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EndpointAccess m_endpoint;

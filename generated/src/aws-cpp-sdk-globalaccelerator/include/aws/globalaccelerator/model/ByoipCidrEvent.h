@@ -41,99 +41,34 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string that contains an <code>Event</code> message describing changes that
      * you make in the status of an IP address range that you bring to Global
      * Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidrEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidrEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes that
-     * you make in the status of an IP address range that you bring to Global
-     * Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidrEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp for when you make a status change for an IP address range that
      * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>A timestamp for when you make a status change for an IP address range that
-     * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>A timestamp for when you make a status change for an IP address range that
-     * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>A timestamp for when you make a status change for an IP address range that
-     * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>A timestamp for when you make a status change for an IP address range that
-     * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidrEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>A timestamp for when you make a status change for an IP address range that
-     * you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-     */
     inline ByoipCidrEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

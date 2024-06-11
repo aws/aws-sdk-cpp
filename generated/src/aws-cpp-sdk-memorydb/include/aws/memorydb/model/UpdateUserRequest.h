@@ -35,124 +35,46 @@ namespace Model
     AWS_MEMORYDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the user</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline UpdateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user</p>
-     */
     inline UpdateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Denotes the user's authentication properties, such as whether it requires a
      * password to authenticate.</p>
      */
     inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
-
-    /**
-     * <p>Denotes the user's authentication properties, such as whether it requires a
-     * password to authenticate.</p>
-     */
     inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
-
-    /**
-     * <p>Denotes the user's authentication properties, such as whether it requires a
-     * password to authenticate.</p>
-     */
     inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
-
-    /**
-     * <p>Denotes the user's authentication properties, such as whether it requires a
-     * password to authenticate.</p>
-     */
     inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
-
-    /**
-     * <p>Denotes the user's authentication properties, such as whether it requires a
-     * password to authenticate.</p>
-     */
     inline UpdateUserRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
-
-    /**
-     * <p>Denotes the user's authentication properties, such as whether it requires a
-     * password to authenticate.</p>
-     */
     inline UpdateUserRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline bool AccessStringHasBeenSet() const { return m_accessStringHasBeenSet; }
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline void SetAccessString(const Aws::String& value) { m_accessStringHasBeenSet = true; m_accessString = value; }
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline void SetAccessString(Aws::String&& value) { m_accessStringHasBeenSet = true; m_accessString = std::move(value); }
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline void SetAccessString(const char* value) { m_accessStringHasBeenSet = true; m_accessString.assign(value); }
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline UpdateUserRequest& WithAccessString(const Aws::String& value) { SetAccessString(value); return *this;}
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline UpdateUserRequest& WithAccessString(Aws::String&& value) { SetAccessString(std::move(value)); return *this;}
-
-    /**
-     * <p>Access permissions string used for this user.</p>
-     */
     inline UpdateUserRequest& WithAccessString(const char* value) { SetAccessString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userName;

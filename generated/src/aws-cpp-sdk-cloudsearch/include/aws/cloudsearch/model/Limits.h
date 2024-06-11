@@ -32,31 +32,21 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline int GetMaximumReplicationCount() const{ return m_maximumReplicationCount; }
-
-    
     inline bool MaximumReplicationCountHasBeenSet() const { return m_maximumReplicationCountHasBeenSet; }
-
-    
     inline void SetMaximumReplicationCount(int value) { m_maximumReplicationCountHasBeenSet = true; m_maximumReplicationCount = value; }
-
-    
     inline Limits& WithMaximumReplicationCount(int value) { SetMaximumReplicationCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMaximumPartitionCount() const{ return m_maximumPartitionCount; }
-
-    
     inline bool MaximumPartitionCountHasBeenSet() const { return m_maximumPartitionCountHasBeenSet; }
-
-    
     inline void SetMaximumPartitionCount(int value) { m_maximumPartitionCountHasBeenSet = true; m_maximumPartitionCount = value; }
-
-    
     inline Limits& WithMaximumPartitionCount(int value) { SetMaximumPartitionCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumReplicationCount;

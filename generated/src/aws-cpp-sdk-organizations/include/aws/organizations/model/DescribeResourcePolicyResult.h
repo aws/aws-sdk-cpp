@@ -33,53 +33,27 @@ namespace Model
     AWS_ORGANIZATIONS_API DescribeResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the resource policy.</p>
      */
     inline const ResourcePolicy& GetResourcePolicy() const{ return m_resourcePolicy; }
-
-    /**
-     * <p>A structure that contains details about the resource policy.</p>
-     */
     inline void SetResourcePolicy(const ResourcePolicy& value) { m_resourcePolicy = value; }
-
-    /**
-     * <p>A structure that contains details about the resource policy.</p>
-     */
     inline void SetResourcePolicy(ResourcePolicy&& value) { m_resourcePolicy = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the resource policy.</p>
-     */
     inline DescribeResourcePolicyResult& WithResourcePolicy(const ResourcePolicy& value) { SetResourcePolicy(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the resource policy.</p>
-     */
     inline DescribeResourcePolicyResult& WithResourcePolicy(ResourcePolicy&& value) { SetResourcePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourcePolicy m_resourcePolicy;

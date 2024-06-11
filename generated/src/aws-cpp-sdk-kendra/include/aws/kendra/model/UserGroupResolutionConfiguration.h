@@ -55,6 +55,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identity store provider (mode) you want to use to get users and groups.
      * IAM Identity Center is currently the only available mode. Your users and groups
@@ -62,47 +63,12 @@ namespace Model
      * mode.</p>
      */
     inline const UserGroupResolutionMode& GetUserGroupResolutionMode() const{ return m_userGroupResolutionMode; }
-
-    /**
-     * <p>The identity store provider (mode) you want to use to get users and groups.
-     * IAM Identity Center is currently the only available mode. Your users and groups
-     * must exist in an IAM Identity Center identity source in order to use this
-     * mode.</p>
-     */
     inline bool UserGroupResolutionModeHasBeenSet() const { return m_userGroupResolutionModeHasBeenSet; }
-
-    /**
-     * <p>The identity store provider (mode) you want to use to get users and groups.
-     * IAM Identity Center is currently the only available mode. Your users and groups
-     * must exist in an IAM Identity Center identity source in order to use this
-     * mode.</p>
-     */
     inline void SetUserGroupResolutionMode(const UserGroupResolutionMode& value) { m_userGroupResolutionModeHasBeenSet = true; m_userGroupResolutionMode = value; }
-
-    /**
-     * <p>The identity store provider (mode) you want to use to get users and groups.
-     * IAM Identity Center is currently the only available mode. Your users and groups
-     * must exist in an IAM Identity Center identity source in order to use this
-     * mode.</p>
-     */
     inline void SetUserGroupResolutionMode(UserGroupResolutionMode&& value) { m_userGroupResolutionModeHasBeenSet = true; m_userGroupResolutionMode = std::move(value); }
-
-    /**
-     * <p>The identity store provider (mode) you want to use to get users and groups.
-     * IAM Identity Center is currently the only available mode. Your users and groups
-     * must exist in an IAM Identity Center identity source in order to use this
-     * mode.</p>
-     */
     inline UserGroupResolutionConfiguration& WithUserGroupResolutionMode(const UserGroupResolutionMode& value) { SetUserGroupResolutionMode(value); return *this;}
-
-    /**
-     * <p>The identity store provider (mode) you want to use to get users and groups.
-     * IAM Identity Center is currently the only available mode. Your users and groups
-     * must exist in an IAM Identity Center identity source in order to use this
-     * mode.</p>
-     */
     inline UserGroupResolutionConfiguration& WithUserGroupResolutionMode(UserGroupResolutionMode&& value) { SetUserGroupResolutionMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UserGroupResolutionMode m_userGroupResolutionMode;

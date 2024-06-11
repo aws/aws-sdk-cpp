@@ -35,61 +35,23 @@ namespace Model
     AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A JSON-formatted list of service codes available for Amazon Web Services
      * services.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceCodeList() const{ return m_serviceCodeList; }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline bool ServiceCodeListHasBeenSet() const { return m_serviceCodeListHasBeenSet; }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline void SetServiceCodeList(const Aws::Vector<Aws::String>& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = value; }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline void SetServiceCodeList(Aws::Vector<Aws::String>&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = std::move(value); }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline DescribeServicesRequest& WithServiceCodeList(const Aws::Vector<Aws::String>& value) { SetServiceCodeList(value); return *this;}
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline DescribeServicesRequest& WithServiceCodeList(Aws::Vector<Aws::String>&& value) { SetServiceCodeList(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline DescribeServicesRequest& AddServiceCodeList(const Aws::String& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline DescribeServicesRequest& AddServiceCodeList(Aws::String&& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A JSON-formatted list of service codes available for Amazon Web Services
-     * services.</p>
-     */
     inline DescribeServicesRequest& AddServiceCodeList(const char* value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language in which Amazon Web Services Support handles the case. Amazon
      * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
@@ -97,63 +59,14 @@ namespace Model
      * <code>language</code> parameter if you want support in that language.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline DescribeServicesRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline DescribeServicesRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-
-    /**
-     * <p>The language in which Amazon Web Services Support handles the case. Amazon
-     * Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-     * ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the
-     * <code>language</code> parameter if you want support in that language.</p>
-     */
     inline DescribeServicesRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_serviceCodeList;

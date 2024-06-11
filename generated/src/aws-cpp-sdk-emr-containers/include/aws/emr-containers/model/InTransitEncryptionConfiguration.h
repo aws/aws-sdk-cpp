@@ -38,42 +38,18 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>TLS certificate-related configuration input for the security
      * configuration.</p>
      */
     inline const TLSCertificateConfiguration& GetTlsCertificateConfiguration() const{ return m_tlsCertificateConfiguration; }
-
-    /**
-     * <p>TLS certificate-related configuration input for the security
-     * configuration.</p>
-     */
     inline bool TlsCertificateConfigurationHasBeenSet() const { return m_tlsCertificateConfigurationHasBeenSet; }
-
-    /**
-     * <p>TLS certificate-related configuration input for the security
-     * configuration.</p>
-     */
     inline void SetTlsCertificateConfiguration(const TLSCertificateConfiguration& value) { m_tlsCertificateConfigurationHasBeenSet = true; m_tlsCertificateConfiguration = value; }
-
-    /**
-     * <p>TLS certificate-related configuration input for the security
-     * configuration.</p>
-     */
     inline void SetTlsCertificateConfiguration(TLSCertificateConfiguration&& value) { m_tlsCertificateConfigurationHasBeenSet = true; m_tlsCertificateConfiguration = std::move(value); }
-
-    /**
-     * <p>TLS certificate-related configuration input for the security
-     * configuration.</p>
-     */
     inline InTransitEncryptionConfiguration& WithTlsCertificateConfiguration(const TLSCertificateConfiguration& value) { SetTlsCertificateConfiguration(value); return *this;}
-
-    /**
-     * <p>TLS certificate-related configuration input for the security
-     * configuration.</p>
-     */
     inline InTransitEncryptionConfiguration& WithTlsCertificateConfiguration(TLSCertificateConfiguration&& value) { SetTlsCertificateConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TLSCertificateConfiguration m_tlsCertificateConfiguration;

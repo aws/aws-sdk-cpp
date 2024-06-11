@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUE_API GetPartitionIndexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of index descriptors.</p>
      */
     inline const Aws::Vector<PartitionIndexDescriptor>& GetPartitionIndexDescriptorList() const{ return m_partitionIndexDescriptorList; }
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline void SetPartitionIndexDescriptorList(const Aws::Vector<PartitionIndexDescriptor>& value) { m_partitionIndexDescriptorList = value; }
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline void SetPartitionIndexDescriptorList(Aws::Vector<PartitionIndexDescriptor>&& value) { m_partitionIndexDescriptorList = std::move(value); }
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline GetPartitionIndexesResult& WithPartitionIndexDescriptorList(const Aws::Vector<PartitionIndexDescriptor>& value) { SetPartitionIndexDescriptorList(value); return *this;}
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline GetPartitionIndexesResult& WithPartitionIndexDescriptorList(Aws::Vector<PartitionIndexDescriptor>&& value) { SetPartitionIndexDescriptorList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline GetPartitionIndexesResult& AddPartitionIndexDescriptorList(const PartitionIndexDescriptor& value) { m_partitionIndexDescriptorList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of index descriptors.</p>
-     */
     inline GetPartitionIndexesResult& AddPartitionIndexDescriptorList(PartitionIndexDescriptor&& value) { m_partitionIndexDescriptorList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, present if the current list segment is not the
      * last.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline GetPartitionIndexesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline GetPartitionIndexesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, present if the current list segment is not the
-     * last.</p>
-     */
     inline GetPartitionIndexesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPartitionIndexesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPartitionIndexesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPartitionIndexesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PartitionIndexDescriptor> m_partitionIndexDescriptorList;

@@ -32,113 +32,44 @@ namespace Model
     AWS_IMAGEBUILDER_API CancelImageCreationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CancelImageCreationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CancelImageCreationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline CancelImageCreationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client token that uniquely identifies the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CancelImageCreationResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CancelImageCreationResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The client token that uniquely identifies the request.</p>
-     */
     inline CancelImageCreationResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArn = value; }
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline CancelImageCreationResult& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline CancelImageCreationResult& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the image whose creation this request canceled.</p>
-     */
     inline CancelImageCreationResult& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestId;

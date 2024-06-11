@@ -36,54 +36,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier for the source DB cluster, which can't be changed and which is
      * unique to an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline DeleteDBClusterAutomatedBackupRequest& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline DeleteDBClusterAutomatedBackupRequest& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the source DB cluster, which can't be changed and which is
-     * unique to an Amazon Web Services Region.</p>
-     */
     inline DeleteDBClusterAutomatedBackupRequest& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dbClusterResourceId;

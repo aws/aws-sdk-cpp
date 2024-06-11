@@ -39,149 +39,57 @@ namespace Model
     AWS_STORAGEGATEWAY_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline ListTagsForResourceResult& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline ListTagsForResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
-     * tags.</p>
-     */
     inline ListTagsForResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An opaque string that indicates the position at which to stop returning the
      * list of tags.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline ListTagsForResourceResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline ListTagsForResourceResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to stop returning the
-     * list of tags.</p>
-     */
     inline ListTagsForResourceResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array that contains the tags for the specified resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>An array that contains the tags for the specified resource.</p>
-     */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

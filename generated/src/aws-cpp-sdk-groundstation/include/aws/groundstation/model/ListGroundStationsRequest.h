@@ -41,116 +41,44 @@ namespace Model
     AWS_GROUNDSTATION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Maximum number of ground stations returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of ground stations returned.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of ground stations returned.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of ground stations returned.</p>
-     */
     inline ListGroundStationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token that can be supplied in the next call to get the next page of
      * ground stations.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Satellite ID to retrieve on-boarded ground stations.</p>
      */
     inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline void SetSatelliteId(const Aws::String& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = value; }
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline void SetSatelliteId(Aws::String&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::move(value); }
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline void SetSatelliteId(const char* value) { m_satelliteIdHasBeenSet = true; m_satelliteId.assign(value); }
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
-
-    /**
-     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
-     */
     inline ListGroundStationsRequest& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

@@ -39,96 +39,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline ConfirmSubscriptionRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline ConfirmSubscriptionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
-     */
     inline ConfirmSubscriptionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
      * action.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline ConfirmSubscriptionRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline ConfirmSubscriptionRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
-     * action.</p>
-     */
     inline ConfirmSubscriptionRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
      * this parameter is <code>true</code> and the request has an Amazon Web Services
@@ -137,70 +77,14 @@ namespace Model
      * authentication. </p>
      */
     inline const Aws::String& GetAuthenticateOnUnsubscribe() const{ return m_authenticateOnUnsubscribe; }
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline bool AuthenticateOnUnsubscribeHasBeenSet() const { return m_authenticateOnUnsubscribeHasBeenSet; }
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline void SetAuthenticateOnUnsubscribe(const Aws::String& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = value; }
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline void SetAuthenticateOnUnsubscribe(Aws::String&& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = std::move(value); }
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline void SetAuthenticateOnUnsubscribe(const char* value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe.assign(value); }
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const Aws::String& value) { SetAuthenticateOnUnsubscribe(value); return *this;}
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(Aws::String&& value) { SetAuthenticateOnUnsubscribe(std::move(value)); return *this;}
-
-    /**
-     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an Amazon Web Services
-     * signature, then only the topic owner and the subscription owner can unsubscribe
-     * the endpoint. The unsubscribe action requires Amazon Web Services
-     * authentication. </p>
-     */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const char* value) { SetAuthenticateOnUnsubscribe(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

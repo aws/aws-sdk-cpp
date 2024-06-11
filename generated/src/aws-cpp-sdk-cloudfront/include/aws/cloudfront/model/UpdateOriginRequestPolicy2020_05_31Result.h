@@ -33,89 +33,40 @@ namespace Model
     AWS_CLOUDFRONT_API UpdateOriginRequestPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>An origin request policy.</p>
      */
     inline const OriginRequestPolicy& GetOriginRequestPolicy() const{ return m_originRequestPolicy; }
-
-    /**
-     * <p>An origin request policy.</p>
-     */
     inline void SetOriginRequestPolicy(const OriginRequestPolicy& value) { m_originRequestPolicy = value; }
-
-    /**
-     * <p>An origin request policy.</p>
-     */
     inline void SetOriginRequestPolicy(OriginRequestPolicy&& value) { m_originRequestPolicy = std::move(value); }
-
-    /**
-     * <p>An origin request policy.</p>
-     */
     inline UpdateOriginRequestPolicy2020_05_31Result& WithOriginRequestPolicy(const OriginRequestPolicy& value) { SetOriginRequestPolicy(value); return *this;}
-
-    /**
-     * <p>An origin request policy.</p>
-     */
     inline UpdateOriginRequestPolicy2020_05_31Result& WithOriginRequestPolicy(OriginRequestPolicy&& value) { SetOriginRequestPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the origin request policy.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline UpdateOriginRequestPolicy2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline UpdateOriginRequestPolicy2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the origin request policy.</p>
-     */
     inline UpdateOriginRequestPolicy2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateOriginRequestPolicy2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateOriginRequestPolicy2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateOriginRequestPolicy2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OriginRequestPolicy m_originRequestPolicy;

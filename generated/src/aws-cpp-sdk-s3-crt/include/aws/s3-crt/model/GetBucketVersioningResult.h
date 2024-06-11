@@ -34,32 +34,18 @@ namespace Model
     AWS_S3CRT_API GetBucketVersioningResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The versioning state of the bucket.</p>
      */
     inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The versioning state of the bucket.</p>
-     */
     inline void SetStatus(const BucketVersioningStatus& value) { m_status = value; }
-
-    /**
-     * <p>The versioning state of the bucket.</p>
-     */
     inline void SetStatus(BucketVersioningStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The versioning state of the bucket.</p>
-     */
     inline GetBucketVersioningResult& WithStatus(const BucketVersioningStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The versioning state of the bucket.</p>
-     */
     inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether MFA delete is enabled in the bucket versioning
      * configuration. This element is only returned if the bucket has been configured
@@ -67,61 +53,22 @@ namespace Model
      * returned.</p>
      */
     inline const MFADeleteStatus& GetMFADelete() const{ return m_mFADelete; }
-
-    /**
-     * <p>Specifies whether MFA delete is enabled in the bucket versioning
-     * configuration. This element is only returned if the bucket has been configured
-     * with MFA delete. If the bucket has never been so configured, this element is not
-     * returned.</p>
-     */
     inline void SetMFADelete(const MFADeleteStatus& value) { m_mFADelete = value; }
-
-    /**
-     * <p>Specifies whether MFA delete is enabled in the bucket versioning
-     * configuration. This element is only returned if the bucket has been configured
-     * with MFA delete. If the bucket has never been so configured, this element is not
-     * returned.</p>
-     */
     inline void SetMFADelete(MFADeleteStatus&& value) { m_mFADelete = std::move(value); }
-
-    /**
-     * <p>Specifies whether MFA delete is enabled in the bucket versioning
-     * configuration. This element is only returned if the bucket has been configured
-     * with MFA delete. If the bucket has never been so configured, this element is not
-     * returned.</p>
-     */
     inline GetBucketVersioningResult& WithMFADelete(const MFADeleteStatus& value) { SetMFADelete(value); return *this;}
-
-    /**
-     * <p>Specifies whether MFA delete is enabled in the bucket versioning
-     * configuration. This element is only returned if the bucket has been configured
-     * with MFA delete. If the bucket has never been so configured, this element is not
-     * returned.</p>
-     */
     inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBucketVersioningResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBucketVersioningResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBucketVersioningResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BucketVersioningStatus m_status;

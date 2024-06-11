@@ -38,46 +38,19 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline NotificationTargetItem& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline NotificationTargetItem& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
-     */
     inline NotificationTargetItem& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snsTopicArn;

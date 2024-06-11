@@ -36,89 +36,45 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
      */
     inline double GetNorth() const{ return m_north; }
-
-    /**
-     * <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
-     */
     inline bool NorthHasBeenSet() const { return m_northHasBeenSet; }
-
-    /**
-     * <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
-     */
     inline void SetNorth(double value) { m_northHasBeenSet = true; m_north = value; }
-
-    /**
-     * <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
-     */
     inline GeospatialCoordinateBounds& WithNorth(double value) { SetNorth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
      */
     inline double GetSouth() const{ return m_south; }
-
-    /**
-     * <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
-     */
     inline bool SouthHasBeenSet() const { return m_southHasBeenSet; }
-
-    /**
-     * <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
-     */
     inline void SetSouth(double value) { m_southHasBeenSet = true; m_south = value; }
-
-    /**
-     * <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
-     */
     inline GeospatialCoordinateBounds& WithSouth(double value) { SetSouth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
      */
     inline double GetWest() const{ return m_west; }
-
-    /**
-     * <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
-     */
     inline bool WestHasBeenSet() const { return m_westHasBeenSet; }
-
-    /**
-     * <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
-     */
     inline void SetWest(double value) { m_westHasBeenSet = true; m_west = value; }
-
-    /**
-     * <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
-     */
     inline GeospatialCoordinateBounds& WithWest(double value) { SetWest(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
      */
     inline double GetEast() const{ return m_east; }
-
-    /**
-     * <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
-     */
     inline bool EastHasBeenSet() const { return m_eastHasBeenSet; }
-
-    /**
-     * <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
-     */
     inline void SetEast(double value) { m_eastHasBeenSet = true; m_east = value; }
-
-    /**
-     * <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
-     */
     inline GeospatialCoordinateBounds& WithEast(double value) { SetEast(value); return *this;}
-
+    ///@}
   private:
 
     double m_north;

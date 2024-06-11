@@ -72,89 +72,42 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This optional parameter enables auto scaling for the table if set to
      * <code>false</code>.</p>
      */
     inline bool GetAutoScalingDisabled() const{ return m_autoScalingDisabled; }
-
-    /**
-     * <p>This optional parameter enables auto scaling for the table if set to
-     * <code>false</code>.</p>
-     */
     inline bool AutoScalingDisabledHasBeenSet() const { return m_autoScalingDisabledHasBeenSet; }
-
-    /**
-     * <p>This optional parameter enables auto scaling for the table if set to
-     * <code>false</code>.</p>
-     */
     inline void SetAutoScalingDisabled(bool value) { m_autoScalingDisabledHasBeenSet = true; m_autoScalingDisabled = value; }
-
-    /**
-     * <p>This optional parameter enables auto scaling for the table if set to
-     * <code>false</code>.</p>
-     */
     inline AutoScalingSettings& WithAutoScalingDisabled(bool value) { SetAutoScalingDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum level of throughput the table should always be ready to support.
      * The value must be between 1 and the max throughput per second quota for your
      * account (40,000 by default).</p>
      */
     inline long long GetMinimumUnits() const{ return m_minimumUnits; }
-
-    /**
-     * <p>The minimum level of throughput the table should always be ready to support.
-     * The value must be between 1 and the max throughput per second quota for your
-     * account (40,000 by default).</p>
-     */
     inline bool MinimumUnitsHasBeenSet() const { return m_minimumUnitsHasBeenSet; }
-
-    /**
-     * <p>The minimum level of throughput the table should always be ready to support.
-     * The value must be between 1 and the max throughput per second quota for your
-     * account (40,000 by default).</p>
-     */
     inline void SetMinimumUnits(long long value) { m_minimumUnitsHasBeenSet = true; m_minimumUnits = value; }
-
-    /**
-     * <p>The minimum level of throughput the table should always be ready to support.
-     * The value must be between 1 and the max throughput per second quota for your
-     * account (40,000 by default).</p>
-     */
     inline AutoScalingSettings& WithMinimumUnits(long long value) { SetMinimumUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Manage costs by specifying the maximum amount of throughput to provision. The
      * value must be between 1 and the max throughput per second quota for your account
      * (40,000 by default).</p>
      */
     inline long long GetMaximumUnits() const{ return m_maximumUnits; }
-
-    /**
-     * <p>Manage costs by specifying the maximum amount of throughput to provision. The
-     * value must be between 1 and the max throughput per second quota for your account
-     * (40,000 by default).</p>
-     */
     inline bool MaximumUnitsHasBeenSet() const { return m_maximumUnitsHasBeenSet; }
-
-    /**
-     * <p>Manage costs by specifying the maximum amount of throughput to provision. The
-     * value must be between 1 and the max throughput per second quota for your account
-     * (40,000 by default).</p>
-     */
     inline void SetMaximumUnits(long long value) { m_maximumUnitsHasBeenSet = true; m_maximumUnits = value; }
-
-    /**
-     * <p>Manage costs by specifying the maximum amount of throughput to provision. The
-     * value must be between 1 and the max throughput per second quota for your account
-     * (40,000 by default).</p>
-     */
     inline AutoScalingSettings& WithMaximumUnits(long long value) { SetMaximumUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
      * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
@@ -162,47 +115,12 @@ namespace Model
      * you specify. You define the target value as a percentage between 20 and 90.</p>
      */
     inline const AutoScalingPolicy& GetScalingPolicy() const{ return m_scalingPolicy; }
-
-    /**
-     * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
-     * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
-     * ratio of consumed to provisioned capacity stays at or near the target value that
-     * you specify. You define the target value as a percentage between 20 and 90.</p>
-     */
     inline bool ScalingPolicyHasBeenSet() const { return m_scalingPolicyHasBeenSet; }
-
-    /**
-     * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
-     * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
-     * ratio of consumed to provisioned capacity stays at or near the target value that
-     * you specify. You define the target value as a percentage between 20 and 90.</p>
-     */
     inline void SetScalingPolicy(const AutoScalingPolicy& value) { m_scalingPolicyHasBeenSet = true; m_scalingPolicy = value; }
-
-    /**
-     * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
-     * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
-     * ratio of consumed to provisioned capacity stays at or near the target value that
-     * you specify. You define the target value as a percentage between 20 and 90.</p>
-     */
     inline void SetScalingPolicy(AutoScalingPolicy&& value) { m_scalingPolicyHasBeenSet = true; m_scalingPolicy = std::move(value); }
-
-    /**
-     * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
-     * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
-     * ratio of consumed to provisioned capacity stays at or near the target value that
-     * you specify. You define the target value as a percentage between 20 and 90.</p>
-     */
     inline AutoScalingSettings& WithScalingPolicy(const AutoScalingPolicy& value) { SetScalingPolicy(value); return *this;}
-
-    /**
-     * <p>Amazon Keyspaces supports the <code>target tracking</code> auto scaling
-     * policy. With this policy, Amazon Keyspaces auto scaling ensures that the table's
-     * ratio of consumed to provisioned capacity stays at or near the target value that
-     * you specify. You define the target value as a percentage between 20 and 90.</p>
-     */
     inline AutoScalingSettings& WithScalingPolicy(AutoScalingPolicy&& value) { SetScalingPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_autoScalingDisabled;

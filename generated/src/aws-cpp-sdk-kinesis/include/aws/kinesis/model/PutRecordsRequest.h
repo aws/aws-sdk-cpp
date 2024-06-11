@@ -43,128 +43,47 @@ namespace Model
      */
     AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The records associated with the request.</p>
      */
     inline const Aws::Vector<PutRecordsRequestEntry>& GetRecords() const{ return m_records; }
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline void SetRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { m_recordsHasBeenSet = true; m_records = value; }
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline void SetRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline PutRecordsRequest& WithRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { SetRecords(value); return *this;}
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline PutRecordsRequest& WithRecords(Aws::Vector<PutRecordsRequestEntry>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline PutRecordsRequest& AddRecords(const PutRecordsRequestEntry& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
-
-    /**
-     * <p>The records associated with the request.</p>
-     */
     inline PutRecordsRequest& AddRecords(PutRecordsRequestEntry&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stream name associated with the request.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline PutRecordsRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline PutRecordsRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The stream name associated with the request.</p>
-     */
     inline PutRecordsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline PutRecordsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline PutRecordsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline PutRecordsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PutRecordsRequestEntry> m_records;

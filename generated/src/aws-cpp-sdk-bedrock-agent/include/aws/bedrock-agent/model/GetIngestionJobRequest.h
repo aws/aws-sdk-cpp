@@ -32,136 +32,48 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the data source in the ingestion job.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the data source in the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the ingestion job.</p>
      */
     inline const Aws::String& GetIngestionJobId() const{ return m_ingestionJobId; }
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline void SetIngestionJobId(const Aws::String& value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId = value; }
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline void SetIngestionJobId(Aws::String&& value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline void SetIngestionJobId(const char* value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithIngestionJobId(const Aws::String& value) { SetIngestionJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithIngestionJobId(Aws::String&& value) { SetIngestionJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the ingestion job.</p>
-     */
     inline GetIngestionJobRequest& WithIngestionJobId(const char* value) { SetIngestionJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the knowledge base for which the ingestion job
      * applies.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline GetIngestionJobRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline GetIngestionJobRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the knowledge base for which the ingestion job
-     * applies.</p>
-     */
     inline GetIngestionJobRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSourceId;

@@ -35,34 +35,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Selects a specific program from within a multi-program transport stream. If the
      * program doesn't exist, the first program within the transport stream will be
      * selected by default.
      */
     inline int GetProgramId() const{ return m_programId; }
-
-    /**
-     * Selects a specific program from within a multi-program transport stream. If the
-     * program doesn't exist, the first program within the transport stream will be
-     * selected by default.
-     */
     inline bool ProgramIdHasBeenSet() const { return m_programIdHasBeenSet; }
-
-    /**
-     * Selects a specific program from within a multi-program transport stream. If the
-     * program doesn't exist, the first program within the transport stream will be
-     * selected by default.
-     */
     inline void SetProgramId(int value) { m_programIdHasBeenSet = true; m_programId = value; }
-
-    /**
-     * Selects a specific program from within a multi-program transport stream. If the
-     * program doesn't exist, the first program within the transport stream will be
-     * selected by default.
-     */
     inline VideoSelectorProgramId& WithProgramId(int value) { SetProgramId(value); return *this;}
-
+    ///@}
   private:
 
     int m_programId;

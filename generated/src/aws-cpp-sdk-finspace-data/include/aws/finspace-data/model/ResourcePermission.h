@@ -49,46 +49,19 @@ namespace Model
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Permission for a resource.</p>
      */
     inline const Aws::String& GetPermission() const{ return m_permission; }
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline void SetPermission(const Aws::String& value) { m_permissionHasBeenSet = true; m_permission = value; }
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline void SetPermission(Aws::String&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline void SetPermission(const char* value) { m_permissionHasBeenSet = true; m_permission.assign(value); }
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline ResourcePermission& WithPermission(const Aws::String& value) { SetPermission(value); return *this;}
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline ResourcePermission& WithPermission(Aws::String&& value) { SetPermission(std::move(value)); return *this;}
-
-    /**
-     * <p>Permission for a resource.</p>
-     */
     inline ResourcePermission& WithPermission(const char* value) { SetPermission(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_permission;

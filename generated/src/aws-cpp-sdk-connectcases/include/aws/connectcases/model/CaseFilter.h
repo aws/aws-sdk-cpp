@@ -39,137 +39,55 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides "and all" filtering.</p>
      */
     inline const Aws::Vector<CaseFilter>& GetAndAll() const{ return m_andAll; }
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline bool AndAllHasBeenSet() const { return m_andAllHasBeenSet; }
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline void SetAndAll(const Aws::Vector<CaseFilter>& value) { m_andAllHasBeenSet = true; m_andAll = value; }
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline void SetAndAll(Aws::Vector<CaseFilter>&& value) { m_andAllHasBeenSet = true; m_andAll = std::move(value); }
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline CaseFilter& WithAndAll(const Aws::Vector<CaseFilter>& value) { SetAndAll(value); return *this;}
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline CaseFilter& WithAndAll(Aws::Vector<CaseFilter>&& value) { SetAndAll(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline CaseFilter& AddAndAll(const CaseFilter& value) { m_andAllHasBeenSet = true; m_andAll.push_back(value); return *this; }
-
-    /**
-     * <p>Provides "and all" filtering.</p>
-     */
     inline CaseFilter& AddAndAll(CaseFilter&& value) { m_andAllHasBeenSet = true; m_andAll.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of fields to filter on.</p>
      */
     inline const FieldFilter& GetField() const{ return m_field; }
-
-    /**
-     * <p>A list of fields to filter on.</p>
-     */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    /**
-     * <p>A list of fields to filter on.</p>
-     */
     inline void SetField(const FieldFilter& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    /**
-     * <p>A list of fields to filter on.</p>
-     */
     inline void SetField(FieldFilter&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    /**
-     * <p>A list of fields to filter on.</p>
-     */
     inline CaseFilter& WithField(const FieldFilter& value) { SetField(value); return *this;}
-
-    /**
-     * <p>A list of fields to filter on.</p>
-     */
     inline CaseFilter& WithField(FieldFilter&& value) { SetField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     AWS_CONNECTCASES_API const CaseFilter& GetNot() const;
-
-    
     AWS_CONNECTCASES_API bool NotHasBeenSet() const;
-
-    
     AWS_CONNECTCASES_API void SetNot(const CaseFilter& value);
-
-    
     AWS_CONNECTCASES_API void SetNot(CaseFilter&& value);
-
-    
     AWS_CONNECTCASES_API CaseFilter& WithNot(const CaseFilter& value);
-
-    
     AWS_CONNECTCASES_API CaseFilter& WithNot(CaseFilter&& value);
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides "or all" filtering.</p>
      */
     inline const Aws::Vector<CaseFilter>& GetOrAll() const{ return m_orAll; }
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline void SetOrAll(const Aws::Vector<CaseFilter>& value) { m_orAllHasBeenSet = true; m_orAll = value; }
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline void SetOrAll(Aws::Vector<CaseFilter>&& value) { m_orAllHasBeenSet = true; m_orAll = std::move(value); }
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline CaseFilter& WithOrAll(const Aws::Vector<CaseFilter>& value) { SetOrAll(value); return *this;}
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline CaseFilter& WithOrAll(Aws::Vector<CaseFilter>&& value) { SetOrAll(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline CaseFilter& AddOrAll(const CaseFilter& value) { m_orAllHasBeenSet = true; m_orAll.push_back(value); return *this; }
-
-    /**
-     * <p>Provides "or all" filtering.</p>
-     */
     inline CaseFilter& AddOrAll(CaseFilter&& value) { m_orAllHasBeenSet = true; m_orAll.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CaseFilter> m_andAll;

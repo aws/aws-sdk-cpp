@@ -42,87 +42,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the load balancer.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the instances.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the instances.</p>
-     */
     inline RegisterInstancesWithLoadBalancerRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerName;

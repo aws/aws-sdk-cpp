@@ -33,58 +33,28 @@ namespace Model
     AWS_DEADLINE_API AssumeQueueRoleForWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services credentials for the role that the worker is
      * assuming.</p>
      */
     inline const AwsCredentials& GetCredentials() const{ return m_credentials; }
-
-    /**
-     * <p>The Amazon Web Services credentials for the role that the worker is
-     * assuming.</p>
-     */
     inline void SetCredentials(const AwsCredentials& value) { m_credentials = value; }
-
-    /**
-     * <p>The Amazon Web Services credentials for the role that the worker is
-     * assuming.</p>
-     */
     inline void SetCredentials(AwsCredentials&& value) { m_credentials = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services credentials for the role that the worker is
-     * assuming.</p>
-     */
     inline AssumeQueueRoleForWorkerResult& WithCredentials(const AwsCredentials& value) { SetCredentials(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services credentials for the role that the worker is
-     * assuming.</p>
-     */
     inline AssumeQueueRoleForWorkerResult& WithCredentials(AwsCredentials&& value) { SetCredentials(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssumeQueueRoleForWorkerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssumeQueueRoleForWorkerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssumeQueueRoleForWorkerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AwsCredentials m_credentials;

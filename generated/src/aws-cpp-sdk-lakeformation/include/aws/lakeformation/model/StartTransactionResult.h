@@ -32,63 +32,29 @@ namespace Model
     AWS_LAKEFORMATION_API StartTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An opaque identifier for the transaction.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionId = value; }
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionId = std::move(value); }
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline void SetTransactionId(const char* value) { m_transactionId.assign(value); }
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque identifier for the transaction.</p>
-     */
     inline StartTransactionResult& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transactionId;

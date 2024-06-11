@@ -32,43 +32,25 @@ namespace Model
     AWS_IOT_API UpdateDynamicThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The dynamic thing group version.</p>
      */
     inline long long GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The dynamic thing group version.</p>
-     */
     inline void SetVersion(long long value) { m_version = value; }
-
-    /**
-     * <p>The dynamic thing group version.</p>
-     */
     inline UpdateDynamicThingGroupResult& WithVersion(long long value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDynamicThingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDynamicThingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDynamicThingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_version;

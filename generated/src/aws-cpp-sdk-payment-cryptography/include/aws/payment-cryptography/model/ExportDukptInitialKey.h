@@ -38,62 +38,21 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
      * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
      * for a TDES_2KEY key or 24 for an AES key.</p>
      */
     inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline ExportDukptInitialKey& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline ExportDukptInitialKey& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-
-    /**
-     * <p>The KSN for IPEK generation using DUKPT. </p> <p>KSN must be padded before
-     * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
-     * for a TDES_2KEY key or 24 for an AES key.</p>
-     */
     inline ExportDukptInitialKey& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keySerialNumber;

@@ -39,118 +39,45 @@ namespace Model
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latest time that this application was launched successfully.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestLaunchTime() const{ return m_latestLaunchTime; }
-
-    /**
-     * <p>The latest time that this application was launched successfully.</p>
-     */
     inline bool LatestLaunchTimeHasBeenSet() const { return m_latestLaunchTimeHasBeenSet; }
-
-    /**
-     * <p>The latest time that this application was launched successfully.</p>
-     */
     inline void SetLatestLaunchTime(const Aws::Utils::DateTime& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = value; }
-
-    /**
-     * <p>The latest time that this application was launched successfully.</p>
-     */
     inline void SetLatestLaunchTime(Aws::Utils::DateTime&& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = std::move(value); }
-
-    /**
-     * <p>The latest time that this application was launched successfully.</p>
-     */
     inline LaunchDetails& WithLatestLaunchTime(const Aws::Utils::DateTime& value) { SetLatestLaunchTime(value); return *this;}
-
-    /**
-     * <p>The latest time that this application was launched successfully.</p>
-     */
     inline LaunchDetails& WithLatestLaunchTime(Aws::Utils::DateTime&& value) { SetLatestLaunchTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the latest stack launched for this application.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the latest stack launched for this application.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the latest stack launched for this application.</p>
-     */
     inline LaunchDetails& WithStackId(const char* value) { SetStackId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_latestLaunchTime;

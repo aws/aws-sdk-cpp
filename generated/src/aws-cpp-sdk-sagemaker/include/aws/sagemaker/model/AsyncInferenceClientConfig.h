@@ -36,34 +36,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of concurrent requests sent by the SageMaker client to the
      * model container. If no value is provided, SageMaker chooses an optimal
      * value.</p>
      */
     inline int GetMaxConcurrentInvocationsPerInstance() const{ return m_maxConcurrentInvocationsPerInstance; }
-
-    /**
-     * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, SageMaker chooses an optimal
-     * value.</p>
-     */
     inline bool MaxConcurrentInvocationsPerInstanceHasBeenSet() const { return m_maxConcurrentInvocationsPerInstanceHasBeenSet; }
-
-    /**
-     * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, SageMaker chooses an optimal
-     * value.</p>
-     */
     inline void SetMaxConcurrentInvocationsPerInstance(int value) { m_maxConcurrentInvocationsPerInstanceHasBeenSet = true; m_maxConcurrentInvocationsPerInstance = value; }
-
-    /**
-     * <p>The maximum number of concurrent requests sent by the SageMaker client to the
-     * model container. If no value is provided, SageMaker chooses an optimal
-     * value.</p>
-     */
     inline AsyncInferenceClientConfig& WithMaxConcurrentInvocationsPerInstance(int value) { SetMaxConcurrentInvocationsPerInstance(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxConcurrentInvocationsPerInstance;

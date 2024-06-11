@@ -37,46 +37,19 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
      */
     inline const Aws::String& GetKeyValueStoreARN() const{ return m_keyValueStoreARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline bool KeyValueStoreARNHasBeenSet() const { return m_keyValueStoreARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline void SetKeyValueStoreARN(const Aws::String& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline void SetKeyValueStoreARN(Aws::String&& value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline void SetKeyValueStoreARN(const char* value) { m_keyValueStoreARNHasBeenSet = true; m_keyValueStoreARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(const Aws::String& value) { SetKeyValueStoreARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(Aws::String&& value) { SetKeyValueStoreARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the key value store association.</p>
-     */
     inline KeyValueStoreAssociation& WithKeyValueStoreARN(const char* value) { SetKeyValueStoreARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyValueStoreARN;

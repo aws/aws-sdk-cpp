@@ -34,99 +34,42 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detectors.</p>
      */
     inline const Aws::Vector<Detector>& GetDetectors() const{ return m_detectors; }
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline void SetDetectors(const Aws::Vector<Detector>& value) { m_detectors = value; }
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline void SetDetectors(Aws::Vector<Detector>&& value) { m_detectors = std::move(value); }
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline GetDetectorsResult& WithDetectors(const Aws::Vector<Detector>& value) { SetDetectors(value); return *this;}
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline GetDetectorsResult& WithDetectors(Aws::Vector<Detector>&& value) { SetDetectors(std::move(value)); return *this;}
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline GetDetectorsResult& AddDetectors(const Detector& value) { m_detectors.push_back(value); return *this; }
-
-    /**
-     * <p>The detectors.</p>
-     */
     inline GetDetectorsResult& AddDetectors(Detector&& value) { m_detectors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next page token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetDetectorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetDetectorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetDetectorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDetectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDetectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDetectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Detector> m_detectors;

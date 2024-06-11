@@ -34,62 +34,21 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier that Amazon Comprehend generated for the job. The
      * <code>StartTargetedSentimentDetectionJob</code> operation returns this
      * identifier in its response.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline DescribeTargetedSentimentDetectionJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline DescribeTargetedSentimentDetectionJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier that Amazon Comprehend generated for the job. The
-     * <code>StartTargetedSentimentDetectionJob</code> operation returns this
-     * identifier in its response.</p>
-     */
     inline DescribeTargetedSentimentDetectionJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

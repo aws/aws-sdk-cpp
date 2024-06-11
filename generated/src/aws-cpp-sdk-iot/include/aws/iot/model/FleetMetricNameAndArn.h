@@ -37,87 +37,33 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The fleet metric name.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet metric name.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fleet metric ARN.</p>
      */
     inline const Aws::String& GetMetricArn() const{ return m_metricArn; }
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline bool MetricArnHasBeenSet() const { return m_metricArnHasBeenSet; }
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline void SetMetricArn(const Aws::String& value) { m_metricArnHasBeenSet = true; m_metricArn = value; }
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline void SetMetricArn(Aws::String&& value) { m_metricArnHasBeenSet = true; m_metricArn = std::move(value); }
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline void SetMetricArn(const char* value) { m_metricArnHasBeenSet = true; m_metricArn.assign(value); }
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricArn(const Aws::String& value) { SetMetricArn(value); return *this;}
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricArn(Aws::String&& value) { SetMetricArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet metric ARN.</p>
-     */
     inline FleetMetricNameAndArn& WithMetricArn(const char* value) { SetMetricArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricName;

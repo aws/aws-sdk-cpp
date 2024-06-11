@@ -39,77 +39,31 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The category by which the utterance analytics were grouped.</p>
      */
     inline const AnalyticsUtteranceField& GetName() const{ return m_name; }
-
-    /**
-     * <p>The category by which the utterance analytics were grouped.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The category by which the utterance analytics were grouped.</p>
-     */
     inline void SetName(const AnalyticsUtteranceField& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The category by which the utterance analytics were grouped.</p>
-     */
     inline void SetName(AnalyticsUtteranceField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The category by which the utterance analytics were grouped.</p>
-     */
     inline AnalyticsUtteranceGroupByKey& WithName(const AnalyticsUtteranceField& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The category by which the utterance analytics were grouped.</p>
-     */
     inline AnalyticsUtteranceGroupByKey& WithName(AnalyticsUtteranceField&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A member of the category by which the utterance analytics were grouped.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline AnalyticsUtteranceGroupByKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline AnalyticsUtteranceGroupByKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A member of the category by which the utterance analytics were grouped.</p>
-     */
     inline AnalyticsUtteranceGroupByKey& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     AnalyticsUtteranceField m_name;

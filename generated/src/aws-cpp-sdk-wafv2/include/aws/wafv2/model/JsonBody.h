@@ -47,43 +47,20 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The patterns to look for in the JSON body. WAF inspects the results of these
      * pattern matches against the rule inspection criteria. </p>
      */
     inline const JsonMatchPattern& GetMatchPattern() const{ return m_matchPattern; }
-
-    /**
-     * <p>The patterns to look for in the JSON body. WAF inspects the results of these
-     * pattern matches against the rule inspection criteria. </p>
-     */
     inline bool MatchPatternHasBeenSet() const { return m_matchPatternHasBeenSet; }
-
-    /**
-     * <p>The patterns to look for in the JSON body. WAF inspects the results of these
-     * pattern matches against the rule inspection criteria. </p>
-     */
     inline void SetMatchPattern(const JsonMatchPattern& value) { m_matchPatternHasBeenSet = true; m_matchPattern = value; }
-
-    /**
-     * <p>The patterns to look for in the JSON body. WAF inspects the results of these
-     * pattern matches against the rule inspection criteria. </p>
-     */
     inline void SetMatchPattern(JsonMatchPattern&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::move(value); }
-
-    /**
-     * <p>The patterns to look for in the JSON body. WAF inspects the results of these
-     * pattern matches against the rule inspection criteria. </p>
-     */
     inline JsonBody& WithMatchPattern(const JsonMatchPattern& value) { SetMatchPattern(value); return *this;}
-
-    /**
-     * <p>The patterns to look for in the JSON body. WAF inspects the results of these
-     * pattern matches against the rule inspection criteria. </p>
-     */
     inline JsonBody& WithMatchPattern(JsonMatchPattern&& value) { SetMatchPattern(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
      * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
@@ -94,63 +71,14 @@ namespace Model
      * keys and another that inspects the values. </p>
      */
     inline const JsonMatchScope& GetMatchScope() const{ return m_matchScope; }
-
-    /**
-     * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
-     * <code>All</code> does not require a match to be found in the keys and a match to
-     * be found in the values. It requires a match to be found in the keys or the
-     * values or both. To require a match in the keys and in the values, use a logical
-     * <code>AND</code> statement to combine two match rules, one that inspects the
-     * keys and another that inspects the values. </p>
-     */
     inline bool MatchScopeHasBeenSet() const { return m_matchScopeHasBeenSet; }
-
-    /**
-     * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
-     * <code>All</code> does not require a match to be found in the keys and a match to
-     * be found in the values. It requires a match to be found in the keys or the
-     * values or both. To require a match in the keys and in the values, use a logical
-     * <code>AND</code> statement to combine two match rules, one that inspects the
-     * keys and another that inspects the values. </p>
-     */
     inline void SetMatchScope(const JsonMatchScope& value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
-
-    /**
-     * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
-     * <code>All</code> does not require a match to be found in the keys and a match to
-     * be found in the values. It requires a match to be found in the keys or the
-     * values or both. To require a match in the keys and in the values, use a logical
-     * <code>AND</code> statement to combine two match rules, one that inspects the
-     * keys and another that inspects the values. </p>
-     */
     inline void SetMatchScope(JsonMatchScope&& value) { m_matchScopeHasBeenSet = true; m_matchScope = std::move(value); }
-
-    /**
-     * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
-     * <code>All</code> does not require a match to be found in the keys and a match to
-     * be found in the values. It requires a match to be found in the keys or the
-     * values or both. To require a match in the keys and in the values, use a logical
-     * <code>AND</code> statement to combine two match rules, one that inspects the
-     * keys and another that inspects the values. </p>
-     */
     inline JsonBody& WithMatchScope(const JsonMatchScope& value) { SetMatchScope(value); return *this;}
-
-    /**
-     * <p>The parts of the JSON to match against using the <code>MatchPattern</code>.
-     * If you specify <code>ALL</code>, WAF matches against keys and values. </p> <p>
-     * <code>All</code> does not require a match to be found in the keys and a match to
-     * be found in the values. It requires a match to be found in the keys or the
-     * values or both. To require a match in the keys and in the values, use a logical
-     * <code>AND</code> statement to combine two match rules, one that inspects the
-     * keys and another that inspects the values. </p>
-     */
     inline JsonBody& WithMatchScope(JsonMatchScope&& value) { SetMatchScope(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>What WAF should do if it fails to completely parse the JSON body. The options
      * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
@@ -170,108 +98,14 @@ namespace Model
      * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline const BodyParsingFallbackBehavior& GetInvalidFallbackBehavior() const{ return m_invalidFallbackBehavior; }
-
-    /**
-     * <p>What WAF should do if it fails to completely parse the JSON body. The options
-     * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
-     * the body as plain text. WAF applies the text transformations and inspection
-     * criteria that you defined for the JSON inspection to the body text string.</p>
-     * </li> <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
-     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
-     * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
-     */
     inline bool InvalidFallbackBehaviorHasBeenSet() const { return m_invalidFallbackBehaviorHasBeenSet; }
-
-    /**
-     * <p>What WAF should do if it fails to completely parse the JSON body. The options
-     * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
-     * the body as plain text. WAF applies the text transformations and inspection
-     * criteria that you defined for the JSON inspection to the body text string.</p>
-     * </li> <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
-     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
-     * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
-     */
     inline void SetInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = value; }
-
-    /**
-     * <p>What WAF should do if it fails to completely parse the JSON body. The options
-     * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
-     * the body as plain text. WAF applies the text transformations and inspection
-     * criteria that you defined for the JSON inspection to the body text string.</p>
-     * </li> <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
-     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
-     * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
-     */
     inline void SetInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = std::move(value); }
-
-    /**
-     * <p>What WAF should do if it fails to completely parse the JSON body. The options
-     * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
-     * the body as plain text. WAF applies the text transformations and inspection
-     * criteria that you defined for the JSON inspection to the body text string.</p>
-     * </li> <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
-     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
-     * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
-     */
     inline JsonBody& WithInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { SetInvalidFallbackBehavior(value); return *this;}
-
-    /**
-     * <p>What WAF should do if it fails to completely parse the JSON body. The options
-     * are the following:</p> <ul> <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect
-     * the body as plain text. WAF applies the text transformations and inspection
-     * criteria that you defined for the JSON inspection to the body text string.</p>
-     * </li> <li> <p> <code>MATCH</code> - Treat the web request as matching the rule
-     * statement. WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
-     * evaluates the content only up to the first parsing failure that it encounters.
-     * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
-     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
-     * in the following examples as two valid key, value pairs: </p> <ul> <li>
-     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
-     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
-     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
-     */
     inline JsonBody& WithInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { SetInvalidFallbackBehavior(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
      * does not support inspecting the entire contents of the web request body if the
@@ -294,122 +128,12 @@ namespace Model
      * </p> <p>Default: <code>CONTINUE</code> </p>
      */
     inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
-
-    /**
-     * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
-     * does not support inspecting the entire contents of the web request body if the
-     * body exceeds the limit for the resource type. When a web request body is larger
-     * than the limit, the underlying host service only forwards the contents that are
-     * within the limit to WAF for inspection. </p> <ul> <li> <p>For Application Load
-     * Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
-     * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-     * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-     * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-     * processing fees. </p> </li> </ul> <p>The options for oversize handling are the
-     * following:</p> <ul> <li> <p> <code>CONTINUE</code> - Inspect the available body
-     * contents normally, according to the rule inspection criteria. </p> </li> <li>
-     * <p> <code>MATCH</code> - Treat the web request as matching the rule statement.
-     * WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
-     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
-     * action settings, so that you block any request whose body is over the limit.
-     * </p> <p>Default: <code>CONTINUE</code> </p>
-     */
     inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
-
-    /**
-     * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
-     * does not support inspecting the entire contents of the web request body if the
-     * body exceeds the limit for the resource type. When a web request body is larger
-     * than the limit, the underlying host service only forwards the contents that are
-     * within the limit to WAF for inspection. </p> <ul> <li> <p>For Application Load
-     * Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
-     * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-     * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-     * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-     * processing fees. </p> </li> </ul> <p>The options for oversize handling are the
-     * following:</p> <ul> <li> <p> <code>CONTINUE</code> - Inspect the available body
-     * contents normally, according to the rule inspection criteria. </p> </li> <li>
-     * <p> <code>MATCH</code> - Treat the web request as matching the rule statement.
-     * WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
-     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
-     * action settings, so that you block any request whose body is over the limit.
-     * </p> <p>Default: <code>CONTINUE</code> </p>
-     */
     inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
-
-    /**
-     * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
-     * does not support inspecting the entire contents of the web request body if the
-     * body exceeds the limit for the resource type. When a web request body is larger
-     * than the limit, the underlying host service only forwards the contents that are
-     * within the limit to WAF for inspection. </p> <ul> <li> <p>For Application Load
-     * Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
-     * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-     * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-     * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-     * processing fees. </p> </li> </ul> <p>The options for oversize handling are the
-     * following:</p> <ul> <li> <p> <code>CONTINUE</code> - Inspect the available body
-     * contents normally, according to the rule inspection criteria. </p> </li> <li>
-     * <p> <code>MATCH</code> - Treat the web request as matching the rule statement.
-     * WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
-     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
-     * action settings, so that you block any request whose body is over the limit.
-     * </p> <p>Default: <code>CONTINUE</code> </p>
-     */
     inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
-
-    /**
-     * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
-     * does not support inspecting the entire contents of the web request body if the
-     * body exceeds the limit for the resource type. When a web request body is larger
-     * than the limit, the underlying host service only forwards the contents that are
-     * within the limit to WAF for inspection. </p> <ul> <li> <p>For Application Load
-     * Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
-     * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-     * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-     * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-     * processing fees. </p> </li> </ul> <p>The options for oversize handling are the
-     * following:</p> <ul> <li> <p> <code>CONTINUE</code> - Inspect the available body
-     * contents normally, according to the rule inspection criteria. </p> </li> <li>
-     * <p> <code>MATCH</code> - Treat the web request as matching the rule statement.
-     * WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
-     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
-     * action settings, so that you block any request whose body is over the limit.
-     * </p> <p>Default: <code>CONTINUE</code> </p>
-     */
     inline JsonBody& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
-
-    /**
-     * <p>What WAF should do if the body is larger than WAF can inspect. </p> <p>WAF
-     * does not support inspecting the entire contents of the web request body if the
-     * body exceeds the limit for the resource type. When a web request body is larger
-     * than the limit, the underlying host service only forwards the contents that are
-     * within the limit to WAF for inspection. </p> <ul> <li> <p>For Application Load
-     * Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p> </li> <li>
-     * <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access,
-     * the default limit is 16 KB (16,384 bytes), and you can increase the limit for
-     * each resource type in the web ACL <code>AssociationConfig</code>, for additional
-     * processing fees. </p> </li> </ul> <p>The options for oversize handling are the
-     * following:</p> <ul> <li> <p> <code>CONTINUE</code> - Inspect the available body
-     * contents normally, according to the rule inspection criteria. </p> </li> <li>
-     * <p> <code>MATCH</code> - Treat the web request as matching the rule statement.
-     * WAF applies the rule action to the request.</p> </li> <li> <p>
-     * <code>NO_MATCH</code> - Treat the web request as not matching the rule
-     * statement.</p> </li> </ul> <p>You can combine the <code>MATCH</code> or
-     * <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL
-     * action settings, so that you block any request whose body is over the limit.
-     * </p> <p>Default: <code>CONTINUE</code> </p>
-     */
     inline JsonBody& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     JsonMatchPattern m_matchPattern;

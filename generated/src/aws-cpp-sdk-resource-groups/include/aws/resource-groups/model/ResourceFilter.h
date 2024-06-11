@@ -40,91 +40,33 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline const ResourceFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the filter. Filter names are case-sensitive.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the filter. Filter names are case-sensitive.</p>
-     */
     inline void SetName(const ResourceFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the filter. Filter names are case-sensitive.</p>
-     */
     inline void SetName(ResourceFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the filter. Filter names are case-sensitive.</p>
-     */
     inline ResourceFilter& WithName(const ResourceFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the filter. Filter names are case-sensitive.</p>
-     */
     inline ResourceFilter& WithName(ResourceFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more filter values. Allowed filter values vary by resource filter
      * name, and are case-sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline ResourceFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline ResourceFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline ResourceFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline ResourceFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more filter values. Allowed filter values vary by resource filter
-     * name, and are case-sensitive.</p>
-     */
     inline ResourceFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     ResourceFilterName m_name;

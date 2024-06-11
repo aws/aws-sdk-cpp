@@ -39,36 +39,17 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Represents the progress of an online resharding operation.</p>
      */
     inline const SlotMigration& GetSlotMigration() const{ return m_slotMigration; }
-
-    /**
-     * <p>Represents the progress of an online resharding operation.</p>
-     */
     inline bool SlotMigrationHasBeenSet() const { return m_slotMigrationHasBeenSet; }
-
-    /**
-     * <p>Represents the progress of an online resharding operation.</p>
-     */
     inline void SetSlotMigration(const SlotMigration& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = value; }
-
-    /**
-     * <p>Represents the progress of an online resharding operation.</p>
-     */
     inline void SetSlotMigration(SlotMigration&& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = std::move(value); }
-
-    /**
-     * <p>Represents the progress of an online resharding operation.</p>
-     */
     inline ReshardingStatus& WithSlotMigration(const SlotMigration& value) { SetSlotMigration(value); return *this;}
-
-    /**
-     * <p>Represents the progress of an online resharding operation.</p>
-     */
     inline ReshardingStatus& WithSlotMigration(SlotMigration&& value) { SetSlotMigration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SlotMigration m_slotMigration;

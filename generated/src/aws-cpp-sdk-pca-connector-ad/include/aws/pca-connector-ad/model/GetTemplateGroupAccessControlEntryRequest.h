@@ -32,103 +32,35 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Security identifier (SID) of the group object from Active Directory. The SID
      * starts with "S-".</p>
      */
     inline const Aws::String& GetGroupSecurityIdentifier() const{ return m_groupSecurityIdentifier; }
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline bool GroupSecurityIdentifierHasBeenSet() const { return m_groupSecurityIdentifierHasBeenSet; }
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline void SetGroupSecurityIdentifier(const Aws::String& value) { m_groupSecurityIdentifierHasBeenSet = true; m_groupSecurityIdentifier = value; }
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline void SetGroupSecurityIdentifier(Aws::String&& value) { m_groupSecurityIdentifierHasBeenSet = true; m_groupSecurityIdentifier = std::move(value); }
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline void SetGroupSecurityIdentifier(const char* value) { m_groupSecurityIdentifierHasBeenSet = true; m_groupSecurityIdentifier.assign(value); }
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithGroupSecurityIdentifier(const Aws::String& value) { SetGroupSecurityIdentifier(value); return *this;}
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithGroupSecurityIdentifier(Aws::String&& value) { SetGroupSecurityIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Security identifier (SID) of the group object from Active Directory. The SID
-     * starts with "S-".</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithGroupSecurityIdentifier(const char* value) { SetGroupSecurityIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that was returned when you called <a
-     * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-     */
     inline GetTemplateGroupAccessControlEntryRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupSecurityIdentifier;

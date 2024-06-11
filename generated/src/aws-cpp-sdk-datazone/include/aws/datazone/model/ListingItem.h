@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An asset published in an Amazon DataZone catalog.</p>
      */
     inline const AssetListing& GetAssetListing() const{ return m_assetListing; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline void SetAssetListing(const AssetListing& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline void SetAssetListing(AssetListing&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline ListingItem& WithAssetListing(const AssetListing& value) { SetAssetListing(value); return *this;}
-
-    /**
-     * <p>An asset published in an Amazon DataZone catalog.</p>
-     */
     inline ListingItem& WithAssetListing(AssetListing&& value) { SetAssetListing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AssetListing m_assetListing;

@@ -39,67 +39,29 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a predefined metric.</p>
      */
     inline const PredefinedMetricSpecification& GetPredefined() const{ return m_predefined; }
-
-    /**
-     * <p>Information about a predefined metric.</p>
-     */
     inline bool PredefinedHasBeenSet() const { return m_predefinedHasBeenSet; }
-
-    /**
-     * <p>Information about a predefined metric.</p>
-     */
     inline void SetPredefined(const PredefinedMetricSpecification& value) { m_predefinedHasBeenSet = true; m_predefined = value; }
-
-    /**
-     * <p>Information about a predefined metric.</p>
-     */
     inline void SetPredefined(PredefinedMetricSpecification&& value) { m_predefinedHasBeenSet = true; m_predefined = std::move(value); }
-
-    /**
-     * <p>Information about a predefined metric.</p>
-     */
     inline MetricSpecification& WithPredefined(const PredefinedMetricSpecification& value) { SetPredefined(value); return *this;}
-
-    /**
-     * <p>Information about a predefined metric.</p>
-     */
     inline MetricSpecification& WithPredefined(PredefinedMetricSpecification&& value) { SetPredefined(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a customized metric.</p>
      */
     inline const CustomizedMetricSpecification& GetCustomized() const{ return m_customized; }
-
-    /**
-     * <p>Information about a customized metric.</p>
-     */
     inline bool CustomizedHasBeenSet() const { return m_customizedHasBeenSet; }
-
-    /**
-     * <p>Information about a customized metric.</p>
-     */
     inline void SetCustomized(const CustomizedMetricSpecification& value) { m_customizedHasBeenSet = true; m_customized = value; }
-
-    /**
-     * <p>Information about a customized metric.</p>
-     */
     inline void SetCustomized(CustomizedMetricSpecification&& value) { m_customizedHasBeenSet = true; m_customized = std::move(value); }
-
-    /**
-     * <p>Information about a customized metric.</p>
-     */
     inline MetricSpecification& WithCustomized(const CustomizedMetricSpecification& value) { SetCustomized(value); return *this;}
-
-    /**
-     * <p>Information about a customized metric.</p>
-     */
     inline MetricSpecification& WithCustomized(CustomizedMetricSpecification&& value) { SetCustomized(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PredefinedMetricSpecification m_predefined;

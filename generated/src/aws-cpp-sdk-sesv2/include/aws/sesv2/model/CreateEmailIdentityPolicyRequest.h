@@ -39,96 +39,36 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The email identity.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The email identity.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
-     * and can only include alphanumeric characters, dashes, and underscores.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
      * <p>For information about the syntax of sending authorization policies, see the
@@ -137,70 +77,14 @@ namespace Model
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-     * <p>For information about the syntax of sending authorization policies, see the
-     * <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
-     * SES Developer Guide</a>.</p>
-     */
     inline CreateEmailIdentityPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailIdentity;

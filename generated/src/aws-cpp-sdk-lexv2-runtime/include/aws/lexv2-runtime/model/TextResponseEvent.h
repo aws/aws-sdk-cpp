@@ -40,119 +40,37 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of messages to send to the user. Messages are ordered based on the
      * order that you returned the messages from your Lambda function or the order that
      * the messages are defined in the bot.</p>
      */
     inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline TextResponseEvent& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline TextResponseEvent& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline TextResponseEvent& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-
-    /**
-     * <p>A list of messages to send to the user. Messages are ordered based on the
-     * order that you returned the messages from your Lambda function or the order that
-     * the messages are defined in the bot.</p>
-     */
     inline TextResponseEvent& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
      * the form <code>RESPONSE-N</code>, where N is a number starting with one and
      * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline TextResponseEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline TextResponseEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
-     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
-     */
     inline TextResponseEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Message> m_messages;

@@ -32,144 +32,49 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteUseCaseRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteUseCaseRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline DeleteUseCaseRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the integration association.</p>
      */
     inline const Aws::String& GetIntegrationAssociationId() const{ return m_integrationAssociationId; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline bool IntegrationAssociationIdHasBeenSet() const { return m_integrationAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const Aws::String& value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId = value; }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(Aws::String&& value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline void SetIntegrationAssociationId(const char* value) { m_integrationAssociationIdHasBeenSet = true; m_integrationAssociationId.assign(value); }
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline DeleteUseCaseRequest& WithIntegrationAssociationId(const Aws::String& value) { SetIntegrationAssociationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline DeleteUseCaseRequest& WithIntegrationAssociationId(Aws::String&& value) { SetIntegrationAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the integration association.</p>
-     */
     inline DeleteUseCaseRequest& WithIntegrationAssociationId(const char* value) { SetIntegrationAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the use case.</p>
      */
     inline const Aws::String& GetUseCaseId() const{ return m_useCaseId; }
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline bool UseCaseIdHasBeenSet() const { return m_useCaseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline void SetUseCaseId(const Aws::String& value) { m_useCaseIdHasBeenSet = true; m_useCaseId = value; }
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline void SetUseCaseId(Aws::String&& value) { m_useCaseIdHasBeenSet = true; m_useCaseId = std::move(value); }
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline void SetUseCaseId(const char* value) { m_useCaseIdHasBeenSet = true; m_useCaseId.assign(value); }
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline DeleteUseCaseRequest& WithUseCaseId(const Aws::String& value) { SetUseCaseId(value); return *this;}
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline DeleteUseCaseRequest& WithUseCaseId(Aws::String&& value) { SetUseCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the use case.</p>
-     */
     inline DeleteUseCaseRequest& WithUseCaseId(const char* value) { SetUseCaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

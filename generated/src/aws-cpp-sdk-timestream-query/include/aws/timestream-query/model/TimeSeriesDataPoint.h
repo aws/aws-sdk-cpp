@@ -43,77 +43,31 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timestamp when the measure value was collected.</p>
      */
     inline const Aws::String& GetTime() const{ return m_time; }
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline TimeSeriesDataPoint& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline TimeSeriesDataPoint& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The timestamp when the measure value was collected.</p>
-     */
     inline TimeSeriesDataPoint& WithTime(const char* value) { SetTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The measure value for the data point.</p>
      */
     AWS_TIMESTREAMQUERY_API const Datum& GetValue() const;
-
-    /**
-     * <p>The measure value for the data point.</p>
-     */
     AWS_TIMESTREAMQUERY_API bool ValueHasBeenSet() const;
-
-    /**
-     * <p>The measure value for the data point.</p>
-     */
     AWS_TIMESTREAMQUERY_API void SetValue(const Datum& value);
-
-    /**
-     * <p>The measure value for the data point.</p>
-     */
     AWS_TIMESTREAMQUERY_API void SetValue(Datum&& value);
-
-    /**
-     * <p>The measure value for the data point.</p>
-     */
     AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(const Datum& value);
-
-    /**
-     * <p>The measure value for the data point.</p>
-     */
     AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(Datum&& value);
-
+    ///@}
   private:
 
     Aws::String m_time;

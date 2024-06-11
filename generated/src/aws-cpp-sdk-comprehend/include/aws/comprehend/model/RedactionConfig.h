@@ -41,132 +41,47 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of the types of PII entities that Amazon Comprehend detects in the
      * input text for your request.</p>
      */
     inline const Aws::Vector<PiiEntityType>& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline void SetPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline void SetPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline RedactionConfig& WithPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { SetPiiEntityTypes(value); return *this;}
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline RedactionConfig& WithPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline RedactionConfig& AddPiiEntityTypes(const PiiEntityType& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the types of PII entities that Amazon Comprehend detects in the
-     * input text for your request.</p>
-     */
     inline RedactionConfig& AddPiiEntityTypes(PiiEntityType&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the PII entity is redacted with the mask character or the
      * entity type.</p>
      */
     inline const PiiEntitiesDetectionMaskMode& GetMaskMode() const{ return m_maskMode; }
-
-    /**
-     * <p>Specifies whether the PII entity is redacted with the mask character or the
-     * entity type.</p>
-     */
     inline bool MaskModeHasBeenSet() const { return m_maskModeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the PII entity is redacted with the mask character or the
-     * entity type.</p>
-     */
     inline void SetMaskMode(const PiiEntitiesDetectionMaskMode& value) { m_maskModeHasBeenSet = true; m_maskMode = value; }
-
-    /**
-     * <p>Specifies whether the PII entity is redacted with the mask character or the
-     * entity type.</p>
-     */
     inline void SetMaskMode(PiiEntitiesDetectionMaskMode&& value) { m_maskModeHasBeenSet = true; m_maskMode = std::move(value); }
-
-    /**
-     * <p>Specifies whether the PII entity is redacted with the mask character or the
-     * entity type.</p>
-     */
     inline RedactionConfig& WithMaskMode(const PiiEntitiesDetectionMaskMode& value) { SetMaskMode(value); return *this;}
-
-    /**
-     * <p>Specifies whether the PII entity is redacted with the mask character or the
-     * entity type.</p>
-     */
     inline RedactionConfig& WithMaskMode(PiiEntitiesDetectionMaskMode&& value) { SetMaskMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A character that replaces each character in the redacted PII entity.</p>
      */
     inline const Aws::String& GetMaskCharacter() const{ return m_maskCharacter; }
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline bool MaskCharacterHasBeenSet() const { return m_maskCharacterHasBeenSet; }
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline void SetMaskCharacter(const Aws::String& value) { m_maskCharacterHasBeenSet = true; m_maskCharacter = value; }
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline void SetMaskCharacter(Aws::String&& value) { m_maskCharacterHasBeenSet = true; m_maskCharacter = std::move(value); }
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline void SetMaskCharacter(const char* value) { m_maskCharacterHasBeenSet = true; m_maskCharacter.assign(value); }
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline RedactionConfig& WithMaskCharacter(const Aws::String& value) { SetMaskCharacter(value); return *this;}
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline RedactionConfig& WithMaskCharacter(Aws::String&& value) { SetMaskCharacter(std::move(value)); return *this;}
-
-    /**
-     * <p>A character that replaces each character in the redacted PII entity.</p>
-     */
     inline RedactionConfig& WithMaskCharacter(const char* value) { SetMaskCharacter(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PiiEntityType> m_piiEntityTypes;

@@ -43,37 +43,19 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The type of location where the bucket will be created.</p>
      */
     inline const LocationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of location where the bucket will be created.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of location where the bucket will be created.</p>
-     */
     inline void SetType(const LocationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of location where the bucket will be created.</p>
-     */
     inline void SetType(LocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of location where the bucket will be created.</p>
-     */
     inline LocationInfo& WithType(const LocationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of location where the bucket will be created.</p>
-     */
     inline LocationInfo& WithType(LocationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the name of the location is the AZ ID of the Availability
@@ -81,63 +63,14 @@ namespace Model
      * <code>usw2-az1</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline LocationInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline LocationInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the name of the location is the AZ ID of the Availability
-     * Zone where the bucket will be created. An example AZ ID value is
-     * <code>usw2-az1</code>.</p>
-     */
     inline LocationInfo& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     LocationType m_type;

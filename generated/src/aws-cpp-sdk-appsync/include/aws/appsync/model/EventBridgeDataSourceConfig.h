@@ -38,62 +38,21 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the event bus. For more information about event buses, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
      * EventBridge event buses</a>.</p>
      */
     inline const Aws::String& GetEventBusArn() const{ return m_eventBusArn; }
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline void SetEventBusArn(const Aws::String& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = value; }
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline void SetEventBusArn(Aws::String&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline void SetEventBusArn(const char* value) { m_eventBusArnHasBeenSet = true; m_eventBusArn.assign(value); }
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline EventBridgeDataSourceConfig& WithEventBusArn(const Aws::String& value) { SetEventBusArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline EventBridgeDataSourceConfig& WithEventBusArn(Aws::String&& value) { SetEventBusArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the event bus. For more information about event buses, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon
-     * EventBridge event buses</a>.</p>
-     */
     inline EventBridgeDataSourceConfig& WithEventBusArn(const char* value) { SetEventBusArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventBusArn;

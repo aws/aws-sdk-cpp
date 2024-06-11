@@ -37,113 +37,44 @@ namespace Model
     AWS_STORAGEGATEWAY_API UpdateChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the target. This is the same target
      * specified in the request.</p>
      */
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline void SetTargetARN(Aws::String&& value) { m_targetARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline void SetTargetARN(const char* value) { m_targetARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the target. This is the same target
-     * specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The iSCSI initiator that connects to the target. This is the same initiator
      * name specified in the request.</p>
      */
     inline const Aws::String& GetInitiatorName() const{ return m_initiatorName; }
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline void SetInitiatorName(const Aws::String& value) { m_initiatorName = value; }
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline void SetInitiatorName(Aws::String&& value) { m_initiatorName = std::move(value); }
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline void SetInitiatorName(const char* value) { m_initiatorName.assign(value); }
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithInitiatorName(const Aws::String& value) { SetInitiatorName(value); return *this;}
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithInitiatorName(Aws::String&& value) { SetInitiatorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The iSCSI initiator that connects to the target. This is the same initiator
-     * name specified in the request.</p>
-     */
     inline UpdateChapCredentialsResult& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateChapCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateChapCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateChapCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetARN;

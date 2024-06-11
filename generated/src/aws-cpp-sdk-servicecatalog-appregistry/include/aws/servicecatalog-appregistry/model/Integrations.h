@@ -37,55 +37,27 @@ namespace Model
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The information about the resource group integration.</p>
      */
     inline const ResourceGroup& GetResourceGroup() const{ return m_resourceGroup; }
-
-    /**
-     * <p> The information about the resource group integration.</p>
-     */
     inline bool ResourceGroupHasBeenSet() const { return m_resourceGroupHasBeenSet; }
-
-    /**
-     * <p> The information about the resource group integration.</p>
-     */
     inline void SetResourceGroup(const ResourceGroup& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = value; }
-
-    /**
-     * <p> The information about the resource group integration.</p>
-     */
     inline void SetResourceGroup(ResourceGroup&& value) { m_resourceGroupHasBeenSet = true; m_resourceGroup = std::move(value); }
-
-    /**
-     * <p> The information about the resource group integration.</p>
-     */
     inline Integrations& WithResourceGroup(const ResourceGroup& value) { SetResourceGroup(value); return *this;}
-
-    /**
-     * <p> The information about the resource group integration.</p>
-     */
     inline Integrations& WithResourceGroup(ResourceGroup&& value) { SetResourceGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResourceGroup& GetApplicationTagResourceGroup() const{ return m_applicationTagResourceGroup; }
-
-    
     inline bool ApplicationTagResourceGroupHasBeenSet() const { return m_applicationTagResourceGroupHasBeenSet; }
-
-    
     inline void SetApplicationTagResourceGroup(const ResourceGroup& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = value; }
-
-    
     inline void SetApplicationTagResourceGroup(ResourceGroup&& value) { m_applicationTagResourceGroupHasBeenSet = true; m_applicationTagResourceGroup = std::move(value); }
-
-    
     inline Integrations& WithApplicationTagResourceGroup(const ResourceGroup& value) { SetApplicationTagResourceGroup(value); return *this;}
-
-    
     inline Integrations& WithApplicationTagResourceGroup(ResourceGroup&& value) { SetApplicationTagResourceGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceGroup m_resourceGroup;

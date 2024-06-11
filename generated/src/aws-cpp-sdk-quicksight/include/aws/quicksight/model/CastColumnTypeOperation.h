@@ -40,163 +40,59 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Column name.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
-
-    /**
-     * <p>Column name.</p>
-     */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-
-    /**
-     * <p>Column name.</p>
-     */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-
-    /**
-     * <p>Column name.</p>
-     */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-
-    /**
-     * <p>Column name.</p>
-     */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-
-    /**
-     * <p>Column name.</p>
-     */
     inline CastColumnTypeOperation& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-
-    /**
-     * <p>Column name.</p>
-     */
     inline CastColumnTypeOperation& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-
-    /**
-     * <p>Column name.</p>
-     */
     inline CastColumnTypeOperation& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>New column data type.</p>
      */
     inline const ColumnDataType& GetNewColumnType() const{ return m_newColumnType; }
-
-    /**
-     * <p>New column data type.</p>
-     */
     inline bool NewColumnTypeHasBeenSet() const { return m_newColumnTypeHasBeenSet; }
-
-    /**
-     * <p>New column data type.</p>
-     */
     inline void SetNewColumnType(const ColumnDataType& value) { m_newColumnTypeHasBeenSet = true; m_newColumnType = value; }
-
-    /**
-     * <p>New column data type.</p>
-     */
     inline void SetNewColumnType(ColumnDataType&& value) { m_newColumnTypeHasBeenSet = true; m_newColumnType = std::move(value); }
-
-    /**
-     * <p>New column data type.</p>
-     */
     inline CastColumnTypeOperation& WithNewColumnType(const ColumnDataType& value) { SetNewColumnType(value); return *this;}
-
-    /**
-     * <p>New column data type.</p>
-     */
     inline CastColumnTypeOperation& WithNewColumnType(ColumnDataType&& value) { SetNewColumnType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sub data type of the new column. Sub types are only available for decimal
      * columns that are part of a SPICE dataset.</p>
      */
     inline const ColumnDataSubType& GetSubType() const{ return m_subType; }
-
-    /**
-     * <p>The sub data type of the new column. Sub types are only available for decimal
-     * columns that are part of a SPICE dataset.</p>
-     */
     inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
-
-    /**
-     * <p>The sub data type of the new column. Sub types are only available for decimal
-     * columns that are part of a SPICE dataset.</p>
-     */
     inline void SetSubType(const ColumnDataSubType& value) { m_subTypeHasBeenSet = true; m_subType = value; }
-
-    /**
-     * <p>The sub data type of the new column. Sub types are only available for decimal
-     * columns that are part of a SPICE dataset.</p>
-     */
     inline void SetSubType(ColumnDataSubType&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
-
-    /**
-     * <p>The sub data type of the new column. Sub types are only available for decimal
-     * columns that are part of a SPICE dataset.</p>
-     */
     inline CastColumnTypeOperation& WithSubType(const ColumnDataSubType& value) { SetSubType(value); return *this;}
-
-    /**
-     * <p>The sub data type of the new column. Sub types are only available for decimal
-     * columns that are part of a SPICE dataset.</p>
-     */
     inline CastColumnTypeOperation& WithSubType(ColumnDataSubType&& value) { SetSubType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When casting a column from string to datetime type, you can supply a string
      * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline CastColumnTypeOperation& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline CastColumnTypeOperation& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>When casting a column from string to datetime type, you can supply a string
-     * in a format supported by Amazon QuickSight to denote the source data format.</p>
-     */
     inline CastColumnTypeOperation& WithFormat(const char* value) { SetFormat(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_columnName;

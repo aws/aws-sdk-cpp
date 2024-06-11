@@ -38,76 +38,32 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline ListUserImportJobsRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline ListUserImportJobsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline ListUserImportJobsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of import jobs you want the request to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of import jobs you want the request to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of import jobs you want the request to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of import jobs you want the request to return.</p>
-     */
     inline ListUserImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This API operation returns a limited number of results. The pagination token
      * is an identifier that you can present in an additional API request with the same
@@ -117,77 +73,14 @@ namespace Model
      * of items.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline ListUserImportJobsRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline ListUserImportJobsRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-
-    /**
-     * <p>This API operation returns a limited number of results. The pagination token
-     * is an identifier that you can present in an additional API request with the same
-     * parameters. When you include the pagination token, Amazon Cognito returns the
-     * next set of items after the current list. Subsequent requests return a new
-     * pagination token. By use of this token, you can paginate through the full list
-     * of items.</p>
-     */
     inline ListUserImportJobsRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

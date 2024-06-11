@@ -36,103 +36,35 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>One or more associations, each consisting of the Action ID, the Product ID,
      * and the Provisioning Artifact ID.</p>
      */
     inline const Aws::Vector<ServiceActionAssociation>& GetServiceActionAssociations() const{ return m_serviceActionAssociations; }
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline bool ServiceActionAssociationsHasBeenSet() const { return m_serviceActionAssociationsHasBeenSet; }
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline void SetServiceActionAssociations(const Aws::Vector<ServiceActionAssociation>& value) { m_serviceActionAssociationsHasBeenSet = true; m_serviceActionAssociations = value; }
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline void SetServiceActionAssociations(Aws::Vector<ServiceActionAssociation>&& value) { m_serviceActionAssociationsHasBeenSet = true; m_serviceActionAssociations = std::move(value); }
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithServiceActionAssociations(const Aws::Vector<ServiceActionAssociation>& value) { SetServiceActionAssociations(value); return *this;}
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithServiceActionAssociations(Aws::Vector<ServiceActionAssociation>&& value) { SetServiceActionAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& AddServiceActionAssociations(const ServiceActionAssociation& value) { m_serviceActionAssociationsHasBeenSet = true; m_serviceActionAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>One or more associations, each consisting of the Action ID, the Product ID,
-     * and the Provisioning Artifact ID.</p>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& AddServiceActionAssociations(ServiceActionAssociation&& value) { m_serviceActionAssociationsHasBeenSet = true; m_serviceActionAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ServiceActionAssociation> m_serviceActionAssociations;

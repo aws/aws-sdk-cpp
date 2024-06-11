@@ -40,82 +40,32 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code for the warning.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline Warning& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline Warning& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code for the warning.</p>
-     */
     inline Warning& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the pages that the warning applies to.</p>
      */
     inline const Aws::Vector<int>& GetPages() const{ return m_pages; }
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline void SetPages(const Aws::Vector<int>& value) { m_pagesHasBeenSet = true; m_pages = value; }
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline void SetPages(Aws::Vector<int>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline Warning& WithPages(const Aws::Vector<int>& value) { SetPages(value); return *this;}
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline Warning& WithPages(Aws::Vector<int>&& value) { SetPages(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the pages that the warning applies to.</p>
-     */
     inline Warning& AddPages(int value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

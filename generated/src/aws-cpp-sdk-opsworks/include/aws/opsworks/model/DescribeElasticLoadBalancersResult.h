@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeElasticLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.</p>
      */
     inline const Aws::Vector<ElasticLoadBalancer>& GetElasticLoadBalancers() const{ return m_elasticLoadBalancers; }
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline void SetElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { m_elasticLoadBalancers = value; }
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline void SetElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { m_elasticLoadBalancers = std::move(value); }
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(const Aws::Vector<ElasticLoadBalancer>& value) { SetElasticLoadBalancers(value); return *this;}
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { SetElasticLoadBalancers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(const ElasticLoadBalancer& value) { m_elasticLoadBalancers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
-     * specified Elastic Load Balancing instances.</p>
-     */
     inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeElasticLoadBalancersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeElasticLoadBalancersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeElasticLoadBalancersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ElasticLoadBalancer> m_elasticLoadBalancers;

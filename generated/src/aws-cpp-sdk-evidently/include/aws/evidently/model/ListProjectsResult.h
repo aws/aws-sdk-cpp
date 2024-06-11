@@ -34,113 +34,44 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The token to use in a subsequent <code>ListProjects</code> operation to
      * return the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use in a subsequent <code>ListProjects</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of structures that contain the configuration details of the projects
      * in the Region.</p>
      */
     inline const Aws::Vector<ProjectSummary>& GetProjects() const{ return m_projects; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline void SetProjects(const Aws::Vector<ProjectSummary>& value) { m_projects = value; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline void SetProjects(Aws::Vector<ProjectSummary>&& value) { m_projects = std::move(value); }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline ListProjectsResult& WithProjects(const Aws::Vector<ProjectSummary>& value) { SetProjects(value); return *this;}
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline ListProjectsResult& WithProjects(Aws::Vector<ProjectSummary>&& value) { SetProjects(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline ListProjectsResult& AddProjects(const ProjectSummary& value) { m_projects.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the projects
-     * in the Region.</p>
-     */
     inline ListProjectsResult& AddProjects(ProjectSummary&& value) { m_projects.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

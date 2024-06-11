@@ -46,47 +46,21 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the blue/green deployment task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline BlueGreenDeploymentTask& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline BlueGreenDeploymentTask& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the blue/green deployment task.</p>
-     */
     inline BlueGreenDeploymentTask& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
      * <li> <p> <code>PENDING</code> - The resource is being prepared for
@@ -96,77 +70,14 @@ namespace Model
      * failed.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline BlueGreenDeploymentTask& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline BlueGreenDeploymentTask& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the blue/green deployment task.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>PENDING</code> - The resource is being prepared for
-     * deployment.</p> </li> <li> <p> <code>IN_PROGRESS</code> - The resource is being
-     * deployed.</p> </li> <li> <p> <code>COMPLETED</code> - The resource has been
-     * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
-     * failed.</p> </li> </ul>
-     */
     inline BlueGreenDeploymentTask& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

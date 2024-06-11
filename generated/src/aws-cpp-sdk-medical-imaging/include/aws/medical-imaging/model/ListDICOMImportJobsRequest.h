@@ -39,147 +39,56 @@ namespace Model
     AWS_MEDICALIMAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline ListDICOMImportJobsRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline ListDICOMImportJobsRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline ListDICOMImportJobsRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filters for listing import jobs based on status.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-
-    /**
-     * <p>The filters for listing import jobs based on status.</p>
-     */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-
-    /**
-     * <p>The filters for listing import jobs based on status.</p>
-     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-
-    /**
-     * <p>The filters for listing import jobs based on status.</p>
-     */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-
-    /**
-     * <p>The filters for listing import jobs based on status.</p>
-     */
     inline ListDICOMImportJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-
-    /**
-     * <p>The filters for listing import jobs based on status.</p>
-     */
     inline ListDICOMImportJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token used to request the list of import jobs on the next
      * page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline ListDICOMImportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline ListDICOMImportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token used to request the list of import jobs on the next
-     * page.</p>
-     */
     inline ListDICOMImportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The max results count. The upper bound is determined by load testing.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The max results count. The upper bound is determined by load testing.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The max results count. The upper bound is determined by load testing.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The max results count. The upper bound is determined by load testing.</p>
-     */
     inline ListDICOMImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreId;

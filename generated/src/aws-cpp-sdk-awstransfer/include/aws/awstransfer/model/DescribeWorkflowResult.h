@@ -33,53 +33,27 @@ namespace Model
     AWS_TRANSFER_API DescribeWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The structure that contains the details of the workflow.</p>
      */
     inline const DescribedWorkflow& GetWorkflow() const{ return m_workflow; }
-
-    /**
-     * <p>The structure that contains the details of the workflow.</p>
-     */
     inline void SetWorkflow(const DescribedWorkflow& value) { m_workflow = value; }
-
-    /**
-     * <p>The structure that contains the details of the workflow.</p>
-     */
     inline void SetWorkflow(DescribedWorkflow&& value) { m_workflow = std::move(value); }
-
-    /**
-     * <p>The structure that contains the details of the workflow.</p>
-     */
     inline DescribeWorkflowResult& WithWorkflow(const DescribedWorkflow& value) { SetWorkflow(value); return *this;}
-
-    /**
-     * <p>The structure that contains the details of the workflow.</p>
-     */
     inline DescribeWorkflowResult& WithWorkflow(DescribedWorkflow&& value) { SetWorkflow(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescribedWorkflow m_workflow;

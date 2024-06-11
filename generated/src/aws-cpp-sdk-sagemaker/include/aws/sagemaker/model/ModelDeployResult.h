@@ -38,62 +38,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the endpoint to which the model has been deployed.</p> 
      * <p>If model deployment fails, this field is omitted from the response.</p>
      * 
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline ModelDeployResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline ModelDeployResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the endpoint to which the model has been deployed.</p> 
-     * <p>If model deployment fails, this field is omitted from the response.</p>
-     * 
-     */
     inline ModelDeployResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointName;

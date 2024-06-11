@@ -38,116 +38,44 @@ namespace Model
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string that matches the query string specified in the
      * <code>SuggestRequest</code>. </p>
      */
     inline const Aws::String& GetSuggestion() const{ return m_suggestion; }
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline bool SuggestionHasBeenSet() const { return m_suggestionHasBeenSet; }
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline void SetSuggestion(const Aws::String& value) { m_suggestionHasBeenSet = true; m_suggestion = value; }
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline void SetSuggestion(Aws::String&& value) { m_suggestionHasBeenSet = true; m_suggestion = std::move(value); }
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline void SetSuggestion(const char* value) { m_suggestionHasBeenSet = true; m_suggestion.assign(value); }
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline SuggestionMatch& WithSuggestion(const Aws::String& value) { SetSuggestion(value); return *this;}
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline SuggestionMatch& WithSuggestion(Aws::String&& value) { SetSuggestion(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that matches the query string specified in the
-     * <code>SuggestRequest</code>. </p>
-     */
     inline SuggestionMatch& WithSuggestion(const char* value) { SetSuggestion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relevance score of a suggested match.</p>
      */
     inline long long GetScore() const{ return m_score; }
-
-    /**
-     * <p>The relevance score of a suggested match.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The relevance score of a suggested match.</p>
-     */
     inline void SetScore(long long value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The relevance score of a suggested match.</p>
-     */
     inline SuggestionMatch& WithScore(long long value) { SetScore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The document ID of the suggested document.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline SuggestionMatch& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline SuggestionMatch& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The document ID of the suggested document.</p>
-     */
     inline SuggestionMatch& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_suggestion;

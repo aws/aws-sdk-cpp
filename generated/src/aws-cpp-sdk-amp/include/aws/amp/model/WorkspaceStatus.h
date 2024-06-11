@@ -37,36 +37,17 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the workspace.</p>
      */
     inline const WorkspaceStatusCode& GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The current status of the workspace.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The current status of the workspace.</p>
-     */
     inline void SetStatusCode(const WorkspaceStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The current status of the workspace.</p>
-     */
     inline void SetStatusCode(WorkspaceStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-
-    /**
-     * <p>The current status of the workspace.</p>
-     */
     inline WorkspaceStatus& WithStatusCode(const WorkspaceStatusCode& value) { SetStatusCode(value); return *this;}
-
-    /**
-     * <p>The current status of the workspace.</p>
-     */
     inline WorkspaceStatus& WithStatusCode(WorkspaceStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WorkspaceStatusCode m_statusCode;

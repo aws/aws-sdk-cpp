@@ -33,53 +33,27 @@ namespace Model
     AWS_S3CONTROL_API GetAccessPointPolicyStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Indicates the current policy status of the specified access point.</p>
      */
     inline const PolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
-
-    /**
-     * <p>Indicates the current policy status of the specified access point.</p>
-     */
     inline void SetPolicyStatus(const PolicyStatus& value) { m_policyStatus = value; }
-
-    /**
-     * <p>Indicates the current policy status of the specified access point.</p>
-     */
     inline void SetPolicyStatus(PolicyStatus&& value) { m_policyStatus = std::move(value); }
-
-    /**
-     * <p>Indicates the current policy status of the specified access point.</p>
-     */
     inline GetAccessPointPolicyStatusResult& WithPolicyStatus(const PolicyStatus& value) { SetPolicyStatus(value); return *this;}
-
-    /**
-     * <p>Indicates the current policy status of the specified access point.</p>
-     */
     inline GetAccessPointPolicyStatusResult& WithPolicyStatus(PolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessPointPolicyStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessPointPolicyStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessPointPolicyStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PolicyStatus m_policyStatus;

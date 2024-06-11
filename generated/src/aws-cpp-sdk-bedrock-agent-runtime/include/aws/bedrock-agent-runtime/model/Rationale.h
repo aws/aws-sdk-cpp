@@ -39,87 +39,33 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reasoning or thought process of the agent, based on the input.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline Rationale& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline Rationale& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The reasoning or thought process of the agent, based on the input.</p>
-     */
     inline Rationale& WithText(const char* value) { SetText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the trace step.</p>
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline Rationale& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline Rationale& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace step.</p>
-     */
     inline Rationale& WithTraceId(const char* value) { SetTraceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

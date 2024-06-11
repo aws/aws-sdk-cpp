@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the auto-evaluation enabled form.</p>
      */
     inline const Aws::String& GetEvaluationFormId() const{ return m_evaluationFormId; }
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline bool EvaluationFormIdHasBeenSet() const { return m_evaluationFormIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline void SetEvaluationFormId(const Aws::String& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = value; }
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline void SetEvaluationFormId(Aws::String&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::move(value); }
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline void SetEvaluationFormId(const char* value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId.assign(value); }
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(const Aws::String& value) { SetEvaluationFormId(value); return *this;}
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(Aws::String&& value) { SetEvaluationFormId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the auto-evaluation enabled form.</p>
-     */
     inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(const char* value) { SetEvaluationFormId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_evaluationFormId;

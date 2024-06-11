@@ -38,6 +38,7 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
      * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
@@ -45,47 +46,12 @@ namespace Model
      * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
      */
     inline const SlotResolutionStrategy& GetSlotResolutionStrategy() const{ return m_slotResolutionStrategy; }
-
-    /**
-     * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
-     * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-     * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-     * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
-     */
     inline bool SlotResolutionStrategyHasBeenSet() const { return m_slotResolutionStrategyHasBeenSet; }
-
-    /**
-     * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
-     * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-     * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-     * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
-     */
     inline void SetSlotResolutionStrategy(const SlotResolutionStrategy& value) { m_slotResolutionStrategyHasBeenSet = true; m_slotResolutionStrategy = value; }
-
-    /**
-     * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
-     * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-     * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-     * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
-     */
     inline void SetSlotResolutionStrategy(SlotResolutionStrategy&& value) { m_slotResolutionStrategyHasBeenSet = true; m_slotResolutionStrategy = std::move(value); }
-
-    /**
-     * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
-     * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-     * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-     * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
-     */
     inline SlotResolutionSetting& WithSlotResolutionStrategy(const SlotResolutionStrategy& value) { SetSlotResolutionStrategy(value); return *this;}
-
-    /**
-     * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
-     * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-     * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-     * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
-     */
     inline SlotResolutionSetting& WithSlotResolutionStrategy(SlotResolutionStrategy&& value) { SetSlotResolutionStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SlotResolutionStrategy m_slotResolutionStrategy;

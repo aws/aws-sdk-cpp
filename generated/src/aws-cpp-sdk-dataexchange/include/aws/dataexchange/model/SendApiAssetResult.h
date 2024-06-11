@@ -37,99 +37,43 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>The response body from the underlying API tracked by the API asset.</p>
      */
     inline Aws::IOStream& GetBody() const { return m_body.GetUnderlyingStream(); }
-
-    /**
-     * <p>The response body from the underlying API tracked by the API asset.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     /**
      * <p>The response headers from the underlying API tracked by the API asset.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseHeaders() const{ return m_responseHeaders; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline void SetResponseHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_responseHeaders = value; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline void SetResponseHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_responseHeaders = std::move(value); }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& WithResponseHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetResponseHeaders(value); return *this;}
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& WithResponseHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseHeaders(std::move(value)); return *this;}
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(const Aws::String& key, const Aws::String& value) { m_responseHeaders.emplace(key, value); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, const Aws::String& value) { m_responseHeaders.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(const Aws::String& key, Aws::String&& value) { m_responseHeaders.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, Aws::String&& value) { m_responseHeaders.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(const char* key, Aws::String&& value) { m_responseHeaders.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(Aws::String&& key, const char* value) { m_responseHeaders.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The response headers from the underlying API tracked by the API asset.</p>
-     */
     inline SendApiAssetResult& AddResponseHeaders(const char* key, const char* value) { m_responseHeaders.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendApiAssetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendApiAssetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendApiAssetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_body;

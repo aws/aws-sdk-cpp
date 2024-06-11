@@ -40,63 +40,29 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the denominator of the fraction that represents the frame rate for the
      * setting Caption source frame rate. Use this setting along with the setting
      * Framerate numerator.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
-
-    /**
-     * Specify the denominator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate numerator.
-     */
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
-
-    /**
-     * Specify the denominator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate numerator.
-     */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
-
-    /**
-     * Specify the denominator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate numerator.
-     */
     inline CaptionSourceFramerate& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify the numerator of the fraction that represents the frame rate for the
      * setting Caption source frame rate. Use this setting along with the setting
      * Framerate denominator.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
-
-    /**
-     * Specify the numerator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate denominator.
-     */
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
-
-    /**
-     * Specify the numerator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate denominator.
-     */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
-
-    /**
-     * Specify the numerator of the fraction that represents the frame rate for the
-     * setting Caption source frame rate. Use this setting along with the setting
-     * Framerate denominator.
-     */
     inline CaptionSourceFramerate& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
-
+    ///@}
   private:
 
     int m_framerateDenominator;

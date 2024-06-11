@@ -38,87 +38,33 @@ namespace Model
     AWS_CLOUDTRAILDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The event ID assigned by CloudTrail.</p>
      */
     inline const Aws::String& GetEventID() const{ return m_eventID; }
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline bool EventIDHasBeenSet() const { return m_eventIDHasBeenSet; }
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline void SetEventID(const Aws::String& value) { m_eventIDHasBeenSet = true; m_eventID = value; }
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline void SetEventID(Aws::String&& value) { m_eventIDHasBeenSet = true; m_eventID = std::move(value); }
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline void SetEventID(const char* value) { m_eventIDHasBeenSet = true; m_eventID.assign(value); }
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline AuditEventResultEntry& WithEventID(const Aws::String& value) { SetEventID(value); return *this;}
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline AuditEventResultEntry& WithEventID(Aws::String&& value) { SetEventID(std::move(value)); return *this;}
-
-    /**
-     * <p>The event ID assigned by CloudTrail.</p>
-     */
     inline AuditEventResultEntry& WithEventID(const char* value) { SetEventID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The original event ID from the source event.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline AuditEventResultEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline AuditEventResultEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The original event ID from the source event.</p>
-     */
     inline AuditEventResultEntry& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventID;

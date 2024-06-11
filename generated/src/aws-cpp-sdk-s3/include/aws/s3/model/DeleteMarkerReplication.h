@@ -52,42 +52,18 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
      * whether to replicate delete markers.</p> 
      */
     inline const DeleteMarkerReplicationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-     * whether to replicate delete markers.</p> 
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-     * whether to replicate delete markers.</p> 
-     */
     inline void SetStatus(const DeleteMarkerReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-     * whether to replicate delete markers.</p> 
-     */
     inline void SetStatus(DeleteMarkerReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-     * whether to replicate delete markers.</p> 
-     */
     inline DeleteMarkerReplication& WithStatus(const DeleteMarkerReplicationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates whether to replicate delete markers.</p>  <p>Indicates
-     * whether to replicate delete markers.</p> 
-     */
     inline DeleteMarkerReplication& WithStatus(DeleteMarkerReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeleteMarkerReplicationStatus m_status;

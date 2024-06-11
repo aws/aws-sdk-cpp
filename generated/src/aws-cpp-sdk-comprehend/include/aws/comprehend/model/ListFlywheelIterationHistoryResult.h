@@ -34,99 +34,42 @@ namespace Model
     AWS_COMPREHEND_API ListFlywheelIterationHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of flywheel iteration properties</p>
      */
     inline const Aws::Vector<FlywheelIterationProperties>& GetFlywheelIterationPropertiesList() const{ return m_flywheelIterationPropertiesList; }
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline void SetFlywheelIterationPropertiesList(const Aws::Vector<FlywheelIterationProperties>& value) { m_flywheelIterationPropertiesList = value; }
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline void SetFlywheelIterationPropertiesList(Aws::Vector<FlywheelIterationProperties>&& value) { m_flywheelIterationPropertiesList = std::move(value); }
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline ListFlywheelIterationHistoryResult& WithFlywheelIterationPropertiesList(const Aws::Vector<FlywheelIterationProperties>& value) { SetFlywheelIterationPropertiesList(value); return *this;}
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline ListFlywheelIterationHistoryResult& WithFlywheelIterationPropertiesList(Aws::Vector<FlywheelIterationProperties>&& value) { SetFlywheelIterationPropertiesList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline ListFlywheelIterationHistoryResult& AddFlywheelIterationPropertiesList(const FlywheelIterationProperties& value) { m_flywheelIterationPropertiesList.push_back(value); return *this; }
-
-    /**
-     * <p>List of flywheel iteration properties</p>
-     */
     inline ListFlywheelIterationHistoryResult& AddFlywheelIterationPropertiesList(FlywheelIterationProperties&& value) { m_flywheelIterationPropertiesList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Next token</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token</p>
-     */
     inline ListFlywheelIterationHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFlywheelIterationHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFlywheelIterationHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFlywheelIterationHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FlywheelIterationProperties> m_flywheelIterationPropertiesList;

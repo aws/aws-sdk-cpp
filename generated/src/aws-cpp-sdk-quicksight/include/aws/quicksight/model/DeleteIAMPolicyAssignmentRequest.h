@@ -32,136 +32,48 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID where you want to delete the IAM policy
      * assignment.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID where you want to delete the IAM policy
-     * assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the assignment. </p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the assignment. </p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The namespace that contains the assignment.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace that contains the assignment.</p>
-     */
     inline DeleteIAMPolicyAssignmentRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

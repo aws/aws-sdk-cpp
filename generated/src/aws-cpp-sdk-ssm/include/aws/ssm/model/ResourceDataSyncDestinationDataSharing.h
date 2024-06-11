@@ -41,46 +41,19 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
      */
     inline const Aws::String& GetDestinationDataSharingType() const{ return m_destinationDataSharingType; }
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline bool DestinationDataSharingTypeHasBeenSet() const { return m_destinationDataSharingTypeHasBeenSet; }
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline void SetDestinationDataSharingType(const Aws::String& value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType = value; }
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline void SetDestinationDataSharingType(Aws::String&& value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType = std::move(value); }
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline void SetDestinationDataSharingType(const char* value) { m_destinationDataSharingTypeHasBeenSet = true; m_destinationDataSharingType.assign(value); }
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(const Aws::String& value) { SetDestinationDataSharingType(value); return *this;}
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(Aws::String&& value) { SetDestinationDataSharingType(std::move(value)); return *this;}
-
-    /**
-     * <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-     */
     inline ResourceDataSyncDestinationDataSharing& WithDestinationDataSharingType(const char* value) { SetDestinationDataSharingType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationDataSharingType;

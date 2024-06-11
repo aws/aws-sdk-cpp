@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDFRONT_API GetRealtimeLogConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A real-time log configuration.</p>
      */
     inline const RealtimeLogConfig& GetRealtimeLogConfig() const{ return m_realtimeLogConfig; }
-
-    /**
-     * <p>A real-time log configuration.</p>
-     */
     inline void SetRealtimeLogConfig(const RealtimeLogConfig& value) { m_realtimeLogConfig = value; }
-
-    /**
-     * <p>A real-time log configuration.</p>
-     */
     inline void SetRealtimeLogConfig(RealtimeLogConfig&& value) { m_realtimeLogConfig = std::move(value); }
-
-    /**
-     * <p>A real-time log configuration.</p>
-     */
     inline GetRealtimeLogConfig2020_05_31Result& WithRealtimeLogConfig(const RealtimeLogConfig& value) { SetRealtimeLogConfig(value); return *this;}
-
-    /**
-     * <p>A real-time log configuration.</p>
-     */
     inline GetRealtimeLogConfig2020_05_31Result& WithRealtimeLogConfig(RealtimeLogConfig&& value) { SetRealtimeLogConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRealtimeLogConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRealtimeLogConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRealtimeLogConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RealtimeLogConfig m_realtimeLogConfig;

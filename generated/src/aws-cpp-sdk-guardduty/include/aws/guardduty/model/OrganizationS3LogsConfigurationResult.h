@@ -36,30 +36,16 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A value that describes whether S3 data event logs are automatically enabled
      * for new members of the organization.</p>
      */
     inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>A value that describes whether S3 data event logs are automatically enabled
-     * for new members of the organization.</p>
-     */
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-
-    /**
-     * <p>A value that describes whether S3 data event logs are automatically enabled
-     * for new members of the organization.</p>
-     */
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-
-    /**
-     * <p>A value that describes whether S3 data event logs are automatically enabled
-     * for new members of the organization.</p>
-     */
     inline OrganizationS3LogsConfigurationResult& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoEnable;

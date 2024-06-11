@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API DeleteEnvironmentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the environment template being deleted.</p>
      */
     inline const EnvironmentTemplate& GetEnvironmentTemplate() const{ return m_environmentTemplate; }
-
-    /**
-     * <p>The detailed data of the environment template being deleted.</p>
-     */
     inline void SetEnvironmentTemplate(const EnvironmentTemplate& value) { m_environmentTemplate = value; }
-
-    /**
-     * <p>The detailed data of the environment template being deleted.</p>
-     */
     inline void SetEnvironmentTemplate(EnvironmentTemplate&& value) { m_environmentTemplate = std::move(value); }
-
-    /**
-     * <p>The detailed data of the environment template being deleted.</p>
-     */
     inline DeleteEnvironmentTemplateResult& WithEnvironmentTemplate(const EnvironmentTemplate& value) { SetEnvironmentTemplate(value); return *this;}
-
-    /**
-     * <p>The detailed data of the environment template being deleted.</p>
-     */
     inline DeleteEnvironmentTemplateResult& WithEnvironmentTemplate(EnvironmentTemplate&& value) { SetEnvironmentTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteEnvironmentTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteEnvironmentTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteEnvironmentTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EnvironmentTemplate m_environmentTemplate;

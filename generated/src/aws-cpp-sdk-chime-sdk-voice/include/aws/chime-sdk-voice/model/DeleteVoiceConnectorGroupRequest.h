@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector Group ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorGroupId() const{ return m_voiceConnectorGroupId; }
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline bool VoiceConnectorGroupIdHasBeenSet() const { return m_voiceConnectorGroupIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline void SetVoiceConnectorGroupId(const Aws::String& value) { m_voiceConnectorGroupIdHasBeenSet = true; m_voiceConnectorGroupId = value; }
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline void SetVoiceConnectorGroupId(Aws::String&& value) { m_voiceConnectorGroupIdHasBeenSet = true; m_voiceConnectorGroupId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline void SetVoiceConnectorGroupId(const char* value) { m_voiceConnectorGroupIdHasBeenSet = true; m_voiceConnectorGroupId.assign(value); }
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline DeleteVoiceConnectorGroupRequest& WithVoiceConnectorGroupId(const Aws::String& value) { SetVoiceConnectorGroupId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline DeleteVoiceConnectorGroupRequest& WithVoiceConnectorGroupId(Aws::String&& value) { SetVoiceConnectorGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector Group ID.</p>
-     */
     inline DeleteVoiceConnectorGroupRequest& WithVoiceConnectorGroupId(const char* value) { SetVoiceConnectorGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorGroupId;

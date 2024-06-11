@@ -37,91 +37,33 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The email address that should be added to the suppression list for your
      * account.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline PutSuppressedDestinationRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline PutSuppressedDestinationRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address that should be added to the suppression list for your
-     * account.</p>
-     */
     inline PutSuppressedDestinationRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The factors that should cause the email address to be added to the
      * suppression list for your account.</p>
      */
     inline const SuppressionListReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The factors that should cause the email address to be added to the
-     * suppression list for your account.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The factors that should cause the email address to be added to the
-     * suppression list for your account.</p>
-     */
     inline void SetReason(const SuppressionListReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The factors that should cause the email address to be added to the
-     * suppression list for your account.</p>
-     */
     inline void SetReason(SuppressionListReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The factors that should cause the email address to be added to the
-     * suppression list for your account.</p>
-     */
     inline PutSuppressedDestinationRequest& WithReason(const SuppressionListReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The factors that should cause the email address to be added to the
-     * suppression list for your account.</p>
-     */
     inline PutSuppressedDestinationRequest& WithReason(SuppressionListReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailAddress;

@@ -34,99 +34,42 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The transaction events returned by the request.</p>
      */
     inline const Aws::Vector<TransactionEvent>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline void SetEvents(const Aws::Vector<TransactionEvent>& value) { m_events = value; }
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline void SetEvents(Aws::Vector<TransactionEvent>&& value) { m_events = std::move(value); }
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline ListFilteredTransactionEventsResult& WithEvents(const Aws::Vector<TransactionEvent>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline ListFilteredTransactionEventsResult& WithEvents(Aws::Vector<TransactionEvent>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline ListFilteredTransactionEventsResult& AddEvents(const TransactionEvent& value) { m_events.push_back(value); return *this; }
-
-    /**
-     * <p>The transaction events returned by the request.</p>
-     */
     inline ListFilteredTransactionEventsResult& AddEvents(TransactionEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListFilteredTransactionEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListFilteredTransactionEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListFilteredTransactionEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListFilteredTransactionEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListFilteredTransactionEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListFilteredTransactionEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TransactionEvent> m_events;

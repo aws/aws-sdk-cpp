@@ -36,47 +36,25 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The polling time in milliseconds.</p>
      */
     inline long long GetPollingTime() const{ return m_pollingTime; }
-
-    /**
-     * <p>The polling time in milliseconds.</p>
-     */
     inline bool PollingTimeHasBeenSet() const { return m_pollingTimeHasBeenSet; }
-
-    /**
-     * <p>The polling time in milliseconds.</p>
-     */
     inline void SetPollingTime(long long value) { m_pollingTimeHasBeenSet = true; m_pollingTime = value; }
-
-    /**
-     * <p>The polling time in milliseconds.</p>
-     */
     inline StreamingDataPreviewOptions& WithPollingTime(long long value) { SetPollingTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The limit to the number of records polled.</p>
      */
     inline long long GetRecordPollingLimit() const{ return m_recordPollingLimit; }
-
-    /**
-     * <p>The limit to the number of records polled.</p>
-     */
     inline bool RecordPollingLimitHasBeenSet() const { return m_recordPollingLimitHasBeenSet; }
-
-    /**
-     * <p>The limit to the number of records polled.</p>
-     */
     inline void SetRecordPollingLimit(long long value) { m_recordPollingLimitHasBeenSet = true; m_recordPollingLimit = value; }
-
-    /**
-     * <p>The limit to the number of records polled.</p>
-     */
     inline StreamingDataPreviewOptions& WithRecordPollingLimit(long long value) { SetRecordPollingLimit(value); return *this;}
-
+    ///@}
   private:
 
     long long m_pollingTime;

@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort configuration for a field in a field well.</p>
      */
     inline const FieldSort& GetFieldSort() const{ return m_fieldSort; }
-
-    /**
-     * <p>The sort configuration for a field in a field well.</p>
-     */
     inline bool FieldSortHasBeenSet() const { return m_fieldSortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration for a field in a field well.</p>
-     */
     inline void SetFieldSort(const FieldSort& value) { m_fieldSortHasBeenSet = true; m_fieldSort = value; }
-
-    /**
-     * <p>The sort configuration for a field in a field well.</p>
-     */
     inline void SetFieldSort(FieldSort&& value) { m_fieldSortHasBeenSet = true; m_fieldSort = std::move(value); }
-
-    /**
-     * <p>The sort configuration for a field in a field well.</p>
-     */
     inline FieldSortOptions& WithFieldSort(const FieldSort& value) { SetFieldSort(value); return *this;}
-
-    /**
-     * <p>The sort configuration for a field in a field well.</p>
-     */
     inline FieldSortOptions& WithFieldSort(FieldSort&& value) { SetFieldSort(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort configuration for a column that is not used in a field well.</p>
      */
     inline const ColumnSort& GetColumnSort() const{ return m_columnSort; }
-
-    /**
-     * <p>The sort configuration for a column that is not used in a field well.</p>
-     */
     inline bool ColumnSortHasBeenSet() const { return m_columnSortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration for a column that is not used in a field well.</p>
-     */
     inline void SetColumnSort(const ColumnSort& value) { m_columnSortHasBeenSet = true; m_columnSort = value; }
-
-    /**
-     * <p>The sort configuration for a column that is not used in a field well.</p>
-     */
     inline void SetColumnSort(ColumnSort&& value) { m_columnSortHasBeenSet = true; m_columnSort = std::move(value); }
-
-    /**
-     * <p>The sort configuration for a column that is not used in a field well.</p>
-     */
     inline FieldSortOptions& WithColumnSort(const ColumnSort& value) { SetColumnSort(value); return *this;}
-
-    /**
-     * <p>The sort configuration for a column that is not used in a field well.</p>
-     */
     inline FieldSortOptions& WithColumnSort(ColumnSort&& value) { SetColumnSort(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FieldSort m_fieldSort;

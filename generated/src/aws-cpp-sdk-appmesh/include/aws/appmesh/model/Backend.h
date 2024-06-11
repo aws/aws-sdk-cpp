@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies a virtual service to use as a backend. </p>
      */
     inline const VirtualServiceBackend& GetVirtualService() const{ return m_virtualService; }
-
-    /**
-     * <p>Specifies a virtual service to use as a backend. </p>
-     */
     inline bool VirtualServiceHasBeenSet() const { return m_virtualServiceHasBeenSet; }
-
-    /**
-     * <p>Specifies a virtual service to use as a backend. </p>
-     */
     inline void SetVirtualService(const VirtualServiceBackend& value) { m_virtualServiceHasBeenSet = true; m_virtualService = value; }
-
-    /**
-     * <p>Specifies a virtual service to use as a backend. </p>
-     */
     inline void SetVirtualService(VirtualServiceBackend&& value) { m_virtualServiceHasBeenSet = true; m_virtualService = std::move(value); }
-
-    /**
-     * <p>Specifies a virtual service to use as a backend. </p>
-     */
     inline Backend& WithVirtualService(const VirtualServiceBackend& value) { SetVirtualService(value); return *this;}
-
-    /**
-     * <p>Specifies a virtual service to use as a backend. </p>
-     */
     inline Backend& WithVirtualService(VirtualServiceBackend&& value) { SetVirtualService(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualServiceBackend m_virtualService;

@@ -34,108 +34,43 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the job definition being run.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline GetJobRunRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline GetJobRunRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the job definition being run.</p>
-     */
     inline GetJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the job run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline GetJobRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline GetJobRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the job run.</p>
-     */
     inline GetJobRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>True if a list of predecessor runs should be returned.</p>
      */
     inline bool GetPredecessorsIncluded() const{ return m_predecessorsIncluded; }
-
-    /**
-     * <p>True if a list of predecessor runs should be returned.</p>
-     */
     inline bool PredecessorsIncludedHasBeenSet() const { return m_predecessorsIncludedHasBeenSet; }
-
-    /**
-     * <p>True if a list of predecessor runs should be returned.</p>
-     */
     inline void SetPredecessorsIncluded(bool value) { m_predecessorsIncludedHasBeenSet = true; m_predecessorsIncluded = value; }
-
-    /**
-     * <p>True if a list of predecessor runs should be returned.</p>
-     */
     inline GetJobRunRequest& WithPredecessorsIncluded(bool value) { SetPredecessorsIncluded(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobName;

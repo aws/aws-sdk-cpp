@@ -38,98 +38,41 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the deployed application.</p>
      */
     inline int GetApplicationVersion() const{ return m_applicationVersion; }
-
-    /**
-     * <p>The version of the deployed application.</p>
-     */
     inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the deployed application.</p>
-     */
     inline void SetApplicationVersion(int value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = value; }
-
-    /**
-     * <p>The version of the deployed application.</p>
-     */
     inline DeployedVersionSummary& WithApplicationVersion(int value) { SetApplicationVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the deployment.</p>
      */
     inline const DeploymentLifecycle& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the deployment.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the deployment.</p>
-     */
     inline void SetStatus(const DeploymentLifecycle& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the deployment.</p>
-     */
     inline void SetStatus(DeploymentLifecycle&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the deployment.</p>
-     */
     inline DeployedVersionSummary& WithStatus(const DeploymentLifecycle& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the deployment.</p>
-     */
     inline DeployedVersionSummary& WithStatus(DeploymentLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the reported status.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline DeployedVersionSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline DeployedVersionSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the reported status.</p>
-     */
     inline DeployedVersionSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
-
+    ///@}
   private:
 
     int m_applicationVersion;

@@ -42,61 +42,29 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
-
-    /**
-     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-     */
     inline bool VPCRegionHasBeenSet() const { return m_vPCRegionHasBeenSet; }
-
-    /**
-     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-     */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
-
-    /**
-     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-     */
     inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
-
-    /**
-     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-     */
     inline VPC& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
-
-    /**
-     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-     */
     inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
-
-    
     inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
-
-    
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
-
-    
     inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::move(value); }
-
-    
     inline void SetVPCId(const char* value) { m_vPCIdHasBeenSet = true; m_vPCId.assign(value); }
-
-    
     inline VPC& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
-
-    
     inline VPC& WithVPCId(Aws::String&& value) { SetVPCId(std::move(value)); return *this;}
-
-    
     inline VPC& WithVPCId(const char* value) { SetVPCId(value); return *this;}
-
+    ///@}
   private:
 
     VPCRegion m_vPCRegion;

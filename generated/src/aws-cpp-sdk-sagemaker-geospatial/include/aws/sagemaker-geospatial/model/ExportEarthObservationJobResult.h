@@ -35,207 +35,86 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API ExportEarthObservationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
      * exported.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The output Amazon Resource Name (ARN) of the Earth Observation job being
-     * exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline ExportEarthObservationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The creation time.</p>
-     */
     inline ExportEarthObservationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
      * job.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobResult& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobResult& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
-     * job.</p>
-     */
     inline ExportEarthObservationJobResult& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source images provided to the Earth Observation job being exported.</p>
      */
     inline bool GetExportSourceImages() const{ return m_exportSourceImages; }
-
-    /**
-     * <p>The source images provided to the Earth Observation job being exported.</p>
-     */
     inline void SetExportSourceImages(bool value) { m_exportSourceImages = value; }
-
-    /**
-     * <p>The source images provided to the Earth Observation job being exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithExportSourceImages(bool value) { SetExportSourceImages(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the results of the Earth Observation job being exported.</p>
      */
     inline const EarthObservationJobExportStatus& GetExportStatus() const{ return m_exportStatus; }
-
-    /**
-     * <p>The status of the results of the Earth Observation job being exported.</p>
-     */
     inline void SetExportStatus(const EarthObservationJobExportStatus& value) { m_exportStatus = value; }
-
-    /**
-     * <p>The status of the results of the Earth Observation job being exported.</p>
-     */
     inline void SetExportStatus(EarthObservationJobExportStatus&& value) { m_exportStatus = std::move(value); }
-
-    /**
-     * <p>The status of the results of the Earth Observation job being exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithExportStatus(const EarthObservationJobExportStatus& value) { SetExportStatus(value); return *this;}
-
-    /**
-     * <p>The status of the results of the Earth Observation job being exported.</p>
-     */
     inline ExportEarthObservationJobResult& WithExportStatus(EarthObservationJobExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object containing information about the output file.</p>
      */
     inline const OutputConfigInput& GetOutputConfig() const{ return m_outputConfig; }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline void SetOutputConfig(const OutputConfigInput& value) { m_outputConfig = value; }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline void SetOutputConfig(OutputConfigInput&& value) { m_outputConfig = std::move(value); }
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline ExportEarthObservationJobResult& WithOutputConfig(const OutputConfigInput& value) { SetOutputConfig(value); return *this;}
-
-    /**
-     * <p>An object containing information about the output file.</p>
-     */
     inline ExportEarthObservationJobResult& WithOutputConfig(OutputConfigInput&& value) { SetOutputConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportEarthObservationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportEarthObservationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportEarthObservationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

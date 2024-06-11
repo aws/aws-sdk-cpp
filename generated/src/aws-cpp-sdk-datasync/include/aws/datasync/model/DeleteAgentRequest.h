@@ -37,62 +37,21 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
      * <code>ListAgents</code> operation to return a list of agents for your account
      * and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline DeleteAgentRequest& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline DeleteAgentRequest& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
-     * <code>ListAgents</code> operation to return a list of agents for your account
-     * and Amazon Web Services Region.</p>
-     */
     inline DeleteAgentRequest& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentArn;

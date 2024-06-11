@@ -36,75 +36,30 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Whether to enable termination protection on the specified stack.</p>
      */
     inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
-
-    /**
-     * <p>Whether to enable termination protection on the specified stack.</p>
-     */
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
-
-    /**
-     * <p>Whether to enable termination protection on the specified stack.</p>
-     */
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
-
-    /**
-     * <p>Whether to enable termination protection on the specified stack.</p>
-     */
     inline UpdateTerminationProtectionRequest& WithEnableTerminationProtection(bool value) { SetEnableTerminationProtection(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name or unique ID of the stack for which you want to set termination
      * protection.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline UpdateTerminationProtectionRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline UpdateTerminationProtectionRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or unique ID of the stack for which you want to set termination
-     * protection.</p>
-     */
     inline UpdateTerminationProtectionRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableTerminationProtection;

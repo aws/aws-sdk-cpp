@@ -38,87 +38,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the linked environment.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the linked environment.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the environment link.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the environment link.</p>
-     */
     inline AwsElasticBeanstalkEnvironmentEnvironmentLink& WithLinkName(const char* value) { SetLinkName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentName;

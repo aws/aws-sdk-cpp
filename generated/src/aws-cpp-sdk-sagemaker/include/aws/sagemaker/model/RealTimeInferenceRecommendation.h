@@ -40,156 +40,51 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The recommendation ID which uniquely identifies each recommendation.</p>
      */
     inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline RealTimeInferenceRecommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline RealTimeInferenceRecommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
     inline RealTimeInferenceRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recommended instance type for Real-Time Inference.</p>
      */
     inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The recommended instance type for Real-Time Inference.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The recommended instance type for Real-Time Inference.</p>
-     */
     inline void SetInstanceType(const ProductionVariantInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The recommended instance type for Real-Time Inference.</p>
-     */
     inline void SetInstanceType(ProductionVariantInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The recommended instance type for Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& WithInstanceType(const ProductionVariantInstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The recommended instance type for Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& WithInstanceType(ProductionVariantInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recommended environment variables to set in the model container for
      * Real-Time Inference.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The recommended environment variables to set in the model container for
-     * Real-Time Inference.</p>
-     */
     inline RealTimeInferenceRecommendation& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_recommendationId;

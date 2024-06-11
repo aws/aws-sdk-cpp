@@ -40,70 +40,30 @@ namespace Model
     AWS_ROUTE53_API ListTagsForResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
      * specified resources.</p>
      */
     inline const Aws::Vector<ResourceTagSet>& GetResourceTagSets() const{ return m_resourceTagSets; }
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline void SetResourceTagSets(const Aws::Vector<ResourceTagSet>& value) { m_resourceTagSets = value; }
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline void SetResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { m_resourceTagSets = std::move(value); }
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline ListTagsForResourcesResult& WithResourceTagSets(const Aws::Vector<ResourceTagSet>& value) { SetResourceTagSets(value); return *this;}
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline ListTagsForResourcesResult& WithResourceTagSets(Aws::Vector<ResourceTagSet>&& value) { SetResourceTagSets(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline ListTagsForResourcesResult& AddResourceTagSets(const ResourceTagSet& value) { m_resourceTagSets.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>ResourceTagSet</code>s containing tags associated with the
-     * specified resources.</p>
-     */
     inline ListTagsForResourcesResult& AddResourceTagSets(ResourceTagSet&& value) { m_resourceTagSets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ResourceTagSet> m_resourceTagSets;

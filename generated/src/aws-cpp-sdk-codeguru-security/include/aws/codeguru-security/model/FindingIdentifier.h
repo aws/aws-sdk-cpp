@@ -38,87 +38,33 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for a finding.</p>
      */
     inline const Aws::String& GetFindingId() const{ return m_findingId; }
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline FindingIdentifier& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline FindingIdentifier& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for a finding.</p>
-     */
     inline FindingIdentifier& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the scan that generated the finding. </p>
      */
     inline const Aws::String& GetScanName() const{ return m_scanName; }
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline FindingIdentifier& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline FindingIdentifier& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the scan that generated the finding. </p>
-     */
     inline FindingIdentifier& WithScanName(const char* value) { SetScanName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_findingId;

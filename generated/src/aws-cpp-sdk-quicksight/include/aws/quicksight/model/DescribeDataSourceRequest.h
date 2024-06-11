@@ -32,95 +32,34 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline DescribeDataSourceRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline DescribeDataSourceRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline DescribeDataSourceRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
      * for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline DescribeDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline DescribeDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the data source. This ID is unique per Amazon Web Services Region
-     * for each Amazon Web Services account.</p>
-     */
     inline DescribeDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

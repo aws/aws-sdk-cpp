@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the key pair for which you are requesting information.</p>
      */
     inline const Aws::String& GetKeyPairName() const{ return m_keyPairName; }
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline void SetKeyPairName(const char* value) { m_keyPairNameHasBeenSet = true; m_keyPairName.assign(value); }
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline GetKeyPairRequest& WithKeyPairName(const Aws::String& value) { SetKeyPairName(value); return *this;}
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline GetKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the key pair for which you are requesting information.</p>
-     */
     inline GetKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyPairName;

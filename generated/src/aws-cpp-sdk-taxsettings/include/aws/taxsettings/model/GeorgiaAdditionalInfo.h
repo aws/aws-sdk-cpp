@@ -38,36 +38,17 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
      */
     inline const PersonType& GetPersonType() const{ return m_personType; }
-
-    /**
-     * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
-     */
     inline bool PersonTypeHasBeenSet() const { return m_personTypeHasBeenSet; }
-
-    /**
-     * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
-     */
     inline void SetPersonType(const PersonType& value) { m_personTypeHasBeenSet = true; m_personType = value; }
-
-    /**
-     * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
-     */
     inline void SetPersonType(PersonType&& value) { m_personTypeHasBeenSet = true; m_personType = std::move(value); }
-
-    /**
-     * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
-     */
     inline GeorgiaAdditionalInfo& WithPersonType(const PersonType& value) { SetPersonType(value); return *this;}
-
-    /**
-     * <p> The legal person or physical person assigned to this TRN in Georgia. </p>
-     */
     inline GeorgiaAdditionalInfo& WithPersonType(PersonType&& value) { SetPersonType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PersonType m_personType;

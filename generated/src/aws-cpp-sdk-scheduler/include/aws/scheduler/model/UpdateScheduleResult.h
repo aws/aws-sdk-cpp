@@ -32,63 +32,29 @@ namespace Model
     AWS_SCHEDULER_API UpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
      */
     inline const Aws::String& GetScheduleArn() const{ return m_scheduleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline void SetScheduleArn(const Aws::String& value) { m_scheduleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline void SetScheduleArn(Aws::String&& value) { m_scheduleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline void SetScheduleArn(const char* value) { m_scheduleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline UpdateScheduleResult& WithScheduleArn(const Aws::String& value) { SetScheduleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline UpdateScheduleResult& WithScheduleArn(Aws::String&& value) { SetScheduleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-     */
     inline UpdateScheduleResult& WithScheduleArn(const char* value) { SetScheduleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduleArn;

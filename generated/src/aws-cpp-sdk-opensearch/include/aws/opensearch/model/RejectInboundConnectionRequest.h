@@ -36,46 +36,19 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the inbound connection to reject.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline RejectInboundConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline RejectInboundConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the inbound connection to reject.</p>
-     */
     inline RejectInboundConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectionId;

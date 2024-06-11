@@ -41,71 +41,31 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline DeleteAnalysisSchemeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline DeleteAnalysisSchemeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline DeleteAnalysisSchemeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the analysis scheme you want to delete.</p>
      */
     inline const Aws::String& GetAnalysisSchemeName() const{ return m_analysisSchemeName; }
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline bool AnalysisSchemeNameHasBeenSet() const { return m_analysisSchemeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline void SetAnalysisSchemeName(const Aws::String& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = value; }
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline void SetAnalysisSchemeName(Aws::String&& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = std::move(value); }
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline void SetAnalysisSchemeName(const char* value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName.assign(value); }
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(const Aws::String& value) { SetAnalysisSchemeName(value); return *this;}
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(Aws::String&& value) { SetAnalysisSchemeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the analysis scheme you want to delete.</p>
-     */
     inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(const char* value) { SetAnalysisSchemeName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

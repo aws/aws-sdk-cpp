@@ -39,116 +39,44 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>reprocessingId</code> returned by
      * <code>StartPipelineReprocessing</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline ReprocessingSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline ReprocessingSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>reprocessingId</code> returned by
-     * <code>StartPipelineReprocessing</code>.</p>
-     */
     inline ReprocessingSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the pipeline reprocessing.</p>
      */
     inline const ReprocessingStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the pipeline reprocessing.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the pipeline reprocessing.</p>
-     */
     inline void SetStatus(const ReprocessingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the pipeline reprocessing.</p>
-     */
     inline void SetStatus(ReprocessingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the pipeline reprocessing.</p>
-     */
     inline ReprocessingSummary& WithStatus(const ReprocessingStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the pipeline reprocessing.</p>
-     */
     inline ReprocessingSummary& WithStatus(ReprocessingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the pipeline reprocessing was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The time the pipeline reprocessing was created.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The time the pipeline reprocessing was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The time the pipeline reprocessing was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The time the pipeline reprocessing was created.</p>
-     */
     inline ReprocessingSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The time the pipeline reprocessing was created.</p>
-     */
     inline ReprocessingSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

@@ -41,6 +41,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Details for SASL/SCRAM client authentication for VPC
@@ -48,48 +49,14 @@ namespace Model
          
      */
     inline const VpcConnectivityScram& GetScram() const{ return m_scram; }
-
-    /**
-     * 
-            <p>Details for SASL/SCRAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline bool ScramHasBeenSet() const { return m_scramHasBeenSet; }
-
-    /**
-     * 
-            <p>Details for SASL/SCRAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetScram(const VpcConnectivityScram& value) { m_scramHasBeenSet = true; m_scram = value; }
-
-    /**
-     * 
-            <p>Details for SASL/SCRAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetScram(VpcConnectivityScram&& value) { m_scramHasBeenSet = true; m_scram = std::move(value); }
-
-    /**
-     * 
-            <p>Details for SASL/SCRAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivitySasl& WithScram(const VpcConnectivityScram& value) { SetScram(value); return *this;}
-
-    /**
-     * 
-            <p>Details for SASL/SCRAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivitySasl& WithScram(VpcConnectivityScram&& value) { SetScram(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>Details for SASL/IAM client authentication for VPC
@@ -97,47 +64,12 @@ namespace Model
          
      */
     inline const VpcConnectivityIam& GetIam() const{ return m_iam; }
-
-    /**
-     * 
-            <p>Details for SASL/IAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-
-    /**
-     * 
-            <p>Details for SASL/IAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetIam(const VpcConnectivityIam& value) { m_iamHasBeenSet = true; m_iam = value; }
-
-    /**
-     * 
-            <p>Details for SASL/IAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetIam(VpcConnectivityIam&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-
-    /**
-     * 
-            <p>Details for SASL/IAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivitySasl& WithIam(const VpcConnectivityIam& value) { SetIam(value); return *this;}
-
-    /**
-     * 
-            <p>Details for SASL/IAM client authentication for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivitySasl& WithIam(VpcConnectivityIam&& value) { SetIam(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VpcConnectivityScram m_scram;

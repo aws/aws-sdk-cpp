@@ -33,57 +33,27 @@ namespace Model
     AWS_EC2_API CreateImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the new AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageId = value; }
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline void SetImageId(const char* value) { m_imageId.assign(value); }
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline CreateImageResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline CreateImageResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the new AMI.</p>
-     */
     inline CreateImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateImageResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageId;

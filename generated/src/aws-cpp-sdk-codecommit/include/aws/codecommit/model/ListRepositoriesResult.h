@@ -40,42 +40,20 @@ namespace Model
     AWS_CODECOMMIT_API ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Lists the repositories called by the list repositories operation.</p>
      */
     inline const Aws::Vector<RepositoryNameIdPair>& GetRepositories() const{ return m_repositories; }
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline void SetRepositories(const Aws::Vector<RepositoryNameIdPair>& value) { m_repositories = value; }
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline void SetRepositories(Aws::Vector<RepositoryNameIdPair>&& value) { m_repositories = std::move(value); }
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline ListRepositoriesResult& WithRepositories(const Aws::Vector<RepositoryNameIdPair>& value) { SetRepositories(value); return *this;}
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline ListRepositoriesResult& WithRepositories(Aws::Vector<RepositoryNameIdPair>&& value) { SetRepositories(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline ListRepositoriesResult& AddRepositories(const RepositoryNameIdPair& value) { m_repositories.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the repositories called by the list repositories operation.</p>
-     */
     inline ListRepositoriesResult& AddRepositories(RepositoryNameIdPair&& value) { m_repositories.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
      * operation. Batch sizes are 1,000 for list repository operations. When the client
@@ -83,77 +61,24 @@ namespace Model
      * retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An enumeration token that allows the operation to batch the results of the
-     * operation. Batch sizes are 1,000 for list repository operations. When the client
-     * sends the token back to CodeCommit, another page of 1,000 records is
-     * retrieved.</p>
-     */
     inline ListRepositoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRepositoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRepositoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRepositoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RepositoryNameIdPair> m_repositories;

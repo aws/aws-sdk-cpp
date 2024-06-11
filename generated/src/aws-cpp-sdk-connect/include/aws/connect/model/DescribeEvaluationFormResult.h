@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeEvaluationFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the evaluation form.</p>
      */
     inline const EvaluationForm& GetEvaluationForm() const{ return m_evaluationForm; }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline void SetEvaluationForm(const EvaluationForm& value) { m_evaluationForm = value; }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline void SetEvaluationForm(EvaluationForm&& value) { m_evaluationForm = std::move(value); }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline DescribeEvaluationFormResult& WithEvaluationForm(const EvaluationForm& value) { SetEvaluationForm(value); return *this;}
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline DescribeEvaluationFormResult& WithEvaluationForm(EvaluationForm&& value) { SetEvaluationForm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEvaluationFormResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEvaluationFormResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEvaluationFormResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EvaluationForm m_evaluationForm;

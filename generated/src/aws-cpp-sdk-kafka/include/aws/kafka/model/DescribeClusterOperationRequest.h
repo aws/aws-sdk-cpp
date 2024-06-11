@@ -32,6 +32,7 @@ namespace Model
     AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
@@ -39,63 +40,14 @@ namespace Model
          
      */
     inline const Aws::String& GetClusterOperationArn() const{ return m_clusterOperationArn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline bool ClusterOperationArnHasBeenSet() const { return m_clusterOperationArnHasBeenSet; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline void SetClusterOperationArn(const Aws::String& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline void SetClusterOperationArn(Aws::String&& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline void SetClusterOperationArn(const char* value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline DescribeClusterOperationRequest& WithClusterOperationArn(const Aws::String& value) { SetClusterOperationArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline DescribeClusterOperationRequest& WithClusterOperationArn(Aws::String&& value) { SetClusterOperationArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK
-     * cluster operation.</p>
-         
-     */
     inline DescribeClusterOperationRequest& WithClusterOperationArn(const char* value) { SetClusterOperationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterOperationArn;

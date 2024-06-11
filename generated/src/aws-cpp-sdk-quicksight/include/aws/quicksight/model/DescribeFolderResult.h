@@ -33,69 +33,36 @@ namespace Model
     AWS_QUICKSIGHT_API DescribeFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline DescribeFolderResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the folder.</p>
      */
     inline const Folder& GetFolder() const{ return m_folder; }
-
-    /**
-     * <p>Information about the folder.</p>
-     */
     inline void SetFolder(const Folder& value) { m_folder = value; }
-
-    /**
-     * <p>Information about the folder.</p>
-     */
     inline void SetFolder(Folder&& value) { m_folder = std::move(value); }
-
-    /**
-     * <p>Information about the folder.</p>
-     */
     inline DescribeFolderResult& WithFolder(const Folder& value) { SetFolder(value); return *this;}
-
-    /**
-     * <p>Information about the folder.</p>
-     */
     inline DescribeFolderResult& WithFolder(Folder&& value) { SetFolder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_status;

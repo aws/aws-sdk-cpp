@@ -38,67 +38,29 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const S3AccessControlList& GetAccessControlList() const{ return m_accessControlList; }
-
-    /**
-     * <p/>
-     */
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetAccessControlList(const S3AccessControlList& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetAccessControlList(S3AccessControlList&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline S3AccessControlPolicy& WithAccessControlList(const S3AccessControlList& value) { SetAccessControlList(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3AccessControlPolicy& WithAccessControlList(S3AccessControlList&& value) { SetAccessControlList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const S3CannedAccessControlList& GetCannedAccessControlList() const{ return m_cannedAccessControlList; }
-
-    /**
-     * <p/>
-     */
     inline bool CannedAccessControlListHasBeenSet() const { return m_cannedAccessControlListHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetCannedAccessControlList(const S3CannedAccessControlList& value) { m_cannedAccessControlListHasBeenSet = true; m_cannedAccessControlList = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetCannedAccessControlList(S3CannedAccessControlList&& value) { m_cannedAccessControlListHasBeenSet = true; m_cannedAccessControlList = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline S3AccessControlPolicy& WithCannedAccessControlList(const S3CannedAccessControlList& value) { SetCannedAccessControlList(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3AccessControlPolicy& WithCannedAccessControlList(S3CannedAccessControlList&& value) { SetCannedAccessControlList(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3AccessControlList m_accessControlList;

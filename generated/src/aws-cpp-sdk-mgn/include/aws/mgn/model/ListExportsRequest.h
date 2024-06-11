@@ -36,86 +36,39 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const ListExportsRequestFilters& GetFilters() const{ return m_filters; }
-
-    
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    
     inline void SetFilters(const ListExportsRequestFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    
     inline void SetFilters(ListExportsRequestFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    
     inline ListExportsRequest& WithFilters(const ListExportsRequestFilters& value) { SetFilters(value); return *this;}
-
-    
     inline ListExportsRequest& WithFilters(ListExportsRequestFilters&& value) { SetFilters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List export request max results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>List export request max results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>List export request max results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>List export request max results.</p>
-     */
     inline ListExportsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List export request next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline ListExportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>List export request next token.</p>
-     */
     inline ListExportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     ListExportsRequestFilters m_filters;

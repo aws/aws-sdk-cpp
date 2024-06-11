@@ -39,118 +39,45 @@ namespace Model
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Encoded value for the failure type. </p>
      */
     inline const NotifyWorkersFailureCode& GetNotifyWorkersFailureCode() const{ return m_notifyWorkersFailureCode; }
-
-    /**
-     * <p> Encoded value for the failure type. </p>
-     */
     inline bool NotifyWorkersFailureCodeHasBeenSet() const { return m_notifyWorkersFailureCodeHasBeenSet; }
-
-    /**
-     * <p> Encoded value for the failure type. </p>
-     */
     inline void SetNotifyWorkersFailureCode(const NotifyWorkersFailureCode& value) { m_notifyWorkersFailureCodeHasBeenSet = true; m_notifyWorkersFailureCode = value; }
-
-    /**
-     * <p> Encoded value for the failure type. </p>
-     */
     inline void SetNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { m_notifyWorkersFailureCodeHasBeenSet = true; m_notifyWorkersFailureCode = std::move(value); }
-
-    /**
-     * <p> Encoded value for the failure type. </p>
-     */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureCode(const NotifyWorkersFailureCode& value) { SetNotifyWorkersFailureCode(value); return *this;}
-
-    /**
-     * <p> Encoded value for the failure type. </p>
-     */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureCode(NotifyWorkersFailureCode&& value) { SetNotifyWorkersFailureCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
      */
     inline const Aws::String& GetNotifyWorkersFailureMessage() const{ return m_notifyWorkersFailureMessage; }
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline bool NotifyWorkersFailureMessageHasBeenSet() const { return m_notifyWorkersFailureMessageHasBeenSet; }
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline void SetNotifyWorkersFailureMessage(const Aws::String& value) { m_notifyWorkersFailureMessageHasBeenSet = true; m_notifyWorkersFailureMessage = value; }
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline void SetNotifyWorkersFailureMessage(Aws::String&& value) { m_notifyWorkersFailureMessageHasBeenSet = true; m_notifyWorkersFailureMessage = std::move(value); }
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline void SetNotifyWorkersFailureMessage(const char* value) { m_notifyWorkersFailureMessageHasBeenSet = true; m_notifyWorkersFailureMessage.assign(value); }
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(const Aws::String& value) { SetNotifyWorkersFailureMessage(value); return *this;}
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(Aws::String&& value) { SetNotifyWorkersFailureMessage(std::move(value)); return *this;}
-
-    /**
-     * <p> A message detailing the reason the Worker could not be notified. </p>
-     */
     inline NotifyWorkersFailureStatus& WithNotifyWorkersFailureMessage(const char* value) { SetNotifyWorkersFailureMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ID of the Worker.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline NotifyWorkersFailureStatus& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline NotifyWorkersFailureStatus& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the Worker.</p>
-     */
     inline NotifyWorkersFailureStatus& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-
+    ///@}
   private:
 
     NotifyWorkersFailureCode m_notifyWorkersFailureCode;

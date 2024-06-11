@@ -36,152 +36,75 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of nodes in a vehicle network.</p>
      */
     inline int GetTotalNodes() const{ return m_totalNodes; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network.</p>
-     */
     inline bool TotalNodesHasBeenSet() const { return m_totalNodesHasBeenSet; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network.</p>
-     */
     inline void SetTotalNodes(int value) { m_totalNodesHasBeenSet = true; m_totalNodes = value; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network.</p>
-     */
     inline NodeCounts& WithTotalNodes(int value) { SetTotalNodes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of nodes in a vehicle network that represent branches.</p>
      */
     inline int GetTotalBranches() const{ return m_totalBranches; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent branches.</p>
-     */
     inline bool TotalBranchesHasBeenSet() const { return m_totalBranchesHasBeenSet; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent branches.</p>
-     */
     inline void SetTotalBranches(int value) { m_totalBranchesHasBeenSet = true; m_totalBranches = value; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent branches.</p>
-     */
     inline NodeCounts& WithTotalBranches(int value) { SetTotalBranches(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of nodes in a vehicle network that represent sensors.</p>
      */
     inline int GetTotalSensors() const{ return m_totalSensors; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent sensors.</p>
-     */
     inline bool TotalSensorsHasBeenSet() const { return m_totalSensorsHasBeenSet; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent sensors.</p>
-     */
     inline void SetTotalSensors(int value) { m_totalSensorsHasBeenSet = true; m_totalSensors = value; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent sensors.</p>
-     */
     inline NodeCounts& WithTotalSensors(int value) { SetTotalSensors(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of nodes in a vehicle network that represent attributes.</p>
      */
     inline int GetTotalAttributes() const{ return m_totalAttributes; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent attributes.</p>
-     */
     inline bool TotalAttributesHasBeenSet() const { return m_totalAttributesHasBeenSet; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent attributes.</p>
-     */
     inline void SetTotalAttributes(int value) { m_totalAttributesHasBeenSet = true; m_totalAttributes = value; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent attributes.</p>
-     */
     inline NodeCounts& WithTotalAttributes(int value) { SetTotalAttributes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of nodes in a vehicle network that represent actuators.</p>
      */
     inline int GetTotalActuators() const{ return m_totalActuators; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent actuators.</p>
-     */
     inline bool TotalActuatorsHasBeenSet() const { return m_totalActuatorsHasBeenSet; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent actuators.</p>
-     */
     inline void SetTotalActuators(int value) { m_totalActuatorsHasBeenSet = true; m_totalActuators = value; }
-
-    /**
-     * <p>The total number of nodes in a vehicle network that represent actuators.</p>
-     */
     inline NodeCounts& WithTotalActuators(int value) { SetTotalActuators(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total structure for the node.</p>
      */
     inline int GetTotalStructs() const{ return m_totalStructs; }
-
-    /**
-     * <p>The total structure for the node.</p>
-     */
     inline bool TotalStructsHasBeenSet() const { return m_totalStructsHasBeenSet; }
-
-    /**
-     * <p>The total structure for the node.</p>
-     */
     inline void SetTotalStructs(int value) { m_totalStructsHasBeenSet = true; m_totalStructs = value; }
-
-    /**
-     * <p>The total structure for the node.</p>
-     */
     inline NodeCounts& WithTotalStructs(int value) { SetTotalStructs(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total properties for the node.</p>
      */
     inline int GetTotalProperties() const{ return m_totalProperties; }
-
-    /**
-     * <p>The total properties for the node.</p>
-     */
     inline bool TotalPropertiesHasBeenSet() const { return m_totalPropertiesHasBeenSet; }
-
-    /**
-     * <p>The total properties for the node.</p>
-     */
     inline void SetTotalProperties(int value) { m_totalPropertiesHasBeenSet = true; m_totalProperties = value; }
-
-    /**
-     * <p>The total properties for the node.</p>
-     */
     inline NodeCounts& WithTotalProperties(int value) { SetTotalProperties(value); return *this;}
-
+    ///@}
   private:
 
     int m_totalNodes;

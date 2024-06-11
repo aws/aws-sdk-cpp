@@ -35,54 +35,20 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> A list of information about each vehicle to create. For more information,
      * see the API data type.</p>
      */
     inline const Aws::Vector<CreateVehicleRequestItem>& GetVehicles() const{ return m_vehicles; }
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline bool VehiclesHasBeenSet() const { return m_vehiclesHasBeenSet; }
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline void SetVehicles(const Aws::Vector<CreateVehicleRequestItem>& value) { m_vehiclesHasBeenSet = true; m_vehicles = value; }
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline void SetVehicles(Aws::Vector<CreateVehicleRequestItem>&& value) { m_vehiclesHasBeenSet = true; m_vehicles = std::move(value); }
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline BatchCreateVehicleRequest& WithVehicles(const Aws::Vector<CreateVehicleRequestItem>& value) { SetVehicles(value); return *this;}
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline BatchCreateVehicleRequest& WithVehicles(Aws::Vector<CreateVehicleRequestItem>&& value) { SetVehicles(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline BatchCreateVehicleRequest& AddVehicles(const CreateVehicleRequestItem& value) { m_vehiclesHasBeenSet = true; m_vehicles.push_back(value); return *this; }
-
-    /**
-     * <p> A list of information about each vehicle to create. For more information,
-     * see the API data type.</p>
-     */
     inline BatchCreateVehicleRequest& AddVehicles(CreateVehicleRequestItem&& value) { m_vehiclesHasBeenSet = true; m_vehicles.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CreateVehicleRequestItem> m_vehicles;

@@ -32,87 +32,33 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline DeleteProxySessionRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline DeleteProxySessionRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline DeleteProxySessionRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proxy session ID.</p>
      */
     inline const Aws::String& GetProxySessionId() const{ return m_proxySessionId; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline bool ProxySessionIdHasBeenSet() const { return m_proxySessionIdHasBeenSet; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(const Aws::String& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = value; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(Aws::String&& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = std::move(value); }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(const char* value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId.assign(value); }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline DeleteProxySessionRequest& WithProxySessionId(const Aws::String& value) { SetProxySessionId(value); return *this;}
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline DeleteProxySessionRequest& WithProxySessionId(Aws::String&& value) { SetProxySessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline DeleteProxySessionRequest& WithProxySessionId(const char* value) { SetProxySessionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

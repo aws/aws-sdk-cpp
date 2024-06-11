@@ -39,62 +39,21 @@ namespace Model
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The objective that's used as filter criteria.</p> <p>You can use this
      * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
      * <code>CommonControlFilter</code> isn’t currently supported.</p>
      */
     inline const Aws::Vector<ObjectiveResourceFilter>& GetObjectives() const{ return m_objectives; }
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline bool ObjectivesHasBeenSet() const { return m_objectivesHasBeenSet; }
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline void SetObjectives(const Aws::Vector<ObjectiveResourceFilter>& value) { m_objectivesHasBeenSet = true; m_objectives = value; }
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline void SetObjectives(Aws::Vector<ObjectiveResourceFilter>&& value) { m_objectivesHasBeenSet = true; m_objectives = std::move(value); }
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline CommonControlFilter& WithObjectives(const Aws::Vector<ObjectiveResourceFilter>& value) { SetObjectives(value); return *this;}
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline CommonControlFilter& WithObjectives(Aws::Vector<ObjectiveResourceFilter>&& value) { SetObjectives(std::move(value)); return *this;}
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline CommonControlFilter& AddObjectives(const ObjectiveResourceFilter& value) { m_objectivesHasBeenSet = true; m_objectives.push_back(value); return *this; }
-
-    /**
-     * <p>The objective that's used as filter criteria.</p> <p>You can use this
-     * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
-     * <code>CommonControlFilter</code> isn’t currently supported.</p>
-     */
     inline CommonControlFilter& AddObjectives(ObjectiveResourceFilter&& value) { m_objectivesHasBeenSet = true; m_objectives.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ObjectiveResourceFilter> m_objectives;

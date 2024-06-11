@@ -33,49 +33,27 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetCheckName() const{ return m_checkName; }
-
-    
     inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
-
-    
     inline void SetCheckName(const Aws::String& value) { m_checkNameHasBeenSet = true; m_checkName = value; }
-
-    
     inline void SetCheckName(Aws::String&& value) { m_checkNameHasBeenSet = true; m_checkName = std::move(value); }
-
-    
     inline void SetCheckName(const char* value) { m_checkNameHasBeenSet = true; m_checkName.assign(value); }
-
-    
     inline DescribeAuditSuppressionRequest& WithCheckName(const Aws::String& value) { SetCheckName(value); return *this;}
-
-    
     inline DescribeAuditSuppressionRequest& WithCheckName(Aws::String&& value) { SetCheckName(std::move(value)); return *this;}
-
-    
     inline DescribeAuditSuppressionRequest& WithCheckName(const char* value) { SetCheckName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-
-    
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-
-    
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-
-    
     inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-
-    
     inline DescribeAuditSuppressionRequest& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
-
-    
     inline DescribeAuditSuppressionRequest& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_checkName;

@@ -46,118 +46,37 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The claim that determines the principal in OIDC access tokens. For example,
      * <code>sub</code>.</p>
      */
     inline const Aws::String& GetPrincipalIdClaim() const{ return m_principalIdClaim; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline bool PrincipalIdClaimHasBeenSet() const { return m_principalIdClaimHasBeenSet; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(const Aws::String& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = value; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(Aws::String&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::move(value); }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(const char* value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim.assign(value); }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(const Aws::String& value) { SetPrincipalIdClaim(value); return *this;}
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(Aws::String&& value) { SetPrincipalIdClaim(std::move(value)); return *this;}
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(const char* value) { SetPrincipalIdClaim(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The access token <code>aud</code> claim values that you want to accept in
      * your policy store. For example, <code>https://myapp.example.com,
      * https://myapp2.example.com</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The access token <code>aud</code> claim values that you want to accept in
-     * your policy store. For example, <code>https://myapp.example.com,
-     * https://myapp2.example.com</code>.</p>
-     */
     inline OpenIdConnectAccessTokenConfiguration& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_principalIdClaim;

@@ -37,136 +37,48 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state of the software that is installed or that is being installed on the
      * device.</p>
      */
     inline const Aws::String& GetInstallState() const{ return m_installState; }
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline bool InstallStateHasBeenSet() const { return m_installStateHasBeenSet; }
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline void SetInstallState(const Aws::String& value) { m_installStateHasBeenSet = true; m_installState = value; }
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline void SetInstallState(Aws::String&& value) { m_installStateHasBeenSet = true; m_installState = std::move(value); }
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline void SetInstallState(const char* value) { m_installStateHasBeenSet = true; m_installState.assign(value); }
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline SoftwareInformation& WithInstallState(const Aws::String& value) { SetInstallState(value); return *this;}
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline SoftwareInformation& WithInstallState(Aws::String&& value) { SetInstallState(std::move(value)); return *this;}
-
-    /**
-     * <p>The state of the software that is installed or that is being installed on the
-     * device.</p>
-     */
     inline SoftwareInformation& WithInstallState(const char* value) { SetInstallState(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the software currently installed on the device.</p>
      */
     inline const Aws::String& GetInstalledVersion() const{ return m_installedVersion; }
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline bool InstalledVersionHasBeenSet() const { return m_installedVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline void SetInstalledVersion(const Aws::String& value) { m_installedVersionHasBeenSet = true; m_installedVersion = value; }
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline void SetInstalledVersion(Aws::String&& value) { m_installedVersionHasBeenSet = true; m_installedVersion = std::move(value); }
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline void SetInstalledVersion(const char* value) { m_installedVersionHasBeenSet = true; m_installedVersion.assign(value); }
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstalledVersion(const Aws::String& value) { SetInstalledVersion(value); return *this;}
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstalledVersion(Aws::String&& value) { SetInstalledVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the software currently installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstalledVersion(const char* value) { SetInstalledVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the software being installed on the device.</p>
      */
     inline const Aws::String& GetInstallingVersion() const{ return m_installingVersion; }
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline bool InstallingVersionHasBeenSet() const { return m_installingVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline void SetInstallingVersion(const Aws::String& value) { m_installingVersionHasBeenSet = true; m_installingVersion = value; }
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline void SetInstallingVersion(Aws::String&& value) { m_installingVersionHasBeenSet = true; m_installingVersion = std::move(value); }
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline void SetInstallingVersion(const char* value) { m_installingVersionHasBeenSet = true; m_installingVersion.assign(value); }
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstallingVersion(const Aws::String& value) { SetInstallingVersion(value); return *this;}
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstallingVersion(Aws::String&& value) { SetInstallingVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the software being installed on the device.</p>
-     */
     inline SoftwareInformation& WithInstallingVersion(const char* value) { SetInstallingVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_installState;

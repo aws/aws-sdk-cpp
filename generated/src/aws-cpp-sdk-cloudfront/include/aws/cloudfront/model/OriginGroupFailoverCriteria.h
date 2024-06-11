@@ -39,42 +39,18 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The status codes that, when returned from the primary origin, will trigger
      * CloudFront to failover to the second origin.</p>
      */
     inline const StatusCodes& GetStatusCodes() const{ return m_statusCodes; }
-
-    /**
-     * <p>The status codes that, when returned from the primary origin, will trigger
-     * CloudFront to failover to the second origin.</p>
-     */
     inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
-
-    /**
-     * <p>The status codes that, when returned from the primary origin, will trigger
-     * CloudFront to failover to the second origin.</p>
-     */
     inline void SetStatusCodes(const StatusCodes& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
-
-    /**
-     * <p>The status codes that, when returned from the primary origin, will trigger
-     * CloudFront to failover to the second origin.</p>
-     */
     inline void SetStatusCodes(StatusCodes&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
-
-    /**
-     * <p>The status codes that, when returned from the primary origin, will trigger
-     * CloudFront to failover to the second origin.</p>
-     */
     inline OriginGroupFailoverCriteria& WithStatusCodes(const StatusCodes& value) { SetStatusCodes(value); return *this;}
-
-    /**
-     * <p>The status codes that, when returned from the primary origin, will trigger
-     * CloudFront to failover to the second origin.</p>
-     */
     inline OriginGroupFailoverCriteria& WithStatusCodes(StatusCodes&& value) { SetStatusCodes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StatusCodes m_statusCodes;

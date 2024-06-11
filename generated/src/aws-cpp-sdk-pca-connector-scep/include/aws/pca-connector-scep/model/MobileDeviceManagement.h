@@ -48,6 +48,7 @@ namespace Model
     AWS_PCACONNECTORSCEP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration settings for use with Microsoft Intune. For information about
      * using Connector for SCEP for Microsoft Intune, see <a
@@ -55,47 +56,12 @@ namespace Model
      * Connector for SCEP for Microsoft Intune</a>.</p>
      */
     inline const IntuneConfiguration& GetIntune() const{ return m_intune; }
-
-    /**
-     * <p>Configuration settings for use with Microsoft Intune. For information about
-     * using Connector for SCEP for Microsoft Intune, see <a
-     * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
-     * Connector for SCEP for Microsoft Intune</a>.</p>
-     */
     inline bool IntuneHasBeenSet() const { return m_intuneHasBeenSet; }
-
-    /**
-     * <p>Configuration settings for use with Microsoft Intune. For information about
-     * using Connector for SCEP for Microsoft Intune, see <a
-     * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
-     * Connector for SCEP for Microsoft Intune</a>.</p>
-     */
     inline void SetIntune(const IntuneConfiguration& value) { m_intuneHasBeenSet = true; m_intune = value; }
-
-    /**
-     * <p>Configuration settings for use with Microsoft Intune. For information about
-     * using Connector for SCEP for Microsoft Intune, see <a
-     * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
-     * Connector for SCEP for Microsoft Intune</a>.</p>
-     */
     inline void SetIntune(IntuneConfiguration&& value) { m_intuneHasBeenSet = true; m_intune = std::move(value); }
-
-    /**
-     * <p>Configuration settings for use with Microsoft Intune. For information about
-     * using Connector for SCEP for Microsoft Intune, see <a
-     * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
-     * Connector for SCEP for Microsoft Intune</a>.</p>
-     */
     inline MobileDeviceManagement& WithIntune(const IntuneConfiguration& value) { SetIntune(value); return *this;}
-
-    /**
-     * <p>Configuration settings for use with Microsoft Intune. For information about
-     * using Connector for SCEP for Microsoft Intune, see <a
-     * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
-     * Connector for SCEP for Microsoft Intune</a>.</p>
-     */
     inline MobileDeviceManagement& WithIntune(IntuneConfiguration&& value) { SetIntune(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IntuneConfiguration m_intune;

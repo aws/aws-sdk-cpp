@@ -33,73 +33,30 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateGcmChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateGcmChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateGcmChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const GCMChannelRequest& GetGCMChannelRequest() const{ return m_gCMChannelRequest; }
-
-    
     inline bool GCMChannelRequestHasBeenSet() const { return m_gCMChannelRequestHasBeenSet; }
-
-    
     inline void SetGCMChannelRequest(const GCMChannelRequest& value) { m_gCMChannelRequestHasBeenSet = true; m_gCMChannelRequest = value; }
-
-    
     inline void SetGCMChannelRequest(GCMChannelRequest&& value) { m_gCMChannelRequestHasBeenSet = true; m_gCMChannelRequest = std::move(value); }
-
-    
     inline UpdateGcmChannelRequest& WithGCMChannelRequest(const GCMChannelRequest& value) { SetGCMChannelRequest(value); return *this;}
-
-    
     inline UpdateGcmChannelRequest& WithGCMChannelRequest(GCMChannelRequest&& value) { SetGCMChannelRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

@@ -42,83 +42,32 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The method for scheduling and maintaining copies of the container group
      * across a container fleet. </p>
      */
     inline const ContainerSchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
-
-    /**
-     * <p>The method for scheduling and maintaining copies of the container group
-     * across a container fleet. </p>
-     */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
-
-    /**
-     * <p>The method for scheduling and maintaining copies of the container group
-     * across a container fleet. </p>
-     */
     inline void SetSchedulingStrategy(const ContainerSchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
-
-    /**
-     * <p>The method for scheduling and maintaining copies of the container group
-     * across a container fleet. </p>
-     */
     inline void SetSchedulingStrategy(ContainerSchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
-
-    /**
-     * <p>The method for scheduling and maintaining copies of the container group
-     * across a container fleet. </p>
-     */
     inline ContainerGroupDefinitionProperty& WithSchedulingStrategy(const ContainerSchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
-
-    /**
-     * <p>The method for scheduling and maintaining copies of the container group
-     * across a container fleet. </p>
-     */
     inline ContainerGroupDefinitionProperty& WithSchedulingStrategy(ContainerSchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the container group definition.</p>
      */
     inline const Aws::String& GetContainerGroupDefinitionName() const{ return m_containerGroupDefinitionName; }
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline bool ContainerGroupDefinitionNameHasBeenSet() const { return m_containerGroupDefinitionNameHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline void SetContainerGroupDefinitionName(const Aws::String& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = value; }
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline void SetContainerGroupDefinitionName(Aws::String&& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline void SetContainerGroupDefinitionName(const char* value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName.assign(value); }
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline ContainerGroupDefinitionProperty& WithContainerGroupDefinitionName(const Aws::String& value) { SetContainerGroupDefinitionName(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline ContainerGroupDefinitionProperty& WithContainerGroupDefinitionName(Aws::String&& value) { SetContainerGroupDefinitionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the container group definition.</p>
-     */
     inline ContainerGroupDefinitionProperty& WithContainerGroupDefinitionName(const char* value) { SetContainerGroupDefinitionName(value); return *this;}
-
+    ///@}
   private:
 
     ContainerSchedulingStrategy m_schedulingStrategy;

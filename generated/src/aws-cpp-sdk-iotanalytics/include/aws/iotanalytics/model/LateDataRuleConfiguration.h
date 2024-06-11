@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The information needed to configure a delta time session window.</p>
      */
     inline const DeltaTimeSessionWindowConfiguration& GetDeltaTimeSessionWindowConfiguration() const{ return m_deltaTimeSessionWindowConfiguration; }
-
-    /**
-     * <p>The information needed to configure a delta time session window.</p>
-     */
     inline bool DeltaTimeSessionWindowConfigurationHasBeenSet() const { return m_deltaTimeSessionWindowConfigurationHasBeenSet; }
-
-    /**
-     * <p>The information needed to configure a delta time session window.</p>
-     */
     inline void SetDeltaTimeSessionWindowConfiguration(const DeltaTimeSessionWindowConfiguration& value) { m_deltaTimeSessionWindowConfigurationHasBeenSet = true; m_deltaTimeSessionWindowConfiguration = value; }
-
-    /**
-     * <p>The information needed to configure a delta time session window.</p>
-     */
     inline void SetDeltaTimeSessionWindowConfiguration(DeltaTimeSessionWindowConfiguration&& value) { m_deltaTimeSessionWindowConfigurationHasBeenSet = true; m_deltaTimeSessionWindowConfiguration = std::move(value); }
-
-    /**
-     * <p>The information needed to configure a delta time session window.</p>
-     */
     inline LateDataRuleConfiguration& WithDeltaTimeSessionWindowConfiguration(const DeltaTimeSessionWindowConfiguration& value) { SetDeltaTimeSessionWindowConfiguration(value); return *this;}
-
-    /**
-     * <p>The information needed to configure a delta time session window.</p>
-     */
     inline LateDataRuleConfiguration& WithDeltaTimeSessionWindowConfiguration(DeltaTimeSessionWindowConfiguration&& value) { SetDeltaTimeSessionWindowConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeltaTimeSessionWindowConfiguration m_deltaTimeSessionWindowConfiguration;

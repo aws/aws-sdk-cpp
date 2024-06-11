@@ -37,36 +37,17 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source's file format descriptor.</p>
      */
     inline const DetectedFileFormatDescriptor& GetFileFormatDescriptor() const{ return m_fileFormatDescriptor; }
-
-    /**
-     * <p>The source's file format descriptor.</p>
-     */
     inline bool FileFormatDescriptorHasBeenSet() const { return m_fileFormatDescriptorHasBeenSet; }
-
-    /**
-     * <p>The source's file format descriptor.</p>
-     */
     inline void SetFileFormatDescriptor(const DetectedFileFormatDescriptor& value) { m_fileFormatDescriptorHasBeenSet = true; m_fileFormatDescriptor = value; }
-
-    /**
-     * <p>The source's file format descriptor.</p>
-     */
     inline void SetFileFormatDescriptor(DetectedFileFormatDescriptor&& value) { m_fileFormatDescriptorHasBeenSet = true; m_fileFormatDescriptor = std::move(value); }
-
-    /**
-     * <p>The source's file format descriptor.</p>
-     */
     inline DetectedS3SourceConfig& WithFileFormatDescriptor(const DetectedFileFormatDescriptor& value) { SetFileFormatDescriptor(value); return *this;}
-
-    /**
-     * <p>The source's file format descriptor.</p>
-     */
     inline DetectedS3SourceConfig& WithFileFormatDescriptor(DetectedFileFormatDescriptor&& value) { SetFileFormatDescriptor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DetectedFileFormatDescriptor m_fileFormatDescriptor;

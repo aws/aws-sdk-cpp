@@ -43,47 +43,21 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier assigned to the document classification job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
      * unique, fully qualified identifier for the job. It includes the Amazon Web
@@ -95,449 +69,138 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline DocumentClassificationJobProperties& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline DocumentClassificationJobProperties& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the document classification job. It is a
-     * unique, fully qualified identifier for the job. It includes the Amazon Web
-     * Services account, Amazon Web Services Region, and the job ID. The format of the
-     * ARN is as follows:</p> <p>
-     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
-     * </p> <p>The following is an example job ARN:</p> <p>
-     * <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
-     * </p>
-     */
     inline DocumentClassificationJobProperties& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name that you assigned to the document classification job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name that you assigned to the document classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the document classification job. If the status is
      * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
      * failure.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-
-    /**
-     * <p>The current status of the document classification job. If the status is
-     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
-     * failure.</p>
-     */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-
-    /**
-     * <p>The current status of the document classification job. If the status is
-     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
-     * failure.</p>
-     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-
-    /**
-     * <p>The current status of the document classification job. If the status is
-     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
-     * failure.</p>
-     */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-
-    /**
-     * <p>The current status of the document classification job. If the status is
-     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
-     * failure.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the document classification job. If the status is
-     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
-     * failure.</p>
-     */
     inline DocumentClassificationJobProperties& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the status of the job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline DocumentClassificationJobProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline DocumentClassificationJobProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the status of the job.</p>
-     */
     inline DocumentClassificationJobProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time that the document classification job was submitted for
      * processing.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
-
-    /**
-     * <p>The time that the document classification job was submitted for
-     * processing.</p>
-     */
     inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
-
-    /**
-     * <p>The time that the document classification job was submitted for
-     * processing.</p>
-     */
     inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
-
-    /**
-     * <p>The time that the document classification job was submitted for
-     * processing.</p>
-     */
     inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::move(value); }
-
-    /**
-     * <p>The time that the document classification job was submitted for
-     * processing.</p>
-     */
     inline DocumentClassificationJobProperties& WithSubmitTime(const Aws::Utils::DateTime& value) { SetSubmitTime(value); return *this;}
-
-    /**
-     * <p>The time that the document classification job was submitted for
-     * processing.</p>
-     */
     inline DocumentClassificationJobProperties& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time that the document classification job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The time that the document classification job completed.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The time that the document classification job completed.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The time that the document classification job completed.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The time that the document classification job completed.</p>
-     */
     inline DocumentClassificationJobProperties& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The time that the document classification job completed.</p>
-     */
     inline DocumentClassificationJobProperties& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
      */
     inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DocumentClassificationJobProperties& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DocumentClassificationJobProperties& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DocumentClassificationJobProperties& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The input data configuration that you supplied when you created the document
      * classification job.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
-
-    /**
-     * <p>The input data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-
-    /**
-     * <p>The input data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-
-    /**
-     * <p>The input data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-
-    /**
-     * <p>The input data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
-
-    /**
-     * <p>The input data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The output data configuration that you supplied when you created the document
      * classification job.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
-
-    /**
-     * <p>The output data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
-
-    /**
-     * <p>The output data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
-
-    /**
-     * <p>The output data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
-
-    /**
-     * <p>The output data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-
-    /**
-     * <p>The output data configuration that you supplied when you created the document
-     * classification job.</p>
-     */
     inline DocumentClassificationJobProperties& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
      * read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline DocumentClassificationJobProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline DocumentClassificationJobProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
-     * read access to your input data.</p>
-     */
     inline DocumentClassificationJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
      * Comprehend uses to encrypt data on the storage volume attached to the ML compute
@@ -549,92 +212,16 @@ namespace Model
      * </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline DocumentClassificationJobProperties& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline DocumentClassificationJobProperties& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
-     * Comprehend uses to encrypt data on the storage volume attached to the ML compute
-     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of
-     * the following formats:</p> <ul> <li> <p>KMS Key ID:
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>Amazon
-     * Resource Name (ARN) of a KMS Key:
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
-     */
     inline DocumentClassificationJobProperties& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
      * containing the resources you are using for your document classification job. For
@@ -643,93 +230,26 @@ namespace Model
      * VPC</a>. </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
-
-    /**
-     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
-     * containing the resources you are using for your document classification job. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-     * VPC</a>. </p>
-     */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-
-    /**
-     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
-     * containing the resources you are using for your document classification job. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-     * VPC</a>. </p>
-     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-
-    /**
-     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
-     * containing the resources you are using for your document classification job. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-     * VPC</a>. </p>
-     */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-
-    /**
-     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
-     * containing the resources you are using for your document classification job. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-     * VPC</a>. </p>
-     */
     inline DocumentClassificationJobProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-
-    /**
-     * <p> Configuration parameters for a private Virtual Private Cloud (VPC)
-     * containing the resources you are using for your document classification job. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-     * VPC</a>. </p>
-     */
     inline DocumentClassificationJobProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Number (ARN) of the flywheel</p>
      */
     inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline DocumentClassificationJobProperties& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline DocumentClassificationJobProperties& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Number (ARN) of the flywheel</p>
-     */
     inline DocumentClassificationJobProperties& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

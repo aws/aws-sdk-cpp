@@ -38,129 +38,53 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum value of the filter.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p>The maximum value of the filter.</p>
-     */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p>The maximum value of the filter.</p>
-     */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p>The maximum value of the filter.</p>
-     */
     inline Filter& WithMaximum(double value) { SetMaximum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum value of the filter.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
-
-    /**
-     * <p>The minimum value of the filter.</p>
-     */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-
-    /**
-     * <p>The minimum value of the filter.</p>
-     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
-
-    /**
-     * <p>The minimum value of the filter.</p>
-     */
     inline Filter& WithMinimum(double value) { SetMinimum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the filter.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the filter being used.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline Filter& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline Filter& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the filter being used.</p>
-     */
     inline Filter& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     double m_maximum;

@@ -33,53 +33,27 @@ namespace Model
     AWS_MEDIASTORE_API DescribeContainerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the queried container.</p>
      */
     inline const Container& GetContainer() const{ return m_container; }
-
-    /**
-     * <p>The name of the queried container.</p>
-     */
     inline void SetContainer(const Container& value) { m_container = value; }
-
-    /**
-     * <p>The name of the queried container.</p>
-     */
     inline void SetContainer(Container&& value) { m_container = std::move(value); }
-
-    /**
-     * <p>The name of the queried container.</p>
-     */
     inline DescribeContainerResult& WithContainer(const Container& value) { SetContainer(value); return *this;}
-
-    /**
-     * <p>The name of the queried container.</p>
-     */
     inline DescribeContainerResult& WithContainer(Container&& value) { SetContainer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeContainerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeContainerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeContainerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Container m_container;

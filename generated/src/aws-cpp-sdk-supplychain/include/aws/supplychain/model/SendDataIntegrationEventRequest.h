@@ -39,239 +39,86 @@ namespace Model
     AWS_SUPPLYCHAIN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The AWS Supply Chain instance identifier.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline SendDataIntegrationEventRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline SendDataIntegrationEventRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline SendDataIntegrationEventRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data event type.</p>
      */
     inline const DataIntegrationEventType& GetEventType() const{ return m_eventType; }
-
-    /**
-     * <p>The data event type.</p>
-     */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-
-    /**
-     * <p>The data event type.</p>
-     */
     inline void SetEventType(const DataIntegrationEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-
-    /**
-     * <p>The data event type.</p>
-     */
     inline void SetEventType(DataIntegrationEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-
-    /**
-     * <p>The data event type.</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventType(const DataIntegrationEventType& value) { SetEventType(value); return *this;}
-
-    /**
-     * <p>The data event type.</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventType(DataIntegrationEventType&& value) { SetEventType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data payload of the event.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline SendDataIntegrationEventRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline SendDataIntegrationEventRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data payload of the event.</p>
-     */
     inline SendDataIntegrationEventRequest& WithData(const char* value) { SetData(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Event identifier (for example, orderId for InboundOrder) used for data
      * sharing or partitioning.</p>
      */
     inline const Aws::String& GetEventGroupId() const{ return m_eventGroupId; }
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline bool EventGroupIdHasBeenSet() const { return m_eventGroupIdHasBeenSet; }
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline void SetEventGroupId(const Aws::String& value) { m_eventGroupIdHasBeenSet = true; m_eventGroupId = value; }
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline void SetEventGroupId(Aws::String&& value) { m_eventGroupIdHasBeenSet = true; m_eventGroupId = std::move(value); }
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline void SetEventGroupId(const char* value) { m_eventGroupIdHasBeenSet = true; m_eventGroupId.assign(value); }
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventGroupId(const Aws::String& value) { SetEventGroupId(value); return *this;}
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventGroupId(Aws::String&& value) { SetEventGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>Event identifier (for example, orderId for InboundOrder) used for data
-     * sharing or partitioning.</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventGroupId(const char* value) { SetEventGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The event timestamp (in epoch seconds).</p>
      */
     inline const Aws::Utils::DateTime& GetEventTimestamp() const{ return m_eventTimestamp; }
-
-    /**
-     * <p>The event timestamp (in epoch seconds).</p>
-     */
     inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
-
-    /**
-     * <p>The event timestamp (in epoch seconds).</p>
-     */
     inline void SetEventTimestamp(const Aws::Utils::DateTime& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
-
-    /**
-     * <p>The event timestamp (in epoch seconds).</p>
-     */
     inline void SetEventTimestamp(Aws::Utils::DateTime&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = std::move(value); }
-
-    /**
-     * <p>The event timestamp (in epoch seconds).</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventTimestamp(const Aws::Utils::DateTime& value) { SetEventTimestamp(value); return *this;}
-
-    /**
-     * <p>The event timestamp (in epoch seconds).</p>
-     */
     inline SendDataIntegrationEventRequest& WithEventTimestamp(Aws::Utils::DateTime&& value) { SetEventTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The idempotent client token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline SendDataIntegrationEventRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline SendDataIntegrationEventRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The idempotent client token.</p>
-     */
     inline SendDataIntegrationEventRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

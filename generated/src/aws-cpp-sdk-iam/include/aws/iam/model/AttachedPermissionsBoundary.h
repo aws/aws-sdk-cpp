@@ -46,97 +46,34 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p> The permissions boundary usage type that indicates what type of IAM resource
      * is used as the permissions boundary for an entity. This data type can only have
      * a value of <code>Policy</code>.</p>
      */
     inline const PermissionsBoundaryAttachmentType& GetPermissionsBoundaryType() const{ return m_permissionsBoundaryType; }
-
-    /**
-     * <p> The permissions boundary usage type that indicates what type of IAM resource
-     * is used as the permissions boundary for an entity. This data type can only have
-     * a value of <code>Policy</code>.</p>
-     */
     inline bool PermissionsBoundaryTypeHasBeenSet() const { return m_permissionsBoundaryTypeHasBeenSet; }
-
-    /**
-     * <p> The permissions boundary usage type that indicates what type of IAM resource
-     * is used as the permissions boundary for an entity. This data type can only have
-     * a value of <code>Policy</code>.</p>
-     */
     inline void SetPermissionsBoundaryType(const PermissionsBoundaryAttachmentType& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
-
-    /**
-     * <p> The permissions boundary usage type that indicates what type of IAM resource
-     * is used as the permissions boundary for an entity. This data type can only have
-     * a value of <code>Policy</code>.</p>
-     */
     inline void SetPermissionsBoundaryType(PermissionsBoundaryAttachmentType&& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = std::move(value); }
-
-    /**
-     * <p> The permissions boundary usage type that indicates what type of IAM resource
-     * is used as the permissions boundary for an entity. This data type can only have
-     * a value of <code>Policy</code>.</p>
-     */
     inline AttachedPermissionsBoundary& WithPermissionsBoundaryType(const PermissionsBoundaryAttachmentType& value) { SetPermissionsBoundaryType(value); return *this;}
-
-    /**
-     * <p> The permissions boundary usage type that indicates what type of IAM resource
-     * is used as the permissions boundary for an entity. This data type can only have
-     * a value of <code>Policy</code>.</p>
-     */
     inline AttachedPermissionsBoundary& WithPermissionsBoundaryType(PermissionsBoundaryAttachmentType&& value) { SetPermissionsBoundaryType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ARN of the policy used to set the permissions boundary for the user or
      * role.</p>
      */
     inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline void SetPermissionsBoundaryArn(const Aws::String& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = value; }
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline void SetPermissionsBoundaryArn(Aws::String&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::move(value); }
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline void SetPermissionsBoundaryArn(const char* value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn.assign(value); }
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(const Aws::String& value) { SetPermissionsBoundaryArn(value); return *this;}
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(Aws::String&& value) { SetPermissionsBoundaryArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The ARN of the policy used to set the permissions boundary for the user or
-     * role.</p>
-     */
     inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(const char* value) { SetPermissionsBoundaryArn(value); return *this;}
-
+    ///@}
   private:
 
     PermissionsBoundaryAttachmentType m_permissionsBoundaryType;

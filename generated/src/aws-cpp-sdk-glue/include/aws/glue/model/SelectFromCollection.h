@@ -40,113 +40,44 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the transform node.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline SelectFromCollection& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline SelectFromCollection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the transform node.</p>
-     */
     inline SelectFromCollection& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline SelectFromCollection& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline SelectFromCollection& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline SelectFromCollection& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline SelectFromCollection& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The data inputs identified by their node names.</p>
-     */
     inline SelectFromCollection& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The index for the DynamicFrame to be selected.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The index for the DynamicFrame to be selected.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The index for the DynamicFrame to be selected.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The index for the DynamicFrame to be selected.</p>
-     */
     inline SelectFromCollection& WithIndex(int value) { SetIndex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

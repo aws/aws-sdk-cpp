@@ -33,60 +33,21 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Inspector deep inspection custom paths you are adding for your
      * organization.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrgPackagePaths() const{ return m_orgPackagePaths; }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline bool OrgPackagePathsHasBeenSet() const { return m_orgPackagePathsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline void SetOrgPackagePaths(const Aws::Vector<Aws::String>& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths = value; }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline void SetOrgPackagePaths(Aws::Vector<Aws::String>&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths = std::move(value); }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline UpdateOrgEc2DeepInspectionConfigurationRequest& WithOrgPackagePaths(const Aws::Vector<Aws::String>& value) { SetOrgPackagePaths(value); return *this;}
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline UpdateOrgEc2DeepInspectionConfigurationRequest& WithOrgPackagePaths(Aws::Vector<Aws::String>&& value) { SetOrgPackagePaths(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(const Aws::String& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(Aws::String&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Inspector deep inspection custom paths you are adding for your
-     * organization.</p>
-     */
     inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(const char* value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_orgPackagePaths;

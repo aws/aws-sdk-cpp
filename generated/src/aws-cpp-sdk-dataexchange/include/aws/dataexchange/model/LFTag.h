@@ -39,92 +39,34 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key name for the LF-tag.</p>
      */
     inline const Aws::String& GetTagKey() const{ return m_tagKey; }
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline LFTag& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline LFTag& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key name for the LF-tag.</p>
-     */
     inline LFTag& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of LF-tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline void SetTagValues(const Aws::Vector<Aws::String>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline LFTag& WithTagValues(const Aws::Vector<Aws::String>& value) { SetTagValues(value); return *this;}
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline LFTag& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline LFTag& AddTagValues(const Aws::String& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline LFTag& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of LF-tag values.</p>
-     */
     inline LFTag& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_tagKey;

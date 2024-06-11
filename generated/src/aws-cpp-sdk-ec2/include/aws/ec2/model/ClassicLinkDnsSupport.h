@@ -40,67 +40,29 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
      */
     inline bool GetClassicLinkDnsSupported() const{ return m_classicLinkDnsSupported; }
-
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
     inline bool ClassicLinkDnsSupportedHasBeenSet() const { return m_classicLinkDnsSupportedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
     inline void SetClassicLinkDnsSupported(bool value) { m_classicLinkDnsSupportedHasBeenSet = true; m_classicLinkDnsSupported = value; }
-
-    /**
-     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-     */
     inline ClassicLinkDnsSupport& WithClassicLinkDnsSupported(bool value) { SetClassicLinkDnsSupported(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline ClassicLinkDnsSupport& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline ClassicLinkDnsSupport& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the VPC.</p>
-     */
     inline ClassicLinkDnsSupport& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_classicLinkDnsSupported;

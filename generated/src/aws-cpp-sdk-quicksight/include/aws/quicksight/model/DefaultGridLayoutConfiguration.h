@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the screen canvas size options for a grid layout.</p>
      */
     inline const GridLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
-
-    /**
-     * <p>Determines the screen canvas size options for a grid layout.</p>
-     */
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-
-    /**
-     * <p>Determines the screen canvas size options for a grid layout.</p>
-     */
     inline void SetCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-
-    /**
-     * <p>Determines the screen canvas size options for a grid layout.</p>
-     */
     inline void SetCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-
-    /**
-     * <p>Determines the screen canvas size options for a grid layout.</p>
-     */
     inline DefaultGridLayoutConfiguration& WithCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-
-    /**
-     * <p>Determines the screen canvas size options for a grid layout.</p>
-     */
     inline DefaultGridLayoutConfiguration& WithCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GridLayoutCanvasSizeOptions m_canvasSizeOptions;

@@ -35,77 +35,31 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application that contains the grant.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline GetApplicationGrantRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline GetApplicationGrantRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application that contains the grant.</p>
-     */
     inline GetApplicationGrantRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of grant.</p>
      */
     inline const GrantType& GetGrantType() const{ return m_grantType; }
-
-    /**
-     * <p>Specifies the type of grant.</p>
-     */
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of grant.</p>
-     */
     inline void SetGrantType(const GrantType& value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-
-    /**
-     * <p>Specifies the type of grant.</p>
-     */
     inline void SetGrantType(GrantType&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::move(value); }
-
-    /**
-     * <p>Specifies the type of grant.</p>
-     */
     inline GetApplicationGrantRequest& WithGrantType(const GrantType& value) { SetGrantType(value); return *this;}
-
-    /**
-     * <p>Specifies the type of grant.</p>
-     */
     inline GetApplicationGrantRequest& WithGrantType(GrantType&& value) { SetGrantType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

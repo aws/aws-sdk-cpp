@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested schema.</p>
      */
     inline const DatasetSchema& GetSchema() const{ return m_schema; }
-
-    /**
-     * <p>The requested schema.</p>
-     */
     inline void SetSchema(const DatasetSchema& value) { m_schema = value; }
-
-    /**
-     * <p>The requested schema.</p>
-     */
     inline void SetSchema(DatasetSchema&& value) { m_schema = std::move(value); }
-
-    /**
-     * <p>The requested schema.</p>
-     */
     inline DescribeSchemaResult& WithSchema(const DatasetSchema& value) { SetSchema(value); return *this;}
-
-    /**
-     * <p>The requested schema.</p>
-     */
     inline DescribeSchemaResult& WithSchema(DatasetSchema&& value) { SetSchema(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DatasetSchema m_schema;

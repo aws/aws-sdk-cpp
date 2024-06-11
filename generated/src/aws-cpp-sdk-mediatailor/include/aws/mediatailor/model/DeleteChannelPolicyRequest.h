@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the channel associated with this channel policy.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline DeleteChannelPolicyRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline DeleteChannelPolicyRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the channel associated with this channel policy.</p>
-     */
     inline DeleteChannelPolicyRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelName;

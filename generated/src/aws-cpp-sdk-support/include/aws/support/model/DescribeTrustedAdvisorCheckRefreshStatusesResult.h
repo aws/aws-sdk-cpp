@@ -41,63 +41,29 @@ namespace Model
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckRefreshStatusesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
      */
     inline const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& GetStatuses() const{ return m_statuses; }
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline void SetStatuses(const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& value) { m_statuses = value; }
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline void SetStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { m_statuses = std::move(value); }
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& value) { SetStatuses(value); return *this;}
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(const TrustedAdvisorCheckRefreshStatus& value) { m_statuses.push_back(value); return *this; }
-
-    /**
-     * <p>The refresh status of the specified Trusted Advisor checks.</p>
-     */
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;

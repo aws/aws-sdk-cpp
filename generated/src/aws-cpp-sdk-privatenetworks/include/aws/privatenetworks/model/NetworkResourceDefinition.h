@@ -40,98 +40,41 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The count in the network resource definition.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The count in the network resource definition.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The count in the network resource definition.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The count in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options in the network resource definition.</p>
      */
     inline const Aws::Vector<NameValuePair>& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline void SetOptions(const Aws::Vector<NameValuePair>& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline void SetOptions(Aws::Vector<NameValuePair>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& WithOptions(const Aws::Vector<NameValuePair>& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& WithOptions(Aws::Vector<NameValuePair>&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& AddOptions(const NameValuePair& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-
-    /**
-     * <p>The options in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& AddOptions(NameValuePair&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type in the network resource definition.</p>
      */
     inline const NetworkResourceDefinitionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type in the network resource definition.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type in the network resource definition.</p>
-     */
     inline void SetType(const NetworkResourceDefinitionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type in the network resource definition.</p>
-     */
     inline void SetType(NetworkResourceDefinitionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& WithType(const NetworkResourceDefinitionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type in the network resource definition.</p>
-     */
     inline NetworkResourceDefinition& WithType(NetworkResourceDefinitionType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_count;

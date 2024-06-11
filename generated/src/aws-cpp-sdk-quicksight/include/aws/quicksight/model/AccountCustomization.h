@@ -39,87 +39,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The default theme for this Amazon QuickSight subscription.</p>
      */
     inline const Aws::String& GetDefaultTheme() const{ return m_defaultTheme; }
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline bool DefaultThemeHasBeenSet() const { return m_defaultThemeHasBeenSet; }
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline void SetDefaultTheme(const Aws::String& value) { m_defaultThemeHasBeenSet = true; m_defaultTheme = value; }
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline void SetDefaultTheme(Aws::String&& value) { m_defaultThemeHasBeenSet = true; m_defaultTheme = std::move(value); }
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline void SetDefaultTheme(const char* value) { m_defaultThemeHasBeenSet = true; m_defaultTheme.assign(value); }
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline AccountCustomization& WithDefaultTheme(const Aws::String& value) { SetDefaultTheme(value); return *this;}
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline AccountCustomization& WithDefaultTheme(Aws::String&& value) { SetDefaultTheme(std::move(value)); return *this;}
-
-    /**
-     * <p>The default theme for this Amazon QuickSight subscription.</p>
-     */
     inline AccountCustomization& WithDefaultTheme(const char* value) { SetDefaultTheme(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default email customization template.</p>
      */
     inline const Aws::String& GetDefaultEmailCustomizationTemplate() const{ return m_defaultEmailCustomizationTemplate; }
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline bool DefaultEmailCustomizationTemplateHasBeenSet() const { return m_defaultEmailCustomizationTemplateHasBeenSet; }
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline void SetDefaultEmailCustomizationTemplate(const Aws::String& value) { m_defaultEmailCustomizationTemplateHasBeenSet = true; m_defaultEmailCustomizationTemplate = value; }
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline void SetDefaultEmailCustomizationTemplate(Aws::String&& value) { m_defaultEmailCustomizationTemplateHasBeenSet = true; m_defaultEmailCustomizationTemplate = std::move(value); }
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline void SetDefaultEmailCustomizationTemplate(const char* value) { m_defaultEmailCustomizationTemplateHasBeenSet = true; m_defaultEmailCustomizationTemplate.assign(value); }
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline AccountCustomization& WithDefaultEmailCustomizationTemplate(const Aws::String& value) { SetDefaultEmailCustomizationTemplate(value); return *this;}
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline AccountCustomization& WithDefaultEmailCustomizationTemplate(Aws::String&& value) { SetDefaultEmailCustomizationTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>The default email customization template.</p>
-     */
     inline AccountCustomization& WithDefaultEmailCustomizationTemplate(const char* value) { SetDefaultEmailCustomizationTemplate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_defaultTheme;

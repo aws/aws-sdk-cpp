@@ -33,53 +33,27 @@ namespace Model
     AWS_EKS_API DescribeAccessEntryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the access entry.</p>
      */
     inline const AccessEntry& GetAccessEntry() const{ return m_accessEntry; }
-
-    /**
-     * <p>Information about the access entry.</p>
-     */
     inline void SetAccessEntry(const AccessEntry& value) { m_accessEntry = value; }
-
-    /**
-     * <p>Information about the access entry.</p>
-     */
     inline void SetAccessEntry(AccessEntry&& value) { m_accessEntry = std::move(value); }
-
-    /**
-     * <p>Information about the access entry.</p>
-     */
     inline DescribeAccessEntryResult& WithAccessEntry(const AccessEntry& value) { SetAccessEntry(value); return *this;}
-
-    /**
-     * <p>Information about the access entry.</p>
-     */
     inline DescribeAccessEntryResult& WithAccessEntry(AccessEntry&& value) { SetAccessEntry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAccessEntryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAccessEntryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAccessEntryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccessEntry m_accessEntry;

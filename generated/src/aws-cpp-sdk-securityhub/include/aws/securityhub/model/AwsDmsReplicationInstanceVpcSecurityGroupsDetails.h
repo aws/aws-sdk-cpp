@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The identifier of the VPC security group that’s associated with the
      * replication instance. </p>
      */
     inline const Aws::String& GetVpcSecurityGroupId() const{ return m_vpcSecurityGroupId; }
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline bool VpcSecurityGroupIdHasBeenSet() const { return m_vpcSecurityGroupIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline void SetVpcSecurityGroupId(Aws::String&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = std::move(value); }
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline void SetVpcSecurityGroupId(const char* value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId.assign(value); }
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(const Aws::String& value) { SetVpcSecurityGroupId(value); return *this;}
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(Aws::String&& value) { SetVpcSecurityGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the VPC security group that’s associated with the
-     * replication instance. </p>
-     */
     inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vpcSecurityGroupId;

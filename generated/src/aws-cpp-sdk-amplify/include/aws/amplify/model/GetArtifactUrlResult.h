@@ -38,99 +38,42 @@ namespace Model
     AWS_AMPLIFY_API GetArtifactUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique ID for an artifact. </p>
      */
     inline const Aws::String& GetArtifactId() const{ return m_artifactId; }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(const Aws::String& value) { m_artifactId = value; }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(Aws::String&& value) { m_artifactId = std::move(value); }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(const char* value) { m_artifactId.assign(value); }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactId(const Aws::String& value) { SetArtifactId(value); return *this;}
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactId(Aws::String&& value) { SetArtifactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactId(const char* value) { SetArtifactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The presigned URL for the artifact. </p>
      */
     inline const Aws::String& GetArtifactUrl() const{ return m_artifactUrl; }
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline void SetArtifactUrl(const Aws::String& value) { m_artifactUrl = value; }
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline void SetArtifactUrl(Aws::String&& value) { m_artifactUrl = std::move(value); }
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline void SetArtifactUrl(const char* value) { m_artifactUrl.assign(value); }
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactUrl(const Aws::String& value) { SetArtifactUrl(value); return *this;}
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactUrl(Aws::String&& value) { SetArtifactUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The presigned URL for the artifact. </p>
-     */
     inline GetArtifactUrlResult& WithArtifactUrl(const char* value) { SetArtifactUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetArtifactUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetArtifactUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetArtifactUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_artifactId;

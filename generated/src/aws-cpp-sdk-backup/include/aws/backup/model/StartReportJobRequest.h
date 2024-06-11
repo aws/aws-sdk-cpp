@@ -33,47 +33,21 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique name of a report plan.</p>
      */
     inline const Aws::String& GetReportPlanName() const{ return m_reportPlanName; }
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline bool ReportPlanNameHasBeenSet() const { return m_reportPlanNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline void SetReportPlanName(const Aws::String& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = value; }
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline void SetReportPlanName(Aws::String&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::move(value); }
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline void SetReportPlanName(const char* value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName.assign(value); }
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline StartReportJobRequest& WithReportPlanName(const Aws::String& value) { SetReportPlanName(value); return *this;}
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline StartReportJobRequest& WithReportPlanName(Aws::String&& value) { SetReportPlanName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of a report plan.</p>
-     */
     inline StartReportJobRequest& WithReportPlanName(const char* value) { SetReportPlanName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A customer-chosen string that you can use to distinguish between otherwise
      * identical calls to <code>StartReportJobInput</code>. Retrying a successful
@@ -81,63 +55,14 @@ namespace Model
      * action taken.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline StartReportJobRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline StartReportJobRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A customer-chosen string that you can use to distinguish between otherwise
-     * identical calls to <code>StartReportJobInput</code>. Retrying a successful
-     * request with the same idempotency token results in a success message with no
-     * action taken.</p>
-     */
     inline StartReportJobRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportPlanName;

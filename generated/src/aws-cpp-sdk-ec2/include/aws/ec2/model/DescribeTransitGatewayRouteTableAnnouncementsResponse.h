@@ -35,93 +35,40 @@ namespace Model
     AWS_EC2_API DescribeTransitGatewayRouteTableAnnouncementsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Describes the transit gateway route table announcement.</p>
      */
     inline const Aws::Vector<TransitGatewayRouteTableAnnouncement>& GetTransitGatewayRouteTableAnnouncements() const{ return m_transitGatewayRouteTableAnnouncements; }
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline void SetTransitGatewayRouteTableAnnouncements(const Aws::Vector<TransitGatewayRouteTableAnnouncement>& value) { m_transitGatewayRouteTableAnnouncements = value; }
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline void SetTransitGatewayRouteTableAnnouncements(Aws::Vector<TransitGatewayRouteTableAnnouncement>&& value) { m_transitGatewayRouteTableAnnouncements = std::move(value); }
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithTransitGatewayRouteTableAnnouncements(const Aws::Vector<TransitGatewayRouteTableAnnouncement>& value) { SetTransitGatewayRouteTableAnnouncements(value); return *this;}
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithTransitGatewayRouteTableAnnouncements(Aws::Vector<TransitGatewayRouteTableAnnouncement>&& value) { SetTransitGatewayRouteTableAnnouncements(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& AddTransitGatewayRouteTableAnnouncements(const TransitGatewayRouteTableAnnouncement& value) { m_transitGatewayRouteTableAnnouncements.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the transit gateway route table announcement.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& AddTransitGatewayRouteTableAnnouncements(TransitGatewayRouteTableAnnouncement&& value) { m_transitGatewayRouteTableAnnouncements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeTransitGatewayRouteTableAnnouncementsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TransitGatewayRouteTableAnnouncement> m_transitGatewayRouteTableAnnouncements;

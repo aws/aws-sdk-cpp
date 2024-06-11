@@ -43,6 +43,7 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>True if a detected face’s eyes, nose, and mouth are partially captured or if
      * they are covered by masks, dark sunglasses, cell phones, hands, or other
@@ -51,59 +52,21 @@ namespace Model
      * others.</p>
      */
     inline bool GetValue() const{ return m_value; }
-
-    /**
-     * <p>True if a detected face’s eyes, nose, and mouth are partially captured or if
-     * they are covered by masks, dark sunglasses, cell phones, hands, or other
-     * objects. False if common occurrences that do not impact face verification are
-     * detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and
-     * others.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>True if a detected face’s eyes, nose, and mouth are partially captured or if
-     * they are covered by masks, dark sunglasses, cell phones, hands, or other
-     * objects. False if common occurrences that do not impact face verification are
-     * detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and
-     * others.</p>
-     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>True if a detected face’s eyes, nose, and mouth are partially captured or if
-     * they are covered by masks, dark sunglasses, cell phones, hands, or other
-     * objects. False if common occurrences that do not impact face verification are
-     * detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and
-     * others.</p>
-     */
     inline FaceOccluded& WithValue(bool value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The confidence that the service has detected the presence of a face
      * occlusion.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The confidence that the service has detected the presence of a face
-     * occlusion.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The confidence that the service has detected the presence of a face
-     * occlusion.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The confidence that the service has detected the presence of a face
-     * occlusion.</p>
-     */
     inline FaceOccluded& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     bool m_value;

@@ -42,42 +42,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Use this parameter to specify the allowed request source. Possible sources
      * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
      */
     inline const IamPolicyConstraints& GetIamPolicyConstraints() const{ return m_iamPolicyConstraints; }
-
-    /**
-     * <p>Use this parameter to specify the allowed request source. Possible sources
-     * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
-     */
     inline bool IamPolicyConstraintsHasBeenSet() const { return m_iamPolicyConstraintsHasBeenSet; }
-
-    /**
-     * <p>Use this parameter to specify the allowed request source. Possible sources
-     * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
-     */
     inline void SetIamPolicyConstraints(const IamPolicyConstraints& value) { m_iamPolicyConstraintsHasBeenSet = true; m_iamPolicyConstraints = value; }
-
-    /**
-     * <p>Use this parameter to specify the allowed request source. Possible sources
-     * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
-     */
     inline void SetIamPolicyConstraints(IamPolicyConstraints&& value) { m_iamPolicyConstraintsHasBeenSet = true; m_iamPolicyConstraints = std::move(value); }
-
-    /**
-     * <p>Use this parameter to specify the allowed request source. Possible sources
-     * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
-     */
     inline S3Presign& WithIamPolicyConstraints(const IamPolicyConstraints& value) { SetIamPolicyConstraints(value); return *this;}
-
-    /**
-     * <p>Use this parameter to specify the allowed request source. Possible sources
-     * are either <code>SourceIp</code> or <code>VpcSourceIp</code>.</p>
-     */
     inline S3Presign& WithIamPolicyConstraints(IamPolicyConstraints&& value) { SetIamPolicyConstraints(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IamPolicyConstraints m_iamPolicyConstraints;

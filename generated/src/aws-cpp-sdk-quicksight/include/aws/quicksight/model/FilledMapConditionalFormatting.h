@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
      */
     inline const Aws::Vector<FilledMapConditionalFormattingOption>& GetConditionalFormattingOptions() const{ return m_conditionalFormattingOptions; }
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline bool ConditionalFormattingOptionsHasBeenSet() const { return m_conditionalFormattingOptionsHasBeenSet; }
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline void SetConditionalFormattingOptions(const Aws::Vector<FilledMapConditionalFormattingOption>& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = value; }
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline void SetConditionalFormattingOptions(Aws::Vector<FilledMapConditionalFormattingOption>&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::move(value); }
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline FilledMapConditionalFormatting& WithConditionalFormattingOptions(const Aws::Vector<FilledMapConditionalFormattingOption>& value) { SetConditionalFormattingOptions(value); return *this;}
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline FilledMapConditionalFormatting& WithConditionalFormattingOptions(Aws::Vector<FilledMapConditionalFormattingOption>&& value) { SetConditionalFormattingOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline FilledMapConditionalFormatting& AddConditionalFormattingOptions(const FilledMapConditionalFormattingOption& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(value); return *this; }
-
-    /**
-     * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-     */
     inline FilledMapConditionalFormatting& AddConditionalFormattingOptions(FilledMapConditionalFormattingOption&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FilledMapConditionalFormattingOption> m_conditionalFormattingOptions;

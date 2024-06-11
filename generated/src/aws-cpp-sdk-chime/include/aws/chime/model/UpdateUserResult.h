@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API UpdateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated user details.</p>
      */
     inline const User& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The updated user details.</p>
-     */
     inline void SetUser(const User& value) { m_user = value; }
-
-    /**
-     * <p>The updated user details.</p>
-     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
-
-    /**
-     * <p>The updated user details.</p>
-     */
     inline UpdateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The updated user details.</p>
-     */
     inline UpdateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     User m_user;

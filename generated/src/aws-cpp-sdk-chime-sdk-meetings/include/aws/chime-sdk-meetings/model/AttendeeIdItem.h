@@ -38,46 +38,19 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of one or more attendee IDs.</p>
      */
     inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline AttendeeIdItem& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline AttendeeIdItem& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more attendee IDs.</p>
-     */
     inline AttendeeIdItem& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attendeeId;

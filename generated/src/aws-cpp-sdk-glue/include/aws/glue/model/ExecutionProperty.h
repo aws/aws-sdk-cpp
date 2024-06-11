@@ -35,34 +35,17 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of concurrent runs allowed for the job. The default is 1.
      * An error is returned when this threshold is reached. The maximum value you can
      * specify is controlled by a service limit.</p>
      */
     inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
-
-    /**
-     * <p>The maximum number of concurrent runs allowed for the job. The default is 1.
-     * An error is returned when this threshold is reached. The maximum value you can
-     * specify is controlled by a service limit.</p>
-     */
     inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of concurrent runs allowed for the job. The default is 1.
-     * An error is returned when this threshold is reached. The maximum value you can
-     * specify is controlled by a service limit.</p>
-     */
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
-
-    /**
-     * <p>The maximum number of concurrent runs allowed for the job. The default is 1.
-     * An error is returned when this threshold is reached. The maximum value you can
-     * specify is controlled by a service limit.</p>
-     */
     inline ExecutionProperty& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxConcurrentRuns;

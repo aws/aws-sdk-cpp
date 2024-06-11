@@ -40,24 +40,15 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const LambdaAction& GetLambdaAction() const{ return m_lambdaAction; }
-
-    
     inline bool LambdaActionHasBeenSet() const { return m_lambdaActionHasBeenSet; }
-
-    
     inline void SetLambdaAction(const LambdaAction& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
-
-    
     inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = std::move(value); }
-
-    
     inline NotificationTargetActions& WithLambdaAction(const LambdaAction& value) { SetLambdaAction(value); return *this;}
-
-    
     inline NotificationTargetActions& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaAction m_lambdaAction;

@@ -39,43 +39,25 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const RuntimeSettings& GetRuntimeSettings() const{ return m_runtimeSettings; }
-
-    
     inline bool RuntimeSettingsHasBeenSet() const { return m_runtimeSettingsHasBeenSet; }
-
-    
     inline void SetRuntimeSettings(const RuntimeSettings& value) { m_runtimeSettingsHasBeenSet = true; m_runtimeSettings = value; }
-
-    
     inline void SetRuntimeSettings(RuntimeSettings&& value) { m_runtimeSettingsHasBeenSet = true; m_runtimeSettings = std::move(value); }
-
-    
     inline GenerativeAISettings& WithRuntimeSettings(const RuntimeSettings& value) { SetRuntimeSettings(value); return *this;}
-
-    
     inline GenerativeAISettings& WithRuntimeSettings(RuntimeSettings&& value) { SetRuntimeSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BuildtimeSettings& GetBuildtimeSettings() const{ return m_buildtimeSettings; }
-
-    
     inline bool BuildtimeSettingsHasBeenSet() const { return m_buildtimeSettingsHasBeenSet; }
-
-    
     inline void SetBuildtimeSettings(const BuildtimeSettings& value) { m_buildtimeSettingsHasBeenSet = true; m_buildtimeSettings = value; }
-
-    
     inline void SetBuildtimeSettings(BuildtimeSettings&& value) { m_buildtimeSettingsHasBeenSet = true; m_buildtimeSettings = std::move(value); }
-
-    
     inline GenerativeAISettings& WithBuildtimeSettings(const BuildtimeSettings& value) { SetBuildtimeSettings(value); return *this;}
-
-    
     inline GenerativeAISettings& WithBuildtimeSettings(BuildtimeSettings&& value) { SetBuildtimeSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuntimeSettings m_runtimeSettings;

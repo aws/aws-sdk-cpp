@@ -32,46 +32,26 @@ namespace Model
     AWS_DETECTIVE_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether to automatically enable new organization accounts as member
      * accounts in the organization behavior graph.</p>
      */
     inline bool GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Indicates whether to automatically enable new organization accounts as member
-     * accounts in the organization behavior graph.</p>
-     */
     inline void SetAutoEnable(bool value) { m_autoEnable = value; }
-
-    /**
-     * <p>Indicates whether to automatically enable new organization accounts as member
-     * accounts in the organization behavior graph.</p>
-     */
     inline DescribeOrganizationConfigurationResult& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeOrganizationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeOrganizationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeOrganizationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoEnable;

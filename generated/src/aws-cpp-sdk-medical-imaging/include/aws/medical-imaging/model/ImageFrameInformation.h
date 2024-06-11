@@ -38,46 +38,19 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The image frame (pixel data) identifier.</p>
      */
     inline const Aws::String& GetImageFrameId() const{ return m_imageFrameId; }
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline bool ImageFrameIdHasBeenSet() const { return m_imageFrameIdHasBeenSet; }
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline void SetImageFrameId(const Aws::String& value) { m_imageFrameIdHasBeenSet = true; m_imageFrameId = value; }
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline void SetImageFrameId(Aws::String&& value) { m_imageFrameIdHasBeenSet = true; m_imageFrameId = std::move(value); }
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline void SetImageFrameId(const char* value) { m_imageFrameIdHasBeenSet = true; m_imageFrameId.assign(value); }
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline ImageFrameInformation& WithImageFrameId(const Aws::String& value) { SetImageFrameId(value); return *this;}
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline ImageFrameInformation& WithImageFrameId(Aws::String&& value) { SetImageFrameId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image frame (pixel data) identifier.</p>
-     */
     inline ImageFrameInformation& WithImageFrameId(const char* value) { SetImageFrameId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageFrameId;

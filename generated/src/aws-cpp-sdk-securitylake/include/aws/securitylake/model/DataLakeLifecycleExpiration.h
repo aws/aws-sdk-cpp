@@ -36,26 +36,15 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of days before data expires in the Amazon Security Lake object.</p>
      */
     inline int GetDays() const{ return m_days; }
-
-    /**
-     * <p>Number of days before data expires in the Amazon Security Lake object.</p>
-     */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
-
-    /**
-     * <p>Number of days before data expires in the Amazon Security Lake object.</p>
-     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
-
-    /**
-     * <p>Number of days before data expires in the Amazon Security Lake object.</p>
-     */
     inline DataLakeLifecycleExpiration& WithDays(int value) { SetDays(value); return *this;}
-
+    ///@}
   private:
 
     int m_days;

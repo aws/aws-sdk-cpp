@@ -38,103 +38,35 @@ namespace Model
     AWS_MACIE2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the classification scope to retrieve the unique identifier
      * for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline ListClassificationScopesRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline ListClassificationScopesRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the classification scope to retrieve the unique identifier
-     * for.</p>
-     */
     inline ListClassificationScopesRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The nextToken string that specifies which page of results to return in a
      * paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListClassificationScopesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListClassificationScopesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListClassificationScopesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -39,6 +39,7 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the Amazon S3 bucket where the seed audience for the generating
      * audience is stored. A valid data source is a JSON line file in the following
@@ -46,96 +47,27 @@ namespace Model
      * "222222"}</code> </p> <p> <code>...</code> </p>
      */
     inline const S3ConfigMap& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
-     * audience is stored. A valid data source is a JSON line file in the following
-     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
-     * "222222"}</code> </p> <p> <code>...</code> </p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
-     * audience is stored. A valid data source is a JSON line file in the following
-     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
-     * "222222"}</code> </p> <p> <code>...</code> </p>
-     */
     inline void SetDataSource(const S3ConfigMap& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
-     * audience is stored. A valid data source is a JSON line file in the following
-     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
-     * "222222"}</code> </p> <p> <code>...</code> </p>
-     */
     inline void SetDataSource(S3ConfigMap&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
-     * audience is stored. A valid data source is a JSON line file in the following
-     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
-     * "222222"}</code> </p> <p> <code>...</code> </p>
-     */
     inline AudienceGenerationJobDataSource& WithDataSource(const S3ConfigMap& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>Defines the Amazon S3 bucket where the seed audience for the generating
-     * audience is stored. A valid data source is a JSON line file in the following
-     * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
-     * "222222"}</code> </p> <p> <code>...</code> </p>
-     */
     inline AudienceGenerationJobDataSource& WithDataSource(S3ConfigMap&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
      * data is stored.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training
-     * data is stored.</p>
-     */
     inline AudienceGenerationJobDataSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     S3ConfigMap m_dataSource;

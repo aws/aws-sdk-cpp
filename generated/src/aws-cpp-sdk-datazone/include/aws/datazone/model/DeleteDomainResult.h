@@ -33,53 +33,27 @@ namespace Model
     AWS_DATAZONE_API DeleteDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the domain.</p>
      */
     inline const DomainStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the domain.</p>
-     */
     inline void SetStatus(const DomainStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the domain.</p>
-     */
     inline void SetStatus(DomainStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the domain.</p>
-     */
     inline DeleteDomainResult& WithStatus(const DomainStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the domain.</p>
-     */
     inline DeleteDomainResult& WithStatus(DomainStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainStatus m_status;

@@ -37,51 +37,20 @@ namespace Model
     AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline DescribeSchedulingPoliciesRequest& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline DescribeSchedulingPoliciesRequest& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline DescribeSchedulingPoliciesRequest& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline DescribeSchedulingPoliciesRequest& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-     */
     inline DescribeSchedulingPoliciesRequest& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_arns;

@@ -39,65 +39,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in milliseconds from the start of the video, that the text was
      * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
      * the individual frame where the text first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the text was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the text first appears.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the text was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the text first appears.</p>
-     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the text was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the text first appears.</p>
-     */
     inline TextDetectionResult& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about text detected in a video.</p>
      */
     inline const TextDetection& GetTextDetection() const{ return m_textDetection; }
-
-    /**
-     * <p>Details about text detected in a video.</p>
-     */
     inline bool TextDetectionHasBeenSet() const { return m_textDetectionHasBeenSet; }
-
-    /**
-     * <p>Details about text detected in a video.</p>
-     */
     inline void SetTextDetection(const TextDetection& value) { m_textDetectionHasBeenSet = true; m_textDetection = value; }
-
-    /**
-     * <p>Details about text detected in a video.</p>
-     */
     inline void SetTextDetection(TextDetection&& value) { m_textDetectionHasBeenSet = true; m_textDetection = std::move(value); }
-
-    /**
-     * <p>Details about text detected in a video.</p>
-     */
     inline TextDetectionResult& WithTextDetection(const TextDetection& value) { SetTextDetection(value); return *this;}
-
-    /**
-     * <p>Details about text detected in a video.</p>
-     */
     inline TextDetectionResult& WithTextDetection(TextDetection&& value) { SetTextDetection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_timestamp;

@@ -38,36 +38,17 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Authorization-related configuration input for the security configuration.</p>
      */
     inline const AuthorizationConfiguration& GetAuthorizationConfiguration() const{ return m_authorizationConfiguration; }
-
-    /**
-     * <p>Authorization-related configuration input for the security configuration.</p>
-     */
     inline bool AuthorizationConfigurationHasBeenSet() const { return m_authorizationConfigurationHasBeenSet; }
-
-    /**
-     * <p>Authorization-related configuration input for the security configuration.</p>
-     */
     inline void SetAuthorizationConfiguration(const AuthorizationConfiguration& value) { m_authorizationConfigurationHasBeenSet = true; m_authorizationConfiguration = value; }
-
-    /**
-     * <p>Authorization-related configuration input for the security configuration.</p>
-     */
     inline void SetAuthorizationConfiguration(AuthorizationConfiguration&& value) { m_authorizationConfigurationHasBeenSet = true; m_authorizationConfiguration = std::move(value); }
-
-    /**
-     * <p>Authorization-related configuration input for the security configuration.</p>
-     */
     inline SecurityConfigurationData& WithAuthorizationConfiguration(const AuthorizationConfiguration& value) { SetAuthorizationConfiguration(value); return *this;}
-
-    /**
-     * <p>Authorization-related configuration input for the security configuration.</p>
-     */
     inline SecurityConfigurationData& WithAuthorizationConfiguration(AuthorizationConfiguration&& value) { SetAuthorizationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuthorizationConfiguration m_authorizationConfiguration;

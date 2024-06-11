@@ -38,42 +38,18 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceEventTopic() const{ return m_wirelessDeviceEventTopic; }
-
-    /**
-     * <p>Denotes whether the wireless device join event topic is enabled or
-     * disabled.</p>
-     */
     inline bool WirelessDeviceEventTopicHasBeenSet() const { return m_wirelessDeviceEventTopicHasBeenSet; }
-
-    /**
-     * <p>Denotes whether the wireless device join event topic is enabled or
-     * disabled.</p>
-     */
     inline void SetWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = value; }
-
-    /**
-     * <p>Denotes whether the wireless device join event topic is enabled or
-     * disabled.</p>
-     */
     inline void SetWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = std::move(value); }
-
-    /**
-     * <p>Denotes whether the wireless device join event topic is enabled or
-     * disabled.</p>
-     */
     inline LoRaWANJoinResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceEventTopic(value); return *this;}
-
-    /**
-     * <p>Denotes whether the wireless device join event topic is enabled or
-     * disabled.</p>
-     */
     inline LoRaWANJoinResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceEventTopic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventNotificationTopicStatus m_wirelessDeviceEventTopic;

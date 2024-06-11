@@ -38,118 +38,45 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the customized metric.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The namespace of the customized metric.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The statistic of the customized metric.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
-
-    /**
-     * <p>The statistic of the customized metric.</p>
-     */
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-
-    /**
-     * <p>The statistic of the customized metric.</p>
-     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-
-    /**
-     * <p>The statistic of the customized metric.</p>
-     */
     inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-
-    /**
-     * <p>The statistic of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
-
-    /**
-     * <p>The statistic of the customized metric.</p>
-     */
     inline CustomizedMetricSpecification& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricName;

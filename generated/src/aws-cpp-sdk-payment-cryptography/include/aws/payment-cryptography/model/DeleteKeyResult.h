@@ -33,53 +33,27 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
      */
     inline const Key& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline void SetKey(const Key& value) { m_key = value; }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline void SetKey(Key&& value) { m_key = std::move(value); }
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline DeleteKeyResult& WithKey(const Key& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
     inline DeleteKeyResult& WithKey(Key&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Key m_key;

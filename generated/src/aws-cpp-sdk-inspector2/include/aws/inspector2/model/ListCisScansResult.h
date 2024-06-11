@@ -34,106 +34,43 @@ namespace Model
     AWS_INSPECTOR2_API ListCisScansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline ListCisScansResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline ListCisScansResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token from a previous request that's used to retrieve the next
-     * page of results.</p>
-     */
     inline ListCisScansResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CIS scans.</p>
      */
     inline const Aws::Vector<CisScan>& GetScans() const{ return m_scans; }
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline void SetScans(const Aws::Vector<CisScan>& value) { m_scans = value; }
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline void SetScans(Aws::Vector<CisScan>&& value) { m_scans = std::move(value); }
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline ListCisScansResult& WithScans(const Aws::Vector<CisScan>& value) { SetScans(value); return *this;}
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline ListCisScansResult& WithScans(Aws::Vector<CisScan>&& value) { SetScans(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline ListCisScansResult& AddScans(const CisScan& value) { m_scans.push_back(value); return *this; }
-
-    /**
-     * <p>The CIS scans.</p>
-     */
     inline ListCisScansResult& AddScans(CisScan&& value) { m_scans.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCisScansResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCisScansResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCisScansResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

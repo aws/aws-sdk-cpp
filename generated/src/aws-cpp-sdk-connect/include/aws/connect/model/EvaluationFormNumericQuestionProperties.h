@@ -40,119 +40,51 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum answer value.</p>
      */
     inline int GetMinValue() const{ return m_minValue; }
-
-    /**
-     * <p>The minimum answer value.</p>
-     */
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
-
-    /**
-     * <p>The minimum answer value.</p>
-     */
     inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
-
-    /**
-     * <p>The minimum answer value.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithMinValue(int value) { SetMinValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum answer value.</p>
      */
     inline int GetMaxValue() const{ return m_maxValue; }
-
-    /**
-     * <p>The maximum answer value.</p>
-     */
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
-
-    /**
-     * <p>The maximum answer value.</p>
-     */
     inline void SetMaxValue(int value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
-
-    /**
-     * <p>The maximum answer value.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithMaxValue(int value) { SetMaxValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scoring options of the numeric question.</p>
      */
     inline const Aws::Vector<EvaluationFormNumericQuestionOption>& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline void SetOptions(const Aws::Vector<EvaluationFormNumericQuestionOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline void SetOptions(Aws::Vector<EvaluationFormNumericQuestionOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithOptions(const Aws::Vector<EvaluationFormNumericQuestionOption>& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithOptions(Aws::Vector<EvaluationFormNumericQuestionOption>&& value) { SetOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& AddOptions(const EvaluationFormNumericQuestionOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-
-    /**
-     * <p>The scoring options of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& AddOptions(EvaluationFormNumericQuestionOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The automation properties of the numeric question.</p>
      */
     inline const EvaluationFormNumericQuestionAutomation& GetAutomation() const{ return m_automation; }
-
-    /**
-     * <p>The automation properties of the numeric question.</p>
-     */
     inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
-
-    /**
-     * <p>The automation properties of the numeric question.</p>
-     */
     inline void SetAutomation(const EvaluationFormNumericQuestionAutomation& value) { m_automationHasBeenSet = true; m_automation = value; }
-
-    /**
-     * <p>The automation properties of the numeric question.</p>
-     */
     inline void SetAutomation(EvaluationFormNumericQuestionAutomation&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
-
-    /**
-     * <p>The automation properties of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithAutomation(const EvaluationFormNumericQuestionAutomation& value) { SetAutomation(value); return *this;}
-
-    /**
-     * <p>The automation properties of the numeric question.</p>
-     */
     inline EvaluationFormNumericQuestionProperties& WithAutomation(EvaluationFormNumericQuestionAutomation&& value) { SetAutomation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_minValue;

@@ -41,87 +41,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the security group rule.</p>
      */
     inline const Aws::String& GetSecurityGroupRuleId() const{ return m_securityGroupRuleId; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline bool SecurityGroupRuleIdHasBeenSet() const { return m_securityGroupRuleIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline void SetSecurityGroupRuleId(const Aws::String& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = value; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline void SetSecurityGroupRuleId(Aws::String&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline void SetSecurityGroupRuleId(const char* value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId.assign(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(const Aws::String& value) { SetSecurityGroupRuleId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(Aws::String&& value) { SetSecurityGroupRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithSecurityGroupRuleId(const char* value) { SetSecurityGroupRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the security group rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the security group rule.</p>
-     */
     inline SecurityGroupRuleDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityGroupRuleId;

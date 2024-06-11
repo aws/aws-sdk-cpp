@@ -43,139 +43,55 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an Amazon EC2 instance type. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions. </p>
      */
     inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
-
-    /**
-     * <p>The name of an Amazon EC2 instance type. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
-     * Instance Types</a> for detailed descriptions. </p>
-     */
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
-
-    /**
-     * <p>The name of an Amazon EC2 instance type. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
-     * Instance Types</a> for detailed descriptions. </p>
-     */
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
-
-    /**
-     * <p>The name of an Amazon EC2 instance type. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
-     * Instance Types</a> for detailed descriptions. </p>
-     */
     inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
-
-    /**
-     * <p>The name of an Amazon EC2 instance type. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
-     * Instance Types</a> for detailed descriptions. </p>
-     */
     inline EC2InstanceLimit& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
-
-    /**
-     * <p>The name of an Amazon EC2 instance type. See <a
-     * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
-     * Instance Types</a> for detailed descriptions. </p>
-     */
     inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of instances for the specified type and location that are
      * currently being used by the Amazon Web Services account. </p>
      */
     inline int GetCurrentInstances() const{ return m_currentInstances; }
-
-    /**
-     * <p>The number of instances for the specified type and location that are
-     * currently being used by the Amazon Web Services account. </p>
-     */
     inline bool CurrentInstancesHasBeenSet() const { return m_currentInstancesHasBeenSet; }
-
-    /**
-     * <p>The number of instances for the specified type and location that are
-     * currently being used by the Amazon Web Services account. </p>
-     */
     inline void SetCurrentInstances(int value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
-
-    /**
-     * <p>The number of instances for the specified type and location that are
-     * currently being used by the Amazon Web Services account. </p>
-     */
     inline EC2InstanceLimit& WithCurrentInstances(int value) { SetCurrentInstances(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of instances that is allowed for the specified instance type and
      * location.</p>
      */
     inline int GetInstanceLimit() const{ return m_instanceLimit; }
-
-    /**
-     * <p>The number of instances that is allowed for the specified instance type and
-     * location.</p>
-     */
     inline bool InstanceLimitHasBeenSet() const { return m_instanceLimitHasBeenSet; }
-
-    /**
-     * <p>The number of instances that is allowed for the specified instance type and
-     * location.</p>
-     */
     inline void SetInstanceLimit(int value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
-
-    /**
-     * <p>The number of instances that is allowed for the specified instance type and
-     * location.</p>
-     */
     inline EC2InstanceLimit& WithInstanceLimit(int value) { SetInstanceLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline EC2InstanceLimit& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline EC2InstanceLimit& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-     */
     inline EC2InstanceLimit& WithLocation(const char* value) { SetLocation(value); return *this;}
-
+    ///@}
   private:
 
     EC2InstanceType m_eC2InstanceType;

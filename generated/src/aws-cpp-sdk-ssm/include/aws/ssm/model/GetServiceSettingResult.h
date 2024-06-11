@@ -39,53 +39,27 @@ namespace Model
     AWS_SSM_API GetServiceSettingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The query result of the current service setting.</p>
      */
     inline const ServiceSetting& GetServiceSetting() const{ return m_serviceSetting; }
-
-    /**
-     * <p>The query result of the current service setting.</p>
-     */
     inline void SetServiceSetting(const ServiceSetting& value) { m_serviceSetting = value; }
-
-    /**
-     * <p>The query result of the current service setting.</p>
-     */
     inline void SetServiceSetting(ServiceSetting&& value) { m_serviceSetting = std::move(value); }
-
-    /**
-     * <p>The query result of the current service setting.</p>
-     */
     inline GetServiceSettingResult& WithServiceSetting(const ServiceSetting& value) { SetServiceSetting(value); return *this;}
-
-    /**
-     * <p>The query result of the current service setting.</p>
-     */
     inline GetServiceSettingResult& WithServiceSetting(ServiceSetting&& value) { SetServiceSetting(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetServiceSettingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetServiceSettingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetServiceSettingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceSetting m_serviceSetting;

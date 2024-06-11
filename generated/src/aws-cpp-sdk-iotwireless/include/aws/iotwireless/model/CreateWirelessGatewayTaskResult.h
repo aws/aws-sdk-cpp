@@ -33,89 +33,40 @@ namespace Model
     AWS_IOTWIRELESS_API CreateWirelessGatewayTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the WirelessGatewayTaskDefinition.</p>
      */
     inline const Aws::String& GetWirelessGatewayTaskDefinitionId() const{ return m_wirelessGatewayTaskDefinitionId; }
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline void SetWirelessGatewayTaskDefinitionId(const Aws::String& value) { m_wirelessGatewayTaskDefinitionId = value; }
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline void SetWirelessGatewayTaskDefinitionId(Aws::String&& value) { m_wirelessGatewayTaskDefinitionId = std::move(value); }
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline void SetWirelessGatewayTaskDefinitionId(const char* value) { m_wirelessGatewayTaskDefinitionId.assign(value); }
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline CreateWirelessGatewayTaskResult& WithWirelessGatewayTaskDefinitionId(const Aws::String& value) { SetWirelessGatewayTaskDefinitionId(value); return *this;}
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline CreateWirelessGatewayTaskResult& WithWirelessGatewayTaskDefinitionId(Aws::String&& value) { SetWirelessGatewayTaskDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the WirelessGatewayTaskDefinition.</p>
-     */
     inline CreateWirelessGatewayTaskResult& WithWirelessGatewayTaskDefinitionId(const char* value) { SetWirelessGatewayTaskDefinitionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the request.</p>
      */
     inline const WirelessGatewayTaskStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the request.</p>
-     */
     inline void SetStatus(const WirelessGatewayTaskStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the request.</p>
-     */
     inline void SetStatus(WirelessGatewayTaskStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the request.</p>
-     */
     inline CreateWirelessGatewayTaskResult& WithStatus(const WirelessGatewayTaskStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the request.</p>
-     */
     inline CreateWirelessGatewayTaskResult& WithStatus(WirelessGatewayTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateWirelessGatewayTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateWirelessGatewayTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateWirelessGatewayTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_wirelessGatewayTaskDefinitionId;

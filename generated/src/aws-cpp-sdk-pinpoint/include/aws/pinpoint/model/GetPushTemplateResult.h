@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetPushTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const PushNotificationTemplateResponse& GetPushNotificationTemplateResponse() const{ return m_pushNotificationTemplateResponse; }
-
-    
     inline void SetPushNotificationTemplateResponse(const PushNotificationTemplateResponse& value) { m_pushNotificationTemplateResponse = value; }
-
-    
     inline void SetPushNotificationTemplateResponse(PushNotificationTemplateResponse&& value) { m_pushNotificationTemplateResponse = std::move(value); }
-
-    
     inline GetPushTemplateResult& WithPushNotificationTemplateResponse(const PushNotificationTemplateResponse& value) { SetPushNotificationTemplateResponse(value); return *this;}
-
-    
     inline GetPushTemplateResult& WithPushNotificationTemplateResponse(PushNotificationTemplateResponse&& value) { SetPushNotificationTemplateResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPushTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPushTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPushTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PushNotificationTemplateResponse m_pushNotificationTemplateResponse;

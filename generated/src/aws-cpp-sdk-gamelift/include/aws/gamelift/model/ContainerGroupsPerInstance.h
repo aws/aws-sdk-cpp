@@ -49,55 +49,27 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The desired number of replica container groups to place on each fleet
      * instance.</p>
      */
     inline int GetDesiredReplicaContainerGroupsPerInstance() const{ return m_desiredReplicaContainerGroupsPerInstance; }
-
-    /**
-     * <p>The desired number of replica container groups to place on each fleet
-     * instance.</p>
-     */
     inline bool DesiredReplicaContainerGroupsPerInstanceHasBeenSet() const { return m_desiredReplicaContainerGroupsPerInstanceHasBeenSet; }
-
-    /**
-     * <p>The desired number of replica container groups to place on each fleet
-     * instance.</p>
-     */
     inline void SetDesiredReplicaContainerGroupsPerInstance(int value) { m_desiredReplicaContainerGroupsPerInstanceHasBeenSet = true; m_desiredReplicaContainerGroupsPerInstance = value; }
-
-    /**
-     * <p>The desired number of replica container groups to place on each fleet
-     * instance.</p>
-     */
     inline ContainerGroupsPerInstance& WithDesiredReplicaContainerGroupsPerInstance(int value) { SetDesiredReplicaContainerGroupsPerInstance(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum possible number of replica container groups that each fleet
      * instance can have.</p>
      */
     inline int GetMaxReplicaContainerGroupsPerInstance() const{ return m_maxReplicaContainerGroupsPerInstance; }
-
-    /**
-     * <p>The maximum possible number of replica container groups that each fleet
-     * instance can have.</p>
-     */
     inline bool MaxReplicaContainerGroupsPerInstanceHasBeenSet() const { return m_maxReplicaContainerGroupsPerInstanceHasBeenSet; }
-
-    /**
-     * <p>The maximum possible number of replica container groups that each fleet
-     * instance can have.</p>
-     */
     inline void SetMaxReplicaContainerGroupsPerInstance(int value) { m_maxReplicaContainerGroupsPerInstanceHasBeenSet = true; m_maxReplicaContainerGroupsPerInstance = value; }
-
-    /**
-     * <p>The maximum possible number of replica container groups that each fleet
-     * instance can have.</p>
-     */
     inline ContainerGroupsPerInstance& WithMaxReplicaContainerGroupsPerInstance(int value) { SetMaxReplicaContainerGroupsPerInstance(value); return *this;}
-
+    ///@}
   private:
 
     int m_desiredReplicaContainerGroupsPerInstance;

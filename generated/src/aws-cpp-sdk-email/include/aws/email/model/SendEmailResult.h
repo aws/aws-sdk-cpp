@@ -38,64 +38,28 @@ namespace Model
     AWS_SES_API SendEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The unique message identifier returned from the <code>SendEmail</code>
      * action. </p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline SendEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline SendEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique message identifier returned from the <code>SendEmail</code>
-     * action. </p>
-     */
     inline SendEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline SendEmailResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline SendEmailResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

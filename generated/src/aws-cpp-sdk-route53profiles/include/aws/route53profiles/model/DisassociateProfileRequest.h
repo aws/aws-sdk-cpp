@@ -32,87 +32,33 @@ namespace Model
     AWS_ROUTE53PROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> ID of the Profile. </p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline DisassociateProfileRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline DisassociateProfileRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline DisassociateProfileRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ID of the VPC. </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline DisassociateProfileRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline DisassociateProfileRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the VPC. </p>
-     */
     inline DisassociateProfileRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileId;

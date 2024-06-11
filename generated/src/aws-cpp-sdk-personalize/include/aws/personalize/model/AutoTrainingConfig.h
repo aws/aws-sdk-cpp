@@ -38,6 +38,7 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies how often to automatically train new solution versions. Specify a
      * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
@@ -49,91 +50,14 @@ namespace Model
      * and configuring a solution</a>.</p>
      */
     inline const Aws::String& GetSchedulingExpression() const{ return m_schedulingExpression; }
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline bool SchedulingExpressionHasBeenSet() const { return m_schedulingExpressionHasBeenSet; }
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline void SetSchedulingExpression(const Aws::String& value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression = value; }
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline void SetSchedulingExpression(Aws::String&& value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression = std::move(value); }
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline void SetSchedulingExpression(const char* value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression.assign(value); }
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline AutoTrainingConfig& WithSchedulingExpression(const Aws::String& value) { SetSchedulingExpression(value); return *this;}
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline AutoTrainingConfig& WithSchedulingExpression(Aws::String&& value) { SetSchedulingExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies how often to automatically train new solution versions. Specify a
-     * rate expression in rate(<i>value</i> <i>unit</i>) format. For value, specify a
-     * number between 1 and 30. For unit, specify <code>day</code> or
-     * <code>days</code>. For example, to automatically create a new solution version
-     * every 5 days, specify <code>rate(5 days)</code>. The default is every 7
-     * days.</p> <p>For more information about auto training, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
-     * and configuring a solution</a>.</p>
-     */
     inline AutoTrainingConfig& WithSchedulingExpression(const char* value) { SetSchedulingExpression(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schedulingExpression;

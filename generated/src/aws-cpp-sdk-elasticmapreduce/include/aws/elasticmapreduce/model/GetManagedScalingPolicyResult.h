@@ -33,58 +33,28 @@ namespace Model
     AWS_EMR_API GetManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
      * cluster. </p>
      */
     inline const ManagedScalingPolicy& GetManagedScalingPolicy() const{ return m_managedScalingPolicy; }
-
-    /**
-     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
-     * cluster. </p>
-     */
     inline void SetManagedScalingPolicy(const ManagedScalingPolicy& value) { m_managedScalingPolicy = value; }
-
-    /**
-     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
-     * cluster. </p>
-     */
     inline void SetManagedScalingPolicy(ManagedScalingPolicy&& value) { m_managedScalingPolicy = std::move(value); }
-
-    /**
-     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
-     * cluster. </p>
-     */
     inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(const ManagedScalingPolicy& value) { SetManagedScalingPolicy(value); return *this;}
-
-    /**
-     * <p>Specifies the managed scaling policy that is attached to an Amazon EMR
-     * cluster. </p>
-     */
     inline GetManagedScalingPolicyResult& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetManagedScalingPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetManagedScalingPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetManagedScalingPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ManagedScalingPolicy m_managedScalingPolicy;

@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The base map style of the geospatial map.</p>
      */
     inline const BaseMapStyleType& GetBaseMapStyle() const{ return m_baseMapStyle; }
-
-    /**
-     * <p>The base map style of the geospatial map.</p>
-     */
     inline bool BaseMapStyleHasBeenSet() const { return m_baseMapStyleHasBeenSet; }
-
-    /**
-     * <p>The base map style of the geospatial map.</p>
-     */
     inline void SetBaseMapStyle(const BaseMapStyleType& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = value; }
-
-    /**
-     * <p>The base map style of the geospatial map.</p>
-     */
     inline void SetBaseMapStyle(BaseMapStyleType&& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = std::move(value); }
-
-    /**
-     * <p>The base map style of the geospatial map.</p>
-     */
     inline GeospatialMapStyleOptions& WithBaseMapStyle(const BaseMapStyleType& value) { SetBaseMapStyle(value); return *this;}
-
-    /**
-     * <p>The base map style of the geospatial map.</p>
-     */
     inline GeospatialMapStyleOptions& WithBaseMapStyle(BaseMapStyleType&& value) { SetBaseMapStyle(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BaseMapStyleType m_baseMapStyle;

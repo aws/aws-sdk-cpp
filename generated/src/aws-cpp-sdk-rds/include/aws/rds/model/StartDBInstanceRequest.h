@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The user-supplied instance identifier.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline StartDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline StartDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The user-supplied instance identifier.</p>
-     */
     inline StartDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBInstanceIdentifier;

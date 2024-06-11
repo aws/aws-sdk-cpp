@@ -32,63 +32,29 @@ namespace Model
     AWS_LAMBDA_API AddPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The permission statement that's added to the function policy.</p>
      */
     inline const Aws::String& GetStatement() const{ return m_statement; }
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline void SetStatement(const Aws::String& value) { m_statement = value; }
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline void SetStatement(Aws::String&& value) { m_statement = std::move(value); }
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline void SetStatement(const char* value) { m_statement.assign(value); }
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline AddPermissionResult& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline AddPermissionResult& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-
-    /**
-     * <p>The permission statement that's added to the function policy.</p>
-     */
     inline AddPermissionResult& WithStatement(const char* value) { SetStatement(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddPermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddPermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddPermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_statement;

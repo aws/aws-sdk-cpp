@@ -38,83 +38,32 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
      * deprecated.</p> 
      */
     inline const AssociationFilterKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
-     */
     inline void SetKey(const AssociationFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
-     */
     inline void SetKey(AssociationFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
-     */
     inline AssociationFilter& WithKey(const AssociationFilterKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The name of the filter.</p>  <p> <code>InstanceId</code> has been
-     * deprecated.</p> 
-     */
     inline AssociationFilter& WithKey(AssociationFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline AssociationFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline AssociationFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The filter value.</p>
-     */
     inline AssociationFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     AssociationFilterKey m_key;

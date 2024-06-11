@@ -40,101 +40,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of dashboard IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all dashboards in this asset bundle.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDashboardIds() const{ return m_dashboardIds; }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline bool DashboardIdsHasBeenSet() const { return m_dashboardIdsHasBeenSet; }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline void SetDashboardIds(const Aws::Vector<Aws::String>& value) { m_dashboardIdsHasBeenSet = true; m_dashboardIds = value; }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline void SetDashboardIds(Aws::Vector<Aws::String>&& value) { m_dashboardIdsHasBeenSet = true; m_dashboardIds = std::move(value); }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& WithDashboardIds(const Aws::Vector<Aws::String>& value) { SetDashboardIds(value); return *this;}
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& WithDashboardIds(Aws::Vector<Aws::String>&& value) { SetDashboardIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& AddDashboardIds(const Aws::String& value) { m_dashboardIdsHasBeenSet = true; m_dashboardIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& AddDashboardIds(Aws::String&& value) { m_dashboardIdsHasBeenSet = true; m_dashboardIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of dashboard IDs that you want to apply overrides to. You can use
-     * <code>*</code> to override all dashboards in this asset bundle.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& AddDashboardIds(const char* value) { m_dashboardIdsHasBeenSet = true; m_dashboardIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags for the dashboards that you want to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDashboardOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dashboardIds;

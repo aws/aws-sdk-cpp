@@ -45,165 +45,68 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The rule number for the entry. For example <i>100</i>. All the network ACL
      * entries are processed in ascending order by rule number. </p>
      */
     inline int GetRuleNumber() const{ return m_ruleNumber; }
-
-    /**
-     * <p> The rule number for the entry. For example <i>100</i>. All the network ACL
-     * entries are processed in ascending order by rule number. </p>
-     */
     inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
-
-    /**
-     * <p> The rule number for the entry. For example <i>100</i>. All the network ACL
-     * entries are processed in ascending order by rule number. </p>
-     */
     inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
-
-    /**
-     * <p> The rule number for the entry. For example <i>100</i>. All the network ACL
-     * entries are processed in ascending order by rule number. </p>
-     */
     inline NetworkACLEntry& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline NetworkACLEntry& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline NetworkACLEntry& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
-     */
     inline NetworkACLEntry& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
      */
     inline const RuleAction& GetRuleAction() const{ return m_ruleAction; }
-
-    /**
-     * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
-     */
     inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
-
-    /**
-     * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
-     */
     inline void SetRuleAction(const RuleAction& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
-
-    /**
-     * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
-     */
     inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
-
-    /**
-     * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
-     */
     inline NetworkACLEntry& WithRuleAction(const RuleAction& value) { SetRuleAction(value); return *this;}
-
-    /**
-     * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
-     */
     inline NetworkACLEntry& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The range of ports the rule applies to. </p>
      */
     inline const PortRange& GetPortRange() const{ return m_portRange; }
-
-    /**
-     * <p> The range of ports the rule applies to. </p>
-     */
     inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
-
-    /**
-     * <p> The range of ports the rule applies to. </p>
-     */
     inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
-
-    /**
-     * <p> The range of ports the rule applies to. </p>
-     */
     inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
-
-    /**
-     * <p> The range of ports the rule applies to. </p>
-     */
     inline NetworkACLEntry& WithPortRange(const PortRange& value) { SetPortRange(value); return *this;}
-
-    /**
-     * <p> The range of ports the rule applies to. </p>
-     */
     inline NetworkACLEntry& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
      */
     inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
-
-    /**
-     * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
-     */
     inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
-
-    /**
-     * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
-     */
     inline void SetIcmpTypeCode(const IcmpTypeCode& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
-
-    /**
-     * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
-     */
     inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
-
-    /**
-     * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
-     */
     inline NetworkACLEntry& WithIcmpTypeCode(const IcmpTypeCode& value) { SetIcmpTypeCode(value); return *this;}
-
-    /**
-     * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
-     */
     inline NetworkACLEntry& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
      * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
@@ -211,63 +114,14 @@ namespace Model
      * <code>100.68.0.0/18</code>. </p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline NetworkACLEntry& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline NetworkACLEntry& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p> The IPv4 network range to allow or deny, in CIDR notation. For example,
-     * <code>172.16.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>. </p>
-     */
     inline NetworkACLEntry& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-
+    ///@}
   private:
 
     int m_ruleNumber;

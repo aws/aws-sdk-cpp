@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetDevEuiEventTopic() const{ return m_devEuiEventTopic; }
-
-    /**
-     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-     */
     inline bool DevEuiEventTopicHasBeenSet() const { return m_devEuiEventTopicHasBeenSet; }
-
-    /**
-     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-     */
     inline void SetDevEuiEventTopic(const EventNotificationTopicStatus& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = value; }
-
-    /**
-     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-     */
     inline void SetDevEuiEventTopic(EventNotificationTopicStatus&& value) { m_devEuiEventTopicHasBeenSet = true; m_devEuiEventTopic = std::move(value); }
-
-    /**
-     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-     */
     inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(const EventNotificationTopicStatus& value) { SetDevEuiEventTopic(value); return *this;}
-
-    /**
-     * <p>Denotes whether the Dev EUI join event topic is enabled or disabled.</p>
-     */
     inline LoRaWANJoinEventNotificationConfigurations& WithDevEuiEventTopic(EventNotificationTopicStatus&& value) { SetDevEuiEventTopic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventNotificationTopicStatus m_devEuiEventTopic;

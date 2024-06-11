@@ -37,36 +37,17 @@ namespace Model
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Output from using SSM to validate the application.</p>
      */
     inline const SSMOutput& GetSsmOutput() const{ return m_ssmOutput; }
-
-    /**
-     * <p>Output from using SSM to validate the application.</p>
-     */
     inline bool SsmOutputHasBeenSet() const { return m_ssmOutputHasBeenSet; }
-
-    /**
-     * <p>Output from using SSM to validate the application.</p>
-     */
     inline void SetSsmOutput(const SSMOutput& value) { m_ssmOutputHasBeenSet = true; m_ssmOutput = value; }
-
-    /**
-     * <p>Output from using SSM to validate the application.</p>
-     */
     inline void SetSsmOutput(SSMOutput&& value) { m_ssmOutputHasBeenSet = true; m_ssmOutput = std::move(value); }
-
-    /**
-     * <p>Output from using SSM to validate the application.</p>
-     */
     inline AppValidationOutput& WithSsmOutput(const SSMOutput& value) { SetSsmOutput(value); return *this;}
-
-    /**
-     * <p>Output from using SSM to validate the application.</p>
-     */
     inline AppValidationOutput& WithSsmOutput(SSMOutput&& value) { SetSsmOutput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SSMOutput m_ssmOutput;

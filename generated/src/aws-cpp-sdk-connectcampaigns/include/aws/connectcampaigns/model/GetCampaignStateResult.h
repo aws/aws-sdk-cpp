@@ -38,43 +38,25 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API GetCampaignStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const CampaignState& GetState() const{ return m_state; }
-
-    
     inline void SetState(const CampaignState& value) { m_state = value; }
-
-    
     inline void SetState(CampaignState&& value) { m_state = std::move(value); }
-
-    
     inline GetCampaignStateResult& WithState(const CampaignState& value) { SetState(value); return *this;}
-
-    
     inline GetCampaignStateResult& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCampaignStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCampaignStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCampaignStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CampaignState m_state;

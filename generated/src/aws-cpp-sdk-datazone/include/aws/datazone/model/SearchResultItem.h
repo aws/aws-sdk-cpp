@@ -38,42 +38,18 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The asset listing included in the results of the <code>SearchListings</code>
      * action.</p>
      */
     inline const AssetListingItem& GetAssetListing() const{ return m_assetListing; }
-
-    /**
-     * <p>The asset listing included in the results of the <code>SearchListings</code>
-     * action.</p>
-     */
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-
-    /**
-     * <p>The asset listing included in the results of the <code>SearchListings</code>
-     * action.</p>
-     */
     inline void SetAssetListing(const AssetListingItem& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-
-    /**
-     * <p>The asset listing included in the results of the <code>SearchListings</code>
-     * action.</p>
-     */
     inline void SetAssetListing(AssetListingItem&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-
-    /**
-     * <p>The asset listing included in the results of the <code>SearchListings</code>
-     * action.</p>
-     */
     inline SearchResultItem& WithAssetListing(const AssetListingItem& value) { SetAssetListing(value); return *this;}
-
-    /**
-     * <p>The asset listing included in the results of the <code>SearchListings</code>
-     * action.</p>
-     */
     inline SearchResultItem& WithAssetListing(AssetListingItem&& value) { SetAssetListing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AssetListingItem m_assetListing;

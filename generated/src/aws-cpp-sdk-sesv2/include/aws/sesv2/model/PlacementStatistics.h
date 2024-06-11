@@ -36,130 +36,60 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentage of emails that arrived in recipients' inboxes during the
      * predictive inbox placement test.</p>
      */
     inline double GetInboxPercentage() const{ return m_inboxPercentage; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' inboxes during the
-     * predictive inbox placement test.</p>
-     */
     inline bool InboxPercentageHasBeenSet() const { return m_inboxPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' inboxes during the
-     * predictive inbox placement test.</p>
-     */
     inline void SetInboxPercentage(double value) { m_inboxPercentageHasBeenSet = true; m_inboxPercentage = value; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' inboxes during the
-     * predictive inbox placement test.</p>
-     */
     inline PlacementStatistics& WithInboxPercentage(double value) { SetInboxPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of emails that arrived in recipients' spam or junk mail
      * folders during the predictive inbox placement test.</p>
      */
     inline double GetSpamPercentage() const{ return m_spamPercentage; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' spam or junk mail
-     * folders during the predictive inbox placement test.</p>
-     */
     inline bool SpamPercentageHasBeenSet() const { return m_spamPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' spam or junk mail
-     * folders during the predictive inbox placement test.</p>
-     */
     inline void SetSpamPercentage(double value) { m_spamPercentageHasBeenSet = true; m_spamPercentage = value; }
-
-    /**
-     * <p>The percentage of emails that arrived in recipients' spam or junk mail
-     * folders during the predictive inbox placement test.</p>
-     */
     inline PlacementStatistics& WithSpamPercentage(double value) { SetSpamPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
      * during the predictive inbox placement test.</p>
      */
     inline double GetMissingPercentage() const{ return m_missingPercentage; }
-
-    /**
-     * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
-     * during the predictive inbox placement test.</p>
-     */
     inline bool MissingPercentageHasBeenSet() const { return m_missingPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
-     * during the predictive inbox placement test.</p>
-     */
     inline void SetMissingPercentage(double value) { m_missingPercentageHasBeenSet = true; m_missingPercentage = value; }
-
-    /**
-     * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
-     * during the predictive inbox placement test.</p>
-     */
     inline PlacementStatistics& WithMissingPercentage(double value) { SetMissingPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of emails that were authenticated by using Sender Policy
      * Framework (SPF) during the predictive inbox placement test.</p>
      */
     inline double GetSpfPercentage() const{ return m_spfPercentage; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using Sender Policy
-     * Framework (SPF) during the predictive inbox placement test.</p>
-     */
     inline bool SpfPercentageHasBeenSet() const { return m_spfPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using Sender Policy
-     * Framework (SPF) during the predictive inbox placement test.</p>
-     */
     inline void SetSpfPercentage(double value) { m_spfPercentageHasBeenSet = true; m_spfPercentage = value; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using Sender Policy
-     * Framework (SPF) during the predictive inbox placement test.</p>
-     */
     inline PlacementStatistics& WithSpfPercentage(double value) { SetSpfPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of emails that were authenticated by using DomainKeys
      * Identified Mail (DKIM) during the predictive inbox placement test.</p>
      */
     inline double GetDkimPercentage() const{ return m_dkimPercentage; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using DomainKeys
-     * Identified Mail (DKIM) during the predictive inbox placement test.</p>
-     */
     inline bool DkimPercentageHasBeenSet() const { return m_dkimPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using DomainKeys
-     * Identified Mail (DKIM) during the predictive inbox placement test.</p>
-     */
     inline void SetDkimPercentage(double value) { m_dkimPercentageHasBeenSet = true; m_dkimPercentage = value; }
-
-    /**
-     * <p>The percentage of emails that were authenticated by using DomainKeys
-     * Identified Mail (DKIM) during the predictive inbox placement test.</p>
-     */
     inline PlacementStatistics& WithDkimPercentage(double value) { SetDkimPercentage(value); return *this;}
-
+    ///@}
   private:
 
     double m_inboxPercentage;

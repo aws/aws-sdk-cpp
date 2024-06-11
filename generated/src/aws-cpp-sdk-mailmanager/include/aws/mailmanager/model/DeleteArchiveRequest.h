@@ -38,46 +38,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the archive to delete.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveIdHasBeenSet = true; m_archiveId = value; }
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::move(value); }
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveIdHasBeenSet = true; m_archiveId.assign(value); }
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline DeleteArchiveRequest& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline DeleteArchiveRequest& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the archive to delete.</p>
-     */
     inline DeleteArchiveRequest& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archiveId;

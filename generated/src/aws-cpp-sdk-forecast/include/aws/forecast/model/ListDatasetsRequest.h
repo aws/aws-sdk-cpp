@@ -34,83 +34,31 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>If the result of the previous request was truncated, the response includes a
      * <code>NextToken</code>. To retrieve the next set of results, use the token in
      * the next request. Tokens expire after 24 hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline ListDatasetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline ListDatasetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the result of the previous request was truncated, the response includes a
-     * <code>NextToken</code>. To retrieve the next set of results, use the token in
-     * the next request. Tokens expire after 24 hours.</p>
-     */
     inline ListDatasetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of items to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The number of items to return in the response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The number of items to return in the response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The number of items to return in the response.</p>
-     */
     inline ListDatasetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

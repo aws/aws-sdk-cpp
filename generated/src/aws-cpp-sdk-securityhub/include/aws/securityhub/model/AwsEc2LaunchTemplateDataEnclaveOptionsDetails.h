@@ -36,30 +36,16 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> If this parameter is set to <code>true</code>, the instance is enabled for
      * Amazon Web Services Nitro Enclaves. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p> If this parameter is set to <code>true</code>, the instance is enabled for
-     * Amazon Web Services Nitro Enclaves. </p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p> If this parameter is set to <code>true</code>, the instance is enabled for
-     * Amazon Web Services Nitro Enclaves. </p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p> If this parameter is set to <code>true</code>, the instance is enabled for
-     * Amazon Web Services Nitro Enclaves. </p>
-     */
     inline AwsEc2LaunchTemplateDataEnclaveOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

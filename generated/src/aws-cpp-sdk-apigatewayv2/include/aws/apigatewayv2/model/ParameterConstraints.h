@@ -36,26 +36,15 @@ namespace Model
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether or not the parameter is required.</p>
      */
     inline bool GetRequired() const{ return m_required; }
-
-    /**
-     * <p>Whether or not the parameter is required.</p>
-     */
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-
-    /**
-     * <p>Whether or not the parameter is required.</p>
-     */
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
-
-    /**
-     * <p>Whether or not the parameter is required.</p>
-     */
     inline ParameterConstraints& WithRequired(bool value) { SetRequired(value); return *this;}
-
+    ///@}
   private:
 
     bool m_required;

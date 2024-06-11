@@ -38,57 +38,27 @@ namespace Model
     AWS_SNS_API CreatePlatformEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>EndpointArn returned from CreateEndpoint action.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = std::move(value); }
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline CreatePlatformEndpointResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline CreatePlatformEndpointResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-
-    /**
-     * <p>EndpointArn returned from CreateEndpoint action.</p>
-     */
     inline CreatePlatformEndpointResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreatePlatformEndpointResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreatePlatformEndpointResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointArn;

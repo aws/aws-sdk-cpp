@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The thing name.
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * The thing name.
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * The thing name.
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * The thing name.
-     */
     inline GetThingRuntimeConfigurationRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline GetThingRuntimeConfigurationRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * The thing name.
-     */
     inline GetThingRuntimeConfigurationRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingName;

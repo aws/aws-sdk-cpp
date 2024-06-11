@@ -42,99 +42,42 @@ namespace Model
     AWS_SUPPORT_API DescribeCasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details for the cases that match the request.</p>
      */
     inline const Aws::Vector<CaseDetails>& GetCases() const{ return m_cases; }
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline void SetCases(const Aws::Vector<CaseDetails>& value) { m_cases = value; }
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline void SetCases(Aws::Vector<CaseDetails>&& value) { m_cases = std::move(value); }
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline DescribeCasesResult& WithCases(const Aws::Vector<CaseDetails>& value) { SetCases(value); return *this;}
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline DescribeCasesResult& WithCases(Aws::Vector<CaseDetails>&& value) { SetCases(std::move(value)); return *this;}
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline DescribeCasesResult& AddCases(const CaseDetails& value) { m_cases.push_back(value); return *this; }
-
-    /**
-     * <p>The details for the cases that match the request.</p>
-     */
     inline DescribeCasesResult& AddCases(CaseDetails&& value) { m_cases.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A resumption point for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline DescribeCasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CaseDetails> m_cases;

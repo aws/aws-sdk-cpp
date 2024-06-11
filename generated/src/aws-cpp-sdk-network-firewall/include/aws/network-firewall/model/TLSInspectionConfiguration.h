@@ -52,54 +52,20 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lists the server certificate configurations that are associated with the TLS
      * configuration.</p>
      */
     inline const Aws::Vector<ServerCertificateConfiguration>& GetServerCertificateConfigurations() const{ return m_serverCertificateConfigurations; }
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline bool ServerCertificateConfigurationsHasBeenSet() const { return m_serverCertificateConfigurationsHasBeenSet; }
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline void SetServerCertificateConfigurations(const Aws::Vector<ServerCertificateConfiguration>& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations = value; }
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline void SetServerCertificateConfigurations(Aws::Vector<ServerCertificateConfiguration>&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations = std::move(value); }
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline TLSInspectionConfiguration& WithServerCertificateConfigurations(const Aws::Vector<ServerCertificateConfiguration>& value) { SetServerCertificateConfigurations(value); return *this;}
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline TLSInspectionConfiguration& WithServerCertificateConfigurations(Aws::Vector<ServerCertificateConfiguration>&& value) { SetServerCertificateConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline TLSInspectionConfiguration& AddServerCertificateConfigurations(const ServerCertificateConfiguration& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the server certificate configurations that are associated with the TLS
-     * configuration.</p>
-     */
     inline TLSInspectionConfiguration& AddServerCertificateConfigurations(ServerCertificateConfiguration&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ServerCertificateConfiguration> m_serverCertificateConfigurations;

@@ -38,137 +38,50 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the transit gateway route table.</p>
      */
     inline const Aws::String& GetTransitGatewayRouteTableId() const{ return m_transitGatewayRouteTableId; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(Aws::String&& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(const char* value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithTransitGatewayRouteTableId(const Aws::String& value) { SetTransitGatewayRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithTransitGatewayRouteTableId(Aws::String&& value) { SetTransitGatewayRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithTransitGatewayRouteTableId(const char* value) { SetTransitGatewayRouteTableId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the peering attachment.</p>
      */
     inline const Aws::String& GetPeeringAttachmentId() const{ return m_peeringAttachmentId; }
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline bool PeeringAttachmentIdHasBeenSet() const { return m_peeringAttachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline void SetPeeringAttachmentId(const Aws::String& value) { m_peeringAttachmentIdHasBeenSet = true; m_peeringAttachmentId = value; }
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline void SetPeeringAttachmentId(Aws::String&& value) { m_peeringAttachmentIdHasBeenSet = true; m_peeringAttachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline void SetPeeringAttachmentId(const char* value) { m_peeringAttachmentIdHasBeenSet = true; m_peeringAttachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithPeeringAttachmentId(const Aws::String& value) { SetPeeringAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithPeeringAttachmentId(Aws::String&& value) { SetPeeringAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the peering attachment.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithPeeringAttachmentId(const char* value) { SetPeeringAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags specifications applied to the transit gateway route table
      * announcement.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags specifications applied to the transit gateway route table
-     * announcement.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -176,31 +89,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateTransitGatewayRouteTableAnnouncementRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transitGatewayRouteTableId;

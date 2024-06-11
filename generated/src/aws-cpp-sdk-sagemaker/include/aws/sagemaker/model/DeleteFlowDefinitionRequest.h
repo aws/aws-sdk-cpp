@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the flow definition you are deleting.</p>
      */
     inline const Aws::String& GetFlowDefinitionName() const{ return m_flowDefinitionName; }
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline bool FlowDefinitionNameHasBeenSet() const { return m_flowDefinitionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline void SetFlowDefinitionName(const Aws::String& value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName = value; }
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline void SetFlowDefinitionName(Aws::String&& value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName = std::move(value); }
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline void SetFlowDefinitionName(const char* value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName.assign(value); }
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline DeleteFlowDefinitionRequest& WithFlowDefinitionName(const Aws::String& value) { SetFlowDefinitionName(value); return *this;}
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline DeleteFlowDefinitionRequest& WithFlowDefinitionName(Aws::String&& value) { SetFlowDefinitionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the flow definition you are deleting.</p>
-     */
     inline DeleteFlowDefinitionRequest& WithFlowDefinitionName(const char* value) { SetFlowDefinitionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowDefinitionName;

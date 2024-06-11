@@ -33,53 +33,27 @@ namespace Model
     AWS_APPFABRIC_API CreateAppAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains information about an app authorization.</p>
      */
     inline const AppAuthorization& GetAppAuthorization() const{ return m_appAuthorization; }
-
-    /**
-     * <p>Contains information about an app authorization.</p>
-     */
     inline void SetAppAuthorization(const AppAuthorization& value) { m_appAuthorization = value; }
-
-    /**
-     * <p>Contains information about an app authorization.</p>
-     */
     inline void SetAppAuthorization(AppAuthorization&& value) { m_appAuthorization = std::move(value); }
-
-    /**
-     * <p>Contains information about an app authorization.</p>
-     */
     inline CreateAppAuthorizationResult& WithAppAuthorization(const AppAuthorization& value) { SetAppAuthorization(value); return *this;}
-
-    /**
-     * <p>Contains information about an app authorization.</p>
-     */
     inline CreateAppAuthorizationResult& WithAppAuthorization(AppAuthorization&& value) { SetAppAuthorization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAppAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAppAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAppAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppAuthorization m_appAuthorization;

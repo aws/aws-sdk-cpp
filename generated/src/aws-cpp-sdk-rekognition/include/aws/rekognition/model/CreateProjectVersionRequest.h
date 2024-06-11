@@ -39,139 +39,50 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the Amazon Rekognition project that will manage the project
      * version you want to train.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline CreateProjectVersionRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline CreateProjectVersionRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Rekognition project that will manage the project
-     * version you want to train.</p>
-     */
     inline CreateProjectVersionRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name for the version of the project version. This value must be unique.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the version of the project version. This value must be unique.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 bucket location to store the results of training. The bucket
      * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
      * permission on the bucket. </p>
      */
     inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-
-    /**
-     * <p>The Amazon S3 bucket location to store the results of training. The bucket
-     * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
-     * permission on the bucket. </p>
-     */
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket location to store the results of training. The bucket
-     * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
-     * permission on the bucket. </p>
-     */
     inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-
-    /**
-     * <p>The Amazon S3 bucket location to store the results of training. The bucket
-     * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
-     * permission on the bucket. </p>
-     */
     inline void SetOutputConfig(OutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket location to store the results of training. The bucket
-     * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
-     * permission on the bucket. </p>
-     */
     inline CreateProjectVersionRequest& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket location to store the results of training. The bucket
-     * can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code>
-     * permission on the bucket. </p>
-     */
     inline CreateProjectVersionRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies an external manifest that the services uses to train the project
      * version. If you specify <code>TrainingData</code> you must also specify
@@ -179,48 +90,14 @@ namespace Model
      * </p>
      */
     inline const TrainingData& GetTrainingData() const{ return m_trainingData; }
-
-    /**
-     * <p>Specifies an external manifest that the services uses to train the project
-     * version. If you specify <code>TrainingData</code> you must also specify
-     * <code>TestingData</code>. The project must not have any associated datasets.
-     * </p>
-     */
     inline bool TrainingDataHasBeenSet() const { return m_trainingDataHasBeenSet; }
-
-    /**
-     * <p>Specifies an external manifest that the services uses to train the project
-     * version. If you specify <code>TrainingData</code> you must also specify
-     * <code>TestingData</code>. The project must not have any associated datasets.
-     * </p>
-     */
     inline void SetTrainingData(const TrainingData& value) { m_trainingDataHasBeenSet = true; m_trainingData = value; }
-
-    /**
-     * <p>Specifies an external manifest that the services uses to train the project
-     * version. If you specify <code>TrainingData</code> you must also specify
-     * <code>TestingData</code>. The project must not have any associated datasets.
-     * </p>
-     */
     inline void SetTrainingData(TrainingData&& value) { m_trainingDataHasBeenSet = true; m_trainingData = std::move(value); }
-
-    /**
-     * <p>Specifies an external manifest that the services uses to train the project
-     * version. If you specify <code>TrainingData</code> you must also specify
-     * <code>TestingData</code>. The project must not have any associated datasets.
-     * </p>
-     */
     inline CreateProjectVersionRequest& WithTrainingData(const TrainingData& value) { SetTrainingData(value); return *this;}
-
-    /**
-     * <p>Specifies an external manifest that the services uses to train the project
-     * version. If you specify <code>TrainingData</code> you must also specify
-     * <code>TestingData</code>. The project must not have any associated datasets.
-     * </p>
-     */
     inline CreateProjectVersionRequest& WithTrainingData(TrainingData&& value) { SetTrainingData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies an external manifest that the service uses to test the project
      * version. If you specify <code>TestingData</code> you must also specify
@@ -228,127 +105,34 @@ namespace Model
      * datasets.</p>
      */
     inline const TestingData& GetTestingData() const{ return m_testingData; }
-
-    /**
-     * <p>Specifies an external manifest that the service uses to test the project
-     * version. If you specify <code>TestingData</code> you must also specify
-     * <code>TrainingData</code>. The project must not have any associated
-     * datasets.</p>
-     */
     inline bool TestingDataHasBeenSet() const { return m_testingDataHasBeenSet; }
-
-    /**
-     * <p>Specifies an external manifest that the service uses to test the project
-     * version. If you specify <code>TestingData</code> you must also specify
-     * <code>TrainingData</code>. The project must not have any associated
-     * datasets.</p>
-     */
     inline void SetTestingData(const TestingData& value) { m_testingDataHasBeenSet = true; m_testingData = value; }
-
-    /**
-     * <p>Specifies an external manifest that the service uses to test the project
-     * version. If you specify <code>TestingData</code> you must also specify
-     * <code>TrainingData</code>. The project must not have any associated
-     * datasets.</p>
-     */
     inline void SetTestingData(TestingData&& value) { m_testingDataHasBeenSet = true; m_testingData = std::move(value); }
-
-    /**
-     * <p>Specifies an external manifest that the service uses to test the project
-     * version. If you specify <code>TestingData</code> you must also specify
-     * <code>TrainingData</code>. The project must not have any associated
-     * datasets.</p>
-     */
     inline CreateProjectVersionRequest& WithTestingData(const TestingData& value) { SetTestingData(value); return *this;}
-
-    /**
-     * <p>Specifies an external manifest that the service uses to test the project
-     * version. If you specify <code>TestingData</code> you must also specify
-     * <code>TrainingData</code>. The project must not have any associated
-     * datasets.</p>
-     */
     inline CreateProjectVersionRequest& WithTestingData(TestingData&& value) { SetTestingData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A set of tags (key-value pairs) that you want to attach to the project
      * version. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A set of tags (key-value pairs) that you want to attach to the project
-     * version. </p>
-     */
     inline CreateProjectVersionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
      * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
@@ -364,203 +148,42 @@ namespace Model
      * are encrypted using a key that AWS owns and manages.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline CreateProjectVersionRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline CreateProjectVersionRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can
-     * supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key,
-     * an alias for your KMS key, or an alias ARN. The key is used to encrypt training
-     * images, test images, and manifest files copied into the service for the project
-     * version. Your source images are unaffected. The key is also used to encrypt
-     * training results and manifest files written to the output Amazon S3 bucket
-     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own KMS key, you
-     * need the following permissions on the KMS key.</p> <ul> <li>
-     * <p>kms:CreateGrant</p> </li> <li> <p>kms:DescribeKey</p> </li> <li>
-     * <p>kms:GenerateDataKey</p> </li> <li> <p>kms:Decrypt</p> </li> </ul> <p>If you
-     * don't specify a value for <code>KmsKeyId</code>, images copied into the service
-     * are encrypted using a key that AWS owns and manages.</p>
-     */
     inline CreateProjectVersionRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description applied to the project version being created.</p>
      */
     inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description applied to the project version being created.</p>
-     */
     inline CreateProjectVersionRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Feature-specific configuration of the training job. If the job configuration
      * does not match the feature type associated with the project, an
      * InvalidParameterException is returned.</p>
      */
     inline const CustomizationFeatureConfig& GetFeatureConfig() const{ return m_featureConfig; }
-
-    /**
-     * <p>Feature-specific configuration of the training job. If the job configuration
-     * does not match the feature type associated with the project, an
-     * InvalidParameterException is returned.</p>
-     */
     inline bool FeatureConfigHasBeenSet() const { return m_featureConfigHasBeenSet; }
-
-    /**
-     * <p>Feature-specific configuration of the training job. If the job configuration
-     * does not match the feature type associated with the project, an
-     * InvalidParameterException is returned.</p>
-     */
     inline void SetFeatureConfig(const CustomizationFeatureConfig& value) { m_featureConfigHasBeenSet = true; m_featureConfig = value; }
-
-    /**
-     * <p>Feature-specific configuration of the training job. If the job configuration
-     * does not match the feature type associated with the project, an
-     * InvalidParameterException is returned.</p>
-     */
     inline void SetFeatureConfig(CustomizationFeatureConfig&& value) { m_featureConfigHasBeenSet = true; m_featureConfig = std::move(value); }
-
-    /**
-     * <p>Feature-specific configuration of the training job. If the job configuration
-     * does not match the feature type associated with the project, an
-     * InvalidParameterException is returned.</p>
-     */
     inline CreateProjectVersionRequest& WithFeatureConfig(const CustomizationFeatureConfig& value) { SetFeatureConfig(value); return *this;}
-
-    /**
-     * <p>Feature-specific configuration of the training job. If the job configuration
-     * does not match the feature type associated with the project, an
-     * InvalidParameterException is returned.</p>
-     */
     inline CreateProjectVersionRequest& WithFeatureConfig(CustomizationFeatureConfig&& value) { SetFeatureConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

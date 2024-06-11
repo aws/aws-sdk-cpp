@@ -40,87 +40,33 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates that the configuration set does not exist.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates that the configuration set does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates that the event destination does not exist.</p>
      */
     inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline void SetEventDestinationName(const Aws::String& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = value; }
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline void SetEventDestinationName(Aws::String&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::move(value); }
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline void SetEventDestinationName(const char* value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName.assign(value); }
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithEventDestinationName(const Aws::String& value) { SetEventDestinationName(value); return *this;}
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithEventDestinationName(Aws::String&& value) { SetEventDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates that the event destination does not exist.</p>
-     */
     inline InvalidCloudWatchDestinationException& WithEventDestinationName(const char* value) { SetEventDestinationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationSetName;

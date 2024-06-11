@@ -38,63 +38,29 @@ namespace Model
     AWS_RDSDATASERVICE_API RollbackTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the rollback operation.</p>
      */
     inline const Aws::String& GetTransactionStatus() const{ return m_transactionStatus; }
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline void SetTransactionStatus(const Aws::String& value) { m_transactionStatus = value; }
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline void SetTransactionStatus(Aws::String&& value) { m_transactionStatus = std::move(value); }
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline void SetTransactionStatus(const char* value) { m_transactionStatus.assign(value); }
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline RollbackTransactionResult& WithTransactionStatus(const Aws::String& value) { SetTransactionStatus(value); return *this;}
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline RollbackTransactionResult& WithTransactionStatus(Aws::String&& value) { SetTransactionStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the rollback operation.</p>
-     */
     inline RollbackTransactionResult& WithTransactionStatus(const char* value) { SetTransactionStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RollbackTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RollbackTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RollbackTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transactionStatus;

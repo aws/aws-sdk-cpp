@@ -34,79 +34,38 @@ namespace Model
     AWS_CONNECT_API DescribeContactEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the evaluation form completed for a specific contact.</p>
      */
     inline const Evaluation& GetEvaluation() const{ return m_evaluation; }
-
-    /**
-     * <p>Information about the evaluation form completed for a specific contact.</p>
-     */
     inline void SetEvaluation(const Evaluation& value) { m_evaluation = value; }
-
-    /**
-     * <p>Information about the evaluation form completed for a specific contact.</p>
-     */
     inline void SetEvaluation(Evaluation&& value) { m_evaluation = std::move(value); }
-
-    /**
-     * <p>Information about the evaluation form completed for a specific contact.</p>
-     */
     inline DescribeContactEvaluationResult& WithEvaluation(const Evaluation& value) { SetEvaluation(value); return *this;}
-
-    /**
-     * <p>Information about the evaluation form completed for a specific contact.</p>
-     */
     inline DescribeContactEvaluationResult& WithEvaluation(Evaluation&& value) { SetEvaluation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the evaluation form.</p>
      */
     inline const EvaluationFormContent& GetEvaluationForm() const{ return m_evaluationForm; }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline void SetEvaluationForm(const EvaluationFormContent& value) { m_evaluationForm = value; }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline void SetEvaluationForm(EvaluationFormContent&& value) { m_evaluationForm = std::move(value); }
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline DescribeContactEvaluationResult& WithEvaluationForm(const EvaluationFormContent& value) { SetEvaluationForm(value); return *this;}
-
-    /**
-     * <p>Information about the evaluation form.</p>
-     */
     inline DescribeContactEvaluationResult& WithEvaluationForm(EvaluationFormContent&& value) { SetEvaluationForm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeContactEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeContactEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeContactEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Evaluation m_evaluation;

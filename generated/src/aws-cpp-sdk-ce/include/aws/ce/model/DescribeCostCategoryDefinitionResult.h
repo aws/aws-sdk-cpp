@@ -33,43 +33,25 @@ namespace Model
     AWS_COSTEXPLORER_API DescribeCostCategoryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const CostCategory& GetCostCategory() const{ return m_costCategory; }
-
-    
     inline void SetCostCategory(const CostCategory& value) { m_costCategory = value; }
-
-    
     inline void SetCostCategory(CostCategory&& value) { m_costCategory = std::move(value); }
-
-    
     inline DescribeCostCategoryDefinitionResult& WithCostCategory(const CostCategory& value) { SetCostCategory(value); return *this;}
-
-    
     inline DescribeCostCategoryDefinitionResult& WithCostCategory(CostCategory&& value) { SetCostCategory(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCostCategoryDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCostCategoryDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCostCategoryDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CostCategory m_costCategory;

@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>Deployment</code> objects that describe the
      * deployments.</p>
      */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline void SetDeployments(const Aws::Vector<Deployment>& value) { m_deployments = value; }
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = std::move(value); }
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline DescribeDeploymentsResult& WithDeployments(const Aws::Vector<Deployment>& value) { SetDeployments(value); return *this;}
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline DescribeDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline DescribeDeploymentsResult& AddDeployments(const Deployment& value) { m_deployments.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>Deployment</code> objects that describe the
-     * deployments.</p>
-     */
     inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Deployment> m_deployments;

@@ -38,77 +38,31 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the rendering engine.</p>
      */
     inline const RenderingEngineType& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the rendering engine.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the rendering engine.</p>
-     */
     inline void SetName(const RenderingEngineType& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the rendering engine.</p>
-     */
     inline void SetName(RenderingEngineType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the rendering engine.</p>
-     */
     inline RenderingEngine& WithName(const RenderingEngineType& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the rendering engine.</p>
-     */
     inline RenderingEngine& WithName(RenderingEngineType&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the rendering engine.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline RenderingEngine& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline RenderingEngine& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the rendering engine.</p>
-     */
     inline RenderingEngine& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     RenderingEngineType m_name;

@@ -38,36 +38,17 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Settings associated with S3 destination
      */
     inline const S3DestinationSettings& GetS3Settings() const{ return m_s3Settings; }
-
-    /**
-     * Settings associated with S3 destination
-     */
     inline bool S3SettingsHasBeenSet() const { return m_s3SettingsHasBeenSet; }
-
-    /**
-     * Settings associated with S3 destination
-     */
     inline void SetS3Settings(const S3DestinationSettings& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = value; }
-
-    /**
-     * Settings associated with S3 destination
-     */
     inline void SetS3Settings(S3DestinationSettings&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::move(value); }
-
-    /**
-     * Settings associated with S3 destination
-     */
     inline DestinationSettings& WithS3Settings(const S3DestinationSettings& value) { SetS3Settings(value); return *this;}
-
-    /**
-     * Settings associated with S3 destination
-     */
     inline DestinationSettings& WithS3Settings(S3DestinationSettings&& value) { SetS3Settings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3DestinationSettings m_s3Settings;

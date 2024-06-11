@@ -33,53 +33,27 @@ namespace Model
     AWS_ECRPUBLIC_API PutRegistryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The catalog data for the public registry.</p>
      */
     inline const RegistryCatalogData& GetRegistryCatalogData() const{ return m_registryCatalogData; }
-
-    /**
-     * <p>The catalog data for the public registry.</p>
-     */
     inline void SetRegistryCatalogData(const RegistryCatalogData& value) { m_registryCatalogData = value; }
-
-    /**
-     * <p>The catalog data for the public registry.</p>
-     */
     inline void SetRegistryCatalogData(RegistryCatalogData&& value) { m_registryCatalogData = std::move(value); }
-
-    /**
-     * <p>The catalog data for the public registry.</p>
-     */
     inline PutRegistryCatalogDataResult& WithRegistryCatalogData(const RegistryCatalogData& value) { SetRegistryCatalogData(value); return *this;}
-
-    /**
-     * <p>The catalog data for the public registry.</p>
-     */
     inline PutRegistryCatalogDataResult& WithRegistryCatalogData(RegistryCatalogData&& value) { SetRegistryCatalogData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutRegistryCatalogDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutRegistryCatalogDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutRegistryCatalogDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RegistryCatalogData m_registryCatalogData;

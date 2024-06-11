@@ -36,158 +36,60 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The CIDR range used for destination matches. Routing decisions are based on
      * the most specific match.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR range used for destination matches. Routing decisions are based on
-     * the most specific match.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the transit gateway route table.</p>
      */
     inline const Aws::String& GetTransitGatewayRouteTableId() const{ return m_transitGatewayRouteTableId; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(Aws::String&& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline void SetTransitGatewayRouteTableId(const char* value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayRouteTableId(const Aws::String& value) { SetTransitGatewayRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayRouteTableId(Aws::String&& value) { SetTransitGatewayRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway route table.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayRouteTableId(const char* value) { SetTransitGatewayRouteTableId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the attachment.</p>
      */
     inline const Aws::String& GetTransitGatewayAttachmentId() const{ return m_transitGatewayAttachmentId; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(Aws::String&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(const char* value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayAttachmentId(const Aws::String& value) { SetTransitGatewayAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayAttachmentId(Aws::String&& value) { SetTransitGatewayAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithTransitGatewayAttachmentId(const char* value) { SetTransitGatewayAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to drop traffic that matches this route.</p>
      */
     inline bool GetBlackhole() const{ return m_blackhole; }
-
-    /**
-     * <p>Indicates whether to drop traffic that matches this route.</p>
-     */
     inline bool BlackholeHasBeenSet() const { return m_blackholeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to drop traffic that matches this route.</p>
-     */
     inline void SetBlackhole(bool value) { m_blackholeHasBeenSet = true; m_blackhole = value; }
-
-    /**
-     * <p>Indicates whether to drop traffic that matches this route.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithBlackhole(bool value) { SetBlackhole(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -195,31 +97,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateTransitGatewayRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;

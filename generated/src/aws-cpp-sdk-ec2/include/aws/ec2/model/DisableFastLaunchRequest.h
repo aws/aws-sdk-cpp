@@ -36,76 +36,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline DisableFastLaunchRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline DisableFastLaunchRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the ID of the image for which to disable Windows fast launch.</p>
-     */
     inline DisableFastLaunchRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Forces the image settings to turn off Windows fast launch for your Windows
      * AMI. This parameter overrides any errors that are encountered while cleaning up
      * resources in your account.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Forces the image settings to turn off Windows fast launch for your Windows
-     * AMI. This parameter overrides any errors that are encountered while cleaning up
-     * resources in your account.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Forces the image settings to turn off Windows fast launch for your Windows
-     * AMI. This parameter overrides any errors that are encountered while cleaning up
-     * resources in your account.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Forces the image settings to turn off Windows fast launch for your Windows
-     * AMI. This parameter overrides any errors that are encountered while cleaning up
-     * resources in your account.</p>
-     */
     inline DisableFastLaunchRequest& WithForce(bool value) { SetForce(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -113,31 +70,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisableFastLaunchRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageId;

@@ -47,6 +47,7 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a
@@ -56,126 +57,29 @@ namespace Model
      * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
     inline const Aws::String& GetByteMatchSetId() const{ return m_byteMatchSetId; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline void SetByteMatchSetId(const char* value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId.assign(value); }
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline ByteMatchSetSummary& WithByteMatchSetId(const Aws::String& value) { SetByteMatchSetId(value); return *this;}
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline ByteMatchSetSummary& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
-     * <code>ByteMatchSetId</code> to get information about a
-     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
-     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
-     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
-     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
-     */
     inline ByteMatchSetSummary& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline ByteMatchSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline ByteMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
-     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-     */
     inline ByteMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_byteMatchSetId;

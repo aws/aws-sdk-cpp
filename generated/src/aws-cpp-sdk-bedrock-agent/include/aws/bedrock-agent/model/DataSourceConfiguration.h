@@ -39,73 +39,30 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains details about the configuration of the S3 object containing the data
      * source.</p>
      */
     inline const S3DataSourceConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
-
-    /**
-     * <p>Contains details about the configuration of the S3 object containing the data
-     * source.</p>
-     */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains details about the configuration of the S3 object containing the data
-     * source.</p>
-     */
     inline void SetS3Configuration(const S3DataSourceConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-
-    /**
-     * <p>Contains details about the configuration of the S3 object containing the data
-     * source.</p>
-     */
     inline void SetS3Configuration(S3DataSourceConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-
-    /**
-     * <p>Contains details about the configuration of the S3 object containing the data
-     * source.</p>
-     */
     inline DataSourceConfiguration& WithS3Configuration(const S3DataSourceConfiguration& value) { SetS3Configuration(value); return *this;}
-
-    /**
-     * <p>Contains details about the configuration of the S3 object containing the data
-     * source.</p>
-     */
     inline DataSourceConfiguration& WithS3Configuration(S3DataSourceConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of storage for the data source.</p>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of storage for the data source.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of storage for the data source.</p>
-     */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of storage for the data source.</p>
-     */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of storage for the data source.</p>
-     */
     inline DataSourceConfiguration& WithType(const DataSourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of storage for the data source.</p>
-     */
     inline DataSourceConfiguration& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3DataSourceConfiguration m_s3Configuration;

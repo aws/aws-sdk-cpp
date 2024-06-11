@@ -39,62 +39,21 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about any skipped analytics features during the analysis
      * of a call analytics job.</p> <p>This array lists all the analytics features that
      * were skipped, along with their corresponding reason code and message.</p>
      */
     inline const Aws::Vector<CallAnalyticsSkippedFeature>& GetSkipped() const{ return m_skipped; }
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline void SetSkipped(const Aws::Vector<CallAnalyticsSkippedFeature>& value) { m_skippedHasBeenSet = true; m_skipped = value; }
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline void SetSkipped(Aws::Vector<CallAnalyticsSkippedFeature>&& value) { m_skippedHasBeenSet = true; m_skipped = std::move(value); }
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline CallAnalyticsJobDetails& WithSkipped(const Aws::Vector<CallAnalyticsSkippedFeature>& value) { SetSkipped(value); return *this;}
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline CallAnalyticsJobDetails& WithSkipped(Aws::Vector<CallAnalyticsSkippedFeature>&& value) { SetSkipped(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline CallAnalyticsJobDetails& AddSkipped(const CallAnalyticsSkippedFeature& value) { m_skippedHasBeenSet = true; m_skipped.push_back(value); return *this; }
-
-    /**
-     * <p>Contains information about any skipped analytics features during the analysis
-     * of a call analytics job.</p> <p>This array lists all the analytics features that
-     * were skipped, along with their corresponding reason code and message.</p>
-     */
     inline CallAnalyticsJobDetails& AddSkipped(CallAnalyticsSkippedFeature&& value) { m_skippedHasBeenSet = true; m_skipped.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CallAnalyticsSkippedFeature> m_skipped;

@@ -38,46 +38,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the delivery channel through which the snapshot is delivered.</p>
      */
     inline const Aws::String& GetDeliveryChannelName() const{ return m_deliveryChannelName; }
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline bool DeliveryChannelNameHasBeenSet() const { return m_deliveryChannelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline void SetDeliveryChannelName(const Aws::String& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = value; }
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline void SetDeliveryChannelName(Aws::String&& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = std::move(value); }
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline void SetDeliveryChannelName(const char* value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName.assign(value); }
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(const Aws::String& value) { SetDeliveryChannelName(value); return *this;}
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(Aws::String&& value) { SetDeliveryChannelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
-     */
     inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(const char* value) { SetDeliveryChannelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryChannelName;

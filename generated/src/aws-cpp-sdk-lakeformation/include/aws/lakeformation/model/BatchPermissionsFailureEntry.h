@@ -39,67 +39,29 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An identifier for an entry of the batch request.</p>
      */
     inline const BatchPermissionsRequestEntry& GetRequestEntry() const{ return m_requestEntry; }
-
-    /**
-     * <p>An identifier for an entry of the batch request.</p>
-     */
     inline bool RequestEntryHasBeenSet() const { return m_requestEntryHasBeenSet; }
-
-    /**
-     * <p>An identifier for an entry of the batch request.</p>
-     */
     inline void SetRequestEntry(const BatchPermissionsRequestEntry& value) { m_requestEntryHasBeenSet = true; m_requestEntry = value; }
-
-    /**
-     * <p>An identifier for an entry of the batch request.</p>
-     */
     inline void SetRequestEntry(BatchPermissionsRequestEntry&& value) { m_requestEntryHasBeenSet = true; m_requestEntry = std::move(value); }
-
-    /**
-     * <p>An identifier for an entry of the batch request.</p>
-     */
     inline BatchPermissionsFailureEntry& WithRequestEntry(const BatchPermissionsRequestEntry& value) { SetRequestEntry(value); return *this;}
-
-    /**
-     * <p>An identifier for an entry of the batch request.</p>
-     */
     inline BatchPermissionsFailureEntry& WithRequestEntry(BatchPermissionsRequestEntry&& value) { SetRequestEntry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An error message that applies to the failure of the entry.</p>
      */
     inline const ErrorDetail& GetError() const{ return m_error; }
-
-    /**
-     * <p>An error message that applies to the failure of the entry.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>An error message that applies to the failure of the entry.</p>
-     */
     inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>An error message that applies to the failure of the entry.</p>
-     */
     inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>An error message that applies to the failure of the entry.</p>
-     */
     inline BatchPermissionsFailureEntry& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-
-    /**
-     * <p>An error message that applies to the failure of the entry.</p>
-     */
     inline BatchPermissionsFailureEntry& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BatchPermissionsRequestEntry m_requestEntry;

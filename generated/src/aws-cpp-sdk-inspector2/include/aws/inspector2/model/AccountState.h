@@ -40,114 +40,44 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountState& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountState& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline AccountState& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object detailing which resources Amazon Inspector is enabled to scan for
      * the account.</p>
      */
     inline const ResourceState& GetResourceState() const{ return m_resourceState; }
-
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
     inline bool ResourceStateHasBeenSet() const { return m_resourceStateHasBeenSet; }
-
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
     inline void SetResourceState(const ResourceState& value) { m_resourceStateHasBeenSet = true; m_resourceState = value; }
-
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
     inline void SetResourceState(ResourceState&& value) { m_resourceStateHasBeenSet = true; m_resourceState = std::move(value); }
-
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
     inline AccountState& WithResourceState(const ResourceState& value) { SetResourceState(value); return *this;}
-
-    /**
-     * <p>An object detailing which resources Amazon Inspector is enabled to scan for
-     * the account.</p>
-     */
     inline AccountState& WithResourceState(ResourceState&& value) { SetResourceState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object detailing the status of Amazon Inspector for the account.</p>
      */
     inline const State& GetState() const{ return m_state; }
-
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
     inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
     inline AccountState& WithState(const State& value) { SetState(value); return *this;}
-
-    /**
-     * <p>An object detailing the status of Amazon Inspector for the account.</p>
-     */
     inline AccountState& WithState(State&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

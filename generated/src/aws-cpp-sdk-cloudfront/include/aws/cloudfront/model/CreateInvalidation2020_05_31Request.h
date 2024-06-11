@@ -36,77 +36,31 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The distribution's id.</p>
      */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline CreateInvalidation2020_05_31Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline CreateInvalidation2020_05_31Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The distribution's id.</p>
-     */
     inline CreateInvalidation2020_05_31Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The batch information for the invalidation.</p>
      */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
-
-    /**
-     * <p>The batch information for the invalidation.</p>
-     */
     inline bool InvalidationBatchHasBeenSet() const { return m_invalidationBatchHasBeenSet; }
-
-    /**
-     * <p>The batch information for the invalidation.</p>
-     */
     inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
-
-    /**
-     * <p>The batch information for the invalidation.</p>
-     */
     inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = std::move(value); }
-
-    /**
-     * <p>The batch information for the invalidation.</p>
-     */
     inline CreateInvalidation2020_05_31Request& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
-
-    /**
-     * <p>The batch information for the invalidation.</p>
-     */
     inline CreateInvalidation2020_05_31Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_distributionId;

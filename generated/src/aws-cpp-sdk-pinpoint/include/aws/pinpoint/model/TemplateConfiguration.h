@@ -38,172 +38,67 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email template to use for the message.</p>
      */
     inline const Template& GetEmailTemplate() const{ return m_emailTemplate; }
-
-    /**
-     * <p>The email template to use for the message.</p>
-     */
     inline bool EmailTemplateHasBeenSet() const { return m_emailTemplateHasBeenSet; }
-
-    /**
-     * <p>The email template to use for the message.</p>
-     */
     inline void SetEmailTemplate(const Template& value) { m_emailTemplateHasBeenSet = true; m_emailTemplate = value; }
-
-    /**
-     * <p>The email template to use for the message.</p>
-     */
     inline void SetEmailTemplate(Template&& value) { m_emailTemplateHasBeenSet = true; m_emailTemplate = std::move(value); }
-
-    /**
-     * <p>The email template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithEmailTemplate(const Template& value) { SetEmailTemplate(value); return *this;}
-
-    /**
-     * <p>The email template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithEmailTemplate(Template&& value) { SetEmailTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The push notification template to use for the message.</p>
      */
     inline const Template& GetPushTemplate() const{ return m_pushTemplate; }
-
-    /**
-     * <p>The push notification template to use for the message.</p>
-     */
     inline bool PushTemplateHasBeenSet() const { return m_pushTemplateHasBeenSet; }
-
-    /**
-     * <p>The push notification template to use for the message.</p>
-     */
     inline void SetPushTemplate(const Template& value) { m_pushTemplateHasBeenSet = true; m_pushTemplate = value; }
-
-    /**
-     * <p>The push notification template to use for the message.</p>
-     */
     inline void SetPushTemplate(Template&& value) { m_pushTemplateHasBeenSet = true; m_pushTemplate = std::move(value); }
-
-    /**
-     * <p>The push notification template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithPushTemplate(const Template& value) { SetPushTemplate(value); return *this;}
-
-    /**
-     * <p>The push notification template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithPushTemplate(Template&& value) { SetPushTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The SMS template to use for the message.</p>
      */
     inline const Template& GetSMSTemplate() const{ return m_sMSTemplate; }
-
-    /**
-     * <p>The SMS template to use for the message.</p>
-     */
     inline bool SMSTemplateHasBeenSet() const { return m_sMSTemplateHasBeenSet; }
-
-    /**
-     * <p>The SMS template to use for the message.</p>
-     */
     inline void SetSMSTemplate(const Template& value) { m_sMSTemplateHasBeenSet = true; m_sMSTemplate = value; }
-
-    /**
-     * <p>The SMS template to use for the message.</p>
-     */
     inline void SetSMSTemplate(Template&& value) { m_sMSTemplateHasBeenSet = true; m_sMSTemplate = std::move(value); }
-
-    /**
-     * <p>The SMS template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithSMSTemplate(const Template& value) { SetSMSTemplate(value); return *this;}
-
-    /**
-     * <p>The SMS template to use for the message.</p>
-     */
     inline TemplateConfiguration& WithSMSTemplate(Template&& value) { SetSMSTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The voice template to use for the message. This object isn't supported for
      * campaigns.</p>
      */
     inline const Template& GetVoiceTemplate() const{ return m_voiceTemplate; }
-
-    /**
-     * <p>The voice template to use for the message. This object isn't supported for
-     * campaigns.</p>
-     */
     inline bool VoiceTemplateHasBeenSet() const { return m_voiceTemplateHasBeenSet; }
-
-    /**
-     * <p>The voice template to use for the message. This object isn't supported for
-     * campaigns.</p>
-     */
     inline void SetVoiceTemplate(const Template& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = value; }
-
-    /**
-     * <p>The voice template to use for the message. This object isn't supported for
-     * campaigns.</p>
-     */
     inline void SetVoiceTemplate(Template&& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = std::move(value); }
-
-    /**
-     * <p>The voice template to use for the message. This object isn't supported for
-     * campaigns.</p>
-     */
     inline TemplateConfiguration& WithVoiceTemplate(const Template& value) { SetVoiceTemplate(value); return *this;}
-
-    /**
-     * <p>The voice template to use for the message. This object isn't supported for
-     * campaigns.</p>
-     */
     inline TemplateConfiguration& WithVoiceTemplate(Template&& value) { SetVoiceTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The InApp template to use for the message. The InApp template object is not
      * supported for SendMessages.</p>
      */
     inline const Template& GetInAppTemplate() const{ return m_inAppTemplate; }
-
-    /**
-     * <p>The InApp template to use for the message. The InApp template object is not
-     * supported for SendMessages.</p>
-     */
     inline bool InAppTemplateHasBeenSet() const { return m_inAppTemplateHasBeenSet; }
-
-    /**
-     * <p>The InApp template to use for the message. The InApp template object is not
-     * supported for SendMessages.</p>
-     */
     inline void SetInAppTemplate(const Template& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = value; }
-
-    /**
-     * <p>The InApp template to use for the message. The InApp template object is not
-     * supported for SendMessages.</p>
-     */
     inline void SetInAppTemplate(Template&& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = std::move(value); }
-
-    /**
-     * <p>The InApp template to use for the message. The InApp template object is not
-     * supported for SendMessages.</p>
-     */
     inline TemplateConfiguration& WithInAppTemplate(const Template& value) { SetInAppTemplate(value); return *this;}
-
-    /**
-     * <p>The InApp template to use for the message. The InApp template object is not
-     * supported for SendMessages.</p>
-     */
     inline TemplateConfiguration& WithInAppTemplate(Template&& value) { SetInAppTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Template m_emailTemplate;

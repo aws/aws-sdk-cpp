@@ -37,6 +37,7 @@ namespace Model
     AWS_GLACIER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -45,142 +46,40 @@ namespace Model
      * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline SetVaultNotificationsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline SetVaultNotificationsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
-     * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-     * ID associated with the credentials used to sign the request. If you use an
-     * account ID, do not include any hyphens ('-') in the ID.</p>
-     */
     inline SetVaultNotificationsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the vault.</p>
      */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline SetVaultNotificationsRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline SetVaultNotificationsRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the vault.</p>
-     */
     inline SetVaultNotificationsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides options for specifying notification configuration.</p>
      */
     inline const VaultNotificationConfig& GetVaultNotificationConfig() const{ return m_vaultNotificationConfig; }
-
-    /**
-     * <p>Provides options for specifying notification configuration.</p>
-     */
     inline bool VaultNotificationConfigHasBeenSet() const { return m_vaultNotificationConfigHasBeenSet; }
-
-    /**
-     * <p>Provides options for specifying notification configuration.</p>
-     */
     inline void SetVaultNotificationConfig(const VaultNotificationConfig& value) { m_vaultNotificationConfigHasBeenSet = true; m_vaultNotificationConfig = value; }
-
-    /**
-     * <p>Provides options for specifying notification configuration.</p>
-     */
     inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfigHasBeenSet = true; m_vaultNotificationConfig = std::move(value); }
-
-    /**
-     * <p>Provides options for specifying notification configuration.</p>
-     */
     inline SetVaultNotificationsRequest& WithVaultNotificationConfig(const VaultNotificationConfig& value) { SetVaultNotificationConfig(value); return *this;}
-
-    /**
-     * <p>Provides options for specifying notification configuration.</p>
-     */
     inline SetVaultNotificationsRequest& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

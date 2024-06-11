@@ -35,46 +35,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>UUID of a mission profile.</p>
      */
     inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline bool MissionProfileIdHasBeenSet() const { return m_missionProfileIdHasBeenSet; }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = value; }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::move(value); }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline void SetMissionProfileId(const char* value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId.assign(value); }
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline DeleteMissionProfileRequest& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline DeleteMissionProfileRequest& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a mission profile.</p>
-     */
     inline DeleteMissionProfileRequest& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_missionProfileId;

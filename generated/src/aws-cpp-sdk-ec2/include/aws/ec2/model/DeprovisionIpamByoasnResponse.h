@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeprovisionIpamByoasnResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>An ASN and BYOIP CIDR association.</p>
      */
     inline const Byoasn& GetByoasn() const{ return m_byoasn; }
-
-    /**
-     * <p>An ASN and BYOIP CIDR association.</p>
-     */
     inline void SetByoasn(const Byoasn& value) { m_byoasn = value; }
-
-    /**
-     * <p>An ASN and BYOIP CIDR association.</p>
-     */
     inline void SetByoasn(Byoasn&& value) { m_byoasn = std::move(value); }
-
-    /**
-     * <p>An ASN and BYOIP CIDR association.</p>
-     */
     inline DeprovisionIpamByoasnResponse& WithByoasn(const Byoasn& value) { SetByoasn(value); return *this;}
-
-    /**
-     * <p>An ASN and BYOIP CIDR association.</p>
-     */
     inline DeprovisionIpamByoasnResponse& WithByoasn(Byoasn&& value) { SetByoasn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeprovisionIpamByoasnResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeprovisionIpamByoasnResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Byoasn m_byoasn;

@@ -32,54 +32,20 @@ namespace Model
     AWS_SYNTHETICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the group to return information for. You can specify the group
      * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
      */
     inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline GetGroupRequest& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline GetGroupRequest& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the group to return information for. You can specify the group
-     * name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-     */
     inline GetGroupRequest& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupIdentifier;

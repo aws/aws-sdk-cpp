@@ -38,36 +38,17 @@ namespace Model
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
      */
     inline const PreloadDataType& GetPreloadDataType() const{ return m_preloadDataType; }
-
-    /**
-     * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-     */
     inline bool PreloadDataTypeHasBeenSet() const { return m_preloadDataTypeHasBeenSet; }
-
-    /**
-     * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-     */
     inline void SetPreloadDataType(const PreloadDataType& value) { m_preloadDataTypeHasBeenSet = true; m_preloadDataType = value; }
-
-    /**
-     * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-     */
     inline void SetPreloadDataType(PreloadDataType&& value) { m_preloadDataTypeHasBeenSet = true; m_preloadDataType = std::move(value); }
-
-    /**
-     * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-     */
     inline PreloadDataConfig& WithPreloadDataType(const PreloadDataType& value) { SetPreloadDataType(value); return *this;}
-
-    /**
-     * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-     */
     inline PreloadDataConfig& WithPreloadDataType(PreloadDataType&& value) { SetPreloadDataType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PreloadDataType m_preloadDataType;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEBUILD_API StartBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the build to be run.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
-
-    /**
-     * <p>Information about the build to be run.</p>
-     */
     inline void SetBuild(const Build& value) { m_build = value; }
-
-    /**
-     * <p>Information about the build to be run.</p>
-     */
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
-
-    /**
-     * <p>Information about the build to be run.</p>
-     */
     inline StartBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
-
-    /**
-     * <p>Information about the build to be run.</p>
-     */
     inline StartBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartBuildResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartBuildResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartBuildResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Build m_build;

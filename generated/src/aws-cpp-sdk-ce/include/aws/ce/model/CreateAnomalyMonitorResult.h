@@ -32,70 +32,30 @@ namespace Model
     AWS_COSTEXPLORER_API CreateAnomalyMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of your newly created cost anomaly detection
      * monitor.</p>
      */
     inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline void SetMonitorArn(const Aws::String& value) { m_monitorArn = value; }
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline void SetMonitorArn(Aws::String&& value) { m_monitorArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline void SetMonitorArn(const char* value) { m_monitorArn.assign(value); }
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline CreateAnomalyMonitorResult& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline CreateAnomalyMonitorResult& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of your newly created cost anomaly detection
-     * monitor.</p>
-     */
     inline CreateAnomalyMonitorResult& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAnomalyMonitorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAnomalyMonitorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAnomalyMonitorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorArn;

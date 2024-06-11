@@ -34,63 +34,29 @@ namespace Model
     AWS_SAGEMAKERMETRICS_API BatchPutMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Lists any errors that occur when inserting metric data.</p>
      */
     inline const Aws::Vector<BatchPutMetricsError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline void SetErrors(const Aws::Vector<BatchPutMetricsError>& value) { m_errors = value; }
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline void SetErrors(Aws::Vector<BatchPutMetricsError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline BatchPutMetricsResult& WithErrors(const Aws::Vector<BatchPutMetricsError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline BatchPutMetricsResult& WithErrors(Aws::Vector<BatchPutMetricsError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline BatchPutMetricsResult& AddErrors(const BatchPutMetricsError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>Lists any errors that occur when inserting metric data.</p>
-     */
     inline BatchPutMetricsResult& AddErrors(BatchPutMetricsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchPutMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchPutMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchPutMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchPutMetricsError> m_errors;

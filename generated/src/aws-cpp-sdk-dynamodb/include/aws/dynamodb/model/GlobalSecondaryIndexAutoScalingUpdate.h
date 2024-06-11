@@ -39,65 +39,29 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the global secondary index.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline GlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline GlobalSecondaryIndexAutoScalingUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline GlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingUpdate() const{ return m_provisionedWriteCapacityAutoScalingUpdate; }
-
-    
     inline bool ProvisionedWriteCapacityAutoScalingUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet; }
-
-    
     inline void SetProvisionedWriteCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingUpdate = value; }
-
-    
     inline void SetProvisionedWriteCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingUpdate = std::move(value); }
-
-    
     inline GlobalSecondaryIndexAutoScalingUpdate& WithProvisionedWriteCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedWriteCapacityAutoScalingUpdate(value); return *this;}
-
-    
     inline GlobalSecondaryIndexAutoScalingUpdate& WithProvisionedWriteCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedWriteCapacityAutoScalingUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

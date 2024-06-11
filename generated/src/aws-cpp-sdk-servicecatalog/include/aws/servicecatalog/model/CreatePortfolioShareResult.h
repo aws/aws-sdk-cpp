@@ -32,70 +32,30 @@ namespace Model
     AWS_SERVICECATALOG_API CreatePortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The portfolio shares a unique identifier that only returns if the portfolio
      * is shared to an organization node.</p>
      */
     inline const Aws::String& GetPortfolioShareToken() const{ return m_portfolioShareToken; }
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareToken = value; }
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline void SetPortfolioShareToken(Aws::String&& value) { m_portfolioShareToken = std::move(value); }
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline void SetPortfolioShareToken(const char* value) { m_portfolioShareToken.assign(value); }
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(const Aws::String& value) { SetPortfolioShareToken(value); return *this;}
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(Aws::String&& value) { SetPortfolioShareToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The portfolio shares a unique identifier that only returns if the portfolio
-     * is shared to an organization node.</p>
-     */
     inline CreatePortfolioShareResult& WithPortfolioShareToken(const char* value) { SetPortfolioShareToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePortfolioShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePortfolioShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePortfolioShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portfolioShareToken;

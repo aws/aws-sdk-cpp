@@ -33,58 +33,28 @@ namespace Model
     AWS_LIGHTSAIL_API GetInstanceAccessDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of key-value pairs containing information about a get instance
      * access request.</p>
      */
     inline const InstanceAccessDetails& GetAccessDetails() const{ return m_accessDetails; }
-
-    /**
-     * <p>An array of key-value pairs containing information about a get instance
-     * access request.</p>
-     */
     inline void SetAccessDetails(const InstanceAccessDetails& value) { m_accessDetails = value; }
-
-    /**
-     * <p>An array of key-value pairs containing information about a get instance
-     * access request.</p>
-     */
     inline void SetAccessDetails(InstanceAccessDetails&& value) { m_accessDetails = std::move(value); }
-
-    /**
-     * <p>An array of key-value pairs containing information about a get instance
-     * access request.</p>
-     */
     inline GetInstanceAccessDetailsResult& WithAccessDetails(const InstanceAccessDetails& value) { SetAccessDetails(value); return *this;}
-
-    /**
-     * <p>An array of key-value pairs containing information about a get instance
-     * access request.</p>
-     */
     inline GetInstanceAccessDetailsResult& WithAccessDetails(InstanceAccessDetails&& value) { SetAccessDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInstanceAccessDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInstanceAccessDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInstanceAccessDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InstanceAccessDetails m_accessDetails;

@@ -39,87 +39,33 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A SQL query string.</p>
      */
     inline const Aws::String& GetSqlQuery() const{ return m_sqlQuery; }
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline bool SqlQueryHasBeenSet() const { return m_sqlQueryHasBeenSet; }
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline void SetSqlQuery(const Aws::String& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = value; }
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline void SetSqlQuery(Aws::String&& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = std::move(value); }
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline void SetSqlQuery(const char* value) { m_sqlQueryHasBeenSet = true; m_sqlQuery.assign(value); }
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline SqlQueryDatasetAction& WithSqlQuery(const Aws::String& value) { SetSqlQuery(value); return *this;}
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline SqlQueryDatasetAction& WithSqlQuery(Aws::String&& value) { SetSqlQuery(std::move(value)); return *this;}
-
-    /**
-     * <p>A SQL query string.</p>
-     */
     inline SqlQueryDatasetAction& WithSqlQuery(const char* value) { SetSqlQuery(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Prefilters applied to message data.</p>
      */
     inline const Aws::Vector<QueryFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline void SetFilters(const Aws::Vector<QueryFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline void SetFilters(Aws::Vector<QueryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline SqlQueryDatasetAction& WithFilters(const Aws::Vector<QueryFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline SqlQueryDatasetAction& WithFilters(Aws::Vector<QueryFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline SqlQueryDatasetAction& AddFilters(const QueryFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>Prefilters applied to message data.</p>
-     */
     inline SqlQueryDatasetAction& AddFilters(QueryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sqlQuery;

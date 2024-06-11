@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
      */
     inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-     */
     inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workteamArn;

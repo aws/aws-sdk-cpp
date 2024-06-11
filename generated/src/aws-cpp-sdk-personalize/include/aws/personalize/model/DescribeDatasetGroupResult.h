@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeDatasetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A listing of the dataset group's properties.</p>
      */
     inline const DatasetGroup& GetDatasetGroup() const{ return m_datasetGroup; }
-
-    /**
-     * <p>A listing of the dataset group's properties.</p>
-     */
     inline void SetDatasetGroup(const DatasetGroup& value) { m_datasetGroup = value; }
-
-    /**
-     * <p>A listing of the dataset group's properties.</p>
-     */
     inline void SetDatasetGroup(DatasetGroup&& value) { m_datasetGroup = std::move(value); }
-
-    /**
-     * <p>A listing of the dataset group's properties.</p>
-     */
     inline DescribeDatasetGroupResult& WithDatasetGroup(const DatasetGroup& value) { SetDatasetGroup(value); return *this;}
-
-    /**
-     * <p>A listing of the dataset group's properties.</p>
-     */
     inline DescribeDatasetGroupResult& WithDatasetGroup(DatasetGroup&& value) { SetDatasetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDatasetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDatasetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDatasetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DatasetGroup m_datasetGroup;

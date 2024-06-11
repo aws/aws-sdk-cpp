@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the trial to delete.</p>
      */
     inline const Aws::String& GetTrialName() const{ return m_trialName; }
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline DeleteTrialRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline DeleteTrialRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the trial to delete.</p>
-     */
     inline DeleteTrialRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trialName;

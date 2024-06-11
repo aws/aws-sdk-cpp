@@ -33,53 +33,27 @@ namespace Model
     AWS_MEMORYDB_API DeleteACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Access Control List object that has been deleted.</p>
      */
     inline const ACL& GetACL() const{ return m_aCL; }
-
-    /**
-     * <p>The Access Control List object that has been deleted.</p>
-     */
     inline void SetACL(const ACL& value) { m_aCL = value; }
-
-    /**
-     * <p>The Access Control List object that has been deleted.</p>
-     */
     inline void SetACL(ACL&& value) { m_aCL = std::move(value); }
-
-    /**
-     * <p>The Access Control List object that has been deleted.</p>
-     */
     inline DeleteACLResult& WithACL(const ACL& value) { SetACL(value); return *this;}
-
-    /**
-     * <p>The Access Control List object that has been deleted.</p>
-     */
     inline DeleteACLResult& WithACL(ACL&& value) { SetACL(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteACLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteACLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteACLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ACL m_aCL;

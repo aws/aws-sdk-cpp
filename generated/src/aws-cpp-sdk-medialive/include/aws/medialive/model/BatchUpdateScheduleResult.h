@@ -40,79 +40,38 @@ namespace Model
     AWS_MEDIALIVE_API BatchUpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * Schedule actions created in the schedule.
      */
     inline const BatchScheduleActionCreateResult& GetCreates() const{ return m_creates; }
-
-    /**
-     * Schedule actions created in the schedule.
-     */
     inline void SetCreates(const BatchScheduleActionCreateResult& value) { m_creates = value; }
-
-    /**
-     * Schedule actions created in the schedule.
-     */
     inline void SetCreates(BatchScheduleActionCreateResult&& value) { m_creates = std::move(value); }
-
-    /**
-     * Schedule actions created in the schedule.
-     */
     inline BatchUpdateScheduleResult& WithCreates(const BatchScheduleActionCreateResult& value) { SetCreates(value); return *this;}
-
-    /**
-     * Schedule actions created in the schedule.
-     */
     inline BatchUpdateScheduleResult& WithCreates(BatchScheduleActionCreateResult&& value) { SetCreates(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Schedule actions deleted from the schedule.
      */
     inline const BatchScheduleActionDeleteResult& GetDeletes() const{ return m_deletes; }
-
-    /**
-     * Schedule actions deleted from the schedule.
-     */
     inline void SetDeletes(const BatchScheduleActionDeleteResult& value) { m_deletes = value; }
-
-    /**
-     * Schedule actions deleted from the schedule.
-     */
     inline void SetDeletes(BatchScheduleActionDeleteResult&& value) { m_deletes = std::move(value); }
-
-    /**
-     * Schedule actions deleted from the schedule.
-     */
     inline BatchUpdateScheduleResult& WithDeletes(const BatchScheduleActionDeleteResult& value) { SetDeletes(value); return *this;}
-
-    /**
-     * Schedule actions deleted from the schedule.
-     */
     inline BatchUpdateScheduleResult& WithDeletes(BatchScheduleActionDeleteResult&& value) { SetDeletes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchUpdateScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchUpdateScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchUpdateScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BatchScheduleActionCreateResult m_creates;

@@ -39,65 +39,29 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of virtual tapes to store on one Snow Family device. Due
      * to physical resource limitations, this value must be set to 80 for Snowball
      * Edge.</p>
      */
     inline int GetStorageLimit() const{ return m_storageLimit; }
-
-    /**
-     * <p>The maximum number of virtual tapes to store on one Snow Family device. Due
-     * to physical resource limitations, this value must be set to 80 for Snowball
-     * Edge.</p>
-     */
     inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of virtual tapes to store on one Snow Family device. Due
-     * to physical resource limitations, this value must be set to 80 for Snowball
-     * Edge.</p>
-     */
     inline void SetStorageLimit(int value) { m_storageLimitHasBeenSet = true; m_storageLimit = value; }
-
-    /**
-     * <p>The maximum number of virtual tapes to store on one Snow Family device. Due
-     * to physical resource limitations, this value must be set to 80 for Snowball
-     * Edge.</p>
-     */
     inline TGWOnDeviceServiceConfiguration& WithStorageLimit(int value) { SetStorageLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scale unit of the virtual tapes on the device.</p>
      */
     inline const StorageUnit& GetStorageUnit() const{ return m_storageUnit; }
-
-    /**
-     * <p>The scale unit of the virtual tapes on the device.</p>
-     */
     inline bool StorageUnitHasBeenSet() const { return m_storageUnitHasBeenSet; }
-
-    /**
-     * <p>The scale unit of the virtual tapes on the device.</p>
-     */
     inline void SetStorageUnit(const StorageUnit& value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
-
-    /**
-     * <p>The scale unit of the virtual tapes on the device.</p>
-     */
     inline void SetStorageUnit(StorageUnit&& value) { m_storageUnitHasBeenSet = true; m_storageUnit = std::move(value); }
-
-    /**
-     * <p>The scale unit of the virtual tapes on the device.</p>
-     */
     inline TGWOnDeviceServiceConfiguration& WithStorageUnit(const StorageUnit& value) { SetStorageUnit(value); return *this;}
-
-    /**
-     * <p>The scale unit of the virtual tapes on the device.</p>
-     */
     inline TGWOnDeviceServiceConfiguration& WithStorageUnit(StorageUnit&& value) { SetStorageUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_storageLimit;

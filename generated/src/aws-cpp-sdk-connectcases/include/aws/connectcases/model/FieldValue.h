@@ -38,77 +38,31 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unique identifier of a field.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldValue& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldValue& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique identifier of a field.</p>
-     */
     inline FieldValue& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Union of potential field value types.</p>
      */
     inline const FieldValueUnion& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline void SetValue(const FieldValueUnion& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline void SetValue(FieldValueUnion&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline FieldValue& WithValue(const FieldValueUnion& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Union of potential field value types.</p>
-     */
     inline FieldValue& WithValue(FieldValueUnion&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

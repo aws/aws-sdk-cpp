@@ -39,110 +39,36 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
      * been defined in the <code>SchemaMapping</code>. Two records are considered to
      * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchingKeys() const{ return m_matchingKeys; }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline bool MatchingKeysHasBeenSet() const { return m_matchingKeysHasBeenSet; }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline void SetMatchingKeys(const Aws::Vector<Aws::String>& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys = value; }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline void SetMatchingKeys(Aws::Vector<Aws::String>&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys = std::move(value); }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline Rule& WithMatchingKeys(const Aws::Vector<Aws::String>& value) { SetMatchingKeys(value); return *this;}
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline Rule& WithMatchingKeys(Aws::Vector<Aws::String>&& value) { SetMatchingKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline Rule& AddMatchingKeys(const Aws::String& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline Rule& AddMatchingKeys(Aws::String&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have
-     * been defined in the <code>SchemaMapping</code>. Two records are considered to
-     * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-     */
     inline Rule& AddMatchingKeys(const char* value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name for the matching rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline Rule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline Rule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the matching rule.</p>
-     */
     inline Rule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_matchingKeys;

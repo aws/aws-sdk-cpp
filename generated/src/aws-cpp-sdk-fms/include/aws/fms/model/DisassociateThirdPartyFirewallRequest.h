@@ -34,36 +34,17 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the third-party firewall vendor.</p>
      */
     inline const ThirdPartyFirewall& GetThirdPartyFirewall() const{ return m_thirdPartyFirewall; }
-
-    /**
-     * <p>The name of the third-party firewall vendor.</p>
-     */
     inline bool ThirdPartyFirewallHasBeenSet() const { return m_thirdPartyFirewallHasBeenSet; }
-
-    /**
-     * <p>The name of the third-party firewall vendor.</p>
-     */
     inline void SetThirdPartyFirewall(const ThirdPartyFirewall& value) { m_thirdPartyFirewallHasBeenSet = true; m_thirdPartyFirewall = value; }
-
-    /**
-     * <p>The name of the third-party firewall vendor.</p>
-     */
     inline void SetThirdPartyFirewall(ThirdPartyFirewall&& value) { m_thirdPartyFirewallHasBeenSet = true; m_thirdPartyFirewall = std::move(value); }
-
-    /**
-     * <p>The name of the third-party firewall vendor.</p>
-     */
     inline DisassociateThirdPartyFirewallRequest& WithThirdPartyFirewall(const ThirdPartyFirewall& value) { SetThirdPartyFirewall(value); return *this;}
-
-    /**
-     * <p>The name of the third-party firewall vendor.</p>
-     */
     inline DisassociateThirdPartyFirewallRequest& WithThirdPartyFirewall(ThirdPartyFirewall&& value) { SetThirdPartyFirewall(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ThirdPartyFirewall m_thirdPartyFirewall;

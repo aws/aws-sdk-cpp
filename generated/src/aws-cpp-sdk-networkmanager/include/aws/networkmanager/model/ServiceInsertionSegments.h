@@ -39,97 +39,35 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of segments associated with the <code>send-via</code> action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSendVia() const{ return m_sendVia; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline bool SendViaHasBeenSet() const { return m_sendViaHasBeenSet; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline void SetSendVia(const Aws::Vector<Aws::String>& value) { m_sendViaHasBeenSet = true; m_sendVia = value; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline void SetSendVia(Aws::Vector<Aws::String>&& value) { m_sendViaHasBeenSet = true; m_sendVia = std::move(value); }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline ServiceInsertionSegments& WithSendVia(const Aws::Vector<Aws::String>& value) { SetSendVia(value); return *this;}
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline ServiceInsertionSegments& WithSendVia(Aws::Vector<Aws::String>&& value) { SetSendVia(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendVia(const Aws::String& value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(value); return *this; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendVia(Aws::String&& value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-via</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendVia(const char* value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of segments associated with the <code>send-to</code> action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSendTo() const{ return m_sendTo; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline bool SendToHasBeenSet() const { return m_sendToHasBeenSet; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline void SetSendTo(const Aws::Vector<Aws::String>& value) { m_sendToHasBeenSet = true; m_sendTo = value; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline void SetSendTo(Aws::Vector<Aws::String>&& value) { m_sendToHasBeenSet = true; m_sendTo = std::move(value); }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline ServiceInsertionSegments& WithSendTo(const Aws::Vector<Aws::String>& value) { SetSendTo(value); return *this;}
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline ServiceInsertionSegments& WithSendTo(Aws::Vector<Aws::String>&& value) { SetSendTo(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendTo(const Aws::String& value) { m_sendToHasBeenSet = true; m_sendTo.push_back(value); return *this; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendTo(Aws::String&& value) { m_sendToHasBeenSet = true; m_sendTo.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of segments associated with the <code>send-to</code> action.</p>
-     */
     inline ServiceInsertionSegments& AddSendTo(const char* value) { m_sendToHasBeenSet = true; m_sendTo.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_sendVia;

@@ -37,87 +37,33 @@ namespace Model
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The prefix setting for the subdomain. </p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p> The prefix setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The branch name setting for the subdomain. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p> The branch name setting for the subdomain. </p>
-     */
     inline SubDomainSetting& WithBranchName(const char* value) { SetBranchName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_prefix;

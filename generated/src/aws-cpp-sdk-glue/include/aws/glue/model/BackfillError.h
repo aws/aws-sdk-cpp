@@ -51,83 +51,32 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code for an error that occurred when registering partition indexes
      * for an existing table.</p>
      */
     inline const BackfillErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code for an error that occurred when registering partition indexes
-     * for an existing table.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code for an error that occurred when registering partition indexes
-     * for an existing table.</p>
-     */
     inline void SetCode(const BackfillErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code for an error that occurred when registering partition indexes
-     * for an existing table.</p>
-     */
     inline void SetCode(BackfillErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error code for an error that occurred when registering partition indexes
-     * for an existing table.</p>
-     */
     inline BackfillError& WithCode(const BackfillErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error code for an error that occurred when registering partition indexes
-     * for an existing table.</p>
-     */
     inline BackfillError& WithCode(BackfillErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of a limited number of partitions in the response.</p>
      */
     inline const Aws::Vector<PartitionValueList>& GetPartitions() const{ return m_partitions; }
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline bool PartitionsHasBeenSet() const { return m_partitionsHasBeenSet; }
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline void SetPartitions(const Aws::Vector<PartitionValueList>& value) { m_partitionsHasBeenSet = true; m_partitions = value; }
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline void SetPartitions(Aws::Vector<PartitionValueList>&& value) { m_partitionsHasBeenSet = true; m_partitions = std::move(value); }
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline BackfillError& WithPartitions(const Aws::Vector<PartitionValueList>& value) { SetPartitions(value); return *this;}
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline BackfillError& WithPartitions(Aws::Vector<PartitionValueList>&& value) { SetPartitions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline BackfillError& AddPartitions(const PartitionValueList& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of a limited number of partitions in the response.</p>
-     */
     inline BackfillError& AddPartitions(PartitionValueList&& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     BackfillErrorCode m_code;

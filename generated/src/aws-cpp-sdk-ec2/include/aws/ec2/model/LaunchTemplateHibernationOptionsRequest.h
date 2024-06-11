@@ -40,30 +40,16 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>If you set this parameter to <code>true</code>, the instance is enabled for
      * hibernation.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetConfigured() const{ return m_configured; }
-
-    /**
-     * <p>If you set this parameter to <code>true</code>, the instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
-     */
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
-
-    /**
-     * <p>If you set this parameter to <code>true</code>, the instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
-     */
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
-
-    /**
-     * <p>If you set this parameter to <code>true</code>, the instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
-     */
     inline LaunchTemplateHibernationOptionsRequest& WithConfigured(bool value) { SetConfigured(value); return *this;}
-
+    ///@}
   private:
 
     bool m_configured;

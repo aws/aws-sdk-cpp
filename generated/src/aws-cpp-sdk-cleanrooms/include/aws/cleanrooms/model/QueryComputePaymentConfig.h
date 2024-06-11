@@ -37,6 +37,7 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the collaboration creator has configured the collaboration
      * member to pay for query compute costs (<code>TRUE</code>) or has not configured
@@ -50,49 +51,10 @@ namespace Model
      * for the member who can query.</p>
      */
     inline bool GetIsResponsible() const{ return m_isResponsible; }
-
-    /**
-     * <p>Indicates whether the collaboration creator has configured the collaboration
-     * member to pay for query compute costs (<code>TRUE</code>) or has not configured
-     * the collaboration member to pay for query compute costs
-     * (<code>FALSE</code>).</p> <p>Exactly one member can be configured to pay for
-     * query compute costs. An error is returned if the collaboration creator sets a
-     * <code>TRUE</code> value for more than one member in the collaboration. </p>
-     * <p>If the collaboration creator hasn't specified anyone as the member paying for
-     * query compute costs, then the member who can query is the default payer. An
-     * error is returned if the collaboration creator sets a <code>FALSE</code> value
-     * for the member who can query.</p>
-     */
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the collaboration creator has configured the collaboration
-     * member to pay for query compute costs (<code>TRUE</code>) or has not configured
-     * the collaboration member to pay for query compute costs
-     * (<code>FALSE</code>).</p> <p>Exactly one member can be configured to pay for
-     * query compute costs. An error is returned if the collaboration creator sets a
-     * <code>TRUE</code> value for more than one member in the collaboration. </p>
-     * <p>If the collaboration creator hasn't specified anyone as the member paying for
-     * query compute costs, then the member who can query is the default payer. An
-     * error is returned if the collaboration creator sets a <code>FALSE</code> value
-     * for the member who can query.</p>
-     */
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
-
-    /**
-     * <p>Indicates whether the collaboration creator has configured the collaboration
-     * member to pay for query compute costs (<code>TRUE</code>) or has not configured
-     * the collaboration member to pay for query compute costs
-     * (<code>FALSE</code>).</p> <p>Exactly one member can be configured to pay for
-     * query compute costs. An error is returned if the collaboration creator sets a
-     * <code>TRUE</code> value for more than one member in the collaboration. </p>
-     * <p>If the collaboration creator hasn't specified anyone as the member paying for
-     * query compute costs, then the member who can query is the default payer. An
-     * error is returned if the collaboration creator sets a <code>FALSE</code> value
-     * for the member who can query.</p>
-     */
     inline QueryComputePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isResponsible;

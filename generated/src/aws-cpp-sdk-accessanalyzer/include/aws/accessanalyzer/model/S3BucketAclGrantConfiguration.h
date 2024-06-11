@@ -41,67 +41,29 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The permissions being granted.</p>
      */
     inline const AclPermission& GetPermission() const{ return m_permission; }
-
-    /**
-     * <p>The permissions being granted.</p>
-     */
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-
-    /**
-     * <p>The permissions being granted.</p>
-     */
     inline void SetPermission(const AclPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-
-    /**
-     * <p>The permissions being granted.</p>
-     */
     inline void SetPermission(AclPermission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-
-    /**
-     * <p>The permissions being granted.</p>
-     */
     inline S3BucketAclGrantConfiguration& WithPermission(const AclPermission& value) { SetPermission(value); return *this;}
-
-    /**
-     * <p>The permissions being granted.</p>
-     */
     inline S3BucketAclGrantConfiguration& WithPermission(AclPermission&& value) { SetPermission(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The grantee to whom you’re assigning access rights.</p>
      */
     inline const AclGrantee& GetGrantee() const{ return m_grantee; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
     inline void SetGrantee(const AclGrantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
     inline void SetGrantee(AclGrantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
     inline S3BucketAclGrantConfiguration& WithGrantee(const AclGrantee& value) { SetGrantee(value); return *this;}
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
     inline S3BucketAclGrantConfiguration& WithGrantee(AclGrantee&& value) { SetGrantee(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AclPermission m_permission;

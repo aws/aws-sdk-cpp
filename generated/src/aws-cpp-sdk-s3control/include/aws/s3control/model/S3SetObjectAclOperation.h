@@ -42,36 +42,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const S3AccessControlPolicy& GetAccessControlPolicy() const{ return m_accessControlPolicy; }
-
-    /**
-     * <p/>
-     */
     inline bool AccessControlPolicyHasBeenSet() const { return m_accessControlPolicyHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetAccessControlPolicy(const S3AccessControlPolicy& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetAccessControlPolicy(S3AccessControlPolicy&& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectAclOperation& WithAccessControlPolicy(const S3AccessControlPolicy& value) { SetAccessControlPolicy(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3SetObjectAclOperation& WithAccessControlPolicy(S3AccessControlPolicy&& value) { SetAccessControlPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3AccessControlPolicy m_accessControlPolicy;

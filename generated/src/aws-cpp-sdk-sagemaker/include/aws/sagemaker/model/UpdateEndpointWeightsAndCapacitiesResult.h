@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline UpdateEndpointWeightsAndCapacitiesResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline UpdateEndpointWeightsAndCapacitiesResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
-     */
     inline UpdateEndpointWeightsAndCapacitiesResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEndpointWeightsAndCapacitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEndpointWeightsAndCapacitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEndpointWeightsAndCapacitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointArn;

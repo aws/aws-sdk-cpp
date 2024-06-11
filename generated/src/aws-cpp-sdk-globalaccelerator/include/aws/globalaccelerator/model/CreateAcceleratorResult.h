@@ -33,58 +33,28 @@ namespace Model
     AWS_GLOBALACCELERATOR_API CreateAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The accelerator that is created by specifying a listener and the supported IP
      * address types.</p>
      */
     inline const Accelerator& GetAccelerator() const{ return m_accelerator; }
-
-    /**
-     * <p>The accelerator that is created by specifying a listener and the supported IP
-     * address types.</p>
-     */
     inline void SetAccelerator(const Accelerator& value) { m_accelerator = value; }
-
-    /**
-     * <p>The accelerator that is created by specifying a listener and the supported IP
-     * address types.</p>
-     */
     inline void SetAccelerator(Accelerator&& value) { m_accelerator = std::move(value); }
-
-    /**
-     * <p>The accelerator that is created by specifying a listener and the supported IP
-     * address types.</p>
-     */
     inline CreateAcceleratorResult& WithAccelerator(const Accelerator& value) { SetAccelerator(value); return *this;}
-
-    /**
-     * <p>The accelerator that is created by specifying a listener and the supported IP
-     * address types.</p>
-     */
     inline CreateAcceleratorResult& WithAccelerator(Accelerator&& value) { SetAccelerator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAcceleratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAcceleratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAcceleratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Accelerator m_accelerator;

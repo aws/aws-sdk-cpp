@@ -38,36 +38,17 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> OS version that the directory needs to be updated to. </p>
      */
     inline const OSVersion& GetOSVersion() const{ return m_oSVersion; }
-
-    /**
-     * <p> OS version that the directory needs to be updated to. </p>
-     */
     inline bool OSVersionHasBeenSet() const { return m_oSVersionHasBeenSet; }
-
-    /**
-     * <p> OS version that the directory needs to be updated to. </p>
-     */
     inline void SetOSVersion(const OSVersion& value) { m_oSVersionHasBeenSet = true; m_oSVersion = value; }
-
-    /**
-     * <p> OS version that the directory needs to be updated to. </p>
-     */
     inline void SetOSVersion(OSVersion&& value) { m_oSVersionHasBeenSet = true; m_oSVersion = std::move(value); }
-
-    /**
-     * <p> OS version that the directory needs to be updated to. </p>
-     */
     inline OSUpdateSettings& WithOSVersion(const OSVersion& value) { SetOSVersion(value); return *this;}
-
-    /**
-     * <p> OS version that the directory needs to be updated to. </p>
-     */
     inline OSUpdateSettings& WithOSVersion(OSVersion&& value) { SetOSVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OSVersion m_oSVersion;

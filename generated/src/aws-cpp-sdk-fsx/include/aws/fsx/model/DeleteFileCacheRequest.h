@@ -35,71 +35,31 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the cache that's being deleted.</p>
      */
     inline const Aws::String& GetFileCacheId() const{ return m_fileCacheId; }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline bool FileCacheIdHasBeenSet() const { return m_fileCacheIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(const Aws::String& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = value; }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(Aws::String&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::move(value); }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(const char* value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId.assign(value); }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheRequest& WithFileCacheId(const Aws::String& value) { SetFileCacheId(value); return *this;}
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheRequest& WithFileCacheId(Aws::String&& value) { SetFileCacheId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheRequest& WithFileCacheId(const char* value) { SetFileCacheId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline DeleteFileCacheRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline DeleteFileCacheRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline DeleteFileCacheRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileCacheId;

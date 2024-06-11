@@ -40,67 +40,29 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latest status of a stream’s edge recording job.</p>
      */
     inline const LastRecorderStatus& GetLastRecorderStatus() const{ return m_lastRecorderStatus; }
-
-    /**
-     * <p>The latest status of a stream’s edge recording job.</p>
-     */
     inline bool LastRecorderStatusHasBeenSet() const { return m_lastRecorderStatusHasBeenSet; }
-
-    /**
-     * <p>The latest status of a stream’s edge recording job.</p>
-     */
     inline void SetLastRecorderStatus(const LastRecorderStatus& value) { m_lastRecorderStatusHasBeenSet = true; m_lastRecorderStatus = value; }
-
-    /**
-     * <p>The latest status of a stream’s edge recording job.</p>
-     */
     inline void SetLastRecorderStatus(LastRecorderStatus&& value) { m_lastRecorderStatusHasBeenSet = true; m_lastRecorderStatus = std::move(value); }
-
-    /**
-     * <p>The latest status of a stream’s edge recording job.</p>
-     */
     inline EdgeAgentStatus& WithLastRecorderStatus(const LastRecorderStatus& value) { SetLastRecorderStatus(value); return *this;}
-
-    /**
-     * <p>The latest status of a stream’s edge recording job.</p>
-     */
     inline EdgeAgentStatus& WithLastRecorderStatus(LastRecorderStatus&& value) { SetLastRecorderStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest status of a stream’s edge to cloud uploader job.</p>
      */
     inline const LastUploaderStatus& GetLastUploaderStatus() const{ return m_lastUploaderStatus; }
-
-    /**
-     * <p>The latest status of a stream’s edge to cloud uploader job.</p>
-     */
     inline bool LastUploaderStatusHasBeenSet() const { return m_lastUploaderStatusHasBeenSet; }
-
-    /**
-     * <p>The latest status of a stream’s edge to cloud uploader job.</p>
-     */
     inline void SetLastUploaderStatus(const LastUploaderStatus& value) { m_lastUploaderStatusHasBeenSet = true; m_lastUploaderStatus = value; }
-
-    /**
-     * <p>The latest status of a stream’s edge to cloud uploader job.</p>
-     */
     inline void SetLastUploaderStatus(LastUploaderStatus&& value) { m_lastUploaderStatusHasBeenSet = true; m_lastUploaderStatus = std::move(value); }
-
-    /**
-     * <p>The latest status of a stream’s edge to cloud uploader job.</p>
-     */
     inline EdgeAgentStatus& WithLastUploaderStatus(const LastUploaderStatus& value) { SetLastUploaderStatus(value); return *this;}
-
-    /**
-     * <p>The latest status of a stream’s edge to cloud uploader job.</p>
-     */
     inline EdgeAgentStatus& WithLastUploaderStatus(LastUploaderStatus&& value) { SetLastUploaderStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LastRecorderStatus m_lastRecorderStatus;

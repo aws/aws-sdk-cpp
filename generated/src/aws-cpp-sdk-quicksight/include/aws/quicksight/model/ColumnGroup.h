@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Geospatial column group that denotes a hierarchy.</p>
      */
     inline const GeoSpatialColumnGroup& GetGeoSpatialColumnGroup() const{ return m_geoSpatialColumnGroup; }
-
-    /**
-     * <p>Geospatial column group that denotes a hierarchy.</p>
-     */
     inline bool GeoSpatialColumnGroupHasBeenSet() const { return m_geoSpatialColumnGroupHasBeenSet; }
-
-    /**
-     * <p>Geospatial column group that denotes a hierarchy.</p>
-     */
     inline void SetGeoSpatialColumnGroup(const GeoSpatialColumnGroup& value) { m_geoSpatialColumnGroupHasBeenSet = true; m_geoSpatialColumnGroup = value; }
-
-    /**
-     * <p>Geospatial column group that denotes a hierarchy.</p>
-     */
     inline void SetGeoSpatialColumnGroup(GeoSpatialColumnGroup&& value) { m_geoSpatialColumnGroupHasBeenSet = true; m_geoSpatialColumnGroup = std::move(value); }
-
-    /**
-     * <p>Geospatial column group that denotes a hierarchy.</p>
-     */
     inline ColumnGroup& WithGeoSpatialColumnGroup(const GeoSpatialColumnGroup& value) { SetGeoSpatialColumnGroup(value); return *this;}
-
-    /**
-     * <p>Geospatial column group that denotes a hierarchy.</p>
-     */
     inline ColumnGroup& WithGeoSpatialColumnGroup(GeoSpatialColumnGroup&& value) { SetGeoSpatialColumnGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeoSpatialColumnGroup m_geoSpatialColumnGroup;

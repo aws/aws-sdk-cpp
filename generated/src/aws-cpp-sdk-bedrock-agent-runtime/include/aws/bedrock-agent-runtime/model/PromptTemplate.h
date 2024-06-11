@@ -44,6 +44,7 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The template for the prompt that's sent to the model for response generation.
      * You can include prompt placeholders, which become replaced before the prompt is
@@ -57,105 +58,14 @@ namespace Model
      * Anthropic Claude models</a> </p> </li> </ul>
      */
     inline const Aws::String& GetTextPromptTemplate() const{ return m_textPromptTemplate; }
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline bool TextPromptTemplateHasBeenSet() const { return m_textPromptTemplateHasBeenSet; }
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline void SetTextPromptTemplate(const Aws::String& value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate = value; }
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline void SetTextPromptTemplate(Aws::String&& value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate = std::move(value); }
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline void SetTextPromptTemplate(const char* value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate.assign(value); }
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline PromptTemplate& WithTextPromptTemplate(const Aws::String& value) { SetTextPromptTemplate(value); return *this;}
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline PromptTemplate& WithTextPromptTemplate(Aws::String&& value) { SetTextPromptTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>The template for the prompt that's sent to the model for response generation.
-     * You can include prompt placeholders, which become replaced before the prompt is
-     * sent to the model to provide instructions and context to the model. In addition,
-     * you can include XML tags to delineate meaningful sections of the prompt
-     * template.</p> <p>For more information, see the following resources:</p> <ul>
-     * <li> <p> <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge
-     * base prompt templates</a> </p> </li> <li> <p> <a
-     * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
-     * Anthropic Claude models</a> </p> </li> </ul>
-     */
     inline PromptTemplate& WithTextPromptTemplate(const char* value) { SetTextPromptTemplate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_textPromptTemplate;

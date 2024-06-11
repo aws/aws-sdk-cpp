@@ -38,57 +38,27 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The day of the month when monthly recurring on-call rotations begin.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
-
-    /**
-     * <p>The day of the month when monthly recurring on-call rotations begin.</p>
-     */
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-
-    /**
-     * <p>The day of the month when monthly recurring on-call rotations begin.</p>
-     */
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
-
-    /**
-     * <p>The day of the month when monthly recurring on-call rotations begin.</p>
-     */
     inline MonthlySetting& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
      */
     inline const HandOffTime& GetHandOffTime() const{ return m_handOffTime; }
-
-    /**
-     * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-     */
     inline bool HandOffTimeHasBeenSet() const { return m_handOffTimeHasBeenSet; }
-
-    /**
-     * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-     */
     inline void SetHandOffTime(const HandOffTime& value) { m_handOffTimeHasBeenSet = true; m_handOffTime = value; }
-
-    /**
-     * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-     */
     inline void SetHandOffTime(HandOffTime&& value) { m_handOffTimeHasBeenSet = true; m_handOffTime = std::move(value); }
-
-    /**
-     * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-     */
     inline MonthlySetting& WithHandOffTime(const HandOffTime& value) { SetHandOffTime(value); return *this;}
-
-    /**
-     * <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-     */
     inline MonthlySetting& WithHandOffTime(HandOffTime&& value) { SetHandOffTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_dayOfMonth;

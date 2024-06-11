@@ -37,95 +37,34 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the agreement.</p>
      */
     inline const Aws::String& GetAgreementName() const{ return m_agreementName; }
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline bool AgreementNameHasBeenSet() const { return m_agreementNameHasBeenSet; }
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline void SetAgreementName(const Aws::String& value) { m_agreementNameHasBeenSet = true; m_agreementName = value; }
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline void SetAgreementName(Aws::String&& value) { m_agreementNameHasBeenSet = true; m_agreementName = std::move(value); }
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline void SetAgreementName(const char* value) { m_agreementNameHasBeenSet = true; m_agreementName.assign(value); }
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline CustomerAgreement& WithAgreementName(const Aws::String& value) { SetAgreementName(value); return *this;}
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline CustomerAgreement& WithAgreementName(Aws::String&& value) { SetAgreementName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the agreement.</p>
-     */
     inline CustomerAgreement& WithAgreementName(const char* value) { SetAgreementName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the customer agreement. This will be either <code>signed</code>
      * or <code>unsigned</code> </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline CustomerAgreement& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline CustomerAgreement& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the customer agreement. This will be either <code>signed</code>
-     * or <code>unsigned</code> </p>
-     */
     inline CustomerAgreement& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agreementName;

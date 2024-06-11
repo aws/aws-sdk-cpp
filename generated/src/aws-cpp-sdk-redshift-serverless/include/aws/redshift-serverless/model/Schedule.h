@@ -39,6 +39,7 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
      * action. Timestamp is in UTC. Format of at expression is
@@ -46,48 +47,14 @@ namespace Model
      * <code>2016-03-04T17:27:00</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetAt() const{ return m_at; }
-
-    /**
-     * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
-     * action. Timestamp is in UTC. Format of at expression is
-     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
-     * <code>2016-03-04T17:27:00</code>.</p>
-     */
     inline bool AtHasBeenSet() const { return m_atHasBeenSet; }
-
-    /**
-     * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
-     * action. Timestamp is in UTC. Format of at expression is
-     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
-     * <code>2016-03-04T17:27:00</code>.</p>
-     */
     inline void SetAt(const Aws::Utils::DateTime& value) { m_atHasBeenSet = true; m_at = value; }
-
-    /**
-     * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
-     * action. Timestamp is in UTC. Format of at expression is
-     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
-     * <code>2016-03-04T17:27:00</code>.</p>
-     */
     inline void SetAt(Aws::Utils::DateTime&& value) { m_atHasBeenSet = true; m_at = std::move(value); }
-
-    /**
-     * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
-     * action. Timestamp is in UTC. Format of at expression is
-     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
-     * <code>2016-03-04T17:27:00</code>.</p>
-     */
     inline Schedule& WithAt(const Aws::Utils::DateTime& value) { SetAt(value); return *this;}
-
-    /**
-     * <p>The timestamp of when Amazon Redshift Serverless should run the scheduled
-     * action. Timestamp is in UTC. Format of at expression is
-     * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
-     * <code>2016-03-04T17:27:00</code>.</p>
-     */
     inline Schedule& WithAt(Aws::Utils::DateTime&& value) { SetAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
      * invocations must be separated by at least one hour. Times are in UTC.</p>
@@ -98,84 +65,14 @@ namespace Model
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetCron() const{ return m_cron; }
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline bool CronHasBeenSet() const { return m_cronHasBeenSet; }
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline void SetCron(const Aws::String& value) { m_cronHasBeenSet = true; m_cron = value; }
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline void SetCron(Aws::String&& value) { m_cronHasBeenSet = true; m_cron = std::move(value); }
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline void SetCron(const char* value) { m_cronHasBeenSet = true; m_cron.assign(value); }
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline Schedule& WithCron(const Aws::String& value) { SetCron(value); return *this;}
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline Schedule& WithCron(Aws::String&& value) { SetCron(std::move(value)); return *this;}
-
-    /**
-     * <p>The cron expression to use to schedule a recurring scheduled action. Schedule
-     * invocations must be separated by at least one hour. Times are in UTC.</p>
-     * <p>Format of cron expressions is <code>(Minutes Hours Day-of-month Month
-     * Day-of-week Year)</code>. For example, <code>"(0 10 ? * MON *)"</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-     */
     inline Schedule& WithCron(const char* value) { SetCron(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_at;

@@ -34,89 +34,40 @@ namespace Model
     AWS_QBUSINESS_API GetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current status of the group.</p>
      */
     inline const GroupStatusDetail& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the group.</p>
-     */
     inline void SetStatus(const GroupStatusDetail& value) { m_status = value; }
-
-    /**
-     * <p>The current status of the group.</p>
-     */
     inline void SetStatus(GroupStatusDetail&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the group.</p>
-     */
     inline GetGroupResult& WithStatus(const GroupStatusDetail& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the group.</p>
-     */
     inline GetGroupResult& WithStatus(GroupStatusDetail&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status history of the group.</p>
      */
     inline const Aws::Vector<GroupStatusDetail>& GetStatusHistory() const{ return m_statusHistory; }
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline void SetStatusHistory(const Aws::Vector<GroupStatusDetail>& value) { m_statusHistory = value; }
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline void SetStatusHistory(Aws::Vector<GroupStatusDetail>&& value) { m_statusHistory = std::move(value); }
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline GetGroupResult& WithStatusHistory(const Aws::Vector<GroupStatusDetail>& value) { SetStatusHistory(value); return *this;}
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline GetGroupResult& WithStatusHistory(Aws::Vector<GroupStatusDetail>&& value) { SetStatusHistory(std::move(value)); return *this;}
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline GetGroupResult& AddStatusHistory(const GroupStatusDetail& value) { m_statusHistory.push_back(value); return *this; }
-
-    /**
-     * <p>The status history of the group.</p>
-     */
     inline GetGroupResult& AddStatusHistory(GroupStatusDetail&& value) { m_statusHistory.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GroupStatusDetail m_status;

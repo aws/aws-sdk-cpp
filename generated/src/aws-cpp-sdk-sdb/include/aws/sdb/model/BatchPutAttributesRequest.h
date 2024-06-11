@@ -38,87 +38,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * The name of the domain in which the attributes are being stored.
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline BatchPutAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline BatchPutAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * The name of the domain in which the attributes are being stored.
-     */
     inline BatchPutAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * A list of items on which to perform the operation.
      */
     inline const Aws::Vector<ReplaceableItem>& GetItems() const{ return m_items; }
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline void SetItems(const Aws::Vector<ReplaceableItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline void SetItems(Aws::Vector<ReplaceableItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline BatchPutAttributesRequest& WithItems(const Aws::Vector<ReplaceableItem>& value) { SetItems(value); return *this;}
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline BatchPutAttributesRequest& WithItems(Aws::Vector<ReplaceableItem>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline BatchPutAttributesRequest& AddItems(const ReplaceableItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * A list of items on which to perform the operation.
-     */
     inline BatchPutAttributesRequest& AddItems(ReplaceableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_domainName;

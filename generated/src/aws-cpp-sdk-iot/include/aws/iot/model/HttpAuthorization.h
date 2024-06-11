@@ -37,48 +37,19 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Use Sig V4 authorization. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>.</p>
      */
     inline const SigV4Authorization& GetSigv4() const{ return m_sigv4; }
-
-    /**
-     * <p>Use Sig V4 authorization. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>.</p>
-     */
     inline bool Sigv4HasBeenSet() const { return m_sigv4HasBeenSet; }
-
-    /**
-     * <p>Use Sig V4 authorization. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>.</p>
-     */
     inline void SetSigv4(const SigV4Authorization& value) { m_sigv4HasBeenSet = true; m_sigv4 = value; }
-
-    /**
-     * <p>Use Sig V4 authorization. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>.</p>
-     */
     inline void SetSigv4(SigV4Authorization&& value) { m_sigv4HasBeenSet = true; m_sigv4 = std::move(value); }
-
-    /**
-     * <p>Use Sig V4 authorization. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>.</p>
-     */
     inline HttpAuthorization& WithSigv4(const SigV4Authorization& value) { SetSigv4(value); return *this;}
-
-    /**
-     * <p>Use Sig V4 authorization. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>.</p>
-     */
     inline HttpAuthorization& WithSigv4(SigV4Authorization&& value) { SetSigv4(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SigV4Authorization m_sigv4;

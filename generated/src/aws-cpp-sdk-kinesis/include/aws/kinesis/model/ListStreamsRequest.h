@@ -38,112 +38,44 @@ namespace Model
     AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of streams to list. The default value is 100. If you
      * specify a value greater than 100, at most 100 results are returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of streams to list. The default value is 100. If you
-     * specify a value greater than 100, at most 100 results are returned.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of streams to list. The default value is 100. If you
-     * specify a value greater than 100, at most 100 results are returned.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of streams to list. The default value is 100. If you
-     * specify a value greater than 100, at most 100 results are returned.</p>
-     */
     inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the stream to start the list with.</p>
      */
     inline const Aws::String& GetExclusiveStartStreamName() const{ return m_exclusiveStartStreamName; }
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline bool ExclusiveStartStreamNameHasBeenSet() const { return m_exclusiveStartStreamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline void SetExclusiveStartStreamName(const Aws::String& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = value; }
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline void SetExclusiveStartStreamName(Aws::String&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = std::move(value); }
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline void SetExclusiveStartStreamName(const char* value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName.assign(value); }
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline ListStreamsRequest& WithExclusiveStartStreamName(const Aws::String& value) { SetExclusiveStartStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline ListStreamsRequest& WithExclusiveStartStreamName(Aws::String&& value) { SetExclusiveStartStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stream to start the list with.</p>
-     */
     inline ListStreamsRequest& WithExclusiveStartStreamName(const char* value) { SetExclusiveStartStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p/>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline ListStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_limit;

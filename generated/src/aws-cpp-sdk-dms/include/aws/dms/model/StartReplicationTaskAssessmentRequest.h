@@ -37,46 +37,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the replication task. </p>
      */
     inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline StartReplicationTaskAssessmentRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline StartReplicationTaskAssessmentRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the replication task. </p>
-     */
     inline StartReplicationTaskAssessmentRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationTaskArn;

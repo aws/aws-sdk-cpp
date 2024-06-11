@@ -38,63 +38,29 @@ namespace Model
     AWS_DIRECTORYSERVICE_API CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the snapshot that was created.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline CreateSnapshotResult& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline CreateSnapshotResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the snapshot that was created.</p>
-     */
     inline CreateSnapshotResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotId;

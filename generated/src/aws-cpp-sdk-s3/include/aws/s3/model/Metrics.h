@@ -39,73 +39,30 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p> Specifies whether the replication metrics are enabled. </p>
      */
     inline const MetricsStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Specifies whether the replication metrics are enabled. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Specifies whether the replication metrics are enabled. </p>
-     */
     inline void SetStatus(const MetricsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Specifies whether the replication metrics are enabled. </p>
-     */
     inline void SetStatus(MetricsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Specifies whether the replication metrics are enabled. </p>
-     */
     inline Metrics& WithStatus(const MetricsStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Specifies whether the replication metrics are enabled. </p>
-     */
     inline Metrics& WithStatus(MetricsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A container specifying the time threshold for emitting the
      * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
      */
     inline const ReplicationTimeValue& GetEventThreshold() const{ return m_eventThreshold; }
-
-    /**
-     * <p> A container specifying the time threshold for emitting the
-     * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-     */
     inline bool EventThresholdHasBeenSet() const { return m_eventThresholdHasBeenSet; }
-
-    /**
-     * <p> A container specifying the time threshold for emitting the
-     * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-     */
     inline void SetEventThreshold(const ReplicationTimeValue& value) { m_eventThresholdHasBeenSet = true; m_eventThreshold = value; }
-
-    /**
-     * <p> A container specifying the time threshold for emitting the
-     * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-     */
     inline void SetEventThreshold(ReplicationTimeValue&& value) { m_eventThresholdHasBeenSet = true; m_eventThreshold = std::move(value); }
-
-    /**
-     * <p> A container specifying the time threshold for emitting the
-     * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-     */
     inline Metrics& WithEventThreshold(const ReplicationTimeValue& value) { SetEventThreshold(value); return *this;}
-
-    /**
-     * <p> A container specifying the time threshold for emitting the
-     * <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-     */
     inline Metrics& WithEventThreshold(ReplicationTimeValue&& value) { SetEventThreshold(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MetricsStatus m_status;

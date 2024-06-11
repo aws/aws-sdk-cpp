@@ -35,6 +35,7 @@ namespace Model
     AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains a summary of the request. Echoes the input values for
      * <code>BiasPosition</code>, <code>FilterBBox</code>,
@@ -44,48 +45,13 @@ namespace Model
      * results. </p>
      */
     inline const SearchPlaceIndexForTextSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
     inline void SetSummary(const SearchPlaceIndexForTextSummary& value) { m_summary = value; }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
     inline void SetSummary(SearchPlaceIndexForTextSummary&& value) { m_summary = std::move(value); }
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
     inline SearchPlaceIndexForTextResult& WithSummary(const SearchPlaceIndexForTextSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>Contains a summary of the request. Echoes the input values for
-     * <code>BiasPosition</code>, <code>FilterBBox</code>,
-     * <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-     * and <code>Text</code>. Also includes the <code>DataSource</code> of the place
-     * index and the bounding box, <code>ResultBBox</code>, which surrounds the search
-     * results. </p>
-     */
     inline SearchPlaceIndexForTextResult& WithSummary(SearchPlaceIndexForTextSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of Places matching the input text. Each result contains additional
      * information about the specific point of interest. </p> <p>Not all response
@@ -93,77 +59,24 @@ namespace Model
      * by specific data partners.</p>
      */
     inline const Aws::Vector<SearchForTextResult>& GetResults() const{ return m_results; }
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline void SetResults(const Aws::Vector<SearchForTextResult>& value) { m_results = value; }
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline void SetResults(Aws::Vector<SearchForTextResult>&& value) { m_results = std::move(value); }
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline SearchPlaceIndexForTextResult& WithResults(const Aws::Vector<SearchForTextResult>& value) { SetResults(value); return *this;}
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline SearchPlaceIndexForTextResult& WithResults(Aws::Vector<SearchForTextResult>&& value) { SetResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline SearchPlaceIndexForTextResult& AddResults(const SearchForTextResult& value) { m_results.push_back(value); return *this; }
-
-    /**
-     * <p>A list of Places matching the input text. Each result contains additional
-     * information about the specific point of interest. </p> <p>Not all response
-     * properties are included with all responses. Some properties may only be returned
-     * by specific data partners.</p>
-     */
     inline SearchPlaceIndexForTextResult& AddResults(SearchForTextResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SearchPlaceIndexForTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SearchPlaceIndexForTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SearchPlaceIndexForTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SearchPlaceIndexForTextSummary m_summary;

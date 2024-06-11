@@ -34,152 +34,50 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with the registry that contains
      * the repository. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry that contains
-     * the repository. If you do not specify a registry, the default registry is
-     * assumed.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository to be evaluated.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository to be evaluated.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy to be evaluated against. If you do not specify a policy, the
      * current policy for the repository is used.</p>
      */
     inline const Aws::String& GetLifecyclePolicyText() const{ return m_lifecyclePolicyText; }
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline bool LifecyclePolicyTextHasBeenSet() const { return m_lifecyclePolicyTextHasBeenSet; }
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline void SetLifecyclePolicyText(const Aws::String& value) { m_lifecyclePolicyTextHasBeenSet = true; m_lifecyclePolicyText = value; }
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline void SetLifecyclePolicyText(Aws::String&& value) { m_lifecyclePolicyTextHasBeenSet = true; m_lifecyclePolicyText = std::move(value); }
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline void SetLifecyclePolicyText(const char* value) { m_lifecyclePolicyTextHasBeenSet = true; m_lifecyclePolicyText.assign(value); }
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithLifecyclePolicyText(const Aws::String& value) { SetLifecyclePolicyText(value); return *this;}
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithLifecyclePolicyText(Aws::String&& value) { SetLifecyclePolicyText(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy to be evaluated against. If you do not specify a policy, the
-     * current policy for the repository is used.</p>
-     */
     inline StartLifecyclePolicyPreviewRequest& WithLifecyclePolicyText(const char* value) { SetLifecyclePolicyText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

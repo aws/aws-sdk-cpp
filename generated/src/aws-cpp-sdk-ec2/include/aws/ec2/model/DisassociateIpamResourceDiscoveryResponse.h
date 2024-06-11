@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DisassociateIpamResourceDiscoveryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A resource discovery association.</p>
      */
     inline const IpamResourceDiscoveryAssociation& GetIpamResourceDiscoveryAssociation() const{ return m_ipamResourceDiscoveryAssociation; }
-
-    /**
-     * <p>A resource discovery association.</p>
-     */
     inline void SetIpamResourceDiscoveryAssociation(const IpamResourceDiscoveryAssociation& value) { m_ipamResourceDiscoveryAssociation = value; }
-
-    /**
-     * <p>A resource discovery association.</p>
-     */
     inline void SetIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociation&& value) { m_ipamResourceDiscoveryAssociation = std::move(value); }
-
-    /**
-     * <p>A resource discovery association.</p>
-     */
     inline DisassociateIpamResourceDiscoveryResponse& WithIpamResourceDiscoveryAssociation(const IpamResourceDiscoveryAssociation& value) { SetIpamResourceDiscoveryAssociation(value); return *this;}
-
-    /**
-     * <p>A resource discovery association.</p>
-     */
     inline DisassociateIpamResourceDiscoveryResponse& WithIpamResourceDiscoveryAssociation(IpamResourceDiscoveryAssociation&& value) { SetIpamResourceDiscoveryAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DisassociateIpamResourceDiscoveryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DisassociateIpamResourceDiscoveryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamResourceDiscoveryAssociation m_ipamResourceDiscoveryAssociation;

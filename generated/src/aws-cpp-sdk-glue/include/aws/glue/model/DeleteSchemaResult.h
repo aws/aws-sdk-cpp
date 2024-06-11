@@ -33,125 +33,53 @@ namespace Model
     AWS_GLUE_API DeleteSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schema being deleted.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaName = value; }
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline void SetSchemaName(Aws::String&& value) { m_schemaName = std::move(value); }
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline void SetSchemaName(const char* value) { m_schemaName.assign(value); }
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema being deleted.</p>
-     */
     inline DeleteSchemaResult& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the schema.</p>
      */
     inline const SchemaStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the schema.</p>
-     */
     inline void SetStatus(const SchemaStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the schema.</p>
-     */
     inline void SetStatus(SchemaStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the schema.</p>
-     */
     inline DeleteSchemaResult& WithStatus(const SchemaStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the schema.</p>
-     */
     inline DeleteSchemaResult& WithStatus(SchemaStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaArn;

@@ -39,78 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
      * defaults are displayed according to users, groups, and values mapping.</p>
      */
     inline const DynamicDefaultValue& GetDynamicValue() const{ return m_dynamicValue; }
-
-    /**
-     * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
-     * defaults are displayed according to users, groups, and values mapping.</p>
-     */
     inline bool DynamicValueHasBeenSet() const { return m_dynamicValueHasBeenSet; }
-
-    /**
-     * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
-     * defaults are displayed according to users, groups, and values mapping.</p>
-     */
     inline void SetDynamicValue(const DynamicDefaultValue& value) { m_dynamicValueHasBeenSet = true; m_dynamicValue = value; }
-
-    /**
-     * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
-     * defaults are displayed according to users, groups, and values mapping.</p>
-     */
     inline void SetDynamicValue(DynamicDefaultValue&& value) { m_dynamicValueHasBeenSet = true; m_dynamicValue = std::move(value); }
-
-    /**
-     * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
-     * defaults are displayed according to users, groups, and values mapping.</p>
-     */
     inline DecimalDefaultValues& WithDynamicValue(const DynamicDefaultValue& value) { SetDynamicValue(value); return *this;}
-
-    /**
-     * <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different
-     * defaults are displayed according to users, groups, and values mapping.</p>
-     */
     inline DecimalDefaultValues& WithDynamicValue(DynamicDefaultValue&& value) { SetDynamicValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
      */
     inline const Aws::Vector<double>& GetStaticValues() const{ return m_staticValues; }
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline bool StaticValuesHasBeenSet() const { return m_staticValuesHasBeenSet; }
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline void SetStaticValues(const Aws::Vector<double>& value) { m_staticValuesHasBeenSet = true; m_staticValues = value; }
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline void SetStaticValues(Aws::Vector<double>&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::move(value); }
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline DecimalDefaultValues& WithStaticValues(const Aws::Vector<double>& value) { SetStaticValues(value); return *this;}
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline DecimalDefaultValues& WithStaticValues(Aws::Vector<double>&& value) { SetStaticValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-     */
     inline DecimalDefaultValues& AddStaticValues(double value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     DynamicDefaultValue m_dynamicValue;

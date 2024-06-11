@@ -39,71 +39,30 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the retention configuration object.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline RetentionConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline RetentionConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the retention configuration object.</p>
-     */
     inline RetentionConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of days Config stores your historical information.</p> 
      * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
-
-    /**
-     * <p>Number of days Config stores your historical information.</p> 
-     * <p>Currently, only applicable to the configuration item history.</p> 
-     */
     inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
-
-    /**
-     * <p>Number of days Config stores your historical information.</p> 
-     * <p>Currently, only applicable to the configuration item history.</p> 
-     */
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
-
-    /**
-     * <p>Number of days Config stores your historical information.</p> 
-     * <p>Currently, only applicable to the configuration item history.</p> 
-     */
     inline RetentionConfiguration& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

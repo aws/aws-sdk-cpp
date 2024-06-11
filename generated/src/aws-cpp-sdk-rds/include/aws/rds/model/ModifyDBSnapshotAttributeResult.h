@@ -33,37 +33,23 @@ namespace Model
     AWS_RDS_API ModifyDBSnapshotAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const DBSnapshotAttributesResult& GetDBSnapshotAttributesResult() const{ return m_dBSnapshotAttributesResult; }
-
-    
     inline void SetDBSnapshotAttributesResult(const DBSnapshotAttributesResult& value) { m_dBSnapshotAttributesResult = value; }
-
-    
     inline void SetDBSnapshotAttributesResult(DBSnapshotAttributesResult&& value) { m_dBSnapshotAttributesResult = std::move(value); }
-
-    
     inline ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(const DBSnapshotAttributesResult& value) { SetDBSnapshotAttributesResult(value); return *this;}
-
-    
     inline ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(DBSnapshotAttributesResult&& value) { SetDBSnapshotAttributesResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyDBSnapshotAttributeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyDBSnapshotAttributeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DBSnapshotAttributesResult m_dBSnapshotAttributesResult;

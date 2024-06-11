@@ -42,248 +42,89 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the test set.</p>
      */
     inline const Aws::String& GetTestSetName() const{ return m_testSetName; }
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline bool TestSetNameHasBeenSet() const { return m_testSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline void SetTestSetName(const Aws::String& value) { m_testSetNameHasBeenSet = true; m_testSetName = value; }
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline void SetTestSetName(Aws::String&& value) { m_testSetNameHasBeenSet = true; m_testSetName = std::move(value); }
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline void SetTestSetName(const char* value) { m_testSetNameHasBeenSet = true; m_testSetName.assign(value); }
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithTestSetName(const Aws::String& value) { SetTestSetName(value); return *this;}
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithTestSetName(Aws::String&& value) { SetTestSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithTestSetName(const char* value) { SetTestSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the test set.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
      * the test set.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access
-     * the test set.</p>
-     */
     inline TestSetImportResourceSpecification& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the location that Amazon Lex uses to store the
      * test-set.</p>
      */
     inline const TestSetStorageLocation& GetStorageLocation() const{ return m_storageLocation; }
-
-    /**
-     * <p>Contains information about the location that Amazon Lex uses to store the
-     * test-set.</p>
-     */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
-
-    /**
-     * <p>Contains information about the location that Amazon Lex uses to store the
-     * test-set.</p>
-     */
     inline void SetStorageLocation(const TestSetStorageLocation& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
-
-    /**
-     * <p>Contains information about the location that Amazon Lex uses to store the
-     * test-set.</p>
-     */
     inline void SetStorageLocation(TestSetStorageLocation&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
-
-    /**
-     * <p>Contains information about the location that Amazon Lex uses to store the
-     * test-set.</p>
-     */
     inline TestSetImportResourceSpecification& WithStorageLocation(const TestSetStorageLocation& value) { SetStorageLocation(value); return *this;}
-
-    /**
-     * <p>Contains information about the location that Amazon Lex uses to store the
-     * test-set.</p>
-     */
     inline TestSetImportResourceSpecification& WithStorageLocation(TestSetStorageLocation&& value) { SetStorageLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the input location from where test-set should be
      * imported.</p>
      */
     inline const TestSetImportInputLocation& GetImportInputLocation() const{ return m_importInputLocation; }
-
-    /**
-     * <p>Contains information about the input location from where test-set should be
-     * imported.</p>
-     */
     inline bool ImportInputLocationHasBeenSet() const { return m_importInputLocationHasBeenSet; }
-
-    /**
-     * <p>Contains information about the input location from where test-set should be
-     * imported.</p>
-     */
     inline void SetImportInputLocation(const TestSetImportInputLocation& value) { m_importInputLocationHasBeenSet = true; m_importInputLocation = value; }
-
-    /**
-     * <p>Contains information about the input location from where test-set should be
-     * imported.</p>
-     */
     inline void SetImportInputLocation(TestSetImportInputLocation&& value) { m_importInputLocationHasBeenSet = true; m_importInputLocation = std::move(value); }
-
-    /**
-     * <p>Contains information about the input location from where test-set should be
-     * imported.</p>
-     */
     inline TestSetImportResourceSpecification& WithImportInputLocation(const TestSetImportInputLocation& value) { SetImportInputLocation(value); return *this;}
-
-    /**
-     * <p>Contains information about the input location from where test-set should be
-     * imported.</p>
-     */
     inline TestSetImportResourceSpecification& WithImportInputLocation(TestSetImportInputLocation&& value) { SetImportInputLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the test-set being imported contains written or spoken
      * data.</p>
      */
     inline const TestSetModality& GetModality() const{ return m_modality; }
-
-    /**
-     * <p>Specifies whether the test-set being imported contains written or spoken
-     * data.</p>
-     */
     inline bool ModalityHasBeenSet() const { return m_modalityHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the test-set being imported contains written or spoken
-     * data.</p>
-     */
     inline void SetModality(const TestSetModality& value) { m_modalityHasBeenSet = true; m_modality = value; }
-
-    /**
-     * <p>Specifies whether the test-set being imported contains written or spoken
-     * data.</p>
-     */
     inline void SetModality(TestSetModality&& value) { m_modalityHasBeenSet = true; m_modality = std::move(value); }
-
-    /**
-     * <p>Specifies whether the test-set being imported contains written or spoken
-     * data.</p>
-     */
     inline TestSetImportResourceSpecification& WithModality(const TestSetModality& value) { SetModality(value); return *this;}
-
-    /**
-     * <p>Specifies whether the test-set being imported contains written or spoken
-     * data.</p>
-     */
     inline TestSetImportResourceSpecification& WithModality(TestSetModality&& value) { SetModality(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags to add to the test set. You can only add tags when you
      * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
@@ -291,103 +132,19 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTestSetTags() const{ return m_testSetTags; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline bool TestSetTagsHasBeenSet() const { return m_testSetTagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline void SetTestSetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_testSetTagsHasBeenSet = true; m_testSetTags = value; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline void SetTestSetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_testSetTagsHasBeenSet = true; m_testSetTags = std::move(value); }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& WithTestSetTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTestSetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& WithTestSetTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTestSetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(const Aws::String& key, const Aws::String& value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(Aws::String&& key, const Aws::String& value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(const Aws::String& key, Aws::String&& value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(Aws::String&& key, Aws::String&& value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(const char* key, Aws::String&& value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(Aws::String&& key, const char* value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of tags to add to the test set. You can only add tags when you
-     * import/generate a new test set. You can't use the <code>UpdateTestSet</code>
-     * operation to update tags. To update tags, use the <code>TagResource</code>
-     * operation.</p>
-     */
     inline TestSetImportResourceSpecification& AddTestSetTags(const char* key, const char* value) { m_testSetTagsHasBeenSet = true; m_testSetTags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_testSetName;

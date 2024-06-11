@@ -37,46 +37,19 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Region where the replica needs to be created.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline Replica& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline Replica& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Region where the replica needs to be created.</p>
-     */
     inline Replica& WithRegionName(const char* value) { SetRegionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_regionName;

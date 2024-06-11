@@ -38,42 +38,18 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The tax registration number type. The value can be
      * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
      */
     inline const TaxRegistrationNumberType& GetTaxRegistrationNumberType() const{ return m_taxRegistrationNumberType; }
-
-    /**
-     * <p> The tax registration number type. The value can be
-     * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
-     */
     inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
-
-    /**
-     * <p> The tax registration number type. The value can be
-     * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
-     */
     inline void SetTaxRegistrationNumberType(const TaxRegistrationNumberType& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
-
-    /**
-     * <p> The tax registration number type. The value can be
-     * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
-     */
     inline void SetTaxRegistrationNumberType(TaxRegistrationNumberType&& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = std::move(value); }
-
-    /**
-     * <p> The tax registration number type. The value can be
-     * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
-     */
     inline RomaniaAdditionalInfo& WithTaxRegistrationNumberType(const TaxRegistrationNumberType& value) { SetTaxRegistrationNumberType(value); return *this;}
-
-    /**
-     * <p> The tax registration number type. The value can be
-     * <code>TaxRegistrationNumber</code> or <code>LocalRegistrationNumber</code>. </p>
-     */
     inline RomaniaAdditionalInfo& WithTaxRegistrationNumberType(TaxRegistrationNumberType&& value) { SetTaxRegistrationNumberType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TaxRegistrationNumberType m_taxRegistrationNumberType;

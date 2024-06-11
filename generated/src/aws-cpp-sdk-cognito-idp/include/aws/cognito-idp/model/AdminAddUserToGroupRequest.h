@@ -34,47 +34,21 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The user pool ID for the user pool.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
@@ -83,111 +57,28 @@ namespace Model
      * user from a third-party IdP.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminAddUserToGroupRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the group that you want to add your user to.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline AdminAddUserToGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline AdminAddUserToGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the group that you want to add your user to.</p>
-     */
     inline AdminAddUserToGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

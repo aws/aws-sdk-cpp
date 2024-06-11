@@ -35,59 +35,28 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the HDR10+ mastering display normalized peak luminance, in nits. This is
      * the normalized actual peak luminance of the mastering display, as defined by ST
      * 2094-40.
      */
     inline int GetMasteringMonitorNits() const{ return m_masteringMonitorNits; }
-
-    /**
-     * Specify the HDR10+ mastering display normalized peak luminance, in nits. This is
-     * the normalized actual peak luminance of the mastering display, as defined by ST
-     * 2094-40.
-     */
     inline bool MasteringMonitorNitsHasBeenSet() const { return m_masteringMonitorNitsHasBeenSet; }
-
-    /**
-     * Specify the HDR10+ mastering display normalized peak luminance, in nits. This is
-     * the normalized actual peak luminance of the mastering display, as defined by ST
-     * 2094-40.
-     */
     inline void SetMasteringMonitorNits(int value) { m_masteringMonitorNitsHasBeenSet = true; m_masteringMonitorNits = value; }
-
-    /**
-     * Specify the HDR10+ mastering display normalized peak luminance, in nits. This is
-     * the normalized actual peak luminance of the mastering display, as defined by ST
-     * 2094-40.
-     */
     inline Hdr10Plus& WithMasteringMonitorNits(int value) { SetMasteringMonitorNits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify the HDR10+ target display nominal peak luminance, in nits. This is the
      * nominal maximum luminance of the target display as defined by ST 2094-40.
      */
     inline int GetTargetMonitorNits() const{ return m_targetMonitorNits; }
-
-    /**
-     * Specify the HDR10+ target display nominal peak luminance, in nits. This is the
-     * nominal maximum luminance of the target display as defined by ST 2094-40.
-     */
     inline bool TargetMonitorNitsHasBeenSet() const { return m_targetMonitorNitsHasBeenSet; }
-
-    /**
-     * Specify the HDR10+ target display nominal peak luminance, in nits. This is the
-     * nominal maximum luminance of the target display as defined by ST 2094-40.
-     */
     inline void SetTargetMonitorNits(int value) { m_targetMonitorNitsHasBeenSet = true; m_targetMonitorNits = value; }
-
-    /**
-     * Specify the HDR10+ target display nominal peak luminance, in nits. This is the
-     * nominal maximum luminance of the target display as defined by ST 2094-40.
-     */
     inline Hdr10Plus& WithTargetMonitorNits(int value) { SetTargetMonitorNits(value); return *this;}
-
+    ///@}
   private:
 
     int m_masteringMonitorNits;

@@ -36,128 +36,47 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon region of the primary cluster of the Global datastore</p>
      */
     inline const Aws::String& GetPrimaryRegion() const{ return m_primaryRegion; }
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline void SetPrimaryRegion(const Aws::String& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = value; }
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline void SetPrimaryRegion(Aws::String&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::move(value); }
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline void SetPrimaryRegion(const char* value) { m_primaryRegionHasBeenSet = true; m_primaryRegion.assign(value); }
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryRegion(const Aws::String& value) { SetPrimaryRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryRegion(Aws::String&& value) { SetPrimaryRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon region of the primary cluster of the Global datastore</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryRegion(const char* value) { SetPrimaryRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the primary replication group</p>
      */
     inline const Aws::String& GetPrimaryReplicationGroupId() const{ return m_primaryReplicationGroupId; }
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline bool PrimaryReplicationGroupIdHasBeenSet() const { return m_primaryReplicationGroupIdHasBeenSet; }
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline void SetPrimaryReplicationGroupId(const Aws::String& value) { m_primaryReplicationGroupIdHasBeenSet = true; m_primaryReplicationGroupId = value; }
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline void SetPrimaryReplicationGroupId(Aws::String&& value) { m_primaryReplicationGroupIdHasBeenSet = true; m_primaryReplicationGroupId = std::move(value); }
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline void SetPrimaryReplicationGroupId(const char* value) { m_primaryReplicationGroupIdHasBeenSet = true; m_primaryReplicationGroupId.assign(value); }
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryReplicationGroupId(const Aws::String& value) { SetPrimaryReplicationGroupId(value); return *this;}
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryReplicationGroupId(Aws::String&& value) { SetPrimaryReplicationGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the primary replication group</p>
-     */
     inline FailoverGlobalReplicationGroupRequest& WithPrimaryReplicationGroupId(const char* value) { SetPrimaryReplicationGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalReplicationGroupId;

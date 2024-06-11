@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,72 +44,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteManagedPrefixListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the prefix list.</p>
      */
     inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline DeleteManagedPrefixListRequest& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline DeleteManagedPrefixListRequest& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the prefix list.</p>
-     */
     inline DeleteManagedPrefixListRequest& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

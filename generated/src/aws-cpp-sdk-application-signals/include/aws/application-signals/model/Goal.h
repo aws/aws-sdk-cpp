@@ -39,49 +39,21 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time period used to evaluate the SLO. It can be either a calendar
      * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
      * interval of 7 days is used.</p>
      */
     inline const Interval& GetInterval() const{ return m_interval; }
-
-    /**
-     * <p>The time period used to evaluate the SLO. It can be either a calendar
-     * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
-     * interval of 7 days is used.</p>
-     */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-
-    /**
-     * <p>The time period used to evaluate the SLO. It can be either a calendar
-     * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
-     * interval of 7 days is used.</p>
-     */
     inline void SetInterval(const Interval& value) { m_intervalHasBeenSet = true; m_interval = value; }
-
-    /**
-     * <p>The time period used to evaluate the SLO. It can be either a calendar
-     * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
-     * interval of 7 days is used.</p>
-     */
     inline void SetInterval(Interval&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-
-    /**
-     * <p>The time period used to evaluate the SLO. It can be either a calendar
-     * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
-     * interval of 7 days is used.</p>
-     */
     inline Goal& WithInterval(const Interval& value) { SetInterval(value); return *this;}
-
-    /**
-     * <p>The time period used to evaluate the SLO. It can be either a calendar
-     * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
-     * interval of 7 days is used.</p>
-     */
     inline Goal& WithInterval(Interval&& value) { SetInterval(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The threshold that determines if the goal is being met. An <i>attainment
      * goal</i> is the ratio of good periods that meet the threshold requirements to
@@ -91,62 +63,21 @@ namespace Model
      * the attainment goal.</p>
      */
     inline double GetAttainmentGoal() const{ return m_attainmentGoal; }
-
-    /**
-     * <p>The threshold that determines if the goal is being met. An <i>attainment
-     * goal</i> is the ratio of good periods that meet the threshold requirements to
-     * the total periods within the interval. For example, an attainment goal of 99.9%
-     * means that within your interval, you are targeting 99.9% of the periods to be in
-     * healthy state.</p> <p>If you omit this parameter, 99 is used to represent 99% as
-     * the attainment goal.</p>
-     */
     inline bool AttainmentGoalHasBeenSet() const { return m_attainmentGoalHasBeenSet; }
-
-    /**
-     * <p>The threshold that determines if the goal is being met. An <i>attainment
-     * goal</i> is the ratio of good periods that meet the threshold requirements to
-     * the total periods within the interval. For example, an attainment goal of 99.9%
-     * means that within your interval, you are targeting 99.9% of the periods to be in
-     * healthy state.</p> <p>If you omit this parameter, 99 is used to represent 99% as
-     * the attainment goal.</p>
-     */
     inline void SetAttainmentGoal(double value) { m_attainmentGoalHasBeenSet = true; m_attainmentGoal = value; }
-
-    /**
-     * <p>The threshold that determines if the goal is being met. An <i>attainment
-     * goal</i> is the ratio of good periods that meet the threshold requirements to
-     * the total periods within the interval. For example, an attainment goal of 99.9%
-     * means that within your interval, you are targeting 99.9% of the periods to be in
-     * healthy state.</p> <p>If you omit this parameter, 99 is used to represent 99% as
-     * the attainment goal.</p>
-     */
     inline Goal& WithAttainmentGoal(double value) { SetAttainmentGoal(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of remaining budget over total budget that you want to get
      * warnings for. If you omit this parameter, the default of 50.0 is used. </p>
      */
     inline double GetWarningThreshold() const{ return m_warningThreshold; }
-
-    /**
-     * <p>The percentage of remaining budget over total budget that you want to get
-     * warnings for. If you omit this parameter, the default of 50.0 is used. </p>
-     */
     inline bool WarningThresholdHasBeenSet() const { return m_warningThresholdHasBeenSet; }
-
-    /**
-     * <p>The percentage of remaining budget over total budget that you want to get
-     * warnings for. If you omit this parameter, the default of 50.0 is used. </p>
-     */
     inline void SetWarningThreshold(double value) { m_warningThresholdHasBeenSet = true; m_warningThreshold = value; }
-
-    /**
-     * <p>The percentage of remaining budget over total budget that you want to get
-     * warnings for. If you omit this parameter, the default of 50.0 is used. </p>
-     */
     inline Goal& WithWarningThreshold(double value) { SetWarningThreshold(value); return *this;}
-
+    ///@}
   private:
 
     Interval m_interval;

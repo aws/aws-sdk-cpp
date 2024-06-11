@@ -33,58 +33,28 @@ namespace Model
     AWS_GAMELIFT_API DescribeFleetLocationUtilizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Utilization information for the requested fleet location. Utilization objects
      * are returned only for fleets and locations that currently exist.</p>
      */
     inline const FleetUtilization& GetFleetUtilization() const{ return m_fleetUtilization; }
-
-    /**
-     * <p>Utilization information for the requested fleet location. Utilization objects
-     * are returned only for fleets and locations that currently exist.</p>
-     */
     inline void SetFleetUtilization(const FleetUtilization& value) { m_fleetUtilization = value; }
-
-    /**
-     * <p>Utilization information for the requested fleet location. Utilization objects
-     * are returned only for fleets and locations that currently exist.</p>
-     */
     inline void SetFleetUtilization(FleetUtilization&& value) { m_fleetUtilization = std::move(value); }
-
-    /**
-     * <p>Utilization information for the requested fleet location. Utilization objects
-     * are returned only for fleets and locations that currently exist.</p>
-     */
     inline DescribeFleetLocationUtilizationResult& WithFleetUtilization(const FleetUtilization& value) { SetFleetUtilization(value); return *this;}
-
-    /**
-     * <p>Utilization information for the requested fleet location. Utilization objects
-     * are returned only for fleets and locations that currently exist.</p>
-     */
     inline DescribeFleetLocationUtilizationResult& WithFleetUtilization(FleetUtilization&& value) { SetFleetUtilization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFleetLocationUtilizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFleetLocationUtilizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFleetLocationUtilizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FleetUtilization m_fleetUtilization;

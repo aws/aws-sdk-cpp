@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKDOCS_API CreateNotificationSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The subscription.</p>
      */
     inline const Subscription& GetSubscription() const{ return m_subscription; }
-
-    /**
-     * <p>The subscription.</p>
-     */
     inline void SetSubscription(const Subscription& value) { m_subscription = value; }
-
-    /**
-     * <p>The subscription.</p>
-     */
     inline void SetSubscription(Subscription&& value) { m_subscription = std::move(value); }
-
-    /**
-     * <p>The subscription.</p>
-     */
     inline CreateNotificationSubscriptionResult& WithSubscription(const Subscription& value) { SetSubscription(value); return *this;}
-
-    /**
-     * <p>The subscription.</p>
-     */
     inline CreateNotificationSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateNotificationSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateNotificationSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateNotificationSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Subscription m_subscription;

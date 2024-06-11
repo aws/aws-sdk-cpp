@@ -34,106 +34,43 @@ namespace Model
     AWS_GLOBALACCELERATOR_API ListCustomRoutingListenersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of listeners for a custom routing accelerator.</p>
      */
     inline const Aws::Vector<CustomRoutingListener>& GetListeners() const{ return m_listeners; }
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline void SetListeners(const Aws::Vector<CustomRoutingListener>& value) { m_listeners = value; }
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline void SetListeners(Aws::Vector<CustomRoutingListener>&& value) { m_listeners = std::move(value); }
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline ListCustomRoutingListenersResult& WithListeners(const Aws::Vector<CustomRoutingListener>& value) { SetListeners(value); return *this;}
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline ListCustomRoutingListenersResult& WithListeners(Aws::Vector<CustomRoutingListener>&& value) { SetListeners(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline ListCustomRoutingListenersResult& AddListeners(const CustomRoutingListener& value) { m_listeners.push_back(value); return *this; }
-
-    /**
-     * <p>The list of listeners for a custom routing accelerator.</p>
-     */
     inline ListCustomRoutingListenersResult& AddListeners(CustomRoutingListener&& value) { m_listeners.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListCustomRoutingListenersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListCustomRoutingListenersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results. You receive this token from a previous
-     * call.</p>
-     */
     inline ListCustomRoutingListenersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCustomRoutingListenersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCustomRoutingListenersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCustomRoutingListenersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CustomRoutingListener> m_listeners;

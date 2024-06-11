@@ -33,53 +33,27 @@ namespace Model
     AWS_NIMBLESTUDIO_API GetLaunchProfileMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The member.</p>
      */
     inline const LaunchProfileMembership& GetMember() const{ return m_member; }
-
-    /**
-     * <p>The member.</p>
-     */
     inline void SetMember(const LaunchProfileMembership& value) { m_member = value; }
-
-    /**
-     * <p>The member.</p>
-     */
     inline void SetMember(LaunchProfileMembership&& value) { m_member = std::move(value); }
-
-    /**
-     * <p>The member.</p>
-     */
     inline GetLaunchProfileMemberResult& WithMember(const LaunchProfileMembership& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>The member.</p>
-     */
     inline GetLaunchProfileMemberResult& WithMember(LaunchProfileMembership&& value) { SetMember(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLaunchProfileMemberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLaunchProfileMemberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLaunchProfileMemberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LaunchProfileMembership m_member;

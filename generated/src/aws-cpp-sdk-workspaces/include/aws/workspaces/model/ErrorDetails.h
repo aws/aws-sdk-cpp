@@ -40,77 +40,31 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the error code returned.</p>
      */
     inline const WorkspaceImageErrorDetailCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>Indicates the error code returned.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>Indicates the error code returned.</p>
-     */
     inline void SetErrorCode(const WorkspaceImageErrorDetailCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>Indicates the error code returned.</p>
-     */
     inline void SetErrorCode(WorkspaceImageErrorDetailCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>Indicates the error code returned.</p>
-     */
     inline ErrorDetails& WithErrorCode(const WorkspaceImageErrorDetailCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>Indicates the error code returned.</p>
-     */
     inline ErrorDetails& WithErrorCode(WorkspaceImageErrorDetailCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text of the error message related the error code.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline ErrorDetails& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline ErrorDetails& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The text of the error message related the error code.</p>
-     */
     inline ErrorDetails& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     WorkspaceImageErrorDetailCode m_errorCode;

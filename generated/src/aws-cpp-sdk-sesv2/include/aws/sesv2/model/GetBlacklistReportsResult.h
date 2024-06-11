@@ -41,94 +41,34 @@ namespace Model
     AWS_SESV2_API GetBlacklistReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about a blacklist that one of your
      * dedicated IP addresses appears on.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& GetBlacklistReport() const{ return m_blacklistReport; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline void SetBlacklistReport(const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& value) { m_blacklistReport = value; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline void SetBlacklistReport(Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>&& value) { m_blacklistReport = std::move(value); }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& WithBlacklistReport(const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& value) { SetBlacklistReport(value); return *this;}
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& WithBlacklistReport(Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>&& value) { SetBlacklistReport(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(const Aws::String& key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(key, value); return *this; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(Aws::String&& key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(const Aws::String& key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(Aws::String&& key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(const char* key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that contains information about a blacklist that one of your
-     * dedicated IP addresses appears on.</p>
-     */
     inline GetBlacklistReportsResult& AddBlacklistReport(const char* key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBlacklistReportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBlacklistReportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBlacklistReportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>> m_blacklistReport;

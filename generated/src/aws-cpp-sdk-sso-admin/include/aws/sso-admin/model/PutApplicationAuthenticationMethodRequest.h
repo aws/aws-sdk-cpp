@@ -36,134 +36,47 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the application with the authentication method to add or
      * update.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to add or
-     * update.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a structure that describes the authentication method to add or
      * update. The structure type you provide is determined by the
      * <code>AuthenticationMethodType</code> parameter.</p>
      */
     inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
-
-    /**
-     * <p>Specifies a structure that describes the authentication method to add or
-     * update. The structure type you provide is determined by the
-     * <code>AuthenticationMethodType</code> parameter.</p>
-     */
     inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
-
-    /**
-     * <p>Specifies a structure that describes the authentication method to add or
-     * update. The structure type you provide is determined by the
-     * <code>AuthenticationMethodType</code> parameter.</p>
-     */
     inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
-
-    /**
-     * <p>Specifies a structure that describes the authentication method to add or
-     * update. The structure type you provide is determined by the
-     * <code>AuthenticationMethodType</code> parameter.</p>
-     */
     inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
-
-    /**
-     * <p>Specifies a structure that describes the authentication method to add or
-     * update. The structure type you provide is determined by the
-     * <code>AuthenticationMethodType</code> parameter.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-
-    /**
-     * <p>Specifies a structure that describes the authentication method to add or
-     * update. The structure type you provide is determined by the
-     * <code>AuthenticationMethodType</code> parameter.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the type of the authentication method that you want to add or
      * update.</p>
      */
     inline const AuthenticationMethodType& GetAuthenticationMethodType() const{ return m_authenticationMethodType; }
-
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
     inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
     inline void SetAuthenticationMethodType(const AuthenticationMethodType& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
     inline void SetAuthenticationMethodType(AuthenticationMethodType&& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = std::move(value); }
-
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(const AuthenticationMethodType& value) { SetAuthenticationMethodType(value); return *this;}
-
-    /**
-     * <p>Specifies the type of the authentication method that you want to add or
-     * update.</p>
-     */
     inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType&& value) { SetAuthenticationMethodType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

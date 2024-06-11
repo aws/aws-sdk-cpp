@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,62 +44,22 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline RegisterInstanceEventNotificationAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the tag keys to register.</p>
      */
     inline const RegisterInstanceTagAttributeRequest& GetInstanceTagAttribute() const{ return m_instanceTagAttribute; }
-
-    /**
-     * <p>Information about the tag keys to register.</p>
-     */
     inline bool InstanceTagAttributeHasBeenSet() const { return m_instanceTagAttributeHasBeenSet; }
-
-    /**
-     * <p>Information about the tag keys to register.</p>
-     */
     inline void SetInstanceTagAttribute(const RegisterInstanceTagAttributeRequest& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = value; }
-
-    /**
-     * <p>Information about the tag keys to register.</p>
-     */
     inline void SetInstanceTagAttribute(RegisterInstanceTagAttributeRequest&& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = std::move(value); }
-
-    /**
-     * <p>Information about the tag keys to register.</p>
-     */
     inline RegisterInstanceEventNotificationAttributesRequest& WithInstanceTagAttribute(const RegisterInstanceTagAttributeRequest& value) { SetInstanceTagAttribute(value); return *this;}
-
-    /**
-     * <p>Information about the tag keys to register.</p>
-     */
     inline RegisterInstanceEventNotificationAttributesRequest& WithInstanceTagAttribute(RegisterInstanceTagAttributeRequest&& value) { SetInstanceTagAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

@@ -33,53 +33,27 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API GetRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The returned recovery point object.</p>
      */
     inline const RecoveryPoint& GetRecoveryPoint() const{ return m_recoveryPoint; }
-
-    /**
-     * <p>The returned recovery point object.</p>
-     */
     inline void SetRecoveryPoint(const RecoveryPoint& value) { m_recoveryPoint = value; }
-
-    /**
-     * <p>The returned recovery point object.</p>
-     */
     inline void SetRecoveryPoint(RecoveryPoint&& value) { m_recoveryPoint = std::move(value); }
-
-    /**
-     * <p>The returned recovery point object.</p>
-     */
     inline GetRecoveryPointResult& WithRecoveryPoint(const RecoveryPoint& value) { SetRecoveryPoint(value); return *this;}
-
-    /**
-     * <p>The returned recovery point object.</p>
-     */
     inline GetRecoveryPointResult& WithRecoveryPoint(RecoveryPoint&& value) { SetRecoveryPoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecoveryPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecoveryPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecoveryPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RecoveryPoint m_recoveryPoint;

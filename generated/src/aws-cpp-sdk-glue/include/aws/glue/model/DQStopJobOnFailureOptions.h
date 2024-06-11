@@ -38,42 +38,18 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When to stop job if your data quality evaluation fails. Options are Immediate
      * or AfterDataLoad.</p>
      */
     inline const DQStopJobOnFailureTiming& GetStopJobOnFailureTiming() const{ return m_stopJobOnFailureTiming; }
-
-    /**
-     * <p>When to stop job if your data quality evaluation fails. Options are Immediate
-     * or AfterDataLoad.</p>
-     */
     inline bool StopJobOnFailureTimingHasBeenSet() const { return m_stopJobOnFailureTimingHasBeenSet; }
-
-    /**
-     * <p>When to stop job if your data quality evaluation fails. Options are Immediate
-     * or AfterDataLoad.</p>
-     */
     inline void SetStopJobOnFailureTiming(const DQStopJobOnFailureTiming& value) { m_stopJobOnFailureTimingHasBeenSet = true; m_stopJobOnFailureTiming = value; }
-
-    /**
-     * <p>When to stop job if your data quality evaluation fails. Options are Immediate
-     * or AfterDataLoad.</p>
-     */
     inline void SetStopJobOnFailureTiming(DQStopJobOnFailureTiming&& value) { m_stopJobOnFailureTimingHasBeenSet = true; m_stopJobOnFailureTiming = std::move(value); }
-
-    /**
-     * <p>When to stop job if your data quality evaluation fails. Options are Immediate
-     * or AfterDataLoad.</p>
-     */
     inline DQStopJobOnFailureOptions& WithStopJobOnFailureTiming(const DQStopJobOnFailureTiming& value) { SetStopJobOnFailureTiming(value); return *this;}
-
-    /**
-     * <p>When to stop job if your data quality evaluation fails. Options are Immediate
-     * or AfterDataLoad.</p>
-     */
     inline DQStopJobOnFailureOptions& WithStopJobOnFailureTiming(DQStopJobOnFailureTiming&& value) { SetStopJobOnFailureTiming(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DQStopJobOnFailureTiming m_stopJobOnFailureTiming;

@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
      */
     inline const Aws::String& GetSourceSnapshotName() const{ return m_sourceSnapshotName; }
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline bool SourceSnapshotNameHasBeenSet() const { return m_sourceSnapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline void SetSourceSnapshotName(Aws::String&& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = std::move(value); }
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline void SetSourceSnapshotName(const char* value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName.assign(value); }
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline ExportSnapshotRequest& WithSourceSnapshotName(const Aws::String& value) { SetSourceSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline ExportSnapshotRequest& WithSourceSnapshotName(Aws::String&& value) { SetSourceSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-     */
     inline ExportSnapshotRequest& WithSourceSnapshotName(const char* value) { SetSourceSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceSnapshotName;

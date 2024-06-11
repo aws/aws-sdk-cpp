@@ -39,87 +39,33 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an Add On.</p>
      */
     inline const Aws::String& GetAnalyzer() const{ return m_analyzer; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline bool AnalyzerHasBeenSet() const { return m_analyzerHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline void SetAnalyzer(const Aws::String& value) { m_analyzerHasBeenSet = true; m_analyzer = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline void SetAnalyzer(Aws::String&& value) { m_analyzerHasBeenSet = true; m_analyzer = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline void SetAnalyzer(const char* value) { m_analyzerHasBeenSet = true; m_analyzer.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline IngressAnalysis& WithAnalyzer(const Aws::String& value) { SetAnalyzer(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline IngressAnalysis& WithAnalyzer(Aws::String&& value) { SetAnalyzer(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of an Add On.</p>
-     */
     inline IngressAnalysis& WithAnalyzer(const char* value) { SetAnalyzer(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The returned value from an Add On.</p>
      */
     inline const Aws::String& GetResultField() const{ return m_resultField; }
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline bool ResultFieldHasBeenSet() const { return m_resultFieldHasBeenSet; }
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline void SetResultField(const Aws::String& value) { m_resultFieldHasBeenSet = true; m_resultField = value; }
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline void SetResultField(Aws::String&& value) { m_resultFieldHasBeenSet = true; m_resultField = std::move(value); }
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline void SetResultField(const char* value) { m_resultFieldHasBeenSet = true; m_resultField.assign(value); }
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline IngressAnalysis& WithResultField(const Aws::String& value) { SetResultField(value); return *this;}
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline IngressAnalysis& WithResultField(Aws::String&& value) { SetResultField(std::move(value)); return *this;}
-
-    /**
-     * <p>The returned value from an Add On.</p>
-     */
     inline IngressAnalysis& WithResultField(const char* value) { SetResultField(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyzer;

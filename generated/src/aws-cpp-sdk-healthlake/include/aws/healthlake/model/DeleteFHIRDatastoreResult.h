@@ -33,168 +33,67 @@ namespace Model
     AWS_HEALTHLAKE_API DeleteFHIRDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The AWS-generated ID for the data store to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS-generated ID for the data store to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline const Aws::String& GetDatastoreArn() const{ return m_datastoreArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline void SetDatastoreArn(const Aws::String& value) { m_datastoreArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline void SetDatastoreArn(Aws::String&& value) { m_datastoreArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline void SetDatastoreArn(const char* value) { m_datastoreArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreArn(const Aws::String& value) { SetDatastoreArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreArn(Aws::String&& value) { SetDatastoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
-     * permission.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreArn(const char* value) { SetDatastoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the data store that the user has requested to be deleted. </p>
      */
     inline const DatastoreStatus& GetDatastoreStatus() const{ return m_datastoreStatus; }
-
-    /**
-     * <p>The status of the data store that the user has requested to be deleted. </p>
-     */
     inline void SetDatastoreStatus(const DatastoreStatus& value) { m_datastoreStatus = value; }
-
-    /**
-     * <p>The status of the data store that the user has requested to be deleted. </p>
-     */
     inline void SetDatastoreStatus(DatastoreStatus&& value) { m_datastoreStatus = std::move(value); }
-
-    /**
-     * <p>The status of the data store that the user has requested to be deleted. </p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreStatus(const DatastoreStatus& value) { SetDatastoreStatus(value); return *this;}
-
-    /**
-     * <p>The status of the data store that the user has requested to be deleted. </p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreStatus(DatastoreStatus&& value) { SetDatastoreStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const{ return m_datastoreEndpoint; }
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline void SetDatastoreEndpoint(const Aws::String& value) { m_datastoreEndpoint = value; }
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline void SetDatastoreEndpoint(Aws::String&& value) { m_datastoreEndpoint = std::move(value); }
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline void SetDatastoreEndpoint(const char* value) { m_datastoreEndpoint.assign(value); }
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(const Aws::String& value) { SetDatastoreEndpoint(value); return *this;}
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(Aws::String&& value) { SetDatastoreEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-     */
     inline DeleteFHIRDatastoreResult& WithDatastoreEndpoint(const char* value) { SetDatastoreEndpoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFHIRDatastoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFHIRDatastoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFHIRDatastoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreId;

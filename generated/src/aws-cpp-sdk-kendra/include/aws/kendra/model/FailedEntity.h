@@ -39,103 +39,35 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline FailedEntity& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline FailedEntity& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the user or group in your IAM Identity Center identity
-     * source. For example, a user ID could be an email.</p>
-     */
     inline FailedEntity& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason the user or group in your IAM Identity Center identity source
      * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline FailedEntity& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline FailedEntity& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason the user or group in your IAM Identity Center identity source
-     * failed to properly configure with your Amazon Kendra experience.</p>
-     */
     inline FailedEntity& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_entityId;

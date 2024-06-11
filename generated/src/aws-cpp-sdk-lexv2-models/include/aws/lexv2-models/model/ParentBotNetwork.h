@@ -37,87 +37,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline ParentBotNetwork& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline ParentBotNetwork& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-     */
     inline ParentBotNetwork& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the network of bots.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline ParentBotNetwork& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline ParentBotNetwork& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the network of bots.</p>
-     */
     inline ParentBotNetwork& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

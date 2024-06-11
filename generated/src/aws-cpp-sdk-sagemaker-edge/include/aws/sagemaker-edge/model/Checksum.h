@@ -39,77 +39,31 @@ namespace Model
     AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the checksum.</p>
      */
     inline const ChecksumType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the checksum.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the checksum.</p>
-     */
     inline void SetType(const ChecksumType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the checksum.</p>
-     */
     inline void SetType(ChecksumType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the checksum.</p>
-     */
     inline Checksum& WithType(const ChecksumType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the checksum.</p>
-     */
     inline Checksum& WithType(ChecksumType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The checksum of the model.</p>
      */
     inline const Aws::String& GetSum() const{ return m_sum; }
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline void SetSum(const Aws::String& value) { m_sumHasBeenSet = true; m_sum = value; }
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline void SetSum(Aws::String&& value) { m_sumHasBeenSet = true; m_sum = std::move(value); }
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline void SetSum(const char* value) { m_sumHasBeenSet = true; m_sum.assign(value); }
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline Checksum& WithSum(const Aws::String& value) { SetSum(value); return *this;}
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline Checksum& WithSum(Aws::String&& value) { SetSum(std::move(value)); return *this;}
-
-    /**
-     * <p>The checksum of the model.</p>
-     */
     inline Checksum& WithSum(const char* value) { SetSum(value); return *this;}
-
+    ///@}
   private:
 
     ChecksumType m_type;

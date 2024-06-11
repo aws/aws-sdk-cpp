@@ -57,42 +57,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
      * Autotune.</p>
      */
     inline const AutotuneMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
-     * Autotune.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
-     * Autotune.</p>
-     */
     inline void SetMode(const AutotuneMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
-     * Autotune.</p>
-     */
     inline void SetMode(AutotuneMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
-     * Autotune.</p>
-     */
     inline Autotune& WithMode(const AutotuneMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use
-     * Autotune.</p>
-     */
     inline Autotune& WithMode(AutotuneMode&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutotuneMode m_mode;

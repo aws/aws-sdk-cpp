@@ -39,46 +39,19 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The container element for an ownership control rule.</p>
      */
     inline const Aws::Vector<OwnershipControlsRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline void SetRules(const Aws::Vector<OwnershipControlsRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline void SetRules(Aws::Vector<OwnershipControlsRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline OwnershipControls& WithRules(const Aws::Vector<OwnershipControlsRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline OwnershipControls& WithRules(Aws::Vector<OwnershipControlsRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline OwnershipControls& AddRules(const OwnershipControlsRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>The container element for an ownership control rule.</p>
-     */
     inline OwnershipControls& AddRules(OwnershipControlsRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<OwnershipControlsRule> m_rules;

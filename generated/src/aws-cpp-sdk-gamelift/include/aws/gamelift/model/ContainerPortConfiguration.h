@@ -40,54 +40,20 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies one or more ranges of ports on a container. These ranges must not
      * overlap. </p>
      */
     inline const Aws::Vector<ContainerPortRange>& GetContainerPortRanges() const{ return m_containerPortRanges; }
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline bool ContainerPortRangesHasBeenSet() const { return m_containerPortRangesHasBeenSet; }
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline void SetContainerPortRanges(const Aws::Vector<ContainerPortRange>& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges = value; }
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline void SetContainerPortRanges(Aws::Vector<ContainerPortRange>&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges = std::move(value); }
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline ContainerPortConfiguration& WithContainerPortRanges(const Aws::Vector<ContainerPortRange>& value) { SetContainerPortRanges(value); return *this;}
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline ContainerPortConfiguration& WithContainerPortRanges(Aws::Vector<ContainerPortRange>&& value) { SetContainerPortRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline ContainerPortConfiguration& AddContainerPortRanges(const ContainerPortRange& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
-     */
     inline ContainerPortConfiguration& AddContainerPortRanges(ContainerPortRange&& value) { m_containerPortRangesHasBeenSet = true; m_containerPortRanges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContainerPortRange> m_containerPortRanges;

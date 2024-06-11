@@ -39,48 +39,19 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies which deserializer to use. You can choose either the Apache Hive
      * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
      * request.</p>
      */
     inline const Deserializer& GetDeserializer() const{ return m_deserializer; }
-
-    /**
-     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
-     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
-     * request.</p>
-     */
     inline bool DeserializerHasBeenSet() const { return m_deserializerHasBeenSet; }
-
-    /**
-     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
-     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
-     * request.</p>
-     */
     inline void SetDeserializer(const Deserializer& value) { m_deserializerHasBeenSet = true; m_deserializer = value; }
-
-    /**
-     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
-     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
-     * request.</p>
-     */
     inline void SetDeserializer(Deserializer&& value) { m_deserializerHasBeenSet = true; m_deserializer = std::move(value); }
-
-    /**
-     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
-     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
-     * request.</p>
-     */
     inline InputFormatConfiguration& WithDeserializer(const Deserializer& value) { SetDeserializer(value); return *this;}
-
-    /**
-     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
-     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
-     * request.</p>
-     */
     inline InputFormatConfiguration& WithDeserializer(Deserializer&& value) { SetDeserializer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Deserializer m_deserializer;

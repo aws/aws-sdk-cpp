@@ -37,36 +37,17 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The role for the message.</p>
      */
     inline const ConversationRole& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role for the message.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role for the message.</p>
-     */
     inline void SetRole(const ConversationRole& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role for the message.</p>
-     */
     inline void SetRole(ConversationRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role for the message.</p>
-     */
     inline MessageStartEvent& WithRole(const ConversationRole& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role for the message.</p>
-     */
     inline MessageStartEvent& WithRole(ConversationRole&& value) { SetRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConversationRole m_role;

@@ -32,91 +32,33 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
      * fetch the next page of Amazon Web Services account preferences if the response
      * payload was paginated.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline DescribeAccountPreferencesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline DescribeAccountPreferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>(Optional) You can use <code>NextToken</code> in a subsequent request to
-     * fetch the next page of Amazon Web Services account preferences if the response
-     * payload was paginated.</p>
-     */
     inline DescribeAccountPreferencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>(Optional) When retrieving account preferences, you can optionally specify
      * the <code>MaxItems</code> parameter to limit the number of objects returned in a
      * response. The default value is 100. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>(Optional) When retrieving account preferences, you can optionally specify
-     * the <code>MaxItems</code> parameter to limit the number of objects returned in a
-     * response. The default value is 100. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>(Optional) When retrieving account preferences, you can optionally specify
-     * the <code>MaxItems</code> parameter to limit the number of objects returned in a
-     * response. The default value is 100. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>(Optional) When retrieving account preferences, you can optionally specify
-     * the <code>MaxItems</code> parameter to limit the number of objects returned in a
-     * response. The default value is 100. </p>
-     */
     inline DescribeAccountPreferencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

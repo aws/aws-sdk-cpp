@@ -35,47 +35,21 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an existing application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the application for which you are adding the reference data
      * source. You can use the <a>DescribeApplication</a> operation to get the current
@@ -83,32 +57,12 @@ namespace Model
      * <code>ConcurrentModificationException</code> is returned.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>The version of the application for which you are adding the reference data
-     * source. You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.</p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>The version of the application for which you are adding the reference data
-     * source. You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.</p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>The version of the application for which you are adding the reference data
-     * source. You can use the <a>DescribeApplication</a> operation to get the current
-     * application version. If the version specified is not the current version, the
-     * <code>ConcurrentModificationException</code> is returned.</p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
      * Data Analytics reads the object and copies the data into the in-application
@@ -116,47 +70,12 @@ namespace Model
      * resulting in-application table that is created. </p>
      */
     inline const ReferenceDataSource& GetReferenceDataSource() const{ return m_referenceDataSource; }
-
-    /**
-     * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
-     * Data Analytics reads the object and copies the data into the in-application
-     * table that is created. You provide an S3 bucket, object key name, and the
-     * resulting in-application table that is created. </p>
-     */
     inline bool ReferenceDataSourceHasBeenSet() const { return m_referenceDataSourceHasBeenSet; }
-
-    /**
-     * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
-     * Data Analytics reads the object and copies the data into the in-application
-     * table that is created. You provide an S3 bucket, object key name, and the
-     * resulting in-application table that is created. </p>
-     */
     inline void SetReferenceDataSource(const ReferenceDataSource& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = value; }
-
-    /**
-     * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
-     * Data Analytics reads the object and copies the data into the in-application
-     * table that is created. You provide an S3 bucket, object key name, and the
-     * resulting in-application table that is created. </p>
-     */
     inline void SetReferenceDataSource(ReferenceDataSource&& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = std::move(value); }
-
-    /**
-     * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
-     * Data Analytics reads the object and copies the data into the in-application
-     * table that is created. You provide an S3 bucket, object key name, and the
-     * resulting in-application table that is created. </p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(const ReferenceDataSource& value) { SetReferenceDataSource(value); return *this;}
-
-    /**
-     * <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis
-     * Data Analytics reads the object and copies the data into the in-application
-     * table that is created. You provide an S3 bucket, object key name, and the
-     * resulting in-application table that is created. </p>
-     */
     inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSource&& value) { SetReferenceDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

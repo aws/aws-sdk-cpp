@@ -41,128 +41,46 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline ResetClusterParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline ResetClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster parameter group to be reset.</p>
-     */
     inline ResetClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>true</code>, all parameters in the specified parameter group will be
      * reset to their default values. </p> <p>Default: <code>true</code> </p>
      */
     inline bool GetResetAllParameters() const{ return m_resetAllParameters; }
-
-    /**
-     * <p>If <code>true</code>, all parameters in the specified parameter group will be
-     * reset to their default values. </p> <p>Default: <code>true</code> </p>
-     */
     inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, all parameters in the specified parameter group will be
-     * reset to their default values. </p> <p>Default: <code>true</code> </p>
-     */
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
-
-    /**
-     * <p>If <code>true</code>, all parameters in the specified parameter group will be
-     * reset to their default values. </p> <p>Default: <code>true</code> </p>
-     */
     inline ResetClusterParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
      * option is not used, then at least one parameter name must be supplied. </p>
      * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline ResetClusterParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline ResetClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline ResetClusterParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
-     * option is not used, then at least one parameter name must be supplied. </p>
-     * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-     */
     inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_parameterGroupName;

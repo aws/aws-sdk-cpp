@@ -39,6 +39,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Disables the automatic recovery behavior of your instance or sets it to
      * default. For more information, see <a
@@ -46,47 +47,12 @@ namespace Model
      * automatic recovery</a>.</p>
      */
     inline const InstanceAutoRecoveryState& GetAutoRecovery() const{ return m_autoRecovery; }
-
-    /**
-     * <p>Disables the automatic recovery behavior of your instance or sets it to
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-     * automatic recovery</a>.</p>
-     */
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-
-    /**
-     * <p>Disables the automatic recovery behavior of your instance or sets it to
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-     * automatic recovery</a>.</p>
-     */
     inline void SetAutoRecovery(const InstanceAutoRecoveryState& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-
-    /**
-     * <p>Disables the automatic recovery behavior of your instance or sets it to
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-     * automatic recovery</a>.</p>
-     */
     inline void SetAutoRecovery(InstanceAutoRecoveryState&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-
-    /**
-     * <p>Disables the automatic recovery behavior of your instance or sets it to
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-     * automatic recovery</a>.</p>
-     */
     inline InstanceMaintenanceOptionsRequest& WithAutoRecovery(const InstanceAutoRecoveryState& value) { SetAutoRecovery(value); return *this;}
-
-    /**
-     * <p>Disables the automatic recovery behavior of your instance or sets it to
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
-     * automatic recovery</a>.</p>
-     */
     inline InstanceMaintenanceOptionsRequest& WithAutoRecovery(InstanceAutoRecoveryState&& value) { SetAutoRecovery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceAutoRecoveryState m_autoRecovery;

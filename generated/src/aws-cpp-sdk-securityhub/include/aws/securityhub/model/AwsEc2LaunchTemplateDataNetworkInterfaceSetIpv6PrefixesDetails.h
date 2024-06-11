@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The IPv6 prefix. </p>
      */
     inline const Aws::String& GetIpv6Prefix() const{ return m_ipv6Prefix; }
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline bool Ipv6PrefixHasBeenSet() const { return m_ipv6PrefixHasBeenSet; }
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline void SetIpv6Prefix(const Aws::String& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = value; }
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline void SetIpv6Prefix(Aws::String&& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = std::move(value); }
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline void SetIpv6Prefix(const char* value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix.assign(value); }
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(const Aws::String& value) { SetIpv6Prefix(value); return *this;}
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(Aws::String&& value) { SetIpv6Prefix(std::move(value)); return *this;}
-
-    /**
-     * <p> The IPv6 prefix. </p>
-     */
     inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(const char* value) { SetIpv6Prefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipv6Prefix;

@@ -39,6 +39,7 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTaskAssessmentRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A pagination token returned for you to pass to a subsequent request. If you
      * pass this token as the <code>Marker</code> value in a subsequent request, the
@@ -46,120 +47,38 @@ namespace Model
      * the request by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token returned for you to pass to a subsequent request. If you
-     * pass this token as the <code>Marker</code> value in a subsequent request, the
-     * response includes only records beyond the marker, up to the value specified in
-     * the request by <code>MaxRecords</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more premigration assessment runs as specified by
      * <code>Filters</code>.</p>
      */
     inline const Aws::Vector<ReplicationTaskAssessmentRun>& GetReplicationTaskAssessmentRuns() const{ return m_replicationTaskAssessmentRuns; }
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline void SetReplicationTaskAssessmentRuns(const Aws::Vector<ReplicationTaskAssessmentRun>& value) { m_replicationTaskAssessmentRuns = value; }
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline void SetReplicationTaskAssessmentRuns(Aws::Vector<ReplicationTaskAssessmentRun>&& value) { m_replicationTaskAssessmentRuns = std::move(value); }
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& WithReplicationTaskAssessmentRuns(const Aws::Vector<ReplicationTaskAssessmentRun>& value) { SetReplicationTaskAssessmentRuns(value); return *this;}
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& WithReplicationTaskAssessmentRuns(Aws::Vector<ReplicationTaskAssessmentRun>&& value) { SetReplicationTaskAssessmentRuns(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& AddReplicationTaskAssessmentRuns(const ReplicationTaskAssessmentRun& value) { m_replicationTaskAssessmentRuns.push_back(value); return *this; }
-
-    /**
-     * <p>One or more premigration assessment runs as specified by
-     * <code>Filters</code>.</p>
-     */
     inline DescribeReplicationTaskAssessmentRunsResult& AddReplicationTaskAssessmentRuns(ReplicationTaskAssessmentRun&& value) { m_replicationTaskAssessmentRuns.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeReplicationTaskAssessmentRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeReplicationTaskAssessmentRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeReplicationTaskAssessmentRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

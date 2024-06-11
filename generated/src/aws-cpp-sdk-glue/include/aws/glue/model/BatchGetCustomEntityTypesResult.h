@@ -34,111 +34,44 @@ namespace Model
     AWS_GLUE_API BatchGetCustomEntityTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>CustomEntityType</code> objects representing the custom
      * patterns that have been created.</p>
      */
     inline const Aws::Vector<CustomEntityType>& GetCustomEntityTypes() const{ return m_customEntityTypes; }
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline void SetCustomEntityTypes(const Aws::Vector<CustomEntityType>& value) { m_customEntityTypes = value; }
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline void SetCustomEntityTypes(Aws::Vector<CustomEntityType>&& value) { m_customEntityTypes = std::move(value); }
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline BatchGetCustomEntityTypesResult& WithCustomEntityTypes(const Aws::Vector<CustomEntityType>& value) { SetCustomEntityTypes(value); return *this;}
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline BatchGetCustomEntityTypesResult& WithCustomEntityTypes(Aws::Vector<CustomEntityType>&& value) { SetCustomEntityTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline BatchGetCustomEntityTypesResult& AddCustomEntityTypes(const CustomEntityType& value) { m_customEntityTypes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>CustomEntityType</code> objects representing the custom
-     * patterns that have been created.</p>
-     */
     inline BatchGetCustomEntityTypesResult& AddCustomEntityTypes(CustomEntityType&& value) { m_customEntityTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the names of custom patterns that were not found.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomEntityTypesNotFound() const{ return m_customEntityTypesNotFound; }
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline void SetCustomEntityTypesNotFound(const Aws::Vector<Aws::String>& value) { m_customEntityTypesNotFound = value; }
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline void SetCustomEntityTypesNotFound(Aws::Vector<Aws::String>&& value) { m_customEntityTypesNotFound = std::move(value); }
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline BatchGetCustomEntityTypesResult& WithCustomEntityTypesNotFound(const Aws::Vector<Aws::String>& value) { SetCustomEntityTypesNotFound(value); return *this;}
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline BatchGetCustomEntityTypesResult& WithCustomEntityTypesNotFound(Aws::Vector<Aws::String>&& value) { SetCustomEntityTypesNotFound(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline BatchGetCustomEntityTypesResult& AddCustomEntityTypesNotFound(const Aws::String& value) { m_customEntityTypesNotFound.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline BatchGetCustomEntityTypesResult& AddCustomEntityTypesNotFound(Aws::String&& value) { m_customEntityTypesNotFound.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of the names of custom patterns that were not found.</p>
-     */
     inline BatchGetCustomEntityTypesResult& AddCustomEntityTypesNotFound(const char* value) { m_customEntityTypesNotFound.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetCustomEntityTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetCustomEntityTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetCustomEntityTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CustomEntityType> m_customEntityTypes;

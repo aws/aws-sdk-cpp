@@ -34,32 +34,18 @@ namespace Model
     AWS_TRANSLATE_API ImportTerminologyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The properties of the custom terminology being imported.</p>
      */
     inline const TerminologyProperties& GetTerminologyProperties() const{ return m_terminologyProperties; }
-
-    /**
-     * <p>The properties of the custom terminology being imported.</p>
-     */
     inline void SetTerminologyProperties(const TerminologyProperties& value) { m_terminologyProperties = value; }
-
-    /**
-     * <p>The properties of the custom terminology being imported.</p>
-     */
     inline void SetTerminologyProperties(TerminologyProperties&& value) { m_terminologyProperties = std::move(value); }
-
-    /**
-     * <p>The properties of the custom terminology being imported.</p>
-     */
     inline ImportTerminologyResult& WithTerminologyProperties(const TerminologyProperties& value) { SetTerminologyProperties(value); return *this;}
-
-    /**
-     * <p>The properties of the custom terminology being imported.</p>
-     */
     inline ImportTerminologyResult& WithTerminologyProperties(TerminologyProperties&& value) { SetTerminologyProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
@@ -67,61 +53,22 @@ namespace Model
      * presigned URL to that has a 30 minute expiration.</p>
      */
     inline const TerminologyDataLocation& GetAuxiliaryDataLocation() const{ return m_auxiliaryDataLocation; }
-
-    /**
-     * <p>The Amazon S3 location of a file that provides any errors or warnings that
-     * were produced by your input file. This file was created when Amazon Translate
-     * attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
-     */
     inline void SetAuxiliaryDataLocation(const TerminologyDataLocation& value) { m_auxiliaryDataLocation = value; }
-
-    /**
-     * <p>The Amazon S3 location of a file that provides any errors or warnings that
-     * were produced by your input file. This file was created when Amazon Translate
-     * attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
-     */
     inline void SetAuxiliaryDataLocation(TerminologyDataLocation&& value) { m_auxiliaryDataLocation = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location of a file that provides any errors or warnings that
-     * were produced by your input file. This file was created when Amazon Translate
-     * attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
-     */
     inline ImportTerminologyResult& WithAuxiliaryDataLocation(const TerminologyDataLocation& value) { SetAuxiliaryDataLocation(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location of a file that provides any errors or warnings that
-     * were produced by your input file. This file was created when Amazon Translate
-     * attempted to create a terminology resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
-     */
     inline ImportTerminologyResult& WithAuxiliaryDataLocation(TerminologyDataLocation&& value) { SetAuxiliaryDataLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ImportTerminologyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ImportTerminologyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ImportTerminologyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TerminologyProperties m_terminologyProperties;

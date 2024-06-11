@@ -39,42 +39,18 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
      * manage. </p>
      */
     inline const IotSiteWiseCustomerManagedDatastoreS3Storage& GetCustomerManagedS3Storage() const{ return m_customerManagedS3Storage; }
-
-    /**
-     * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
-     * manage. </p>
-     */
     inline bool CustomerManagedS3StorageHasBeenSet() const { return m_customerManagedS3StorageHasBeenSet; }
-
-    /**
-     * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
-     * manage. </p>
-     */
     inline void SetCustomerManagedS3Storage(const IotSiteWiseCustomerManagedDatastoreS3Storage& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = value; }
-
-    /**
-     * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
-     * manage. </p>
-     */
     inline void SetCustomerManagedS3Storage(IotSiteWiseCustomerManagedDatastoreS3Storage&& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = std::move(value); }
-
-    /**
-     * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
-     * manage. </p>
-     */
     inline DatastoreIotSiteWiseMultiLayerStorage& WithCustomerManagedS3Storage(const IotSiteWiseCustomerManagedDatastoreS3Storage& value) { SetCustomerManagedS3Storage(value); return *this;}
-
-    /**
-     * <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
-     * manage. </p>
-     */
     inline DatastoreIotSiteWiseMultiLayerStorage& WithCustomerManagedS3Storage(IotSiteWiseCustomerManagedDatastoreS3Storage&& value) { SetCustomerManagedS3Storage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IotSiteWiseCustomerManagedDatastoreS3Storage m_customerManagedS3Storage;

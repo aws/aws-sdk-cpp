@@ -40,214 +40,75 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
      * control.</p>
      */
     inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline RoutingControl& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline RoutingControl& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that includes the routing
-     * control.</p>
-     */
     inline RoutingControl& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the routing control.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the routing control.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The deployment status of a routing control. Status can be one of the
      * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The deployment status of a routing control. Status can be one of the
-     * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The deployment status of a routing control. Status can be one of the
-     * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The deployment status of a routing control. Status can be one of the
-     * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The deployment status of a routing control. Status can be one of the
-     * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-     */
     inline RoutingControl& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The deployment status of a routing control. Status can be one of the
-     * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-     */
     inline RoutingControl& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the routing control owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(const char* value) { SetOwner(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlPanelArn;

@@ -38,46 +38,19 @@ namespace Model
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URI locating the container image.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline ContainerImage& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline ContainerImage& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-
-    /**
-     * <p>The URI locating the container image.</p>
-     */
     inline ContainerImage& WithUri(const char* value) { SetUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_uri;

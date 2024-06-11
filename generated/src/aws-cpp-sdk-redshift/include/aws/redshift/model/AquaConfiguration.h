@@ -42,79 +42,31 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>This field is retired. Amazon Redshift automatically determines whether to
      * use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaStatus& GetAquaStatus() const{ return m_aquaStatus; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline bool AquaStatusHasBeenSet() const { return m_aquaStatusHasBeenSet; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaStatus(const AquaStatus& value) { m_aquaStatusHasBeenSet = true; m_aquaStatus = value; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaStatus(AquaStatus&& value) { m_aquaStatusHasBeenSet = true; m_aquaStatus = std::move(value); }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline AquaConfiguration& WithAquaStatus(const AquaStatus& value) { SetAquaStatus(value); return *this;}
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline AquaConfiguration& WithAquaStatus(AquaStatus&& value) { SetAquaStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This field is retired. Amazon Redshift automatically determines whether to
      * use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline AquaConfiguration& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
-
-    /**
-     * <p>This field is retired. Amazon Redshift automatically determines whether to
-     * use AQUA (Advanced Query Accelerator).</p>
-     */
     inline AquaConfiguration& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AquaStatus m_aquaStatus;

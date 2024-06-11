@@ -35,159 +35,59 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The thing group name to create.</p>
      */
     inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline CreateThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline CreateThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The thing group name to create.</p>
-     */
     inline CreateThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the parent thing group.</p>
      */
     inline const Aws::String& GetParentGroupName() const{ return m_parentGroupName; }
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline bool ParentGroupNameHasBeenSet() const { return m_parentGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline void SetParentGroupName(const Aws::String& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = value; }
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline void SetParentGroupName(Aws::String&& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline void SetParentGroupName(const char* value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName.assign(value); }
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline CreateThingGroupRequest& WithParentGroupName(const Aws::String& value) { SetParentGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline CreateThingGroupRequest& WithParentGroupName(Aws::String&& value) { SetParentGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the parent thing group.</p>
-     */
     inline CreateThingGroupRequest& WithParentGroupName(const char* value) { SetParentGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The thing group properties.</p>
      */
     inline const ThingGroupProperties& GetThingGroupProperties() const{ return m_thingGroupProperties; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline void SetThingGroupProperties(ThingGroupProperties&& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = std::move(value); }
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline CreateThingGroupRequest& WithThingGroupProperties(const ThingGroupProperties& value) { SetThingGroupProperties(value); return *this;}
-
-    /**
-     * <p>The thing group properties.</p>
-     */
     inline CreateThingGroupRequest& WithThingGroupProperties(ThingGroupProperties&& value) { SetThingGroupProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata which can be used to manage the thing group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline CreateThingGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline CreateThingGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline CreateThingGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Metadata which can be used to manage the thing group.</p>
-     */
     inline CreateThingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_thingGroupName;

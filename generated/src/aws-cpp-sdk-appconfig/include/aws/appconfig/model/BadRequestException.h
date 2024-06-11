@@ -40,68 +40,37 @@ namespace Model
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline BadRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline BadRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline BadRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BadRequestReason& GetReason() const{ return m_reason; }
-
-    
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    
     inline void SetReason(const BadRequestReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    
     inline void SetReason(BadRequestReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    
     inline BadRequestException& WithReason(const BadRequestReason& value) { SetReason(value); return *this;}
-
-    
     inline BadRequestException& WithReason(BadRequestReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BadRequestDetails& GetDetails() const{ return m_details; }
-
-    
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    
     inline void SetDetails(const BadRequestDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    
     inline void SetDetails(BadRequestDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    
     inline BadRequestException& WithDetails(const BadRequestDetails& value) { SetDetails(value); return *this;}
-
-    
     inline BadRequestException& WithDetails(BadRequestDetails&& value) { SetDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

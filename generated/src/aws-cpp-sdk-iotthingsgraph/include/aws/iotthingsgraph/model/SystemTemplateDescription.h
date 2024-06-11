@@ -39,92 +39,40 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains summary information about a system.</p>
      */
     inline const SystemTemplateSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>An object that contains summary information about a system.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>An object that contains summary information about a system.</p>
-     */
     inline void SetSummary(const SystemTemplateSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>An object that contains summary information about a system.</p>
-     */
     inline void SetSummary(SystemTemplateSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>An object that contains summary information about a system.</p>
-     */
     inline SystemTemplateDescription& WithSummary(const SystemTemplateSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>An object that contains summary information about a system.</p>
-     */
     inline SystemTemplateDescription& WithSummary(SystemTemplateSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The definition document of a system.</p>
      */
     inline const DefinitionDocument& GetDefinition() const{ return m_definition; }
-
-    /**
-     * <p>The definition document of a system.</p>
-     */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-
-    /**
-     * <p>The definition document of a system.</p>
-     */
     inline void SetDefinition(const DefinitionDocument& value) { m_definitionHasBeenSet = true; m_definition = value; }
-
-    /**
-     * <p>The definition document of a system.</p>
-     */
     inline void SetDefinition(DefinitionDocument&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-
-    /**
-     * <p>The definition document of a system.</p>
-     */
     inline SystemTemplateDescription& WithDefinition(const DefinitionDocument& value) { SetDefinition(value); return *this;}
-
-    /**
-     * <p>The definition document of a system.</p>
-     */
     inline SystemTemplateDescription& WithDefinition(DefinitionDocument&& value) { SetDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The namespace version against which the system was validated. Use this value
      * in your system instance.</p>
      */
     inline long long GetValidatedNamespaceVersion() const{ return m_validatedNamespaceVersion; }
-
-    /**
-     * <p>The namespace version against which the system was validated. Use this value
-     * in your system instance.</p>
-     */
     inline bool ValidatedNamespaceVersionHasBeenSet() const { return m_validatedNamespaceVersionHasBeenSet; }
-
-    /**
-     * <p>The namespace version against which the system was validated. Use this value
-     * in your system instance.</p>
-     */
     inline void SetValidatedNamespaceVersion(long long value) { m_validatedNamespaceVersionHasBeenSet = true; m_validatedNamespaceVersion = value; }
-
-    /**
-     * <p>The namespace version against which the system was validated. Use this value
-     * in your system instance.</p>
-     */
     inline SystemTemplateDescription& WithValidatedNamespaceVersion(long long value) { SetValidatedNamespaceVersion(value); return *this;}
-
+    ///@}
   private:
 
     SystemTemplateSummary m_summary;

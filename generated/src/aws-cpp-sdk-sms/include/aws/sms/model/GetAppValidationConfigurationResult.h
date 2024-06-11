@@ -35,99 +35,42 @@ namespace Model
     AWS_SMS_API GetAppValidationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The configuration for application validation.</p>
      */
     inline const Aws::Vector<AppValidationConfiguration>& GetAppValidationConfigurations() const{ return m_appValidationConfigurations; }
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline void SetAppValidationConfigurations(const Aws::Vector<AppValidationConfiguration>& value) { m_appValidationConfigurations = value; }
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline void SetAppValidationConfigurations(Aws::Vector<AppValidationConfiguration>&& value) { m_appValidationConfigurations = std::move(value); }
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline GetAppValidationConfigurationResult& WithAppValidationConfigurations(const Aws::Vector<AppValidationConfiguration>& value) { SetAppValidationConfigurations(value); return *this;}
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline GetAppValidationConfigurationResult& WithAppValidationConfigurations(Aws::Vector<AppValidationConfiguration>&& value) { SetAppValidationConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline GetAppValidationConfigurationResult& AddAppValidationConfigurations(const AppValidationConfiguration& value) { m_appValidationConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The configuration for application validation.</p>
-     */
     inline GetAppValidationConfigurationResult& AddAppValidationConfigurations(AppValidationConfiguration&& value) { m_appValidationConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for instance validation.</p>
      */
     inline const Aws::Vector<ServerGroupValidationConfiguration>& GetServerGroupValidationConfigurations() const{ return m_serverGroupValidationConfigurations; }
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline void SetServerGroupValidationConfigurations(const Aws::Vector<ServerGroupValidationConfiguration>& value) { m_serverGroupValidationConfigurations = value; }
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline void SetServerGroupValidationConfigurations(Aws::Vector<ServerGroupValidationConfiguration>&& value) { m_serverGroupValidationConfigurations = std::move(value); }
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline GetAppValidationConfigurationResult& WithServerGroupValidationConfigurations(const Aws::Vector<ServerGroupValidationConfiguration>& value) { SetServerGroupValidationConfigurations(value); return *this;}
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline GetAppValidationConfigurationResult& WithServerGroupValidationConfigurations(Aws::Vector<ServerGroupValidationConfiguration>&& value) { SetServerGroupValidationConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline GetAppValidationConfigurationResult& AddServerGroupValidationConfigurations(const ServerGroupValidationConfiguration& value) { m_serverGroupValidationConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The configuration for instance validation.</p>
-     */
     inline GetAppValidationConfigurationResult& AddServerGroupValidationConfigurations(ServerGroupValidationConfiguration&& value) { m_serverGroupValidationConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAppValidationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAppValidationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAppValidationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AppValidationConfiguration> m_appValidationConfigurations;

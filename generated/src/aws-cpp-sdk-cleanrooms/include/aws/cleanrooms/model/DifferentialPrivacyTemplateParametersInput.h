@@ -36,55 +36,27 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The epsilon value that you want to use.</p>
      */
     inline int GetEpsilon() const{ return m_epsilon; }
-
-    /**
-     * <p>The epsilon value that you want to use.</p>
-     */
     inline bool EpsilonHasBeenSet() const { return m_epsilonHasBeenSet; }
-
-    /**
-     * <p>The epsilon value that you want to use.</p>
-     */
     inline void SetEpsilon(int value) { m_epsilonHasBeenSet = true; m_epsilon = value; }
-
-    /**
-     * <p>The epsilon value that you want to use.</p>
-     */
     inline DifferentialPrivacyTemplateParametersInput& WithEpsilon(int value) { SetEpsilon(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Noise added per query is measured in terms of the number of users whose
      * contributions you want to obscure. This value governs the rate at which the
      * privacy budget is depleted.</p>
      */
     inline int GetUsersNoisePerQuery() const{ return m_usersNoisePerQuery; }
-
-    /**
-     * <p>Noise added per query is measured in terms of the number of users whose
-     * contributions you want to obscure. This value governs the rate at which the
-     * privacy budget is depleted.</p>
-     */
     inline bool UsersNoisePerQueryHasBeenSet() const { return m_usersNoisePerQueryHasBeenSet; }
-
-    /**
-     * <p>Noise added per query is measured in terms of the number of users whose
-     * contributions you want to obscure. This value governs the rate at which the
-     * privacy budget is depleted.</p>
-     */
     inline void SetUsersNoisePerQuery(int value) { m_usersNoisePerQueryHasBeenSet = true; m_usersNoisePerQuery = value; }
-
-    /**
-     * <p>Noise added per query is measured in terms of the number of users whose
-     * contributions you want to obscure. This value governs the rate at which the
-     * privacy budget is depleted.</p>
-     */
     inline DifferentialPrivacyTemplateParametersInput& WithUsersNoisePerQuery(int value) { SetUsersNoisePerQuery(value); return *this;}
-
+    ///@}
   private:
 
     int m_epsilon;

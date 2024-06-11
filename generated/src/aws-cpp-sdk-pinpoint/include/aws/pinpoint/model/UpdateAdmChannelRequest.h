@@ -33,73 +33,30 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const ADMChannelRequest& GetADMChannelRequest() const{ return m_aDMChannelRequest; }
-
-    
     inline bool ADMChannelRequestHasBeenSet() const { return m_aDMChannelRequestHasBeenSet; }
-
-    
     inline void SetADMChannelRequest(const ADMChannelRequest& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = value; }
-
-    
     inline void SetADMChannelRequest(ADMChannelRequest&& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = std::move(value); }
-
-    
     inline UpdateAdmChannelRequest& WithADMChannelRequest(const ADMChannelRequest& value) { SetADMChannelRequest(value); return *this;}
-
-    
     inline UpdateAdmChannelRequest& WithADMChannelRequest(ADMChannelRequest&& value) { SetADMChannelRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateAdmChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateAdmChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline UpdateAdmChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-
+    ///@}
   private:
 
     ADMChannelRequest m_aDMChannelRequest;

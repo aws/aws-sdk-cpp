@@ -39,30 +39,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::Vector<ProblemDetail>& GetProblems() const{ return m_problems; }
-
-    
     inline bool ProblemsHasBeenSet() const { return m_problemsHasBeenSet; }
-
-    
     inline void SetProblems(const Aws::Vector<ProblemDetail>& value) { m_problemsHasBeenSet = true; m_problems = value; }
-
-    
     inline void SetProblems(Aws::Vector<ProblemDetail>&& value) { m_problemsHasBeenSet = true; m_problems = std::move(value); }
-
-    
     inline InvalidContactFlowModuleException& WithProblems(const Aws::Vector<ProblemDetail>& value) { SetProblems(value); return *this;}
-
-    
     inline InvalidContactFlowModuleException& WithProblems(Aws::Vector<ProblemDetail>&& value) { SetProblems(std::move(value)); return *this;}
-
-    
     inline InvalidContactFlowModuleException& AddProblems(const ProblemDetail& value) { m_problemsHasBeenSet = true; m_problems.push_back(value); return *this; }
-
-    
     inline InvalidContactFlowModuleException& AddProblems(ProblemDetail&& value) { m_problemsHasBeenSet = true; m_problems.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ProblemDetail> m_problems;

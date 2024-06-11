@@ -38,36 +38,17 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The package version's output configuration.</p>
      */
     inline const PackageVersionOutputConfig& GetPackageVersionOutputConfig() const{ return m_packageVersionOutputConfig; }
-
-    /**
-     * <p>The package version's output configuration.</p>
-     */
     inline bool PackageVersionOutputConfigHasBeenSet() const { return m_packageVersionOutputConfigHasBeenSet; }
-
-    /**
-     * <p>The package version's output configuration.</p>
-     */
     inline void SetPackageVersionOutputConfig(const PackageVersionOutputConfig& value) { m_packageVersionOutputConfigHasBeenSet = true; m_packageVersionOutputConfig = value; }
-
-    /**
-     * <p>The package version's output configuration.</p>
-     */
     inline void SetPackageVersionOutputConfig(PackageVersionOutputConfig&& value) { m_packageVersionOutputConfigHasBeenSet = true; m_packageVersionOutputConfig = std::move(value); }
-
-    /**
-     * <p>The package version's output configuration.</p>
-     */
     inline PackageImportJobOutputConfig& WithPackageVersionOutputConfig(const PackageVersionOutputConfig& value) { SetPackageVersionOutputConfig(value); return *this;}
-
-    /**
-     * <p>The package version's output configuration.</p>
-     */
     inline PackageImportJobOutputConfig& WithPackageVersionOutputConfig(PackageVersionOutputConfig&& value) { SetPackageVersionOutputConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PackageVersionOutputConfig m_packageVersionOutputConfig;

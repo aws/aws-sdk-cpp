@@ -35,83 +35,32 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the ID of the policy store in which to place the schema.</p>
      */
     inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline PutSchemaRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline PutSchemaRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ID of the policy store in which to place the schema.</p>
-     */
     inline PutSchemaRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the definition of the schema to be stored. The schema definition
      * must be written in Cedar schema JSON.</p>
      */
     inline const SchemaDefinition& GetDefinition() const{ return m_definition; }
-
-    /**
-     * <p>Specifies the definition of the schema to be stored. The schema definition
-     * must be written in Cedar schema JSON.</p>
-     */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-
-    /**
-     * <p>Specifies the definition of the schema to be stored. The schema definition
-     * must be written in Cedar schema JSON.</p>
-     */
     inline void SetDefinition(const SchemaDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-
-    /**
-     * <p>Specifies the definition of the schema to be stored. The schema definition
-     * must be written in Cedar schema JSON.</p>
-     */
     inline void SetDefinition(SchemaDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-
-    /**
-     * <p>Specifies the definition of the schema to be stored. The schema definition
-     * must be written in Cedar schema JSON.</p>
-     */
     inline PutSchemaRequest& WithDefinition(const SchemaDefinition& value) { SetDefinition(value); return *this;}
-
-    /**
-     * <p>Specifies the definition of the schema to be stored. The schema definition
-     * must be written in Cedar schema JSON.</p>
-     */
     inline PutSchemaRequest& WithDefinition(SchemaDefinition&& value) { SetDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyStoreId;

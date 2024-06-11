@@ -36,26 +36,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
      */
     inline int GetRuntimeInSeconds() const{ return m_runtimeInSeconds; }
-
-    /**
-     * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-     */
     inline bool RuntimeInSecondsHasBeenSet() const { return m_runtimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-     */
     inline void SetRuntimeInSeconds(int value) { m_runtimeInSecondsHasBeenSet = true; m_runtimeInSeconds = value; }
-
-    /**
-     * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-     */
     inline HyperParameterTuningJobConsumedResources& WithRuntimeInSeconds(int value) { SetRuntimeInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_runtimeInSeconds;

@@ -40,128 +40,47 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the association between a network ACL and a subnet.</p>
      */
     inline const Aws::String& GetNetworkAclAssociationId() const{ return m_networkAclAssociationId; }
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline bool NetworkAclAssociationIdHasBeenSet() const { return m_networkAclAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline void SetNetworkAclAssociationId(const Aws::String& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = value; }
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline void SetNetworkAclAssociationId(Aws::String&& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = std::move(value); }
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline void SetNetworkAclAssociationId(const char* value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId.assign(value); }
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclAssociationId(const Aws::String& value) { SetNetworkAclAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclAssociationId(Aws::String&& value) { SetNetworkAclAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the association between a network ACL and a subnet.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclAssociationId(const char* value) { SetNetworkAclAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the network ACL.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network ACL.</p>
-     */
     inline NetworkAclAssociation& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline NetworkAclAssociation& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline NetworkAclAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline NetworkAclAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkAclAssociationId;

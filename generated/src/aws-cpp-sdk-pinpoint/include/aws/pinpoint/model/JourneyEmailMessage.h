@@ -38,62 +38,21 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The verified email address to send the email message from. The default
      * address is the FromAddress specified for the email channel for the
      * application.</p>
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline void SetFromAddress(Aws::String&& value) { m_fromAddressHasBeenSet = true; m_fromAddress = std::move(value); }
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline void SetFromAddress(const char* value) { m_fromAddressHasBeenSet = true; m_fromAddress.assign(value); }
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline JourneyEmailMessage& WithFromAddress(const Aws::String& value) { SetFromAddress(value); return *this;}
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline JourneyEmailMessage& WithFromAddress(Aws::String&& value) { SetFromAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The verified email address to send the email message from. The default
-     * address is the FromAddress specified for the email channel for the
-     * application.</p>
-     */
     inline JourneyEmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fromAddress;

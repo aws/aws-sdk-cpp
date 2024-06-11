@@ -39,58 +39,28 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API UpdateLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains the current status of the logging
      * configuration.</p>
      */
     inline const LoggingConfigurationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A structure that contains the current status of the logging
-     * configuration.</p>
-     */
     inline void SetStatus(const LoggingConfigurationStatus& value) { m_status = value; }
-
-    /**
-     * <p>A structure that contains the current status of the logging
-     * configuration.</p>
-     */
     inline void SetStatus(LoggingConfigurationStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>A structure that contains the current status of the logging
-     * configuration.</p>
-     */
     inline UpdateLoggingConfigurationResult& WithStatus(const LoggingConfigurationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A structure that contains the current status of the logging
-     * configuration.</p>
-     */
     inline UpdateLoggingConfigurationResult& WithStatus(LoggingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoggingConfigurationStatus m_status;

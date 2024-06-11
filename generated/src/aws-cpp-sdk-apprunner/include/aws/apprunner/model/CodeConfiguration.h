@@ -39,6 +39,7 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source of the App Runner configuration. Values are interpreted as
      * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
@@ -49,63 +50,14 @@ namespace Model
      * file in the source code repository.</p> </li> </ul>
      */
     inline const ConfigurationSource& GetConfigurationSource() const{ return m_configurationSource; }
-
-    /**
-     * <p>The source of the App Runner configuration. Values are interpreted as
-     * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
-     * configuration values from the <code>apprunner.yaml</code> file in the source
-     * code repository and ignores <code>CodeConfigurationValues</code>.</p> </li> <li>
-     * <p> <code>API</code> – App Runner uses configuration values provided in
-     * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
-     * file in the source code repository.</p> </li> </ul>
-     */
     inline bool ConfigurationSourceHasBeenSet() const { return m_configurationSourceHasBeenSet; }
-
-    /**
-     * <p>The source of the App Runner configuration. Values are interpreted as
-     * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
-     * configuration values from the <code>apprunner.yaml</code> file in the source
-     * code repository and ignores <code>CodeConfigurationValues</code>.</p> </li> <li>
-     * <p> <code>API</code> – App Runner uses configuration values provided in
-     * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
-     * file in the source code repository.</p> </li> </ul>
-     */
     inline void SetConfigurationSource(const ConfigurationSource& value) { m_configurationSourceHasBeenSet = true; m_configurationSource = value; }
-
-    /**
-     * <p>The source of the App Runner configuration. Values are interpreted as
-     * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
-     * configuration values from the <code>apprunner.yaml</code> file in the source
-     * code repository and ignores <code>CodeConfigurationValues</code>.</p> </li> <li>
-     * <p> <code>API</code> – App Runner uses configuration values provided in
-     * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
-     * file in the source code repository.</p> </li> </ul>
-     */
     inline void SetConfigurationSource(ConfigurationSource&& value) { m_configurationSourceHasBeenSet = true; m_configurationSource = std::move(value); }
-
-    /**
-     * <p>The source of the App Runner configuration. Values are interpreted as
-     * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
-     * configuration values from the <code>apprunner.yaml</code> file in the source
-     * code repository and ignores <code>CodeConfigurationValues</code>.</p> </li> <li>
-     * <p> <code>API</code> – App Runner uses configuration values provided in
-     * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
-     * file in the source code repository.</p> </li> </ul>
-     */
     inline CodeConfiguration& WithConfigurationSource(const ConfigurationSource& value) { SetConfigurationSource(value); return *this;}
-
-    /**
-     * <p>The source of the App Runner configuration. Values are interpreted as
-     * follows:</p> <ul> <li> <p> <code>REPOSITORY</code> – App Runner reads
-     * configuration values from the <code>apprunner.yaml</code> file in the source
-     * code repository and ignores <code>CodeConfigurationValues</code>.</p> </li> <li>
-     * <p> <code>API</code> – App Runner uses configuration values provided in
-     * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
-     * file in the source code repository.</p> </li> </ul>
-     */
     inline CodeConfiguration& WithConfigurationSource(ConfigurationSource&& value) { SetConfigurationSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The basic configuration for building and running the App Runner service. Use
      * it to quickly launch an App Runner service without providing a
@@ -113,47 +65,12 @@ namespace Model
      * file if it exists).</p>
      */
     inline const CodeConfigurationValues& GetCodeConfigurationValues() const{ return m_codeConfigurationValues; }
-
-    /**
-     * <p>The basic configuration for building and running the App Runner service. Use
-     * it to quickly launch an App Runner service without providing a
-     * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
-     * file if it exists).</p>
-     */
     inline bool CodeConfigurationValuesHasBeenSet() const { return m_codeConfigurationValuesHasBeenSet; }
-
-    /**
-     * <p>The basic configuration for building and running the App Runner service. Use
-     * it to quickly launch an App Runner service without providing a
-     * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
-     * file if it exists).</p>
-     */
     inline void SetCodeConfigurationValues(const CodeConfigurationValues& value) { m_codeConfigurationValuesHasBeenSet = true; m_codeConfigurationValues = value; }
-
-    /**
-     * <p>The basic configuration for building and running the App Runner service. Use
-     * it to quickly launch an App Runner service without providing a
-     * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
-     * file if it exists).</p>
-     */
     inline void SetCodeConfigurationValues(CodeConfigurationValues&& value) { m_codeConfigurationValuesHasBeenSet = true; m_codeConfigurationValues = std::move(value); }
-
-    /**
-     * <p>The basic configuration for building and running the App Runner service. Use
-     * it to quickly launch an App Runner service without providing a
-     * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
-     * file if it exists).</p>
-     */
     inline CodeConfiguration& WithCodeConfigurationValues(const CodeConfigurationValues& value) { SetCodeConfigurationValues(value); return *this;}
-
-    /**
-     * <p>The basic configuration for building and running the App Runner service. Use
-     * it to quickly launch an App Runner service without providing a
-     * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
-     * file if it exists).</p>
-     */
     inline CodeConfiguration& WithCodeConfigurationValues(CodeConfigurationValues&& value) { SetCodeConfigurationValues(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfigurationSource m_configurationSource;

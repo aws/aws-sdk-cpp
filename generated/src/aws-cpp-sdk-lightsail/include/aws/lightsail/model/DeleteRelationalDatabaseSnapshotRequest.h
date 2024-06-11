@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the database snapshot that you are deleting.</p>
      */
     inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(Aws::String&& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = std::move(value); }
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline void SetRelationalDatabaseSnapshotName(const char* value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName.assign(value); }
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(const Aws::String& value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(Aws::String&& value) { SetRelationalDatabaseSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database snapshot that you are deleting.</p>
-     */
     inline DeleteRelationalDatabaseSnapshotRequest& WithRelationalDatabaseSnapshotName(const char* value) { SetRelationalDatabaseSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_relationalDatabaseSnapshotName;

@@ -38,42 +38,18 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the configuration of the lambda which is being
      * registered as the connector.</p>
      */
     inline const LambdaConnectorProvisioningConfig& GetLambda() const{ return m_lambda; }
-
-    /**
-     * <p>Contains information about the configuration of the lambda which is being
-     * registered as the connector.</p>
-     */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
-
-    /**
-     * <p>Contains information about the configuration of the lambda which is being
-     * registered as the connector.</p>
-     */
     inline void SetLambda(const LambdaConnectorProvisioningConfig& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
-
-    /**
-     * <p>Contains information about the configuration of the lambda which is being
-     * registered as the connector.</p>
-     */
     inline void SetLambda(LambdaConnectorProvisioningConfig&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
-
-    /**
-     * <p>Contains information about the configuration of the lambda which is being
-     * registered as the connector.</p>
-     */
     inline ConnectorProvisioningConfig& WithLambda(const LambdaConnectorProvisioningConfig& value) { SetLambda(value); return *this;}
-
-    /**
-     * <p>Contains information about the configuration of the lambda which is being
-     * registered as the connector.</p>
-     */
     inline ConnectorProvisioningConfig& WithLambda(LambdaConnectorProvisioningConfig&& value) { SetLambda(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaConnectorProvisioningConfig m_lambda;

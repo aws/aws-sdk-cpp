@@ -33,58 +33,28 @@ namespace Model
     AWS_APPRUNNER_API DeleteVpcIngressConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the App Runner VPC Ingress Connection that this request just
      * deleted.</p>
      */
     inline const VpcIngressConnection& GetVpcIngressConnection() const{ return m_vpcIngressConnection; }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection that this request just
-     * deleted.</p>
-     */
     inline void SetVpcIngressConnection(const VpcIngressConnection& value) { m_vpcIngressConnection = value; }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection that this request just
-     * deleted.</p>
-     */
     inline void SetVpcIngressConnection(VpcIngressConnection&& value) { m_vpcIngressConnection = std::move(value); }
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection that this request just
-     * deleted.</p>
-     */
     inline DeleteVpcIngressConnectionResult& WithVpcIngressConnection(const VpcIngressConnection& value) { SetVpcIngressConnection(value); return *this;}
-
-    /**
-     * <p>A description of the App Runner VPC Ingress Connection that this request just
-     * deleted.</p>
-     */
     inline DeleteVpcIngressConnectionResult& WithVpcIngressConnection(VpcIngressConnection&& value) { SetVpcIngressConnection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteVpcIngressConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteVpcIngressConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteVpcIngressConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VpcIngressConnection m_vpcIngressConnection;

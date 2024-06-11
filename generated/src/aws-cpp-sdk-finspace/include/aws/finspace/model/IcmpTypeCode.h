@@ -36,51 +36,26 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ICMP type. A value of <i>-1</i> means all types. </p>
      */
     inline int GetType() const{ return m_type; }
-
-    /**
-     * <p>The ICMP type. A value of <i>-1</i> means all types. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The ICMP type. A value of <i>-1</i> means all types. </p>
-     */
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The ICMP type. A value of <i>-1</i> means all types. </p>
-     */
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP
      * type. </p>
      */
     inline int GetCode() const{ return m_code; }
-
-    /**
-     * <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP
-     * type. </p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP
-     * type. </p>
-     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p> The ICMP code. A value of <i>-1</i> means all codes for the specified ICMP
-     * type. </p>
-     */
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
-
+    ///@}
   private:
 
     int m_type;

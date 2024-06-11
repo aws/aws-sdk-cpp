@@ -35,72 +35,36 @@ namespace Model
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time the job was submitted to Elastic Transcoder, in epoch
      * milliseconds.</p>
      */
     inline long long GetSubmitTimeMillis() const{ return m_submitTimeMillis; }
-
-    /**
-     * <p>The time the job was submitted to Elastic Transcoder, in epoch
-     * milliseconds.</p>
-     */
     inline bool SubmitTimeMillisHasBeenSet() const { return m_submitTimeMillisHasBeenSet; }
-
-    /**
-     * <p>The time the job was submitted to Elastic Transcoder, in epoch
-     * milliseconds.</p>
-     */
     inline void SetSubmitTimeMillis(long long value) { m_submitTimeMillisHasBeenSet = true; m_submitTimeMillis = value; }
-
-    /**
-     * <p>The time the job was submitted to Elastic Transcoder, in epoch
-     * milliseconds.</p>
-     */
     inline Timing& WithSubmitTimeMillis(long long value) { SetSubmitTimeMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the job began transcoding, in epoch milliseconds.</p>
      */
     inline long long GetStartTimeMillis() const{ return m_startTimeMillis; }
-
-    /**
-     * <p>The time the job began transcoding, in epoch milliseconds.</p>
-     */
     inline bool StartTimeMillisHasBeenSet() const { return m_startTimeMillisHasBeenSet; }
-
-    /**
-     * <p>The time the job began transcoding, in epoch milliseconds.</p>
-     */
     inline void SetStartTimeMillis(long long value) { m_startTimeMillisHasBeenSet = true; m_startTimeMillis = value; }
-
-    /**
-     * <p>The time the job began transcoding, in epoch milliseconds.</p>
-     */
     inline Timing& WithStartTimeMillis(long long value) { SetStartTimeMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time the job finished transcoding, in epoch milliseconds.</p>
      */
     inline long long GetFinishTimeMillis() const{ return m_finishTimeMillis; }
-
-    /**
-     * <p>The time the job finished transcoding, in epoch milliseconds.</p>
-     */
     inline bool FinishTimeMillisHasBeenSet() const { return m_finishTimeMillisHasBeenSet; }
-
-    /**
-     * <p>The time the job finished transcoding, in epoch milliseconds.</p>
-     */
     inline void SetFinishTimeMillis(long long value) { m_finishTimeMillisHasBeenSet = true; m_finishTimeMillis = value; }
-
-    /**
-     * <p>The time the job finished transcoding, in epoch milliseconds.</p>
-     */
     inline Timing& WithFinishTimeMillis(long long value) { SetFinishTimeMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_submitTimeMillis;

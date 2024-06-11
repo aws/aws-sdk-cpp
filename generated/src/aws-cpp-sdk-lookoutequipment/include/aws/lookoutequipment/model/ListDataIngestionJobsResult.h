@@ -34,113 +34,44 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API ListDataIngestionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline ListDataIngestionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline ListDataIngestionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> An opaque pagination token indicating where to continue the listing of data
-     * ingestion jobs. </p>
-     */
     inline ListDataIngestionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies information about the specific data ingestion job, including
      * dataset name and status. </p>
      */
     inline const Aws::Vector<DataIngestionJobSummary>& GetDataIngestionJobSummaries() const{ return m_dataIngestionJobSummaries; }
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline void SetDataIngestionJobSummaries(const Aws::Vector<DataIngestionJobSummary>& value) { m_dataIngestionJobSummaries = value; }
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline void SetDataIngestionJobSummaries(Aws::Vector<DataIngestionJobSummary>&& value) { m_dataIngestionJobSummaries = std::move(value); }
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline ListDataIngestionJobsResult& WithDataIngestionJobSummaries(const Aws::Vector<DataIngestionJobSummary>& value) { SetDataIngestionJobSummaries(value); return *this;}
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline ListDataIngestionJobsResult& WithDataIngestionJobSummaries(Aws::Vector<DataIngestionJobSummary>&& value) { SetDataIngestionJobSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline ListDataIngestionJobsResult& AddDataIngestionJobSummaries(const DataIngestionJobSummary& value) { m_dataIngestionJobSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies information about the specific data ingestion job, including
-     * dataset name and status. </p>
-     */
     inline ListDataIngestionJobsResult& AddDataIngestionJobSummaries(DataIngestionJobSummary&& value) { m_dataIngestionJobSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDataIngestionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDataIngestionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDataIngestionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

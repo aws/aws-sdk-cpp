@@ -37,46 +37,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Dataset name.</p>
      */
     inline const Aws::String& GetDataSetName() const{ return m_dataSetName; }
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline bool DataSetNameHasBeenSet() const { return m_dataSetNameHasBeenSet; }
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline void SetDataSetName(const Aws::String& value) { m_dataSetNameHasBeenSet = true; m_dataSetName = value; }
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline void SetDataSetName(Aws::String&& value) { m_dataSetNameHasBeenSet = true; m_dataSetName = std::move(value); }
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline void SetDataSetName(const char* value) { m_dataSetNameHasBeenSet = true; m_dataSetName.assign(value); }
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline AwsIotAnalyticsParameters& WithDataSetName(const Aws::String& value) { SetDataSetName(value); return *this;}
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline AwsIotAnalyticsParameters& WithDataSetName(Aws::String&& value) { SetDataSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Dataset name.</p>
-     */
     inline AwsIotAnalyticsParameters& WithDataSetName(const char* value) { SetDataSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetName;

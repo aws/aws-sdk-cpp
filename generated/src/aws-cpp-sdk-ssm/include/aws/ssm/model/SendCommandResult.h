@@ -33,58 +33,28 @@ namespace Model
     AWS_SSM_API SendCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request as it was received by Systems Manager. Also provides the command
      * ID which can be used future references to this request.</p>
      */
     inline const Command& GetCommand() const{ return m_command; }
-
-    /**
-     * <p>The request as it was received by Systems Manager. Also provides the command
-     * ID which can be used future references to this request.</p>
-     */
     inline void SetCommand(const Command& value) { m_command = value; }
-
-    /**
-     * <p>The request as it was received by Systems Manager. Also provides the command
-     * ID which can be used future references to this request.</p>
-     */
     inline void SetCommand(Command&& value) { m_command = std::move(value); }
-
-    /**
-     * <p>The request as it was received by Systems Manager. Also provides the command
-     * ID which can be used future references to this request.</p>
-     */
     inline SendCommandResult& WithCommand(const Command& value) { SetCommand(value); return *this;}
-
-    /**
-     * <p>The request as it was received by Systems Manager. Also provides the command
-     * ID which can be used future references to this request.</p>
-     */
     inline SendCommandResult& WithCommand(Command&& value) { SetCommand(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendCommandResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendCommandResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendCommandResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Command m_command;

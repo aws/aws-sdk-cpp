@@ -37,46 +37,19 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A system prompt for the model. </p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline SystemContentBlock& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline SystemContentBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>A system prompt for the model. </p>
-     */
     inline SystemContentBlock& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

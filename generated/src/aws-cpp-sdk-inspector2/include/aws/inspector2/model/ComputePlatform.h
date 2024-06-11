@@ -37,128 +37,47 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The compute platform product.</p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline ComputePlatform& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline ComputePlatform& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-
-    /**
-     * <p>The compute platform product.</p>
-     */
     inline ComputePlatform& WithProduct(const char* value) { SetProduct(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compute platform vendor.</p>
      */
     inline const Aws::String& GetVendor() const{ return m_vendor; }
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline bool VendorHasBeenSet() const { return m_vendorHasBeenSet; }
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline void SetVendor(const Aws::String& value) { m_vendorHasBeenSet = true; m_vendor = value; }
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline void SetVendor(Aws::String&& value) { m_vendorHasBeenSet = true; m_vendor = std::move(value); }
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline void SetVendor(const char* value) { m_vendorHasBeenSet = true; m_vendor.assign(value); }
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline ComputePlatform& WithVendor(const Aws::String& value) { SetVendor(value); return *this;}
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline ComputePlatform& WithVendor(Aws::String&& value) { SetVendor(std::move(value)); return *this;}
-
-    /**
-     * <p>The compute platform vendor.</p>
-     */
     inline ComputePlatform& WithVendor(const char* value) { SetVendor(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compute platform version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline ComputePlatform& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline ComputePlatform& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The compute platform version.</p>
-     */
     inline ComputePlatform& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_product;

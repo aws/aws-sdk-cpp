@@ -34,54 +34,20 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the cost anomaly subscription that you want to
      * delete. </p>
      */
     inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline DeleteAnomalySubscriptionRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline DeleteAnomalySubscriptionRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the cost anomaly subscription that you want to
-     * delete. </p>
-     */
     inline DeleteAnomalySubscriptionRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionArn;

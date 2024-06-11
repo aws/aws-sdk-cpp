@@ -40,48 +40,19 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>EBS volume information.</p>
          
      */
     inline const EBSStorageInfo& GetEbsStorageInfo() const{ return m_ebsStorageInfo; }
-
-    /**
-     * 
-            <p>EBS volume information.</p>
-         
-     */
     inline bool EbsStorageInfoHasBeenSet() const { return m_ebsStorageInfoHasBeenSet; }
-
-    /**
-     * 
-            <p>EBS volume information.</p>
-         
-     */
     inline void SetEbsStorageInfo(const EBSStorageInfo& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = value; }
-
-    /**
-     * 
-            <p>EBS volume information.</p>
-         
-     */
     inline void SetEbsStorageInfo(EBSStorageInfo&& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = std::move(value); }
-
-    /**
-     * 
-            <p>EBS volume information.</p>
-         
-     */
     inline StorageInfo& WithEbsStorageInfo(const EBSStorageInfo& value) { SetEbsStorageInfo(value); return *this;}
-
-    /**
-     * 
-            <p>EBS volume information.</p>
-         
-     */
     inline StorageInfo& WithEbsStorageInfo(EBSStorageInfo&& value) { SetEbsStorageInfo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EBSStorageInfo m_ebsStorageInfo;

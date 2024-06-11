@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The border around a tile.</p>
      */
     inline const BorderStyle& GetBorder() const{ return m_border; }
-
-    /**
-     * <p>The border around a tile.</p>
-     */
     inline bool BorderHasBeenSet() const { return m_borderHasBeenSet; }
-
-    /**
-     * <p>The border around a tile.</p>
-     */
     inline void SetBorder(const BorderStyle& value) { m_borderHasBeenSet = true; m_border = value; }
-
-    /**
-     * <p>The border around a tile.</p>
-     */
     inline void SetBorder(BorderStyle&& value) { m_borderHasBeenSet = true; m_border = std::move(value); }
-
-    /**
-     * <p>The border around a tile.</p>
-     */
     inline TileStyle& WithBorder(const BorderStyle& value) { SetBorder(value); return *this;}
-
-    /**
-     * <p>The border around a tile.</p>
-     */
     inline TileStyle& WithBorder(BorderStyle&& value) { SetBorder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BorderStyle m_border;

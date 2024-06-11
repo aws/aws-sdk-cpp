@@ -39,67 +39,29 @@ namespace Model
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The issue type for the associated count.</p>
      */
     inline const Aws::String& GetAggregateValue() const{ return m_aggregateValue; }
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline bool AggregateValueHasBeenSet() const { return m_aggregateValueHasBeenSet; }
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline void SetAggregateValue(const Aws::String& value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = value; }
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline void SetAggregateValue(Aws::String&& value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = std::move(value); }
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline void SetAggregateValue(const char* value) { m_aggregateValueHasBeenSet = true; m_aggregateValue.assign(value); }
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline EventAggregate& WithAggregateValue(const Aws::String& value) { SetAggregateValue(value); return *this;}
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline EventAggregate& WithAggregateValue(Aws::String&& value) { SetAggregateValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The issue type for the associated count.</p>
-     */
     inline EventAggregate& WithAggregateValue(const char* value) { SetAggregateValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of events of the associated issue type.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of events of the associated issue type.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of events of the associated issue type.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of events of the associated issue type.</p>
-     */
     inline EventAggregate& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aggregateValue;

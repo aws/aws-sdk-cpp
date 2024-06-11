@@ -40,116 +40,44 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The properties of the provider service.</p>
      */
     inline const ProviderProperties& GetProviderProperties() const{ return m_providerProperties; }
-
-    /**
-     * <p>The properties of the provider service.</p>
-     */
     inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-
-    /**
-     * <p>The properties of the provider service.</p>
-     */
     inline void SetProviderProperties(const ProviderProperties& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = value; }
-
-    /**
-     * <p>The properties of the provider service.</p>
-     */
     inline void SetProviderProperties(ProviderProperties&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::move(value); }
-
-    /**
-     * <p>The properties of the provider service.</p>
-     */
     inline ResolutionTechniques& WithProviderProperties(const ProviderProperties& value) { SetProviderProperties(value); return *this;}
-
-    /**
-     * <p>The properties of the provider service.</p>
-     */
     inline ResolutionTechniques& WithProviderProperties(ProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of matching. There are three types of matching:
      * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
      * <code>PROVIDER</code>.</p>
      */
     inline const ResolutionType& GetResolutionType() const{ return m_resolutionType; }
-
-    /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
-     */
     inline bool ResolutionTypeHasBeenSet() const { return m_resolutionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
-     */
     inline void SetResolutionType(const ResolutionType& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = value; }
-
-    /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
-     */
     inline void SetResolutionType(ResolutionType&& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = std::move(value); }
-
-    /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
-     */
     inline ResolutionTechniques& WithResolutionType(const ResolutionType& value) { SetResolutionType(value); return *this;}
-
-    /**
-     * <p>The type of matching. There are three types of matching:
-     * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
-     * <code>PROVIDER</code>.</p>
-     */
     inline ResolutionTechniques& WithResolutionType(ResolutionType&& value) { SetResolutionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object which defines the list of matching rules to run and has a field
      * <code>Rules</code>, which is a list of rule objects.</p>
      */
     inline const RuleBasedProperties& GetRuleBasedProperties() const{ return m_ruleBasedProperties; }
-
-    /**
-     * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
-     */
     inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
-
-    /**
-     * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
-     */
     inline void SetRuleBasedProperties(const RuleBasedProperties& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = value; }
-
-    /**
-     * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
-     */
     inline void SetRuleBasedProperties(RuleBasedProperties&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::move(value); }
-
-    /**
-     * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
-     */
     inline ResolutionTechniques& WithRuleBasedProperties(const RuleBasedProperties& value) { SetRuleBasedProperties(value); return *this;}
-
-    /**
-     * <p>An object which defines the list of matching rules to run and has a field
-     * <code>Rules</code>, which is a list of rule objects.</p>
-     */
     inline ResolutionTechniques& WithRuleBasedProperties(RuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProviderProperties m_providerProperties;

@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateEndpointConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
      */
     inline const Aws::String& GetEndpointConfigArn() const{ return m_endpointConfigArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline void SetEndpointConfigArn(const Aws::String& value) { m_endpointConfigArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline void SetEndpointConfigArn(Aws::String&& value) { m_endpointConfigArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline void SetEndpointConfigArn(const char* value) { m_endpointConfigArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline CreateEndpointConfigResult& WithEndpointConfigArn(const Aws::String& value) { SetEndpointConfigArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline CreateEndpointConfigResult& WithEndpointConfigArn(Aws::String&& value) { SetEndpointConfigArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-     */
     inline CreateEndpointConfigResult& WithEndpointConfigArn(const char* value) { SetEndpointConfigArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEndpointConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEndpointConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEndpointConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointConfigArn;

@@ -34,165 +34,59 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline ListPrincipalsForPortfolioRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline ListPrincipalsForPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline ListPrincipalsForPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The portfolio identifier.</p>
      */
     inline const Aws::String& GetPortfolioId() const{ return m_portfolioId; }
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline void SetPortfolioId(const char* value) { m_portfolioIdHasBeenSet = true; m_portfolioId.assign(value); }
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPortfolioId(const Aws::String& value) { SetPortfolioId(value); return *this;}
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
-
-    /**
-     * <p>The portfolio identifier.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of items to return with this call.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return with this call.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of items to return with this call.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The page token for the next set of results. To retrieve the first set of
      * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The page token for the next set of results. To retrieve the first set of
-     * results, use null.</p>
-     */
     inline ListPrincipalsForPortfolioRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_acceptLanguage;

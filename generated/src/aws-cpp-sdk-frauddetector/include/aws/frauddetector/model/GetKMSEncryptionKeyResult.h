@@ -33,53 +33,27 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetKMSEncryptionKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The KMS encryption key.</p>
      */
     inline const KMSKey& GetKmsKey() const{ return m_kmsKey; }
-
-    /**
-     * <p>The KMS encryption key.</p>
-     */
     inline void SetKmsKey(const KMSKey& value) { m_kmsKey = value; }
-
-    /**
-     * <p>The KMS encryption key.</p>
-     */
     inline void SetKmsKey(KMSKey&& value) { m_kmsKey = std::move(value); }
-
-    /**
-     * <p>The KMS encryption key.</p>
-     */
     inline GetKMSEncryptionKeyResult& WithKmsKey(const KMSKey& value) { SetKmsKey(value); return *this;}
-
-    /**
-     * <p>The KMS encryption key.</p>
-     */
     inline GetKMSEncryptionKeyResult& WithKmsKey(KMSKey&& value) { SetKmsKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetKMSEncryptionKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetKMSEncryptionKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetKMSEncryptionKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     KMSKey m_kmsKey;

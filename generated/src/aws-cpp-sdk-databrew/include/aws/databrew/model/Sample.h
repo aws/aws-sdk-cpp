@@ -38,57 +38,27 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of rows in the sample.</p>
      */
     inline int GetSize() const{ return m_size; }
-
-    /**
-     * <p>The number of rows in the sample.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The number of rows in the sample.</p>
-     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The number of rows in the sample.</p>
-     */
     inline Sample& WithSize(int value) { SetSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The way in which DataBrew obtains rows from a dataset.</p>
      */
     inline const SampleType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The way in which DataBrew obtains rows from a dataset.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The way in which DataBrew obtains rows from a dataset.</p>
-     */
     inline void SetType(const SampleType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The way in which DataBrew obtains rows from a dataset.</p>
-     */
     inline void SetType(SampleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The way in which DataBrew obtains rows from a dataset.</p>
-     */
     inline Sample& WithType(const SampleType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The way in which DataBrew obtains rows from a dataset.</p>
-     */
     inline Sample& WithType(SampleType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_size;

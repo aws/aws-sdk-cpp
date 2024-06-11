@@ -42,55 +42,22 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a predicate in a rule, such as
      * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
      */
     inline const Aws::String& GetDataId() const{ return m_dataId; }
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline bool DataIdHasBeenSet() const { return m_dataIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline void SetDataId(const Aws::String& value) { m_dataIdHasBeenSet = true; m_dataId = value; }
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline void SetDataId(Aws::String&& value) { m_dataIdHasBeenSet = true; m_dataId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline void SetDataId(const char* value) { m_dataIdHasBeenSet = true; m_dataId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithDataId(const Aws::String& value) { SetDataId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithDataId(Aws::String&& value) { SetDataId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a predicate in a rule, such as
-     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithDataId(const char* value) { SetDataId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies if you want WAF to allow, block, or count requests based on the
      * settings in the <code>ByteMatchSet</code>, <code>IPSet</code>,
@@ -99,83 +66,25 @@ namespace Model
      * <code>SizeConstraintSet</code>. </p>
      */
     inline bool GetNegated() const{ return m_negated; }
-
-    /**
-     * <p>Specifies if you want WAF to allow, block, or count requests based on the
-     * settings in the <code>ByteMatchSet</code>, <code>IPSet</code>,
-     * <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>,
-     * <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or
-     * <code>SizeConstraintSet</code>. </p>
-     */
     inline bool NegatedHasBeenSet() const { return m_negatedHasBeenSet; }
-
-    /**
-     * <p>Specifies if you want WAF to allow, block, or count requests based on the
-     * settings in the <code>ByteMatchSet</code>, <code>IPSet</code>,
-     * <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>,
-     * <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or
-     * <code>SizeConstraintSet</code>. </p>
-     */
     inline void SetNegated(bool value) { m_negatedHasBeenSet = true; m_negated = value; }
-
-    /**
-     * <p>Specifies if you want WAF to allow, block, or count requests based on the
-     * settings in the <code>ByteMatchSet</code>, <code>IPSet</code>,
-     * <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>,
-     * <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or
-     * <code>SizeConstraintSet</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithNegated(bool value) { SetNegated(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
      * <code>IPSet</code>. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
-     * <code>IPSet</code>. </p>
-     */
     inline AwsWafRegionalRulePredicateListDetails& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataId;

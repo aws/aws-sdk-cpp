@@ -38,77 +38,31 @@ namespace Model
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The tracking number of the shipment. </p>
      */
     inline const Aws::String& GetShipmentTrackingNumber() const{ return m_shipmentTrackingNumber; }
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline bool ShipmentTrackingNumberHasBeenSet() const { return m_shipmentTrackingNumberHasBeenSet; }
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline void SetShipmentTrackingNumber(const Aws::String& value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber = value; }
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline void SetShipmentTrackingNumber(Aws::String&& value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber = std::move(value); }
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline void SetShipmentTrackingNumber(const char* value) { m_shipmentTrackingNumberHasBeenSet = true; m_shipmentTrackingNumber.assign(value); }
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline ShipmentInformation& WithShipmentTrackingNumber(const Aws::String& value) { SetShipmentTrackingNumber(value); return *this;}
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline ShipmentInformation& WithShipmentTrackingNumber(Aws::String&& value) { SetShipmentTrackingNumber(std::move(value)); return *this;}
-
-    /**
-     * <p> The tracking number of the shipment. </p>
-     */
     inline ShipmentInformation& WithShipmentTrackingNumber(const char* value) { SetShipmentTrackingNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The carrier of the shipment. </p>
      */
     inline const ShipmentCarrier& GetShipmentCarrier() const{ return m_shipmentCarrier; }
-
-    /**
-     * <p> The carrier of the shipment. </p>
-     */
     inline bool ShipmentCarrierHasBeenSet() const { return m_shipmentCarrierHasBeenSet; }
-
-    /**
-     * <p> The carrier of the shipment. </p>
-     */
     inline void SetShipmentCarrier(const ShipmentCarrier& value) { m_shipmentCarrierHasBeenSet = true; m_shipmentCarrier = value; }
-
-    /**
-     * <p> The carrier of the shipment. </p>
-     */
     inline void SetShipmentCarrier(ShipmentCarrier&& value) { m_shipmentCarrierHasBeenSet = true; m_shipmentCarrier = std::move(value); }
-
-    /**
-     * <p> The carrier of the shipment. </p>
-     */
     inline ShipmentInformation& WithShipmentCarrier(const ShipmentCarrier& value) { SetShipmentCarrier(value); return *this;}
-
-    /**
-     * <p> The carrier of the shipment. </p>
-     */
     inline ShipmentInformation& WithShipmentCarrier(ShipmentCarrier&& value) { SetShipmentCarrier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shipmentTrackingNumber;

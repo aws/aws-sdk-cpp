@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API CreateConfiguredTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The created configured table.</p>
      */
     inline const ConfiguredTable& GetConfiguredTable() const{ return m_configuredTable; }
-
-    /**
-     * <p>The created configured table.</p>
-     */
     inline void SetConfiguredTable(const ConfiguredTable& value) { m_configuredTable = value; }
-
-    /**
-     * <p>The created configured table.</p>
-     */
     inline void SetConfiguredTable(ConfiguredTable&& value) { m_configuredTable = std::move(value); }
-
-    /**
-     * <p>The created configured table.</p>
-     */
     inline CreateConfiguredTableResult& WithConfiguredTable(const ConfiguredTable& value) { SetConfiguredTable(value); return *this;}
-
-    /**
-     * <p>The created configured table.</p>
-     */
     inline CreateConfiguredTableResult& WithConfiguredTable(ConfiguredTable&& value) { SetConfiguredTable(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateConfiguredTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateConfiguredTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateConfiguredTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConfiguredTable m_configuredTable;

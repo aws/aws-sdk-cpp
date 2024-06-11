@@ -32,6 +32,7 @@ namespace Model
     AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
@@ -39,63 +40,14 @@ namespace Model
          
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline DescribeConfigurationRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline DescribeConfigurationRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK
-     * configuration and all of its revisions.</p>
-         
-     */
     inline DescribeConfigurationRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

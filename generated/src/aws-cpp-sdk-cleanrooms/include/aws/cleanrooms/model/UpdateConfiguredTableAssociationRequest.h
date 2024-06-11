@@ -32,193 +32,64 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the configured table association to update.
      * Currently accepts the configured table association ID.</p>
      */
     inline const Aws::String& GetConfiguredTableAssociationIdentifier() const{ return m_configuredTableAssociationIdentifier; }
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline bool ConfiguredTableAssociationIdentifierHasBeenSet() const { return m_configuredTableAssociationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline void SetConfiguredTableAssociationIdentifier(const Aws::String& value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier = value; }
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline void SetConfiguredTableAssociationIdentifier(Aws::String&& value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline void SetConfiguredTableAssociationIdentifier(const char* value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithConfiguredTableAssociationIdentifier(const Aws::String& value) { SetConfiguredTableAssociationIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithConfiguredTableAssociationIdentifier(Aws::String&& value) { SetConfiguredTableAssociationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the configured table association to update.
-     * Currently accepts the configured table association ID.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithConfiguredTableAssociationIdentifier(const char* value) { SetConfiguredTableAssociationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID for the membership that the configured table association
      * belongs to.</p>
      */
     inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the membership that the configured table association
-     * belongs to.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new description for the configured table association.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A new description for the configured table association.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The service will assume this role to access catalog metadata and query the
      * table.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The service will assume this role to access catalog metadata and query the
-     * table.</p>
-     */
     inline UpdateConfiguredTableAssociationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configuredTableAssociationIdentifier;

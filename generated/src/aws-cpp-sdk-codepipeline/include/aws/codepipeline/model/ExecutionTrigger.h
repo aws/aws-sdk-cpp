@@ -39,99 +39,34 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of change-detection method, command, or user interaction that
      * started a pipeline execution.</p>
      */
     inline const TriggerType& GetTriggerType() const{ return m_triggerType; }
-
-    /**
-     * <p>The type of change-detection method, command, or user interaction that
-     * started a pipeline execution.</p>
-     */
     inline bool TriggerTypeHasBeenSet() const { return m_triggerTypeHasBeenSet; }
-
-    /**
-     * <p>The type of change-detection method, command, or user interaction that
-     * started a pipeline execution.</p>
-     */
     inline void SetTriggerType(const TriggerType& value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
-
-    /**
-     * <p>The type of change-detection method, command, or user interaction that
-     * started a pipeline execution.</p>
-     */
     inline void SetTriggerType(TriggerType&& value) { m_triggerTypeHasBeenSet = true; m_triggerType = std::move(value); }
-
-    /**
-     * <p>The type of change-detection method, command, or user interaction that
-     * started a pipeline execution.</p>
-     */
     inline ExecutionTrigger& WithTriggerType(const TriggerType& value) { SetTriggerType(value); return *this;}
-
-    /**
-     * <p>The type of change-detection method, command, or user interaction that
-     * started a pipeline execution.</p>
-     */
     inline ExecutionTrigger& WithTriggerType(TriggerType&& value) { SetTriggerType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Detail related to the event that started a pipeline execution, such as the
      * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
      * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
      */
     inline const Aws::String& GetTriggerDetail() const{ return m_triggerDetail; }
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline bool TriggerDetailHasBeenSet() const { return m_triggerDetailHasBeenSet; }
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline void SetTriggerDetail(const Aws::String& value) { m_triggerDetailHasBeenSet = true; m_triggerDetail = value; }
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline void SetTriggerDetail(Aws::String&& value) { m_triggerDetailHasBeenSet = true; m_triggerDetail = std::move(value); }
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline void SetTriggerDetail(const char* value) { m_triggerDetailHasBeenSet = true; m_triggerDetail.assign(value); }
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline ExecutionTrigger& WithTriggerDetail(const Aws::String& value) { SetTriggerDetail(value); return *this;}
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline ExecutionTrigger& WithTriggerDetail(Aws::String&& value) { SetTriggerDetail(std::move(value)); return *this;}
-
-    /**
-     * <p>Detail related to the event that started a pipeline execution, such as the
-     * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
-     * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-     */
     inline ExecutionTrigger& WithTriggerDetail(const char* value) { SetTriggerDetail(value); return *this;}
-
+    ///@}
   private:
 
     TriggerType m_triggerType;

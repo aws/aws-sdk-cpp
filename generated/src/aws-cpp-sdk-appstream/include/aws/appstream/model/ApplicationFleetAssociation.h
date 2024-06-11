@@ -37,87 +37,33 @@ namespace Model
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the fleet associated with the application.</p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline ApplicationFleetAssociation& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline ApplicationFleetAssociation& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the fleet associated with the application.</p>
-     */
     inline ApplicationFleetAssociation& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the application associated with the fleet.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline ApplicationFleetAssociation& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline ApplicationFleetAssociation& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the application associated with the fleet.</p>
-     */
     inline ApplicationFleetAssociation& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fleetName;

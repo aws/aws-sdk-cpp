@@ -40,120 +40,45 @@ namespace Model
     AWS_DYNAMODBSTREAMS_API GetRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The stream records from the shard, which were retrieved using the shard
      * iterator.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_records = value; }
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_records = std::move(value); }
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline GetRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline GetRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline GetRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
-
-    /**
-     * <p>The stream records from the shard, which were retrieved using the shard
-     * iterator.</p>
-     */
     inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next position in the shard from which to start sequentially reading
      * stream records. If set to <code>null</code>, the shard has been closed and the
      * requested iterator will not return any more data.</p>
      */
     inline const Aws::String& GetNextShardIterator() const{ return m_nextShardIterator; }
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline void SetNextShardIterator(const Aws::String& value) { m_nextShardIterator = value; }
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline void SetNextShardIterator(Aws::String&& value) { m_nextShardIterator = std::move(value); }
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline void SetNextShardIterator(const char* value) { m_nextShardIterator.assign(value); }
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline GetRecordsResult& WithNextShardIterator(const Aws::String& value) { SetNextShardIterator(value); return *this;}
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline GetRecordsResult& WithNextShardIterator(Aws::String&& value) { SetNextShardIterator(std::move(value)); return *this;}
-
-    /**
-     * <p>The next position in the shard from which to start sequentially reading
-     * stream records. If set to <code>null</code>, the shard has been closed and the
-     * requested iterator will not return any more data.</p>
-     */
     inline GetRecordsResult& WithNextShardIterator(const char* value) { SetNextShardIterator(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Record> m_records;

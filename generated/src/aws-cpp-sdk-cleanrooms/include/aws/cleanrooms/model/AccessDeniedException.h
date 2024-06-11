@@ -39,61 +39,29 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline AccessDeniedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline AccessDeniedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline AccessDeniedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reason code for the exception.</p>
      */
     inline const AccessDeniedExceptionReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline void SetReason(const AccessDeniedExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline void SetReason(AccessDeniedExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline AccessDeniedException& WithReason(const AccessDeniedExceptionReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A reason code for the exception.</p>
-     */
     inline AccessDeniedException& WithReason(AccessDeniedExceptionReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

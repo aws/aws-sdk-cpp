@@ -36,26 +36,15 @@ namespace Model
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum threshold needed to successfully authenticate a speaker.</p>
      */
     inline int GetAcceptanceThreshold() const{ return m_acceptanceThreshold; }
-
-    /**
-     * <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-     */
     inline bool AcceptanceThresholdHasBeenSet() const { return m_acceptanceThresholdHasBeenSet; }
-
-    /**
-     * <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-     */
     inline void SetAcceptanceThreshold(int value) { m_acceptanceThresholdHasBeenSet = true; m_acceptanceThreshold = value; }
-
-    /**
-     * <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-     */
     inline AuthenticationConfiguration& WithAcceptanceThreshold(int value) { SetAcceptanceThreshold(value); return *this;}
-
+    ///@}
   private:
 
     int m_acceptanceThreshold;

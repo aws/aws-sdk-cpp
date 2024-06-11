@@ -38,48 +38,19 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The JSON schema for the tool. For more information, see <a
      * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
      * Reference</a>.</p>
      */
     inline Aws::Utils::DocumentView GetJson() const{ return m_json; }
-
-    /**
-     * <p>The JSON schema for the tool. For more information, see <a
-     * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
-     * Reference</a>.</p>
-     */
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
-
-    /**
-     * <p>The JSON schema for the tool. For more information, see <a
-     * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
-     * Reference</a>.</p>
-     */
     inline void SetJson(const Aws::Utils::Document& value) { m_jsonHasBeenSet = true; m_json = value; }
-
-    /**
-     * <p>The JSON schema for the tool. For more information, see <a
-     * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
-     * Reference</a>.</p>
-     */
     inline void SetJson(Aws::Utils::Document&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
-
-    /**
-     * <p>The JSON schema for the tool. For more information, see <a
-     * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
-     * Reference</a>.</p>
-     */
     inline ToolInputSchema& WithJson(const Aws::Utils::Document& value) { SetJson(value); return *this;}
-
-    /**
-     * <p>The JSON schema for the tool. For more information, see <a
-     * href="https://json-schema.org/understanding-json-schema/reference">JSON Schema
-     * Reference</a>.</p>
-     */
     inline ToolInputSchema& WithJson(Aws::Utils::Document&& value) { SetJson(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Document m_json;

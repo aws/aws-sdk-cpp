@@ -38,57 +38,27 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of time of the specified unit.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The amount of time of the specified unit.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The amount of time of the specified unit.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The amount of time of the specified unit.</p>
-     */
     inline Range& WithValue(int value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of time.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of time.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of time.</p>
-     */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of time.</p>
-     */
     inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of time.</p>
-     */
     inline Range& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of time.</p>
-     */
     inline Range& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_value;

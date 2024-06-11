@@ -39,96 +39,41 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The daily number of messages that an endpoint can receive from all journeys.
      * The maximum value is 100. If set to 0, this limit will not apply.</p>
      */
     inline int GetDailyCap() const{ return m_dailyCap; }
-
-    /**
-     * <p>The daily number of messages that an endpoint can receive from all journeys.
-     * The maximum value is 100. If set to 0, this limit will not apply.</p>
-     */
     inline bool DailyCapHasBeenSet() const { return m_dailyCapHasBeenSet; }
-
-    /**
-     * <p>The daily number of messages that an endpoint can receive from all journeys.
-     * The maximum value is 100. If set to 0, this limit will not apply.</p>
-     */
     inline void SetDailyCap(int value) { m_dailyCapHasBeenSet = true; m_dailyCap = value; }
-
-    /**
-     * <p>The daily number of messages that an endpoint can receive from all journeys.
-     * The maximum value is 100. If set to 0, this limit will not apply.</p>
-     */
     inline ApplicationSettingsJourneyLimits& WithDailyCap(int value) { SetDailyCap(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default maximum number of messages that can be sent to an endpoint during
      * the specified timeframe for all journeys.</p>
      */
     inline const JourneyTimeframeCap& GetTimeframeCap() const{ return m_timeframeCap; }
-
-    /**
-     * <p>The default maximum number of messages that can be sent to an endpoint during
-     * the specified timeframe for all journeys.</p>
-     */
     inline bool TimeframeCapHasBeenSet() const { return m_timeframeCapHasBeenSet; }
-
-    /**
-     * <p>The default maximum number of messages that can be sent to an endpoint during
-     * the specified timeframe for all journeys.</p>
-     */
     inline void SetTimeframeCap(const JourneyTimeframeCap& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = value; }
-
-    /**
-     * <p>The default maximum number of messages that can be sent to an endpoint during
-     * the specified timeframe for all journeys.</p>
-     */
     inline void SetTimeframeCap(JourneyTimeframeCap&& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = std::move(value); }
-
-    /**
-     * <p>The default maximum number of messages that can be sent to an endpoint during
-     * the specified timeframe for all journeys.</p>
-     */
     inline ApplicationSettingsJourneyLimits& WithTimeframeCap(const JourneyTimeframeCap& value) { SetTimeframeCap(value); return *this;}
-
-    /**
-     * <p>The default maximum number of messages that can be sent to an endpoint during
-     * the specified timeframe for all journeys.</p>
-     */
     inline ApplicationSettingsJourneyLimits& WithTimeframeCap(JourneyTimeframeCap&& value) { SetTimeframeCap(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default maximum number of messages that a single journey can sent to a
      * single endpoint. The maximum value is 100. If set to 0, this limit will not
      * apply.</p>
      */
     inline int GetTotalCap() const{ return m_totalCap; }
-
-    /**
-     * <p>The default maximum number of messages that a single journey can sent to a
-     * single endpoint. The maximum value is 100. If set to 0, this limit will not
-     * apply.</p>
-     */
     inline bool TotalCapHasBeenSet() const { return m_totalCapHasBeenSet; }
-
-    /**
-     * <p>The default maximum number of messages that a single journey can sent to a
-     * single endpoint. The maximum value is 100. If set to 0, this limit will not
-     * apply.</p>
-     */
     inline void SetTotalCap(int value) { m_totalCapHasBeenSet = true; m_totalCap = value; }
-
-    /**
-     * <p>The default maximum number of messages that a single journey can sent to a
-     * single endpoint. The maximum value is 100. If set to 0, this limit will not
-     * apply.</p>
-     */
     inline ApplicationSettingsJourneyLimits& WithTotalCap(int value) { SetTotalCap(value); return *this;}
-
+    ///@}
   private:
 
     int m_dailyCap;

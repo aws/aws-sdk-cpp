@@ -34,46 +34,19 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Resolver endpoint that you want to get information about.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline GetResolverEndpointRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline GetResolverEndpointRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Resolver endpoint that you want to get information about.</p>
-     */
     inline GetResolverEndpointRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resolverEndpointId;

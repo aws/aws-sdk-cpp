@@ -36,47 +36,25 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>GSM base station identity code (BSIC).</p>
      */
     inline int GetBsic() const{ return m_bsic; }
-
-    /**
-     * <p>GSM base station identity code (BSIC).</p>
-     */
     inline bool BsicHasBeenSet() const { return m_bsicHasBeenSet; }
-
-    /**
-     * <p>GSM base station identity code (BSIC).</p>
-     */
     inline void SetBsic(int value) { m_bsicHasBeenSet = true; m_bsic = value; }
-
-    /**
-     * <p>GSM base station identity code (BSIC).</p>
-     */
     inline GsmLocalId& WithBsic(int value) { SetBsic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>GSM broadcast control channel.</p>
      */
     inline int GetBcch() const{ return m_bcch; }
-
-    /**
-     * <p>GSM broadcast control channel.</p>
-     */
     inline bool BcchHasBeenSet() const { return m_bcchHasBeenSet; }
-
-    /**
-     * <p>GSM broadcast control channel.</p>
-     */
     inline void SetBcch(int value) { m_bcchHasBeenSet = true; m_bcch = value; }
-
-    /**
-     * <p>GSM broadcast control channel.</p>
-     */
     inline GsmLocalId& WithBcch(int value) { SetBcch(value); return *this;}
-
+    ///@}
   private:
 
     int m_bsic;

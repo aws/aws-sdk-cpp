@@ -38,179 +38,63 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the VPC that the directory is in.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the VPC that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifiers of the subnets for the directory servers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The identifiers of the subnets for the directory servers.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain controller security group identifier for the directory.</p>
      */
     inline const Aws::String& GetSecurityGroupId() const{ return m_securityGroupId; }
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::move(value); }
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline void SetSecurityGroupId(const char* value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId.assign(value); }
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain controller security group identifier for the directory.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of Availability Zones that the directory is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of Availability Zones that the directory is in.</p>
-     */
     inline DirectoryVpcSettingsDescription& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_vpcId;

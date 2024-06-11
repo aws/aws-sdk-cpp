@@ -42,148 +42,63 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the sampling rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline SamplingTargetDocument& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline SamplingTargetDocument& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the sampling rule.</p>
-     */
     inline SamplingTargetDocument& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of matching requests to instrument, after the reservoir is
      * exhausted.</p>
      */
     inline double GetFixedRate() const{ return m_fixedRate; }
-
-    /**
-     * <p>The percentage of matching requests to instrument, after the reservoir is
-     * exhausted.</p>
-     */
     inline bool FixedRateHasBeenSet() const { return m_fixedRateHasBeenSet; }
-
-    /**
-     * <p>The percentage of matching requests to instrument, after the reservoir is
-     * exhausted.</p>
-     */
     inline void SetFixedRate(double value) { m_fixedRateHasBeenSet = true; m_fixedRate = value; }
-
-    /**
-     * <p>The percentage of matching requests to instrument, after the reservoir is
-     * exhausted.</p>
-     */
     inline SamplingTargetDocument& WithFixedRate(double value) { SetFixedRate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
     inline int GetReservoirQuota() const{ return m_reservoirQuota; }
-
-    /**
-     * <p>The number of requests per second that X-Ray allocated for this service.</p>
-     */
     inline bool ReservoirQuotaHasBeenSet() const { return m_reservoirQuotaHasBeenSet; }
-
-    /**
-     * <p>The number of requests per second that X-Ray allocated for this service.</p>
-     */
     inline void SetReservoirQuota(int value) { m_reservoirQuotaHasBeenSet = true; m_reservoirQuota = value; }
-
-    /**
-     * <p>The number of requests per second that X-Ray allocated for this service.</p>
-     */
     inline SamplingTargetDocument& WithReservoirQuota(int value) { SetReservoirQuota(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When the reservoir quota expires.</p>
      */
     inline const Aws::Utils::DateTime& GetReservoirQuotaTTL() const{ return m_reservoirQuotaTTL; }
-
-    /**
-     * <p>When the reservoir quota expires.</p>
-     */
     inline bool ReservoirQuotaTTLHasBeenSet() const { return m_reservoirQuotaTTLHasBeenSet; }
-
-    /**
-     * <p>When the reservoir quota expires.</p>
-     */
     inline void SetReservoirQuotaTTL(const Aws::Utils::DateTime& value) { m_reservoirQuotaTTLHasBeenSet = true; m_reservoirQuotaTTL = value; }
-
-    /**
-     * <p>When the reservoir quota expires.</p>
-     */
     inline void SetReservoirQuotaTTL(Aws::Utils::DateTime&& value) { m_reservoirQuotaTTLHasBeenSet = true; m_reservoirQuotaTTL = std::move(value); }
-
-    /**
-     * <p>When the reservoir quota expires.</p>
-     */
     inline SamplingTargetDocument& WithReservoirQuotaTTL(const Aws::Utils::DateTime& value) { SetReservoirQuotaTTL(value); return *this;}
-
-    /**
-     * <p>When the reservoir quota expires.</p>
-     */
     inline SamplingTargetDocument& WithReservoirQuotaTTL(Aws::Utils::DateTime&& value) { SetReservoirQuotaTTL(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of seconds for the service to wait before getting sampling targets
      * again.</p>
      */
     inline int GetInterval() const{ return m_interval; }
-
-    /**
-     * <p>The number of seconds for the service to wait before getting sampling targets
-     * again.</p>
-     */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-
-    /**
-     * <p>The number of seconds for the service to wait before getting sampling targets
-     * again.</p>
-     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
-
-    /**
-     * <p>The number of seconds for the service to wait before getting sampling targets
-     * again.</p>
-     */
     inline SamplingTargetDocument& WithInterval(int value) { SetInterval(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleName;

@@ -39,118 +39,45 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filters only groups with the provided name prefix.</p>
      */
     inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline ListGroupsFilters& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline ListGroupsFilters& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters only groups with the provided name prefix.</p>
-     */
     inline ListGroupsFilters& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters only groups with the provided primary email prefix.</p>
      */
     inline const Aws::String& GetPrimaryEmailPrefix() const{ return m_primaryEmailPrefix; }
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline bool PrimaryEmailPrefixHasBeenSet() const { return m_primaryEmailPrefixHasBeenSet; }
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline void SetPrimaryEmailPrefix(const Aws::String& value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix = value; }
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline void SetPrimaryEmailPrefix(Aws::String&& value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix = std::move(value); }
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline void SetPrimaryEmailPrefix(const char* value) { m_primaryEmailPrefixHasBeenSet = true; m_primaryEmailPrefix.assign(value); }
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline ListGroupsFilters& WithPrimaryEmailPrefix(const Aws::String& value) { SetPrimaryEmailPrefix(value); return *this;}
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline ListGroupsFilters& WithPrimaryEmailPrefix(Aws::String&& value) { SetPrimaryEmailPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters only groups with the provided primary email prefix.</p>
-     */
     inline ListGroupsFilters& WithPrimaryEmailPrefix(const char* value) { SetPrimaryEmailPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters only groups with the provided state.</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Filters only groups with the provided state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>Filters only groups with the provided state.</p>
-     */
     inline void SetState(const EntityState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>Filters only groups with the provided state.</p>
-     */
     inline void SetState(EntityState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>Filters only groups with the provided state.</p>
-     */
     inline ListGroupsFilters& WithState(const EntityState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Filters only groups with the provided state.</p>
-     */
     inline ListGroupsFilters& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namePrefix;

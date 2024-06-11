@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the meeting for which you stop transcription.</p>
      */
     inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline StopMeetingTranscriptionRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline StopMeetingTranscriptionRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the meeting for which you stop transcription.</p>
-     */
     inline StopMeetingTranscriptionRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_meetingId;

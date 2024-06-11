@@ -41,47 +41,21 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the property.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline AssetPropertySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline AssetPropertySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the property.</p>
-     */
     inline AssetPropertySummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alias that identifies the property, such as an OPC-UA server data stream
      * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
@@ -91,276 +65,82 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias that identifies the property, such as an OPC-UA server data stream
-     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
-     * Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithAlias(const char* value) { SetAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline AssetPropertySummary& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline AssetPropertySummary& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-
-    /**
-     * <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
-     */
     inline AssetPropertySummary& WithUnit(const char* value) { SetUnit(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const PropertyNotification& GetNotification() const{ return m_notification; }
-
-    
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
-
-    
     inline void SetNotification(const PropertyNotification& value) { m_notificationHasBeenSet = true; m_notification = value; }
-
-    
     inline void SetNotification(PropertyNotification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
-
-    
     inline AssetPropertySummary& WithNotification(const PropertyNotification& value) { SetNotification(value); return *this;}
-
-    
     inline AssetPropertySummary& WithNotification(PropertyNotification&& value) { SetNotification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The ID of the composite model that contains the asset property. </p>
      */
     inline const Aws::String& GetAssetCompositeModelId() const{ return m_assetCompositeModelId; }
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline bool AssetCompositeModelIdHasBeenSet() const { return m_assetCompositeModelIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline void SetAssetCompositeModelId(const Aws::String& value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId = value; }
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline void SetAssetCompositeModelId(Aws::String&& value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId = std::move(value); }
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline void SetAssetCompositeModelId(const char* value) { m_assetCompositeModelIdHasBeenSet = true; m_assetCompositeModelId.assign(value); }
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline AssetPropertySummary& WithAssetCompositeModelId(const Aws::String& value) { SetAssetCompositeModelId(value); return *this;}
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline AssetPropertySummary& WithAssetCompositeModelId(Aws::String&& value) { SetAssetCompositeModelId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the composite model that contains the asset property. </p>
-     */
     inline AssetPropertySummary& WithAssetCompositeModelId(const char* value) { SetAssetCompositeModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The structured path to the property from the root of the asset.</p>
      */
     inline const Aws::Vector<AssetPropertyPathSegment>& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline void SetPath(const Aws::Vector<AssetPropertyPathSegment>& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline void SetPath(Aws::Vector<AssetPropertyPathSegment>&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline AssetPropertySummary& WithPath(const Aws::Vector<AssetPropertyPathSegment>& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline AssetPropertySummary& WithPath(Aws::Vector<AssetPropertyPathSegment>&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline AssetPropertySummary& AddPath(const AssetPropertyPathSegment& value) { m_pathHasBeenSet = true; m_path.push_back(value); return *this; }
-
-    /**
-     * <p>The structured path to the property from the root of the asset.</p>
-     */
     inline AssetPropertySummary& AddPath(AssetPropertyPathSegment&& value) { m_pathHasBeenSet = true; m_path.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The external ID of the property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
      * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The external ID of the property. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
-     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline AssetPropertySummary& WithExternalId(const char* value) { SetExternalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

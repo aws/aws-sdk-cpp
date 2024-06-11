@@ -40,64 +40,28 @@ namespace Model
     AWS_SES_API ListReceiptFiltersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of IP address filter data structures, which each consist of a name, an
      * IP address range, and whether to allow or block mail from it.</p>
      */
     inline const Aws::Vector<ReceiptFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline void SetFilters(const Aws::Vector<ReceiptFilter>& value) { m_filters = value; }
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline void SetFilters(Aws::Vector<ReceiptFilter>&& value) { m_filters = std::move(value); }
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline ListReceiptFiltersResult& WithFilters(const Aws::Vector<ReceiptFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline ListReceiptFiltersResult& WithFilters(Aws::Vector<ReceiptFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline ListReceiptFiltersResult& AddFilters(const ReceiptFilter& value) { m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of IP address filter data structures, which each consist of a name, an
-     * IP address range, and whether to allow or block mail from it.</p>
-     */
     inline ListReceiptFiltersResult& AddFilters(ReceiptFilter&& value) { m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ListReceiptFiltersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ListReceiptFiltersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ReceiptFilter> m_filters;

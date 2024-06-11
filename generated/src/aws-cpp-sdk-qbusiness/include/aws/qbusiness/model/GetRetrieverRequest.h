@@ -32,87 +32,33 @@ namespace Model
     AWS_QBUSINESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Q Business application using the retriever.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline GetRetrieverRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline GetRetrieverRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline GetRetrieverRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the retriever.</p>
      */
     inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline bool RetrieverIdHasBeenSet() const { return m_retrieverIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline void SetRetrieverId(const Aws::String& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = value; }
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline void SetRetrieverId(Aws::String&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::move(value); }
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline void SetRetrieverId(const char* value) { m_retrieverIdHasBeenSet = true; m_retrieverId.assign(value); }
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline GetRetrieverRequest& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline GetRetrieverRequest& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the retriever.</p>
-     */
     inline GetRetrieverRequest& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

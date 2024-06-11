@@ -43,6 +43,7 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p> A container for filter information for the selection of Amazon S3 objects
      * encrypted with Amazon Web Services KMS. If you include
@@ -50,48 +51,14 @@ namespace Model
      * element is required. </p>
      */
     inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const{ return m_sseKmsEncryptedObjects; }
-
-    /**
-     * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with Amazon Web Services KMS. If you include
-     * <code>SourceSelectionCriteria</code> in the replication configuration, this
-     * element is required. </p>
-     */
     inline bool SseKmsEncryptedObjectsHasBeenSet() const { return m_sseKmsEncryptedObjectsHasBeenSet; }
-
-    /**
-     * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with Amazon Web Services KMS. If you include
-     * <code>SourceSelectionCriteria</code> in the replication configuration, this
-     * element is required. </p>
-     */
     inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
-
-    /**
-     * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with Amazon Web Services KMS. If you include
-     * <code>SourceSelectionCriteria</code> in the replication configuration, this
-     * element is required. </p>
-     */
     inline void SetSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::move(value); }
-
-    /**
-     * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with Amazon Web Services KMS. If you include
-     * <code>SourceSelectionCriteria</code> in the replication configuration, this
-     * element is required. </p>
-     */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { SetSseKmsEncryptedObjects(value); return *this;}
-
-    /**
-     * <p> A container for filter information for the selection of Amazon S3 objects
-     * encrypted with Amazon Web Services KMS. If you include
-     * <code>SourceSelectionCriteria</code> in the replication configuration, this
-     * element is required. </p>
-     */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A filter that you can specify for selections for modifications on replicas.
      * Amazon S3 doesn't replicate replica modifications by default. In the latest
@@ -103,67 +70,12 @@ namespace Model
      * is not allowed</p> 
      */
     inline const ReplicaModifications& GetReplicaModifications() const{ return m_replicaModifications; }
-
-    /**
-     * <p>A filter that you can specify for selections for modifications on replicas.
-     * Amazon S3 doesn't replicate replica modifications by default. In the latest
-     * version of replication configuration (when <code>Filter</code> is specified),
-     * you can specify this element and set the status to <code>Enabled</code> to
-     * replicate modifications on replicas. </p>  <p> If you don't specify the
-     * <code>Filter</code> element, Amazon S3 assumes that the replication
-     * configuration is the earlier version, V1. In the earlier version, this element
-     * is not allowed</p> 
-     */
     inline bool ReplicaModificationsHasBeenSet() const { return m_replicaModificationsHasBeenSet; }
-
-    /**
-     * <p>A filter that you can specify for selections for modifications on replicas.
-     * Amazon S3 doesn't replicate replica modifications by default. In the latest
-     * version of replication configuration (when <code>Filter</code> is specified),
-     * you can specify this element and set the status to <code>Enabled</code> to
-     * replicate modifications on replicas. </p>  <p> If you don't specify the
-     * <code>Filter</code> element, Amazon S3 assumes that the replication
-     * configuration is the earlier version, V1. In the earlier version, this element
-     * is not allowed</p> 
-     */
     inline void SetReplicaModifications(const ReplicaModifications& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = value; }
-
-    /**
-     * <p>A filter that you can specify for selections for modifications on replicas.
-     * Amazon S3 doesn't replicate replica modifications by default. In the latest
-     * version of replication configuration (when <code>Filter</code> is specified),
-     * you can specify this element and set the status to <code>Enabled</code> to
-     * replicate modifications on replicas. </p>  <p> If you don't specify the
-     * <code>Filter</code> element, Amazon S3 assumes that the replication
-     * configuration is the earlier version, V1. In the earlier version, this element
-     * is not allowed</p> 
-     */
     inline void SetReplicaModifications(ReplicaModifications&& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = std::move(value); }
-
-    /**
-     * <p>A filter that you can specify for selections for modifications on replicas.
-     * Amazon S3 doesn't replicate replica modifications by default. In the latest
-     * version of replication configuration (when <code>Filter</code> is specified),
-     * you can specify this element and set the status to <code>Enabled</code> to
-     * replicate modifications on replicas. </p>  <p> If you don't specify the
-     * <code>Filter</code> element, Amazon S3 assumes that the replication
-     * configuration is the earlier version, V1. In the earlier version, this element
-     * is not allowed</p> 
-     */
     inline SourceSelectionCriteria& WithReplicaModifications(const ReplicaModifications& value) { SetReplicaModifications(value); return *this;}
-
-    /**
-     * <p>A filter that you can specify for selections for modifications on replicas.
-     * Amazon S3 doesn't replicate replica modifications by default. In the latest
-     * version of replication configuration (when <code>Filter</code> is specified),
-     * you can specify this element and set the status to <code>Enabled</code> to
-     * replicate modifications on replicas. </p>  <p> If you don't specify the
-     * <code>Filter</code> element, Amazon S3 assumes that the replication
-     * configuration is the earlier version, V1. In the earlier version, this element
-     * is not allowed</p> 
-     */
     inline SourceSelectionCriteria& WithReplicaModifications(ReplicaModifications&& value) { SetReplicaModifications(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SseKmsEncryptedObjects m_sseKmsEncryptedObjects;

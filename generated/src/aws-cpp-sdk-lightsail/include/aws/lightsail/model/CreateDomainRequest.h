@@ -36,103 +36,35 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain name to manage (<code>example.com</code>).</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name to manage (<code>example.com</code>).</p>
-     */
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>
      * <p>Use the <code>TagResource</code> action to tag a resource after it's
      * created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tag keys and optional values to add to the resource during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p>
-     */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_domainName;

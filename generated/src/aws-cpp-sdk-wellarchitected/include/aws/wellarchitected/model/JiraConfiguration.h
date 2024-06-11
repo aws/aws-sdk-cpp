@@ -38,65 +38,29 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL of the associated Jira issue.</p>
      */
     inline const Aws::String& GetJiraIssueUrl() const{ return m_jiraIssueUrl; }
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline bool JiraIssueUrlHasBeenSet() const { return m_jiraIssueUrlHasBeenSet; }
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline void SetJiraIssueUrl(const Aws::String& value) { m_jiraIssueUrlHasBeenSet = true; m_jiraIssueUrl = value; }
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline void SetJiraIssueUrl(Aws::String&& value) { m_jiraIssueUrlHasBeenSet = true; m_jiraIssueUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline void SetJiraIssueUrl(const char* value) { m_jiraIssueUrlHasBeenSet = true; m_jiraIssueUrl.assign(value); }
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline JiraConfiguration& WithJiraIssueUrl(const Aws::String& value) { SetJiraIssueUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline JiraConfiguration& WithJiraIssueUrl(Aws::String&& value) { SetJiraIssueUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the associated Jira issue.</p>
-     */
     inline JiraConfiguration& WithJiraIssueUrl(const char* value) { SetJiraIssueUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Utils::DateTime& GetLastSyncedTime() const{ return m_lastSyncedTime; }
-
-    
     inline bool LastSyncedTimeHasBeenSet() const { return m_lastSyncedTimeHasBeenSet; }
-
-    
     inline void SetLastSyncedTime(const Aws::Utils::DateTime& value) { m_lastSyncedTimeHasBeenSet = true; m_lastSyncedTime = value; }
-
-    
     inline void SetLastSyncedTime(Aws::Utils::DateTime&& value) { m_lastSyncedTimeHasBeenSet = true; m_lastSyncedTime = std::move(value); }
-
-    
     inline JiraConfiguration& WithLastSyncedTime(const Aws::Utils::DateTime& value) { SetLastSyncedTime(value); return *this;}
-
-    
     inline JiraConfiguration& WithLastSyncedTime(Aws::Utils::DateTime&& value) { SetLastSyncedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jiraIssueUrl;

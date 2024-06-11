@@ -40,73 +40,30 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline const CustomizableMetricName& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p> The name of the resource utilization metric name to customize. </p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p> The name of the resource utilization metric name to customize. </p>
-     */
     inline void SetMetricName(const CustomizableMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p> The name of the resource utilization metric name to customize. </p>
-     */
     inline void SetMetricName(CustomizableMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p> The name of the resource utilization metric name to customize. </p>
-     */
     inline UtilizationPreference& WithMetricName(const CustomizableMetricName& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p> The name of the resource utilization metric name to customize. </p>
-     */
     inline UtilizationPreference& WithMetricName(CustomizableMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The parameters to set when customizing the resource utilization thresholds.
      * </p>
      */
     inline const CustomizableMetricParameters& GetMetricParameters() const{ return m_metricParameters; }
-
-    /**
-     * <p> The parameters to set when customizing the resource utilization thresholds.
-     * </p>
-     */
     inline bool MetricParametersHasBeenSet() const { return m_metricParametersHasBeenSet; }
-
-    /**
-     * <p> The parameters to set when customizing the resource utilization thresholds.
-     * </p>
-     */
     inline void SetMetricParameters(const CustomizableMetricParameters& value) { m_metricParametersHasBeenSet = true; m_metricParameters = value; }
-
-    /**
-     * <p> The parameters to set when customizing the resource utilization thresholds.
-     * </p>
-     */
     inline void SetMetricParameters(CustomizableMetricParameters&& value) { m_metricParametersHasBeenSet = true; m_metricParameters = std::move(value); }
-
-    /**
-     * <p> The parameters to set when customizing the resource utilization thresholds.
-     * </p>
-     */
     inline UtilizationPreference& WithMetricParameters(const CustomizableMetricParameters& value) { SetMetricParameters(value); return *this;}
-
-    /**
-     * <p> The parameters to set when customizing the resource utilization thresholds.
-     * </p>
-     */
     inline UtilizationPreference& WithMetricParameters(CustomizableMetricParameters&& value) { SetMetricParameters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CustomizableMetricName m_metricName;

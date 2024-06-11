@@ -39,46 +39,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of origin groups.</p>
      */
     inline const Aws::Vector<AwsCloudFrontDistributionOriginGroup>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline void SetItems(const Aws::Vector<AwsCloudFrontDistributionOriginGroup>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline void SetItems(Aws::Vector<AwsCloudFrontDistributionOriginGroup>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroups& WithItems(const Aws::Vector<AwsCloudFrontDistributionOriginGroup>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroups& WithItems(Aws::Vector<AwsCloudFrontDistributionOriginGroup>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroups& AddItems(const AwsCloudFrontDistributionOriginGroup& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The list of origin groups.</p>
-     */
     inline AwsCloudFrontDistributionOriginGroups& AddItems(AwsCloudFrontDistributionOriginGroup&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsCloudFrontDistributionOriginGroup> m_items;

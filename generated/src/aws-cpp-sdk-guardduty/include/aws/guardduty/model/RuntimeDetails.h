@@ -39,67 +39,29 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the observed process.</p>
      */
     inline const ProcessDetails& GetProcess() const{ return m_process; }
-
-    /**
-     * <p>Information about the observed process.</p>
-     */
     inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
-
-    /**
-     * <p>Information about the observed process.</p>
-     */
     inline void SetProcess(const ProcessDetails& value) { m_processHasBeenSet = true; m_process = value; }
-
-    /**
-     * <p>Information about the observed process.</p>
-     */
     inline void SetProcess(ProcessDetails&& value) { m_processHasBeenSet = true; m_process = std::move(value); }
-
-    /**
-     * <p>Information about the observed process.</p>
-     */
     inline RuntimeDetails& WithProcess(const ProcessDetails& value) { SetProcess(value); return *this;}
-
-    /**
-     * <p>Information about the observed process.</p>
-     */
     inline RuntimeDetails& WithProcess(ProcessDetails&& value) { SetProcess(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional information about the suspicious activity.</p>
      */
     inline const RuntimeContext& GetContext() const{ return m_context; }
-
-    /**
-     * <p>Additional information about the suspicious activity.</p>
-     */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-
-    /**
-     * <p>Additional information about the suspicious activity.</p>
-     */
     inline void SetContext(const RuntimeContext& value) { m_contextHasBeenSet = true; m_context = value; }
-
-    /**
-     * <p>Additional information about the suspicious activity.</p>
-     */
     inline void SetContext(RuntimeContext&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-
-    /**
-     * <p>Additional information about the suspicious activity.</p>
-     */
     inline RuntimeDetails& WithContext(const RuntimeContext& value) { SetContext(value); return *this;}
-
-    /**
-     * <p>Additional information about the suspicious activity.</p>
-     */
     inline RuntimeDetails& WithContext(RuntimeContext&& value) { SetContext(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ProcessDetails m_process;

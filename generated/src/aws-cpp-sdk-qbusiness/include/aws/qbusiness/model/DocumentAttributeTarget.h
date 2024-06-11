@@ -54,6 +54,7 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the target document attribute or metadata field. For
      * example, 'Department' could be an identifier for the target attribute or
@@ -61,125 +62,38 @@ namespace Model
      * documents.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline DocumentAttributeTarget& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline DocumentAttributeTarget& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the target document attribute or metadata field. For
-     * example, 'Department' could be an identifier for the target attribute or
-     * metadata field that includes the department names associated with the
-     * documents.</p>
-     */
     inline DocumentAttributeTarget& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DocumentAttributeValue& GetValue() const{ return m_value; }
-
-    
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    
     inline void SetValue(const DocumentAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    
     inline void SetValue(DocumentAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    
     inline DocumentAttributeTarget& WithValue(const DocumentAttributeValue& value) { SetValue(value); return *this;}
-
-    
     inline DocumentAttributeTarget& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <code>TRUE</code> to delete the existing target value for your specified
      * target attribute key. You cannot create a target value and set this to
      * <code>TRUE</code>.</p>
      */
     inline const AttributeValueOperator& GetAttributeValueOperator() const{ return m_attributeValueOperator; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
     inline bool AttributeValueOperatorHasBeenSet() const { return m_attributeValueOperatorHasBeenSet; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
     inline void SetAttributeValueOperator(const AttributeValueOperator& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = value; }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
     inline void SetAttributeValueOperator(AttributeValueOperator&& value) { m_attributeValueOperatorHasBeenSet = true; m_attributeValueOperator = std::move(value); }
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
     inline DocumentAttributeTarget& WithAttributeValueOperator(const AttributeValueOperator& value) { SetAttributeValueOperator(value); return *this;}
-
-    /**
-     * <p> <code>TRUE</code> to delete the existing target value for your specified
-     * target attribute key. You cannot create a target value and set this to
-     * <code>TRUE</code>.</p>
-     */
     inline DocumentAttributeTarget& WithAttributeValueOperator(AttributeValueOperator&& value) { SetAttributeValueOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

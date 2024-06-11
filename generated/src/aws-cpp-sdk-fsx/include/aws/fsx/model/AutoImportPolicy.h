@@ -43,6 +43,7 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
      * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
@@ -55,98 +56,14 @@ namespace Model
      * combination of event types for your <code>AutoImportPolicy</code>.</p>
      */
     inline const Aws::Vector<EventType>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline void SetEvents(const Aws::Vector<EventType>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline void SetEvents(Aws::Vector<EventType>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline AutoImportPolicy& WithEvents(const Aws::Vector<EventType>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline AutoImportPolicy& WithEvents(Aws::Vector<EventType>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline AutoImportPolicy& AddEvents(const EventType& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
-    /**
-     * <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
-     * <ul> <li> <p> <code>NEW</code> - Amazon FSx automatically imports metadata of
-     * files added to the linked S3 bucket that do not currently exist in the FSx file
-     * system.</p> </li> <li> <p> <code>CHANGED</code> - Amazon FSx automatically
-     * updates file metadata and invalidates existing file content on the file system
-     * as files change in the data repository.</p> </li> <li> <p> <code>DELETED</code>
-     * - Amazon FSx automatically deletes files on the file system as corresponding
-     * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
-     * combination of event types for your <code>AutoImportPolicy</code>.</p>
-     */
     inline AutoImportPolicy& AddEvents(EventType&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EventType> m_events;

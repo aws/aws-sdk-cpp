@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The metric attribution's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetMetricAttributionArn() const{ return m_metricAttributionArn; }
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline bool MetricAttributionArnHasBeenSet() const { return m_metricAttributionArnHasBeenSet; }
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline void SetMetricAttributionArn(const Aws::String& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = value; }
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline void SetMetricAttributionArn(Aws::String&& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = std::move(value); }
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline void SetMetricAttributionArn(const char* value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn.assign(value); }
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline DeleteMetricAttributionRequest& WithMetricAttributionArn(const Aws::String& value) { SetMetricAttributionArn(value); return *this;}
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline DeleteMetricAttributionRequest& WithMetricAttributionArn(Aws::String&& value) { SetMetricAttributionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The metric attribution's Amazon Resource Name (ARN).</p>
-     */
     inline DeleteMetricAttributionRequest& WithMetricAttributionArn(const char* value) { SetMetricAttributionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricAttributionArn;

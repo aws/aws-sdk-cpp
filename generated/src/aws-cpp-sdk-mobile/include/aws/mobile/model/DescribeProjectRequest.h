@@ -42,75 +42,31 @@ namespace Model
     AWS_MOBILE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> Unique project identifier. </p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DescribeProjectRequest& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DescribeProjectRequest& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-
-    /**
-     * <p> Unique project identifier. </p>
-     */
     inline DescribeProjectRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> If set to true, causes AWS Mobile Hub to synchronize information from other
      * services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub
      * project. </p>
      */
     inline bool GetSyncFromResources() const{ return m_syncFromResources; }
-
-    /**
-     * <p> If set to true, causes AWS Mobile Hub to synchronize information from other
-     * services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub
-     * project. </p>
-     */
     inline bool SyncFromResourcesHasBeenSet() const { return m_syncFromResourcesHasBeenSet; }
-
-    /**
-     * <p> If set to true, causes AWS Mobile Hub to synchronize information from other
-     * services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub
-     * project. </p>
-     */
     inline void SetSyncFromResources(bool value) { m_syncFromResourcesHasBeenSet = true; m_syncFromResources = value; }
-
-    /**
-     * <p> If set to true, causes AWS Mobile Hub to synchronize information from other
-     * services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub
-     * project. </p>
-     */
     inline DescribeProjectRequest& WithSyncFromResources(bool value) { SetSyncFromResources(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectId;

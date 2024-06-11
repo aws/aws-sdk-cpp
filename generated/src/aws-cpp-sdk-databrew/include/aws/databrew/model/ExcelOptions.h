@@ -40,128 +40,46 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One or more named sheets in the Excel file that will be included in the
      * dataset.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSheetNames() const{ return m_sheetNames; }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline bool SheetNamesHasBeenSet() const { return m_sheetNamesHasBeenSet; }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline void SetSheetNames(const Aws::Vector<Aws::String>& value) { m_sheetNamesHasBeenSet = true; m_sheetNames = value; }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline void SetSheetNames(Aws::Vector<Aws::String>&& value) { m_sheetNamesHasBeenSet = true; m_sheetNames = std::move(value); }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& WithSheetNames(const Aws::Vector<Aws::String>& value) { SetSheetNames(value); return *this;}
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& WithSheetNames(Aws::Vector<Aws::String>&& value) { SetSheetNames(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& AddSheetNames(const Aws::String& value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(value); return *this; }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& AddSheetNames(Aws::String&& value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more named sheets in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& AddSheetNames(const char* value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more sheet numbers in the Excel file that will be included in the
      * dataset.</p>
      */
     inline const Aws::Vector<int>& GetSheetIndexes() const{ return m_sheetIndexes; }
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline bool SheetIndexesHasBeenSet() const { return m_sheetIndexesHasBeenSet; }
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline void SetSheetIndexes(const Aws::Vector<int>& value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes = value; }
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline void SetSheetIndexes(Aws::Vector<int>&& value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes = std::move(value); }
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& WithSheetIndexes(const Aws::Vector<int>& value) { SetSheetIndexes(value); return *this;}
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& WithSheetIndexes(Aws::Vector<int>&& value) { SetSheetIndexes(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more sheet numbers in the Excel file that will be included in the
-     * dataset.</p>
-     */
     inline ExcelOptions& AddSheetIndexes(int value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A variable that specifies whether the first row in the file is parsed as the
      * header. If this value is false, column names are auto-generated.</p>
      */
     inline bool GetHeaderRow() const{ return m_headerRow; }
-
-    /**
-     * <p>A variable that specifies whether the first row in the file is parsed as the
-     * header. If this value is false, column names are auto-generated.</p>
-     */
     inline bool HeaderRowHasBeenSet() const { return m_headerRowHasBeenSet; }
-
-    /**
-     * <p>A variable that specifies whether the first row in the file is parsed as the
-     * header. If this value is false, column names are auto-generated.</p>
-     */
     inline void SetHeaderRow(bool value) { m_headerRowHasBeenSet = true; m_headerRow = value; }
-
-    /**
-     * <p>A variable that specifies whether the first row in the file is parsed as the
-     * header. If this value is false, column names are auto-generated.</p>
-     */
     inline ExcelOptions& WithHeaderRow(bool value) { SetHeaderRow(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_sheetNames;

@@ -44,31 +44,18 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Indicates if the action should be applied to objects in the Batch Operations
      * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
-
-    /**
-     * <p>Indicates if the action should be applied to objects in the Batch Operations
-     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
-     */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
-
-    /**
-     * <p>Indicates if the action should be applied to objects in the Batch Operations
-     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
-     */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
-
-    /**
-     * <p>Indicates if the action should be applied to objects in the Batch Operations
-     * job even if they have Object Lock <code> GOVERNANCE</code> type in place.</p>
-     */
     inline S3SetObjectRetentionOperation& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the Object Lock retention mode to be applied to all objects in the
      * Batch Operations job. For more information, see <a
@@ -77,52 +64,12 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const S3Retention& GetRetention() const{ return m_retention; }
-
-    /**
-     * <p>Contains the Object Lock retention mode to be applied to all objects in the
-     * Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
-     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
-     */
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
-
-    /**
-     * <p>Contains the Object Lock retention mode to be applied to all objects in the
-     * Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
-     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
-     */
     inline void SetRetention(const S3Retention& value) { m_retentionHasBeenSet = true; m_retention = value; }
-
-    /**
-     * <p>Contains the Object Lock retention mode to be applied to all objects in the
-     * Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
-     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
-     */
     inline void SetRetention(S3Retention&& value) { m_retentionHasBeenSet = true; m_retention = std::move(value); }
-
-    /**
-     * <p>Contains the Object Lock retention mode to be applied to all objects in the
-     * Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
-     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
-     */
     inline S3SetObjectRetentionOperation& WithRetention(const S3Retention& value) { SetRetention(value); return *this;}
-
-    /**
-     * <p>Contains the Object Lock retention mode to be applied to all objects in the
-     * Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
-     * S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User
-     * Guide</i>.</p>
-     */
     inline S3SetObjectRetentionOperation& WithRetention(S3Retention&& value) { SetRetention(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_bypassGovernanceRetention;

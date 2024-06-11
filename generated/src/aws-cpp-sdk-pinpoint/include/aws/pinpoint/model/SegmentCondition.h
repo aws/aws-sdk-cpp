@@ -38,46 +38,19 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the segment to associate with the activity.</p>
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline SegmentCondition& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline SegmentCondition& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment to associate with the activity.</p>
-     */
     inline SegmentCondition& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_segmentId;

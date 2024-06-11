@@ -37,83 +37,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The model latency percentile threshold. Acceptable values are
      * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
      * as <code>P95</code>.</p>
      */
     inline const Aws::String& GetPercentile() const{ return m_percentile; }
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline bool PercentileHasBeenSet() const { return m_percentileHasBeenSet; }
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline void SetPercentile(const Aws::String& value) { m_percentileHasBeenSet = true; m_percentile = value; }
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline void SetPercentile(Aws::String&& value) { m_percentileHasBeenSet = true; m_percentile = std::move(value); }
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline void SetPercentile(const char* value) { m_percentileHasBeenSet = true; m_percentile.assign(value); }
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline ModelLatencyThreshold& WithPercentile(const Aws::String& value) { SetPercentile(value); return *this;}
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline ModelLatencyThreshold& WithPercentile(Aws::String&& value) { SetPercentile(std::move(value)); return *this;}
-
-    /**
-     * <p>The model latency percentile threshold. Acceptable values are
-     * <code>P95</code> and <code>P99</code>. For custom load tests, specify the value
-     * as <code>P95</code>.</p>
-     */
     inline ModelLatencyThreshold& WithPercentile(const char* value) { SetPercentile(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model latency percentile value in milliseconds.</p>
      */
     inline int GetValueInMilliseconds() const{ return m_valueInMilliseconds; }
-
-    /**
-     * <p>The model latency percentile value in milliseconds.</p>
-     */
     inline bool ValueInMillisecondsHasBeenSet() const { return m_valueInMillisecondsHasBeenSet; }
-
-    /**
-     * <p>The model latency percentile value in milliseconds.</p>
-     */
     inline void SetValueInMilliseconds(int value) { m_valueInMillisecondsHasBeenSet = true; m_valueInMilliseconds = value; }
-
-    /**
-     * <p>The model latency percentile value in milliseconds.</p>
-     */
     inline ModelLatencyThreshold& WithValueInMilliseconds(int value) { SetValueInMilliseconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_percentile;

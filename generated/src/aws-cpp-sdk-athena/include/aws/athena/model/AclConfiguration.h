@@ -43,6 +43,7 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 canned ACL that Athena should specify when storing query
      * results. Currently the only supported canned ACL is
@@ -54,67 +55,12 @@ namespace Model
      * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const S3AclOption& GetS3AclOption() const{ return m_s3AclOption; }
-
-    /**
-     * <p>The Amazon S3 canned ACL that Athena should specify when storing query
-     * results. Currently the only supported canned ACL is
-     * <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the
-     * workgroup overrides client-side settings, then the Amazon S3 canned ACL
-     * specified in the workgroup's settings is used for all queries that run in the
-     * workgroup. For more information about Amazon S3 canned ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
-     * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline bool S3AclOptionHasBeenSet() const { return m_s3AclOptionHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 canned ACL that Athena should specify when storing query
-     * results. Currently the only supported canned ACL is
-     * <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the
-     * workgroup overrides client-side settings, then the Amazon S3 canned ACL
-     * specified in the workgroup's settings is used for all queries that run in the
-     * workgroup. For more information about Amazon S3 canned ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
-     * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetS3AclOption(const S3AclOption& value) { m_s3AclOptionHasBeenSet = true; m_s3AclOption = value; }
-
-    /**
-     * <p>The Amazon S3 canned ACL that Athena should specify when storing query
-     * results. Currently the only supported canned ACL is
-     * <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the
-     * workgroup overrides client-side settings, then the Amazon S3 canned ACL
-     * specified in the workgroup's settings is used for all queries that run in the
-     * workgroup. For more information about Amazon S3 canned ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
-     * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline void SetS3AclOption(S3AclOption&& value) { m_s3AclOptionHasBeenSet = true; m_s3AclOption = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 canned ACL that Athena should specify when storing query
-     * results. Currently the only supported canned ACL is
-     * <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the
-     * workgroup overrides client-side settings, then the Amazon S3 canned ACL
-     * specified in the workgroup's settings is used for all queries that run in the
-     * workgroup. For more information about Amazon S3 canned ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
-     * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline AclConfiguration& WithS3AclOption(const S3AclOption& value) { SetS3AclOption(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 canned ACL that Athena should specify when storing query
-     * results. Currently the only supported canned ACL is
-     * <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the
-     * workgroup overrides client-side settings, then the Amazon S3 canned ACL
-     * specified in the workgroup's settings is used for all queries that run in the
-     * workgroup. For more information about Amazon S3 canned ACLs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
-     * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-     */
     inline AclConfiguration& WithS3AclOption(S3AclOption&& value) { SetS3AclOption(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3AclOption m_s3AclOption;

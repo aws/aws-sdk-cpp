@@ -40,67 +40,29 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a <code>Bounce</code> event.</p>
      */
     inline const Bounce& GetBounce() const{ return m_bounce; }
-
-    /**
-     * <p>Information about a <code>Bounce</code> event.</p>
-     */
     inline bool BounceHasBeenSet() const { return m_bounceHasBeenSet; }
-
-    /**
-     * <p>Information about a <code>Bounce</code> event.</p>
-     */
     inline void SetBounce(const Bounce& value) { m_bounceHasBeenSet = true; m_bounce = value; }
-
-    /**
-     * <p>Information about a <code>Bounce</code> event.</p>
-     */
     inline void SetBounce(Bounce&& value) { m_bounceHasBeenSet = true; m_bounce = std::move(value); }
-
-    /**
-     * <p>Information about a <code>Bounce</code> event.</p>
-     */
     inline EventDetails& WithBounce(const Bounce& value) { SetBounce(value); return *this;}
-
-    /**
-     * <p>Information about a <code>Bounce</code> event.</p>
-     */
     inline EventDetails& WithBounce(Bounce&& value) { SetBounce(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a <code>Complaint</code> event.</p>
      */
     inline const Complaint& GetComplaint() const{ return m_complaint; }
-
-    /**
-     * <p>Information about a <code>Complaint</code> event.</p>
-     */
     inline bool ComplaintHasBeenSet() const { return m_complaintHasBeenSet; }
-
-    /**
-     * <p>Information about a <code>Complaint</code> event.</p>
-     */
     inline void SetComplaint(const Complaint& value) { m_complaintHasBeenSet = true; m_complaint = value; }
-
-    /**
-     * <p>Information about a <code>Complaint</code> event.</p>
-     */
     inline void SetComplaint(Complaint&& value) { m_complaintHasBeenSet = true; m_complaint = std::move(value); }
-
-    /**
-     * <p>Information about a <code>Complaint</code> event.</p>
-     */
     inline EventDetails& WithComplaint(const Complaint& value) { SetComplaint(value); return *this;}
-
-    /**
-     * <p>Information about a <code>Complaint</code> event.</p>
-     */
     inline EventDetails& WithComplaint(Complaint&& value) { SetComplaint(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Bounce m_bounce;

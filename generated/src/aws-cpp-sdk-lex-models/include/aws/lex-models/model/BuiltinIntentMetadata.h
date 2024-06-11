@@ -39,6 +39,7 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the built-in intent. To find the signature for an
      * intent, see <a
@@ -46,104 +47,28 @@ namespace Model
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline BuiltinIntentMetadata& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline BuiltinIntentMetadata& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the built-in intent. To find the signature for an
-     * intent, see <a
-     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
-     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-     */
     inline BuiltinIntentMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of identifiers for the locales that the intent supports.</p>
      */
     inline const Aws::Vector<Locale>& GetSupportedLocales() const{ return m_supportedLocales; }
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline bool SupportedLocalesHasBeenSet() const { return m_supportedLocalesHasBeenSet; }
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline void SetSupportedLocales(const Aws::Vector<Locale>& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales = value; }
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline void SetSupportedLocales(Aws::Vector<Locale>&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales = std::move(value); }
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline BuiltinIntentMetadata& WithSupportedLocales(const Aws::Vector<Locale>& value) { SetSupportedLocales(value); return *this;}
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline BuiltinIntentMetadata& WithSupportedLocales(Aws::Vector<Locale>&& value) { SetSupportedLocales(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline BuiltinIntentMetadata& AddSupportedLocales(const Locale& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(value); return *this; }
-
-    /**
-     * <p>A list of identifiers for the locales that the intent supports.</p>
-     */
     inline BuiltinIntentMetadata& AddSupportedLocales(Locale&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_signature;

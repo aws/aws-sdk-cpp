@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Choose how ad markers are included in the packaged content. If you include ad
      * markers in the content stream in your upstream encoders, then you need to inform
@@ -47,62 +48,12 @@ namespace Model
      * </ul>
      */
     inline const AdMarkerDash& GetAdMarkerDash() const{ return m_adMarkerDash; }
-
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
     inline bool AdMarkerDashHasBeenSet() const { return m_adMarkerDashHasBeenSet; }
-
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
     inline void SetAdMarkerDash(const AdMarkerDash& value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = value; }
-
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
     inline void SetAdMarkerDash(AdMarkerDash&& value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = std::move(value); }
-
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
     inline ScteDash& WithAdMarkerDash(const AdMarkerDash& value) { SetAdMarkerDash(value); return *this;}
-
-    /**
-     * <p>Choose how ad markers are included in the packaged content. If you include ad
-     * markers in the content stream in your upstream encoders, then you need to inform
-     * MediaPackage what to do with the ad markers in the output.</p> <p>Value
-     * description:</p> <ul> <li> <p> <code>Binary</code> - The SCTE-35 marker is
-     * expressed as a hex-string (Base64 string) rather than full XML.</p> </li> <li>
-     * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
-     * </ul>
-     */
     inline ScteDash& WithAdMarkerDash(AdMarkerDash&& value) { SetAdMarkerDash(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AdMarkerDash m_adMarkerDash;

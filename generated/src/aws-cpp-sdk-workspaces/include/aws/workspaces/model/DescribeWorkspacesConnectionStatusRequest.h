@@ -35,100 +35,35 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkspaceIds() const{ return m_workspaceIds; }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline bool WorkspaceIdsHasBeenSet() const { return m_workspaceIdsHasBeenSet; }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = std::move(value); }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(const Aws::Vector<Aws::String>& value) { SetWorkspaceIds(value); return *this;}
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const Aws::String& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeWorkspacesConnectionStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_workspaceIds;

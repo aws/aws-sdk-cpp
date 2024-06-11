@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the identity provider.</p>
      */
     inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline GetIdentityProviderRequest& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline GetIdentityProviderRequest& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the identity provider.</p>
-     */
     inline GetIdentityProviderRequest& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityProviderArn;

@@ -34,120 +34,45 @@ namespace Model
     AWS_COSTEXPLORER_API GetAnomalyMonitorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of cost anomaly monitors that includes the detailed metadata for each
      * monitor. </p>
      */
     inline const Aws::Vector<AnomalyMonitor>& GetAnomalyMonitors() const{ return m_anomalyMonitors; }
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline void SetAnomalyMonitors(const Aws::Vector<AnomalyMonitor>& value) { m_anomalyMonitors = value; }
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline void SetAnomalyMonitors(Aws::Vector<AnomalyMonitor>&& value) { m_anomalyMonitors = std::move(value); }
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline GetAnomalyMonitorsResult& WithAnomalyMonitors(const Aws::Vector<AnomalyMonitor>& value) { SetAnomalyMonitors(value); return *this;}
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline GetAnomalyMonitorsResult& WithAnomalyMonitors(Aws::Vector<AnomalyMonitor>&& value) { SetAnomalyMonitors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline GetAnomalyMonitorsResult& AddAnomalyMonitors(const AnomalyMonitor& value) { m_anomalyMonitors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of cost anomaly monitors that includes the detailed metadata for each
-     * monitor. </p>
-     */
     inline GetAnomalyMonitorsResult& AddAnomalyMonitors(AnomalyMonitor&& value) { m_anomalyMonitors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalyMonitorsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalyMonitorsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalyMonitorsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAnomalyMonitorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAnomalyMonitorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAnomalyMonitorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AnomalyMonitor> m_anomalyMonitors;

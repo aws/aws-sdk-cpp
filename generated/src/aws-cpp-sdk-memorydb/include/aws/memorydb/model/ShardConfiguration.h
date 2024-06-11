@@ -38,75 +38,30 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string that specifies the keyspace for a particular node group. Keyspaces
      * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
      */
     inline const Aws::String& GetSlots() const{ return m_slots; }
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline void SetSlots(const Aws::String& value) { m_slotsHasBeenSet = true; m_slots = value; }
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline void SetSlots(const char* value) { m_slotsHasBeenSet = true; m_slots.assign(value); }
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline ShardConfiguration& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline ShardConfiguration& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
-     * range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-     */
     inline ShardConfiguration& WithSlots(const char* value) { SetSlots(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of read replica nodes in this shard.</p>
      */
     inline int GetReplicaCount() const{ return m_replicaCount; }
-
-    /**
-     * <p>The number of read replica nodes in this shard.</p>
-     */
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
-
-    /**
-     * <p>The number of read replica nodes in this shard.</p>
-     */
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
-
-    /**
-     * <p>The number of read replica nodes in this shard.</p>
-     */
     inline ShardConfiguration& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_slots;

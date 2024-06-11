@@ -34,73 +34,36 @@ namespace Model
     AWS_EC2_API AttachVerifiedAccessTrustProviderResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Details about the Verified Access trust provider.</p>
      */
     inline const VerifiedAccessTrustProvider& GetVerifiedAccessTrustProvider() const{ return m_verifiedAccessTrustProvider; }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline void SetVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { m_verifiedAccessTrustProvider = value; }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline void SetVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { m_verifiedAccessTrustProvider = std::move(value); }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline AttachVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { SetVerifiedAccessTrustProvider(value); return *this;}
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline AttachVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { SetVerifiedAccessTrustProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about the Verified Access instance.</p>
      */
     inline const VerifiedAccessInstance& GetVerifiedAccessInstance() const{ return m_verifiedAccessInstance; }
-
-    /**
-     * <p>Details about the Verified Access instance.</p>
-     */
     inline void SetVerifiedAccessInstance(const VerifiedAccessInstance& value) { m_verifiedAccessInstance = value; }
-
-    /**
-     * <p>Details about the Verified Access instance.</p>
-     */
     inline void SetVerifiedAccessInstance(VerifiedAccessInstance&& value) { m_verifiedAccessInstance = std::move(value); }
-
-    /**
-     * <p>Details about the Verified Access instance.</p>
-     */
     inline AttachVerifiedAccessTrustProviderResponse& WithVerifiedAccessInstance(const VerifiedAccessInstance& value) { SetVerifiedAccessInstance(value); return *this;}
-
-    /**
-     * <p>Details about the Verified Access instance.</p>
-     */
     inline AttachVerifiedAccessTrustProviderResponse& WithVerifiedAccessInstance(VerifiedAccessInstance&& value) { SetVerifiedAccessInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AttachVerifiedAccessTrustProviderResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AttachVerifiedAccessTrustProviderResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;

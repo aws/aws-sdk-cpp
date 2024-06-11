@@ -39,132 +39,47 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The geofence successfully stored in a geofence collection.</p>
      */
     inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline BatchPutGeofenceSuccess& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline BatchPutGeofenceSuccess& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence successfully stored in a geofence collection.</p>
-     */
     inline BatchPutGeofenceSuccess& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp for when the geofence was stored in a geofence collection in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline BatchPutGeofenceSuccess& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the geofence was stored in a geofence collection in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline BatchPutGeofenceSuccess& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp for when the geofence was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-
-    /**
-     * <p>The timestamp for when the geofence was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the geofence was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-
-    /**
-     * <p>The timestamp for when the geofence was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the geofence was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline BatchPutGeofenceSuccess& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the geofence was last updated in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline BatchPutGeofenceSuccess& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_geofenceId;

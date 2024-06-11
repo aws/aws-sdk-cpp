@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the analysis result that you want to retrieve.</p>
      */
     inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline DescribeDetectorModelAnalysisRequest& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline DescribeDetectorModelAnalysisRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the analysis result that you want to retrieve.</p>
-     */
     inline DescribeDetectorModelAnalysisRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analysisId;

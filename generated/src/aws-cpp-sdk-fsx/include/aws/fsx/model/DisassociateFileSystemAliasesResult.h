@@ -42,70 +42,30 @@ namespace Model
     AWS_FSX_API DisassociateFileSystemAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
      * disassociate from the file system.</p>
      */
     inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliases = value; }
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliases = std::move(value); }
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline DisassociateFileSystemAliasesResult& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline DisassociateFileSystemAliasesResult& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline DisassociateFileSystemAliasesResult& AddAliases(const Alias& value) { m_aliases.push_back(value); return *this; }
-
-    /**
-     * <p>An array of one or more DNS aliases that Amazon FSx is attempting to
-     * disassociate from the file system.</p>
-     */
     inline DisassociateFileSystemAliasesResult& AddAliases(Alias&& value) { m_aliases.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateFileSystemAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateFileSystemAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateFileSystemAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Alias> m_aliases;

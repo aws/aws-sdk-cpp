@@ -32,87 +32,33 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the resource to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource to update.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the certificate to associate with the wireless gateway.</p>
      */
     inline const Aws::String& GetIotCertificateId() const{ return m_iotCertificateId; }
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline bool IotCertificateIdHasBeenSet() const { return m_iotCertificateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(const Aws::String& value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId = value; }
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(Aws::String&& value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(const char* value) { m_iotCertificateIdHasBeenSet = true; m_iotCertificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(const Aws::String& value) { SetIotCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(Aws::String&& value) { SetIotCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate to associate with the wireless gateway.</p>
-     */
     inline AssociateWirelessGatewayWithCertificateRequest& WithIotCertificateId(const char* value) { SetIotCertificateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

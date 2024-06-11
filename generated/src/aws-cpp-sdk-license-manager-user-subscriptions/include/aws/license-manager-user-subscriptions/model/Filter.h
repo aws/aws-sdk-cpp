@@ -40,128 +40,47 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an attribute to use as a filter.</p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline Filter& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline Filter& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an attribute to use as a filter.</p>
-     */
     inline Filter& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of search (For example, eq, geq, leq)</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline Filter& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline Filter& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of search (For example, eq, geq, leq)</p>
-     */
     inline Filter& WithOperation(const char* value) { SetOperation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value of the filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Value of the filter.</p>
-     */
     inline Filter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attribute;

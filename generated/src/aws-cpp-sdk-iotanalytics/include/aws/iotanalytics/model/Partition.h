@@ -38,46 +38,19 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline Partition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline Partition& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the attribute that defines a partition dimension. </p>
-     */
     inline Partition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

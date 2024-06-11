@@ -36,26 +36,15 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of retention lifecycle policies in the current account.</p>
      */
     inline long long GetRetentionPolicyCount() const{ return m_retentionPolicyCount; }
-
-    /**
-     * <p>The number of retention lifecycle policies in the current account.</p>
-     */
     inline bool RetentionPolicyCountHasBeenSet() const { return m_retentionPolicyCountHasBeenSet; }
-
-    /**
-     * <p>The number of retention lifecycle policies in the current account.</p>
-     */
     inline void SetRetentionPolicyCount(long long value) { m_retentionPolicyCountHasBeenSet = true; m_retentionPolicyCount = value; }
-
-    /**
-     * <p>The number of retention lifecycle policies in the current account.</p>
-     */
     inline LifecyclePolicyStats& WithRetentionPolicyCount(long long value) { SetRetentionPolicyCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_retentionPolicyCount;

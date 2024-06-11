@@ -42,130 +42,55 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The forecasted event identifier.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline ForecastedEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline ForecastedEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-
-    /**
-     * <p>The forecasted event identifier.</p>
-     */
     inline ForecastedEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The geofence identifier pertaining to the forecasted event.</p>
      */
     inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline ForecastedEvent& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline ForecastedEvent& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence identifier pertaining to the forecasted event.</p>
-     */
     inline ForecastedEvent& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if the device is located within the geofence.</p>
      */
     inline bool GetIsDeviceInGeofence() const{ return m_isDeviceInGeofence; }
-
-    /**
-     * <p>Indicates if the device is located within the geofence.</p>
-     */
     inline bool IsDeviceInGeofenceHasBeenSet() const { return m_isDeviceInGeofenceHasBeenSet; }
-
-    /**
-     * <p>Indicates if the device is located within the geofence.</p>
-     */
     inline void SetIsDeviceInGeofence(bool value) { m_isDeviceInGeofenceHasBeenSet = true; m_isDeviceInGeofence = value; }
-
-    /**
-     * <p>Indicates if the device is located within the geofence.</p>
-     */
     inline ForecastedEvent& WithIsDeviceInGeofence(bool value) { SetIsDeviceInGeofence(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The closest distance from the device's position to the geofence.</p>
      */
     inline double GetNearestDistance() const{ return m_nearestDistance; }
-
-    /**
-     * <p>The closest distance from the device's position to the geofence.</p>
-     */
     inline bool NearestDistanceHasBeenSet() const { return m_nearestDistanceHasBeenSet; }
-
-    /**
-     * <p>The closest distance from the device's position to the geofence.</p>
-     */
     inline void SetNearestDistance(double value) { m_nearestDistanceHasBeenSet = true; m_nearestDistance = value; }
-
-    /**
-     * <p>The closest distance from the device's position to the geofence.</p>
-     */
     inline ForecastedEvent& WithNearestDistance(double value) { SetNearestDistance(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The event type, forecasting three states for which a device can be in
      * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
@@ -176,171 +101,45 @@ namespace Model
      * is inside of a geofence, and the device is not moving.</p>
      */
     inline const ForecastedGeofenceEventType& GetEventType() const{ return m_eventType; }
-
-    /**
-     * <p>The event type, forecasting three states for which a device can be in
-     * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-     * geofence, but would breach the fence if the device is moving at its current
-     * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-     * inside of a geofence, but would breach the fence if the device is moving at its
-     * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-     * is inside of a geofence, and the device is not moving.</p>
-     */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-
-    /**
-     * <p>The event type, forecasting three states for which a device can be in
-     * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-     * geofence, but would breach the fence if the device is moving at its current
-     * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-     * inside of a geofence, but would breach the fence if the device is moving at its
-     * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-     * is inside of a geofence, and the device is not moving.</p>
-     */
     inline void SetEventType(const ForecastedGeofenceEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-
-    /**
-     * <p>The event type, forecasting three states for which a device can be in
-     * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-     * geofence, but would breach the fence if the device is moving at its current
-     * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-     * inside of a geofence, but would breach the fence if the device is moving at its
-     * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-     * is inside of a geofence, and the device is not moving.</p>
-     */
     inline void SetEventType(ForecastedGeofenceEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-
-    /**
-     * <p>The event type, forecasting three states for which a device can be in
-     * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-     * geofence, but would breach the fence if the device is moving at its current
-     * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-     * inside of a geofence, but would breach the fence if the device is moving at its
-     * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-     * is inside of a geofence, and the device is not moving.</p>
-     */
     inline ForecastedEvent& WithEventType(const ForecastedGeofenceEventType& value) { SetEventType(value); return *this;}
-
-    /**
-     * <p>The event type, forecasting three states for which a device can be in
-     * relative to a geofence:</p> <p> <code>ENTER</code>: If a device is outside of a
-     * geofence, but would breach the fence if the device is moving at its current
-     * speed within time horizon window.</p> <p> <code>EXIT</code>: If a device is
-     * inside of a geofence, but would breach the fence if the device is moving at its
-     * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
-     * is inside of a geofence, and the device is not moving.</p>
-     */
     inline ForecastedEvent& WithEventType(ForecastedGeofenceEventType&& value) { SetEventType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The forecasted time the device will breach the geofence in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline const Aws::Utils::DateTime& GetForecastedBreachTime() const{ return m_forecastedBreachTime; }
-
-    /**
-     * <p>The forecasted time the device will breach the geofence in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline bool ForecastedBreachTimeHasBeenSet() const { return m_forecastedBreachTimeHasBeenSet; }
-
-    /**
-     * <p>The forecasted time the device will breach the geofence in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetForecastedBreachTime(const Aws::Utils::DateTime& value) { m_forecastedBreachTimeHasBeenSet = true; m_forecastedBreachTime = value; }
-
-    /**
-     * <p>The forecasted time the device will breach the geofence in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline void SetForecastedBreachTime(Aws::Utils::DateTime&& value) { m_forecastedBreachTimeHasBeenSet = true; m_forecastedBreachTime = std::move(value); }
-
-    /**
-     * <p>The forecasted time the device will breach the geofence in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline ForecastedEvent& WithForecastedBreachTime(const Aws::Utils::DateTime& value) { SetForecastedBreachTime(value); return *this;}
-
-    /**
-     * <p>The forecasted time the device will breach the geofence in <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-     */
     inline ForecastedEvent& WithForecastedBreachTime(Aws::Utils::DateTime&& value) { SetForecastedBreachTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The geofence properties.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The geofence properties.</p>
-     */
     inline ForecastedEvent& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_eventId;

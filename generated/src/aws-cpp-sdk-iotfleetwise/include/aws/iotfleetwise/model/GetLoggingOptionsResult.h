@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTFLEETWISE_API GetLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
      */
     inline const CloudWatchLogDeliveryOptions& GetCloudWatchLogDelivery() const{ return m_cloudWatchLogDelivery; }
-
-    /**
-     * <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { m_cloudWatchLogDelivery = value; }
-
-    /**
-     * <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { m_cloudWatchLogDelivery = std::move(value); }
-
-    /**
-     * <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-     */
     inline GetLoggingOptionsResult& WithCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { SetCloudWatchLogDelivery(value); return *this;}
-
-    /**
-     * <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-     */
     inline GetLoggingOptionsResult& WithCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { SetCloudWatchLogDelivery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLoggingOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLoggingOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLoggingOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogDeliveryOptions m_cloudWatchLogDelivery;

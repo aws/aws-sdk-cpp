@@ -39,51 +39,20 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of delivery channel names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeliveryChannelNames() const{ return m_deliveryChannelNames; }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline bool DeliveryChannelNamesHasBeenSet() const { return m_deliveryChannelNamesHasBeenSet; }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline void SetDeliveryChannelNames(const Aws::Vector<Aws::String>& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = value; }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline void SetDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = std::move(value); }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline DescribeDeliveryChannelsRequest& WithDeliveryChannelNames(const Aws::Vector<Aws::String>& value) { SetDeliveryChannelNames(value); return *this;}
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline DescribeDeliveryChannelsRequest& WithDeliveryChannelNames(Aws::Vector<Aws::String>&& value) { SetDeliveryChannelNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(const Aws::String& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(Aws::String&& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of delivery channel names.</p>
-     */
     inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(const char* value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_deliveryChannelNames;

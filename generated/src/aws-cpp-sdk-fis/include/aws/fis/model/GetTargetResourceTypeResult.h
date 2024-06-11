@@ -33,53 +33,27 @@ namespace Model
     AWS_FIS_API GetTargetResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the resource type.</p>
      */
     inline const TargetResourceType& GetTargetResourceType() const{ return m_targetResourceType; }
-
-    /**
-     * <p>Information about the resource type.</p>
-     */
     inline void SetTargetResourceType(const TargetResourceType& value) { m_targetResourceType = value; }
-
-    /**
-     * <p>Information about the resource type.</p>
-     */
     inline void SetTargetResourceType(TargetResourceType&& value) { m_targetResourceType = std::move(value); }
-
-    /**
-     * <p>Information about the resource type.</p>
-     */
     inline GetTargetResourceTypeResult& WithTargetResourceType(const TargetResourceType& value) { SetTargetResourceType(value); return *this;}
-
-    /**
-     * <p>Information about the resource type.</p>
-     */
     inline GetTargetResourceTypeResult& WithTargetResourceType(TargetResourceType&& value) { SetTargetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTargetResourceTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTargetResourceTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTargetResourceTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TargetResourceType m_targetResourceType;

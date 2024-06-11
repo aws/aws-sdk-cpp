@@ -34,99 +34,42 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetBatchPredictionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array containing the details of each batch prediction job.</p>
      */
     inline const Aws::Vector<BatchPrediction>& GetBatchPredictions() const{ return m_batchPredictions; }
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline void SetBatchPredictions(const Aws::Vector<BatchPrediction>& value) { m_batchPredictions = value; }
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline void SetBatchPredictions(Aws::Vector<BatchPrediction>&& value) { m_batchPredictions = std::move(value); }
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline GetBatchPredictionJobsResult& WithBatchPredictions(const Aws::Vector<BatchPrediction>& value) { SetBatchPredictions(value); return *this;}
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline GetBatchPredictionJobsResult& WithBatchPredictions(Aws::Vector<BatchPrediction>&& value) { SetBatchPredictions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline GetBatchPredictionJobsResult& AddBatchPredictions(const BatchPrediction& value) { m_batchPredictions.push_back(value); return *this; }
-
-    /**
-     * <p>An array containing the details of each batch prediction job.</p>
-     */
     inline GetBatchPredictionJobsResult& AddBatchPredictions(BatchPrediction&& value) { m_batchPredictions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next token for the subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetBatchPredictionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetBatchPredictionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The next token for the subsequent request.</p>
-     */
     inline GetBatchPredictionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBatchPredictionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBatchPredictionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBatchPredictionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchPrediction> m_batchPredictions;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIME_API UpdateRoomMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The room membership details.</p>
      */
     inline const RoomMembership& GetRoomMembership() const{ return m_roomMembership; }
-
-    /**
-     * <p>The room membership details.</p>
-     */
     inline void SetRoomMembership(const RoomMembership& value) { m_roomMembership = value; }
-
-    /**
-     * <p>The room membership details.</p>
-     */
     inline void SetRoomMembership(RoomMembership&& value) { m_roomMembership = std::move(value); }
-
-    /**
-     * <p>The room membership details.</p>
-     */
     inline UpdateRoomMembershipResult& WithRoomMembership(const RoomMembership& value) { SetRoomMembership(value); return *this;}
-
-    /**
-     * <p>The room membership details.</p>
-     */
     inline UpdateRoomMembershipResult& WithRoomMembership(RoomMembership&& value) { SetRoomMembership(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateRoomMembershipResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateRoomMembershipResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateRoomMembershipResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RoomMembership m_roomMembership;

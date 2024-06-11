@@ -39,147 +39,56 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of jobs to return in one page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of jobs to return in one page of results.</p>
-     */
     inline ListReadSetImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListReadSetImportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListReadSetImportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
     inline ListReadSetImportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The jobs' sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline ListReadSetImportJobsRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline ListReadSetImportJobsRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The jobs' sequence store ID.</p>
-     */
     inline ListReadSetImportJobsRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A filter to apply to the list.</p>
      */
     inline const ImportReadSetFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline void SetFilter(const ImportReadSetFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline void SetFilter(ImportReadSetFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline ListReadSetImportJobsRequest& WithFilter(const ImportReadSetFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
     inline ListReadSetImportJobsRequest& WithFilter(ImportReadSetFilter&& value) { SetFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

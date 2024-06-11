@@ -39,67 +39,29 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The connector-specific properties of the profile configuration. </p>
      */
     inline const ConnectorProfileProperties& GetConnectorProfileProperties() const{ return m_connectorProfileProperties; }
-
-    /**
-     * <p> The connector-specific properties of the profile configuration. </p>
-     */
     inline bool ConnectorProfilePropertiesHasBeenSet() const { return m_connectorProfilePropertiesHasBeenSet; }
-
-    /**
-     * <p> The connector-specific properties of the profile configuration. </p>
-     */
     inline void SetConnectorProfileProperties(const ConnectorProfileProperties& value) { m_connectorProfilePropertiesHasBeenSet = true; m_connectorProfileProperties = value; }
-
-    /**
-     * <p> The connector-specific properties of the profile configuration. </p>
-     */
     inline void SetConnectorProfileProperties(ConnectorProfileProperties&& value) { m_connectorProfilePropertiesHasBeenSet = true; m_connectorProfileProperties = std::move(value); }
-
-    /**
-     * <p> The connector-specific properties of the profile configuration. </p>
-     */
     inline ConnectorProfileConfig& WithConnectorProfileProperties(const ConnectorProfileProperties& value) { SetConnectorProfileProperties(value); return *this;}
-
-    /**
-     * <p> The connector-specific properties of the profile configuration. </p>
-     */
     inline ConnectorProfileConfig& WithConnectorProfileProperties(ConnectorProfileProperties&& value) { SetConnectorProfileProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The connector-specific credentials required by each connector. </p>
      */
     inline const ConnectorProfileCredentials& GetConnectorProfileCredentials() const{ return m_connectorProfileCredentials; }
-
-    /**
-     * <p> The connector-specific credentials required by each connector. </p>
-     */
     inline bool ConnectorProfileCredentialsHasBeenSet() const { return m_connectorProfileCredentialsHasBeenSet; }
-
-    /**
-     * <p> The connector-specific credentials required by each connector. </p>
-     */
     inline void SetConnectorProfileCredentials(const ConnectorProfileCredentials& value) { m_connectorProfileCredentialsHasBeenSet = true; m_connectorProfileCredentials = value; }
-
-    /**
-     * <p> The connector-specific credentials required by each connector. </p>
-     */
     inline void SetConnectorProfileCredentials(ConnectorProfileCredentials&& value) { m_connectorProfileCredentialsHasBeenSet = true; m_connectorProfileCredentials = std::move(value); }
-
-    /**
-     * <p> The connector-specific credentials required by each connector. </p>
-     */
     inline ConnectorProfileConfig& WithConnectorProfileCredentials(const ConnectorProfileCredentials& value) { SetConnectorProfileCredentials(value); return *this;}
-
-    /**
-     * <p> The connector-specific credentials required by each connector. </p>
-     */
     inline ConnectorProfileConfig& WithConnectorProfileCredentials(ConnectorProfileCredentials&& value) { SetConnectorProfileCredentials(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConnectorProfileProperties m_connectorProfileProperties;

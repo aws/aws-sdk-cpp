@@ -37,103 +37,35 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The client application clientID if the ClientAppType is
      * <code>USER_MANAGED</code>.</p>
      */
     inline const Aws::String& GetUserManagedClientApplicationClientId() const{ return m_userManagedClientApplicationClientId; }
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline bool UserManagedClientApplicationClientIdHasBeenSet() const { return m_userManagedClientApplicationClientIdHasBeenSet; }
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline void SetUserManagedClientApplicationClientId(const Aws::String& value) { m_userManagedClientApplicationClientIdHasBeenSet = true; m_userManagedClientApplicationClientId = value; }
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline void SetUserManagedClientApplicationClientId(Aws::String&& value) { m_userManagedClientApplicationClientIdHasBeenSet = true; m_userManagedClientApplicationClientId = std::move(value); }
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline void SetUserManagedClientApplicationClientId(const char* value) { m_userManagedClientApplicationClientIdHasBeenSet = true; m_userManagedClientApplicationClientId.assign(value); }
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline OAuth2ClientApplication& WithUserManagedClientApplicationClientId(const Aws::String& value) { SetUserManagedClientApplicationClientId(value); return *this;}
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline OAuth2ClientApplication& WithUserManagedClientApplicationClientId(Aws::String&& value) { SetUserManagedClientApplicationClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The client application clientID if the ClientAppType is
-     * <code>USER_MANAGED</code>.</p>
-     */
     inline OAuth2ClientApplication& WithUserManagedClientApplicationClientId(const char* value) { SetUserManagedClientApplicationClientId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reference to the SaaS-side client app that is Amazon Web Services
      * managed.</p>
      */
     inline const Aws::String& GetAWSManagedClientApplicationReference() const{ return m_aWSManagedClientApplicationReference; }
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline bool AWSManagedClientApplicationReferenceHasBeenSet() const { return m_aWSManagedClientApplicationReferenceHasBeenSet; }
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline void SetAWSManagedClientApplicationReference(const Aws::String& value) { m_aWSManagedClientApplicationReferenceHasBeenSet = true; m_aWSManagedClientApplicationReference = value; }
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline void SetAWSManagedClientApplicationReference(Aws::String&& value) { m_aWSManagedClientApplicationReferenceHasBeenSet = true; m_aWSManagedClientApplicationReference = std::move(value); }
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline void SetAWSManagedClientApplicationReference(const char* value) { m_aWSManagedClientApplicationReferenceHasBeenSet = true; m_aWSManagedClientApplicationReference.assign(value); }
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline OAuth2ClientApplication& WithAWSManagedClientApplicationReference(const Aws::String& value) { SetAWSManagedClientApplicationReference(value); return *this;}
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline OAuth2ClientApplication& WithAWSManagedClientApplicationReference(Aws::String&& value) { SetAWSManagedClientApplicationReference(std::move(value)); return *this;}
-
-    /**
-     * <p>The reference to the SaaS-side client app that is Amazon Web Services
-     * managed.</p>
-     */
     inline OAuth2ClientApplication& WithAWSManagedClientApplicationReference(const char* value) { SetAWSManagedClientApplicationReference(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userManagedClientApplicationClientId;

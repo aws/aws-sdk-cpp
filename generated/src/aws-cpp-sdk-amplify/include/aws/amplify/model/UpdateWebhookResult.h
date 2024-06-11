@@ -39,53 +39,27 @@ namespace Model
     AWS_AMPLIFY_API UpdateWebhookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes a webhook that connects repository events to an Amplify app. </p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
-
-    /**
-     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
-     */
     inline void SetWebhook(const Webhook& value) { m_webhook = value; }
-
-    /**
-     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
-     */
     inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
-
-    /**
-     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
-     */
     inline UpdateWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
-
-    /**
-     * <p>Describes a webhook that connects repository events to an Amplify app. </p>
-     */
     inline UpdateWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateWebhookResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateWebhookResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateWebhookResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Webhook m_webhook;

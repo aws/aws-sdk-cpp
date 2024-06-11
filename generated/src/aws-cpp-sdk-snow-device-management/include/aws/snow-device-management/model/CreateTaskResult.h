@@ -32,99 +32,42 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API CreateTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the task that you created.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task that you created.</p>
-     */
     inline CreateTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskArn;

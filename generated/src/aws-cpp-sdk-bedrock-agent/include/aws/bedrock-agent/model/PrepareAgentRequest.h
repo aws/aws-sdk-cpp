@@ -32,54 +32,20 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
      * version.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline PrepareAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline PrepareAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
-     * version.</p>
-     */
     inline PrepareAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

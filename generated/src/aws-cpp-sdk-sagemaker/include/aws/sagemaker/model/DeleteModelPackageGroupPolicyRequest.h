@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the model group for which to delete the policy.</p>
      */
     inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline DeleteModelPackageGroupPolicyRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline DeleteModelPackageGroupPolicyRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the model group for which to delete the policy.</p>
-     */
     inline DeleteModelPackageGroupPolicyRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelPackageGroupName;

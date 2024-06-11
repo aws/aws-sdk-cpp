@@ -38,67 +38,29 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration of the Amazon Web Services Glue data source.</p>
      */
     inline const GlueRunConfigurationInput& GetGlueRunConfiguration() const{ return m_glueRunConfiguration; }
-
-    /**
-     * <p>The configuration of the Amazon Web Services Glue data source.</p>
-     */
     inline bool GlueRunConfigurationHasBeenSet() const { return m_glueRunConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration of the Amazon Web Services Glue data source.</p>
-     */
     inline void SetGlueRunConfiguration(const GlueRunConfigurationInput& value) { m_glueRunConfigurationHasBeenSet = true; m_glueRunConfiguration = value; }
-
-    /**
-     * <p>The configuration of the Amazon Web Services Glue data source.</p>
-     */
     inline void SetGlueRunConfiguration(GlueRunConfigurationInput&& value) { m_glueRunConfigurationHasBeenSet = true; m_glueRunConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration of the Amazon Web Services Glue data source.</p>
-     */
     inline DataSourceConfigurationInput& WithGlueRunConfiguration(const GlueRunConfigurationInput& value) { SetGlueRunConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration of the Amazon Web Services Glue data source.</p>
-     */
     inline DataSourceConfigurationInput& WithGlueRunConfiguration(GlueRunConfigurationInput&& value) { SetGlueRunConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of the Amazon Redshift data source.</p>
      */
     inline const RedshiftRunConfigurationInput& GetRedshiftRunConfiguration() const{ return m_redshiftRunConfiguration; }
-
-    /**
-     * <p>The configuration of the Amazon Redshift data source.</p>
-     */
     inline bool RedshiftRunConfigurationHasBeenSet() const { return m_redshiftRunConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration of the Amazon Redshift data source.</p>
-     */
     inline void SetRedshiftRunConfiguration(const RedshiftRunConfigurationInput& value) { m_redshiftRunConfigurationHasBeenSet = true; m_redshiftRunConfiguration = value; }
-
-    /**
-     * <p>The configuration of the Amazon Redshift data source.</p>
-     */
     inline void SetRedshiftRunConfiguration(RedshiftRunConfigurationInput&& value) { m_redshiftRunConfigurationHasBeenSet = true; m_redshiftRunConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration of the Amazon Redshift data source.</p>
-     */
     inline DataSourceConfigurationInput& WithRedshiftRunConfiguration(const RedshiftRunConfigurationInput& value) { SetRedshiftRunConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration of the Amazon Redshift data source.</p>
-     */
     inline DataSourceConfigurationInput& WithRedshiftRunConfiguration(RedshiftRunConfigurationInput&& value) { SetRedshiftRunConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueRunConfigurationInput m_glueRunConfiguration;

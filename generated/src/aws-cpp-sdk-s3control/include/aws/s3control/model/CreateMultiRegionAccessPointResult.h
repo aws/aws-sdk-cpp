@@ -32,77 +32,31 @@ namespace Model
     AWS_S3CONTROL_API CreateMultiRegionAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The request token associated with the request. You can use this token with <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
      * to determine the status of asynchronous requests.</p>
      */
     inline const Aws::String& GetRequestTokenARN() const{ return m_requestTokenARN; }
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline void SetRequestTokenARN(const Aws::String& value) { m_requestTokenARN = value; }
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline void SetRequestTokenARN(Aws::String&& value) { m_requestTokenARN = std::move(value); }
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline void SetRequestTokenARN(const char* value) { m_requestTokenARN.assign(value); }
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline CreateMultiRegionAccessPointResult& WithRequestTokenARN(const Aws::String& value) { SetRequestTokenARN(value); return *this;}
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline CreateMultiRegionAccessPointResult& WithRequestTokenARN(Aws::String&& value) { SetRequestTokenARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The request token associated with the request. You can use this token with <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a>
-     * to determine the status of asynchronous requests.</p>
-     */
     inline CreateMultiRegionAccessPointResult& WithRequestTokenARN(const char* value) { SetRequestTokenARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMultiRegionAccessPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMultiRegionAccessPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMultiRegionAccessPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestTokenARN;

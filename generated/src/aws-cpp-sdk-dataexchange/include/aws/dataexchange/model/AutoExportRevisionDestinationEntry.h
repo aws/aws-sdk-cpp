@@ -38,47 +38,21 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string representing the pattern for generated names of the individual
      * assets in the revision. For more information about key patterns, see <a
@@ -86,63 +60,14 @@ namespace Model
      * patterns when exporting revisions</a>.</p>
      */
     inline const Aws::String& GetKeyPattern() const{ return m_keyPattern; }
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline bool KeyPatternHasBeenSet() const { return m_keyPatternHasBeenSet; }
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline void SetKeyPattern(const Aws::String& value) { m_keyPatternHasBeenSet = true; m_keyPattern = value; }
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline void SetKeyPattern(Aws::String&& value) { m_keyPatternHasBeenSet = true; m_keyPattern = std::move(value); }
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline void SetKeyPattern(const char* value) { m_keyPatternHasBeenSet = true; m_keyPattern.assign(value); }
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithKeyPattern(const Aws::String& value) { SetKeyPattern(value); return *this;}
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithKeyPattern(Aws::String&& value) { SetKeyPattern(std::move(value)); return *this;}
-
-    /**
-     * <p>A string representing the pattern for generated names of the individual
-     * assets in the revision. For more information about key patterns, see <a
-     * href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key
-     * patterns when exporting revisions</a>.</p>
-     */
     inline AutoExportRevisionDestinationEntry& WithKeyPattern(const char* value) { SetKeyPattern(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

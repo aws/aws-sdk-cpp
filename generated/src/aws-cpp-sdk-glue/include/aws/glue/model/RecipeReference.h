@@ -37,87 +37,33 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the DataBrew recipe.</p>
      */
     inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The RecipeVersion of the DataBrew recipe.</p>
      */
     inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The RecipeVersion of the DataBrew recipe.</p>
-     */
     inline RecipeReference& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recipeArn;

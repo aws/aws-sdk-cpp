@@ -38,6 +38,7 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of recommendations that were excluded from the assessment.</p> <p>For
      * example, if the <code>excludedCount</code> for Alarms coverage scoring component
@@ -45,32 +46,12 @@ namespace Model
      * assessment.</p>
      */
     inline long long GetExcludedCount() const{ return m_excludedCount; }
-
-    /**
-     * <p>Number of recommendations that were excluded from the assessment.</p> <p>For
-     * example, if the <code>excludedCount</code> for Alarms coverage scoring component
-     * is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the
-     * assessment.</p>
-     */
     inline bool ExcludedCountHasBeenSet() const { return m_excludedCountHasBeenSet; }
-
-    /**
-     * <p>Number of recommendations that were excluded from the assessment.</p> <p>For
-     * example, if the <code>excludedCount</code> for Alarms coverage scoring component
-     * is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the
-     * assessment.</p>
-     */
     inline void SetExcludedCount(long long value) { m_excludedCountHasBeenSet = true; m_excludedCount = value; }
-
-    /**
-     * <p>Number of recommendations that were excluded from the assessment.</p> <p>For
-     * example, if the <code>excludedCount</code> for Alarms coverage scoring component
-     * is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the
-     * assessment.</p>
-     */
     inline ScoringComponentResiliencyScore& WithExcludedCount(long long value) { SetExcludedCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of recommendations that must be implemented to obtain the maximum
      * possible score for the scoring component. For SOPs, alarms, and tests, these are
@@ -81,41 +62,12 @@ namespace Model
      * need to be implemented to achieve the maximum possible score.</p>
      */
     inline long long GetOutstandingCount() const{ return m_outstandingCount; }
-
-    /**
-     * <p>Number of recommendations that must be implemented to obtain the maximum
-     * possible score for the scoring component. For SOPs, alarms, and tests, these are
-     * the number of recommendations that must be implemented. For compliance, these
-     * are the number of Application Components that have breached the resiliency
-     * policy.</p> <p>For example, if the <code>outstandingCount</code> for Alarms
-     * coverage scoring component is 5, it indicates that 5 Amazon CloudWatch alarms
-     * need to be implemented to achieve the maximum possible score.</p>
-     */
     inline bool OutstandingCountHasBeenSet() const { return m_outstandingCountHasBeenSet; }
-
-    /**
-     * <p>Number of recommendations that must be implemented to obtain the maximum
-     * possible score for the scoring component. For SOPs, alarms, and tests, these are
-     * the number of recommendations that must be implemented. For compliance, these
-     * are the number of Application Components that have breached the resiliency
-     * policy.</p> <p>For example, if the <code>outstandingCount</code> for Alarms
-     * coverage scoring component is 5, it indicates that 5 Amazon CloudWatch alarms
-     * need to be implemented to achieve the maximum possible score.</p>
-     */
     inline void SetOutstandingCount(long long value) { m_outstandingCountHasBeenSet = true; m_outstandingCount = value; }
-
-    /**
-     * <p>Number of recommendations that must be implemented to obtain the maximum
-     * possible score for the scoring component. For SOPs, alarms, and tests, these are
-     * the number of recommendations that must be implemented. For compliance, these
-     * are the number of Application Components that have breached the resiliency
-     * policy.</p> <p>For example, if the <code>outstandingCount</code> for Alarms
-     * coverage scoring component is 5, it indicates that 5 Amazon CloudWatch alarms
-     * need to be implemented to achieve the maximum possible score.</p>
-     */
     inline ScoringComponentResiliencyScore& WithOutstandingCount(long long value) { SetOutstandingCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum possible score that can be obtained for the scoring component. </p>
      * <p>For example, if the <code>possibleScore</code> is 20 points, it indicates the
@@ -123,56 +75,21 @@ namespace Model
      * new assessment after implementing all the Resilience Hub recommendations.</p>
      */
     inline double GetPossibleScore() const{ return m_possibleScore; }
-
-    /**
-     * <p>Maximum possible score that can be obtained for the scoring component. </p>
-     * <p>For example, if the <code>possibleScore</code> is 20 points, it indicates the
-     * maximum possible score you can achieve for the scoring component when you run a
-     * new assessment after implementing all the Resilience Hub recommendations.</p>
-     */
     inline bool PossibleScoreHasBeenSet() const { return m_possibleScoreHasBeenSet; }
-
-    /**
-     * <p>Maximum possible score that can be obtained for the scoring component. </p>
-     * <p>For example, if the <code>possibleScore</code> is 20 points, it indicates the
-     * maximum possible score you can achieve for the scoring component when you run a
-     * new assessment after implementing all the Resilience Hub recommendations.</p>
-     */
     inline void SetPossibleScore(double value) { m_possibleScoreHasBeenSet = true; m_possibleScore = value; }
-
-    /**
-     * <p>Maximum possible score that can be obtained for the scoring component. </p>
-     * <p>For example, if the <code>possibleScore</code> is 20 points, it indicates the
-     * maximum possible score you can achieve for the scoring component when you run a
-     * new assessment after implementing all the Resilience Hub recommendations.</p>
-     */
     inline ScoringComponentResiliencyScore& WithPossibleScore(double value) { SetPossibleScore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resiliency score points given for the scoring component. The score is always
      * less than or equal to the <code>possibleScore</code>.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>Resiliency score points given for the scoring component. The score is always
-     * less than or equal to the <code>possibleScore</code>.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>Resiliency score points given for the scoring component. The score is always
-     * less than or equal to the <code>possibleScore</code>.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>Resiliency score points given for the scoring component. The score is always
-     * less than or equal to the <code>possibleScore</code>.</p>
-     */
     inline ScoringComponentResiliencyScore& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     long long m_excludedCount;

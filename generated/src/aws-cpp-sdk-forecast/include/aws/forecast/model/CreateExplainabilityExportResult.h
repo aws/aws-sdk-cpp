@@ -32,63 +32,29 @@ namespace Model
     AWS_FORECASTSERVICE_API CreateExplainabilityExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the export.</p>
      */
     inline const Aws::String& GetExplainabilityExportArn() const{ return m_explainabilityExportArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline void SetExplainabilityExportArn(const Aws::String& value) { m_explainabilityExportArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline void SetExplainabilityExportArn(Aws::String&& value) { m_explainabilityExportArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline void SetExplainabilityExportArn(const char* value) { m_explainabilityExportArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline CreateExplainabilityExportResult& WithExplainabilityExportArn(const Aws::String& value) { SetExplainabilityExportArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline CreateExplainabilityExportResult& WithExplainabilityExportArn(Aws::String&& value) { SetExplainabilityExportArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export.</p>
-     */
     inline CreateExplainabilityExportResult& WithExplainabilityExportArn(const char* value) { SetExplainabilityExportArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateExplainabilityExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateExplainabilityExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateExplainabilityExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_explainabilityExportArn;

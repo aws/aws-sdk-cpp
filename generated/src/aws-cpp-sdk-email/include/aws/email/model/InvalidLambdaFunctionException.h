@@ -43,46 +43,19 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates that the ARN of the function was not found.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline InvalidLambdaFunctionException& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline InvalidLambdaFunctionException& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates that the ARN of the function was not found.</p>
-     */
     inline InvalidLambdaFunctionException& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_functionArn;

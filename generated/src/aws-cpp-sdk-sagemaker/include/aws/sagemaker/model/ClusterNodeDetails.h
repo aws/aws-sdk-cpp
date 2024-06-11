@@ -43,349 +43,132 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The instance group name in which the instance is.</p>
      */
     inline const Aws::String& GetInstanceGroupName() const{ return m_instanceGroupName; }
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline bool InstanceGroupNameHasBeenSet() const { return m_instanceGroupNameHasBeenSet; }
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline void SetInstanceGroupName(const Aws::String& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = value; }
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline void SetInstanceGroupName(Aws::String&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::move(value); }
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline void SetInstanceGroupName(const char* value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName.assign(value); }
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline ClusterNodeDetails& WithInstanceGroupName(const Aws::String& value) { SetInstanceGroupName(value); return *this;}
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline ClusterNodeDetails& WithInstanceGroupName(Aws::String&& value) { SetInstanceGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance group name in which the instance is.</p>
-     */
     inline ClusterNodeDetails& WithInstanceGroupName(const char* value) { SetInstanceGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the instance.</p>
      */
     inline const ClusterInstanceStatusDetails& GetInstanceStatus() const{ return m_instanceStatus; }
-
-    /**
-     * <p>The status of the instance.</p>
-     */
     inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the instance.</p>
-     */
     inline void SetInstanceStatus(const ClusterInstanceStatusDetails& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
-
-    /**
-     * <p>The status of the instance.</p>
-     */
     inline void SetInstanceStatus(ClusterInstanceStatusDetails&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
-
-    /**
-     * <p>The status of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceStatus(const ClusterInstanceStatusDetails& value) { SetInstanceStatus(value); return *this;}
-
-    /**
-     * <p>The status of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceStatus(ClusterInstanceStatusDetails&& value) { SetInstanceStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the instance.</p>
      */
     inline const ClusterInstanceType& GetInstanceType() const{ return m_instanceType; }
-
-    /**
-     * <p>The type of the instance.</p>
-     */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the instance.</p>
-     */
     inline void SetInstanceType(const ClusterInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-
-    /**
-     * <p>The type of the instance.</p>
-     */
     inline void SetInstanceType(ClusterInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-
-    /**
-     * <p>The type of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceType(const ClusterInstanceType& value) { SetInstanceType(value); return *this;}
-
-    /**
-     * <p>The type of the instance.</p>
-     */
     inline ClusterNodeDetails& WithInstanceType(ClusterInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the instance is launched.</p>
      */
     inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
-
-    /**
-     * <p>The time when the instance is launched.</p>
-     */
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
-
-    /**
-     * <p>The time when the instance is launched.</p>
-     */
     inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
-
-    /**
-     * <p>The time when the instance is launched.</p>
-     */
     inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
-
-    /**
-     * <p>The time when the instance is launched.</p>
-     */
     inline ClusterNodeDetails& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
-
-    /**
-     * <p>The time when the instance is launched.</p>
-     */
     inline ClusterNodeDetails& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The LifeCycle configuration applied to the instance.</p>
      */
     inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const{ return m_lifeCycleConfig; }
-
-    /**
-     * <p>The LifeCycle configuration applied to the instance.</p>
-     */
     inline bool LifeCycleConfigHasBeenSet() const { return m_lifeCycleConfigHasBeenSet; }
-
-    /**
-     * <p>The LifeCycle configuration applied to the instance.</p>
-     */
     inline void SetLifeCycleConfig(const ClusterLifeCycleConfig& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = value; }
-
-    /**
-     * <p>The LifeCycle configuration applied to the instance.</p>
-     */
     inline void SetLifeCycleConfig(ClusterLifeCycleConfig&& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = std::move(value); }
-
-    /**
-     * <p>The LifeCycle configuration applied to the instance.</p>
-     */
     inline ClusterNodeDetails& WithLifeCycleConfig(const ClusterLifeCycleConfig& value) { SetLifeCycleConfig(value); return *this;}
-
-    /**
-     * <p>The LifeCycle configuration applied to the instance.</p>
-     */
     inline ClusterNodeDetails& WithLifeCycleConfig(ClusterLifeCycleConfig&& value) { SetLifeCycleConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of threads per CPU core you specified under
      * <code>CreateCluster</code>.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
-
-    /**
-     * <p>The number of threads per CPU core you specified under
-     * <code>CreateCluster</code>.</p>
-     */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
-
-    /**
-     * <p>The number of threads per CPU core you specified under
-     * <code>CreateCluster</code>.</p>
-     */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
-
-    /**
-     * <p>The number of threads per CPU core you specified under
-     * <code>CreateCluster</code>.</p>
-     */
     inline ClusterNodeDetails& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
      */
     inline const Aws::String& GetPrivatePrimaryIp() const{ return m_privatePrimaryIp; }
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline bool PrivatePrimaryIpHasBeenSet() const { return m_privatePrimaryIpHasBeenSet; }
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivatePrimaryIp(const Aws::String& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = value; }
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivatePrimaryIp(Aws::String&& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = std::move(value); }
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivatePrimaryIp(const char* value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp.assign(value); }
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivatePrimaryIp(const Aws::String& value) { SetPrivatePrimaryIp(value); return *this;}
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivatePrimaryIp(Aws::String&& value) { SetPrivatePrimaryIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivatePrimaryIp(const char* value) { SetPrivatePrimaryIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
      */
     inline const Aws::String& GetPrivateDnsHostname() const{ return m_privateDnsHostname; }
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline bool PrivateDnsHostnameHasBeenSet() const { return m_privateDnsHostnameHasBeenSet; }
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivateDnsHostname(const Aws::String& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = value; }
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivateDnsHostname(Aws::String&& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = std::move(value); }
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPrivateDnsHostname(const char* value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname.assign(value); }
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivateDnsHostname(const Aws::String& value) { SetPrivateDnsHostname(value); return *this;}
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivateDnsHostname(Aws::String&& value) { SetPrivateDnsHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPrivateDnsHostname(const char* value) { SetPrivateDnsHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The placement details of the SageMaker HyperPod cluster node.</p>
      */
     inline const ClusterInstancePlacement& GetPlacement() const{ return m_placement; }
-
-    /**
-     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
-     */
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-
-    /**
-     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPlacement(const ClusterInstancePlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
-
-    /**
-     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
-     */
     inline void SetPlacement(ClusterInstancePlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-
-    /**
-     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPlacement(const ClusterInstancePlacement& value) { SetPlacement(value); return *this;}
-
-    /**
-     * <p>The placement details of the SageMaker HyperPod cluster node.</p>
-     */
     inline ClusterNodeDetails& WithPlacement(ClusterInstancePlacement&& value) { SetPlacement(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceGroupName;

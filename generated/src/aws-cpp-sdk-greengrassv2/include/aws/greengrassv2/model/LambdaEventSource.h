@@ -40,47 +40,21 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The topic to which to subscribe to receive event messages.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline LambdaEventSource& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline LambdaEventSource& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>The topic to which to subscribe to receive event messages.</p>
-     */
     inline LambdaEventSource& WithTopic(const char* value) { SetTopic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of event source. Choose from the following options:</p> <ul> <li>
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
@@ -91,62 +65,12 @@ namespace Model
      * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline const LambdaEventSourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of event source. Choose from the following options:</p> <ul> <li>
-     * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
-     * event source type doesn't support MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-     * This event source type supports MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> </ul>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of event source. Choose from the following options:</p> <ul> <li>
-     * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
-     * event source type doesn't support MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-     * This event source type supports MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> </ul>
-     */
     inline void SetType(const LambdaEventSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of event source. Choose from the following options:</p> <ul> <li>
-     * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
-     * event source type doesn't support MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-     * This event source type supports MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> </ul>
-     */
     inline void SetType(LambdaEventSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of event source. Choose from the following options:</p> <ul> <li>
-     * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
-     * event source type doesn't support MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-     * This event source type supports MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> </ul>
-     */
     inline LambdaEventSource& WithType(const LambdaEventSourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of event source. Choose from the following options:</p> <ul> <li>
-     * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
-     * event source type doesn't support MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-     * This event source type supports MQTT wildcards (<code>+</code> and
-     * <code>#</code>) in the event source topic.</p> </li> </ul>
-     */
     inline LambdaEventSource& WithType(LambdaEventSourceType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topic;

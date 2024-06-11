@@ -38,67 +38,29 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The earliest end time in the time range. </p>
      */
     inline const Aws::Utils::DateTime& GetFromTime() const{ return m_fromTime; }
-
-    /**
-     * <p> The earliest end time in the time range. </p>
-     */
     inline bool FromTimeHasBeenSet() const { return m_fromTimeHasBeenSet; }
-
-    /**
-     * <p> The earliest end time in the time range. </p>
-     */
     inline void SetFromTime(const Aws::Utils::DateTime& value) { m_fromTimeHasBeenSet = true; m_fromTime = value; }
-
-    /**
-     * <p> The earliest end time in the time range. </p>
-     */
     inline void SetFromTime(Aws::Utils::DateTime&& value) { m_fromTimeHasBeenSet = true; m_fromTime = std::move(value); }
-
-    /**
-     * <p> The earliest end time in the time range. </p>
-     */
     inline EndTimeRange& WithFromTime(const Aws::Utils::DateTime& value) { SetFromTime(value); return *this;}
-
-    /**
-     * <p> The earliest end time in the time range. </p>
-     */
     inline EndTimeRange& WithFromTime(Aws::Utils::DateTime&& value) { SetFromTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The latest end time in the time range. </p>
      */
     inline const Aws::Utils::DateTime& GetToTime() const{ return m_toTime; }
-
-    /**
-     * <p> The latest end time in the time range. </p>
-     */
     inline bool ToTimeHasBeenSet() const { return m_toTimeHasBeenSet; }
-
-    /**
-     * <p> The latest end time in the time range. </p>
-     */
     inline void SetToTime(const Aws::Utils::DateTime& value) { m_toTimeHasBeenSet = true; m_toTime = value; }
-
-    /**
-     * <p> The latest end time in the time range. </p>
-     */
     inline void SetToTime(Aws::Utils::DateTime&& value) { m_toTimeHasBeenSet = true; m_toTime = std::move(value); }
-
-    /**
-     * <p> The latest end time in the time range. </p>
-     */
     inline EndTimeRange& WithToTime(const Aws::Utils::DateTime& value) { SetToTime(value); return *this;}
-
-    /**
-     * <p> The latest end time in the time range. </p>
-     */
     inline EndTimeRange& WithToTime(Aws::Utils::DateTime&& value) { SetToTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_fromTime;

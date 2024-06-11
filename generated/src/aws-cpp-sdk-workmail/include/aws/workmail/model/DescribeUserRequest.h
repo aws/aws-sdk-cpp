@@ -34,47 +34,21 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier for the organization under which the user exists.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline DescribeUserRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline DescribeUserRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the organization under which the user exists.</p>
-     */
     inline DescribeUserRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the user to be described.</p> <p>The identifier can be the
      * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
@@ -83,70 +57,14 @@ namespace Model
      * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline DescribeUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline DescribeUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the user to be described.</p> <p>The identifier can be the
-     * <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
-     * are available:</p> <ul> <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or
-     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
-     * user@domain.tld</p> </li> <li> <p>User name: user</p> </li> </ul> <p/>
-     */
     inline DescribeUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

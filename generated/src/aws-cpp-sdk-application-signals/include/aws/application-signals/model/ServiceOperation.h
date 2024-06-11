@@ -42,103 +42,35 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the operation, discovered by Application Signals.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline ServiceOperation& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline ServiceOperation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the operation, discovered by Application Signals.</p>
-     */
     inline ServiceOperation& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of structures that each contain information about one metric
      * associated with this service operation that was discovered by Application
      * Signals.</p>
      */
     inline const Aws::Vector<MetricReference>& GetMetricReferences() const{ return m_metricReferences; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline bool MetricReferencesHasBeenSet() const { return m_metricReferencesHasBeenSet; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline void SetMetricReferences(const Aws::Vector<MetricReference>& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = value; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline void SetMetricReferences(Aws::Vector<MetricReference>&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::move(value); }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceOperation& WithMetricReferences(const Aws::Vector<MetricReference>& value) { SetMetricReferences(value); return *this;}
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceOperation& WithMetricReferences(Aws::Vector<MetricReference>&& value) { SetMetricReferences(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceOperation& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service operation that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceOperation& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

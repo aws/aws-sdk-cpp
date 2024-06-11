@@ -41,88 +41,39 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The targeted port of the weighted object.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The targeted port of the weighted object.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The targeted port of the weighted object.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The targeted port of the weighted object.</p>
-     */
     inline WeightedTarget& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The virtual node to associate with the weighted target.</p>
      */
     inline const Aws::String& GetVirtualNode() const{ return m_virtualNode; }
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline void SetVirtualNode(const Aws::String& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline void SetVirtualNode(Aws::String&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::move(value); }
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline void SetVirtualNode(const char* value) { m_virtualNodeHasBeenSet = true; m_virtualNode.assign(value); }
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline WeightedTarget& WithVirtualNode(const Aws::String& value) { SetVirtualNode(value); return *this;}
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline WeightedTarget& WithVirtualNode(Aws::String&& value) { SetVirtualNode(std::move(value)); return *this;}
-
-    /**
-     * <p>The virtual node to associate with the weighted target.</p>
-     */
     inline WeightedTarget& WithVirtualNode(const char* value) { SetVirtualNode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relative weight of the weighted target.</p>
      */
     inline int GetWeight() const{ return m_weight; }
-
-    /**
-     * <p>The relative weight of the weighted target.</p>
-     */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
-
-    /**
-     * <p>The relative weight of the weighted target.</p>
-     */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
-
-    /**
-     * <p>The relative weight of the weighted target.</p>
-     */
     inline WeightedTarget& WithWeight(int value) { SetWeight(value); return *this;}
-
+    ///@}
   private:
 
     int m_port;

@@ -33,53 +33,27 @@ namespace Model
     AWS_EMRCONTAINERS_API DescribeJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>This output displays information about the specified job template.</p>
      */
     inline const JobTemplate& GetJobTemplate() const{ return m_jobTemplate; }
-
-    /**
-     * <p>This output displays information about the specified job template.</p>
-     */
     inline void SetJobTemplate(const JobTemplate& value) { m_jobTemplate = value; }
-
-    /**
-     * <p>This output displays information about the specified job template.</p>
-     */
     inline void SetJobTemplate(JobTemplate&& value) { m_jobTemplate = std::move(value); }
-
-    /**
-     * <p>This output displays information about the specified job template.</p>
-     */
     inline DescribeJobTemplateResult& WithJobTemplate(const JobTemplate& value) { SetJobTemplate(value); return *this;}
-
-    /**
-     * <p>This output displays information about the specified job template.</p>
-     */
     inline DescribeJobTemplateResult& WithJobTemplate(JobTemplate&& value) { SetJobTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeJobTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeJobTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeJobTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobTemplate m_jobTemplate;

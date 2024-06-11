@@ -41,108 +41,43 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents the facet being added to the object.</p>
      */
     inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
-
-    /**
-     * <p>Represents the facet being added to the object.</p>
-     */
     inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
-
-    /**
-     * <p>Represents the facet being added to the object.</p>
-     */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
-
-    /**
-     * <p>Represents the facet being added to the object.</p>
-     */
     inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
-
-    /**
-     * <p>Represents the facet being added to the object.</p>
-     */
     inline BatchAddFacetToObject& WithSchemaFacet(const SchemaFacet& value) { SetSchemaFacet(value); return *this;}
-
-    /**
-     * <p>Represents the facet being added to the object.</p>
-     */
     inline BatchAddFacetToObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attributes to set on the object.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline bool ObjectAttributeListHasBeenSet() const { return m_objectAttributeListHasBeenSet; }
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline void SetObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline BatchAddFacetToObject& WithObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { SetObjectAttributeList(value); return *this;}
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline BatchAddFacetToObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline BatchAddFacetToObject& AddObjectAttributeList(const AttributeKeyAndValue& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes to set on the object.</p>
-     */
     inline BatchAddFacetToObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to the object being mutated.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>A reference to the object being mutated.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the object being mutated.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>A reference to the object being mutated.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>A reference to the object being mutated.</p>
-     */
     inline BatchAddFacetToObject& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>A reference to the object being mutated.</p>
-     */
     inline BatchAddFacetToObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SchemaFacet m_schemaFacet;

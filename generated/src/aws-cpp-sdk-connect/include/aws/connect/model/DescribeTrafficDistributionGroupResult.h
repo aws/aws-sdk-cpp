@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeTrafficDistributionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the traffic distribution group.</p>
      */
     inline const TrafficDistributionGroup& GetTrafficDistributionGroup() const{ return m_trafficDistributionGroup; }
-
-    /**
-     * <p>Information about the traffic distribution group.</p>
-     */
     inline void SetTrafficDistributionGroup(const TrafficDistributionGroup& value) { m_trafficDistributionGroup = value; }
-
-    /**
-     * <p>Information about the traffic distribution group.</p>
-     */
     inline void SetTrafficDistributionGroup(TrafficDistributionGroup&& value) { m_trafficDistributionGroup = std::move(value); }
-
-    /**
-     * <p>Information about the traffic distribution group.</p>
-     */
     inline DescribeTrafficDistributionGroupResult& WithTrafficDistributionGroup(const TrafficDistributionGroup& value) { SetTrafficDistributionGroup(value); return *this;}
-
-    /**
-     * <p>Information about the traffic distribution group.</p>
-     */
     inline DescribeTrafficDistributionGroupResult& WithTrafficDistributionGroup(TrafficDistributionGroup&& value) { SetTrafficDistributionGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTrafficDistributionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTrafficDistributionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTrafficDistributionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TrafficDistributionGroup m_trafficDistributionGroup;

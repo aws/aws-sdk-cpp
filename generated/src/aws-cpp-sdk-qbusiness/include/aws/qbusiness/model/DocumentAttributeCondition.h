@@ -51,6 +51,7 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
@@ -59,71 +60,16 @@ namespace Model
      * key used for the condition.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently doesn't support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the document attribute used for the condition.</p> <p>For
      * example, 'Source_URI' could be an identifier for the attribute or metadata field
@@ -132,71 +78,22 @@ namespace Model
      * key used for the condition.</p>
      */
     inline const DocumentEnrichmentConditionOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently does not support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently does not support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline void SetOperator(const DocumentEnrichmentConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently does not support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline void SetOperator(DocumentEnrichmentConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently does not support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithOperator(const DocumentEnrichmentConditionOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The identifier of the document attribute used for the condition.</p> <p>For
-     * example, 'Source_URI' could be an identifier for the attribute or metadata field
-     * that contains source URIs associated with the documents.</p> <p>Amazon Q
-     * Business currently does not support <code>_document_body</code> as an attribute
-     * key used for the condition.</p>
-     */
     inline DocumentAttributeCondition& WithOperator(DocumentEnrichmentConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DocumentAttributeValue& GetValue() const{ return m_value; }
-
-    
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    
     inline void SetValue(const DocumentAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    
     inline void SetValue(DocumentAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    
     inline DocumentAttributeCondition& WithValue(const DocumentAttributeValue& value) { SetValue(value); return *this;}
-
-    
     inline DocumentAttributeCondition& WithValue(DocumentAttributeValue&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

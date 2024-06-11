@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The on-visual menu options for a visual.</p>
      */
     inline const VisualMenuOption& GetVisualMenuOption() const{ return m_visualMenuOption; }
-
-    /**
-     * <p>The on-visual menu options for a visual.</p>
-     */
     inline bool VisualMenuOptionHasBeenSet() const { return m_visualMenuOptionHasBeenSet; }
-
-    /**
-     * <p>The on-visual menu options for a visual.</p>
-     */
     inline void SetVisualMenuOption(const VisualMenuOption& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = value; }
-
-    /**
-     * <p>The on-visual menu options for a visual.</p>
-     */
     inline void SetVisualMenuOption(VisualMenuOption&& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = std::move(value); }
-
-    /**
-     * <p>The on-visual menu options for a visual.</p>
-     */
     inline VisualInteractionOptions& WithVisualMenuOption(const VisualMenuOption& value) { SetVisualMenuOption(value); return *this;}
-
-    /**
-     * <p>The on-visual menu options for a visual.</p>
-     */
     inline VisualInteractionOptions& WithVisualMenuOption(VisualMenuOption&& value) { SetVisualMenuOption(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The context menu options for a visual.</p>
      */
     inline const ContextMenuOption& GetContextMenuOption() const{ return m_contextMenuOption; }
-
-    /**
-     * <p>The context menu options for a visual.</p>
-     */
     inline bool ContextMenuOptionHasBeenSet() const { return m_contextMenuOptionHasBeenSet; }
-
-    /**
-     * <p>The context menu options for a visual.</p>
-     */
     inline void SetContextMenuOption(const ContextMenuOption& value) { m_contextMenuOptionHasBeenSet = true; m_contextMenuOption = value; }
-
-    /**
-     * <p>The context menu options for a visual.</p>
-     */
     inline void SetContextMenuOption(ContextMenuOption&& value) { m_contextMenuOptionHasBeenSet = true; m_contextMenuOption = std::move(value); }
-
-    /**
-     * <p>The context menu options for a visual.</p>
-     */
     inline VisualInteractionOptions& WithContextMenuOption(const ContextMenuOption& value) { SetContextMenuOption(value); return *this;}
-
-    /**
-     * <p>The context menu options for a visual.</p>
-     */
     inline VisualInteractionOptions& WithContextMenuOption(ContextMenuOption&& value) { SetContextMenuOption(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VisualMenuOption m_visualMenuOption;

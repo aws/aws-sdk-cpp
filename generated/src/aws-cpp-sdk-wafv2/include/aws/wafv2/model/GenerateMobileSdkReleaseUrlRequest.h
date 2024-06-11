@@ -35,85 +35,32 @@ namespace Model
     AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The device platform.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The device platform.</p>
-     */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-
-    /**
-     * <p>The device platform.</p>
-     */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The device platform.</p>
-     */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The device platform.</p>
-     */
     inline GenerateMobileSdkReleaseUrlRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The device platform.</p>
-     */
     inline GenerateMobileSdkReleaseUrlRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The release version. For the latest available version, specify
      * <code>LATEST</code>.</p>
      */
     inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline GenerateMobileSdkReleaseUrlRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline GenerateMobileSdkReleaseUrlRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The release version. For the latest available version, specify
-     * <code>LATEST</code>.</p>
-     */
     inline GenerateMobileSdkReleaseUrlRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
-
+    ///@}
   private:
 
     Platform m_platform;

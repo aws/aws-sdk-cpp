@@ -36,34 +36,17 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the persistent storage in gigabytes (specifically GiB).</p>
      *  <p>Valid values for storage are based on memory sizes in 16GB increments.
      * Valid values are 16, 32, and 64.</p> 
      */
     inline int GetSizeInGiB() const{ return m_sizeInGiB; }
-
-    /**
-     * <p>The size of the persistent storage in gigabytes (specifically GiB).</p>
-     *  <p>Valid values for storage are based on memory sizes in 16GB increments.
-     * Valid values are 16, 32, and 64.</p> 
-     */
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
-
-    /**
-     * <p>The size of the persistent storage in gigabytes (specifically GiB).</p>
-     *  <p>Valid values for storage are based on memory sizes in 16GB increments.
-     * Valid values are 16, 32, and 64.</p> 
-     */
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
-
-    /**
-     * <p>The size of the persistent storage in gigabytes (specifically GiB).</p>
-     *  <p>Valid values for storage are based on memory sizes in 16GB increments.
-     * Valid values are 16, 32, and 64.</p> 
-     */
     inline PersistentStorage& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
-
+    ///@}
   private:
 
     int m_sizeInGiB;

@@ -33,58 +33,28 @@ namespace Model
     AWS_ROLESANYWHERE_API ImportCrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The state of the certificate revocation list (CRL) after a read or write
      * operation.</p>
      */
     inline const CrlDetail& GetCrl() const{ return m_crl; }
-
-    /**
-     * <p>The state of the certificate revocation list (CRL) after a read or write
-     * operation.</p>
-     */
     inline void SetCrl(const CrlDetail& value) { m_crl = value; }
-
-    /**
-     * <p>The state of the certificate revocation list (CRL) after a read or write
-     * operation.</p>
-     */
     inline void SetCrl(CrlDetail&& value) { m_crl = std::move(value); }
-
-    /**
-     * <p>The state of the certificate revocation list (CRL) after a read or write
-     * operation.</p>
-     */
     inline ImportCrlResult& WithCrl(const CrlDetail& value) { SetCrl(value); return *this;}
-
-    /**
-     * <p>The state of the certificate revocation list (CRL) after a read or write
-     * operation.</p>
-     */
     inline ImportCrlResult& WithCrl(CrlDetail&& value) { SetCrl(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ImportCrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ImportCrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ImportCrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CrlDetail m_crl;

@@ -39,6 +39,7 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The raw data of the message. This data needs to base64-encoded if you are
      * accessing Amazon SES directly through the HTTPS interface. If you are accessing
@@ -57,102 +58,12 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The raw data of the message. This data needs to base64-encoded if you are
-     * accessing Amazon SES directly through the HTTPS interface. If you are accessing
-     * Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
-     * 64-encoding for you. In all cases, the client must ensure that the message
-     * format complies with Internet email standards regarding email header fields,
-     * MIME types, and MIME encoding.</p> <p>The To:, CC:, and BCC: headers in the raw
-     * message can contain a group list.</p> <p>If you are using
-     * <code>SendRawEmail</code> with sending authorization, you can include X-headers
-     * in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-     * For more information, see the documentation for <code>SendRawEmail</code>. </p>
-     *  <p>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</p>  <p>For
-     * more information, go to the <a
-     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
-     * Developer Guide</a>.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The raw data of the message. This data needs to base64-encoded if you are
-     * accessing Amazon SES directly through the HTTPS interface. If you are accessing
-     * Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
-     * 64-encoding for you. In all cases, the client must ensure that the message
-     * format complies with Internet email standards regarding email header fields,
-     * MIME types, and MIME encoding.</p> <p>The To:, CC:, and BCC: headers in the raw
-     * message can contain a group list.</p> <p>If you are using
-     * <code>SendRawEmail</code> with sending authorization, you can include X-headers
-     * in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-     * For more information, see the documentation for <code>SendRawEmail</code>. </p>
-     *  <p>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</p>  <p>For
-     * more information, go to the <a
-     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
-     * Developer Guide</a>.</p>
-     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The raw data of the message. This data needs to base64-encoded if you are
-     * accessing Amazon SES directly through the HTTPS interface. If you are accessing
-     * Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
-     * 64-encoding for you. In all cases, the client must ensure that the message
-     * format complies with Internet email standards regarding email header fields,
-     * MIME types, and MIME encoding.</p> <p>The To:, CC:, and BCC: headers in the raw
-     * message can contain a group list.</p> <p>If you are using
-     * <code>SendRawEmail</code> with sending authorization, you can include X-headers
-     * in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-     * For more information, see the documentation for <code>SendRawEmail</code>. </p>
-     *  <p>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</p>  <p>For
-     * more information, go to the <a
-     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
-     * Developer Guide</a>.</p>
-     */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The raw data of the message. This data needs to base64-encoded if you are
-     * accessing Amazon SES directly through the HTTPS interface. If you are accessing
-     * Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
-     * 64-encoding for you. In all cases, the client must ensure that the message
-     * format complies with Internet email standards regarding email header fields,
-     * MIME types, and MIME encoding.</p> <p>The To:, CC:, and BCC: headers in the raw
-     * message can contain a group list.</p> <p>If you are using
-     * <code>SendRawEmail</code> with sending authorization, you can include X-headers
-     * in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-     * For more information, see the documentation for <code>SendRawEmail</code>. </p>
-     *  <p>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</p>  <p>For
-     * more information, go to the <a
-     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
-     * Developer Guide</a>.</p>
-     */
     inline RawMessage& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The raw data of the message. This data needs to base64-encoded if you are
-     * accessing Amazon SES directly through the HTTPS interface. If you are accessing
-     * Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
-     * 64-encoding for you. In all cases, the client must ensure that the message
-     * format complies with Internet email standards regarding email header fields,
-     * MIME types, and MIME encoding.</p> <p>The To:, CC:, and BCC: headers in the raw
-     * message can contain a group list.</p> <p>If you are using
-     * <code>SendRawEmail</code> with sending authorization, you can include X-headers
-     * in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-     * For more information, see the documentation for <code>SendRawEmail</code>. </p>
-     *  <p>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</p>  <p>For
-     * more information, go to the <a
-     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
-     * Developer Guide</a>.</p>
-     */
     inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_data;

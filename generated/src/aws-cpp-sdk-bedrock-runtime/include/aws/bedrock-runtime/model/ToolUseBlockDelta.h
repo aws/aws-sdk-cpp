@@ -37,46 +37,19 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The input for a requested tool.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline ToolUseBlockDelta& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline ToolUseBlockDelta& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-
-    /**
-     * <p>The input for a requested tool.</p>
-     */
     inline ToolUseBlockDelta& WithInput(const char* value) { SetInput(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_input;

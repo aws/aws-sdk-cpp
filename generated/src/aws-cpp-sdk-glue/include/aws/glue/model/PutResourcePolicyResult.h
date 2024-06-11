@@ -32,70 +32,30 @@ namespace Model
     AWS_GLUE_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A hash of the policy that has just been set. This must be included in a
      * subsequent call that overwrites or updates this policy.</p>
      */
     inline const Aws::String& GetPolicyHash() const{ return m_policyHash; }
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline void SetPolicyHash(const Aws::String& value) { m_policyHash = value; }
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline void SetPolicyHash(Aws::String&& value) { m_policyHash = std::move(value); }
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline void SetPolicyHash(const char* value) { m_policyHash.assign(value); }
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyHash(const Aws::String& value) { SetPolicyHash(value); return *this;}
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyHash(Aws::String&& value) { SetPolicyHash(std::move(value)); return *this;}
-
-    /**
-     * <p>A hash of the policy that has just been set. This must be included in a
-     * subsequent call that overwrites or updates this policy.</p>
-     */
     inline PutResourcePolicyResult& WithPolicyHash(const char* value) { SetPolicyHash(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyHash;

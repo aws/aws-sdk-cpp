@@ -36,46 +36,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Input Security Group to delete
      */
     inline const Aws::String& GetInputSecurityGroupId() const{ return m_inputSecurityGroupId; }
-
-    /**
-     * The Input Security Group to delete
-     */
     inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
-
-    /**
-     * The Input Security Group to delete
-     */
     inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
-
-    /**
-     * The Input Security Group to delete
-     */
     inline void SetInputSecurityGroupId(Aws::String&& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = std::move(value); }
-
-    /**
-     * The Input Security Group to delete
-     */
     inline void SetInputSecurityGroupId(const char* value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId.assign(value); }
-
-    /**
-     * The Input Security Group to delete
-     */
     inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(const Aws::String& value) { SetInputSecurityGroupId(value); return *this;}
-
-    /**
-     * The Input Security Group to delete
-     */
     inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(Aws::String&& value) { SetInputSecurityGroupId(std::move(value)); return *this;}
-
-    /**
-     * The Input Security Group to delete
-     */
     inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(const char* value) { SetInputSecurityGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputSecurityGroupId;

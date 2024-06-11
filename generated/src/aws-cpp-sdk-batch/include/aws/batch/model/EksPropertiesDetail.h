@@ -38,36 +38,17 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The properties for the Kubernetes pod resources of a job.</p>
      */
     inline const EksPodPropertiesDetail& GetPodProperties() const{ return m_podProperties; }
-
-    /**
-     * <p>The properties for the Kubernetes pod resources of a job.</p>
-     */
     inline bool PodPropertiesHasBeenSet() const { return m_podPropertiesHasBeenSet; }
-
-    /**
-     * <p>The properties for the Kubernetes pod resources of a job.</p>
-     */
     inline void SetPodProperties(const EksPodPropertiesDetail& value) { m_podPropertiesHasBeenSet = true; m_podProperties = value; }
-
-    /**
-     * <p>The properties for the Kubernetes pod resources of a job.</p>
-     */
     inline void SetPodProperties(EksPodPropertiesDetail&& value) { m_podPropertiesHasBeenSet = true; m_podProperties = std::move(value); }
-
-    /**
-     * <p>The properties for the Kubernetes pod resources of a job.</p>
-     */
     inline EksPropertiesDetail& WithPodProperties(const EksPodPropertiesDetail& value) { SetPodProperties(value); return *this;}
-
-    /**
-     * <p>The properties for the Kubernetes pod resources of a job.</p>
-     */
     inline EksPropertiesDetail& WithPodProperties(EksPodPropertiesDetail&& value) { SetPodProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EksPodPropertiesDetail m_podProperties;

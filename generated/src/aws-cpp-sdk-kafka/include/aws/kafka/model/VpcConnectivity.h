@@ -37,6 +37,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Includes all client authentication information for VPC
@@ -44,47 +45,12 @@ namespace Model
          
      */
     inline const VpcConnectivityClientAuthentication& GetClientAuthentication() const{ return m_clientAuthentication; }
-
-    /**
-     * 
-            <p>Includes all client authentication information for VPC
-     * connectivity.</p>
-         
-     */
     inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
-
-    /**
-     * 
-            <p>Includes all client authentication information for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetClientAuthentication(const VpcConnectivityClientAuthentication& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
-
-    /**
-     * 
-            <p>Includes all client authentication information for VPC
-     * connectivity.</p>
-         
-     */
     inline void SetClientAuthentication(VpcConnectivityClientAuthentication&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
-
-    /**
-     * 
-            <p>Includes all client authentication information for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivity& WithClientAuthentication(const VpcConnectivityClientAuthentication& value) { SetClientAuthentication(value); return *this;}
-
-    /**
-     * 
-            <p>Includes all client authentication information for VPC
-     * connectivity.</p>
-         
-     */
     inline VpcConnectivity& WithClientAuthentication(VpcConnectivityClientAuthentication&& value) { SetClientAuthentication(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VpcConnectivityClientAuthentication m_clientAuthentication;

@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKSPACESWEB_API CreateUserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the user settings.</p>
      */
     inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const Aws::String& value) { m_userSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(Aws::String&& value) { m_userSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const char* value) { m_userSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline CreateUserSettingsResult& WithUserSettingsArn(const Aws::String& value) { SetUserSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline CreateUserSettingsResult& WithUserSettingsArn(Aws::String&& value) { SetUserSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline CreateUserSettingsResult& WithUserSettingsArn(const char* value) { SetUserSettingsArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userSettingsArn;

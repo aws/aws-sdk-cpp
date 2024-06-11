@@ -51,54 +51,20 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The result of the workflow execution. The form of the result is
      * implementation defined.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline CompleteWorkflowExecutionDecisionAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline CompleteWorkflowExecutionDecisionAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-
-    /**
-     * <p>The result of the workflow execution. The form of the result is
-     * implementation defined.</p>
-     */
     inline CompleteWorkflowExecutionDecisionAttributes& WithResult(const char* value) { SetResult(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_result;

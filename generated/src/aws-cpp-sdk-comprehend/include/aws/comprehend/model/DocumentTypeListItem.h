@@ -37,57 +37,27 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Page number.</p>
      */
     inline int GetPage() const{ return m_page; }
-
-    /**
-     * <p>Page number.</p>
-     */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-
-    /**
-     * <p>Page number.</p>
-     */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
-
-    /**
-     * <p>Page number.</p>
-     */
     inline DocumentTypeListItem& WithPage(int value) { SetPage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Document type.</p>
      */
     inline const DocumentType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Document type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Document type.</p>
-     */
     inline void SetType(const DocumentType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Document type.</p>
-     */
     inline void SetType(DocumentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Document type.</p>
-     */
     inline DocumentTypeListItem& WithType(const DocumentType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Document type.</p>
-     */
     inline DocumentTypeListItem& WithType(DocumentType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_page;

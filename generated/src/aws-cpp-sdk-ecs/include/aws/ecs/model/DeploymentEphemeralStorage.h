@@ -38,54 +38,20 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
      * deployment.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline DeploymentEphemeralStorage& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline DeploymentEphemeralStorage& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * deployment.</p>
-     */
     inline DeploymentEphemeralStorage& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

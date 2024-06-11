@@ -39,87 +39,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The dataset references of the source template of an analysis.</p>
      */
     inline const Aws::Vector<DataSetReference>& GetDataSetReferences() const{ return m_dataSetReferences; }
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline bool DataSetReferencesHasBeenSet() const { return m_dataSetReferencesHasBeenSet; }
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline void SetDataSetReferences(const Aws::Vector<DataSetReference>& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences = value; }
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline void SetDataSetReferences(Aws::Vector<DataSetReference>&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences = std::move(value); }
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& WithDataSetReferences(const Aws::Vector<DataSetReference>& value) { SetDataSetReferences(value); return *this;}
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& WithDataSetReferences(Aws::Vector<DataSetReference>&& value) { SetDataSetReferences(std::move(value)); return *this;}
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& AddDataSetReferences(const DataSetReference& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences.push_back(value); return *this; }
-
-    /**
-     * <p>The dataset references of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& AddDataSetReferences(DataSetReference&& value) { m_dataSetReferencesHasBeenSet = true; m_dataSetReferences.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
-     */
     inline AnalysisSourceTemplate& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DataSetReference> m_dataSetReferences;

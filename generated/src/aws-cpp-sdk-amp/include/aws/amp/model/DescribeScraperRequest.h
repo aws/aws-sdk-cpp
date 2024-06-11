@@ -36,46 +36,19 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the scraper to describe.</p>
      */
     inline const Aws::String& GetScraperId() const{ return m_scraperId; }
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline void SetScraperId(const Aws::String& value) { m_scraperIdHasBeenSet = true; m_scraperId = value; }
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline void SetScraperId(Aws::String&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::move(value); }
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline void SetScraperId(const char* value) { m_scraperIdHasBeenSet = true; m_scraperId.assign(value); }
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline DescribeScraperRequest& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline DescribeScraperRequest& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the scraper to describe.</p>
-     */
     inline DescribeScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scraperId;

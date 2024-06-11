@@ -35,26 +35,15 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The index for a content block.</p>
      */
     inline int GetContentBlockIndex() const{ return m_contentBlockIndex; }
-
-    /**
-     * <p>The index for a content block.</p>
-     */
     inline bool ContentBlockIndexHasBeenSet() const { return m_contentBlockIndexHasBeenSet; }
-
-    /**
-     * <p>The index for a content block.</p>
-     */
     inline void SetContentBlockIndex(int value) { m_contentBlockIndexHasBeenSet = true; m_contentBlockIndex = value; }
-
-    /**
-     * <p>The index for a content block.</p>
-     */
     inline ContentBlockStopEvent& WithContentBlockIndex(int value) { SetContentBlockIndex(value); return *this;}
-
+    ///@}
   private:
 
     int m_contentBlockIndex;

@@ -42,96 +42,36 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The policy name.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy name.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
      * length of 2048, excluding whitespace.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048, excluding whitespace.</p>
-     */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the policy version is set as the default. When this
      * parameter is true, the new policy version becomes the operative version (that
@@ -139,31 +79,10 @@ namespace Model
      * attached).</p>
      */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
-
-    /**
-     * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version (that
-     * is, the version that is in effect for the certificates to which the policy is
-     * attached).</p>
-     */
     inline bool SetAsDefaultHasBeenSet() const { return m_setAsDefaultHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version (that
-     * is, the version that is in effect for the certificates to which the policy is
-     * attached).</p>
-     */
     inline void SetSetAsDefault(bool value) { m_setAsDefaultHasBeenSet = true; m_setAsDefault = value; }
-
-    /**
-     * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version (that
-     * is, the version that is in effect for the certificates to which the policy is
-     * attached).</p>
-     */
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

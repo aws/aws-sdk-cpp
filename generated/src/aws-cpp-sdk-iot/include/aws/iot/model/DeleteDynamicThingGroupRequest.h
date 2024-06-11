@@ -38,67 +38,29 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the dynamic thing group to delete.</p>
      */
     inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline DeleteDynamicThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline DeleteDynamicThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dynamic thing group to delete.</p>
-     */
     inline DeleteDynamicThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The expected version of the dynamic thing group to delete.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
-
-    /**
-     * <p>The expected version of the dynamic thing group to delete.</p>
-     */
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
-
-    /**
-     * <p>The expected version of the dynamic thing group to delete.</p>
-     */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
-
-    /**
-     * <p>The expected version of the dynamic thing group to delete.</p>
-     */
     inline DeleteDynamicThingGroupRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingGroupName;

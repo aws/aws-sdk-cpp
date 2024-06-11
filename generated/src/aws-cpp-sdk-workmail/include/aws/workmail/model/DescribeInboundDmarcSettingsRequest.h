@@ -34,46 +34,19 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Lists the ID of the given organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline DescribeInboundDmarcSettingsRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline DescribeInboundDmarcSettingsRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the ID of the given organization.</p>
-     */
     inline DescribeInboundDmarcSettingsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

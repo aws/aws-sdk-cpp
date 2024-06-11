@@ -33,58 +33,28 @@ namespace Model
     AWS_ROUTE53PROFILES_API DeleteProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Information about the <code>DeleteProfile</code> request, including the
      * status of the request. </p>
      */
     inline const Profile& GetProfile() const{ return m_profile; }
-
-    /**
-     * <p> Information about the <code>DeleteProfile</code> request, including the
-     * status of the request. </p>
-     */
     inline void SetProfile(const Profile& value) { m_profile = value; }
-
-    /**
-     * <p> Information about the <code>DeleteProfile</code> request, including the
-     * status of the request. </p>
-     */
     inline void SetProfile(Profile&& value) { m_profile = std::move(value); }
-
-    /**
-     * <p> Information about the <code>DeleteProfile</code> request, including the
-     * status of the request. </p>
-     */
     inline DeleteProfileResult& WithProfile(const Profile& value) { SetProfile(value); return *this;}
-
-    /**
-     * <p> Information about the <code>DeleteProfile</code> request, including the
-     * status of the request. </p>
-     */
     inline DeleteProfileResult& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Profile m_profile;

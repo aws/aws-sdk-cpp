@@ -32,54 +32,20 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the ACM certificate that you want to disassociate from your
      * MediaConvert resource.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline DisassociateCertificateRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline DisassociateCertificateRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the ACM certificate that you want to disassociate from your
-     * MediaConvert resource.
-     */
     inline DisassociateCertificateRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

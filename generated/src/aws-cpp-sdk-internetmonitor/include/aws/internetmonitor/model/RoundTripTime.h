@@ -37,68 +37,35 @@ namespace Model
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>RTT at the 50th percentile (p50).</p>
      */
     inline double GetP50() const{ return m_p50; }
-
-    /**
-     * <p>RTT at the 50th percentile (p50).</p>
-     */
     inline bool P50HasBeenSet() const { return m_p50HasBeenSet; }
-
-    /**
-     * <p>RTT at the 50th percentile (p50).</p>
-     */
     inline void SetP50(double value) { m_p50HasBeenSet = true; m_p50 = value; }
-
-    /**
-     * <p>RTT at the 50th percentile (p50).</p>
-     */
     inline RoundTripTime& WithP50(double value) { SetP50(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>RTT at the 90th percentile (p90). </p>
      */
     inline double GetP90() const{ return m_p90; }
-
-    /**
-     * <p>RTT at the 90th percentile (p90). </p>
-     */
     inline bool P90HasBeenSet() const { return m_p90HasBeenSet; }
-
-    /**
-     * <p>RTT at the 90th percentile (p90). </p>
-     */
     inline void SetP90(double value) { m_p90HasBeenSet = true; m_p90 = value; }
-
-    /**
-     * <p>RTT at the 90th percentile (p90). </p>
-     */
     inline RoundTripTime& WithP90(double value) { SetP90(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>RTT at the 95th percentile (p95). </p>
      */
     inline double GetP95() const{ return m_p95; }
-
-    /**
-     * <p>RTT at the 95th percentile (p95). </p>
-     */
     inline bool P95HasBeenSet() const { return m_p95HasBeenSet; }
-
-    /**
-     * <p>RTT at the 95th percentile (p95). </p>
-     */
     inline void SetP95(double value) { m_p95HasBeenSet = true; m_p95 = value; }
-
-    /**
-     * <p>RTT at the 95th percentile (p95). </p>
-     */
     inline RoundTripTime& WithP95(double value) { SetP95(value); return *this;}
-
+    ///@}
   private:
 
     double m_p50;

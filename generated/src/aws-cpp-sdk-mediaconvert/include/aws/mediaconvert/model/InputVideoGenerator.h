@@ -41,34 +41,17 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify an integer value for Black video duration from 50 to 86400000 to
      * generate a black video input for that many milliseconds. Required when you
      * include Video generator.
      */
     inline int GetDuration() const{ return m_duration; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-
-    /**
-     * Specify an integer value for Black video duration from 50 to 86400000 to
-     * generate a black video input for that many milliseconds. Required when you
-     * include Video generator.
-     */
     inline InputVideoGenerator& WithDuration(int value) { SetDuration(value); return *this;}
-
+    ///@}
   private:
 
     int m_duration;

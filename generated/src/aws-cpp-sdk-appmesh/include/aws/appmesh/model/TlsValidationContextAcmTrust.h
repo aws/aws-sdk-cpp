@@ -39,51 +39,20 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArns() const{ return m_certificateAuthorityArns; }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline bool CertificateAuthorityArnsHasBeenSet() const { return m_certificateAuthorityArnsHasBeenSet; }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline void SetCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = value; }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline void SetCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = std::move(value); }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { SetCertificateAuthorityArns(value); return *this;}
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { SetCertificateAuthorityArns(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const Aws::String& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(Aws::String&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-     */
     inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const char* value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_certificateAuthorityArns;

@@ -38,112 +38,38 @@ namespace Model
     AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The name of the Cognito stream to receive updates. This stream must be in the
      * developers account and in the same region as the identity pool.
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline CognitoStreams& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline CognitoStreams& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * The name of the Cognito stream to receive updates. This stream must be in the
-     * developers account and in the same region as the identity pool.
-     */
     inline CognitoStreams& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
      * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
      * on your Cognito stream.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline CognitoStreams& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline CognitoStreams& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
-     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
-     * on your Cognito stream.
-     */
     inline CognitoStreams& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
      * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
@@ -151,47 +77,12 @@ namespace Model
      * DISABLED.</p>
      */
     inline const StreamingStatus& GetStreamingStatus() const{ return m_streamingStatus; }
-
-    /**
-     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
-     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
-     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
-     * DISABLED.</p>
-     */
     inline bool StreamingStatusHasBeenSet() const { return m_streamingStatusHasBeenSet; }
-
-    /**
-     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
-     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
-     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
-     * DISABLED.</p>
-     */
     inline void SetStreamingStatus(const StreamingStatus& value) { m_streamingStatusHasBeenSet = true; m_streamingStatus = value; }
-
-    /**
-     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
-     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
-     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
-     * DISABLED.</p>
-     */
     inline void SetStreamingStatus(StreamingStatus&& value) { m_streamingStatusHasBeenSet = true; m_streamingStatus = std::move(value); }
-
-    /**
-     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
-     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
-     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
-     * DISABLED.</p>
-     */
     inline CognitoStreams& WithStreamingStatus(const StreamingStatus& value) { SetStreamingStatus(value); return *this;}
-
-    /**
-     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
-     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
-     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
-     * DISABLED.</p>
-     */
     inline CognitoStreams& WithStreamingStatus(StreamingStatus&& value) { SetStreamingStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamName;

@@ -36,36 +36,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
     inline const StreamingDistributionConfigWithTags& GetStreamingDistributionConfigWithTags() const{ return m_streamingDistributionConfigWithTags; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline bool StreamingDistributionConfigWithTagsHasBeenSet() const { return m_streamingDistributionConfigWithTagsHasBeenSet; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfigWithTags(const StreamingDistributionConfigWithTags& value) { m_streamingDistributionConfigWithTagsHasBeenSet = true; m_streamingDistributionConfigWithTags = value; }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline void SetStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags&& value) { m_streamingDistributionConfigWithTagsHasBeenSet = true; m_streamingDistributionConfigWithTags = std::move(value); }
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline CreateStreamingDistributionWithTags2020_05_31Request& WithStreamingDistributionConfigWithTags(const StreamingDistributionConfigWithTags& value) { SetStreamingDistributionConfigWithTags(value); return *this;}
-
-    /**
-     * <p>The streaming distribution's configuration information.</p>
-     */
     inline CreateStreamingDistributionWithTags2020_05_31Request& WithStreamingDistributionConfigWithTags(StreamingDistributionConfigWithTags&& value) { SetStreamingDistributionConfigWithTags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StreamingDistributionConfigWithTags m_streamingDistributionConfigWithTags;

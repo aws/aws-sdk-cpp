@@ -41,87 +41,33 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the event data store.</p>
      */
     inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline bool EventDataStoreArnHasBeenSet() const { return m_eventDataStoreArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = value; }
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn.assign(value); }
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline EventDataStore& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline EventDataStore& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the event data store.</p>
-     */
     inline EventDataStore& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the event data store.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline EventDataStore& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline EventDataStore& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event data store.</p>
-     */
     inline EventDataStore& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventDataStoreArn;

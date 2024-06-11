@@ -39,98 +39,34 @@ namespace Model
     AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> A list of strings that uniquely identify the clusters to protect. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
     inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline SetTerminationProtectionRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline SetTerminationProtectionRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline SetTerminationProtectionRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline SetTerminationProtectionRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of strings that uniquely identify the clusters to protect. This
-     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> . </p>
-     */
     inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean that indicates whether to protect the cluster and prevent the
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
      * intervention, or job-flow error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
-
-    /**
-     * <p>A Boolean that indicates whether to protect the cluster and prevent the
-     * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error.</p>
-     */
     inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
-
-    /**
-     * <p>A Boolean that indicates whether to protect the cluster and prevent the
-     * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error.</p>
-     */
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
-
-    /**
-     * <p>A Boolean that indicates whether to protect the cluster and prevent the
-     * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error.</p>
-     */
     inline SetTerminationProtectionRequest& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_jobFlowIds;

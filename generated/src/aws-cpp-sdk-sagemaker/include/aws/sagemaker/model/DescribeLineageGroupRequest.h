@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the lineage group.</p>
      */
     inline const Aws::String& GetLineageGroupName() const{ return m_lineageGroupName; }
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline bool LineageGroupNameHasBeenSet() const { return m_lineageGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline void SetLineageGroupName(const Aws::String& value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName = value; }
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline void SetLineageGroupName(Aws::String&& value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline void SetLineageGroupName(const char* value) { m_lineageGroupNameHasBeenSet = true; m_lineageGroupName.assign(value); }
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline DescribeLineageGroupRequest& WithLineageGroupName(const Aws::String& value) { SetLineageGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline DescribeLineageGroupRequest& WithLineageGroupName(Aws::String&& value) { SetLineageGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the lineage group.</p>
-     */
     inline DescribeLineageGroupRequest& WithLineageGroupName(const char* value) { SetLineageGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lineageGroupName;

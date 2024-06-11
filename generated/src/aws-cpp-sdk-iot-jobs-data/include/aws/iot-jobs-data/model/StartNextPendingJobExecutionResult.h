@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTJOBSDATAPLANE_API StartNextPendingJobExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A JobExecution object.</p>
      */
     inline const JobExecution& GetExecution() const{ return m_execution; }
-
-    /**
-     * <p>A JobExecution object.</p>
-     */
     inline void SetExecution(const JobExecution& value) { m_execution = value; }
-
-    /**
-     * <p>A JobExecution object.</p>
-     */
     inline void SetExecution(JobExecution&& value) { m_execution = std::move(value); }
-
-    /**
-     * <p>A JobExecution object.</p>
-     */
     inline StartNextPendingJobExecutionResult& WithExecution(const JobExecution& value) { SetExecution(value); return *this;}
-
-    /**
-     * <p>A JobExecution object.</p>
-     */
     inline StartNextPendingJobExecutionResult& WithExecution(JobExecution&& value) { SetExecution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartNextPendingJobExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartNextPendingJobExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartNextPendingJobExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobExecution m_execution;

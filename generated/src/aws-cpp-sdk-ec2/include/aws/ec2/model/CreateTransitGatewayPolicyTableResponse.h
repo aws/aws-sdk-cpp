@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateTransitGatewayPolicyTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Describes the created transit gateway policy table.</p>
      */
     inline const TransitGatewayPolicyTable& GetTransitGatewayPolicyTable() const{ return m_transitGatewayPolicyTable; }
-
-    /**
-     * <p>Describes the created transit gateway policy table.</p>
-     */
     inline void SetTransitGatewayPolicyTable(const TransitGatewayPolicyTable& value) { m_transitGatewayPolicyTable = value; }
-
-    /**
-     * <p>Describes the created transit gateway policy table.</p>
-     */
     inline void SetTransitGatewayPolicyTable(TransitGatewayPolicyTable&& value) { m_transitGatewayPolicyTable = std::move(value); }
-
-    /**
-     * <p>Describes the created transit gateway policy table.</p>
-     */
     inline CreateTransitGatewayPolicyTableResponse& WithTransitGatewayPolicyTable(const TransitGatewayPolicyTable& value) { SetTransitGatewayPolicyTable(value); return *this;}
-
-    /**
-     * <p>Describes the created transit gateway policy table.</p>
-     */
     inline CreateTransitGatewayPolicyTableResponse& WithTransitGatewayPolicyTable(TransitGatewayPolicyTable&& value) { SetTransitGatewayPolicyTable(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateTransitGatewayPolicyTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateTransitGatewayPolicyTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayPolicyTable m_transitGatewayPolicyTable;

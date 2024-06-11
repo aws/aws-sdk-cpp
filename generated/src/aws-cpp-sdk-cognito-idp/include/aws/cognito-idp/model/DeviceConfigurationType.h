@@ -57,6 +57,7 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When true, a remembered device can sign in with device authentication instead
      * of SMS and time-based one-time password (TOTP) factors for multi-factor
@@ -66,38 +67,12 @@ namespace Model
      * factor in a user pool that requires MFA.</p> 
      */
     inline bool GetChallengeRequiredOnNewDevice() const{ return m_challengeRequiredOnNewDevice; }
-
-    /**
-     * <p>When true, a remembered device can sign in with device authentication instead
-     * of SMS and time-based one-time password (TOTP) factors for multi-factor
-     * authentication (MFA).</p>  <p>Whether or not
-     * <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with
-     * devices that have not been confirmed or remembered must still provide a second
-     * factor in a user pool that requires MFA.</p> 
-     */
     inline bool ChallengeRequiredOnNewDeviceHasBeenSet() const { return m_challengeRequiredOnNewDeviceHasBeenSet; }
-
-    /**
-     * <p>When true, a remembered device can sign in with device authentication instead
-     * of SMS and time-based one-time password (TOTP) factors for multi-factor
-     * authentication (MFA).</p>  <p>Whether or not
-     * <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with
-     * devices that have not been confirmed or remembered must still provide a second
-     * factor in a user pool that requires MFA.</p> 
-     */
     inline void SetChallengeRequiredOnNewDevice(bool value) { m_challengeRequiredOnNewDeviceHasBeenSet = true; m_challengeRequiredOnNewDevice = value; }
-
-    /**
-     * <p>When true, a remembered device can sign in with device authentication instead
-     * of SMS and time-based one-time password (TOTP) factors for multi-factor
-     * authentication (MFA).</p>  <p>Whether or not
-     * <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with
-     * devices that have not been confirmed or remembered must still provide a second
-     * factor in a user pool that requires MFA.</p> 
-     */
     inline DeviceConfigurationType& WithChallengeRequiredOnNewDevice(bool value) { SetChallengeRequiredOnNewDevice(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When true, Amazon Cognito doesn't automatically remember a user's device when
      * your app sends a <a
@@ -112,52 +87,10 @@ namespace Model
      * <code>ConfirmDevice</code> API request.</p>
      */
     inline bool GetDeviceOnlyRememberedOnUserPrompt() const{ return m_deviceOnlyRememberedOnUserPrompt; }
-
-    /**
-     * <p>When true, Amazon Cognito doesn't automatically remember a user's device when
-     * your app sends a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">
-     * ConfirmDevice</a> API request. In your app, create a prompt for your user to
-     * choose whether they want to remember their device. Return the user's choice in
-     * an <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">
-     * UpdateDeviceStatus</a> API request.</p> <p>When
-     * <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon
-     * Cognito immediately remembers devices that you register in a
-     * <code>ConfirmDevice</code> API request.</p>
-     */
     inline bool DeviceOnlyRememberedOnUserPromptHasBeenSet() const { return m_deviceOnlyRememberedOnUserPromptHasBeenSet; }
-
-    /**
-     * <p>When true, Amazon Cognito doesn't automatically remember a user's device when
-     * your app sends a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">
-     * ConfirmDevice</a> API request. In your app, create a prompt for your user to
-     * choose whether they want to remember their device. Return the user's choice in
-     * an <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">
-     * UpdateDeviceStatus</a> API request.</p> <p>When
-     * <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon
-     * Cognito immediately remembers devices that you register in a
-     * <code>ConfirmDevice</code> API request.</p>
-     */
     inline void SetDeviceOnlyRememberedOnUserPrompt(bool value) { m_deviceOnlyRememberedOnUserPromptHasBeenSet = true; m_deviceOnlyRememberedOnUserPrompt = value; }
-
-    /**
-     * <p>When true, Amazon Cognito doesn't automatically remember a user's device when
-     * your app sends a <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">
-     * ConfirmDevice</a> API request. In your app, create a prompt for your user to
-     * choose whether they want to remember their device. Return the user's choice in
-     * an <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">
-     * UpdateDeviceStatus</a> API request.</p> <p>When
-     * <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon
-     * Cognito immediately remembers devices that you register in a
-     * <code>ConfirmDevice</code> API request.</p>
-     */
     inline DeviceConfigurationType& WithDeviceOnlyRememberedOnUserPrompt(bool value) { SetDeviceOnlyRememberedOnUserPrompt(value); return *this;}
-
+    ///@}
   private:
 
     bool m_challengeRequiredOnNewDevice;

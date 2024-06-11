@@ -34,46 +34,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the bundle.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline DeleteWorkspaceBundleRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline DeleteWorkspaceBundleRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline DeleteWorkspaceBundleRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bundleId;

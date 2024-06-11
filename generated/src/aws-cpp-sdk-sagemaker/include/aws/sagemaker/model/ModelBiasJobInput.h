@@ -39,86 +39,39 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const EndpointInput& GetEndpointInput() const{ return m_endpointInput; }
-
-    
     inline bool EndpointInputHasBeenSet() const { return m_endpointInputHasBeenSet; }
-
-    
     inline void SetEndpointInput(const EndpointInput& value) { m_endpointInputHasBeenSet = true; m_endpointInput = value; }
-
-    
     inline void SetEndpointInput(EndpointInput&& value) { m_endpointInputHasBeenSet = true; m_endpointInput = std::move(value); }
-
-    
     inline ModelBiasJobInput& WithEndpointInput(const EndpointInput& value) { SetEndpointInput(value); return *this;}
-
-    
     inline ModelBiasJobInput& WithEndpointInput(EndpointInput&& value) { SetEndpointInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Input object for the batch transform job.</p>
      */
     inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline ModelBiasJobInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline ModelBiasJobInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Location of ground truth labels to use in model bias job.</p>
      */
     inline const MonitoringGroundTruthS3Input& GetGroundTruthS3Input() const{ return m_groundTruthS3Input; }
-
-    /**
-     * <p>Location of ground truth labels to use in model bias job.</p>
-     */
     inline bool GroundTruthS3InputHasBeenSet() const { return m_groundTruthS3InputHasBeenSet; }
-
-    /**
-     * <p>Location of ground truth labels to use in model bias job.</p>
-     */
     inline void SetGroundTruthS3Input(const MonitoringGroundTruthS3Input& value) { m_groundTruthS3InputHasBeenSet = true; m_groundTruthS3Input = value; }
-
-    /**
-     * <p>Location of ground truth labels to use in model bias job.</p>
-     */
     inline void SetGroundTruthS3Input(MonitoringGroundTruthS3Input&& value) { m_groundTruthS3InputHasBeenSet = true; m_groundTruthS3Input = std::move(value); }
-
-    /**
-     * <p>Location of ground truth labels to use in model bias job.</p>
-     */
     inline ModelBiasJobInput& WithGroundTruthS3Input(const MonitoringGroundTruthS3Input& value) { SetGroundTruthS3Input(value); return *this;}
-
-    /**
-     * <p>Location of ground truth labels to use in model bias job.</p>
-     */
     inline ModelBiasJobInput& WithGroundTruthS3Input(MonitoringGroundTruthS3Input&& value) { SetGroundTruthS3Input(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EndpointInput m_endpointInput;

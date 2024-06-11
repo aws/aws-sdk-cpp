@@ -36,26 +36,15 @@ namespace Model
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of replicas to scale up or down to</p>
      */
     inline int GetReplicaCount() const{ return m_replicaCount; }
-
-    /**
-     * <p>The number of replicas to scale up or down to</p>
-     */
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
-
-    /**
-     * <p>The number of replicas to scale up or down to</p>
-     */
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
-
-    /**
-     * <p>The number of replicas to scale up or down to</p>
-     */
     inline ReplicaConfigurationRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_replicaCount;

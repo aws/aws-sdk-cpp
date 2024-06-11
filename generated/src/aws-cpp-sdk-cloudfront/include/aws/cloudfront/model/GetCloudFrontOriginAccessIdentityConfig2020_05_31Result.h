@@ -39,96 +39,41 @@ namespace Model
     AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The origin access identity's configuration information.</p>
      */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
-
-    /**
-     * <p>The origin access identity's configuration information.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfig = value; }
-
-    /**
-     * <p>The origin access identity's configuration information.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
-
-    /**
-     * <p>The origin access identity's configuration information.</p>
-     */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
-
-    /**
-     * <p>The origin access identity's configuration information.</p>
-     */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the configuration. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the configuration. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;

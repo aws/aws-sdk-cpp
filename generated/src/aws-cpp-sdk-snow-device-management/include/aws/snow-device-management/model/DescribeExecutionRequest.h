@@ -32,87 +32,33 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the managed device.</p>
      */
     inline const Aws::String& GetManagedDeviceId() const{ return m_managedDeviceId; }
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline bool ManagedDeviceIdHasBeenSet() const { return m_managedDeviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline void SetManagedDeviceId(const Aws::String& value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId = value; }
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline void SetManagedDeviceId(Aws::String&& value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline void SetManagedDeviceId(const char* value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId.assign(value); }
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline DescribeExecutionRequest& WithManagedDeviceId(const Aws::String& value) { SetManagedDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline DescribeExecutionRequest& WithManagedDeviceId(Aws::String&& value) { SetManagedDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the managed device.</p>
-     */
     inline DescribeExecutionRequest& WithManagedDeviceId(const char* value) { SetManagedDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the task that the action is describing.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline DescribeExecutionRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline DescribeExecutionRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task that the action is describing.</p>
-     */
     inline DescribeExecutionRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_managedDeviceId;

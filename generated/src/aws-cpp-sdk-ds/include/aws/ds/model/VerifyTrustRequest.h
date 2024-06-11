@@ -39,46 +39,19 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = std::move(value); }
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline VerifyTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline VerifyTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique Trust ID of the trust relationship to verify.</p>
-     */
     inline VerifyTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trustId;

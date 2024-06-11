@@ -48,77 +48,33 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline bool AlarmNamesHasBeenSet() const { return m_alarmNamesHasBeenSet; }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::move(value); }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline DeploymentAlarms& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline DeploymentAlarms& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline DeploymentAlarms& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline DeploymentAlarms& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-     */
     inline DeploymentAlarms& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether to use the CloudWatch alarm option in the service
      * deployment process.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
-
-    /**
-     * <p>Determines whether to use the CloudWatch alarm option in the service
-     * deployment process.</p>
-     */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
-
-    /**
-     * <p>Determines whether to use the CloudWatch alarm option in the service
-     * deployment process.</p>
-     */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
-
-    /**
-     * <p>Determines whether to use the CloudWatch alarm option in the service
-     * deployment process.</p>
-     */
     inline DeploymentAlarms& WithEnable(bool value) { SetEnable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether to configure Amazon ECS to roll back the service if a
      * service deployment fails. If rollback is used, when a service deployment fails,
@@ -126,31 +82,10 @@ namespace Model
      * successfully.</p>
      */
     inline bool GetRollback() const{ return m_rollback; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is used, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline bool RollbackHasBeenSet() const { return m_rollbackHasBeenSet; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is used, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline void SetRollback(bool value) { m_rollbackHasBeenSet = true; m_rollback = value; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is used, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline DeploymentAlarms& WithRollback(bool value) { SetRollback(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_alarmNames;

@@ -39,48 +39,19 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
      * enabled to consume recommendations that are generated from Amazon CodeGuru
      * Profiler.</p>
      */
     inline const EventSourceOptInStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
-     * enabled to consume recommendations that are generated from Amazon CodeGuru
-     * Profiler.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
-     * enabled to consume recommendations that are generated from Amazon CodeGuru
-     * Profiler.</p>
-     */
     inline void SetStatus(const EventSourceOptInStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
-     * enabled to consume recommendations that are generated from Amazon CodeGuru
-     * Profiler.</p>
-     */
     inline void SetStatus(EventSourceOptInStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
-     * enabled to consume recommendations that are generated from Amazon CodeGuru
-     * Profiler.</p>
-     */
     inline AmazonCodeGuruProfilerIntegration& WithStatus(const EventSourceOptInStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is
-     * enabled to consume recommendations that are generated from Amazon CodeGuru
-     * Profiler.</p>
-     */
     inline AmazonCodeGuruProfilerIntegration& WithStatus(EventSourceOptInStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventSourceOptInStatus m_status;

@@ -39,62 +39,21 @@ namespace Model
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
      * to specify one domain ARN at a time. Passing multiple ARNs in the
      * <code>ObjectiveFilter</code> isn’t currently supported.</p>
      */
     inline const Aws::Vector<DomainResourceFilter>& GetDomains() const{ return m_domains; }
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline void SetDomains(const Aws::Vector<DomainResourceFilter>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline void SetDomains(Aws::Vector<DomainResourceFilter>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline ObjectiveFilter& WithDomains(const Aws::Vector<DomainResourceFilter>& value) { SetDomains(value); return *this;}
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline ObjectiveFilter& WithDomains(Aws::Vector<DomainResourceFilter>&& value) { SetDomains(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline ObjectiveFilter& AddDomains(const DomainResourceFilter& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-
-    /**
-     * <p>The domain that's used as filter criteria.</p> <p>You can use this parameter
-     * to specify one domain ARN at a time. Passing multiple ARNs in the
-     * <code>ObjectiveFilter</code> isn’t currently supported.</p>
-     */
     inline ObjectiveFilter& AddDomains(DomainResourceFilter&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DomainResourceFilter> m_domains;

@@ -38,53 +38,27 @@ namespace Model
     AWS_GLACIER_API GetVaultAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
      */
     inline const VaultAccessPolicy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>Contains the returned vault access policy as a JSON string.</p>
-     */
     inline void SetPolicy(const VaultAccessPolicy& value) { m_policy = value; }
-
-    /**
-     * <p>Contains the returned vault access policy as a JSON string.</p>
-     */
     inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>Contains the returned vault access policy as a JSON string.</p>
-     */
     inline GetVaultAccessPolicyResult& WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>Contains the returned vault access policy as a JSON string.</p>
-     */
     inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVaultAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVaultAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVaultAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VaultAccessPolicy m_policy;

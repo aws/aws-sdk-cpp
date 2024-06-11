@@ -38,108 +38,43 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> The name of the security profile. </p>
      */
     inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the security profile. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The maximum number of results to return at one time. The default is 10. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> The maximum number of results to return at one time. The default is 10. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> The maximum number of results to return at one time. The default is 10. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> The maximum number of results to return at one time. The default is 10. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The token for the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The token for the next set of results. </p>
-     */
     inline GetBehaviorModelTrainingSummariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityProfileName;

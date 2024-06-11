@@ -36,95 +36,34 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline RejectCertificateTransferRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline RejectCertificateTransferRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline RejectCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason the certificate transfer was rejected.</p>
      */
     inline const Aws::String& GetRejectReason() const{ return m_rejectReason; }
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline bool RejectReasonHasBeenSet() const { return m_rejectReasonHasBeenSet; }
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline void SetRejectReason(const Aws::String& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = value; }
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = std::move(value); }
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline void SetRejectReason(const char* value) { m_rejectReasonHasBeenSet = true; m_rejectReason.assign(value); }
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline RejectCertificateTransferRequest& WithRejectReason(const Aws::String& value) { SetRejectReason(value); return *this;}
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline RejectCertificateTransferRequest& WithRejectReason(Aws::String&& value) { SetRejectReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason the certificate transfer was rejected.</p>
-     */
     inline RejectCertificateTransferRequest& WithRejectReason(const char* value) { SetRejectReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateId;

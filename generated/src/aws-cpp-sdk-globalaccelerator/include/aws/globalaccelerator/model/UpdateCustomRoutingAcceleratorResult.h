@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API UpdateCustomRoutingAcceleratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the updated custom routing accelerator.</p>
      */
     inline const CustomRoutingAccelerator& GetAccelerator() const{ return m_accelerator; }
-
-    /**
-     * <p>Information about the updated custom routing accelerator.</p>
-     */
     inline void SetAccelerator(const CustomRoutingAccelerator& value) { m_accelerator = value; }
-
-    /**
-     * <p>Information about the updated custom routing accelerator.</p>
-     */
     inline void SetAccelerator(CustomRoutingAccelerator&& value) { m_accelerator = std::move(value); }
-
-    /**
-     * <p>Information about the updated custom routing accelerator.</p>
-     */
     inline UpdateCustomRoutingAcceleratorResult& WithAccelerator(const CustomRoutingAccelerator& value) { SetAccelerator(value); return *this;}
-
-    /**
-     * <p>Information about the updated custom routing accelerator.</p>
-     */
     inline UpdateCustomRoutingAcceleratorResult& WithAccelerator(CustomRoutingAccelerator&& value) { SetAccelerator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCustomRoutingAcceleratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCustomRoutingAcceleratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCustomRoutingAcceleratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CustomRoutingAccelerator m_accelerator;

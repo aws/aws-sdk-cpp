@@ -39,42 +39,18 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies how data related to the storage class analysis for an Amazon S3
      * bucket should be exported.</p>
      */
     inline const StorageClassAnalysisDataExport& GetDataExport() const{ return m_dataExport; }
-
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
     inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
-
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
     inline void SetDataExport(const StorageClassAnalysisDataExport& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
-
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
     inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::move(value); }
-
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
     inline StorageClassAnalysis& WithDataExport(const StorageClassAnalysisDataExport& value) { SetDataExport(value); return *this;}
-
-    /**
-     * <p>Specifies how data related to the storage class analysis for an Amazon S3
-     * bucket should be exported.</p>
-     */
     inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StorageClassAnalysisDataExport m_dataExport;

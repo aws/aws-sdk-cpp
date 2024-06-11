@@ -38,46 +38,19 @@ namespace Model
     AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Show each group of test results.</p>
      */
     inline const Aws::Vector<GroupResult>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline void SetGroups(const Aws::Vector<GroupResult>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline void SetGroups(Aws::Vector<GroupResult>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline TestResult& WithGroups(const Aws::Vector<GroupResult>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline TestResult& WithGroups(Aws::Vector<GroupResult>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline TestResult& AddGroups(const GroupResult& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>Show each group of test results.</p>
-     */
     inline TestResult& AddGroups(GroupResult&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GroupResult> m_groups;

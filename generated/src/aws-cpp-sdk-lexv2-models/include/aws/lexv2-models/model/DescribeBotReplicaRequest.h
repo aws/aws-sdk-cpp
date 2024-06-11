@@ -32,87 +32,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request for the unique bot ID of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The request for the region of the replicated bot being monitored.</p>
      */
     inline const Aws::String& GetReplicaRegion() const{ return m_replicaRegion; }
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline bool ReplicaRegionHasBeenSet() const { return m_replicaRegionHasBeenSet; }
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline void SetReplicaRegion(const Aws::String& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = value; }
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline void SetReplicaRegion(Aws::String&& value) { m_replicaRegionHasBeenSet = true; m_replicaRegion = std::move(value); }
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline void SetReplicaRegion(const char* value) { m_replicaRegionHasBeenSet = true; m_replicaRegion.assign(value); }
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithReplicaRegion(const Aws::String& value) { SetReplicaRegion(value); return *this;}
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithReplicaRegion(Aws::String&& value) { SetReplicaRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The request for the region of the replicated bot being monitored.</p>
-     */
     inline DescribeBotReplicaRequest& WithReplicaRegion(const char* value) { SetReplicaRegion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

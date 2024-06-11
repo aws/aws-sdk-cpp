@@ -38,103 +38,35 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The savings amount that you're accumulating for the usage that's covered by a
      * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
      */
     inline const Aws::String& GetNetSavings() const{ return m_netSavings; }
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline bool NetSavingsHasBeenSet() const { return m_netSavingsHasBeenSet; }
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline void SetNetSavings(const Aws::String& value) { m_netSavingsHasBeenSet = true; m_netSavings = value; }
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline void SetNetSavings(Aws::String&& value) { m_netSavingsHasBeenSet = true; m_netSavings = std::move(value); }
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline void SetNetSavings(const char* value) { m_netSavingsHasBeenSet = true; m_netSavings.assign(value); }
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline SavingsPlansSavings& WithNetSavings(const Aws::String& value) { SetNetSavings(value); return *this;}
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline SavingsPlansSavings& WithNetSavings(Aws::String&& value) { SetNetSavings(std::move(value)); return *this;}
-
-    /**
-     * <p>The savings amount that you're accumulating for the usage that's covered by a
-     * Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-     */
     inline SavingsPlansSavings& WithNetSavings(const char* value) { SetNetSavings(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>How much the amount that the usage would have cost if it was accrued at the
      * On-Demand rate.</p>
      */
     inline const Aws::String& GetOnDemandCostEquivalent() const{ return m_onDemandCostEquivalent; }
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline bool OnDemandCostEquivalentHasBeenSet() const { return m_onDemandCostEquivalentHasBeenSet; }
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline void SetOnDemandCostEquivalent(const Aws::String& value) { m_onDemandCostEquivalentHasBeenSet = true; m_onDemandCostEquivalent = value; }
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline void SetOnDemandCostEquivalent(Aws::String&& value) { m_onDemandCostEquivalentHasBeenSet = true; m_onDemandCostEquivalent = std::move(value); }
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline void SetOnDemandCostEquivalent(const char* value) { m_onDemandCostEquivalentHasBeenSet = true; m_onDemandCostEquivalent.assign(value); }
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline SavingsPlansSavings& WithOnDemandCostEquivalent(const Aws::String& value) { SetOnDemandCostEquivalent(value); return *this;}
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline SavingsPlansSavings& WithOnDemandCostEquivalent(Aws::String&& value) { SetOnDemandCostEquivalent(std::move(value)); return *this;}
-
-    /**
-     * <p>How much the amount that the usage would have cost if it was accrued at the
-     * On-Demand rate.</p>
-     */
     inline SavingsPlansSavings& WithOnDemandCostEquivalent(const char* value) { SetOnDemandCostEquivalent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_netSavings;

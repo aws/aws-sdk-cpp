@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tooltip item for the fields.</p>
      */
     inline const FieldTooltipItem& GetFieldTooltipItem() const{ return m_fieldTooltipItem; }
-
-    /**
-     * <p>The tooltip item for the fields.</p>
-     */
     inline bool FieldTooltipItemHasBeenSet() const { return m_fieldTooltipItemHasBeenSet; }
-
-    /**
-     * <p>The tooltip item for the fields.</p>
-     */
     inline void SetFieldTooltipItem(const FieldTooltipItem& value) { m_fieldTooltipItemHasBeenSet = true; m_fieldTooltipItem = value; }
-
-    /**
-     * <p>The tooltip item for the fields.</p>
-     */
     inline void SetFieldTooltipItem(FieldTooltipItem&& value) { m_fieldTooltipItemHasBeenSet = true; m_fieldTooltipItem = std::move(value); }
-
-    /**
-     * <p>The tooltip item for the fields.</p>
-     */
     inline TooltipItem& WithFieldTooltipItem(const FieldTooltipItem& value) { SetFieldTooltipItem(value); return *this;}
-
-    /**
-     * <p>The tooltip item for the fields.</p>
-     */
     inline TooltipItem& WithFieldTooltipItem(FieldTooltipItem&& value) { SetFieldTooltipItem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tooltip item for the columns that are not part of a field well.</p>
      */
     inline const ColumnTooltipItem& GetColumnTooltipItem() const{ return m_columnTooltipItem; }
-
-    /**
-     * <p>The tooltip item for the columns that are not part of a field well.</p>
-     */
     inline bool ColumnTooltipItemHasBeenSet() const { return m_columnTooltipItemHasBeenSet; }
-
-    /**
-     * <p>The tooltip item for the columns that are not part of a field well.</p>
-     */
     inline void SetColumnTooltipItem(const ColumnTooltipItem& value) { m_columnTooltipItemHasBeenSet = true; m_columnTooltipItem = value; }
-
-    /**
-     * <p>The tooltip item for the columns that are not part of a field well.</p>
-     */
     inline void SetColumnTooltipItem(ColumnTooltipItem&& value) { m_columnTooltipItemHasBeenSet = true; m_columnTooltipItem = std::move(value); }
-
-    /**
-     * <p>The tooltip item for the columns that are not part of a field well.</p>
-     */
     inline TooltipItem& WithColumnTooltipItem(const ColumnTooltipItem& value) { SetColumnTooltipItem(value); return *this;}
-
-    /**
-     * <p>The tooltip item for the columns that are not part of a field well.</p>
-     */
     inline TooltipItem& WithColumnTooltipItem(ColumnTooltipItem&& value) { SetColumnTooltipItem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FieldTooltipItem m_fieldTooltipItem;

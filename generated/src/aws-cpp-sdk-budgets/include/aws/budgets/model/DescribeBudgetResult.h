@@ -38,53 +38,27 @@ namespace Model
     AWS_BUDGETS_API DescribeBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the budget.</p>
      */
     inline const Budget& GetBudget() const{ return m_budget; }
-
-    /**
-     * <p>The description of the budget.</p>
-     */
     inline void SetBudget(const Budget& value) { m_budget = value; }
-
-    /**
-     * <p>The description of the budget.</p>
-     */
     inline void SetBudget(Budget&& value) { m_budget = std::move(value); }
-
-    /**
-     * <p>The description of the budget.</p>
-     */
     inline DescribeBudgetResult& WithBudget(const Budget& value) { SetBudget(value); return *this;}
-
-    /**
-     * <p>The description of the budget.</p>
-     */
     inline DescribeBudgetResult& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBudgetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBudgetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBudgetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Budget m_budget;

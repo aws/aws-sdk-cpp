@@ -39,37 +39,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
      */
     inline const ListTransactionsSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-     */
     inline void SetSortBy(const ListTransactionsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-     */
     inline void SetSortBy(ListTransactionsSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-     */
     inline ListTransactionsSort& WithSortBy(const ListTransactionsSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-     */
     inline ListTransactionsSort& WithSortBy(ListTransactionsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
      * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
@@ -77,47 +59,12 @@ namespace Model
      * to <code>ASCENDING</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
-     * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
-     * and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default
-     * to <code>ASCENDING</code>.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
-     * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
-     * and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default
-     * to <code>ASCENDING</code>.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
-     * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
-     * and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default
-     * to <code>ASCENDING</code>.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
-     * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
-     * and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default
-     * to <code>ASCENDING</code>.</p>
-     */
     inline ListTransactionsSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The container for the <i>sort order</i> for <code>ListTransactions</code>.
-     * The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code>
-     * and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default
-     * to <code>ASCENDING</code>.</p>
-     */
     inline ListTransactionsSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ListTransactionsSortBy m_sortBy;

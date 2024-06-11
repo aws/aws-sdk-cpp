@@ -37,63 +37,29 @@ namespace Model
     AWS_GROUNDSTATION_API DeleteDataflowEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>UUID of a dataflow endpoint group.</p>
      */
     inline const Aws::String& GetDataflowEndpointGroupId() const{ return m_dataflowEndpointGroupId; }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(const Aws::String& value) { m_dataflowEndpointGroupId = value; }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(Aws::String&& value) { m_dataflowEndpointGroupId = std::move(value); }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(const char* value) { m_dataflowEndpointGroupId.assign(value); }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DeleteDataflowEndpointGroupResult& WithDataflowEndpointGroupId(const Aws::String& value) { SetDataflowEndpointGroupId(value); return *this;}
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DeleteDataflowEndpointGroupResult& WithDataflowEndpointGroupId(Aws::String&& value) { SetDataflowEndpointGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DeleteDataflowEndpointGroupResult& WithDataflowEndpointGroupId(const char* value) { SetDataflowEndpointGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDataflowEndpointGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDataflowEndpointGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDataflowEndpointGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataflowEndpointGroupId;

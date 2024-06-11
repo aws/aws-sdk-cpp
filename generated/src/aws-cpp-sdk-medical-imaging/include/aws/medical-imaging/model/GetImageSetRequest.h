@@ -38,128 +38,47 @@ namespace Model
     AWS_MEDICALIMAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The data store identifier.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline GetImageSetRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline GetImageSetRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The data store identifier.</p>
-     */
     inline GetImageSetRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image set identifier.</p>
      */
     inline const Aws::String& GetImageSetId() const{ return m_imageSetId; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline bool ImageSetIdHasBeenSet() const { return m_imageSetIdHasBeenSet; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(const Aws::String& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = value; }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(Aws::String&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::move(value); }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline void SetImageSetId(const char* value) { m_imageSetIdHasBeenSet = true; m_imageSetId.assign(value); }
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline GetImageSetRequest& WithImageSetId(const Aws::String& value) { SetImageSetId(value); return *this;}
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline GetImageSetRequest& WithImageSetId(Aws::String&& value) { SetImageSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image set identifier.</p>
-     */
     inline GetImageSetRequest& WithImageSetId(const char* value) { SetImageSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image set version identifier.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline GetImageSetRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline GetImageSetRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The image set version identifier.</p>
-     */
     inline GetImageSetRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreId;

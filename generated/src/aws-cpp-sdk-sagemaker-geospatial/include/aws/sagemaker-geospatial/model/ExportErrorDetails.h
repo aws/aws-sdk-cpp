@@ -38,79 +38,31 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The structure for returning the export error details while exporting results
      * of an Earth Observation job.</p>
      */
     inline const ExportErrorDetailsOutput& GetExportResults() const{ return m_exportResults; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting results
-     * of an Earth Observation job.</p>
-     */
     inline bool ExportResultsHasBeenSet() const { return m_exportResultsHasBeenSet; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting results
-     * of an Earth Observation job.</p>
-     */
     inline void SetExportResults(const ExportErrorDetailsOutput& value) { m_exportResultsHasBeenSet = true; m_exportResults = value; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting results
-     * of an Earth Observation job.</p>
-     */
     inline void SetExportResults(ExportErrorDetailsOutput&& value) { m_exportResultsHasBeenSet = true; m_exportResults = std::move(value); }
-
-    /**
-     * <p>The structure for returning the export error details while exporting results
-     * of an Earth Observation job.</p>
-     */
     inline ExportErrorDetails& WithExportResults(const ExportErrorDetailsOutput& value) { SetExportResults(value); return *this;}
-
-    /**
-     * <p>The structure for returning the export error details while exporting results
-     * of an Earth Observation job.</p>
-     */
     inline ExportErrorDetails& WithExportResults(ExportErrorDetailsOutput&& value) { SetExportResults(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The structure for returning the export error details while exporting the
      * source images of an Earth Observation job.</p>
      */
     inline const ExportErrorDetailsOutput& GetExportSourceImages() const{ return m_exportSourceImages; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting the
-     * source images of an Earth Observation job.</p>
-     */
     inline bool ExportSourceImagesHasBeenSet() const { return m_exportSourceImagesHasBeenSet; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting the
-     * source images of an Earth Observation job.</p>
-     */
     inline void SetExportSourceImages(const ExportErrorDetailsOutput& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = value; }
-
-    /**
-     * <p>The structure for returning the export error details while exporting the
-     * source images of an Earth Observation job.</p>
-     */
     inline void SetExportSourceImages(ExportErrorDetailsOutput&& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = std::move(value); }
-
-    /**
-     * <p>The structure for returning the export error details while exporting the
-     * source images of an Earth Observation job.</p>
-     */
     inline ExportErrorDetails& WithExportSourceImages(const ExportErrorDetailsOutput& value) { SetExportSourceImages(value); return *this;}
-
-    /**
-     * <p>The structure for returning the export error details while exporting the
-     * source images of an Earth Observation job.</p>
-     */
     inline ExportErrorDetails& WithExportSourceImages(ExportErrorDetailsOutput&& value) { SetExportSourceImages(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExportErrorDetailsOutput m_exportResults;

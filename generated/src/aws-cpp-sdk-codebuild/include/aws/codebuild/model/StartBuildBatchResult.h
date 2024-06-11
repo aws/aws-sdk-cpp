@@ -33,58 +33,28 @@ namespace Model
     AWS_CODEBUILD_API StartBuildBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>BuildBatch</code> object that contains information about the batch
      * build.</p>
      */
     inline const BuildBatch& GetBuildBatch() const{ return m_buildBatch; }
-
-    /**
-     * <p>A <code>BuildBatch</code> object that contains information about the batch
-     * build.</p>
-     */
     inline void SetBuildBatch(const BuildBatch& value) { m_buildBatch = value; }
-
-    /**
-     * <p>A <code>BuildBatch</code> object that contains information about the batch
-     * build.</p>
-     */
     inline void SetBuildBatch(BuildBatch&& value) { m_buildBatch = std::move(value); }
-
-    /**
-     * <p>A <code>BuildBatch</code> object that contains information about the batch
-     * build.</p>
-     */
     inline StartBuildBatchResult& WithBuildBatch(const BuildBatch& value) { SetBuildBatch(value); return *this;}
-
-    /**
-     * <p>A <code>BuildBatch</code> object that contains information about the batch
-     * build.</p>
-     */
     inline StartBuildBatchResult& WithBuildBatch(BuildBatch&& value) { SetBuildBatch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartBuildBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartBuildBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartBuildBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BuildBatch m_buildBatch;

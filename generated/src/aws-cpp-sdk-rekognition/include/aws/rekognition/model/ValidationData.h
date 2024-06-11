@@ -47,46 +47,19 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The assets that comprise the validation data. </p>
      */
     inline const Aws::Vector<Asset>& GetAssets() const{ return m_assets; }
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline void SetAssets(const Aws::Vector<Asset>& value) { m_assetsHasBeenSet = true; m_assets = value; }
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline void SetAssets(Aws::Vector<Asset>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline ValidationData& WithAssets(const Aws::Vector<Asset>& value) { SetAssets(value); return *this;}
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline ValidationData& WithAssets(Aws::Vector<Asset>&& value) { SetAssets(std::move(value)); return *this;}
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline ValidationData& AddAssets(const Asset& value) { m_assetsHasBeenSet = true; m_assets.push_back(value); return *this; }
-
-    /**
-     * <p>The assets that comprise the validation data. </p>
-     */
     inline ValidationData& AddAssets(Asset&& value) { m_assetsHasBeenSet = true; m_assets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Asset> m_assets;

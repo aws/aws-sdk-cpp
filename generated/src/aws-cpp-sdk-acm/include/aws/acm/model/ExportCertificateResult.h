@@ -32,149 +32,57 @@ namespace Model
     AWS_ACM_API ExportCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The base64 PEM-encoded certificate.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline void SetCertificate(const char* value) { m_certificate.assign(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline ExportCertificateResult& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline ExportCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate.</p>
-     */
     inline ExportCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The base64 PEM-encoded certificate chain. This does not include the
      * certificate that you are exporting.</p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline ExportCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline ExportCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
-
-    /**
-     * <p>The base64 PEM-encoded certificate chain. This does not include the
-     * certificate that you are exporting.</p>
-     */
     inline ExportCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encrypted private key associated with the public key in the certificate.
      * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKey = value; }
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKey = std::move(value); }
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline void SetPrivateKey(const char* value) { m_privateKey.assign(value); }
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline ExportCertificateResult& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline ExportCertificateResult& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The encrypted private key associated with the public key in the certificate.
-     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-     */
     inline ExportCertificateResult& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificate;

@@ -33,63 +33,29 @@ namespace Model
     AWS_WAFREGIONAL_API GetRegexPatternSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>RegexPatternSet</a> that you specified in the
      * <code>GetRegexPatternSet</code> request, including the identifier of the pattern
      * set and the regular expression patterns you want AWS WAF to search for. </p>
      */
     inline const RegexPatternSet& GetRegexPatternSet() const{ return m_regexPatternSet; }
-
-    /**
-     * <p>Information about the <a>RegexPatternSet</a> that you specified in the
-     * <code>GetRegexPatternSet</code> request, including the identifier of the pattern
-     * set and the regular expression patterns you want AWS WAF to search for. </p>
-     */
     inline void SetRegexPatternSet(const RegexPatternSet& value) { m_regexPatternSet = value; }
-
-    /**
-     * <p>Information about the <a>RegexPatternSet</a> that you specified in the
-     * <code>GetRegexPatternSet</code> request, including the identifier of the pattern
-     * set and the regular expression patterns you want AWS WAF to search for. </p>
-     */
     inline void SetRegexPatternSet(RegexPatternSet&& value) { m_regexPatternSet = std::move(value); }
-
-    /**
-     * <p>Information about the <a>RegexPatternSet</a> that you specified in the
-     * <code>GetRegexPatternSet</code> request, including the identifier of the pattern
-     * set and the regular expression patterns you want AWS WAF to search for. </p>
-     */
     inline GetRegexPatternSetResult& WithRegexPatternSet(const RegexPatternSet& value) { SetRegexPatternSet(value); return *this;}
-
-    /**
-     * <p>Information about the <a>RegexPatternSet</a> that you specified in the
-     * <code>GetRegexPatternSet</code> request, including the identifier of the pattern
-     * set and the regular expression patterns you want AWS WAF to search for. </p>
-     */
     inline GetRegexPatternSetResult& WithRegexPatternSet(RegexPatternSet&& value) { SetRegexPatternSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRegexPatternSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRegexPatternSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRegexPatternSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RegexPatternSet m_regexPatternSet;

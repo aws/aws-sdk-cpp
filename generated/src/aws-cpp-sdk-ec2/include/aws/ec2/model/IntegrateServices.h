@@ -41,46 +41,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Information about the integration with Amazon Athena.</p>
      */
     inline const Aws::Vector<AthenaIntegration>& GetAthenaIntegrations() const{ return m_athenaIntegrations; }
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline bool AthenaIntegrationsHasBeenSet() const { return m_athenaIntegrationsHasBeenSet; }
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline void SetAthenaIntegrations(const Aws::Vector<AthenaIntegration>& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations = value; }
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline void SetAthenaIntegrations(Aws::Vector<AthenaIntegration>&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations = std::move(value); }
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline IntegrateServices& WithAthenaIntegrations(const Aws::Vector<AthenaIntegration>& value) { SetAthenaIntegrations(value); return *this;}
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline IntegrateServices& WithAthenaIntegrations(Aws::Vector<AthenaIntegration>&& value) { SetAthenaIntegrations(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline IntegrateServices& AddAthenaIntegrations(const AthenaIntegration& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the integration with Amazon Athena.</p>
-     */
     inline IntegrateServices& AddAthenaIntegrations(AthenaIntegration&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AthenaIntegration> m_athenaIntegrations;

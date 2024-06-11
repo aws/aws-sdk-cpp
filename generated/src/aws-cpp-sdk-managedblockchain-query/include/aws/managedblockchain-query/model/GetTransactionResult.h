@@ -33,53 +33,27 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API GetTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the details of the transaction.</p>
      */
     inline const Transaction& GetTransaction() const{ return m_transaction; }
-
-    /**
-     * <p>Contains the details of the transaction.</p>
-     */
     inline void SetTransaction(const Transaction& value) { m_transaction = value; }
-
-    /**
-     * <p>Contains the details of the transaction.</p>
-     */
     inline void SetTransaction(Transaction&& value) { m_transaction = std::move(value); }
-
-    /**
-     * <p>Contains the details of the transaction.</p>
-     */
     inline GetTransactionResult& WithTransaction(const Transaction& value) { SetTransaction(value); return *this;}
-
-    /**
-     * <p>Contains the details of the transaction.</p>
-     */
     inline GetTransactionResult& WithTransaction(Transaction&& value) { SetTransaction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Transaction m_transaction;

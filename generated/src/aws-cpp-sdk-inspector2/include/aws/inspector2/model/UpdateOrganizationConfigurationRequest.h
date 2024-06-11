@@ -32,42 +32,18 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Defines which scan types are enabled automatically for new members of your
      * Amazon Inspector organization.</p>
      */
     inline const AutoEnable& GetAutoEnable() const{ return m_autoEnable; }
-
-    /**
-     * <p>Defines which scan types are enabled automatically for new members of your
-     * Amazon Inspector organization.</p>
-     */
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-
-    /**
-     * <p>Defines which scan types are enabled automatically for new members of your
-     * Amazon Inspector organization.</p>
-     */
     inline void SetAutoEnable(const AutoEnable& value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-
-    /**
-     * <p>Defines which scan types are enabled automatically for new members of your
-     * Amazon Inspector organization.</p>
-     */
     inline void SetAutoEnable(AutoEnable&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::move(value); }
-
-    /**
-     * <p>Defines which scan types are enabled automatically for new members of your
-     * Amazon Inspector organization.</p>
-     */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(const AutoEnable& value) { SetAutoEnable(value); return *this;}
-
-    /**
-     * <p>Defines which scan types are enabled automatically for new members of your
-     * Amazon Inspector organization.</p>
-     */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(AutoEnable&& value) { SetAutoEnable(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoEnable m_autoEnable;

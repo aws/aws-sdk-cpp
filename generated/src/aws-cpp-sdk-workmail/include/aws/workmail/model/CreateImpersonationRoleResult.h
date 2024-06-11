@@ -32,63 +32,29 @@ namespace Model
     AWS_WORKMAIL_API CreateImpersonationRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The new impersonation role ID.</p>
      */
     inline const Aws::String& GetImpersonationRoleId() const{ return m_impersonationRoleId; }
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline void SetImpersonationRoleId(const Aws::String& value) { m_impersonationRoleId = value; }
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline void SetImpersonationRoleId(Aws::String&& value) { m_impersonationRoleId = std::move(value); }
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline void SetImpersonationRoleId(const char* value) { m_impersonationRoleId.assign(value); }
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline CreateImpersonationRoleResult& WithImpersonationRoleId(const Aws::String& value) { SetImpersonationRoleId(value); return *this;}
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline CreateImpersonationRoleResult& WithImpersonationRoleId(Aws::String&& value) { SetImpersonationRoleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The new impersonation role ID.</p>
-     */
     inline CreateImpersonationRoleResult& WithImpersonationRoleId(const char* value) { SetImpersonationRoleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateImpersonationRoleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateImpersonationRoleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateImpersonationRoleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_impersonationRoleId;

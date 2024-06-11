@@ -32,63 +32,29 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline DeleteProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline DeleteProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
-     */
     inline DeleteProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

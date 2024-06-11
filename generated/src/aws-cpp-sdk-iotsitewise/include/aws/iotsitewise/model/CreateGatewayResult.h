@@ -32,49 +32,21 @@ namespace Model
     AWS_IOTSITEWISE_API CreateGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
      * SiteWise API operations.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayId = value; }
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline void SetGatewayId(const char* value) { m_gatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline CreateGatewayResult& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline CreateGatewayResult& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise API operations.</p>
-     */
     inline CreateGatewayResult& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
@@ -83,83 +55,24 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline CreateGatewayResult& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline CreateGatewayResult& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the gateway, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code>
-     * </p>
-     */
     inline CreateGatewayResult& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayId;

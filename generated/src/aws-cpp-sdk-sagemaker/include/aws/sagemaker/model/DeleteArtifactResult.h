@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API DeleteArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the artifact.</p>
      */
     inline const Aws::String& GetArtifactArn() const{ return m_artifactArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline void SetArtifactArn(const Aws::String& value) { m_artifactArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline void SetArtifactArn(Aws::String&& value) { m_artifactArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline void SetArtifactArn(const char* value) { m_artifactArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline DeleteArtifactResult& WithArtifactArn(const Aws::String& value) { SetArtifactArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline DeleteArtifactResult& WithArtifactArn(Aws::String&& value) { SetArtifactArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the artifact.</p>
-     */
     inline DeleteArtifactResult& WithArtifactArn(const char* value) { SetArtifactArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_artifactArn;

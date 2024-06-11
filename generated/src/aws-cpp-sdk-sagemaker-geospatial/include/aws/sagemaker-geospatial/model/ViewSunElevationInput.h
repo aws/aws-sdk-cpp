@@ -36,47 +36,25 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lower bound to view the sun elevation.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
-
-    /**
-     * <p>The lower bound to view the sun elevation.</p>
-     */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
-
-    /**
-     * <p>The lower bound to view the sun elevation.</p>
-     */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
-
-    /**
-     * <p>The lower bound to view the sun elevation.</p>
-     */
     inline ViewSunElevationInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upper bound to view the sun elevation.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
-
-    /**
-     * <p>The upper bound to view the sun elevation.</p>
-     */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
-
-    /**
-     * <p>The upper bound to view the sun elevation.</p>
-     */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
-
-    /**
-     * <p>The upper bound to view the sun elevation.</p>
-     */
     inline ViewSunElevationInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
-
+    ///@}
   private:
 
     double m_lowerBound;

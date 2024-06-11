@@ -40,185 +40,62 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time at which the existing policy for the unused permissions finding was
      * last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetPolicyUpdatedAt() const{ return m_policyUpdatedAt; }
-
-    /**
-     * <p>The time at which the existing policy for the unused permissions finding was
-     * last updated.</p>
-     */
     inline bool PolicyUpdatedAtHasBeenSet() const { return m_policyUpdatedAtHasBeenSet; }
-
-    /**
-     * <p>The time at which the existing policy for the unused permissions finding was
-     * last updated.</p>
-     */
     inline void SetPolicyUpdatedAt(const Aws::Utils::DateTime& value) { m_policyUpdatedAtHasBeenSet = true; m_policyUpdatedAt = value; }
-
-    /**
-     * <p>The time at which the existing policy for the unused permissions finding was
-     * last updated.</p>
-     */
     inline void SetPolicyUpdatedAt(Aws::Utils::DateTime&& value) { m_policyUpdatedAtHasBeenSet = true; m_policyUpdatedAt = std::move(value); }
-
-    /**
-     * <p>The time at which the existing policy for the unused permissions finding was
-     * last updated.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithPolicyUpdatedAt(const Aws::Utils::DateTime& value) { SetPolicyUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The time at which the existing policy for the unused permissions finding was
-     * last updated.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithPolicyUpdatedAt(Aws::Utils::DateTime&& value) { SetPolicyUpdatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A recommendation of whether to create or detach a policy for an unused
      * permissions finding.</p>
      */
     inline const RecommendedRemediationAction& GetRecommendedAction() const{ return m_recommendedAction; }
-
-    /**
-     * <p>A recommendation of whether to create or detach a policy for an unused
-     * permissions finding.</p>
-     */
     inline bool RecommendedActionHasBeenSet() const { return m_recommendedActionHasBeenSet; }
-
-    /**
-     * <p>A recommendation of whether to create or detach a policy for an unused
-     * permissions finding.</p>
-     */
     inline void SetRecommendedAction(const RecommendedRemediationAction& value) { m_recommendedActionHasBeenSet = true; m_recommendedAction = value; }
-
-    /**
-     * <p>A recommendation of whether to create or detach a policy for an unused
-     * permissions finding.</p>
-     */
     inline void SetRecommendedAction(RecommendedRemediationAction&& value) { m_recommendedActionHasBeenSet = true; m_recommendedAction = std::move(value); }
-
-    /**
-     * <p>A recommendation of whether to create or detach a policy for an unused
-     * permissions finding.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithRecommendedAction(const RecommendedRemediationAction& value) { SetRecommendedAction(value); return *this;}
-
-    /**
-     * <p>A recommendation of whether to create or detach a policy for an unused
-     * permissions finding.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithRecommendedAction(RecommendedRemediationAction&& value) { SetRecommendedAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the recommended action for the unused permissions finding is to replace
      * the existing policy, the contents of the recommended policy to replace the
      * policy specified in the <code>existingPolicyId</code> field.</p>
      */
     inline const Aws::String& GetRecommendedPolicy() const{ return m_recommendedPolicy; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline bool RecommendedPolicyHasBeenSet() const { return m_recommendedPolicyHasBeenSet; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline void SetRecommendedPolicy(const Aws::String& value) { m_recommendedPolicyHasBeenSet = true; m_recommendedPolicy = value; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline void SetRecommendedPolicy(Aws::String&& value) { m_recommendedPolicyHasBeenSet = true; m_recommendedPolicy = std::move(value); }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline void SetRecommendedPolicy(const char* value) { m_recommendedPolicyHasBeenSet = true; m_recommendedPolicy.assign(value); }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithRecommendedPolicy(const Aws::String& value) { SetRecommendedPolicy(value); return *this;}
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithRecommendedPolicy(Aws::String&& value) { SetRecommendedPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to replace
-     * the existing policy, the contents of the recommended policy to replace the
-     * policy specified in the <code>existingPolicyId</code> field.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithRecommendedPolicy(const char* value) { SetRecommendedPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the recommended action for the unused permissions finding is to detach a
      * policy, the ID of an existing policy to be detached.</p>
      */
     inline const Aws::String& GetExistingPolicyId() const{ return m_existingPolicyId; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline bool ExistingPolicyIdHasBeenSet() const { return m_existingPolicyIdHasBeenSet; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline void SetExistingPolicyId(const Aws::String& value) { m_existingPolicyIdHasBeenSet = true; m_existingPolicyId = value; }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline void SetExistingPolicyId(Aws::String&& value) { m_existingPolicyIdHasBeenSet = true; m_existingPolicyId = std::move(value); }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline void SetExistingPolicyId(const char* value) { m_existingPolicyIdHasBeenSet = true; m_existingPolicyId.assign(value); }
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithExistingPolicyId(const Aws::String& value) { SetExistingPolicyId(value); return *this;}
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithExistingPolicyId(Aws::String&& value) { SetExistingPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>If the recommended action for the unused permissions finding is to detach a
-     * policy, the ID of an existing policy to be detached.</p>
-     */
     inline UnusedPermissionsRecommendedStep& WithExistingPolicyId(const char* value) { SetExistingPolicyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_policyUpdatedAt;

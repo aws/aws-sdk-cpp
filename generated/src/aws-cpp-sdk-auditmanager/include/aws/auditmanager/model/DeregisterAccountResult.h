@@ -33,53 +33,27 @@ namespace Model
     AWS_AUDITMANAGER_API DeregisterAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The registration status of the account. </p>
      */
     inline const AccountStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The registration status of the account. </p>
-     */
     inline void SetStatus(const AccountStatus& value) { m_status = value; }
-
-    /**
-     * <p> The registration status of the account. </p>
-     */
     inline void SetStatus(AccountStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p> The registration status of the account. </p>
-     */
     inline DeregisterAccountResult& WithStatus(const AccountStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The registration status of the account. </p>
-     */
     inline DeregisterAccountResult& WithStatus(AccountStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeregisterAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeregisterAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeregisterAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountStatus m_status;

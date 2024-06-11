@@ -39,67 +39,29 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the dependent service.</p>
      */
     inline const ServiceName& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the dependent service.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dependent service.</p>
-     */
     inline void SetServiceName(const ServiceName& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the dependent service.</p>
-     */
     inline void SetServiceName(ServiceName&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the dependent service.</p>
-     */
     inline DependentService& WithServiceName(const ServiceName& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the dependent service.</p>
-     */
     inline DependentService& WithServiceName(ServiceName&& value) { SetServiceName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the dependent service.</p>
      */
     inline const ServiceVersion& GetServiceVersion() const{ return m_serviceVersion; }
-
-    /**
-     * <p>The version of the dependent service.</p>
-     */
     inline bool ServiceVersionHasBeenSet() const { return m_serviceVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the dependent service.</p>
-     */
     inline void SetServiceVersion(const ServiceVersion& value) { m_serviceVersionHasBeenSet = true; m_serviceVersion = value; }
-
-    /**
-     * <p>The version of the dependent service.</p>
-     */
     inline void SetServiceVersion(ServiceVersion&& value) { m_serviceVersionHasBeenSet = true; m_serviceVersion = std::move(value); }
-
-    /**
-     * <p>The version of the dependent service.</p>
-     */
     inline DependentService& WithServiceVersion(const ServiceVersion& value) { SetServiceVersion(value); return *this;}
-
-    /**
-     * <p>The version of the dependent service.</p>
-     */
     inline DependentService& WithServiceVersion(ServiceVersion&& value) { SetServiceVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServiceName m_serviceName;

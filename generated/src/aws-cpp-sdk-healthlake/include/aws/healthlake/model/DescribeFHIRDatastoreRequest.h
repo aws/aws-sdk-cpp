@@ -34,46 +34,19 @@ namespace Model
     AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The AWS-generated data store ID.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline DescribeFHIRDatastoreRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline DescribeFHIRDatastoreRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS-generated data store ID.</p>
-     */
     inline DescribeFHIRDatastoreRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreId;

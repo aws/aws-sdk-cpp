@@ -41,156 +41,50 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time when the access key was most recently used.</p> <p>This
      * value is null if the access key has not been used.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
-
-    /**
-     * <p>The date and time when the access key was most recently used.</p> <p>This
-     * value is null if the access key has not been used.</p>
-     */
     inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the access key was most recently used.</p> <p>This
-     * value is null if the access key has not been used.</p>
-     */
     inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
-
-    /**
-     * <p>The date and time when the access key was most recently used.</p> <p>This
-     * value is null if the access key has not been used.</p>
-     */
     inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the access key was most recently used.</p> <p>This
-     * value is null if the access key has not been used.</p>
-     */
     inline AccessKeyLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the access key was most recently used.</p> <p>This
-     * value is null if the access key has not been used.</p>
-     */
     inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region where this access key was most recently
      * used.</p> <p>This value is <code>N/A</code> if the access key has not been
      * used.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline AccessKeyLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region where this access key was most recently
-     * used.</p> <p>This value is <code>N/A</code> if the access key has not been
-     * used.</p>
-     */
     inline AccessKeyLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Web Services service with which this access key was
      * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
      * not been used.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline AccessKeyLastUsed& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline AccessKeyLastUsed& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services service with which this access key was
-     * most recently used.</p> <p>This value is <code>N/A</code> if the access key has
-     * not been used.</p>
-     */
     inline AccessKeyLastUsed& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastUsedDate;

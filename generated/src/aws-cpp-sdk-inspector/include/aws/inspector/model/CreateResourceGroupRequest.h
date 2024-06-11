@@ -35,62 +35,21 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A collection of keys and an array of possible values,
      * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
      * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
      */
     inline const Aws::Vector<ResourceGroupTag>& GetResourceGroupTags() const{ return m_resourceGroupTags; }
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline bool ResourceGroupTagsHasBeenSet() const { return m_resourceGroupTagsHasBeenSet; }
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline void SetResourceGroupTags(const Aws::Vector<ResourceGroupTag>& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = value; }
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline void SetResourceGroupTags(Aws::Vector<ResourceGroupTag>&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = std::move(value); }
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline CreateResourceGroupRequest& WithResourceGroupTags(const Aws::Vector<ResourceGroupTag>& value) { SetResourceGroupTags(value); return *this;}
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline CreateResourceGroupRequest& WithResourceGroupTags(Aws::Vector<ResourceGroupTag>&& value) { SetResourceGroupTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline CreateResourceGroupRequest& AddResourceGroupTags(const ResourceGroupTag& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags.push_back(value); return *this; }
-
-    /**
-     * <p>A collection of keys and an array of possible values,
-     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
-     * <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-     */
     inline CreateResourceGroupRequest& AddResourceGroupTags(ResourceGroupTag&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ResourceGroupTag> m_resourceGroupTags;

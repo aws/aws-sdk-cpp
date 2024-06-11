@@ -32,46 +32,19 @@ namespace Model
     AWS_OAM_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the sink to retrieve the policy of.</p>
      */
     inline const Aws::String& GetSinkIdentifier() const{ return m_sinkIdentifier; }
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline bool SinkIdentifierHasBeenSet() const { return m_sinkIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline void SetSinkIdentifier(const Aws::String& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = value; }
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline void SetSinkIdentifier(Aws::String&& value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier = std::move(value); }
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline void SetSinkIdentifier(const char* value) { m_sinkIdentifierHasBeenSet = true; m_sinkIdentifier.assign(value); }
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline GetSinkPolicyRequest& WithSinkIdentifier(const Aws::String& value) { SetSinkIdentifier(value); return *this;}
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline GetSinkPolicyRequest& WithSinkIdentifier(Aws::String&& value) { SetSinkIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the sink to retrieve the policy of.</p>
-     */
     inline GetSinkPolicyRequest& WithSinkIdentifier(const char* value) { SetSinkIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sinkIdentifier;

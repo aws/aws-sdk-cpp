@@ -35,208 +35,74 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the code repository branch where the Proton Ops file is
      * found.</p>
      */
     inline const Aws::String& GetBranch() const{ return m_branch; }
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the code repository branch where the Proton Ops file is
-     * found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithBranch(const char* value) { SetBranch(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The path to the Proton Ops file.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path to the Proton Ops file.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository where the Proton Ops file is found.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository where the Proton Ops file is found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository provider where the Proton Ops file is found.</p>
      */
     inline const RepositoryProvider& GetRepositoryProvider() const{ return m_repositoryProvider; }
-
-    /**
-     * <p>The name of the repository provider where the Proton Ops file is found.</p>
-     */
     inline bool RepositoryProviderHasBeenSet() const { return m_repositoryProviderHasBeenSet; }
-
-    /**
-     * <p>The name of the repository provider where the Proton Ops file is found.</p>
-     */
     inline void SetRepositoryProvider(const RepositoryProvider& value) { m_repositoryProviderHasBeenSet = true; m_repositoryProvider = value; }
-
-    /**
-     * <p>The name of the repository provider where the Proton Ops file is found.</p>
-     */
     inline void SetRepositoryProvider(RepositoryProvider&& value) { m_repositoryProviderHasBeenSet = true; m_repositoryProvider = std::move(value); }
-
-    /**
-     * <p>The name of the repository provider where the Proton Ops file is found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithRepositoryProvider(const RepositoryProvider& value) { SetRepositoryProvider(value); return *this;}
-
-    /**
-     * <p>The name of the repository provider where the Proton Ops file is found.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithRepositoryProvider(RepositoryProvider&& value) { SetRepositoryProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service the Proton Ops file is for.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service the Proton Ops file is for.</p>
-     */
     inline UpdateServiceSyncConfigRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_branch;

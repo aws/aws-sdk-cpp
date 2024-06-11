@@ -37,87 +37,33 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the import.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline Import& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline Import& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the import.</p>
-     */
     inline Import& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revision of the import.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline Import& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline Import& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-
-    /**
-     * <p>The revision of the import.</p>
-     */
     inline Import& WithRevision(const char* value) { SetRevision(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

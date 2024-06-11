@@ -32,63 +32,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API CreateDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the deployment.</p>
-     */
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentId;

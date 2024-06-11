@@ -38,128 +38,47 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The Amazon Resource Number (ARN) of the cloud flow.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline BridgeFlowOutput& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline BridgeFlowOutput& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the cloud flow.
-     */
     inline BridgeFlowOutput& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The Amazon Resource Number (ARN) of the flow source.
      */
     inline const Aws::String& GetFlowSourceArn() const{ return m_flowSourceArn; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline bool FlowSourceArnHasBeenSet() const { return m_flowSourceArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline void SetFlowSourceArn(const Aws::String& value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn = value; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline void SetFlowSourceArn(Aws::String&& value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline void SetFlowSourceArn(const char* value) { m_flowSourceArnHasBeenSet = true; m_flowSourceArn.assign(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline BridgeFlowOutput& WithFlowSourceArn(const Aws::String& value) { SetFlowSourceArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline BridgeFlowOutput& WithFlowSourceArn(Aws::String&& value) { SetFlowSourceArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the flow source.
-     */
     inline BridgeFlowOutput& WithFlowSourceArn(const char* value) { SetFlowSourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the bridge's output.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the bridge's output.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the bridge's output.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the bridge's output.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the bridge's output.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the bridge's output.
-     */
     inline BridgeFlowOutput& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the bridge's output.
-     */
     inline BridgeFlowOutput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the bridge's output.
-     */
     inline BridgeFlowOutput& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

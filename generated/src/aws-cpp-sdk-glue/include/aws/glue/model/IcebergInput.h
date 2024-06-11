@@ -39,77 +39,31 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
      */
     inline const MetadataOperation& GetMetadataOperation() const{ return m_metadataOperation; }
-
-    /**
-     * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-     */
     inline bool MetadataOperationHasBeenSet() const { return m_metadataOperationHasBeenSet; }
-
-    /**
-     * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-     */
     inline void SetMetadataOperation(const MetadataOperation& value) { m_metadataOperationHasBeenSet = true; m_metadataOperation = value; }
-
-    /**
-     * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-     */
     inline void SetMetadataOperation(MetadataOperation&& value) { m_metadataOperationHasBeenSet = true; m_metadataOperation = std::move(value); }
-
-    /**
-     * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-     */
     inline IcebergInput& WithMetadataOperation(const MetadataOperation& value) { SetMetadataOperation(value); return *this;}
-
-    /**
-     * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-     */
     inline IcebergInput& WithMetadataOperation(MetadataOperation&& value) { SetMetadataOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The table version for the Iceberg table. Defaults to 2.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline IcebergInput& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline IcebergInput& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The table version for the Iceberg table. Defaults to 2.</p>
-     */
     inline IcebergInput& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     MetadataOperation m_metadataOperation;

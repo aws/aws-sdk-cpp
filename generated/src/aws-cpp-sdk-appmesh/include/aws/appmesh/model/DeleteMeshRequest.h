@@ -35,46 +35,19 @@ namespace Model
     AWS_APPMESH_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the service mesh to delete.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline DeleteMeshRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline DeleteMeshRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service mesh to delete.</p>
-     */
     inline DeleteMeshRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_meshName;

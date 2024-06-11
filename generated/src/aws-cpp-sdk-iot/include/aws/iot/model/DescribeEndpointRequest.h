@@ -41,6 +41,7 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
      * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
@@ -54,105 +55,14 @@ namespace Model
      * are more secure and are trusted by most popular browsers.</p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
-     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
-     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
-     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
-     * Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p>
-     * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
-     * </li> </ul> <p>We strongly recommend that customers use the newer
-     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
-     * are more secure and are trusted by most popular browsers.</p>
-     */
     inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointType;

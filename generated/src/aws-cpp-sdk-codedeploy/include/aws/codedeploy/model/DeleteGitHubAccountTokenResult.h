@@ -38,63 +38,29 @@ namespace Model
     AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the GitHub account connection that was deleted.</p>
      */
     inline const Aws::String& GetTokenName() const{ return m_tokenName; }
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline void SetTokenName(const Aws::String& value) { m_tokenName = value; }
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline void SetTokenName(Aws::String&& value) { m_tokenName = std::move(value); }
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline void SetTokenName(const char* value) { m_tokenName.assign(value); }
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline DeleteGitHubAccountTokenResult& WithTokenName(const Aws::String& value) { SetTokenName(value); return *this;}
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline DeleteGitHubAccountTokenResult& WithTokenName(Aws::String&& value) { SetTokenName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the GitHub account connection that was deleted.</p>
-     */
     inline DeleteGitHubAccountTokenResult& WithTokenName(const char* value) { SetTokenName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteGitHubAccountTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteGitHubAccountTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteGitHubAccountTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tokenName;

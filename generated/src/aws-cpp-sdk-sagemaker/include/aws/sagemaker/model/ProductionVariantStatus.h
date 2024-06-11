@@ -39,6 +39,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The endpoint variant status which describes the current deployment stage
      * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
@@ -51,144 +52,38 @@ namespace Model
      * configuration.</p> </li> </ul>
      */
     inline const VariantStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The endpoint variant status which describes the current deployment stage
-     * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
-     * inference resources for the production variant.</p> </li> <li> <p>
-     * <code>Deleting</code>: Terminating inference resources for the production
-     * variant.</p> </li> <li> <p> <code>Updating</code>: Updating capacity for the
-     * production variant.</p> </li> <li> <p> <code>ActivatingTraffic</code>: Turning
-     * on traffic for the production variant.</p> </li> <li> <p> <code>Baking</code>:
-     * Waiting period to monitor the CloudWatch alarms in the automatic rollback
-     * configuration.</p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The endpoint variant status which describes the current deployment stage
-     * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
-     * inference resources for the production variant.</p> </li> <li> <p>
-     * <code>Deleting</code>: Terminating inference resources for the production
-     * variant.</p> </li> <li> <p> <code>Updating</code>: Updating capacity for the
-     * production variant.</p> </li> <li> <p> <code>ActivatingTraffic</code>: Turning
-     * on traffic for the production variant.</p> </li> <li> <p> <code>Baking</code>:
-     * Waiting period to monitor the CloudWatch alarms in the automatic rollback
-     * configuration.</p> </li> </ul>
-     */
     inline void SetStatus(const VariantStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The endpoint variant status which describes the current deployment stage
-     * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
-     * inference resources for the production variant.</p> </li> <li> <p>
-     * <code>Deleting</code>: Terminating inference resources for the production
-     * variant.</p> </li> <li> <p> <code>Updating</code>: Updating capacity for the
-     * production variant.</p> </li> <li> <p> <code>ActivatingTraffic</code>: Turning
-     * on traffic for the production variant.</p> </li> <li> <p> <code>Baking</code>:
-     * Waiting period to monitor the CloudWatch alarms in the automatic rollback
-     * configuration.</p> </li> </ul>
-     */
     inline void SetStatus(VariantStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The endpoint variant status which describes the current deployment stage
-     * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
-     * inference resources for the production variant.</p> </li> <li> <p>
-     * <code>Deleting</code>: Terminating inference resources for the production
-     * variant.</p> </li> <li> <p> <code>Updating</code>: Updating capacity for the
-     * production variant.</p> </li> <li> <p> <code>ActivatingTraffic</code>: Turning
-     * on traffic for the production variant.</p> </li> <li> <p> <code>Baking</code>:
-     * Waiting period to monitor the CloudWatch alarms in the automatic rollback
-     * configuration.</p> </li> </ul>
-     */
     inline ProductionVariantStatus& WithStatus(const VariantStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The endpoint variant status which describes the current deployment stage
-     * status or operational status.</p> <ul> <li> <p> <code>Creating</code>: Creating
-     * inference resources for the production variant.</p> </li> <li> <p>
-     * <code>Deleting</code>: Terminating inference resources for the production
-     * variant.</p> </li> <li> <p> <code>Updating</code>: Updating capacity for the
-     * production variant.</p> </li> <li> <p> <code>ActivatingTraffic</code>: Turning
-     * on traffic for the production variant.</p> </li> <li> <p> <code>Baking</code>:
-     * Waiting period to monitor the CloudWatch alarms in the automatic rollback
-     * configuration.</p> </li> </ul>
-     */
     inline ProductionVariantStatus& WithStatus(VariantStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message that describes the status of the production variant.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline ProductionVariantStatus& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline ProductionVariantStatus& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that describes the status of the production variant.</p>
-     */
     inline ProductionVariantStatus& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The start time of the current status change.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start time of the current status change.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The start time of the current status change.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The start time of the current status change.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The start time of the current status change.</p>
-     */
     inline ProductionVariantStatus& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The start time of the current status change.</p>
-     */
     inline ProductionVariantStatus& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VariantStatus m_status;

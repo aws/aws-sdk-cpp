@@ -39,62 +39,21 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains the properties for the Amazon ECS task definition of
      * a job.</p>  <p>This object is currently limited to one element.</p>
      * 
      */
     inline const Aws::Vector<EcsTaskProperties>& GetTaskProperties() const{ return m_taskProperties; }
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline void SetTaskProperties(const Aws::Vector<EcsTaskProperties>& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = value; }
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline void SetTaskProperties(Aws::Vector<EcsTaskProperties>&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::move(value); }
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline EcsProperties& WithTaskProperties(const Aws::Vector<EcsTaskProperties>& value) { SetTaskProperties(value); return *this;}
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline EcsProperties& WithTaskProperties(Aws::Vector<EcsTaskProperties>&& value) { SetTaskProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline EcsProperties& AddTaskProperties(const EcsTaskProperties& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(value); return *this; }
-
-    /**
-     * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
-     */
     inline EcsProperties& AddTaskProperties(EcsTaskProperties&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EcsTaskProperties> m_taskProperties;

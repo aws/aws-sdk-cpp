@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of app block builders associated with app blocks.</p>
      */
     inline const AppBlockBuilderAppBlockAssociation& GetAppBlockBuilderAppBlockAssociation() const{ return m_appBlockBuilderAppBlockAssociation; }
-
-    /**
-     * <p>The list of app block builders associated with app blocks.</p>
-     */
     inline void SetAppBlockBuilderAppBlockAssociation(const AppBlockBuilderAppBlockAssociation& value) { m_appBlockBuilderAppBlockAssociation = value; }
-
-    /**
-     * <p>The list of app block builders associated with app blocks.</p>
-     */
     inline void SetAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociation&& value) { m_appBlockBuilderAppBlockAssociation = std::move(value); }
-
-    /**
-     * <p>The list of app block builders associated with app blocks.</p>
-     */
     inline AssociateAppBlockBuilderAppBlockResult& WithAppBlockBuilderAppBlockAssociation(const AppBlockBuilderAppBlockAssociation& value) { SetAppBlockBuilderAppBlockAssociation(value); return *this;}
-
-    /**
-     * <p>The list of app block builders associated with app blocks.</p>
-     */
     inline AssociateAppBlockBuilderAppBlockResult& WithAppBlockBuilderAppBlockAssociation(AppBlockBuilderAppBlockAssociation&& value) { SetAppBlockBuilderAppBlockAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateAppBlockBuilderAppBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AppBlockBuilderAppBlockAssociation m_appBlockBuilderAppBlockAssociation;

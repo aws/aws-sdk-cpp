@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetComponentArn() const{ return m_componentArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline bool ComponentArnHasBeenSet() const { return m_componentArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetComponentArn(const Aws::String& value) { m_componentArnHasBeenSet = true; m_componentArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetComponentArn(Aws::String&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetComponentArn(const char* value) { m_componentArnHasBeenSet = true; m_componentArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline GetComponentPolicyRequest& WithComponentArn(const Aws::String& value) { SetComponentArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline GetComponentPolicyRequest& WithComponentArn(Aws::String&& value) { SetComponentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the component whose policy you want to
-     * retrieve.</p>
-     */
     inline GetComponentPolicyRequest& WithComponentArn(const char* value) { SetComponentArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentArn;

@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the Amazon S3 bucket that the
      * generated dashboard snapshot is saved in.</p>
      */
     inline const S3BucketConfiguration& GetBucketConfiguration() const{ return m_bucketConfiguration; }
-
-    /**
-     * <p>A structure that contains details about the Amazon S3 bucket that the
-     * generated dashboard snapshot is saved in.</p>
-     */
     inline bool BucketConfigurationHasBeenSet() const { return m_bucketConfigurationHasBeenSet; }
-
-    /**
-     * <p>A structure that contains details about the Amazon S3 bucket that the
-     * generated dashboard snapshot is saved in.</p>
-     */
     inline void SetBucketConfiguration(const S3BucketConfiguration& value) { m_bucketConfigurationHasBeenSet = true; m_bucketConfiguration = value; }
-
-    /**
-     * <p>A structure that contains details about the Amazon S3 bucket that the
-     * generated dashboard snapshot is saved in.</p>
-     */
     inline void SetBucketConfiguration(S3BucketConfiguration&& value) { m_bucketConfigurationHasBeenSet = true; m_bucketConfiguration = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the Amazon S3 bucket that the
-     * generated dashboard snapshot is saved in.</p>
-     */
     inline SnapshotS3DestinationConfiguration& WithBucketConfiguration(const S3BucketConfiguration& value) { SetBucketConfiguration(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the Amazon S3 bucket that the
-     * generated dashboard snapshot is saved in.</p>
-     */
     inline SnapshotS3DestinationConfiguration& WithBucketConfiguration(S3BucketConfiguration&& value) { SetBucketConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3BucketConfiguration m_bucketConfiguration;

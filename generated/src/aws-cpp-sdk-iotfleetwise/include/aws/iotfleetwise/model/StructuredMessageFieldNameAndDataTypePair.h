@@ -40,85 +40,32 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field name of the structured message. It determines how a data value is
      * referenced in the target language. </p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline StructuredMessageFieldNameAndDataTypePair& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline StructuredMessageFieldNameAndDataTypePair& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p>The field name of the structured message. It determines how a data value is
-     * referenced in the target language. </p>
-     */
     inline StructuredMessageFieldNameAndDataTypePair& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data type. </p>
      */
     AWS_IOTFLEETWISE_API const StructuredMessage& GetDataType() const;
-
-    /**
-     * <p>The data type. </p>
-     */
     AWS_IOTFLEETWISE_API bool DataTypeHasBeenSet() const;
-
-    /**
-     * <p>The data type. </p>
-     */
     AWS_IOTFLEETWISE_API void SetDataType(const StructuredMessage& value);
-
-    /**
-     * <p>The data type. </p>
-     */
     AWS_IOTFLEETWISE_API void SetDataType(StructuredMessage&& value);
-
-    /**
-     * <p>The data type. </p>
-     */
     AWS_IOTFLEETWISE_API StructuredMessageFieldNameAndDataTypePair& WithDataType(const StructuredMessage& value);
-
-    /**
-     * <p>The data type. </p>
-     */
     AWS_IOTFLEETWISE_API StructuredMessageFieldNameAndDataTypePair& WithDataType(StructuredMessage&& value);
-
+    ///@}
   private:
 
     Aws::String m_fieldName;

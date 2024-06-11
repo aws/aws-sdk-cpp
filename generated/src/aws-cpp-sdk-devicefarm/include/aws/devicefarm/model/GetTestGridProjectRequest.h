@@ -34,54 +34,20 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the Selenium testing project, from either
      * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline GetTestGridProjectRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline GetTestGridProjectRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Selenium testing project, from either
-     * <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-     */
     inline GetTestGridProjectRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

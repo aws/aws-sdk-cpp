@@ -37,67 +37,29 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to apply the update if it is a major version change.</p>
      */
     inline bool GetAllowMajorVersionUpdate() const{ return m_allowMajorVersionUpdate; }
-
-    /**
-     * <p>Whether to apply the update if it is a major version change.</p>
-     */
     inline bool AllowMajorVersionUpdateHasBeenSet() const { return m_allowMajorVersionUpdateHasBeenSet; }
-
-    /**
-     * <p>Whether to apply the update if it is a major version change.</p>
-     */
     inline void SetAllowMajorVersionUpdate(bool value) { m_allowMajorVersionUpdateHasBeenSet = true; m_allowMajorVersionUpdate = value; }
-
-    /**
-     * <p>Whether to apply the update if it is a major version change.</p>
-     */
     inline OTAJobConfig& WithAllowMajorVersionUpdate(bool value) { SetAllowMajorVersionUpdate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target version of the device software.</p>
      */
     inline const Aws::String& GetImageVersion() const{ return m_imageVersion; }
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline bool ImageVersionHasBeenSet() const { return m_imageVersionHasBeenSet; }
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline void SetImageVersion(const Aws::String& value) { m_imageVersionHasBeenSet = true; m_imageVersion = value; }
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline void SetImageVersion(Aws::String&& value) { m_imageVersionHasBeenSet = true; m_imageVersion = std::move(value); }
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline void SetImageVersion(const char* value) { m_imageVersionHasBeenSet = true; m_imageVersion.assign(value); }
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline OTAJobConfig& WithImageVersion(const Aws::String& value) { SetImageVersion(value); return *this;}
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline OTAJobConfig& WithImageVersion(Aws::String&& value) { SetImageVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The target version of the device software.</p>
-     */
     inline OTAJobConfig& WithImageVersion(const char* value) { SetImageVersion(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowMajorVersionUpdate;

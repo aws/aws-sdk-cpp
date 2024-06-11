@@ -38,6 +38,7 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
@@ -45,31 +46,10 @@ namespace Model
      *        
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * 
-            <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
- 
-     *        
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * 
-            <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
- 
-     *        
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * 
-            <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
- 
-     *        
-     */
     inline VpcConnectivityIam& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

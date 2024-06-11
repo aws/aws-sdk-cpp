@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API CreateTemplateSyncConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The template sync configuration detail data that's returned by Proton.</p>
      */
     inline const TemplateSyncConfig& GetTemplateSyncConfig() const{ return m_templateSyncConfig; }
-
-    /**
-     * <p>The template sync configuration detail data that's returned by Proton.</p>
-     */
     inline void SetTemplateSyncConfig(const TemplateSyncConfig& value) { m_templateSyncConfig = value; }
-
-    /**
-     * <p>The template sync configuration detail data that's returned by Proton.</p>
-     */
     inline void SetTemplateSyncConfig(TemplateSyncConfig&& value) { m_templateSyncConfig = std::move(value); }
-
-    /**
-     * <p>The template sync configuration detail data that's returned by Proton.</p>
-     */
     inline CreateTemplateSyncConfigResult& WithTemplateSyncConfig(const TemplateSyncConfig& value) { SetTemplateSyncConfig(value); return *this;}
-
-    /**
-     * <p>The template sync configuration detail data that's returned by Proton.</p>
-     */
     inline CreateTemplateSyncConfigResult& WithTemplateSyncConfig(TemplateSyncConfig&& value) { SetTemplateSyncConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTemplateSyncConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTemplateSyncConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTemplateSyncConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TemplateSyncConfig m_templateSyncConfig;

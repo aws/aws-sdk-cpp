@@ -39,101 +39,35 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of channels to filter on for related items of type
      * <code>Contact</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetChannel() const{ return m_channel; }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline void SetChannel(const Aws::Vector<Aws::String>& value) { m_channelHasBeenSet = true; m_channel = value; }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline void SetChannel(Aws::Vector<Aws::String>&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline ContactFilter& WithChannel(const Aws::Vector<Aws::String>& value) { SetChannel(value); return *this;}
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline ContactFilter& WithChannel(Aws::Vector<Aws::String>&& value) { SetChannel(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline ContactFilter& AddChannel(const Aws::String& value) { m_channelHasBeenSet = true; m_channel.push_back(value); return *this; }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline ContactFilter& AddChannel(Aws::String&& value) { m_channelHasBeenSet = true; m_channel.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of channels to filter on for related items of type
-     * <code>Contact</code>.</p>
-     */
     inline ContactFilter& AddChannel(const char* value) { m_channelHasBeenSet = true; m_channel.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier of a contact in Amazon Connect.</p>
      */
     inline const Aws::String& GetContactArn() const{ return m_contactArn; }
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline ContactFilter& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline ContactFilter& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of a contact in Amazon Connect.</p>
-     */
     inline ContactFilter& WithContactArn(const char* value) { SetContactArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_channel;

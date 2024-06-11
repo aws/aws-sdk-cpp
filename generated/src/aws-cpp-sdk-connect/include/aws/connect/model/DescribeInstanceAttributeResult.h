@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeInstanceAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The type of attribute.</p>
      */
     inline const Attribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline void SetAttribute(const Attribute& value) { m_attribute = value; }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline void SetAttribute(Attribute&& value) { m_attribute = std::move(value); }
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline DescribeInstanceAttributeResult& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The type of attribute.</p>
-     */
     inline DescribeInstanceAttributeResult& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeInstanceAttributeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeInstanceAttributeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeInstanceAttributeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attribute m_attribute;

@@ -38,42 +38,18 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cloud formation properties included as part of the provisioning
      * properties of an environment blueprint.</p>
      */
     inline const CloudFormationProperties& GetCloudFormation() const{ return m_cloudFormation; }
-
-    /**
-     * <p>The cloud formation properties included as part of the provisioning
-     * properties of an environment blueprint.</p>
-     */
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
-
-    /**
-     * <p>The cloud formation properties included as part of the provisioning
-     * properties of an environment blueprint.</p>
-     */
     inline void SetCloudFormation(const CloudFormationProperties& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
-
-    /**
-     * <p>The cloud formation properties included as part of the provisioning
-     * properties of an environment blueprint.</p>
-     */
     inline void SetCloudFormation(CloudFormationProperties&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
-
-    /**
-     * <p>The cloud formation properties included as part of the provisioning
-     * properties of an environment blueprint.</p>
-     */
     inline ProvisioningProperties& WithCloudFormation(const CloudFormationProperties& value) { SetCloudFormation(value); return *this;}
-
-    /**
-     * <p>The cloud formation properties included as part of the provisioning
-     * properties of an environment blueprint.</p>
-     */
     inline ProvisioningProperties& WithCloudFormation(CloudFormationProperties&& value) { SetCloudFormation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudFormationProperties m_cloudFormation;

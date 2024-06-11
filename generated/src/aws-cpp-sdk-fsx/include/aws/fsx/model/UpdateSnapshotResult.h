@@ -33,58 +33,28 @@ namespace Model
     AWS_FSX_API UpdateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
      * the snapshot that you updated.</p>
      */
     inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
-
-    /**
-     * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
-     * the snapshot that you updated.</p>
-     */
     inline void SetSnapshot(const Snapshot& value) { m_snapshot = value; }
-
-    /**
-     * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
-     * the snapshot that you updated.</p>
-     */
     inline void SetSnapshot(Snapshot&& value) { m_snapshot = std::move(value); }
-
-    /**
-     * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
-     * the snapshot that you updated.</p>
-     */
     inline UpdateSnapshotResult& WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
-
-    /**
-     * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
-     * the snapshot that you updated.</p>
-     */
     inline UpdateSnapshotResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Snapshot m_snapshot;

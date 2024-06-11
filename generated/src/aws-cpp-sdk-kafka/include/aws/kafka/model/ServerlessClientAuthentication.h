@@ -40,48 +40,19 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Details for ClientAuthentication using SASL.</p>
          
      */
     inline const ServerlessSasl& GetSasl() const{ return m_sasl; }
-
-    /**
-     * 
-            <p>Details for ClientAuthentication using SASL.</p>
-         
-     */
     inline bool SaslHasBeenSet() const { return m_saslHasBeenSet; }
-
-    /**
-     * 
-            <p>Details for ClientAuthentication using SASL.</p>
-         
-     */
     inline void SetSasl(const ServerlessSasl& value) { m_saslHasBeenSet = true; m_sasl = value; }
-
-    /**
-     * 
-            <p>Details for ClientAuthentication using SASL.</p>
-         
-     */
     inline void SetSasl(ServerlessSasl&& value) { m_saslHasBeenSet = true; m_sasl = std::move(value); }
-
-    /**
-     * 
-            <p>Details for ClientAuthentication using SASL.</p>
-         
-     */
     inline ServerlessClientAuthentication& WithSasl(const ServerlessSasl& value) { SetSasl(value); return *this;}
-
-    /**
-     * 
-            <p>Details for ClientAuthentication using SASL.</p>
-         
-     */
     inline ServerlessClientAuthentication& WithSasl(ServerlessSasl&& value) { SetSasl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServerlessSasl m_sasl;

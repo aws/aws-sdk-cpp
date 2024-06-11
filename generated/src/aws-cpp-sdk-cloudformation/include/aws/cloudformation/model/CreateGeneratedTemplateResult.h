@@ -33,57 +33,27 @@ namespace Model
     AWS_CLOUDFORMATION_API CreateGeneratedTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the generated template.</p>
      */
     inline const Aws::String& GetGeneratedTemplateId() const{ return m_generatedTemplateId; }
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline void SetGeneratedTemplateId(const Aws::String& value) { m_generatedTemplateId = value; }
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline void SetGeneratedTemplateId(Aws::String&& value) { m_generatedTemplateId = std::move(value); }
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline void SetGeneratedTemplateId(const char* value) { m_generatedTemplateId.assign(value); }
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(const Aws::String& value) { SetGeneratedTemplateId(value); return *this;}
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(Aws::String&& value) { SetGeneratedTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the generated template.</p>
-     */
     inline CreateGeneratedTemplateResult& WithGeneratedTemplateId(const char* value) { SetGeneratedTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateGeneratedTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateGeneratedTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_generatedTemplateId;

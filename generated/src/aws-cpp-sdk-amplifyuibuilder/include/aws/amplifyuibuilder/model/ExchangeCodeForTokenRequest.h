@@ -33,73 +33,30 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The third-party provider for the token. The only valid value is
      * <code>figma</code>.</p>
      */
     inline const TokenProviders& GetProvider() const{ return m_provider; }
-
-    /**
-     * <p>The third-party provider for the token. The only valid value is
-     * <code>figma</code>.</p>
-     */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-
-    /**
-     * <p>The third-party provider for the token. The only valid value is
-     * <code>figma</code>.</p>
-     */
     inline void SetProvider(const TokenProviders& value) { m_providerHasBeenSet = true; m_provider = value; }
-
-    /**
-     * <p>The third-party provider for the token. The only valid value is
-     * <code>figma</code>.</p>
-     */
     inline void SetProvider(TokenProviders&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-
-    /**
-     * <p>The third-party provider for the token. The only valid value is
-     * <code>figma</code>.</p>
-     */
     inline ExchangeCodeForTokenRequest& WithProvider(const TokenProviders& value) { SetProvider(value); return *this;}
-
-    /**
-     * <p>The third-party provider for the token. The only valid value is
-     * <code>figma</code>.</p>
-     */
     inline ExchangeCodeForTokenRequest& WithProvider(TokenProviders&& value) { SetProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the configuration of the request.</p>
      */
     inline const ExchangeCodeForTokenRequestBody& GetRequest() const{ return m_request; }
-
-    /**
-     * <p>Describes the configuration of the request.</p>
-     */
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-
-    /**
-     * <p>Describes the configuration of the request.</p>
-     */
     inline void SetRequest(const ExchangeCodeForTokenRequestBody& value) { m_requestHasBeenSet = true; m_request = value; }
-
-    /**
-     * <p>Describes the configuration of the request.</p>
-     */
     inline void SetRequest(ExchangeCodeForTokenRequestBody&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-
-    /**
-     * <p>Describes the configuration of the request.</p>
-     */
     inline ExchangeCodeForTokenRequest& WithRequest(const ExchangeCodeForTokenRequestBody& value) { SetRequest(value); return *this;}
-
-    /**
-     * <p>Describes the configuration of the request.</p>
-     */
     inline ExchangeCodeForTokenRequest& WithRequest(ExchangeCodeForTokenRequestBody&& value) { SetRequest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TokenProviders m_provider;

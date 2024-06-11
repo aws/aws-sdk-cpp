@@ -37,6 +37,7 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the updated typed link resides. For more information, see <a>arns</a> or <a
@@ -44,135 +45,40 @@ namespace Model
      * Links</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline UpdateLinkAttributesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline UpdateLinkAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
-     * the updated typed link resides. For more information, see <a>arns</a> or <a
-     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
-     * Links</a>.</p>
-     */
     inline UpdateLinkAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows a typed link specifier to be accepted as input.</p>
      */
     inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
-
-    /**
-     * <p>Allows a typed link specifier to be accepted as input.</p>
-     */
     inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
-
-    /**
-     * <p>Allows a typed link specifier to be accepted as input.</p>
-     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
-
-    /**
-     * <p>Allows a typed link specifier to be accepted as input.</p>
-     */
     inline void SetTypedLinkSpecifier(TypedLinkSpecifier&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::move(value); }
-
-    /**
-     * <p>Allows a typed link specifier to be accepted as input.</p>
-     */
     inline UpdateLinkAttributesRequest& WithTypedLinkSpecifier(const TypedLinkSpecifier& value) { SetTypedLinkSpecifier(value); return *this;}
-
-    /**
-     * <p>Allows a typed link specifier to be accepted as input.</p>
-     */
     inline UpdateLinkAttributesRequest& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attributes update structure.</p>
      */
     inline const Aws::Vector<LinkAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline void SetAttributeUpdates(const Aws::Vector<LinkAttributeUpdate>& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline void SetAttributeUpdates(Aws::Vector<LinkAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateLinkAttributesRequest& WithAttributeUpdates(const Aws::Vector<LinkAttributeUpdate>& value) { SetAttributeUpdates(value); return *this;}
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateLinkAttributesRequest& WithAttributeUpdates(Aws::Vector<LinkAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateLinkAttributesRequest& AddAttributeUpdates(const LinkAttributeUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes update structure.</p>
-     */
     inline UpdateLinkAttributesRequest& AddAttributeUpdates(LinkAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

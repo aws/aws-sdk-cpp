@@ -37,54 +37,20 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
      * information about.</p>
      */
     inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline DescribeAgentRequest& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline DescribeAgentRequest& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that you want
-     * information about.</p>
-     */
     inline DescribeAgentRequest& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentArn;

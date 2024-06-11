@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the usage limit to return information for.</p>
      */
     inline const Aws::String& GetUsageLimitId() const{ return m_usageLimitId; }
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline void SetUsageLimitId(const Aws::String& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = value; }
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline void SetUsageLimitId(Aws::String&& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline void SetUsageLimitId(const char* value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline GetUsageLimitRequest& WithUsageLimitId(const Aws::String& value) { SetUsageLimitId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline GetUsageLimitRequest& WithUsageLimitId(Aws::String&& value) { SetUsageLimitId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the usage limit to return information for.</p>
-     */
     inline GetUsageLimitRequest& WithUsageLimitId(const char* value) { SetUsageLimitId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_usageLimitId;

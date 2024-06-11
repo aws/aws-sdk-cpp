@@ -41,55 +41,27 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Face search settings to use on a streaming video. </p>
      */
     inline const FaceSearchSettings& GetFaceSearch() const{ return m_faceSearch; }
-
-    /**
-     * <p>Face search settings to use on a streaming video. </p>
-     */
     inline bool FaceSearchHasBeenSet() const { return m_faceSearchHasBeenSet; }
-
-    /**
-     * <p>Face search settings to use on a streaming video. </p>
-     */
     inline void SetFaceSearch(const FaceSearchSettings& value) { m_faceSearchHasBeenSet = true; m_faceSearch = value; }
-
-    /**
-     * <p>Face search settings to use on a streaming video. </p>
-     */
     inline void SetFaceSearch(FaceSearchSettings&& value) { m_faceSearchHasBeenSet = true; m_faceSearch = std::move(value); }
-
-    /**
-     * <p>Face search settings to use on a streaming video. </p>
-     */
     inline StreamProcessorSettings& WithFaceSearch(const FaceSearchSettings& value) { SetFaceSearch(value); return *this;}
-
-    /**
-     * <p>Face search settings to use on a streaming video. </p>
-     */
     inline StreamProcessorSettings& WithFaceSearch(FaceSearchSettings&& value) { SetFaceSearch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ConnectedHomeSettings& GetConnectedHome() const{ return m_connectedHome; }
-
-    
     inline bool ConnectedHomeHasBeenSet() const { return m_connectedHomeHasBeenSet; }
-
-    
     inline void SetConnectedHome(const ConnectedHomeSettings& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = value; }
-
-    
     inline void SetConnectedHome(ConnectedHomeSettings&& value) { m_connectedHomeHasBeenSet = true; m_connectedHome = std::move(value); }
-
-    
     inline StreamProcessorSettings& WithConnectedHome(const ConnectedHomeSettings& value) { SetConnectedHome(value); return *this;}
-
-    
     inline StreamProcessorSettings& WithConnectedHome(ConnectedHomeSettings&& value) { SetConnectedHome(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FaceSearchSettings m_faceSearch;

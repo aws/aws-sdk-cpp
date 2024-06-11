@@ -38,57 +38,27 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The amount of outbound bandwidth that is discounted in the offering.
      */
     inline int GetReservedBitrate() const{ return m_reservedBitrate; }
-
-    /**
-     * The amount of outbound bandwidth that is discounted in the offering.
-     */
     inline bool ReservedBitrateHasBeenSet() const { return m_reservedBitrateHasBeenSet; }
-
-    /**
-     * The amount of outbound bandwidth that is discounted in the offering.
-     */
     inline void SetReservedBitrate(int value) { m_reservedBitrateHasBeenSet = true; m_reservedBitrate = value; }
-
-    /**
-     * The amount of outbound bandwidth that is discounted in the offering.
-     */
     inline ResourceSpecification& WithReservedBitrate(int value) { SetReservedBitrate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The type of resource and the unit that is being billed for.
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * The type of resource and the unit that is being billed for.
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * The type of resource and the unit that is being billed for.
-     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * The type of resource and the unit that is being billed for.
-     */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * The type of resource and the unit that is being billed for.
-     */
     inline ResourceSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * The type of resource and the unit that is being billed for.
-     */
     inline ResourceSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_reservedBitrate;

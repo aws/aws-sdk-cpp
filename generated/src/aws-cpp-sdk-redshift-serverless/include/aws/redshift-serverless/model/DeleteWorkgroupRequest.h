@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the workgroup to be deleted.</p>
      */
     inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline DeleteWorkgroupRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline DeleteWorkgroupRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workgroup to be deleted.</p>
-     */
     inline DeleteWorkgroupRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workgroupName;

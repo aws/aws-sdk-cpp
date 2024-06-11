@@ -41,183 +41,69 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the algorithm used to generate the private key.</p>
      */
     inline const PrivateKeyAlgorithm& GetAlgorithm() const{ return m_algorithm; }
-
-    /**
-     * <p>Defines the algorithm used to generate the private key.</p>
-     */
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-
-    /**
-     * <p>Defines the algorithm used to generate the private key.</p>
-     */
     inline void SetAlgorithm(const PrivateKeyAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-
-    /**
-     * <p>Defines the algorithm used to generate the private key.</p>
-     */
     inline void SetAlgorithm(PrivateKeyAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-
-    /**
-     * <p>Defines the algorithm used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& WithAlgorithm(const PrivateKeyAlgorithm& value) { SetAlgorithm(value); return *this;}
-
-    /**
-     * <p>Defines the algorithm used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& WithAlgorithm(PrivateKeyAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the cryptographic providers used to generate the private key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCryptoProviders() const{ return m_cryptoProviders; }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline bool CryptoProvidersHasBeenSet() const { return m_cryptoProvidersHasBeenSet; }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline void SetCryptoProviders(const Aws::Vector<Aws::String>& value) { m_cryptoProvidersHasBeenSet = true; m_cryptoProviders = value; }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline void SetCryptoProviders(Aws::Vector<Aws::String>&& value) { m_cryptoProvidersHasBeenSet = true; m_cryptoProviders = std::move(value); }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& WithCryptoProviders(const Aws::Vector<Aws::String>& value) { SetCryptoProviders(value); return *this;}
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& WithCryptoProviders(Aws::Vector<Aws::String>&& value) { SetCryptoProviders(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& AddCryptoProviders(const Aws::String& value) { m_cryptoProvidersHasBeenSet = true; m_cryptoProviders.push_back(value); return *this; }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& AddCryptoProviders(Aws::String&& value) { m_cryptoProvidersHasBeenSet = true; m_cryptoProviders.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Defines the cryptographic providers used to generate the private key.</p>
-     */
     inline PrivateKeyAttributesV4& AddCryptoProviders(const char* value) { m_cryptoProvidersHasBeenSet = true; m_cryptoProviders.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
      * "SIGNATURE" value.</p>
      */
     inline const KeySpec& GetKeySpec() const{ return m_keySpec; }
-
-    /**
-     * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
-     * "SIGNATURE" value.</p>
-     */
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }
-
-    /**
-     * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
-     * "SIGNATURE" value.</p>
-     */
     inline void SetKeySpec(const KeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
-
-    /**
-     * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
-     * "SIGNATURE" value.</p>
-     */
     inline void SetKeySpec(KeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
-
-    /**
-     * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
-     * "SIGNATURE" value.</p>
-     */
     inline PrivateKeyAttributesV4& WithKeySpec(const KeySpec& value) { SetKeySpec(value); return *this;}
-
-    /**
-     * <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or
-     * "SIGNATURE" value.</p>
-     */
     inline PrivateKeyAttributesV4& WithKeySpec(KeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key usage property defines the purpose of the private key contained in
      * the certificate. You can specify specific purposes using property flags or all
      * by using property type ALL.</p>
      */
     inline const KeyUsageProperty& GetKeyUsageProperty() const{ return m_keyUsageProperty; }
-
-    /**
-     * <p>The key usage property defines the purpose of the private key contained in
-     * the certificate. You can specify specific purposes using property flags or all
-     * by using property type ALL.</p>
-     */
     inline bool KeyUsagePropertyHasBeenSet() const { return m_keyUsagePropertyHasBeenSet; }
-
-    /**
-     * <p>The key usage property defines the purpose of the private key contained in
-     * the certificate. You can specify specific purposes using property flags or all
-     * by using property type ALL.</p>
-     */
     inline void SetKeyUsageProperty(const KeyUsageProperty& value) { m_keyUsagePropertyHasBeenSet = true; m_keyUsageProperty = value; }
-
-    /**
-     * <p>The key usage property defines the purpose of the private key contained in
-     * the certificate. You can specify specific purposes using property flags or all
-     * by using property type ALL.</p>
-     */
     inline void SetKeyUsageProperty(KeyUsageProperty&& value) { m_keyUsagePropertyHasBeenSet = true; m_keyUsageProperty = std::move(value); }
-
-    /**
-     * <p>The key usage property defines the purpose of the private key contained in
-     * the certificate. You can specify specific purposes using property flags or all
-     * by using property type ALL.</p>
-     */
     inline PrivateKeyAttributesV4& WithKeyUsageProperty(const KeyUsageProperty& value) { SetKeyUsageProperty(value); return *this;}
-
-    /**
-     * <p>The key usage property defines the purpose of the private key contained in
-     * the certificate. You can specify specific purposes using property flags or all
-     * by using property type ALL.</p>
-     */
     inline PrivateKeyAttributesV4& WithKeyUsageProperty(KeyUsageProperty&& value) { SetKeyUsageProperty(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set the minimum key length of the private key.</p>
      */
     inline int GetMinimalKeyLength() const{ return m_minimalKeyLength; }
-
-    /**
-     * <p>Set the minimum key length of the private key.</p>
-     */
     inline bool MinimalKeyLengthHasBeenSet() const { return m_minimalKeyLengthHasBeenSet; }
-
-    /**
-     * <p>Set the minimum key length of the private key.</p>
-     */
     inline void SetMinimalKeyLength(int value) { m_minimalKeyLengthHasBeenSet = true; m_minimalKeyLength = value; }
-
-    /**
-     * <p>Set the minimum key length of the private key.</p>
-     */
     inline PrivateKeyAttributesV4& WithMinimalKeyLength(int value) { SetMinimalKeyLength(value); return *this;}
-
+    ///@}
   private:
 
     PrivateKeyAlgorithm m_algorithm;

@@ -39,46 +39,19 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of service tax codes for your TRN in Malaysia.</p>
      */
     inline const Aws::Vector<MalaysiaServiceTaxCode>& GetServiceTaxCodes() const{ return m_serviceTaxCodes; }
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline bool ServiceTaxCodesHasBeenSet() const { return m_serviceTaxCodesHasBeenSet; }
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline void SetServiceTaxCodes(const Aws::Vector<MalaysiaServiceTaxCode>& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes = value; }
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline void SetServiceTaxCodes(Aws::Vector<MalaysiaServiceTaxCode>&& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes = std::move(value); }
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline MalaysiaAdditionalInfo& WithServiceTaxCodes(const Aws::Vector<MalaysiaServiceTaxCode>& value) { SetServiceTaxCodes(value); return *this;}
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline MalaysiaAdditionalInfo& WithServiceTaxCodes(Aws::Vector<MalaysiaServiceTaxCode>&& value) { SetServiceTaxCodes(std::move(value)); return *this;}
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline MalaysiaAdditionalInfo& AddServiceTaxCodes(const MalaysiaServiceTaxCode& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes.push_back(value); return *this; }
-
-    /**
-     * <p>List of service tax codes for your TRN in Malaysia.</p>
-     */
     inline MalaysiaAdditionalInfo& AddServiceTaxCodes(MalaysiaServiceTaxCode&& value) { m_serviceTaxCodesHasBeenSet = true; m_serviceTaxCodes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<MalaysiaServiceTaxCode> m_serviceTaxCodes;

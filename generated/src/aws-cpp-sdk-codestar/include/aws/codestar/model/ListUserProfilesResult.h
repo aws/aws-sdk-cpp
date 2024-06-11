@@ -34,106 +34,43 @@ namespace Model
     AWS_CODESTAR_API ListUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
      */
     inline const Aws::Vector<UserProfileSummary>& GetUserProfiles() const{ return m_userProfiles; }
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline void SetUserProfiles(const Aws::Vector<UserProfileSummary>& value) { m_userProfiles = value; }
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline void SetUserProfiles(Aws::Vector<UserProfileSummary>&& value) { m_userProfiles = std::move(value); }
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline ListUserProfilesResult& WithUserProfiles(const Aws::Vector<UserProfileSummary>& value) { SetUserProfiles(value); return *this;}
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline ListUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfileSummary>&& value) { SetUserProfiles(std::move(value)); return *this;}
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline ListUserProfilesResult& AddUserProfiles(const UserProfileSummary& value) { m_userProfiles.push_back(value); return *this; }
-
-    /**
-     * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-     */
     inline ListUserProfilesResult& AddUserProfiles(UserProfileSummary&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The continuation token to use when requesting the next set of results, if
      * there are more results to be returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The continuation token to use when requesting the next set of results, if
-     * there are more results to be returned.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListUserProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListUserProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListUserProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UserProfileSummary> m_userProfiles;

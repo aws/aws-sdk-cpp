@@ -38,95 +38,34 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the image.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline ImageLocation& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline ImageLocation& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the image.</p>
-     */
     inline ImageLocation& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL where the image is available. The URL is valid for 15 minutes so that
      * you can view and download the image</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline ImageLocation& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline ImageLocation& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL where the image is available. The URL is valid for 15 minutes so that
-     * you can view and download the image</p>
-     */
     inline ImageLocation& WithUrl(const char* value) { SetUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

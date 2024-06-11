@@ -35,46 +35,19 @@ namespace Model
     AWS_IOTDATAPLANE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The topic name of the retained message to retrieve.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline GetRetainedMessageRequest& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline GetRetainedMessageRequest& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>The topic name of the retained message to retrieve.</p>
-     */
     inline GetRetainedMessageRequest& WithTopic(const char* value) { SetTopic(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topic;

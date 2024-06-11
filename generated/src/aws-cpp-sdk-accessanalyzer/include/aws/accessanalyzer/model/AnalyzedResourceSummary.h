@@ -38,118 +38,45 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the analyzed resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the analyzed resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID that owns the resource.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of resource that was analyzed.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of resource that was analyzed.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of resource that was analyzed.</p>
-     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of resource that was analyzed.</p>
-     */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of resource that was analyzed.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of resource that was analyzed.</p>
-     */
     inline AnalyzedResourceSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

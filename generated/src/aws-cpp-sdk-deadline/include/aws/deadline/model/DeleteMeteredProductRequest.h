@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the license endpoint from which to remove the metered product.</p>
      */
     inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline bool LicenseEndpointIdHasBeenSet() const { return m_licenseEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = value; }
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline DeleteMeteredProductRequest& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline DeleteMeteredProductRequest& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the license endpoint from which to remove the metered product.</p>
-     */
     inline DeleteMeteredProductRequest& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The product ID to remove from the license endpoint.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline DeleteMeteredProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline DeleteMeteredProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-
-    /**
-     * <p>The product ID to remove from the license endpoint.</p>
-     */
     inline DeleteMeteredProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseEndpointId;

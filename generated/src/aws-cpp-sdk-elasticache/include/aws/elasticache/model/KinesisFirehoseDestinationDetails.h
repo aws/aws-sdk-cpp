@@ -40,46 +40,19 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the Kinesis Data Firehose delivery stream.</p>
      */
     inline const Aws::String& GetDeliveryStream() const{ return m_deliveryStream; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline bool DeliveryStreamHasBeenSet() const { return m_deliveryStreamHasBeenSet; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline void SetDeliveryStream(const Aws::String& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = value; }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline void SetDeliveryStream(Aws::String&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::move(value); }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline void SetDeliveryStream(const char* value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream.assign(value); }
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline KinesisFirehoseDestinationDetails& WithDeliveryStream(const Aws::String& value) { SetDeliveryStream(value); return *this;}
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline KinesisFirehoseDestinationDetails& WithDeliveryStream(Aws::String&& value) { SetDeliveryStream(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Kinesis Data Firehose delivery stream.</p>
-     */
     inline KinesisFirehoseDestinationDetails& WithDeliveryStream(const char* value) { SetDeliveryStream(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryStream;

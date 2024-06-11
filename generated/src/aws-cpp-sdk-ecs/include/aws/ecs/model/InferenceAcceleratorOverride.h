@@ -42,103 +42,35 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Elastic Inference accelerator device name to override for the task. This
      * parameter must match a <code>deviceName</code> specified in the task
      * definition.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Elastic Inference accelerator device name to override for the task. This
-     * parameter must match a <code>deviceName</code> specified in the task
-     * definition.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Elastic Inference accelerator type to use.</p>
      */
     inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The Elastic Inference accelerator type to use.</p>
-     */
     inline InferenceAcceleratorOverride& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceName;

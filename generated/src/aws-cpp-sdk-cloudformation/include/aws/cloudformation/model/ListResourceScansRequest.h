@@ -36,47 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A string that identifies the next page of resource scan results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline ListResourceScansRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline ListResourceScansRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of resource scan results.</p>
-     */
     inline ListResourceScansRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> If the number of available results exceeds this maximum, the response
      * includes a <code>NextToken</code> value that you can use for the
@@ -84,31 +58,10 @@ namespace Model
      * value is 10. The maximum value is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> If the number of available results exceeds this maximum, the response
-     * includes a <code>NextToken</code> value that you can use for the
-     * <code>NextToken</code> parameter to get the next set of results. The default
-     * value is 10. The maximum value is 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> If the number of available results exceeds this maximum, the response
-     * includes a <code>NextToken</code> value that you can use for the
-     * <code>NextToken</code> parameter to get the next set of results. The default
-     * value is 10. The maximum value is 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> If the number of available results exceeds this maximum, the response
-     * includes a <code>NextToken</code> value that you can use for the
-     * <code>NextToken</code> parameter to get the next set of results. The default
-     * value is 10. The maximum value is 100.</p>
-     */
     inline ListResourceScansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

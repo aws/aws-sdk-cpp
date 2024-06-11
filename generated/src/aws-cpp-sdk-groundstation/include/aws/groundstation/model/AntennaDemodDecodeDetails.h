@@ -38,46 +38,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of an antenna demod decode output node used in a contact.</p>
      */
     inline const Aws::String& GetOutputNode() const{ return m_outputNode; }
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline bool OutputNodeHasBeenSet() const { return m_outputNodeHasBeenSet; }
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline void SetOutputNode(const Aws::String& value) { m_outputNodeHasBeenSet = true; m_outputNode = value; }
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline void SetOutputNode(Aws::String&& value) { m_outputNodeHasBeenSet = true; m_outputNode = std::move(value); }
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline void SetOutputNode(const char* value) { m_outputNodeHasBeenSet = true; m_outputNode.assign(value); }
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline AntennaDemodDecodeDetails& WithOutputNode(const Aws::String& value) { SetOutputNode(value); return *this;}
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline AntennaDemodDecodeDetails& WithOutputNode(Aws::String&& value) { SetOutputNode(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of an antenna demod decode output node used in a contact.</p>
-     */
     inline AntennaDemodDecodeDetails& WithOutputNode(const char* value) { SetOutputNode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_outputNode;

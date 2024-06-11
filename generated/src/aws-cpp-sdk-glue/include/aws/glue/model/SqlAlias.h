@@ -38,87 +38,33 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A table, or a column in a table.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline SqlAlias& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline SqlAlias& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>A table, or a column in a table.</p>
-     */
     inline SqlAlias& WithFrom(const char* value) { SetFrom(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A temporary name given to a table, or a column in a table.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline SqlAlias& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline SqlAlias& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>A temporary name given to a table, or a column in a table.</p>
-     */
     inline SqlAlias& WithAlias(const char* value) { SetAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_from;

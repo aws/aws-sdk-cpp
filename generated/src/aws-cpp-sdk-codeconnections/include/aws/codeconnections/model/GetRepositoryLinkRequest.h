@@ -34,46 +34,19 @@ namespace Model
     AWS_CODECONNECTIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the repository link to get.</p>
      */
     inline const Aws::String& GetRepositoryLinkId() const{ return m_repositoryLinkId; }
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline bool RepositoryLinkIdHasBeenSet() const { return m_repositoryLinkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline void SetRepositoryLinkId(const Aws::String& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = value; }
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline void SetRepositoryLinkId(Aws::String&& value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId = std::move(value); }
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline void SetRepositoryLinkId(const char* value) { m_repositoryLinkIdHasBeenSet = true; m_repositoryLinkId.assign(value); }
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline GetRepositoryLinkRequest& WithRepositoryLinkId(const Aws::String& value) { SetRepositoryLinkId(value); return *this;}
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline GetRepositoryLinkRequest& WithRepositoryLinkId(Aws::String&& value) { SetRepositoryLinkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the repository link to get.</p>
-     */
     inline GetRepositoryLinkRequest& WithRepositoryLinkId(const char* value) { SetRepositoryLinkId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryLinkId;

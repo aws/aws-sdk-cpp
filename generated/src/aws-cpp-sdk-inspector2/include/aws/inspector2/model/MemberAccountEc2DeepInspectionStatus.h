@@ -39,83 +39,32 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the Amazon Web Services account of the organization
      * member.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline MemberAccountEc2DeepInspectionStatus& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline MemberAccountEc2DeepInspectionStatus& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the Amazon Web Services account of the organization
-     * member.</p>
-     */
     inline MemberAccountEc2DeepInspectionStatus& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether Amazon Inspector deep inspection is active in the account. If
      * <code>TRUE</code> Amazon Inspector deep inspection is active, if
      * <code>FALSE</code> it is not active.</p>
      */
     inline bool GetActivateDeepInspection() const{ return m_activateDeepInspection; }
-
-    /**
-     * <p>Whether Amazon Inspector deep inspection is active in the account. If
-     * <code>TRUE</code> Amazon Inspector deep inspection is active, if
-     * <code>FALSE</code> it is not active.</p>
-     */
     inline bool ActivateDeepInspectionHasBeenSet() const { return m_activateDeepInspectionHasBeenSet; }
-
-    /**
-     * <p>Whether Amazon Inspector deep inspection is active in the account. If
-     * <code>TRUE</code> Amazon Inspector deep inspection is active, if
-     * <code>FALSE</code> it is not active.</p>
-     */
     inline void SetActivateDeepInspection(bool value) { m_activateDeepInspectionHasBeenSet = true; m_activateDeepInspection = value; }
-
-    /**
-     * <p>Whether Amazon Inspector deep inspection is active in the account. If
-     * <code>TRUE</code> Amazon Inspector deep inspection is active, if
-     * <code>FALSE</code> it is not active.</p>
-     */
     inline MemberAccountEc2DeepInspectionStatus& WithActivateDeepInspection(bool value) { SetActivateDeepInspection(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

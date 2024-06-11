@@ -43,77 +43,31 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The role that the message plays in the message.</p>
      */
     inline const ConversationRole& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role that the message plays in the message.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role that the message plays in the message.</p>
-     */
     inline void SetRole(const ConversationRole& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role that the message plays in the message.</p>
-     */
     inline void SetRole(ConversationRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role that the message plays in the message.</p>
-     */
     inline Message& WithRole(const ConversationRole& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role that the message plays in the message.</p>
-     */
     inline Message& WithRole(ConversationRole&& value) { SetRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message content.</p>
      */
     inline const Aws::Vector<ContentBlock>& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The message content.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The message content.</p>
-     */
     inline void SetContent(const Aws::Vector<ContentBlock>& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The message content.</p>
-     */
     inline void SetContent(Aws::Vector<ContentBlock>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The message content.</p>
-     */
     inline Message& WithContent(const Aws::Vector<ContentBlock>& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The message content.</p>
-     */
     inline Message& WithContent(Aws::Vector<ContentBlock>&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The message content.</p>
-     */
     inline Message& AddContent(const ContentBlock& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-
-    /**
-     * <p>The message content.</p>
-     */
     inline Message& AddContent(ContentBlock&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ConversationRole m_role;

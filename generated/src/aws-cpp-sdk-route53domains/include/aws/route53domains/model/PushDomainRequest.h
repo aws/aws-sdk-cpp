@@ -34,87 +34,33 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> Name of the domain. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline PushDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline PushDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p> Name of the domain. </p>
-     */
     inline PushDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> New IPS tag for the domain. </p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline PushDomainRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline PushDomainRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-
-    /**
-     * <p> New IPS tag for the domain. </p>
-     */
     inline PushDomainRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

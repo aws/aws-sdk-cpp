@@ -40,233 +40,85 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the landing zone.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The drift status of the landing zone.</p>
      */
     inline const LandingZoneDriftStatusSummary& GetDriftStatus() const{ return m_driftStatus; }
-
-    /**
-     * <p>The drift status of the landing zone.</p>
-     */
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-
-    /**
-     * <p>The drift status of the landing zone.</p>
-     */
     inline void SetDriftStatus(const LandingZoneDriftStatusSummary& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
-
-    /**
-     * <p>The drift status of the landing zone.</p>
-     */
     inline void SetDriftStatus(LandingZoneDriftStatusSummary&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
-
-    /**
-     * <p>The drift status of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithDriftStatus(const LandingZoneDriftStatusSummary& value) { SetDriftStatus(value); return *this;}
-
-    /**
-     * <p>The drift status of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithDriftStatus(LandingZoneDriftStatusSummary&& value) { SetDriftStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest available version of the landing zone.</p>
      */
     inline const Aws::String& GetLatestAvailableVersion() const{ return m_latestAvailableVersion; }
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline bool LatestAvailableVersionHasBeenSet() const { return m_latestAvailableVersionHasBeenSet; }
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline void SetLatestAvailableVersion(const Aws::String& value) { m_latestAvailableVersionHasBeenSet = true; m_latestAvailableVersion = value; }
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline void SetLatestAvailableVersion(Aws::String&& value) { m_latestAvailableVersionHasBeenSet = true; m_latestAvailableVersion = std::move(value); }
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline void SetLatestAvailableVersion(const char* value) { m_latestAvailableVersionHasBeenSet = true; m_latestAvailableVersion.assign(value); }
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithLatestAvailableVersion(const Aws::String& value) { SetLatestAvailableVersion(value); return *this;}
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithLatestAvailableVersion(Aws::String&& value) { SetLatestAvailableVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The latest available version of the landing zone.</p>
-     */
     inline LandingZoneDetail& WithLatestAvailableVersion(const char* value) { SetLatestAvailableVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The landing zone manifest JSON text file that specifies the landing zone
      * configurations. </p>
      */
     inline Aws::Utils::DocumentView GetManifest() const{ return m_manifest; }
-
-    /**
-     * <p>The landing zone manifest JSON text file that specifies the landing zone
-     * configurations. </p>
-     */
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-
-    /**
-     * <p>The landing zone manifest JSON text file that specifies the landing zone
-     * configurations. </p>
-     */
     inline void SetManifest(const Aws::Utils::Document& value) { m_manifestHasBeenSet = true; m_manifest = value; }
-
-    /**
-     * <p>The landing zone manifest JSON text file that specifies the landing zone
-     * configurations. </p>
-     */
     inline void SetManifest(Aws::Utils::Document&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
-
-    /**
-     * <p>The landing zone manifest JSON text file that specifies the landing zone
-     * configurations. </p>
-     */
     inline LandingZoneDetail& WithManifest(const Aws::Utils::Document& value) { SetManifest(value); return *this;}
-
-    /**
-     * <p>The landing zone manifest JSON text file that specifies the landing zone
-     * configurations. </p>
-     */
     inline LandingZoneDetail& WithManifest(Aws::Utils::Document&& value) { SetManifest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
      * <code>PROCESSING</code>, <code>FAILED</code>.</p>
      */
     inline const LandingZoneStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
-     * <code>PROCESSING</code>, <code>FAILED</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
-     * <code>PROCESSING</code>, <code>FAILED</code>.</p>
-     */
     inline void SetStatus(const LandingZoneStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
-     * <code>PROCESSING</code>, <code>FAILED</code>.</p>
-     */
     inline void SetStatus(LandingZoneStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
-     * <code>PROCESSING</code>, <code>FAILED</code>.</p>
-     */
     inline LandingZoneDetail& WithStatus(const LandingZoneStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The landing zone deployment status. One of <code>ACTIVE</code>,
-     * <code>PROCESSING</code>, <code>FAILED</code>.</p>
-     */
     inline LandingZoneDetail& WithStatus(LandingZoneStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The landing zone's current deployed version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline LandingZoneDetail& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline LandingZoneDetail& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The landing zone's current deployed version.</p>
-     */
     inline LandingZoneDetail& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

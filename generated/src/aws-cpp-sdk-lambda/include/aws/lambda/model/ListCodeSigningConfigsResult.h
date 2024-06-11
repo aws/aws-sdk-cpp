@@ -34,99 +34,42 @@ namespace Model
     AWS_LAMBDA_API ListCodeSigningConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListCodeSigningConfigsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListCodeSigningConfigsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListCodeSigningConfigsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code signing configurations</p>
      */
     inline const Aws::Vector<CodeSigningConfig>& GetCodeSigningConfigs() const{ return m_codeSigningConfigs; }
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline void SetCodeSigningConfigs(const Aws::Vector<CodeSigningConfig>& value) { m_codeSigningConfigs = value; }
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline void SetCodeSigningConfigs(Aws::Vector<CodeSigningConfig>&& value) { m_codeSigningConfigs = std::move(value); }
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline ListCodeSigningConfigsResult& WithCodeSigningConfigs(const Aws::Vector<CodeSigningConfig>& value) { SetCodeSigningConfigs(value); return *this;}
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline ListCodeSigningConfigsResult& WithCodeSigningConfigs(Aws::Vector<CodeSigningConfig>&& value) { SetCodeSigningConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline ListCodeSigningConfigsResult& AddCodeSigningConfigs(const CodeSigningConfig& value) { m_codeSigningConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>The code signing configurations</p>
-     */
     inline ListCodeSigningConfigsResult& AddCodeSigningConfigs(CodeSigningConfig&& value) { m_codeSigningConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCodeSigningConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCodeSigningConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCodeSigningConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextMarker;

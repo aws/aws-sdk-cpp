@@ -36,95 +36,34 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Internal ID of the package to dissociate from the domain. Use
      * <code>ListPackagesForDomain</code> to find this value.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline DissociatePackageRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline DissociatePackageRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-
-    /**
-     * <p>Internal ID of the package to dissociate from the domain. Use
-     * <code>ListPackagesForDomain</code> to find this value.</p>
-     */
     inline DissociatePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Name of the domain to dissociate the package from.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline DissociatePackageRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline DissociatePackageRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the domain to dissociate the package from.</p>
-     */
     inline DissociatePackageRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageID;

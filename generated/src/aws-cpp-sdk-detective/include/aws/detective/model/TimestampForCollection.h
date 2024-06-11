@@ -38,48 +38,19 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data and time when data collection began for a source package. The value
      * is an ISO8601 formatted string. For example,
      * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The data and time when data collection began for a source package. The value
-     * is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The data and time when data collection began for a source package. The value
-     * is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The data and time when data collection began for a source package. The value
-     * is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The data and time when data collection began for a source package. The value
-     * is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline TimestampForCollection& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The data and time when data collection began for a source package. The value
-     * is an ISO8601 formatted string. For example,
-     * <code>2021-08-18T16:35:56.284Z</code>.</p>
-     */
     inline TimestampForCollection& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;

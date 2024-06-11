@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIACONNECT_API AddBridgeOutputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The Amazon Resource Number (ARN) of the bridge.
      */
     inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(const Aws::String& value) { m_bridgeArn = value; }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(Aws::String&& value) { m_bridgeArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline void SetBridgeArn(const char* value) { m_bridgeArn.assign(value); }
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline AddBridgeOutputsResult& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline AddBridgeOutputsResult& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Number (ARN) of the bridge.
-     */
     inline AddBridgeOutputsResult& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The outputs that you added to this bridge.
      */
     inline const Aws::Vector<BridgeOutput>& GetOutputs() const{ return m_outputs; }
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline void SetOutputs(const Aws::Vector<BridgeOutput>& value) { m_outputs = value; }
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline void SetOutputs(Aws::Vector<BridgeOutput>&& value) { m_outputs = std::move(value); }
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline AddBridgeOutputsResult& WithOutputs(const Aws::Vector<BridgeOutput>& value) { SetOutputs(value); return *this;}
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline AddBridgeOutputsResult& WithOutputs(Aws::Vector<BridgeOutput>&& value) { SetOutputs(std::move(value)); return *this;}
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline AddBridgeOutputsResult& AddOutputs(const BridgeOutput& value) { m_outputs.push_back(value); return *this; }
-
-    /**
-     * The outputs that you added to this bridge.
-     */
     inline AddBridgeOutputsResult& AddOutputs(BridgeOutput&& value) { m_outputs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddBridgeOutputsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddBridgeOutputsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddBridgeOutputsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bridgeArn;

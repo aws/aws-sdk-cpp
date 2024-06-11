@@ -38,46 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the foundation model used in descriptive bot building.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline BedrockModelSpecification& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline BedrockModelSpecification& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the foundation model used in descriptive bot building.</p>
-     */
     inline BedrockModelSpecification& WithModelArn(const char* value) { SetModelArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelArn;

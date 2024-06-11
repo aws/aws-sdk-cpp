@@ -40,73 +40,30 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
-
-    
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-
-    
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-
-    
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-
-    
     inline RSessionAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-
-    
     inline RSessionAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of custom SageMaker images that are configured to run as a RSession
      * app.</p>
      */
     inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline RSessionAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline RSessionAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline RSessionAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
-
-    /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
-     * app.</p>
-     */
     inline RSessionAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;

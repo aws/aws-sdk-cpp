@@ -38,63 +38,29 @@ namespace Model
     AWS_AMPLIFY_API GenerateAccessLogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The pre-signed URL for the requested access logs. </p>
      */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline void SetLogUrl(const Aws::String& value) { m_logUrl = value; }
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline void SetLogUrl(Aws::String&& value) { m_logUrl = std::move(value); }
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline void SetLogUrl(const char* value) { m_logUrl.assign(value); }
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline GenerateAccessLogsResult& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline GenerateAccessLogsResult& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The pre-signed URL for the requested access logs. </p>
-     */
     inline GenerateAccessLogsResult& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GenerateAccessLogsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GenerateAccessLogsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GenerateAccessLogsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logUrl;

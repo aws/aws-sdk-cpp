@@ -38,6 +38,7 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
      * you must specify whether your use of Amazon Lex is related to a website,
@@ -64,88 +65,10 @@ namespace Model
      * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
     inline bool GetChildDirected() const{ return m_childDirected; }
-
-    /**
-     * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
-     * you must specify whether your use of Amazon Lex is related to a website,
-     * program, or other application that is directed or targeted, in whole or in part,
-     * to children under age 13 and subject to the Children's Online Privacy Protection
-     * Act (COPPA) by specifying <code>true</code> or <code>false</code> in the
-     * <code>childDirected</code> field. By specifying <code>true</code> in the
-     * <code>childDirected</code> field, you confirm that your use of Amazon Lex
-     * <b>is</b> related to a website, program, or other application that is directed
-     * or targeted, in whole or in part, to children under age 13 and subject to COPPA.
-     * By specifying <code>false</code> in the <code>childDirected</code> field, you
-     * confirm that your use of Amazon Lex <b>is not</b> related to a website, program,
-     * or other application that is directed or targeted, in whole or in part, to
-     * children under age 13 and subject to COPPA. You may not specify a default value
-     * for the <code>childDirected</code> field that does not accurately reflect
-     * whether your use of Amazon Lex is related to a website, program, or other
-     * application that is directed or targeted, in whole or in part, to children under
-     * age 13 and subject to COPPA. If your use of Amazon Lex relates to a website,
-     * program, or other application that is directed in whole or in part, to children
-     * under age 13, you must obtain any required verifiable parental consent under
-     * COPPA. For information regarding the use of Amazon Lex in connection with
-     * websites, programs, or other applications that are directed or targeted, in
-     * whole or in part, to children under age 13, see the <a
-     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
-     */
     inline bool ChildDirectedHasBeenSet() const { return m_childDirectedHasBeenSet; }
-
-    /**
-     * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
-     * you must specify whether your use of Amazon Lex is related to a website,
-     * program, or other application that is directed or targeted, in whole or in part,
-     * to children under age 13 and subject to the Children's Online Privacy Protection
-     * Act (COPPA) by specifying <code>true</code> or <code>false</code> in the
-     * <code>childDirected</code> field. By specifying <code>true</code> in the
-     * <code>childDirected</code> field, you confirm that your use of Amazon Lex
-     * <b>is</b> related to a website, program, or other application that is directed
-     * or targeted, in whole or in part, to children under age 13 and subject to COPPA.
-     * By specifying <code>false</code> in the <code>childDirected</code> field, you
-     * confirm that your use of Amazon Lex <b>is not</b> related to a website, program,
-     * or other application that is directed or targeted, in whole or in part, to
-     * children under age 13 and subject to COPPA. You may not specify a default value
-     * for the <code>childDirected</code> field that does not accurately reflect
-     * whether your use of Amazon Lex is related to a website, program, or other
-     * application that is directed or targeted, in whole or in part, to children under
-     * age 13 and subject to COPPA. If your use of Amazon Lex relates to a website,
-     * program, or other application that is directed in whole or in part, to children
-     * under age 13, you must obtain any required verifiable parental consent under
-     * COPPA. For information regarding the use of Amazon Lex in connection with
-     * websites, programs, or other applications that are directed or targeted, in
-     * whole or in part, to children under age 13, see the <a
-     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
-     */
     inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
-
-    /**
-     * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
-     * you must specify whether your use of Amazon Lex is related to a website,
-     * program, or other application that is directed or targeted, in whole or in part,
-     * to children under age 13 and subject to the Children's Online Privacy Protection
-     * Act (COPPA) by specifying <code>true</code> or <code>false</code> in the
-     * <code>childDirected</code> field. By specifying <code>true</code> in the
-     * <code>childDirected</code> field, you confirm that your use of Amazon Lex
-     * <b>is</b> related to a website, program, or other application that is directed
-     * or targeted, in whole or in part, to children under age 13 and subject to COPPA.
-     * By specifying <code>false</code> in the <code>childDirected</code> field, you
-     * confirm that your use of Amazon Lex <b>is not</b> related to a website, program,
-     * or other application that is directed or targeted, in whole or in part, to
-     * children under age 13 and subject to COPPA. You may not specify a default value
-     * for the <code>childDirected</code> field that does not accurately reflect
-     * whether your use of Amazon Lex is related to a website, program, or other
-     * application that is directed or targeted, in whole or in part, to children under
-     * age 13 and subject to COPPA. If your use of Amazon Lex relates to a website,
-     * program, or other application that is directed in whole or in part, to children
-     * under age 13, you must obtain any required verifiable parental consent under
-     * COPPA. For information regarding the use of Amazon Lex in connection with
-     * websites, programs, or other applications that are directed or targeted, in
-     * whole or in part, to children under age 13, see the <a
-     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
-     */
     inline DataPrivacy& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
-
+    ///@}
   private:
 
     bool m_childDirected;

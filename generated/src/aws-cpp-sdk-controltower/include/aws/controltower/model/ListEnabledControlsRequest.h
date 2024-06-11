@@ -33,113 +33,45 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
      * select the types of control operations to view.</p>
      */
     inline const EnabledControlFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
-     * select the types of control operations to view.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
-     * select the types of control operations to view.</p>
-     */
     inline void SetFilter(const EnabledControlFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
-     * select the types of control operations to view.</p>
-     */
     inline void SetFilter(EnabledControlFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
-     * select the types of control operations to view.</p>
-     */
     inline ListEnabledControlsRequest& WithFilter(const EnabledControlFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>An input filter for the <code>ListCEnabledControls</code> API that lets you
-     * select the types of control operations to view.</p>
-     */
     inline ListEnabledControlsRequest& WithFilter(EnabledControlFilter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>How many results to return per API call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>How many results to return per API call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>How many results to return per API call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>How many results to return per API call.</p>
-     */
     inline ListEnabledControlsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to continue the list from a previous API call with the same
      * parameters.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline ListEnabledControlsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline ListEnabledControlsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to continue the list from a previous API call with the same
-     * parameters.</p>
-     */
     inline ListEnabledControlsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the organizational unit. For information on how to find the
      * <code>targetIdentifier</code>, see <a
@@ -147,63 +79,14 @@ namespace Model
      * overview page</a>.</p>
      */
     inline const Aws::String& GetTargetIdentifier() const{ return m_targetIdentifier; }
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline void SetTargetIdentifier(const Aws::String& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline void SetTargetIdentifier(Aws::String&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline void SetTargetIdentifier(const char* value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier.assign(value); }
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline ListEnabledControlsRequest& WithTargetIdentifier(const Aws::String& value) { SetTargetIdentifier(value); return *this;}
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline ListEnabledControlsRequest& WithTargetIdentifier(Aws::String&& value) { SetTargetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the organizational unit. For information on how to find the
-     * <code>targetIdentifier</code>, see <a
-     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
-     * overview page</a>.</p>
-     */
     inline ListEnabledControlsRequest& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     EnabledControlFilter m_filter;

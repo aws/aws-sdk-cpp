@@ -37,167 +37,73 @@ namespace Model
     AWS_IOTWIRELESS_API GetEventConfigurationByResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Resource type event configuration for the device registration state
      * event.</p>
      */
     inline const DeviceRegistrationStateResourceTypeEventConfiguration& GetDeviceRegistrationState() const{ return m_deviceRegistrationState; }
-
-    /**
-     * <p>Resource type event configuration for the device registration state
-     * event.</p>
-     */
     inline void SetDeviceRegistrationState(const DeviceRegistrationStateResourceTypeEventConfiguration& value) { m_deviceRegistrationState = value; }
-
-    /**
-     * <p>Resource type event configuration for the device registration state
-     * event.</p>
-     */
     inline void SetDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfiguration&& value) { m_deviceRegistrationState = std::move(value); }
-
-    /**
-     * <p>Resource type event configuration for the device registration state
-     * event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithDeviceRegistrationState(const DeviceRegistrationStateResourceTypeEventConfiguration& value) { SetDeviceRegistrationState(value); return *this;}
-
-    /**
-     * <p>Resource type event configuration for the device registration state
-     * event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithDeviceRegistrationState(DeviceRegistrationStateResourceTypeEventConfiguration&& value) { SetDeviceRegistrationState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resource type event configuration for the proximity event.</p>
      */
     inline const ProximityResourceTypeEventConfiguration& GetProximity() const{ return m_proximity; }
-
-    /**
-     * <p>Resource type event configuration for the proximity event.</p>
-     */
     inline void SetProximity(const ProximityResourceTypeEventConfiguration& value) { m_proximity = value; }
-
-    /**
-     * <p>Resource type event configuration for the proximity event.</p>
-     */
     inline void SetProximity(ProximityResourceTypeEventConfiguration&& value) { m_proximity = std::move(value); }
-
-    /**
-     * <p>Resource type event configuration for the proximity event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithProximity(const ProximityResourceTypeEventConfiguration& value) { SetProximity(value); return *this;}
-
-    /**
-     * <p>Resource type event configuration for the proximity event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithProximity(ProximityResourceTypeEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resource type event configuration for the join event.</p>
      */
     inline const JoinResourceTypeEventConfiguration& GetJoin() const{ return m_join; }
-
-    /**
-     * <p>Resource type event configuration for the join event.</p>
-     */
     inline void SetJoin(const JoinResourceTypeEventConfiguration& value) { m_join = value; }
-
-    /**
-     * <p>Resource type event configuration for the join event.</p>
-     */
     inline void SetJoin(JoinResourceTypeEventConfiguration&& value) { m_join = std::move(value); }
-
-    /**
-     * <p>Resource type event configuration for the join event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithJoin(const JoinResourceTypeEventConfiguration& value) { SetJoin(value); return *this;}
-
-    /**
-     * <p>Resource type event configuration for the join event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithJoin(JoinResourceTypeEventConfiguration&& value) { SetJoin(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resource type event configuration for the connection status event.</p>
      */
     inline const ConnectionStatusResourceTypeEventConfiguration& GetConnectionStatus() const{ return m_connectionStatus; }
-
-    /**
-     * <p>Resource type event configuration for the connection status event.</p>
-     */
     inline void SetConnectionStatus(const ConnectionStatusResourceTypeEventConfiguration& value) { m_connectionStatus = value; }
-
-    /**
-     * <p>Resource type event configuration for the connection status event.</p>
-     */
     inline void SetConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { m_connectionStatus = std::move(value); }
-
-    /**
-     * <p>Resource type event configuration for the connection status event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithConnectionStatus(const ConnectionStatusResourceTypeEventConfiguration& value) { SetConnectionStatus(value); return *this;}
-
-    /**
-     * <p>Resource type event configuration for the connection status event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resource type event configuration object for the message delivery status
      * event.</p>
      */
     inline const MessageDeliveryStatusResourceTypeEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
-
-    /**
-     * <p>Resource type event configuration object for the message delivery status
-     * event.</p>
-     */
     inline void SetMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { m_messageDeliveryStatus = value; }
-
-    /**
-     * <p>Resource type event configuration object for the message delivery status
-     * event.</p>
-     */
     inline void SetMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { m_messageDeliveryStatus = std::move(value); }
-
-    /**
-     * <p>Resource type event configuration object for the message delivery status
-     * event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
-
-    /**
-     * <p>Resource type event configuration object for the message delivery status
-     * event.</p>
-     */
     inline GetEventConfigurationByResourceTypesResult& WithMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEventConfigurationByResourceTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEventConfigurationByResourceTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEventConfigurationByResourceTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;

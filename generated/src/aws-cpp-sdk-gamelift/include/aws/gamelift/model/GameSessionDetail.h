@@ -39,37 +39,19 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Object that describes a game session.</p>
      */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
-
-    /**
-     * <p>Object that describes a game session.</p>
-     */
     inline bool GameSessionHasBeenSet() const { return m_gameSessionHasBeenSet; }
-
-    /**
-     * <p>Object that describes a game session.</p>
-     */
     inline void SetGameSession(const GameSession& value) { m_gameSessionHasBeenSet = true; m_gameSession = value; }
-
-    /**
-     * <p>Object that describes a game session.</p>
-     */
     inline void SetGameSession(GameSession&& value) { m_gameSessionHasBeenSet = true; m_gameSession = std::move(value); }
-
-    /**
-     * <p>Object that describes a game session.</p>
-     */
     inline GameSessionDetail& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
-
-    /**
-     * <p>Object that describes a game session.</p>
-     */
     inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
      * <b>NoProtection</b> -- The game session can be terminated during a scale-down
@@ -78,52 +60,12 @@ namespace Model
      * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
-
-    /**
-     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
-     */
     inline bool ProtectionPolicyHasBeenSet() const { return m_protectionPolicyHasBeenSet; }
-
-    /**
-     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
-     */
     inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
-
-    /**
-     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
-     */
     inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = std::move(value); }
-
-    /**
-     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
-     */
     inline GameSessionDetail& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
-
-    /**
-     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
-     */
     inline GameSessionDetail& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GameSession m_gameSession;

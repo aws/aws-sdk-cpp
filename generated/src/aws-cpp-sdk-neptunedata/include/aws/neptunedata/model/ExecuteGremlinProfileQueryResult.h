@@ -37,42 +37,27 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>A text blob containing the Gremlin Profile result. See <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin
      * profile API in Neptune</a> for details.</p>
      */
     inline Aws::IOStream& GetOutput() const { return m_output.GetUnderlyingStream(); }
-
-    /**
-     * <p>A text blob containing the Gremlin Profile result. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin
-     * profile API in Neptune</a> for details.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_output = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteGremlinProfileQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteGremlinProfileQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteGremlinProfileQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_output;

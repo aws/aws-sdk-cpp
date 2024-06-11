@@ -40,75 +40,30 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline BatchDetectEntitiesItemResult& WithIndex(int value) { SetIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more <a>Entity</a> objects, one for each entity detected in the
      * document.</p>
      */
     inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline void SetEntities(const Aws::Vector<Entity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline void SetEntities(Aws::Vector<Entity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline BatchDetectEntitiesItemResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline BatchDetectEntitiesItemResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline BatchDetectEntitiesItemResult& AddEntities(const Entity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
-
-    /**
-     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
-     * document.</p>
-     */
     inline BatchDetectEntitiesItemResult& AddEntities(Entity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_index;

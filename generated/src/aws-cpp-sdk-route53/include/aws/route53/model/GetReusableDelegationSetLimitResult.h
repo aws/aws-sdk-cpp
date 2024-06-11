@@ -39,77 +39,38 @@ namespace Model
     AWS_ROUTE53_API GetReusableDelegationSetLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The current setting for the limit on hosted zones that you can associate with
      * the specified reusable delegation set.</p>
      */
     inline const ReusableDelegationSetLimit& GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The current setting for the limit on hosted zones that you can associate with
-     * the specified reusable delegation set.</p>
-     */
     inline void SetLimit(const ReusableDelegationSetLimit& value) { m_limit = value; }
-
-    /**
-     * <p>The current setting for the limit on hosted zones that you can associate with
-     * the specified reusable delegation set.</p>
-     */
     inline void SetLimit(ReusableDelegationSetLimit&& value) { m_limit = std::move(value); }
-
-    /**
-     * <p>The current setting for the limit on hosted zones that you can associate with
-     * the specified reusable delegation set.</p>
-     */
     inline GetReusableDelegationSetLimitResult& WithLimit(const ReusableDelegationSetLimit& value) { SetLimit(value); return *this;}
-
-    /**
-     * <p>The current setting for the limit on hosted zones that you can associate with
-     * the specified reusable delegation set.</p>
-     */
     inline GetReusableDelegationSetLimitResult& WithLimit(ReusableDelegationSetLimit&& value) { SetLimit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current number of hosted zones that you can associate with the specified
      * reusable delegation set.</p>
      */
     inline long long GetCount() const{ return m_count; }
-
-    /**
-     * <p>The current number of hosted zones that you can associate with the specified
-     * reusable delegation set.</p>
-     */
     inline void SetCount(long long value) { m_count = value; }
-
-    /**
-     * <p>The current number of hosted zones that you can associate with the specified
-     * reusable delegation set.</p>
-     */
     inline GetReusableDelegationSetLimitResult& WithCount(long long value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetReusableDelegationSetLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetReusableDelegationSetLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetReusableDelegationSetLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReusableDelegationSetLimit m_limit;

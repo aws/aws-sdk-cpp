@@ -37,51 +37,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A list of attribute names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_attributeNames;

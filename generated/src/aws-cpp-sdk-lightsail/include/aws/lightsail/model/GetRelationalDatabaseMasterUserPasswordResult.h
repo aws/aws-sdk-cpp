@@ -33,94 +33,41 @@ namespace Model
     AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The master user password for the <code>password version</code> specified.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPassword = value; }
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPassword = std::move(value); }
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPassword.assign(value); }
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The master user password for the <code>password version</code> specified.</p>
-     */
     inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the specified version of the master user password was
      * created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The timestamp when the specified version of the master user password was
-     * created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-
-    /**
-     * <p>The timestamp when the specified version of the master user password was
-     * created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-
-    /**
-     * <p>The timestamp when the specified version of the master user password was
-     * created.</p>
-     */
     inline GetRelationalDatabaseMasterUserPasswordResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp when the specified version of the master user password was
-     * created.</p>
-     */
     inline GetRelationalDatabaseMasterUserPasswordResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_masterUserPassword;

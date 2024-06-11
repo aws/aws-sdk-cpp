@@ -40,91 +40,33 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the resource group that is associated with the specified resource
      * query.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline GroupQuery& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline GroupQuery& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource group that is associated with the specified resource
-     * query.</p>
-     */
     inline GroupQuery& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource query that determines which Amazon Web Services resources are
      * members of the associated resource group.</p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
-
-    /**
-     * <p>The resource query that determines which Amazon Web Services resources are
-     * members of the associated resource group.</p>
-     */
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
-
-    /**
-     * <p>The resource query that determines which Amazon Web Services resources are
-     * members of the associated resource group.</p>
-     */
     inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
-
-    /**
-     * <p>The resource query that determines which Amazon Web Services resources are
-     * members of the associated resource group.</p>
-     */
     inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
-
-    /**
-     * <p>The resource query that determines which Amazon Web Services resources are
-     * members of the associated resource group.</p>
-     */
     inline GroupQuery& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
-
-    /**
-     * <p>The resource query that determines which Amazon Web Services resources are
-     * members of the associated resource group.</p>
-     */
     inline GroupQuery& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupName;

@@ -33,58 +33,28 @@ namespace Model
     AWS_ROUTE53RESOLVER_API UpdateFirewallConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
      * VPC. </p>
      */
     inline const FirewallConfig& GetFirewallConfig() const{ return m_firewallConfig; }
-
-    /**
-     * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * VPC. </p>
-     */
     inline void SetFirewallConfig(const FirewallConfig& value) { m_firewallConfig = value; }
-
-    /**
-     * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * VPC. </p>
-     */
     inline void SetFirewallConfig(FirewallConfig&& value) { m_firewallConfig = std::move(value); }
-
-    /**
-     * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * VPC. </p>
-     */
     inline UpdateFirewallConfigResult& WithFirewallConfig(const FirewallConfig& value) { SetFirewallConfig(value); return *this;}
-
-    /**
-     * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * VPC. </p>
-     */
     inline UpdateFirewallConfigResult& WithFirewallConfig(FirewallConfig&& value) { SetFirewallConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFirewallConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFirewallConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFirewallConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FirewallConfig m_firewallConfig;

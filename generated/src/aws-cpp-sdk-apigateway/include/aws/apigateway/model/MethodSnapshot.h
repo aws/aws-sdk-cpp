@@ -38,6 +38,7 @@ namespace Model
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The method's authorization type. Valid values are <code>NONE</code> for open
      * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
@@ -45,84 +46,24 @@ namespace Model
      * Cognito user pool.</p>
      */
     inline const Aws::String& GetAuthorizationType() const{ return m_authorizationType; }
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline void SetAuthorizationType(const Aws::String& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline void SetAuthorizationType(const char* value) { m_authorizationTypeHasBeenSet = true; m_authorizationType.assign(value); }
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline MethodSnapshot& WithAuthorizationType(const Aws::String& value) { SetAuthorizationType(value); return *this;}
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline MethodSnapshot& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
-
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
     inline MethodSnapshot& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the method requires a valid ApiKey.</p>
      */
     inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
-
-    /**
-     * <p>Specifies whether the method requires a valid ApiKey.</p>
-     */
     inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the method requires a valid ApiKey.</p>
-     */
     inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
-
-    /**
-     * <p>Specifies whether the method requires a valid ApiKey.</p>
-     */
     inline MethodSnapshot& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authorizationType;

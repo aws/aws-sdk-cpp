@@ -39,67 +39,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The scan method that is applied to the instance.</p>
      */
     inline const Ec2ScanMode& GetScanMode() const{ return m_scanMode; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline void SetScanMode(const Ec2ScanMode& value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline void SetScanMode(Ec2ScanMode&& value) { m_scanModeHasBeenSet = true; m_scanMode = std::move(value); }
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline Ec2ScanModeState& WithScanMode(const Ec2ScanMode& value) { SetScanMode(value); return *this;}
-
-    /**
-     * <p>The scan method that is applied to the instance.</p>
-     */
     inline Ec2ScanModeState& WithScanMode(Ec2ScanMode&& value) { SetScanMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the Amazon EC2 scan mode setting.</p>
      */
     inline const Ec2ScanModeStatus& GetScanModeStatus() const{ return m_scanModeStatus; }
-
-    /**
-     * <p>The status of the Amazon EC2 scan mode setting.</p>
-     */
     inline bool ScanModeStatusHasBeenSet() const { return m_scanModeStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the Amazon EC2 scan mode setting.</p>
-     */
     inline void SetScanModeStatus(const Ec2ScanModeStatus& value) { m_scanModeStatusHasBeenSet = true; m_scanModeStatus = value; }
-
-    /**
-     * <p>The status of the Amazon EC2 scan mode setting.</p>
-     */
     inline void SetScanModeStatus(Ec2ScanModeStatus&& value) { m_scanModeStatusHasBeenSet = true; m_scanModeStatus = std::move(value); }
-
-    /**
-     * <p>The status of the Amazon EC2 scan mode setting.</p>
-     */
     inline Ec2ScanModeState& WithScanModeStatus(const Ec2ScanModeStatus& value) { SetScanModeStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Amazon EC2 scan mode setting.</p>
-     */
     inline Ec2ScanModeState& WithScanModeStatus(Ec2ScanModeStatus&& value) { SetScanModeStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ec2ScanMode m_scanMode;

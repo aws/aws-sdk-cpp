@@ -37,36 +37,17 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon S3 data source.</p>
      */
     inline const S3GlueDataCatalog& GetS3GlueDataCatalog() const{ return m_s3GlueDataCatalog; }
-
-    /**
-     * <p>An Amazon S3 data source.</p>
-     */
     inline bool S3GlueDataCatalogHasBeenSet() const { return m_s3GlueDataCatalogHasBeenSet; }
-
-    /**
-     * <p>An Amazon S3 data source.</p>
-     */
     inline void SetS3GlueDataCatalog(const S3GlueDataCatalog& value) { m_s3GlueDataCatalogHasBeenSet = true; m_s3GlueDataCatalog = value; }
-
-    /**
-     * <p>An Amazon S3 data source.</p>
-     */
     inline void SetS3GlueDataCatalog(S3GlueDataCatalog&& value) { m_s3GlueDataCatalogHasBeenSet = true; m_s3GlueDataCatalog = std::move(value); }
-
-    /**
-     * <p>An Amazon S3 data source.</p>
-     */
     inline DataSourceType& WithS3GlueDataCatalog(const S3GlueDataCatalog& value) { SetS3GlueDataCatalog(value); return *this;}
-
-    /**
-     * <p>An Amazon S3 data source.</p>
-     */
     inline DataSourceType& WithS3GlueDataCatalog(S3GlueDataCatalog&& value) { SetS3GlueDataCatalog(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3GlueDataCatalog m_s3GlueDataCatalog;

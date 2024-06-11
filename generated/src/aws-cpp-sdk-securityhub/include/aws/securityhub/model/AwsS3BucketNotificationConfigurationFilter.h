@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details for an Amazon S3 filter.</p>
      */
     inline const AwsS3BucketNotificationConfigurationS3KeyFilter& GetS3KeyFilter() const{ return m_s3KeyFilter; }
-
-    /**
-     * <p>Details for an Amazon S3 filter.</p>
-     */
     inline bool S3KeyFilterHasBeenSet() const { return m_s3KeyFilterHasBeenSet; }
-
-    /**
-     * <p>Details for an Amazon S3 filter.</p>
-     */
     inline void SetS3KeyFilter(const AwsS3BucketNotificationConfigurationS3KeyFilter& value) { m_s3KeyFilterHasBeenSet = true; m_s3KeyFilter = value; }
-
-    /**
-     * <p>Details for an Amazon S3 filter.</p>
-     */
     inline void SetS3KeyFilter(AwsS3BucketNotificationConfigurationS3KeyFilter&& value) { m_s3KeyFilterHasBeenSet = true; m_s3KeyFilter = std::move(value); }
-
-    /**
-     * <p>Details for an Amazon S3 filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationFilter& WithS3KeyFilter(const AwsS3BucketNotificationConfigurationS3KeyFilter& value) { SetS3KeyFilter(value); return *this;}
-
-    /**
-     * <p>Details for an Amazon S3 filter.</p>
-     */
     inline AwsS3BucketNotificationConfigurationFilter& WithS3KeyFilter(AwsS3BucketNotificationConfigurationS3KeyFilter&& value) { SetS3KeyFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsS3BucketNotificationConfigurationS3KeyFilter m_s3KeyFilter;

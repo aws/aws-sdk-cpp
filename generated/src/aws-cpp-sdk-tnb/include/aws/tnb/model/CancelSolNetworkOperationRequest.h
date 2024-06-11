@@ -32,46 +32,19 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the network operation.</p>
      */
     inline const Aws::String& GetNsLcmOpOccId() const{ return m_nsLcmOpOccId; }
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline bool NsLcmOpOccIdHasBeenSet() const { return m_nsLcmOpOccIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline void SetNsLcmOpOccId(const Aws::String& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = value; }
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline void SetNsLcmOpOccId(Aws::String&& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = std::move(value); }
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline void SetNsLcmOpOccId(const char* value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId.assign(value); }
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline CancelSolNetworkOperationRequest& WithNsLcmOpOccId(const Aws::String& value) { SetNsLcmOpOccId(value); return *this;}
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline CancelSolNetworkOperationRequest& WithNsLcmOpOccId(Aws::String&& value) { SetNsLcmOpOccId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the network operation.</p>
-     */
     inline CancelSolNetworkOperationRequest& WithNsLcmOpOccId(const char* value) { SetNsLcmOpOccId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nsLcmOpOccId;

@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API UpdateTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The resulting trigger definition.</p>
      */
     inline const Trigger& GetTrigger() const{ return m_trigger; }
-
-    /**
-     * <p>The resulting trigger definition.</p>
-     */
     inline void SetTrigger(const Trigger& value) { m_trigger = value; }
-
-    /**
-     * <p>The resulting trigger definition.</p>
-     */
     inline void SetTrigger(Trigger&& value) { m_trigger = std::move(value); }
-
-    /**
-     * <p>The resulting trigger definition.</p>
-     */
     inline UpdateTriggerResult& WithTrigger(const Trigger& value) { SetTrigger(value); return *this;}
-
-    /**
-     * <p>The resulting trigger definition.</p>
-     */
     inline UpdateTriggerResult& WithTrigger(Trigger&& value) { SetTrigger(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTriggerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTriggerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTriggerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Trigger m_trigger;

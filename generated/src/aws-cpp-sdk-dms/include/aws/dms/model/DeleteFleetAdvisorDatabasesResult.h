@@ -33,68 +33,30 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The IDs of the databases that the operation deleted.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatabaseIds() const{ return m_databaseIds; }
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline void SetDatabaseIds(const Aws::Vector<Aws::String>& value) { m_databaseIds = value; }
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline void SetDatabaseIds(Aws::Vector<Aws::String>&& value) { m_databaseIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline DeleteFleetAdvisorDatabasesResult& WithDatabaseIds(const Aws::Vector<Aws::String>& value) { SetDatabaseIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline DeleteFleetAdvisorDatabasesResult& WithDatabaseIds(Aws::Vector<Aws::String>&& value) { SetDatabaseIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(const Aws::String& value) { m_databaseIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(Aws::String&& value) { m_databaseIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the databases that the operation deleted.</p>
-     */
     inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(const char* value) { m_databaseIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFleetAdvisorDatabasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFleetAdvisorDatabasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFleetAdvisorDatabasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_databaseIds;

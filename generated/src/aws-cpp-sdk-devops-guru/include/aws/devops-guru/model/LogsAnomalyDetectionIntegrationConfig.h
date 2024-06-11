@@ -39,42 +39,18 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
      * CloudWatch log groups.</p>
      */
     inline const OptInStatus& GetOptInStatus() const{ return m_optInStatus; }
-
-    /**
-     * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
-     * CloudWatch log groups.</p>
-     */
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
-
-    /**
-     * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
-     * CloudWatch log groups.</p>
-     */
     inline void SetOptInStatus(const OptInStatus& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
-
-    /**
-     * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
-     * CloudWatch log groups.</p>
-     */
     inline void SetOptInStatus(OptInStatus&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
-
-    /**
-     * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
-     * CloudWatch log groups.</p>
-     */
     inline LogsAnomalyDetectionIntegrationConfig& WithOptInStatus(const OptInStatus& value) { SetOptInStatus(value); return *this;}
-
-    /**
-     * <p>Specifies if DevOps Guru is configured to perform log anomaly detection on
-     * CloudWatch log groups.</p>
-     */
     inline LogsAnomalyDetectionIntegrationConfig& WithOptInStatus(OptInStatus&& value) { SetOptInStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OptInStatus m_optInStatus;

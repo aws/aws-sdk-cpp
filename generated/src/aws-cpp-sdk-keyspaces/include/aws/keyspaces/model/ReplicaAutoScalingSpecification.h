@@ -39,83 +39,32 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaAutoScalingSpecification& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaAutoScalingSpecification& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaAutoScalingSpecification& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The auto scaling settings for a multi-Region table in the specified Amazon
      * Web Services Region.</p>
      */
     inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
-
-    /**
-     * <p>The auto scaling settings for a multi-Region table in the specified Amazon
-     * Web Services Region.</p>
-     */
     inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
-
-    /**
-     * <p>The auto scaling settings for a multi-Region table in the specified Amazon
-     * Web Services Region.</p>
-     */
     inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
-
-    /**
-     * <p>The auto scaling settings for a multi-Region table in the specified Amazon
-     * Web Services Region.</p>
-     */
     inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
-
-    /**
-     * <p>The auto scaling settings for a multi-Region table in the specified Amazon
-     * Web Services Region.</p>
-     */
     inline ReplicaAutoScalingSpecification& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
-
-    /**
-     * <p>The auto scaling settings for a multi-Region table in the specified Amazon
-     * Web Services Region.</p>
-     */
     inline ReplicaAutoScalingSpecification& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_region;

@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Hdr10Settings& GetHdr10Settings() const{ return m_hdr10Settings; }
-
-    
     inline bool Hdr10SettingsHasBeenSet() const { return m_hdr10SettingsHasBeenSet; }
-
-    
     inline void SetHdr10Settings(const Hdr10Settings& value) { m_hdr10SettingsHasBeenSet = true; m_hdr10Settings = value; }
-
-    
     inline void SetHdr10Settings(Hdr10Settings&& value) { m_hdr10SettingsHasBeenSet = true; m_hdr10Settings = std::move(value); }
-
-    
     inline VideoSelectorColorSpaceSettings& WithHdr10Settings(const Hdr10Settings& value) { SetHdr10Settings(value); return *this;}
-
-    
     inline VideoSelectorColorSpaceSettings& WithHdr10Settings(Hdr10Settings&& value) { SetHdr10Settings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Hdr10Settings m_hdr10Settings;

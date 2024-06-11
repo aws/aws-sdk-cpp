@@ -40,141 +40,55 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 configuration for monitoring log publishing.</p>
      */
     inline const S3MonitoringConfiguration& GetS3MonitoringConfiguration() const{ return m_s3MonitoringConfiguration; }
-
-    /**
-     * <p>The Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline bool S3MonitoringConfigurationHasBeenSet() const { return m_s3MonitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline void SetS3MonitoringConfiguration(const S3MonitoringConfiguration& value) { m_s3MonitoringConfigurationHasBeenSet = true; m_s3MonitoringConfiguration = value; }
-
-    /**
-     * <p>The Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline void SetS3MonitoringConfiguration(S3MonitoringConfiguration&& value) { m_s3MonitoringConfigurationHasBeenSet = true; m_s3MonitoringConfiguration = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline MonitoringConfiguration& WithS3MonitoringConfiguration(const S3MonitoringConfiguration& value) { SetS3MonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline MonitoringConfiguration& WithS3MonitoringConfiguration(S3MonitoringConfiguration&& value) { SetS3MonitoringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The managed log persistence configuration for a job run.</p>
      */
     inline const ManagedPersistenceMonitoringConfiguration& GetManagedPersistenceMonitoringConfiguration() const{ return m_managedPersistenceMonitoringConfiguration; }
-
-    /**
-     * <p>The managed log persistence configuration for a job run.</p>
-     */
     inline bool ManagedPersistenceMonitoringConfigurationHasBeenSet() const { return m_managedPersistenceMonitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p>The managed log persistence configuration for a job run.</p>
-     */
     inline void SetManagedPersistenceMonitoringConfiguration(const ManagedPersistenceMonitoringConfiguration& value) { m_managedPersistenceMonitoringConfigurationHasBeenSet = true; m_managedPersistenceMonitoringConfiguration = value; }
-
-    /**
-     * <p>The managed log persistence configuration for a job run.</p>
-     */
     inline void SetManagedPersistenceMonitoringConfiguration(ManagedPersistenceMonitoringConfiguration&& value) { m_managedPersistenceMonitoringConfigurationHasBeenSet = true; m_managedPersistenceMonitoringConfiguration = std::move(value); }
-
-    /**
-     * <p>The managed log persistence configuration for a job run.</p>
-     */
     inline MonitoringConfiguration& WithManagedPersistenceMonitoringConfiguration(const ManagedPersistenceMonitoringConfiguration& value) { SetManagedPersistenceMonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p>The managed log persistence configuration for a job run.</p>
-     */
     inline MonitoringConfiguration& WithManagedPersistenceMonitoringConfiguration(ManagedPersistenceMonitoringConfiguration&& value) { SetManagedPersistenceMonitoringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
      * your jobs to send log information to CloudWatch.</p>
      */
     inline const CloudWatchLoggingConfiguration& GetCloudWatchLoggingConfiguration() const{ return m_cloudWatchLoggingConfiguration; }
-
-    /**
-     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
-     * your jobs to send log information to CloudWatch.</p>
-     */
     inline bool CloudWatchLoggingConfigurationHasBeenSet() const { return m_cloudWatchLoggingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
-     * your jobs to send log information to CloudWatch.</p>
-     */
     inline void SetCloudWatchLoggingConfiguration(const CloudWatchLoggingConfiguration& value) { m_cloudWatchLoggingConfigurationHasBeenSet = true; m_cloudWatchLoggingConfiguration = value; }
-
-    /**
-     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
-     * your jobs to send log information to CloudWatch.</p>
-     */
     inline void SetCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration&& value) { m_cloudWatchLoggingConfigurationHasBeenSet = true; m_cloudWatchLoggingConfiguration = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
-     * your jobs to send log information to CloudWatch.</p>
-     */
     inline MonitoringConfiguration& WithCloudWatchLoggingConfiguration(const CloudWatchLoggingConfiguration& value) { SetCloudWatchLoggingConfiguration(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
-     * your jobs to send log information to CloudWatch.</p>
-     */
     inline MonitoringConfiguration& WithCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration&& value) { SetCloudWatchLoggingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The monitoring configuration object you can configure to send metrics to
      * Amazon Managed Service for Prometheus for a job run.</p>
      */
     inline const PrometheusMonitoringConfiguration& GetPrometheusMonitoringConfiguration() const{ return m_prometheusMonitoringConfiguration; }
-
-    /**
-     * <p>The monitoring configuration object you can configure to send metrics to
-     * Amazon Managed Service for Prometheus for a job run.</p>
-     */
     inline bool PrometheusMonitoringConfigurationHasBeenSet() const { return m_prometheusMonitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p>The monitoring configuration object you can configure to send metrics to
-     * Amazon Managed Service for Prometheus for a job run.</p>
-     */
     inline void SetPrometheusMonitoringConfiguration(const PrometheusMonitoringConfiguration& value) { m_prometheusMonitoringConfigurationHasBeenSet = true; m_prometheusMonitoringConfiguration = value; }
-
-    /**
-     * <p>The monitoring configuration object you can configure to send metrics to
-     * Amazon Managed Service for Prometheus for a job run.</p>
-     */
     inline void SetPrometheusMonitoringConfiguration(PrometheusMonitoringConfiguration&& value) { m_prometheusMonitoringConfigurationHasBeenSet = true; m_prometheusMonitoringConfiguration = std::move(value); }
-
-    /**
-     * <p>The monitoring configuration object you can configure to send metrics to
-     * Amazon Managed Service for Prometheus for a job run.</p>
-     */
     inline MonitoringConfiguration& WithPrometheusMonitoringConfiguration(const PrometheusMonitoringConfiguration& value) { SetPrometheusMonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p>The monitoring configuration object you can configure to send metrics to
-     * Amazon Managed Service for Prometheus for a job run.</p>
-     */
     inline MonitoringConfiguration& WithPrometheusMonitoringConfiguration(PrometheusMonitoringConfiguration&& value) { SetPrometheusMonitoringConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;

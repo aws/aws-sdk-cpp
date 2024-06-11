@@ -39,96 +39,41 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that specifies information about a property.</p>
      */
     inline const PropertyDefinitionResponse& GetDefinition() const{ return m_definition; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline void SetDefinition(const PropertyDefinitionResponse& value) { m_definitionHasBeenSet = true; m_definition = value; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline void SetDefinition(PropertyDefinitionResponse&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline PropertyResponse& WithDefinition(const PropertyDefinitionResponse& value) { SetDefinition(value); return *this;}
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline PropertyResponse& WithDefinition(PropertyDefinitionResponse&& value) { SetDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the property.</p>
      */
     inline const DataValue& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline void SetValue(const DataValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline void SetValue(DataValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline PropertyResponse& WithValue(const DataValue& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline PropertyResponse& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This flag notes whether all values of a list or map type property are
      * returned in the API response. The maximum number of values per property returned
      * is 50.</p>
      */
     inline bool GetAreAllPropertyValuesReturned() const{ return m_areAllPropertyValuesReturned; }
-
-    /**
-     * <p>This flag notes whether all values of a list or map type property are
-     * returned in the API response. The maximum number of values per property returned
-     * is 50.</p>
-     */
     inline bool AreAllPropertyValuesReturnedHasBeenSet() const { return m_areAllPropertyValuesReturnedHasBeenSet; }
-
-    /**
-     * <p>This flag notes whether all values of a list or map type property are
-     * returned in the API response. The maximum number of values per property returned
-     * is 50.</p>
-     */
     inline void SetAreAllPropertyValuesReturned(bool value) { m_areAllPropertyValuesReturnedHasBeenSet = true; m_areAllPropertyValuesReturned = value; }
-
-    /**
-     * <p>This flag notes whether all values of a list or map type property are
-     * returned in the API response. The maximum number of values per property returned
-     * is 50.</p>
-     */
     inline PropertyResponse& WithAreAllPropertyValuesReturned(bool value) { SetAreAllPropertyValuesReturned(value); return *this;}
-
+    ///@}
   private:
 
     PropertyDefinitionResponse m_definition;

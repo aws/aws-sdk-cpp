@@ -33,53 +33,27 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API UpdateScheduledActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ScheduledAction object that was updated.</p>
      */
     inline const ScheduledActionResponse& GetScheduledAction() const{ return m_scheduledAction; }
-
-    /**
-     * <p>The ScheduledAction object that was updated.</p>
-     */
     inline void SetScheduledAction(const ScheduledActionResponse& value) { m_scheduledAction = value; }
-
-    /**
-     * <p>The ScheduledAction object that was updated.</p>
-     */
     inline void SetScheduledAction(ScheduledActionResponse&& value) { m_scheduledAction = std::move(value); }
-
-    /**
-     * <p>The ScheduledAction object that was updated.</p>
-     */
     inline UpdateScheduledActionResult& WithScheduledAction(const ScheduledActionResponse& value) { SetScheduledAction(value); return *this;}
-
-    /**
-     * <p>The ScheduledAction object that was updated.</p>
-     */
     inline UpdateScheduledActionResult& WithScheduledAction(ScheduledActionResponse&& value) { SetScheduledAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateScheduledActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateScheduledActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateScheduledActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ScheduledActionResponse m_scheduledAction;

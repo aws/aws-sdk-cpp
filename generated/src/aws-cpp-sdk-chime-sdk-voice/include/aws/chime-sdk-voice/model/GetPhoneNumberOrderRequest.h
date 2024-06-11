@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the phone number order .</p>
      */
     inline const Aws::String& GetPhoneNumberOrderId() const{ return m_phoneNumberOrderId; }
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline bool PhoneNumberOrderIdHasBeenSet() const { return m_phoneNumberOrderIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline void SetPhoneNumberOrderId(const Aws::String& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = value; }
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline void SetPhoneNumberOrderId(Aws::String&& value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId = std::move(value); }
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline void SetPhoneNumberOrderId(const char* value) { m_phoneNumberOrderIdHasBeenSet = true; m_phoneNumberOrderId.assign(value); }
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(const Aws::String& value) { SetPhoneNumberOrderId(value); return *this;}
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(Aws::String&& value) { SetPhoneNumberOrderId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the phone number order .</p>
-     */
     inline GetPhoneNumberOrderRequest& WithPhoneNumberOrderId(const char* value) { SetPhoneNumberOrderId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumberOrderId;

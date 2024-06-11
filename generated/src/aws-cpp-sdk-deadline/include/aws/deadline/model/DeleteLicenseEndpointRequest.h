@@ -32,46 +32,19 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The license endpoint ID of the license endpoint to delete.</p>
      */
     inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline bool LicenseEndpointIdHasBeenSet() const { return m_licenseEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = value; }
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::move(value); }
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId.assign(value); }
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The license endpoint ID of the license endpoint to delete.</p>
-     */
     inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseEndpointId;

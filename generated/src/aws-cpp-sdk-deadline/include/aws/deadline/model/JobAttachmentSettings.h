@@ -38,87 +38,33 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The root prefix.</p>
      */
     inline const Aws::String& GetRootPrefix() const{ return m_rootPrefix; }
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline bool RootPrefixHasBeenSet() const { return m_rootPrefixHasBeenSet; }
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline void SetRootPrefix(const Aws::String& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = value; }
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline void SetRootPrefix(Aws::String&& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = std::move(value); }
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline void SetRootPrefix(const char* value) { m_rootPrefixHasBeenSet = true; m_rootPrefix.assign(value); }
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline JobAttachmentSettings& WithRootPrefix(const Aws::String& value) { SetRootPrefix(value); return *this;}
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline JobAttachmentSettings& WithRootPrefix(Aws::String&& value) { SetRootPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The root prefix.</p>
-     */
     inline JobAttachmentSettings& WithRootPrefix(const char* value) { SetRootPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 bucket name.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline JobAttachmentSettings& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline JobAttachmentSettings& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket name.</p>
-     */
     inline JobAttachmentSettings& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rootPrefix;

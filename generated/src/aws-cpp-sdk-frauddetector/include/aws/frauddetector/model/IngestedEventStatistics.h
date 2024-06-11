@@ -37,170 +37,67 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of stored events.</p>
      */
     inline long long GetNumberOfEvents() const{ return m_numberOfEvents; }
-
-    /**
-     * <p>The number of stored events.</p>
-     */
     inline bool NumberOfEventsHasBeenSet() const { return m_numberOfEventsHasBeenSet; }
-
-    /**
-     * <p>The number of stored events.</p>
-     */
     inline void SetNumberOfEvents(long long value) { m_numberOfEventsHasBeenSet = true; m_numberOfEvents = value; }
-
-    /**
-     * <p>The number of stored events.</p>
-     */
     inline IngestedEventStatistics& WithNumberOfEvents(long long value) { SetNumberOfEvents(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total size of the stored events.</p>
      */
     inline long long GetEventDataSizeInBytes() const{ return m_eventDataSizeInBytes; }
-
-    /**
-     * <p>The total size of the stored events.</p>
-     */
     inline bool EventDataSizeInBytesHasBeenSet() const { return m_eventDataSizeInBytesHasBeenSet; }
-
-    /**
-     * <p>The total size of the stored events.</p>
-     */
     inline void SetEventDataSizeInBytes(long long value) { m_eventDataSizeInBytesHasBeenSet = true; m_eventDataSizeInBytes = value; }
-
-    /**
-     * <p>The total size of the stored events.</p>
-     */
     inline IngestedEventStatistics& WithEventDataSizeInBytes(long long value) { SetEventDataSizeInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The oldest stored event.</p>
      */
     inline const Aws::String& GetLeastRecentEvent() const{ return m_leastRecentEvent; }
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline bool LeastRecentEventHasBeenSet() const { return m_leastRecentEventHasBeenSet; }
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline void SetLeastRecentEvent(const Aws::String& value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent = value; }
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline void SetLeastRecentEvent(Aws::String&& value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent = std::move(value); }
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline void SetLeastRecentEvent(const char* value) { m_leastRecentEventHasBeenSet = true; m_leastRecentEvent.assign(value); }
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline IngestedEventStatistics& WithLeastRecentEvent(const Aws::String& value) { SetLeastRecentEvent(value); return *this;}
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline IngestedEventStatistics& WithLeastRecentEvent(Aws::String&& value) { SetLeastRecentEvent(std::move(value)); return *this;}
-
-    /**
-     * <p>The oldest stored event.</p>
-     */
     inline IngestedEventStatistics& WithLeastRecentEvent(const char* value) { SetLeastRecentEvent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The newest stored event.</p>
      */
     inline const Aws::String& GetMostRecentEvent() const{ return m_mostRecentEvent; }
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline bool MostRecentEventHasBeenSet() const { return m_mostRecentEventHasBeenSet; }
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline void SetMostRecentEvent(const Aws::String& value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent = value; }
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline void SetMostRecentEvent(Aws::String&& value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent = std::move(value); }
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline void SetMostRecentEvent(const char* value) { m_mostRecentEventHasBeenSet = true; m_mostRecentEvent.assign(value); }
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline IngestedEventStatistics& WithMostRecentEvent(const Aws::String& value) { SetMostRecentEvent(value); return *this;}
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline IngestedEventStatistics& WithMostRecentEvent(Aws::String&& value) { SetMostRecentEvent(std::move(value)); return *this;}
-
-    /**
-     * <p>The newest stored event.</p>
-     */
     inline IngestedEventStatistics& WithMostRecentEvent(const char* value) { SetMostRecentEvent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Timestamp of when the stored event was last updated. </p>
      */
     inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline void SetLastUpdatedTime(const Aws::String& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline void SetLastUpdatedTime(Aws::String&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline void SetLastUpdatedTime(const char* value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime.assign(value); }
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline IngestedEventStatistics& WithLastUpdatedTime(const Aws::String& value) { SetLastUpdatedTime(value); return *this;}
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline IngestedEventStatistics& WithLastUpdatedTime(Aws::String&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Timestamp of when the stored event was last updated. </p>
-     */
     inline IngestedEventStatistics& WithLastUpdatedTime(const char* value) { SetLastUpdatedTime(value); return *this;}
-
+    ///@}
   private:
 
     long long m_numberOfEvents;

@@ -33,32 +33,18 @@ namespace Model
     AWS_RAM_API RejectResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains the details about the rejected invitation.</p>
      */
     inline const ResourceShareInvitation& GetResourceShareInvitation() const{ return m_resourceShareInvitation; }
-
-    /**
-     * <p>An object that contains the details about the rejected invitation.</p>
-     */
     inline void SetResourceShareInvitation(const ResourceShareInvitation& value) { m_resourceShareInvitation = value; }
-
-    /**
-     * <p>An object that contains the details about the rejected invitation.</p>
-     */
     inline void SetResourceShareInvitation(ResourceShareInvitation&& value) { m_resourceShareInvitation = std::move(value); }
-
-    /**
-     * <p>An object that contains the details about the rejected invitation.</p>
-     */
     inline RejectResourceShareInvitationResult& WithResourceShareInvitation(const ResourceShareInvitation& value) { SetResourceShareInvitation(value); return *this;}
-
-    /**
-     * <p>An object that contains the details about the rejected invitation.</p>
-     */
     inline RejectResourceShareInvitationResult& WithResourceShareInvitation(ResourceShareInvitation&& value) { SetResourceShareInvitation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The idempotency identifier associated with this request. If you want to
      * repeat the same operation in an idempotent manner then you must include this
@@ -67,83 +53,24 @@ namespace Model
      * call.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline RejectResourceShareInvitationResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline RejectResourceShareInvitationResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The idempotency identifier associated with this request. If you want to
-     * repeat the same operation in an idempotent manner then you must include this
-     * value in the <code>clientToken</code> request parameter of that later call. All
-     * other parameters must also have the same values that you used in the first
-     * call.</p>
-     */
     inline RejectResourceShareInvitationResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RejectResourceShareInvitationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RejectResourceShareInvitationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RejectResourceShareInvitationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourceShareInvitation m_resourceShareInvitation;

@@ -33,53 +33,27 @@ namespace Model
     AWS_PCACONNECTORAD_API GetConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains information about your connector.</p>
      */
     inline const Connector& GetConnector() const{ return m_connector; }
-
-    /**
-     * <p>A structure that contains information about your connector.</p>
-     */
     inline void SetConnector(const Connector& value) { m_connector = value; }
-
-    /**
-     * <p>A structure that contains information about your connector.</p>
-     */
     inline void SetConnector(Connector&& value) { m_connector = std::move(value); }
-
-    /**
-     * <p>A structure that contains information about your connector.</p>
-     */
     inline GetConnectorResult& WithConnector(const Connector& value) { SetConnector(value); return *this;}
-
-    /**
-     * <p>A structure that contains information about your connector.</p>
-     */
     inline GetConnectorResult& WithConnector(Connector&& value) { SetConnector(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Connector m_connector;

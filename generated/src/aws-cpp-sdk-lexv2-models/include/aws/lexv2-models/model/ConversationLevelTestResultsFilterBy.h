@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The selection of matched or mismatched end-to-end status to filter test set
      * results data at the conversation level.</p>
      */
     inline const TestResultMatchStatus& GetEndToEndResult() const{ return m_endToEndResult; }
-
-    /**
-     * <p>The selection of matched or mismatched end-to-end status to filter test set
-     * results data at the conversation level.</p>
-     */
     inline bool EndToEndResultHasBeenSet() const { return m_endToEndResultHasBeenSet; }
-
-    /**
-     * <p>The selection of matched or mismatched end-to-end status to filter test set
-     * results data at the conversation level.</p>
-     */
     inline void SetEndToEndResult(const TestResultMatchStatus& value) { m_endToEndResultHasBeenSet = true; m_endToEndResult = value; }
-
-    /**
-     * <p>The selection of matched or mismatched end-to-end status to filter test set
-     * results data at the conversation level.</p>
-     */
     inline void SetEndToEndResult(TestResultMatchStatus&& value) { m_endToEndResultHasBeenSet = true; m_endToEndResult = std::move(value); }
-
-    /**
-     * <p>The selection of matched or mismatched end-to-end status to filter test set
-     * results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResultsFilterBy& WithEndToEndResult(const TestResultMatchStatus& value) { SetEndToEndResult(value); return *this;}
-
-    /**
-     * <p>The selection of matched or mismatched end-to-end status to filter test set
-     * results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResultsFilterBy& WithEndToEndResult(TestResultMatchStatus&& value) { SetEndToEndResult(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TestResultMatchStatus m_endToEndResult;

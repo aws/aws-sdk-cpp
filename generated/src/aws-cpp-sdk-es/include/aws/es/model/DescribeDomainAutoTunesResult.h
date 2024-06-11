@@ -42,6 +42,7 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DescribeDomainAutoTunesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
      * domain. See the <a
@@ -49,113 +50,37 @@ namespace Model
      * target="_blank">Developer Guide</a> for more information.</p>
      */
     inline const Aws::Vector<AutoTune>& GetAutoTunes() const{ return m_autoTunes; }
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline void SetAutoTunes(const Aws::Vector<AutoTune>& value) { m_autoTunes = value; }
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline void SetAutoTunes(Aws::Vector<AutoTune>&& value) { m_autoTunes = std::move(value); }
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline DescribeDomainAutoTunesResult& WithAutoTunes(const Aws::Vector<AutoTune>& value) { SetAutoTunes(value); return *this;}
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline DescribeDomainAutoTunesResult& WithAutoTunes(Aws::Vector<AutoTune>&& value) { SetAutoTunes(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline DescribeDomainAutoTunesResult& AddAutoTunes(const AutoTune& value) { m_autoTunes.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the list of setting adjustments that Auto-Tune has made to the
-     * domain. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline DescribeDomainAutoTunesResult& AddAutoTunes(AutoTune&& value) { m_autoTunes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeDomainAutoTunesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeDomainAutoTunesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeDomainAutoTunesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDomainAutoTunesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDomainAutoTunesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDomainAutoTunesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AutoTune> m_autoTunes;

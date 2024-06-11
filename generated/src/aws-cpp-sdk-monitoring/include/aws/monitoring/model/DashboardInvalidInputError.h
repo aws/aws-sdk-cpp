@@ -41,55 +41,29 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline DashboardInvalidInputError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline DashboardInvalidInputError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline DashboardInvalidInputError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const{ return m_dashboardValidationMessages; }
-
-    
     inline bool DashboardValidationMessagesHasBeenSet() const { return m_dashboardValidationMessagesHasBeenSet; }
-
-    
     inline void SetDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = value; }
-
-    
     inline void SetDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = std::move(value); }
-
-    
     inline DashboardInvalidInputError& WithDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { SetDashboardValidationMessages(value); return *this;}
-
-    
     inline DashboardInvalidInputError& WithDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { SetDashboardValidationMessages(std::move(value)); return *this;}
-
-    
     inline DashboardInvalidInputError& AddDashboardValidationMessages(const DashboardValidationMessage& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.push_back(value); return *this; }
-
-    
     inline DashboardInvalidInputError& AddDashboardValidationMessages(DashboardValidationMessage&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

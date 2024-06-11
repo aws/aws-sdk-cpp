@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the portal.</p>
      */
     inline const Aws::String& GetPortalId() const{ return m_portalId; }
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline bool PortalIdHasBeenSet() const { return m_portalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline void SetPortalId(const Aws::String& value) { m_portalIdHasBeenSet = true; m_portalId = value; }
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline void SetPortalId(Aws::String&& value) { m_portalIdHasBeenSet = true; m_portalId = std::move(value); }
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline void SetPortalId(const char* value) { m_portalIdHasBeenSet = true; m_portalId.assign(value); }
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline DescribePortalRequest& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline DescribePortalRequest& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the portal.</p>
-     */
     inline DescribePortalRequest& WithPortalId(const char* value) { SetPortalId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portalId;

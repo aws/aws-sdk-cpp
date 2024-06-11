@@ -34,106 +34,43 @@ namespace Model
     AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of patches and patch status.</p>
      */
     inline const Aws::Vector<EffectivePatch>& GetEffectivePatches() const{ return m_effectivePatches; }
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline void SetEffectivePatches(const Aws::Vector<EffectivePatch>& value) { m_effectivePatches = value; }
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline void SetEffectivePatches(Aws::Vector<EffectivePatch>&& value) { m_effectivePatches = std::move(value); }
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& WithEffectivePatches(const Aws::Vector<EffectivePatch>& value) { SetEffectivePatches(value); return *this;}
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& WithEffectivePatches(Aws::Vector<EffectivePatch>&& value) { SetEffectivePatches(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(const EffectivePatch& value) { m_effectivePatches.push_back(value); return *this; }
-
-    /**
-     * <p>An array of patches and patch status.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& AddEffectivePatches(EffectivePatch&& value) { m_effectivePatches.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeEffectivePatchesForPatchBaselineResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEffectivePatchesForPatchBaselineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EffectivePatch> m_effectivePatches;

@@ -45,128 +45,46 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the type of analytics feature that was skipped during the analysis
      * of a call analytics job.</p>
      */
     inline const CallAnalyticsFeature& GetFeature() const{ return m_feature; }
-
-    /**
-     * <p>Indicates the type of analytics feature that was skipped during the analysis
-     * of a call analytics job.</p>
-     */
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-
-    /**
-     * <p>Indicates the type of analytics feature that was skipped during the analysis
-     * of a call analytics job.</p>
-     */
     inline void SetFeature(const CallAnalyticsFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
-
-    /**
-     * <p>Indicates the type of analytics feature that was skipped during the analysis
-     * of a call analytics job.</p>
-     */
     inline void SetFeature(CallAnalyticsFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-
-    /**
-     * <p>Indicates the type of analytics feature that was skipped during the analysis
-     * of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithFeature(const CallAnalyticsFeature& value) { SetFeature(value); return *this;}
-
-    /**
-     * <p>Indicates the type of analytics feature that was skipped during the analysis
-     * of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithFeature(CallAnalyticsFeature&& value) { SetFeature(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides a code indicating the reason why a specific analytics feature was
      * skipped during the analysis of a call analytics job.</p>
      */
     inline const CallAnalyticsSkippedReasonCode& GetReasonCode() const{ return m_reasonCode; }
-
-    /**
-     * <p>Provides a code indicating the reason why a specific analytics feature was
-     * skipped during the analysis of a call analytics job.</p>
-     */
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-
-    /**
-     * <p>Provides a code indicating the reason why a specific analytics feature was
-     * skipped during the analysis of a call analytics job.</p>
-     */
     inline void SetReasonCode(const CallAnalyticsSkippedReasonCode& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-
-    /**
-     * <p>Provides a code indicating the reason why a specific analytics feature was
-     * skipped during the analysis of a call analytics job.</p>
-     */
     inline void SetReasonCode(CallAnalyticsSkippedReasonCode&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-
-    /**
-     * <p>Provides a code indicating the reason why a specific analytics feature was
-     * skipped during the analysis of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithReasonCode(const CallAnalyticsSkippedReasonCode& value) { SetReasonCode(value); return *this;}
-
-    /**
-     * <p>Provides a code indicating the reason why a specific analytics feature was
-     * skipped during the analysis of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithReasonCode(CallAnalyticsSkippedReasonCode&& value) { SetReasonCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains additional information or a message explaining why a specific
      * analytics feature was skipped during the analysis of a call analytics job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains additional information or a message explaining why a specific
-     * analytics feature was skipped during the analysis of a call analytics job.</p>
-     */
     inline CallAnalyticsSkippedFeature& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     CallAnalyticsFeature m_feature;

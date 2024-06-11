@@ -44,55 +44,22 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If the invoked entity is an operation on an entity, the name of that
      * dependent operation is displayed here.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>If the invoked entity is an operation on an entity, the name of that
-     * dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
      * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
@@ -109,317 +76,50 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDependentKeyAttributes() const{ return m_dependentKeyAttributes; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline bool DependentKeyAttributesHasBeenSet() const { return m_dependentKeyAttributesHasBeenSet; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetDependentKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes = value; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetDependentKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes = std::move(value); }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& WithDependentKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetDependentKeyAttributes(value); return *this;}
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& WithDependentKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetDependentKeyAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(const Aws::String& key, const Aws::String& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, const Aws::String& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(const Aws::String& key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(const char* key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, const char* value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This is a string-to-string map. It can include the following fields.</p> <ul>
-     * <li> <p> <code>Type</code> designates the type of object this is.</p> </li> <li>
-     * <p> <code>ResourceType</code> specifies the type of the resource. This field is
-     * used only when the value of the <code>Type</code> field is <code>Resource</code>
-     * or <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies
-     * the name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ServiceDependent& AddDependentKeyAttributes(const char* key, const char* value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the dependent invoker was a service that invoked it from an operation, the
      * name of that dependent operation is displayed here.</p>
      */
     inline const Aws::String& GetDependentOperationName() const{ return m_dependentOperationName; }
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline bool DependentOperationNameHasBeenSet() const { return m_dependentOperationNameHasBeenSet; }
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline void SetDependentOperationName(const Aws::String& value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName = value; }
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline void SetDependentOperationName(Aws::String&& value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName = std::move(value); }
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline void SetDependentOperationName(const char* value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName.assign(value); }
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithDependentOperationName(const Aws::String& value) { SetDependentOperationName(value); return *this;}
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithDependentOperationName(Aws::String&& value) { SetDependentOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>If the dependent invoker was a service that invoked it from an operation, the
-     * name of that dependent operation is displayed here.</p>
-     */
     inline ServiceDependent& WithDependentOperationName(const char* value) { SetDependentOperationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of structures that each contain information about one metric
      * associated with this service dependent that was discovered by Application
      * Signals.</p>
      */
     inline const Aws::Vector<MetricReference>& GetMetricReferences() const{ return m_metricReferences; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline bool MetricReferencesHasBeenSet() const { return m_metricReferencesHasBeenSet; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline void SetMetricReferences(const Aws::Vector<MetricReference>& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = value; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline void SetMetricReferences(Aws::Vector<MetricReference>&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::move(value); }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceDependent& WithMetricReferences(const Aws::Vector<MetricReference>& value) { SetMetricReferences(value); return *this;}
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceDependent& WithMetricReferences(Aws::Vector<MetricReference>&& value) { SetMetricReferences(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceDependent& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that each contain information about one metric
-     * associated with this service dependent that was discovered by Application
-     * Signals.</p>
-     */
     inline ServiceDependent& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_operationName;

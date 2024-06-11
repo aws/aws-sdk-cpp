@@ -34,42 +34,18 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
      * messaging).</p>
      */
     inline const ContactMethodVerificationProtocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-     * messaging).</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-     * messaging).</p>
-     */
     inline void SetProtocol(const ContactMethodVerificationProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-     * messaging).</p>
-     */
     inline void SetProtocol(ContactMethodVerificationProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-     * messaging).</p>
-     */
     inline SendContactMethodVerificationRequest& WithProtocol(const ContactMethodVerificationProtocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text
-     * messaging).</p>
-     */
     inline SendContactMethodVerificationRequest& WithProtocol(ContactMethodVerificationProtocol&& value) { SetProtocol(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContactMethodVerificationProtocol m_protocol;

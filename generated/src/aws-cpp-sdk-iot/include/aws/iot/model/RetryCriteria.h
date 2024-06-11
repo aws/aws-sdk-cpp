@@ -38,57 +38,27 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of job execution failures that can initiate a job retry.</p>
      */
     inline const RetryableFailureType& GetFailureType() const{ return m_failureType; }
-
-    /**
-     * <p>The type of job execution failures that can initiate a job retry.</p>
-     */
     inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
-
-    /**
-     * <p>The type of job execution failures that can initiate a job retry.</p>
-     */
     inline void SetFailureType(const RetryableFailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
-
-    /**
-     * <p>The type of job execution failures that can initiate a job retry.</p>
-     */
     inline void SetFailureType(RetryableFailureType&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::move(value); }
-
-    /**
-     * <p>The type of job execution failures that can initiate a job retry.</p>
-     */
     inline RetryCriteria& WithFailureType(const RetryableFailureType& value) { SetFailureType(value); return *this;}
-
-    /**
-     * <p>The type of job execution failures that can initiate a job retry.</p>
-     */
     inline RetryCriteria& WithFailureType(RetryableFailureType&& value) { SetFailureType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of retries allowed for a failure type for the job.</p>
      */
     inline int GetNumberOfRetries() const{ return m_numberOfRetries; }
-
-    /**
-     * <p>The number of retries allowed for a failure type for the job.</p>
-     */
     inline bool NumberOfRetriesHasBeenSet() const { return m_numberOfRetriesHasBeenSet; }
-
-    /**
-     * <p>The number of retries allowed for a failure type for the job.</p>
-     */
     inline void SetNumberOfRetries(int value) { m_numberOfRetriesHasBeenSet = true; m_numberOfRetries = value; }
-
-    /**
-     * <p>The number of retries allowed for a failure type for the job.</p>
-     */
     inline RetryCriteria& WithNumberOfRetries(int value) { SetNumberOfRetries(value); return *this;}
-
+    ///@}
   private:
 
     RetryableFailureType m_failureType;

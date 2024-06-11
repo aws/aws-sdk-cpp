@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEPIPELINE_API PutApprovalResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
      */
     inline const Aws::Utils::DateTime& GetApprovedAt() const{ return m_approvedAt; }
-
-    /**
-     * <p>The timestamp showing when the approval or rejection was submitted.</p>
-     */
     inline void SetApprovedAt(const Aws::Utils::DateTime& value) { m_approvedAt = value; }
-
-    /**
-     * <p>The timestamp showing when the approval or rejection was submitted.</p>
-     */
     inline void SetApprovedAt(Aws::Utils::DateTime&& value) { m_approvedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp showing when the approval or rejection was submitted.</p>
-     */
     inline PutApprovalResultResult& WithApprovedAt(const Aws::Utils::DateTime& value) { SetApprovedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp showing when the approval or rejection was submitted.</p>
-     */
     inline PutApprovalResultResult& WithApprovedAt(Aws::Utils::DateTime&& value) { SetApprovedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutApprovalResultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutApprovalResultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutApprovalResultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_approvedAt;

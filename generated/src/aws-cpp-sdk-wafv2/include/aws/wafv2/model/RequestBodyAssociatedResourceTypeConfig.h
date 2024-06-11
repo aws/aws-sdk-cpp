@@ -47,6 +47,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
@@ -55,52 +56,12 @@ namespace Model
      * (16,384 bytes)</code> </p>
      */
     inline const SizeInspectionLimit& GetDefaultSizeInspectionLimit() const{ return m_defaultSizeInspectionLimit; }
-
-    /**
-     * <p>Specifies the maximum size of the web request body component that an
-     * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
-     * Access resource should send to WAF for inspection. This applies to statements in
-     * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
-     * (16,384 bytes)</code> </p>
-     */
     inline bool DefaultSizeInspectionLimitHasBeenSet() const { return m_defaultSizeInspectionLimitHasBeenSet; }
-
-    /**
-     * <p>Specifies the maximum size of the web request body component that an
-     * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
-     * Access resource should send to WAF for inspection. This applies to statements in
-     * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
-     * (16,384 bytes)</code> </p>
-     */
     inline void SetDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = value; }
-
-    /**
-     * <p>Specifies the maximum size of the web request body component that an
-     * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
-     * Access resource should send to WAF for inspection. This applies to statements in
-     * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
-     * (16,384 bytes)</code> </p>
-     */
     inline void SetDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = std::move(value); }
-
-    /**
-     * <p>Specifies the maximum size of the web request body component that an
-     * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
-     * Access resource should send to WAF for inspection. This applies to statements in
-     * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
-     * (16,384 bytes)</code> </p>
-     */
     inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { SetDefaultSizeInspectionLimit(value); return *this;}
-
-    /**
-     * <p>Specifies the maximum size of the web request body component that an
-     * associated CloudFront, API Gateway, Amazon Cognito, App Runner, or Verified
-     * Access resource should send to WAF for inspection. This applies to statements in
-     * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
-     * (16,384 bytes)</code> </p>
-     */
     inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { SetDefaultSizeInspectionLimit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SizeInspectionLimit m_defaultSizeInspectionLimit;

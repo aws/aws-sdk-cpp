@@ -33,53 +33,27 @@ namespace Model
     AWS_MANAGEDGRAFANA_API DescribeWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing information about the workspace.</p>
      */
     inline const WorkspaceDescription& GetWorkspace() const{ return m_workspace; }
-
-    /**
-     * <p>A structure containing information about the workspace.</p>
-     */
     inline void SetWorkspace(const WorkspaceDescription& value) { m_workspace = value; }
-
-    /**
-     * <p>A structure containing information about the workspace.</p>
-     */
     inline void SetWorkspace(WorkspaceDescription&& value) { m_workspace = std::move(value); }
-
-    /**
-     * <p>A structure containing information about the workspace.</p>
-     */
     inline DescribeWorkspaceResult& WithWorkspace(const WorkspaceDescription& value) { SetWorkspace(value); return *this;}
-
-    /**
-     * <p>A structure containing information about the workspace.</p>
-     */
     inline DescribeWorkspaceResult& WithWorkspace(WorkspaceDescription&& value) { SetWorkspace(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeWorkspaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeWorkspaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeWorkspaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WorkspaceDescription m_workspace;

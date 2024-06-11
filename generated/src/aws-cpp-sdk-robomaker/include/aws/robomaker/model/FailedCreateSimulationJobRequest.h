@@ -41,145 +41,56 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The simulation job request.</p>
      */
     inline const SimulationJobRequest& GetRequest() const{ return m_request; }
-
-    /**
-     * <p>The simulation job request.</p>
-     */
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-
-    /**
-     * <p>The simulation job request.</p>
-     */
     inline void SetRequest(const SimulationJobRequest& value) { m_requestHasBeenSet = true; m_request = value; }
-
-    /**
-     * <p>The simulation job request.</p>
-     */
     inline void SetRequest(SimulationJobRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-
-    /**
-     * <p>The simulation job request.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithRequest(const SimulationJobRequest& value) { SetRequest(value); return *this;}
-
-    /**
-     * <p>The simulation job request.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithRequest(SimulationJobRequest&& value) { SetRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The failure reason of the simulation job request.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The failure reason of the simulation job request.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The failure code.</p>
      */
     inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
-
-    /**
-     * <p>The failure code.</p>
-     */
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    /**
-     * <p>The failure code.</p>
-     */
     inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    /**
-     * <p>The failure code.</p>
-     */
     inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    /**
-     * <p>The failure code.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
-
-    /**
-     * <p>The failure code.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the simulation job batch
      * failed.</p>
      */
     inline const Aws::Utils::DateTime& GetFailedAt() const{ return m_failedAt; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the simulation job batch
-     * failed.</p>
-     */
     inline bool FailedAtHasBeenSet() const { return m_failedAtHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the simulation job batch
-     * failed.</p>
-     */
     inline void SetFailedAt(const Aws::Utils::DateTime& value) { m_failedAtHasBeenSet = true; m_failedAt = value; }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the simulation job batch
-     * failed.</p>
-     */
     inline void SetFailedAt(Aws::Utils::DateTime&& value) { m_failedAtHasBeenSet = true; m_failedAt = std::move(value); }
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the simulation job batch
-     * failed.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailedAt(const Aws::Utils::DateTime& value) { SetFailedAt(value); return *this;}
-
-    /**
-     * <p>The time, in milliseconds since the epoch, when the simulation job batch
-     * failed.</p>
-     */
     inline FailedCreateSimulationJobRequest& WithFailedAt(Aws::Utils::DateTime&& value) { SetFailedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SimulationJobRequest m_request;

@@ -40,57 +40,27 @@ namespace Model
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The result set of the SQL statement.</p>
      */
     inline const ResultFrame& GetResultFrame() const{ return m_resultFrame; }
-
-    /**
-     * <p>The result set of the SQL statement.</p>
-     */
     inline bool ResultFrameHasBeenSet() const { return m_resultFrameHasBeenSet; }
-
-    /**
-     * <p>The result set of the SQL statement.</p>
-     */
     inline void SetResultFrame(const ResultFrame& value) { m_resultFrameHasBeenSet = true; m_resultFrame = value; }
-
-    /**
-     * <p>The result set of the SQL statement.</p>
-     */
     inline void SetResultFrame(ResultFrame&& value) { m_resultFrameHasBeenSet = true; m_resultFrame = std::move(value); }
-
-    /**
-     * <p>The result set of the SQL statement.</p>
-     */
     inline SqlStatementResult& WithResultFrame(const ResultFrame& value) { SetResultFrame(value); return *this;}
-
-    /**
-     * <p>The result set of the SQL statement.</p>
-     */
     inline SqlStatementResult& WithResultFrame(ResultFrame&& value) { SetResultFrame(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of records updated by a SQL statement.</p>
      */
     inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
     inline bool NumberOfRecordsUpdatedHasBeenSet() const { return m_numberOfRecordsUpdatedHasBeenSet; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
     inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdatedHasBeenSet = true; m_numberOfRecordsUpdated = value; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
     inline SqlStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
-
+    ///@}
   private:
 
     ResultFrame m_resultFrame;

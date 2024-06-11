@@ -37,54 +37,20 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
      * provider.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline LambdaAvailabilityProvider& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline LambdaAvailabilityProvider& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability
-     * provider.</p>
-     */
     inline LambdaAvailabilityProvider& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lambdaArn;

@@ -32,46 +32,19 @@ namespace Model
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The extension association ID to get.</p>
      */
     inline const Aws::String& GetExtensionAssociationId() const{ return m_extensionAssociationId; }
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline bool ExtensionAssociationIdHasBeenSet() const { return m_extensionAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline void SetExtensionAssociationId(const Aws::String& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = value; }
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline void SetExtensionAssociationId(Aws::String&& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = std::move(value); }
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline void SetExtensionAssociationId(const char* value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId.assign(value); }
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline GetExtensionAssociationRequest& WithExtensionAssociationId(const Aws::String& value) { SetExtensionAssociationId(value); return *this;}
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline GetExtensionAssociationRequest& WithExtensionAssociationId(Aws::String&& value) { SetExtensionAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The extension association ID to get.</p>
-     */
     inline GetExtensionAssociationRequest& WithExtensionAssociationId(const char* value) { SetExtensionAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_extensionAssociationId;

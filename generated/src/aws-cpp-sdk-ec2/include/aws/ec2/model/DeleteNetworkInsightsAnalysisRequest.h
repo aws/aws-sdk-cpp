@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,72 +44,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteNetworkInsightsAnalysisRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the network insights analysis.</p>
      */
     inline const Aws::String& GetNetworkInsightsAnalysisId() const{ return m_networkInsightsAnalysisId; }
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline bool NetworkInsightsAnalysisIdHasBeenSet() const { return m_networkInsightsAnalysisIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline void SetNetworkInsightsAnalysisId(const Aws::String& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = value; }
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline void SetNetworkInsightsAnalysisId(Aws::String&& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = std::move(value); }
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline void SetNetworkInsightsAnalysisId(const char* value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId.assign(value); }
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(const Aws::String& value) { SetNetworkInsightsAnalysisId(value); return *this;}
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(Aws::String&& value) { SetNetworkInsightsAnalysisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the network insights analysis.</p>
-     */
     inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(const char* value) { SetNetworkInsightsAnalysisId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

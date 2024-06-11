@@ -40,82 +40,32 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the algorithm being used for geomosaic.</p>
      */
     inline const AlgorithmNameGeoMosaic& GetAlgorithmName() const{ return m_algorithmName; }
-
-    /**
-     * <p>The name of the algorithm being used for geomosaic.</p>
-     */
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
-
-    /**
-     * <p>The name of the algorithm being used for geomosaic.</p>
-     */
     inline void SetAlgorithmName(const AlgorithmNameGeoMosaic& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
-
-    /**
-     * <p>The name of the algorithm being used for geomosaic.</p>
-     */
     inline void SetAlgorithmName(AlgorithmNameGeoMosaic&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
-
-    /**
-     * <p>The name of the algorithm being used for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& WithAlgorithmName(const AlgorithmNameGeoMosaic& value) { SetAlgorithmName(value); return *this;}
-
-    /**
-     * <p>The name of the algorithm being used for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& WithAlgorithmName(AlgorithmNameGeoMosaic&& value) { SetAlgorithmName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target bands for geomosaic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The target bands for geomosaic.</p>
-     */
     inline GeoMosaicConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
-
+    ///@}
   private:
 
     AlgorithmNameGeoMosaic m_algorithmName;

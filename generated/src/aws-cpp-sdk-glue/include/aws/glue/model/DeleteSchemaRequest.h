@@ -34,42 +34,18 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>This is a wrapper structure that may contain the schema name and Amazon
      * Resource Name (ARN).</p>
      */
     inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the schema name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the schema name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-
-    /**
-     * <p>This is a wrapper structure that may contain the schema name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-
-    /**
-     * <p>This is a wrapper structure that may contain the schema name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline DeleteSchemaRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-
-    /**
-     * <p>This is a wrapper structure that may contain the schema name and Amazon
-     * Resource Name (ARN).</p>
-     */
     inline DeleteSchemaRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SchemaId m_schemaId;

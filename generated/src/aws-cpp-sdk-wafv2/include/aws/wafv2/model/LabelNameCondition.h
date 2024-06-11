@@ -38,6 +38,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The label name that a log record must contain in order to meet the condition.
      * This must be a fully qualified label name. Fully qualified labels have a prefix,
@@ -45,63 +46,14 @@ namespace Model
      * ACL context of the rule that added the label. </p>
      */
     inline const Aws::String& GetLabelName() const{ return m_labelName; }
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline bool LabelNameHasBeenSet() const { return m_labelNameHasBeenSet; }
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline void SetLabelName(const Aws::String& value) { m_labelNameHasBeenSet = true; m_labelName = value; }
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline void SetLabelName(Aws::String&& value) { m_labelNameHasBeenSet = true; m_labelName = std::move(value); }
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline void SetLabelName(const char* value) { m_labelNameHasBeenSet = true; m_labelName.assign(value); }
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline LabelNameCondition& WithLabelName(const Aws::String& value) { SetLabelName(value); return *this;}
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline LabelNameCondition& WithLabelName(Aws::String&& value) { SetLabelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The label name that a log record must contain in order to meet the condition.
-     * This must be a fully qualified label name. Fully qualified labels have a prefix,
-     * optional namespaces, and label name. The prefix identifies the rule group or web
-     * ACL context of the rule that added the label. </p>
-     */
     inline LabelNameCondition& WithLabelName(const char* value) { SetLabelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_labelName;

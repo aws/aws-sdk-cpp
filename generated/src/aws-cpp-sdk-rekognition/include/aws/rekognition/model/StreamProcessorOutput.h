@@ -41,79 +41,31 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
      * processor streams the analysis results.</p>
      */
     inline const KinesisDataStream& GetKinesisDataStream() const{ return m_kinesisDataStream; }
-
-    /**
-     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
-     * processor streams the analysis results.</p>
-     */
     inline bool KinesisDataStreamHasBeenSet() const { return m_kinesisDataStreamHasBeenSet; }
-
-    /**
-     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
-     * processor streams the analysis results.</p>
-     */
     inline void SetKinesisDataStream(const KinesisDataStream& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = value; }
-
-    /**
-     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
-     * processor streams the analysis results.</p>
-     */
     inline void SetKinesisDataStream(KinesisDataStream&& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = std::move(value); }
-
-    /**
-     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
-     * processor streams the analysis results.</p>
-     */
     inline StreamProcessorOutput& WithKinesisDataStream(const KinesisDataStream& value) { SetKinesisDataStream(value); return *this;}
-
-    /**
-     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
-     * processor streams the analysis results.</p>
-     */
     inline StreamProcessorOutput& WithKinesisDataStream(KinesisDataStream&& value) { SetKinesisDataStream(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
      * detailed inference results of a video analysis operation. </p>
      */
     inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
-
-    /**
-     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
-     * detailed inference results of a video analysis operation. </p>
-     */
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-
-    /**
-     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
-     * detailed inference results of a video analysis operation. </p>
-     */
     inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-
-    /**
-     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
-     * detailed inference results of a video analysis operation. </p>
-     */
     inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-
-    /**
-     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
-     * detailed inference results of a video analysis operation. </p>
-     */
     inline StreamProcessorOutput& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
-     * detailed inference results of a video analysis operation. </p>
-     */
     inline StreamProcessorOutput& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KinesisDataStream m_kinesisDataStream;

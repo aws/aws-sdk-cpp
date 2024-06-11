@@ -39,96 +39,41 @@ namespace Model
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
      */
     inline const Aws::String& GetMessageType() const{ return m_messageType; }
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline void SetMessageType(const Aws::String& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline void SetMessageType(Aws::String&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline void SetMessageType(const char* value) { m_messageTypeHasBeenSet = true; m_messageType.assign(value); }
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline TelemetryMetadata& WithMessageType(const Aws::String& value) { SetMessageType(value); return *this;}
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline TelemetryMetadata& WithMessageType(Aws::String&& value) { SetMessageType(std::move(value)); return *this;}
-
-    /**
-     * <p>A specific type of behavioral data that is collected by the agent.</p>
-     */
     inline TelemetryMetadata& WithMessageType(const char* value) { SetMessageType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The count of messages that the agent sends to the Amazon Inspector
      * service.</p>
      */
     inline long long GetCount() const{ return m_count; }
-
-    /**
-     * <p>The count of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The count of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The count of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline TelemetryMetadata& WithCount(long long value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data size of messages that the agent sends to the Amazon Inspector
      * service.</p>
      */
     inline long long GetDataSize() const{ return m_dataSize; }
-
-    /**
-     * <p>The data size of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline bool DataSizeHasBeenSet() const { return m_dataSizeHasBeenSet; }
-
-    /**
-     * <p>The data size of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline void SetDataSize(long long value) { m_dataSizeHasBeenSet = true; m_dataSize = value; }
-
-    /**
-     * <p>The data size of messages that the agent sends to the Amazon Inspector
-     * service.</p>
-     */
     inline TelemetryMetadata& WithDataSize(long long value) { SetDataSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageType;

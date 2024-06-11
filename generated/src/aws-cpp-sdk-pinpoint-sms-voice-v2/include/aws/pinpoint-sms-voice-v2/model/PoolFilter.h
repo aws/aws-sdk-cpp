@@ -40,82 +40,32 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the attribute to filter on.</p>
      */
     inline const PoolFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the attribute to filter on.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the attribute to filter on.</p>
-     */
     inline void SetName(const PoolFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the attribute to filter on.</p>
-     */
     inline void SetName(PoolFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the attribute to filter on.</p>
-     */
     inline PoolFilter& WithName(const PoolFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the attribute to filter on.</p>
-     */
     inline PoolFilter& WithName(PoolFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array values to filter for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline PoolFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline PoolFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline PoolFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline PoolFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array values to filter for.</p>
-     */
     inline PoolFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     PoolFilterName m_name;

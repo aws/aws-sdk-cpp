@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateVerifiedAccessTrustProviderResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Details about the Verified Access trust provider.</p>
      */
     inline const VerifiedAccessTrustProvider& GetVerifiedAccessTrustProvider() const{ return m_verifiedAccessTrustProvider; }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline void SetVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { m_verifiedAccessTrustProvider = value; }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline void SetVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { m_verifiedAccessTrustProvider = std::move(value); }
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline CreateVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { SetVerifiedAccessTrustProvider(value); return *this;}
-
-    /**
-     * <p>Details about the Verified Access trust provider.</p>
-     */
     inline CreateVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { SetVerifiedAccessTrustProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateVerifiedAccessTrustProviderResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateVerifiedAccessTrustProviderResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;

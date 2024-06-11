@@ -37,57 +37,27 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percentage threshold for the budget action to remove.</p>
      */
     inline double GetThresholdPercentage() const{ return m_thresholdPercentage; }
-
-    /**
-     * <p>The percentage threshold for the budget action to remove.</p>
-     */
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage threshold for the budget action to remove.</p>
-     */
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
-
-    /**
-     * <p>The percentage threshold for the budget action to remove.</p>
-     */
     inline BudgetActionToRemove& WithThresholdPercentage(double value) { SetThresholdPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of budget action to remove.</p>
      */
     inline const BudgetActionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of budget action to remove.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of budget action to remove.</p>
-     */
     inline void SetType(const BudgetActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of budget action to remove.</p>
-     */
     inline void SetType(BudgetActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of budget action to remove.</p>
-     */
     inline BudgetActionToRemove& WithType(const BudgetActionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of budget action to remove.</p>
-     */
     inline BudgetActionToRemove& WithType(BudgetActionType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_thresholdPercentage;

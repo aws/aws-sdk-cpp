@@ -39,67 +39,29 @@ namespace Model
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The key-name of the LF-tag.</p>
      */
     inline const LFTagPair& GetLFTag() const{ return m_lFTag; }
-
-    /**
-     * <p>The key-name of the LF-tag.</p>
-     */
     inline bool LFTagHasBeenSet() const { return m_lFTagHasBeenSet; }
-
-    /**
-     * <p>The key-name of the LF-tag.</p>
-     */
     inline void SetLFTag(const LFTagPair& value) { m_lFTagHasBeenSet = true; m_lFTag = value; }
-
-    /**
-     * <p>The key-name of the LF-tag.</p>
-     */
     inline void SetLFTag(LFTagPair&& value) { m_lFTagHasBeenSet = true; m_lFTag = std::move(value); }
-
-    /**
-     * <p>The key-name of the LF-tag.</p>
-     */
     inline LFTagError& WithLFTag(const LFTagPair& value) { SetLFTag(value); return *this;}
-
-    /**
-     * <p>The key-name of the LF-tag.</p>
-     */
     inline LFTagError& WithLFTag(LFTagPair&& value) { SetLFTag(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
      */
     inline const ErrorDetail& GetError() const{ return m_error; }
-
-    /**
-     * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-     */
     inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-     */
     inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-     */
     inline LFTagError& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-
-    /**
-     * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
-     */
     inline LFTagError& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LFTagPair m_lFTag;

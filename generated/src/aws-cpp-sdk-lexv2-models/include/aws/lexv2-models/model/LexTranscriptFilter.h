@@ -38,48 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The object that contains a date range filter that will be applied to the
      * transcript. Specify this object if you want Amazon Lex to only read the files
      * that are within the date range.</p>
      */
     inline const DateRangeFilter& GetDateRangeFilter() const{ return m_dateRangeFilter; }
-
-    /**
-     * <p>The object that contains a date range filter that will be applied to the
-     * transcript. Specify this object if you want Amazon Lex to only read the files
-     * that are within the date range.</p>
-     */
     inline bool DateRangeFilterHasBeenSet() const { return m_dateRangeFilterHasBeenSet; }
-
-    /**
-     * <p>The object that contains a date range filter that will be applied to the
-     * transcript. Specify this object if you want Amazon Lex to only read the files
-     * that are within the date range.</p>
-     */
     inline void SetDateRangeFilter(const DateRangeFilter& value) { m_dateRangeFilterHasBeenSet = true; m_dateRangeFilter = value; }
-
-    /**
-     * <p>The object that contains a date range filter that will be applied to the
-     * transcript. Specify this object if you want Amazon Lex to only read the files
-     * that are within the date range.</p>
-     */
     inline void SetDateRangeFilter(DateRangeFilter&& value) { m_dateRangeFilterHasBeenSet = true; m_dateRangeFilter = std::move(value); }
-
-    /**
-     * <p>The object that contains a date range filter that will be applied to the
-     * transcript. Specify this object if you want Amazon Lex to only read the files
-     * that are within the date range.</p>
-     */
     inline LexTranscriptFilter& WithDateRangeFilter(const DateRangeFilter& value) { SetDateRangeFilter(value); return *this;}
-
-    /**
-     * <p>The object that contains a date range filter that will be applied to the
-     * transcript. Specify this object if you want Amazon Lex to only read the files
-     * that are within the date range.</p>
-     */
     inline LexTranscriptFilter& WithDateRangeFilter(DateRangeFilter&& value) { SetDateRangeFilter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DateRangeFilter m_dateRangeFilter;

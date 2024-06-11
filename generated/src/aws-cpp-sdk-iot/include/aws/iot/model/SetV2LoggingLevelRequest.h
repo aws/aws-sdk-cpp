@@ -33,67 +33,29 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The log target.</p>
      */
     inline const LogTarget& GetLogTarget() const{ return m_logTarget; }
-
-    /**
-     * <p>The log target.</p>
-     */
     inline bool LogTargetHasBeenSet() const { return m_logTargetHasBeenSet; }
-
-    /**
-     * <p>The log target.</p>
-     */
     inline void SetLogTarget(const LogTarget& value) { m_logTargetHasBeenSet = true; m_logTarget = value; }
-
-    /**
-     * <p>The log target.</p>
-     */
     inline void SetLogTarget(LogTarget&& value) { m_logTargetHasBeenSet = true; m_logTarget = std::move(value); }
-
-    /**
-     * <p>The log target.</p>
-     */
     inline SetV2LoggingLevelRequest& WithLogTarget(const LogTarget& value) { SetLogTarget(value); return *this;}
-
-    /**
-     * <p>The log target.</p>
-     */
     inline SetV2LoggingLevelRequest& WithLogTarget(LogTarget&& value) { SetLogTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The log level.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>The log level.</p>
-     */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    /**
-     * <p>The log level.</p>
-     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    /**
-     * <p>The log level.</p>
-     */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    /**
-     * <p>The log level.</p>
-     */
     inline SetV2LoggingLevelRequest& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>The log level.</p>
-     */
     inline SetV2LoggingLevelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogTarget m_logTarget;

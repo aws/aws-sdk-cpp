@@ -37,87 +37,33 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the project.</p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline ProjectSummary& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline ProjectSummary& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline ProjectSummary& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectSummary& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectSummary& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project.</p>
-     */
     inline ProjectSummary& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectId;

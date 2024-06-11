@@ -38,54 +38,20 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 location (bucket and prefix). For example:
      * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
      */
     inline const Aws::String& GetIntermediateS3Path() const{ return m_intermediateS3Path; }
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline bool IntermediateS3PathHasBeenSet() const { return m_intermediateS3PathHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline void SetIntermediateS3Path(const Aws::String& value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path = value; }
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline void SetIntermediateS3Path(Aws::String&& value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline void SetIntermediateS3Path(const char* value) { m_intermediateS3PathHasBeenSet = true; m_intermediateS3Path.assign(value); }
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline IntermediateSourceConfiguration& WithIntermediateS3Path(const Aws::String& value) { SetIntermediateS3Path(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline IntermediateSourceConfiguration& WithIntermediateS3Path(Aws::String&& value) { SetIntermediateS3Path(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 location (bucket and prefix). For example:
-     * <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-     */
     inline IntermediateSourceConfiguration& WithIntermediateS3Path(const char* value) { SetIntermediateS3Path(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_intermediateS3Path;

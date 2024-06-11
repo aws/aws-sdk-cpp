@@ -45,79 +45,31 @@ namespace Model
     AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
      */
     inline const MaxCountRule& GetMaxCountRule() const{ return m_maxCountRule; }
-
-    /**
-     * <p>Specify a max count rule to restrict the number of application versions that
-     * are retained for an application.</p>
-     */
     inline bool MaxCountRuleHasBeenSet() const { return m_maxCountRuleHasBeenSet; }
-
-    /**
-     * <p>Specify a max count rule to restrict the number of application versions that
-     * are retained for an application.</p>
-     */
     inline void SetMaxCountRule(const MaxCountRule& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = value; }
-
-    /**
-     * <p>Specify a max count rule to restrict the number of application versions that
-     * are retained for an application.</p>
-     */
     inline void SetMaxCountRule(MaxCountRule&& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = std::move(value); }
-
-    /**
-     * <p>Specify a max count rule to restrict the number of application versions that
-     * are retained for an application.</p>
-     */
     inline ApplicationVersionLifecycleConfig& WithMaxCountRule(const MaxCountRule& value) { SetMaxCountRule(value); return *this;}
-
-    /**
-     * <p>Specify a max count rule to restrict the number of application versions that
-     * are retained for an application.</p>
-     */
     inline ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRule&& value) { SetMaxCountRule(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify a max age rule to restrict the length of time that application
      * versions are retained for an application.</p>
      */
     inline const MaxAgeRule& GetMaxAgeRule() const{ return m_maxAgeRule; }
-
-    /**
-     * <p>Specify a max age rule to restrict the length of time that application
-     * versions are retained for an application.</p>
-     */
     inline bool MaxAgeRuleHasBeenSet() const { return m_maxAgeRuleHasBeenSet; }
-
-    /**
-     * <p>Specify a max age rule to restrict the length of time that application
-     * versions are retained for an application.</p>
-     */
     inline void SetMaxAgeRule(const MaxAgeRule& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = value; }
-
-    /**
-     * <p>Specify a max age rule to restrict the length of time that application
-     * versions are retained for an application.</p>
-     */
     inline void SetMaxAgeRule(MaxAgeRule&& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = std::move(value); }
-
-    /**
-     * <p>Specify a max age rule to restrict the length of time that application
-     * versions are retained for an application.</p>
-     */
     inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(const MaxAgeRule& value) { SetMaxAgeRule(value); return *this;}
-
-    /**
-     * <p>Specify a max age rule to restrict the length of time that application
-     * versions are retained for an application.</p>
-     */
     inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRule&& value) { SetMaxAgeRule(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MaxCountRule m_maxCountRule;

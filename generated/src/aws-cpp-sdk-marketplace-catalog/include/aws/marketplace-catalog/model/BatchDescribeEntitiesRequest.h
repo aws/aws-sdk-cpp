@@ -33,46 +33,19 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>List of entity IDs and the catalogs the entities are present in.</p>
      */
     inline const Aws::Vector<EntityRequest>& GetEntityRequestList() const{ return m_entityRequestList; }
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline bool EntityRequestListHasBeenSet() const { return m_entityRequestListHasBeenSet; }
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline void SetEntityRequestList(const Aws::Vector<EntityRequest>& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList = value; }
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline void SetEntityRequestList(Aws::Vector<EntityRequest>&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList = std::move(value); }
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline BatchDescribeEntitiesRequest& WithEntityRequestList(const Aws::Vector<EntityRequest>& value) { SetEntityRequestList(value); return *this;}
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline BatchDescribeEntitiesRequest& WithEntityRequestList(Aws::Vector<EntityRequest>&& value) { SetEntityRequestList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline BatchDescribeEntitiesRequest& AddEntityRequestList(const EntityRequest& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList.push_back(value); return *this; }
-
-    /**
-     * <p>List of entity IDs and the catalogs the entities are present in.</p>
-     */
     inline BatchDescribeEntitiesRequest& AddEntityRequestList(EntityRequest&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EntityRequest> m_entityRequestList;

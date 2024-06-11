@@ -41,203 +41,90 @@ namespace Model
     AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const CmafPackage& GetCmafPackage() const{ return m_cmafPackage; }
-
-    
     inline bool CmafPackageHasBeenSet() const { return m_cmafPackageHasBeenSet; }
-
-    
     inline void SetCmafPackage(const CmafPackage& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
-
-    
     inline void SetCmafPackage(CmafPackage&& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = std::move(value); }
-
-    
     inline CreatePackagingConfigurationRequest& WithCmafPackage(const CmafPackage& value) { SetCmafPackage(value); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
-
-    
     inline bool DashPackageHasBeenSet() const { return m_dashPackageHasBeenSet; }
-
-    
     inline void SetDashPackage(const DashPackage& value) { m_dashPackageHasBeenSet = true; m_dashPackage = value; }
-
-    
     inline void SetDashPackage(DashPackage&& value) { m_dashPackageHasBeenSet = true; m_dashPackage = std::move(value); }
-
-    
     inline CreatePackagingConfigurationRequest& WithDashPackage(const DashPackage& value) { SetDashPackage(value); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& WithDashPackage(DashPackage&& value) { SetDashPackage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HlsPackage& GetHlsPackage() const{ return m_hlsPackage; }
-
-    
     inline bool HlsPackageHasBeenSet() const { return m_hlsPackageHasBeenSet; }
-
-    
     inline void SetHlsPackage(const HlsPackage& value) { m_hlsPackageHasBeenSet = true; m_hlsPackage = value; }
-
-    
     inline void SetHlsPackage(HlsPackage&& value) { m_hlsPackageHasBeenSet = true; m_hlsPackage = std::move(value); }
-
-    
     inline CreatePackagingConfigurationRequest& WithHlsPackage(const HlsPackage& value) { SetHlsPackage(value); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& WithHlsPackage(HlsPackage&& value) { SetHlsPackage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the PackagingConfiguration.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline CreatePackagingConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline CreatePackagingConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the PackagingConfiguration.
-     */
     inline CreatePackagingConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MssPackage& GetMssPackage() const{ return m_mssPackage; }
-
-    
     inline bool MssPackageHasBeenSet() const { return m_mssPackageHasBeenSet; }
-
-    
     inline void SetMssPackage(const MssPackage& value) { m_mssPackageHasBeenSet = true; m_mssPackage = value; }
-
-    
     inline void SetMssPackage(MssPackage&& value) { m_mssPackageHasBeenSet = true; m_mssPackage = std::move(value); }
-
-    
     inline CreatePackagingConfigurationRequest& WithMssPackage(const MssPackage& value) { SetMssPackage(value); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& WithMssPackage(MssPackage&& value) { SetMssPackage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of a PackagingGroup.
      */
     inline const Aws::String& GetPackagingGroupId() const{ return m_packagingGroupId; }
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline bool PackagingGroupIdHasBeenSet() const { return m_packagingGroupIdHasBeenSet; }
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline void SetPackagingGroupId(const Aws::String& value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId = value; }
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline void SetPackagingGroupId(Aws::String&& value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId = std::move(value); }
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline void SetPackagingGroupId(const char* value) { m_packagingGroupIdHasBeenSet = true; m_packagingGroupId.assign(value); }
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline CreatePackagingConfigurationRequest& WithPackagingGroupId(const Aws::String& value) { SetPackagingGroupId(value); return *this;}
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline CreatePackagingConfigurationRequest& WithPackagingGroupId(Aws::String&& value) { SetPackagingGroupId(std::move(value)); return *this;}
-
-    /**
-     * The ID of a PackagingGroup.
-     */
     inline CreatePackagingConfigurationRequest& WithPackagingGroupId(const char* value) { SetPackagingGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    
     inline CreatePackagingConfigurationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    
     inline CreatePackagingConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     CmafPackage m_cmafPackage;

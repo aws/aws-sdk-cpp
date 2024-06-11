@@ -35,99 +35,42 @@ namespace Model
     AWS_VPCLATTICE_API RegisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The targets that were successfully registered.</p>
      */
     inline const Aws::Vector<Target>& GetSuccessful() const{ return m_successful; }
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline void SetSuccessful(const Aws::Vector<Target>& value) { m_successful = value; }
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline void SetSuccessful(Aws::Vector<Target>&& value) { m_successful = std::move(value); }
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline RegisterTargetsResult& WithSuccessful(const Aws::Vector<Target>& value) { SetSuccessful(value); return *this;}
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline RegisterTargetsResult& WithSuccessful(Aws::Vector<Target>&& value) { SetSuccessful(std::move(value)); return *this;}
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline RegisterTargetsResult& AddSuccessful(const Target& value) { m_successful.push_back(value); return *this; }
-
-    /**
-     * <p>The targets that were successfully registered.</p>
-     */
     inline RegisterTargetsResult& AddSuccessful(Target&& value) { m_successful.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The targets that were not registered.</p>
      */
     inline const Aws::Vector<TargetFailure>& GetUnsuccessful() const{ return m_unsuccessful; }
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline void SetUnsuccessful(const Aws::Vector<TargetFailure>& value) { m_unsuccessful = value; }
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline void SetUnsuccessful(Aws::Vector<TargetFailure>&& value) { m_unsuccessful = std::move(value); }
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline RegisterTargetsResult& WithUnsuccessful(const Aws::Vector<TargetFailure>& value) { SetUnsuccessful(value); return *this;}
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline RegisterTargetsResult& WithUnsuccessful(Aws::Vector<TargetFailure>&& value) { SetUnsuccessful(std::move(value)); return *this;}
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline RegisterTargetsResult& AddUnsuccessful(const TargetFailure& value) { m_unsuccessful.push_back(value); return *this; }
-
-    /**
-     * <p>The targets that were not registered.</p>
-     */
     inline RegisterTargetsResult& AddUnsuccessful(TargetFailure&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Target> m_successful;

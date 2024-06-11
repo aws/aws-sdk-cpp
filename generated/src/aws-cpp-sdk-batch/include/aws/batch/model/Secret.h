@@ -45,47 +45,21 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the secret.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline Secret& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline Secret& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline Secret& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
@@ -96,84 +70,14 @@ namespace Model
      * exists in a different Region, then the full ARN must be specified.</p> 
      */
     inline const Aws::String& GetValueFrom() const{ return m_valueFrom; }
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline bool ValueFromHasBeenSet() const { return m_valueFromHasBeenSet; }
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline void SetValueFrom(const Aws::String& value) { m_valueFromHasBeenSet = true; m_valueFrom = value; }
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline void SetValueFrom(Aws::String&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::move(value); }
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline void SetValueFrom(const char* value) { m_valueFromHasBeenSet = true; m_valueFrom.assign(value); }
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline Secret& WithValueFrom(const Aws::String& value) { SetValueFrom(value); return *this;}
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline Secret& WithValueFrom(Aws::String&& value) { SetValueFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>The secret to expose to the container. The supported values are either the
-     * full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of
-     * the parameter in the Amazon Web Services Systems Manager Parameter Store.</p>
-     *  <p>If the Amazon Web Services Systems Manager Parameter Store parameter
-     * exists in the same Region as the job you're launching, then you can use either
-     * the full Amazon Resource Name (ARN) or name of the parameter. If the parameter
-     * exists in a different Region, then the full ARN must be specified.</p> 
-     */
     inline Secret& WithValueFrom(const char* value) { SetValueFrom(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

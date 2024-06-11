@@ -37,36 +37,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Semtech GNSS solver configuration object.</p>
      */
     inline const SemtechGnssConfiguration& GetSemtechGnss() const{ return m_semtechGnss; }
-
-    /**
-     * <p>The Semtech GNSS solver configuration object.</p>
-     */
     inline bool SemtechGnssHasBeenSet() const { return m_semtechGnssHasBeenSet; }
-
-    /**
-     * <p>The Semtech GNSS solver configuration object.</p>
-     */
     inline void SetSemtechGnss(const SemtechGnssConfiguration& value) { m_semtechGnssHasBeenSet = true; m_semtechGnss = value; }
-
-    /**
-     * <p>The Semtech GNSS solver configuration object.</p>
-     */
     inline void SetSemtechGnss(SemtechGnssConfiguration&& value) { m_semtechGnssHasBeenSet = true; m_semtechGnss = std::move(value); }
-
-    /**
-     * <p>The Semtech GNSS solver configuration object.</p>
-     */
     inline PositionSolverConfigurations& WithSemtechGnss(const SemtechGnssConfiguration& value) { SetSemtechGnss(value); return *this;}
-
-    /**
-     * <p>The Semtech GNSS solver configuration object.</p>
-     */
     inline PositionSolverConfigurations& WithSemtechGnss(SemtechGnssConfiguration&& value) { SetSemtechGnss(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SemtechGnssConfiguration m_semtechGnss;

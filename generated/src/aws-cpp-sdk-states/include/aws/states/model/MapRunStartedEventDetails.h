@@ -38,46 +38,19 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
      */
     inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline MapRunStartedEventDetails& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline MapRunStartedEventDetails& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-     */
     inline MapRunStartedEventDetails& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mapRunArn;

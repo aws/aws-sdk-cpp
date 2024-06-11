@@ -34,113 +34,44 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API GetSlotTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects, one for each slot type, that provides information such
      * as the name of the slot type, the version, and a description.</p>
      */
     inline const Aws::Vector<SlotTypeMetadata>& GetSlotTypes() const{ return m_slotTypes; }
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline void SetSlotTypes(const Aws::Vector<SlotTypeMetadata>& value) { m_slotTypes = value; }
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline void SetSlotTypes(Aws::Vector<SlotTypeMetadata>&& value) { m_slotTypes = std::move(value); }
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline GetSlotTypesResult& WithSlotTypes(const Aws::Vector<SlotTypeMetadata>& value) { SetSlotTypes(value); return *this;}
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline GetSlotTypesResult& WithSlotTypes(Aws::Vector<SlotTypeMetadata>&& value) { SetSlotTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline GetSlotTypesResult& AddSlotTypes(const SlotTypeMetadata& value) { m_slotTypes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects, one for each slot type, that provides information such
-     * as the name of the slot type, the version, and a description.</p>
-     */
     inline GetSlotTypesResult& AddSlotTypes(SlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response is truncated, it includes a pagination token that you can
      * specify in your next request to fetch the next page of slot types.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline GetSlotTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline GetSlotTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, it includes a pagination token that you can
-     * specify in your next request to fetch the next page of slot types.</p>
-     */
     inline GetSlotTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSlotTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSlotTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSlotTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SlotTypeMetadata> m_slotTypes;

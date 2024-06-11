@@ -39,46 +39,19 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
      */
     inline const Aws::Vector<AvailabilityZoneInfo>& GetAvailabilityZoneInformation() const{ return m_availabilityZoneInformation; }
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline bool AvailabilityZoneInformationHasBeenSet() const { return m_availabilityZoneInformationHasBeenSet; }
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline void SetAvailabilityZoneInformation(const Aws::Vector<AvailabilityZoneInfo>& value) { m_availabilityZoneInformationHasBeenSet = true; m_availabilityZoneInformation = value; }
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline void SetAvailabilityZoneInformation(Aws::Vector<AvailabilityZoneInfo>&& value) { m_availabilityZoneInformationHasBeenSet = true; m_availabilityZoneInformation = std::move(value); }
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline EnvironmentInfo& WithAvailabilityZoneInformation(const Aws::Vector<AvailabilityZoneInfo>& value) { SetAvailabilityZoneInformation(value); return *this;}
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline EnvironmentInfo& WithAvailabilityZoneInformation(Aws::Vector<AvailabilityZoneInfo>&& value) { SetAvailabilityZoneInformation(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline EnvironmentInfo& AddAvailabilityZoneInformation(const AvailabilityZoneInfo& value) { m_availabilityZoneInformationHasBeenSet = true; m_availabilityZoneInformation.push_back(value); return *this; }
-
-    /**
-     * <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-     */
     inline EnvironmentInfo& AddAvailabilityZoneInformation(AvailabilityZoneInfo&& value) { m_availabilityZoneInformationHasBeenSet = true; m_availabilityZoneInformation.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AvailabilityZoneInfo> m_availabilityZoneInformation;

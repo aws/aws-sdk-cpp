@@ -39,87 +39,33 @@ namespace Model
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the party name.</p>
      */
     inline const Aws::String& GetPartyName() const{ return m_partyName; }
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline bool PartyNameHasBeenSet() const { return m_partyNameHasBeenSet; }
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline void SetPartyName(const Aws::String& value) { m_partyNameHasBeenSet = true; m_partyName = value; }
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline void SetPartyName(Aws::String&& value) { m_partyNameHasBeenSet = true; m_partyName = std::move(value); }
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline void SetPartyName(const char* value) { m_partyNameHasBeenSet = true; m_partyName.assign(value); }
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline EdiPartyName& WithPartyName(const Aws::String& value) { SetPartyName(value); return *this;}
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline EdiPartyName& WithPartyName(Aws::String&& value) { SetPartyName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the party name.</p>
-     */
     inline EdiPartyName& WithPartyName(const char* value) { SetPartyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the name assigner.</p>
      */
     inline const Aws::String& GetNameAssigner() const{ return m_nameAssigner; }
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline bool NameAssignerHasBeenSet() const { return m_nameAssignerHasBeenSet; }
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline void SetNameAssigner(const Aws::String& value) { m_nameAssignerHasBeenSet = true; m_nameAssigner = value; }
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline void SetNameAssigner(Aws::String&& value) { m_nameAssignerHasBeenSet = true; m_nameAssigner = std::move(value); }
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline void SetNameAssigner(const char* value) { m_nameAssignerHasBeenSet = true; m_nameAssigner.assign(value); }
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline EdiPartyName& WithNameAssigner(const Aws::String& value) { SetNameAssigner(value); return *this;}
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline EdiPartyName& WithNameAssigner(Aws::String&& value) { SetNameAssigner(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name assigner.</p>
-     */
     inline EdiPartyName& WithNameAssigner(const char* value) { SetNameAssigner(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_partyName;

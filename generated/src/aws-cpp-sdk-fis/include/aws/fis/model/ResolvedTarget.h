@@ -38,153 +38,52 @@ namespace Model
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource type of the target.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline ResolvedTarget& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline ResolvedTarget& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource type of the target.</p>
-     */
     inline ResolvedTarget& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the target.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline ResolvedTarget& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline ResolvedTarget& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the target.</p>
-     */
     inline ResolvedTarget& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the target.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTargetInformation() const{ return m_targetInformation; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline bool TargetInformationHasBeenSet() const { return m_targetInformationHasBeenSet; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline void SetTargetInformation(const Aws::Map<Aws::String, Aws::String>& value) { m_targetInformationHasBeenSet = true; m_targetInformation = value; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline void SetTargetInformation(Aws::Map<Aws::String, Aws::String>&& value) { m_targetInformationHasBeenSet = true; m_targetInformation = std::move(value); }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& WithTargetInformation(const Aws::Map<Aws::String, Aws::String>& value) { SetTargetInformation(value); return *this;}
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& WithTargetInformation(Aws::Map<Aws::String, Aws::String>&& value) { SetTargetInformation(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(const Aws::String& key, const Aws::String& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, value); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(Aws::String&& key, const Aws::String& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(const Aws::String& key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(Aws::String&& key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(const char* key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(Aws::String&& key, const char* value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Information about the target.</p>
-     */
     inline ResolvedTarget& AddTargetInformation(const char* key, const char* value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceType;

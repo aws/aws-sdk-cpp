@@ -40,95 +40,34 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The request header name that you want CloudFront to send to your staging
      * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
      */
     inline const Aws::String& GetHeader() const{ return m_header; }
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-
-    /**
-     * <p>The request header name that you want CloudFront to send to your staging
-     * distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithHeader(const char* value) { SetHeader(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The request header value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The request header value.</p>
-     */
     inline ContinuousDeploymentSingleHeaderConfig& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_header;

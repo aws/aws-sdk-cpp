@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API DescribeFraudsterRegistrationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the specified fraudster registration job.</p>
      */
     inline const FraudsterRegistrationJob& GetJob() const{ return m_job; }
-
-    /**
-     * <p>Contains details about the specified fraudster registration job.</p>
-     */
     inline void SetJob(const FraudsterRegistrationJob& value) { m_job = value; }
-
-    /**
-     * <p>Contains details about the specified fraudster registration job.</p>
-     */
     inline void SetJob(FraudsterRegistrationJob&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>Contains details about the specified fraudster registration job.</p>
-     */
     inline DescribeFraudsterRegistrationJobResult& WithJob(const FraudsterRegistrationJob& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>Contains details about the specified fraudster registration job.</p>
-     */
     inline DescribeFraudsterRegistrationJobResult& WithJob(FraudsterRegistrationJob&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFraudsterRegistrationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFraudsterRegistrationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFraudsterRegistrationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FraudsterRegistrationJob m_job;

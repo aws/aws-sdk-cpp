@@ -38,6 +38,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of groups, separated by semi-colons, that filters a query response
      * based on user context. The document is only returned to users that are in one of
@@ -45,63 +46,14 @@ namespace Model
      * <code>Query</code> API.</p>
      */
     inline const Aws::String& GetAllowedGroupsColumnName() const{ return m_allowedGroupsColumnName; }
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline bool AllowedGroupsColumnNameHasBeenSet() const { return m_allowedGroupsColumnNameHasBeenSet; }
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline void SetAllowedGroupsColumnName(const Aws::String& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = value; }
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline void SetAllowedGroupsColumnName(Aws::String&& value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName = std::move(value); }
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline void SetAllowedGroupsColumnName(const char* value) { m_allowedGroupsColumnNameHasBeenSet = true; m_allowedGroupsColumnName.assign(value); }
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline AclConfiguration& WithAllowedGroupsColumnName(const Aws::String& value) { SetAllowedGroupsColumnName(value); return *this;}
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline AclConfiguration& WithAllowedGroupsColumnName(Aws::String&& value) { SetAllowedGroupsColumnName(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of groups, separated by semi-colons, that filters a query response
-     * based on user context. The document is only returned to users that are in one of
-     * the groups specified in the <code>UserContext</code> field of the
-     * <code>Query</code> API.</p>
-     */
     inline AclConfiguration& WithAllowedGroupsColumnName(const char* value) { SetAllowedGroupsColumnName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_allowedGroupsColumnName;

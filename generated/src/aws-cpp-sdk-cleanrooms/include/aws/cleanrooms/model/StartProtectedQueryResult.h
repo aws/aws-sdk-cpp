@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API StartProtectedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The protected query.</p>
      */
     inline const ProtectedQuery& GetProtectedQuery() const{ return m_protectedQuery; }
-
-    /**
-     * <p>The protected query.</p>
-     */
     inline void SetProtectedQuery(const ProtectedQuery& value) { m_protectedQuery = value; }
-
-    /**
-     * <p>The protected query.</p>
-     */
     inline void SetProtectedQuery(ProtectedQuery&& value) { m_protectedQuery = std::move(value); }
-
-    /**
-     * <p>The protected query.</p>
-     */
     inline StartProtectedQueryResult& WithProtectedQuery(const ProtectedQuery& value) { SetProtectedQuery(value); return *this;}
-
-    /**
-     * <p>The protected query.</p>
-     */
     inline StartProtectedQueryResult& WithProtectedQuery(ProtectedQuery&& value) { SetProtectedQuery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartProtectedQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartProtectedQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartProtectedQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProtectedQuery m_protectedQuery;

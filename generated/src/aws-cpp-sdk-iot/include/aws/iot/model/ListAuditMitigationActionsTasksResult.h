@@ -34,106 +34,43 @@ namespace Model
     AWS_IOT_API ListAuditMitigationActionsTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The collection of audit mitigation tasks that matched the filter
      * criteria.</p>
      */
     inline const Aws::Vector<AuditMitigationActionsTaskMetadata>& GetTasks() const{ return m_tasks; }
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline void SetTasks(const Aws::Vector<AuditMitigationActionsTaskMetadata>& value) { m_tasks = value; }
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline void SetTasks(Aws::Vector<AuditMitigationActionsTaskMetadata>&& value) { m_tasks = std::move(value); }
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& WithTasks(const Aws::Vector<AuditMitigationActionsTaskMetadata>& value) { SetTasks(value); return *this;}
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& WithTasks(Aws::Vector<AuditMitigationActionsTaskMetadata>&& value) { SetTasks(std::move(value)); return *this;}
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& AddTasks(const AuditMitigationActionsTaskMetadata& value) { m_tasks.push_back(value); return *this; }
-
-    /**
-     * <p>The collection of audit mitigation tasks that matched the filter
-     * criteria.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& AddTasks(AuditMitigationActionsTaskMetadata&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListAuditMitigationActionsTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAuditMitigationActionsTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAuditMitigationActionsTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAuditMitigationActionsTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AuditMitigationActionsTaskMetadata> m_tasks;

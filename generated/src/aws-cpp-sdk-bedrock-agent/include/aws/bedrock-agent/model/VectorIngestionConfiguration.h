@@ -38,48 +38,19 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
      * refers to an excerpt from a data source that is returned when the knowledge base
      * that it belongs to is queried.</p>
      */
     inline const ChunkingConfiguration& GetChunkingConfiguration() const{ return m_chunkingConfiguration; }
-
-    /**
-     * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
-     * refers to an excerpt from a data source that is returned when the knowledge base
-     * that it belongs to is queried.</p>
-     */
     inline bool ChunkingConfigurationHasBeenSet() const { return m_chunkingConfigurationHasBeenSet; }
-
-    /**
-     * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
-     * refers to an excerpt from a data source that is returned when the knowledge base
-     * that it belongs to is queried.</p>
-     */
     inline void SetChunkingConfiguration(const ChunkingConfiguration& value) { m_chunkingConfigurationHasBeenSet = true; m_chunkingConfiguration = value; }
-
-    /**
-     * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
-     * refers to an excerpt from a data source that is returned when the knowledge base
-     * that it belongs to is queried.</p>
-     */
     inline void SetChunkingConfiguration(ChunkingConfiguration&& value) { m_chunkingConfigurationHasBeenSet = true; m_chunkingConfiguration = std::move(value); }
-
-    /**
-     * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
-     * refers to an excerpt from a data source that is returned when the knowledge base
-     * that it belongs to is queried.</p>
-     */
     inline VectorIngestionConfiguration& WithChunkingConfiguration(const ChunkingConfiguration& value) { SetChunkingConfiguration(value); return *this;}
-
-    /**
-     * <p>Details about how to chunk the documents in the data source. A <i>chunk</i>
-     * refers to an excerpt from a data source that is returned when the knowledge base
-     * that it belongs to is queried.</p>
-     */
     inline VectorIngestionConfiguration& WithChunkingConfiguration(ChunkingConfiguration&& value) { SetChunkingConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChunkingConfiguration m_chunkingConfiguration;

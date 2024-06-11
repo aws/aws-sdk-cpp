@@ -37,36 +37,17 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
      */
     inline const Status& GetKeyStatus() const{ return m_keyStatus; }
-
-    /**
-     * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-     */
     inline bool KeyStatusHasBeenSet() const { return m_keyStatusHasBeenSet; }
-
-    /**
-     * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-     */
     inline void SetKeyStatus(const Status& value) { m_keyStatusHasBeenSet = true; m_keyStatus = value; }
-
-    /**
-     * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-     */
     inline void SetKeyStatus(Status&& value) { m_keyStatusHasBeenSet = true; m_keyStatus = std::move(value); }
-
-    /**
-     * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-     */
     inline ApiKeyFilter& WithKeyStatus(const Status& value) { SetKeyStatus(value); return *this;}
-
-    /**
-     * <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-     */
     inline ApiKeyFilter& WithKeyStatus(Status&& value) { SetKeyStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Status m_keyStatus;

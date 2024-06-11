@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the patch baseline to delete.</p>
      */
     inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline void SetBaselineId(const Aws::String& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline void SetBaselineId(const char* value) { m_baselineIdHasBeenSet = true; m_baselineId.assign(value); }
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline DeletePatchBaselineRequest& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline DeletePatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the patch baseline to delete.</p>
-     */
     inline DeletePatchBaselineRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baselineId;

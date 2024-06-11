@@ -39,73 +39,30 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
      * segment.</p>
      */
     inline const SetDimension& GetCountry() const{ return m_country; }
-
-    /**
-     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
-     * segment.</p>
-     */
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-
-    /**
-     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
-     * segment.</p>
-     */
     inline void SetCountry(const SetDimension& value) { m_countryHasBeenSet = true; m_country = value; }
-
-    /**
-     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
-     * segment.</p>
-     */
     inline void SetCountry(SetDimension&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-
-    /**
-     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
-     * segment.</p>
-     */
     inline SegmentLocation& WithCountry(const SetDimension& value) { SetCountry(value); return *this;}
-
-    /**
-     * <p>The country or region code, in ISO 3166-1 alpha-2 format, for the
-     * segment.</p>
-     */
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The GPS location and range for the segment.</p>
      */
     inline const GPSPointDimension& GetGPSPoint() const{ return m_gPSPoint; }
-
-    /**
-     * <p>The GPS location and range for the segment.</p>
-     */
     inline bool GPSPointHasBeenSet() const { return m_gPSPointHasBeenSet; }
-
-    /**
-     * <p>The GPS location and range for the segment.</p>
-     */
     inline void SetGPSPoint(const GPSPointDimension& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = value; }
-
-    /**
-     * <p>The GPS location and range for the segment.</p>
-     */
     inline void SetGPSPoint(GPSPointDimension&& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = std::move(value); }
-
-    /**
-     * <p>The GPS location and range for the segment.</p>
-     */
     inline SegmentLocation& WithGPSPoint(const GPSPointDimension& value) { SetGPSPoint(value); return *this;}
-
-    /**
-     * <p>The GPS location and range for the segment.</p>
-     */
     inline SegmentLocation& WithGPSPoint(GPSPointDimension&& value) { SetGPSPoint(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SetDimension m_country;

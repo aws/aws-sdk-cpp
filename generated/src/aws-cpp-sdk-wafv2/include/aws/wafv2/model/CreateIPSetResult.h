@@ -33,6 +33,7 @@ namespace Model
     AWS_WAFV2_API CreateIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>High-level information about an <a>IPSet</a>, returned by operations like
      * create and list. This provides information like the ID, that you can use to
@@ -40,61 +41,22 @@ namespace Model
      * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
      */
     inline const IPSetSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>High-level information about an <a>IPSet</a>, returned by operations like
-     * create and list. This provides information like the ID, that you can use to
-     * retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the
-     * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
-     */
     inline void SetSummary(const IPSetSummary& value) { m_summary = value; }
-
-    /**
-     * <p>High-level information about an <a>IPSet</a>, returned by operations like
-     * create and list. This provides information like the ID, that you can use to
-     * retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the
-     * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
-     */
     inline void SetSummary(IPSetSummary&& value) { m_summary = std::move(value); }
-
-    /**
-     * <p>High-level information about an <a>IPSet</a>, returned by operations like
-     * create and list. This provides information like the ID, that you can use to
-     * retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the
-     * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
-     */
     inline CreateIPSetResult& WithSummary(const IPSetSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>High-level information about an <a>IPSet</a>, returned by operations like
-     * create and list. This provides information like the ID, that you can use to
-     * retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the
-     * <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
-     */
     inline CreateIPSetResult& WithSummary(IPSetSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateIPSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateIPSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateIPSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IPSetSummary m_summary;

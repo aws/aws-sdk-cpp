@@ -37,42 +37,18 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the batch builds to retrieve. Only batch builds that have this
      * status will be retrieved.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the batch builds to retrieve. Only batch builds that have this
-     * status will be retrieved.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the batch builds to retrieve. Only batch builds that have this
-     * status will be retrieved.</p>
-     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the batch builds to retrieve. Only batch builds that have this
-     * status will be retrieved.</p>
-     */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the batch builds to retrieve. Only batch builds that have this
-     * status will be retrieved.</p>
-     */
     inline BuildBatchFilter& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the batch builds to retrieve. Only batch builds that have this
-     * status will be retrieved.</p>
-     */
     inline BuildBatchFilter& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StatusType m_status;

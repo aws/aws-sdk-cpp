@@ -39,49 +39,21 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
      * instructions that you provide in the setting MCC XML.
      */
     inline const EsamManifestConfirmConditionNotification& GetManifestConfirmConditionNotification() const{ return m_manifestConfirmConditionNotification; }
-
-    /**
-     * Specifies an ESAM ManifestConfirmConditionNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML.
-     */
     inline bool ManifestConfirmConditionNotificationHasBeenSet() const { return m_manifestConfirmConditionNotificationHasBeenSet; }
-
-    /**
-     * Specifies an ESAM ManifestConfirmConditionNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML.
-     */
     inline void SetManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = value; }
-
-    /**
-     * Specifies an ESAM ManifestConfirmConditionNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML.
-     */
     inline void SetManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = std::move(value); }
-
-    /**
-     * Specifies an ESAM ManifestConfirmConditionNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML.
-     */
     inline EsamSettings& WithManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { SetManifestConfirmConditionNotification(value); return *this;}
-
-    /**
-     * Specifies an ESAM ManifestConfirmConditionNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
-     * instructions that you provide in the setting MCC XML.
-     */
     inline EsamSettings& WithManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { SetManifestConfirmConditionNotification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specifies the stream distance, in milliseconds, between the SCTE 35 messages
      * that the transcoder places and the splice points that they refer to. If the time
@@ -89,74 +61,24 @@ namespace Model
      * then the transcoder places the SCTE-35 marker at the beginning of the stream.
      */
     inline int GetResponseSignalPreroll() const{ return m_responseSignalPreroll; }
-
-    /**
-     * Specifies the stream distance, in milliseconds, between the SCTE 35 messages
-     * that the transcoder places and the splice points that they refer to. If the time
-     * between the start of the asset and the SCTE-35 message is less than this value,
-     * then the transcoder places the SCTE-35 marker at the beginning of the stream.
-     */
     inline bool ResponseSignalPrerollHasBeenSet() const { return m_responseSignalPrerollHasBeenSet; }
-
-    /**
-     * Specifies the stream distance, in milliseconds, between the SCTE 35 messages
-     * that the transcoder places and the splice points that they refer to. If the time
-     * between the start of the asset and the SCTE-35 message is less than this value,
-     * then the transcoder places the SCTE-35 marker at the beginning of the stream.
-     */
     inline void SetResponseSignalPreroll(int value) { m_responseSignalPrerollHasBeenSet = true; m_responseSignalPreroll = value; }
-
-    /**
-     * Specifies the stream distance, in milliseconds, between the SCTE 35 messages
-     * that the transcoder places and the splice points that they refer to. If the time
-     * between the start of the asset and the SCTE-35 message is less than this value,
-     * then the transcoder places the SCTE-35 marker at the beginning of the stream.
-     */
     inline EsamSettings& WithResponseSignalPreroll(int value) { SetResponseSignalPreroll(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
      * instructions that you provide in the setting SCC XML.
      */
     inline const EsamSignalProcessingNotification& GetSignalProcessingNotification() const{ return m_signalProcessingNotification; }
-
-    /**
-     * Specifies an ESAM SignalProcessingNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML.
-     */
     inline bool SignalProcessingNotificationHasBeenSet() const { return m_signalProcessingNotificationHasBeenSet; }
-
-    /**
-     * Specifies an ESAM SignalProcessingNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML.
-     */
     inline void SetSignalProcessingNotification(const EsamSignalProcessingNotification& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = value; }
-
-    /**
-     * Specifies an ESAM SignalProcessingNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML.
-     */
     inline void SetSignalProcessingNotification(EsamSignalProcessingNotification&& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = std::move(value); }
-
-    /**
-     * Specifies an ESAM SignalProcessingNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML.
-     */
     inline EsamSettings& WithSignalProcessingNotification(const EsamSignalProcessingNotification& value) { SetSignalProcessingNotification(value); return *this;}
-
-    /**
-     * Specifies an ESAM SignalProcessingNotification XML as per
-     * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
-     * instructions that you provide in the setting SCC XML.
-     */
     inline EsamSettings& WithSignalProcessingNotification(EsamSignalProcessingNotification&& value) { SetSignalProcessingNotification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EsamManifestConfirmConditionNotification m_manifestConfirmConditionNotification;

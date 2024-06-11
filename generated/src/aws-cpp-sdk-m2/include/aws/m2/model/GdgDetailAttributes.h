@@ -42,67 +42,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
-     */
     inline GdgDetailAttributes& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The disposition of the data set in the catalog.</p>
      */
     inline const Aws::String& GetRollDisposition() const{ return m_rollDisposition; }
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline bool RollDispositionHasBeenSet() const { return m_rollDispositionHasBeenSet; }
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline void SetRollDisposition(const Aws::String& value) { m_rollDispositionHasBeenSet = true; m_rollDisposition = value; }
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline void SetRollDisposition(Aws::String&& value) { m_rollDispositionHasBeenSet = true; m_rollDisposition = std::move(value); }
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline void SetRollDisposition(const char* value) { m_rollDispositionHasBeenSet = true; m_rollDisposition.assign(value); }
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline GdgDetailAttributes& WithRollDisposition(const Aws::String& value) { SetRollDisposition(value); return *this;}
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline GdgDetailAttributes& WithRollDisposition(Aws::String&& value) { SetRollDisposition(std::move(value)); return *this;}
-
-    /**
-     * <p>The disposition of the data set in the catalog.</p>
-     */
     inline GdgDetailAttributes& WithRollDisposition(const char* value) { SetRollDisposition(value); return *this;}
-
+    ///@}
   private:
 
     int m_limit;

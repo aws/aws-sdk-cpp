@@ -34,79 +34,31 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the application for which you want to get the version
      * description.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline DescribeApplicationVersionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline DescribeApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application for which you want to get the version
-     * description.</p>
-     */
     inline DescribeApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the application version for which you want to get the
      * description.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>The ID of the application version for which you want to get the
-     * description.</p>
-     */
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application version for which you want to get the
-     * description.</p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
-
-    /**
-     * <p>The ID of the application version for which you want to get the
-     * description.</p>
-     */
     inline DescribeApplicationVersionRequest& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

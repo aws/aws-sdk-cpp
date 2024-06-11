@@ -43,126 +43,46 @@ namespace Model
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the resource group.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline ResourceGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline ResourceGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource group.</p>
-     */
     inline ResourceGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags (key and value pairs) of the resource group. This data type property
      * is used in the <a>CreateResourceGroup</a> action.</p>
      */
     inline const Aws::Vector<ResourceGroupTag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline void SetTags(const Aws::Vector<ResourceGroupTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline void SetTags(Aws::Vector<ResourceGroupTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline ResourceGroup& WithTags(const Aws::Vector<ResourceGroupTag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline ResourceGroup& WithTags(Aws::Vector<ResourceGroupTag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline ResourceGroup& AddTags(const ResourceGroupTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags (key and value pairs) of the resource group. This data type property
-     * is used in the <a>CreateResourceGroup</a> action.</p>
-     */
     inline ResourceGroup& AddTags(ResourceGroupTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which resource group is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The time at which resource group is created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The time at which resource group is created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The time at which resource group is created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The time at which resource group is created.</p>
-     */
     inline ResourceGroup& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The time at which resource group is created.</p>
-     */
     inline ResourceGroup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

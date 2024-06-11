@@ -32,63 +32,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API DisableDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the directory that has been disabled.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArn = value; }
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArn.assign(value); }
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline DisableDirectoryResult& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline DisableDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the directory that has been disabled.</p>
-     */
     inline DisableDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisableDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisableDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisableDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

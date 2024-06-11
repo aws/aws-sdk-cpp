@@ -37,87 +37,33 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The step ID.</p>
      */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-
-    /**
-     * <p>The step ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task ID.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task ID.</p>
-     */
     inline TaskRunSessionActionDefinitionSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stepId;

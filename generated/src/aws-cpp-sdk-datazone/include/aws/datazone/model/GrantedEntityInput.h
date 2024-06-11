@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The listing for which a subscription is to be granted.</p>
      */
     inline const ListingRevisionInput& GetListing() const{ return m_listing; }
-
-    /**
-     * <p>The listing for which a subscription is to be granted.</p>
-     */
     inline bool ListingHasBeenSet() const { return m_listingHasBeenSet; }
-
-    /**
-     * <p>The listing for which a subscription is to be granted.</p>
-     */
     inline void SetListing(const ListingRevisionInput& value) { m_listingHasBeenSet = true; m_listing = value; }
-
-    /**
-     * <p>The listing for which a subscription is to be granted.</p>
-     */
     inline void SetListing(ListingRevisionInput&& value) { m_listingHasBeenSet = true; m_listing = std::move(value); }
-
-    /**
-     * <p>The listing for which a subscription is to be granted.</p>
-     */
     inline GrantedEntityInput& WithListing(const ListingRevisionInput& value) { SetListing(value); return *this;}
-
-    /**
-     * <p>The listing for which a subscription is to be granted.</p>
-     */
     inline GrantedEntityInput& WithListing(ListingRevisionInput&& value) { SetListing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ListingRevisionInput m_listing;

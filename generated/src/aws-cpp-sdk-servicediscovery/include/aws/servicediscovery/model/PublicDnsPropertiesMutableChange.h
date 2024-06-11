@@ -38,42 +38,18 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
      * for the public DNS namespace.</p>
      */
     inline const SOAChange& GetSOA() const{ return m_sOA; }
-
-    /**
-     * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
-     * for the public DNS namespace.</p>
-     */
     inline bool SOAHasBeenSet() const { return m_sOAHasBeenSet; }
-
-    /**
-     * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
-     * for the public DNS namespace.</p>
-     */
     inline void SetSOA(const SOAChange& value) { m_sOAHasBeenSet = true; m_sOA = value; }
-
-    /**
-     * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
-     * for the public DNS namespace.</p>
-     */
     inline void SetSOA(SOAChange&& value) { m_sOAHasBeenSet = true; m_sOA = std::move(value); }
-
-    /**
-     * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
-     * for the public DNS namespace.</p>
-     */
     inline PublicDnsPropertiesMutableChange& WithSOA(const SOAChange& value) { SetSOA(value); return *this;}
-
-    /**
-     * <p>Updated fields for the Start of Authority (SOA) record for the hosted zone
-     * for the public DNS namespace.</p>
-     */
     inline PublicDnsPropertiesMutableChange& WithSOA(SOAChange&& value) { SetSOA(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SOAChange m_sOA;

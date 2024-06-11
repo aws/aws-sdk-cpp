@@ -35,54 +35,20 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Provides information about source databases to analyze. After this analysis,
      * Fleet Advisor recommends target engines for each source database.</p>
      */
     inline const Aws::Vector<StartRecommendationsRequestEntry>& GetData() const{ return m_data; }
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline void SetData(const Aws::Vector<StartRecommendationsRequestEntry>& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline void SetData(Aws::Vector<StartRecommendationsRequestEntry>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline BatchStartRecommendationsRequest& WithData(const Aws::Vector<StartRecommendationsRequestEntry>& value) { SetData(value); return *this;}
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline BatchStartRecommendationsRequest& WithData(Aws::Vector<StartRecommendationsRequestEntry>&& value) { SetData(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline BatchStartRecommendationsRequest& AddData(const StartRecommendationsRequestEntry& value) { m_dataHasBeenSet = true; m_data.push_back(value); return *this; }
-
-    /**
-     * <p>Provides information about source databases to analyze. After this analysis,
-     * Fleet Advisor recommends target engines for each source database.</p>
-     */
     inline BatchStartRecommendationsRequest& AddData(StartRecommendationsRequestEntry&& value) { m_dataHasBeenSet = true; m_data.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StartRecommendationsRequestEntry> m_data;

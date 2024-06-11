@@ -38,103 +38,35 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline SessionCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline SessionCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
-     * 'gluestreaming'.</p>
-     */
     inline SessionCommand& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the Python version. The Python version indicates the version
      * supported for jobs of type Spark.</p>
      */
     inline const Aws::String& GetPythonVersion() const{ return m_pythonVersion; }
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline bool PythonVersionHasBeenSet() const { return m_pythonVersionHasBeenSet; }
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline void SetPythonVersion(const Aws::String& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = value; }
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline void SetPythonVersion(Aws::String&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::move(value); }
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline void SetPythonVersion(const char* value) { m_pythonVersionHasBeenSet = true; m_pythonVersion.assign(value); }
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline SessionCommand& WithPythonVersion(const Aws::String& value) { SetPythonVersion(value); return *this;}
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline SessionCommand& WithPythonVersion(Aws::String&& value) { SetPythonVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Python version. The Python version indicates the version
-     * supported for jobs of type Spark.</p>
-     */
     inline SessionCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

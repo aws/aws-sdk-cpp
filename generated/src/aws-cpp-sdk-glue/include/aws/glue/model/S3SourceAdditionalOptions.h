@@ -36,55 +36,27 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets the upper limit for the target size of the dataset in bytes that will be
      * processed.</p>
      */
     inline long long GetBoundedSize() const{ return m_boundedSize; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline bool BoundedSizeHasBeenSet() const { return m_boundedSizeHasBeenSet; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline void SetBoundedSize(long long value) { m_boundedSizeHasBeenSet = true; m_boundedSize = value; }
-
-    /**
-     * <p>Sets the upper limit for the target size of the dataset in bytes that will be
-     * processed.</p>
-     */
     inline S3SourceAdditionalOptions& WithBoundedSize(long long value) { SetBoundedSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the upper limit for the target number of files that will be
      * processed.</p>
      */
     inline long long GetBoundedFiles() const{ return m_boundedFiles; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline bool BoundedFilesHasBeenSet() const { return m_boundedFilesHasBeenSet; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline void SetBoundedFiles(long long value) { m_boundedFilesHasBeenSet = true; m_boundedFiles = value; }
-
-    /**
-     * <p>Sets the upper limit for the target number of files that will be
-     * processed.</p>
-     */
     inline S3SourceAdditionalOptions& WithBoundedFiles(long long value) { SetBoundedFiles(value); return *this;}
-
+    ///@}
   private:
 
     long long m_boundedSize;

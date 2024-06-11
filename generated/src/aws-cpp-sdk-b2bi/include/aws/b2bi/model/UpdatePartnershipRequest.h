@@ -35,133 +35,48 @@ namespace Model
     AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the unique, system-generated identifier for a partnership.</p>
      */
     inline const Aws::String& GetPartnershipId() const{ return m_partnershipId; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline bool PartnershipIdHasBeenSet() const { return m_partnershipIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline void SetPartnershipId(const Aws::String& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = value; }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline void SetPartnershipId(Aws::String&& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = std::move(value); }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline void SetPartnershipId(const char* value) { m_partnershipIdHasBeenSet = true; m_partnershipId.assign(value); }
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline UpdatePartnershipRequest& WithPartnershipId(const Aws::String& value) { SetPartnershipId(value); return *this;}
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline UpdatePartnershipRequest& WithPartnershipId(Aws::String&& value) { SetPartnershipId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the unique, system-generated identifier for a partnership.</p>
-     */
     inline UpdatePartnershipRequest& WithPartnershipId(const char* value) { SetPartnershipId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the partnership, used to identify it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline UpdatePartnershipRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline UpdatePartnershipRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the partnership, used to identify it.</p>
-     */
     inline UpdatePartnershipRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of the capabilities associated with this partnership.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCapabilities() const{ return m_capabilities; }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline void SetCapabilities(const Aws::Vector<Aws::String>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline void SetCapabilities(Aws::Vector<Aws::String>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline UpdatePartnershipRequest& WithCapabilities(const Aws::Vector<Aws::String>& value) { SetCapabilities(value); return *this;}
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline UpdatePartnershipRequest& WithCapabilities(Aws::Vector<Aws::String>&& value) { SetCapabilities(std::move(value)); return *this;}
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline UpdatePartnershipRequest& AddCapabilities(const Aws::String& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline UpdatePartnershipRequest& AddCapabilities(Aws::String&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of the capabilities associated with this partnership.</p>
-     */
     inline UpdatePartnershipRequest& AddCapabilities(const char* value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_partnershipId;

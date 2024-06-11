@@ -41,71 +41,30 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes the media accelerators for the instance type.</p>
      */
     inline const Aws::Vector<MediaDeviceInfo>& GetAccelerators() const{ return m_accelerators; }
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline bool AcceleratorsHasBeenSet() const { return m_acceleratorsHasBeenSet; }
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline void SetAccelerators(const Aws::Vector<MediaDeviceInfo>& value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline void SetAccelerators(Aws::Vector<MediaDeviceInfo>&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::move(value); }
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline MediaAcceleratorInfo& WithAccelerators(const Aws::Vector<MediaDeviceInfo>& value) { SetAccelerators(value); return *this;}
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline MediaAcceleratorInfo& WithAccelerators(Aws::Vector<MediaDeviceInfo>&& value) { SetAccelerators(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline MediaAcceleratorInfo& AddAccelerators(const MediaDeviceInfo& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the media accelerators for the instance type.</p>
-     */
     inline MediaAcceleratorInfo& AddAccelerators(MediaDeviceInfo&& value) { m_acceleratorsHasBeenSet = true; m_accelerators.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total size of the memory for the media accelerators for the instance
      * type, in MiB.</p>
      */
     inline int GetTotalMediaMemoryInMiB() const{ return m_totalMediaMemoryInMiB; }
-
-    /**
-     * <p>The total size of the memory for the media accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline bool TotalMediaMemoryInMiBHasBeenSet() const { return m_totalMediaMemoryInMiBHasBeenSet; }
-
-    /**
-     * <p>The total size of the memory for the media accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline void SetTotalMediaMemoryInMiB(int value) { m_totalMediaMemoryInMiBHasBeenSet = true; m_totalMediaMemoryInMiB = value; }
-
-    /**
-     * <p>The total size of the memory for the media accelerators for the instance
-     * type, in MiB.</p>
-     */
     inline MediaAcceleratorInfo& WithTotalMediaMemoryInMiB(int value) { SetTotalMediaMemoryInMiB(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MediaDeviceInfo> m_accelerators;

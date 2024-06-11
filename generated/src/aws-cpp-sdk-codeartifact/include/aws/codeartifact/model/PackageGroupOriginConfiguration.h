@@ -40,66 +40,22 @@ namespace Model
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The origin configuration settings that determine how package versions can
      * enter repositories.</p>
      */
     inline const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& GetRestrictions() const{ return m_restrictions; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline void SetRestrictions(const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline void SetRestrictions(Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& WithRestrictions(const Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>& value) { SetRestrictions(value); return *this;}
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& WithRestrictions(Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction>&& value) { SetRestrictions(std::move(value)); return *this;}
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& AddRestrictions(const PackageGroupOriginRestrictionType& key, const PackageGroupOriginRestriction& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(key, value); return *this; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& AddRestrictions(PackageGroupOriginRestrictionType&& key, const PackageGroupOriginRestriction& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& AddRestrictions(const PackageGroupOriginRestrictionType& key, PackageGroupOriginRestriction&& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The origin configuration settings that determine how package versions can
-     * enter repositories.</p>
-     */
     inline PackageGroupOriginConfiguration& AddRestrictions(PackageGroupOriginRestrictionType&& key, PackageGroupOriginRestriction&& value) { m_restrictionsHasBeenSet = true; m_restrictions.emplace(std::move(key), std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<PackageGroupOriginRestrictionType, PackageGroupOriginRestriction> m_restrictions;

@@ -33,53 +33,27 @@ namespace Model
     AWS_SSO_API GetRoleCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The credentials for the role that is assigned to the user.</p>
      */
     inline const RoleCredentials& GetRoleCredentials() const{ return m_roleCredentials; }
-
-    /**
-     * <p>The credentials for the role that is assigned to the user.</p>
-     */
     inline void SetRoleCredentials(const RoleCredentials& value) { m_roleCredentials = value; }
-
-    /**
-     * <p>The credentials for the role that is assigned to the user.</p>
-     */
     inline void SetRoleCredentials(RoleCredentials&& value) { m_roleCredentials = std::move(value); }
-
-    /**
-     * <p>The credentials for the role that is assigned to the user.</p>
-     */
     inline GetRoleCredentialsResult& WithRoleCredentials(const RoleCredentials& value) { SetRoleCredentials(value); return *this;}
-
-    /**
-     * <p>The credentials for the role that is assigned to the user.</p>
-     */
     inline GetRoleCredentialsResult& WithRoleCredentials(RoleCredentials&& value) { SetRoleCredentials(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRoleCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRoleCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRoleCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RoleCredentials m_roleCredentials;

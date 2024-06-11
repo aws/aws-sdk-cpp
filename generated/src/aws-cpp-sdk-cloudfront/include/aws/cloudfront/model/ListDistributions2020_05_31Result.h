@@ -39,53 +39,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListDistributions2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>DistributionList</code> type.</p>
      */
     inline const DistributionList& GetDistributionList() const{ return m_distributionList; }
-
-    /**
-     * <p>The <code>DistributionList</code> type.</p>
-     */
     inline void SetDistributionList(const DistributionList& value) { m_distributionList = value; }
-
-    /**
-     * <p>The <code>DistributionList</code> type.</p>
-     */
     inline void SetDistributionList(DistributionList&& value) { m_distributionList = std::move(value); }
-
-    /**
-     * <p>The <code>DistributionList</code> type.</p>
-     */
     inline ListDistributions2020_05_31Result& WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
-
-    /**
-     * <p>The <code>DistributionList</code> type.</p>
-     */
     inline ListDistributions2020_05_31Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDistributions2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDistributions2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDistributions2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DistributionList m_distributionList;

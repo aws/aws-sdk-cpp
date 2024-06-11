@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * channel ID
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
-
-    /**
-     * channel ID
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * channel ID
-     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * channel ID
-     */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-
-    /**
-     * channel ID
-     */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-
-    /**
-     * channel ID
-     */
     inline DescribeChannelRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-
-    /**
-     * channel ID
-     */
     inline DescribeChannelRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-
-    /**
-     * channel ID
-     */
     inline DescribeChannelRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelId;

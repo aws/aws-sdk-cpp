@@ -38,42 +38,18 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The billing period range in which the custom line item version is
      * applied.</p>
      */
     inline const ListCustomLineItemVersionsBillingPeriodRangeFilter& GetBillingPeriodRange() const{ return m_billingPeriodRange; }
-
-    /**
-     * <p>The billing period range in which the custom line item version is
-     * applied.</p>
-     */
     inline bool BillingPeriodRangeHasBeenSet() const { return m_billingPeriodRangeHasBeenSet; }
-
-    /**
-     * <p>The billing period range in which the custom line item version is
-     * applied.</p>
-     */
     inline void SetBillingPeriodRange(const ListCustomLineItemVersionsBillingPeriodRangeFilter& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = value; }
-
-    /**
-     * <p>The billing period range in which the custom line item version is
-     * applied.</p>
-     */
     inline void SetBillingPeriodRange(ListCustomLineItemVersionsBillingPeriodRangeFilter&& value) { m_billingPeriodRangeHasBeenSet = true; m_billingPeriodRange = std::move(value); }
-
-    /**
-     * <p>The billing period range in which the custom line item version is
-     * applied.</p>
-     */
     inline ListCustomLineItemVersionsFilter& WithBillingPeriodRange(const ListCustomLineItemVersionsBillingPeriodRangeFilter& value) { SetBillingPeriodRange(value); return *this;}
-
-    /**
-     * <p>The billing period range in which the custom line item version is
-     * applied.</p>
-     */
     inline ListCustomLineItemVersionsFilter& WithBillingPeriodRange(ListCustomLineItemVersionsBillingPeriodRangeFilter&& value) { SetBillingPeriodRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ListCustomLineItemVersionsBillingPeriodRangeFilter m_billingPeriodRange;

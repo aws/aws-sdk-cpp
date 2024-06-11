@@ -38,54 +38,20 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identity (that is, the email address or domain) that you want to delete
      * from your Amazon Pinpoint account.</p>
      */
     inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity (that is, the email address or domain) that you want to delete
-     * from your Amazon Pinpoint account.</p>
-     */
     inline DeleteEmailIdentityRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailIdentity;

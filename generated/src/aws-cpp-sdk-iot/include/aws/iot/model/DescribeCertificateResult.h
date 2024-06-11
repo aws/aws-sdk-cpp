@@ -39,53 +39,27 @@ namespace Model
     AWS_IOT_API DescribeCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the certificate.</p>
      */
     inline const CertificateDescription& GetCertificateDescription() const{ return m_certificateDescription; }
-
-    /**
-     * <p>The description of the certificate.</p>
-     */
     inline void SetCertificateDescription(const CertificateDescription& value) { m_certificateDescription = value; }
-
-    /**
-     * <p>The description of the certificate.</p>
-     */
     inline void SetCertificateDescription(CertificateDescription&& value) { m_certificateDescription = std::move(value); }
-
-    /**
-     * <p>The description of the certificate.</p>
-     */
     inline DescribeCertificateResult& WithCertificateDescription(const CertificateDescription& value) { SetCertificateDescription(value); return *this;}
-
-    /**
-     * <p>The description of the certificate.</p>
-     */
     inline DescribeCertificateResult& WithCertificateDescription(CertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CertificateDescription m_certificateDescription;

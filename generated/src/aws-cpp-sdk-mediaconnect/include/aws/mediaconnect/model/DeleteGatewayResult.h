@@ -32,63 +32,29 @@ namespace Model
     AWS_MEDIACONNECT_API DeleteGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the gateway that was deleted.
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline DeleteGatewayResult& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline DeleteGatewayResult& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that was deleted.
-     */
     inline DeleteGatewayResult& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayArn;

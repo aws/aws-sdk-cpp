@@ -34,106 +34,43 @@ namespace Model
     AWS_SSM_API DescribeMaintenanceWindowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the maintenance window executions.</p>
      */
     inline const Aws::Vector<MaintenanceWindowExecution>& GetWindowExecutions() const{ return m_windowExecutions; }
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline void SetWindowExecutions(const Aws::Vector<MaintenanceWindowExecution>& value) { m_windowExecutions = value; }
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline void SetWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { m_windowExecutions = std::move(value); }
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(const Aws::Vector<MaintenanceWindowExecution>& value) { SetWindowExecutions(value); return *this;}
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& WithWindowExecutions(Aws::Vector<MaintenanceWindowExecution>&& value) { SetWindowExecutions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(const MaintenanceWindowExecution& value) { m_windowExecutions.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the maintenance window executions.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(MaintenanceWindowExecution&& value) { m_windowExecutions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
     inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMaintenanceWindowExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMaintenanceWindowExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMaintenanceWindowExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MaintenanceWindowExecution> m_windowExecutions;

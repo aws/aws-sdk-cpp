@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKER_API ListHubContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The summaries of the listed hub content.</p>
      */
     inline const Aws::Vector<HubContentInfo>& GetHubContentSummaries() const{ return m_hubContentSummaries; }
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline void SetHubContentSummaries(const Aws::Vector<HubContentInfo>& value) { m_hubContentSummaries = value; }
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline void SetHubContentSummaries(Aws::Vector<HubContentInfo>&& value) { m_hubContentSummaries = std::move(value); }
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline ListHubContentsResult& WithHubContentSummaries(const Aws::Vector<HubContentInfo>& value) { SetHubContentSummaries(value); return *this;}
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline ListHubContentsResult& WithHubContentSummaries(Aws::Vector<HubContentInfo>&& value) { SetHubContentSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline ListHubContentsResult& AddHubContentSummaries(const HubContentInfo& value) { m_hubContentSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>The summaries of the listed hub content.</p>
-     */
     inline ListHubContentsResult& AddHubContentSummaries(HubContentInfo&& value) { m_hubContentSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of hub content, use it in the subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline ListHubContentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline ListHubContentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of hub content, use it in the subsequent request.</p>
-     */
     inline ListHubContentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListHubContentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListHubContentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListHubContentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<HubContentInfo> m_hubContentSummaries;

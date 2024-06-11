@@ -40,36 +40,17 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains details about the updates to be applied to a static policy.</p>
      */
     inline const UpdateStaticPolicyDefinition& GetStatic() const{ return m_static; }
-
-    /**
-     * <p>Contains details about the updates to be applied to a static policy.</p>
-     */
     inline bool StaticHasBeenSet() const { return m_staticHasBeenSet; }
-
-    /**
-     * <p>Contains details about the updates to be applied to a static policy.</p>
-     */
     inline void SetStatic(const UpdateStaticPolicyDefinition& value) { m_staticHasBeenSet = true; m_static = value; }
-
-    /**
-     * <p>Contains details about the updates to be applied to a static policy.</p>
-     */
     inline void SetStatic(UpdateStaticPolicyDefinition&& value) { m_staticHasBeenSet = true; m_static = std::move(value); }
-
-    /**
-     * <p>Contains details about the updates to be applied to a static policy.</p>
-     */
     inline UpdatePolicyDefinition& WithStatic(const UpdateStaticPolicyDefinition& value) { SetStatic(value); return *this;}
-
-    /**
-     * <p>Contains details about the updates to be applied to a static policy.</p>
-     */
     inline UpdatePolicyDefinition& WithStatic(UpdateStaticPolicyDefinition&& value) { SetStatic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateStaticPolicyDefinition m_static;

@@ -38,65 +38,29 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value, specified as a percent total of a service's
      * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
      * between 0 and 100.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
-     * between 0 and 100.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
-     * between 0 and 100.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
-     * between 0 and 100.</p>
-     */
     inline Scale& WithValue(double value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of measure for the scale value.</p>
      */
     inline const ScaleUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of measure for the scale value.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of measure for the scale value.</p>
-     */
     inline void SetUnit(const ScaleUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of measure for the scale value.</p>
-     */
     inline void SetUnit(ScaleUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of measure for the scale value.</p>
-     */
     inline Scale& WithUnit(const ScaleUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of measure for the scale value.</p>
-     */
     inline Scale& WithUnit(ScaleUnit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_value;

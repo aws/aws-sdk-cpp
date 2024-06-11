@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the DB proxy endpoint to delete.</p>
      */
     inline const Aws::String& GetDBProxyEndpointName() const{ return m_dBProxyEndpointName; }
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline bool DBProxyEndpointNameHasBeenSet() const { return m_dBProxyEndpointNameHasBeenSet; }
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline void SetDBProxyEndpointName(const Aws::String& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = value; }
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline void SetDBProxyEndpointName(Aws::String&& value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName = std::move(value); }
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline void SetDBProxyEndpointName(const char* value) { m_dBProxyEndpointNameHasBeenSet = true; m_dBProxyEndpointName.assign(value); }
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline DeleteDBProxyEndpointRequest& WithDBProxyEndpointName(const Aws::String& value) { SetDBProxyEndpointName(value); return *this;}
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline DeleteDBProxyEndpointRequest& WithDBProxyEndpointName(Aws::String&& value) { SetDBProxyEndpointName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DB proxy endpoint to delete.</p>
-     */
     inline DeleteDBProxyEndpointRequest& WithDBProxyEndpointName(const char* value) { SetDBProxyEndpointName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBProxyEndpointName;

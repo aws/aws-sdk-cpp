@@ -33,53 +33,27 @@ namespace Model
     AWS_IVS_API GetRecordingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <zonbook></zonbook><xhtml></xhtml>
      */
     inline const RecordingConfiguration& GetRecordingConfiguration() const{ return m_recordingConfiguration; }
-
-    /**
-     * <zonbook></zonbook><xhtml></xhtml>
-     */
     inline void SetRecordingConfiguration(const RecordingConfiguration& value) { m_recordingConfiguration = value; }
-
-    /**
-     * <zonbook></zonbook><xhtml></xhtml>
-     */
     inline void SetRecordingConfiguration(RecordingConfiguration&& value) { m_recordingConfiguration = std::move(value); }
-
-    /**
-     * <zonbook></zonbook><xhtml></xhtml>
-     */
     inline GetRecordingConfigurationResult& WithRecordingConfiguration(const RecordingConfiguration& value) { SetRecordingConfiguration(value); return *this;}
-
-    /**
-     * <zonbook></zonbook><xhtml></xhtml>
-     */
     inline GetRecordingConfigurationResult& WithRecordingConfiguration(RecordingConfiguration&& value) { SetRecordingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecordingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecordingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecordingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RecordingConfiguration m_recordingConfiguration;

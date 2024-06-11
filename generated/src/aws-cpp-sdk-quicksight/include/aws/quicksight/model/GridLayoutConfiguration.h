@@ -42,65 +42,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The elements that are included in a grid layout.</p>
      */
     inline const Aws::Vector<GridLayoutElement>& GetElements() const{ return m_elements; }
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline bool ElementsHasBeenSet() const { return m_elementsHasBeenSet; }
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline void SetElements(const Aws::Vector<GridLayoutElement>& value) { m_elementsHasBeenSet = true; m_elements = value; }
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline void SetElements(Aws::Vector<GridLayoutElement>&& value) { m_elementsHasBeenSet = true; m_elements = std::move(value); }
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline GridLayoutConfiguration& WithElements(const Aws::Vector<GridLayoutElement>& value) { SetElements(value); return *this;}
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline GridLayoutConfiguration& WithElements(Aws::Vector<GridLayoutElement>&& value) { SetElements(std::move(value)); return *this;}
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline GridLayoutConfiguration& AddElements(const GridLayoutElement& value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
-
-    /**
-     * <p>The elements that are included in a grid layout.</p>
-     */
     inline GridLayoutConfiguration& AddElements(GridLayoutElement&& value) { m_elementsHasBeenSet = true; m_elements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const GridLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
-
-    
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-
-    
     inline void SetCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-
-    
     inline void SetCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-
-    
     inline GridLayoutConfiguration& WithCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-
-    
     inline GridLayoutConfiguration& WithCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GridLayoutElement> m_elements;

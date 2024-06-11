@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the network settings.</p>
      */
     inline const Aws::String& GetNetworkSettingsArn() const{ return m_networkSettingsArn; }
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline void SetNetworkSettingsArn(const Aws::String& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline void SetNetworkSettingsArn(Aws::String&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline void SetNetworkSettingsArn(const char* value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline GetNetworkSettingsRequest& WithNetworkSettingsArn(const Aws::String& value) { SetNetworkSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline GetNetworkSettingsRequest& WithNetworkSettingsArn(Aws::String&& value) { SetNetworkSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the network settings.</p>
-     */
     inline GetNetworkSettingsRequest& WithNetworkSettingsArn(const char* value) { SetNetworkSettingsArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkSettingsArn;

@@ -34,228 +34,90 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the resource group.</p>
      */
     inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline UpdateApplicationRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline UpdateApplicationRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline UpdateApplicationRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> When set to <code>true</code>, creates opsItems for any problems detected on
      * an application. </p>
      */
     inline bool GetOpsCenterEnabled() const{ return m_opsCenterEnabled; }
-
-    /**
-     * <p> When set to <code>true</code>, creates opsItems for any problems detected on
-     * an application. </p>
-     */
     inline bool OpsCenterEnabledHasBeenSet() const { return m_opsCenterEnabledHasBeenSet; }
-
-    /**
-     * <p> When set to <code>true</code>, creates opsItems for any problems detected on
-     * an application. </p>
-     */
     inline void SetOpsCenterEnabled(bool value) { m_opsCenterEnabledHasBeenSet = true; m_opsCenterEnabled = value; }
-
-    /**
-     * <p> When set to <code>true</code>, creates opsItems for any problems detected on
-     * an application. </p>
-     */
     inline UpdateApplicationRequest& WithOpsCenterEnabled(bool value) { SetOpsCenterEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether Application Insights can listen to CloudWatch events for
      * the application resources, such as <code>instance terminated</code>,
      * <code>failed deployment</code>, and others. </p>
      */
     inline bool GetCWEMonitorEnabled() const{ return m_cWEMonitorEnabled; }
-
-    /**
-     * <p> Indicates whether Application Insights can listen to CloudWatch events for
-     * the application resources, such as <code>instance terminated</code>,
-     * <code>failed deployment</code>, and others. </p>
-     */
     inline bool CWEMonitorEnabledHasBeenSet() const { return m_cWEMonitorEnabledHasBeenSet; }
-
-    /**
-     * <p> Indicates whether Application Insights can listen to CloudWatch events for
-     * the application resources, such as <code>instance terminated</code>,
-     * <code>failed deployment</code>, and others. </p>
-     */
     inline void SetCWEMonitorEnabled(bool value) { m_cWEMonitorEnabledHasBeenSet = true; m_cWEMonitorEnabled = value; }
-
-    /**
-     * <p> Indicates whether Application Insights can listen to CloudWatch events for
-     * the application resources, such as <code>instance terminated</code>,
-     * <code>failed deployment</code>, and others. </p>
-     */
     inline UpdateApplicationRequest& WithCWEMonitorEnabled(bool value) { SetCWEMonitorEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
      * created opsItem. Allows you to receive notifications for updates to the
      * opsItem.</p>
      */
     inline const Aws::String& GetOpsItemSNSTopicArn() const{ return m_opsItemSNSTopicArn; }
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline bool OpsItemSNSTopicArnHasBeenSet() const { return m_opsItemSNSTopicArnHasBeenSet; }
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline void SetOpsItemSNSTopicArn(const Aws::String& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = value; }
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline void SetOpsItemSNSTopicArn(Aws::String&& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = std::move(value); }
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline void SetOpsItemSNSTopicArn(const char* value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn.assign(value); }
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(const Aws::String& value) { SetOpsItemSNSTopicArn(value); return *this;}
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(Aws::String&& value) { SetOpsItemSNSTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the
-     * opsItem.</p>
-     */
     inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Disassociates the SNS topic from the opsItem created for detected
      * problems.</p>
      */
     inline bool GetRemoveSNSTopic() const{ return m_removeSNSTopic; }
-
-    /**
-     * <p> Disassociates the SNS topic from the opsItem created for detected
-     * problems.</p>
-     */
     inline bool RemoveSNSTopicHasBeenSet() const { return m_removeSNSTopicHasBeenSet; }
-
-    /**
-     * <p> Disassociates the SNS topic from the opsItem created for detected
-     * problems.</p>
-     */
     inline void SetRemoveSNSTopic(bool value) { m_removeSNSTopicHasBeenSet = true; m_removeSNSTopic = value; }
-
-    /**
-     * <p> Disassociates the SNS topic from the opsItem created for detected
-     * problems.</p>
-     */
     inline UpdateApplicationRequest& WithRemoveSNSTopic(bool value) { SetRemoveSNSTopic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Turns auto-configuration on or off. </p>
      */
     inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
-
-    /**
-     * <p> Turns auto-configuration on or off. </p>
-     */
     inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
-
-    /**
-     * <p> Turns auto-configuration on or off. </p>
-     */
     inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
-
-    /**
-     * <p> Turns auto-configuration on or off. </p>
-     */
     inline UpdateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If set to true, the managed policies for SSM and CW will be attached to the
      * instance roles if they are missing.</p>
      */
     inline bool GetAttachMissingPermission() const{ return m_attachMissingPermission; }
-
-    /**
-     * <p>If set to true, the managed policies for SSM and CW will be attached to the
-     * instance roles if they are missing.</p>
-     */
     inline bool AttachMissingPermissionHasBeenSet() const { return m_attachMissingPermissionHasBeenSet; }
-
-    /**
-     * <p>If set to true, the managed policies for SSM and CW will be attached to the
-     * instance roles if they are missing.</p>
-     */
     inline void SetAttachMissingPermission(bool value) { m_attachMissingPermissionHasBeenSet = true; m_attachMissingPermission = value; }
-
-    /**
-     * <p>If set to true, the managed policies for SSM and CW will be attached to the
-     * instance roles if they are missing.</p>
-     */
     inline UpdateApplicationRequest& WithAttachMissingPermission(bool value) { SetAttachMissingPermission(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceGroupName;

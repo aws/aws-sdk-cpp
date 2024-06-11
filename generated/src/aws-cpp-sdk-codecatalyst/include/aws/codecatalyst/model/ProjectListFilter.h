@@ -41,113 +41,44 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A key that can be used to sort results.</p>
      */
     inline const FilterKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline void SetKey(const FilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline void SetKey(FilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline ProjectListFilter& WithKey(const FilterKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>A key that can be used to sort results.</p>
-     */
     inline ProjectListFilter& WithKey(FilterKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values of the key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline ProjectListFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline ProjectListFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline ProjectListFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline ProjectListFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The values of the key.</p>
-     */
     inline ProjectListFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operator used to compare the fields.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline ProjectListFilter& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-
-    /**
-     * <p>The operator used to compare the fields.</p>
-     */
     inline ProjectListFilter& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FilterKey m_key;

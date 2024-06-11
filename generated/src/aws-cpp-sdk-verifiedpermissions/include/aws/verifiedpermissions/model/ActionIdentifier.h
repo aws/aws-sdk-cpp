@@ -45,87 +45,33 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of an action.</p>
      */
     inline const Aws::String& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline ActionIdentifier& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline ActionIdentifier& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of an action.</p>
-     */
     inline ActionIdentifier& WithActionType(const char* value) { SetActionType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of an action.</p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline ActionIdentifier& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline ActionIdentifier& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of an action.</p>
-     */
     inline ActionIdentifier& WithActionId(const char* value) { SetActionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionType;

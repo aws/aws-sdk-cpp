@@ -34,62 +34,21 @@ namespace Model
     AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline ResolveCaseRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline ResolveCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The support case ID requested or returned in the call. The case ID is an
-     * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-     */
     inline ResolveCaseRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_caseId;

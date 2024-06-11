@@ -36,30 +36,16 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether automatic business name generation is to be enabled or not
      * as part of the recommendation configuration.</p>
      */
     inline bool GetEnableBusinessNameGeneration() const{ return m_enableBusinessNameGeneration; }
-
-    /**
-     * <p>Specifies whether automatic business name generation is to be enabled or not
-     * as part of the recommendation configuration.</p>
-     */
     inline bool EnableBusinessNameGenerationHasBeenSet() const { return m_enableBusinessNameGenerationHasBeenSet; }
-
-    /**
-     * <p>Specifies whether automatic business name generation is to be enabled or not
-     * as part of the recommendation configuration.</p>
-     */
     inline void SetEnableBusinessNameGeneration(bool value) { m_enableBusinessNameGenerationHasBeenSet = true; m_enableBusinessNameGeneration = value; }
-
-    /**
-     * <p>Specifies whether automatic business name generation is to be enabled or not
-     * as part of the recommendation configuration.</p>
-     */
     inline RecommendationConfiguration& WithEnableBusinessNameGeneration(bool value) { SetEnableBusinessNameGeneration(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableBusinessNameGeneration;

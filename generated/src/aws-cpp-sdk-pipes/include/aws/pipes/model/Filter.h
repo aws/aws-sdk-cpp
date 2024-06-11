@@ -40,46 +40,19 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The event pattern.</p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline Filter& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline Filter& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-
-    /**
-     * <p>The event pattern.</p>
-     */
     inline Filter& WithPattern(const char* value) { SetPattern(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pattern;

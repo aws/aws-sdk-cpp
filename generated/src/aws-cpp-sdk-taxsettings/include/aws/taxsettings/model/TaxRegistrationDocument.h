@@ -37,36 +37,17 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 location where your tax registration document is stored.</p>
      */
     inline const SourceS3Location& GetS3Location() const{ return m_s3Location; }
-
-    /**
-     * <p>The Amazon S3 location where your tax registration document is stored.</p>
-     */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 location where your tax registration document is stored.</p>
-     */
     inline void SetS3Location(const SourceS3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-
-    /**
-     * <p>The Amazon S3 location where your tax registration document is stored.</p>
-     */
     inline void SetS3Location(SourceS3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 location where your tax registration document is stored.</p>
-     */
     inline TaxRegistrationDocument& WithS3Location(const SourceS3Location& value) { SetS3Location(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 location where your tax registration document is stored.</p>
-     */
     inline TaxRegistrationDocument& WithS3Location(SourceS3Location&& value) { SetS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SourceS3Location m_s3Location;

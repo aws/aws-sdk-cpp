@@ -39,36 +39,17 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The names of the S3 buckets to add or remove from the list.</p>
      */
     inline const S3ClassificationScopeExclusionUpdate& GetExcludes() const{ return m_excludes; }
-
-    /**
-     * <p>The names of the S3 buckets to add or remove from the list.</p>
-     */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-
-    /**
-     * <p>The names of the S3 buckets to add or remove from the list.</p>
-     */
     inline void SetExcludes(const S3ClassificationScopeExclusionUpdate& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-
-    /**
-     * <p>The names of the S3 buckets to add or remove from the list.</p>
-     */
     inline void SetExcludes(S3ClassificationScopeExclusionUpdate&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-
-    /**
-     * <p>The names of the S3 buckets to add or remove from the list.</p>
-     */
     inline S3ClassificationScopeUpdate& WithExcludes(const S3ClassificationScopeExclusionUpdate& value) { SetExcludes(value); return *this;}
-
-    /**
-     * <p>The names of the S3 buckets to add or remove from the list.</p>
-     */
     inline S3ClassificationScopeUpdate& WithExcludes(S3ClassificationScopeExclusionUpdate&& value) { SetExcludes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ClassificationScopeExclusionUpdate m_excludes;

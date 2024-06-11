@@ -32,46 +32,19 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network resource.</p>
      */
     inline const Aws::String& GetNetworkResourceArn() const{ return m_networkResourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline bool NetworkResourceArnHasBeenSet() const { return m_networkResourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline void SetNetworkResourceArn(const Aws::String& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline void SetNetworkResourceArn(Aws::String&& value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline void SetNetworkResourceArn(const char* value) { m_networkResourceArnHasBeenSet = true; m_networkResourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline GetNetworkResourceRequest& WithNetworkResourceArn(const Aws::String& value) { SetNetworkResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline GetNetworkResourceRequest& WithNetworkResourceArn(Aws::String&& value) { SetNetworkResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network resource.</p>
-     */
     inline GetNetworkResourceRequest& WithNetworkResourceArn(const char* value) { SetNetworkResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkResourceArn;

@@ -39,83 +39,32 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the runtime version you want the function to use.</p>
      */
     inline const Aws::String& GetRuntimeVersionArn() const{ return m_runtimeVersionArn; }
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline bool RuntimeVersionArnHasBeenSet() const { return m_runtimeVersionArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline void SetRuntimeVersionArn(const Aws::String& value) { m_runtimeVersionArnHasBeenSet = true; m_runtimeVersionArn = value; }
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline void SetRuntimeVersionArn(Aws::String&& value) { m_runtimeVersionArnHasBeenSet = true; m_runtimeVersionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline void SetRuntimeVersionArn(const char* value) { m_runtimeVersionArnHasBeenSet = true; m_runtimeVersionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline RuntimeVersionConfig& WithRuntimeVersionArn(const Aws::String& value) { SetRuntimeVersionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline RuntimeVersionConfig& WithRuntimeVersionArn(Aws::String&& value) { SetRuntimeVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the runtime version you want the function to use.</p>
-     */
     inline RuntimeVersionConfig& WithRuntimeVersionArn(const char* value) { SetRuntimeVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error response when Lambda is unable to retrieve the runtime version for a
      * function.</p>
      */
     inline const RuntimeVersionError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Error response when Lambda is unable to retrieve the runtime version for a
-     * function.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Error response when Lambda is unable to retrieve the runtime version for a
-     * function.</p>
-     */
     inline void SetError(const RuntimeVersionError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Error response when Lambda is unable to retrieve the runtime version for a
-     * function.</p>
-     */
     inline void SetError(RuntimeVersionError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Error response when Lambda is unable to retrieve the runtime version for a
-     * function.</p>
-     */
     inline RuntimeVersionConfig& WithError(const RuntimeVersionError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Error response when Lambda is unable to retrieve the runtime version for a
-     * function.</p>
-     */
     inline RuntimeVersionConfig& WithError(RuntimeVersionError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_runtimeVersionArn;

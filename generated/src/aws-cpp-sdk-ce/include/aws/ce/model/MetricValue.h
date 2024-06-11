@@ -37,87 +37,33 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The actual number that represents the metric.</p>
      */
     inline const Aws::String& GetAmount() const{ return m_amount; }
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline void SetAmount(Aws::String&& value) { m_amountHasBeenSet = true; m_amount = std::move(value); }
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline void SetAmount(const char* value) { m_amountHasBeenSet = true; m_amount.assign(value); }
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline MetricValue& WithAmount(const Aws::String& value) { SetAmount(value); return *this;}
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline MetricValue& WithAmount(Aws::String&& value) { SetAmount(std::move(value)); return *this;}
-
-    /**
-     * <p>The actual number that represents the metric.</p>
-     */
     inline MetricValue& WithAmount(const char* value) { SetAmount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit that the metric is given in.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline MetricValue& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline MetricValue& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-
-    /**
-     * <p>The unit that the metric is given in.</p>
-     */
     inline MetricValue& WithUnit(const char* value) { SetUnit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_amount;

@@ -40,77 +40,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort configuration of a group by fields.</p>
      */
     inline const Aws::Vector<FieldSortOptions>& GetCategorySort() const{ return m_categorySort; }
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline bool CategorySortHasBeenSet() const { return m_categorySortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline void SetCategorySort(const Aws::Vector<FieldSortOptions>& value) { m_categorySortHasBeenSet = true; m_categorySort = value; }
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline void SetCategorySort(Aws::Vector<FieldSortOptions>&& value) { m_categorySortHasBeenSet = true; m_categorySort = std::move(value); }
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline BoxPlotSortConfiguration& WithCategorySort(const Aws::Vector<FieldSortOptions>& value) { SetCategorySort(value); return *this;}
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline BoxPlotSortConfiguration& WithCategorySort(Aws::Vector<FieldSortOptions>&& value) { SetCategorySort(std::move(value)); return *this;}
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline BoxPlotSortConfiguration& AddCategorySort(const FieldSortOptions& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(value); return *this; }
-
-    /**
-     * <p>The sort configuration of a group by fields.</p>
-     */
     inline BoxPlotSortConfiguration& AddCategorySort(FieldSortOptions&& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination configuration of a table visual or box plot.</p>
      */
     inline const PaginationConfiguration& GetPaginationConfiguration() const{ return m_paginationConfiguration; }
-
-    /**
-     * <p>The pagination configuration of a table visual or box plot.</p>
-     */
     inline bool PaginationConfigurationHasBeenSet() const { return m_paginationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The pagination configuration of a table visual or box plot.</p>
-     */
     inline void SetPaginationConfiguration(const PaginationConfiguration& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = value; }
-
-    /**
-     * <p>The pagination configuration of a table visual or box plot.</p>
-     */
     inline void SetPaginationConfiguration(PaginationConfiguration&& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = std::move(value); }
-
-    /**
-     * <p>The pagination configuration of a table visual or box plot.</p>
-     */
     inline BoxPlotSortConfiguration& WithPaginationConfiguration(const PaginationConfiguration& value) { SetPaginationConfiguration(value); return *this;}
-
-    /**
-     * <p>The pagination configuration of a table visual or box plot.</p>
-     */
     inline BoxPlotSortConfiguration& WithPaginationConfiguration(PaginationConfiguration&& value) { SetPaginationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldSortOptions> m_categorySort;

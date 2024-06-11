@@ -34,46 +34,19 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the batch segment job to describe.</p>
      */
     inline const Aws::String& GetBatchSegmentJobArn() const{ return m_batchSegmentJobArn; }
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline bool BatchSegmentJobArnHasBeenSet() const { return m_batchSegmentJobArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline void SetBatchSegmentJobArn(const Aws::String& value) { m_batchSegmentJobArnHasBeenSet = true; m_batchSegmentJobArn = value; }
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline void SetBatchSegmentJobArn(Aws::String&& value) { m_batchSegmentJobArnHasBeenSet = true; m_batchSegmentJobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline void SetBatchSegmentJobArn(const char* value) { m_batchSegmentJobArnHasBeenSet = true; m_batchSegmentJobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline DescribeBatchSegmentJobRequest& WithBatchSegmentJobArn(const Aws::String& value) { SetBatchSegmentJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline DescribeBatchSegmentJobRequest& WithBatchSegmentJobArn(Aws::String&& value) { SetBatchSegmentJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the batch segment job to describe.</p>
-     */
     inline DescribeBatchSegmentJobRequest& WithBatchSegmentJobArn(const char* value) { SetBatchSegmentJobArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_batchSegmentJobArn;

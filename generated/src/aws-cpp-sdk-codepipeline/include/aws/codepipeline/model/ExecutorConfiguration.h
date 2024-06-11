@@ -40,67 +40,29 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the <code>Lambda</code> executor of the action type.</p>
      */
     inline const LambdaExecutorConfiguration& GetLambdaExecutorConfiguration() const{ return m_lambdaExecutorConfiguration; }
-
-    /**
-     * <p>Details about the <code>Lambda</code> executor of the action type.</p>
-     */
     inline bool LambdaExecutorConfigurationHasBeenSet() const { return m_lambdaExecutorConfigurationHasBeenSet; }
-
-    /**
-     * <p>Details about the <code>Lambda</code> executor of the action type.</p>
-     */
     inline void SetLambdaExecutorConfiguration(const LambdaExecutorConfiguration& value) { m_lambdaExecutorConfigurationHasBeenSet = true; m_lambdaExecutorConfiguration = value; }
-
-    /**
-     * <p>Details about the <code>Lambda</code> executor of the action type.</p>
-     */
     inline void SetLambdaExecutorConfiguration(LambdaExecutorConfiguration&& value) { m_lambdaExecutorConfigurationHasBeenSet = true; m_lambdaExecutorConfiguration = std::move(value); }
-
-    /**
-     * <p>Details about the <code>Lambda</code> executor of the action type.</p>
-     */
     inline ExecutorConfiguration& WithLambdaExecutorConfiguration(const LambdaExecutorConfiguration& value) { SetLambdaExecutorConfiguration(value); return *this;}
-
-    /**
-     * <p>Details about the <code>Lambda</code> executor of the action type.</p>
-     */
     inline ExecutorConfiguration& WithLambdaExecutorConfiguration(LambdaExecutorConfiguration&& value) { SetLambdaExecutorConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
      */
     inline const JobWorkerExecutorConfiguration& GetJobWorkerExecutorConfiguration() const{ return m_jobWorkerExecutorConfiguration; }
-
-    /**
-     * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-     */
     inline bool JobWorkerExecutorConfigurationHasBeenSet() const { return m_jobWorkerExecutorConfigurationHasBeenSet; }
-
-    /**
-     * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-     */
     inline void SetJobWorkerExecutorConfiguration(const JobWorkerExecutorConfiguration& value) { m_jobWorkerExecutorConfigurationHasBeenSet = true; m_jobWorkerExecutorConfiguration = value; }
-
-    /**
-     * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-     */
     inline void SetJobWorkerExecutorConfiguration(JobWorkerExecutorConfiguration&& value) { m_jobWorkerExecutorConfigurationHasBeenSet = true; m_jobWorkerExecutorConfiguration = std::move(value); }
-
-    /**
-     * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-     */
     inline ExecutorConfiguration& WithJobWorkerExecutorConfiguration(const JobWorkerExecutorConfiguration& value) { SetJobWorkerExecutorConfiguration(value); return *this;}
-
-    /**
-     * <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-     */
     inline ExecutorConfiguration& WithJobWorkerExecutorConfiguration(JobWorkerExecutorConfiguration&& value) { SetJobWorkerExecutorConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaExecutorConfiguration m_lambdaExecutorConfiguration;

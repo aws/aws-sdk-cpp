@@ -37,87 +37,33 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the bot member that processes the request.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotId(const char* value) { SetBotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the bot member that processes the request.</p>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bot member that processes the request.</p>
-     */
     inline RecognizedBotMember& WithBotName(const char* value) { SetBotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_botId;

@@ -34,54 +34,20 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeAccountModificationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeAccountModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If you received a <code>NextToken</code> from a previous call that was
-     * paginated, provide this token to receive the next set of results.</p>
-     */
     inline DescribeAccountModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

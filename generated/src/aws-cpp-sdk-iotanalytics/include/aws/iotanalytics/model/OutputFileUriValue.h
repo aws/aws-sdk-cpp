@@ -38,54 +38,20 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URI of the location where dataset contents are stored, usually the URI of
      * a file in an S3 bucket.</p>
      */
     inline const Aws::String& GetFileName() const{ return m_fileName; }
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline OutputFileUriValue& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline OutputFileUriValue& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The URI of the location where dataset contents are stored, usually the URI of
-     * a file in an S3 bucket.</p>
-     */
     inline OutputFileUriValue& WithFileName(const char* value) { SetFileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileName;

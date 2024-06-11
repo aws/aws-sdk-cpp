@@ -43,122 +43,45 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
      */
     inline const Aws::Vector<StorageType>& GetStorageTypes() const{ return m_storageTypes; }
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline bool StorageTypesHasBeenSet() const { return m_storageTypesHasBeenSet; }
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline void SetStorageTypes(const Aws::Vector<StorageType>& value) { m_storageTypesHasBeenSet = true; m_storageTypes = value; }
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline void SetStorageTypes(Aws::Vector<StorageType>&& value) { m_storageTypesHasBeenSet = true; m_storageTypes = std::move(value); }
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline Limits& WithStorageTypes(const Aws::Vector<StorageType>& value) { SetStorageTypes(value); return *this;}
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline Limits& WithStorageTypes(Aws::Vector<StorageType>&& value) { SetStorageTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline Limits& AddStorageTypes(const StorageType& value) { m_storageTypesHasBeenSet = true; m_storageTypes.push_back(value); return *this; }
-
-    /**
-     * <p>StorageType represents the list of storage related types and attributes that
-     * are available for given InstanceType. </p>
-     */
     inline Limits& AddStorageTypes(StorageType&& value) { m_storageTypesHasBeenSet = true; m_storageTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const InstanceLimits& GetInstanceLimits() const{ return m_instanceLimits; }
-
-    
     inline bool InstanceLimitsHasBeenSet() const { return m_instanceLimitsHasBeenSet; }
-
-    
     inline void SetInstanceLimits(const InstanceLimits& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = value; }
-
-    
     inline void SetInstanceLimits(InstanceLimits&& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = std::move(value); }
-
-    
     inline Limits& WithInstanceLimits(const InstanceLimits& value) { SetInstanceLimits(value); return *this;}
-
-    
     inline Limits& WithInstanceLimits(InstanceLimits&& value) { SetInstanceLimits(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for
      * each of it's <code> <a>InstanceRole</a> </code> . </p>
      */
     inline const Aws::Vector<AdditionalLimit>& GetAdditionalLimits() const{ return m_additionalLimits; }
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline bool AdditionalLimitsHasBeenSet() const { return m_additionalLimitsHasBeenSet; }
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline void SetAdditionalLimits(const Aws::Vector<AdditionalLimit>& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits = value; }
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline void SetAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits = std::move(value); }
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline Limits& WithAdditionalLimits(const Aws::Vector<AdditionalLimit>& value) { SetAdditionalLimits(value); return *this;}
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline Limits& WithAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { SetAdditionalLimits(std::move(value)); return *this;}
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline Limits& AddAdditionalLimits(const AdditionalLimit& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits.push_back(value); return *this; }
-
-    /**
-     * <p> List of additional limits that are specific to a given InstanceType and for
-     * each of it's <code> <a>InstanceRole</a> </code> . </p>
-     */
     inline Limits& AddAdditionalLimits(AdditionalLimit&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StorageType> m_storageTypes;

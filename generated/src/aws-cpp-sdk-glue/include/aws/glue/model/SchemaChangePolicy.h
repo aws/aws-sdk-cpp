@@ -39,67 +39,29 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
     inline const UpdateBehavior& GetUpdateBehavior() const{ return m_updateBehavior; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline void SetUpdateBehavior(const UpdateBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline void SetUpdateBehavior(UpdateBehavior&& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = std::move(value); }
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline SchemaChangePolicy& WithUpdateBehavior(const UpdateBehavior& value) { SetUpdateBehavior(value); return *this;}
-
-    /**
-     * <p>The update behavior when the crawler finds a changed schema.</p>
-     */
     inline SchemaChangePolicy& WithUpdateBehavior(UpdateBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The deletion behavior when the crawler finds a deleted object.</p>
      */
     inline const DeleteBehavior& GetDeleteBehavior() const{ return m_deleteBehavior; }
-
-    /**
-     * <p>The deletion behavior when the crawler finds a deleted object.</p>
-     */
     inline bool DeleteBehaviorHasBeenSet() const { return m_deleteBehaviorHasBeenSet; }
-
-    /**
-     * <p>The deletion behavior when the crawler finds a deleted object.</p>
-     */
     inline void SetDeleteBehavior(const DeleteBehavior& value) { m_deleteBehaviorHasBeenSet = true; m_deleteBehavior = value; }
-
-    /**
-     * <p>The deletion behavior when the crawler finds a deleted object.</p>
-     */
     inline void SetDeleteBehavior(DeleteBehavior&& value) { m_deleteBehaviorHasBeenSet = true; m_deleteBehavior = std::move(value); }
-
-    /**
-     * <p>The deletion behavior when the crawler finds a deleted object.</p>
-     */
     inline SchemaChangePolicy& WithDeleteBehavior(const DeleteBehavior& value) { SetDeleteBehavior(value); return *this;}
-
-    /**
-     * <p>The deletion behavior when the crawler finds a deleted object.</p>
-     */
     inline SchemaChangePolicy& WithDeleteBehavior(DeleteBehavior&& value) { SetDeleteBehavior(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateBehavior m_updateBehavior;

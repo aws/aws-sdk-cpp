@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DescribeProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The description of the project.</p>
      */
     inline const ProjectDescription& GetProjectDescription() const{ return m_projectDescription; }
-
-    /**
-     * <p>The description of the project.</p>
-     */
     inline void SetProjectDescription(const ProjectDescription& value) { m_projectDescription = value; }
-
-    /**
-     * <p>The description of the project.</p>
-     */
     inline void SetProjectDescription(ProjectDescription&& value) { m_projectDescription = std::move(value); }
-
-    /**
-     * <p>The description of the project.</p>
-     */
     inline DescribeProjectResult& WithProjectDescription(const ProjectDescription& value) { SetProjectDescription(value); return *this;}
-
-    /**
-     * <p>The description of the project.</p>
-     */
     inline DescribeProjectResult& WithProjectDescription(ProjectDescription&& value) { SetProjectDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProjectDescription m_projectDescription;

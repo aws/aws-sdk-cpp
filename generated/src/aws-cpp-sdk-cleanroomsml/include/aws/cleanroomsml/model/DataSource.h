@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A GlueDataSource object that defines the catalog ID, database name, and table
      * name for the training data.</p>
      */
     inline const GlueDataSource& GetGlueDataSource() const{ return m_glueDataSource; }
-
-    /**
-     * <p>A GlueDataSource object that defines the catalog ID, database name, and table
-     * name for the training data.</p>
-     */
     inline bool GlueDataSourceHasBeenSet() const { return m_glueDataSourceHasBeenSet; }
-
-    /**
-     * <p>A GlueDataSource object that defines the catalog ID, database name, and table
-     * name for the training data.</p>
-     */
     inline void SetGlueDataSource(const GlueDataSource& value) { m_glueDataSourceHasBeenSet = true; m_glueDataSource = value; }
-
-    /**
-     * <p>A GlueDataSource object that defines the catalog ID, database name, and table
-     * name for the training data.</p>
-     */
     inline void SetGlueDataSource(GlueDataSource&& value) { m_glueDataSourceHasBeenSet = true; m_glueDataSource = std::move(value); }
-
-    /**
-     * <p>A GlueDataSource object that defines the catalog ID, database name, and table
-     * name for the training data.</p>
-     */
     inline DataSource& WithGlueDataSource(const GlueDataSource& value) { SetGlueDataSource(value); return *this;}
-
-    /**
-     * <p>A GlueDataSource object that defines the catalog ID, database name, and table
-     * name for the training data.</p>
-     */
     inline DataSource& WithGlueDataSource(GlueDataSource&& value) { SetGlueDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueDataSource m_glueDataSource;

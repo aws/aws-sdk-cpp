@@ -33,57 +33,27 @@ namespace Model
     AWS_EC2_API CreateStoreImageTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The name of the stored AMI object in the S3 bucket.</p>
      */
     inline const Aws::String& GetObjectKey() const{ return m_objectKey; }
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline void SetObjectKey(const Aws::String& value) { m_objectKey = value; }
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline void SetObjectKey(Aws::String&& value) { m_objectKey = std::move(value); }
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline void SetObjectKey(const char* value) { m_objectKey.assign(value); }
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline CreateStoreImageTaskResponse& WithObjectKey(const Aws::String& value) { SetObjectKey(value); return *this;}
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline CreateStoreImageTaskResponse& WithObjectKey(Aws::String&& value) { SetObjectKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stored AMI object in the S3 bucket.</p>
-     */
     inline CreateStoreImageTaskResponse& WithObjectKey(const char* value) { SetObjectKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateStoreImageTaskResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateStoreImageTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_objectKey;

@@ -37,63 +37,29 @@ namespace Model
     AWS_MAILMANAGER_API CreateArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the newly created archive.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline CreateArchiveResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline CreateArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the newly created archive.</p>
-     */
     inline CreateArchiveResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateArchiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateArchiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateArchiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archiveId;

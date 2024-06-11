@@ -32,70 +32,30 @@ namespace Model
     AWS_ROUTE53RESOLVER_API GetResolverRulePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Resolver rule policy for the rule that you specified in a
      * <code>GetResolverRulePolicy</code> request.</p>
      */
     inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline void SetResolverRulePolicy(const Aws::String& value) { m_resolverRulePolicy = value; }
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline void SetResolverRulePolicy(Aws::String&& value) { m_resolverRulePolicy = std::move(value); }
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline void SetResolverRulePolicy(const char* value) { m_resolverRulePolicy.assign(value); }
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(const Aws::String& value) { SetResolverRulePolicy(value); return *this;}
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(Aws::String&& value) { SetResolverRulePolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The Resolver rule policy for the rule that you specified in a
-     * <code>GetResolverRulePolicy</code> request.</p>
-     */
     inline GetResolverRulePolicyResult& WithResolverRulePolicy(const char* value) { SetResolverRulePolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResolverRulePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResolverRulePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResolverRulePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resolverRulePolicy;

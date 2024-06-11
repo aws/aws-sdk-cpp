@@ -34,106 +34,43 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of applications.</p>
      */
     inline const Aws::Vector<ApplicationInfo>& GetApplicationInfoList() const{ return m_applicationInfoList; }
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline void SetApplicationInfoList(const Aws::Vector<ApplicationInfo>& value) { m_applicationInfoList = value; }
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline void SetApplicationInfoList(Aws::Vector<ApplicationInfo>&& value) { m_applicationInfoList = std::move(value); }
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline ListApplicationsResult& WithApplicationInfoList(const Aws::Vector<ApplicationInfo>& value) { SetApplicationInfoList(value); return *this;}
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline ListApplicationsResult& WithApplicationInfoList(Aws::Vector<ApplicationInfo>&& value) { SetApplicationInfoList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline ListApplicationsResult& AddApplicationInfoList(const ApplicationInfo& value) { m_applicationInfoList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of applications.</p>
-     */
     inline ListApplicationsResult& AddApplicationInfoList(ApplicationInfo&& value) { m_applicationInfoList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return. </p>
-     */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ApplicationInfo> m_applicationInfoList;

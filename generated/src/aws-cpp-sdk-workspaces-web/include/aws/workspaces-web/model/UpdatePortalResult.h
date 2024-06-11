@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESWEB_API UpdatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The web portal.</p>
      */
     inline const Portal& GetPortal() const{ return m_portal; }
-
-    /**
-     * <p>The web portal.</p>
-     */
     inline void SetPortal(const Portal& value) { m_portal = value; }
-
-    /**
-     * <p>The web portal.</p>
-     */
     inline void SetPortal(Portal&& value) { m_portal = std::move(value); }
-
-    /**
-     * <p>The web portal.</p>
-     */
     inline UpdatePortalResult& WithPortal(const Portal& value) { SetPortal(value); return *this;}
-
-    /**
-     * <p>The web portal.</p>
-     */
     inline UpdatePortalResult& WithPortal(Portal&& value) { SetPortal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePortalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePortalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePortalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Portal m_portal;

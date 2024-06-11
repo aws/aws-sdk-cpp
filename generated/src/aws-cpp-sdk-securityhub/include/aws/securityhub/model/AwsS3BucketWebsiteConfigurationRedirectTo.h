@@ -38,103 +38,35 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the host to redirect requests to.</p>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the host to redirect requests to.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithHostname(const char* value) { SetHostname(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The protocol to use when redirecting requests. By default, this field uses
      * the same protocol as the original request. Valid values are <code>http</code> or
      * <code>https</code>.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-
-    /**
-     * <p>The protocol to use when redirecting requests. By default, this field uses
-     * the same protocol as the original request. Valid values are <code>http</code> or
-     * <code>https</code>.</p>
-     */
     inline AwsS3BucketWebsiteConfigurationRedirectTo& WithProtocol(const char* value) { SetProtocol(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostname;

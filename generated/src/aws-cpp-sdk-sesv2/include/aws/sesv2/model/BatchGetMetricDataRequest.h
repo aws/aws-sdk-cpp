@@ -37,46 +37,19 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of queries for metrics to be retrieved.</p>
      */
     inline const Aws::Vector<BatchGetMetricDataQuery>& GetQueries() const{ return m_queries; }
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline void SetQueries(const Aws::Vector<BatchGetMetricDataQuery>& value) { m_queriesHasBeenSet = true; m_queries = value; }
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline void SetQueries(Aws::Vector<BatchGetMetricDataQuery>&& value) { m_queriesHasBeenSet = true; m_queries = std::move(value); }
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline BatchGetMetricDataRequest& WithQueries(const Aws::Vector<BatchGetMetricDataQuery>& value) { SetQueries(value); return *this;}
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline BatchGetMetricDataRequest& WithQueries(Aws::Vector<BatchGetMetricDataQuery>&& value) { SetQueries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline BatchGetMetricDataRequest& AddQueries(const BatchGetMetricDataQuery& value) { m_queriesHasBeenSet = true; m_queries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of queries for metrics to be retrieved.</p>
-     */
     inline BatchGetMetricDataRequest& AddQueries(BatchGetMetricDataQuery&& value) { m_queriesHasBeenSet = true; m_queries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<BatchGetMetricDataQuery> m_queries;

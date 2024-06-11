@@ -42,55 +42,22 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline UpdateCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline UpdateCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
-     * certificate ID.)</p>
-     */
     inline UpdateCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
      * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
@@ -99,52 +66,12 @@ namespace Model
      * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline const CertificateStatus& GetNewStatus() const{ return m_newStatus; }
-
-    /**
-     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
-     * and PENDING_ACTIVATION are statuses used internally by IoT. They are not
-     * intended for developer use.</p> <p> <b>Note:</b> The status value
-     * REGISTER_INACTIVE is deprecated and should not be used.</p>
-     */
     inline bool NewStatusHasBeenSet() const { return m_newStatusHasBeenSet; }
-
-    /**
-     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
-     * and PENDING_ACTIVATION are statuses used internally by IoT. They are not
-     * intended for developer use.</p> <p> <b>Note:</b> The status value
-     * REGISTER_INACTIVE is deprecated and should not be used.</p>
-     */
     inline void SetNewStatus(const CertificateStatus& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
-
-    /**
-     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
-     * and PENDING_ACTIVATION are statuses used internally by IoT. They are not
-     * intended for developer use.</p> <p> <b>Note:</b> The status value
-     * REGISTER_INACTIVE is deprecated and should not be used.</p>
-     */
     inline void SetNewStatus(CertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = std::move(value); }
-
-    /**
-     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
-     * and PENDING_ACTIVATION are statuses used internally by IoT. They are not
-     * intended for developer use.</p> <p> <b>Note:</b> The status value
-     * REGISTER_INACTIVE is deprecated and should not be used.</p>
-     */
     inline UpdateCertificateRequest& WithNewStatus(const CertificateStatus& value) { SetNewStatus(value); return *this;}
-
-    /**
-     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
-     * and PENDING_ACTIVATION are statuses used internally by IoT. They are not
-     * intended for developer use.</p> <p> <b>Note:</b> The status value
-     * REGISTER_INACTIVE is deprecated and should not be used.</p>
-     */
     inline UpdateCertificateRequest& WithNewStatus(CertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateId;

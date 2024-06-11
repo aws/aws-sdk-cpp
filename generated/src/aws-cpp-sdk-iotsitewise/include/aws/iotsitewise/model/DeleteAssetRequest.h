@@ -39,6 +39,7 @@ namespace Model
     AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the asset to delete. This can be either the actual ID in UUID
      * format, or else <code>externalId:</code> followed by the external ID, if it has
@@ -47,127 +48,30 @@ namespace Model
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline DeleteAssetRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline DeleteAssetRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asset to delete. This can be either the actual ID in UUID
-     * format, or else <code>externalId:</code> followed by the external ID, if it has
-     * one. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
-     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-     */
     inline DeleteAssetRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAssetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAssetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline DeleteAssetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetId;

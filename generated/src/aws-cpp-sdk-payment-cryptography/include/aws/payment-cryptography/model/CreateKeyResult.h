@@ -33,53 +33,27 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API CreateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The key material that contains all the key attributes.</p>
      */
     inline const Key& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key material that contains all the key attributes.</p>
-     */
     inline void SetKey(const Key& value) { m_key = value; }
-
-    /**
-     * <p>The key material that contains all the key attributes.</p>
-     */
     inline void SetKey(Key&& value) { m_key = std::move(value); }
-
-    /**
-     * <p>The key material that contains all the key attributes.</p>
-     */
     inline CreateKeyResult& WithKey(const Key& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key material that contains all the key attributes.</p>
-     */
     inline CreateKeyResult& WithKey(Key&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Key m_key;

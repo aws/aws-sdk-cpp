@@ -33,6 +33,7 @@ namespace Model
     AWS_ROUTE53_API GetQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains information about the query logging
      * configuration that you specified in a <a
@@ -40,61 +41,22 @@ namespace Model
      * request.</p>
      */
     inline const QueryLoggingConfig& GetQueryLoggingConfig() const{ return m_queryLoggingConfig; }
-
-    /**
-     * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
-     * request.</p>
-     */
     inline void SetQueryLoggingConfig(const QueryLoggingConfig& value) { m_queryLoggingConfig = value; }
-
-    /**
-     * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
-     * request.</p>
-     */
     inline void SetQueryLoggingConfig(QueryLoggingConfig&& value) { m_queryLoggingConfig = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
-     * request.</p>
-     */
     inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(const QueryLoggingConfig& value) { SetQueryLoggingConfig(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the query logging
-     * configuration that you specified in a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a>
-     * request.</p>
-     */
     inline GetQueryLoggingConfigResult& WithQueryLoggingConfig(QueryLoggingConfig&& value) { SetQueryLoggingConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetQueryLoggingConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetQueryLoggingConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetQueryLoggingConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     QueryLoggingConfig m_queryLoggingConfig;

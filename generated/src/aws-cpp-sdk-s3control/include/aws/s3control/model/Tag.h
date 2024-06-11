@@ -45,6 +45,7 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The key of the key-value pair of a tag added to your Amazon Web Services
      * resource. A tag key can be up to 128 Unicode characters in length and is
@@ -52,120 +53,30 @@ namespace Model
      * supported. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag key can be up to 128 Unicode characters in length and is
-     * case-sensitive. System created tags that begin with <code>aws:</code> aren’t
-     * supported. </p>
-     */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The value of the key-value pair of a tag added to your Amazon Web Services
      * resource. A tag value can be up to 256 Unicode characters in length and is
      * case-sensitive. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p> The value of the key-value pair of a tag added to your Amazon Web Services
-     * resource. A tag value can be up to 256 Unicode characters in length and is
-     * case-sensitive. </p>
-     */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

@@ -34,42 +34,20 @@ namespace Model
     AWS_MEDIASTORE_API ListContainersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The names of the containers.</p>
      */
     inline const Aws::Vector<Container>& GetContainers() const{ return m_containers; }
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline void SetContainers(const Aws::Vector<Container>& value) { m_containers = value; }
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline void SetContainers(Aws::Vector<Container>&& value) { m_containers = std::move(value); }
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline ListContainersResult& WithContainers(const Aws::Vector<Container>& value) { SetContainers(value); return *this;}
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline ListContainersResult& WithContainers(Aws::Vector<Container>&& value) { SetContainers(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline ListContainersResult& AddContainers(const Container& value) { m_containers.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the containers.</p>
-     */
     inline ListContainersResult& AddContainers(Container&& value) { m_containers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> <code>NextToken</code> is the token to use in the next call to
      * <code>ListContainers</code>. This token is returned only if you included the
@@ -77,77 +55,24 @@ namespace Model
      * containers to return. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline ListContainersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline ListContainersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> <code>NextToken</code> is the token to use in the next call to
-     * <code>ListContainers</code>. This token is returned only if you included the
-     * <code>MaxResults</code> tag in the original command, and only if there are still
-     * containers to return. </p>
-     */
     inline ListContainersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListContainersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListContainersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListContainersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Container> m_containers;

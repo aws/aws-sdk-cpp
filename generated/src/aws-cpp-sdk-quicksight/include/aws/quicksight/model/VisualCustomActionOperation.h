@@ -42,141 +42,55 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filter operation that filters data included in a visual or in an entire
      * sheet.</p>
      */
     inline const CustomActionFilterOperation& GetFilterOperation() const{ return m_filterOperation; }
-
-    /**
-     * <p>The filter operation that filters data included in a visual or in an entire
-     * sheet.</p>
-     */
     inline bool FilterOperationHasBeenSet() const { return m_filterOperationHasBeenSet; }
-
-    /**
-     * <p>The filter operation that filters data included in a visual or in an entire
-     * sheet.</p>
-     */
     inline void SetFilterOperation(const CustomActionFilterOperation& value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
-
-    /**
-     * <p>The filter operation that filters data included in a visual or in an entire
-     * sheet.</p>
-     */
     inline void SetFilterOperation(CustomActionFilterOperation&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::move(value); }
-
-    /**
-     * <p>The filter operation that filters data included in a visual or in an entire
-     * sheet.</p>
-     */
     inline VisualCustomActionOperation& WithFilterOperation(const CustomActionFilterOperation& value) { SetFilterOperation(value); return *this;}
-
-    /**
-     * <p>The filter operation that filters data included in a visual or in an entire
-     * sheet.</p>
-     */
     inline VisualCustomActionOperation& WithFilterOperation(CustomActionFilterOperation&& value) { SetFilterOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The navigation operation that navigates between different sheets in the same
      * analysis.</p>
      */
     inline const CustomActionNavigationOperation& GetNavigationOperation() const{ return m_navigationOperation; }
-
-    /**
-     * <p>The navigation operation that navigates between different sheets in the same
-     * analysis.</p>
-     */
     inline bool NavigationOperationHasBeenSet() const { return m_navigationOperationHasBeenSet; }
-
-    /**
-     * <p>The navigation operation that navigates between different sheets in the same
-     * analysis.</p>
-     */
     inline void SetNavigationOperation(const CustomActionNavigationOperation& value) { m_navigationOperationHasBeenSet = true; m_navigationOperation = value; }
-
-    /**
-     * <p>The navigation operation that navigates between different sheets in the same
-     * analysis.</p>
-     */
     inline void SetNavigationOperation(CustomActionNavigationOperation&& value) { m_navigationOperationHasBeenSet = true; m_navigationOperation = std::move(value); }
-
-    /**
-     * <p>The navigation operation that navigates between different sheets in the same
-     * analysis.</p>
-     */
     inline VisualCustomActionOperation& WithNavigationOperation(const CustomActionNavigationOperation& value) { SetNavigationOperation(value); return *this;}
-
-    /**
-     * <p>The navigation operation that navigates between different sheets in the same
-     * analysis.</p>
-     */
     inline VisualCustomActionOperation& WithNavigationOperation(CustomActionNavigationOperation&& value) { SetNavigationOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL operation that opens a link to another webpage.</p>
      */
     inline const CustomActionURLOperation& GetURLOperation() const{ return m_uRLOperation; }
-
-    /**
-     * <p>The URL operation that opens a link to another webpage.</p>
-     */
     inline bool URLOperationHasBeenSet() const { return m_uRLOperationHasBeenSet; }
-
-    /**
-     * <p>The URL operation that opens a link to another webpage.</p>
-     */
     inline void SetURLOperation(const CustomActionURLOperation& value) { m_uRLOperationHasBeenSet = true; m_uRLOperation = value; }
-
-    /**
-     * <p>The URL operation that opens a link to another webpage.</p>
-     */
     inline void SetURLOperation(CustomActionURLOperation&& value) { m_uRLOperationHasBeenSet = true; m_uRLOperation = std::move(value); }
-
-    /**
-     * <p>The URL operation that opens a link to another webpage.</p>
-     */
     inline VisualCustomActionOperation& WithURLOperation(const CustomActionURLOperation& value) { SetURLOperation(value); return *this;}
-
-    /**
-     * <p>The URL operation that opens a link to another webpage.</p>
-     */
     inline VisualCustomActionOperation& WithURLOperation(CustomActionURLOperation&& value) { SetURLOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The set parameter operation that sets parameters in custom action.</p>
      */
     inline const CustomActionSetParametersOperation& GetSetParametersOperation() const{ return m_setParametersOperation; }
-
-    /**
-     * <p>The set parameter operation that sets parameters in custom action.</p>
-     */
     inline bool SetParametersOperationHasBeenSet() const { return m_setParametersOperationHasBeenSet; }
-
-    /**
-     * <p>The set parameter operation that sets parameters in custom action.</p>
-     */
     inline void SetSetParametersOperation(const CustomActionSetParametersOperation& value) { m_setParametersOperationHasBeenSet = true; m_setParametersOperation = value; }
-
-    /**
-     * <p>The set parameter operation that sets parameters in custom action.</p>
-     */
     inline void SetSetParametersOperation(CustomActionSetParametersOperation&& value) { m_setParametersOperationHasBeenSet = true; m_setParametersOperation = std::move(value); }
-
-    /**
-     * <p>The set parameter operation that sets parameters in custom action.</p>
-     */
     inline VisualCustomActionOperation& WithSetParametersOperation(const CustomActionSetParametersOperation& value) { SetSetParametersOperation(value); return *this;}
-
-    /**
-     * <p>The set parameter operation that sets parameters in custom action.</p>
-     */
     inline VisualCustomActionOperation& WithSetParametersOperation(CustomActionSetParametersOperation&& value) { SetSetParametersOperation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CustomActionFilterOperation m_filterOperation;

@@ -46,6 +46,7 @@ namespace Model
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of snapshots to retain in the archive storage tier for
      * each volume. The count must ensure that each snapshot remains in the archive
@@ -54,102 +55,35 @@ namespace Model
      * archived for at least 90 days.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The maximum number of snapshots to retain in the archive storage tier for
-     * each volume. The count must ensure that each snapshot remains in the archive
-     * tier for at least 90 days. For example, if the schedule creates snapshots every
-     * 30 days, you must specify a count of 3 or more to ensure that each snapshot is
-     * archived for at least 90 days.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The maximum number of snapshots to retain in the archive storage tier for
-     * each volume. The count must ensure that each snapshot remains in the archive
-     * tier for at least 90 days. For example, if the schedule creates snapshots every
-     * 30 days, you must specify a count of 3 or more to ensure that each snapshot is
-     * archived for at least 90 days.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The maximum number of snapshots to retain in the archive storage tier for
-     * each volume. The count must ensure that each snapshot remains in the archive
-     * tier for at least 90 days. For example, if the schedule creates snapshots every
-     * 30 days, you must specify a count of 3 or more to ensure that each snapshot is
-     * archived for at least 90 days.</p>
-     */
     inline RetentionArchiveTier& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the period of time to retain snapshots in the archive tier. After
      * this period expires, the snapshot is permanently deleted.</p>
      */
     inline int GetInterval() const{ return m_interval; }
-
-    /**
-     * <p>Specifies the period of time to retain snapshots in the archive tier. After
-     * this period expires, the snapshot is permanently deleted.</p>
-     */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-
-    /**
-     * <p>Specifies the period of time to retain snapshots in the archive tier. After
-     * this period expires, the snapshot is permanently deleted.</p>
-     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
-
-    /**
-     * <p>Specifies the period of time to retain snapshots in the archive tier. After
-     * this period expires, the snapshot is permanently deleted.</p>
-     */
     inline RetentionArchiveTier& WithInterval(int value) { SetInterval(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
      * retain a snapshots in the archive tier for 6 months, specify
      * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
     inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
-
-    /**
-     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
-     * retain a snapshots in the archive tier for 6 months, specify
-     * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-     */
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-
-    /**
-     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
-     * retain a snapshots in the archive tier for 6 months, specify
-     * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-     */
     inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-
-    /**
-     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
-     * retain a snapshots in the archive tier for 6 months, specify
-     * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-     */
     inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-
-    /**
-     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
-     * retain a snapshots in the archive tier for 6 months, specify
-     * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-     */
     inline RetentionArchiveTier& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-
-    /**
-     * <p>The unit of time in which to measure the <b>Interval</b>. For example, to
-     * retain a snapshots in the archive tier for 6 months, specify
-     * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-     */
     inline RetentionArchiveTier& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_count;

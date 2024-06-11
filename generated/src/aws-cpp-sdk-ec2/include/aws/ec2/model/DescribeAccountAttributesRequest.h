@@ -37,47 +37,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The account attribute names.</p>
      */
     inline const Aws::Vector<AccountAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline void SetAttributeNames(const Aws::Vector<AccountAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline void SetAttributeNames(Aws::Vector<AccountAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& WithAttributeNames(const Aws::Vector<AccountAttributeName>& value) { SetAttributeNames(value); return *this;}
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& WithAttributeNames(Aws::Vector<AccountAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& AddAttributeNames(const AccountAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-
-    /**
-     * <p>The account attribute names.</p>
-     */
     inline DescribeAccountAttributesRequest& AddAttributeNames(AccountAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -85,31 +59,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DescribeAccountAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AccountAttributeName> m_attributeNames;

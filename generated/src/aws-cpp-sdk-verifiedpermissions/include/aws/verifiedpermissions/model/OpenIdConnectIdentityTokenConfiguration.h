@@ -46,118 +46,37 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The claim that determines the principal in OIDC access tokens. For example,
      * <code>sub</code>.</p>
      */
     inline const Aws::String& GetPrincipalIdClaim() const{ return m_principalIdClaim; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline bool PrincipalIdClaimHasBeenSet() const { return m_principalIdClaimHasBeenSet; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(const Aws::String& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = value; }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(Aws::String&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::move(value); }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline void SetPrincipalIdClaim(const char* value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim.assign(value); }
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(const Aws::String& value) { SetPrincipalIdClaim(value); return *this;}
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(Aws::String&& value) { SetPrincipalIdClaim(std::move(value)); return *this;}
-
-    /**
-     * <p>The claim that determines the principal in OIDC access tokens. For example,
-     * <code>sub</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(const char* value) { SetPrincipalIdClaim(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID token audience, or client ID, claim values that you want to accept in
      * your policy store from an OIDC identity provider. For example,
      * <code>1example23456789, 2example10111213</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientIds() const{ return m_clientIds; }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline bool ClientIdsHasBeenSet() const { return m_clientIdsHasBeenSet; }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline void SetClientIds(const Aws::Vector<Aws::String>& value) { m_clientIdsHasBeenSet = true; m_clientIds = value; }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline void SetClientIds(Aws::Vector<Aws::String>&& value) { m_clientIdsHasBeenSet = true; m_clientIds = std::move(value); }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& WithClientIds(const Aws::Vector<Aws::String>& value) { SetClientIds(value); return *this;}
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& WithClientIds(Aws::Vector<Aws::String>&& value) { SetClientIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& AddClientIds(const Aws::String& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& AddClientIds(Aws::String&& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ID token audience, or client ID, claim values that you want to accept in
-     * your policy store from an OIDC identity provider. For example,
-     * <code>1example23456789, 2example10111213</code>.</p>
-     */
     inline OpenIdConnectIdentityTokenConfiguration& AddClientIds(const char* value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_principalIdClaim;

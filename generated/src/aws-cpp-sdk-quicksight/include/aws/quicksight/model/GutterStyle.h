@@ -36,30 +36,16 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This Boolean value controls whether to display a gutter space between sheet
      * tiles. </p>
      */
     inline bool GetShow() const{ return m_show; }
-
-    /**
-     * <p>This Boolean value controls whether to display a gutter space between sheet
-     * tiles. </p>
-     */
     inline bool ShowHasBeenSet() const { return m_showHasBeenSet; }
-
-    /**
-     * <p>This Boolean value controls whether to display a gutter space between sheet
-     * tiles. </p>
-     */
     inline void SetShow(bool value) { m_showHasBeenSet = true; m_show = value; }
-
-    /**
-     * <p>This Boolean value controls whether to display a gutter space between sheet
-     * tiles. </p>
-     */
     inline GutterStyle& WithShow(bool value) { SetShow(value); return *this;}
-
+    ///@}
   private:
 
     bool m_show;

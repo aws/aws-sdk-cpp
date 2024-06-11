@@ -33,89 +33,40 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetDeleteEventsByEventTypeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The event type name.</p>
      */
     inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline void SetEventTypeName(const Aws::String& value) { m_eventTypeName = value; }
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline void SetEventTypeName(Aws::String&& value) { m_eventTypeName = std::move(value); }
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline void SetEventTypeName(const char* value) { m_eventTypeName.assign(value); }
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline GetDeleteEventsByEventTypeStatusResult& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline GetDeleteEventsByEventTypeStatusResult& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The event type name.</p>
-     */
     inline GetDeleteEventsByEventTypeStatusResult& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The deletion status.</p>
      */
     inline const AsyncJobStatus& GetEventsDeletionStatus() const{ return m_eventsDeletionStatus; }
-
-    /**
-     * <p>The deletion status.</p>
-     */
     inline void SetEventsDeletionStatus(const AsyncJobStatus& value) { m_eventsDeletionStatus = value; }
-
-    /**
-     * <p>The deletion status.</p>
-     */
     inline void SetEventsDeletionStatus(AsyncJobStatus&& value) { m_eventsDeletionStatus = std::move(value); }
-
-    /**
-     * <p>The deletion status.</p>
-     */
     inline GetDeleteEventsByEventTypeStatusResult& WithEventsDeletionStatus(const AsyncJobStatus& value) { SetEventsDeletionStatus(value); return *this;}
-
-    /**
-     * <p>The deletion status.</p>
-     */
     inline GetDeleteEventsByEventTypeStatusResult& WithEventsDeletionStatus(AsyncJobStatus&& value) { SetEventsDeletionStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeleteEventsByEventTypeStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeleteEventsByEventTypeStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeleteEventsByEventTypeStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventTypeName;

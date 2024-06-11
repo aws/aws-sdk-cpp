@@ -38,34 +38,17 @@ namespace Model
     AWS_KENDRARANKING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of extra capacity for your rescore execution plan.</p> <p>A single
      * extra capacity unit for a rescore execution plan provides 0.01 rescore requests
      * per second. You can add up to 1000 extra capacity units.</p>
      */
     inline int GetRescoreCapacityUnits() const{ return m_rescoreCapacityUnits; }
-
-    /**
-     * <p>The amount of extra capacity for your rescore execution plan.</p> <p>A single
-     * extra capacity unit for a rescore execution plan provides 0.01 rescore requests
-     * per second. You can add up to 1000 extra capacity units.</p>
-     */
     inline bool RescoreCapacityUnitsHasBeenSet() const { return m_rescoreCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The amount of extra capacity for your rescore execution plan.</p> <p>A single
-     * extra capacity unit for a rescore execution plan provides 0.01 rescore requests
-     * per second. You can add up to 1000 extra capacity units.</p>
-     */
     inline void SetRescoreCapacityUnits(int value) { m_rescoreCapacityUnitsHasBeenSet = true; m_rescoreCapacityUnits = value; }
-
-    /**
-     * <p>The amount of extra capacity for your rescore execution plan.</p> <p>A single
-     * extra capacity unit for a rescore execution plan provides 0.01 rescore requests
-     * per second. You can add up to 1000 extra capacity units.</p>
-     */
     inline CapacityUnitsConfiguration& WithRescoreCapacityUnits(int value) { SetRescoreCapacityUnits(value); return *this;}
-
+    ///@}
   private:
 
     int m_rescoreCapacityUnits;

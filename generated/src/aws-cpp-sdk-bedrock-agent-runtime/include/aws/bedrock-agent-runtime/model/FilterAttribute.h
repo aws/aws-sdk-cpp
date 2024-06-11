@@ -45,77 +45,31 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name that the metadata attribute must match.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline FilterAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline FilterAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name that the metadata attribute must match.</p>
-     */
     inline FilterAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value to whcih to compare the value of the metadata attribute.</p>
      */
     inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value to whcih to compare the value of the metadata attribute.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value to whcih to compare the value of the metadata attribute.</p>
-     */
     inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value to whcih to compare the value of the metadata attribute.</p>
-     */
     inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value to whcih to compare the value of the metadata attribute.</p>
-     */
     inline FilterAttribute& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value to whcih to compare the value of the metadata attribute.</p>
-     */
     inline FilterAttribute& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

@@ -37,132 +37,47 @@ namespace Model
     AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
      * begins with the specified string are returned.</p> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueNamePrefix() const{ return m_queueNamePrefix; }
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline bool QueueNamePrefixHasBeenSet() const { return m_queueNamePrefixHasBeenSet; }
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline void SetQueueNamePrefix(const Aws::String& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline void SetQueueNamePrefix(Aws::String&& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = std::move(value); }
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline void SetQueueNamePrefix(const char* value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix.assign(value); }
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline ListQueuesRequest& WithQueueNamePrefix(const Aws::String& value) { SetQueueNamePrefix(value); return *this;}
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline ListQueuesRequest& WithQueueNamePrefix(Aws::String&& value) { SetQueueNamePrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p> <p>Queue URLs and names are
-     * case-sensitive.</p>
-     */
     inline ListQueuesRequest& WithQueueNamePrefix(const char* value) { SetQueueNamePrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token to request the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline ListQueuesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline ListQueuesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token to request the next set of results.</p>
-     */
     inline ListQueuesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of results to include in the response. Value range is 1 to
      * 1000. You must set <code>MaxResults</code> to receive a value for
      * <code>NextToken</code> in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of results to include in the response. Value range is 1 to
-     * 1000. You must set <code>MaxResults</code> to receive a value for
-     * <code>NextToken</code> in the response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of results to include in the response. Value range is 1 to
-     * 1000. You must set <code>MaxResults</code> to receive a value for
-     * <code>NextToken</code> in the response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of results to include in the response. Value range is 1 to
-     * 1000. You must set <code>MaxResults</code> to receive a value for
-     * <code>NextToken</code> in the response.</p>
-     */
     inline ListQueuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queueNamePrefix;

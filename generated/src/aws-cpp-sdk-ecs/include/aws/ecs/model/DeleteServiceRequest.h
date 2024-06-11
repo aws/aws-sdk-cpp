@@ -34,132 +34,47 @@ namespace Model
     AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the service to delete. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline DeleteServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline DeleteServiceRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-
-    /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
-     */
     inline DeleteServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service to delete.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline DeleteServiceRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline DeleteServiceRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service to delete.</p>
-     */
     inline DeleteServiceRequest& WithService(const char* value) { SetService(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
      * down to zero tasks. It's only necessary to use this if the service uses the
      * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
-     * down to zero tasks. It's only necessary to use this if the service uses the
-     * <code>REPLICA</code> scheduling strategy.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
-     * down to zero tasks. It's only necessary to use this if the service uses the
-     * <code>REPLICA</code> scheduling strategy.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
-     * down to zero tasks. It's only necessary to use this if the service uses the
-     * <code>REPLICA</code> scheduling strategy.</p>
-     */
     inline DeleteServiceRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cluster;

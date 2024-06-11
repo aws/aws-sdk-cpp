@@ -38,42 +38,18 @@ namespace Model
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The KMS encryption configuration used to provide details for data
      * encryption. </p>
      */
     inline const KmsEncryptionConfig& GetKmsEncryptionConfig() const{ return m_kmsEncryptionConfig; }
-
-    /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
-     */
     inline bool KmsEncryptionConfigHasBeenSet() const { return m_kmsEncryptionConfigHasBeenSet; }
-
-    /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
-     */
     inline void SetKmsEncryptionConfig(const KmsEncryptionConfig& value) { m_kmsEncryptionConfigHasBeenSet = true; m_kmsEncryptionConfig = value; }
-
-    /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
-     */
     inline void SetKmsEncryptionConfig(KmsEncryptionConfig&& value) { m_kmsEncryptionConfigHasBeenSet = true; m_kmsEncryptionConfig = std::move(value); }
-
-    /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
-     */
     inline SseConfiguration& WithKmsEncryptionConfig(const KmsEncryptionConfig& value) { SetKmsEncryptionConfig(value); return *this;}
-
-    /**
-     * <p> The KMS encryption configuration used to provide details for data
-     * encryption. </p>
-     */
     inline SseConfiguration& WithKmsEncryptionConfig(KmsEncryptionConfig&& value) { SetKmsEncryptionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KmsEncryptionConfig m_kmsEncryptionConfig;

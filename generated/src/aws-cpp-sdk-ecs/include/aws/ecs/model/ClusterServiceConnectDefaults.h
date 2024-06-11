@@ -52,62 +52,21 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
      * namespace. When you create a service and don't specify a Service Connect
      * configuration, this namespace is used.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline ClusterServiceConnectDefaults& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline ClusterServiceConnectDefaults& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map
-     * namespace. When you create a service and don't specify a Service Connect
-     * configuration, this namespace is used.</p>
-     */
     inline ClusterServiceConnectDefaults& WithNamespace(const char* value) { SetNamespace(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namespace;

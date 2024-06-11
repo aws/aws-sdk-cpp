@@ -34,54 +34,20 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the development schema. For more
      * information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the development schema. For more
-     * information, see <a>arns</a>.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaArn;

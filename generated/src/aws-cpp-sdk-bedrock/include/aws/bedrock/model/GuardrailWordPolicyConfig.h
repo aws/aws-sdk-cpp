@@ -40,87 +40,33 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of words to configure for the guardrail.</p>
      */
     inline const Aws::Vector<GuardrailWordConfig>& GetWordsConfig() const{ return m_wordsConfig; }
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline bool WordsConfigHasBeenSet() const { return m_wordsConfigHasBeenSet; }
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline void SetWordsConfig(const Aws::Vector<GuardrailWordConfig>& value) { m_wordsConfigHasBeenSet = true; m_wordsConfig = value; }
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline void SetWordsConfig(Aws::Vector<GuardrailWordConfig>&& value) { m_wordsConfigHasBeenSet = true; m_wordsConfig = std::move(value); }
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& WithWordsConfig(const Aws::Vector<GuardrailWordConfig>& value) { SetWordsConfig(value); return *this;}
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& WithWordsConfig(Aws::Vector<GuardrailWordConfig>&& value) { SetWordsConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& AddWordsConfig(const GuardrailWordConfig& value) { m_wordsConfigHasBeenSet = true; m_wordsConfig.push_back(value); return *this; }
-
-    /**
-     * <p>A list of words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& AddWordsConfig(GuardrailWordConfig&& value) { m_wordsConfigHasBeenSet = true; m_wordsConfig.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of managed words to configure for the guardrail.</p>
      */
     inline const Aws::Vector<GuardrailManagedWordsConfig>& GetManagedWordListsConfig() const{ return m_managedWordListsConfig; }
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline bool ManagedWordListsConfigHasBeenSet() const { return m_managedWordListsConfigHasBeenSet; }
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline void SetManagedWordListsConfig(const Aws::Vector<GuardrailManagedWordsConfig>& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig = value; }
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline void SetManagedWordListsConfig(Aws::Vector<GuardrailManagedWordsConfig>&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig = std::move(value); }
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& WithManagedWordListsConfig(const Aws::Vector<GuardrailManagedWordsConfig>& value) { SetManagedWordListsConfig(value); return *this;}
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& WithManagedWordListsConfig(Aws::Vector<GuardrailManagedWordsConfig>&& value) { SetManagedWordListsConfig(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& AddManagedWordListsConfig(const GuardrailManagedWordsConfig& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig.push_back(value); return *this; }
-
-    /**
-     * <p>A list of managed words to configure for the guardrail.</p>
-     */
     inline GuardrailWordPolicyConfig& AddManagedWordListsConfig(GuardrailManagedWordsConfig&& value) { m_managedWordListsConfigHasBeenSet = true; m_managedWordListsConfig.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailWordConfig> m_wordsConfig;

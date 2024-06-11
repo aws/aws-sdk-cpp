@@ -44,55 +44,27 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and
      * objects in this bucket. </p>
      */
     inline bool GetIgnorePublicAcls() const{ return m_ignorePublicAcls; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and
-     * objects in this bucket. </p>
-     */
     inline bool IgnorePublicAclsHasBeenSet() const { return m_ignorePublicAclsHasBeenSet; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and
-     * objects in this bucket. </p>
-     */
     inline void SetIgnorePublicAcls(bool value) { m_ignorePublicAclsHasBeenSet = true; m_ignorePublicAcls = value; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and
-     * objects in this bucket. </p>
-     */
     inline S3PublicAccessBlockConfiguration& WithIgnorePublicAcls(bool value) { SetIgnorePublicAcls(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. </p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should restrict public bucket policies for this
-     * bucket. </p>
-     */
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should restrict public bucket policies for this
-     * bucket. </p>
-     */
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
-
-    /**
-     * <p> Specifies whether Amazon S3 should restrict public bucket policies for this
-     * bucket. </p>
-     */
     inline S3PublicAccessBlockConfiguration& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
-
+    ///@}
   private:
 
     bool m_ignorePublicAcls;

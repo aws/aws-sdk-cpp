@@ -33,58 +33,28 @@ namespace Model
     AWS_SECURITYLAKE_API CreateSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Retrieve information about the subscriber created using the
      * <code>CreateSubscriber</code> API.</p>
      */
     inline const SubscriberResource& GetSubscriber() const{ return m_subscriber; }
-
-    /**
-     * <p>Retrieve information about the subscriber created using the
-     * <code>CreateSubscriber</code> API.</p>
-     */
     inline void SetSubscriber(const SubscriberResource& value) { m_subscriber = value; }
-
-    /**
-     * <p>Retrieve information about the subscriber created using the
-     * <code>CreateSubscriber</code> API.</p>
-     */
     inline void SetSubscriber(SubscriberResource&& value) { m_subscriber = std::move(value); }
-
-    /**
-     * <p>Retrieve information about the subscriber created using the
-     * <code>CreateSubscriber</code> API.</p>
-     */
     inline CreateSubscriberResult& WithSubscriber(const SubscriberResource& value) { SetSubscriber(value); return *this;}
-
-    /**
-     * <p>Retrieve information about the subscriber created using the
-     * <code>CreateSubscriber</code> API.</p>
-     */
     inline CreateSubscriberResult& WithSubscriber(SubscriberResource&& value) { SetSubscriber(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSubscriberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSubscriberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSubscriberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SubscriberResource m_subscriber;

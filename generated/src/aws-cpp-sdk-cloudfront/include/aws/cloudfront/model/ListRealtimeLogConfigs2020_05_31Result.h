@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListRealtimeLogConfigs2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of real-time log configurations.</p>
      */
     inline const RealtimeLogConfigs& GetRealtimeLogConfigs() const{ return m_realtimeLogConfigs; }
-
-    /**
-     * <p>A list of real-time log configurations.</p>
-     */
     inline void SetRealtimeLogConfigs(const RealtimeLogConfigs& value) { m_realtimeLogConfigs = value; }
-
-    /**
-     * <p>A list of real-time log configurations.</p>
-     */
     inline void SetRealtimeLogConfigs(RealtimeLogConfigs&& value) { m_realtimeLogConfigs = std::move(value); }
-
-    /**
-     * <p>A list of real-time log configurations.</p>
-     */
     inline ListRealtimeLogConfigs2020_05_31Result& WithRealtimeLogConfigs(const RealtimeLogConfigs& value) { SetRealtimeLogConfigs(value); return *this;}
-
-    /**
-     * <p>A list of real-time log configurations.</p>
-     */
     inline ListRealtimeLogConfigs2020_05_31Result& WithRealtimeLogConfigs(RealtimeLogConfigs&& value) { SetRealtimeLogConfigs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRealtimeLogConfigs2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRealtimeLogConfigs2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRealtimeLogConfigs2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RealtimeLogConfigs m_realtimeLogConfigs;

@@ -37,87 +37,33 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
-
-    /**
-     * <p/>
-     */
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithID(const Aws::String& value) { SetID(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithID(const char* value) { SetID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-
-    /**
-     * <p/>
-     */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline S3ObjectOwner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iD;

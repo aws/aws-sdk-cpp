@@ -38,103 +38,35 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository to set or change the comment or description
-     * for.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new comment or description for the specified repository. Repository
      * descriptions are limited to 1,000 characters.</p>
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline bool RepositoryDescriptionHasBeenSet() const { return m_repositoryDescriptionHasBeenSet; }
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline void SetRepositoryDescription(const Aws::String& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::move(value); }
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline void SetRepositoryDescription(const char* value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription.assign(value); }
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const Aws::String& value) { SetRepositoryDescription(value); return *this;}
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The new comment or description for the specified repository. Repository
-     * descriptions are limited to 1,000 characters.</p>
-     */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

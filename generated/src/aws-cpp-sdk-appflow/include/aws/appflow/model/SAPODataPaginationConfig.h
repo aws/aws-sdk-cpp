@@ -39,6 +39,7 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of records that Amazon AppFlow receives in each page of
      * the response from your SAP application. For transfers of OData records, the
@@ -46,31 +47,10 @@ namespace Model
      * provider, the maximum page size is 10,000.</p>
      */
     inline int GetMaxPageSize() const{ return m_maxPageSize; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application. For transfers of OData records, the
-     * maximum page size is 3,000. For transfers of data that comes from an ODP
-     * provider, the maximum page size is 10,000.</p>
-     */
     inline bool MaxPageSizeHasBeenSet() const { return m_maxPageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application. For transfers of OData records, the
-     * maximum page size is 3,000. For transfers of data that comes from an ODP
-     * provider, the maximum page size is 10,000.</p>
-     */
     inline void SetMaxPageSize(int value) { m_maxPageSizeHasBeenSet = true; m_maxPageSize = value; }
-
-    /**
-     * <p>The maximum number of records that Amazon AppFlow receives in each page of
-     * the response from your SAP application. For transfers of OData records, the
-     * maximum page size is 3,000. For transfers of data that comes from an ODP
-     * provider, the maximum page size is 10,000.</p>
-     */
     inline SAPODataPaginationConfig& WithMaxPageSize(int value) { SetMaxPageSize(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxPageSize;

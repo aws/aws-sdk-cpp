@@ -33,58 +33,28 @@ namespace Model
     AWS_DEVICEFARM_API CreateVPCEConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about your VPC endpoint
      * configuration.</p>
      */
     inline const VPCEConfiguration& GetVpceConfiguration() const{ return m_vpceConfiguration; }
-
-    /**
-     * <p>An object that contains information about your VPC endpoint
-     * configuration.</p>
-     */
     inline void SetVpceConfiguration(const VPCEConfiguration& value) { m_vpceConfiguration = value; }
-
-    /**
-     * <p>An object that contains information about your VPC endpoint
-     * configuration.</p>
-     */
     inline void SetVpceConfiguration(VPCEConfiguration&& value) { m_vpceConfiguration = std::move(value); }
-
-    /**
-     * <p>An object that contains information about your VPC endpoint
-     * configuration.</p>
-     */
     inline CreateVPCEConfigurationResult& WithVpceConfiguration(const VPCEConfiguration& value) { SetVpceConfiguration(value); return *this;}
-
-    /**
-     * <p>An object that contains information about your VPC endpoint
-     * configuration.</p>
-     */
     inline CreateVPCEConfigurationResult& WithVpceConfiguration(VPCEConfiguration&& value) { SetVpceConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateVPCEConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateVPCEConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateVPCEConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VPCEConfiguration m_vpceConfiguration;

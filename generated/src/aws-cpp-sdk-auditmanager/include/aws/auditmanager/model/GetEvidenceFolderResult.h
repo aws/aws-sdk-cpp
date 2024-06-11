@@ -33,53 +33,27 @@ namespace Model
     AWS_AUDITMANAGER_API GetEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The folder that the evidence is stored in. </p>
      */
     inline const AssessmentEvidenceFolder& GetEvidenceFolder() const{ return m_evidenceFolder; }
-
-    /**
-     * <p> The folder that the evidence is stored in. </p>
-     */
     inline void SetEvidenceFolder(const AssessmentEvidenceFolder& value) { m_evidenceFolder = value; }
-
-    /**
-     * <p> The folder that the evidence is stored in. </p>
-     */
     inline void SetEvidenceFolder(AssessmentEvidenceFolder&& value) { m_evidenceFolder = std::move(value); }
-
-    /**
-     * <p> The folder that the evidence is stored in. </p>
-     */
     inline GetEvidenceFolderResult& WithEvidenceFolder(const AssessmentEvidenceFolder& value) { SetEvidenceFolder(value); return *this;}
-
-    /**
-     * <p> The folder that the evidence is stored in. </p>
-     */
     inline GetEvidenceFolderResult& WithEvidenceFolder(AssessmentEvidenceFolder&& value) { SetEvidenceFolder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEvidenceFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEvidenceFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEvidenceFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AssessmentEvidenceFolder m_evidenceFolder;

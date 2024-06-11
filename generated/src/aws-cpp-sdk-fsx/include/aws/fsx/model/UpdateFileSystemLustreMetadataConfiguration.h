@@ -43,6 +43,7 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>(USER_PROVISIONED mode only) Specifies the number of Metadata IOPS to
      * provision for your file system. Valid values are <code>1500</code>,
@@ -52,38 +53,12 @@ namespace Model
      * provisioned for the file system.</p>
      */
     inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>(USER_PROVISIONED mode only) Specifies the number of Metadata IOPS to
-     * provision for your file system. Valid values are <code>1500</code>,
-     * <code>3000</code>, <code>6000</code>, <code>12000</code>, and multiples of
-     * <code>12000</code> up to a maximum of <code>192000</code>.</p> <p>The value you
-     * provide must be greater than or equal to the current number of Metadata IOPS
-     * provisioned for the file system.</p>
-     */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-
-    /**
-     * <p>(USER_PROVISIONED mode only) Specifies the number of Metadata IOPS to
-     * provision for your file system. Valid values are <code>1500</code>,
-     * <code>3000</code>, <code>6000</code>, <code>12000</code>, and multiples of
-     * <code>12000</code> up to a maximum of <code>192000</code>.</p> <p>The value you
-     * provide must be greater than or equal to the current number of Metadata IOPS
-     * provisioned for the file system.</p>
-     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>(USER_PROVISIONED mode only) Specifies the number of Metadata IOPS to
-     * provision for your file system. Valid values are <code>1500</code>,
-     * <code>3000</code>, <code>6000</code>, <code>12000</code>, and multiples of
-     * <code>12000</code> up to a maximum of <code>192000</code>.</p> <p>The value you
-     * provide must be greater than or equal to the current number of Metadata IOPS
-     * provisioned for the file system.</p>
-     */
     inline UpdateFileSystemLustreMetadataConfiguration& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
      * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
@@ -99,87 +74,12 @@ namespace Model
      *  </li> </ul>
      */
     inline const MetadataConfigurationMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
-     * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-     * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
-     * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
-     * parameter to provide a Metadata IOPS value that is greater than or equal to the
-     * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
-     * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
-     * value for this parameter, but do not input a value for Iops.</p>  <p>If
-     * you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current
-     * Metadata IOPS value is greater than the automated default, FSx for Lustre
-     * rejects the request because downscaling Metadata IOPS is not supported.</p>
-     *  </li> </ul>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
-     * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-     * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
-     * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
-     * parameter to provide a Metadata IOPS value that is greater than or equal to the
-     * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
-     * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
-     * value for this parameter, but do not input a value for Iops.</p>  <p>If
-     * you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current
-     * Metadata IOPS value is greater than the automated default, FSx for Lustre
-     * rejects the request because downscaling Metadata IOPS is not supported.</p>
-     *  </li> </ul>
-     */
     inline void SetMode(const MetadataConfigurationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
-     * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-     * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
-     * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
-     * parameter to provide a Metadata IOPS value that is greater than or equal to the
-     * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
-     * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
-     * value for this parameter, but do not input a value for Iops.</p>  <p>If
-     * you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current
-     * Metadata IOPS value is greater than the automated default, FSx for Lustre
-     * rejects the request because downscaling Metadata IOPS is not supported.</p>
-     *  </li> </ul>
-     */
     inline void SetMode(MetadataConfigurationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
-     * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-     * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
-     * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
-     * parameter to provide a Metadata IOPS value that is greater than or equal to the
-     * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
-     * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
-     * value for this parameter, but do not input a value for Iops.</p>  <p>If
-     * you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current
-     * Metadata IOPS value is greater than the automated default, FSx for Lustre
-     * rejects the request because downscaling Metadata IOPS is not supported.</p>
-     *  </li> </ul>
-     */
     inline UpdateFileSystemLustreMetadataConfiguration& WithMode(const MetadataConfigurationMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>The metadata configuration mode for provisioning Metadata IOPS for an FSx for
-     * Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p> <ul>
-     * <li> <p>To increase the Metadata IOPS or to switch from AUTOMATIC mode, specify
-     * <code>USER_PROVISIONED</code> as the value for this parameter. Then use the Iops
-     * parameter to provide a Metadata IOPS value that is greater than or equal to the
-     * current number of Metadata IOPS provisioned for the file system.</p> </li> <li>
-     * <p>To switch from USER_PROVISIONED mode, specify <code>AUTOMATIC</code> as the
-     * value for this parameter, but do not input a value for Iops.</p>  <p>If
-     * you request to switch from USER_PROVISIONED to AUTOMATIC mode and the current
-     * Metadata IOPS value is greater than the automated default, FSx for Lustre
-     * rejects the request because downscaling Metadata IOPS is not supported.</p>
-     *  </li> </ul>
-     */
     inline UpdateFileSystemLustreMetadataConfiguration& WithMode(MetadataConfigurationMode&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_iops;

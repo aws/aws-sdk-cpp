@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cell scaling configuration of the sizing options for the table image
      * configuration.</p>
      */
     inline const TableCellImageScalingConfiguration& GetTableCellImageScalingConfiguration() const{ return m_tableCellImageScalingConfiguration; }
-
-    /**
-     * <p>The cell scaling configuration of the sizing options for the table image
-     * configuration.</p>
-     */
     inline bool TableCellImageScalingConfigurationHasBeenSet() const { return m_tableCellImageScalingConfigurationHasBeenSet; }
-
-    /**
-     * <p>The cell scaling configuration of the sizing options for the table image
-     * configuration.</p>
-     */
     inline void SetTableCellImageScalingConfiguration(const TableCellImageScalingConfiguration& value) { m_tableCellImageScalingConfigurationHasBeenSet = true; m_tableCellImageScalingConfiguration = value; }
-
-    /**
-     * <p>The cell scaling configuration of the sizing options for the table image
-     * configuration.</p>
-     */
     inline void SetTableCellImageScalingConfiguration(TableCellImageScalingConfiguration&& value) { m_tableCellImageScalingConfigurationHasBeenSet = true; m_tableCellImageScalingConfiguration = std::move(value); }
-
-    /**
-     * <p>The cell scaling configuration of the sizing options for the table image
-     * configuration.</p>
-     */
     inline TableCellImageSizingConfiguration& WithTableCellImageScalingConfiguration(const TableCellImageScalingConfiguration& value) { SetTableCellImageScalingConfiguration(value); return *this;}
-
-    /**
-     * <p>The cell scaling configuration of the sizing options for the table image
-     * configuration.</p>
-     */
     inline TableCellImageSizingConfiguration& WithTableCellImageScalingConfiguration(TableCellImageScalingConfiguration&& value) { SetTableCellImageScalingConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableCellImageScalingConfiguration m_tableCellImageScalingConfiguration;

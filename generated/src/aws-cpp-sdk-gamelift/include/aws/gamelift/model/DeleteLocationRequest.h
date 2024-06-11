@@ -34,46 +34,19 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The location name of the custom location to be deleted.</p>
      */
     inline const Aws::String& GetLocationName() const{ return m_locationName; }
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline DeleteLocationRequest& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline DeleteLocationRequest& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The location name of the custom location to be deleted.</p>
-     */
     inline DeleteLocationRequest& WithLocationName(const char* value) { SetLocationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_locationName;

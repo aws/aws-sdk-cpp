@@ -39,93 +39,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The primary message that Amazon Lex should send to the user.</p>
      */
     inline const Message& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The primary message that Amazon Lex should send to the user.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The primary message that Amazon Lex should send to the user.</p>
-     */
     inline void SetMessage(const Message& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The primary message that Amazon Lex should send to the user.</p>
-     */
     inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The primary message that Amazon Lex should send to the user.</p>
-     */
     inline MessageGroup& WithMessage(const Message& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The primary message that Amazon Lex should send to the user.</p>
-     */
     inline MessageGroup& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Message variations to send to the user. When variations are defined, Amazon
      * Lex chooses the primary message or one of the variations to send to the
      * user.</p>
      */
     inline const Aws::Vector<Message>& GetVariations() const{ return m_variations; }
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline bool VariationsHasBeenSet() const { return m_variationsHasBeenSet; }
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline void SetVariations(const Aws::Vector<Message>& value) { m_variationsHasBeenSet = true; m_variations = value; }
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline void SetVariations(Aws::Vector<Message>&& value) { m_variationsHasBeenSet = true; m_variations = std::move(value); }
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline MessageGroup& WithVariations(const Aws::Vector<Message>& value) { SetVariations(value); return *this;}
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline MessageGroup& WithVariations(Aws::Vector<Message>&& value) { SetVariations(std::move(value)); return *this;}
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline MessageGroup& AddVariations(const Message& value) { m_variationsHasBeenSet = true; m_variations.push_back(value); return *this; }
-
-    /**
-     * <p>Message variations to send to the user. When variations are defined, Amazon
-     * Lex chooses the primary message or one of the variations to send to the
-     * user.</p>
-     */
     inline MessageGroup& AddVariations(Message&& value) { m_variationsHasBeenSet = true; m_variations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Message m_message;

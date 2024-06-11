@@ -32,135 +32,55 @@ namespace Model
     AWS_ENTITYRESOLUTION_API DeletePolicyStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the resource for which the policy need to be deleted.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline DeletePolicyStatementResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline DeletePolicyStatementResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource for which the policy need to be deleted.</p>
-     */
     inline DeletePolicyStatementResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource-based policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline DeletePolicyStatementResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline DeletePolicyStatementResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource-based policy.</p>
-     */
     inline DeletePolicyStatementResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for the deleted policy.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_token = value; }
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline void SetToken(const char* value) { m_token.assign(value); }
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline DeletePolicyStatementResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline DeletePolicyStatementResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the deleted policy.</p>
-     */
     inline DeletePolicyStatementResult& WithToken(const char* value) { SetToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeletePolicyStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeletePolicyStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeletePolicyStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

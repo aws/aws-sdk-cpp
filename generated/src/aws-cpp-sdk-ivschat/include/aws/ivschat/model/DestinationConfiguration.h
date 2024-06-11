@@ -42,116 +42,44 @@ namespace Model
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
      * be logged.</p>
      */
     inline const CloudWatchLogsDestinationConfiguration& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
-
-    /**
-     * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
-     * be logged.</p>
-     */
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-
-    /**
-     * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
-     * be logged.</p>
-     */
     inline void SetCloudWatchLogs(const CloudWatchLogsDestinationConfiguration& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-
-    /**
-     * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
-     * be logged.</p>
-     */
     inline void SetCloudWatchLogs(CloudWatchLogsDestinationConfiguration&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-
-    /**
-     * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
-     * be logged.</p>
-     */
     inline DestinationConfiguration& WithCloudWatchLogs(const CloudWatchLogsDestinationConfiguration& value) { SetCloudWatchLogs(value); return *this;}
-
-    /**
-     * <p>An Amazon CloudWatch Logs destination configuration where chat activity will
-     * be logged.</p>
-     */
     inline DestinationConfiguration& WithCloudWatchLogs(CloudWatchLogsDestinationConfiguration&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
      * will be logged.</p>
      */
     inline const FirehoseDestinationConfiguration& GetFirehose() const{ return m_firehose; }
-
-    /**
-     * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
-     * will be logged.</p>
-     */
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
-
-    /**
-     * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
-     * will be logged.</p>
-     */
     inline void SetFirehose(const FirehoseDestinationConfiguration& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
-
-    /**
-     * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
-     * will be logged.</p>
-     */
     inline void SetFirehose(FirehoseDestinationConfiguration&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
-
-    /**
-     * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
-     * will be logged.</p>
-     */
     inline DestinationConfiguration& WithFirehose(const FirehoseDestinationConfiguration& value) { SetFirehose(value); return *this;}
-
-    /**
-     * <p>An Amazon Kinesis Data Firehose destination configuration where chat activity
-     * will be logged.</p>
-     */
     inline DestinationConfiguration& WithFirehose(FirehoseDestinationConfiguration&& value) { SetFirehose(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon S3 destination configuration where chat activity will be
      * logged.</p>
      */
     inline const S3DestinationConfiguration& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
     inline void SetS3(const S3DestinationConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
     inline void SetS3(S3DestinationConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
     inline DestinationConfiguration& WithS3(const S3DestinationConfiguration& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>An Amazon S3 destination configuration where chat activity will be
-     * logged.</p>
-     */
     inline DestinationConfiguration& WithS3(S3DestinationConfiguration&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogsDestinationConfiguration m_cloudWatchLogs;

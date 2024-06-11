@@ -38,67 +38,29 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline const Greengrass& GetGreengrass() const{ return m_greengrass; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass.</p>
-     */
     inline bool GreengrassHasBeenSet() const { return m_greengrassHasBeenSet; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass.</p>
-     */
     inline void SetGreengrass(const Greengrass& value) { m_greengrassHasBeenSet = true; m_greengrass = value; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass.</p>
-     */
     inline void SetGreengrass(Greengrass&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::move(value); }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass.</p>
-     */
     inline GatewayPlatform& WithGreengrass(const Greengrass& value) { SetGreengrass(value); return *this;}
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass.</p>
-     */
     inline GatewayPlatform& WithGreengrass(Greengrass&& value) { SetGreengrass(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A gateway that runs on IoT Greengrass V2.</p>
      */
     inline const GreengrassV2& GetGreengrassV2() const{ return m_greengrassV2; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass V2.</p>
-     */
     inline bool GreengrassV2HasBeenSet() const { return m_greengrassV2HasBeenSet; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass V2.</p>
-     */
     inline void SetGreengrassV2(const GreengrassV2& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = value; }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass V2.</p>
-     */
     inline void SetGreengrassV2(GreengrassV2&& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = std::move(value); }
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass V2.</p>
-     */
     inline GatewayPlatform& WithGreengrassV2(const GreengrassV2& value) { SetGreengrassV2(value); return *this;}
-
-    /**
-     * <p>A gateway that runs on IoT Greengrass V2.</p>
-     */
     inline GatewayPlatform& WithGreengrassV2(GreengrassV2&& value) { SetGreengrassV2(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Greengrass m_greengrass;

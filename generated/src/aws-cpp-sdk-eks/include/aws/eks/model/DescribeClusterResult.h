@@ -33,53 +33,27 @@ namespace Model
     AWS_EKS_API DescribeClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of your specified cluster.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
-
-    /**
-     * <p>The full description of your specified cluster.</p>
-     */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
-
-    /**
-     * <p>The full description of your specified cluster.</p>
-     */
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-
-    /**
-     * <p>The full description of your specified cluster.</p>
-     */
     inline DescribeClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-
-    /**
-     * <p>The full description of your specified cluster.</p>
-     */
     inline DescribeClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Cluster m_cluster;

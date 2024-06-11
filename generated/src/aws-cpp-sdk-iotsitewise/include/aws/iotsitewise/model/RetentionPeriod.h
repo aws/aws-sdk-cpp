@@ -36,63 +36,29 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of days that your data is kept.</p>  <p>If you specified a
      * value for this parameter, the <code>unlimited</code> parameter must be
      * <code>false</code>.</p> 
      */
     inline int GetNumberOfDays() const{ return m_numberOfDays; }
-
-    /**
-     * <p>The number of days that your data is kept.</p>  <p>If you specified a
-     * value for this parameter, the <code>unlimited</code> parameter must be
-     * <code>false</code>.</p> 
-     */
     inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
-
-    /**
-     * <p>The number of days that your data is kept.</p>  <p>If you specified a
-     * value for this parameter, the <code>unlimited</code> parameter must be
-     * <code>false</code>.</p> 
-     */
     inline void SetNumberOfDays(int value) { m_numberOfDaysHasBeenSet = true; m_numberOfDays = value; }
-
-    /**
-     * <p>The number of days that your data is kept.</p>  <p>If you specified a
-     * value for this parameter, the <code>unlimited</code> parameter must be
-     * <code>false</code>.</p> 
-     */
     inline RetentionPeriod& WithNumberOfDays(int value) { SetNumberOfDays(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If true, your data is kept indefinitely.</p>  <p>If configured to
      * <code>true</code>, you must not specify a value for the
      * <code>numberOfDays</code> parameter.</p> 
      */
     inline bool GetUnlimited() const{ return m_unlimited; }
-
-    /**
-     * <p>If true, your data is kept indefinitely.</p>  <p>If configured to
-     * <code>true</code>, you must not specify a value for the
-     * <code>numberOfDays</code> parameter.</p> 
-     */
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
-
-    /**
-     * <p>If true, your data is kept indefinitely.</p>  <p>If configured to
-     * <code>true</code>, you must not specify a value for the
-     * <code>numberOfDays</code> parameter.</p> 
-     */
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
-
-    /**
-     * <p>If true, your data is kept indefinitely.</p>  <p>If configured to
-     * <code>true</code>, you must not specify a value for the
-     * <code>numberOfDays</code> parameter.</p> 
-     */
     inline RetentionPeriod& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
-
+    ///@}
   private:
 
     int m_numberOfDays;

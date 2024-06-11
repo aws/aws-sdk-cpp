@@ -46,6 +46,7 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (for example,
@@ -64,157 +65,28 @@ namespace Model
      * <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline const EBSFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume
-     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
-     * <code>tag:key</code> is a key and value combination of a tag assigned to your
-     * Amazon EBS volume recommendations. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all Amazon EBS volume
-     * recommendations that have a tag with the key of <code>Owner</code> and the value
-     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
-     * key of a tag assigned to your Amazon EBS volume recommendations. Use this filter
-     * to find all of your Amazon EBS volume recommendations that have a tag with a
-     * specific key. This doesn’t consider the tag value. For example, you can find
-     * your Amazon EBS volume recommendations with a tag key value of
-     * <code>Owner</code> or without any tag keys assigned.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume
-     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
-     * <code>tag:key</code> is a key and value combination of a tag assigned to your
-     * Amazon EBS volume recommendations. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all Amazon EBS volume
-     * recommendations that have a tag with the key of <code>Owner</code> and the value
-     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
-     * key of a tag assigned to your Amazon EBS volume recommendations. Use this filter
-     * to find all of your Amazon EBS volume recommendations that have a tag with a
-     * specific key. This doesn’t consider the tag value. For example, you can find
-     * your Amazon EBS volume recommendations with a tag key value of
-     * <code>Owner</code> or without any tag keys assigned.</p>
-     */
     inline void SetName(const EBSFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume
-     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
-     * <code>tag:key</code> is a key and value combination of a tag assigned to your
-     * Amazon EBS volume recommendations. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all Amazon EBS volume
-     * recommendations that have a tag with the key of <code>Owner</code> and the value
-     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
-     * key of a tag assigned to your Amazon EBS volume recommendations. Use this filter
-     * to find all of your Amazon EBS volume recommendations that have a tag with a
-     * specific key. This doesn’t consider the tag value. For example, you can find
-     * your Amazon EBS volume recommendations with a tag key value of
-     * <code>Owner</code> or without any tag keys assigned.</p>
-     */
     inline void SetName(EBSFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume
-     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
-     * <code>tag:key</code> is a key and value combination of a tag assigned to your
-     * Amazon EBS volume recommendations. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all Amazon EBS volume
-     * recommendations that have a tag with the key of <code>Owner</code> and the value
-     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
-     * key of a tag assigned to your Amazon EBS volume recommendations. Use this filter
-     * to find all of your Amazon EBS volume recommendations that have a tag with a
-     * specific key. This doesn’t consider the tag value. For example, you can find
-     * your Amazon EBS volume recommendations with a tag key value of
-     * <code>Owner</code> or without any tag keys assigned.</p>
-     */
     inline EBSFilter& WithName(const EBSFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume
-     * recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A
-     * <code>tag:key</code> is a key and value combination of a tag assigned to your
-     * Amazon EBS volume recommendations. Use the tag key in the filter name and the
-     * tag value as the filter value. For example, to find all Amazon EBS volume
-     * recommendations that have a tag with the key of <code>Owner</code> and the value
-     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
-     * key of a tag assigned to your Amazon EBS volume recommendations. Use this filter
-     * to find all of your Amazon EBS volume recommendations that have a tag with a
-     * specific key. This doesn’t consider the tag value. For example, you can find
-     * your Amazon EBS volume recommendations with a tag key value of
-     * <code>Owner</code> or without any tag keys assigned.</p>
-     */
     inline EBSFilter& WithName(EBSFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
      * or <code>NotOptimized</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline EBSFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline EBSFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline EBSFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline EBSFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
-     * or <code>NotOptimized</code>.</p>
-     */
     inline EBSFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     EBSFilterName m_name;

@@ -33,53 +33,27 @@ namespace Model
     AWS_WAFREGIONAL_API GetLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
-
-    /**
-     * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
-     */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfiguration = value; }
-
-    /**
-     * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
-     */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
-
-    /**
-     * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
-     */
     inline GetLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-
-    /**
-     * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
-     */
     inline GetLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoggingConfiguration m_loggingConfiguration;

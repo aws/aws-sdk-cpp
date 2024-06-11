@@ -39,132 +39,47 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The category of the custom action that you want to delete, such as source or
      * deploy.</p>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
-
-    /**
-     * <p>The category of the custom action that you want to delete, such as source or
-     * deploy.</p>
-     */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-
-    /**
-     * <p>The category of the custom action that you want to delete, such as source or
-     * deploy.</p>
-     */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-
-    /**
-     * <p>The category of the custom action that you want to delete, such as source or
-     * deploy.</p>
-     */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-
-    /**
-     * <p>The category of the custom action that you want to delete, such as source or
-     * deploy.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
-
-    /**
-     * <p>The category of the custom action that you want to delete, such as source or
-     * deploy.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-
-    /**
-     * <p>The provider of the service used in the custom action, such as
-     * CodeDeploy.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the custom action to delete.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the custom action to delete.</p>
-     */
     inline DeleteCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     ActionCategory m_category;

@@ -36,87 +36,33 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of your database for which to update parameters.</p>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your database for which to update parameters.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The database parameters to update.</p>
      */
     inline const Aws::Vector<RelationalDatabaseParameter>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline void SetParameters(const Aws::Vector<RelationalDatabaseParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline void SetParameters(Aws::Vector<RelationalDatabaseParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& WithParameters(const Aws::Vector<RelationalDatabaseParameter>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& WithParameters(Aws::Vector<RelationalDatabaseParameter>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& AddParameters(const RelationalDatabaseParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p>The database parameters to update.</p>
-     */
     inline UpdateRelationalDatabaseParametersRequest& AddParameters(RelationalDatabaseParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_relationalDatabaseName;

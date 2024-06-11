@@ -39,115 +39,37 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents an equal condition that is applied to a single field while
      * retrieving the coverage details.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEquals() const{ return m_equals; }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline void SetEquals(const Aws::Vector<Aws::String>& value) { m_equalsHasBeenSet = true; m_equals = value; }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline void SetEquals(Aws::Vector<Aws::String>&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& WithEquals(const Aws::Vector<Aws::String>& value) { SetEquals(value); return *this;}
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& WithEquals(Aws::Vector<Aws::String>&& value) { SetEquals(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddEquals(const Aws::String& value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddEquals(Aws::String&& value) { m_equalsHasBeenSet = true; m_equals.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Represents an equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddEquals(const char* value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents a not equal condition that is applied to a single field while
      * retrieving the coverage details.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotEquals() const{ return m_notEquals; }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline void SetNotEquals(const Aws::Vector<Aws::String>& value) { m_notEqualsHasBeenSet = true; m_notEquals = value; }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline void SetNotEquals(Aws::Vector<Aws::String>&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::move(value); }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& WithNotEquals(const Aws::Vector<Aws::String>& value) { SetNotEquals(value); return *this;}
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& WithNotEquals(Aws::Vector<Aws::String>&& value) { SetNotEquals(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddNotEquals(const Aws::String& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddNotEquals(Aws::String&& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Represents a not equal condition that is applied to a single field while
-     * retrieving the coverage details.</p>
-     */
     inline CoverageFilterCondition& AddNotEquals(const char* value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_equals;

@@ -34,120 +34,45 @@ namespace Model
     AWS_APPSTREAM_API DescribeDirectoryConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the directory configurations. Note that although the
      * response syntax in this topic includes the account password, this password is
      * not returned in the actual response. </p>
      */
     inline const Aws::Vector<DirectoryConfig>& GetDirectoryConfigs() const{ return m_directoryConfigs; }
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline void SetDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { m_directoryConfigs = value; }
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline void SetDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { m_directoryConfigs = std::move(value); }
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(const Aws::Vector<DirectoryConfig>& value) { SetDirectoryConfigs(value); return *this;}
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline DescribeDirectoryConfigsResult& WithDirectoryConfigs(Aws::Vector<DirectoryConfig>&& value) { SetDirectoryConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(const DirectoryConfig& value) { m_directoryConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the directory configurations. Note that although the
-     * response syntax in this topic includes the account password, this password is
-     * not returned in the actual response. </p>
-     */
     inline DescribeDirectoryConfigsResult& AddDirectoryConfigs(DirectoryConfig&& value) { m_directoryConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeDirectoryConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeDirectoryConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeDirectoryConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDirectoryConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDirectoryConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDirectoryConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DirectoryConfig> m_directoryConfigs;

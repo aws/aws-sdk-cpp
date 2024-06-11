@@ -37,31 +37,21 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline int GetMinimumInstanceCount() const{ return m_minimumInstanceCount; }
-
-    
     inline bool MinimumInstanceCountHasBeenSet() const { return m_minimumInstanceCountHasBeenSet; }
-
-    
     inline void SetMinimumInstanceCount(int value) { m_minimumInstanceCountHasBeenSet = true; m_minimumInstanceCount = value; }
-
-    
     inline InstanceCountLimits& WithMinimumInstanceCount(int value) { SetMinimumInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMaximumInstanceCount() const{ return m_maximumInstanceCount; }
-
-    
     inline bool MaximumInstanceCountHasBeenSet() const { return m_maximumInstanceCountHasBeenSet; }
-
-    
     inline void SetMaximumInstanceCount(int value) { m_maximumInstanceCountHasBeenSet = true; m_maximumInstanceCount = value; }
-
-    
     inline InstanceCountLimits& WithMaximumInstanceCount(int value) { SetMaximumInstanceCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_minimumInstanceCount;

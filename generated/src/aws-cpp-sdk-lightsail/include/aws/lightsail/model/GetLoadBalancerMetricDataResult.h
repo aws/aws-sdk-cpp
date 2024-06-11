@@ -35,89 +35,40 @@ namespace Model
     AWS_LIGHTSAIL_API GetLoadBalancerMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the metric returned.</p>
      */
     inline const LoadBalancerMetricName& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the metric returned.</p>
-     */
     inline void SetMetricName(const LoadBalancerMetricName& value) { m_metricName = value; }
-
-    /**
-     * <p>The name of the metric returned.</p>
-     */
     inline void SetMetricName(LoadBalancerMetricName&& value) { m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the metric returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& WithMetricName(const LoadBalancerMetricName& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the metric returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& WithMetricName(LoadBalancerMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of objects that describe the metric data returned.</p>
      */
     inline const Aws::Vector<MetricDatapoint>& GetMetricData() const{ return m_metricData; }
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline void SetMetricData(const Aws::Vector<MetricDatapoint>& value) { m_metricData = value; }
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline void SetMetricData(Aws::Vector<MetricDatapoint>&& value) { m_metricData = std::move(value); }
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& WithMetricData(const Aws::Vector<MetricDatapoint>& value) { SetMetricData(value); return *this;}
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& WithMetricData(Aws::Vector<MetricDatapoint>&& value) { SetMetricData(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& AddMetricData(const MetricDatapoint& value) { m_metricData.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects that describe the metric data returned.</p>
-     */
     inline GetLoadBalancerMetricDataResult& AddMetricData(MetricDatapoint&& value) { m_metricData.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLoadBalancerMetricDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLoadBalancerMetricDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLoadBalancerMetricDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoadBalancerMetricName m_metricName;

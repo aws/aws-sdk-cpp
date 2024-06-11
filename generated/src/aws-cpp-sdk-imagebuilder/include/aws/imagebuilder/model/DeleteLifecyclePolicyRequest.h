@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
      * delete.</p>
      */
     inline const Aws::String& GetLifecyclePolicyArn() const{ return m_lifecyclePolicyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline bool LifecyclePolicyArnHasBeenSet() const { return m_lifecyclePolicyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline void SetLifecyclePolicyArn(const Aws::String& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline void SetLifecyclePolicyArn(Aws::String&& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline void SetLifecyclePolicyArn(const char* value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline DeleteLifecyclePolicyRequest& WithLifecyclePolicyArn(const Aws::String& value) { SetLifecyclePolicyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline DeleteLifecyclePolicyRequest& WithLifecyclePolicyArn(Aws::String&& value) { SetLifecyclePolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to
-     * delete.</p>
-     */
     inline DeleteLifecyclePolicyRequest& WithLifecyclePolicyArn(const char* value) { SetLifecyclePolicyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lifecyclePolicyArn;

@@ -38,54 +38,20 @@ namespace Model
     AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents a message whose visibility timeout has been changed
      * successfully.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents a message whose visibility timeout has been changed
-     * successfully.</p>
-     */
     inline ChangeMessageVisibilityBatchResultEntry& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

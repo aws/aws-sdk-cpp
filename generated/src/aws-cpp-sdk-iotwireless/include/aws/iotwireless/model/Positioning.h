@@ -35,44 +35,29 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline int GetClockSync() const{ return m_clockSync; }
-
-    
     inline bool ClockSyncHasBeenSet() const { return m_clockSyncHasBeenSet; }
-
-    
     inline void SetClockSync(int value) { m_clockSyncHasBeenSet = true; m_clockSync = value; }
-
-    
     inline Positioning& WithClockSync(int value) { SetClockSync(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetStream() const{ return m_stream; }
-
-    
     inline bool StreamHasBeenSet() const { return m_streamHasBeenSet; }
-
-    
     inline void SetStream(int value) { m_streamHasBeenSet = true; m_stream = value; }
-
-    
     inline Positioning& WithStream(int value) { SetStream(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetGnss() const{ return m_gnss; }
-
-    
     inline bool GnssHasBeenSet() const { return m_gnssHasBeenSet; }
-
-    
     inline void SetGnss(int value) { m_gnssHasBeenSet = true; m_gnss = value; }
-
-    
     inline Positioning& WithGnss(int value) { SetGnss(value); return *this;}
-
+    ///@}
   private:
 
     int m_clockSync;

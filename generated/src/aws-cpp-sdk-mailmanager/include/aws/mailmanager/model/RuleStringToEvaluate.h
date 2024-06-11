@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email attribute to evaluate in a string condition expression.</p>
      */
     inline const RuleStringEmailAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The email attribute to evaluate in a string condition expression.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The email attribute to evaluate in a string condition expression.</p>
-     */
     inline void SetAttribute(const RuleStringEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The email attribute to evaluate in a string condition expression.</p>
-     */
     inline void SetAttribute(RuleStringEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The email attribute to evaluate in a string condition expression.</p>
-     */
     inline RuleStringToEvaluate& WithAttribute(const RuleStringEmailAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The email attribute to evaluate in a string condition expression.</p>
-     */
     inline RuleStringToEvaluate& WithAttribute(RuleStringEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleStringEmailAttribute m_attribute;

@@ -32,87 +32,33 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier for one of your collaborations.</p>
      */
     inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your collaborations.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for one of your privacy budget templates.</p>
      */
     inline const Aws::String& GetPrivacyBudgetTemplateIdentifier() const{ return m_privacyBudgetTemplateIdentifier; }
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline bool PrivacyBudgetTemplateIdentifierHasBeenSet() const { return m_privacyBudgetTemplateIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(const Aws::String& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(Aws::String&& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline void SetPrivacyBudgetTemplateIdentifier(const char* value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const Aws::String& value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(Aws::String&& value) { SetPrivacyBudgetTemplateIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for one of your privacy budget templates.</p>
-     */
     inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const char* value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collaborationIdentifier;

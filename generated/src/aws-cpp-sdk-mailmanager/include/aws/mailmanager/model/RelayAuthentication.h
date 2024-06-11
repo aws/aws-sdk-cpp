@@ -41,91 +41,33 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Keep an empty structure if the relay destination server does not require SMTP
      * credential authentication.</p>
      */
     inline const NoAuthentication& GetNoAuthentication() const{ return m_noAuthentication; }
-
-    /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
     inline bool NoAuthenticationHasBeenSet() const { return m_noAuthenticationHasBeenSet; }
-
-    /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
     inline void SetNoAuthentication(const NoAuthentication& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = value; }
-
-    /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
     inline void SetNoAuthentication(NoAuthentication&& value) { m_noAuthenticationHasBeenSet = true; m_noAuthentication = std::move(value); }
-
-    /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
     inline RelayAuthentication& WithNoAuthentication(const NoAuthentication& value) { SetNoAuthentication(value); return *this;}
-
-    /**
-     * <p>Keep an empty structure if the relay destination server does not require SMTP
-     * credential authentication.</p>
-     */
     inline RelayAuthentication& WithNoAuthentication(NoAuthentication&& value) { SetNoAuthentication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the secret created in secrets manager where the relay server's
      * SMTP credentials are stored.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline RelayAuthentication& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline RelayAuthentication& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the secret created in secrets manager where the relay server's
-     * SMTP credentials are stored.</p>
-     */
     inline RelayAuthentication& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
-
+    ///@}
   private:
 
     NoAuthentication m_noAuthentication;

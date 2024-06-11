@@ -41,77 +41,31 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value that you want to include in the filter.</p>
      */
     inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline void SetDimensionValue(const Aws::String& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline void SetDimensionValue(Aws::String&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::move(value); }
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline void SetDimensionValue(const char* value) { m_dimensionValueHasBeenSet = true; m_dimensionValue.assign(value); }
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline Filter& WithDimensionValue(const Aws::String& value) { SetDimensionValue(value); return *this;}
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline Filter& WithDimensionValue(Aws::String&& value) { SetDimensionValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value that you want to include in the filter.</p>
-     */
     inline Filter& WithDimensionValue(const char* value) { SetDimensionValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The condition to apply.</p>
      */
     inline const FilterOperation& GetFilterOperation() const{ return m_filterOperation; }
-
-    /**
-     * <p>The condition to apply.</p>
-     */
     inline bool FilterOperationHasBeenSet() const { return m_filterOperationHasBeenSet; }
-
-    /**
-     * <p>The condition to apply.</p>
-     */
     inline void SetFilterOperation(const FilterOperation& value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
-
-    /**
-     * <p>The condition to apply.</p>
-     */
     inline void SetFilterOperation(FilterOperation&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::move(value); }
-
-    /**
-     * <p>The condition to apply.</p>
-     */
     inline Filter& WithFilterOperation(const FilterOperation& value) { SetFilterOperation(value); return *this;}
-
-    /**
-     * <p>The condition to apply.</p>
-     */
     inline Filter& WithFilterOperation(FilterOperation&& value) { SetFilterOperation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dimensionValue;

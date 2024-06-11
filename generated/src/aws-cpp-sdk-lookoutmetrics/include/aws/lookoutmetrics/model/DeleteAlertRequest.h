@@ -32,46 +32,19 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the alert to delete.</p>
      */
     inline const Aws::String& GetAlertArn() const{ return m_alertArn; }
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline bool AlertArnHasBeenSet() const { return m_alertArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline void SetAlertArn(const Aws::String& value) { m_alertArnHasBeenSet = true; m_alertArn = value; }
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline void SetAlertArn(Aws::String&& value) { m_alertArnHasBeenSet = true; m_alertArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline void SetAlertArn(const char* value) { m_alertArnHasBeenSet = true; m_alertArn.assign(value); }
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline DeleteAlertRequest& WithAlertArn(const Aws::String& value) { SetAlertArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline DeleteAlertRequest& WithAlertArn(Aws::String&& value) { SetAlertArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the alert to delete.</p>
-     */
     inline DeleteAlertRequest& WithAlertArn(const char* value) { SetAlertArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alertArn;

@@ -43,77 +43,31 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filters to use for the search.</p>
      */
     inline const Aws::Vector<SearchFilterExpression>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline void SetFilters(const Aws::Vector<SearchFilterExpression>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline void SetFilters(Aws::Vector<SearchFilterExpression>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline SearchGroupedFilterExpressions& WithFilters(const Aws::Vector<SearchFilterExpression>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline SearchGroupedFilterExpressions& WithFilters(Aws::Vector<SearchFilterExpression>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline SearchGroupedFilterExpressions& AddFilters(const SearchFilterExpression& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters to use for the search.</p>
-     */
     inline SearchGroupedFilterExpressions& AddFilters(SearchFilterExpression&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operators to include in the search.</p>
      */
     inline const LogicalOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operators to include in the search.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operators to include in the search.</p>
-     */
     inline void SetOperator(const LogicalOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operators to include in the search.</p>
-     */
     inline void SetOperator(LogicalOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operators to include in the search.</p>
-     */
     inline SearchGroupedFilterExpressions& WithOperator(const LogicalOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operators to include in the search.</p>
-     */
     inline SearchGroupedFilterExpressions& WithOperator(LogicalOperator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SearchFilterExpression> m_filters;

@@ -42,60 +42,21 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This action specifies the replacement recipient email addresses to
      * insert.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplaceWith() const{ return m_replaceWith; }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline bool ReplaceWithHasBeenSet() const { return m_replaceWithHasBeenSet; }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline void SetReplaceWith(const Aws::Vector<Aws::String>& value) { m_replaceWithHasBeenSet = true; m_replaceWith = value; }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline void SetReplaceWith(Aws::Vector<Aws::String>&& value) { m_replaceWithHasBeenSet = true; m_replaceWith = std::move(value); }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline ReplaceRecipientAction& WithReplaceWith(const Aws::Vector<Aws::String>& value) { SetReplaceWith(value); return *this;}
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline ReplaceRecipientAction& WithReplaceWith(Aws::Vector<Aws::String>&& value) { SetReplaceWith(std::move(value)); return *this;}
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline ReplaceRecipientAction& AddReplaceWith(const Aws::String& value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(value); return *this; }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline ReplaceRecipientAction& AddReplaceWith(Aws::String&& value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>This action specifies the replacement recipient email addresses to
-     * insert.</p>
-     */
     inline ReplaceRecipientAction& AddReplaceWith(const char* value) { m_replaceWithHasBeenSet = true; m_replaceWith.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_replaceWith;

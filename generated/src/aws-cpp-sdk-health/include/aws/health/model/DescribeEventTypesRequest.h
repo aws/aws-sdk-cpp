@@ -35,86 +35,34 @@ namespace Model
     AWS_HEALTH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Values to narrow the results returned.</p>
      */
     inline const EventTypeFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline void SetFilter(const EventTypeFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline void SetFilter(EventTypeFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline DescribeEventTypesRequest& WithFilter(const EventTypeFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Values to narrow the results returned.</p>
-     */
     inline DescribeEventTypesRequest& WithFilter(EventTypeFilter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The locale (language) to return information in. English (en) is the default
      * and the only supported value at this time.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline DescribeEventTypesRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline DescribeEventTypesRequest& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
-
-    /**
-     * <p>The locale (language) to return information in. English (en) is the default
-     * and the only supported value at this time.</p>
-     */
     inline DescribeEventTypesRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the results of a search are large, only a portion of the results are
      * returned, and a <code>nextToken</code> pagination token is returned in the
@@ -123,99 +71,26 @@ namespace Model
      * does not contain a pagination token value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the results of a search are large, only a portion of the results are
-     * returned, and a <code>nextToken</code> pagination token is returned in the
-     * response. To retrieve the next batch of results, reissue the search request and
-     * include the returned token. When all results have been returned, the response
-     * does not contain a pagination token value.</p>
-     */
     inline DescribeEventTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
      * parameter, this operation returns a maximum of 30 items by default.</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
-     * parameter, this operation returns a maximum of 30 items by default.</p> 
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
-     * parameter, this operation returns a maximum of 30 items by default.</p> 
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
-     * parameter, this operation returns a maximum of 30 items by default.</p> 
-     */
     inline DescribeEventTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     EventTypeFilter m_filter;

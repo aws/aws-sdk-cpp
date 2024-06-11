@@ -34,6 +34,7 @@ namespace Model
     AWS_CONNECT_API ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The permissions granted to the security profile. For a complete list of valid
      * permissions, see <a
@@ -41,190 +42,63 @@ namespace Model
      * of security profile permissions</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissions = value; }
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissions = std::move(value); }
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline ListSecurityProfilePermissionsResult& AddPermissions(const Aws::String& value) { m_permissions.push_back(value); return *this; }
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline ListSecurityProfilePermissionsResult& AddPermissions(Aws::String&& value) { m_permissions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The permissions granted to the security profile. For a complete list of valid
-     * permissions, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-     * of security profile permissions</a>.</p>
-     */
     inline ListSecurityProfilePermissionsResult& AddPermissions(const char* value) { m_permissions.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-
-    /**
-     * <p>The timestamp when this resource was last modified.</p>
-     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-
-    /**
-     * <p>The timestamp when this resource was last modified.</p>
-     */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-
-    /**
-     * <p>The timestamp when this resource was last modified.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-
-    /**
-     * <p>The timestamp when this resource was last modified.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
     inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegion = value; }
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegion = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegion.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region where this resource was last modified.</p>
-     */
     inline ListSecurityProfilePermissionsResult& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSecurityProfilePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSecurityProfilePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSecurityProfilePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_permissions;

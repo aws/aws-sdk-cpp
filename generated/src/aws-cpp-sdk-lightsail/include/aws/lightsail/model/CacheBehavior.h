@@ -38,6 +38,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
      * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
@@ -53,87 +54,12 @@ namespace Model
      * strings to personalize content for individual users.</p> </li> </ul>
      */
     inline const BehaviorEnum& GetBehavior() const{ return m_behavior; }
-
-    /**
-     * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
-     * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
-     * best for static sites. When specified, your distribution caches and serves your
-     * entire website as static content. This behavior is ideal for websites with
-     * static content that doesn't change depending on who views it, or for websites
-     * that don't use cookies, headers, or query strings to personalize content.</p>
-     * </li> <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites
-     * that serve a mix of static and dynamic content. When specified, your
-     * distribution caches and serve only the content that is specified in the
-     * distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is
-     * ideal for websites or web applications that use cookies, headers, and query
-     * strings to personalize content for individual users.</p> </li> </ul>
-     */
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
-
-    /**
-     * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
-     * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
-     * best for static sites. When specified, your distribution caches and serves your
-     * entire website as static content. This behavior is ideal for websites with
-     * static content that doesn't change depending on who views it, or for websites
-     * that don't use cookies, headers, or query strings to personalize content.</p>
-     * </li> <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites
-     * that serve a mix of static and dynamic content. When specified, your
-     * distribution caches and serve only the content that is specified in the
-     * distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is
-     * ideal for websites or web applications that use cookies, headers, and query
-     * strings to personalize content for individual users.</p> </li> </ul>
-     */
     inline void SetBehavior(const BehaviorEnum& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
-
-    /**
-     * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
-     * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
-     * best for static sites. When specified, your distribution caches and serves your
-     * entire website as static content. This behavior is ideal for websites with
-     * static content that doesn't change depending on who views it, or for websites
-     * that don't use cookies, headers, or query strings to personalize content.</p>
-     * </li> <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites
-     * that serve a mix of static and dynamic content. When specified, your
-     * distribution caches and serve only the content that is specified in the
-     * distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is
-     * ideal for websites or web applications that use cookies, headers, and query
-     * strings to personalize content for individual users.</p> </li> </ul>
-     */
     inline void SetBehavior(BehaviorEnum&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
-
-    /**
-     * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
-     * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
-     * best for static sites. When specified, your distribution caches and serves your
-     * entire website as static content. This behavior is ideal for websites with
-     * static content that doesn't change depending on who views it, or for websites
-     * that don't use cookies, headers, or query strings to personalize content.</p>
-     * </li> <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites
-     * that serve a mix of static and dynamic content. When specified, your
-     * distribution caches and serve only the content that is specified in the
-     * distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is
-     * ideal for websites or web applications that use cookies, headers, and query
-     * strings to personalize content for individual users.</p> </li> </ul>
-     */
     inline CacheBehavior& WithBehavior(const BehaviorEnum& value) { SetBehavior(value); return *this;}
-
-    /**
-     * <p>The cache behavior of the distribution.</p> <p>The following cache behaviors
-     * can be specified:</p> <ul> <li> <p> <b> <code>cache</code> </b> - This option is
-     * best for static sites. When specified, your distribution caches and serves your
-     * entire website as static content. This behavior is ideal for websites with
-     * static content that doesn't change depending on who views it, or for websites
-     * that don't use cookies, headers, or query strings to personalize content.</p>
-     * </li> <li> <p> <b> <code>dont-cache</code> </b> - This option is best for sites
-     * that serve a mix of static and dynamic content. When specified, your
-     * distribution caches and serve only the content that is specified in the
-     * distribution's <code>CacheBehaviorPerPath</code> parameter. This behavior is
-     * ideal for websites or web applications that use cookies, headers, and query
-     * strings to personalize content for individual users.</p> </li> </ul>
-     */
     inline CacheBehavior& WithBehavior(BehaviorEnum&& value) { SetBehavior(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BehaviorEnum m_behavior;

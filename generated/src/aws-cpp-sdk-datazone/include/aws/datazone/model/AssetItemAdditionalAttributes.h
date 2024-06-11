@@ -40,144 +40,49 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The forms included in the additional attributes of an inventory asset.</p>
      */
     inline const Aws::Vector<FormOutput>& GetFormsOutput() const{ return m_formsOutput; }
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline bool FormsOutputHasBeenSet() const { return m_formsOutputHasBeenSet; }
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline void SetFormsOutput(const Aws::Vector<FormOutput>& value) { m_formsOutputHasBeenSet = true; m_formsOutput = value; }
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline void SetFormsOutput(Aws::Vector<FormOutput>&& value) { m_formsOutputHasBeenSet = true; m_formsOutput = std::move(value); }
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithFormsOutput(const Aws::Vector<FormOutput>& value) { SetFormsOutput(value); return *this;}
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithFormsOutput(Aws::Vector<FormOutput>&& value) { SetFormsOutput(std::move(value)); return *this;}
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddFormsOutput(const FormOutput& value) { m_formsOutputHasBeenSet = true; m_formsOutput.push_back(value); return *this; }
-
-    /**
-     * <p>The forms included in the additional attributes of an inventory asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddFormsOutput(FormOutput&& value) { m_formsOutputHasBeenSet = true; m_formsOutput.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The latest time series data points forms included in the additional
      * attributes of an asset.</p>
      */
     inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointFormsOutput() const{ return m_latestTimeSeriesDataPointFormsOutput; }
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline bool LatestTimeSeriesDataPointFormsOutputHasBeenSet() const { return m_latestTimeSeriesDataPointFormsOutputHasBeenSet; }
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline void SetLatestTimeSeriesDataPointFormsOutput(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true; m_latestTimeSeriesDataPointFormsOutput = value; }
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline void SetLatestTimeSeriesDataPointFormsOutput(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true; m_latestTimeSeriesDataPointFormsOutput = std::move(value); }
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithLatestTimeSeriesDataPointFormsOutput(const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& value) { SetLatestTimeSeriesDataPointFormsOutput(value); return *this;}
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithLatestTimeSeriesDataPointFormsOutput(Aws::Vector<TimeSeriesDataPointSummaryFormOutput>&& value) { SetLatestTimeSeriesDataPointFormsOutput(std::move(value)); return *this;}
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddLatestTimeSeriesDataPointFormsOutput(const TimeSeriesDataPointSummaryFormOutput& value) { m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true; m_latestTimeSeriesDataPointFormsOutput.push_back(value); return *this; }
-
-    /**
-     * <p>The latest time series data points forms included in the additional
-     * attributes of an asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddLatestTimeSeriesDataPointFormsOutput(TimeSeriesDataPointSummaryFormOutput&& value) { m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true; m_latestTimeSeriesDataPointFormsOutput.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read-only forms included in the additional attributes of an inventory
      * asset.</p>
      */
     inline const Aws::Vector<FormOutput>& GetReadOnlyFormsOutput() const{ return m_readOnlyFormsOutput; }
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline bool ReadOnlyFormsOutputHasBeenSet() const { return m_readOnlyFormsOutputHasBeenSet; }
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline void SetReadOnlyFormsOutput(const Aws::Vector<FormOutput>& value) { m_readOnlyFormsOutputHasBeenSet = true; m_readOnlyFormsOutput = value; }
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline void SetReadOnlyFormsOutput(Aws::Vector<FormOutput>&& value) { m_readOnlyFormsOutputHasBeenSet = true; m_readOnlyFormsOutput = std::move(value); }
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithReadOnlyFormsOutput(const Aws::Vector<FormOutput>& value) { SetReadOnlyFormsOutput(value); return *this;}
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline AssetItemAdditionalAttributes& WithReadOnlyFormsOutput(Aws::Vector<FormOutput>&& value) { SetReadOnlyFormsOutput(std::move(value)); return *this;}
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddReadOnlyFormsOutput(const FormOutput& value) { m_readOnlyFormsOutputHasBeenSet = true; m_readOnlyFormsOutput.push_back(value); return *this; }
-
-    /**
-     * <p>The read-only forms included in the additional attributes of an inventory
-     * asset.</p>
-     */
     inline AssetItemAdditionalAttributes& AddReadOnlyFormsOutput(FormOutput&& value) { m_readOnlyFormsOutputHasBeenSet = true; m_readOnlyFormsOutput.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<FormOutput> m_formsOutput;

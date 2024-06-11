@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A customer-supplied backup plan document in JSON format.</p>
      */
     inline const Aws::String& GetBackupPlanTemplateJson() const{ return m_backupPlanTemplateJson; }
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline bool BackupPlanTemplateJsonHasBeenSet() const { return m_backupPlanTemplateJsonHasBeenSet; }
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline void SetBackupPlanTemplateJson(const Aws::String& value) { m_backupPlanTemplateJsonHasBeenSet = true; m_backupPlanTemplateJson = value; }
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline void SetBackupPlanTemplateJson(Aws::String&& value) { m_backupPlanTemplateJsonHasBeenSet = true; m_backupPlanTemplateJson = std::move(value); }
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline void SetBackupPlanTemplateJson(const char* value) { m_backupPlanTemplateJsonHasBeenSet = true; m_backupPlanTemplateJson.assign(value); }
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline GetBackupPlanFromJSONRequest& WithBackupPlanTemplateJson(const Aws::String& value) { SetBackupPlanTemplateJson(value); return *this;}
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline GetBackupPlanFromJSONRequest& WithBackupPlanTemplateJson(Aws::String&& value) { SetBackupPlanTemplateJson(std::move(value)); return *this;}
-
-    /**
-     * <p>A customer-supplied backup plan document in JSON format.</p>
-     */
     inline GetBackupPlanFromJSONRequest& WithBackupPlanTemplateJson(const char* value) { SetBackupPlanTemplateJson(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupPlanTemplateJson;

@@ -33,6 +33,7 @@ namespace Model
     AWS_RESILIENCEHUB_API DescribeResiliencyPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specific resiliency policy, returned as an object. This
      * object includes creation time, data location constraints, its name, description,
@@ -40,61 +41,22 @@ namespace Model
      * seconds, and more.</p>
      */
     inline const ResiliencyPolicy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>Information about the specific resiliency policy, returned as an object. This
-     * object includes creation time, data location constraints, its name, description,
-     * tags, the recovery time objective (RTO) and recovery point objective (RPO) in
-     * seconds, and more.</p>
-     */
     inline void SetPolicy(const ResiliencyPolicy& value) { m_policy = value; }
-
-    /**
-     * <p>Information about the specific resiliency policy, returned as an object. This
-     * object includes creation time, data location constraints, its name, description,
-     * tags, the recovery time objective (RTO) and recovery point objective (RPO) in
-     * seconds, and more.</p>
-     */
     inline void SetPolicy(ResiliencyPolicy&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>Information about the specific resiliency policy, returned as an object. This
-     * object includes creation time, data location constraints, its name, description,
-     * tags, the recovery time objective (RTO) and recovery point objective (RPO) in
-     * seconds, and more.</p>
-     */
     inline DescribeResiliencyPolicyResult& WithPolicy(const ResiliencyPolicy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>Information about the specific resiliency policy, returned as an object. This
-     * object includes creation time, data location constraints, its name, description,
-     * tags, the recovery time objective (RTO) and recovery point objective (RPO) in
-     * seconds, and more.</p>
-     */
     inline DescribeResiliencyPolicyResult& WithPolicy(ResiliencyPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeResiliencyPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeResiliencyPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeResiliencyPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResiliencyPolicy m_policy;

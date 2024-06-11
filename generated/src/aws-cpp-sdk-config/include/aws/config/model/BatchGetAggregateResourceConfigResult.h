@@ -35,106 +35,43 @@ namespace Model
     AWS_CONFIGSERVICE_API BatchGetAggregateResourceConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that contains the current configuration of one or more resources.</p>
      */
     inline const Aws::Vector<BaseConfigurationItem>& GetBaseConfigurationItems() const{ return m_baseConfigurationItems; }
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline void SetBaseConfigurationItems(const Aws::Vector<BaseConfigurationItem>& value) { m_baseConfigurationItems = value; }
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline void SetBaseConfigurationItems(Aws::Vector<BaseConfigurationItem>&& value) { m_baseConfigurationItems = std::move(value); }
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& WithBaseConfigurationItems(const Aws::Vector<BaseConfigurationItem>& value) { SetBaseConfigurationItems(value); return *this;}
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& WithBaseConfigurationItems(Aws::Vector<BaseConfigurationItem>&& value) { SetBaseConfigurationItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& AddBaseConfigurationItems(const BaseConfigurationItem& value) { m_baseConfigurationItems.push_back(value); return *this; }
-
-    /**
-     * <p>A list that contains the current configuration of one or more resources.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& AddBaseConfigurationItems(BaseConfigurationItem&& value) { m_baseConfigurationItems.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of resource identifiers that were not processed with current scope.
      * The list is empty if all the resources are processed.</p>
      */
     inline const Aws::Vector<AggregateResourceIdentifier>& GetUnprocessedResourceIdentifiers() const{ return m_unprocessedResourceIdentifiers; }
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline void SetUnprocessedResourceIdentifiers(const Aws::Vector<AggregateResourceIdentifier>& value) { m_unprocessedResourceIdentifiers = value; }
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline void SetUnprocessedResourceIdentifiers(Aws::Vector<AggregateResourceIdentifier>&& value) { m_unprocessedResourceIdentifiers = std::move(value); }
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& WithUnprocessedResourceIdentifiers(const Aws::Vector<AggregateResourceIdentifier>& value) { SetUnprocessedResourceIdentifiers(value); return *this;}
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& WithUnprocessedResourceIdentifiers(Aws::Vector<AggregateResourceIdentifier>&& value) { SetUnprocessedResourceIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& AddUnprocessedResourceIdentifiers(const AggregateResourceIdentifier& value) { m_unprocessedResourceIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of resource identifiers that were not processed with current scope.
-     * The list is empty if all the resources are processed.</p>
-     */
     inline BatchGetAggregateResourceConfigResult& AddUnprocessedResourceIdentifiers(AggregateResourceIdentifier&& value) { m_unprocessedResourceIdentifiers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetAggregateResourceConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetAggregateResourceConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetAggregateResourceConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;

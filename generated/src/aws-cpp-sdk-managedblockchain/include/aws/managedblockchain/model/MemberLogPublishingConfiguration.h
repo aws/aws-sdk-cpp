@@ -38,42 +38,18 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configuration properties for logging events associated with a member of a
      * Managed Blockchain network using the Hyperledger Fabric framework.</p>
      */
     inline const MemberFabricLogPublishingConfiguration& GetFabric() const{ return m_fabric; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member of a
-     * Managed Blockchain network using the Hyperledger Fabric framework.</p>
-     */
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member of a
-     * Managed Blockchain network using the Hyperledger Fabric framework.</p>
-     */
     inline void SetFabric(const MemberFabricLogPublishingConfiguration& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member of a
-     * Managed Blockchain network using the Hyperledger Fabric framework.</p>
-     */
     inline void SetFabric(MemberFabricLogPublishingConfiguration&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-
-    /**
-     * <p>Configuration properties for logging events associated with a member of a
-     * Managed Blockchain network using the Hyperledger Fabric framework.</p>
-     */
     inline MemberLogPublishingConfiguration& WithFabric(const MemberFabricLogPublishingConfiguration& value) { SetFabric(value); return *this;}
-
-    /**
-     * <p>Configuration properties for logging events associated with a member of a
-     * Managed Blockchain network using the Hyperledger Fabric framework.</p>
-     */
     inline MemberLogPublishingConfiguration& WithFabric(MemberFabricLogPublishingConfiguration&& value) { SetFabric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MemberFabricLogPublishingConfiguration m_fabric;

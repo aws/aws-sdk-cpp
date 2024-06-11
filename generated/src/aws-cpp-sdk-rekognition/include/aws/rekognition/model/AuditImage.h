@@ -40,80 +40,38 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Base64-encoded bytes representing an image selected from the Face
      * Liveness video and returned for audit purposes.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>The Base64-encoded bytes representing an image selected from the Face
-     * Liveness video and returned for audit purposes.</p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>The Base64-encoded bytes representing an image selected from the Face
-     * Liveness video and returned for audit purposes.</p>
-     */
     inline void SetBytes(const Aws::Utils::CryptoBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>The Base64-encoded bytes representing an image selected from the Face
-     * Liveness video and returned for audit purposes.</p>
-     */
     inline void SetBytes(Aws::Utils::CryptoBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>The Base64-encoded bytes representing an image selected from the Face
-     * Liveness video and returned for audit purposes.</p>
-     */
     inline AuditImage& WithBytes(const Aws::Utils::CryptoBuffer& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>The Base64-encoded bytes representing an image selected from the Face
-     * Liveness video and returned for audit purposes.</p>
-     */
     inline AuditImage& WithBytes(Aws::Utils::CryptoBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
-
-    
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    
     inline AuditImage& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-
-    
     inline AuditImage& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
-
-    
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-
-    
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-
-    
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-
-    
     inline AuditImage& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-
-    
     inline AuditImage& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::CryptoBuffer m_bytes;

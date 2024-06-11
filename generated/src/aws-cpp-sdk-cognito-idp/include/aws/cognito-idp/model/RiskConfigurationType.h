@@ -41,241 +41,86 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user pool ID.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline RiskConfigurationType& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline RiskConfigurationType& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user pool ID.</p>
-     */
     inline RiskConfigurationType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The app client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline RiskConfigurationType& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline RiskConfigurationType& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-
-    /**
-     * <p>The app client ID.</p>
-     */
     inline RiskConfigurationType& WithClientId(const char* value) { SetClientId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compromised credentials risk configuration object, including the
      * <code>EventFilter</code> and the <code>EventAction</code>.</p>
      */
     inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
-
-    /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
-     */
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
-
-    /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
-     */
     inline void SetCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = value; }
-
-    /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
-     */
     inline void SetCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = std::move(value); }
-
-    /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
-     */
     inline RiskConfigurationType& WithCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { SetCompromisedCredentialsRiskConfiguration(value); return *this;}
-
-    /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
-     */
     inline RiskConfigurationType& WithCompromisedCredentialsRiskConfiguration(CompromisedCredentialsRiskConfigurationType&& value) { SetCompromisedCredentialsRiskConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account takeover risk configuration object, including the
      * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
      * there is an account takeover.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
-
-    /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
-     */
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
-
-    /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
-     */
     inline void SetAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = value; }
-
-    /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
-     */
     inline void SetAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = std::move(value); }
-
-    /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
-     */
     inline RiskConfigurationType& WithAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { SetAccountTakeoverRiskConfiguration(value); return *this;}
-
-    /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
-     */
     inline RiskConfigurationType& WithAccountTakeoverRiskConfiguration(AccountTakeoverRiskConfigurationType&& value) { SetAccountTakeoverRiskConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration to override the risk decision.</p>
      */
     inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const{ return m_riskExceptionConfiguration; }
-
-    /**
-     * <p>The configuration to override the risk decision.</p>
-     */
     inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration to override the risk decision.</p>
-     */
     inline void SetRiskExceptionConfiguration(const RiskExceptionConfigurationType& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = value; }
-
-    /**
-     * <p>The configuration to override the risk decision.</p>
-     */
     inline void SetRiskExceptionConfiguration(RiskExceptionConfigurationType&& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration to override the risk decision.</p>
-     */
     inline RiskConfigurationType& WithRiskExceptionConfiguration(const RiskExceptionConfigurationType& value) { SetRiskExceptionConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration to override the risk decision.</p>
-     */
     inline RiskConfigurationType& WithRiskExceptionConfiguration(RiskExceptionConfigurationType&& value) { SetRiskExceptionConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the item was modified. Amazon Cognito returns this
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline RiskConfigurationType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the item was modified. Amazon Cognito returns this
-     * timestamp in UNIX epoch time format. Your SDK might render the output in a
-     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
-     */
     inline RiskConfigurationType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

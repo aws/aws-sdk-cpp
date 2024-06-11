@@ -39,67 +39,30 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The input does not satisfy the constraints specified by an Amazon Web
      * Services service.</p>
      */
     inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The input does not satisfy the constraints specified by an Amazon Web
-     * Services service.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The input does not satisfy the constraints specified by an Amazon Web
-     * Services service.</p>
-     */
     inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The input does not satisfy the constraints specified by an Amazon Web
-     * Services service.</p>
-     */
     inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The input does not satisfy the constraints specified by an Amazon Web
-     * Services service.</p>
-     */
     inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The input does not satisfy the constraints specified by an Amazon Web
-     * Services service.</p>
-     */
     inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

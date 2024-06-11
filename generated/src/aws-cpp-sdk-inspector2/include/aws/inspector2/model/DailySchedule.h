@@ -37,36 +37,17 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The schedule start time.</p>
      */
     inline const Time& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The schedule start time.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The schedule start time.</p>
-     */
     inline void SetStartTime(const Time& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The schedule start time.</p>
-     */
     inline void SetStartTime(Time&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The schedule start time.</p>
-     */
     inline DailySchedule& WithStartTime(const Time& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The schedule start time.</p>
-     */
     inline DailySchedule& WithStartTime(Time&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Time m_startTime;

@@ -39,87 +39,33 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
     inline const Aws::String& GetVectorType() const{ return m_vectorType; }
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline bool VectorTypeHasBeenSet() const { return m_vectorTypeHasBeenSet; }
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline void SetVectorType(const Aws::String& value) { m_vectorTypeHasBeenSet = true; m_vectorType = value; }
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline void SetVectorType(Aws::String&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::move(value); }
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline void SetVectorType(const char* value) { m_vectorTypeHasBeenSet = true; m_vectorType.assign(value); }
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline SummarizedAttackVector& WithVectorType(const Aws::String& value) { SetVectorType(value); return *this;}
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline SummarizedAttackVector& WithVectorType(Aws::String&& value) { SetVectorType(std::move(value)); return *this;}
-
-    /**
-     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-     */
     inline SummarizedAttackVector& WithVectorType(const char* value) { SetVectorType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of counters that describe the details of the attack.</p>
      */
     inline const Aws::Vector<SummarizedCounter>& GetVectorCounters() const{ return m_vectorCounters; }
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline bool VectorCountersHasBeenSet() const { return m_vectorCountersHasBeenSet; }
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline void SetVectorCounters(const Aws::Vector<SummarizedCounter>& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters = value; }
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline void SetVectorCounters(Aws::Vector<SummarizedCounter>&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters = std::move(value); }
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline SummarizedAttackVector& WithVectorCounters(const Aws::Vector<SummarizedCounter>& value) { SetVectorCounters(value); return *this;}
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline SummarizedAttackVector& WithVectorCounters(Aws::Vector<SummarizedCounter>&& value) { SetVectorCounters(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline SummarizedAttackVector& AddVectorCounters(const SummarizedCounter& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.push_back(value); return *this; }
-
-    /**
-     * <p>The list of counters that describe the details of the attack.</p>
-     */
     inline SummarizedAttackVector& AddVectorCounters(SummarizedCounter&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_vectorType;

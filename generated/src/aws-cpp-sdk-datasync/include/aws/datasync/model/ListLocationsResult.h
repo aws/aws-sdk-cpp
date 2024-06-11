@@ -39,106 +39,43 @@ namespace Model
     AWS_DATASYNC_API ListLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array that contains a list of locations.</p>
      */
     inline const Aws::Vector<LocationListEntry>& GetLocations() const{ return m_locations; }
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline void SetLocations(const Aws::Vector<LocationListEntry>& value) { m_locations = value; }
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline void SetLocations(Aws::Vector<LocationListEntry>&& value) { m_locations = std::move(value); }
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline ListLocationsResult& WithLocations(const Aws::Vector<LocationListEntry>& value) { SetLocations(value); return *this;}
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline ListLocationsResult& WithLocations(Aws::Vector<LocationListEntry>&& value) { SetLocations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline ListLocationsResult& AddLocations(const LocationListEntry& value) { m_locations.push_back(value); return *this; }
-
-    /**
-     * <p>An array that contains a list of locations.</p>
-     */
     inline ListLocationsResult& AddLocations(LocationListEntry&& value) { m_locations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An opaque string that indicates the position at which to begin returning the
      * next list of locations.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline ListLocationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline ListLocationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque string that indicates the position at which to begin returning the
-     * next list of locations.</p>
-     */
     inline ListLocationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLocationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLocationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLocationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LocationListEntry> m_locations;

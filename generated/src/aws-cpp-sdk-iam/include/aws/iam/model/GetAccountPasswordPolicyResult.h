@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API GetAccountPasswordPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the account's password policy.</p>
      */
     inline const PasswordPolicy& GetPasswordPolicy() const{ return m_passwordPolicy; }
-
-    /**
-     * <p>A structure that contains details about the account's password policy.</p>
-     */
     inline void SetPasswordPolicy(const PasswordPolicy& value) { m_passwordPolicy = value; }
-
-    /**
-     * <p>A structure that contains details about the account's password policy.</p>
-     */
     inline void SetPasswordPolicy(PasswordPolicy&& value) { m_passwordPolicy = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the account's password policy.</p>
-     */
     inline GetAccountPasswordPolicyResult& WithPasswordPolicy(const PasswordPolicy& value) { SetPasswordPolicy(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the account's password policy.</p>
-     */
     inline GetAccountPasswordPolicyResult& WithPasswordPolicy(PasswordPolicy&& value) { SetPasswordPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetAccountPasswordPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetAccountPasswordPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PasswordPolicy m_passwordPolicy;

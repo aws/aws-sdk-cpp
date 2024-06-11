@@ -38,95 +38,34 @@ namespace Model
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A JSON object containing start and date time (UTC). Date and time format is
      * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
      */
     inline const Aws::String& GetStartDateTime() const{ return m_startDateTime; }
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetStartDateTime(const Aws::String& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetStartDateTime(Aws::String&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetStartDateTime(const char* value) { m_startDateTimeHasBeenSet = true; m_startDateTime.assign(value); }
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithStartDateTime(const Aws::String& value) { SetStartDateTime(value); return *this;}
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithStartDateTime(Aws::String&& value) { SetStartDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p> A JSON object containing start and date time (UTC). Date and time format is
-     * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithStartDateTime(const char* value) { SetStartDateTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
      */
     inline const Aws::String& GetEndDateTime() const{ return m_endDateTime; }
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetEndDateTime(const Aws::String& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetEndDateTime(Aws::String&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline void SetEndDateTime(const char* value) { m_endDateTimeHasBeenSet = true; m_endDateTime.assign(value); }
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithEndDateTime(const Aws::String& value) { SetEndDateTime(value); return *this;}
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithEndDateTime(Aws::String&& value) { SetEndDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
-     */
     inline DateInterval& WithEndDateTime(const char* value) { SetEndDateTime(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_startDateTime;

@@ -38,46 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the knowledge base used.</p>
      */
     inline const Aws::String& GetBedrockKnowledgeBaseArn() const{ return m_bedrockKnowledgeBaseArn; }
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline bool BedrockKnowledgeBaseArnHasBeenSet() const { return m_bedrockKnowledgeBaseArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline void SetBedrockKnowledgeBaseArn(const Aws::String& value) { m_bedrockKnowledgeBaseArnHasBeenSet = true; m_bedrockKnowledgeBaseArn = value; }
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline void SetBedrockKnowledgeBaseArn(Aws::String&& value) { m_bedrockKnowledgeBaseArnHasBeenSet = true; m_bedrockKnowledgeBaseArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline void SetBedrockKnowledgeBaseArn(const char* value) { m_bedrockKnowledgeBaseArnHasBeenSet = true; m_bedrockKnowledgeBaseArn.assign(value); }
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline BedrockKnowledgeStoreConfiguration& WithBedrockKnowledgeBaseArn(const Aws::String& value) { SetBedrockKnowledgeBaseArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline BedrockKnowledgeStoreConfiguration& WithBedrockKnowledgeBaseArn(Aws::String&& value) { SetBedrockKnowledgeBaseArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the knowledge base used.</p>
-     */
     inline BedrockKnowledgeStoreConfiguration& WithBedrockKnowledgeBaseArn(const char* value) { SetBedrockKnowledgeBaseArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bedrockKnowledgeBaseArn;

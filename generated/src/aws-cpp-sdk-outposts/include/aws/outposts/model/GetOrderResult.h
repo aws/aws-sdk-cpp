@@ -33,43 +33,25 @@ namespace Model
     AWS_OUTPOSTS_API GetOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Order& GetOrder() const{ return m_order; }
-
-    
     inline void SetOrder(const Order& value) { m_order = value; }
-
-    
     inline void SetOrder(Order&& value) { m_order = std::move(value); }
-
-    
     inline GetOrderResult& WithOrder(const Order& value) { SetOrder(value); return *this;}
-
-    
     inline GetOrderResult& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOrderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOrderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOrderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Order m_order;

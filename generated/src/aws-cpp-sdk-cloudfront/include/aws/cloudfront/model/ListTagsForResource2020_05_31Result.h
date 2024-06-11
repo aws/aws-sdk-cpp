@@ -39,53 +39,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListTagsForResource2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(const Tags& value) { m_tags = value; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline void SetTags(Tags&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline ListTagsForResource2020_05_31Result& WithTags(const Tags& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-     */
     inline ListTagsForResource2020_05_31Result& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsForResource2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsForResource2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsForResource2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Tags m_tags;

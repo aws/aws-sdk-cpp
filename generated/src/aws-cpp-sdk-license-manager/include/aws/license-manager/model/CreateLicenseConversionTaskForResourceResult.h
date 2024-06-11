@@ -32,63 +32,29 @@ namespace Model
     AWS_LICENSEMANAGER_API CreateLicenseConversionTaskForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the created license type conversion task.</p>
      */
     inline const Aws::String& GetLicenseConversionTaskId() const{ return m_licenseConversionTaskId; }
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline void SetLicenseConversionTaskId(const Aws::String& value) { m_licenseConversionTaskId = value; }
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline void SetLicenseConversionTaskId(Aws::String&& value) { m_licenseConversionTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline void SetLicenseConversionTaskId(const char* value) { m_licenseConversionTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline CreateLicenseConversionTaskForResourceResult& WithLicenseConversionTaskId(const Aws::String& value) { SetLicenseConversionTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline CreateLicenseConversionTaskForResourceResult& WithLicenseConversionTaskId(Aws::String&& value) { SetLicenseConversionTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the created license type conversion task.</p>
-     */
     inline CreateLicenseConversionTaskForResourceResult& WithLicenseConversionTaskId(const char* value) { SetLicenseConversionTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLicenseConversionTaskForResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLicenseConversionTaskForResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLicenseConversionTaskForResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseConversionTaskId;

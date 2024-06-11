@@ -38,88 +38,35 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An identifier of the data format that the classifier matches.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline CreateXMLClassifierRequest& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline CreateXMLClassifierRequest& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier of the data format that the classifier matches.</p>
-     */
     inline CreateXMLClassifierRequest& WithClassification(const char* value) { SetClassification(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the classifier.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateXMLClassifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateXMLClassifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateXMLClassifierRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The XML tag designating the element that contains each record in an XML
      * document being parsed. This can't identify a self-closing element (closed by
@@ -129,77 +76,14 @@ namespace Model
      * item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline const Aws::String& GetRowTag() const{ return m_rowTag; }
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline bool RowTagHasBeenSet() const { return m_rowTagHasBeenSet; }
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline void SetRowTag(const Aws::String& value) { m_rowTagHasBeenSet = true; m_rowTag = value; }
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline void SetRowTag(Aws::String&& value) { m_rowTagHasBeenSet = true; m_rowTag = std::move(value); }
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline void SetRowTag(const char* value) { m_rowTagHasBeenSet = true; m_rowTag.assign(value); }
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline CreateXMLClassifierRequest& WithRowTag(const Aws::String& value) { SetRowTag(value); return *this;}
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline CreateXMLClassifierRequest& WithRowTag(Aws::String&& value) { SetRowTag(std::move(value)); return *this;}
-
-    /**
-     * <p>The XML tag designating the element that contains each record in an XML
-     * document being parsed. This can't identify a self-closing element (closed by
-     * <code>/&gt;</code>). An empty row element that contains only attributes can be
-     * parsed as long as it ends with a closing tag (for example, <code>&lt;row
-     * item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row
-     * item_a="A" item_b="B" /&gt;</code> is not).</p>
-     */
     inline CreateXMLClassifierRequest& WithRowTag(const char* value) { SetRowTag(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_classification;

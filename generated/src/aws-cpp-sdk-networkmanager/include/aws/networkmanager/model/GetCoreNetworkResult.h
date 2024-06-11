@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API GetCoreNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about a core network.</p>
      */
     inline const CoreNetwork& GetCoreNetwork() const{ return m_coreNetwork; }
-
-    /**
-     * <p>Details about a core network.</p>
-     */
     inline void SetCoreNetwork(const CoreNetwork& value) { m_coreNetwork = value; }
-
-    /**
-     * <p>Details about a core network.</p>
-     */
     inline void SetCoreNetwork(CoreNetwork&& value) { m_coreNetwork = std::move(value); }
-
-    /**
-     * <p>Details about a core network.</p>
-     */
     inline GetCoreNetworkResult& WithCoreNetwork(const CoreNetwork& value) { SetCoreNetwork(value); return *this;}
-
-    /**
-     * <p>Details about a core network.</p>
-     */
     inline GetCoreNetworkResult& WithCoreNetwork(CoreNetwork&& value) { SetCoreNetwork(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCoreNetworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCoreNetworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCoreNetworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CoreNetwork m_coreNetwork;

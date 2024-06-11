@@ -38,54 +38,20 @@ namespace Model
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of objects representing the replication destinations and repository
      * filters for a replication configuration.</p>
      */
     inline const Aws::Vector<ReplicationRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline void SetRules(const Aws::Vector<ReplicationRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline void SetRules(Aws::Vector<ReplicationRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline ReplicationConfiguration& WithRules(const Aws::Vector<ReplicationRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline ReplicationConfiguration& WithRules(Aws::Vector<ReplicationRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline ReplicationConfiguration& AddRules(const ReplicationRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects representing the replication destinations and repository
-     * filters for a replication configuration.</p>
-     */
     inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ReplicationRule> m_rules;

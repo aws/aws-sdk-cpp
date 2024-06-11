@@ -38,36 +38,17 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about an Amazon OpenSearch Service domain.</p>
      */
     inline const AWSDomainInformation& GetAWSDomainInformation() const{ return m_aWSDomainInformation; }
-
-    /**
-     * <p>Information about an Amazon OpenSearch Service domain.</p>
-     */
     inline bool AWSDomainInformationHasBeenSet() const { return m_aWSDomainInformationHasBeenSet; }
-
-    /**
-     * <p>Information about an Amazon OpenSearch Service domain.</p>
-     */
     inline void SetAWSDomainInformation(const AWSDomainInformation& value) { m_aWSDomainInformationHasBeenSet = true; m_aWSDomainInformation = value; }
-
-    /**
-     * <p>Information about an Amazon OpenSearch Service domain.</p>
-     */
     inline void SetAWSDomainInformation(AWSDomainInformation&& value) { m_aWSDomainInformationHasBeenSet = true; m_aWSDomainInformation = std::move(value); }
-
-    /**
-     * <p>Information about an Amazon OpenSearch Service domain.</p>
-     */
     inline DomainInformationContainer& WithAWSDomainInformation(const AWSDomainInformation& value) { SetAWSDomainInformation(value); return *this;}
-
-    /**
-     * <p>Information about an Amazon OpenSearch Service domain.</p>
-     */
     inline DomainInformationContainer& WithAWSDomainInformation(AWSDomainInformation&& value) { SetAWSDomainInformation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AWSDomainInformation m_aWSDomainInformation;

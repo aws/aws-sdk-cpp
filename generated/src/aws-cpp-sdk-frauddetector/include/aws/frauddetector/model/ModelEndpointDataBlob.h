@@ -40,77 +40,31 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetByteBuffer() const{ return m_byteBuffer; }
-
-    /**
-     * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-     */
     inline bool ByteBufferHasBeenSet() const { return m_byteBufferHasBeenSet; }
-
-    /**
-     * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-     */
     inline void SetByteBuffer(const Aws::Utils::ByteBuffer& value) { m_byteBufferHasBeenSet = true; m_byteBuffer = value; }
-
-    /**
-     * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-     */
     inline void SetByteBuffer(Aws::Utils::ByteBuffer&& value) { m_byteBufferHasBeenSet = true; m_byteBuffer = std::move(value); }
-
-    /**
-     * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-     */
     inline ModelEndpointDataBlob& WithByteBuffer(const Aws::Utils::ByteBuffer& value) { SetByteBuffer(value); return *this;}
-
-    /**
-     * <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-     */
     inline ModelEndpointDataBlob& WithByteBuffer(Aws::Utils::ByteBuffer&& value) { SetByteBuffer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline ModelEndpointDataBlob& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline ModelEndpointDataBlob& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-     */
     inline ModelEndpointDataBlob& WithContentType(const char* value) { SetContentType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_byteBuffer;

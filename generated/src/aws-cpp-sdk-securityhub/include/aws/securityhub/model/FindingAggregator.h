@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
      * retrieve details for, update, and delete the finding aggregator.</p>
      */
     inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline bool FindingAggregatorArnHasBeenSet() const { return m_findingAggregatorArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = value; }
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline void SetFindingAggregatorArn(Aws::String&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline void SetFindingAggregatorArn(const char* value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn.assign(value); }
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline FindingAggregator& WithFindingAggregatorArn(const Aws::String& value) { SetFindingAggregatorArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline FindingAggregator& WithFindingAggregatorArn(Aws::String&& value) { SetFindingAggregatorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and delete the finding aggregator.</p>
-     */
     inline FindingAggregator& WithFindingAggregatorArn(const char* value) { SetFindingAggregatorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_findingAggregatorArn;

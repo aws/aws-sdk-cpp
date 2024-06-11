@@ -34,54 +34,20 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the assessment template for which you want to create
      * an exclusions preview.</p>
      */
     inline const Aws::String& GetAssessmentTemplateArn() const{ return m_assessmentTemplateArn; }
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline bool AssessmentTemplateArnHasBeenSet() const { return m_assessmentTemplateArnHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline void SetAssessmentTemplateArn(const Aws::String& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = value; }
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline void SetAssessmentTemplateArn(Aws::String&& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline void SetAssessmentTemplateArn(const char* value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn.assign(value); }
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline CreateExclusionsPreviewRequest& WithAssessmentTemplateArn(const Aws::String& value) { SetAssessmentTemplateArn(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline CreateExclusionsPreviewRequest& WithAssessmentTemplateArn(Aws::String&& value) { SetAssessmentTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the assessment template for which you want to create
-     * an exclusions preview.</p>
-     */
     inline CreateExclusionsPreviewRequest& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assessmentTemplateArn;

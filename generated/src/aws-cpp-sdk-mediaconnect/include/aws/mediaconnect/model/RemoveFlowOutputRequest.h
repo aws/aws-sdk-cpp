@@ -32,87 +32,33 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The flow that you want to remove an output from.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline RemoveFlowOutputRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline RemoveFlowOutputRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The flow that you want to remove an output from.
-     */
     inline RemoveFlowOutputRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ARN of the output that you want to remove.
      */
     inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline void SetOutputArn(const Aws::String& value) { m_outputArnHasBeenSet = true; m_outputArn = value; }
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline void SetOutputArn(Aws::String&& value) { m_outputArnHasBeenSet = true; m_outputArn = std::move(value); }
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline void SetOutputArn(const char* value) { m_outputArnHasBeenSet = true; m_outputArn.assign(value); }
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline RemoveFlowOutputRequest& WithOutputArn(const Aws::String& value) { SetOutputArn(value); return *this;}
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline RemoveFlowOutputRequest& WithOutputArn(Aws::String&& value) { SetOutputArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the output that you want to remove.
-     */
     inline RemoveFlowOutputRequest& WithOutputArn(const char* value) { SetOutputArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

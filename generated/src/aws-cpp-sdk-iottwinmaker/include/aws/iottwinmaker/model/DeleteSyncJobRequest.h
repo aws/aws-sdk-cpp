@@ -32,95 +32,34 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The workspace ID.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline DeleteSyncJobRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline DeleteSyncJobRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The workspace ID.</p>
-     */
     inline DeleteSyncJobRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sync source.</p>  <p>Currently the only supported syncSource is
      * <code>SITEWISE </code>.</p> 
      */
     inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline void SetSyncSource(const Aws::String& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline void SetSyncSource(Aws::String&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline void SetSyncSource(const char* value) { m_syncSourceHasBeenSet = true; m_syncSource.assign(value); }
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline DeleteSyncJobRequest& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline DeleteSyncJobRequest& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The sync source.</p>  <p>Currently the only supported syncSource is
-     * <code>SITEWISE </code>.</p> 
-     */
     inline DeleteSyncJobRequest& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workspaceId;

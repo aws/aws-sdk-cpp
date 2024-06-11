@@ -38,43 +38,25 @@ namespace Model
     AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the calling task runner should terminate.</p>
      */
     inline bool GetTerminate() const{ return m_terminate; }
-
-    /**
-     * <p>Indicates whether the calling task runner should terminate.</p>
-     */
     inline void SetTerminate(bool value) { m_terminate = value; }
-
-    /**
-     * <p>Indicates whether the calling task runner should terminate.</p>
-     */
     inline ReportTaskRunnerHeartbeatResult& WithTerminate(bool value) { SetTerminate(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ReportTaskRunnerHeartbeatResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ReportTaskRunnerHeartbeatResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ReportTaskRunnerHeartbeatResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_terminate;

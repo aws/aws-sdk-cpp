@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API DescribeRoleAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The role alias description.</p>
      */
     inline const RoleAliasDescription& GetRoleAliasDescription() const{ return m_roleAliasDescription; }
-
-    /**
-     * <p>The role alias description.</p>
-     */
     inline void SetRoleAliasDescription(const RoleAliasDescription& value) { m_roleAliasDescription = value; }
-
-    /**
-     * <p>The role alias description.</p>
-     */
     inline void SetRoleAliasDescription(RoleAliasDescription&& value) { m_roleAliasDescription = std::move(value); }
-
-    /**
-     * <p>The role alias description.</p>
-     */
     inline DescribeRoleAliasResult& WithRoleAliasDescription(const RoleAliasDescription& value) { SetRoleAliasDescription(value); return *this;}
-
-    /**
-     * <p>The role alias description.</p>
-     */
     inline DescribeRoleAliasResult& WithRoleAliasDescription(RoleAliasDescription&& value) { SetRoleAliasDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRoleAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRoleAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRoleAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RoleAliasDescription m_roleAliasDescription;

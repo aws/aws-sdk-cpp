@@ -39,87 +39,33 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetTargetMultiMeasureName() const{ return m_targetMultiMeasureName; }
-
-    /**
-     * <p/>
-     */
     inline bool TargetMultiMeasureNameHasBeenSet() const { return m_targetMultiMeasureNameHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetTargetMultiMeasureName(const Aws::String& value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetTargetMultiMeasureName(Aws::String&& value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetTargetMultiMeasureName(const char* value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& WithTargetMultiMeasureName(const Aws::String& value) { SetTargetMultiMeasureName(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& WithTargetMultiMeasureName(Aws::String&& value) { SetTargetMultiMeasureName(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& WithTargetMultiMeasureName(const char* value) { SetTargetMultiMeasureName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<MultiMeasureAttributeMapping>& GetMultiMeasureAttributeMappings() const{ return m_multiMeasureAttributeMappings; }
-
-    /**
-     * <p/>
-     */
     inline bool MultiMeasureAttributeMappingsHasBeenSet() const { return m_multiMeasureAttributeMappingsHasBeenSet; }
-
-    /**
-     * <p/>
-     */
     inline void SetMultiMeasureAttributeMappings(const Aws::Vector<MultiMeasureAttributeMapping>& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetMultiMeasureAttributeMappings(Aws::Vector<MultiMeasureAttributeMapping>&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& WithMultiMeasureAttributeMappings(const Aws::Vector<MultiMeasureAttributeMapping>& value) { SetMultiMeasureAttributeMappings(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& WithMultiMeasureAttributeMappings(Aws::Vector<MultiMeasureAttributeMapping>&& value) { SetMultiMeasureAttributeMappings(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& AddMultiMeasureAttributeMappings(const MultiMeasureAttributeMapping& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline MultiMeasureMappings& AddMultiMeasureAttributeMappings(MultiMeasureAttributeMapping&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_targetMultiMeasureName;

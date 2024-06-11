@@ -39,73 +39,30 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
      */
     inline const VPCDerivedInfo& GetOptions() const{ return m_options; }
-
-    /**
-     * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
-     */
     inline void SetOptions(const VPCDerivedInfo& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
-     */
     inline void SetOptions(VPCDerivedInfo&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
-     */
     inline VPCDerivedInfoStatus& WithOptions(const VPCDerivedInfo& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p> Specifies the VPC options for the specified Elasticsearch domain.</p>
-     */
     inline VPCDerivedInfoStatus& WithOptions(VPCDerivedInfo&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the status of the VPC options for the specified Elasticsearch
      * domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Specifies the status of the VPC options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Specifies the status of the VPC options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Specifies the status of the VPC options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Specifies the status of the VPC options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline VPCDerivedInfoStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Specifies the status of the VPC options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline VPCDerivedInfoStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VPCDerivedInfo m_options;

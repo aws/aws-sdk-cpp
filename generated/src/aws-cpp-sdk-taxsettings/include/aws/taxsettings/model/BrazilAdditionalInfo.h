@@ -38,103 +38,35 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
      * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
      */
     inline const Aws::String& GetCcmCode() const{ return m_ccmCode; }
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline bool CcmCodeHasBeenSet() const { return m_ccmCodeHasBeenSet; }
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline void SetCcmCode(const Aws::String& value) { m_ccmCodeHasBeenSet = true; m_ccmCode = value; }
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline void SetCcmCode(Aws::String&& value) { m_ccmCodeHasBeenSet = true; m_ccmCode = std::move(value); }
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline void SetCcmCode(const char* value) { m_ccmCodeHasBeenSet = true; m_ccmCode.assign(value); }
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline BrazilAdditionalInfo& WithCcmCode(const Aws::String& value) { SetCcmCode(value); return *this;}
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline BrazilAdditionalInfo& WithCcmCode(Aws::String&& value) { SetCcmCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The Cadastro de Contribuintes Mobiliários (CCM) code for your TRN in Brazil.
-     * This only applies for a CNPJ tax type for the São Paulo municipality.</p>
-     */
     inline BrazilAdditionalInfo& WithCcmCode(const char* value) { SetCcmCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
      * a CNPJ tax type.</p>
      */
     inline const Aws::String& GetLegalNatureCode() const{ return m_legalNatureCode; }
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline bool LegalNatureCodeHasBeenSet() const { return m_legalNatureCodeHasBeenSet; }
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline void SetLegalNatureCode(const Aws::String& value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode = value; }
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline void SetLegalNatureCode(Aws::String&& value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode = std::move(value); }
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline void SetLegalNatureCode(const char* value) { m_legalNatureCodeHasBeenSet = true; m_legalNatureCode.assign(value); }
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline BrazilAdditionalInfo& WithLegalNatureCode(const Aws::String& value) { SetLegalNatureCode(value); return *this;}
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline BrazilAdditionalInfo& WithLegalNatureCode(Aws::String&& value) { SetLegalNatureCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Legal nature of business, based on your TRN in Brazil. This only applies for
-     * a CNPJ tax type.</p>
-     */
     inline BrazilAdditionalInfo& WithLegalNatureCode(const char* value) { SetLegalNatureCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ccmCode;

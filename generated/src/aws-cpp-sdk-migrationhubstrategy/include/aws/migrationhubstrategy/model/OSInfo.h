@@ -38,77 +38,31 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Information about the type of operating system. </p>
      */
     inline const OSType& GetType() const{ return m_type; }
-
-    /**
-     * <p> Information about the type of operating system. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> Information about the type of operating system. </p>
-     */
     inline void SetType(const OSType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> Information about the type of operating system. </p>
-     */
     inline void SetType(OSType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> Information about the type of operating system. </p>
-     */
     inline OSInfo& WithType(const OSType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> Information about the type of operating system. </p>
-     */
     inline OSInfo& WithType(OSType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Information about the version of operating system. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline OSInfo& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline OSInfo& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p> Information about the version of operating system. </p>
-     */
     inline OSInfo& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     OSType m_type;

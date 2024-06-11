@@ -38,83 +38,32 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
      * ‘NUMBER’.</p>
      */
     inline const TemplateParameterDataType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
-     */
     inline void SetType(const TemplateParameterDataType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
-     */
     inline void SetType(TemplateParameterDataType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
-     */
     inline TemplateParameterConfiguration& WithType(const TemplateParameterDataType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the job template parameter. Allowed values are: ‘STRING’,
-     * ‘NUMBER’.</p>
-     */
     inline TemplateParameterConfiguration& WithType(TemplateParameterDataType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default value for the job template parameter.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline TemplateParameterConfiguration& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline TemplateParameterConfiguration& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The default value for the job template parameter.</p>
-     */
     inline TemplateParameterConfiguration& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
-
+    ///@}
   private:
 
     TemplateParameterDataType m_type;

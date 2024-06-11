@@ -40,42 +40,18 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
      * at an elevated risk of being interrupted.</p>
      */
     inline const FleetSpotCapacityRebalance& GetCapacityRebalance() const{ return m_capacityRebalance; }
-
-    /**
-     * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
-     * at an elevated risk of being interrupted.</p>
-     */
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
-
-    /**
-     * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
-     * at an elevated risk of being interrupted.</p>
-     */
     inline void SetCapacityRebalance(const FleetSpotCapacityRebalance& value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
-
-    /**
-     * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
-     * at an elevated risk of being interrupted.</p>
-     */
     inline void SetCapacityRebalance(FleetSpotCapacityRebalance&& value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = std::move(value); }
-
-    /**
-     * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
-     * at an elevated risk of being interrupted.</p>
-     */
     inline FleetSpotMaintenanceStrategies& WithCapacityRebalance(const FleetSpotCapacityRebalance& value) { SetCapacityRebalance(value); return *this;}
-
-    /**
-     * <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is
-     * at an elevated risk of being interrupted.</p>
-     */
     inline FleetSpotMaintenanceStrategies& WithCapacityRebalance(FleetSpotCapacityRebalance&& value) { SetCapacityRebalance(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FleetSpotCapacityRebalance m_capacityRebalance;

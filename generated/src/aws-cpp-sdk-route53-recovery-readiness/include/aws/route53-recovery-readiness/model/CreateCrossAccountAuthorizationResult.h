@@ -32,63 +32,29 @@ namespace Model
     AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The cross-account authorization.</p>
      */
     inline const Aws::String& GetCrossAccountAuthorization() const{ return m_crossAccountAuthorization; }
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline void SetCrossAccountAuthorization(const Aws::String& value) { m_crossAccountAuthorization = value; }
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline void SetCrossAccountAuthorization(Aws::String&& value) { m_crossAccountAuthorization = std::move(value); }
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline void SetCrossAccountAuthorization(const char* value) { m_crossAccountAuthorization.assign(value); }
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const Aws::String& value) { SetCrossAccountAuthorization(value); return *this;}
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(Aws::String&& value) { SetCrossAccountAuthorization(std::move(value)); return *this;}
-
-    /**
-     * <p>The cross-account authorization.</p>
-     */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const char* value) { SetCrossAccountAuthorization(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCrossAccountAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCrossAccountAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCrossAccountAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_crossAccountAuthorization;

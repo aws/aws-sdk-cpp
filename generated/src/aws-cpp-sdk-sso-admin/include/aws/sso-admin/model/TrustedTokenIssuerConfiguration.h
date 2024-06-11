@@ -39,42 +39,18 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that describes the settings for a trusted token issuer that works
      * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
      */
     inline const OidcJwtConfiguration& GetOidcJwtConfiguration() const{ return m_oidcJwtConfiguration; }
-
-    /**
-     * <p>A structure that describes the settings for a trusted token issuer that works
-     * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
-     */
     inline bool OidcJwtConfigurationHasBeenSet() const { return m_oidcJwtConfigurationHasBeenSet; }
-
-    /**
-     * <p>A structure that describes the settings for a trusted token issuer that works
-     * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
-     */
     inline void SetOidcJwtConfiguration(const OidcJwtConfiguration& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = value; }
-
-    /**
-     * <p>A structure that describes the settings for a trusted token issuer that works
-     * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
-     */
     inline void SetOidcJwtConfiguration(OidcJwtConfiguration&& value) { m_oidcJwtConfigurationHasBeenSet = true; m_oidcJwtConfiguration = std::move(value); }
-
-    /**
-     * <p>A structure that describes the settings for a trusted token issuer that works
-     * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
-     */
     inline TrustedTokenIssuerConfiguration& WithOidcJwtConfiguration(const OidcJwtConfiguration& value) { SetOidcJwtConfiguration(value); return *this;}
-
-    /**
-     * <p>A structure that describes the settings for a trusted token issuer that works
-     * with OpenID Connect (OIDC) by using JSON Web Tokens (JWT).</p>
-     */
     inline TrustedTokenIssuerConfiguration& WithOidcJwtConfiguration(OidcJwtConfiguration&& value) { SetOidcJwtConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OidcJwtConfiguration m_oidcJwtConfiguration;

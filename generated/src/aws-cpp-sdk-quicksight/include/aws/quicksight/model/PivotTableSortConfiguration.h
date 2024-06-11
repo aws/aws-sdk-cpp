@@ -39,46 +39,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field sort options for a pivot table sort configuration.</p>
      */
     inline const Aws::Vector<PivotFieldSortOptions>& GetFieldSortOptions() const{ return m_fieldSortOptions; }
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline bool FieldSortOptionsHasBeenSet() const { return m_fieldSortOptionsHasBeenSet; }
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline void SetFieldSortOptions(const Aws::Vector<PivotFieldSortOptions>& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions = value; }
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline void SetFieldSortOptions(Aws::Vector<PivotFieldSortOptions>&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions = std::move(value); }
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline PivotTableSortConfiguration& WithFieldSortOptions(const Aws::Vector<PivotFieldSortOptions>& value) { SetFieldSortOptions(value); return *this;}
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline PivotTableSortConfiguration& WithFieldSortOptions(Aws::Vector<PivotFieldSortOptions>&& value) { SetFieldSortOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline PivotTableSortConfiguration& AddFieldSortOptions(const PivotFieldSortOptions& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions.push_back(value); return *this; }
-
-    /**
-     * <p>The field sort options for a pivot table sort configuration.</p>
-     */
     inline PivotTableSortConfiguration& AddFieldSortOptions(PivotFieldSortOptions&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PivotFieldSortOptions> m_fieldSortOptions;

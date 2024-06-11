@@ -42,104 +42,37 @@ namespace Model
      */
     AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The name of the stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key to use as the starting point for the list of tags. If this parameter
      * is set, <code>ListTagsForStream</code> gets all tags that occur after
      * <code>ExclusiveStartTagKey</code>. </p>
      */
     inline const Aws::String& GetExclusiveStartTagKey() const{ return m_exclusiveStartTagKey; }
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline bool ExclusiveStartTagKeyHasBeenSet() const { return m_exclusiveStartTagKeyHasBeenSet; }
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline void SetExclusiveStartTagKey(const Aws::String& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = value; }
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline void SetExclusiveStartTagKey(Aws::String&& value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey = std::move(value); }
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline void SetExclusiveStartTagKey(const char* value) { m_exclusiveStartTagKeyHasBeenSet = true; m_exclusiveStartTagKey.assign(value); }
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const Aws::String& value) { SetExclusiveStartTagKey(value); return *this;}
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(Aws::String&& value) { SetExclusiveStartTagKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The key to use as the starting point for the list of tags. If this parameter
-     * is set, <code>ListTagsForStream</code> gets all tags that occur after
-     * <code>ExclusiveStartTagKey</code>. </p>
-     */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const char* value) { SetExclusiveStartTagKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of tags to return. If this number is less than the total number of
      * tags associated with the stream, <code>HasMoreTags</code> is set to
@@ -147,72 +80,24 @@ namespace Model
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The number of tags to return. If this number is less than the total number of
-     * tags associated with the stream, <code>HasMoreTags</code> is set to
-     * <code>true</code>. To list additional tags, set
-     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The number of tags to return. If this number is less than the total number of
-     * tags associated with the stream, <code>HasMoreTags</code> is set to
-     * <code>true</code>. To list additional tags, set
-     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The number of tags to return. If this number is less than the total number of
-     * tags associated with the stream, <code>HasMoreTags</code> is set to
-     * <code>true</code>. To list additional tags, set
-     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
-     */
     inline ListTagsForStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline ListTagsForStreamRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamName;

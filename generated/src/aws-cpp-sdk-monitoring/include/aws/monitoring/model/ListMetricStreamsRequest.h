@@ -36,75 +36,30 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Include this value, if it was returned by the previous call, to get the next
      * set of metric streams.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline ListMetricStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline ListMetricStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Include this value, if it was returned by the previous call, to get the next
-     * set of metric streams.</p>
-     */
     inline ListMetricStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in one operation.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in one operation.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in one operation.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in one operation.</p>
-     */
     inline ListMetricStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -39,79 +39,31 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies the cluster configuration for the specified Elasticsearch
      * domain.</p>
      */
     inline const ElasticsearchClusterConfig& GetOptions() const{ return m_options; }
-
-    /**
-     * <p> Specifies the cluster configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p> Specifies the cluster configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetOptions(const ElasticsearchClusterConfig& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p> Specifies the cluster configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetOptions(ElasticsearchClusterConfig&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p> Specifies the cluster configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline ElasticsearchClusterConfigStatus& WithOptions(const ElasticsearchClusterConfig& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p> Specifies the cluster configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline ElasticsearchClusterConfigStatus& WithOptions(ElasticsearchClusterConfig&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the status of the configuration for the specified Elasticsearch
      * domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Specifies the status of the configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Specifies the status of the configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Specifies the status of the configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Specifies the status of the configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline ElasticsearchClusterConfigStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Specifies the status of the configuration for the specified Elasticsearch
-     * domain.</p>
-     */
     inline ElasticsearchClusterConfigStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ElasticsearchClusterConfig m_options;

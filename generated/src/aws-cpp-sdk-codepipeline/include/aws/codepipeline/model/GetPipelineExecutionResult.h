@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEPIPELINE_API GetPipelineExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents information about the execution of a pipeline.</p>
      */
     inline const PipelineExecution& GetPipelineExecution() const{ return m_pipelineExecution; }
-
-    /**
-     * <p>Represents information about the execution of a pipeline.</p>
-     */
     inline void SetPipelineExecution(const PipelineExecution& value) { m_pipelineExecution = value; }
-
-    /**
-     * <p>Represents information about the execution of a pipeline.</p>
-     */
     inline void SetPipelineExecution(PipelineExecution&& value) { m_pipelineExecution = std::move(value); }
-
-    /**
-     * <p>Represents information about the execution of a pipeline.</p>
-     */
     inline GetPipelineExecutionResult& WithPipelineExecution(const PipelineExecution& value) { SetPipelineExecution(value); return *this;}
-
-    /**
-     * <p>Represents information about the execution of a pipeline.</p>
-     */
     inline GetPipelineExecutionResult& WithPipelineExecution(PipelineExecution&& value) { SetPipelineExecution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPipelineExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPipelineExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPipelineExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PipelineExecution m_pipelineExecution;

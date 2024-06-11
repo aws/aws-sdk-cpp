@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
      * describe each layer's configuration.</p>
      */
     inline const Aws::Vector<LoadBasedAutoScalingConfiguration>& GetLoadBasedAutoScalingConfigurations() const{ return m_loadBasedAutoScalingConfigurations; }
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline void SetLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { m_loadBasedAutoScalingConfigurations = value; }
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline void SetLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { m_loadBasedAutoScalingConfigurations = std::move(value); }
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(const Aws::Vector<LoadBasedAutoScalingConfiguration>& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { SetLoadBasedAutoScalingConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(const LoadBasedAutoScalingConfiguration& value) { m_loadBasedAutoScalingConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
-     * describe each layer's configuration.</p>
-     */
     inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeLoadBasedAutoScalingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeLoadBasedAutoScalingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeLoadBasedAutoScalingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LoadBasedAutoScalingConfiguration> m_loadBasedAutoScalingConfigurations;

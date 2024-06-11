@@ -38,103 +38,35 @@ namespace Model
     AWS_IOTEVENTSDATA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the key used as a filter to select only the alarms associated
      * with the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
      */
     inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline bool KeyValueHasBeenSet() const { return m_keyValueHasBeenSet; }
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline void SetKeyValue(const Aws::String& value) { m_keyValueHasBeenSet = true; m_keyValue = value; }
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline void SetKeyValue(Aws::String&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::move(value); }
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline void SetKeyValue(const char* value) { m_keyValueHasBeenSet = true; m_keyValue.assign(value); }
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline DescribeAlarmRequest& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline DescribeAlarmRequest& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the key used as a filter to select only the alarms associated
-     * with the <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-     */
     inline DescribeAlarmRequest& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alarmModelName;

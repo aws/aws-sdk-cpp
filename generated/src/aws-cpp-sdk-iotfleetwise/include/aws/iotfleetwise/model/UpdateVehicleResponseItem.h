@@ -37,87 +37,33 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique ID of the updated vehicle.</p>
      */
     inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-     */
     inline UpdateVehicleResponseItem& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vehicleName;

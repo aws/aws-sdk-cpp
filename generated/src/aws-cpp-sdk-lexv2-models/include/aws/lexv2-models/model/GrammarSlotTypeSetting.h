@@ -38,36 +38,17 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source of the grammar used to create the slot type.</p>
      */
     inline const GrammarSlotTypeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The source of the grammar used to create the slot type.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The source of the grammar used to create the slot type.</p>
-     */
     inline void SetSource(const GrammarSlotTypeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The source of the grammar used to create the slot type.</p>
-     */
     inline void SetSource(GrammarSlotTypeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The source of the grammar used to create the slot type.</p>
-     */
     inline GrammarSlotTypeSetting& WithSource(const GrammarSlotTypeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The source of the grammar used to create the slot type.</p>
-     */
     inline GrammarSlotTypeSetting& WithSource(GrammarSlotTypeSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GrammarSlotTypeSource m_source;

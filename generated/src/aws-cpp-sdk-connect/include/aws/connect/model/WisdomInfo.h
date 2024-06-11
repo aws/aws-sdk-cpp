@@ -37,46 +37,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
      */
     inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline bool SessionArnHasBeenSet() const { return m_sessionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline void SetSessionArn(const Aws::String& value) { m_sessionArnHasBeenSet = true; m_sessionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline void SetSessionArn(Aws::String&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline void SetSessionArn(const char* value) { m_sessionArnHasBeenSet = true; m_sessionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline WisdomInfo& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline WisdomInfo& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
-     */
     inline WisdomInfo& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sessionArn;

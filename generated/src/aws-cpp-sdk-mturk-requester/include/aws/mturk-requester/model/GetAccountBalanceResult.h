@@ -32,71 +32,38 @@ namespace Model
     AWS_MTURK_API GetAccountBalanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetAvailableBalance() const{ return m_availableBalance; }
-
-    
     inline void SetAvailableBalance(const Aws::String& value) { m_availableBalance = value; }
-
-    
     inline void SetAvailableBalance(Aws::String&& value) { m_availableBalance = std::move(value); }
-
-    
     inline void SetAvailableBalance(const char* value) { m_availableBalance.assign(value); }
-
-    
     inline GetAccountBalanceResult& WithAvailableBalance(const Aws::String& value) { SetAvailableBalance(value); return *this;}
-
-    
     inline GetAccountBalanceResult& WithAvailableBalance(Aws::String&& value) { SetAvailableBalance(std::move(value)); return *this;}
-
-    
     inline GetAccountBalanceResult& WithAvailableBalance(const char* value) { SetAvailableBalance(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetOnHoldBalance() const{ return m_onHoldBalance; }
-
-    
     inline void SetOnHoldBalance(const Aws::String& value) { m_onHoldBalance = value; }
-
-    
     inline void SetOnHoldBalance(Aws::String&& value) { m_onHoldBalance = std::move(value); }
-
-    
     inline void SetOnHoldBalance(const char* value) { m_onHoldBalance.assign(value); }
-
-    
     inline GetAccountBalanceResult& WithOnHoldBalance(const Aws::String& value) { SetOnHoldBalance(value); return *this;}
-
-    
     inline GetAccountBalanceResult& WithOnHoldBalance(Aws::String&& value) { SetOnHoldBalance(std::move(value)); return *this;}
-
-    
     inline GetAccountBalanceResult& WithOnHoldBalance(const char* value) { SetOnHoldBalance(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccountBalanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccountBalanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccountBalanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_availableBalance;

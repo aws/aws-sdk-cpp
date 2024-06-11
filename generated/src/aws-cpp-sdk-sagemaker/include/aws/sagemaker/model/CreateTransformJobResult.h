@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateTransformJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the transform job.</p>
      */
     inline const Aws::String& GetTransformJobArn() const{ return m_transformJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline void SetTransformJobArn(const Aws::String& value) { m_transformJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline void SetTransformJobArn(Aws::String&& value) { m_transformJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline void SetTransformJobArn(const char* value) { m_transformJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline CreateTransformJobResult& WithTransformJobArn(const Aws::String& value) { SetTransformJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline CreateTransformJobResult& WithTransformJobArn(Aws::String&& value) { SetTransformJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
-     */
     inline CreateTransformJobResult& WithTransformJobArn(const char* value) { SetTransformJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTransformJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTransformJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTransformJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformJobArn;

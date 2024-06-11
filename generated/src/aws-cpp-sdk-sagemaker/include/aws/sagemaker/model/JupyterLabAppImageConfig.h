@@ -40,43 +40,25 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
-
-    
     inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
-
-    
     inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
-
-    
     inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
-
-    
     inline JupyterLabAppImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
-
-    
     inline JupyterLabAppImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
-
-    
     inline bool ContainerConfigHasBeenSet() const { return m_containerConfigHasBeenSet; }
-
-    
     inline void SetContainerConfig(const ContainerConfig& value) { m_containerConfigHasBeenSet = true; m_containerConfig = value; }
-
-    
     inline void SetContainerConfig(ContainerConfig&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::move(value); }
-
-    
     inline JupyterLabAppImageConfig& WithContainerConfig(const ContainerConfig& value) { SetContainerConfig(value); return *this;}
-
-    
     inline JupyterLabAppImageConfig& WithContainerConfig(ContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FileSystemConfig m_fileSystemConfig;

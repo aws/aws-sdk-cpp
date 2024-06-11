@@ -37,46 +37,19 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline CancelTaskExecutionRequest& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline CancelTaskExecutionRequest& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-     */
     inline CancelTaskExecutionRequest& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskExecutionArn;

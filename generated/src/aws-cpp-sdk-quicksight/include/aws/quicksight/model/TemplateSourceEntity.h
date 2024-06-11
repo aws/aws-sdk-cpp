@@ -38,67 +38,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source analysis, if it is based on an analysis.</p>
      */
     inline const TemplateSourceAnalysis& GetSourceAnalysis() const{ return m_sourceAnalysis; }
-
-    /**
-     * <p>The source analysis, if it is based on an analysis.</p>
-     */
     inline bool SourceAnalysisHasBeenSet() const { return m_sourceAnalysisHasBeenSet; }
-
-    /**
-     * <p>The source analysis, if it is based on an analysis.</p>
-     */
     inline void SetSourceAnalysis(const TemplateSourceAnalysis& value) { m_sourceAnalysisHasBeenSet = true; m_sourceAnalysis = value; }
-
-    /**
-     * <p>The source analysis, if it is based on an analysis.</p>
-     */
     inline void SetSourceAnalysis(TemplateSourceAnalysis&& value) { m_sourceAnalysisHasBeenSet = true; m_sourceAnalysis = std::move(value); }
-
-    /**
-     * <p>The source analysis, if it is based on an analysis.</p>
-     */
     inline TemplateSourceEntity& WithSourceAnalysis(const TemplateSourceAnalysis& value) { SetSourceAnalysis(value); return *this;}
-
-    /**
-     * <p>The source analysis, if it is based on an analysis.</p>
-     */
     inline TemplateSourceEntity& WithSourceAnalysis(TemplateSourceAnalysis&& value) { SetSourceAnalysis(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source template, if it is based on an template.</p>
      */
     inline const TemplateSourceTemplate& GetSourceTemplate() const{ return m_sourceTemplate; }
-
-    /**
-     * <p>The source template, if it is based on an template.</p>
-     */
     inline bool SourceTemplateHasBeenSet() const { return m_sourceTemplateHasBeenSet; }
-
-    /**
-     * <p>The source template, if it is based on an template.</p>
-     */
     inline void SetSourceTemplate(const TemplateSourceTemplate& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = value; }
-
-    /**
-     * <p>The source template, if it is based on an template.</p>
-     */
     inline void SetSourceTemplate(TemplateSourceTemplate&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::move(value); }
-
-    /**
-     * <p>The source template, if it is based on an template.</p>
-     */
     inline TemplateSourceEntity& WithSourceTemplate(const TemplateSourceTemplate& value) { SetSourceTemplate(value); return *this;}
-
-    /**
-     * <p>The source template, if it is based on an template.</p>
-     */
     inline TemplateSourceEntity& WithSourceTemplate(TemplateSourceTemplate&& value) { SetSourceTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TemplateSourceAnalysis m_sourceAnalysis;

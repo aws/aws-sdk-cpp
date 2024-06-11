@@ -33,54 +33,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
      * the root ID to retrieve associations for. </p>
      */
     inline const Aws::Vector<ConfigurationPolicyAssociation>& GetConfigurationPolicyAssociationIdentifiers() const{ return m_configurationPolicyAssociationIdentifiers; }
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline bool ConfigurationPolicyAssociationIdentifiersHasBeenSet() const { return m_configurationPolicyAssociationIdentifiersHasBeenSet; }
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline void SetConfigurationPolicyAssociationIdentifiers(const Aws::Vector<ConfigurationPolicyAssociation>& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = value; }
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline void SetConfigurationPolicyAssociationIdentifiers(Aws::Vector<ConfigurationPolicyAssociation>&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = std::move(value); }
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline BatchGetConfigurationPolicyAssociationsRequest& WithConfigurationPolicyAssociationIdentifiers(const Aws::Vector<ConfigurationPolicyAssociation>& value) { SetConfigurationPolicyAssociationIdentifiers(value); return *this;}
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline BatchGetConfigurationPolicyAssociationsRequest& WithConfigurationPolicyAssociationIdentifiers(Aws::Vector<ConfigurationPolicyAssociation>&& value) { SetConfigurationPolicyAssociationIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline BatchGetConfigurationPolicyAssociationsRequest& AddConfigurationPolicyAssociationIdentifiers(const ConfigurationPolicyAssociation& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
-     * the root ID to retrieve associations for. </p>
-     */
     inline BatchGetConfigurationPolicyAssociationsRequest& AddConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociation&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ConfigurationPolicyAssociation> m_configurationPolicyAssociationIdentifiers;

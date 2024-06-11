@@ -40,57 +40,27 @@ namespace Model
     AWS_EC2_API PurchaseScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the Scheduled Instances.</p>
      */
     inline const Aws::Vector<ScheduledInstance>& GetScheduledInstanceSet() const{ return m_scheduledInstanceSet; }
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline void SetScheduledInstanceSet(const Aws::Vector<ScheduledInstance>& value) { m_scheduledInstanceSet = value; }
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline void SetScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { m_scheduledInstanceSet = std::move(value); }
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline PurchaseScheduledInstancesResponse& WithScheduledInstanceSet(const Aws::Vector<ScheduledInstance>& value) { SetScheduledInstanceSet(value); return *this;}
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline PurchaseScheduledInstancesResponse& WithScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { SetScheduledInstanceSet(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline PurchaseScheduledInstancesResponse& AddScheduledInstanceSet(const ScheduledInstance& value) { m_scheduledInstanceSet.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the Scheduled Instances.</p>
-     */
     inline PurchaseScheduledInstancesResponse& AddScheduledInstanceSet(ScheduledInstance&& value) { m_scheduledInstanceSet.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline PurchaseScheduledInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline PurchaseScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;

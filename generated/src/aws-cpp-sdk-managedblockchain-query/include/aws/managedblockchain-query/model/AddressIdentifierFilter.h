@@ -39,51 +39,20 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The container for the recipient address of the transaction. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTransactionEventToAddress() const{ return m_transactionEventToAddress; }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline bool TransactionEventToAddressHasBeenSet() const { return m_transactionEventToAddressHasBeenSet; }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline void SetTransactionEventToAddress(const Aws::Vector<Aws::String>& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress = value; }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline void SetTransactionEventToAddress(Aws::Vector<Aws::String>&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress = std::move(value); }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline AddressIdentifierFilter& WithTransactionEventToAddress(const Aws::Vector<Aws::String>& value) { SetTransactionEventToAddress(value); return *this;}
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline AddressIdentifierFilter& WithTransactionEventToAddress(Aws::Vector<Aws::String>&& value) { SetTransactionEventToAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline AddressIdentifierFilter& AddTransactionEventToAddress(const Aws::String& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(value); return *this; }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline AddressIdentifierFilter& AddTransactionEventToAddress(Aws::String&& value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The container for the recipient address of the transaction. </p>
-     */
     inline AddressIdentifierFilter& AddTransactionEventToAddress(const char* value) { m_transactionEventToAddressHasBeenSet = true; m_transactionEventToAddress.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_transactionEventToAddress;

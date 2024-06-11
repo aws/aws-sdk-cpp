@@ -41,124 +41,39 @@ namespace Model
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The category rules that have been matched in the analyzed segment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchedCategories() const{ return m_matchedCategories; }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline bool MatchedCategoriesHasBeenSet() const { return m_matchedCategoriesHasBeenSet; }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline void SetMatchedCategories(const Aws::Vector<Aws::String>& value) { m_matchedCategoriesHasBeenSet = true; m_matchedCategories = value; }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline void SetMatchedCategories(Aws::Vector<Aws::String>&& value) { m_matchedCategoriesHasBeenSet = true; m_matchedCategories = std::move(value); }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline Categories& WithMatchedCategories(const Aws::Vector<Aws::String>& value) { SetMatchedCategories(value); return *this;}
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline Categories& WithMatchedCategories(Aws::Vector<Aws::String>&& value) { SetMatchedCategories(std::move(value)); return *this;}
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline Categories& AddMatchedCategories(const Aws::String& value) { m_matchedCategoriesHasBeenSet = true; m_matchedCategories.push_back(value); return *this; }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline Categories& AddMatchedCategories(Aws::String&& value) { m_matchedCategoriesHasBeenSet = true; m_matchedCategories.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The category rules that have been matched in the analyzed segment.</p>
-     */
     inline Categories& AddMatchedCategories(const char* value) { m_matchedCategoriesHasBeenSet = true; m_matchedCategories.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The category rule that was matched and when it occurred in the
      * transcript.</p>
      */
     inline const Aws::Map<Aws::String, CategoryDetails>& GetMatchedDetails() const{ return m_matchedDetails; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline bool MatchedDetailsHasBeenSet() const { return m_matchedDetailsHasBeenSet; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline void SetMatchedDetails(const Aws::Map<Aws::String, CategoryDetails>& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = value; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline void SetMatchedDetails(Aws::Map<Aws::String, CategoryDetails>&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails = std::move(value); }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& WithMatchedDetails(const Aws::Map<Aws::String, CategoryDetails>& value) { SetMatchedDetails(value); return *this;}
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& WithMatchedDetails(Aws::Map<Aws::String, CategoryDetails>&& value) { SetMatchedDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(const Aws::String& key, const CategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(Aws::String&& key, const CategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(const Aws::String& key, CategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(Aws::String&& key, CategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(const char* key, CategoryDetails&& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The category rule that was matched and when it occurred in the
-     * transcript.</p>
-     */
     inline Categories& AddMatchedDetails(const char* key, const CategoryDetails& value) { m_matchedDetailsHasBeenSet = true; m_matchedDetails.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_matchedCategories;

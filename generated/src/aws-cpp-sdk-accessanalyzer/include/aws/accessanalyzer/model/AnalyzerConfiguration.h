@@ -38,48 +38,19 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
      * Services organization or account. External access analyzers do not support any
      * configuration.</p>
      */
     inline const UnusedAccessConfiguration& GetUnusedAccess() const{ return m_unusedAccess; }
-
-    /**
-     * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
-     */
     inline bool UnusedAccessHasBeenSet() const { return m_unusedAccessHasBeenSet; }
-
-    /**
-     * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
-     */
     inline void SetUnusedAccess(const UnusedAccessConfiguration& value) { m_unusedAccessHasBeenSet = true; m_unusedAccess = value; }
-
-    /**
-     * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
-     */
     inline void SetUnusedAccess(UnusedAccessConfiguration&& value) { m_unusedAccessHasBeenSet = true; m_unusedAccess = std::move(value); }
-
-    /**
-     * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
-     */
     inline AnalyzerConfiguration& WithUnusedAccess(const UnusedAccessConfiguration& value) { SetUnusedAccess(value); return *this;}
-
-    /**
-     * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
-     */
     inline AnalyzerConfiguration& WithUnusedAccess(UnusedAccessConfiguration&& value) { SetUnusedAccess(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UnusedAccessConfiguration m_unusedAccess;

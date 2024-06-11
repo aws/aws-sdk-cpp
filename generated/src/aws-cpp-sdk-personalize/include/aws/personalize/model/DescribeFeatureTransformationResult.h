@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeFeatureTransformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A listing of the FeatureTransformation properties.</p>
      */
     inline const FeatureTransformation& GetFeatureTransformation() const{ return m_featureTransformation; }
-
-    /**
-     * <p>A listing of the FeatureTransformation properties.</p>
-     */
     inline void SetFeatureTransformation(const FeatureTransformation& value) { m_featureTransformation = value; }
-
-    /**
-     * <p>A listing of the FeatureTransformation properties.</p>
-     */
     inline void SetFeatureTransformation(FeatureTransformation&& value) { m_featureTransformation = std::move(value); }
-
-    /**
-     * <p>A listing of the FeatureTransformation properties.</p>
-     */
     inline DescribeFeatureTransformationResult& WithFeatureTransformation(const FeatureTransformation& value) { SetFeatureTransformation(value); return *this;}
-
-    /**
-     * <p>A listing of the FeatureTransformation properties.</p>
-     */
     inline DescribeFeatureTransformationResult& WithFeatureTransformation(FeatureTransformation&& value) { SetFeatureTransformation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFeatureTransformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFeatureTransformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFeatureTransformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FeatureTransformation m_featureTransformation;

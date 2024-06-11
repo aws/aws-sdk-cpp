@@ -33,53 +33,27 @@ namespace Model
     AWS_S3CONTROL_API GetAccessPointConfigurationForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Object Lambda Access Point configuration document.</p>
      */
     inline const ObjectLambdaConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>Object Lambda Access Point configuration document.</p>
-     */
     inline void SetConfiguration(const ObjectLambdaConfiguration& value) { m_configuration = value; }
-
-    /**
-     * <p>Object Lambda Access Point configuration document.</p>
-     */
     inline void SetConfiguration(ObjectLambdaConfiguration&& value) { m_configuration = std::move(value); }
-
-    /**
-     * <p>Object Lambda Access Point configuration document.</p>
-     */
     inline GetAccessPointConfigurationForObjectLambdaResult& WithConfiguration(const ObjectLambdaConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>Object Lambda Access Point configuration document.</p>
-     */
     inline GetAccessPointConfigurationForObjectLambdaResult& WithConfiguration(ObjectLambdaConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAccessPointConfigurationForObjectLambdaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ObjectLambdaConfiguration m_configuration;

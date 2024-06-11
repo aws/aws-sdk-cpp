@@ -41,61 +41,28 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the toxic content type.</p>
      */
     inline const ToxicContentType& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the toxic content type.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the toxic content type.</p>
-     */
     inline void SetName(const ToxicContentType& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the toxic content type.</p>
-     */
     inline void SetName(ToxicContentType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the toxic content type.</p>
-     */
     inline ToxicContent& WithName(const ToxicContentType& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the toxic content type.</p>
-     */
     inline ToxicContent& WithName(ToxicContentType&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Model confidence in the detected content type. Value range is zero to one,
      * where one is highest confidence.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p> Model confidence in the detected content type. Value range is zero to one,
-     * where one is highest confidence.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p> Model confidence in the detected content type. Value range is zero to one,
-     * where one is highest confidence.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p> Model confidence in the detected content type. Value range is zero to one,
-     * where one is highest confidence.</p>
-     */
     inline ToxicContent& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     ToxicContentType m_name;

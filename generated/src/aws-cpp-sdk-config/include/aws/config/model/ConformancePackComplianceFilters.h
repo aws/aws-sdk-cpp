@@ -40,94 +40,34 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filters the results by Config rule names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline ConformancePackComplianceFilters& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline ConformancePackComplianceFilters& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline ConformancePackComplianceFilters& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline ConformancePackComplianceFilters& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the results by Config rule names.</p>
-     */
     inline ConformancePackComplianceFilters& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * <code>INSUFFICIENT_DATA</code> is not supported.</p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
-
-    /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * <code>INSUFFICIENT_DATA</code> is not supported.</p>
-     */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-
-    /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * <code>INSUFFICIENT_DATA</code> is not supported.</p>
-     */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-
-    /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * <code>INSUFFICIENT_DATA</code> is not supported.</p>
-     */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-
-    /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * <code>INSUFFICIENT_DATA</code> is not supported.</p>
-     */
     inline ConformancePackComplianceFilters& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
-
-    /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * <code>INSUFFICIENT_DATA</code> is not supported.</p>
-     */
     inline ConformancePackComplianceFilters& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;

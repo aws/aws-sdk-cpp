@@ -38,48 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Y axis type to be used in the chart.</p> <p>If you choose
      * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
      * vertical axis of the chart.</p>
      */
     inline const SingleYAxisOption& GetYAxis() const{ return m_yAxis; }
-
-    /**
-     * <p>The Y axis type to be used in the chart.</p> <p>If you choose
-     * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
-     * vertical axis of the chart.</p>
-     */
     inline bool YAxisHasBeenSet() const { return m_yAxisHasBeenSet; }
-
-    /**
-     * <p>The Y axis type to be used in the chart.</p> <p>If you choose
-     * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
-     * vertical axis of the chart.</p>
-     */
     inline void SetYAxis(const SingleYAxisOption& value) { m_yAxisHasBeenSet = true; m_yAxis = value; }
-
-    /**
-     * <p>The Y axis type to be used in the chart.</p> <p>If you choose
-     * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
-     * vertical axis of the chart.</p>
-     */
     inline void SetYAxis(SingleYAxisOption&& value) { m_yAxisHasBeenSet = true; m_yAxis = std::move(value); }
-
-    /**
-     * <p>The Y axis type to be used in the chart.</p> <p>If you choose
-     * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
-     * vertical axis of the chart.</p>
-     */
     inline YAxisOptions& WithYAxis(const SingleYAxisOption& value) { SetYAxis(value); return *this;}
-
-    /**
-     * <p>The Y axis type to be used in the chart.</p> <p>If you choose
-     * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
-     * vertical axis of the chart.</p>
-     */
     inline YAxisOptions& WithYAxis(SingleYAxisOption&& value) { SetYAxis(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SingleYAxisOption m_yAxis;

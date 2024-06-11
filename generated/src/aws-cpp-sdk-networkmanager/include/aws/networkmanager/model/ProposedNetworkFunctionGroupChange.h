@@ -40,120 +40,45 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of proposed changes to the key-value tags associated with the
      * network function group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of proposed changes to the key-value tags associated with the
-     * network function group.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proposed new attachment policy rule number for the network function
      * group.</p>
      */
     inline int GetAttachmentPolicyRuleNumber() const{ return m_attachmentPolicyRuleNumber; }
-
-    /**
-     * <p>The proposed new attachment policy rule number for the network function
-     * group.</p>
-     */
     inline bool AttachmentPolicyRuleNumberHasBeenSet() const { return m_attachmentPolicyRuleNumberHasBeenSet; }
-
-    /**
-     * <p>The proposed new attachment policy rule number for the network function
-     * group.</p>
-     */
     inline void SetAttachmentPolicyRuleNumber(int value) { m_attachmentPolicyRuleNumberHasBeenSet = true; m_attachmentPolicyRuleNumber = value; }
-
-    /**
-     * <p>The proposed new attachment policy rule number for the network function
-     * group.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithAttachmentPolicyRuleNumber(int value) { SetAttachmentPolicyRuleNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proposed name change for the network function group name.</p>
      */
     inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed name change for the network function group name.</p>
-     */
     inline ProposedNetworkFunctionGroupChange& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tags;

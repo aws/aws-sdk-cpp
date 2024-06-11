@@ -35,42 +35,20 @@ namespace Model
     AWS_SECRETSMANAGER_API BatchGetSecretValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of secret values.</p>
      */
     inline const Aws::Vector<SecretValueEntry>& GetSecretValues() const{ return m_secretValues; }
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline void SetSecretValues(const Aws::Vector<SecretValueEntry>& value) { m_secretValues = value; }
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline void SetSecretValues(Aws::Vector<SecretValueEntry>&& value) { m_secretValues = std::move(value); }
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline BatchGetSecretValueResult& WithSecretValues(const Aws::Vector<SecretValueEntry>& value) { SetSecretValues(value); return *this;}
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline BatchGetSecretValueResult& WithSecretValues(Aws::Vector<SecretValueEntry>&& value) { SetSecretValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline BatchGetSecretValueResult& AddSecretValues(const SecretValueEntry& value) { m_secretValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of secret values.</p>
-     */
     inline BatchGetSecretValueResult& AddSecretValues(SecretValueEntry&& value) { m_secretValues.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Secrets Manager includes this value if there's more output available than
      * what is included in the current response. This can occur even when the response
@@ -79,126 +57,38 @@ namespace Model
      * this value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline BatchGetSecretValueResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline BatchGetSecretValueResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Secrets Manager includes this value if there's more output available than
-     * what is included in the current response. This can occur even when the response
-     * includes no values at all, such as when you ask for a filtered view of a long
-     * list. To get the next results, call <code>BatchGetSecretValue</code> again with
-     * this value.</p>
-     */
     inline BatchGetSecretValueResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of errors Secrets Manager encountered while attempting to retrieve
      * individual secrets.</p>
      */
     inline const Aws::Vector<APIErrorType>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline void SetErrors(const Aws::Vector<APIErrorType>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline void SetErrors(Aws::Vector<APIErrorType>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline BatchGetSecretValueResult& WithErrors(const Aws::Vector<APIErrorType>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline BatchGetSecretValueResult& WithErrors(Aws::Vector<APIErrorType>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline BatchGetSecretValueResult& AddErrors(const APIErrorType& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of errors Secrets Manager encountered while attempting to retrieve
-     * individual secrets.</p>
-     */
     inline BatchGetSecretValueResult& AddErrors(APIErrorType&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetSecretValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetSecretValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetSecretValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SecretValueEntry> m_secretValues;

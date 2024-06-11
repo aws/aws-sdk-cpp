@@ -37,128 +37,47 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the core network.</p>
      */
     inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the core network.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network function group name.</p>
      */
     inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The network function group name.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location for the core network edge.</p>
      */
     inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline bool EdgeLocationHasBeenSet() const { return m_edgeLocationHasBeenSet; }
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline void SetEdgeLocation(const Aws::String& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = value; }
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline void SetEdgeLocation(Aws::String&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::move(value); }
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline void SetEdgeLocation(const char* value) { m_edgeLocationHasBeenSet = true; m_edgeLocation.assign(value); }
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithEdgeLocation(const Aws::String& value) { SetEdgeLocation(value); return *this;}
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithEdgeLocation(Aws::String&& value) { SetEdgeLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The location for the core network edge.</p>
-     */
     inline CoreNetworkNetworkFunctionGroupIdentifier& WithEdgeLocation(const char* value) { SetEdgeLocation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_coreNetworkId;

@@ -41,93 +41,49 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline GetAnswerRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline GetAnswerRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline GetAnswerRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
-
-    
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-
-    
     inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-
-    
     inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-
-    
     inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-
-    
     inline GetAnswerRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-
-    
     inline GetAnswerRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-
-    
     inline GetAnswerRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetQuestionId() const{ return m_questionId; }
-
-    
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-
-    
     inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-
-    
     inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-
-    
     inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-
-    
     inline GetAnswerRequest& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-
-    
     inline GetAnswerRequest& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-
-    
     inline GetAnswerRequest& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
-
-    
     inline bool MilestoneNumberHasBeenSet() const { return m_milestoneNumberHasBeenSet; }
-
-    
     inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
-
-    
     inline GetAnswerRequest& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

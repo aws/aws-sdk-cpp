@@ -41,77 +41,31 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The estimated monthly savings possible as a percentage of monthly cost by
      * adopting Compute Optimizer’s Amazon ECS service recommendations. This includes
      * any applicable Savings Plans discounts. </p>
      */
     inline double GetSavingsOpportunityPercentage() const{ return m_savingsOpportunityPercentage; }
-
-    /**
-     * <p> The estimated monthly savings possible as a percentage of monthly cost by
-     * adopting Compute Optimizer’s Amazon ECS service recommendations. This includes
-     * any applicable Savings Plans discounts. </p>
-     */
     inline bool SavingsOpportunityPercentageHasBeenSet() const { return m_savingsOpportunityPercentageHasBeenSet; }
-
-    /**
-     * <p> The estimated monthly savings possible as a percentage of monthly cost by
-     * adopting Compute Optimizer’s Amazon ECS service recommendations. This includes
-     * any applicable Savings Plans discounts. </p>
-     */
     inline void SetSavingsOpportunityPercentage(double value) { m_savingsOpportunityPercentageHasBeenSet = true; m_savingsOpportunityPercentage = value; }
-
-    /**
-     * <p> The estimated monthly savings possible as a percentage of monthly cost by
-     * adopting Compute Optimizer’s Amazon ECS service recommendations. This includes
-     * any applicable Savings Plans discounts. </p>
-     */
     inline ECSSavingsOpportunityAfterDiscounts& WithSavingsOpportunityPercentage(double value) { SetSavingsOpportunityPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
      * Amazon ECS service recommendations. This includes any applicable Savings Plans
      * discounts. </p>
      */
     inline const ECSEstimatedMonthlySavings& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
-
-    /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon ECS service recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
-     */
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-
-    /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon ECS service recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
-     */
     inline void SetEstimatedMonthlySavings(const ECSEstimatedMonthlySavings& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-
-    /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon ECS service recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
-     */
     inline void SetEstimatedMonthlySavings(ECSEstimatedMonthlySavings&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
-
-    /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon ECS service recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
-     */
     inline ECSSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(const ECSEstimatedMonthlySavings& value) { SetEstimatedMonthlySavings(value); return *this;}
-
-    /**
-     * <p> The estimated monthly savings possible by adopting Compute Optimizer’s
-     * Amazon ECS service recommendations. This includes any applicable Savings Plans
-     * discounts. </p>
-     */
     inline ECSSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(ECSEstimatedMonthlySavings&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_savingsOpportunityPercentage;

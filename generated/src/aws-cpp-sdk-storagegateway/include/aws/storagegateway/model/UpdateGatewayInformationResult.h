@@ -38,85 +38,40 @@ namespace Model
     AWS_STORAGEGATEWAY_API UpdateGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-
-    
     inline UpdateGatewayInformationResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline UpdateGatewayInformationResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline UpdateGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name you configured for your gateway.</p>
      */
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline void SetGatewayName(const Aws::String& value) { m_gatewayName = value; }
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline void SetGatewayName(Aws::String&& value) { m_gatewayName = std::move(value); }
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline void SetGatewayName(const char* value) { m_gatewayName.assign(value); }
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline UpdateGatewayInformationResult& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline UpdateGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name you configured for your gateway.</p>
-     */
     inline UpdateGatewayInformationResult& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateGatewayInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateGatewayInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateGatewayInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

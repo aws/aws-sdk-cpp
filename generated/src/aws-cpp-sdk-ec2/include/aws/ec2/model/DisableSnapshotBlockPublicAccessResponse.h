@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DisableSnapshotBlockPublicAccessResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>unblocked</code> if the request succeeds.</p>
      */
     inline const SnapshotBlockPublicAccessState& GetState() const{ return m_state; }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds.</p>
-     */
     inline void SetState(const SnapshotBlockPublicAccessState& value) { m_state = value; }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds.</p>
-     */
     inline void SetState(SnapshotBlockPublicAccessState&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds.</p>
-     */
     inline DisableSnapshotBlockPublicAccessResponse& WithState(const SnapshotBlockPublicAccessState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds.</p>
-     */
     inline DisableSnapshotBlockPublicAccessResponse& WithState(SnapshotBlockPublicAccessState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DisableSnapshotBlockPublicAccessResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DisableSnapshotBlockPublicAccessResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SnapshotBlockPublicAccessState m_state;

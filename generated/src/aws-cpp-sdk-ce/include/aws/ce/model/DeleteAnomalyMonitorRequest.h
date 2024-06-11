@@ -34,54 +34,20 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the cost anomaly monitor that you want to delete.
      * </p>
      */
     inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline DeleteAnomalyMonitorRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline DeleteAnomalyMonitorRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the cost anomaly monitor that you want to delete.
-     * </p>
-     */
     inline DeleteAnomalyMonitorRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorArn;

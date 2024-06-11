@@ -37,54 +37,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
      * <code>DISABLED</code> | <code>ENABLED</code> </p>
      */
     inline const Aws::String& GetCertificateTransparencyLoggingPreference() const{ return m_certificateTransparencyLoggingPreference; }
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline void SetCertificateTransparencyLoggingPreference(const Aws::String& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline void SetCertificateTransparencyLoggingPreference(Aws::String&& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = std::move(value); }
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline void SetCertificateTransparencyLoggingPreference(const char* value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference.assign(value); }
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(const Aws::String& value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(Aws::String&& value) { SetCertificateTransparencyLoggingPreference(std::move(value)); return *this;}
-
-    /**
-     * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
-     * <code>DISABLED</code> | <code>ENABLED</code> </p>
-     */
     inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(const char* value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateTransparencyLoggingPreference;

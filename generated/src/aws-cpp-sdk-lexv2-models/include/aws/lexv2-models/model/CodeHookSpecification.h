@@ -38,24 +38,15 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const LambdaCodeHook& GetLambdaCodeHook() const{ return m_lambdaCodeHook; }
-
-    
     inline bool LambdaCodeHookHasBeenSet() const { return m_lambdaCodeHookHasBeenSet; }
-
-    
     inline void SetLambdaCodeHook(const LambdaCodeHook& value) { m_lambdaCodeHookHasBeenSet = true; m_lambdaCodeHook = value; }
-
-    
     inline void SetLambdaCodeHook(LambdaCodeHook&& value) { m_lambdaCodeHookHasBeenSet = true; m_lambdaCodeHook = std::move(value); }
-
-    
     inline CodeHookSpecification& WithLambdaCodeHook(const LambdaCodeHook& value) { SetLambdaCodeHook(value); return *this;}
-
-    
     inline CodeHookSpecification& WithLambdaCodeHook(LambdaCodeHook&& value) { SetLambdaCodeHook(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LambdaCodeHook m_lambdaCodeHook;

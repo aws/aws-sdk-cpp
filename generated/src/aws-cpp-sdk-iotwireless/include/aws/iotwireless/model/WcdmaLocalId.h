@@ -36,47 +36,25 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
      */
     inline int GetUarfcndl() const{ return m_uarfcndl; }
-
-    /**
-     * <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-     */
     inline bool UarfcndlHasBeenSet() const { return m_uarfcndlHasBeenSet; }
-
-    /**
-     * <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-     */
     inline void SetUarfcndl(int value) { m_uarfcndlHasBeenSet = true; m_uarfcndl = value; }
-
-    /**
-     * <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-     */
     inline WcdmaLocalId& WithUarfcndl(int value) { SetUarfcndl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Primary Scrambling Code.</p>
      */
     inline int GetPsc() const{ return m_psc; }
-
-    /**
-     * <p>Primary Scrambling Code.</p>
-     */
     inline bool PscHasBeenSet() const { return m_pscHasBeenSet; }
-
-    /**
-     * <p>Primary Scrambling Code.</p>
-     */
     inline void SetPsc(int value) { m_pscHasBeenSet = true; m_psc = value; }
-
-    /**
-     * <p>Primary Scrambling Code.</p>
-     */
     inline WcdmaLocalId& WithPsc(int value) { SetPsc(value); return *this;}
-
+    ///@}
   private:
 
     int m_uarfcndl;

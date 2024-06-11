@@ -33,58 +33,28 @@ namespace Model
     AWS_ROUTE53RESOLVER_API GetResolverEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the Resolver endpoint that you specified in a
      * <code>GetResolverEndpoint</code> request.</p>
      */
     inline const ResolverEndpoint& GetResolverEndpoint() const{ return m_resolverEndpoint; }
-
-    /**
-     * <p>Information about the Resolver endpoint that you specified in a
-     * <code>GetResolverEndpoint</code> request.</p>
-     */
     inline void SetResolverEndpoint(const ResolverEndpoint& value) { m_resolverEndpoint = value; }
-
-    /**
-     * <p>Information about the Resolver endpoint that you specified in a
-     * <code>GetResolverEndpoint</code> request.</p>
-     */
     inline void SetResolverEndpoint(ResolverEndpoint&& value) { m_resolverEndpoint = std::move(value); }
-
-    /**
-     * <p>Information about the Resolver endpoint that you specified in a
-     * <code>GetResolverEndpoint</code> request.</p>
-     */
     inline GetResolverEndpointResult& WithResolverEndpoint(const ResolverEndpoint& value) { SetResolverEndpoint(value); return *this;}
-
-    /**
-     * <p>Information about the Resolver endpoint that you specified in a
-     * <code>GetResolverEndpoint</code> request.</p>
-     */
     inline GetResolverEndpointResult& WithResolverEndpoint(ResolverEndpoint&& value) { SetResolverEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResolverEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResolverEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResolverEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResolverEndpoint m_resolverEndpoint;

@@ -39,83 +39,32 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the email provider that the inbox placement data applies to.</p>
      */
     inline const Aws::String& GetIspName() const{ return m_ispName; }
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline void SetIspName(const Aws::String& value) { m_ispNameHasBeenSet = true; m_ispName = value; }
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline void SetIspName(Aws::String&& value) { m_ispNameHasBeenSet = true; m_ispName = std::move(value); }
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline void SetIspName(const char* value) { m_ispNameHasBeenSet = true; m_ispName.assign(value); }
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline IspPlacement& WithIspName(const Aws::String& value) { SetIspName(value); return *this;}
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline IspPlacement& WithIspName(Aws::String&& value) { SetIspName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the email provider that the inbox placement data applies to.</p>
-     */
     inline IspPlacement& WithIspName(const char* value) { SetIspName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that contains inbox placement metrics for a specific email
      * provider.</p>
      */
     inline const PlacementStatistics& GetPlacementStatistics() const{ return m_placementStatistics; }
-
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
     inline bool PlacementStatisticsHasBeenSet() const { return m_placementStatisticsHasBeenSet; }
-
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
     inline void SetPlacementStatistics(const PlacementStatistics& value) { m_placementStatisticsHasBeenSet = true; m_placementStatistics = value; }
-
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
     inline void SetPlacementStatistics(PlacementStatistics&& value) { m_placementStatisticsHasBeenSet = true; m_placementStatistics = std::move(value); }
-
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
     inline IspPlacement& WithPlacementStatistics(const PlacementStatistics& value) { SetPlacementStatistics(value); return *this;}
-
-    /**
-     * <p>An object that contains inbox placement metrics for a specific email
-     * provider.</p>
-     */
     inline IspPlacement& WithPlacementStatistics(PlacementStatistics&& value) { SetPlacementStatistics(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ispName;

@@ -41,129 +41,53 @@ namespace Model
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state of the component associated with the deployment.</p>
      */
     inline const ComponentState& GetComponent() const{ return m_component; }
-
-    /**
-     * <p>The state of the component associated with the deployment.</p>
-     */
     inline bool ComponentHasBeenSet() const { return m_componentHasBeenSet; }
-
-    /**
-     * <p>The state of the component associated with the deployment.</p>
-     */
     inline void SetComponent(const ComponentState& value) { m_componentHasBeenSet = true; m_component = value; }
-
-    /**
-     * <p>The state of the component associated with the deployment.</p>
-     */
     inline void SetComponent(ComponentState&& value) { m_componentHasBeenSet = true; m_component = std::move(value); }
-
-    /**
-     * <p>The state of the component associated with the deployment.</p>
-     */
     inline DeploymentState& WithComponent(const ComponentState& value) { SetComponent(value); return *this;}
-
-    /**
-     * <p>The state of the component associated with the deployment.</p>
-     */
     inline DeploymentState& WithComponent(ComponentState&& value) { SetComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the environment associated with the deployment.</p>
      */
     inline const EnvironmentState& GetEnvironment() const{ return m_environment; }
-
-    /**
-     * <p>The state of the environment associated with the deployment.</p>
-     */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-
-    /**
-     * <p>The state of the environment associated with the deployment.</p>
-     */
     inline void SetEnvironment(const EnvironmentState& value) { m_environmentHasBeenSet = true; m_environment = value; }
-
-    /**
-     * <p>The state of the environment associated with the deployment.</p>
-     */
     inline void SetEnvironment(EnvironmentState&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-
-    /**
-     * <p>The state of the environment associated with the deployment.</p>
-     */
     inline DeploymentState& WithEnvironment(const EnvironmentState& value) { SetEnvironment(value); return *this;}
-
-    /**
-     * <p>The state of the environment associated with the deployment.</p>
-     */
     inline DeploymentState& WithEnvironment(EnvironmentState&& value) { SetEnvironment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the service instance associated with the deployment.</p>
      */
     inline const ServiceInstanceState& GetServiceInstance() const{ return m_serviceInstance; }
-
-    /**
-     * <p>The state of the service instance associated with the deployment.</p>
-     */
     inline bool ServiceInstanceHasBeenSet() const { return m_serviceInstanceHasBeenSet; }
-
-    /**
-     * <p>The state of the service instance associated with the deployment.</p>
-     */
     inline void SetServiceInstance(const ServiceInstanceState& value) { m_serviceInstanceHasBeenSet = true; m_serviceInstance = value; }
-
-    /**
-     * <p>The state of the service instance associated with the deployment.</p>
-     */
     inline void SetServiceInstance(ServiceInstanceState&& value) { m_serviceInstanceHasBeenSet = true; m_serviceInstance = std::move(value); }
-
-    /**
-     * <p>The state of the service instance associated with the deployment.</p>
-     */
     inline DeploymentState& WithServiceInstance(const ServiceInstanceState& value) { SetServiceInstance(value); return *this;}
-
-    /**
-     * <p>The state of the service instance associated with the deployment.</p>
-     */
     inline DeploymentState& WithServiceInstance(ServiceInstanceState&& value) { SetServiceInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the service pipeline associated with the deployment.</p>
      */
     inline const ServicePipelineState& GetServicePipeline() const{ return m_servicePipeline; }
-
-    /**
-     * <p>The state of the service pipeline associated with the deployment.</p>
-     */
     inline bool ServicePipelineHasBeenSet() const { return m_servicePipelineHasBeenSet; }
-
-    /**
-     * <p>The state of the service pipeline associated with the deployment.</p>
-     */
     inline void SetServicePipeline(const ServicePipelineState& value) { m_servicePipelineHasBeenSet = true; m_servicePipeline = value; }
-
-    /**
-     * <p>The state of the service pipeline associated with the deployment.</p>
-     */
     inline void SetServicePipeline(ServicePipelineState&& value) { m_servicePipelineHasBeenSet = true; m_servicePipeline = std::move(value); }
-
-    /**
-     * <p>The state of the service pipeline associated with the deployment.</p>
-     */
     inline DeploymentState& WithServicePipeline(const ServicePipelineState& value) { SetServicePipeline(value); return *this;}
-
-    /**
-     * <p>The state of the service pipeline associated with the deployment.</p>
-     */
     inline DeploymentState& WithServicePipeline(ServicePipelineState&& value) { SetServicePipeline(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ComponentState m_component;

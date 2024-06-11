@@ -34,106 +34,43 @@ namespace Model
     AWS_XRAY_API GetSamplingStatisticSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the number of requests instrumented for each sampling
      * rule.</p>
      */
     inline const Aws::Vector<SamplingStatisticSummary>& GetSamplingStatisticSummaries() const{ return m_samplingStatisticSummaries; }
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline void SetSamplingStatisticSummaries(const Aws::Vector<SamplingStatisticSummary>& value) { m_samplingStatisticSummaries = value; }
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline void SetSamplingStatisticSummaries(Aws::Vector<SamplingStatisticSummary>&& value) { m_samplingStatisticSummaries = std::move(value); }
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline GetSamplingStatisticSummariesResult& WithSamplingStatisticSummaries(const Aws::Vector<SamplingStatisticSummary>& value) { SetSamplingStatisticSummaries(value); return *this;}
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline GetSamplingStatisticSummariesResult& WithSamplingStatisticSummaries(Aws::Vector<SamplingStatisticSummary>&& value) { SetSamplingStatisticSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline GetSamplingStatisticSummariesResult& AddSamplingStatisticSummaries(const SamplingStatisticSummary& value) { m_samplingStatisticSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the number of requests instrumented for each sampling
-     * rule.</p>
-     */
     inline GetSamplingStatisticSummariesResult& AddSamplingStatisticSummaries(SamplingStatisticSummary&& value) { m_samplingStatisticSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetSamplingStatisticSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetSamplingStatisticSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline GetSamplingStatisticSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSamplingStatisticSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSamplingStatisticSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSamplingStatisticSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SamplingStatisticSummary> m_samplingStatisticSummaries;

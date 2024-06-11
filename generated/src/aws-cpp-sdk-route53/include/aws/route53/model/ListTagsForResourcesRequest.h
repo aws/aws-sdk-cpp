@@ -38,103 +38,35 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ListTagsForResourcesRequest& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ListTagsForResourcesRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains the ResourceId element for each resource for
      * which you want to get a list of tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline ListTagsForResourcesRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline ListTagsForResourcesRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline ListTagsForResourcesRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline ListTagsForResourcesRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A complex type that contains the ResourceId element for each resource for
-     * which you want to get a list of tags.</p>
-     */
     inline ListTagsForResourcesRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     TagResourceType m_resourceType;

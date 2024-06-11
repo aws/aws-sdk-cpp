@@ -34,63 +34,29 @@ namespace Model
     AWS_LAKEFORMATION_API BatchGrantPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of failures to grant permissions to the resources.</p>
      */
     inline const Aws::Vector<BatchPermissionsFailureEntry>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline void SetFailures(const Aws::Vector<BatchPermissionsFailureEntry>& value) { m_failures = value; }
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline void SetFailures(Aws::Vector<BatchPermissionsFailureEntry>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline BatchGrantPermissionsResult& WithFailures(const Aws::Vector<BatchPermissionsFailureEntry>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline BatchGrantPermissionsResult& WithFailures(Aws::Vector<BatchPermissionsFailureEntry>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline BatchGrantPermissionsResult& AddFailures(const BatchPermissionsFailureEntry& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>A list of failures to grant permissions to the resources.</p>
-     */
     inline BatchGrantPermissionsResult& AddFailures(BatchPermissionsFailureEntry&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGrantPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGrantPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGrantPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchPermissionsFailureEntry> m_failures;

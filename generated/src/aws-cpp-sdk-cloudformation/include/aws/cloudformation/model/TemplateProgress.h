@@ -38,89 +38,45 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of resources that succeeded the template generation.</p>
      */
     inline int GetResourcesSucceeded() const{ return m_resourcesSucceeded; }
-
-    /**
-     * <p>The number of resources that succeeded the template generation.</p>
-     */
     inline bool ResourcesSucceededHasBeenSet() const { return m_resourcesSucceededHasBeenSet; }
-
-    /**
-     * <p>The number of resources that succeeded the template generation.</p>
-     */
     inline void SetResourcesSucceeded(int value) { m_resourcesSucceededHasBeenSet = true; m_resourcesSucceeded = value; }
-
-    /**
-     * <p>The number of resources that succeeded the template generation.</p>
-     */
     inline TemplateProgress& WithResourcesSucceeded(int value) { SetResourcesSucceeded(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of resources that failed the template generation.</p>
      */
     inline int GetResourcesFailed() const{ return m_resourcesFailed; }
-
-    /**
-     * <p>The number of resources that failed the template generation.</p>
-     */
     inline bool ResourcesFailedHasBeenSet() const { return m_resourcesFailedHasBeenSet; }
-
-    /**
-     * <p>The number of resources that failed the template generation.</p>
-     */
     inline void SetResourcesFailed(int value) { m_resourcesFailedHasBeenSet = true; m_resourcesFailed = value; }
-
-    /**
-     * <p>The number of resources that failed the template generation.</p>
-     */
     inline TemplateProgress& WithResourcesFailed(int value) { SetResourcesFailed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of resources that are in-process for the template generation.</p>
      */
     inline int GetResourcesProcessing() const{ return m_resourcesProcessing; }
-
-    /**
-     * <p>The number of resources that are in-process for the template generation.</p>
-     */
     inline bool ResourcesProcessingHasBeenSet() const { return m_resourcesProcessingHasBeenSet; }
-
-    /**
-     * <p>The number of resources that are in-process for the template generation.</p>
-     */
     inline void SetResourcesProcessing(int value) { m_resourcesProcessingHasBeenSet = true; m_resourcesProcessing = value; }
-
-    /**
-     * <p>The number of resources that are in-process for the template generation.</p>
-     */
     inline TemplateProgress& WithResourcesProcessing(int value) { SetResourcesProcessing(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of resources that are still pending the template generation.</p>
      */
     inline int GetResourcesPending() const{ return m_resourcesPending; }
-
-    /**
-     * <p>The number of resources that are still pending the template generation.</p>
-     */
     inline bool ResourcesPendingHasBeenSet() const { return m_resourcesPendingHasBeenSet; }
-
-    /**
-     * <p>The number of resources that are still pending the template generation.</p>
-     */
     inline void SetResourcesPending(int value) { m_resourcesPendingHasBeenSet = true; m_resourcesPending = value; }
-
-    /**
-     * <p>The number of resources that are still pending the template generation.</p>
-     */
     inline TemplateProgress& WithResourcesPending(int value) { SetResourcesPending(value); return *this;}
-
+    ///@}
   private:
 
     int m_resourcesSucceeded;

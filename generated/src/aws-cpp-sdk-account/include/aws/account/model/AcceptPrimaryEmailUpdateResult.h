@@ -33,53 +33,27 @@ namespace Model
     AWS_ACCOUNT_API AcceptPrimaryEmailUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Retrieves the status of the accepted primary email update request.</p>
      */
     inline const PrimaryEmailUpdateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Retrieves the status of the accepted primary email update request.</p>
-     */
     inline void SetStatus(const PrimaryEmailUpdateStatus& value) { m_status = value; }
-
-    /**
-     * <p>Retrieves the status of the accepted primary email update request.</p>
-     */
     inline void SetStatus(PrimaryEmailUpdateStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>Retrieves the status of the accepted primary email update request.</p>
-     */
     inline AcceptPrimaryEmailUpdateResult& WithStatus(const PrimaryEmailUpdateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Retrieves the status of the accepted primary email update request.</p>
-     */
     inline AcceptPrimaryEmailUpdateResult& WithStatus(PrimaryEmailUpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AcceptPrimaryEmailUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AcceptPrimaryEmailUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AcceptPrimaryEmailUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PrimaryEmailUpdateStatus m_status;

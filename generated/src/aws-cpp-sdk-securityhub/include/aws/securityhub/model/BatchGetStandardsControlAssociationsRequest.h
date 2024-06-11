@@ -33,6 +33,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> An array with one or more objects that includes a security control
      * (identified with <code>SecurityControlId</code>,
@@ -42,77 +43,14 @@ namespace Model
      * the same across standards. </p>
      */
     inline const Aws::Vector<StandardsControlAssociationId>& GetStandardsControlAssociationIds() const{ return m_standardsControlAssociationIds; }
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline bool StandardsControlAssociationIdsHasBeenSet() const { return m_standardsControlAssociationIdsHasBeenSet; }
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline void SetStandardsControlAssociationIds(const Aws::Vector<StandardsControlAssociationId>& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds = value; }
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline void SetStandardsControlAssociationIds(Aws::Vector<StandardsControlAssociationId>&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds = std::move(value); }
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline BatchGetStandardsControlAssociationsRequest& WithStandardsControlAssociationIds(const Aws::Vector<StandardsControlAssociationId>& value) { SetStandardsControlAssociationIds(value); return *this;}
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline BatchGetStandardsControlAssociationsRequest& WithStandardsControlAssociationIds(Aws::Vector<StandardsControlAssociationId>&& value) { SetStandardsControlAssociationIds(std::move(value)); return *this;}
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline BatchGetStandardsControlAssociationsRequest& AddStandardsControlAssociationIds(const StandardsControlAssociationId& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds.push_back(value); return *this; }
-
-    /**
-     * <p> An array with one or more objects that includes a security control
-     * (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
-     * Resource Name (ARN) of a standard. This field is used to query the enablement
-     * status of a control in a specified standard. The security control ID or ARN is
-     * the same across standards. </p>
-     */
     inline BatchGetStandardsControlAssociationsRequest& AddStandardsControlAssociationIds(StandardsControlAssociationId&& value) { m_standardsControlAssociationIdsHasBeenSet = true; m_standardsControlAssociationIds.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StandardsControlAssociationId> m_standardsControlAssociationIds;

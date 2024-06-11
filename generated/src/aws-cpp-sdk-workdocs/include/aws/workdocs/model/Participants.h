@@ -39,87 +39,33 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of users.</p>
      */
     inline const Aws::Vector<UserMetadata>& GetUsers() const{ return m_users; }
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline void SetUsers(const Aws::Vector<UserMetadata>& value) { m_usersHasBeenSet = true; m_users = value; }
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline void SetUsers(Aws::Vector<UserMetadata>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline Participants& WithUsers(const Aws::Vector<UserMetadata>& value) { SetUsers(value); return *this;}
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline Participants& WithUsers(Aws::Vector<UserMetadata>&& value) { SetUsers(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline Participants& AddUsers(const UserMetadata& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
-
-    /**
-     * <p>The list of users.</p>
-     */
     inline Participants& AddUsers(UserMetadata&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of user groups.</p>
      */
     inline const Aws::Vector<GroupMetadata>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline void SetGroups(const Aws::Vector<GroupMetadata>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline void SetGroups(Aws::Vector<GroupMetadata>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline Participants& WithGroups(const Aws::Vector<GroupMetadata>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline Participants& WithGroups(Aws::Vector<GroupMetadata>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline Participants& AddGroups(const GroupMetadata& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The list of user groups.</p>
-     */
     inline Participants& AddGroups(GroupMetadata&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<UserMetadata> m_users;

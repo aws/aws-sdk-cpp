@@ -35,100 +35,41 @@ namespace Model
     AWS_EC2_API DescribeVpcEndpointConnectionNotificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The notifications.</p>
      */
     inline const Aws::Vector<ConnectionNotification>& GetConnectionNotificationSet() const{ return m_connectionNotificationSet; }
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline void SetConnectionNotificationSet(const Aws::Vector<ConnectionNotification>& value) { m_connectionNotificationSet = value; }
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline void SetConnectionNotificationSet(Aws::Vector<ConnectionNotification>&& value) { m_connectionNotificationSet = std::move(value); }
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithConnectionNotificationSet(const Aws::Vector<ConnectionNotification>& value) { SetConnectionNotificationSet(value); return *this;}
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithConnectionNotificationSet(Aws::Vector<ConnectionNotification>&& value) { SetConnectionNotificationSet(std::move(value)); return *this;}
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& AddConnectionNotificationSet(const ConnectionNotification& value) { m_connectionNotificationSet.push_back(value); return *this; }
-
-    /**
-     * <p>The notifications.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& AddConnectionNotificationSet(ConnectionNotification&& value) { m_connectionNotificationSet.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeVpcEndpointConnectionNotificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConnectionNotification> m_connectionNotificationSet;

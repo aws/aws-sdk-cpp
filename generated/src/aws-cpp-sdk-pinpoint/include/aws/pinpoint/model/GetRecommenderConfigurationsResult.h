@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetRecommenderConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ListRecommenderConfigurationsResponse& GetListRecommenderConfigurationsResponse() const{ return m_listRecommenderConfigurationsResponse; }
-
-    
     inline void SetListRecommenderConfigurationsResponse(const ListRecommenderConfigurationsResponse& value) { m_listRecommenderConfigurationsResponse = value; }
-
-    
     inline void SetListRecommenderConfigurationsResponse(ListRecommenderConfigurationsResponse&& value) { m_listRecommenderConfigurationsResponse = std::move(value); }
-
-    
     inline GetRecommenderConfigurationsResult& WithListRecommenderConfigurationsResponse(const ListRecommenderConfigurationsResponse& value) { SetListRecommenderConfigurationsResponse(value); return *this;}
-
-    
     inline GetRecommenderConfigurationsResult& WithListRecommenderConfigurationsResponse(ListRecommenderConfigurationsResponse&& value) { SetListRecommenderConfigurationsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecommenderConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecommenderConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecommenderConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ListRecommenderConfigurationsResponse m_listRecommenderConfigurationsResponse;

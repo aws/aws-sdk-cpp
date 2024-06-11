@@ -32,36 +32,17 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A datasource bucket in Amazon S3.</p>
      */
     inline const SampleDataS3SourceConfig& GetS3SourceConfig() const{ return m_s3SourceConfig; }
-
-    /**
-     * <p>A datasource bucket in Amazon S3.</p>
-     */
     inline bool S3SourceConfigHasBeenSet() const { return m_s3SourceConfigHasBeenSet; }
-
-    /**
-     * <p>A datasource bucket in Amazon S3.</p>
-     */
     inline void SetS3SourceConfig(const SampleDataS3SourceConfig& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = value; }
-
-    /**
-     * <p>A datasource bucket in Amazon S3.</p>
-     */
     inline void SetS3SourceConfig(SampleDataS3SourceConfig&& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = std::move(value); }
-
-    /**
-     * <p>A datasource bucket in Amazon S3.</p>
-     */
     inline GetSampleDataRequest& WithS3SourceConfig(const SampleDataS3SourceConfig& value) { SetS3SourceConfig(value); return *this;}
-
-    /**
-     * <p>A datasource bucket in Amazon S3.</p>
-     */
     inline GetSampleDataRequest& WithS3SourceConfig(SampleDataS3SourceConfig&& value) { SetS3SourceConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SampleDataS3SourceConfig m_s3SourceConfig;

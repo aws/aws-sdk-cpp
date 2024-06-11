@@ -40,103 +40,35 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the cache security group.</p>
      */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline bool CacheSecurityGroupNameHasBeenSet() const { return m_cacheSecurityGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cache security group.</p>
-     */
     inline CacheSecurityGroupMembership& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The membership status in the cache security group. The status changes when a
      * cache security group is modified, or when the cache security groups assigned to
      * a cluster are modified.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline CacheSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline CacheSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The membership status in the cache security group. The status changes when a
-     * cache security group is modified, or when the cache security groups assigned to
-     * a cluster are modified.</p>
-     */
     inline CacheSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cacheSecurityGroupName;

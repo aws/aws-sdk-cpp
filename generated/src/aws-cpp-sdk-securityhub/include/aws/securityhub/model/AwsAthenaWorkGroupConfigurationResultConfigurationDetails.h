@@ -41,42 +41,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies the method used to encrypt the user’s data stores in the Athena
      * workgroup. </p>
      */
     inline const AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
-
-    /**
-     * <p> Specifies the method used to encrypt the user’s data stores in the Athena
-     * workgroup. </p>
-     */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-
-    /**
-     * <p> Specifies the method used to encrypt the user’s data stores in the Athena
-     * workgroup. </p>
-     */
     inline void SetEncryptionConfiguration(const AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-
-    /**
-     * <p> Specifies the method used to encrypt the user’s data stores in the Athena
-     * workgroup. </p>
-     */
     inline void SetEncryptionConfiguration(AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-
-    /**
-     * <p> Specifies the method used to encrypt the user’s data stores in the Athena
-     * workgroup. </p>
-     */
     inline AwsAthenaWorkGroupConfigurationResultConfigurationDetails& WithEncryptionConfiguration(const AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails& value) { SetEncryptionConfiguration(value); return *this;}
-
-    /**
-     * <p> Specifies the method used to encrypt the user’s data stores in the Athena
-     * workgroup. </p>
-     */
     inline AwsAthenaWorkGroupConfigurationResultConfigurationDetails& WithEncryptionConfiguration(AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails m_encryptionConfiguration;

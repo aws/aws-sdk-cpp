@@ -39,77 +39,31 @@ namespace Model
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline const JobSummary& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p> Describes the summary for an execution job for an Amplify app. </p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p> Describes the summary for an execution job for an Amplify app. </p>
-     */
     inline void SetSummary(const JobSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p> Describes the summary for an execution job for an Amplify app. </p>
-     */
     inline void SetSummary(JobSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p> Describes the summary for an execution job for an Amplify app. </p>
-     */
     inline Job& WithSummary(const JobSummary& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p> Describes the summary for an execution job for an Amplify app. </p>
-     */
     inline Job& WithSummary(JobSummary&& value) { SetSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline Job& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline Job& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline Job& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-
-    /**
-     * <p> The execution steps for an execution job, for an Amplify app. </p>
-     */
     inline Job& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     JobSummary m_summary;

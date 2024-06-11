@@ -39,89 +39,33 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data format of the final export job file, can be one of the
      * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
      * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
      */
     inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
-
-    /**
-     * <p>The data format of the final export job file, can be one of the
-     * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
-     * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
-     */
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-
-    /**
-     * <p>The data format of the final export job file, can be one of the
-     * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
-     * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
-     */
     inline void SetDataFormat(const DataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-
-    /**
-     * <p>The data format of the final export job file, can be one of the
-     * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
-     * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
-     */
     inline void SetDataFormat(DataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-
-    /**
-     * <p>The data format of the final export job file, can be one of the
-     * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
-     * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
-     */
     inline ExportDestination& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
-
-    /**
-     * <p>The data format of the final export job file, can be one of the
-     * following:</p> <ul> <li> <p> <code>CSV</code> - A comma-separated values
-     * file.</p> </li> <li> <p> <code>JSON</code> - A Json file.</p> </li> </ul>
-     */
     inline ExportDestination& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline void SetS3Url(Aws::String&& value) { m_s3UrlHasBeenSet = true; m_s3Url = std::move(value); }
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline void SetS3Url(const char* value) { m_s3UrlHasBeenSet = true; m_s3Url.assign(value); }
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline ExportDestination& WithS3Url(const Aws::String& value) { SetS3Url(value); return *this;}
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline ExportDestination& WithS3Url(Aws::String&& value) { SetS3Url(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-     */
     inline ExportDestination& WithS3Url(const char* value) { SetS3Url(value); return *this;}
-
+    ///@}
   private:
 
     DataFormat m_dataFormat;

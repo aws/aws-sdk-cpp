@@ -40,87 +40,33 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A message about the unique problems' result.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline UniqueProblem& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline UniqueProblem& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message about the unique problems' result.</p>
-     */
     inline UniqueProblem& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the problems.</p>
      */
     inline const Aws::Vector<Problem>& GetProblems() const{ return m_problems; }
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline bool ProblemsHasBeenSet() const { return m_problemsHasBeenSet; }
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline void SetProblems(const Aws::Vector<Problem>& value) { m_problemsHasBeenSet = true; m_problems = value; }
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline void SetProblems(Aws::Vector<Problem>&& value) { m_problemsHasBeenSet = true; m_problems = std::move(value); }
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline UniqueProblem& WithProblems(const Aws::Vector<Problem>& value) { SetProblems(value); return *this;}
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline UniqueProblem& WithProblems(Aws::Vector<Problem>&& value) { SetProblems(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline UniqueProblem& AddProblems(const Problem& value) { m_problemsHasBeenSet = true; m_problems.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the problems.</p>
-     */
     inline UniqueProblem& AddProblems(Problem&& value) { m_problemsHasBeenSet = true; m_problems.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

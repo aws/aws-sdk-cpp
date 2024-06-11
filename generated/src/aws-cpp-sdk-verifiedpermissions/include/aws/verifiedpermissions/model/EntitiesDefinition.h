@@ -45,62 +45,21 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of entities that are needed to successfully evaluate an
      * authorization request. Each entity in this array must include an identifier for
      * the entity, the attributes of the entity, and a list of any parent entities.</p>
      */
     inline const Aws::Vector<EntityItem>& GetEntityList() const{ return m_entityList; }
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline void SetEntityList(const Aws::Vector<EntityItem>& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline void SetEntityList(Aws::Vector<EntityItem>&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline EntitiesDefinition& WithEntityList(const Aws::Vector<EntityItem>& value) { SetEntityList(value); return *this;}
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline EntitiesDefinition& WithEntityList(Aws::Vector<EntityItem>&& value) { SetEntityList(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline EntitiesDefinition& AddEntityList(const EntityItem& value) { m_entityListHasBeenSet = true; m_entityList.push_back(value); return *this; }
-
-    /**
-     * <p>An array of entities that are needed to successfully evaluate an
-     * authorization request. Each entity in this array must include an identifier for
-     * the entity, the attributes of the entity, and a list of any parent entities.</p>
-     */
     inline EntitiesDefinition& AddEntityList(EntityItem&& value) { m_entityListHasBeenSet = true; m_entityList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EntityItem> m_entityList;

@@ -40,87 +40,33 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One part of a key-value pair.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline ConformancePackInputParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline ConformancePackInputParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-
-    /**
-     * <p>One part of a key-value pair.</p>
-     */
     inline ConformancePackInputParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Another part of the key-value pair. </p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline ConformancePackInputParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline ConformancePackInputParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Another part of the key-value pair. </p>
-     */
     inline ConformancePackInputParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameterName;

@@ -34,46 +34,19 @@ namespace Model
     AWS_CODESTAR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline DescribeUserProfileRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline DescribeUserProfileRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user.</p>
-     */
     inline DescribeUserProfileRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userArn;

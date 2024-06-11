@@ -37,67 +37,29 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameter's description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline WorkflowParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline WorkflowParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameter's description.</p>
-     */
     inline WorkflowParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the parameter is optional.</p>
      */
     inline bool GetOptional() const{ return m_optional; }
-
-    /**
-     * <p>Whether the parameter is optional.</p>
-     */
     inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
-
-    /**
-     * <p>Whether the parameter is optional.</p>
-     */
     inline void SetOptional(bool value) { m_optionalHasBeenSet = true; m_optional = value; }
-
-    /**
-     * <p>Whether the parameter is optional.</p>
-     */
     inline WorkflowParameter& WithOptional(bool value) { SetOptional(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

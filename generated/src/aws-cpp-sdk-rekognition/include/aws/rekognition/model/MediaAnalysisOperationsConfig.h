@@ -38,36 +38,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains configuration options for a DetectModerationLabels job.</p>
      */
     inline const MediaAnalysisDetectModerationLabelsConfig& GetDetectModerationLabels() const{ return m_detectModerationLabels; }
-
-    /**
-     * <p>Contains configuration options for a DetectModerationLabels job.</p>
-     */
     inline bool DetectModerationLabelsHasBeenSet() const { return m_detectModerationLabelsHasBeenSet; }
-
-    /**
-     * <p>Contains configuration options for a DetectModerationLabels job.</p>
-     */
     inline void SetDetectModerationLabels(const MediaAnalysisDetectModerationLabelsConfig& value) { m_detectModerationLabelsHasBeenSet = true; m_detectModerationLabels = value; }
-
-    /**
-     * <p>Contains configuration options for a DetectModerationLabels job.</p>
-     */
     inline void SetDetectModerationLabels(MediaAnalysisDetectModerationLabelsConfig&& value) { m_detectModerationLabelsHasBeenSet = true; m_detectModerationLabels = std::move(value); }
-
-    /**
-     * <p>Contains configuration options for a DetectModerationLabels job.</p>
-     */
     inline MediaAnalysisOperationsConfig& WithDetectModerationLabels(const MediaAnalysisDetectModerationLabelsConfig& value) { SetDetectModerationLabels(value); return *this;}
-
-    /**
-     * <p>Contains configuration options for a DetectModerationLabels job.</p>
-     */
     inline MediaAnalysisOperationsConfig& WithDetectModerationLabels(MediaAnalysisDetectModerationLabelsConfig&& value) { SetDetectModerationLabels(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MediaAnalysisDetectModerationLabelsConfig m_detectModerationLabels;

@@ -39,6 +39,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the instance's Capacity Reservation preferences. If equal to
      * <code>open</code>, the instance can run in any open Capacity Reservation that
@@ -47,101 +48,26 @@ namespace Model
      * if one is available. The instance runs in On-Demand capacity. </p>
      */
     inline const Aws::String& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline void SetCapacityReservationPreference(const Aws::String& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline void SetCapacityReservationPreference(Aws::String&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline void SetCapacityReservationPreference(const char* value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference.assign(value); }
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(const Aws::String& value) { SetCapacityReservationPreference(value); return *this;}
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(Aws::String&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
-
-    /**
-     * <p> Indicates the instance's Capacity Reservation preferences. If equal to
-     * <code>open</code>, the instance can run in any open Capacity Reservation that
-     * has matching attributes (instance type, platform, Availability Zone). If equal
-     * to <code>none</code>, the instance avoids running in a Capacity Reservation even
-     * if one is available. The instance runs in On-Demand capacity. </p>
-     */
     inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationPreference(const char* value) { SetCapacityReservationPreference(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies a target Capacity Reservation. </p>
      */
     inline const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
-
-    /**
-     * <p> Specifies a target Capacity Reservation. </p>
-     */
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
-
-    /**
-     * <p> Specifies a target Capacity Reservation. </p>
-     */
     inline void SetCapacityReservationTarget(const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
-
-    /**
-     * <p> Specifies a target Capacity Reservation. </p>
-     */
     inline void SetCapacityReservationTarget(AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
-
-    /**
-     * <p> Specifies a target Capacity Reservation. </p>
-     */
     inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationTarget(const AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails& value) { SetCapacityReservationTarget(value); return *this;}
-
-    /**
-     * <p> Specifies a target Capacity Reservation. </p>
-     */
     inline AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& WithCapacityReservationTarget(AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacityReservationPreference;

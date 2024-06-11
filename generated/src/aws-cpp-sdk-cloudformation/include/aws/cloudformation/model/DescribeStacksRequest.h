@@ -39,6 +39,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      *  <p>If you don't pass a parameter to <code>StackName</code>, the API
      * returns a response that describes all resources in the account, which can impact
@@ -57,189 +58,29 @@ namespace Model
      * default value.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline DescribeStacksRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline DescribeStacksRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
-     * returns a response that describes all resources in the account, which can impact
-     * performance. This requires <code>ListStacks</code> and
-     * <code>DescribeStacks</code> permissions.</p> <p>Consider using the
-     * <a>ListStacks</a> API if you're not passing a parameter to
-     * <code>StackName</code>.</p> <p>The IAM policy below can be added to IAM policies
-     * when you want to limit resource-level permissions and avoid returning a response
-     * when no parameter is sent in the request:</p> <p>{ "Version": "2012-10-17",
-     * "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-     * "NotResource": "arn:aws:cloudformation:*:*:stack/ * / *" }] }</p>  <p>The
-     * name or the unique stack ID that's associated with the stack, which aren't
-     * always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted stacks: You
-     * must specify the unique stack ID.</p> </li> </ul> <p>Default: There is no
-     * default value.</p>
-     */
     inline DescribeStacksRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline DescribeStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline DescribeStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stacks that you want to
-     * retrieve.</p>
-     */
     inline DescribeStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackName;

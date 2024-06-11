@@ -38,67 +38,29 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The endpoint for a monitoring job.</p>
      */
     inline const EndpointInput& GetEndpointInput() const{ return m_endpointInput; }
-
-    /**
-     * <p>The endpoint for a monitoring job.</p>
-     */
     inline bool EndpointInputHasBeenSet() const { return m_endpointInputHasBeenSet; }
-
-    /**
-     * <p>The endpoint for a monitoring job.</p>
-     */
     inline void SetEndpointInput(const EndpointInput& value) { m_endpointInputHasBeenSet = true; m_endpointInput = value; }
-
-    /**
-     * <p>The endpoint for a monitoring job.</p>
-     */
     inline void SetEndpointInput(EndpointInput&& value) { m_endpointInputHasBeenSet = true; m_endpointInput = std::move(value); }
-
-    /**
-     * <p>The endpoint for a monitoring job.</p>
-     */
     inline MonitoringInput& WithEndpointInput(const EndpointInput& value) { SetEndpointInput(value); return *this;}
-
-    /**
-     * <p>The endpoint for a monitoring job.</p>
-     */
     inline MonitoringInput& WithEndpointInput(EndpointInput&& value) { SetEndpointInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Input object for the batch transform job.</p>
      */
     inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline MonitoringInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
-
-    /**
-     * <p>Input object for the batch transform job.</p>
-     */
     inline MonitoringInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EndpointInput m_endpointInput;

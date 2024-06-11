@@ -32,36 +32,17 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The topic rule destination configuration.</p>
      */
     inline const TopicRuleDestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
-
-    /**
-     * <p>The topic rule destination configuration.</p>
-     */
     inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The topic rule destination configuration.</p>
-     */
     inline void SetDestinationConfiguration(const TopicRuleDestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-
-    /**
-     * <p>The topic rule destination configuration.</p>
-     */
     inline void SetDestinationConfiguration(TopicRuleDestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-
-    /**
-     * <p>The topic rule destination configuration.</p>
-     */
     inline CreateTopicRuleDestinationRequest& WithDestinationConfiguration(const TopicRuleDestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-
-    /**
-     * <p>The topic rule destination configuration.</p>
-     */
     inline CreateTopicRuleDestinationRequest& WithDestinationConfiguration(TopicRuleDestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TopicRuleDestinationConfiguration m_destinationConfiguration;

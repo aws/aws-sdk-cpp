@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEARTIFACT_API UpdateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The updated repository. </p>
      */
     inline const RepositoryDescription& GetRepository() const{ return m_repository; }
-
-    /**
-     * <p> The updated repository. </p>
-     */
     inline void SetRepository(const RepositoryDescription& value) { m_repository = value; }
-
-    /**
-     * <p> The updated repository. </p>
-     */
     inline void SetRepository(RepositoryDescription&& value) { m_repository = std::move(value); }
-
-    /**
-     * <p> The updated repository. </p>
-     */
     inline UpdateRepositoryResult& WithRepository(const RepositoryDescription& value) { SetRepository(value); return *this;}
-
-    /**
-     * <p> The updated repository. </p>
-     */
     inline UpdateRepositoryResult& WithRepository(RepositoryDescription&& value) { SetRepository(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RepositoryDescription m_repository;

@@ -38,77 +38,31 @@ namespace Model
     AWS_SESV2_API TestRenderEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The complete MIME message rendered by applying the data in the
      * <code>TemplateData</code> parameter to the template specified in the
      * TemplateName parameter.</p>
      */
     inline const Aws::String& GetRenderedTemplate() const{ return m_renderedTemplate; }
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline void SetRenderedTemplate(const Aws::String& value) { m_renderedTemplate = value; }
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline void SetRenderedTemplate(Aws::String&& value) { m_renderedTemplate = std::move(value); }
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline void SetRenderedTemplate(const char* value) { m_renderedTemplate.assign(value); }
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline TestRenderEmailTemplateResult& WithRenderedTemplate(const Aws::String& value) { SetRenderedTemplate(value); return *this;}
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline TestRenderEmailTemplateResult& WithRenderedTemplate(Aws::String&& value) { SetRenderedTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>The complete MIME message rendered by applying the data in the
-     * <code>TemplateData</code> parameter to the template specified in the
-     * TemplateName parameter.</p>
-     */
     inline TestRenderEmailTemplateResult& WithRenderedTemplate(const char* value) { SetRenderedTemplate(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline TestRenderEmailTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline TestRenderEmailTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline TestRenderEmailTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_renderedTemplate;

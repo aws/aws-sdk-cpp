@@ -38,6 +38,7 @@ namespace Model
     AWS_ROUTE53DOMAINS_API CancelDomainTransferToAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
      * to track the progress of the request. Because the transfer request was canceled,
@@ -45,77 +46,24 @@ namespace Model
      * to query the operation status.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned
-     * to track the progress of the request. Because the transfer request was canceled,
-     * the value is no longer valid, and you can't use <code>GetOperationDetail</code>
-     * to query the operation status.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelDomainTransferToAnotherAwsAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelDomainTransferToAnotherAwsAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelDomainTransferToAnotherAwsAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationId;

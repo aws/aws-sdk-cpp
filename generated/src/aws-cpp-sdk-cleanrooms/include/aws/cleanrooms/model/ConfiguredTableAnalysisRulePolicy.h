@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Controls on the query specifications that can be run on a configured
      * table.</p>
      */
     inline const ConfiguredTableAnalysisRulePolicyV1& GetV1() const{ return m_v1; }
-
-    /**
-     * <p>Controls on the query specifications that can be run on a configured
-     * table.</p>
-     */
     inline bool V1HasBeenSet() const { return m_v1HasBeenSet; }
-
-    /**
-     * <p>Controls on the query specifications that can be run on a configured
-     * table.</p>
-     */
     inline void SetV1(const ConfiguredTableAnalysisRulePolicyV1& value) { m_v1HasBeenSet = true; m_v1 = value; }
-
-    /**
-     * <p>Controls on the query specifications that can be run on a configured
-     * table.</p>
-     */
     inline void SetV1(ConfiguredTableAnalysisRulePolicyV1&& value) { m_v1HasBeenSet = true; m_v1 = std::move(value); }
-
-    /**
-     * <p>Controls on the query specifications that can be run on a configured
-     * table.</p>
-     */
     inline ConfiguredTableAnalysisRulePolicy& WithV1(const ConfiguredTableAnalysisRulePolicyV1& value) { SetV1(value); return *this;}
-
-    /**
-     * <p>Controls on the query specifications that can be run on a configured
-     * table.</p>
-     */
     inline ConfiguredTableAnalysisRulePolicy& WithV1(ConfiguredTableAnalysisRulePolicyV1&& value) { SetV1(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfiguredTableAnalysisRulePolicyV1 m_v1;

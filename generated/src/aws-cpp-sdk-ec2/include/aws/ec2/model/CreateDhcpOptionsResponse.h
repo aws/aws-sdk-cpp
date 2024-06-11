@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API CreateDhcpOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A set of DHCP options.</p>
      */
     inline const DhcpOptions& GetDhcpOptions() const{ return m_dhcpOptions; }
-
-    /**
-     * <p>A set of DHCP options.</p>
-     */
     inline void SetDhcpOptions(const DhcpOptions& value) { m_dhcpOptions = value; }
-
-    /**
-     * <p>A set of DHCP options.</p>
-     */
     inline void SetDhcpOptions(DhcpOptions&& value) { m_dhcpOptions = std::move(value); }
-
-    /**
-     * <p>A set of DHCP options.</p>
-     */
     inline CreateDhcpOptionsResponse& WithDhcpOptions(const DhcpOptions& value) { SetDhcpOptions(value); return *this;}
-
-    /**
-     * <p>A set of DHCP options.</p>
-     */
     inline CreateDhcpOptionsResponse& WithDhcpOptions(DhcpOptions&& value) { SetDhcpOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateDhcpOptionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateDhcpOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DhcpOptions m_dhcpOptions;

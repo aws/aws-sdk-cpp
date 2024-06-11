@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteSubnetCidrReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deleted subnet CIDR reservation.</p>
      */
     inline const SubnetCidrReservation& GetDeletedSubnetCidrReservation() const{ return m_deletedSubnetCidrReservation; }
-
-    /**
-     * <p>Information about the deleted subnet CIDR reservation.</p>
-     */
     inline void SetDeletedSubnetCidrReservation(const SubnetCidrReservation& value) { m_deletedSubnetCidrReservation = value; }
-
-    /**
-     * <p>Information about the deleted subnet CIDR reservation.</p>
-     */
     inline void SetDeletedSubnetCidrReservation(SubnetCidrReservation&& value) { m_deletedSubnetCidrReservation = std::move(value); }
-
-    /**
-     * <p>Information about the deleted subnet CIDR reservation.</p>
-     */
     inline DeleteSubnetCidrReservationResponse& WithDeletedSubnetCidrReservation(const SubnetCidrReservation& value) { SetDeletedSubnetCidrReservation(value); return *this;}
-
-    /**
-     * <p>Information about the deleted subnet CIDR reservation.</p>
-     */
     inline DeleteSubnetCidrReservationResponse& WithDeletedSubnetCidrReservation(SubnetCidrReservation&& value) { SetDeletedSubnetCidrReservation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteSubnetCidrReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteSubnetCidrReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubnetCidrReservation m_deletedSubnetCidrReservation;

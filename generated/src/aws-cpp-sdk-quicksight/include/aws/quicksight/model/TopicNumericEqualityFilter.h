@@ -40,37 +40,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The constant used in a numeric equality filter.</p>
      */
     inline const TopicSingularFilterConstant& GetConstant() const{ return m_constant; }
-
-    /**
-     * <p>The constant used in a numeric equality filter.</p>
-     */
     inline bool ConstantHasBeenSet() const { return m_constantHasBeenSet; }
-
-    /**
-     * <p>The constant used in a numeric equality filter.</p>
-     */
     inline void SetConstant(const TopicSingularFilterConstant& value) { m_constantHasBeenSet = true; m_constant = value; }
-
-    /**
-     * <p>The constant used in a numeric equality filter.</p>
-     */
     inline void SetConstant(TopicSingularFilterConstant&& value) { m_constantHasBeenSet = true; m_constant = std::move(value); }
-
-    /**
-     * <p>The constant used in a numeric equality filter.</p>
-     */
     inline TopicNumericEqualityFilter& WithConstant(const TopicSingularFilterConstant& value) { SetConstant(value); return *this;}
-
-    /**
-     * <p>The constant used in a numeric equality filter.</p>
-     */
     inline TopicNumericEqualityFilter& WithConstant(TopicSingularFilterConstant&& value) { SetConstant(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An aggregation function that specifies how to calculate the value of a
      * numeric field for a topic. Valid values for this structure are
@@ -80,57 +62,12 @@ namespace Model
      * <code>VAR</code>, and <code>VARP</code>.</p>
      */
     inline const NamedFilterAggType& GetAggregation() const{ return m_aggregation; }
-
-    /**
-     * <p>An aggregation function that specifies how to calculate the value of a
-     * numeric field for a topic. Valid values for this structure are
-     * <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>,
-     * <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
-     * <code>VAR</code>, and <code>VARP</code>.</p>
-     */
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-
-    /**
-     * <p>An aggregation function that specifies how to calculate the value of a
-     * numeric field for a topic. Valid values for this structure are
-     * <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>,
-     * <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
-     * <code>VAR</code>, and <code>VARP</code>.</p>
-     */
     inline void SetAggregation(const NamedFilterAggType& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-
-    /**
-     * <p>An aggregation function that specifies how to calculate the value of a
-     * numeric field for a topic. Valid values for this structure are
-     * <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>,
-     * <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
-     * <code>VAR</code>, and <code>VARP</code>.</p>
-     */
     inline void SetAggregation(NamedFilterAggType&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-
-    /**
-     * <p>An aggregation function that specifies how to calculate the value of a
-     * numeric field for a topic. Valid values for this structure are
-     * <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>,
-     * <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
-     * <code>VAR</code>, and <code>VARP</code>.</p>
-     */
     inline TopicNumericEqualityFilter& WithAggregation(const NamedFilterAggType& value) { SetAggregation(value); return *this;}
-
-    /**
-     * <p>An aggregation function that specifies how to calculate the value of a
-     * numeric field for a topic. Valid values for this structure are
-     * <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>,
-     * <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
-     * <code>VAR</code>, and <code>VARP</code>.</p>
-     */
     inline TopicNumericEqualityFilter& WithAggregation(NamedFilterAggType&& value) { SetAggregation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TopicSingularFilterConstant m_constant;

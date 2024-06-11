@@ -39,87 +39,33 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Date after which the container product was last modified.</p>
      */
     inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Date after which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Date before which the container product was last modified.</p>
      */
     inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Date before which the container product was last modified.</p>
-     */
     inline ContainerProductLastModifiedDateFilterDateRange& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_afterValue;

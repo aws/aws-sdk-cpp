@@ -39,43 +39,25 @@ namespace Model
     AWS_AMPLIFY_API DeleteAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const App& GetApp() const{ return m_app; }
-
-    
     inline void SetApp(const App& value) { m_app = value; }
-
-    
     inline void SetApp(App&& value) { m_app = std::move(value); }
-
-    
     inline DeleteAppResult& WithApp(const App& value) { SetApp(value); return *this;}
-
-    
     inline DeleteAppResult& WithApp(App&& value) { SetApp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     App m_app;

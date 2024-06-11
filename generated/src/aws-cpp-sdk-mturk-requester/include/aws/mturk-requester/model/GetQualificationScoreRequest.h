@@ -34,87 +34,33 @@ namespace Model
     AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the QualificationType.</p>
      */
     inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline void SetQualificationTypeId(const char* value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId.assign(value); }
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline GetQualificationScoreRequest& WithQualificationTypeId(const Aws::String& value) { SetQualificationTypeId(value); return *this;}
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline GetQualificationScoreRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the QualificationType.</p>
-     */
     inline GetQualificationScoreRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline GetQualificationScoreRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline GetQualificationScoreRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Worker whose Qualification is being updated.</p>
-     */
     inline GetQualificationScoreRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_qualificationTypeId;

@@ -40,98 +40,41 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The left hand side argument of a TLS condition expression.</p>
      */
     inline const IngressTlsProtocolToEvaluate& GetEvaluate() const{ return m_evaluate; }
-
-    /**
-     * <p>The left hand side argument of a TLS condition expression.</p>
-     */
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-
-    /**
-     * <p>The left hand side argument of a TLS condition expression.</p>
-     */
     inline void SetEvaluate(const IngressTlsProtocolToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-
-    /**
-     * <p>The left hand side argument of a TLS condition expression.</p>
-     */
     inline void SetEvaluate(IngressTlsProtocolToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-
-    /**
-     * <p>The left hand side argument of a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithEvaluate(const IngressTlsProtocolToEvaluate& value) { SetEvaluate(value); return *this;}
-
-    /**
-     * <p>The left hand side argument of a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithEvaluate(IngressTlsProtocolToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The matching operator for a TLS condition expression.</p>
      */
     inline const IngressTlsProtocolOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The matching operator for a TLS condition expression.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The matching operator for a TLS condition expression.</p>
-     */
     inline void SetOperator(const IngressTlsProtocolOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The matching operator for a TLS condition expression.</p>
-     */
     inline void SetOperator(IngressTlsProtocolOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The matching operator for a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithOperator(const IngressTlsProtocolOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The matching operator for a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithOperator(IngressTlsProtocolOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The right hand side argument of a TLS condition expression.</p>
      */
     inline const IngressTlsProtocolAttribute& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The right hand side argument of a TLS condition expression.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The right hand side argument of a TLS condition expression.</p>
-     */
     inline void SetValue(const IngressTlsProtocolAttribute& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The right hand side argument of a TLS condition expression.</p>
-     */
     inline void SetValue(IngressTlsProtocolAttribute&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The right hand side argument of a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithValue(const IngressTlsProtocolAttribute& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The right hand side argument of a TLS condition expression.</p>
-     */
     inline IngressTlsProtocolExpression& WithValue(IngressTlsProtocolAttribute&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngressTlsProtocolToEvaluate m_evaluate;

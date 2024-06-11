@@ -38,88 +38,35 @@ namespace Model
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline Stream& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline Stream& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the stream.</p>
-     */
     inline Stream& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline Stream& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline Stream& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The DynamoDB table with which the stream is associated.</p>
-     */
     inline Stream& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
@@ -130,84 +77,14 @@ namespace Model
      * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStreamLabel() const{ return m_streamLabel; }
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline bool StreamLabelHasBeenSet() const { return m_streamLabelHasBeenSet; }
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline void SetStreamLabel(const Aws::String& value) { m_streamLabelHasBeenSet = true; m_streamLabel = value; }
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline void SetStreamLabel(Aws::String&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::move(value); }
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline void SetStreamLabel(const char* value) { m_streamLabelHasBeenSet = true; m_streamLabel.assign(value); }
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline Stream& WithStreamLabel(const Aws::String& value) { SetStreamLabel(value); return *this;}
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline Stream& WithStreamLabel(Aws::String&& value) { SetStreamLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
-     * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
-     * because it is possible that a stream from another table might have the same
-     * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
-     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
-     * <code>StreamLabel</code> </p> </li> </ul>
-     */
     inline Stream& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamArn;

@@ -37,87 +37,33 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The component ID.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline Step& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline Step& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The component ID.</p>
-     */
     inline Step& WithComponentId(const char* value) { SetComponentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The component type.</p>
      */
     inline const Aws::String& GetComponentType() const{ return m_componentType; }
-
-    /**
-     * <p>The component type.</p>
-     */
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-
-    /**
-     * <p>The component type.</p>
-     */
     inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-
-    /**
-     * <p>The component type.</p>
-     */
     inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
     inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
     inline Step& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
     inline Step& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
     inline Step& WithComponentType(const char* value) { SetComponentType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_componentId;

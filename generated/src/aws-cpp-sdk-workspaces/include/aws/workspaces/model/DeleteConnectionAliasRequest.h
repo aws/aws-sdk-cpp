@@ -34,46 +34,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the connection alias to delete.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline DeleteConnectionAliasRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline DeleteConnectionAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the connection alias to delete.</p>
-     */
     inline DeleteConnectionAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aliasId;

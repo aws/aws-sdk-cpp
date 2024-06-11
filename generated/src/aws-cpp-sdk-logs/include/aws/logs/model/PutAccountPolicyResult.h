@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API PutAccountPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The account policy that you created.</p>
      */
     inline const AccountPolicy& GetAccountPolicy() const{ return m_accountPolicy; }
-
-    /**
-     * <p>The account policy that you created.</p>
-     */
     inline void SetAccountPolicy(const AccountPolicy& value) { m_accountPolicy = value; }
-
-    /**
-     * <p>The account policy that you created.</p>
-     */
     inline void SetAccountPolicy(AccountPolicy&& value) { m_accountPolicy = std::move(value); }
-
-    /**
-     * <p>The account policy that you created.</p>
-     */
     inline PutAccountPolicyResult& WithAccountPolicy(const AccountPolicy& value) { SetAccountPolicy(value); return *this;}
-
-    /**
-     * <p>The account policy that you created.</p>
-     */
     inline PutAccountPolicyResult& WithAccountPolicy(AccountPolicy&& value) { SetAccountPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutAccountPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutAccountPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutAccountPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AccountPolicy m_accountPolicy;

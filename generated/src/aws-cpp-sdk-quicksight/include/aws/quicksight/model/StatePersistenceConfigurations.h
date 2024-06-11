@@ -36,30 +36,16 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
      * turned on or off.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
-     * turned on or off.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
-     * turned on or off.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Determines if a Amazon QuickSight dashboard's state persistence settings are
-     * turned on or off.</p>
-     */
     inline StatePersistenceConfigurations& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

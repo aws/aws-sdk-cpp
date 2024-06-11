@@ -39,46 +39,19 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Up to 25 entity types that the model is trained to recognize.</p>
      */
     inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline void SetEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline void SetEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline EntityRecognitionConfig& WithEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { SetEntityTypes(value); return *this;}
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline EntityRecognitionConfig& WithEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { SetEntityTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline EntityRecognitionConfig& AddEntityTypes(const EntityTypesListItem& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Up to 25 entity types that the model is trained to recognize.</p>
-     */
     inline EntityRecognitionConfig& AddEntityTypes(EntityTypesListItem&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EntityTypesListItem> m_entityTypes;

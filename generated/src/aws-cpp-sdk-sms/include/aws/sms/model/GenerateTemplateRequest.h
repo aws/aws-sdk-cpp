@@ -35,77 +35,31 @@ namespace Model
     AWS_SMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application associated with the CloudFormation template.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline GenerateTemplateRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline GenerateTemplateRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application associated with the CloudFormation template.</p>
-     */
     inline GenerateTemplateRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The format for generating the CloudFormation template.</p>
      */
     inline const OutputFormat& GetTemplateFormat() const{ return m_templateFormat; }
-
-    /**
-     * <p>The format for generating the CloudFormation template.</p>
-     */
     inline bool TemplateFormatHasBeenSet() const { return m_templateFormatHasBeenSet; }
-
-    /**
-     * <p>The format for generating the CloudFormation template.</p>
-     */
     inline void SetTemplateFormat(const OutputFormat& value) { m_templateFormatHasBeenSet = true; m_templateFormat = value; }
-
-    /**
-     * <p>The format for generating the CloudFormation template.</p>
-     */
     inline void SetTemplateFormat(OutputFormat&& value) { m_templateFormatHasBeenSet = true; m_templateFormat = std::move(value); }
-
-    /**
-     * <p>The format for generating the CloudFormation template.</p>
-     */
     inline GenerateTemplateRequest& WithTemplateFormat(const OutputFormat& value) { SetTemplateFormat(value); return *this;}
-
-    /**
-     * <p>The format for generating the CloudFormation template.</p>
-     */
     inline GenerateTemplateRequest& WithTemplateFormat(OutputFormat&& value) { SetTemplateFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

@@ -36,323 +36,127 @@ namespace Model
     AWS_OMICS_API GetSequenceStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The store's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline GetSequenceStoreResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline GetSequenceStoreResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's ID.</p>
-     */
     inline GetSequenceStoreResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline GetSequenceStoreResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline GetSequenceStoreResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
     inline GetSequenceStoreResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline GetSequenceStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline GetSequenceStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline GetSequenceStoreResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline GetSequenceStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline GetSequenceStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
     inline GetSequenceStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The store's server-side encryption (SSE) settings.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline void SetSseConfig(const SseConfig& value) { m_sseConfig = value; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline void SetSseConfig(SseConfig&& value) { m_sseConfig = std::move(value); }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline GetSequenceStoreResult& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
     inline GetSequenceStoreResult& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When the store was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline GetSequenceStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
     inline GetSequenceStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An S3 location that is used to store files that have failed a direct
      * upload.</p>
      */
     inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocation = value; }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocation = std::move(value); }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(const char* value) { m_fallbackLocation.assign(value); }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline GetSequenceStoreResult& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline GetSequenceStoreResult& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline GetSequenceStoreResult& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
      * bucket.</p>
      */
     inline const SequenceStoreS3Access& GetS3Access() const{ return m_s3Access; }
-
-    /**
-     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
-     * bucket.</p>
-     */
     inline void SetS3Access(const SequenceStoreS3Access& value) { m_s3Access = value; }
-
-    /**
-     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
-     * bucket.</p>
-     */
     inline void SetS3Access(SequenceStoreS3Access&& value) { m_s3Access = std::move(value); }
-
-    /**
-     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
-     * bucket.</p>
-     */
     inline GetSequenceStoreResult& WithS3Access(const SequenceStoreS3Access& value) { SetS3Access(value); return *this;}
-
-    /**
-     * <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3
-     * bucket.</p>
-     */
     inline GetSequenceStoreResult& WithS3Access(SequenceStoreS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The algorithm family of the ETag.</p>
      */
     inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
-
-    /**
-     * <p>The algorithm family of the ETag.</p>
-     */
     inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamily = value; }
-
-    /**
-     * <p>The algorithm family of the ETag.</p>
-     */
     inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamily = std::move(value); }
-
-    /**
-     * <p>The algorithm family of the ETag.</p>
-     */
     inline GetSequenceStoreResult& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
-
-    /**
-     * <p>The algorithm family of the ETag.</p>
-     */
     inline GetSequenceStoreResult& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSequenceStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSequenceStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSequenceStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

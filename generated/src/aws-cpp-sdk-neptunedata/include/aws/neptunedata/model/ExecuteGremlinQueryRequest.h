@@ -34,6 +34,7 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Using this API, you can run Gremlin queries in string format much as you can
      * using the HTTP endpoint. The interface is compatible with whatever Gremlin
@@ -43,78 +44,16 @@ namespace Model
      * supports).</p>
      */
     inline const Aws::String& GetGremlinQuery() const{ return m_gremlinQuery; }
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline bool GremlinQueryHasBeenSet() const { return m_gremlinQueryHasBeenSet; }
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline void SetGremlinQuery(const Aws::String& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = value; }
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline void SetGremlinQuery(Aws::String&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::move(value); }
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline void SetGremlinQuery(const char* value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery.assign(value); }
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline ExecuteGremlinQueryRequest& WithGremlinQuery(const Aws::String& value) { SetGremlinQuery(value); return *this;}
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline ExecuteGremlinQueryRequest& WithGremlinQuery(Aws::String&& value) { SetGremlinQuery(std::move(value)); return *this;}
-
-    /**
-     * <p>Using this API, you can run Gremlin queries in string format much as you can
-     * using the HTTP endpoint. The interface is compatible with whatever Gremlin
-     * version your DB cluster is using (see the <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop
-     * client section</a> to determine which Gremlin releases your engine version
-     * supports).</p>
-     */
     inline ExecuteGremlinQueryRequest& WithGremlinQuery(const char* value) { SetGremlinQuery(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If non-null, the query results are returned in a serialized response message
      * in the format specified by this parameter. See the <a
@@ -123,70 +62,14 @@ namespace Model
      * currently supported.</p>
      */
     inline const Aws::String& GetSerializer() const{ return m_serializer; }
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline bool SerializerHasBeenSet() const { return m_serializerHasBeenSet; }
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline void SetSerializer(const Aws::String& value) { m_serializerHasBeenSet = true; m_serializer = value; }
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline void SetSerializer(Aws::String&& value) { m_serializerHasBeenSet = true; m_serializer = std::move(value); }
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline void SetSerializer(const char* value) { m_serializerHasBeenSet = true; m_serializer.assign(value); }
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline ExecuteGremlinQueryRequest& WithSerializer(const Aws::String& value) { SetSerializer(value); return *this;}
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline ExecuteGremlinQueryRequest& WithSerializer(Aws::String&& value) { SetSerializer(std::move(value)); return *this;}
-
-    /**
-     * <p>If non-null, the query results are returned in a serialized response message
-     * in the format specified by this parameter. See the <a
-     * href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a>
-     * section in the TinkerPop documentation for a list of the formats that are
-     * currently supported.</p>
-     */
     inline ExecuteGremlinQueryRequest& WithSerializer(const char* value) { SetSerializer(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gremlinQuery;

@@ -32,63 +32,29 @@ namespace Model
     AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>ID of the import request.</p>
      */
     inline const Aws::String& GetImportId() const{ return m_importId; }
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline void SetImportId(const Aws::String& value) { m_importId = value; }
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline void SetImportId(const char* value) { m_importId.assign(value); }
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline ImportApplicationUsageResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline ImportApplicationUsageResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the import request.</p>
-     */
     inline ImportApplicationUsageResult& WithImportId(const char* value) { SetImportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ImportApplicationUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ImportApplicationUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ImportApplicationUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_importId;

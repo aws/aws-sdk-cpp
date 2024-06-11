@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the network interface. The details are in a corresponding
      * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the network interface. The details are in a corresponding
-     * <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-     */
     inline AwsEc2InstanceNetworkInterfacesDetails& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_networkInterfaceId;

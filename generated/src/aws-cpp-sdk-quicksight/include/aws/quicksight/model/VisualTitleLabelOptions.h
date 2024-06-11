@@ -38,73 +38,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The visibility of the title label.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
-
-    /**
-     * <p>The visibility of the title label.</p>
-     */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-
-    /**
-     * <p>The visibility of the title label.</p>
-     */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-
-    /**
-     * <p>The visibility of the title label.</p>
-     */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-
-    /**
-     * <p>The visibility of the title label.</p>
-     */
     inline VisualTitleLabelOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-
-    /**
-     * <p>The visibility of the title label.</p>
-     */
     inline VisualTitleLabelOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The short text format of the title label, such as plain text or rich
      * text.</p>
      */
     inline const ShortFormatText& GetFormatText() const{ return m_formatText; }
-
-    /**
-     * <p>The short text format of the title label, such as plain text or rich
-     * text.</p>
-     */
     inline bool FormatTextHasBeenSet() const { return m_formatTextHasBeenSet; }
-
-    /**
-     * <p>The short text format of the title label, such as plain text or rich
-     * text.</p>
-     */
     inline void SetFormatText(const ShortFormatText& value) { m_formatTextHasBeenSet = true; m_formatText = value; }
-
-    /**
-     * <p>The short text format of the title label, such as plain text or rich
-     * text.</p>
-     */
     inline void SetFormatText(ShortFormatText&& value) { m_formatTextHasBeenSet = true; m_formatText = std::move(value); }
-
-    /**
-     * <p>The short text format of the title label, such as plain text or rich
-     * text.</p>
-     */
     inline VisualTitleLabelOptions& WithFormatText(const ShortFormatText& value) { SetFormatText(value); return *this;}
-
-    /**
-     * <p>The short text format of the title label, such as plain text or rich
-     * text.</p>
-     */
     inline VisualTitleLabelOptions& WithFormatText(ShortFormatText&& value) { SetFormatText(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Visibility m_visibility;

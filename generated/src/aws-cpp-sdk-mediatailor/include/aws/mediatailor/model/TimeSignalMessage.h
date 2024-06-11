@@ -47,54 +47,20 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
      * message(s) sent with the <code>time_signal</code> message.</p>
      */
     inline const Aws::Vector<SegmentationDescriptor>& GetSegmentationDescriptors() const{ return m_segmentationDescriptors; }
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline bool SegmentationDescriptorsHasBeenSet() const { return m_segmentationDescriptorsHasBeenSet; }
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline void SetSegmentationDescriptors(const Aws::Vector<SegmentationDescriptor>& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors = value; }
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline void SetSegmentationDescriptors(Aws::Vector<SegmentationDescriptor>&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors = std::move(value); }
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline TimeSignalMessage& WithSegmentationDescriptors(const Aws::Vector<SegmentationDescriptor>& value) { SetSegmentationDescriptors(value); return *this;}
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline TimeSignalMessage& WithSegmentationDescriptors(Aws::Vector<SegmentationDescriptor>&& value) { SetSegmentationDescriptors(std::move(value)); return *this;}
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline TimeSignalMessage& AddSegmentationDescriptors(const SegmentationDescriptor& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors.push_back(value); return *this; }
-
-    /**
-     * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
-     * message(s) sent with the <code>time_signal</code> message.</p>
-     */
     inline TimeSignalMessage& AddSegmentationDescriptors(SegmentationDescriptor&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SegmentationDescriptor> m_segmentationDescriptors;

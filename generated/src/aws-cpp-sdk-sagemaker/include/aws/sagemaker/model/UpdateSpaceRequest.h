@@ -35,159 +35,59 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the associated domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline UpdateSpaceRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline UpdateSpaceRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the associated domain.</p>
-     */
     inline UpdateSpaceRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the space.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A collection of space settings.</p>
      */
     inline const SpaceSettings& GetSpaceSettings() const{ return m_spaceSettings; }
-
-    /**
-     * <p>A collection of space settings.</p>
-     */
     inline bool SpaceSettingsHasBeenSet() const { return m_spaceSettingsHasBeenSet; }
-
-    /**
-     * <p>A collection of space settings.</p>
-     */
     inline void SetSpaceSettings(const SpaceSettings& value) { m_spaceSettingsHasBeenSet = true; m_spaceSettings = value; }
-
-    /**
-     * <p>A collection of space settings.</p>
-     */
     inline void SetSpaceSettings(SpaceSettings&& value) { m_spaceSettingsHasBeenSet = true; m_spaceSettings = std::move(value); }
-
-    /**
-     * <p>A collection of space settings.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceSettings(const SpaceSettings& value) { SetSpaceSettings(value); return *this;}
-
-    /**
-     * <p>A collection of space settings.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceSettings(SpaceSettings&& value) { SetSpaceSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
      */
     inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline bool SpaceDisplayNameHasBeenSet() const { return m_spaceDisplayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = value; }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::move(value); }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName.assign(value); }
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-     */
     inline UpdateSpaceRequest& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

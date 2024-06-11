@@ -37,67 +37,29 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of storage on the disk in bytes.</p>
      */
     inline long long GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>The amount of storage on the disk in bytes.</p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>The amount of storage on the disk in bytes.</p>
-     */
     inline void SetBytes(long long value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>The amount of storage on the disk in bytes.</p>
-     */
     inline Disk& WithBytes(long long value) { SetBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The disk or device name.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline Disk& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline Disk& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The disk or device name.</p>
-     */
     inline Disk& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
-
+    ///@}
   private:
 
     long long m_bytes;

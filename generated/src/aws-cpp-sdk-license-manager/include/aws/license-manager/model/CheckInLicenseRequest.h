@@ -34,87 +34,33 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>License consumption token.</p>
      */
     inline const Aws::String& GetLicenseConsumptionToken() const{ return m_licenseConsumptionToken; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline bool LicenseConsumptionTokenHasBeenSet() const { return m_licenseConsumptionTokenHasBeenSet; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(const Aws::String& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = value; }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(Aws::String&& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = std::move(value); }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline void SetLicenseConsumptionToken(const char* value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken.assign(value); }
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline CheckInLicenseRequest& WithLicenseConsumptionToken(const Aws::String& value) { SetLicenseConsumptionToken(value); return *this;}
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline CheckInLicenseRequest& WithLicenseConsumptionToken(Aws::String&& value) { SetLicenseConsumptionToken(std::move(value)); return *this;}
-
-    /**
-     * <p>License consumption token.</p>
-     */
     inline CheckInLicenseRequest& WithLicenseConsumptionToken(const char* value) { SetLicenseConsumptionToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>License beneficiary.</p>
      */
     inline const Aws::String& GetBeneficiary() const{ return m_beneficiary; }
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline bool BeneficiaryHasBeenSet() const { return m_beneficiaryHasBeenSet; }
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline void SetBeneficiary(const Aws::String& value) { m_beneficiaryHasBeenSet = true; m_beneficiary = value; }
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline void SetBeneficiary(Aws::String&& value) { m_beneficiaryHasBeenSet = true; m_beneficiary = std::move(value); }
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline void SetBeneficiary(const char* value) { m_beneficiaryHasBeenSet = true; m_beneficiary.assign(value); }
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline CheckInLicenseRequest& WithBeneficiary(const Aws::String& value) { SetBeneficiary(value); return *this;}
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline CheckInLicenseRequest& WithBeneficiary(Aws::String&& value) { SetBeneficiary(std::move(value)); return *this;}
-
-    /**
-     * <p>License beneficiary.</p>
-     */
     inline CheckInLicenseRequest& WithBeneficiary(const char* value) { SetBeneficiary(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseConsumptionToken;

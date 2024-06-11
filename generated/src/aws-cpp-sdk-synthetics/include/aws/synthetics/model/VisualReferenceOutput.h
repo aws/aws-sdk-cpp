@@ -44,103 +44,35 @@ namespace Model
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of screenshots that are used as the baseline for comparisons during
      * visual monitoring.</p>
      */
     inline const Aws::Vector<BaseScreenshot>& GetBaseScreenshots() const{ return m_baseScreenshots; }
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline bool BaseScreenshotsHasBeenSet() const { return m_baseScreenshotsHasBeenSet; }
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline void SetBaseScreenshots(const Aws::Vector<BaseScreenshot>& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots = value; }
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline void SetBaseScreenshots(Aws::Vector<BaseScreenshot>&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots = std::move(value); }
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline VisualReferenceOutput& WithBaseScreenshots(const Aws::Vector<BaseScreenshot>& value) { SetBaseScreenshots(value); return *this;}
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline VisualReferenceOutput& WithBaseScreenshots(Aws::Vector<BaseScreenshot>&& value) { SetBaseScreenshots(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline VisualReferenceOutput& AddBaseScreenshots(const BaseScreenshot& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots.push_back(value); return *this; }
-
-    /**
-     * <p>An array of screenshots that are used as the baseline for comparisons during
-     * visual monitoring.</p>
-     */
     inline VisualReferenceOutput& AddBaseScreenshots(BaseScreenshot&& value) { m_baseScreenshotsHasBeenSet = true; m_baseScreenshots.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the canary run that produced the baseline screenshots that are used
      * for visual monitoring comparisons by this canary.</p>
      */
     inline const Aws::String& GetBaseCanaryRunId() const{ return m_baseCanaryRunId; }
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline bool BaseCanaryRunIdHasBeenSet() const { return m_baseCanaryRunIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline void SetBaseCanaryRunId(const Aws::String& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = value; }
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline void SetBaseCanaryRunId(Aws::String&& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = std::move(value); }
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline void SetBaseCanaryRunId(const char* value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId.assign(value); }
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline VisualReferenceOutput& WithBaseCanaryRunId(const Aws::String& value) { SetBaseCanaryRunId(value); return *this;}
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline VisualReferenceOutput& WithBaseCanaryRunId(Aws::String&& value) { SetBaseCanaryRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the canary run that produced the baseline screenshots that are used
-     * for visual monitoring comparisons by this canary.</p>
-     */
     inline VisualReferenceOutput& WithBaseCanaryRunId(const char* value) { SetBaseCanaryRunId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BaseScreenshot> m_baseScreenshots;

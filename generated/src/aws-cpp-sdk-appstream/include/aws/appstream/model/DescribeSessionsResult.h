@@ -34,106 +34,43 @@ namespace Model
     AWS_APPSTREAM_API DescribeSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the streaming sessions.</p>
      */
     inline const Aws::Vector<Session>& GetSessions() const{ return m_sessions; }
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline void SetSessions(const Aws::Vector<Session>& value) { m_sessions = value; }
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline void SetSessions(Aws::Vector<Session>&& value) { m_sessions = std::move(value); }
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline DescribeSessionsResult& WithSessions(const Aws::Vector<Session>& value) { SetSessions(value); return *this;}
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline DescribeSessionsResult& WithSessions(Aws::Vector<Session>&& value) { SetSessions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline DescribeSessionsResult& AddSessions(const Session& value) { m_sessions.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the streaming sessions.</p>
-     */
     inline DescribeSessionsResult& AddSessions(Session&& value) { m_sessions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Session> m_sessions;

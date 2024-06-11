@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTANALYTICS_API DescribeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains information about the dataset.</p>
      */
     inline const Dataset& GetDataset() const{ return m_dataset; }
-
-    /**
-     * <p>An object that contains information about the dataset.</p>
-     */
     inline void SetDataset(const Dataset& value) { m_dataset = value; }
-
-    /**
-     * <p>An object that contains information about the dataset.</p>
-     */
     inline void SetDataset(Dataset&& value) { m_dataset = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the dataset.</p>
-     */
     inline DescribeDatasetResult& WithDataset(const Dataset& value) { SetDataset(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the dataset.</p>
-     */
     inline DescribeDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Dataset m_dataset;

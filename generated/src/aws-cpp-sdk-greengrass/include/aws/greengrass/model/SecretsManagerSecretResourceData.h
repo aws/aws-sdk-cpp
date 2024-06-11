@@ -41,117 +41,37 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the Secrets Manager secret to make available on the core. The value
      * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
      * is included by default.
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline SecretsManagerSecretResourceData& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline SecretsManagerSecretResourceData& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the Secrets Manager secret to make available on the core. The value
-     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
-     * is included by default.
-     */
     inline SecretsManagerSecretResourceData& WithARN(const char* value) { SetARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Optional. The staging labels whose values you want to make available on the
      * core, in addition to ''AWSCURRENT''.
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalStagingLabelsToDownload() const{ return m_additionalStagingLabelsToDownload; }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline bool AdditionalStagingLabelsToDownloadHasBeenSet() const { return m_additionalStagingLabelsToDownloadHasBeenSet; }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline void SetAdditionalStagingLabelsToDownload(const Aws::Vector<Aws::String>& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload = value; }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline void SetAdditionalStagingLabelsToDownload(Aws::Vector<Aws::String>&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload = std::move(value); }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline SecretsManagerSecretResourceData& WithAdditionalStagingLabelsToDownload(const Aws::Vector<Aws::String>& value) { SetAdditionalStagingLabelsToDownload(value); return *this;}
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline SecretsManagerSecretResourceData& WithAdditionalStagingLabelsToDownload(Aws::Vector<Aws::String>&& value) { SetAdditionalStagingLabelsToDownload(std::move(value)); return *this;}
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(const Aws::String& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(value); return *this; }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(Aws::String&& value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(std::move(value)); return *this; }
-
-    /**
-     * Optional. The staging labels whose values you want to make available on the
-     * core, in addition to ''AWSCURRENT''.
-     */
     inline SecretsManagerSecretResourceData& AddAdditionalStagingLabelsToDownload(const char* value) { m_additionalStagingLabelsToDownloadHasBeenSet = true; m_additionalStagingLabelsToDownload.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_aRN;

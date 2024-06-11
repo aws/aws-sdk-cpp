@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DisassociateTransitGatewayConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The transit gateway Connect peer association.</p>
      */
     inline const TransitGatewayConnectPeerAssociation& GetTransitGatewayConnectPeerAssociation() const{ return m_transitGatewayConnectPeerAssociation; }
-
-    /**
-     * <p>The transit gateway Connect peer association.</p>
-     */
     inline void SetTransitGatewayConnectPeerAssociation(const TransitGatewayConnectPeerAssociation& value) { m_transitGatewayConnectPeerAssociation = value; }
-
-    /**
-     * <p>The transit gateway Connect peer association.</p>
-     */
     inline void SetTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociation&& value) { m_transitGatewayConnectPeerAssociation = std::move(value); }
-
-    /**
-     * <p>The transit gateway Connect peer association.</p>
-     */
     inline DisassociateTransitGatewayConnectPeerResult& WithTransitGatewayConnectPeerAssociation(const TransitGatewayConnectPeerAssociation& value) { SetTransitGatewayConnectPeerAssociation(value); return *this;}
-
-    /**
-     * <p>The transit gateway Connect peer association.</p>
-     */
     inline DisassociateTransitGatewayConnectPeerResult& WithTransitGatewayConnectPeerAssociation(TransitGatewayConnectPeerAssociation&& value) { SetTransitGatewayConnectPeerAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateTransitGatewayConnectPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateTransitGatewayConnectPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateTransitGatewayConnectPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayConnectPeerAssociation m_transitGatewayConnectPeerAssociation;

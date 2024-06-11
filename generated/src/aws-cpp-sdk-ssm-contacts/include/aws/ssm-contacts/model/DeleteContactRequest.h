@@ -34,46 +34,19 @@ namespace Model
     AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline DeleteContactRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline DeleteContactRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-     */
     inline DeleteContactRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactId;

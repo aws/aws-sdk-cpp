@@ -33,58 +33,28 @@ namespace Model
     AWS_WAFV2_API GetMobileSdkReleaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information for a specified SDK release, including release notes and
      * tags.</p>
      */
     inline const MobileSdkRelease& GetMobileSdkRelease() const{ return m_mobileSdkRelease; }
-
-    /**
-     * <p>Information for a specified SDK release, including release notes and
-     * tags.</p>
-     */
     inline void SetMobileSdkRelease(const MobileSdkRelease& value) { m_mobileSdkRelease = value; }
-
-    /**
-     * <p>Information for a specified SDK release, including release notes and
-     * tags.</p>
-     */
     inline void SetMobileSdkRelease(MobileSdkRelease&& value) { m_mobileSdkRelease = std::move(value); }
-
-    /**
-     * <p>Information for a specified SDK release, including release notes and
-     * tags.</p>
-     */
     inline GetMobileSdkReleaseResult& WithMobileSdkRelease(const MobileSdkRelease& value) { SetMobileSdkRelease(value); return *this;}
-
-    /**
-     * <p>Information for a specified SDK release, including release notes and
-     * tags.</p>
-     */
     inline GetMobileSdkReleaseResult& WithMobileSdkRelease(MobileSdkRelease&& value) { SetMobileSdkRelease(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMobileSdkReleaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMobileSdkReleaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMobileSdkReleaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MobileSdkRelease m_mobileSdkRelease;

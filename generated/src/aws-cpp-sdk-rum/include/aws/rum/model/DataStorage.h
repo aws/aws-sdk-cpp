@@ -39,48 +39,19 @@ namespace Model
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that contains the information about whether the app monitor
      * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
      * structure also contains the name of the log group.</p>
      */
     inline const CwLog& GetCwLog() const{ return m_cwLog; }
-
-    /**
-     * <p>A structure that contains the information about whether the app monitor
-     * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
-     * structure also contains the name of the log group.</p>
-     */
     inline bool CwLogHasBeenSet() const { return m_cwLogHasBeenSet; }
-
-    /**
-     * <p>A structure that contains the information about whether the app monitor
-     * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
-     * structure also contains the name of the log group.</p>
-     */
     inline void SetCwLog(const CwLog& value) { m_cwLogHasBeenSet = true; m_cwLog = value; }
-
-    /**
-     * <p>A structure that contains the information about whether the app monitor
-     * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
-     * structure also contains the name of the log group.</p>
-     */
     inline void SetCwLog(CwLog&& value) { m_cwLogHasBeenSet = true; m_cwLog = std::move(value); }
-
-    /**
-     * <p>A structure that contains the information about whether the app monitor
-     * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
-     * structure also contains the name of the log group.</p>
-     */
     inline DataStorage& WithCwLog(const CwLog& value) { SetCwLog(value); return *this;}
-
-    /**
-     * <p>A structure that contains the information about whether the app monitor
-     * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
-     * structure also contains the name of the log group.</p>
-     */
     inline DataStorage& WithCwLog(CwLog&& value) { SetCwLog(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CwLog m_cwLog;

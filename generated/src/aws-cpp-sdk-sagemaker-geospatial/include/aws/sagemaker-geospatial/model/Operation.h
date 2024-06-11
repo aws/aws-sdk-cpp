@@ -39,126 +39,46 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Textual representation of the math operation; Equation used to compute the
      * spectral index.</p>
      */
     inline const Aws::String& GetEquation() const{ return m_equation; }
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline bool EquationHasBeenSet() const { return m_equationHasBeenSet; }
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline void SetEquation(const Aws::String& value) { m_equationHasBeenSet = true; m_equation = value; }
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline void SetEquation(Aws::String&& value) { m_equationHasBeenSet = true; m_equation = std::move(value); }
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline void SetEquation(const char* value) { m_equationHasBeenSet = true; m_equation.assign(value); }
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline Operation& WithEquation(const Aws::String& value) { SetEquation(value); return *this;}
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline Operation& WithEquation(Aws::String&& value) { SetEquation(std::move(value)); return *this;}
-
-    /**
-     * <p>Textual representation of the math operation; Equation used to compute the
-     * spectral index.</p>
-     */
     inline Operation& WithEquation(const char* value) { SetEquation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the operation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline Operation& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline Operation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the operation.</p>
-     */
     inline Operation& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the operation.</p>
      */
     inline const OutputType& GetOutputType() const{ return m_outputType; }
-
-    /**
-     * <p>The type of the operation.</p>
-     */
     inline bool OutputTypeHasBeenSet() const { return m_outputTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the operation.</p>
-     */
     inline void SetOutputType(const OutputType& value) { m_outputTypeHasBeenSet = true; m_outputType = value; }
-
-    /**
-     * <p>The type of the operation.</p>
-     */
     inline void SetOutputType(OutputType&& value) { m_outputTypeHasBeenSet = true; m_outputType = std::move(value); }
-
-    /**
-     * <p>The type of the operation.</p>
-     */
     inline Operation& WithOutputType(const OutputType& value) { SetOutputType(value); return *this;}
-
-    /**
-     * <p>The type of the operation.</p>
-     */
     inline Operation& WithOutputType(OutputType&& value) { SetOutputType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_equation;

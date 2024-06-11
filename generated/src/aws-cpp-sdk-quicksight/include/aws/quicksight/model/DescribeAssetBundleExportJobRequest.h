@@ -32,95 +32,34 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account the export job is executed in. </p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the job that you want described. The job ID is set when you start a
      * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
      */
     inline const Aws::String& GetAssetBundleExportJobId() const{ return m_assetBundleExportJobId; }
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline bool AssetBundleExportJobIdHasBeenSet() const { return m_assetBundleExportJobIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline void SetAssetBundleExportJobId(const Aws::String& value) { m_assetBundleExportJobIdHasBeenSet = true; m_assetBundleExportJobId = value; }
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline void SetAssetBundleExportJobId(Aws::String&& value) { m_assetBundleExportJobIdHasBeenSet = true; m_assetBundleExportJobId = std::move(value); }
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline void SetAssetBundleExportJobId(const char* value) { m_assetBundleExportJobIdHasBeenSet = true; m_assetBundleExportJobId.assign(value); }
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAssetBundleExportJobId(const Aws::String& value) { SetAssetBundleExportJobId(value); return *this;}
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAssetBundleExportJobId(Aws::String&& value) { SetAssetBundleExportJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the job that you want described. The job ID is set when you start a
-     * new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-     */
     inline DescribeAssetBundleExportJobRequest& WithAssetBundleExportJobId(const char* value) { SetAssetBundleExportJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

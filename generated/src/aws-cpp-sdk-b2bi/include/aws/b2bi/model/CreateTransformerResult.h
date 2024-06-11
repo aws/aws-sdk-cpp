@@ -36,357 +36,133 @@ namespace Model
     AWS_B2BI_API CreateTransformerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the system-assigned unique identifier for the transformer.</p>
      */
     inline const Aws::String& GetTransformerId() const{ return m_transformerId; }
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(const Aws::String& value) { m_transformerId = value; }
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(Aws::String&& value) { m_transformerId = std::move(value); }
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline void SetTransformerId(const char* value) { m_transformerId.assign(value); }
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerId(const Aws::String& value) { SetTransformerId(value); return *this;}
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerId(Aws::String&& value) { SetTransformerId(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the system-assigned unique identifier for the transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
      * resource, such as a capability, partnership, profile, or transformer.</p>
      */
     inline const Aws::String& GetTransformerArn() const{ return m_transformerArn; }
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline void SetTransformerArn(const Aws::String& value) { m_transformerArn = value; }
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline void SetTransformerArn(Aws::String&& value) { m_transformerArn = std::move(value); }
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline void SetTransformerArn(const char* value) { m_transformerArn.assign(value); }
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerArn(const Aws::String& value) { SetTransformerArn(value); return *this;}
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerArn(Aws::String&& value) { SetTransformerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
-     * resource, such as a capability, partnership, profile, or transformer.</p>
-     */
     inline CreateTransformerResult& WithTransformerArn(const char* value) { SetTransformerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the name of the transformer, used to identify it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline CreateTransformerResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline CreateTransformerResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the name of the transformer, used to identify it.</p>
-     */
     inline CreateTransformerResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns that the currently supported file formats for EDI transformations are
      * <code>JSON</code> and <code>XML</code>.</p>
      */
     inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
-
-    /**
-     * <p>Returns that the currently supported file formats for EDI transformations are
-     * <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline void SetFileFormat(const FileFormat& value) { m_fileFormat = value; }
-
-    /**
-     * <p>Returns that the currently supported file formats for EDI transformations are
-     * <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline void SetFileFormat(FileFormat&& value) { m_fileFormat = std::move(value); }
-
-    /**
-     * <p>Returns that the currently supported file formats for EDI transformations are
-     * <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline CreateTransformerResult& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-
-    /**
-     * <p>Returns that the currently supported file formats for EDI transformations are
-     * <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline CreateTransformerResult& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the mapping template for the transformer. This template is used to
      * map the parsed EDI file using JSONata or XSLT.</p>
      */
     inline const Aws::String& GetMappingTemplate() const{ return m_mappingTemplate; }
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline void SetMappingTemplate(const Aws::String& value) { m_mappingTemplate = value; }
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline void SetMappingTemplate(Aws::String&& value) { m_mappingTemplate = std::move(value); }
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline void SetMappingTemplate(const char* value) { m_mappingTemplate.assign(value); }
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline CreateTransformerResult& WithMappingTemplate(const Aws::String& value) { SetMappingTemplate(value); return *this;}
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline CreateTransformerResult& WithMappingTemplate(Aws::String&& value) { SetMappingTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
     inline CreateTransformerResult& WithMappingTemplate(const char* value) { SetMappingTemplate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the state of the newly created transformer. The transformer can be
      * either <code>active</code> or <code>inactive</code>. For the transformer to be
      * used in a capability, its status must <code>active</code>.</p>
      */
     inline const TransformerStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Returns the state of the newly created transformer. The transformer can be
-     * either <code>active</code> or <code>inactive</code>. For the transformer to be
-     * used in a capability, its status must <code>active</code>.</p>
-     */
     inline void SetStatus(const TransformerStatus& value) { m_status = value; }
-
-    /**
-     * <p>Returns the state of the newly created transformer. The transformer can be
-     * either <code>active</code> or <code>inactive</code>. For the transformer to be
-     * used in a capability, its status must <code>active</code>.</p>
-     */
     inline void SetStatus(TransformerStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>Returns the state of the newly created transformer. The transformer can be
-     * either <code>active</code> or <code>inactive</code>. For the transformer to be
-     * used in a capability, its status must <code>active</code>.</p>
-     */
     inline CreateTransformerResult& WithStatus(const TransformerStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Returns the state of the newly created transformer. The transformer can be
-     * either <code>active</code> or <code>inactive</code>. For the transformer to be
-     * used in a capability, its status must <code>active</code>.</p>
-     */
     inline CreateTransformerResult& WithStatus(TransformerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the details for the EDI standard that is being used for the
      * transformer. Currently, only X12 is supported. X12 is a set of standards and
      * corresponding messages that define specific business documents.</p>
      */
     inline const EdiType& GetEdiType() const{ return m_ediType; }
-
-    /**
-     * <p>Returns the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline void SetEdiType(const EdiType& value) { m_ediType = value; }
-
-    /**
-     * <p>Returns the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline void SetEdiType(EdiType&& value) { m_ediType = std::move(value); }
-
-    /**
-     * <p>Returns the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline CreateTransformerResult& WithEdiType(const EdiType& value) { SetEdiType(value); return *this;}
-
-    /**
-     * <p>Returns the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline CreateTransformerResult& WithEdiType(EdiType&& value) { SetEdiType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns a sample EDI document that is used by a transformer as a guide for
      * processing the EDI data.</p>
      */
     inline const Aws::String& GetSampleDocument() const{ return m_sampleDocument; }
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline void SetSampleDocument(const Aws::String& value) { m_sampleDocument = value; }
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline void SetSampleDocument(Aws::String&& value) { m_sampleDocument = std::move(value); }
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline void SetSampleDocument(const char* value) { m_sampleDocument.assign(value); }
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline CreateTransformerResult& WithSampleDocument(const Aws::String& value) { SetSampleDocument(value); return *this;}
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline CreateTransformerResult& WithSampleDocument(Aws::String&& value) { SetSampleDocument(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
     inline CreateTransformerResult& WithSampleDocument(const char* value) { SetSampleDocument(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns a timestamp for creation date and time of the transformer.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>Returns a timestamp for creation date and time of the transformer.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-
-    /**
-     * <p>Returns a timestamp for creation date and time of the transformer.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-
-    /**
-     * <p>Returns a timestamp for creation date and time of the transformer.</p>
-     */
     inline CreateTransformerResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>Returns a timestamp for creation date and time of the transformer.</p>
-     */
     inline CreateTransformerResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateTransformerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateTransformerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateTransformerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformerId;

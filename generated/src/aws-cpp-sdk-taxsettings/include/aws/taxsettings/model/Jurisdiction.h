@@ -39,95 +39,34 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The country code of the jurisdiction. </p>
      */
     inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline Jurisdiction& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline Jurisdiction& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-
-    /**
-     * <p> The country code of the jurisdiction. </p>
-     */
     inline Jurisdiction& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The state, region, or province associated with the country of the
      * jurisdiction, if applicable. </p>
      */
     inline const Aws::String& GetStateOrRegion() const{ return m_stateOrRegion; }
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline void SetStateOrRegion(const Aws::String& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = value; }
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline void SetStateOrRegion(Aws::String&& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = std::move(value); }
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline void SetStateOrRegion(const char* value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion.assign(value); }
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline Jurisdiction& WithStateOrRegion(const Aws::String& value) { SetStateOrRegion(value); return *this;}
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline Jurisdiction& WithStateOrRegion(Aws::String&& value) { SetStateOrRegion(std::move(value)); return *this;}
-
-    /**
-     * <p> The state, region, or province associated with the country of the
-     * jurisdiction, if applicable. </p>
-     */
     inline Jurisdiction& WithStateOrRegion(const char* value) { SetStateOrRegion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_countryCode;

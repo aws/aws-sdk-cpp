@@ -35,34 +35,17 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of times you've redriven an execution. If you have not yet
      * redriven an execution, the <code>redriveCount</code> is 0. This count is not
      * updated for redrives that failed to start or are pending to be redriven.</p>
      */
     inline int GetRedriveCount() const{ return m_redriveCount; }
-
-    /**
-     * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
-     */
     inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
-
-    /**
-     * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
-     */
     inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
-
-    /**
-     * <p>The number of times you've redriven an execution. If you have not yet
-     * redriven an execution, the <code>redriveCount</code> is 0. This count is not
-     * updated for redrives that failed to start or are pending to be redriven.</p>
-     */
     inline ExecutionRedrivenEventDetails& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_redriveCount;

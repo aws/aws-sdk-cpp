@@ -34,113 +34,44 @@ namespace Model
     AWS_KENDRA_API ListAccessControlConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If the response is truncated, Amazon Kendra returns this token, which you can
      * use in the subsequent request to retrieve the next set of access control
      * configurations.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Kendra returns this token, which you can
-     * use in the subsequent request to retrieve the next set of access control
-     * configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of your access control configurations.</p>
      */
     inline const Aws::Vector<AccessControlConfigurationSummary>& GetAccessControlConfigurations() const{ return m_accessControlConfigurations; }
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline void SetAccessControlConfigurations(const Aws::Vector<AccessControlConfigurationSummary>& value) { m_accessControlConfigurations = value; }
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline void SetAccessControlConfigurations(Aws::Vector<AccessControlConfigurationSummary>&& value) { m_accessControlConfigurations = std::move(value); }
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& WithAccessControlConfigurations(const Aws::Vector<AccessControlConfigurationSummary>& value) { SetAccessControlConfigurations(value); return *this;}
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& WithAccessControlConfigurations(Aws::Vector<AccessControlConfigurationSummary>&& value) { SetAccessControlConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& AddAccessControlConfigurations(const AccessControlConfigurationSummary& value) { m_accessControlConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The details of your access control configurations.</p>
-     */
     inline ListAccessControlConfigurationsResult& AddAccessControlConfigurations(AccessControlConfigurationSummary&& value) { m_accessControlConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAccessControlConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAccessControlConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAccessControlConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

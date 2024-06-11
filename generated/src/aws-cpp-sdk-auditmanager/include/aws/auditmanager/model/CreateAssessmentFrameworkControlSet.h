@@ -41,95 +41,34 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the control set. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the control set. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The list of controls within the control set. This doesn't contain the
      * control set ID. </p>
      */
     inline const Aws::Vector<CreateAssessmentFrameworkControl>& GetControls() const{ return m_controls; }
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline void SetControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { m_controlsHasBeenSet = true; m_controls = value; }
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline void SetControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& WithControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { SetControls(value); return *this;}
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& WithControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { SetControls(std::move(value)); return *this;}
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& AddControls(const CreateAssessmentFrameworkControl& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
-
-    /**
-     * <p> The list of controls within the control set. This doesn't contain the
-     * control set ID. </p>
-     */
     inline CreateAssessmentFrameworkControlSet& AddControls(CreateAssessmentFrameworkControl&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

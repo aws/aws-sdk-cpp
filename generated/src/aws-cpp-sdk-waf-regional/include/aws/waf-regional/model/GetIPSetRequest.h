@@ -34,62 +34,21 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
     inline const Aws::String& GetIPSetId() const{ return m_iPSetId; }
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline void SetIPSetId(const char* value) { m_iPSetIdHasBeenSet = true; m_iPSetId.assign(value); }
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline GetIPSetRequest& WithIPSetId(const Aws::String& value) { SetIPSetId(value); return *this;}
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline GetIPSetRequest& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
-     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-     * <a>ListIPSets</a>.</p>
-     */
     inline GetIPSetRequest& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iPSetId;

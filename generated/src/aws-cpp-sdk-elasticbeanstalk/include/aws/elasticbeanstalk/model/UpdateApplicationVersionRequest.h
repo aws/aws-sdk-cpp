@@ -39,160 +39,51 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline UpdateApplicationVersionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline UpdateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application associated with this version.</p> <p> If no
-     * application is found with this name, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error.</p>
-     */
     inline UpdateApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the version to update.</p> <p>If no application version is found
      * with this label, <code>UpdateApplication</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline UpdateApplicationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline UpdateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the version to update.</p> <p>If no application version is found
-     * with this label, <code>UpdateApplication</code> returns an
-     * <code>InvalidParameterValue</code> error. </p>
-     */
     inline UpdateApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new description for this version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline UpdateApplicationVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline UpdateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A new description for this version.</p>
-     */
     inline UpdateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

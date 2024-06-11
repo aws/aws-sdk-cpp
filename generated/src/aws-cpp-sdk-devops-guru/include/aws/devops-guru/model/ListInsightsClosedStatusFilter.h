@@ -39,79 +39,31 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
      * insights. </p>
      */
     inline const InsightType& GetType() const{ return m_type; }
-
-    /**
-     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
-     * insights. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
-     * insights. </p>
-     */
     inline void SetType(const InsightType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
-     * insights. </p>
-     */
     inline void SetType(InsightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
-     * insights. </p>
-     */
     inline ListInsightsClosedStatusFilter& WithType(const InsightType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code>
-     * insights. </p>
-     */
     inline ListInsightsClosedStatusFilter& WithType(InsightType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A time range used to specify when the behavior of the filtered insights
      * ended. </p>
      */
     inline const EndTimeRange& GetEndTimeRange() const{ return m_endTimeRange; }
-
-    /**
-     * <p> A time range used to specify when the behavior of the filtered insights
-     * ended. </p>
-     */
     inline bool EndTimeRangeHasBeenSet() const { return m_endTimeRangeHasBeenSet; }
-
-    /**
-     * <p> A time range used to specify when the behavior of the filtered insights
-     * ended. </p>
-     */
     inline void SetEndTimeRange(const EndTimeRange& value) { m_endTimeRangeHasBeenSet = true; m_endTimeRange = value; }
-
-    /**
-     * <p> A time range used to specify when the behavior of the filtered insights
-     * ended. </p>
-     */
     inline void SetEndTimeRange(EndTimeRange&& value) { m_endTimeRangeHasBeenSet = true; m_endTimeRange = std::move(value); }
-
-    /**
-     * <p> A time range used to specify when the behavior of the filtered insights
-     * ended. </p>
-     */
     inline ListInsightsClosedStatusFilter& WithEndTimeRange(const EndTimeRange& value) { SetEndTimeRange(value); return *this;}
-
-    /**
-     * <p> A time range used to specify when the behavior of the filtered insights
-     * ended. </p>
-     */
     inline ListInsightsClosedStatusFilter& WithEndTimeRange(EndTimeRange&& value) { SetEndTimeRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InsightType m_type;

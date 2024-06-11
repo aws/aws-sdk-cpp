@@ -38,71 +38,30 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The area under the curve (auc). This summarizes the total positive rate
      * (tpr) and false positive rate (FPR) across all possible model score thresholds.
      * </p>
      */
     inline double GetAuc() const{ return m_auc; }
-
-    /**
-     * <p> The area under the curve (auc). This summarizes the total positive rate
-     * (tpr) and false positive rate (FPR) across all possible model score thresholds.
-     * </p>
-     */
     inline bool AucHasBeenSet() const { return m_aucHasBeenSet; }
-
-    /**
-     * <p> The area under the curve (auc). This summarizes the total positive rate
-     * (tpr) and false positive rate (FPR) across all possible model score thresholds.
-     * </p>
-     */
     inline void SetAuc(double value) { m_aucHasBeenSet = true; m_auc = value; }
-
-    /**
-     * <p> The area under the curve (auc). This summarizes the total positive rate
-     * (tpr) and false positive rate (FPR) across all possible model score thresholds.
-     * </p>
-     */
     inline TFIModelPerformance& WithAuc(double value) { SetAuc(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
      * range greater than 0.1 indicates higher model uncertainity. </p>
      */
     inline const UncertaintyRange& GetUncertaintyRange() const{ return m_uncertaintyRange; }
-
-    /**
-     * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
-     * range greater than 0.1 indicates higher model uncertainity. </p>
-     */
     inline bool UncertaintyRangeHasBeenSet() const { return m_uncertaintyRangeHasBeenSet; }
-
-    /**
-     * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
-     * range greater than 0.1 indicates higher model uncertainity. </p>
-     */
     inline void SetUncertaintyRange(const UncertaintyRange& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = value; }
-
-    /**
-     * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
-     * range greater than 0.1 indicates higher model uncertainity. </p>
-     */
     inline void SetUncertaintyRange(UncertaintyRange&& value) { m_uncertaintyRangeHasBeenSet = true; m_uncertaintyRange = std::move(value); }
-
-    /**
-     * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
-     * range greater than 0.1 indicates higher model uncertainity. </p>
-     */
     inline TFIModelPerformance& WithUncertaintyRange(const UncertaintyRange& value) { SetUncertaintyRange(value); return *this;}
-
-    /**
-     * <p> Indicates the range of area under curve (auc) expected from the TFI model. A
-     * range greater than 0.1 indicates higher model uncertainity. </p>
-     */
     inline TFIModelPerformance& WithUncertaintyRange(UncertaintyRange&& value) { SetUncertaintyRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_auc;

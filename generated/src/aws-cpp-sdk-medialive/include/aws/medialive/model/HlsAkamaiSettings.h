@@ -38,224 +38,90 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Number of seconds to wait before retrying connection to the CDN if the
      * connection is lost.
      */
     inline int GetConnectionRetryInterval() const{ return m_connectionRetryInterval; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
-
-    /**
-     * Number of seconds to wait before retrying connection to the CDN if the
-     * connection is lost.
-     */
     inline HlsAkamaiSettings& WithConnectionRetryInterval(int value) { SetConnectionRetryInterval(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Size in seconds of file cache for streaming outputs.
      */
     inline int GetFilecacheDuration() const{ return m_filecacheDuration; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline void SetFilecacheDuration(int value) { m_filecacheDurationHasBeenSet = true; m_filecacheDuration = value; }
-
-    /**
-     * Size in seconds of file cache for streaming outputs.
-     */
     inline HlsAkamaiSettings& WithFilecacheDuration(int value) { SetFilecacheDuration(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify whether or not to use chunked transfer encoding to Akamai. User should
      * contact Akamai to enable this feature.
      */
     inline const HlsAkamaiHttpTransferMode& GetHttpTransferMode() const{ return m_httpTransferMode; }
-
-    /**
-     * Specify whether or not to use chunked transfer encoding to Akamai. User should
-     * contact Akamai to enable this feature.
-     */
     inline bool HttpTransferModeHasBeenSet() const { return m_httpTransferModeHasBeenSet; }
-
-    /**
-     * Specify whether or not to use chunked transfer encoding to Akamai. User should
-     * contact Akamai to enable this feature.
-     */
     inline void SetHttpTransferMode(const HlsAkamaiHttpTransferMode& value) { m_httpTransferModeHasBeenSet = true; m_httpTransferMode = value; }
-
-    /**
-     * Specify whether or not to use chunked transfer encoding to Akamai. User should
-     * contact Akamai to enable this feature.
-     */
     inline void SetHttpTransferMode(HlsAkamaiHttpTransferMode&& value) { m_httpTransferModeHasBeenSet = true; m_httpTransferMode = std::move(value); }
-
-    /**
-     * Specify whether or not to use chunked transfer encoding to Akamai. User should
-     * contact Akamai to enable this feature.
-     */
     inline HlsAkamaiSettings& WithHttpTransferMode(const HlsAkamaiHttpTransferMode& value) { SetHttpTransferMode(value); return *this;}
-
-    /**
-     * Specify whether or not to use chunked transfer encoding to Akamai. User should
-     * contact Akamai to enable this feature.
-     */
     inline HlsAkamaiSettings& WithHttpTransferMode(HlsAkamaiHttpTransferMode&& value) { SetHttpTransferMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Number of retry attempts that will be made before the Live Event is put into an
      * error state. Applies only if the CDN destination URI begins with "s3" or
      * "mediastore". For other URIs, the value is always 3.
      */
     inline int GetNumRetries() const{ return m_numRetries; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
-
-    /**
-     * Number of retry attempts that will be made before the Live Event is put into an
-     * error state. Applies only if the CDN destination URI begins with "s3" or
-     * "mediastore". For other URIs, the value is always 3.
-     */
     inline HlsAkamaiSettings& WithNumRetries(int value) { SetNumRetries(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline void SetRestartDelay(int value) { m_restartDelayHasBeenSet = true; m_restartDelay = value; }
-
-    /**
-     * If a streaming output fails, number of seconds to wait until a restart is
-     * initiated. A value of 0 means never restart.
-     */
     inline HlsAkamaiSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Salt for authenticated Akamai.
      */
     inline const Aws::String& GetSalt() const{ return m_salt; }
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline bool SaltHasBeenSet() const { return m_saltHasBeenSet; }
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline void SetSalt(const Aws::String& value) { m_saltHasBeenSet = true; m_salt = value; }
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline void SetSalt(Aws::String&& value) { m_saltHasBeenSet = true; m_salt = std::move(value); }
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline void SetSalt(const char* value) { m_saltHasBeenSet = true; m_salt.assign(value); }
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline HlsAkamaiSettings& WithSalt(const Aws::String& value) { SetSalt(value); return *this;}
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline HlsAkamaiSettings& WithSalt(Aws::String&& value) { SetSalt(std::move(value)); return *this;}
-
-    /**
-     * Salt for authenticated Akamai.
-     */
     inline HlsAkamaiSettings& WithSalt(const char* value) { SetSalt(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Token parameter for authenticated akamai. If not specified, _gda_ is used.
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline HlsAkamaiSettings& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline HlsAkamaiSettings& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
-     */
     inline HlsAkamaiSettings& WithToken(const char* value) { SetToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_connectionRetryInterval;

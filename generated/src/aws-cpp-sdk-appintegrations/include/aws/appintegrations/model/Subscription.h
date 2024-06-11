@@ -38,87 +38,33 @@ namespace Model
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the subscription.</p>
      */
     inline const Aws::String& GetEvent() const{ return m_event; }
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline Subscription& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline Subscription& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the subscription.</p>
-     */
     inline Subscription& WithEvent(const char* value) { SetEvent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the subscription.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline Subscription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline Subscription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the subscription.</p>
-     */
     inline Subscription& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_event;

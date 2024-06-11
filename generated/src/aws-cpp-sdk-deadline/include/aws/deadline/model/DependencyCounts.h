@@ -35,89 +35,45 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of consumers resolved.</p>
      */
     inline int GetConsumersResolved() const{ return m_consumersResolved; }
-
-    /**
-     * <p>The number of consumers resolved.</p>
-     */
     inline bool ConsumersResolvedHasBeenSet() const { return m_consumersResolvedHasBeenSet; }
-
-    /**
-     * <p>The number of consumers resolved.</p>
-     */
     inline void SetConsumersResolved(int value) { m_consumersResolvedHasBeenSet = true; m_consumersResolved = value; }
-
-    /**
-     * <p>The number of consumers resolved.</p>
-     */
     inline DependencyCounts& WithConsumersResolved(int value) { SetConsumersResolved(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of unresolved consumers.</p>
      */
     inline int GetConsumersUnresolved() const{ return m_consumersUnresolved; }
-
-    /**
-     * <p>The number of unresolved consumers.</p>
-     */
     inline bool ConsumersUnresolvedHasBeenSet() const { return m_consumersUnresolvedHasBeenSet; }
-
-    /**
-     * <p>The number of unresolved consumers.</p>
-     */
     inline void SetConsumersUnresolved(int value) { m_consumersUnresolvedHasBeenSet = true; m_consumersUnresolved = value; }
-
-    /**
-     * <p>The number of unresolved consumers.</p>
-     */
     inline DependencyCounts& WithConsumersUnresolved(int value) { SetConsumersUnresolved(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of resolved dependencies.</p>
      */
     inline int GetDependenciesResolved() const{ return m_dependenciesResolved; }
-
-    /**
-     * <p>The number of resolved dependencies.</p>
-     */
     inline bool DependenciesResolvedHasBeenSet() const { return m_dependenciesResolvedHasBeenSet; }
-
-    /**
-     * <p>The number of resolved dependencies.</p>
-     */
     inline void SetDependenciesResolved(int value) { m_dependenciesResolvedHasBeenSet = true; m_dependenciesResolved = value; }
-
-    /**
-     * <p>The number of resolved dependencies.</p>
-     */
     inline DependencyCounts& WithDependenciesResolved(int value) { SetDependenciesResolved(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of unresolved dependencies.</p>
      */
     inline int GetDependenciesUnresolved() const{ return m_dependenciesUnresolved; }
-
-    /**
-     * <p>The number of unresolved dependencies.</p>
-     */
     inline bool DependenciesUnresolvedHasBeenSet() const { return m_dependenciesUnresolvedHasBeenSet; }
-
-    /**
-     * <p>The number of unresolved dependencies.</p>
-     */
     inline void SetDependenciesUnresolved(int value) { m_dependenciesUnresolvedHasBeenSet = true; m_dependenciesUnresolved = value; }
-
-    /**
-     * <p>The number of unresolved dependencies.</p>
-     */
     inline DependencyCounts& WithDependenciesUnresolved(int value) { SetDependenciesUnresolved(value); return *this;}
-
+    ///@}
   private:
 
     int m_consumersResolved;

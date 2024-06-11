@@ -33,58 +33,28 @@ namespace Model
     AWS_KINESIS_API DescribeStreamSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a>StreamDescriptionSummary</a> containing information about the
      * stream.</p>
      */
     inline const StreamDescriptionSummary& GetStreamDescriptionSummary() const{ return m_streamDescriptionSummary; }
-
-    /**
-     * <p>A <a>StreamDescriptionSummary</a> containing information about the
-     * stream.</p>
-     */
     inline void SetStreamDescriptionSummary(const StreamDescriptionSummary& value) { m_streamDescriptionSummary = value; }
-
-    /**
-     * <p>A <a>StreamDescriptionSummary</a> containing information about the
-     * stream.</p>
-     */
     inline void SetStreamDescriptionSummary(StreamDescriptionSummary&& value) { m_streamDescriptionSummary = std::move(value); }
-
-    /**
-     * <p>A <a>StreamDescriptionSummary</a> containing information about the
-     * stream.</p>
-     */
     inline DescribeStreamSummaryResult& WithStreamDescriptionSummary(const StreamDescriptionSummary& value) { SetStreamDescriptionSummary(value); return *this;}
-
-    /**
-     * <p>A <a>StreamDescriptionSummary</a> containing information about the
-     * stream.</p>
-     */
     inline DescribeStreamSummaryResult& WithStreamDescriptionSummary(StreamDescriptionSummary&& value) { SetStreamDescriptionSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeStreamSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeStreamSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeStreamSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StreamDescriptionSummary m_streamDescriptionSummary;

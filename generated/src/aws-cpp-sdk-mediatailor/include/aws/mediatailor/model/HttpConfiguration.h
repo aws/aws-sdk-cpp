@@ -37,54 +37,20 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The base URL for the source location host server. This string must include
      * the protocol, such as <b>https://</b>.</p>
      */
     inline const Aws::String& GetBaseUrl() const{ return m_baseUrl; }
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline void SetBaseUrl(const Aws::String& value) { m_baseUrlHasBeenSet = true; m_baseUrl = value; }
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline void SetBaseUrl(Aws::String&& value) { m_baseUrlHasBeenSet = true; m_baseUrl = std::move(value); }
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline void SetBaseUrl(const char* value) { m_baseUrlHasBeenSet = true; m_baseUrl.assign(value); }
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline HttpConfiguration& WithBaseUrl(const Aws::String& value) { SetBaseUrl(value); return *this;}
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline HttpConfiguration& WithBaseUrl(Aws::String&& value) { SetBaseUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The base URL for the source location host server. This string must include
-     * the protocol, such as <b>https://</b>.</p>
-     */
     inline HttpConfiguration& WithBaseUrl(const char* value) { SetBaseUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baseUrl;

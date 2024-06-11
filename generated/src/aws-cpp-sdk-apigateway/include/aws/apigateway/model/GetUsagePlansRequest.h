@@ -42,112 +42,44 @@ namespace Model
     AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline GetUsagePlansRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline GetUsagePlansRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The current pagination position in the paged result set.</p>
-     */
     inline GetUsagePlansRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline GetUsagePlansRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline GetUsagePlansRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the API key associated with the usage plans.</p>
-     */
     inline GetUsagePlansRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of returned results per page. The default value is 25 and
-     * the maximum value is 500.</p>
-     */
     inline GetUsagePlansRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_position;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CONFIGSERVICE_API PutAggregationAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns an AggregationAuthorization object. </p>
      */
     inline const AggregationAuthorization& GetAggregationAuthorization() const{ return m_aggregationAuthorization; }
-
-    /**
-     * <p>Returns an AggregationAuthorization object. </p>
-     */
     inline void SetAggregationAuthorization(const AggregationAuthorization& value) { m_aggregationAuthorization = value; }
-
-    /**
-     * <p>Returns an AggregationAuthorization object. </p>
-     */
     inline void SetAggregationAuthorization(AggregationAuthorization&& value) { m_aggregationAuthorization = std::move(value); }
-
-    /**
-     * <p>Returns an AggregationAuthorization object. </p>
-     */
     inline PutAggregationAuthorizationResult& WithAggregationAuthorization(const AggregationAuthorization& value) { SetAggregationAuthorization(value); return *this;}
-
-    /**
-     * <p>Returns an AggregationAuthorization object. </p>
-     */
     inline PutAggregationAuthorizationResult& WithAggregationAuthorization(AggregationAuthorization&& value) { SetAggregationAuthorization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutAggregationAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutAggregationAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutAggregationAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AggregationAuthorization m_aggregationAuthorization;

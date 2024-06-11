@@ -37,46 +37,19 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the group in Amazon DataZone.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline GroupDetails& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline GroupDetails& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the group in Amazon DataZone.</p>
-     */
     inline GroupDetails& WithGroupId(const char* value) { SetGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupId;

@@ -34,151 +34,64 @@ namespace Model
     AWS_QUICKSIGHT_API UpdateThemePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID for the theme.</p>
      */
     inline const Aws::String& GetThemeId() const{ return m_themeId; }
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline void SetThemeId(const Aws::String& value) { m_themeId = value; }
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline void SetThemeId(Aws::String&& value) { m_themeId = std::move(value); }
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline void SetThemeId(const char* value) { m_themeId.assign(value); }
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeId(const char* value) { SetThemeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the theme.</p>
      */
     inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline void SetThemeArn(const Aws::String& value) { m_themeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline void SetThemeArn(Aws::String&& value) { m_themeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline void SetThemeArn(const char* value) { m_themeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resulting list of resource permissions for the theme.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
-
-    /**
-     * <p>The resulting list of resource permissions for the theme.</p>
-     */
     inline UpdateThemePermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateThemePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateThemePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateThemePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline UpdateThemePermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_themeId;

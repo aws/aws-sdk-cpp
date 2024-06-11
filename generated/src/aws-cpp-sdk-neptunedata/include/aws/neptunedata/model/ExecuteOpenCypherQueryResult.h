@@ -33,53 +33,27 @@ namespace Model
     AWS_NEPTUNEDATA_API ExecuteOpenCypherQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The openCypherquery results.</p>
      */
     inline Aws::Utils::DocumentView GetResults() const{ return m_results; }
-
-    /**
-     * <p>The openCypherquery results.</p>
-     */
     inline void SetResults(const Aws::Utils::Document& value) { m_results = value; }
-
-    /**
-     * <p>The openCypherquery results.</p>
-     */
     inline void SetResults(Aws::Utils::Document&& value) { m_results = std::move(value); }
-
-    /**
-     * <p>The openCypherquery results.</p>
-     */
     inline ExecuteOpenCypherQueryResult& WithResults(const Aws::Utils::Document& value) { SetResults(value); return *this;}
-
-    /**
-     * <p>The openCypherquery results.</p>
-     */
     inline ExecuteOpenCypherQueryResult& WithResults(Aws::Utils::Document&& value) { SetResults(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteOpenCypherQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteOpenCypherQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteOpenCypherQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Document m_results;

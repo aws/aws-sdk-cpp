@@ -43,311 +43,112 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The acknowledgement status of the order.</p>
      */
     inline const AcknowledgmentStatus& GetAcknowledgmentStatus() const{ return m_acknowledgmentStatus; }
-
-    /**
-     * <p>The acknowledgement status of the order.</p>
-     */
     inline bool AcknowledgmentStatusHasBeenSet() const { return m_acknowledgmentStatusHasBeenSet; }
-
-    /**
-     * <p>The acknowledgement status of the order.</p>
-     */
     inline void SetAcknowledgmentStatus(const AcknowledgmentStatus& value) { m_acknowledgmentStatusHasBeenSet = true; m_acknowledgmentStatus = value; }
-
-    /**
-     * <p>The acknowledgement status of the order.</p>
-     */
     inline void SetAcknowledgmentStatus(AcknowledgmentStatus&& value) { m_acknowledgmentStatusHasBeenSet = true; m_acknowledgmentStatus = std::move(value); }
-
-    /**
-     * <p>The acknowledgement status of the order.</p>
-     */
     inline Order& WithAcknowledgmentStatus(const AcknowledgmentStatus& value) { SetAcknowledgmentStatus(value); return *this;}
-
-    /**
-     * <p>The acknowledgement status of the order.</p>
-     */
     inline Order& WithAcknowledgmentStatus(AcknowledgmentStatus&& value) { SetAcknowledgmentStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation time of the order.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The creation time of the order.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The creation time of the order.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The creation time of the order.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The creation time of the order.</p>
-     */
     inline Order& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The creation time of the order.</p>
-     */
     inline Order& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
      */
     inline const Aws::String& GetNetworkArn() const{ return m_networkArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline bool NetworkArnHasBeenSet() const { return m_networkArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline void SetNetworkArn(const Aws::String& value) { m_networkArnHasBeenSet = true; m_networkArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline void SetNetworkArn(Aws::String&& value) { m_networkArnHasBeenSet = true; m_networkArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline void SetNetworkArn(const char* value) { m_networkArnHasBeenSet = true; m_networkArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline Order& WithNetworkArn(const Aws::String& value) { SetNetworkArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline Order& WithNetworkArn(Aws::String&& value) { SetNetworkArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-     */
     inline Order& WithNetworkArn(const char* value) { SetNetworkArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network site associated with this
      * order.</p>
      */
     inline const Aws::String& GetNetworkSiteArn() const{ return m_networkSiteArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline bool NetworkSiteArnHasBeenSet() const { return m_networkSiteArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline void SetNetworkSiteArn(const Aws::String& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline void SetNetworkSiteArn(Aws::String&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline void SetNetworkSiteArn(const char* value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline Order& WithNetworkSiteArn(const Aws::String& value) { SetNetworkSiteArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline Order& WithNetworkSiteArn(Aws::String&& value) { SetNetworkSiteArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the network site associated with this
-     * order.</p>
-     */
     inline Order& WithNetworkSiteArn(const char* value) { SetNetworkSiteArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the order.</p>
      */
     inline const Aws::String& GetOrderArn() const{ return m_orderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline bool OrderArnHasBeenSet() const { return m_orderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(const Aws::String& value) { m_orderArnHasBeenSet = true; m_orderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(Aws::String&& value) { m_orderArnHasBeenSet = true; m_orderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(const char* value) { m_orderArnHasBeenSet = true; m_orderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline Order& WithOrderArn(const Aws::String& value) { SetOrderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline Order& WithOrderArn(Aws::String&& value) { SetOrderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline Order& WithOrderArn(const char* value) { SetOrderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the network resources placed in the order.</p>
      */
     inline const Aws::Vector<OrderedResourceDefinition>& GetOrderedResources() const{ return m_orderedResources; }
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline bool OrderedResourcesHasBeenSet() const { return m_orderedResourcesHasBeenSet; }
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline void SetOrderedResources(const Aws::Vector<OrderedResourceDefinition>& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources = value; }
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline void SetOrderedResources(Aws::Vector<OrderedResourceDefinition>&& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources = std::move(value); }
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline Order& WithOrderedResources(const Aws::Vector<OrderedResourceDefinition>& value) { SetOrderedResources(value); return *this;}
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline Order& WithOrderedResources(Aws::Vector<OrderedResourceDefinition>&& value) { SetOrderedResources(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline Order& AddOrderedResources(const OrderedResourceDefinition& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the network resources placed in the order.</p>
-     */
     inline Order& AddOrderedResources(OrderedResourceDefinition&& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The shipping address of the order.</p>
      */
     inline const Address& GetShippingAddress() const{ return m_shippingAddress; }
-
-    /**
-     * <p>The shipping address of the order.</p>
-     */
     inline bool ShippingAddressHasBeenSet() const { return m_shippingAddressHasBeenSet; }
-
-    /**
-     * <p>The shipping address of the order.</p>
-     */
     inline void SetShippingAddress(const Address& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = value; }
-
-    /**
-     * <p>The shipping address of the order.</p>
-     */
     inline void SetShippingAddress(Address&& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = std::move(value); }
-
-    /**
-     * <p>The shipping address of the order.</p>
-     */
     inline Order& WithShippingAddress(const Address& value) { SetShippingAddress(value); return *this;}
-
-    /**
-     * <p>The shipping address of the order.</p>
-     */
     inline Order& WithShippingAddress(Address&& value) { SetShippingAddress(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tracking information of the order.</p>
      */
     inline const Aws::Vector<TrackingInformation>& GetTrackingInformation() const{ return m_trackingInformation; }
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline bool TrackingInformationHasBeenSet() const { return m_trackingInformationHasBeenSet; }
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline void SetTrackingInformation(const Aws::Vector<TrackingInformation>& value) { m_trackingInformationHasBeenSet = true; m_trackingInformation = value; }
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline void SetTrackingInformation(Aws::Vector<TrackingInformation>&& value) { m_trackingInformationHasBeenSet = true; m_trackingInformation = std::move(value); }
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline Order& WithTrackingInformation(const Aws::Vector<TrackingInformation>& value) { SetTrackingInformation(value); return *this;}
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline Order& WithTrackingInformation(Aws::Vector<TrackingInformation>&& value) { SetTrackingInformation(std::move(value)); return *this;}
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline Order& AddTrackingInformation(const TrackingInformation& value) { m_trackingInformationHasBeenSet = true; m_trackingInformation.push_back(value); return *this; }
-
-    /**
-     * <p>The tracking information of the order.</p>
-     */
     inline Order& AddTrackingInformation(TrackingInformation&& value) { m_trackingInformationHasBeenSet = true; m_trackingInformation.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AcknowledgmentStatus m_acknowledgmentStatus;

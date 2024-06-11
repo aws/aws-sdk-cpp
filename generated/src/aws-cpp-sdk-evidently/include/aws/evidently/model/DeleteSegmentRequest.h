@@ -32,46 +32,19 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the segment to delete.</p>
      */
     inline const Aws::String& GetSegment() const{ return m_segment; }
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline DeleteSegmentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline DeleteSegmentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the segment to delete.</p>
-     */
     inline DeleteSegmentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_segment;

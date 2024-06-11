@@ -37,87 +37,33 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the inventory asset.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline AssetTargetNameMap& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline AssetTargetNameMap& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the inventory asset.</p>
-     */
     inline AssetTargetNameMap& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target name in the asset target name map.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline AssetTargetNameMap& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline AssetTargetNameMap& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The target name in the asset target name map.</p>
-     */
     inline AssetTargetNameMap& WithTargetName(const char* value) { SetTargetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assetId;

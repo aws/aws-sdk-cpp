@@ -39,67 +39,29 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the authentication mode.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Describes the authentication mode.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Describes the authentication mode.</p>
-     */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Describes the authentication mode.</p>
-     */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Describes the authentication mode.</p>
-     */
     inline BackendAPIAuthType& WithMode(const Mode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Describes the authentication mode.</p>
-     */
     inline BackendAPIAuthType& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes settings for the authentication mode.</p>
      */
     inline const BackendAPIAppSyncAuthSettings& GetSettings() const{ return m_settings; }
-
-    /**
-     * <p>Describes settings for the authentication mode.</p>
-     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-
-    /**
-     * <p>Describes settings for the authentication mode.</p>
-     */
     inline void SetSettings(const BackendAPIAppSyncAuthSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-
-    /**
-     * <p>Describes settings for the authentication mode.</p>
-     */
     inline void SetSettings(BackendAPIAppSyncAuthSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-
-    /**
-     * <p>Describes settings for the authentication mode.</p>
-     */
     inline BackendAPIAuthType& WithSettings(const BackendAPIAppSyncAuthSettings& value) { SetSettings(value); return *this;}
-
-    /**
-     * <p>Describes settings for the authentication mode.</p>
-     */
     inline BackendAPIAuthType& WithSettings(BackendAPIAppSyncAuthSettings&& value) { SetSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Mode m_mode;

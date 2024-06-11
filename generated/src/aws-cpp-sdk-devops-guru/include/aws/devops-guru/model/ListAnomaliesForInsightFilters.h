@@ -38,24 +38,15 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
-
-    
     inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
-
-    
     inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
-
-    
     inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
-
-    
     inline ListAnomaliesForInsightFilters& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
-
-    
     inline ListAnomaliesForInsightFilters& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServiceCollection m_serviceCollection;

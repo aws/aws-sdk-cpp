@@ -32,40 +32,24 @@ namespace Model
     AWS_SNS_API GetSMSSandboxAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Indicates whether the calling Amazon Web Services account is in the SMS
      * sandbox.</p>
      */
     inline bool GetIsInSandbox() const{ return m_isInSandbox; }
-
-    /**
-     * <p>Indicates whether the calling Amazon Web Services account is in the SMS
-     * sandbox.</p>
-     */
     inline void SetIsInSandbox(bool value) { m_isInSandbox = value; }
-
-    /**
-     * <p>Indicates whether the calling Amazon Web Services account is in the SMS
-     * sandbox.</p>
-     */
     inline GetSMSSandboxAccountStatusResult& WithIsInSandbox(bool value) { SetIsInSandbox(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetSMSSandboxAccountStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetSMSSandboxAccountStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_isInSandbox;

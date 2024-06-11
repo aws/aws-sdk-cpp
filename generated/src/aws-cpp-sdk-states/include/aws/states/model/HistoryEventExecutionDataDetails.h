@@ -36,30 +36,16 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
      * <code>false</code> for API calls.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
-
-    /**
-     * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code> for API calls.</p>
-     */
     inline bool TruncatedHasBeenSet() const { return m_truncatedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code> for API calls.</p>
-     */
     inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
-
-    /**
-     * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code> for API calls.</p>
-     */
     inline HistoryEventExecutionDataDetails& WithTruncated(bool value) { SetTruncated(value); return *this;}
-
+    ///@}
   private:
 
     bool m_truncated;

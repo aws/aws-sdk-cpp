@@ -32,87 +32,33 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the service account to delete.</p>
      */
     inline const Aws::String& GetServiceAccountId() const{ return m_serviceAccountId; }
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline bool ServiceAccountIdHasBeenSet() const { return m_serviceAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline void SetServiceAccountId(const Aws::String& value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId = value; }
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline void SetServiceAccountId(Aws::String&& value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline void SetServiceAccountId(const char* value) { m_serviceAccountIdHasBeenSet = true; m_serviceAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithServiceAccountId(const Aws::String& value) { SetServiceAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithServiceAccountId(Aws::String&& value) { SetServiceAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the service account to delete.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithServiceAccountId(const char* value) { SetServiceAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace where the service account resides.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace where the service account resides.</p>
-     */
     inline DeleteWorkspaceServiceAccountRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceAccountId;

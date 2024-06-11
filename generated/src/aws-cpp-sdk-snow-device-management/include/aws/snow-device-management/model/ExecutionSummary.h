@@ -39,159 +39,59 @@ namespace Model
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the execution.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline ExecutionSummary& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline ExecutionSummary& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the execution.</p>
-     */
     inline ExecutionSummary& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the managed device that the task is being executed on.</p>
      */
     inline const Aws::String& GetManagedDeviceId() const{ return m_managedDeviceId; }
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline bool ManagedDeviceIdHasBeenSet() const { return m_managedDeviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline void SetManagedDeviceId(const Aws::String& value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId = value; }
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline void SetManagedDeviceId(Aws::String&& value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline void SetManagedDeviceId(const char* value) { m_managedDeviceIdHasBeenSet = true; m_managedDeviceId.assign(value); }
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline ExecutionSummary& WithManagedDeviceId(const Aws::String& value) { SetManagedDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline ExecutionSummary& WithManagedDeviceId(Aws::String&& value) { SetManagedDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the managed device that the task is being executed on.</p>
-     */
     inline ExecutionSummary& WithManagedDeviceId(const char* value) { SetManagedDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the execution.</p>
      */
     inline const ExecutionState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the execution.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the execution.</p>
-     */
     inline void SetState(const ExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the execution.</p>
-     */
     inline void SetState(ExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the execution.</p>
-     */
     inline ExecutionSummary& WithState(const ExecutionState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the execution.</p>
-     */
     inline ExecutionSummary& WithState(ExecutionState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the task.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline ExecutionSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline ExecutionSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task.</p>
-     */
     inline ExecutionSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_executionId;

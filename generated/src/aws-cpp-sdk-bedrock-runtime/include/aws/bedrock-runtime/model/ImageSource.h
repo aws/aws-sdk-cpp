@@ -37,42 +37,18 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
      * base64 encode the image bytes.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
-     */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
-     */
     inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
-     */
     inline ImageSource& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>The raw image bytes for the image. If you use an AWS SDK, you don't need to
-     * base64 encode the image bytes.</p>
-     */
     inline ImageSource& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_bytes;

@@ -38,67 +38,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attendee information, including attendee ID and join token.</p>
      */
     inline const Attendee& GetAttendee() const{ return m_attendee; }
-
-    /**
-     * <p>The attendee information, including attendee ID and join token.</p>
-     */
     inline bool AttendeeHasBeenSet() const { return m_attendeeHasBeenSet; }
-
-    /**
-     * <p>The attendee information, including attendee ID and join token.</p>
-     */
     inline void SetAttendee(const Attendee& value) { m_attendeeHasBeenSet = true; m_attendee = value; }
-
-    /**
-     * <p>The attendee information, including attendee ID and join token.</p>
-     */
     inline void SetAttendee(Attendee&& value) { m_attendeeHasBeenSet = true; m_attendee = std::move(value); }
-
-    /**
-     * <p>The attendee information, including attendee ID and join token.</p>
-     */
     inline ConnectionData& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
-
-    /**
-     * <p>The attendee information, including attendee ID and join token.</p>
-     */
     inline ConnectionData& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A meeting created using the Amazon Chime SDK.</p>
      */
     inline const Meeting& GetMeeting() const{ return m_meeting; }
-
-    /**
-     * <p>A meeting created using the Amazon Chime SDK.</p>
-     */
     inline bool MeetingHasBeenSet() const { return m_meetingHasBeenSet; }
-
-    /**
-     * <p>A meeting created using the Amazon Chime SDK.</p>
-     */
     inline void SetMeeting(const Meeting& value) { m_meetingHasBeenSet = true; m_meeting = value; }
-
-    /**
-     * <p>A meeting created using the Amazon Chime SDK.</p>
-     */
     inline void SetMeeting(Meeting&& value) { m_meetingHasBeenSet = true; m_meeting = std::move(value); }
-
-    /**
-     * <p>A meeting created using the Amazon Chime SDK.</p>
-     */
     inline ConnectionData& WithMeeting(const Meeting& value) { SetMeeting(value); return *this;}
-
-    /**
-     * <p>A meeting created using the Amazon Chime SDK.</p>
-     */
     inline ConnectionData& WithMeeting(Meeting&& value) { SetMeeting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Attendee m_attendee;

@@ -44,49 +44,21 @@ namespace Model
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of ACM's <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
     inline const RenewalStatus& GetRenewalStatus() const{ return m_renewalStatus; }
-
-    /**
-     * <p>The status of ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> of the certificate.</p>
-     */
     inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
-
-    /**
-     * <p>The status of ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> of the certificate.</p>
-     */
     inline void SetRenewalStatus(const RenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
-
-    /**
-     * <p>The status of ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> of the certificate.</p>
-     */
     inline void SetRenewalStatus(RenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
-
-    /**
-     * <p>The status of ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> of the certificate.</p>
-     */
     inline RenewalSummary& WithRenewalStatus(const RenewalStatus& value) { SetRenewalStatus(value); return *this;}
-
-    /**
-     * <p>The status of ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> of the certificate.</p>
-     */
     inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the validation of each domain name in the
      * certificate, as it pertains to ACM's <a
@@ -96,139 +68,38 @@ namespace Model
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline RenewalSummary& WithDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { SetDomainValidationOptions(value); return *this;}
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline RenewalSummary& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline RenewalSummary& AddDomainValidationOptions(const DomainValidation& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
-
-    /**
-     * <p>Contains information about the validation of each domain name in the
-     * certificate, as it pertains to ACM's <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a
-     * result of the <a>RequestCertificate</a> request. This field exists only when the
-     * certificate type is <code>AMAZON_ISSUED</code>.</p>
-     */
     inline RenewalSummary& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason that a renewal request was unsuccessful.</p>
      */
     inline const FailureReason& GetRenewalStatusReason() const{ return m_renewalStatusReason; }
-
-    /**
-     * <p>The reason that a renewal request was unsuccessful.</p>
-     */
     inline bool RenewalStatusReasonHasBeenSet() const { return m_renewalStatusReasonHasBeenSet; }
-
-    /**
-     * <p>The reason that a renewal request was unsuccessful.</p>
-     */
     inline void SetRenewalStatusReason(const FailureReason& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
-
-    /**
-     * <p>The reason that a renewal request was unsuccessful.</p>
-     */
     inline void SetRenewalStatusReason(FailureReason&& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = std::move(value); }
-
-    /**
-     * <p>The reason that a renewal request was unsuccessful.</p>
-     */
     inline RenewalSummary& WithRenewalStatusReason(const FailureReason& value) { SetRenewalStatusReason(value); return *this;}
-
-    /**
-     * <p>The reason that a renewal request was unsuccessful.</p>
-     */
     inline RenewalSummary& WithRenewalStatusReason(FailureReason&& value) { SetRenewalStatusReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the renewal summary was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The time at which the renewal summary was last updated.</p>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The time at which the renewal summary was last updated.</p>
-     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The time at which the renewal summary was last updated.</p>
-     */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The time at which the renewal summary was last updated.</p>
-     */
     inline RenewalSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The time at which the renewal summary was last updated.</p>
-     */
     inline RenewalSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RenewalStatus m_renewalStatus;

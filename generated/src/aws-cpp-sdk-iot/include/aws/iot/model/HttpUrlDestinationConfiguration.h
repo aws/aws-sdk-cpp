@@ -38,54 +38,20 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL IoT uses to confirm ownership of or access to the topic rule
      * destination URL.</p>
      */
     inline const Aws::String& GetConfirmationUrl() const{ return m_confirmationUrl; }
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline bool ConfirmationUrlHasBeenSet() const { return m_confirmationUrlHasBeenSet; }
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline void SetConfirmationUrl(const Aws::String& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = value; }
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline void SetConfirmationUrl(Aws::String&& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = std::move(value); }
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline void SetConfirmationUrl(const char* value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl.assign(value); }
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline HttpUrlDestinationConfiguration& WithConfirmationUrl(const Aws::String& value) { SetConfirmationUrl(value); return *this;}
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline HttpUrlDestinationConfiguration& WithConfirmationUrl(Aws::String&& value) { SetConfirmationUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL IoT uses to confirm ownership of or access to the topic rule
-     * destination URL.</p>
-     */
     inline HttpUrlDestinationConfiguration& WithConfirmationUrl(const char* value) { SetConfirmationUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_confirmationUrl;

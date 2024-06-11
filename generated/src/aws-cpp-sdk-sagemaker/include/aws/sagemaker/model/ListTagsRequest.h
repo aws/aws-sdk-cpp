@@ -34,132 +34,46 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline ListTagsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline ListTagsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-     * retrieve.</p>
-     */
     inline ListTagsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
      * SageMaker returns this token. To retrieve the next set of tags, use it in the
      * subsequent request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline ListTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline ListTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * SageMaker returns this token. To retrieve the next set of tags, use it in the
-     * subsequent request. </p>
-     */
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of tags to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
     inline ListTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

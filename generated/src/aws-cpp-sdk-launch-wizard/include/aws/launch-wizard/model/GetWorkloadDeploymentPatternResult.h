@@ -33,53 +33,27 @@ namespace Model
     AWS_LAUNCHWIZARD_API GetWorkloadDeploymentPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the workload deployment pattern.</p>
      */
     inline const WorkloadDeploymentPatternData& GetWorkloadDeploymentPattern() const{ return m_workloadDeploymentPattern; }
-
-    /**
-     * <p>Details about the workload deployment pattern.</p>
-     */
     inline void SetWorkloadDeploymentPattern(const WorkloadDeploymentPatternData& value) { m_workloadDeploymentPattern = value; }
-
-    /**
-     * <p>Details about the workload deployment pattern.</p>
-     */
     inline void SetWorkloadDeploymentPattern(WorkloadDeploymentPatternData&& value) { m_workloadDeploymentPattern = std::move(value); }
-
-    /**
-     * <p>Details about the workload deployment pattern.</p>
-     */
     inline GetWorkloadDeploymentPatternResult& WithWorkloadDeploymentPattern(const WorkloadDeploymentPatternData& value) { SetWorkloadDeploymentPattern(value); return *this;}
-
-    /**
-     * <p>Details about the workload deployment pattern.</p>
-     */
     inline GetWorkloadDeploymentPatternResult& WithWorkloadDeploymentPattern(WorkloadDeploymentPatternData&& value) { SetWorkloadDeploymentPattern(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWorkloadDeploymentPatternResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWorkloadDeploymentPatternResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWorkloadDeploymentPatternResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     WorkloadDeploymentPatternData m_workloadDeploymentPattern;

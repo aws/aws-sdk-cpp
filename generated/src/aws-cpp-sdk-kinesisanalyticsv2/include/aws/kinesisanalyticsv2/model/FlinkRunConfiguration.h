@@ -36,6 +36,7 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When restoring from a snapshot, specifies whether the runtime is allowed to
      * skip a state that cannot be mapped to the new program. This will happen if the
@@ -51,55 +52,10 @@ namespace Model
      * was previously set to <code>true</code>.</p> 
      */
     inline bool GetAllowNonRestoredState() const{ return m_allowNonRestoredState; }
-
-    /**
-     * <p>When restoring from a snapshot, specifies whether the runtime is allowed to
-     * skip a state that cannot be mapped to the new program. This will happen if the
-     * program is updated between snapshots to remove stateful parameters, and state
-     * data in the snapshot no longer corresponds to valid application data. For more
-     * information, see <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
-     * Allowing Non-Restored State</a> in the <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
-     * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
-     * you update your application without specifying this parameter,
-     * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
-     * was previously set to <code>true</code>.</p> 
-     */
     inline bool AllowNonRestoredStateHasBeenSet() const { return m_allowNonRestoredStateHasBeenSet; }
-
-    /**
-     * <p>When restoring from a snapshot, specifies whether the runtime is allowed to
-     * skip a state that cannot be mapped to the new program. This will happen if the
-     * program is updated between snapshots to remove stateful parameters, and state
-     * data in the snapshot no longer corresponds to valid application data. For more
-     * information, see <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
-     * Allowing Non-Restored State</a> in the <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
-     * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
-     * you update your application without specifying this parameter,
-     * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
-     * was previously set to <code>true</code>.</p> 
-     */
     inline void SetAllowNonRestoredState(bool value) { m_allowNonRestoredStateHasBeenSet = true; m_allowNonRestoredState = value; }
-
-    /**
-     * <p>When restoring from a snapshot, specifies whether the runtime is allowed to
-     * skip a state that cannot be mapped to the new program. This will happen if the
-     * program is updated between snapshots to remove stateful parameters, and state
-     * data in the snapshot no longer corresponds to valid application data. For more
-     * information, see <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
-     * Allowing Non-Restored State</a> in the <a
-     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
-     * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
-     * you update your application without specifying this parameter,
-     * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
-     * was previously set to <code>true</code>.</p> 
-     */
     inline FlinkRunConfiguration& WithAllowNonRestoredState(bool value) { SetAllowNonRestoredState(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowNonRestoredState;

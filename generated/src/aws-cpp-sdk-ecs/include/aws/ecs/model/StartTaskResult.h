@@ -35,106 +35,43 @@ namespace Model
     AWS_ECS_API StartTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A full description of the tasks that were started. Each task that was
      * successfully placed on your container instances is described.</p>
      */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = std::move(value); }
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline StartTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline StartTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline StartTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
-
-    /**
-     * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances is described.</p>
-     */
     inline StartTaskResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline StartTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline StartTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline StartTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline StartTaskResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Task> m_tasks;

@@ -39,97 +39,35 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A container for the S3 Storage Lens bucket includes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBuckets() const{ return m_buckets; }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline void SetBuckets(const Aws::Vector<Aws::String>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline void SetBuckets(Aws::Vector<Aws::String>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline Include& WithBuckets(const Aws::Vector<Aws::String>& value) { SetBuckets(value); return *this;}
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline Include& WithBuckets(Aws::Vector<Aws::String>&& value) { SetBuckets(std::move(value)); return *this;}
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline Include& AddBuckets(const Aws::String& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline Include& AddBuckets(Aws::String&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A container for the S3 Storage Lens bucket includes.</p>
-     */
     inline Include& AddBuckets(const char* value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A container for the S3 Storage Lens Region includes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline Include& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline Include& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline Include& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline Include& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A container for the S3 Storage Lens Region includes.</p>
-     */
     inline Include& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_buckets;

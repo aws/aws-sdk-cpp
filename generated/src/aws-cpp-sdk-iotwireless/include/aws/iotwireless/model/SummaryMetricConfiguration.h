@@ -37,36 +37,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the configuration of summary metrics.</p>
      */
     inline const SummaryMetricConfigurationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the configuration of summary metrics.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the configuration of summary metrics.</p>
-     */
     inline void SetStatus(const SummaryMetricConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the configuration of summary metrics.</p>
-     */
     inline void SetStatus(SummaryMetricConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the configuration of summary metrics.</p>
-     */
     inline SummaryMetricConfiguration& WithStatus(const SummaryMetricConfigurationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the configuration of summary metrics.</p>
-     */
     inline SummaryMetricConfiguration& WithStatus(SummaryMetricConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SummaryMetricConfigurationStatus m_status;

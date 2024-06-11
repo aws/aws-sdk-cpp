@@ -37,36 +37,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The access log configuration.</p>
      */
     inline const VirtualGatewayAccessLog& GetAccessLog() const{ return m_accessLog; }
-
-    /**
-     * <p>The access log configuration.</p>
-     */
     inline bool AccessLogHasBeenSet() const { return m_accessLogHasBeenSet; }
-
-    /**
-     * <p>The access log configuration.</p>
-     */
     inline void SetAccessLog(const VirtualGatewayAccessLog& value) { m_accessLogHasBeenSet = true; m_accessLog = value; }
-
-    /**
-     * <p>The access log configuration.</p>
-     */
     inline void SetAccessLog(VirtualGatewayAccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::move(value); }
-
-    /**
-     * <p>The access log configuration.</p>
-     */
     inline VirtualGatewayLogging& WithAccessLog(const VirtualGatewayAccessLog& value) { SetAccessLog(value); return *this;}
-
-    /**
-     * <p>The access log configuration.</p>
-     */
     inline VirtualGatewayLogging& WithAccessLog(VirtualGatewayAccessLog&& value) { SetAccessLog(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualGatewayAccessLog m_accessLog;

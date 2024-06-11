@@ -34,99 +34,42 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of components for the Amplify app.</p>
      */
     inline const Aws::Vector<ComponentSummary>& GetEntities() const{ return m_entities; }
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline void SetEntities(const Aws::Vector<ComponentSummary>& value) { m_entities = value; }
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline void SetEntities(Aws::Vector<ComponentSummary>&& value) { m_entities = std::move(value); }
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline ListComponentsResult& WithEntities(const Aws::Vector<ComponentSummary>& value) { SetEntities(value); return *this;}
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline ListComponentsResult& WithEntities(Aws::Vector<ComponentSummary>&& value) { SetEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline ListComponentsResult& AddEntities(const ComponentSummary& value) { m_entities.push_back(value); return *this; }
-
-    /**
-     * <p>The list of components for the Amplify app.</p>
-     */
     inline ListComponentsResult& AddEntities(ComponentSummary&& value) { m_entities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListComponentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListComponentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListComponentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListComponentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListComponentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListComponentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ComponentSummary> m_entities;

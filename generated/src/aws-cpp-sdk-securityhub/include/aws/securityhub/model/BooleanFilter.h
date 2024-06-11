@@ -35,26 +35,15 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the boolean.</p>
      */
     inline bool GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the boolean.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the boolean.</p>
-     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the boolean.</p>
-     */
     inline BooleanFilter& WithValue(bool value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     bool m_value;

@@ -40,65 +40,29 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const FlowDefinition& GetFlowDefinition() const{ return m_flowDefinition; }
-
-    
     inline bool FlowDefinitionHasBeenSet() const { return m_flowDefinitionHasBeenSet; }
-
-    
     inline void SetFlowDefinition(const FlowDefinition& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = value; }
-
-    
     inline void SetFlowDefinition(FlowDefinition&& value) { m_flowDefinitionHasBeenSet = true; m_flowDefinition = std::move(value); }
-
-    
     inline AppflowIntegration& WithFlowDefinition(const FlowDefinition& value) { SetFlowDefinition(value); return *this;}
-
-    
     inline AppflowIntegration& WithFlowDefinition(FlowDefinition&& value) { SetFlowDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
      */
     inline const Aws::Vector<Batch>& GetBatches() const{ return m_batches; }
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline bool BatchesHasBeenSet() const { return m_batchesHasBeenSet; }
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline void SetBatches(const Aws::Vector<Batch>& value) { m_batchesHasBeenSet = true; m_batches = value; }
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline void SetBatches(Aws::Vector<Batch>&& value) { m_batchesHasBeenSet = true; m_batches = std::move(value); }
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline AppflowIntegration& WithBatches(const Aws::Vector<Batch>& value) { SetBatches(value); return *this;}
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline AppflowIntegration& WithBatches(Aws::Vector<Batch>&& value) { SetBatches(std::move(value)); return *this;}
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline AppflowIntegration& AddBatches(const Batch& value) { m_batchesHasBeenSet = true; m_batches.push_back(value); return *this; }
-
-    /**
-     * <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-     */
     inline AppflowIntegration& AddBatches(Batch&& value) { m_batchesHasBeenSet = true; m_batches.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     FlowDefinition m_flowDefinition;

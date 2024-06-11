@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the snapshot for which you are requesting information.</p>
      */
     inline const Aws::String& GetInstanceSnapshotName() const{ return m_instanceSnapshotName; }
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline bool InstanceSnapshotNameHasBeenSet() const { return m_instanceSnapshotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline void SetInstanceSnapshotName(const Aws::String& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline void SetInstanceSnapshotName(Aws::String&& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = std::move(value); }
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline void SetInstanceSnapshotName(const char* value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName.assign(value); }
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline GetInstanceSnapshotRequest& WithInstanceSnapshotName(const Aws::String& value) { SetInstanceSnapshotName(value); return *this;}
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline GetInstanceSnapshotRequest& WithInstanceSnapshotName(Aws::String&& value) { SetInstanceSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the snapshot for which you are requesting information.</p>
-     */
     inline GetInstanceSnapshotRequest& WithInstanceSnapshotName(const char* value) { SetInstanceSnapshotName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceSnapshotName;

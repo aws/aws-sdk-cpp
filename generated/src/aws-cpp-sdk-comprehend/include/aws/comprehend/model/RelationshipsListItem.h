@@ -39,82 +39,32 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifers of the child blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline RelationshipsListItem& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline RelationshipsListItem& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline RelationshipsListItem& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline RelationshipsListItem& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Identifers of the child blocks.</p>
-     */
     inline RelationshipsListItem& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Only supported relationship is a child relationship.</p>
      */
     inline const RelationshipType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Only supported relationship is a child relationship.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Only supported relationship is a child relationship.</p>
-     */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Only supported relationship is a child relationship.</p>
-     */
     inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Only supported relationship is a child relationship.</p>
-     */
     inline RelationshipsListItem& WithType(const RelationshipType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Only supported relationship is a child relationship.</p>
-     */
     inline RelationshipsListItem& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_ids;

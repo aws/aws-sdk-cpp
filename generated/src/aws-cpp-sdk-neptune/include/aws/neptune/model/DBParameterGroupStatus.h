@@ -43,87 +43,33 @@ namespace Model
     AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the DP parameter group.</p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline DBParameterGroupStatus& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline DBParameterGroupStatus& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DP parameter group.</p>
-     */
     inline DBParameterGroupStatus& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of parameter updates.</p>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline DBParameterGroupStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline DBParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of parameter updates.</p>
-     */
     inline DBParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBParameterGroupName;

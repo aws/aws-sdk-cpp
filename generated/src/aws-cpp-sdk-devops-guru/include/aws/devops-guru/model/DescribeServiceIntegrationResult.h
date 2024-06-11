@@ -33,43 +33,25 @@ namespace Model
     AWS_DEVOPSGURU_API DescribeServiceIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ServiceIntegrationConfig& GetServiceIntegration() const{ return m_serviceIntegration; }
-
-    
     inline void SetServiceIntegration(const ServiceIntegrationConfig& value) { m_serviceIntegration = value; }
-
-    
     inline void SetServiceIntegration(ServiceIntegrationConfig&& value) { m_serviceIntegration = std::move(value); }
-
-    
     inline DescribeServiceIntegrationResult& WithServiceIntegration(const ServiceIntegrationConfig& value) { SetServiceIntegration(value); return *this;}
-
-    
     inline DescribeServiceIntegrationResult& WithServiceIntegration(ServiceIntegrationConfig&& value) { SetServiceIntegration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServiceIntegrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServiceIntegrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServiceIntegrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceIntegrationConfig m_serviceIntegration;

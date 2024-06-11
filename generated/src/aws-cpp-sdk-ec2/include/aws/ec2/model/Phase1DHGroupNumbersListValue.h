@@ -38,26 +38,15 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Diffie-Hellmann group number.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The Diffie-Hellmann group number.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The Diffie-Hellmann group number.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The Diffie-Hellmann group number.</p>
-     */
     inline Phase1DHGroupNumbersListValue& WithValue(int value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     int m_value;

@@ -38,30 +38,16 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The attribute value. The valid values are <code>true</code> or
      * <code>false</code>.</p>
      */
     inline bool GetValue() const{ return m_value; }
-
-    /**
-     * <p>The attribute value. The valid values are <code>true</code> or
-     * <code>false</code>.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The attribute value. The valid values are <code>true</code> or
-     * <code>false</code>.</p>
-     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The attribute value. The valid values are <code>true</code> or
-     * <code>false</code>.</p>
-     */
     inline AttributeBooleanValue& WithValue(bool value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     bool m_value;

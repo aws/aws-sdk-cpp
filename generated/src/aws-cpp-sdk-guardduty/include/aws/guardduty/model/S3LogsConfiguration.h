@@ -36,26 +36,15 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The status of S3 data event logs as a data source.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
-
-    /**
-     * <p> The status of S3 data event logs as a data source.</p>
-     */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
-
-    /**
-     * <p> The status of S3 data event logs as a data source.</p>
-     */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
-
-    /**
-     * <p> The status of S3 data event logs as a data source.</p>
-     */
     inline S3LogsConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enable;

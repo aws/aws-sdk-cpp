@@ -32,46 +32,19 @@ namespace Model
     AWS_IVSREALTIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ARN of the stage to be deleted.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline DeleteStageRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline DeleteStageRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the stage to be deleted.</p>
-     */
     inline DeleteStageRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

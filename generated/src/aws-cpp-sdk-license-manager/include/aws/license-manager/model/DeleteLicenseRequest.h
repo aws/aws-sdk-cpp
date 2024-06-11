@@ -34,87 +34,33 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the license.</p>
      */
     inline const Aws::String& GetLicenseArn() const{ return m_licenseArn; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline bool LicenseArnHasBeenSet() const { return m_licenseArnHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline void SetLicenseArn(const Aws::String& value) { m_licenseArnHasBeenSet = true; m_licenseArn = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline void SetLicenseArn(Aws::String&& value) { m_licenseArnHasBeenSet = true; m_licenseArn = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline void SetLicenseArn(const char* value) { m_licenseArnHasBeenSet = true; m_licenseArn.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline DeleteLicenseRequest& WithLicenseArn(const Aws::String& value) { SetLicenseArn(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline DeleteLicenseRequest& WithLicenseArn(Aws::String&& value) { SetLicenseArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) of the license.</p>
-     */
     inline DeleteLicenseRequest& WithLicenseArn(const char* value) { SetLicenseArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Current version of the license.</p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline DeleteLicenseRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline DeleteLicenseRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Current version of the license.</p>
-     */
     inline DeleteLicenseRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseArn;

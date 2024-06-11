@@ -38,53 +38,27 @@ namespace Model
     AWS_DEVICEFARM_API GetProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The project to get information about.</p>
      */
     inline const Project& GetProject() const{ return m_project; }
-
-    /**
-     * <p>The project to get information about.</p>
-     */
     inline void SetProject(const Project& value) { m_project = value; }
-
-    /**
-     * <p>The project to get information about.</p>
-     */
     inline void SetProject(Project&& value) { m_project = std::move(value); }
-
-    /**
-     * <p>The project to get information about.</p>
-     */
     inline GetProjectResult& WithProject(const Project& value) { SetProject(value); return *this;}
-
-    /**
-     * <p>The project to get information about.</p>
-     */
     inline GetProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Project m_project;

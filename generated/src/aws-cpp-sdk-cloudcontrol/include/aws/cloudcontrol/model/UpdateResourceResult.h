@@ -33,6 +33,7 @@ namespace Model
     AWS_CLOUDCONTROLAPI_API UpdateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the current status of the resource update request.</p> <p>Use the
      * <code>RequestToken</code> of the <code>ProgressEvent</code> with <a
@@ -40,61 +41,22 @@ namespace Model
      * to return the current status of a resource operation request.</p>
      */
     inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-
-    /**
-     * <p>Represents the current status of the resource update request.</p> <p>Use the
-     * <code>RequestToken</code> of the <code>ProgressEvent</code> with <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * to return the current status of a resource operation request.</p>
-     */
     inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-
-    /**
-     * <p>Represents the current status of the resource update request.</p> <p>Use the
-     * <code>RequestToken</code> of the <code>ProgressEvent</code> with <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * to return the current status of a resource operation request.</p>
-     */
     inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-
-    /**
-     * <p>Represents the current status of the resource update request.</p> <p>Use the
-     * <code>RequestToken</code> of the <code>ProgressEvent</code> with <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * to return the current status of a resource operation request.</p>
-     */
     inline UpdateResourceResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-
-    /**
-     * <p>Represents the current status of the resource update request.</p> <p>Use the
-     * <code>RequestToken</code> of the <code>ProgressEvent</code> with <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * to return the current status of a resource operation request.</p>
-     */
     inline UpdateResourceResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProgressEvent m_progressEvent;

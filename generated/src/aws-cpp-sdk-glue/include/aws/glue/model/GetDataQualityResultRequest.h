@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique result ID for the data quality result.</p>
      */
     inline const Aws::String& GetResultId() const{ return m_resultId; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline GetDataQualityResultRequest& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline GetDataQualityResultRequest& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline GetDataQualityResultRequest& WithResultId(const char* value) { SetResultId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resultId;

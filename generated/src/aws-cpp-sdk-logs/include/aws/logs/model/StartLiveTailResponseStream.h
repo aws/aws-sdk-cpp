@@ -42,141 +42,55 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This object contains information about this Live Tail session, including the
      * log groups included and the log stream filters, if any.</p>
      */
     inline const LiveTailSessionStart& GetSessionStart() const{ return m_sessionStart; }
-
-    /**
-     * <p>This object contains information about this Live Tail session, including the
-     * log groups included and the log stream filters, if any.</p>
-     */
     inline bool SessionStartHasBeenSet() const { return m_sessionStartHasBeenSet; }
-
-    /**
-     * <p>This object contains information about this Live Tail session, including the
-     * log groups included and the log stream filters, if any.</p>
-     */
     inline void SetSessionStart(const LiveTailSessionStart& value) { m_sessionStartHasBeenSet = true; m_sessionStart = value; }
-
-    /**
-     * <p>This object contains information about this Live Tail session, including the
-     * log groups included and the log stream filters, if any.</p>
-     */
     inline void SetSessionStart(LiveTailSessionStart&& value) { m_sessionStartHasBeenSet = true; m_sessionStart = std::move(value); }
-
-    /**
-     * <p>This object contains information about this Live Tail session, including the
-     * log groups included and the log stream filters, if any.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionStart(const LiveTailSessionStart& value) { SetSessionStart(value); return *this;}
-
-    /**
-     * <p>This object contains information about this Live Tail session, including the
-     * log groups included and the log stream filters, if any.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionStart(LiveTailSessionStart&& value) { SetSessionStart(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This object contains the log events and session metadata.</p>
      */
     inline const LiveTailSessionUpdate& GetSessionUpdate() const{ return m_sessionUpdate; }
-
-    /**
-     * <p>This object contains the log events and session metadata.</p>
-     */
     inline bool SessionUpdateHasBeenSet() const { return m_sessionUpdateHasBeenSet; }
-
-    /**
-     * <p>This object contains the log events and session metadata.</p>
-     */
     inline void SetSessionUpdate(const LiveTailSessionUpdate& value) { m_sessionUpdateHasBeenSet = true; m_sessionUpdate = value; }
-
-    /**
-     * <p>This object contains the log events and session metadata.</p>
-     */
     inline void SetSessionUpdate(LiveTailSessionUpdate&& value) { m_sessionUpdateHasBeenSet = true; m_sessionUpdate = std::move(value); }
-
-    /**
-     * <p>This object contains the log events and session metadata.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionUpdate(const LiveTailSessionUpdate& value) { SetSessionUpdate(value); return *this;}
-
-    /**
-     * <p>This object contains the log events and session metadata.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionUpdate(LiveTailSessionUpdate&& value) { SetSessionUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This exception is returned in the stream when the Live Tail session times
      * out. Live Tail sessions time out after three hours.</p>
      */
     inline const SessionTimeoutException& GetSessionTimeoutException() const{ return m_sessionTimeoutException; }
-
-    /**
-     * <p>This exception is returned in the stream when the Live Tail session times
-     * out. Live Tail sessions time out after three hours.</p>
-     */
     inline bool SessionTimeoutExceptionHasBeenSet() const { return m_sessionTimeoutExceptionHasBeenSet; }
-
-    /**
-     * <p>This exception is returned in the stream when the Live Tail session times
-     * out. Live Tail sessions time out after three hours.</p>
-     */
     inline void SetSessionTimeoutException(const SessionTimeoutException& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = value; }
-
-    /**
-     * <p>This exception is returned in the stream when the Live Tail session times
-     * out. Live Tail sessions time out after three hours.</p>
-     */
     inline void SetSessionTimeoutException(SessionTimeoutException&& value) { m_sessionTimeoutExceptionHasBeenSet = true; m_sessionTimeoutException = std::move(value); }
-
-    /**
-     * <p>This exception is returned in the stream when the Live Tail session times
-     * out. Live Tail sessions time out after three hours.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionTimeoutException(const SessionTimeoutException& value) { SetSessionTimeoutException(value); return *this;}
-
-    /**
-     * <p>This exception is returned in the stream when the Live Tail session times
-     * out. Live Tail sessions time out after three hours.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionTimeoutException(SessionTimeoutException&& value) { SetSessionTimeoutException(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This exception is returned if an unknown error occurs.</p>
      */
     inline const SessionStreamingException& GetSessionStreamingException() const{ return m_sessionStreamingException; }
-
-    /**
-     * <p>This exception is returned if an unknown error occurs.</p>
-     */
     inline bool SessionStreamingExceptionHasBeenSet() const { return m_sessionStreamingExceptionHasBeenSet; }
-
-    /**
-     * <p>This exception is returned if an unknown error occurs.</p>
-     */
     inline void SetSessionStreamingException(const SessionStreamingException& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = value; }
-
-    /**
-     * <p>This exception is returned if an unknown error occurs.</p>
-     */
     inline void SetSessionStreamingException(SessionStreamingException&& value) { m_sessionStreamingExceptionHasBeenSet = true; m_sessionStreamingException = std::move(value); }
-
-    /**
-     * <p>This exception is returned if an unknown error occurs.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionStreamingException(const SessionStreamingException& value) { SetSessionStreamingException(value); return *this;}
-
-    /**
-     * <p>This exception is returned if an unknown error occurs.</p>
-     */
     inline StartLiveTailResponseStream& WithSessionStreamingException(SessionStreamingException&& value) { SetSessionStreamingException(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LiveTailSessionStart m_sessionStart;

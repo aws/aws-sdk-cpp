@@ -36,47 +36,25 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The default size of the EBS storage volume for a space.</p>
      */
     inline int GetDefaultEbsVolumeSizeInGb() const{ return m_defaultEbsVolumeSizeInGb; }
-
-    /**
-     * <p>The default size of the EBS storage volume for a space.</p>
-     */
     inline bool DefaultEbsVolumeSizeInGbHasBeenSet() const { return m_defaultEbsVolumeSizeInGbHasBeenSet; }
-
-    /**
-     * <p>The default size of the EBS storage volume for a space.</p>
-     */
     inline void SetDefaultEbsVolumeSizeInGb(int value) { m_defaultEbsVolumeSizeInGbHasBeenSet = true; m_defaultEbsVolumeSizeInGb = value; }
-
-    /**
-     * <p>The default size of the EBS storage volume for a space.</p>
-     */
     inline DefaultEbsStorageSettings& WithDefaultEbsVolumeSizeInGb(int value) { SetDefaultEbsVolumeSizeInGb(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum size of the EBS storage volume for a space.</p>
      */
     inline int GetMaximumEbsVolumeSizeInGb() const{ return m_maximumEbsVolumeSizeInGb; }
-
-    /**
-     * <p>The maximum size of the EBS storage volume for a space.</p>
-     */
     inline bool MaximumEbsVolumeSizeInGbHasBeenSet() const { return m_maximumEbsVolumeSizeInGbHasBeenSet; }
-
-    /**
-     * <p>The maximum size of the EBS storage volume for a space.</p>
-     */
     inline void SetMaximumEbsVolumeSizeInGb(int value) { m_maximumEbsVolumeSizeInGbHasBeenSet = true; m_maximumEbsVolumeSizeInGb = value; }
-
-    /**
-     * <p>The maximum size of the EBS storage volume for a space.</p>
-     */
     inline DefaultEbsStorageSettings& WithMaximumEbsVolumeSizeInGb(int value) { SetMaximumEbsVolumeSizeInGb(value); return *this;}
-
+    ///@}
   private:
 
     int m_defaultEbsVolumeSizeInGb;

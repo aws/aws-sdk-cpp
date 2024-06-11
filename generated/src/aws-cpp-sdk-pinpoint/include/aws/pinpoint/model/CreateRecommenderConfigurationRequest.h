@@ -32,24 +32,15 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const CreateRecommenderConfiguration& GetCreateRecommenderConfiguration() const{ return m_createRecommenderConfiguration; }
-
-    
     inline bool CreateRecommenderConfigurationHasBeenSet() const { return m_createRecommenderConfigurationHasBeenSet; }
-
-    
     inline void SetCreateRecommenderConfiguration(const CreateRecommenderConfiguration& value) { m_createRecommenderConfigurationHasBeenSet = true; m_createRecommenderConfiguration = value; }
-
-    
     inline void SetCreateRecommenderConfiguration(CreateRecommenderConfiguration&& value) { m_createRecommenderConfigurationHasBeenSet = true; m_createRecommenderConfiguration = std::move(value); }
-
-    
     inline CreateRecommenderConfigurationRequest& WithCreateRecommenderConfiguration(const CreateRecommenderConfiguration& value) { SetCreateRecommenderConfiguration(value); return *this;}
-
-    
     inline CreateRecommenderConfigurationRequest& WithCreateRecommenderConfiguration(CreateRecommenderConfiguration&& value) { SetCreateRecommenderConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateRecommenderConfiguration m_createRecommenderConfiguration;

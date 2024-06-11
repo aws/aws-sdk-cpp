@@ -45,84 +45,34 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the context.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline ActiveContext& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline ActiveContext& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the context.</p>
-     */
     inline ActiveContext& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the number of turns or seconds that the context is active. Once the
      * time to live expires, the context is no longer returned in a response.</p>
      */
     inline const ActiveContextTimeToLive& GetTimeToLive() const{ return m_timeToLive; }
-
-    /**
-     * <p>Indicates the number of turns or seconds that the context is active. Once the
-     * time to live expires, the context is no longer returned in a response.</p>
-     */
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
-
-    /**
-     * <p>Indicates the number of turns or seconds that the context is active. Once the
-     * time to live expires, the context is no longer returned in a response.</p>
-     */
     inline void SetTimeToLive(const ActiveContextTimeToLive& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
-
-    /**
-     * <p>Indicates the number of turns or seconds that the context is active. Once the
-     * time to live expires, the context is no longer returned in a response.</p>
-     */
     inline void SetTimeToLive(ActiveContextTimeToLive&& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = std::move(value); }
-
-    /**
-     * <p>Indicates the number of turns or seconds that the context is active. Once the
-     * time to live expires, the context is no longer returned in a response.</p>
-     */
     inline ActiveContext& WithTimeToLive(const ActiveContextTimeToLive& value) { SetTimeToLive(value); return *this;}
-
-    /**
-     * <p>Indicates the number of turns or seconds that the context is active. Once the
-     * time to live expires, the context is no longer returned in a response.</p>
-     */
     inline ActiveContext& WithTimeToLive(ActiveContextTimeToLive&& value) { SetTimeToLive(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of contexts active for the request. A context can be activated when a
      * previous intent is fulfilled, or by including the context in the request.</p>
@@ -131,115 +81,19 @@ namespace Model
      * the session are cleared. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContextAttributes() const{ return m_contextAttributes; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline bool ContextAttributesHasBeenSet() const { return m_contextAttributesHasBeenSet; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline void SetContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = value; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline void SetContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::move(value); }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& WithContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetContextAttributes(value); return *this;}
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& WithContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetContextAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(const Aws::String& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(const Aws::String& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(const char* key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(Aws::String&& key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A list of contexts active for the request. A context can be activated when a
-     * previous intent is fulfilled, or by including the context in the request.</p>
-     * <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
-     * list of contexts for the session. If you specify an empty list, all contexts for
-     * the session are cleared. </p>
-     */
     inline ActiveContext& AddContextAttributes(const char* key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

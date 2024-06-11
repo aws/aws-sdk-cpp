@@ -35,47 +35,25 @@ namespace Model
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
     inline int GetRpoInSecs() const{ return m_rpoInSecs; }
-
-    /**
-     * <p>Recovery Point Objective (RPO) in seconds.</p>
-     */
     inline bool RpoInSecsHasBeenSet() const { return m_rpoInSecsHasBeenSet; }
-
-    /**
-     * <p>Recovery Point Objective (RPO) in seconds.</p>
-     */
     inline void SetRpoInSecs(int value) { m_rpoInSecsHasBeenSet = true; m_rpoInSecs = value; }
-
-    /**
-     * <p>Recovery Point Objective (RPO) in seconds.</p>
-     */
     inline FailurePolicy& WithRpoInSecs(int value) { SetRpoInSecs(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
     inline int GetRtoInSecs() const{ return m_rtoInSecs; }
-
-    /**
-     * <p>Recovery Time Objective (RTO) in seconds.</p>
-     */
     inline bool RtoInSecsHasBeenSet() const { return m_rtoInSecsHasBeenSet; }
-
-    /**
-     * <p>Recovery Time Objective (RTO) in seconds.</p>
-     */
     inline void SetRtoInSecs(int value) { m_rtoInSecsHasBeenSet = true; m_rtoInSecs = value; }
-
-    /**
-     * <p>Recovery Time Objective (RTO) in seconds.</p>
-     */
     inline FailurePolicy& WithRtoInSecs(int value) { SetRtoInSecs(value); return *this;}
-
+    ///@}
   private:
 
     int m_rpoInSecs;

@@ -33,53 +33,27 @@ namespace Model
     AWS_DEVICEFARM_API UpdateUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A test spec uploaded to Device Farm.</p>
      */
     inline const Upload& GetUpload() const{ return m_upload; }
-
-    /**
-     * <p>A test spec uploaded to Device Farm.</p>
-     */
     inline void SetUpload(const Upload& value) { m_upload = value; }
-
-    /**
-     * <p>A test spec uploaded to Device Farm.</p>
-     */
     inline void SetUpload(Upload&& value) { m_upload = std::move(value); }
-
-    /**
-     * <p>A test spec uploaded to Device Farm.</p>
-     */
     inline UpdateUploadResult& WithUpload(const Upload& value) { SetUpload(value); return *this;}
-
-    /**
-     * <p>A test spec uploaded to Device Farm.</p>
-     */
     inline UpdateUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Upload m_upload;

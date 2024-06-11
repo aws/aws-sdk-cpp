@@ -38,47 +38,25 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of objects that can be labeled by human workers.</p>
      */
     inline int GetMaxHumanLabeledObjectCount() const{ return m_maxHumanLabeledObjectCount; }
-
-    /**
-     * <p>The maximum number of objects that can be labeled by human workers.</p>
-     */
     inline bool MaxHumanLabeledObjectCountHasBeenSet() const { return m_maxHumanLabeledObjectCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of objects that can be labeled by human workers.</p>
-     */
     inline void SetMaxHumanLabeledObjectCount(int value) { m_maxHumanLabeledObjectCountHasBeenSet = true; m_maxHumanLabeledObjectCount = value; }
-
-    /**
-     * <p>The maximum number of objects that can be labeled by human workers.</p>
-     */
     inline LabelingJobStoppingConditions& WithMaxHumanLabeledObjectCount(int value) { SetMaxHumanLabeledObjectCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of input data objects that should be labeled.</p>
      */
     inline int GetMaxPercentageOfInputDatasetLabeled() const{ return m_maxPercentageOfInputDatasetLabeled; }
-
-    /**
-     * <p>The maximum number of input data objects that should be labeled.</p>
-     */
     inline bool MaxPercentageOfInputDatasetLabeledHasBeenSet() const { return m_maxPercentageOfInputDatasetLabeledHasBeenSet; }
-
-    /**
-     * <p>The maximum number of input data objects that should be labeled.</p>
-     */
     inline void SetMaxPercentageOfInputDatasetLabeled(int value) { m_maxPercentageOfInputDatasetLabeledHasBeenSet = true; m_maxPercentageOfInputDatasetLabeled = value; }
-
-    /**
-     * <p>The maximum number of input data objects that should be labeled.</p>
-     */
     inline LabelingJobStoppingConditions& WithMaxPercentageOfInputDatasetLabeled(int value) { SetMaxPercentageOfInputDatasetLabeled(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxHumanLabeledObjectCount;

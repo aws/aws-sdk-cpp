@@ -36,92 +36,34 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingArns() const{ return m_findingArns; }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline void SetFindingArns(Aws::Vector<Aws::String>&& value) { m_findingArnsHasBeenSet = true; m_findingArns = std::move(value); }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline AddAttributesToFindingsRequest& WithFindingArns(const Aws::Vector<Aws::String>& value) { SetFindingArns(value); return *this;}
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline AddAttributesToFindingsRequest& WithFindingArns(Aws::Vector<Aws::String>&& value) { SetFindingArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline AddAttributesToFindingsRequest& AddFindingArns(const Aws::String& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline AddAttributesToFindingsRequest& AddFindingArns(Aws::String&& value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-     */
     inline AddAttributesToFindingsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The array of attributes that you want to assign to specified findings.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline AddAttributesToFindingsRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline AddAttributesToFindingsRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline AddAttributesToFindingsRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>The array of attributes that you want to assign to specified findings.</p>
-     */
     inline AddAttributesToFindingsRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_findingArns;

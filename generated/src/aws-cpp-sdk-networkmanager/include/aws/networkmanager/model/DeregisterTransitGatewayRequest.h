@@ -32,87 +32,33 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the global network.</p>
      */
     inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayArn() const{ return m_transitGatewayArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline bool TransitGatewayArnHasBeenSet() const { return m_transitGatewayArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline void SetTransitGatewayArn(const Aws::String& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline void SetTransitGatewayArn(Aws::String&& value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline void SetTransitGatewayArn(const char* value) { m_transitGatewayArnHasBeenSet = true; m_transitGatewayArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithTransitGatewayArn(const Aws::String& value) { SetTransitGatewayArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithTransitGatewayArn(Aws::String&& value) { SetTransitGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-     */
     inline DeregisterTransitGatewayRequest& WithTransitGatewayArn(const char* value) { SetTransitGatewayArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalNetworkId;

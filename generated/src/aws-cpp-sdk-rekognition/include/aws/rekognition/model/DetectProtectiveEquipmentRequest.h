@@ -35,79 +35,31 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The image in which you want to detect PPE on detected persons. The image can
      * be passed as image bytes or you can reference an image stored in an Amazon S3
      * bucket. </p>
      */
     inline const Image& GetImage() const{ return m_image; }
-
-    /**
-     * <p>The image in which you want to detect PPE on detected persons. The image can
-     * be passed as image bytes or you can reference an image stored in an Amazon S3
-     * bucket. </p>
-     */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-
-    /**
-     * <p>The image in which you want to detect PPE on detected persons. The image can
-     * be passed as image bytes or you can reference an image stored in an Amazon S3
-     * bucket. </p>
-     */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>The image in which you want to detect PPE on detected persons. The image can
-     * be passed as image bytes or you can reference an image stored in an Amazon S3
-     * bucket. </p>
-     */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>The image in which you want to detect PPE on detected persons. The image can
-     * be passed as image bytes or you can reference an image stored in an Amazon S3
-     * bucket. </p>
-     */
     inline DetectProtectiveEquipmentRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>The image in which you want to detect PPE on detected persons. The image can
-     * be passed as image bytes or you can reference an image stored in an Amazon S3
-     * bucket. </p>
-     */
     inline DetectProtectiveEquipmentRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of PPE types that you want to summarize.</p>
      */
     inline const ProtectiveEquipmentSummarizationAttributes& GetSummarizationAttributes() const{ return m_summarizationAttributes; }
-
-    /**
-     * <p>An array of PPE types that you want to summarize.</p>
-     */
     inline bool SummarizationAttributesHasBeenSet() const { return m_summarizationAttributesHasBeenSet; }
-
-    /**
-     * <p>An array of PPE types that you want to summarize.</p>
-     */
     inline void SetSummarizationAttributes(const ProtectiveEquipmentSummarizationAttributes& value) { m_summarizationAttributesHasBeenSet = true; m_summarizationAttributes = value; }
-
-    /**
-     * <p>An array of PPE types that you want to summarize.</p>
-     */
     inline void SetSummarizationAttributes(ProtectiveEquipmentSummarizationAttributes&& value) { m_summarizationAttributesHasBeenSet = true; m_summarizationAttributes = std::move(value); }
-
-    /**
-     * <p>An array of PPE types that you want to summarize.</p>
-     */
     inline DetectProtectiveEquipmentRequest& WithSummarizationAttributes(const ProtectiveEquipmentSummarizationAttributes& value) { SetSummarizationAttributes(value); return *this;}
-
-    /**
-     * <p>An array of PPE types that you want to summarize.</p>
-     */
     inline DetectProtectiveEquipmentRequest& WithSummarizationAttributes(ProtectiveEquipmentSummarizationAttributes&& value) { SetSummarizationAttributes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Image m_image;

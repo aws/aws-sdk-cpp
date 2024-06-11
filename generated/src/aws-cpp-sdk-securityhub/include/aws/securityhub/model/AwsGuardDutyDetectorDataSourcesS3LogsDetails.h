@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A value that describes whether S3 data event logs are automatically enabled
      * for new members of an organization. </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p> A value that describes whether S3 data event logs are automatically enabled
-     * for new members of an organization. </p>
-     */
     inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_status;

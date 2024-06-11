@@ -36,26 +36,15 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean option to control whether SSL should be disabled.</p>
      */
     inline bool GetDisableSsl() const{ return m_disableSsl; }
-
-    /**
-     * <p>A Boolean option to control whether SSL should be disabled.</p>
-     */
     inline bool DisableSslHasBeenSet() const { return m_disableSslHasBeenSet; }
-
-    /**
-     * <p>A Boolean option to control whether SSL should be disabled.</p>
-     */
     inline void SetDisableSsl(bool value) { m_disableSslHasBeenSet = true; m_disableSsl = value; }
-
-    /**
-     * <p>A Boolean option to control whether SSL should be disabled.</p>
-     */
     inline SslProperties& WithDisableSsl(bool value) { SetDisableSsl(value); return *this;}
-
+    ///@}
   private:
 
     bool m_disableSsl;

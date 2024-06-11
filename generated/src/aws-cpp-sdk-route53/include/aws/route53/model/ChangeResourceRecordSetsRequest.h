@@ -37,91 +37,33 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to change.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline ChangeResourceRecordSetsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline ChangeResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the hosted zone that contains the resource record sets that you
-     * want to change.</p>
-     */
     inline ChangeResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
      * element.</p>
      */
     inline const ChangeBatch& GetChangeBatch() const{ return m_changeBatch; }
-
-    /**
-     * <p>A complex type that contains an optional comment and the <code>Changes</code>
-     * element.</p>
-     */
     inline bool ChangeBatchHasBeenSet() const { return m_changeBatchHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains an optional comment and the <code>Changes</code>
-     * element.</p>
-     */
     inline void SetChangeBatch(const ChangeBatch& value) { m_changeBatchHasBeenSet = true; m_changeBatch = value; }
-
-    /**
-     * <p>A complex type that contains an optional comment and the <code>Changes</code>
-     * element.</p>
-     */
     inline void SetChangeBatch(ChangeBatch&& value) { m_changeBatchHasBeenSet = true; m_changeBatch = std::move(value); }
-
-    /**
-     * <p>A complex type that contains an optional comment and the <code>Changes</code>
-     * element.</p>
-     */
     inline ChangeResourceRecordSetsRequest& WithChangeBatch(const ChangeBatch& value) { SetChangeBatch(value); return *this;}
-
-    /**
-     * <p>A complex type that contains an optional comment and the <code>Changes</code>
-     * element.</p>
-     */
     inline ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatch&& value) { SetChangeBatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hostedZoneId;

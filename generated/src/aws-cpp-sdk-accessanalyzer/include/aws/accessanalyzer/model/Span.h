@@ -38,67 +38,29 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The start position of the span (inclusive).</p>
      */
     inline const Position& GetStart() const{ return m_start; }
-
-    /**
-     * <p>The start position of the span (inclusive).</p>
-     */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-
-    /**
-     * <p>The start position of the span (inclusive).</p>
-     */
     inline void SetStart(const Position& value) { m_startHasBeenSet = true; m_start = value; }
-
-    /**
-     * <p>The start position of the span (inclusive).</p>
-     */
     inline void SetStart(Position&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-
-    /**
-     * <p>The start position of the span (inclusive).</p>
-     */
     inline Span& WithStart(const Position& value) { SetStart(value); return *this;}
-
-    /**
-     * <p>The start position of the span (inclusive).</p>
-     */
     inline Span& WithStart(Position&& value) { SetStart(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end position of the span (exclusive).</p>
      */
     inline const Position& GetEnd() const{ return m_end; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
     inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
     inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
     inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
     inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Position m_start;

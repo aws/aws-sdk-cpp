@@ -37,67 +37,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CIS date filter's earliest scan start time.</p>
      */
     inline const Aws::Utils::DateTime& GetEarliestScanStartTime() const{ return m_earliestScanStartTime; }
-
-    /**
-     * <p>The CIS date filter's earliest scan start time.</p>
-     */
     inline bool EarliestScanStartTimeHasBeenSet() const { return m_earliestScanStartTimeHasBeenSet; }
-
-    /**
-     * <p>The CIS date filter's earliest scan start time.</p>
-     */
     inline void SetEarliestScanStartTime(const Aws::Utils::DateTime& value) { m_earliestScanStartTimeHasBeenSet = true; m_earliestScanStartTime = value; }
-
-    /**
-     * <p>The CIS date filter's earliest scan start time.</p>
-     */
     inline void SetEarliestScanStartTime(Aws::Utils::DateTime&& value) { m_earliestScanStartTimeHasBeenSet = true; m_earliestScanStartTime = std::move(value); }
-
-    /**
-     * <p>The CIS date filter's earliest scan start time.</p>
-     */
     inline CisDateFilter& WithEarliestScanStartTime(const Aws::Utils::DateTime& value) { SetEarliestScanStartTime(value); return *this;}
-
-    /**
-     * <p>The CIS date filter's earliest scan start time.</p>
-     */
     inline CisDateFilter& WithEarliestScanStartTime(Aws::Utils::DateTime&& value) { SetEarliestScanStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CIS date filter's latest scan start time.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestScanStartTime() const{ return m_latestScanStartTime; }
-
-    /**
-     * <p>The CIS date filter's latest scan start time.</p>
-     */
     inline bool LatestScanStartTimeHasBeenSet() const { return m_latestScanStartTimeHasBeenSet; }
-
-    /**
-     * <p>The CIS date filter's latest scan start time.</p>
-     */
     inline void SetLatestScanStartTime(const Aws::Utils::DateTime& value) { m_latestScanStartTimeHasBeenSet = true; m_latestScanStartTime = value; }
-
-    /**
-     * <p>The CIS date filter's latest scan start time.</p>
-     */
     inline void SetLatestScanStartTime(Aws::Utils::DateTime&& value) { m_latestScanStartTimeHasBeenSet = true; m_latestScanStartTime = std::move(value); }
-
-    /**
-     * <p>The CIS date filter's latest scan start time.</p>
-     */
     inline CisDateFilter& WithLatestScanStartTime(const Aws::Utils::DateTime& value) { SetLatestScanStartTime(value); return *this;}
-
-    /**
-     * <p>The CIS date filter's latest scan start time.</p>
-     */
     inline CisDateFilter& WithLatestScanStartTime(Aws::Utils::DateTime&& value) { SetLatestScanStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_earliestScanStartTime;

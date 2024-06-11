@@ -38,53 +38,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API ModifyEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The modified endpoint.</p>
      */
     inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
-
-    /**
-     * <p>The modified endpoint.</p>
-     */
     inline void SetEndpoint(const Endpoint& value) { m_endpoint = value; }
-
-    /**
-     * <p>The modified endpoint.</p>
-     */
     inline void SetEndpoint(Endpoint&& value) { m_endpoint = std::move(value); }
-
-    /**
-     * <p>The modified endpoint.</p>
-     */
     inline ModifyEndpointResult& WithEndpoint(const Endpoint& value) { SetEndpoint(value); return *this;}
-
-    /**
-     * <p>The modified endpoint.</p>
-     */
     inline ModifyEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ModifyEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ModifyEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ModifyEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Endpoint m_endpoint;

@@ -35,47 +35,25 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum GPU for the accelerator.</p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum GPU for the accelerator.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum GPU for the accelerator.</p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum GPU for the accelerator.</p>
-     */
     inline AcceleratorCountRange& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum GPU for the accelerator.</p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum GPU for the accelerator.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum GPU for the accelerator.</p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum GPU for the accelerator.</p>
-     */
     inline AcceleratorCountRange& WithMin(int value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     int m_max;

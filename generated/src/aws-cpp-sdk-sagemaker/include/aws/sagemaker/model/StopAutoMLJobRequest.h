@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the object you are requesting.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline StopAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline StopAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the object you are requesting.</p>
-     */
     inline StopAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_autoMLJobName;

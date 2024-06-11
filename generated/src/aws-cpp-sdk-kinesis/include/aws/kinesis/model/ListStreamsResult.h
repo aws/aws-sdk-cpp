@@ -40,164 +40,66 @@ namespace Model
     AWS_KINESIS_API ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The names of the streams that are associated with the Amazon Web Services
      * account making the <code>ListStreams</code> request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStreamNames() const{ return m_streamNames; }
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline void SetStreamNames(const Aws::Vector<Aws::String>& value) { m_streamNames = value; }
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = std::move(value); }
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline ListStreamsResult& WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline ListStreamsResult& AddStreamNames(const Aws::String& value) { m_streamNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the streams that are associated with the Amazon Web Services
-     * account making the <code>ListStreams</code> request.</p>
-     */
     inline ListStreamsResult& AddStreamNames(const char* value) { m_streamNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If set to <code>true</code>, there are more streams available to list.</p>
      */
     inline bool GetHasMoreStreams() const{ return m_hasMoreStreams; }
-
-    /**
-     * <p>If set to <code>true</code>, there are more streams available to list.</p>
-     */
     inline void SetHasMoreStreams(bool value) { m_hasMoreStreams = value; }
-
-    /**
-     * <p>If set to <code>true</code>, there are more streams available to list.</p>
-     */
     inline ListStreamsResult& WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<StreamSummary>& GetStreamSummaries() const{ return m_streamSummaries; }
-
-    /**
-     * <p/>
-     */
     inline void SetStreamSummaries(const Aws::Vector<StreamSummary>& value) { m_streamSummaries = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetStreamSummaries(Aws::Vector<StreamSummary>&& value) { m_streamSummaries = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& WithStreamSummaries(const Aws::Vector<StreamSummary>& value) { SetStreamSummaries(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& WithStreamSummaries(Aws::Vector<StreamSummary>&& value) { SetStreamSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& AddStreamSummaries(const StreamSummary& value) { m_streamSummaries.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline ListStreamsResult& AddStreamSummaries(StreamSummary&& value) { m_streamSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_streamNames;

@@ -37,36 +37,17 @@ namespace Model
     AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reason the parameter is invalid.</p>
      */
     inline const InvalidParameterProblem& GetProblem() const{ return m_problem; }
-
-    /**
-     * <p>The reason the parameter is invalid.</p>
-     */
     inline bool ProblemHasBeenSet() const { return m_problemHasBeenSet; }
-
-    /**
-     * <p>The reason the parameter is invalid.</p>
-     */
     inline void SetProblem(const InvalidParameterProblem& value) { m_problemHasBeenSet = true; m_problem = value; }
-
-    /**
-     * <p>The reason the parameter is invalid.</p>
-     */
     inline void SetProblem(InvalidParameterProblem&& value) { m_problemHasBeenSet = true; m_problem = std::move(value); }
-
-    /**
-     * <p>The reason the parameter is invalid.</p>
-     */
     inline InvalidParameterDetail& WithProblem(const InvalidParameterProblem& value) { SetProblem(value); return *this;}
-
-    /**
-     * <p>The reason the parameter is invalid.</p>
-     */
     inline InvalidParameterDetail& WithProblem(InvalidParameterProblem&& value) { SetProblem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InvalidParameterProblem m_problem;

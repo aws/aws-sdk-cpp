@@ -32,70 +32,30 @@ namespace Model
     AWS_TAXSETTINGS_API GetTaxRegistrationDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The file path of the Amazon S3 bucket where you want to download your tax
      * document to.</p>
      */
     inline const Aws::String& GetDestinationFilePath() const{ return m_destinationFilePath; }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline void SetDestinationFilePath(const Aws::String& value) { m_destinationFilePath = value; }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline void SetDestinationFilePath(Aws::String&& value) { m_destinationFilePath = std::move(value); }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline void SetDestinationFilePath(const char* value) { m_destinationFilePath.assign(value); }
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline GetTaxRegistrationDocumentResult& WithDestinationFilePath(const Aws::String& value) { SetDestinationFilePath(value); return *this;}
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline GetTaxRegistrationDocumentResult& WithDestinationFilePath(Aws::String&& value) { SetDestinationFilePath(std::move(value)); return *this;}
-
-    /**
-     * <p>The file path of the Amazon S3 bucket where you want to download your tax
-     * document to.</p>
-     */
     inline GetTaxRegistrationDocumentResult& WithDestinationFilePath(const char* value) { SetDestinationFilePath(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTaxRegistrationDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTaxRegistrationDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTaxRegistrationDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationFilePath;

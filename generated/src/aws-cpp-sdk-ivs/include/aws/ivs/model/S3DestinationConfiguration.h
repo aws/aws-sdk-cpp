@@ -38,46 +38,19 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline S3DestinationConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline S3DestinationConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-     */
     inline S3DestinationConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

@@ -36,30 +36,16 @@ namespace Model
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Shows the completed percentage of enrollment or registration requests listed
      * in the input file.</p>
      */
     inline int GetPercentComplete() const{ return m_percentComplete; }
-
-    /**
-     * <p>Shows the completed percentage of enrollment or registration requests listed
-     * in the input file.</p>
-     */
     inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
-
-    /**
-     * <p>Shows the completed percentage of enrollment or registration requests listed
-     * in the input file.</p>
-     */
     inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
-
-    /**
-     * <p>Shows the completed percentage of enrollment or registration requests listed
-     * in the input file.</p>
-     */
     inline JobProgress& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
-
+    ///@}
   private:
 
     int m_percentComplete;

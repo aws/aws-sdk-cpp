@@ -34,113 +34,44 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API ListLaunchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of structures that contain the configuration details of the launches
      * in the specified project.</p>
      */
     inline const Aws::Vector<Launch>& GetLaunches() const{ return m_launches; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline void SetLaunches(const Aws::Vector<Launch>& value) { m_launches = value; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline void SetLaunches(Aws::Vector<Launch>&& value) { m_launches = std::move(value); }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline ListLaunchesResult& WithLaunches(const Aws::Vector<Launch>& value) { SetLaunches(value); return *this;}
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline ListLaunchesResult& WithLaunches(Aws::Vector<Launch>&& value) { SetLaunches(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline ListLaunchesResult& AddLaunches(const Launch& value) { m_launches.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that contain the configuration details of the launches
-     * in the specified project.</p>
-     */
     inline ListLaunchesResult& AddLaunches(Launch&& value) { m_launches.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
      * return the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListLaunchesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListLaunchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use in a subsequent <code>ListLaunches</code> operation to
-     * return the next set of results.</p>
-     */
     inline ListLaunchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLaunchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLaunchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLaunchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Launch> m_launches;

@@ -31,46 +31,19 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "PutSolNetworkPackageContent"; }
 
 
+    ///@{
     /**
      * <p>Network service descriptor info ID.</p>
      */
     inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline PutSolNetworkPackageContentRequest& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline PutSolNetworkPackageContentRequest& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-
-    /**
-     * <p>Network service descriptor info ID.</p>
-     */
     inline PutSolNetworkPackageContentRequest& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
-
+    ///@}
   private:
 
 

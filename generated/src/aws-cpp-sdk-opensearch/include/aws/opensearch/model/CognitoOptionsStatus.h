@@ -39,67 +39,29 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Cognito options for the specified domain.</p>
      */
     inline const CognitoOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>Cognito options for the specified domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>Cognito options for the specified domain.</p>
-     */
     inline void SetOptions(const CognitoOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>Cognito options for the specified domain.</p>
-     */
     inline void SetOptions(CognitoOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>Cognito options for the specified domain.</p>
-     */
     inline CognitoOptionsStatus& WithOptions(const CognitoOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>Cognito options for the specified domain.</p>
-     */
     inline CognitoOptionsStatus& WithOptions(CognitoOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the Cognito options for the specified domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the Cognito options for the specified domain.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the Cognito options for the specified domain.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the Cognito options for the specified domain.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the Cognito options for the specified domain.</p>
-     */
     inline CognitoOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the Cognito options for the specified domain.</p>
-     */
     inline CognitoOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CognitoOptions m_options;

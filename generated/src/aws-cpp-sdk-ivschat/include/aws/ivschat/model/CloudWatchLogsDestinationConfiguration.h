@@ -38,54 +38,20 @@ namespace Model
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
      * logged.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
-     * logged.</p>
-     */
     inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logGroupName;

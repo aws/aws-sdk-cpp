@@ -38,46 +38,19 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Secret Access Key portion of the credentials. </p>
      */
     inline const Aws::String& GetApiSecretKey() const{ return m_apiSecretKey; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline bool ApiSecretKeyHasBeenSet() const { return m_apiSecretKeyHasBeenSet; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetApiSecretKey(const Aws::String& value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey = value; }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetApiSecretKey(Aws::String&& value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey = std::move(value); }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline void SetApiSecretKey(const char* value) { m_apiSecretKeyHasBeenSet = true; m_apiSecretKey.assign(value); }
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline TrendmicroConnectorProfileCredentials& WithApiSecretKey(const Aws::String& value) { SetApiSecretKey(value); return *this;}
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline TrendmicroConnectorProfileCredentials& WithApiSecretKey(Aws::String&& value) { SetApiSecretKey(std::move(value)); return *this;}
-
-    /**
-     * <p> The Secret Access Key portion of the credentials. </p>
-     */
     inline TrendmicroConnectorProfileCredentials& WithApiSecretKey(const char* value) { SetApiSecretKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiSecretKey;

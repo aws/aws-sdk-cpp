@@ -35,113 +35,44 @@ namespace Model
     AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of target device.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeviceIds() const{ return m_deviceIds; }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline bool DeviceIdsHasBeenSet() const { return m_deviceIdsHasBeenSet; }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline void SetDeviceIds(const Aws::Vector<Aws::String>& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = value; }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline void SetDeviceIds(Aws::Vector<Aws::String>&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds = std::move(value); }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline CreateJobForDevicesRequest& WithDeviceIds(const Aws::Vector<Aws::String>& value) { SetDeviceIds(value); return *this;}
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline CreateJobForDevicesRequest& WithDeviceIds(Aws::Vector<Aws::String>&& value) { SetDeviceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline CreateJobForDevicesRequest& AddDeviceIds(const Aws::String& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline CreateJobForDevicesRequest& AddDeviceIds(Aws::String&& value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>ID of target device.</p>
-     */
     inline CreateJobForDevicesRequest& AddDeviceIds(const char* value) { m_deviceIdsHasBeenSet = true; m_deviceIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration settings for a software update job.</p>
      */
     inline const DeviceJobConfig& GetDeviceJobConfig() const{ return m_deviceJobConfig; }
-
-    /**
-     * <p>Configuration settings for a software update job.</p>
-     */
     inline bool DeviceJobConfigHasBeenSet() const { return m_deviceJobConfigHasBeenSet; }
-
-    /**
-     * <p>Configuration settings for a software update job.</p>
-     */
     inline void SetDeviceJobConfig(const DeviceJobConfig& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = value; }
-
-    /**
-     * <p>Configuration settings for a software update job.</p>
-     */
     inline void SetDeviceJobConfig(DeviceJobConfig&& value) { m_deviceJobConfigHasBeenSet = true; m_deviceJobConfig = std::move(value); }
-
-    /**
-     * <p>Configuration settings for a software update job.</p>
-     */
     inline CreateJobForDevicesRequest& WithDeviceJobConfig(const DeviceJobConfig& value) { SetDeviceJobConfig(value); return *this;}
-
-    /**
-     * <p>Configuration settings for a software update job.</p>
-     */
     inline CreateJobForDevicesRequest& WithDeviceJobConfig(DeviceJobConfig&& value) { SetDeviceJobConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of job to run.</p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
-
-    /**
-     * <p>The type of job to run.</p>
-     */
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-
-    /**
-     * <p>The type of job to run.</p>
-     */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-
-    /**
-     * <p>The type of job to run.</p>
-     */
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-
-    /**
-     * <p>The type of job to run.</p>
-     */
     inline CreateJobForDevicesRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-
-    /**
-     * <p>The type of job to run.</p>
-     */
     inline CreateJobForDevicesRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_deviceIds;

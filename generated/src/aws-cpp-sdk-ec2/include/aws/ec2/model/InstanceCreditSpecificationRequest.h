@@ -40,47 +40,21 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
      * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
@@ -88,63 +62,14 @@ namespace Model
      * option.</p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
-
-    /**
-     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
-     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
-     * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
-     * option.</p>
-     */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

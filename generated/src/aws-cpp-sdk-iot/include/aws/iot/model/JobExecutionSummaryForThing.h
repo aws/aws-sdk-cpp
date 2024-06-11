@@ -38,77 +38,31 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline JobExecutionSummaryForThing& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline JobExecutionSummaryForThing& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline JobExecutionSummaryForThing& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains a subset of information about a job execution.</p>
      */
     inline const JobExecutionSummary& GetJobExecutionSummary() const{ return m_jobExecutionSummary; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline bool JobExecutionSummaryHasBeenSet() const { return m_jobExecutionSummaryHasBeenSet; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline void SetJobExecutionSummary(const JobExecutionSummary& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = value; }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline void SetJobExecutionSummary(JobExecutionSummary&& value) { m_jobExecutionSummaryHasBeenSet = true; m_jobExecutionSummary = std::move(value); }
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline JobExecutionSummaryForThing& WithJobExecutionSummary(const JobExecutionSummary& value) { SetJobExecutionSummary(value); return *this;}
-
-    /**
-     * <p>Contains a subset of information about a job execution.</p>
-     */
     inline JobExecutionSummaryForThing& WithJobExecutionSummary(JobExecutionSummary&& value) { SetJobExecutionSummary(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

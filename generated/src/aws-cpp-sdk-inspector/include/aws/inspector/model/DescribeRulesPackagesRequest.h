@@ -36,82 +36,32 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the rules package that you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline DescribeRulesPackagesRequest& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline DescribeRulesPackagesRequest& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline DescribeRulesPackagesRequest& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline DescribeRulesPackagesRequest& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARN that specifies the rules package that you want to describe.</p>
-     */
     inline DescribeRulesPackagesRequest& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The locale that you want to translate a rules package description into.</p>
      */
     inline const Locale& GetLocale() const{ return m_locale; }
-
-    /**
-     * <p>The locale that you want to translate a rules package description into.</p>
-     */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-
-    /**
-     * <p>The locale that you want to translate a rules package description into.</p>
-     */
     inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-
-    /**
-     * <p>The locale that you want to translate a rules package description into.</p>
-     */
     inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-
-    /**
-     * <p>The locale that you want to translate a rules package description into.</p>
-     */
     inline DescribeRulesPackagesRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-
-    /**
-     * <p>The locale that you want to translate a rules package description into.</p>
-     */
     inline DescribeRulesPackagesRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_rulesPackageArns;

@@ -42,85 +42,32 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
      */
     inline const DetectionFilter& GetWordFilter() const{ return m_wordFilter; }
-
-    /**
-     * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-     */
     inline bool WordFilterHasBeenSet() const { return m_wordFilterHasBeenSet; }
-
-    /**
-     * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-     */
     inline void SetWordFilter(const DetectionFilter& value) { m_wordFilterHasBeenSet = true; m_wordFilter = value; }
-
-    /**
-     * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-     */
     inline void SetWordFilter(DetectionFilter&& value) { m_wordFilterHasBeenSet = true; m_wordFilter = std::move(value); }
-
-    /**
-     * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-     */
     inline StartTextDetectionFilters& WithWordFilter(const DetectionFilter& value) { SetWordFilter(value); return *this;}
-
-    /**
-     * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-     */
     inline StartTextDetectionFilters& WithWordFilter(DetectionFilter&& value) { SetWordFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter focusing on a certain area of the frame. Uses a
      * <code>BoundingBox</code> object to set the region of the screen.</p>
      */
     inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline bool RegionsOfInterestHasBeenSet() const { return m_regionsOfInterestHasBeenSet; }
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = value; }
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::move(value); }
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline StartTextDetectionFilters& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline StartTextDetectionFilters& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline StartTextDetectionFilters& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(value); return *this; }
-
-    /**
-     * <p>Filter focusing on a certain area of the frame. Uses a
-     * <code>BoundingBox</code> object to set the region of the screen.</p>
-     */
     inline StartTextDetectionFilters& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DetectionFilter m_wordFilter;

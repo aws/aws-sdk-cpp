@@ -38,71 +38,24 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The job execution status.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDetailsMap() const{ return m_detailsMap; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline bool DetailsMapHasBeenSet() const { return m_detailsMapHasBeenSet; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline void SetDetailsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_detailsMapHasBeenSet = true; m_detailsMap = value; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline void SetDetailsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_detailsMapHasBeenSet = true; m_detailsMap = std::move(value); }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& WithDetailsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetDetailsMap(value); return *this;}
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& WithDetailsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetDetailsMap(std::move(value)); return *this;}
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(const Aws::String& key, const Aws::String& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, value); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, const Aws::String& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(const Aws::String& key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(const char* key, Aws::String&& value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(Aws::String&& key, const char* value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The job execution status.</p>
-     */
     inline JobExecutionStatusDetails& AddDetailsMap(const char* key, const char* value) { m_detailsMapHasBeenSet = true; m_detailsMap.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_detailsMap;

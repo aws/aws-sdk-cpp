@@ -33,125 +33,53 @@ namespace Model
     AWS_QBUSINESS_API CreatePluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the plugin created.</p>
      */
     inline const Aws::String& GetPluginId() const{ return m_pluginId; }
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline void SetPluginId(const Aws::String& value) { m_pluginId = value; }
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline void SetPluginId(Aws::String&& value) { m_pluginId = std::move(value); }
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline void SetPluginId(const char* value) { m_pluginId.assign(value); }
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline CreatePluginResult& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline CreatePluginResult& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the plugin created.</p>
-     */
     inline CreatePluginResult& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a plugin.</p>
      */
     inline const Aws::String& GetPluginArn() const{ return m_pluginArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline void SetPluginArn(const Aws::String& value) { m_pluginArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline void SetPluginArn(Aws::String&& value) { m_pluginArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline void SetPluginArn(const char* value) { m_pluginArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline CreatePluginResult& WithPluginArn(const Aws::String& value) { SetPluginArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline CreatePluginResult& WithPluginArn(Aws::String&& value) { SetPluginArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a plugin.</p>
-     */
     inline CreatePluginResult& WithPluginArn(const char* value) { SetPluginArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
      */
     inline const PluginBuildStatus& GetBuildStatus() const{ return m_buildStatus; }
-
-    /**
-     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
-     */
     inline void SetBuildStatus(const PluginBuildStatus& value) { m_buildStatus = value; }
-
-    /**
-     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
-     */
     inline void SetBuildStatus(PluginBuildStatus&& value) { m_buildStatus = std::move(value); }
-
-    /**
-     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
-     */
     inline CreatePluginResult& WithBuildStatus(const PluginBuildStatus& value) { SetBuildStatus(value); return *this;}
-
-    /**
-     * <p>The current status of a plugin. A plugin is modified asynchronously.</p>
-     */
     inline CreatePluginResult& WithBuildStatus(PluginBuildStatus&& value) { SetBuildStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePluginResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePluginResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePluginResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pluginId;

@@ -35,6 +35,7 @@ namespace Model
     AWS_ACCESSANALYZER_API CheckNoPublicAccessSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The result of the check for public access to the specified resource type. If
      * the result is <code>PASS</code>, the policy doesn't allow public access to the
@@ -42,147 +43,50 @@ namespace Model
      * allow public access to the specified resource type.</p>
      */
     inline const CheckNoPublicAccessResult& GetResult() const{ return m_result; }
-
-    /**
-     * <p>The result of the check for public access to the specified resource type. If
-     * the result is <code>PASS</code>, the policy doesn't allow public access to the
-     * specified resource type. If the result is <code>FAIL</code>, the policy might
-     * allow public access to the specified resource type.</p>
-     */
     inline void SetResult(const CheckNoPublicAccessResult& value) { m_result = value; }
-
-    /**
-     * <p>The result of the check for public access to the specified resource type. If
-     * the result is <code>PASS</code>, the policy doesn't allow public access to the
-     * specified resource type. If the result is <code>FAIL</code>, the policy might
-     * allow public access to the specified resource type.</p>
-     */
     inline void SetResult(CheckNoPublicAccessResult&& value) { m_result = std::move(value); }
-
-    /**
-     * <p>The result of the check for public access to the specified resource type. If
-     * the result is <code>PASS</code>, the policy doesn't allow public access to the
-     * specified resource type. If the result is <code>FAIL</code>, the policy might
-     * allow public access to the specified resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithResult(const CheckNoPublicAccessResult& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>The result of the check for public access to the specified resource type. If
-     * the result is <code>PASS</code>, the policy doesn't allow public access to the
-     * specified resource type. If the result is <code>FAIL</code>, the policy might
-     * allow public access to the specified resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithResult(CheckNoPublicAccessResult&& value) { SetResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message indicating whether the specified policy allows public access to
      * resources.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline void SetMessage(const char* value) { m_message.assign(value); }
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message indicating whether the specified policy allows public access to
-     * resources.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of reasons why the specified resource policy grants public access for
      * the resource type.</p>
      */
     inline const Aws::Vector<ReasonSummary>& GetReasons() const{ return m_reasons; }
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline void SetReasons(const Aws::Vector<ReasonSummary>& value) { m_reasons = value; }
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline void SetReasons(Aws::Vector<ReasonSummary>&& value) { m_reasons = std::move(value); }
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithReasons(const Aws::Vector<ReasonSummary>& value) { SetReasons(value); return *this;}
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& WithReasons(Aws::Vector<ReasonSummary>&& value) { SetReasons(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& AddReasons(const ReasonSummary& value) { m_reasons.push_back(value); return *this; }
-
-    /**
-     * <p>A list of reasons why the specified resource policy grants public access for
-     * the resource type.</p>
-     */
     inline CheckNoPublicAccessSdkResult& AddReasons(ReasonSummary&& value) { m_reasons.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CheckNoPublicAccessSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CheckNoPublicAccessSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CheckNoPublicAccessSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CheckNoPublicAccessResult m_result;

@@ -35,83 +35,32 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the job definition to update.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline UpdateJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline UpdateJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the job definition to update.</p>
-     */
     inline UpdateJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the values with which to update the job definition. Unspecified
      * configuration is removed or reset to default values.</p>
      */
     inline const JobUpdate& GetJobUpdate() const{ return m_jobUpdate; }
-
-    /**
-     * <p>Specifies the values with which to update the job definition. Unspecified
-     * configuration is removed or reset to default values.</p>
-     */
     inline bool JobUpdateHasBeenSet() const { return m_jobUpdateHasBeenSet; }
-
-    /**
-     * <p>Specifies the values with which to update the job definition. Unspecified
-     * configuration is removed or reset to default values.</p>
-     */
     inline void SetJobUpdate(const JobUpdate& value) { m_jobUpdateHasBeenSet = true; m_jobUpdate = value; }
-
-    /**
-     * <p>Specifies the values with which to update the job definition. Unspecified
-     * configuration is removed or reset to default values.</p>
-     */
     inline void SetJobUpdate(JobUpdate&& value) { m_jobUpdateHasBeenSet = true; m_jobUpdate = std::move(value); }
-
-    /**
-     * <p>Specifies the values with which to update the job definition. Unspecified
-     * configuration is removed or reset to default values.</p>
-     */
     inline UpdateJobRequest& WithJobUpdate(const JobUpdate& value) { SetJobUpdate(value); return *this;}
-
-    /**
-     * <p>Specifies the values with which to update the job definition. Unspecified
-     * configuration is removed or reset to default values.</p>
-     */
     inline UpdateJobRequest& WithJobUpdate(JobUpdate&& value) { SetJobUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobName;

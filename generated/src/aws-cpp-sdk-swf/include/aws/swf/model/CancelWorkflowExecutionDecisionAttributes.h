@@ -51,46 +51,19 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Details of the cancellation.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline CancelWorkflowExecutionDecisionAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline CancelWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-
-    /**
-     * <p> Details of the cancellation.</p>
-     */
     inline CancelWorkflowExecutionDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_details;

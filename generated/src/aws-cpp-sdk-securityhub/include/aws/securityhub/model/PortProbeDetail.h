@@ -42,104 +42,42 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides information about the port that was scanned.</p>
      */
     inline const ActionLocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
-
-    /**
-     * <p>Provides information about the port that was scanned.</p>
-     */
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
-
-    /**
-     * <p>Provides information about the port that was scanned.</p>
-     */
     inline void SetLocalPortDetails(const ActionLocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
-
-    /**
-     * <p>Provides information about the port that was scanned.</p>
-     */
     inline void SetLocalPortDetails(ActionLocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
-
-    /**
-     * <p>Provides information about the port that was scanned.</p>
-     */
     inline PortProbeDetail& WithLocalPortDetails(const ActionLocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
-
-    /**
-     * <p>Provides information about the port that was scanned.</p>
-     */
     inline PortProbeDetail& WithLocalPortDetails(ActionLocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information about the IP address where the scanned port is
      * located.</p>
      */
     inline const ActionLocalIpDetails& GetLocalIpDetails() const{ return m_localIpDetails; }
-
-    /**
-     * <p>Provides information about the IP address where the scanned port is
-     * located.</p>
-     */
     inline bool LocalIpDetailsHasBeenSet() const { return m_localIpDetailsHasBeenSet; }
-
-    /**
-     * <p>Provides information about the IP address where the scanned port is
-     * located.</p>
-     */
     inline void SetLocalIpDetails(const ActionLocalIpDetails& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = value; }
-
-    /**
-     * <p>Provides information about the IP address where the scanned port is
-     * located.</p>
-     */
     inline void SetLocalIpDetails(ActionLocalIpDetails&& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = std::move(value); }
-
-    /**
-     * <p>Provides information about the IP address where the scanned port is
-     * located.</p>
-     */
     inline PortProbeDetail& WithLocalIpDetails(const ActionLocalIpDetails& value) { SetLocalIpDetails(value); return *this;}
-
-    /**
-     * <p>Provides information about the IP address where the scanned port is
-     * located.</p>
-     */
     inline PortProbeDetail& WithLocalIpDetails(ActionLocalIpDetails&& value) { SetLocalIpDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides information about the remote IP address that performed the scan.</p>
      */
     inline const ActionRemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
-
-    /**
-     * <p>Provides information about the remote IP address that performed the scan.</p>
-     */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
-
-    /**
-     * <p>Provides information about the remote IP address that performed the scan.</p>
-     */
     inline void SetRemoteIpDetails(const ActionRemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
-
-    /**
-     * <p>Provides information about the remote IP address that performed the scan.</p>
-     */
     inline void SetRemoteIpDetails(ActionRemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
-
-    /**
-     * <p>Provides information about the remote IP address that performed the scan.</p>
-     */
     inline PortProbeDetail& WithRemoteIpDetails(const ActionRemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
-
-    /**
-     * <p>Provides information about the remote IP address that performed the scan.</p>
-     */
     inline PortProbeDetail& WithRemoteIpDetails(ActionRemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ActionLocalPortDetails m_localPortDetails;

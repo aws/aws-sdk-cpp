@@ -38,42 +38,18 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The text associated with the attribute and information about the highlight to
      * apply to the text.</p>
      */
     inline const TextWithHighlights& GetTextWithHighlightsValue() const{ return m_textWithHighlightsValue; }
-
-    /**
-     * <p>The text associated with the attribute and information about the highlight to
-     * apply to the text.</p>
-     */
     inline bool TextWithHighlightsValueHasBeenSet() const { return m_textWithHighlightsValueHasBeenSet; }
-
-    /**
-     * <p>The text associated with the attribute and information about the highlight to
-     * apply to the text.</p>
-     */
     inline void SetTextWithHighlightsValue(const TextWithHighlights& value) { m_textWithHighlightsValueHasBeenSet = true; m_textWithHighlightsValue = value; }
-
-    /**
-     * <p>The text associated with the attribute and information about the highlight to
-     * apply to the text.</p>
-     */
     inline void SetTextWithHighlightsValue(TextWithHighlights&& value) { m_textWithHighlightsValueHasBeenSet = true; m_textWithHighlightsValue = std::move(value); }
-
-    /**
-     * <p>The text associated with the attribute and information about the highlight to
-     * apply to the text.</p>
-     */
     inline AdditionalResultAttributeValue& WithTextWithHighlightsValue(const TextWithHighlights& value) { SetTextWithHighlightsValue(value); return *this;}
-
-    /**
-     * <p>The text associated with the attribute and information about the highlight to
-     * apply to the text.</p>
-     */
     inline AdditionalResultAttributeValue& WithTextWithHighlightsValue(TextWithHighlights&& value) { SetTextWithHighlightsValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TextWithHighlights m_textWithHighlightsValue;

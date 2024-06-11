@@ -32,42 +32,18 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The target account ID, organizational unit ID, or the root ID to retrieve
      * the association for. </p>
      */
     inline const Target& GetTarget() const{ return m_target; }
-
-    /**
-     * <p> The target account ID, organizational unit ID, or the root ID to retrieve
-     * the association for. </p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p> The target account ID, organizational unit ID, or the root ID to retrieve
-     * the association for. </p>
-     */
     inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p> The target account ID, organizational unit ID, or the root ID to retrieve
-     * the association for. </p>
-     */
     inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p> The target account ID, organizational unit ID, or the root ID to retrieve
-     * the association for. </p>
-     */
     inline GetConfigurationPolicyAssociationRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p> The target account ID, organizational unit ID, or the root ID to retrieve
-     * the association for. </p>
-     */
     inline GetConfigurationPolicyAssociationRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Target m_target;

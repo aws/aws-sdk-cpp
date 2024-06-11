@@ -45,6 +45,7 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The access method to use when retrieving sensitive data from affected S3
      * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
@@ -58,78 +59,14 @@ namespace Model
      * deleted.</p>
      */
     inline const RetrievalMode& GetRetrievalMode() const{ return m_retrievalMode; }
-
-    /**
-     * <p>The access method to use when retrieving sensitive data from affected S3
-     * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
-     * affected Amazon Web Services account and delegates access to Amazon Macie; and,
-     * CALLER_CREDENTIALS, use the credentials of the IAM user who requests the
-     * sensitive data. If you specify ASSUME_ROLE, also specify the name of an existing
-     * IAM role for Macie to assume (roleName).</p> <p>If you change this
-     * value from ASSUME_ROLE to CALLER_CREDENTIALS for an existing configuration,
-     * Macie permanently deletes the external ID and role name currently specified for
-     * the configuration. These settings can't be recovered after they're
-     * deleted.</p>
-     */
     inline bool RetrievalModeHasBeenSet() const { return m_retrievalModeHasBeenSet; }
-
-    /**
-     * <p>The access method to use when retrieving sensitive data from affected S3
-     * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
-     * affected Amazon Web Services account and delegates access to Amazon Macie; and,
-     * CALLER_CREDENTIALS, use the credentials of the IAM user who requests the
-     * sensitive data. If you specify ASSUME_ROLE, also specify the name of an existing
-     * IAM role for Macie to assume (roleName).</p> <p>If you change this
-     * value from ASSUME_ROLE to CALLER_CREDENTIALS for an existing configuration,
-     * Macie permanently deletes the external ID and role name currently specified for
-     * the configuration. These settings can't be recovered after they're
-     * deleted.</p>
-     */
     inline void SetRetrievalMode(const RetrievalMode& value) { m_retrievalModeHasBeenSet = true; m_retrievalMode = value; }
-
-    /**
-     * <p>The access method to use when retrieving sensitive data from affected S3
-     * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
-     * affected Amazon Web Services account and delegates access to Amazon Macie; and,
-     * CALLER_CREDENTIALS, use the credentials of the IAM user who requests the
-     * sensitive data. If you specify ASSUME_ROLE, also specify the name of an existing
-     * IAM role for Macie to assume (roleName).</p> <p>If you change this
-     * value from ASSUME_ROLE to CALLER_CREDENTIALS for an existing configuration,
-     * Macie permanently deletes the external ID and role name currently specified for
-     * the configuration. These settings can't be recovered after they're
-     * deleted.</p>
-     */
     inline void SetRetrievalMode(RetrievalMode&& value) { m_retrievalModeHasBeenSet = true; m_retrievalMode = std::move(value); }
-
-    /**
-     * <p>The access method to use when retrieving sensitive data from affected S3
-     * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
-     * affected Amazon Web Services account and delegates access to Amazon Macie; and,
-     * CALLER_CREDENTIALS, use the credentials of the IAM user who requests the
-     * sensitive data. If you specify ASSUME_ROLE, also specify the name of an existing
-     * IAM role for Macie to assume (roleName).</p> <p>If you change this
-     * value from ASSUME_ROLE to CALLER_CREDENTIALS for an existing configuration,
-     * Macie permanently deletes the external ID and role name currently specified for
-     * the configuration. These settings can't be recovered after they're
-     * deleted.</p>
-     */
     inline UpdateRetrievalConfiguration& WithRetrievalMode(const RetrievalMode& value) { SetRetrievalMode(value); return *this;}
-
-    /**
-     * <p>The access method to use when retrieving sensitive data from affected S3
-     * objects. Valid values are: ASSUME_ROLE, assume an IAM role that is in the
-     * affected Amazon Web Services account and delegates access to Amazon Macie; and,
-     * CALLER_CREDENTIALS, use the credentials of the IAM user who requests the
-     * sensitive data. If you specify ASSUME_ROLE, also specify the name of an existing
-     * IAM role for Macie to assume (roleName).</p> <p>If you change this
-     * value from ASSUME_ROLE to CALLER_CREDENTIALS for an existing configuration,
-     * Macie permanently deletes the external ID and role name currently specified for
-     * the configuration. These settings can't be recovered after they're
-     * deleted.</p>
-     */
     inline UpdateRetrievalConfiguration& WithRetrievalMode(RetrievalMode&& value) { SetRetrievalMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the IAM role that is in the affected Amazon Web Services account
      * and Amazon Macie is allowed to assume when retrieving sensitive data from
@@ -137,63 +74,14 @@ namespace Model
      * role must meet all requirements for Macie to assume the role.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline UpdateRetrievalConfiguration& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline UpdateRetrievalConfiguration& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM role that is in the affected Amazon Web Services account
-     * and Amazon Macie is allowed to assume when retrieving sensitive data from
-     * affected S3 objects for the account. The trust and permissions policies for the
-     * role must meet all requirements for Macie to assume the role.</p>
-     */
     inline UpdateRetrievalConfiguration& WithRoleName(const char* value) { SetRoleName(value); return *this;}
-
+    ///@}
   private:
 
     RetrievalMode m_retrievalMode;

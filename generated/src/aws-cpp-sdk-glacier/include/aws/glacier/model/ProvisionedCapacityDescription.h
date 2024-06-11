@@ -37,144 +37,49 @@ namespace Model
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
     inline const Aws::String& GetCapacityId() const{ return m_capacityId; }
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline bool CapacityIdHasBeenSet() const { return m_capacityIdHasBeenSet; }
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline void SetCapacityId(const Aws::String& value) { m_capacityIdHasBeenSet = true; m_capacityId = value; }
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline void SetCapacityId(Aws::String&& value) { m_capacityIdHasBeenSet = true; m_capacityId = std::move(value); }
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline void SetCapacityId(const char* value) { m_capacityIdHasBeenSet = true; m_capacityId.assign(value); }
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline ProvisionedCapacityDescription& WithCapacityId(const Aws::String& value) { SetCapacityId(value); return *this;}
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline ProvisionedCapacityDescription& WithCapacityId(Aws::String&& value) { SetCapacityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID that identifies the provisioned capacity unit.</p>
-     */
     inline ProvisionedCapacityDescription& WithCapacityId(const char* value) { SetCapacityId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date that the provisioned capacity unit was purchased, in Universal
      * Coordinated Time (UTC).</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The date that the provisioned capacity unit was purchased, in Universal
-     * Coordinated Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
      * Time (UTC).</p>
      */
     inline const Aws::String& GetExpirationDate() const{ return m_expirationDate; }
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline void SetExpirationDate(const Aws::String& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline void SetExpirationDate(Aws::String&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline void SetExpirationDate(const char* value) { m_expirationDateHasBeenSet = true; m_expirationDate.assign(value); }
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithExpirationDate(const Aws::String& value) { SetExpirationDate(value); return *this;}
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithExpirationDate(Aws::String&& value) { SetExpirationDate(std::move(value)); return *this;}
-
-    /**
-     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
-     * Time (UTC).</p>
-     */
     inline ProvisionedCapacityDescription& WithExpirationDate(const char* value) { SetExpirationDate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacityId;

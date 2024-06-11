@@ -38,6 +38,7 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Use automated ABR to have MediaConvert set up the renditions in your ABR package
      * for you automatically, based on characteristics of your input video. This
@@ -45,47 +46,12 @@ namespace Model
      * package.
      */
     inline const AutomatedAbrSettings& GetAbrSettings() const{ return m_abrSettings; }
-
-    /**
-     * Use automated ABR to have MediaConvert set up the renditions in your ABR package
-     * for you automatically, based on characteristics of your input video. This
-     * feature optimizes video quality while minimizing the overall size of your ABR
-     * package.
-     */
     inline bool AbrSettingsHasBeenSet() const { return m_abrSettingsHasBeenSet; }
-
-    /**
-     * Use automated ABR to have MediaConvert set up the renditions in your ABR package
-     * for you automatically, based on characteristics of your input video. This
-     * feature optimizes video quality while minimizing the overall size of your ABR
-     * package.
-     */
     inline void SetAbrSettings(const AutomatedAbrSettings& value) { m_abrSettingsHasBeenSet = true; m_abrSettings = value; }
-
-    /**
-     * Use automated ABR to have MediaConvert set up the renditions in your ABR package
-     * for you automatically, based on characteristics of your input video. This
-     * feature optimizes video quality while minimizing the overall size of your ABR
-     * package.
-     */
     inline void SetAbrSettings(AutomatedAbrSettings&& value) { m_abrSettingsHasBeenSet = true; m_abrSettings = std::move(value); }
-
-    /**
-     * Use automated ABR to have MediaConvert set up the renditions in your ABR package
-     * for you automatically, based on characteristics of your input video. This
-     * feature optimizes video quality while minimizing the overall size of your ABR
-     * package.
-     */
     inline AutomatedEncodingSettings& WithAbrSettings(const AutomatedAbrSettings& value) { SetAbrSettings(value); return *this;}
-
-    /**
-     * Use automated ABR to have MediaConvert set up the renditions in your ABR package
-     * for you automatically, based on characteristics of your input video. This
-     * feature optimizes video quality while minimizing the overall size of your ABR
-     * package.
-     */
     inline AutomatedEncodingSettings& WithAbrSettings(AutomatedAbrSettings&& value) { SetAbrSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutomatedAbrSettings m_abrSettings;

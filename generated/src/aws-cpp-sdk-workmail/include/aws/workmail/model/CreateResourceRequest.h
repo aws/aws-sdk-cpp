@@ -35,198 +35,72 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier associated with the organization for which the resource is
      * created.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline CreateResourceRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline CreateResourceRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier associated with the organization for which the resource is
-     * created.</p>
-     */
     inline CreateResourceRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the new resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline CreateResourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline CreateResourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the new resource.</p>
-     */
     inline CreateResourceRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the new resource. The available types are <code>equipment</code>
      * and <code>room</code>.</p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the new resource. The available types are <code>equipment</code>
-     * and <code>room</code>.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the new resource. The available types are <code>equipment</code>
-     * and <code>room</code>.</p>
-     */
     inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the new resource. The available types are <code>equipment</code>
-     * and <code>room</code>.</p>
-     */
     inline void SetType(ResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the new resource. The available types are <code>equipment</code>
-     * and <code>room</code>.</p>
-     */
     inline CreateResourceRequest& WithType(const ResourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the new resource. The available types are <code>equipment</code>
-     * and <code>room</code>.</p>
-     */
     inline CreateResourceRequest& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Resource description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline CreateResourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline CreateResourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Resource description.</p>
-     */
     inline CreateResourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If this parameter is enabled, the resource will be hidden from the address
      * book.</p>
      */
     inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
-
-    /**
-     * <p>If this parameter is enabled, the resource will be hidden from the address
-     * book.</p>
-     */
     inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
-
-    /**
-     * <p>If this parameter is enabled, the resource will be hidden from the address
-     * book.</p>
-     */
     inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
-
-    /**
-     * <p>If this parameter is enabled, the resource will be hidden from the address
-     * book.</p>
-     */
     inline CreateResourceRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

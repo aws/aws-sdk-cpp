@@ -40,148 +40,64 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetCheckName() const{ return m_checkName; }
-
-    
     inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
-
-    
     inline void SetCheckName(const Aws::String& value) { m_checkNameHasBeenSet = true; m_checkName = value; }
-
-    
     inline void SetCheckName(Aws::String&& value) { m_checkNameHasBeenSet = true; m_checkName = std::move(value); }
-
-    
     inline void SetCheckName(const char* value) { m_checkNameHasBeenSet = true; m_checkName.assign(value); }
-
-    
     inline AuditSuppression& WithCheckName(const Aws::String& value) { SetCheckName(value); return *this;}
-
-    
     inline AuditSuppression& WithCheckName(Aws::String&& value) { SetCheckName(std::move(value)); return *this;}
-
-    
     inline AuditSuppression& WithCheckName(const char* value) { SetCheckName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-
-    
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-
-    
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-
-    
     inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-
-    
     inline AuditSuppression& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
-
-    
     inline AuditSuppression& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The expiration date (epoch timestamp in seconds) that you want the
      * suppression to adhere to. </p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
-
-    /**
-     * <p> The expiration date (epoch timestamp in seconds) that you want the
-     * suppression to adhere to. </p>
-     */
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
-
-    /**
-     * <p> The expiration date (epoch timestamp in seconds) that you want the
-     * suppression to adhere to. </p>
-     */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
-
-    /**
-     * <p> The expiration date (epoch timestamp in seconds) that you want the
-     * suppression to adhere to. </p>
-     */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
-
-    /**
-     * <p> The expiration date (epoch timestamp in seconds) that you want the
-     * suppression to adhere to. </p>
-     */
     inline AuditSuppression& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-
-    /**
-     * <p> The expiration date (epoch timestamp in seconds) that you want the
-     * suppression to adhere to. </p>
-     */
     inline AuditSuppression& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether a suppression should exist indefinitely or not. </p>
      */
     inline bool GetSuppressIndefinitely() const{ return m_suppressIndefinitely; }
-
-    /**
-     * <p> Indicates whether a suppression should exist indefinitely or not. </p>
-     */
     inline bool SuppressIndefinitelyHasBeenSet() const { return m_suppressIndefinitelyHasBeenSet; }
-
-    /**
-     * <p> Indicates whether a suppression should exist indefinitely or not. </p>
-     */
     inline void SetSuppressIndefinitely(bool value) { m_suppressIndefinitelyHasBeenSet = true; m_suppressIndefinitely = value; }
-
-    /**
-     * <p> Indicates whether a suppression should exist indefinitely or not. </p>
-     */
     inline AuditSuppression& WithSuppressIndefinitely(bool value) { SetSuppressIndefinitely(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The description of the audit suppression. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline AuditSuppression& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline AuditSuppression& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p> The description of the audit suppression. </p>
-     */
     inline AuditSuppression& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_checkName;

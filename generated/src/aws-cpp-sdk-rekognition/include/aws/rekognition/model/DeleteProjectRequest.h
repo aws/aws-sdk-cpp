@@ -34,46 +34,19 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline DeleteProjectRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline DeleteProjectRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-     */
     inline DeleteProjectRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectArn;

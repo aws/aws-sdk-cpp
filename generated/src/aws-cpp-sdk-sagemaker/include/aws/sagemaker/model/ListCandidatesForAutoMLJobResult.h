@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKER_API ListCandidatesForAutoMLJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
      */
     inline const Aws::Vector<AutoMLCandidate>& GetCandidates() const{ return m_candidates; }
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline void SetCandidates(const Aws::Vector<AutoMLCandidate>& value) { m_candidates = value; }
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline void SetCandidates(Aws::Vector<AutoMLCandidate>&& value) { m_candidates = std::move(value); }
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& WithCandidates(const Aws::Vector<AutoMLCandidate>& value) { SetCandidates(value); return *this;}
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& WithCandidates(Aws::Vector<AutoMLCandidate>&& value) { SetCandidates(std::move(value)); return *this;}
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& AddCandidates(const AutoMLCandidate& value) { m_candidates.push_back(value); return *this; }
-
-    /**
-     * <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& AddCandidates(AutoMLCandidate&& value) { m_candidates.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you receive this token. Use it in
-     * your next request to receive the next set of results.</p>
-     */
     inline ListCandidatesForAutoMLJobResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCandidatesForAutoMLJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCandidatesForAutoMLJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCandidatesForAutoMLJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AutoMLCandidate> m_candidates;

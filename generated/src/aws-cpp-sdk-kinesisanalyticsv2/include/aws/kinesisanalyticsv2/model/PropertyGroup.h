@@ -39,112 +39,38 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the key of an application execution property key-value pair.</p>
      */
     inline const Aws::String& GetPropertyGroupId() const{ return m_propertyGroupId; }
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline bool PropertyGroupIdHasBeenSet() const { return m_propertyGroupIdHasBeenSet; }
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline void SetPropertyGroupId(const Aws::String& value) { m_propertyGroupIdHasBeenSet = true; m_propertyGroupId = value; }
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline void SetPropertyGroupId(Aws::String&& value) { m_propertyGroupIdHasBeenSet = true; m_propertyGroupId = std::move(value); }
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline void SetPropertyGroupId(const char* value) { m_propertyGroupIdHasBeenSet = true; m_propertyGroupId.assign(value); }
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& WithPropertyGroupId(const Aws::String& value) { SetPropertyGroupId(value); return *this;}
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& WithPropertyGroupId(Aws::String&& value) { SetPropertyGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the key of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& WithPropertyGroupId(const char* value) { SetPropertyGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the value of an application execution property key-value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPropertyMap() const{ return m_propertyMap; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline bool PropertyMapHasBeenSet() const { return m_propertyMapHasBeenSet; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline void SetPropertyMap(const Aws::Map<Aws::String, Aws::String>& value) { m_propertyMapHasBeenSet = true; m_propertyMap = value; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline void SetPropertyMap(Aws::Map<Aws::String, Aws::String>&& value) { m_propertyMapHasBeenSet = true; m_propertyMap = std::move(value); }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& WithPropertyMap(const Aws::Map<Aws::String, Aws::String>& value) { SetPropertyMap(value); return *this;}
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& WithPropertyMap(Aws::Map<Aws::String, Aws::String>&& value) { SetPropertyMap(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(const Aws::String& key, const Aws::String& value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(key, value); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(Aws::String&& key, const Aws::String& value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(const Aws::String& key, Aws::String&& value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(Aws::String&& key, Aws::String&& value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(const char* key, Aws::String&& value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(Aws::String&& key, const char* value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Describes the value of an application execution property key-value pair.</p>
-     */
     inline PropertyGroup& AddPropertyMap(const char* key, const char* value) { m_propertyMapHasBeenSet = true; m_propertyMap.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_propertyGroupId;

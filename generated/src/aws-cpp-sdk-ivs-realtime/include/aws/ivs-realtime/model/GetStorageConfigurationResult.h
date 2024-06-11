@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API GetStorageConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The StorageConfiguration that was returned.</p>
      */
     inline const StorageConfiguration& GetStorageConfiguration() const{ return m_storageConfiguration; }
-
-    /**
-     * <p>The StorageConfiguration that was returned.</p>
-     */
     inline void SetStorageConfiguration(const StorageConfiguration& value) { m_storageConfiguration = value; }
-
-    /**
-     * <p>The StorageConfiguration that was returned.</p>
-     */
     inline void SetStorageConfiguration(StorageConfiguration&& value) { m_storageConfiguration = std::move(value); }
-
-    /**
-     * <p>The StorageConfiguration that was returned.</p>
-     */
     inline GetStorageConfigurationResult& WithStorageConfiguration(const StorageConfiguration& value) { SetStorageConfiguration(value); return *this;}
-
-    /**
-     * <p>The StorageConfiguration that was returned.</p>
-     */
     inline GetStorageConfigurationResult& WithStorageConfiguration(StorageConfiguration&& value) { SetStorageConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStorageConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStorageConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStorageConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StorageConfiguration m_storageConfiguration;

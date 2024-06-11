@@ -51,6 +51,7 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
@@ -59,168 +60,44 @@ namespace Model
      * <code>arn</code>.</p>
      */
     inline const Aws::String& GetTimerId() const{ return m_timerId; }
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
-
-    /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
-     * <code>arn</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent
      * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline StartTimerDecisionAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline StartTimerDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-
-    /**
-     * <p>The data attached to the event that can be used by the decider in subsequent
-     * workflow tasks.</p>
-     */
     inline StartTimerDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The duration to wait before firing the timer.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
      */
     inline const Aws::String& GetStartToFireTimeout() const{ return m_startToFireTimeout; }
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline bool StartToFireTimeoutHasBeenSet() const { return m_startToFireTimeoutHasBeenSet; }
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline void SetStartToFireTimeout(const Aws::String& value) { m_startToFireTimeoutHasBeenSet = true; m_startToFireTimeout = value; }
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline void SetStartToFireTimeout(Aws::String&& value) { m_startToFireTimeoutHasBeenSet = true; m_startToFireTimeout = std::move(value); }
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline void SetStartToFireTimeout(const char* value) { m_startToFireTimeoutHasBeenSet = true; m_startToFireTimeout.assign(value); }
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithStartToFireTimeout(const Aws::String& value) { SetStartToFireTimeout(value); return *this;}
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithStartToFireTimeout(Aws::String&& value) { SetStartToFireTimeout(std::move(value)); return *this;}
-
-    /**
-     * <p> The duration to wait before firing the timer.</p> <p>The duration is
-     * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-     */
     inline StartTimerDecisionAttributes& WithStartToFireTimeout(const char* value) { SetStartToFireTimeout(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timerId;

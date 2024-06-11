@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetSegmentImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ImportJobsResponse& GetImportJobsResponse() const{ return m_importJobsResponse; }
-
-    
     inline void SetImportJobsResponse(const ImportJobsResponse& value) { m_importJobsResponse = value; }
-
-    
     inline void SetImportJobsResponse(ImportJobsResponse&& value) { m_importJobsResponse = std::move(value); }
-
-    
     inline GetSegmentImportJobsResult& WithImportJobsResponse(const ImportJobsResponse& value) { SetImportJobsResponse(value); return *this;}
-
-    
     inline GetSegmentImportJobsResult& WithImportJobsResponse(ImportJobsResponse&& value) { SetImportJobsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSegmentImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSegmentImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSegmentImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ImportJobsResponse m_importJobsResponse;

@@ -38,64 +38,36 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>Indicates the media type of the resource.</p>
      */
     inline const DescriptorContentType& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(const DescriptorContentType& value) { m_contentType = value; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(DescriptorContentType&& value) { m_contentType = std::move(value); }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolNetworkPackageDescriptorResult& WithContentType(const DescriptorContentType& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolNetworkPackageDescriptorResult& WithContentType(DescriptorContentType&& value) { SetContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contents of the network service descriptor in the network package.</p>
      */
     inline Aws::IOStream& GetNsd() const { return m_nsd.GetUnderlyingStream(); }
-
-    /**
-     * <p>Contents of the network service descriptor in the network package.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_nsd = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSolNetworkPackageDescriptorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSolNetworkPackageDescriptorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSolNetworkPackageDescriptorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescriptorContentType m_contentType;

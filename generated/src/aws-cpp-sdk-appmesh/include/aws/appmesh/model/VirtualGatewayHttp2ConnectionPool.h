@@ -36,30 +36,16 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of inflight requests Envoy can concurrently support across
      * hosts in upstream cluster.</p>
      */
     inline int GetMaxRequests() const{ return m_maxRequests; }
-
-    /**
-     * <p>Maximum number of inflight requests Envoy can concurrently support across
-     * hosts in upstream cluster.</p>
-     */
     inline bool MaxRequestsHasBeenSet() const { return m_maxRequestsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of inflight requests Envoy can concurrently support across
-     * hosts in upstream cluster.</p>
-     */
     inline void SetMaxRequests(int value) { m_maxRequestsHasBeenSet = true; m_maxRequests = value; }
-
-    /**
-     * <p>Maximum number of inflight requests Envoy can concurrently support across
-     * hosts in upstream cluster.</p>
-     */
     inline VirtualGatewayHttp2ConnectionPool& WithMaxRequests(int value) { SetMaxRequests(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxRequests;

@@ -32,63 +32,29 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API CreateLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The ID of the label that you have created. </p>
      */
     inline const Aws::String& GetLabelId() const{ return m_labelId; }
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline void SetLabelId(const Aws::String& value) { m_labelId = value; }
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline void SetLabelId(Aws::String&& value) { m_labelId = std::move(value); }
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline void SetLabelId(const char* value) { m_labelId.assign(value); }
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline CreateLabelResult& WithLabelId(const Aws::String& value) { SetLabelId(value); return *this;}
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline CreateLabelResult& WithLabelId(Aws::String&& value) { SetLabelId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the label that you have created. </p>
-     */
     inline CreateLabelResult& WithLabelId(const char* value) { SetLabelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLabelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLabelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLabelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_labelId;

@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESWEB_API UpdateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user access logging settings.</p>
      */
     inline const UserAccessLoggingSettings& GetUserAccessLoggingSettings() const{ return m_userAccessLoggingSettings; }
-
-    /**
-     * <p>The user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettings(const UserAccessLoggingSettings& value) { m_userAccessLoggingSettings = value; }
-
-    /**
-     * <p>The user access logging settings.</p>
-     */
     inline void SetUserAccessLoggingSettings(UserAccessLoggingSettings&& value) { m_userAccessLoggingSettings = std::move(value); }
-
-    /**
-     * <p>The user access logging settings.</p>
-     */
     inline UpdateUserAccessLoggingSettingsResult& WithUserAccessLoggingSettings(const UserAccessLoggingSettings& value) { SetUserAccessLoggingSettings(value); return *this;}
-
-    /**
-     * <p>The user access logging settings.</p>
-     */
     inline UpdateUserAccessLoggingSettingsResult& WithUserAccessLoggingSettings(UserAccessLoggingSettings&& value) { SetUserAccessLoggingSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserAccessLoggingSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserAccessLoggingSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserAccessLoggingSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UserAccessLoggingSettings m_userAccessLoggingSettings;

@@ -41,177 +41,61 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This represents a boolean type condition matching on the incoming mail. It
      * performs the boolean operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
      */
     inline const IngressBooleanExpression& GetBooleanExpression() const{ return m_booleanExpression; }
-
-    /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-
-    /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline void SetBooleanExpression(const IngressBooleanExpression& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = value; }
-
-    /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline void SetBooleanExpression(IngressBooleanExpression&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::move(value); }
-
-    /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithBooleanExpression(const IngressBooleanExpression& value) { SetBooleanExpression(value); return *this;}
-
-    /**
-     * <p>This represents a boolean type condition matching on the incoming mail. It
-     * performs the boolean operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithBooleanExpression(IngressBooleanExpression&& value) { SetBooleanExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This represents an IP based condition matching on the incoming mail. It
      * performs the operation configured in 'Operator' and evaluates the 'Protocol'
      * object against the 'Value'.</p>
      */
     inline const IngressIpv4Expression& GetIpExpression() const{ return m_ipExpression; }
-
-    /**
-     * <p>This represents an IP based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline bool IpExpressionHasBeenSet() const { return m_ipExpressionHasBeenSet; }
-
-    /**
-     * <p>This represents an IP based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline void SetIpExpression(const IngressIpv4Expression& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = value; }
-
-    /**
-     * <p>This represents an IP based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline void SetIpExpression(IngressIpv4Expression&& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = std::move(value); }
-
-    /**
-     * <p>This represents an IP based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithIpExpression(const IngressIpv4Expression& value) { SetIpExpression(value); return *this;}
-
-    /**
-     * <p>This represents an IP based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithIpExpression(IngressIpv4Expression&& value) { SetIpExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This represents a string based condition matching on the incoming mail. It
      * performs the string operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
      */
     inline const IngressStringExpression& GetStringExpression() const{ return m_stringExpression; }
-
-    /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-
-    /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline void SetStringExpression(const IngressStringExpression& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = value; }
-
-    /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline void SetStringExpression(IngressStringExpression&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::move(value); }
-
-    /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithStringExpression(const IngressStringExpression& value) { SetStringExpression(value); return *this;}
-
-    /**
-     * <p>This represents a string based condition matching on the incoming mail. It
-     * performs the string operation configured in 'Operator' and evaluates the
-     * 'Protocol' object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithStringExpression(IngressStringExpression&& value) { SetStringExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This represents a TLS based condition matching on the incoming mail. It
      * performs the operation configured in 'Operator' and evaluates the 'Protocol'
      * object against the 'Value'.</p>
      */
     inline const IngressTlsProtocolExpression& GetTlsExpression() const{ return m_tlsExpression; }
-
-    /**
-     * <p>This represents a TLS based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline bool TlsExpressionHasBeenSet() const { return m_tlsExpressionHasBeenSet; }
-
-    /**
-     * <p>This represents a TLS based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline void SetTlsExpression(const IngressTlsProtocolExpression& value) { m_tlsExpressionHasBeenSet = true; m_tlsExpression = value; }
-
-    /**
-     * <p>This represents a TLS based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline void SetTlsExpression(IngressTlsProtocolExpression&& value) { m_tlsExpressionHasBeenSet = true; m_tlsExpression = std::move(value); }
-
-    /**
-     * <p>This represents a TLS based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithTlsExpression(const IngressTlsProtocolExpression& value) { SetTlsExpression(value); return *this;}
-
-    /**
-     * <p>This represents a TLS based condition matching on the incoming mail. It
-     * performs the operation configured in 'Operator' and evaluates the 'Protocol'
-     * object against the 'Value'.</p>
-     */
     inline PolicyCondition& WithTlsExpression(IngressTlsProtocolExpression&& value) { SetTlsExpression(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngressBooleanExpression m_booleanExpression;

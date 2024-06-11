@@ -38,77 +38,31 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the cloud flow to use as a source of this bridge.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline UpdateBridgeFlowSourceRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline UpdateBridgeFlowSourceRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the cloud flow to use as a source of this bridge.
-     */
     inline UpdateBridgeFlowSourceRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the VPC interface attachment to use for this source.
      */
     inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const{ return m_flowVpcInterfaceAttachment; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline void SetFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = value; }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline void SetFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = std::move(value); }
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline UpdateBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetFlowVpcInterfaceAttachment(value); return *this;}
-
-    /**
-     * The name of the VPC interface attachment to use for this source.
-     */
     inline UpdateBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetFlowVpcInterfaceAttachment(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

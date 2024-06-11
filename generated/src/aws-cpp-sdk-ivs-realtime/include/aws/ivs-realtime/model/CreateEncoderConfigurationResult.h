@@ -33,53 +33,27 @@ namespace Model
     AWS_IVSREALTIME_API CreateEncoderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The EncoderConfiguration that was created.</p>
      */
     inline const EncoderConfiguration& GetEncoderConfiguration() const{ return m_encoderConfiguration; }
-
-    /**
-     * <p>The EncoderConfiguration that was created.</p>
-     */
     inline void SetEncoderConfiguration(const EncoderConfiguration& value) { m_encoderConfiguration = value; }
-
-    /**
-     * <p>The EncoderConfiguration that was created.</p>
-     */
     inline void SetEncoderConfiguration(EncoderConfiguration&& value) { m_encoderConfiguration = std::move(value); }
-
-    /**
-     * <p>The EncoderConfiguration that was created.</p>
-     */
     inline CreateEncoderConfigurationResult& WithEncoderConfiguration(const EncoderConfiguration& value) { SetEncoderConfiguration(value); return *this;}
-
-    /**
-     * <p>The EncoderConfiguration that was created.</p>
-     */
     inline CreateEncoderConfigurationResult& WithEncoderConfiguration(EncoderConfiguration&& value) { SetEncoderConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateEncoderConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateEncoderConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateEncoderConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EncoderConfiguration m_encoderConfiguration;

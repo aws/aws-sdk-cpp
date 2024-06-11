@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API ModifyAddressAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the Elastic IP address.</p>
      */
     inline const AddressAttribute& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>Information about the Elastic IP address.</p>
-     */
     inline void SetAddress(const AddressAttribute& value) { m_address = value; }
-
-    /**
-     * <p>Information about the Elastic IP address.</p>
-     */
     inline void SetAddress(AddressAttribute&& value) { m_address = std::move(value); }
-
-    /**
-     * <p>Information about the Elastic IP address.</p>
-     */
     inline ModifyAddressAttributeResponse& WithAddress(const AddressAttribute& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>Information about the Elastic IP address.</p>
-     */
     inline ModifyAddressAttributeResponse& WithAddress(AddressAttribute&& value) { SetAddress(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyAddressAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyAddressAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AddressAttribute m_address;

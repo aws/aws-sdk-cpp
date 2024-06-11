@@ -39,92 +39,34 @@ namespace Model
     AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The code for the Amazon Web Services service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline Service& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline Service& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code for the Amazon Web Services service.</p>
-     */
     inline Service& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attributes that are available for this service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline Service& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline Service& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline Service& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline Service& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The attributes that are available for this service.</p>
-     */
     inline Service& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_serviceCode;

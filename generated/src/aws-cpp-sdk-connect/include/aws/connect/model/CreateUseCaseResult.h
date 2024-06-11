@@ -32,99 +32,42 @@ namespace Model
     AWS_CONNECT_API CreateUseCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the use case.</p>
      */
     inline const Aws::String& GetUseCaseId() const{ return m_useCaseId; }
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline void SetUseCaseId(const Aws::String& value) { m_useCaseId = value; }
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline void SetUseCaseId(Aws::String&& value) { m_useCaseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline void SetUseCaseId(const char* value) { m_useCaseId.assign(value); }
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseId(const Aws::String& value) { SetUseCaseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseId(Aws::String&& value) { SetUseCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseId(const char* value) { SetUseCaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the use case.</p>
      */
     inline const Aws::String& GetUseCaseArn() const{ return m_useCaseArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline void SetUseCaseArn(const Aws::String& value) { m_useCaseArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline void SetUseCaseArn(Aws::String&& value) { m_useCaseArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline void SetUseCaseArn(const char* value) { m_useCaseArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseArn(const Aws::String& value) { SetUseCaseArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseArn(Aws::String&& value) { SetUseCaseArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the use case.</p>
-     */
     inline CreateUseCaseResult& WithUseCaseArn(const char* value) { SetUseCaseArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUseCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUseCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUseCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_useCaseId;

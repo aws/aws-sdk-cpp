@@ -39,118 +39,45 @@ namespace Model
     AWS_CODEDEPLOY_API ListGitHubAccountTokenNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of names of connections to GitHub accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenNameList() const{ return m_tokenNameList; }
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline void SetTokenNameList(const Aws::Vector<Aws::String>& value) { m_tokenNameList = value; }
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline void SetTokenNameList(Aws::Vector<Aws::String>&& value) { m_tokenNameList = std::move(value); }
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline ListGitHubAccountTokenNamesResult& WithTokenNameList(const Aws::Vector<Aws::String>& value) { SetTokenNameList(value); return *this;}
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline ListGitHubAccountTokenNamesResult& WithTokenNameList(Aws::Vector<Aws::String>&& value) { SetTokenNameList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline ListGitHubAccountTokenNamesResult& AddTokenNameList(const Aws::String& value) { m_tokenNameList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline ListGitHubAccountTokenNamesResult& AddTokenNameList(Aws::String&& value) { m_tokenNameList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of connections to GitHub accounts.</p>
-     */
     inline ListGitHubAccountTokenNamesResult& AddTokenNameList(const char* value) { m_tokenNameList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
      * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
      * return the next set of names in the list. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
-     * return the next set of names in the list. </p>
-     */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListGitHubAccountTokenNamesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListGitHubAccountTokenNamesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListGitHubAccountTokenNamesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_tokenNameList;

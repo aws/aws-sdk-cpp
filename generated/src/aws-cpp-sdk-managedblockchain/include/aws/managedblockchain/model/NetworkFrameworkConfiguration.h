@@ -38,42 +38,18 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
      * that uses Hyperledger Fabric. </p>
      */
     inline const NetworkFabricConfiguration& GetFabric() const{ return m_fabric; }
-
-    /**
-     * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
-     * that uses Hyperledger Fabric. </p>
-     */
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-
-    /**
-     * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
-     * that uses Hyperledger Fabric. </p>
-     */
     inline void SetFabric(const NetworkFabricConfiguration& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-
-    /**
-     * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
-     * that uses Hyperledger Fabric. </p>
-     */
     inline void SetFabric(NetworkFabricConfiguration&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-
-    /**
-     * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
-     * that uses Hyperledger Fabric. </p>
-     */
     inline NetworkFrameworkConfiguration& WithFabric(const NetworkFabricConfiguration& value) { SetFabric(value); return *this;}
-
-    /**
-     * <p> Hyperledger Fabric configuration properties for a Managed Blockchain network
-     * that uses Hyperledger Fabric. </p>
-     */
     inline NetworkFrameworkConfiguration& WithFabric(NetworkFabricConfiguration&& value) { SetFabric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NetworkFabricConfiguration m_fabric;

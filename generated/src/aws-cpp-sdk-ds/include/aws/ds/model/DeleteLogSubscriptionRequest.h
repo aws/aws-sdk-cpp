@@ -34,46 +34,19 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Identifier of the directory whose log subscription you want to delete.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline DeleteLogSubscriptionRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline DeleteLogSubscriptionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the directory whose log subscription you want to delete.</p>
-     */
     inline DeleteLogSubscriptionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

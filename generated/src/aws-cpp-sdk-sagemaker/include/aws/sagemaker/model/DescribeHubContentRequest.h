@@ -35,159 +35,59 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the hub that contains the content to describe.</p>
      */
     inline const Aws::String& GetHubName() const{ return m_hubName; }
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline bool HubNameHasBeenSet() const { return m_hubNameHasBeenSet; }
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline void SetHubName(const Aws::String& value) { m_hubNameHasBeenSet = true; m_hubName = value; }
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline void SetHubName(Aws::String&& value) { m_hubNameHasBeenSet = true; m_hubName = std::move(value); }
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline void SetHubName(const char* value) { m_hubNameHasBeenSet = true; m_hubName.assign(value); }
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubName(const Aws::String& value) { SetHubName(value); return *this;}
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubName(Aws::String&& value) { SetHubName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the hub that contains the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubName(const char* value) { SetHubName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of content in the hub.</p>
      */
     inline const HubContentType& GetHubContentType() const{ return m_hubContentType; }
-
-    /**
-     * <p>The type of content in the hub.</p>
-     */
     inline bool HubContentTypeHasBeenSet() const { return m_hubContentTypeHasBeenSet; }
-
-    /**
-     * <p>The type of content in the hub.</p>
-     */
     inline void SetHubContentType(const HubContentType& value) { m_hubContentTypeHasBeenSet = true; m_hubContentType = value; }
-
-    /**
-     * <p>The type of content in the hub.</p>
-     */
     inline void SetHubContentType(HubContentType&& value) { m_hubContentTypeHasBeenSet = true; m_hubContentType = std::move(value); }
-
-    /**
-     * <p>The type of content in the hub.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentType(const HubContentType& value) { SetHubContentType(value); return *this;}
-
-    /**
-     * <p>The type of content in the hub.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentType(HubContentType&& value) { SetHubContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the content to describe.</p>
      */
     inline const Aws::String& GetHubContentName() const{ return m_hubContentName; }
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline bool HubContentNameHasBeenSet() const { return m_hubContentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline void SetHubContentName(const Aws::String& value) { m_hubContentNameHasBeenSet = true; m_hubContentName = value; }
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline void SetHubContentName(Aws::String&& value) { m_hubContentNameHasBeenSet = true; m_hubContentName = std::move(value); }
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline void SetHubContentName(const char* value) { m_hubContentNameHasBeenSet = true; m_hubContentName.assign(value); }
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentName(const Aws::String& value) { SetHubContentName(value); return *this;}
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentName(Aws::String&& value) { SetHubContentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentName(const char* value) { SetHubContentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the content to describe.</p>
      */
     inline const Aws::String& GetHubContentVersion() const{ return m_hubContentVersion; }
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline bool HubContentVersionHasBeenSet() const { return m_hubContentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline void SetHubContentVersion(const Aws::String& value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion = value; }
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline void SetHubContentVersion(Aws::String&& value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline void SetHubContentVersion(const char* value) { m_hubContentVersionHasBeenSet = true; m_hubContentVersion.assign(value); }
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentVersion(const Aws::String& value) { SetHubContentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentVersion(Aws::String&& value) { SetHubContentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the content to describe.</p>
-     */
     inline DescribeHubContentRequest& WithHubContentVersion(const char* value) { SetHubContentVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hubName;

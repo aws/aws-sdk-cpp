@@ -39,36 +39,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
      */
     inline const ExistingObjectReplicationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-     */
     inline void SetStatus(const ExistingObjectReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-     */
     inline void SetStatus(ExistingObjectReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-     */
     inline ExistingObjectReplication& WithStatus(const ExistingObjectReplicationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-     */
     inline ExistingObjectReplication& WithStatus(ExistingObjectReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExistingObjectReplicationStatus m_status;

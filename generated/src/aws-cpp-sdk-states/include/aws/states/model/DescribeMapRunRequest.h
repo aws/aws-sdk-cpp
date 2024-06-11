@@ -34,46 +34,19 @@ namespace Model
     AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
      */
     inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline DescribeMapRunRequest& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline DescribeMapRunRequest& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-     */
     inline DescribeMapRunRequest& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mapRunArn;

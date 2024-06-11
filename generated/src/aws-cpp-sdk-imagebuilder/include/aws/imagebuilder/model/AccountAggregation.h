@@ -42,83 +42,32 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifies the account that owns the aggregated resource findings.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline AccountAggregation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline AccountAggregation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifies the account that owns the aggregated resource findings.</p>
-     */
     inline AccountAggregation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Counts by severity level for medium severity and higher level findings, plus
      * a total for all of the findings.</p>
      */
     inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
-
-    /**
-     * <p>Counts by severity level for medium severity and higher level findings, plus
-     * a total for all of the findings.</p>
-     */
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-
-    /**
-     * <p>Counts by severity level for medium severity and higher level findings, plus
-     * a total for all of the findings.</p>
-     */
     inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-
-    /**
-     * <p>Counts by severity level for medium severity and higher level findings, plus
-     * a total for all of the findings.</p>
-     */
     inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-
-    /**
-     * <p>Counts by severity level for medium severity and higher level findings, plus
-     * a total for all of the findings.</p>
-     */
     inline AccountAggregation& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-
-    /**
-     * <p>Counts by severity level for medium severity and higher level findings, plus
-     * a total for all of the findings.</p>
-     */
     inline AccountAggregation& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

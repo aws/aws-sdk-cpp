@@ -45,6 +45,7 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A custom start time for the off-peak window, in Coordinated Universal Time
      * (UTC). The window length will always be 10 hours, so you can't specify an end
@@ -52,47 +53,12 @@ namespace Model
      * will automatically be set to 9:00 A.M.</p>
      */
     inline const WindowStartTime& GetWindowStartTime() const{ return m_windowStartTime; }
-
-    /**
-     * <p>A custom start time for the off-peak window, in Coordinated Universal Time
-     * (UTC). The window length will always be 10 hours, so you can't specify an end
-     * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
-     * will automatically be set to 9:00 A.M.</p>
-     */
     inline bool WindowStartTimeHasBeenSet() const { return m_windowStartTimeHasBeenSet; }
-
-    /**
-     * <p>A custom start time for the off-peak window, in Coordinated Universal Time
-     * (UTC). The window length will always be 10 hours, so you can't specify an end
-     * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
-     * will automatically be set to 9:00 A.M.</p>
-     */
     inline void SetWindowStartTime(const WindowStartTime& value) { m_windowStartTimeHasBeenSet = true; m_windowStartTime = value; }
-
-    /**
-     * <p>A custom start time for the off-peak window, in Coordinated Universal Time
-     * (UTC). The window length will always be 10 hours, so you can't specify an end
-     * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
-     * will automatically be set to 9:00 A.M.</p>
-     */
     inline void SetWindowStartTime(WindowStartTime&& value) { m_windowStartTimeHasBeenSet = true; m_windowStartTime = std::move(value); }
-
-    /**
-     * <p>A custom start time for the off-peak window, in Coordinated Universal Time
-     * (UTC). The window length will always be 10 hours, so you can't specify an end
-     * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
-     * will automatically be set to 9:00 A.M.</p>
-     */
     inline OffPeakWindow& WithWindowStartTime(const WindowStartTime& value) { SetWindowStartTime(value); return *this;}
-
-    /**
-     * <p>A custom start time for the off-peak window, in Coordinated Universal Time
-     * (UTC). The window length will always be 10 hours, so you can't specify an end
-     * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
-     * will automatically be set to 9:00 A.M.</p>
-     */
     inline OffPeakWindow& WithWindowStartTime(WindowStartTime&& value) { SetWindowStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WindowStartTime m_windowStartTime;

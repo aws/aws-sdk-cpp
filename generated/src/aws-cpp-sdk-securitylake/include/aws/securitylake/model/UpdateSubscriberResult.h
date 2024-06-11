@@ -33,53 +33,27 @@ namespace Model
     AWS_SECURITYLAKE_API UpdateSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated subscriber information.</p>
      */
     inline const SubscriberResource& GetSubscriber() const{ return m_subscriber; }
-
-    /**
-     * <p>The updated subscriber information.</p>
-     */
     inline void SetSubscriber(const SubscriberResource& value) { m_subscriber = value; }
-
-    /**
-     * <p>The updated subscriber information.</p>
-     */
     inline void SetSubscriber(SubscriberResource&& value) { m_subscriber = std::move(value); }
-
-    /**
-     * <p>The updated subscriber information.</p>
-     */
     inline UpdateSubscriberResult& WithSubscriber(const SubscriberResource& value) { SetSubscriber(value); return *this;}
-
-    /**
-     * <p>The updated subscriber information.</p>
-     */
     inline UpdateSubscriberResult& WithSubscriber(SubscriberResource&& value) { SetSubscriber(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateSubscriberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateSubscriberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateSubscriberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SubscriberResource m_subscriber;

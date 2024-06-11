@@ -36,111 +36,36 @@ namespace Model
     AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
      * such as a server, user, or role.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline TagResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline TagResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource,
-     * such as a server, user, or role.</p>
-     */
     inline TagResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs assigned to ARNs that you can use to group and search for
      * resources by type. You can attach this metadata to resources (servers, users,
      * workflows, and so on) for any purpose.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Key-value pairs assigned to ARNs that you can use to group and search for
-     * resources by type. You can attach this metadata to resources (servers, users,
-     * workflows, and so on) for any purpose.</p>
-     */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_arn;

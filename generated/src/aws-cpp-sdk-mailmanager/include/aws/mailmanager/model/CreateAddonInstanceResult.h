@@ -32,63 +32,29 @@ namespace Model
     AWS_MAILMANAGER_API CreateAddonInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique ID of the Add On instance created by this API.</p>
      */
     inline const Aws::String& GetAddonInstanceId() const{ return m_addonInstanceId; }
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline void SetAddonInstanceId(const Aws::String& value) { m_addonInstanceId = value; }
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline void SetAddonInstanceId(Aws::String&& value) { m_addonInstanceId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline void SetAddonInstanceId(const char* value) { m_addonInstanceId.assign(value); }
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline CreateAddonInstanceResult& WithAddonInstanceId(const Aws::String& value) { SetAddonInstanceId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline CreateAddonInstanceResult& WithAddonInstanceId(Aws::String&& value) { SetAddonInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the Add On instance created by this API.</p>
-     */
     inline CreateAddonInstanceResult& WithAddonInstanceId(const char* value) { SetAddonInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAddonInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAddonInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAddonInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addonInstanceId;

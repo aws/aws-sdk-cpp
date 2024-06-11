@@ -40,49 +40,21 @@ namespace Model
     AWS_SESV2_API ListCustomVerificationEmailTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of the custom verification email templates that exist in your
      * account.</p>
      */
     inline const Aws::Vector<CustomVerificationEmailTemplateMetadata>& GetCustomVerificationEmailTemplates() const{ return m_customVerificationEmailTemplates; }
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline void SetCustomVerificationEmailTemplates(const Aws::Vector<CustomVerificationEmailTemplateMetadata>& value) { m_customVerificationEmailTemplates = value; }
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline void SetCustomVerificationEmailTemplates(Aws::Vector<CustomVerificationEmailTemplateMetadata>&& value) { m_customVerificationEmailTemplates = std::move(value); }
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& WithCustomVerificationEmailTemplates(const Aws::Vector<CustomVerificationEmailTemplateMetadata>& value) { SetCustomVerificationEmailTemplates(value); return *this;}
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& WithCustomVerificationEmailTemplates(Aws::Vector<CustomVerificationEmailTemplateMetadata>&& value) { SetCustomVerificationEmailTemplates(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& AddCustomVerificationEmailTemplates(const CustomVerificationEmailTemplateMetadata& value) { m_customVerificationEmailTemplates.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the custom verification email templates that exist in your
-     * account.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& AddCustomVerificationEmailTemplates(CustomVerificationEmailTemplateMetadata&& value) { m_customVerificationEmailTemplates.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token indicating that there are additional custom verification email
      * templates available to be listed. Pass this token to a subsequent call to
@@ -90,77 +62,24 @@ namespace Model
      * verification email templates.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token indicating that there are additional custom verification email
-     * templates available to be listed. Pass this token to a subsequent call to
-     * <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom
-     * verification email templates.</p>
-     */
     inline ListCustomVerificationEmailTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCustomVerificationEmailTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCustomVerificationEmailTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCustomVerificationEmailTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CustomVerificationEmailTemplateMetadata> m_customVerificationEmailTemplates;

@@ -42,237 +42,79 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The OAuth2 grant type in the CreateConnection request. For example,
      * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
      * <code>CLIENT_CREDENTIALS</code>.</p>
      */
     inline const OAuth2GrantType& GetOAuth2GrantType() const{ return m_oAuth2GrantType; }
-
-    /**
-     * <p>The OAuth2 grant type in the CreateConnection request. For example,
-     * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
-     * <code>CLIENT_CREDENTIALS</code>.</p>
-     */
     inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }
-
-    /**
-     * <p>The OAuth2 grant type in the CreateConnection request. For example,
-     * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
-     * <code>CLIENT_CREDENTIALS</code>.</p>
-     */
     inline void SetOAuth2GrantType(const OAuth2GrantType& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = value; }
-
-    /**
-     * <p>The OAuth2 grant type in the CreateConnection request. For example,
-     * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
-     * <code>CLIENT_CREDENTIALS</code>.</p>
-     */
     inline void SetOAuth2GrantType(OAuth2GrantType&& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = std::move(value); }
-
-    /**
-     * <p>The OAuth2 grant type in the CreateConnection request. For example,
-     * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
-     * <code>CLIENT_CREDENTIALS</code>.</p>
-     */
     inline OAuth2PropertiesInput& WithOAuth2GrantType(const OAuth2GrantType& value) { SetOAuth2GrantType(value); return *this;}
-
-    /**
-     * <p>The OAuth2 grant type in the CreateConnection request. For example,
-     * <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or
-     * <code>CLIENT_CREDENTIALS</code>.</p>
-     */
     inline OAuth2PropertiesInput& WithOAuth2GrantType(OAuth2GrantType&& value) { SetOAuth2GrantType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client application type in the CreateConnection request. For example,
      * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
      */
     inline const OAuth2ClientApplication& GetOAuth2ClientApplication() const{ return m_oAuth2ClientApplication; }
-
-    /**
-     * <p>The client application type in the CreateConnection request. For example,
-     * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
-     */
     inline bool OAuth2ClientApplicationHasBeenSet() const { return m_oAuth2ClientApplicationHasBeenSet; }
-
-    /**
-     * <p>The client application type in the CreateConnection request. For example,
-     * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
-     */
     inline void SetOAuth2ClientApplication(const OAuth2ClientApplication& value) { m_oAuth2ClientApplicationHasBeenSet = true; m_oAuth2ClientApplication = value; }
-
-    /**
-     * <p>The client application type in the CreateConnection request. For example,
-     * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
-     */
     inline void SetOAuth2ClientApplication(OAuth2ClientApplication&& value) { m_oAuth2ClientApplicationHasBeenSet = true; m_oAuth2ClientApplication = std::move(value); }
-
-    /**
-     * <p>The client application type in the CreateConnection request. For example,
-     * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
-     */
     inline OAuth2PropertiesInput& WithOAuth2ClientApplication(const OAuth2ClientApplication& value) { SetOAuth2ClientApplication(value); return *this;}
-
-    /**
-     * <p>The client application type in the CreateConnection request. For example,
-     * <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
-     */
     inline OAuth2PropertiesInput& WithOAuth2ClientApplication(OAuth2ClientApplication&& value) { SetOAuth2ClientApplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL of the provider's authentication server, to exchange an authorization
      * code for an access token.</p>
      */
     inline const Aws::String& GetTokenUrl() const{ return m_tokenUrl; }
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline bool TokenUrlHasBeenSet() const { return m_tokenUrlHasBeenSet; }
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline void SetTokenUrl(const Aws::String& value) { m_tokenUrlHasBeenSet = true; m_tokenUrl = value; }
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline void SetTokenUrl(Aws::String&& value) { m_tokenUrlHasBeenSet = true; m_tokenUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline void SetTokenUrl(const char* value) { m_tokenUrlHasBeenSet = true; m_tokenUrl.assign(value); }
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline OAuth2PropertiesInput& WithTokenUrl(const Aws::String& value) { SetTokenUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline OAuth2PropertiesInput& WithTokenUrl(Aws::String&& value) { SetTokenUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the provider's authentication server, to exchange an authorization
-     * code for an access token.</p>
-     */
     inline OAuth2PropertiesInput& WithTokenUrl(const char* value) { SetTokenUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTokenUrlParametersMap() const{ return m_tokenUrlParametersMap; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline bool TokenUrlParametersMapHasBeenSet() const { return m_tokenUrlParametersMapHasBeenSet; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline void SetTokenUrlParametersMap(const Aws::Map<Aws::String, Aws::String>& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap = value; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline void SetTokenUrlParametersMap(Aws::Map<Aws::String, Aws::String>&& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap = std::move(value); }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& WithTokenUrlParametersMap(const Aws::Map<Aws::String, Aws::String>& value) { SetTokenUrlParametersMap(value); return *this;}
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& WithTokenUrlParametersMap(Aws::Map<Aws::String, Aws::String>&& value) { SetTokenUrlParametersMap(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(const Aws::String& key, const Aws::String& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(Aws::String&& key, const Aws::String& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(const Aws::String& key, Aws::String&& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(Aws::String&& key, Aws::String&& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(const char* key, Aws::String&& value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(Aws::String&& key, const char* value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of parameters that are added to the token <code>GET</code> request.</p>
-     */
     inline OAuth2PropertiesInput& AddTokenUrlParametersMap(const char* key, const char* value) { m_tokenUrlParametersMapHasBeenSet = true; m_tokenUrlParametersMap.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The set of properties required for the the OAuth2
      * <code>AUTHORIZATION_CODE</code> grant type.</p>
      */
     inline const AuthorizationCodeProperties& GetAuthorizationCodeProperties() const{ return m_authorizationCodeProperties; }
-
-    /**
-     * <p>The set of properties required for the the OAuth2
-     * <code>AUTHORIZATION_CODE</code> grant type.</p>
-     */
     inline bool AuthorizationCodePropertiesHasBeenSet() const { return m_authorizationCodePropertiesHasBeenSet; }
-
-    /**
-     * <p>The set of properties required for the the OAuth2
-     * <code>AUTHORIZATION_CODE</code> grant type.</p>
-     */
     inline void SetAuthorizationCodeProperties(const AuthorizationCodeProperties& value) { m_authorizationCodePropertiesHasBeenSet = true; m_authorizationCodeProperties = value; }
-
-    /**
-     * <p>The set of properties required for the the OAuth2
-     * <code>AUTHORIZATION_CODE</code> grant type.</p>
-     */
     inline void SetAuthorizationCodeProperties(AuthorizationCodeProperties&& value) { m_authorizationCodePropertiesHasBeenSet = true; m_authorizationCodeProperties = std::move(value); }
-
-    /**
-     * <p>The set of properties required for the the OAuth2
-     * <code>AUTHORIZATION_CODE</code> grant type.</p>
-     */
     inline OAuth2PropertiesInput& WithAuthorizationCodeProperties(const AuthorizationCodeProperties& value) { SetAuthorizationCodeProperties(value); return *this;}
-
-    /**
-     * <p>The set of properties required for the the OAuth2
-     * <code>AUTHORIZATION_CODE</code> grant type.</p>
-     */
     inline OAuth2PropertiesInput& WithAuthorizationCodeProperties(AuthorizationCodeProperties&& value) { SetAuthorizationCodeProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OAuth2GrantType m_oAuth2GrantType;

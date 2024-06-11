@@ -38,177 +38,62 @@ namespace Model
     AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The UUID of the CIDR collection.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline ListCidrBlocksRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline ListCidrBlocksRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The UUID of the CIDR collection.</p>
-     */
     inline ListCidrBlocksRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the CIDR collection location.</p>
      */
     inline const Aws::String& GetLocationName() const{ return m_locationName; }
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline ListCidrBlocksRequest& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline ListCidrBlocksRequest& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the CIDR collection location.</p>
-     */
     inline ListCidrBlocksRequest& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An opaque pagination token to indicate where the service is to begin
      * enumerating results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline ListCidrBlocksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline ListCidrBlocksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An opaque pagination token to indicate where the service is to begin
-     * enumerating results.</p>
-     */
     inline ListCidrBlocksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of results you want returned.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline ListCidrBlocksRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline ListCidrBlocksRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-
-    /**
-     * <p>Maximum number of results you want returned.</p>
-     */
     inline ListCidrBlocksRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collectionId;

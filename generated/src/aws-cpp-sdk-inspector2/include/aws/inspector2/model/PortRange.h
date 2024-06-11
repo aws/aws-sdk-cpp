@@ -36,47 +36,25 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The beginning port in a port range.</p>
      */
     inline int GetBegin() const{ return m_begin; }
-
-    /**
-     * <p>The beginning port in a port range.</p>
-     */
     inline bool BeginHasBeenSet() const { return m_beginHasBeenSet; }
-
-    /**
-     * <p>The beginning port in a port range.</p>
-     */
     inline void SetBegin(int value) { m_beginHasBeenSet = true; m_begin = value; }
-
-    /**
-     * <p>The beginning port in a port range.</p>
-     */
     inline PortRange& WithBegin(int value) { SetBegin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ending port in a port range.</p>
      */
     inline int GetEnd() const{ return m_end; }
-
-    /**
-     * <p>The ending port in a port range.</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>The ending port in a port range.</p>
-     */
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>The ending port in a port range.</p>
-     */
     inline PortRange& WithEnd(int value) { SetEnd(value); return *this;}
-
+    ///@}
   private:
 
     int m_begin;

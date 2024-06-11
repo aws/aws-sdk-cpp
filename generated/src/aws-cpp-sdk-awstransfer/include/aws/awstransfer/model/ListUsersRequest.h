@@ -34,31 +34,18 @@ namespace Model
     AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the number of users to return as a response to the
      * <code>ListUsers</code> request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Specifies the number of users to return as a response to the
-     * <code>ListUsers</code> request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of users to return as a response to the
-     * <code>ListUsers</code> request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Specifies the number of users to return as a response to the
-     * <code>ListUsers</code> request.</p>
-     */
     inline ListUsersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there are additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass
@@ -66,112 +53,29 @@ namespace Model
      * continue listing additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline ListUsersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline ListUsersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are additional results from the <code>ListUsers</code> call, a
-     * <code>NextToken</code> parameter is returned in the output. You can then pass
-     * the <code>NextToken</code> to a subsequent <code>ListUsers</code> command, to
-     * continue listing additional users.</p>
-     */
     inline ListUsersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A system-assigned unique identifier for a server that has users assigned to
      * it.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline ListUsersRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline ListUsersRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that has users assigned to
-     * it.</p>
-     */
     inline ListUsersRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

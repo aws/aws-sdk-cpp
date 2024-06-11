@@ -42,67 +42,29 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The certificate signing request (CSR).</p>
      */
     inline const Aws::String& GetCertificateSigningRequest() const{ return m_certificateSigningRequest; }
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline bool CertificateSigningRequestHasBeenSet() const { return m_certificateSigningRequestHasBeenSet; }
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline void SetCertificateSigningRequest(const Aws::String& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = value; }
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline void SetCertificateSigningRequest(Aws::String&& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = std::move(value); }
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline void SetCertificateSigningRequest(const char* value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest.assign(value); }
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(const Aws::String& value) { SetCertificateSigningRequest(value); return *this;}
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(Aws::String&& value) { SetCertificateSigningRequest(std::move(value)); return *this;}
-
-    /**
-     * <p>The certificate signing request (CSR).</p>
-     */
     inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(const char* value) { SetCertificateSigningRequest(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
-
-    /**
-     * <p>Specifies whether the certificate is active.</p>
-     */
     inline CreateCertificateFromCsrRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateSigningRequest;

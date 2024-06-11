@@ -38,46 +38,19 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lambda ARN of the connector being registered.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline LambdaConnectorProvisioningConfig& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline LambdaConnectorProvisioningConfig& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Lambda ARN of the connector being registered.</p>
-     */
     inline LambdaConnectorProvisioningConfig& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lambdaArn;

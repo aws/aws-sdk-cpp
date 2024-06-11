@@ -38,57 +38,27 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-     */
     inline TimestampMetricValuePair& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-     */
     inline TimestampMetricValuePair& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value of the anomalous metric data point at respective Timestamp.</p>
      */
     inline double GetMetricValue() const{ return m_metricValue; }
-
-    /**
-     * <p>Value of the anomalous metric data point at respective Timestamp.</p>
-     */
     inline bool MetricValueHasBeenSet() const { return m_metricValueHasBeenSet; }
-
-    /**
-     * <p>Value of the anomalous metric data point at respective Timestamp.</p>
-     */
     inline void SetMetricValue(double value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
-
-    /**
-     * <p>Value of the anomalous metric data point at respective Timestamp.</p>
-     */
     inline TimestampMetricValuePair& WithMetricValue(double value) { SetMetricValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;

@@ -40,30 +40,17 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-
-    
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-
-    
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-
-    
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-
-    
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-
-    
     inline ServiceEndpoint& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-
-    
     inline ServiceEndpoint& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-
-    
     inline ServiceEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpoint;

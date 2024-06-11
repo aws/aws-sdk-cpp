@@ -39,77 +39,31 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the collection.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline CollectionFilters& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline CollectionFilters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the collection.</p>
-     */
     inline CollectionFilters& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the collection.</p>
      */
     inline const CollectionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the collection.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the collection.</p>
-     */
     inline void SetStatus(const CollectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the collection.</p>
-     */
     inline void SetStatus(CollectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the collection.</p>
-     */
     inline CollectionFilters& WithStatus(const CollectionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the collection.</p>
-     */
     inline CollectionFilters& WithStatus(CollectionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

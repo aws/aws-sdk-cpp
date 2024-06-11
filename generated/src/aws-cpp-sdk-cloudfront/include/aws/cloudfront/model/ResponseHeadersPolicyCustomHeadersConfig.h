@@ -41,67 +41,29 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of HTTP response headers in the list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of HTTP response headers in the list.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of HTTP response headers in the list.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of HTTP response headers in the list.</p>
-     */
     inline ResponseHeadersPolicyCustomHeadersConfig& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of HTTP response headers and their values.</p>
      */
     inline const Aws::Vector<ResponseHeadersPolicyCustomHeader>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline void SetItems(const Aws::Vector<ResponseHeadersPolicyCustomHeader>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline void SetItems(Aws::Vector<ResponseHeadersPolicyCustomHeader>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline ResponseHeadersPolicyCustomHeadersConfig& WithItems(const Aws::Vector<ResponseHeadersPolicyCustomHeader>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline ResponseHeadersPolicyCustomHeadersConfig& WithItems(Aws::Vector<ResponseHeadersPolicyCustomHeader>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline ResponseHeadersPolicyCustomHeadersConfig& AddItems(const ResponseHeadersPolicyCustomHeader& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The list of HTTP response headers and their values.</p>
-     */
     inline ResponseHeadersPolicyCustomHeadersConfig& AddItems(ResponseHeadersPolicyCustomHeader&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

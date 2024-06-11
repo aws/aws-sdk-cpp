@@ -39,42 +39,18 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
      * Parquet SerDe. If both are non-null, the server rejects the request.</p>
      */
     inline const Serializer& GetSerializer() const{ return m_serializer; }
-
-    /**
-     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
-     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
-     */
     inline bool SerializerHasBeenSet() const { return m_serializerHasBeenSet; }
-
-    /**
-     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
-     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
-     */
     inline void SetSerializer(const Serializer& value) { m_serializerHasBeenSet = true; m_serializer = value; }
-
-    /**
-     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
-     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
-     */
     inline void SetSerializer(Serializer&& value) { m_serializerHasBeenSet = true; m_serializer = std::move(value); }
-
-    /**
-     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
-     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
-     */
     inline OutputFormatConfiguration& WithSerializer(const Serializer& value) { SetSerializer(value); return *this;}
-
-    /**
-     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
-     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
-     */
     inline OutputFormatConfiguration& WithSerializer(Serializer&& value) { SetSerializer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Serializer m_serializer;

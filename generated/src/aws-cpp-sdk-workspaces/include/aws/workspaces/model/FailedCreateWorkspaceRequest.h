@@ -38,126 +38,46 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the WorkSpace.</p>
      */
     inline const WorkspaceRequest& GetWorkspaceRequest() const{ return m_workspaceRequest; }
-
-    /**
-     * <p>Information about the WorkSpace.</p>
-     */
     inline bool WorkspaceRequestHasBeenSet() const { return m_workspaceRequestHasBeenSet; }
-
-    /**
-     * <p>Information about the WorkSpace.</p>
-     */
     inline void SetWorkspaceRequest(const WorkspaceRequest& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
-
-    /**
-     * <p>Information about the WorkSpace.</p>
-     */
     inline void SetWorkspaceRequest(WorkspaceRequest&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = std::move(value); }
-
-    /**
-     * <p>Information about the WorkSpace.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(const WorkspaceRequest& value) { SetWorkspaceRequest(value); return *this;}
-
-    /**
-     * <p>Information about the WorkSpace.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text of the error message that is returned if the WorkSpace cannot be
      * created.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The text of the error message that is returned if the WorkSpace cannot be
-     * created.</p>
-     */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     WorkspaceRequest m_workspaceRequest;

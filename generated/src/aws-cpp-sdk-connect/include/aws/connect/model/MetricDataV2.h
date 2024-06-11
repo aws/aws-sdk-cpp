@@ -38,57 +38,27 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
      */
     inline const MetricV2& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-     */
     inline void SetMetric(const MetricV2& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-     */
     inline void SetMetric(MetricV2&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-     */
     inline MetricDataV2& WithMetric(const MetricV2& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-     */
     inline MetricDataV2& WithMetric(MetricV2&& value) { SetMetric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The corresponding value of the metric returned in the response.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The corresponding value of the metric returned in the response.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The corresponding value of the metric returned in the response.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The corresponding value of the metric returned in the response.</p>
-     */
     inline MetricDataV2& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     MetricV2 m_metric;

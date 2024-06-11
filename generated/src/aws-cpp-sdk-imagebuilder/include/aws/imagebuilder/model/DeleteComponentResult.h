@@ -32,77 +32,31 @@ namespace Model
     AWS_IMAGEBUILDER_API DeleteComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline DeleteComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline DeleteComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID that uniquely identifies this request.</p>
-     */
     inline DeleteComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline const Aws::String& GetComponentBuildVersionArn() const{ return m_componentBuildVersionArn; }
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline void SetComponentBuildVersionArn(const Aws::String& value) { m_componentBuildVersionArn = value; }
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline void SetComponentBuildVersionArn(Aws::String&& value) { m_componentBuildVersionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline void SetComponentBuildVersionArn(const char* value) { m_componentBuildVersionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline DeleteComponentResult& WithComponentBuildVersionArn(const Aws::String& value) { SetComponentBuildVersionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline DeleteComponentResult& WithComponentBuildVersionArn(Aws::String&& value) { SetComponentBuildVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the component build version that this request deleted.</p>
-     */
     inline DeleteComponentResult& WithComponentBuildVersionArn(const char* value) { SetComponentBuildVersionArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestId;

@@ -40,142 +40,56 @@ namespace Model
     AWS_CODEDEPLOY_API BatchGetApplicationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application that corresponds to the revisions.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about errors that might have occurred during the API call.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline const Aws::Vector<RevisionInfo>& GetRevisions() const{ return m_revisions; }
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline void SetRevisions(const Aws::Vector<RevisionInfo>& value) { m_revisions = value; }
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline void SetRevisions(Aws::Vector<RevisionInfo>&& value) { m_revisions = std::move(value); }
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithRevisions(const Aws::Vector<RevisionInfo>& value) { SetRevisions(value); return *this;}
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline BatchGetApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionInfo>&& value) { SetRevisions(std::move(value)); return *this;}
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline BatchGetApplicationRevisionsResult& AddRevisions(const RevisionInfo& value) { m_revisions.push_back(value); return *this; }
-
-    /**
-     * <p>Additional information about the revisions, including the type and
-     * location.</p>
-     */
     inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetApplicationRevisionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetApplicationRevisionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetApplicationRevisionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

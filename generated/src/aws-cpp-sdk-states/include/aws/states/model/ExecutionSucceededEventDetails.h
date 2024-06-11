@@ -39,85 +39,32 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The JSON data output by the execution. Length constraints apply to the
      * payload size, and are expressed as bytes in UTF-8 encoding.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline ExecutionSucceededEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline ExecutionSucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON data output by the execution. Length constraints apply to the
-     * payload size, and are expressed as bytes in UTF-8 encoding.</p>
-     */
     inline ExecutionSucceededEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains details about the output of an execution history event.</p>
      */
     inline const HistoryEventExecutionDataDetails& GetOutputDetails() const{ return m_outputDetails; }
-
-    /**
-     * <p>Contains details about the output of an execution history event.</p>
-     */
     inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
-
-    /**
-     * <p>Contains details about the output of an execution history event.</p>
-     */
     inline void SetOutputDetails(const HistoryEventExecutionDataDetails& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
-
-    /**
-     * <p>Contains details about the output of an execution history event.</p>
-     */
     inline void SetOutputDetails(HistoryEventExecutionDataDetails&& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = std::move(value); }
-
-    /**
-     * <p>Contains details about the output of an execution history event.</p>
-     */
     inline ExecutionSucceededEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
-
-    /**
-     * <p>Contains details about the output of an execution history event.</p>
-     */
     inline ExecutionSucceededEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_output;

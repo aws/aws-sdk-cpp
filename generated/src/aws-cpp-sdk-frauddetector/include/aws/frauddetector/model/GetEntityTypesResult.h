@@ -34,99 +34,42 @@ namespace Model
     AWS_FRAUDDETECTOR_API GetEntityTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of entity types.</p>
      */
     inline const Aws::Vector<EntityType>& GetEntityTypes() const{ return m_entityTypes; }
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline void SetEntityTypes(const Aws::Vector<EntityType>& value) { m_entityTypes = value; }
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline void SetEntityTypes(Aws::Vector<EntityType>&& value) { m_entityTypes = std::move(value); }
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline GetEntityTypesResult& WithEntityTypes(const Aws::Vector<EntityType>& value) { SetEntityTypes(value); return *this;}
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline GetEntityTypesResult& WithEntityTypes(Aws::Vector<EntityType>&& value) { SetEntityTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline GetEntityTypesResult& AddEntityTypes(const EntityType& value) { m_entityTypes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of entity types.</p>
-     */
     inline GetEntityTypesResult& AddEntityTypes(EntityType&& value) { m_entityTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The next page token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetEntityTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetEntityTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The next page token.</p>
-     */
     inline GetEntityTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEntityTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEntityTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEntityTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EntityType> m_entityTypes;

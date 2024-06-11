@@ -40,46 +40,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the required elements for an automatic model evaluation job.</p>
      */
     inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const{ return m_datasetMetricConfigs; }
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline bool DatasetMetricConfigsHasBeenSet() const { return m_datasetMetricConfigsHasBeenSet; }
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline void SetDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = value; }
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline void SetDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::move(value); }
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline AutomatedEvaluationConfig& WithDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { SetDatasetMetricConfigs(value); return *this;}
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline AutomatedEvaluationConfig& WithDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { SetDatasetMetricConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline AutomatedEvaluationConfig& AddDatasetMetricConfigs(const EvaluationDatasetMetricConfig& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the required elements for an automatic model evaluation job.</p>
-     */
     inline AutomatedEvaluationConfig& AddDatasetMetricConfigs(EvaluationDatasetMetricConfig&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EvaluationDatasetMetricConfig> m_datasetMetricConfigs;

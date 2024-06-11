@@ -34,113 +34,44 @@ namespace Model
     AWS_SAGEMAKER_API RenderUiTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A Liquid template that renders the HTML for the worker UI.</p>
      */
     inline const Aws::String& GetRenderedContent() const{ return m_renderedContent; }
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline void SetRenderedContent(const Aws::String& value) { m_renderedContent = value; }
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline void SetRenderedContent(Aws::String&& value) { m_renderedContent = std::move(value); }
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline void SetRenderedContent(const char* value) { m_renderedContent.assign(value); }
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline RenderUiTemplateResult& WithRenderedContent(const Aws::String& value) { SetRenderedContent(value); return *this;}
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline RenderUiTemplateResult& WithRenderedContent(Aws::String&& value) { SetRenderedContent(std::move(value)); return *this;}
-
-    /**
-     * <p>A Liquid template that renders the HTML for the worker UI.</p>
-     */
     inline RenderUiTemplateResult& WithRenderedContent(const char* value) { SetRenderedContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of one or more <code>RenderingError</code> objects if any were
      * encountered while rendering the template. If there were no errors, the list is
      * empty.</p>
      */
     inline const Aws::Vector<RenderingError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline void SetErrors(const Aws::Vector<RenderingError>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline void SetErrors(Aws::Vector<RenderingError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline RenderUiTemplateResult& WithErrors(const Aws::Vector<RenderingError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline RenderUiTemplateResult& WithErrors(Aws::Vector<RenderingError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline RenderUiTemplateResult& AddErrors(const RenderingError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more <code>RenderingError</code> objects if any were
-     * encountered while rendering the template. If there were no errors, the list is
-     * empty.</p>
-     */
     inline RenderUiTemplateResult& AddErrors(RenderingError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RenderUiTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RenderUiTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RenderUiTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_renderedContent;

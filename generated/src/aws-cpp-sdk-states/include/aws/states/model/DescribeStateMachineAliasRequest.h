@@ -34,46 +34,19 @@ namespace Model
     AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
      */
     inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline bool StateMachineAliasArnHasBeenSet() const { return m_stateMachineAliasArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArnHasBeenSet = true; m_stateMachineAliasArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-     */
     inline DescribeStateMachineAliasRequest& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stateMachineAliasArn;

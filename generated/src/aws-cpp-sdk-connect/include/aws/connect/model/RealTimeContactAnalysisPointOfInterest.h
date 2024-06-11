@@ -39,54 +39,20 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of the transcript items (segments) that are associated with a given
      * point of interest. </p>
      */
     inline const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>& GetTranscriptItems() const{ return m_transcriptItems; }
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline bool TranscriptItemsHasBeenSet() const { return m_transcriptItemsHasBeenSet; }
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline void SetTranscriptItems(const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems = value; }
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline void SetTranscriptItems(Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems = std::move(value); }
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline RealTimeContactAnalysisPointOfInterest& WithTranscriptItems(const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>& value) { SetTranscriptItems(value); return *this;}
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline RealTimeContactAnalysisPointOfInterest& WithTranscriptItems(Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>&& value) { SetTranscriptItems(std::move(value)); return *this;}
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline RealTimeContactAnalysisPointOfInterest& AddTranscriptItems(const RealTimeContactAnalysisTranscriptItemWithCharacterOffsets& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems.push_back(value); return *this; }
-
-    /**
-     * <p>List of the transcript items (segments) that are associated with a given
-     * point of interest. </p>
-     */
     inline RealTimeContactAnalysisPointOfInterest& AddTranscriptItems(RealTimeContactAnalysisTranscriptItemWithCharacterOffsets&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets> m_transcriptItems;

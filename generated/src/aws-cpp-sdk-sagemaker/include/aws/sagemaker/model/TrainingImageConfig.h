@@ -39,85 +39,32 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The method that your training job will use to gain access to the images in
      * your private Docker registry. For access to an image in a private Docker
      * registry, set to <code>Vpc</code>.</p>
      */
     inline const TrainingRepositoryAccessMode& GetTrainingRepositoryAccessMode() const{ return m_trainingRepositoryAccessMode; }
-
-    /**
-     * <p>The method that your training job will use to gain access to the images in
-     * your private Docker registry. For access to an image in a private Docker
-     * registry, set to <code>Vpc</code>.</p>
-     */
     inline bool TrainingRepositoryAccessModeHasBeenSet() const { return m_trainingRepositoryAccessModeHasBeenSet; }
-
-    /**
-     * <p>The method that your training job will use to gain access to the images in
-     * your private Docker registry. For access to an image in a private Docker
-     * registry, set to <code>Vpc</code>.</p>
-     */
     inline void SetTrainingRepositoryAccessMode(const TrainingRepositoryAccessMode& value) { m_trainingRepositoryAccessModeHasBeenSet = true; m_trainingRepositoryAccessMode = value; }
-
-    /**
-     * <p>The method that your training job will use to gain access to the images in
-     * your private Docker registry. For access to an image in a private Docker
-     * registry, set to <code>Vpc</code>.</p>
-     */
     inline void SetTrainingRepositoryAccessMode(TrainingRepositoryAccessMode&& value) { m_trainingRepositoryAccessModeHasBeenSet = true; m_trainingRepositoryAccessMode = std::move(value); }
-
-    /**
-     * <p>The method that your training job will use to gain access to the images in
-     * your private Docker registry. For access to an image in a private Docker
-     * registry, set to <code>Vpc</code>.</p>
-     */
     inline TrainingImageConfig& WithTrainingRepositoryAccessMode(const TrainingRepositoryAccessMode& value) { SetTrainingRepositoryAccessMode(value); return *this;}
-
-    /**
-     * <p>The method that your training job will use to gain access to the images in
-     * your private Docker registry. For access to an image in a private Docker
-     * registry, set to <code>Vpc</code>.</p>
-     */
     inline TrainingImageConfig& WithTrainingRepositoryAccessMode(TrainingRepositoryAccessMode&& value) { SetTrainingRepositoryAccessMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object containing authentication information for a private Docker registry
      * containing your training images.</p>
      */
     inline const TrainingRepositoryAuthConfig& GetTrainingRepositoryAuthConfig() const{ return m_trainingRepositoryAuthConfig; }
-
-    /**
-     * <p>An object containing authentication information for a private Docker registry
-     * containing your training images.</p>
-     */
     inline bool TrainingRepositoryAuthConfigHasBeenSet() const { return m_trainingRepositoryAuthConfigHasBeenSet; }
-
-    /**
-     * <p>An object containing authentication information for a private Docker registry
-     * containing your training images.</p>
-     */
     inline void SetTrainingRepositoryAuthConfig(const TrainingRepositoryAuthConfig& value) { m_trainingRepositoryAuthConfigHasBeenSet = true; m_trainingRepositoryAuthConfig = value; }
-
-    /**
-     * <p>An object containing authentication information for a private Docker registry
-     * containing your training images.</p>
-     */
     inline void SetTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfig&& value) { m_trainingRepositoryAuthConfigHasBeenSet = true; m_trainingRepositoryAuthConfig = std::move(value); }
-
-    /**
-     * <p>An object containing authentication information for a private Docker registry
-     * containing your training images.</p>
-     */
     inline TrainingImageConfig& WithTrainingRepositoryAuthConfig(const TrainingRepositoryAuthConfig& value) { SetTrainingRepositoryAuthConfig(value); return *this;}
-
-    /**
-     * <p>An object containing authentication information for a private Docker registry
-     * containing your training images.</p>
-     */
     inline TrainingImageConfig& WithTrainingRepositoryAuthConfig(TrainingRepositoryAuthConfig&& value) { SetTrainingRepositoryAuthConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TrainingRepositoryAccessMode m_trainingRepositoryAccessMode;

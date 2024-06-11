@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
      * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
      */
     inline const Aws::String& GetDataVolumeKMSKeyId() const{ return m_dataVolumeKMSKeyId; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline bool DataVolumeKMSKeyIdHasBeenSet() const { return m_dataVolumeKMSKeyIdHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline void SetDataVolumeKMSKeyId(const Aws::String& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline void SetDataVolumeKMSKeyId(Aws::String&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline void SetDataVolumeKMSKeyId(const char* value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(const Aws::String& value) { SetDataVolumeKMSKeyId(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(Aws::String&& value) { SetDataVolumeKMSKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the KMS key for encrypting data at rest.
-     * If you don't specify a KMS key, MSK creates one for you and uses it.</p>
-     */
     inline AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails& WithDataVolumeKMSKeyId(const char* value) { SetDataVolumeKMSKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataVolumeKMSKeyId;

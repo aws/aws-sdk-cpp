@@ -34,54 +34,20 @@ namespace Model
     AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
      * <a>DescribeCommunications</a> operation.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline DescribeAttachmentRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline DescribeAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the attachment to return. Attachment IDs are returned by the
-     * <a>DescribeCommunications</a> operation.</p>
-     */
     inline DescribeAttachmentRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentId;

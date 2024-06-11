@@ -38,112 +38,44 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobExecutionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobExecutionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier you assigned to this job when it was created.</p>
-     */
     inline DescribeJobExecutionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the thing on which the job execution is running.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline DescribeJobExecutionRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline DescribeJobExecutionRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing on which the job execution is running.</p>
-     */
     inline DescribeJobExecutionRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string (consisting of the digits "0" through "9" which is used to specify a
      * particular job execution on a particular device.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
-
-    /**
-     * <p>A string (consisting of the digits "0" through "9" which is used to specify a
-     * particular job execution on a particular device.</p>
-     */
     inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
-
-    /**
-     * <p>A string (consisting of the digits "0" through "9" which is used to specify a
-     * particular job execution on a particular device.</p>
-     */
     inline void SetExecutionNumber(long long value) { m_executionNumberHasBeenSet = true; m_executionNumber = value; }
-
-    /**
-     * <p>A string (consisting of the digits "0" through "9" which is used to specify a
-     * particular job execution on a particular device.</p>
-     */
     inline DescribeJobExecutionRequest& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

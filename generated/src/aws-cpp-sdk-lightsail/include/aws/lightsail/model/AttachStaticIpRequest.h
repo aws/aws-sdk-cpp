@@ -34,87 +34,33 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the static IP.</p>
      */
     inline const Aws::String& GetStaticIpName() const{ return m_staticIpName; }
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline bool StaticIpNameHasBeenSet() const { return m_staticIpNameHasBeenSet; }
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline void SetStaticIpName(const Aws::String& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::move(value); }
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline void SetStaticIpName(const char* value) { m_staticIpNameHasBeenSet = true; m_staticIpName.assign(value); }
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline AttachStaticIpRequest& WithStaticIpName(const Aws::String& value) { SetStaticIpName(value); return *this;}
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline AttachStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the static IP.</p>
-     */
     inline AttachStaticIpRequest& WithStaticIpName(const char* value) { SetStaticIpName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline AttachStaticIpRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline AttachStaticIpRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The instance name to which you want to attach the static IP address.</p>
-     */
     inline AttachStaticIpRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_staticIpName;

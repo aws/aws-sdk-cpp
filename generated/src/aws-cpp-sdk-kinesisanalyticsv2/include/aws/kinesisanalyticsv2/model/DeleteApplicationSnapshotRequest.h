@@ -35,124 +35,46 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an existing application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an existing application.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for the snapshot delete.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the snapshot delete.</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The creation timestamp of the application snapshot to delete. You can
      * retrieve this value using or .</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreationTimestamp() const{ return m_snapshotCreationTimestamp; }
-
-    /**
-     * <p>The creation timestamp of the application snapshot to delete. You can
-     * retrieve this value using or .</p>
-     */
     inline bool SnapshotCreationTimestampHasBeenSet() const { return m_snapshotCreationTimestampHasBeenSet; }
-
-    /**
-     * <p>The creation timestamp of the application snapshot to delete. You can
-     * retrieve this value using or .</p>
-     */
     inline void SetSnapshotCreationTimestamp(const Aws::Utils::DateTime& value) { m_snapshotCreationTimestampHasBeenSet = true; m_snapshotCreationTimestamp = value; }
-
-    /**
-     * <p>The creation timestamp of the application snapshot to delete. You can
-     * retrieve this value using or .</p>
-     */
     inline void SetSnapshotCreationTimestamp(Aws::Utils::DateTime&& value) { m_snapshotCreationTimestampHasBeenSet = true; m_snapshotCreationTimestamp = std::move(value); }
-
-    /**
-     * <p>The creation timestamp of the application snapshot to delete. You can
-     * retrieve this value using or .</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithSnapshotCreationTimestamp(const Aws::Utils::DateTime& value) { SetSnapshotCreationTimestamp(value); return *this;}
-
-    /**
-     * <p>The creation timestamp of the application snapshot to delete. You can
-     * retrieve this value using or .</p>
-     */
     inline DeleteApplicationSnapshotRequest& WithSnapshotCreationTimestamp(Aws::Utils::DateTime&& value) { SetSnapshotCreationTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

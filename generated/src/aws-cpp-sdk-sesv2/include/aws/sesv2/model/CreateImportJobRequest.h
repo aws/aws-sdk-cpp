@@ -37,67 +37,29 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The destination for the import job.</p>
      */
     inline const ImportDestination& GetImportDestination() const{ return m_importDestination; }
-
-    /**
-     * <p>The destination for the import job.</p>
-     */
     inline bool ImportDestinationHasBeenSet() const { return m_importDestinationHasBeenSet; }
-
-    /**
-     * <p>The destination for the import job.</p>
-     */
     inline void SetImportDestination(const ImportDestination& value) { m_importDestinationHasBeenSet = true; m_importDestination = value; }
-
-    /**
-     * <p>The destination for the import job.</p>
-     */
     inline void SetImportDestination(ImportDestination&& value) { m_importDestinationHasBeenSet = true; m_importDestination = std::move(value); }
-
-    /**
-     * <p>The destination for the import job.</p>
-     */
     inline CreateImportJobRequest& WithImportDestination(const ImportDestination& value) { SetImportDestination(value); return *this;}
-
-    /**
-     * <p>The destination for the import job.</p>
-     */
     inline CreateImportJobRequest& WithImportDestination(ImportDestination&& value) { SetImportDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data source for the import job.</p>
      */
     inline const ImportDataSource& GetImportDataSource() const{ return m_importDataSource; }
-
-    /**
-     * <p>The data source for the import job.</p>
-     */
     inline bool ImportDataSourceHasBeenSet() const { return m_importDataSourceHasBeenSet; }
-
-    /**
-     * <p>The data source for the import job.</p>
-     */
     inline void SetImportDataSource(const ImportDataSource& value) { m_importDataSourceHasBeenSet = true; m_importDataSource = value; }
-
-    /**
-     * <p>The data source for the import job.</p>
-     */
     inline void SetImportDataSource(ImportDataSource&& value) { m_importDataSourceHasBeenSet = true; m_importDataSource = std::move(value); }
-
-    /**
-     * <p>The data source for the import job.</p>
-     */
     inline CreateImportJobRequest& WithImportDataSource(const ImportDataSource& value) { SetImportDataSource(value); return *this;}
-
-    /**
-     * <p>The data source for the import job.</p>
-     */
     inline CreateImportJobRequest& WithImportDataSource(ImportDataSource&& value) { SetImportDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ImportDestination m_importDestination;

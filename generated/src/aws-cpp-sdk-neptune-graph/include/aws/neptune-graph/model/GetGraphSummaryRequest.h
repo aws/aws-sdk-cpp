@@ -45,83 +45,32 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetGraphSummaryRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetGraphSummaryRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the Neptune Analytics graph.</p>
-     */
     inline GetGraphSummaryRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The summary mode can take one of two values: <code>basic</code> (the
      * default), and <code>detailed</code>.</p>
      */
     inline const GraphSummaryMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>The summary mode can take one of two values: <code>basic</code> (the
-     * default), and <code>detailed</code>.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>The summary mode can take one of two values: <code>basic</code> (the
-     * default), and <code>detailed</code>.</p>
-     */
     inline void SetMode(const GraphSummaryMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>The summary mode can take one of two values: <code>basic</code> (the
-     * default), and <code>detailed</code>.</p>
-     */
     inline void SetMode(GraphSummaryMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>The summary mode can take one of two values: <code>basic</code> (the
-     * default), and <code>detailed</code>.</p>
-     */
     inline GetGraphSummaryRequest& WithMode(const GraphSummaryMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>The summary mode can take one of two values: <code>basic</code> (the
-     * default), and <code>detailed</code>.</p>
-     */
     inline GetGraphSummaryRequest& WithMode(GraphSummaryMode&& value) { SetMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphIdentifier;

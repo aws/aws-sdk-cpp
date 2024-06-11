@@ -39,77 +39,31 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filters for the search criteria.</p>
      */
     inline const Aws::Vector<SearchFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline void SetFilters(const Aws::Vector<SearchFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline void SetFilters(Aws::Vector<SearchFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline SearchCriteria& WithFilters(const Aws::Vector<SearchFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline SearchCriteria& WithFilters(Aws::Vector<SearchFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline SearchCriteria& AddFilters(const SearchFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters for the search criteria.</p>
-     */
     inline SearchCriteria& AddFilters(SearchFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort input for search criteria.</p>
      */
     inline const Sort& GetSort() const{ return m_sort; }
-
-    /**
-     * <p>The sort input for search criteria.</p>
-     */
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-
-    /**
-     * <p>The sort input for search criteria.</p>
-     */
     inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
-
-    /**
-     * <p>The sort input for search criteria.</p>
-     */
     inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-
-    /**
-     * <p>The sort input for search criteria.</p>
-     */
     inline SearchCriteria& WithSort(const Sort& value) { SetSort(value); return *this;}
-
-    /**
-     * <p>The sort input for search criteria.</p>
-     */
     inline SearchCriteria& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SearchFilter> m_filters;

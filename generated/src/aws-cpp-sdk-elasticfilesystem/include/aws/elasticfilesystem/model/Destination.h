@@ -40,6 +40,7 @@ namespace Model
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
      * <code>Paused</code> state occurs as a result of opting out of the source or
@@ -58,193 +59,43 @@ namespace Model
      * </li> </ul>
      */
     inline const ReplicationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
-     * <code>Paused</code> state occurs as a result of opting out of the source or
-     * destination Region after the replication configuration was created. To resume
-     * replication for the file system, you need to again opt in to the Amazon Web
-     * Services Region. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-     * Guide</i>.</p> </li> <li> <p>The <code>Error</code> state occurs when either the
-     * source or the destination file system (or both) is in a failed state and is
-     * unrecoverable. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-     * replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the
-     * replication configuration, and then restore the most recent backup of the failed
-     * file system (either the source or the destination) to a new file system.</p>
-     * </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
-     * <code>Paused</code> state occurs as a result of opting out of the source or
-     * destination Region after the replication configuration was created. To resume
-     * replication for the file system, you need to again opt in to the Amazon Web
-     * Services Region. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-     * Guide</i>.</p> </li> <li> <p>The <code>Error</code> state occurs when either the
-     * source or the destination file system (or both) is in a failed state and is
-     * unrecoverable. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-     * replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the
-     * replication configuration, and then restore the most recent backup of the failed
-     * file system (either the source or the destination) to a new file system.</p>
-     * </li> </ul>
-     */
     inline void SetStatus(const ReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
-     * <code>Paused</code> state occurs as a result of opting out of the source or
-     * destination Region after the replication configuration was created. To resume
-     * replication for the file system, you need to again opt in to the Amazon Web
-     * Services Region. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-     * Guide</i>.</p> </li> <li> <p>The <code>Error</code> state occurs when either the
-     * source or the destination file system (or both) is in a failed state and is
-     * unrecoverable. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-     * replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the
-     * replication configuration, and then restore the most recent backup of the failed
-     * file system (either the source or the destination) to a new file system.</p>
-     * </li> </ul>
-     */
     inline void SetStatus(ReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
-     * <code>Paused</code> state occurs as a result of opting out of the source or
-     * destination Region after the replication configuration was created. To resume
-     * replication for the file system, you need to again opt in to the Amazon Web
-     * Services Region. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-     * Guide</i>.</p> </li> <li> <p>The <code>Error</code> state occurs when either the
-     * source or the destination file system (or both) is in a failed state and is
-     * unrecoverable. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-     * replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the
-     * replication configuration, and then restore the most recent backup of the failed
-     * file system (either the source or the destination) to a new file system.</p>
-     * </li> </ul>
-     */
     inline Destination& WithStatus(const ReplicationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
-     * <code>Paused</code> state occurs as a result of opting out of the source or
-     * destination Region after the replication configuration was created. To resume
-     * replication for the file system, you need to again opt in to the Amazon Web
-     * Services Region. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-     * Guide</i>.</p> </li> <li> <p>The <code>Error</code> state occurs when either the
-     * source or the destination file system (or both) is in a failed state and is
-     * unrecoverable. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
-     * replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the
-     * replication configuration, and then restore the most recent backup of the failed
-     * file system (either the source or the destination) to a new file system.</p>
-     * </li> </ul>
-     */
     inline Destination& WithStatus(ReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the destination Amazon EFS file system.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline Destination& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline Destination& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the destination Amazon EFS file system.</p>
-     */
     inline Destination& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region in which the destination file system is
      * located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline Destination& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline Destination& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region in which the destination file system is
-     * located.</p>
-     */
     inline Destination& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time when the most recent sync was successfully completed on the
      * destination file system. Any changes to data on the source file system that
@@ -253,52 +104,12 @@ namespace Model
      * replicated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastReplicatedTimestamp() const{ return m_lastReplicatedTimestamp; }
-
-    /**
-     * <p>The time when the most recent sync was successfully completed on the
-     * destination file system. Any changes to data on the source file system that
-     * occurred before this time have been successfully replicated to the destination
-     * file system. Any changes that occurred after this time might not be fully
-     * replicated.</p>
-     */
     inline bool LastReplicatedTimestampHasBeenSet() const { return m_lastReplicatedTimestampHasBeenSet; }
-
-    /**
-     * <p>The time when the most recent sync was successfully completed on the
-     * destination file system. Any changes to data on the source file system that
-     * occurred before this time have been successfully replicated to the destination
-     * file system. Any changes that occurred after this time might not be fully
-     * replicated.</p>
-     */
     inline void SetLastReplicatedTimestamp(const Aws::Utils::DateTime& value) { m_lastReplicatedTimestampHasBeenSet = true; m_lastReplicatedTimestamp = value; }
-
-    /**
-     * <p>The time when the most recent sync was successfully completed on the
-     * destination file system. Any changes to data on the source file system that
-     * occurred before this time have been successfully replicated to the destination
-     * file system. Any changes that occurred after this time might not be fully
-     * replicated.</p>
-     */
     inline void SetLastReplicatedTimestamp(Aws::Utils::DateTime&& value) { m_lastReplicatedTimestampHasBeenSet = true; m_lastReplicatedTimestamp = std::move(value); }
-
-    /**
-     * <p>The time when the most recent sync was successfully completed on the
-     * destination file system. Any changes to data on the source file system that
-     * occurred before this time have been successfully replicated to the destination
-     * file system. Any changes that occurred after this time might not be fully
-     * replicated.</p>
-     */
     inline Destination& WithLastReplicatedTimestamp(const Aws::Utils::DateTime& value) { SetLastReplicatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The time when the most recent sync was successfully completed on the
-     * destination file system. Any changes to data on the source file system that
-     * occurred before this time have been successfully replicated to the destination
-     * file system. Any changes that occurred after this time might not be fully
-     * replicated.</p>
-     */
     inline Destination& WithLastReplicatedTimestamp(Aws::Utils::DateTime&& value) { SetLastReplicatedTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReplicationStatus m_status;

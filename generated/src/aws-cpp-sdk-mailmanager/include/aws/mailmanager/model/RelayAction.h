@@ -40,126 +40,46 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A policy that states what to do in the case of failure. The action will fail
      * if there are configuration errors. For example, the specified relay has been
      * deleted.</p>
      */
     inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified relay has been
-     * deleted.</p>
-     */
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified relay has been
-     * deleted.</p>
-     */
     inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified relay has been
-     * deleted.</p>
-     */
     inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified relay has been
-     * deleted.</p>
-     */
     inline RelayAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified relay has been
-     * deleted.</p>
-     */
     inline RelayAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This action specifies whether to preserve or replace original mail from
      * address while relaying received emails to a destination server.</p>
      */
     inline const MailFrom& GetMailFrom() const{ return m_mailFrom; }
-
-    /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
     inline bool MailFromHasBeenSet() const { return m_mailFromHasBeenSet; }
-
-    /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
     inline void SetMailFrom(const MailFrom& value) { m_mailFromHasBeenSet = true; m_mailFrom = value; }
-
-    /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
     inline void SetMailFrom(MailFrom&& value) { m_mailFromHasBeenSet = true; m_mailFrom = std::move(value); }
-
-    /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
     inline RelayAction& WithMailFrom(const MailFrom& value) { SetMailFrom(value); return *this;}
-
-    /**
-     * <p>This action specifies whether to preserve or replace original mail from
-     * address while relaying received emails to a destination server.</p>
-     */
     inline RelayAction& WithMailFrom(MailFrom&& value) { SetMailFrom(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the relay resource to be used when relaying an email.</p>
      */
     inline const Aws::String& GetRelay() const{ return m_relay; }
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline bool RelayHasBeenSet() const { return m_relayHasBeenSet; }
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline void SetRelay(const Aws::String& value) { m_relayHasBeenSet = true; m_relay = value; }
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline void SetRelay(Aws::String&& value) { m_relayHasBeenSet = true; m_relay = std::move(value); }
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline void SetRelay(const char* value) { m_relayHasBeenSet = true; m_relay.assign(value); }
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline RelayAction& WithRelay(const Aws::String& value) { SetRelay(value); return *this;}
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline RelayAction& WithRelay(Aws::String&& value) { SetRelay(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the relay resource to be used when relaying an email.</p>
-     */
     inline RelayAction& WithRelay(const char* value) { SetRelay(value); return *this;}
-
+    ///@}
   private:
 
     ActionFailurePolicy m_actionFailurePolicy;

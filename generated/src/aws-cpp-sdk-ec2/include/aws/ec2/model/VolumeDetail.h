@@ -37,26 +37,15 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The size of the volume, in GiB.</p>
      */
     inline long long GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size of the volume, in GiB.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size of the volume, in GiB.</p>
-     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size of the volume, in GiB.</p>
-     */
     inline VolumeDetail& WithSize(long long value) { SetSize(value); return *this;}
-
+    ///@}
   private:
 
     long long m_size;

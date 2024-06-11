@@ -38,48 +38,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
      * of the same class have similar image quality over the operating points that are
      * valid for that class.
      */
     inline const Xavc4kIntraVbrProfileClass& GetXavcClass() const{ return m_xavcClass; }
-
-    /**
-     * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline bool XavcClassHasBeenSet() const { return m_xavcClassHasBeenSet; }
-
-    /**
-     * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline void SetXavcClass(const Xavc4kIntraVbrProfileClass& value) { m_xavcClassHasBeenSet = true; m_xavcClass = value; }
-
-    /**
-     * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline void SetXavcClass(Xavc4kIntraVbrProfileClass&& value) { m_xavcClassHasBeenSet = true; m_xavcClass = std::move(value); }
-
-    /**
-     * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline Xavc4kIntraVbrProfileSettings& WithXavcClass(const Xavc4kIntraVbrProfileClass& value) { SetXavcClass(value); return *this;}
-
-    /**
-     * Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline Xavc4kIntraVbrProfileSettings& WithXavcClass(Xavc4kIntraVbrProfileClass&& value) { SetXavcClass(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Xavc4kIntraVbrProfileClass m_xavcClass;

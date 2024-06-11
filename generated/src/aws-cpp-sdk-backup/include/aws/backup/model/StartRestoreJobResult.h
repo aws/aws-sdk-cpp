@@ -32,63 +32,29 @@ namespace Model
     AWS_BACKUP_API StartRestoreJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
     inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobId = value; }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(Aws::String&& value) { m_restoreJobId = std::move(value); }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline void SetRestoreJobId(const char* value) { m_restoreJobId.assign(value); }
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline StartRestoreJobResult& WithRestoreJobId(const Aws::String& value) { SetRestoreJobId(value); return *this;}
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline StartRestoreJobResult& WithRestoreJobId(Aws::String&& value) { SetRestoreJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>Uniquely identifies the job that restores a recovery point.</p>
-     */
     inline StartRestoreJobResult& WithRestoreJobId(const char* value) { SetRestoreJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartRestoreJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartRestoreJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartRestoreJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_restoreJobId;

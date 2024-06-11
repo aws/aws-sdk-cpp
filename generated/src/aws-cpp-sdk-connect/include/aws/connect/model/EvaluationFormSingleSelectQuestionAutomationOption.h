@@ -38,42 +38,18 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The automation option based on a rule category for the single select
      * question.</p>
      */
     inline const SingleSelectQuestionRuleCategoryAutomation& GetRuleCategory() const{ return m_ruleCategory; }
-
-    /**
-     * <p>The automation option based on a rule category for the single select
-     * question.</p>
-     */
     inline bool RuleCategoryHasBeenSet() const { return m_ruleCategoryHasBeenSet; }
-
-    /**
-     * <p>The automation option based on a rule category for the single select
-     * question.</p>
-     */
     inline void SetRuleCategory(const SingleSelectQuestionRuleCategoryAutomation& value) { m_ruleCategoryHasBeenSet = true; m_ruleCategory = value; }
-
-    /**
-     * <p>The automation option based on a rule category for the single select
-     * question.</p>
-     */
     inline void SetRuleCategory(SingleSelectQuestionRuleCategoryAutomation&& value) { m_ruleCategoryHasBeenSet = true; m_ruleCategory = std::move(value); }
-
-    /**
-     * <p>The automation option based on a rule category for the single select
-     * question.</p>
-     */
     inline EvaluationFormSingleSelectQuestionAutomationOption& WithRuleCategory(const SingleSelectQuestionRuleCategoryAutomation& value) { SetRuleCategory(value); return *this;}
-
-    /**
-     * <p>The automation option based on a rule category for the single select
-     * question.</p>
-     */
     inline EvaluationFormSingleSelectQuestionAutomationOption& WithRuleCategory(SingleSelectQuestionRuleCategoryAutomation&& value) { SetRuleCategory(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SingleSelectQuestionRuleCategoryAutomation m_ruleCategory;

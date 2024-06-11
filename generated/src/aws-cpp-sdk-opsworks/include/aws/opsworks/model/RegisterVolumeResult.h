@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API RegisterVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The volume ID.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline RegisterVolumeResult& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline RegisterVolumeResult& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The volume ID.</p>
-     */
     inline RegisterVolumeResult& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeId;

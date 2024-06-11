@@ -37,36 +37,17 @@ namespace Model
     AWS_TRUSTEDADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Cost optimizing aggregates</p>
      */
     inline const RecommendationCostOptimizingAggregates& GetCostOptimizing() const{ return m_costOptimizing; }
-
-    /**
-     * <p>Cost optimizing aggregates</p>
-     */
     inline bool CostOptimizingHasBeenSet() const { return m_costOptimizingHasBeenSet; }
-
-    /**
-     * <p>Cost optimizing aggregates</p>
-     */
     inline void SetCostOptimizing(const RecommendationCostOptimizingAggregates& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = value; }
-
-    /**
-     * <p>Cost optimizing aggregates</p>
-     */
     inline void SetCostOptimizing(RecommendationCostOptimizingAggregates&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::move(value); }
-
-    /**
-     * <p>Cost optimizing aggregates</p>
-     */
     inline RecommendationPillarSpecificAggregates& WithCostOptimizing(const RecommendationCostOptimizingAggregates& value) { SetCostOptimizing(value); return *this;}
-
-    /**
-     * <p>Cost optimizing aggregates</p>
-     */
     inline RecommendationPillarSpecificAggregates& WithCostOptimizing(RecommendationCostOptimizingAggregates&& value) { SetCostOptimizing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RecommendationCostOptimizingAggregates m_costOptimizing;

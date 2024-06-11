@@ -39,37 +39,23 @@ namespace Model
     AWS_CLOUDSEARCH_API UpdateScalingParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const ScalingParametersStatus& GetScalingParameters() const{ return m_scalingParameters; }
-
-    
     inline void SetScalingParameters(const ScalingParametersStatus& value) { m_scalingParameters = value; }
-
-    
     inline void SetScalingParameters(ScalingParametersStatus&& value) { m_scalingParameters = std::move(value); }
-
-    
     inline UpdateScalingParametersResult& WithScalingParameters(const ScalingParametersStatus& value) { SetScalingParameters(value); return *this;}
-
-    
     inline UpdateScalingParametersResult& WithScalingParameters(ScalingParametersStatus&& value) { SetScalingParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UpdateScalingParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UpdateScalingParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScalingParametersStatus m_scalingParameters;

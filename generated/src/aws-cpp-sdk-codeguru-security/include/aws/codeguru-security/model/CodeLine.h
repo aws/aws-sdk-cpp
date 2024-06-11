@@ -37,67 +37,29 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The code that contains a vulnerability.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline CodeLine& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline CodeLine& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The code that contains a vulnerability.</p>
-     */
     inline CodeLine& WithContent(const char* value) { SetContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code line number.</p>
      */
     inline int GetNumber() const{ return m_number; }
-
-    /**
-     * <p>The code line number.</p>
-     */
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
-
-    /**
-     * <p>The code line number.</p>
-     */
     inline void SetNumber(int value) { m_numberHasBeenSet = true; m_number = value; }
-
-    /**
-     * <p>The code line number.</p>
-     */
     inline CodeLine& WithNumber(int value) { SetNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_content;

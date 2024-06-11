@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeregisterTransitGatewayMulticastGroupMembersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deregistered members.</p>
      */
     inline const TransitGatewayMulticastDeregisteredGroupMembers& GetDeregisteredMulticastGroupMembers() const{ return m_deregisteredMulticastGroupMembers; }
-
-    /**
-     * <p>Information about the deregistered members.</p>
-     */
     inline void SetDeregisteredMulticastGroupMembers(const TransitGatewayMulticastDeregisteredGroupMembers& value) { m_deregisteredMulticastGroupMembers = value; }
-
-    /**
-     * <p>Information about the deregistered members.</p>
-     */
     inline void SetDeregisteredMulticastGroupMembers(TransitGatewayMulticastDeregisteredGroupMembers&& value) { m_deregisteredMulticastGroupMembers = std::move(value); }
-
-    /**
-     * <p>Information about the deregistered members.</p>
-     */
     inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithDeregisteredMulticastGroupMembers(const TransitGatewayMulticastDeregisteredGroupMembers& value) { SetDeregisteredMulticastGroupMembers(value); return *this;}
-
-    /**
-     * <p>Information about the deregistered members.</p>
-     */
     inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithDeregisteredMulticastGroupMembers(TransitGatewayMulticastDeregisteredGroupMembers&& value) { SetDeregisteredMulticastGroupMembers(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayMulticastDeregisteredGroupMembers m_deregisteredMulticastGroupMembers;

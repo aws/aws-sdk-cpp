@@ -38,36 +38,17 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The OS update related settings. </p>
      */
     inline const OSUpdateSettings& GetOSUpdateSettings() const{ return m_oSUpdateSettings; }
-
-    /**
-     * <p> The OS update related settings. </p>
-     */
     inline bool OSUpdateSettingsHasBeenSet() const { return m_oSUpdateSettingsHasBeenSet; }
-
-    /**
-     * <p> The OS update related settings. </p>
-     */
     inline void SetOSUpdateSettings(const OSUpdateSettings& value) { m_oSUpdateSettingsHasBeenSet = true; m_oSUpdateSettings = value; }
-
-    /**
-     * <p> The OS update related settings. </p>
-     */
     inline void SetOSUpdateSettings(OSUpdateSettings&& value) { m_oSUpdateSettingsHasBeenSet = true; m_oSUpdateSettings = std::move(value); }
-
-    /**
-     * <p> The OS update related settings. </p>
-     */
     inline UpdateValue& WithOSUpdateSettings(const OSUpdateSettings& value) { SetOSUpdateSettings(value); return *this;}
-
-    /**
-     * <p> The OS update related settings. </p>
-     */
     inline UpdateValue& WithOSUpdateSettings(OSUpdateSettings&& value) { SetOSUpdateSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OSUpdateSettings m_oSUpdateSettings;

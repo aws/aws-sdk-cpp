@@ -39,118 +39,45 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
      */
     inline const CloudFormationStackRecordSourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
-     */
     inline void SetResourceType(const CloudFormationStackRecordSourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
-     */
     inline void SetResourceType(CloudFormationStackRecordSourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithResourceType(const CloudFormationStackRecordSourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithResourceType(CloudFormationStackRecordSourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the record.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
-     */
     inline CloudFormationStackRecordSourceInfo& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     CloudFormationStackRecordSourceType m_resourceType;

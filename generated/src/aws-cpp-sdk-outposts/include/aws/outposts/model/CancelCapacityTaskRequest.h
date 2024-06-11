@@ -32,95 +32,34 @@ namespace Model
     AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of the capacity task that you want to cancel.</p>
      */
     inline const Aws::String& GetCapacityTaskId() const{ return m_capacityTaskId; }
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline bool CapacityTaskIdHasBeenSet() const { return m_capacityTaskIdHasBeenSet; }
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline void SetCapacityTaskId(const Aws::String& value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId = value; }
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline void SetCapacityTaskId(Aws::String&& value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId = std::move(value); }
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline void SetCapacityTaskId(const char* value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId.assign(value); }
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithCapacityTaskId(const Aws::String& value) { SetCapacityTaskId(value); return *this;}
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithCapacityTaskId(Aws::String&& value) { SetCapacityTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the capacity task that you want to cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithCapacityTaskId(const char* value) { SetCapacityTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ID or ARN of the Outpost associated with the capacity task that you want to
      * cancel.</p>
      */
     inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>ID or ARN of the Outpost associated with the capacity task that you want to
-     * cancel.</p>
-     */
     inline CancelCapacityTaskRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacityTaskId;

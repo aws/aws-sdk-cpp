@@ -39,36 +39,17 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The resource statement.</p>
      */
     inline const ResourceStatement& GetResourceStatement() const{ return m_resourceStatement; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline bool ResourceStatementHasBeenSet() const { return m_resourceStatementHasBeenSet; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline void SetResourceStatement(const ResourceStatement& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = value; }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline void SetResourceStatement(ResourceStatement&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::move(value); }
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline ThroughResourcesStatement& WithResourceStatement(const ResourceStatement& value) { SetResourceStatement(value); return *this;}
-
-    /**
-     * <p>The resource statement.</p>
-     */
     inline ThroughResourcesStatement& WithResourceStatement(ResourceStatement&& value) { SetResourceStatement(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceStatement m_resourceStatement;

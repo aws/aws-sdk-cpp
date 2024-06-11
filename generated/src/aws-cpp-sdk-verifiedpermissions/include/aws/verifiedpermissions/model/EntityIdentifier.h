@@ -48,103 +48,35 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of an entity.</p> <p>Example:
      * <code>"entityType":"<i>typeName</i>"</code> </p>
      */
     inline const Aws::String& GetEntityType() const{ return m_entityType; }
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline void SetEntityType(const Aws::String& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline void SetEntityType(Aws::String&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline void SetEntityType(const char* value) { m_entityTypeHasBeenSet = true; m_entityType.assign(value); }
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityType(const Aws::String& value) { SetEntityType(value); return *this;}
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityType(Aws::String&& value) { SetEntityType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of an entity.</p> <p>Example:
-     * <code>"entityType":"<i>typeName</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityType(const char* value) { SetEntityType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of an entity.</p> <p>
      * <code>"entityId":"<i>identifier</i>"</code> </p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an entity.</p> <p>
-     * <code>"entityId":"<i>identifier</i>"</code> </p>
-     */
     inline EntityIdentifier& WithEntityId(const char* value) { SetEntityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_entityType;

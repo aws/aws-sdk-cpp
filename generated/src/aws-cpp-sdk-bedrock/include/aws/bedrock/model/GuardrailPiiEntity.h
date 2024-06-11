@@ -38,67 +38,29 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of PII entity. For example, Social Security Number.</p>
      */
     inline const GuardrailPiiEntityType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of PII entity. For example, Social Security Number.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of PII entity. For example, Social Security Number.</p>
-     */
     inline void SetType(const GuardrailPiiEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of PII entity. For example, Social Security Number.</p>
-     */
     inline void SetType(GuardrailPiiEntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of PII entity. For example, Social Security Number.</p>
-     */
     inline GuardrailPiiEntity& WithType(const GuardrailPiiEntityType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of PII entity. For example, Social Security Number.</p>
-     */
     inline GuardrailPiiEntity& WithType(GuardrailPiiEntityType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configured guardrail action when PII entity is detected.</p>
      */
     inline const GuardrailSensitiveInformationAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The configured guardrail action when PII entity is detected.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The configured guardrail action when PII entity is detected.</p>
-     */
     inline void SetAction(const GuardrailSensitiveInformationAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The configured guardrail action when PII entity is detected.</p>
-     */
     inline void SetAction(GuardrailSensitiveInformationAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The configured guardrail action when PII entity is detected.</p>
-     */
     inline GuardrailPiiEntity& WithAction(const GuardrailSensitiveInformationAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The configured guardrail action when PII entity is detected.</p>
-     */
     inline GuardrailPiiEntity& WithAction(GuardrailSensitiveInformationAction&& value) { SetAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GuardrailPiiEntityType m_type;

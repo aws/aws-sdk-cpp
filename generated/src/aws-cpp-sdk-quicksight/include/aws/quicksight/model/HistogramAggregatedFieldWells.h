@@ -38,54 +38,20 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value field wells of a histogram. Values are aggregated by
      * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
      */
     inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline HistogramAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline HistogramAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline HistogramAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The value field wells of a histogram. Values are aggregated by
-     * <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-     */
     inline HistogramAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<MeasureField> m_values;

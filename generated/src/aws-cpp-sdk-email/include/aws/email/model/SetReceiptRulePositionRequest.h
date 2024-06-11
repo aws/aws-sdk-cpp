@@ -43,144 +43,49 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the receipt rule set that contains the receipt rule to
-     * reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the receipt rule to reposition.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the receipt rule to reposition.</p>
-     */
     inline SetReceiptRulePositionRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the receipt rule after which to place the specified receipt
      * rule.</p>
      */
     inline const Aws::String& GetAfter() const{ return m_after; }
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline void SetAfter(const Aws::String& value) { m_afterHasBeenSet = true; m_after = value; }
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline void SetAfter(Aws::String&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline void SetAfter(const char* value) { m_afterHasBeenSet = true; m_after.assign(value); }
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline SetReceiptRulePositionRequest& WithAfter(const Aws::String& value) { SetAfter(value); return *this;}
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline SetReceiptRulePositionRequest& WithAfter(Aws::String&& value) { SetAfter(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the receipt rule after which to place the specified receipt
-     * rule.</p>
-     */
     inline SetReceiptRulePositionRequest& WithAfter(const char* value) { SetAfter(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleSetName;

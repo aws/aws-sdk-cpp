@@ -38,36 +38,17 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The request to change the source server migration lifecycle state.</p>
      */
     inline const ChangeServerLifeCycleStateSourceServerLifecycleState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The request to change the source server migration lifecycle state.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The request to change the source server migration lifecycle state.</p>
-     */
     inline void SetState(const ChangeServerLifeCycleStateSourceServerLifecycleState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The request to change the source server migration lifecycle state.</p>
-     */
     inline void SetState(ChangeServerLifeCycleStateSourceServerLifecycleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The request to change the source server migration lifecycle state.</p>
-     */
     inline ChangeServerLifeCycleStateSourceServerLifecycle& WithState(const ChangeServerLifeCycleStateSourceServerLifecycleState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The request to change the source server migration lifecycle state.</p>
-     */
     inline ChangeServerLifeCycleStateSourceServerLifecycle& WithState(ChangeServerLifeCycleStateSourceServerLifecycleState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeServerLifeCycleStateSourceServerLifecycleState m_state;

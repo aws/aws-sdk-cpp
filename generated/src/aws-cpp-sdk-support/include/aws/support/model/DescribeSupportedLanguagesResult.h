@@ -34,70 +34,30 @@ namespace Model
     AWS_SUPPORT_API DescribeSupportedLanguagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
      * </p>
      */
     inline const Aws::Vector<SupportedLanguage>& GetSupportedLanguages() const{ return m_supportedLanguages; }
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline void SetSupportedLanguages(const Aws::Vector<SupportedLanguage>& value) { m_supportedLanguages = value; }
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline void SetSupportedLanguages(Aws::Vector<SupportedLanguage>&& value) { m_supportedLanguages = std::move(value); }
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline DescribeSupportedLanguagesResult& WithSupportedLanguages(const Aws::Vector<SupportedLanguage>& value) { SetSupportedLanguages(value); return *this;}
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline DescribeSupportedLanguagesResult& WithSupportedLanguages(Aws::Vector<SupportedLanguage>&& value) { SetSupportedLanguages(std::move(value)); return *this;}
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline DescribeSupportedLanguagesResult& AddSupportedLanguages(const SupportedLanguage& value) { m_supportedLanguages.push_back(value); return *this; }
-
-    /**
-     * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
-     * </p>
-     */
     inline DescribeSupportedLanguagesResult& AddSupportedLanguages(SupportedLanguage&& value) { m_supportedLanguages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSupportedLanguagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSupportedLanguagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSupportedLanguagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SupportedLanguage> m_supportedLanguages;

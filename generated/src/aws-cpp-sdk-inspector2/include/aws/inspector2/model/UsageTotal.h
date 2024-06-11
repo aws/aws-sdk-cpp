@@ -39,87 +39,33 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The account ID of the account that usage data was retrieved for.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline UsageTotal& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline UsageTotal& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The account ID of the account that usage data was retrieved for.</p>
-     */
     inline UsageTotal& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object representing the total usage for an account.</p>
      */
     inline const Aws::Vector<Usage>& GetUsage() const{ return m_usage; }
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline void SetUsage(const Aws::Vector<Usage>& value) { m_usageHasBeenSet = true; m_usage = value; }
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline void SetUsage(Aws::Vector<Usage>&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline UsageTotal& WithUsage(const Aws::Vector<Usage>& value) { SetUsage(value); return *this;}
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline UsageTotal& WithUsage(Aws::Vector<Usage>&& value) { SetUsage(std::move(value)); return *this;}
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline UsageTotal& AddUsage(const Usage& value) { m_usageHasBeenSet = true; m_usage.push_back(value); return *this; }
-
-    /**
-     * <p>An object representing the total usage for an account.</p>
-     */
     inline UsageTotal& AddUsage(Usage&& value) { m_usageHasBeenSet = true; m_usage.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_accountId;

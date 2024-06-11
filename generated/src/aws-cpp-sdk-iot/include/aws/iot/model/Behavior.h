@@ -39,88 +39,35 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name you've given to the behavior.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline Behavior& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline Behavior& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name you've given to the behavior.</p>
-     */
     inline Behavior& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>What is measured by the behavior.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline Behavior& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline Behavior& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-
-    /**
-     * <p>What is measured by the behavior.</p>
-     */
     inline Behavior& WithMetric(const char* value) { SetMetric(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The dimension for a metric in your behavior. For example, using a
      * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
@@ -128,48 +75,14 @@ namespace Model
      * dimension. This can't be used with custom metrics.</p>
      */
     inline const MetricDimension& GetMetricDimension() const{ return m_metricDimension; }
-
-    /**
-     * <p>The dimension for a metric in your behavior. For example, using a
-     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * to only MQTT topics where the name matches the pattern specified in the
-     * dimension. This can't be used with custom metrics.</p>
-     */
     inline bool MetricDimensionHasBeenSet() const { return m_metricDimensionHasBeenSet; }
-
-    /**
-     * <p>The dimension for a metric in your behavior. For example, using a
-     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * to only MQTT topics where the name matches the pattern specified in the
-     * dimension. This can't be used with custom metrics.</p>
-     */
     inline void SetMetricDimension(const MetricDimension& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = value; }
-
-    /**
-     * <p>The dimension for a metric in your behavior. For example, using a
-     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * to only MQTT topics where the name matches the pattern specified in the
-     * dimension. This can't be used with custom metrics.</p>
-     */
     inline void SetMetricDimension(MetricDimension&& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = std::move(value); }
-
-    /**
-     * <p>The dimension for a metric in your behavior. For example, using a
-     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * to only MQTT topics where the name matches the pattern specified in the
-     * dimension. This can't be used with custom metrics.</p>
-     */
     inline Behavior& WithMetricDimension(const MetricDimension& value) { SetMetricDimension(value); return *this;}
-
-    /**
-     * <p>The dimension for a metric in your behavior. For example, using a
-     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
-     * to only MQTT topics where the name matches the pattern specified in the
-     * dimension. This can't be used with custom metrics.</p>
-     */
     inline Behavior& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
      * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
@@ -177,93 +90,33 @@ namespace Model
      * behaving anomalously.</p> 
      */
     inline const BehaviorCriteria& GetCriteria() const{ return m_criteria; }
-
-    /**
-     * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
-     * an alert through Amazon SNS when IoT Device Defender detects that a device is
-     * behaving anomalously.</p> 
-     */
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-
-    /**
-     * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
-     * an alert through Amazon SNS when IoT Device Defender detects that a device is
-     * behaving anomalously.</p> 
-     */
     inline void SetCriteria(const BehaviorCriteria& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-
-    /**
-     * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
-     * an alert through Amazon SNS when IoT Device Defender detects that a device is
-     * behaving anomalously.</p> 
-     */
     inline void SetCriteria(BehaviorCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-
-    /**
-     * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
-     * an alert through Amazon SNS when IoT Device Defender detects that a device is
-     * behaving anomalously.</p> 
-     */
     inline Behavior& WithCriteria(const BehaviorCriteria& value) { SetCriteria(value); return *this;}
-
-    /**
-     * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
-     * an alert through Amazon SNS when IoT Device Defender detects that a device is
-     * behaving anomalously.</p> 
-     */
     inline Behavior& WithCriteria(BehaviorCriteria&& value) { SetCriteria(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Suppresses alerts. </p>
      */
     inline bool GetSuppressAlerts() const{ return m_suppressAlerts; }
-
-    /**
-     * <p> Suppresses alerts. </p>
-     */
     inline bool SuppressAlertsHasBeenSet() const { return m_suppressAlertsHasBeenSet; }
-
-    /**
-     * <p> Suppresses alerts. </p>
-     */
     inline void SetSuppressAlerts(bool value) { m_suppressAlertsHasBeenSet = true; m_suppressAlerts = value; }
-
-    /**
-     * <p> Suppresses alerts. </p>
-     */
     inline Behavior& WithSuppressAlerts(bool value) { SetSuppressAlerts(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Value indicates exporting metrics related to the behavior when it is
      * true.</p>
      */
     inline bool GetExportMetric() const{ return m_exportMetric; }
-
-    /**
-     * <p>Value indicates exporting metrics related to the behavior when it is
-     * true.</p>
-     */
     inline bool ExportMetricHasBeenSet() const { return m_exportMetricHasBeenSet; }
-
-    /**
-     * <p>Value indicates exporting metrics related to the behavior when it is
-     * true.</p>
-     */
     inline void SetExportMetric(bool value) { m_exportMetricHasBeenSet = true; m_exportMetric = value; }
-
-    /**
-     * <p>Value indicates exporting metrics related to the behavior when it is
-     * true.</p>
-     */
     inline Behavior& WithExportMetric(bool value) { SetExportMetric(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

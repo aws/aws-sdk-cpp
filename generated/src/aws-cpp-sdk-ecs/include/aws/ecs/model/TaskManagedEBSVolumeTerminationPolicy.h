@@ -38,6 +38,7 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the volume should be deleted on when the task stops. If a
      * value of <code>true</code> is specified, &#x2028;Amazon ECS deletes the Amazon
@@ -47,37 +48,10 @@ namespace Model
      * &#x2028;account.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-
-    /**
-     * <p>Indicates whether the volume should be deleted on when the task stops. If a
-     * value of <code>true</code> is specified, &#x2028;Amazon ECS deletes the Amazon
-     * EBS volume on your behalf when the task goes into the <code>STOPPED</code>
-     * state. If no value is specified, the &#x2028;default value is <code>true</code>
-     * is used. When set to <code>false</code>, Amazon ECS leaves the volume in your
-     * &#x2028;account.</p>
-     */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the volume should be deleted on when the task stops. If a
-     * value of <code>true</code> is specified, &#x2028;Amazon ECS deletes the Amazon
-     * EBS volume on your behalf when the task goes into the <code>STOPPED</code>
-     * state. If no value is specified, the &#x2028;default value is <code>true</code>
-     * is used. When set to <code>false</code>, Amazon ECS leaves the volume in your
-     * &#x2028;account.</p>
-     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-
-    /**
-     * <p>Indicates whether the volume should be deleted on when the task stops. If a
-     * value of <code>true</code> is specified, &#x2028;Amazon ECS deletes the Amazon
-     * EBS volume on your behalf when the task goes into the <code>STOPPED</code>
-     * state. If no value is specified, the &#x2028;default value is <code>true</code>
-     * is used. When set to <code>false</code>, Amazon ECS leaves the volume in your
-     * &#x2028;account.</p>
-     */
     inline TaskManagedEBSVolumeTerminationPolicy& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
-
+    ///@}
   private:
 
     bool m_deleteOnTermination;

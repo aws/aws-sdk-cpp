@@ -34,46 +34,19 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the scheduled action.</p>
      */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline GetScheduledActionRequest& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline GetScheduledActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the scheduled action.</p>
-     */
     inline GetScheduledActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduledActionName;

@@ -39,67 +39,29 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the robot software suite (ROS distribution).</p>
      */
     inline const RobotSoftwareSuiteType& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
-     */
     inline void SetName(const RobotSoftwareSuiteType& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
-     */
     inline void SetName(RobotSoftwareSuiteType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
-     */
     inline RobotSoftwareSuite& WithName(const RobotSoftwareSuiteType& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
-     */
     inline RobotSoftwareSuite& WithName(RobotSoftwareSuiteType&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the robot software suite (ROS distribution).</p>
      */
     inline const RobotSoftwareSuiteVersionType& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
-     */
     inline void SetVersion(const RobotSoftwareSuiteVersionType& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
-     */
     inline void SetVersion(RobotSoftwareSuiteVersionType&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
-     */
     inline RobotSoftwareSuite& WithVersion(const RobotSoftwareSuiteVersionType& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
-     */
     inline RobotSoftwareSuite& WithVersion(RobotSoftwareSuiteVersionType&& value) { SetVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RobotSoftwareSuiteType m_name;

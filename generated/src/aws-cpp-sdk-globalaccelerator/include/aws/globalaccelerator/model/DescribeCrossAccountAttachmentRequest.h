@@ -34,54 +34,20 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
      * describe.</p>
      */
     inline const Aws::String& GetAttachmentArn() const{ return m_attachmentArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline void SetAttachmentArn(Aws::String&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline void SetAttachmentArn(const char* value) { m_attachmentArnHasBeenSet = true; m_attachmentArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline DescribeCrossAccountAttachmentRequest& WithAttachmentArn(const Aws::String& value) { SetAttachmentArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline DescribeCrossAccountAttachmentRequest& WithAttachmentArn(Aws::String&& value) { SetAttachmentArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the cross-account attachment to
-     * describe.</p>
-     */
     inline DescribeCrossAccountAttachmentRequest& WithAttachmentArn(const char* value) { SetAttachmentArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentArn;

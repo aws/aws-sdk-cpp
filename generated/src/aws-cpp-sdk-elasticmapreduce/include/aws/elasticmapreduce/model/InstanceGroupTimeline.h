@@ -37,98 +37,41 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The creation date and time of the instance group.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The creation date and time of the instance group.</p>
-     */
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-
-    /**
-     * <p>The creation date and time of the instance group.</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-
-    /**
-     * <p>The creation date and time of the instance group.</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The creation date and time of the instance group.</p>
-     */
     inline InstanceGroupTimeline& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The creation date and time of the instance group.</p>
-     */
     inline InstanceGroupTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the instance group became ready to perform tasks.</p>
      */
     inline const Aws::Utils::DateTime& GetReadyDateTime() const{ return m_readyDateTime; }
-
-    /**
-     * <p>The date and time when the instance group became ready to perform tasks.</p>
-     */
     inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the instance group became ready to perform tasks.</p>
-     */
     inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
-
-    /**
-     * <p>The date and time when the instance group became ready to perform tasks.</p>
-     */
     inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the instance group became ready to perform tasks.</p>
-     */
     inline InstanceGroupTimeline& WithReadyDateTime(const Aws::Utils::DateTime& value) { SetReadyDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the instance group became ready to perform tasks.</p>
-     */
     inline InstanceGroupTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the instance group terminated.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
-
-    /**
-     * <p>The date and time when the instance group terminated.</p>
-     */
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the instance group terminated.</p>
-     */
     inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-
-    /**
-     * <p>The date and time when the instance group terminated.</p>
-     */
     inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the instance group terminated.</p>
-     */
     inline InstanceGroupTimeline& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the instance group terminated.</p>
-     */
     inline InstanceGroupTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationDateTime;

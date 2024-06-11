@@ -38,279 +38,105 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the rotation schedule for the secret.</p>
      */
     inline const AwsSecretsManagerSecretRotationRules& GetRotationRules() const{ return m_rotationRules; }
-
-    /**
-     * <p>Defines the rotation schedule for the secret.</p>
-     */
     inline bool RotationRulesHasBeenSet() const { return m_rotationRulesHasBeenSet; }
-
-    /**
-     * <p>Defines the rotation schedule for the secret.</p>
-     */
     inline void SetRotationRules(const AwsSecretsManagerSecretRotationRules& value) { m_rotationRulesHasBeenSet = true; m_rotationRules = value; }
-
-    /**
-     * <p>Defines the rotation schedule for the secret.</p>
-     */
     inline void SetRotationRules(AwsSecretsManagerSecretRotationRules&& value) { m_rotationRulesHasBeenSet = true; m_rotationRules = std::move(value); }
-
-    /**
-     * <p>Defines the rotation schedule for the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationRules(const AwsSecretsManagerSecretRotationRules& value) { SetRotationRules(value); return *this;}
-
-    /**
-     * <p>Defines the rotation schedule for the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationRules(AwsSecretsManagerSecretRotationRules&& value) { SetRotationRules(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the rotation occurred within the specified rotation frequency.</p>
      */
     inline bool GetRotationOccurredWithinFrequency() const{ return m_rotationOccurredWithinFrequency; }
-
-    /**
-     * <p>Whether the rotation occurred within the specified rotation frequency.</p>
-     */
     inline bool RotationOccurredWithinFrequencyHasBeenSet() const { return m_rotationOccurredWithinFrequencyHasBeenSet; }
-
-    /**
-     * <p>Whether the rotation occurred within the specified rotation frequency.</p>
-     */
     inline void SetRotationOccurredWithinFrequency(bool value) { m_rotationOccurredWithinFrequencyHasBeenSet = true; m_rotationOccurredWithinFrequency = value; }
-
-    /**
-     * <p>Whether the rotation occurred within the specified rotation frequency.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationOccurredWithinFrequency(bool value) { SetRotationOccurredWithinFrequency(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
      * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
      * this secret.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
-     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
-     * this secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether rotation is enabled.</p>
      */
     inline bool GetRotationEnabled() const{ return m_rotationEnabled; }
-
-    /**
-     * <p>Whether rotation is enabled.</p>
-     */
     inline bool RotationEnabledHasBeenSet() const { return m_rotationEnabledHasBeenSet; }
-
-    /**
-     * <p>Whether rotation is enabled.</p>
-     */
     inline void SetRotationEnabled(bool value) { m_rotationEnabledHasBeenSet = true; m_rotationEnabled = value; }
-
-    /**
-     * <p>Whether rotation is enabled.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationEnabled(bool value) { SetRotationEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the Lambda function that rotates the secret.</p>
      */
     inline const Aws::String& GetRotationLambdaArn() const{ return m_rotationLambdaArn; }
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline bool RotationLambdaArnHasBeenSet() const { return m_rotationLambdaArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline void SetRotationLambdaArn(const Aws::String& value) { m_rotationLambdaArnHasBeenSet = true; m_rotationLambdaArn = value; }
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline void SetRotationLambdaArn(Aws::String&& value) { m_rotationLambdaArnHasBeenSet = true; m_rotationLambdaArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline void SetRotationLambdaArn(const char* value) { m_rotationLambdaArnHasBeenSet = true; m_rotationLambdaArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationLambdaArn(const Aws::String& value) { SetRotationLambdaArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationLambdaArn(Aws::String&& value) { SetRotationLambdaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda function that rotates the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithRotationLambdaArn(const char* value) { SetRotationLambdaArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the secret is deleted.</p>
      */
     inline bool GetDeleted() const{ return m_deleted; }
-
-    /**
-     * <p>Whether the secret is deleted.</p>
-     */
     inline bool DeletedHasBeenSet() const { return m_deletedHasBeenSet; }
-
-    /**
-     * <p>Whether the secret is deleted.</p>
-     */
     inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
-
-    /**
-     * <p>Whether the secret is deleted.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithDeleted(bool value) { SetDeleted(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the secret.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user-provided description of the secret.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The user-provided description of the secret.</p>
-     */
     inline AwsSecretsManagerSecretDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     AwsSecretsManagerSecretRotationRules m_rotationRules;

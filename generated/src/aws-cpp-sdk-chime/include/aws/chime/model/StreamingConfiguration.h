@@ -41,88 +41,39 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
-
-    /**
-     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-     */
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
-
-    /**
-     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-     */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
-
-    /**
-     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-     */
     inline StreamingConfiguration& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>When true, media streaming to Amazon Kinesis is turned off.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
-
-    /**
-     * <p>When true, media streaming to Amazon Kinesis is turned off.</p>
-     */
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
-
-    /**
-     * <p>When true, media streaming to Amazon Kinesis is turned off.</p>
-     */
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
-
-    /**
-     * <p>When true, media streaming to Amazon Kinesis is turned off.</p>
-     */
     inline StreamingConfiguration& WithDisabled(bool value) { SetDisabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The streaming notification targets.</p>
      */
     inline const Aws::Vector<StreamingNotificationTarget>& GetStreamingNotificationTargets() const{ return m_streamingNotificationTargets; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline bool StreamingNotificationTargetsHasBeenSet() const { return m_streamingNotificationTargetsHasBeenSet; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline void SetStreamingNotificationTargets(const Aws::Vector<StreamingNotificationTarget>& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets = value; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline void SetStreamingNotificationTargets(Aws::Vector<StreamingNotificationTarget>&& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets = std::move(value); }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& WithStreamingNotificationTargets(const Aws::Vector<StreamingNotificationTarget>& value) { SetStreamingNotificationTargets(value); return *this;}
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& WithStreamingNotificationTargets(Aws::Vector<StreamingNotificationTarget>&& value) { SetStreamingNotificationTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& AddStreamingNotificationTargets(const StreamingNotificationTarget& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets.push_back(value); return *this; }
-
-    /**
-     * <p>The streaming notification targets.</p>
-     */
     inline StreamingConfiguration& AddStreamingNotificationTargets(StreamingNotificationTarget&& value) { m_streamingNotificationTargetsHasBeenSet = true; m_streamingNotificationTargets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_dataRetentionInHours;

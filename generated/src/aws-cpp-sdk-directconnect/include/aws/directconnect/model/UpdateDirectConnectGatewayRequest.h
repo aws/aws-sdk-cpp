@@ -34,87 +34,33 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Direct Connect gateway to update.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway to update.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new name for the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetNewDirectConnectGatewayName() const{ return m_newDirectConnectGatewayName; }
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline bool NewDirectConnectGatewayNameHasBeenSet() const { return m_newDirectConnectGatewayNameHasBeenSet; }
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline void SetNewDirectConnectGatewayName(const Aws::String& value) { m_newDirectConnectGatewayNameHasBeenSet = true; m_newDirectConnectGatewayName = value; }
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline void SetNewDirectConnectGatewayName(Aws::String&& value) { m_newDirectConnectGatewayNameHasBeenSet = true; m_newDirectConnectGatewayName = std::move(value); }
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline void SetNewDirectConnectGatewayName(const char* value) { m_newDirectConnectGatewayNameHasBeenSet = true; m_newDirectConnectGatewayName.assign(value); }
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithNewDirectConnectGatewayName(const Aws::String& value) { SetNewDirectConnectGatewayName(value); return *this;}
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithNewDirectConnectGatewayName(Aws::String&& value) { SetNewDirectConnectGatewayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The new name for the Direct Connect gateway.</p>
-     */
     inline UpdateDirectConnectGatewayRequest& WithNewDirectConnectGatewayName(const char* value) { SetNewDirectConnectGatewayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directConnectGatewayId;

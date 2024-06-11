@@ -33,58 +33,28 @@ namespace Model
     AWS_POLLY_API GetSpeechSynthesisTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>SynthesisTask object that provides information from the requested task,
      * including output format, creation time, task status, and so on.</p>
      */
     inline const SynthesisTask& GetSynthesisTask() const{ return m_synthesisTask; }
-
-    /**
-     * <p>SynthesisTask object that provides information from the requested task,
-     * including output format, creation time, task status, and so on.</p>
-     */
     inline void SetSynthesisTask(const SynthesisTask& value) { m_synthesisTask = value; }
-
-    /**
-     * <p>SynthesisTask object that provides information from the requested task,
-     * including output format, creation time, task status, and so on.</p>
-     */
     inline void SetSynthesisTask(SynthesisTask&& value) { m_synthesisTask = std::move(value); }
-
-    /**
-     * <p>SynthesisTask object that provides information from the requested task,
-     * including output format, creation time, task status, and so on.</p>
-     */
     inline GetSpeechSynthesisTaskResult& WithSynthesisTask(const SynthesisTask& value) { SetSynthesisTask(value); return *this;}
-
-    /**
-     * <p>SynthesisTask object that provides information from the requested task,
-     * including output format, creation time, task status, and so on.</p>
-     */
     inline GetSpeechSynthesisTaskResult& WithSynthesisTask(SynthesisTask&& value) { SetSynthesisTask(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSpeechSynthesisTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSpeechSynthesisTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSpeechSynthesisTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SynthesisTask m_synthesisTask;

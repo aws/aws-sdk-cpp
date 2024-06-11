@@ -42,36 +42,17 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
      */
     inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline DescribeConfigRulesFilters& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
-
-    /**
-     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-     */
     inline DescribeConfigRulesFilters& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EvaluationMode m_evaluationMode;

@@ -33,6 +33,7 @@ namespace Model
     AWS_BUDGETS_API DescribeBudgetPerformanceHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
@@ -42,91 +43,33 @@ namespace Model
      * the last four quarters.</p>
      */
     inline const BudgetPerformanceHistory& GetBudgetPerformanceHistory() const{ return m_budgetPerformanceHistory; }
-
-    /**
-     * <p>The history of how often the budget has gone into an <code>ALARM</code>
-     * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
-     * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the current month plus the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
-     * the last four quarters.</p>
-     */
     inline void SetBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { m_budgetPerformanceHistory = value; }
-
-    /**
-     * <p>The history of how often the budget has gone into an <code>ALARM</code>
-     * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
-     * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the current month plus the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
-     * the last four quarters.</p>
-     */
     inline void SetBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { m_budgetPerformanceHistory = std::move(value); }
-
-    /**
-     * <p>The history of how often the budget has gone into an <code>ALARM</code>
-     * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
-     * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the current month plus the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
-     * the last four quarters.</p>
-     */
     inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { SetBudgetPerformanceHistory(value); return *this;}
-
-    /**
-     * <p>The history of how often the budget has gone into an <code>ALARM</code>
-     * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
-     * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the current month plus the last 12 months. For
-     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
-     * the last four quarters.</p>
-     */
     inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { SetBudgetPerformanceHistory(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBudgetPerformanceHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BudgetPerformanceHistory m_budgetPerformanceHistory;

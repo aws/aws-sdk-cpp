@@ -34,47 +34,21 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the resource for which you are requesting information.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline GetOperationsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline GetOperationsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource for which you are requesting information.</p>
-     */
     inline GetOperationsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to advance to the next page of results from your request.</p> <p>To
      * get a page token, perform an initial <code>GetOperationsForResource</code>
@@ -82,63 +56,14 @@ namespace Model
      * token that you can specify as the page token in a subsequent request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline GetOperationsForResourceRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline GetOperationsForResourceRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>To
-     * get a page token, perform an initial <code>GetOperationsForResource</code>
-     * request. If your results are paginated, the response will return a next page
-     * token that you can specify as the page token in a subsequent request.</p>
-     */
     inline GetOperationsForResourceRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

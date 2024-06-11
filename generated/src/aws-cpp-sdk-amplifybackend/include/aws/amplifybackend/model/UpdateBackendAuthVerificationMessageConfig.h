@@ -40,98 +40,41 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of verification message to send.</p>
      */
     inline const DeliveryMethod& GetDeliveryMethod() const{ return m_deliveryMethod; }
-
-    /**
-     * <p>The type of verification message to send.</p>
-     */
     inline bool DeliveryMethodHasBeenSet() const { return m_deliveryMethodHasBeenSet; }
-
-    /**
-     * <p>The type of verification message to send.</p>
-     */
     inline void SetDeliveryMethod(const DeliveryMethod& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = value; }
-
-    /**
-     * <p>The type of verification message to send.</p>
-     */
     inline void SetDeliveryMethod(DeliveryMethod&& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = std::move(value); }
-
-    /**
-     * <p>The type of verification message to send.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithDeliveryMethod(const DeliveryMethod& value) { SetDeliveryMethod(value); return *this;}
-
-    /**
-     * <p>The type of verification message to send.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithDeliveryMethod(DeliveryMethod&& value) { SetDeliveryMethod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The settings for the email message.</p>
      */
     inline const EmailSettings& GetEmailSettings() const{ return m_emailSettings; }
-
-    /**
-     * <p>The settings for the email message.</p>
-     */
     inline bool EmailSettingsHasBeenSet() const { return m_emailSettingsHasBeenSet; }
-
-    /**
-     * <p>The settings for the email message.</p>
-     */
     inline void SetEmailSettings(const EmailSettings& value) { m_emailSettingsHasBeenSet = true; m_emailSettings = value; }
-
-    /**
-     * <p>The settings for the email message.</p>
-     */
     inline void SetEmailSettings(EmailSettings&& value) { m_emailSettingsHasBeenSet = true; m_emailSettings = std::move(value); }
-
-    /**
-     * <p>The settings for the email message.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithEmailSettings(const EmailSettings& value) { SetEmailSettings(value); return *this;}
-
-    /**
-     * <p>The settings for the email message.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithEmailSettings(EmailSettings&& value) { SetEmailSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The settings for the SMS message.</p>
      */
     inline const SmsSettings& GetSmsSettings() const{ return m_smsSettings; }
-
-    /**
-     * <p>The settings for the SMS message.</p>
-     */
     inline bool SmsSettingsHasBeenSet() const { return m_smsSettingsHasBeenSet; }
-
-    /**
-     * <p>The settings for the SMS message.</p>
-     */
     inline void SetSmsSettings(const SmsSettings& value) { m_smsSettingsHasBeenSet = true; m_smsSettings = value; }
-
-    /**
-     * <p>The settings for the SMS message.</p>
-     */
     inline void SetSmsSettings(SmsSettings&& value) { m_smsSettingsHasBeenSet = true; m_smsSettings = std::move(value); }
-
-    /**
-     * <p>The settings for the SMS message.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithSmsSettings(const SmsSettings& value) { SetSmsSettings(value); return *this;}
-
-    /**
-     * <p>The settings for the SMS message.</p>
-     */
     inline UpdateBackendAuthVerificationMessageConfig& WithSmsSettings(SmsSettings&& value) { SetSmsSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeliveryMethod m_deliveryMethod;

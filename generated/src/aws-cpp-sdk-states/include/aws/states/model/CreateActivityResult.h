@@ -33,89 +33,40 @@ namespace Model
     AWS_SFN_API CreateActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
      */
     inline const Aws::String& GetActivityArn() const{ return m_activityArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline void SetActivityArn(const Aws::String& value) { m_activityArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline void SetActivityArn(Aws::String&& value) { m_activityArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline void SetActivityArn(const char* value) { m_activityArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline CreateActivityResult& WithActivityArn(const Aws::String& value) { SetActivityArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline CreateActivityResult& WithActivityArn(Aws::String&& value) { SetActivityArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-     */
     inline CreateActivityResult& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date the activity is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The date the activity is created.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-
-    /**
-     * <p>The date the activity is created.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-
-    /**
-     * <p>The date the activity is created.</p>
-     */
     inline CreateActivityResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The date the activity is created.</p>
-     */
     inline CreateActivityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateActivityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateActivityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateActivityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_activityArn;

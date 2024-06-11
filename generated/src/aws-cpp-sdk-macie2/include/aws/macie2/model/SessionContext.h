@@ -40,79 +40,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time when the credentials were issued, and whether the
      * credentials were authenticated with a multi-factor authentication (MFA)
      * device.</p>
      */
     inline const SessionContextAttributes& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The date and time when the credentials were issued, and whether the
-     * credentials were authenticated with a multi-factor authentication (MFA)
-     * device.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The date and time when the credentials were issued, and whether the
-     * credentials were authenticated with a multi-factor authentication (MFA)
-     * device.</p>
-     */
     inline void SetAttributes(const SessionContextAttributes& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The date and time when the credentials were issued, and whether the
-     * credentials were authenticated with a multi-factor authentication (MFA)
-     * device.</p>
-     */
     inline void SetAttributes(SessionContextAttributes&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The date and time when the credentials were issued, and whether the
-     * credentials were authenticated with a multi-factor authentication (MFA)
-     * device.</p>
-     */
     inline SessionContext& WithAttributes(const SessionContextAttributes& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The date and time when the credentials were issued, and whether the
-     * credentials were authenticated with a multi-factor authentication (MFA)
-     * device.</p>
-     */
     inline SessionContext& WithAttributes(SessionContextAttributes&& value) { SetAttributes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline const SessionIssuer& GetSessionIssuer() const{ return m_sessionIssuer; }
-
-    /**
-     * <p>The source and type of credentials that were issued to the entity.</p>
-     */
     inline bool SessionIssuerHasBeenSet() const { return m_sessionIssuerHasBeenSet; }
-
-    /**
-     * <p>The source and type of credentials that were issued to the entity.</p>
-     */
     inline void SetSessionIssuer(const SessionIssuer& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = value; }
-
-    /**
-     * <p>The source and type of credentials that were issued to the entity.</p>
-     */
     inline void SetSessionIssuer(SessionIssuer&& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = std::move(value); }
-
-    /**
-     * <p>The source and type of credentials that were issued to the entity.</p>
-     */
     inline SessionContext& WithSessionIssuer(const SessionIssuer& value) { SetSessionIssuer(value); return *this;}
-
-    /**
-     * <p>The source and type of credentials that were issued to the entity.</p>
-     */
     inline SessionContext& WithSessionIssuer(SessionIssuer&& value) { SetSessionIssuer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SessionContextAttributes m_attributes;

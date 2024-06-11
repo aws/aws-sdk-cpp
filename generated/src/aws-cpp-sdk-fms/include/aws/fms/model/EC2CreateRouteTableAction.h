@@ -39,77 +39,31 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A description of the CreateRouteTable action.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline EC2CreateRouteTableAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline EC2CreateRouteTableAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the CreateRouteTable action.</p>
-     */
     inline EC2CreateRouteTableAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the ID of a VPC.</p>
      */
     inline const ActionTarget& GetVpcId() const{ return m_vpcId; }
-
-    /**
-     * <p>Information about the ID of a VPC.</p>
-     */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-
-    /**
-     * <p>Information about the ID of a VPC.</p>
-     */
     inline void SetVpcId(const ActionTarget& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-
-    /**
-     * <p>Information about the ID of a VPC.</p>
-     */
     inline void SetVpcId(ActionTarget&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-
-    /**
-     * <p>Information about the ID of a VPC.</p>
-     */
     inline EC2CreateRouteTableAction& WithVpcId(const ActionTarget& value) { SetVpcId(value); return *this;}
-
-    /**
-     * <p>Information about the ID of a VPC.</p>
-     */
     inline EC2CreateRouteTableAction& WithVpcId(ActionTarget&& value) { SetVpcId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

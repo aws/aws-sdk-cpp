@@ -34,54 +34,20 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the bucket that the new access key will belong to, and grant
      * access to.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline CreateBucketAccessKeyRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline CreateBucketAccessKeyRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bucket that the new access key will belong to, and grant
-     * access to.</p>
-     */
     inline CreateBucketAccessKeyRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

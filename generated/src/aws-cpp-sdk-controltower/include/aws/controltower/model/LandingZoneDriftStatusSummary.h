@@ -40,6 +40,7 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
      * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
@@ -49,57 +50,12 @@ namespace Model
      * expected. </p> </li> </ul>
      */
     inline const LandingZoneDriftStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
-     * match the configuration that Amazon Web Services Control Tower expected. </p>
-     * </li> <li> <p> <code>IN_SYNC</code>: The landing zone deployed in this
-     * configuration matches the configuration that Amazon Web Services Control Tower
-     * expected. </p> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
-     * match the configuration that Amazon Web Services Control Tower expected. </p>
-     * </li> <li> <p> <code>IN_SYNC</code>: The landing zone deployed in this
-     * configuration matches the configuration that Amazon Web Services Control Tower
-     * expected. </p> </li> </ul>
-     */
     inline void SetStatus(const LandingZoneDriftStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
-     * match the configuration that Amazon Web Services Control Tower expected. </p>
-     * </li> <li> <p> <code>IN_SYNC</code>: The landing zone deployed in this
-     * configuration matches the configuration that Amazon Web Services Control Tower
-     * expected. </p> </li> </ul>
-     */
     inline void SetStatus(LandingZoneDriftStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
-     * match the configuration that Amazon Web Services Control Tower expected. </p>
-     * </li> <li> <p> <code>IN_SYNC</code>: The landing zone deployed in this
-     * configuration matches the configuration that Amazon Web Services Control Tower
-     * expected. </p> </li> </ul>
-     */
     inline LandingZoneDriftStatusSummary& WithStatus(const LandingZoneDriftStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The drift status of the landing zone. </p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>DRIFTED</code>: The landing zone deployed in this configuration does not
-     * match the configuration that Amazon Web Services Control Tower expected. </p>
-     * </li> <li> <p> <code>IN_SYNC</code>: The landing zone deployed in this
-     * configuration matches the configuration that Amazon Web Services Control Tower
-     * expected. </p> </li> </ul>
-     */
     inline LandingZoneDriftStatusSummary& WithStatus(LandingZoneDriftStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LandingZoneDriftStatus m_status;

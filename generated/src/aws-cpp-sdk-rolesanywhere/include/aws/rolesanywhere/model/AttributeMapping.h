@@ -40,77 +40,31 @@ namespace Model
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
      */
     inline const CertificateField& GetCertificateField() const{ return m_certificateField; }
-
-    /**
-     * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-     */
     inline bool CertificateFieldHasBeenSet() const { return m_certificateFieldHasBeenSet; }
-
-    /**
-     * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-     */
     inline void SetCertificateField(const CertificateField& value) { m_certificateFieldHasBeenSet = true; m_certificateField = value; }
-
-    /**
-     * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-     */
     inline void SetCertificateField(CertificateField&& value) { m_certificateFieldHasBeenSet = true; m_certificateField = std::move(value); }
-
-    /**
-     * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-     */
     inline AttributeMapping& WithCertificateField(const CertificateField& value) { SetCertificateField(value); return *this;}
-
-    /**
-     * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-     */
     inline AttributeMapping& WithCertificateField(CertificateField&& value) { SetCertificateField(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of mapping entries for every supported specifier or sub-field.</p>
      */
     inline const Aws::Vector<MappingRule>& GetMappingRules() const{ return m_mappingRules; }
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline bool MappingRulesHasBeenSet() const { return m_mappingRulesHasBeenSet; }
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline void SetMappingRules(const Aws::Vector<MappingRule>& value) { m_mappingRulesHasBeenSet = true; m_mappingRules = value; }
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline void SetMappingRules(Aws::Vector<MappingRule>&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules = std::move(value); }
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline AttributeMapping& WithMappingRules(const Aws::Vector<MappingRule>& value) { SetMappingRules(value); return *this;}
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline AttributeMapping& WithMappingRules(Aws::Vector<MappingRule>&& value) { SetMappingRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline AttributeMapping& AddMappingRules(const MappingRule& value) { m_mappingRulesHasBeenSet = true; m_mappingRules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of mapping entries for every supported specifier or sub-field.</p>
-     */
     inline AttributeMapping& AddMappingRules(MappingRule&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     CertificateField m_certificateField;

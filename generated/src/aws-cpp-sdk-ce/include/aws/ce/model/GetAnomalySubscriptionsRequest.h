@@ -35,170 +35,60 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of cost anomaly subscription ARNs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubscriptionArnList() const{ return m_subscriptionArnList; }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline bool SubscriptionArnListHasBeenSet() const { return m_subscriptionArnListHasBeenSet; }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline void SetSubscriptionArnList(const Aws::Vector<Aws::String>& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList = value; }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline void SetSubscriptionArnList(Aws::Vector<Aws::String>&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList = std::move(value); }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithSubscriptionArnList(const Aws::Vector<Aws::String>& value) { SetSubscriptionArnList(value); return *this;}
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithSubscriptionArnList(Aws::Vector<Aws::String>&& value) { SetSubscriptionArnList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(const Aws::String& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(Aws::String&& value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of cost anomaly subscription ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& AddSubscriptionArnList(const char* value) { m_subscriptionArnListHasBeenSet = true; m_subscriptionArnList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Cost anomaly monitor ARNs. </p>
      */
     inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Cost anomaly monitor ARNs. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
      * maximum page size. </p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to retrieve the next set of results. Amazon Web Services provides
-     * the token when the response from a previous call has more results than the
-     * maximum page size. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of entries a paginated response contains. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The number of entries a paginated response contains. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The number of entries a paginated response contains. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The number of entries a paginated response contains. </p>
-     */
     inline GetAnomalySubscriptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subscriptionArnList;

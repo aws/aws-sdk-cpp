@@ -39,6 +39,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The actions to take on a packet that matches one of the stateless rule
      * definition's match attributes. You must specify a standard action
@@ -46,108 +47,28 @@ namespace Model
      * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The actions to take on a packet that matches one of the stateless rule
-     * definition's match attributes. You must specify a standard action
-     * (<code>aws:pass</code>, <code>aws:drop</code>, or
-     * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The criteria for Network Firewall to use to inspect an individual packet in a
      * stateless rule inspection.</p>
      */
     inline const RuleGroupSourceStatelessRuleMatchAttributes& GetMatchAttributes() const{ return m_matchAttributes; }
-
-    /**
-     * <p>The criteria for Network Firewall to use to inspect an individual packet in a
-     * stateless rule inspection.</p>
-     */
     inline bool MatchAttributesHasBeenSet() const { return m_matchAttributesHasBeenSet; }
-
-    /**
-     * <p>The criteria for Network Firewall to use to inspect an individual packet in a
-     * stateless rule inspection.</p>
-     */
     inline void SetMatchAttributes(const RuleGroupSourceStatelessRuleMatchAttributes& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = value; }
-
-    /**
-     * <p>The criteria for Network Firewall to use to inspect an individual packet in a
-     * stateless rule inspection.</p>
-     */
     inline void SetMatchAttributes(RuleGroupSourceStatelessRuleMatchAttributes&& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = std::move(value); }
-
-    /**
-     * <p>The criteria for Network Firewall to use to inspect an individual packet in a
-     * stateless rule inspection.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& WithMatchAttributes(const RuleGroupSourceStatelessRuleMatchAttributes& value) { SetMatchAttributes(value); return *this;}
-
-    /**
-     * <p>The criteria for Network Firewall to use to inspect an individual packet in a
-     * stateless rule inspection.</p>
-     */
     inline RuleGroupSourceStatelessRuleDefinition& WithMatchAttributes(RuleGroupSourceStatelessRuleMatchAttributes&& value) { SetMatchAttributes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_actions;

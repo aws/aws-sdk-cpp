@@ -40,108 +40,43 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The blockchain network of the contract.</p>
      */
     inline const QueryNetwork& GetNetwork() const{ return m_network; }
-
-    /**
-     * <p>The blockchain network of the contract.</p>
-     */
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-
-    /**
-     * <p>The blockchain network of the contract.</p>
-     */
     inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-
-    /**
-     * <p>The blockchain network of the contract.</p>
-     */
     inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-
-    /**
-     * <p>The blockchain network of the contract.</p>
-     */
     inline ContractFilter& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-
-    /**
-     * <p>The blockchain network of the contract.</p>
-     */
     inline ContractFilter& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The container for the token standard.</p>
      */
     inline const QueryTokenStandard& GetTokenStandard() const{ return m_tokenStandard; }
-
-    /**
-     * <p>The container for the token standard.</p>
-     */
     inline bool TokenStandardHasBeenSet() const { return m_tokenStandardHasBeenSet; }
-
-    /**
-     * <p>The container for the token standard.</p>
-     */
     inline void SetTokenStandard(const QueryTokenStandard& value) { m_tokenStandardHasBeenSet = true; m_tokenStandard = value; }
-
-    /**
-     * <p>The container for the token standard.</p>
-     */
     inline void SetTokenStandard(QueryTokenStandard&& value) { m_tokenStandardHasBeenSet = true; m_tokenStandard = std::move(value); }
-
-    /**
-     * <p>The container for the token standard.</p>
-     */
     inline ContractFilter& WithTokenStandard(const QueryTokenStandard& value) { SetTokenStandard(value); return *this;}
-
-    /**
-     * <p>The container for the token standard.</p>
-     */
     inline ContractFilter& WithTokenStandard(QueryTokenStandard&& value) { SetTokenStandard(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network address of the deployer.</p>
      */
     inline const Aws::String& GetDeployerAddress() const{ return m_deployerAddress; }
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline bool DeployerAddressHasBeenSet() const { return m_deployerAddressHasBeenSet; }
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline void SetDeployerAddress(const Aws::String& value) { m_deployerAddressHasBeenSet = true; m_deployerAddress = value; }
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline void SetDeployerAddress(Aws::String&& value) { m_deployerAddressHasBeenSet = true; m_deployerAddress = std::move(value); }
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline void SetDeployerAddress(const char* value) { m_deployerAddressHasBeenSet = true; m_deployerAddress.assign(value); }
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline ContractFilter& WithDeployerAddress(const Aws::String& value) { SetDeployerAddress(value); return *this;}
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline ContractFilter& WithDeployerAddress(Aws::String&& value) { SetDeployerAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The network address of the deployer.</p>
-     */
     inline ContractFilter& WithDeployerAddress(const char* value) { SetDeployerAddress(value); return *this;}
-
+    ///@}
   private:
 
     QueryNetwork m_network;

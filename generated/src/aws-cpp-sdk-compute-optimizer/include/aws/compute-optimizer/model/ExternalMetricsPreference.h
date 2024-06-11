@@ -38,36 +38,17 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Contains the source options for external metrics preferences. </p>
      */
     inline const ExternalMetricsSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p> Contains the source options for external metrics preferences. </p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p> Contains the source options for external metrics preferences. </p>
-     */
     inline void SetSource(const ExternalMetricsSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p> Contains the source options for external metrics preferences. </p>
-     */
     inline void SetSource(ExternalMetricsSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p> Contains the source options for external metrics preferences. </p>
-     */
     inline ExternalMetricsPreference& WithSource(const ExternalMetricsSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p> Contains the source options for external metrics preferences. </p>
-     */
     inline ExternalMetricsPreference& WithSource(ExternalMetricsSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ExternalMetricsSource m_source;

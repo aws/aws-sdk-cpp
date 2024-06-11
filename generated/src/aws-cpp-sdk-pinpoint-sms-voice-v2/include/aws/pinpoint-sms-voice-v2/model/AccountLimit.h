@@ -38,78 +38,37 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the attribute to apply the account limit to.</p>
      */
     inline const AccountLimitName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the attribute to apply the account limit to.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the attribute to apply the account limit to.</p>
-     */
     inline void SetName(const AccountLimitName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the attribute to apply the account limit to.</p>
-     */
     inline void SetName(AccountLimitName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the attribute to apply the account limit to.</p>
-     */
     inline AccountLimit& WithName(const AccountLimitName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the attribute to apply the account limit to.</p>
-     */
     inline AccountLimit& WithName(AccountLimitName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current amount that has been spent, in US dollars.</p>
      */
     inline long long GetUsed() const{ return m_used; }
-
-    /**
-     * <p>The current amount that has been spent, in US dollars.</p>
-     */
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
-
-    /**
-     * <p>The current amount that has been spent, in US dollars.</p>
-     */
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
-
-    /**
-     * <p>The current amount that has been spent, in US dollars.</p>
-     */
     inline AccountLimit& WithUsed(long long value) { SetUsed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
      */
     inline long long GetMax() const{ return m_max; }
-
-    /**
-     * <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
-     */
     inline void SetMax(long long value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
-     */
     inline AccountLimit& WithMax(long long value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     AccountLimitName m_name;

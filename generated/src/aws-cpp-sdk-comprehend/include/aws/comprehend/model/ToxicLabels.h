@@ -42,71 +42,30 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Array of toxic content types identified in the string.</p>
      */
     inline const Aws::Vector<ToxicContent>& GetLabels() const{ return m_labels; }
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline void SetLabels(const Aws::Vector<ToxicContent>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline void SetLabels(Aws::Vector<ToxicContent>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline ToxicLabels& WithLabels(const Aws::Vector<ToxicContent>& value) { SetLabels(value); return *this;}
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline ToxicLabels& WithLabels(Aws::Vector<ToxicContent>&& value) { SetLabels(std::move(value)); return *this;}
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline ToxicLabels& AddLabels(const ToxicContent& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-
-    /**
-     * <p>Array of toxic content types identified in the string.</p>
-     */
     inline ToxicLabels& AddLabels(ToxicContent&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Overall toxicity score for the string. Value range is zero to one, where one
      * is the highest confidence.</p>
      */
     inline double GetToxicity() const{ return m_toxicity; }
-
-    /**
-     * <p>Overall toxicity score for the string. Value range is zero to one, where one
-     * is the highest confidence.</p>
-     */
     inline bool ToxicityHasBeenSet() const { return m_toxicityHasBeenSet; }
-
-    /**
-     * <p>Overall toxicity score for the string. Value range is zero to one, where one
-     * is the highest confidence.</p>
-     */
     inline void SetToxicity(double value) { m_toxicityHasBeenSet = true; m_toxicity = value; }
-
-    /**
-     * <p>Overall toxicity score for the string. Value range is zero to one, where one
-     * is the highest confidence.</p>
-     */
     inline ToxicLabels& WithToxicity(double value) { SetToxicity(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ToxicContent> m_labels;

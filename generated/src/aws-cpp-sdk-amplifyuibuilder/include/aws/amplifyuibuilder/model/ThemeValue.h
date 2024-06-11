@@ -41,87 +41,33 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of a theme property.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline ThemeValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline ThemeValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of a theme property.</p>
-     */
     inline ThemeValue& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key-value pairs that define the theme's properties.</p>
      */
     inline const Aws::Vector<ThemeValues>& GetChildren() const{ return m_children; }
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline void SetChildren(const Aws::Vector<ThemeValues>& value) { m_childrenHasBeenSet = true; m_children = value; }
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline void SetChildren(Aws::Vector<ThemeValues>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline ThemeValue& WithChildren(const Aws::Vector<ThemeValues>& value) { SetChildren(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline ThemeValue& WithChildren(Aws::Vector<ThemeValues>&& value) { SetChildren(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline ThemeValue& AddChildren(const ThemeValues& value) { m_childrenHasBeenSet = true; m_children.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that define the theme's properties.</p>
-     */
     inline ThemeValue& AddChildren(ThemeValues&& value) { m_childrenHasBeenSet = true; m_children.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_value;

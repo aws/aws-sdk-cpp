@@ -35,63 +35,23 @@ namespace Model
     AWS_ACMPCA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Use this parameter when paginating results in a subsequent request after you
      * receive a response with truncated results. Set it to the value of the
      * <code>NextToken</code> parameter from the response you just received.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of
      * items to return in the response on each page. If additional items exist beyond
@@ -101,74 +61,23 @@ namespace Model
      * only returns a maximum of 100 items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
-     * only returns a maximum of 100 items.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
-     * only returns a maximum of 100 items.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
-     * only returns a maximum of 100 items.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use this parameter to filter the returned set of certificate authorities
      * based on their owner. The default is SELF.</p>
      */
     inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
-
-    /**
-     * <p>Use this parameter to filter the returned set of certificate authorities
-     * based on their owner. The default is SELF.</p>
-     */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
-
-    /**
-     * <p>Use this parameter to filter the returned set of certificate authorities
-     * based on their owner. The default is SELF.</p>
-     */
     inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
-
-    /**
-     * <p>Use this parameter to filter the returned set of certificate authorities
-     * based on their owner. The default is SELF.</p>
-     */
     inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
-
-    /**
-     * <p>Use this parameter to filter the returned set of certificate authorities
-     * based on their owner. The default is SELF.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
-
-    /**
-     * <p>Use this parameter to filter the returned set of certificate authorities
-     * based on their owner. The default is SELF.</p>
-     */
     inline ListCertificateAuthoritiesRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

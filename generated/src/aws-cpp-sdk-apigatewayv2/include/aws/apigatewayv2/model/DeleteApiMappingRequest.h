@@ -32,87 +32,33 @@ namespace Model
     AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The API mapping identifier.</p>
      */
     inline const Aws::String& GetApiMappingId() const{ return m_apiMappingId; }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline bool ApiMappingIdHasBeenSet() const { return m_apiMappingIdHasBeenSet; }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline void SetApiMappingId(const Aws::String& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = value; }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline void SetApiMappingId(Aws::String&& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = std::move(value); }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline void SetApiMappingId(const char* value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId.assign(value); }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline DeleteApiMappingRequest& WithApiMappingId(const Aws::String& value) { SetApiMappingId(value); return *this;}
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline DeleteApiMappingRequest& WithApiMappingId(Aws::String&& value) { SetApiMappingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
     inline DeleteApiMappingRequest& WithApiMappingId(const char* value) { SetApiMappingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline DeleteApiMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline DeleteApiMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline DeleteApiMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiMappingId;

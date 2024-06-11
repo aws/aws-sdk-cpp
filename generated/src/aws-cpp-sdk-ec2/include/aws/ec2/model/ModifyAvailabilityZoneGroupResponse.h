@@ -32,37 +32,23 @@ namespace Model
     AWS_EC2_API ModifyAvailabilityZoneGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
      */
     inline bool GetReturn() const{ return m_return; }
-
-    /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-     */
     inline void SetReturn(bool value) { m_return = value; }
-
-    /**
-     * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-     */
     inline ModifyAvailabilityZoneGroupResponse& WithReturn(bool value) { SetReturn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyAvailabilityZoneGroupResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyAvailabilityZoneGroupResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_return;

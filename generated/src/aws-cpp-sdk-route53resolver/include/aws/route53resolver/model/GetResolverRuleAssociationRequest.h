@@ -34,54 +34,20 @@ namespace Model
     AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Resolver rule association that you want to get information
      * about.</p>
      */
     inline const Aws::String& GetResolverRuleAssociationId() const{ return m_resolverRuleAssociationId; }
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline bool ResolverRuleAssociationIdHasBeenSet() const { return m_resolverRuleAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline void SetResolverRuleAssociationId(const Aws::String& value) { m_resolverRuleAssociationIdHasBeenSet = true; m_resolverRuleAssociationId = value; }
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline void SetResolverRuleAssociationId(Aws::String&& value) { m_resolverRuleAssociationIdHasBeenSet = true; m_resolverRuleAssociationId = std::move(value); }
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline void SetResolverRuleAssociationId(const char* value) { m_resolverRuleAssociationIdHasBeenSet = true; m_resolverRuleAssociationId.assign(value); }
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline GetResolverRuleAssociationRequest& WithResolverRuleAssociationId(const Aws::String& value) { SetResolverRuleAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline GetResolverRuleAssociationRequest& WithResolverRuleAssociationId(Aws::String&& value) { SetResolverRuleAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
     inline GetResolverRuleAssociationRequest& WithResolverRuleAssociationId(const char* value) { SetResolverRuleAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resolverRuleAssociationId;

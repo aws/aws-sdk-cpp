@@ -34,115 +34,51 @@ namespace Model
     AWS_KINESISANALYTICSV2_API AddApplicationInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline AddApplicationInputResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline AddApplicationInputResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline AddApplicationInputResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the current application version.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-
-    /**
-     * <p>Provides the current application version.</p>
-     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
-
-    /**
-     * <p>Provides the current application version.</p>
-     */
     inline AddApplicationInputResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the application input configuration. </p>
      */
     inline const Aws::Vector<InputDescription>& GetInputDescriptions() const{ return m_inputDescriptions; }
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline void SetInputDescriptions(const Aws::Vector<InputDescription>& value) { m_inputDescriptions = value; }
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline void SetInputDescriptions(Aws::Vector<InputDescription>&& value) { m_inputDescriptions = std::move(value); }
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline AddApplicationInputResult& WithInputDescriptions(const Aws::Vector<InputDescription>& value) { SetInputDescriptions(value); return *this;}
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline AddApplicationInputResult& WithInputDescriptions(Aws::Vector<InputDescription>&& value) { SetInputDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline AddApplicationInputResult& AddInputDescriptions(const InputDescription& value) { m_inputDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the application input configuration. </p>
-     */
     inline AddApplicationInputResult& AddInputDescriptions(InputDescription&& value) { m_inputDescriptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddApplicationInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddApplicationInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddApplicationInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationARN;

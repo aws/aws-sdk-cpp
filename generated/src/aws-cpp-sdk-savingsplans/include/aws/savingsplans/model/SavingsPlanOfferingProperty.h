@@ -39,77 +39,31 @@ namespace Model
     AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The property name.</p>
      */
     inline const SavingsPlanOfferingPropertyKey& GetName() const{ return m_name; }
-
-    /**
-     * <p>The property name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The property name.</p>
-     */
     inline void SetName(const SavingsPlanOfferingPropertyKey& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The property name.</p>
-     */
     inline void SetName(SavingsPlanOfferingPropertyKey&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The property name.</p>
-     */
     inline SavingsPlanOfferingProperty& WithName(const SavingsPlanOfferingPropertyKey& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The property name.</p>
-     */
     inline SavingsPlanOfferingProperty& WithName(SavingsPlanOfferingPropertyKey&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The property value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The property value.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The property value.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The property value.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The property value.</p>
-     */
     inline SavingsPlanOfferingProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The property value.</p>
-     */
     inline SavingsPlanOfferingProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The property value.</p>
-     */
     inline SavingsPlanOfferingProperty& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     SavingsPlanOfferingPropertyKey m_name;

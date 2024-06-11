@@ -34,6 +34,7 @@ namespace Model
     AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
@@ -41,63 +42,14 @@ namespace Model
      * account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline GetBandwidthRateLimitScheduleRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline GetBandwidthRateLimitScheduleRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-     * <code>ListGateways</code> </a> operation to return a list of gateways for your
-     * account and Amazon Web Services Region.</p>
-     */
     inline GetBandwidthRateLimitScheduleRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayArn;

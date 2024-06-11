@@ -38,36 +38,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tumbling time interval window.</p>
      */
     inline const TumblingWindow& GetTumbling() const{ return m_tumbling; }
-
-    /**
-     * <p>The tumbling time interval window.</p>
-     */
     inline bool TumblingHasBeenSet() const { return m_tumblingHasBeenSet; }
-
-    /**
-     * <p>The tumbling time interval window.</p>
-     */
     inline void SetTumbling(const TumblingWindow& value) { m_tumblingHasBeenSet = true; m_tumbling = value; }
-
-    /**
-     * <p>The tumbling time interval window.</p>
-     */
     inline void SetTumbling(TumblingWindow&& value) { m_tumblingHasBeenSet = true; m_tumbling = std::move(value); }
-
-    /**
-     * <p>The tumbling time interval window.</p>
-     */
     inline MetricWindow& WithTumbling(const TumblingWindow& value) { SetTumbling(value); return *this;}
-
-    /**
-     * <p>The tumbling time interval window.</p>
-     */
     inline MetricWindow& WithTumbling(TumblingWindow&& value) { SetTumbling(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TumblingWindow m_tumbling;

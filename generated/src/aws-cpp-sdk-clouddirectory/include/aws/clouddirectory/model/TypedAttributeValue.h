@@ -41,170 +41,67 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string data value.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline TypedAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline TypedAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A string data value.</p>
-     */
     inline TypedAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A binary data value.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBinaryValue() const{ return m_binaryValue; }
-
-    /**
-     * <p>A binary data value.</p>
-     */
     inline bool BinaryValueHasBeenSet() const { return m_binaryValueHasBeenSet; }
-
-    /**
-     * <p>A binary data value.</p>
-     */
     inline void SetBinaryValue(const Aws::Utils::ByteBuffer& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
-
-    /**
-     * <p>A binary data value.</p>
-     */
     inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
-
-    /**
-     * <p>A binary data value.</p>
-     */
     inline TypedAttributeValue& WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
-
-    /**
-     * <p>A binary data value.</p>
-     */
     inline TypedAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean data value.</p>
      */
     inline bool GetBooleanValue() const{ return m_booleanValue; }
-
-    /**
-     * <p>A Boolean data value.</p>
-     */
     inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
-
-    /**
-     * <p>A Boolean data value.</p>
-     */
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
-
-    /**
-     * <p>A Boolean data value.</p>
-     */
     inline TypedAttributeValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A number data value.</p>
      */
     inline const Aws::String& GetNumberValue() const{ return m_numberValue; }
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline bool NumberValueHasBeenSet() const { return m_numberValueHasBeenSet; }
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline void SetNumberValue(const Aws::String& value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline void SetNumberValue(Aws::String&& value) { m_numberValueHasBeenSet = true; m_numberValue = std::move(value); }
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline void SetNumberValue(const char* value) { m_numberValueHasBeenSet = true; m_numberValue.assign(value); }
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline TypedAttributeValue& WithNumberValue(const Aws::String& value) { SetNumberValue(value); return *this;}
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline TypedAttributeValue& WithNumberValue(Aws::String&& value) { SetNumberValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A number data value.</p>
-     */
     inline TypedAttributeValue& WithNumberValue(const char* value) { SetNumberValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A date and time value.</p>
      */
     inline const Aws::Utils::DateTime& GetDatetimeValue() const{ return m_datetimeValue; }
-
-    /**
-     * <p>A date and time value.</p>
-     */
     inline bool DatetimeValueHasBeenSet() const { return m_datetimeValueHasBeenSet; }
-
-    /**
-     * <p>A date and time value.</p>
-     */
     inline void SetDatetimeValue(const Aws::Utils::DateTime& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = value; }
-
-    /**
-     * <p>A date and time value.</p>
-     */
     inline void SetDatetimeValue(Aws::Utils::DateTime&& value) { m_datetimeValueHasBeenSet = true; m_datetimeValue = std::move(value); }
-
-    /**
-     * <p>A date and time value.</p>
-     */
     inline TypedAttributeValue& WithDatetimeValue(const Aws::Utils::DateTime& value) { SetDatetimeValue(value); return *this;}
-
-    /**
-     * <p>A date and time value.</p>
-     */
     inline TypedAttributeValue& WithDatetimeValue(Aws::Utils::DateTime&& value) { SetDatetimeValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stringValue;

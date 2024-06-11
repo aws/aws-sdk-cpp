@@ -40,114 +40,44 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
     inline const Aws::Utils::DateTime& GetDeadline() const{ return m_deadline; }
-
-    /**
-     * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs. If a deadline is not yet available for this resource type, this field is
-     * not returned.</p>
-     */
     inline bool DeadlineHasBeenSet() const { return m_deadlineHasBeenSet; }
-
-    /**
-     * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs. If a deadline is not yet available for this resource type, this field is
-     * not returned.</p>
-     */
     inline void SetDeadline(const Aws::Utils::DateTime& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
-
-    /**
-     * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs. If a deadline is not yet available for this resource type, this field is
-     * not returned.</p>
-     */
     inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = std::move(value); }
-
-    /**
-     * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs. If a deadline is not yet available for this resource type, this field is
-     * not returned.</p>
-     */
     inline IdFormat& WithDeadline(const Aws::Utils::DateTime& value) { SetDeadline(value); return *this;}
-
-    /**
-     * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs. If a deadline is not yet available for this resource type, this field is
-     * not returned.</p>
-     */
     inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline IdFormat& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline IdFormat& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of resource.</p>
-     */
     inline IdFormat& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
      * resource.</p>
      */
     inline bool GetUseLongIds() const{ return m_useLongIds; }
-
-    /**
-     * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.</p>
-     */
     inline bool UseLongIdsHasBeenSet() const { return m_useLongIdsHasBeenSet; }
-
-    /**
-     * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.</p>
-     */
     inline void SetUseLongIds(bool value) { m_useLongIdsHasBeenSet = true; m_useLongIds = value; }
-
-    /**
-     * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
-     * resource.</p>
-     */
     inline IdFormat& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_deadline;

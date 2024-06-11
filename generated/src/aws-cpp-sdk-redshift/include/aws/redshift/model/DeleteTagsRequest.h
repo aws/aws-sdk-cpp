@@ -41,100 +41,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
      * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline DeleteTagsRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline DeleteTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
-     * For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-     */
     inline DeleteTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag key that you want to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline DeleteTagsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline DeleteTagsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline DeleteTagsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline DeleteTagsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The tag key that you want to delete.</p>
-     */
     inline DeleteTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

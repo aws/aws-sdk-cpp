@@ -39,67 +39,29 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains citations for a part of an agent response.</p>
      */
     inline const Attribution& GetAttribution() const{ return m_attribution; }
-
-    /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
     inline bool AttributionHasBeenSet() const { return m_attributionHasBeenSet; }
-
-    /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
     inline void SetAttribution(const Attribution& value) { m_attributionHasBeenSet = true; m_attribution = value; }
-
-    /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
     inline void SetAttribution(Attribution&& value) { m_attributionHasBeenSet = true; m_attribution = std::move(value); }
-
-    /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
     inline PayloadPart& WithAttribution(const Attribution& value) { SetAttribution(value); return *this;}
-
-    /**
-     * <p>Contains citations for a part of an agent response.</p>
-     */
     inline PayloadPart& WithAttribution(Attribution&& value) { SetAttribution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A part of the agent response in bytes.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>A part of the agent response in bytes.</p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>A part of the agent response in bytes.</p>
-     */
     inline void SetBytes(const Aws::Utils::CryptoBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>A part of the agent response in bytes.</p>
-     */
     inline void SetBytes(Aws::Utils::CryptoBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>A part of the agent response in bytes.</p>
-     */
     inline PayloadPart& WithBytes(const Aws::Utils::CryptoBuffer& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>A part of the agent response in bytes.</p>
-     */
     inline PayloadPart& WithBytes(Aws::Utils::CryptoBuffer&& value) { SetBytes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Attribution m_attribution;

@@ -38,73 +38,30 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The integer number of units for the time period. For example <code>6</code>
      * (months).</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>The integer number of units for the time period. For example <code>6</code>
-     * (months).</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The integer number of units for the time period. For example <code>6</code>
-     * (months).</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The integer number of units for the time period. For example <code>6</code>
-     * (months).</p>
-     */
     inline LifecyclePolicyDetailExclusionRulesAmisLastLaunched& WithValue(int value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
      * time since the last instance launched from the AMI. For example: days, weeks,
      * months, or years.</p>
      */
     inline const LifecyclePolicyTimeUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-     * time since the last instance launched from the AMI. For example: days, weeks,
-     * months, or years.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-     * time since the last instance launched from the AMI. For example: days, weeks,
-     * months, or years.</p>
-     */
     inline void SetUnit(const LifecyclePolicyTimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-     * time since the last instance launched from the AMI. For example: days, weeks,
-     * months, or years.</p>
-     */
     inline void SetUnit(LifecyclePolicyTimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-     * time since the last instance launched from the AMI. For example: days, weeks,
-     * months, or years.</p>
-     */
     inline LifecyclePolicyDetailExclusionRulesAmisLastLaunched& WithUnit(const LifecyclePolicyTimeUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>Defines the unit of time that the lifecycle policy uses to calculate elapsed
-     * time since the last instance launched from the AMI. For example: days, weeks,
-     * months, or years.</p>
-     */
     inline LifecyclePolicyDetailExclusionRulesAmisLastLaunched& WithUnit(LifecyclePolicyTimeUnit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_value;

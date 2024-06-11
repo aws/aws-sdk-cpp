@@ -39,73 +39,30 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The MFA mode for the backend of your Amplify project.</p>
      */
     inline const MFAMode& GetMFAMode() const{ return m_mFAMode; }
-
-    /**
-     * <p>The MFA mode for the backend of your Amplify project.</p>
-     */
     inline bool MFAModeHasBeenSet() const { return m_mFAModeHasBeenSet; }
-
-    /**
-     * <p>The MFA mode for the backend of your Amplify project.</p>
-     */
     inline void SetMFAMode(const MFAMode& value) { m_mFAModeHasBeenSet = true; m_mFAMode = value; }
-
-    /**
-     * <p>The MFA mode for the backend of your Amplify project.</p>
-     */
     inline void SetMFAMode(MFAMode&& value) { m_mFAModeHasBeenSet = true; m_mFAMode = std::move(value); }
-
-    /**
-     * <p>The MFA mode for the backend of your Amplify project.</p>
-     */
     inline UpdateBackendAuthMFAConfig& WithMFAMode(const MFAMode& value) { SetMFAMode(value); return *this;}
-
-    /**
-     * <p>The MFA mode for the backend of your Amplify project.</p>
-     */
     inline UpdateBackendAuthMFAConfig& WithMFAMode(MFAMode&& value) { SetMFAMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The settings of your MFA configuration for the backend of your Amplify
      * project.</p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
-
-    /**
-     * <p>The settings of your MFA configuration for the backend of your Amplify
-     * project.</p>
-     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-
-    /**
-     * <p>The settings of your MFA configuration for the backend of your Amplify
-     * project.</p>
-     */
     inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-
-    /**
-     * <p>The settings of your MFA configuration for the backend of your Amplify
-     * project.</p>
-     */
     inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-
-    /**
-     * <p>The settings of your MFA configuration for the backend of your Amplify
-     * project.</p>
-     */
     inline UpdateBackendAuthMFAConfig& WithSettings(const Settings& value) { SetSettings(value); return *this;}
-
-    /**
-     * <p>The settings of your MFA configuration for the backend of your Amplify
-     * project.</p>
-     */
     inline UpdateBackendAuthMFAConfig& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MFAMode m_mFAMode;

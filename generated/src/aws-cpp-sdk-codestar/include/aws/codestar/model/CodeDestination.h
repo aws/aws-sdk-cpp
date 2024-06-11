@@ -41,91 +41,33 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the AWS CodeCommit repository to be created in AWS
      * CodeStar. This is where the source code files provided with the project request
      * will be uploaded after project creation.</p>
      */
     inline const CodeCommitCodeDestination& GetCodeCommit() const{ return m_codeCommit; }
-
-    /**
-     * <p>Information about the AWS CodeCommit repository to be created in AWS
-     * CodeStar. This is where the source code files provided with the project request
-     * will be uploaded after project creation.</p>
-     */
     inline bool CodeCommitHasBeenSet() const { return m_codeCommitHasBeenSet; }
-
-    /**
-     * <p>Information about the AWS CodeCommit repository to be created in AWS
-     * CodeStar. This is where the source code files provided with the project request
-     * will be uploaded after project creation.</p>
-     */
     inline void SetCodeCommit(const CodeCommitCodeDestination& value) { m_codeCommitHasBeenSet = true; m_codeCommit = value; }
-
-    /**
-     * <p>Information about the AWS CodeCommit repository to be created in AWS
-     * CodeStar. This is where the source code files provided with the project request
-     * will be uploaded after project creation.</p>
-     */
     inline void SetCodeCommit(CodeCommitCodeDestination&& value) { m_codeCommitHasBeenSet = true; m_codeCommit = std::move(value); }
-
-    /**
-     * <p>Information about the AWS CodeCommit repository to be created in AWS
-     * CodeStar. This is where the source code files provided with the project request
-     * will be uploaded after project creation.</p>
-     */
     inline CodeDestination& WithCodeCommit(const CodeCommitCodeDestination& value) { SetCodeCommit(value); return *this;}
-
-    /**
-     * <p>Information about the AWS CodeCommit repository to be created in AWS
-     * CodeStar. This is where the source code files provided with the project request
-     * will be uploaded after project creation.</p>
-     */
     inline CodeDestination& WithCodeCommit(CodeCommitCodeDestination&& value) { SetCodeCommit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the GitHub repository to be created in AWS CodeStar. This
      * is where the source code files provided with the project request will be
      * uploaded after project creation.</p>
      */
     inline const GitHubCodeDestination& GetGitHub() const{ return m_gitHub; }
-
-    /**
-     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
-     * is where the source code files provided with the project request will be
-     * uploaded after project creation.</p>
-     */
     inline bool GitHubHasBeenSet() const { return m_gitHubHasBeenSet; }
-
-    /**
-     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
-     * is where the source code files provided with the project request will be
-     * uploaded after project creation.</p>
-     */
     inline void SetGitHub(const GitHubCodeDestination& value) { m_gitHubHasBeenSet = true; m_gitHub = value; }
-
-    /**
-     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
-     * is where the source code files provided with the project request will be
-     * uploaded after project creation.</p>
-     */
     inline void SetGitHub(GitHubCodeDestination&& value) { m_gitHubHasBeenSet = true; m_gitHub = std::move(value); }
-
-    /**
-     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
-     * is where the source code files provided with the project request will be
-     * uploaded after project creation.</p>
-     */
     inline CodeDestination& WithGitHub(const GitHubCodeDestination& value) { SetGitHub(value); return *this;}
-
-    /**
-     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
-     * is where the source code files provided with the project request will be
-     * uploaded after project creation.</p>
-     */
     inline CodeDestination& WithGitHub(GitHubCodeDestination&& value) { SetGitHub(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CodeCommitCodeDestination m_codeCommit;

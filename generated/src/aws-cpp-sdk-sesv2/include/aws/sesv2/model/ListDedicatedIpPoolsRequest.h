@@ -42,55 +42,22 @@ namespace Model
     AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
      * indicate the position in the list of dedicated IP pools.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline ListDedicatedIpPoolsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline ListDedicatedIpPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to
-     * indicate the position in the list of dedicated IP pools.</p>
-     */
     inline ListDedicatedIpPoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of results to show in a single call to
      * <code>ListDedicatedIpPools</code>. If the number of results is larger than the
@@ -99,34 +66,10 @@ namespace Model
      * results.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The number of results to show in a single call to
-     * <code>ListDedicatedIpPools</code>. If the number of results is larger than the
-     * number you specified in this parameter, then the response includes a
-     * <code>NextToken</code> element, which you can use to obtain additional
-     * results.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The number of results to show in a single call to
-     * <code>ListDedicatedIpPools</code>. If the number of results is larger than the
-     * number you specified in this parameter, then the response includes a
-     * <code>NextToken</code> element, which you can use to obtain additional
-     * results.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The number of results to show in a single call to
-     * <code>ListDedicatedIpPools</code>. If the number of results is larger than the
-     * number you specified in this parameter, then the response includes a
-     * <code>NextToken</code> element, which you can use to obtain additional
-     * results.</p>
-     */
     inline ListDedicatedIpPoolsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

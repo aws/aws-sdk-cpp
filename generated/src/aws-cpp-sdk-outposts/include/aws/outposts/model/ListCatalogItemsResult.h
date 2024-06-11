@@ -34,85 +34,40 @@ namespace Model
     AWS_OUTPOSTS_API ListCatalogItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the catalog items.</p>
      */
     inline const Aws::Vector<CatalogItem>& GetCatalogItems() const{ return m_catalogItems; }
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline void SetCatalogItems(const Aws::Vector<CatalogItem>& value) { m_catalogItems = value; }
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline void SetCatalogItems(Aws::Vector<CatalogItem>&& value) { m_catalogItems = std::move(value); }
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline ListCatalogItemsResult& WithCatalogItems(const Aws::Vector<CatalogItem>& value) { SetCatalogItems(value); return *this;}
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline ListCatalogItemsResult& WithCatalogItems(Aws::Vector<CatalogItem>&& value) { SetCatalogItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline ListCatalogItemsResult& AddCatalogItems(const CatalogItem& value) { m_catalogItems.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the catalog items.</p>
-     */
     inline ListCatalogItemsResult& AddCatalogItems(CatalogItem&& value) { m_catalogItems.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline ListCatalogItemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListCatalogItemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListCatalogItemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListCatalogItemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListCatalogItemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListCatalogItemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CatalogItem> m_catalogItems;

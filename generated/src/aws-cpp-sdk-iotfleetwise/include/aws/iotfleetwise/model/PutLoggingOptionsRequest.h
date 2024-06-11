@@ -34,36 +34,17 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
      */
     inline const CloudWatchLogDeliveryOptions& GetCloudWatchLogDelivery() const{ return m_cloudWatchLogDelivery; }
-
-    /**
-     * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-     */
     inline bool CloudWatchLogDeliveryHasBeenSet() const { return m_cloudWatchLogDeliveryHasBeenSet; }
-
-    /**
-     * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { m_cloudWatchLogDeliveryHasBeenSet = true; m_cloudWatchLogDelivery = value; }
-
-    /**
-     * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-     */
     inline void SetCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { m_cloudWatchLogDeliveryHasBeenSet = true; m_cloudWatchLogDelivery = std::move(value); }
-
-    /**
-     * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-     */
     inline PutLoggingOptionsRequest& WithCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { SetCloudWatchLogDelivery(value); return *this;}
-
-    /**
-     * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
-     */
     inline PutLoggingOptionsRequest& WithCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { SetCloudWatchLogDelivery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogDeliveryOptions m_cloudWatchLogDelivery;

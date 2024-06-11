@@ -32,67 +32,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline GetApplicationVersionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline GetApplicationVersionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the application.</p>
-     */
     inline GetApplicationVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific version of the application.</p>
      */
     inline int GetApplicationVersion() const{ return m_applicationVersion; }
-
-    /**
-     * <p>The specific version of the application.</p>
-     */
     inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
-
-    /**
-     * <p>The specific version of the application.</p>
-     */
     inline void SetApplicationVersion(int value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = value; }
-
-    /**
-     * <p>The specific version of the application.</p>
-     */
     inline GetApplicationVersionRequest& WithApplicationVersion(int value) { SetApplicationVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

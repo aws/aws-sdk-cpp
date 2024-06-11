@@ -34,87 +34,33 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the delivery destination to assign this policy to.</p>
      */
     inline const Aws::String& GetDeliveryDestinationName() const{ return m_deliveryDestinationName; }
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline bool DeliveryDestinationNameHasBeenSet() const { return m_deliveryDestinationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline void SetDeliveryDestinationName(const Aws::String& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = value; }
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline void SetDeliveryDestinationName(Aws::String&& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = std::move(value); }
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline void SetDeliveryDestinationName(const char* value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName.assign(value); }
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const Aws::String& value) { SetDeliveryDestinationName(value); return *this;}
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(Aws::String&& value) { SetDeliveryDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the delivery destination to assign this policy to.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const char* value) { SetDeliveryDestinationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The contents of the policy.</p>
      */
     inline const Aws::String& GetDeliveryDestinationPolicy() const{ return m_deliveryDestinationPolicy; }
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline bool DeliveryDestinationPolicyHasBeenSet() const { return m_deliveryDestinationPolicyHasBeenSet; }
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(const Aws::String& value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy = value; }
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(Aws::String&& value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy = std::move(value); }
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline void SetDeliveryDestinationPolicy(const char* value) { m_deliveryDestinationPolicyHasBeenSet = true; m_deliveryDestinationPolicy.assign(value); }
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationPolicy(const Aws::String& value) { SetDeliveryDestinationPolicy(value); return *this;}
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationPolicy(Aws::String&& value) { SetDeliveryDestinationPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The contents of the policy.</p>
-     */
     inline PutDeliveryDestinationPolicyRequest& WithDeliveryDestinationPolicy(const char* value) { SetDeliveryDestinationPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryDestinationName;

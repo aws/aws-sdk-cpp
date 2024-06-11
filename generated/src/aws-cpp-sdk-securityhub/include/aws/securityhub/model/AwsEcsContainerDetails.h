@@ -40,153 +40,58 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the container. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline AwsEcsContainerDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline AwsEcsContainerDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the container. </p>
-     */
     inline AwsEcsContainerDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image used for the container. </p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline AwsEcsContainerDetails& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline AwsEcsContainerDetails& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-
-    /**
-     * <p>The image used for the container. </p>
-     */
     inline AwsEcsContainerDetails& WithImage(const char* value) { SetImage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The mount points for data volumes in your container. </p>
      */
     inline const Aws::Vector<AwsMountPoint>& GetMountPoints() const{ return m_mountPoints; }
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline void SetMountPoints(const Aws::Vector<AwsMountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline void SetMountPoints(Aws::Vector<AwsMountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline AwsEcsContainerDetails& WithMountPoints(const Aws::Vector<AwsMountPoint>& value) { SetMountPoints(value); return *this;}
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline AwsEcsContainerDetails& WithMountPoints(Aws::Vector<AwsMountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline AwsEcsContainerDetails& AddMountPoints(const AwsMountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-
-    /**
-     * <p>The mount points for data volumes in your container. </p>
-     */
     inline AwsEcsContainerDetails& AddMountPoints(AwsMountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the root user). </p>
      */
     inline bool GetPrivileged() const{ return m_privileged; }
-
-    /**
-     * <p>When this parameter is true, the container is given elevated privileges on
-     * the host container instance (similar to the root user). </p>
-     */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
-
-    /**
-     * <p>When this parameter is true, the container is given elevated privileges on
-     * the host container instance (similar to the root user). </p>
-     */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
-
-    /**
-     * <p>When this parameter is true, the container is given elevated privileges on
-     * the host container instance (similar to the root user). </p>
-     */
     inline AwsEcsContainerDetails& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

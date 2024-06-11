@@ -37,46 +37,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Text of the word configured for the guardrail to block.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline GuardrailWordConfig& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline GuardrailWordConfig& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>Text of the word configured for the guardrail to block.</p>
-     */
     inline GuardrailWordConfig& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

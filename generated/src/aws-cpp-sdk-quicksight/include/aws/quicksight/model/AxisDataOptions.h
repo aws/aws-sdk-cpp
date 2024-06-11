@@ -40,67 +40,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options for an axis with a numeric field.</p>
      */
     inline const NumericAxisOptions& GetNumericAxisOptions() const{ return m_numericAxisOptions; }
-
-    /**
-     * <p>The options for an axis with a numeric field.</p>
-     */
     inline bool NumericAxisOptionsHasBeenSet() const { return m_numericAxisOptionsHasBeenSet; }
-
-    /**
-     * <p>The options for an axis with a numeric field.</p>
-     */
     inline void SetNumericAxisOptions(const NumericAxisOptions& value) { m_numericAxisOptionsHasBeenSet = true; m_numericAxisOptions = value; }
-
-    /**
-     * <p>The options for an axis with a numeric field.</p>
-     */
     inline void SetNumericAxisOptions(NumericAxisOptions&& value) { m_numericAxisOptionsHasBeenSet = true; m_numericAxisOptions = std::move(value); }
-
-    /**
-     * <p>The options for an axis with a numeric field.</p>
-     */
     inline AxisDataOptions& WithNumericAxisOptions(const NumericAxisOptions& value) { SetNumericAxisOptions(value); return *this;}
-
-    /**
-     * <p>The options for an axis with a numeric field.</p>
-     */
     inline AxisDataOptions& WithNumericAxisOptions(NumericAxisOptions&& value) { SetNumericAxisOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options for an axis with a date field.</p>
      */
     inline const DateAxisOptions& GetDateAxisOptions() const{ return m_dateAxisOptions; }
-
-    /**
-     * <p>The options for an axis with a date field.</p>
-     */
     inline bool DateAxisOptionsHasBeenSet() const { return m_dateAxisOptionsHasBeenSet; }
-
-    /**
-     * <p>The options for an axis with a date field.</p>
-     */
     inline void SetDateAxisOptions(const DateAxisOptions& value) { m_dateAxisOptionsHasBeenSet = true; m_dateAxisOptions = value; }
-
-    /**
-     * <p>The options for an axis with a date field.</p>
-     */
     inline void SetDateAxisOptions(DateAxisOptions&& value) { m_dateAxisOptionsHasBeenSet = true; m_dateAxisOptions = std::move(value); }
-
-    /**
-     * <p>The options for an axis with a date field.</p>
-     */
     inline AxisDataOptions& WithDateAxisOptions(const DateAxisOptions& value) { SetDateAxisOptions(value); return *this;}
-
-    /**
-     * <p>The options for an axis with a date field.</p>
-     */
     inline AxisDataOptions& WithDateAxisOptions(DateAxisOptions&& value) { SetDateAxisOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumericAxisOptions m_numericAxisOptions;

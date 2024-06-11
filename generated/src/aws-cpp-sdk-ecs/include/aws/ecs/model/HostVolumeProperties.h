@@ -38,6 +38,7 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When the <code>host</code> parameter is used, specify a
      * <code>sourcePath</code> to declare the path on the host container instance
@@ -51,105 +52,14 @@ namespace Model
      * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline HostVolumeProperties& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-
-    /**
-     * <p>When the <code>host</code> parameter is used, specify a
-     * <code>sourcePath</code> to declare the path on the host container instance
-     * that's presented to the container. If this parameter is empty, then the Docker
-     * daemon has assigned a host path for you. If the <code>host</code> parameter
-     * contains a <code>sourcePath</code> file location, then the data volume persists
-     * at the specified location on the host container instance until you delete it
-     * manually. If the <code>sourcePath</code> value doesn't exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist,
-     * the contents of the source path folder are exported.</p> <p>If you're using the
-     * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-     */
     inline HostVolumeProperties& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourcePath;

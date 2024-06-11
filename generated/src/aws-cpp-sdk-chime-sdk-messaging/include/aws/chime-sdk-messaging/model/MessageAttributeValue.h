@@ -38,51 +38,20 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The strings in a message attribute value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValuesHasBeenSet = true; m_stringValues = value; }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::move(value); }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline MessageAttributeValue& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline MessageAttributeValue& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline MessageAttributeValue& AddStringValues(const Aws::String& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline MessageAttributeValue& AddStringValues(Aws::String&& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The strings in a message attribute value.</p>
-     */
     inline MessageAttributeValue& AddStringValues(const char* value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_stringValues;

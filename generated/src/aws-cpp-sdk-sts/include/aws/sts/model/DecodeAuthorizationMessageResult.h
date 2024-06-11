@@ -40,57 +40,27 @@ namespace Model
     AWS_STS_API DecodeAuthorizationMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The API returns a response with the decoded message.</p>
      */
     inline const Aws::String& GetDecodedMessage() const{ return m_decodedMessage; }
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline void SetDecodedMessage(const Aws::String& value) { m_decodedMessage = value; }
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = std::move(value); }
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline void SetDecodedMessage(const char* value) { m_decodedMessage.assign(value); }
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The API returns a response with the decoded message.</p>
-     */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const char* value) { SetDecodedMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DecodeAuthorizationMessageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_decodedMessage;

@@ -32,70 +32,30 @@ namespace Model
     AWS_DATASYNC_API AddStorageSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the on-premises storage system that you can use with DataSync
      * Discovery.</p>
      */
     inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArn = value; }
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline void SetStorageSystemArn(const char* value) { m_storageSystemArn.assign(value); }
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline AddStorageSystemResult& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline AddStorageSystemResult& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the on-premises storage system that you can use with DataSync
-     * Discovery.</p>
-     */
     inline AddStorageSystemResult& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddStorageSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddStorageSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddStorageSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_storageSystemArn;

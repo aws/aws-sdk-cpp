@@ -37,46 +37,19 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The set's ID.</p>
      */
     inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline bool ReadSetIdHasBeenSet() const { return m_readSetIdHasBeenSet; }
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline void SetReadSetId(const Aws::String& value) { m_readSetIdHasBeenSet = true; m_readSetId = value; }
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline void SetReadSetId(Aws::String&& value) { m_readSetIdHasBeenSet = true; m_readSetId = std::move(value); }
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline void SetReadSetId(const char* value) { m_readSetIdHasBeenSet = true; m_readSetId.assign(value); }
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline ExportReadSet& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline ExportReadSet& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The set's ID.</p>
-     */
     inline ExportReadSet& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_readSetId;

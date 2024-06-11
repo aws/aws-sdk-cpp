@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeMetricAttributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the metric attribution.</p>
      */
     inline const MetricAttribution& GetMetricAttribution() const{ return m_metricAttribution; }
-
-    /**
-     * <p>The details of the metric attribution.</p>
-     */
     inline void SetMetricAttribution(const MetricAttribution& value) { m_metricAttribution = value; }
-
-    /**
-     * <p>The details of the metric attribution.</p>
-     */
     inline void SetMetricAttribution(MetricAttribution&& value) { m_metricAttribution = std::move(value); }
-
-    /**
-     * <p>The details of the metric attribution.</p>
-     */
     inline DescribeMetricAttributionResult& WithMetricAttribution(const MetricAttribution& value) { SetMetricAttribution(value); return *this;}
-
-    /**
-     * <p>The details of the metric attribution.</p>
-     */
     inline DescribeMetricAttributionResult& WithMetricAttribution(MetricAttribution&& value) { SetMetricAttribution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMetricAttributionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMetricAttributionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMetricAttributionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MetricAttribution m_metricAttribution;

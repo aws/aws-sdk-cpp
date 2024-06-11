@@ -39,53 +39,27 @@ namespace Model
     AWS_MOBILE_API DescribeBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The details of the bundle. </p>
      */
     inline const BundleDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p> The details of the bundle. </p>
-     */
     inline void SetDetails(const BundleDetails& value) { m_details = value; }
-
-    /**
-     * <p> The details of the bundle. </p>
-     */
     inline void SetDetails(BundleDetails&& value) { m_details = std::move(value); }
-
-    /**
-     * <p> The details of the bundle. </p>
-     */
     inline DescribeBundleResult& WithDetails(const BundleDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p> The details of the bundle. </p>
-     */
     inline DescribeBundleResult& WithDetails(BundleDetails&& value) { SetDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeBundleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeBundleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeBundleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BundleDetails m_details;

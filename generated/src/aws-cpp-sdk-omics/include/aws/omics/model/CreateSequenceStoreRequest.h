@@ -35,313 +35,106 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A name for the store.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description for the store.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Server-side encryption (SSE) settings for the store.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags for the store.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateSequenceStoreRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>To ensure that requests don't run multiple times, specify a unique token for
      * each request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline CreateSequenceStoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline CreateSequenceStoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
-     */
     inline CreateSequenceStoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An S3 location that is used to store files that have failed a direct
      * upload.</p>
      */
     inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline bool FallbackLocationHasBeenSet() const { return m_fallbackLocationHasBeenSet; }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = value; }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = std::move(value); }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline void SetFallbackLocation(const char* value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation.assign(value); }
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline CreateSequenceStoreRequest& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline CreateSequenceStoreRequest& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>An S3 location that is used to store files that have failed a direct
-     * upload.</p>
-     */
     inline CreateSequenceStoreRequest& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ETag algorithm family to use for ingested read sets.</p>
      */
     inline const ETagAlgorithmFamily& GetETagAlgorithmFamily() const{ return m_eTagAlgorithmFamily; }
-
-    /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
-     */
     inline bool ETagAlgorithmFamilyHasBeenSet() const { return m_eTagAlgorithmFamilyHasBeenSet; }
-
-    /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
-     */
     inline void SetETagAlgorithmFamily(const ETagAlgorithmFamily& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = value; }
-
-    /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
-     */
     inline void SetETagAlgorithmFamily(ETagAlgorithmFamily&& value) { m_eTagAlgorithmFamilyHasBeenSet = true; m_eTagAlgorithmFamily = std::move(value); }
-
-    /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
-     */
     inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
-
-    /**
-     * <p>The ETag algorithm family to use for ingested read sets.</p>
-     */
     inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

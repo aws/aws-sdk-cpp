@@ -37,47 +37,25 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of tokens to include in a chunk.</p>
      */
     inline int GetMaxTokens() const{ return m_maxTokens; }
-
-    /**
-     * <p>The maximum number of tokens to include in a chunk.</p>
-     */
     inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
-
-    /**
-     * <p>The maximum number of tokens to include in a chunk.</p>
-     */
     inline void SetMaxTokens(int value) { m_maxTokensHasBeenSet = true; m_maxTokens = value; }
-
-    /**
-     * <p>The maximum number of tokens to include in a chunk.</p>
-     */
     inline FixedSizeChunkingConfiguration& WithMaxTokens(int value) { SetMaxTokens(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of overlap between adjacent chunks of a data source.</p>
      */
     inline int GetOverlapPercentage() const{ return m_overlapPercentage; }
-
-    /**
-     * <p>The percentage of overlap between adjacent chunks of a data source.</p>
-     */
     inline bool OverlapPercentageHasBeenSet() const { return m_overlapPercentageHasBeenSet; }
-
-    /**
-     * <p>The percentage of overlap between adjacent chunks of a data source.</p>
-     */
     inline void SetOverlapPercentage(int value) { m_overlapPercentageHasBeenSet = true; m_overlapPercentage = value; }
-
-    /**
-     * <p>The percentage of overlap between adjacent chunks of a data source.</p>
-     */
     inline FixedSizeChunkingConfiguration& WithOverlapPercentage(int value) { SetOverlapPercentage(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxTokens;

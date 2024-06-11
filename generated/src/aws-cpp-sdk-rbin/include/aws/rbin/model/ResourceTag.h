@@ -38,87 +38,33 @@ namespace Model
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tag key.</p>
      */
     inline const Aws::String& GetResourceTagKey() const{ return m_resourceTagKey; }
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline bool ResourceTagKeyHasBeenSet() const { return m_resourceTagKeyHasBeenSet; }
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline void SetResourceTagKey(const Aws::String& value) { m_resourceTagKeyHasBeenSet = true; m_resourceTagKey = value; }
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline void SetResourceTagKey(Aws::String&& value) { m_resourceTagKeyHasBeenSet = true; m_resourceTagKey = std::move(value); }
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline void SetResourceTagKey(const char* value) { m_resourceTagKeyHasBeenSet = true; m_resourceTagKey.assign(value); }
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline ResourceTag& WithResourceTagKey(const Aws::String& value) { SetResourceTagKey(value); return *this;}
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline ResourceTag& WithResourceTagKey(Aws::String&& value) { SetResourceTagKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag key.</p>
-     */
     inline ResourceTag& WithResourceTagKey(const char* value) { SetResourceTagKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag value.</p>
      */
     inline const Aws::String& GetResourceTagValue() const{ return m_resourceTagValue; }
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline bool ResourceTagValueHasBeenSet() const { return m_resourceTagValueHasBeenSet; }
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline void SetResourceTagValue(const Aws::String& value) { m_resourceTagValueHasBeenSet = true; m_resourceTagValue = value; }
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline void SetResourceTagValue(Aws::String&& value) { m_resourceTagValueHasBeenSet = true; m_resourceTagValue = std::move(value); }
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline void SetResourceTagValue(const char* value) { m_resourceTagValueHasBeenSet = true; m_resourceTagValue.assign(value); }
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline ResourceTag& WithResourceTagValue(const Aws::String& value) { SetResourceTagValue(value); return *this;}
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline ResourceTag& WithResourceTagValue(Aws::String&& value) { SetResourceTagValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag value.</p>
-     */
     inline ResourceTag& WithResourceTagValue(const char* value) { SetResourceTagValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceTagKey;

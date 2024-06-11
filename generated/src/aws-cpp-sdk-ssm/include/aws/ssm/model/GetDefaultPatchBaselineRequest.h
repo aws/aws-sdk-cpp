@@ -34,36 +34,17 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Returns the default patch baseline for the specified operating system.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
-
-    /**
-     * <p>Returns the default patch baseline for the specified operating system.</p>
-     */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-
-    /**
-     * <p>Returns the default patch baseline for the specified operating system.</p>
-     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-
-    /**
-     * <p>Returns the default patch baseline for the specified operating system.</p>
-     */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-
-    /**
-     * <p>Returns the default patch baseline for the specified operating system.</p>
-     */
     inline GetDefaultPatchBaselineRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-
-    /**
-     * <p>Returns the default patch baseline for the specified operating system.</p>
-     */
     inline GetDefaultPatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OperatingSystem m_operatingSystem;

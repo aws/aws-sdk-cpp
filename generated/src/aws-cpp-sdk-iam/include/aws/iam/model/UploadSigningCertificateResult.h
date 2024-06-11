@@ -39,47 +39,25 @@ namespace Model
     AWS_IAM_API UploadSigningCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the certificate.</p>
      */
     inline const SigningCertificate& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>Information about the certificate.</p>
-     */
     inline void SetCertificate(const SigningCertificate& value) { m_certificate = value; }
-
-    /**
-     * <p>Information about the certificate.</p>
-     */
     inline void SetCertificate(SigningCertificate&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>Information about the certificate.</p>
-     */
     inline UploadSigningCertificateResult& WithCertificate(const SigningCertificate& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>Information about the certificate.</p>
-     */
     inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline UploadSigningCertificateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline UploadSigningCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SigningCertificate m_certificate;

@@ -34,71 +34,30 @@ namespace Model
     AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline ListMessageMoveTasksRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline ListMessageMoveTasksRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the queue whose message movement tasks are to be listed.</p>
-     */
     inline ListMessageMoveTasksRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to include in the response. The default is 1,
      * which provides the most recent message movement task. The upper limit is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to include in the response. The default is 1,
-     * which provides the most recent message movement task. The upper limit is 10.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to include in the response. The default is 1,
-     * which provides the most recent message movement task. The upper limit is 10.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to include in the response. The default is 1,
-     * which provides the most recent message movement task. The upper limit is 10.</p>
-     */
     inline ListMessageMoveTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceArn;

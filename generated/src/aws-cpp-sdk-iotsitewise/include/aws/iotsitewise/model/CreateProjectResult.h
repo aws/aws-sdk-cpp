@@ -32,42 +32,20 @@ namespace Model
     AWS_IOTSITEWISE_API CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the project.</p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const Aws::String& value) { m_projectId = value; }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(Aws::String&& value) { m_projectId = std::move(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline void SetProjectId(const char* value) { m_projectId.assign(value); }
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline CreateProjectResult& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline CreateProjectResult& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the project.</p>
-     */
     inline CreateProjectResult& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
@@ -76,83 +54,24 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline CreateProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline CreateProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the project, which has the following format.</p> <p>
-     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
-     * </p>
-     */
     inline CreateProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectId;

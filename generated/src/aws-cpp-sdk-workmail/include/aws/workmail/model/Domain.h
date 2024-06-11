@@ -43,95 +43,34 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The fully qualified domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline Domain& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline Domain& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The fully qualified domain name.</p>
-     */
     inline Domain& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
      * a domain hosted in Route 53.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline Domain& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline Domain& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring
-     * a domain hosted in Route 53.</p>
-     */
     inline Domain& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;
