@@ -39,23 +39,15 @@ namespace Model
     ${exportMacro} ${typeInfo.className}() = default;
     ${exportMacro} ${typeInfo.className}(Aws::Vector<unsigned char>&& value) { ${memberVariableName} = std::move(value); }
 
+    ///@{
     $memberDocumentation
     inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const { return ${memberVariableName}; }
-
-    $memberDocumentation
     inline ${moveType} Get${memberKeyWithFirstLetterCapitalized}WithOwnership() { return std::move(${memberVariableName}); }
-
-    $memberDocumentation
     inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName} = value; }
-
-    $memberDocumentation
     inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName} = std::move(value); }
-
-    $memberDocumentation
     inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value) { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}
-
-    $memberDocumentation
     inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value) { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}
+    ///@}
 
   private:
 
