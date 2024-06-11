@@ -257,6 +257,36 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Creates a new Malware Protection plan for the protected resource.</p> <p>When
+         * you create a Malware Protection plan, the Amazon Web Services service terms for
+         * GuardDuty Malware Protection apply. For more information, see <a
+         * href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon Web
+         * Services service terms for GuardDuty Malware Protection</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMalwareProtectionPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMalwareProtectionPlanOutcome CreateMalwareProtectionPlan(const Model::CreateMalwareProtectionPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMalwareProtectionPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMalwareProtectionPlanRequestT = Model::CreateMalwareProtectionPlanRequest>
+        Model::CreateMalwareProtectionPlanOutcomeCallable CreateMalwareProtectionPlanCallable(const CreateMalwareProtectionPlanRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::CreateMalwareProtectionPlan, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMalwareProtectionPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMalwareProtectionPlanRequestT = Model::CreateMalwareProtectionPlanRequest>
+        void CreateMalwareProtectionPlanAsync(const CreateMalwareProtectionPlanRequestT& request, const CreateMalwareProtectionPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::CreateMalwareProtectionPlan, request, handler, context);
+        }
+
+        /**
          * <p>Creates member accounts of the current Amazon Web Services account by
          * specifying a list of Amazon Web Services account IDs. This step is a
          * prerequisite for managing the associated member accounts either by invitation or
@@ -515,6 +545,33 @@ namespace GuardDuty
         void DeleteInvitationsAsync(const DeleteInvitationsRequestT& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::DeleteInvitations, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the Malware Protection plan ID associated with the Malware Protection
+         * plan resource. Use this API only when you no longer want to protect the resource
+         * associated with this Malware Protection plan ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMalwareProtectionPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMalwareProtectionPlanOutcome DeleteMalwareProtectionPlan(const Model::DeleteMalwareProtectionPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMalwareProtectionPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMalwareProtectionPlanRequestT = Model::DeleteMalwareProtectionPlanRequest>
+        Model::DeleteMalwareProtectionPlanOutcomeCallable DeleteMalwareProtectionPlanCallable(const DeleteMalwareProtectionPlanRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::DeleteMalwareProtectionPlan, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMalwareProtectionPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMalwareProtectionPlanRequestT = Model::DeleteMalwareProtectionPlanRequest>
+        void DeleteMalwareProtectionPlanAsync(const DeleteMalwareProtectionPlanRequestT& request, const DeleteMalwareProtectionPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::DeleteMalwareProtectionPlan, request, handler, context);
         }
 
         /**
@@ -1054,6 +1111,32 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Retrieves the Malware Protection plan details associated with a Malware
+         * Protection plan ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareProtectionPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMalwareProtectionPlanOutcome GetMalwareProtectionPlan(const Model::GetMalwareProtectionPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMalwareProtectionPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMalwareProtectionPlanRequestT = Model::GetMalwareProtectionPlanRequest>
+        Model::GetMalwareProtectionPlanOutcomeCallable GetMalwareProtectionPlanCallable(const GetMalwareProtectionPlanRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetMalwareProtectionPlan, request);
+        }
+
+        /**
+         * An Async wrapper for GetMalwareProtectionPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMalwareProtectionPlanRequestT = Model::GetMalwareProtectionPlanRequest>
+        void GetMalwareProtectionPlanAsync(const GetMalwareProtectionPlanRequestT& request, const GetMalwareProtectionPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetMalwareProtectionPlan, request, handler, context);
+        }
+
+        /**
          * <p>Returns the details of the malware scan settings.</p> <p>There might be
          * regional differences because some data sources might not be available in all the
          * Amazon Web Services Regions where GuardDuty is presently supported. For more
@@ -1476,6 +1559,32 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Lists the Malware Protection plan IDs associated with the protected resources
+         * in your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMalwareProtectionPlansOutcome ListMalwareProtectionPlans(const Model::ListMalwareProtectionPlansRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMalwareProtectionPlans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMalwareProtectionPlansRequestT = Model::ListMalwareProtectionPlansRequest>
+        Model::ListMalwareProtectionPlansOutcomeCallable ListMalwareProtectionPlansCallable(const ListMalwareProtectionPlansRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::ListMalwareProtectionPlans, request);
+        }
+
+        /**
+         * An Async wrapper for ListMalwareProtectionPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMalwareProtectionPlansRequestT = Model::ListMalwareProtectionPlansRequest>
+        void ListMalwareProtectionPlansAsync(const ListMalwareProtectionPlansRequestT& request, const ListMalwareProtectionPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::ListMalwareProtectionPlans, request, handler, context);
+        }
+
+        /**
          * <p>Lists details about all member accounts for the current GuardDuty
          * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">AWS
@@ -1888,6 +1997,32 @@ namespace GuardDuty
         void UpdateIPSetAsync(const UpdateIPSetRequestT& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::UpdateIPSet, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing Malware Protection plan resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareProtectionPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMalwareProtectionPlanOutcome UpdateMalwareProtectionPlan(const Model::UpdateMalwareProtectionPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMalwareProtectionPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMalwareProtectionPlanRequestT = Model::UpdateMalwareProtectionPlanRequest>
+        Model::UpdateMalwareProtectionPlanOutcomeCallable UpdateMalwareProtectionPlanCallable(const UpdateMalwareProtectionPlanRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::UpdateMalwareProtectionPlan, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMalwareProtectionPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMalwareProtectionPlanRequestT = Model::UpdateMalwareProtectionPlanRequest>
+        void UpdateMalwareProtectionPlanAsync(const UpdateMalwareProtectionPlanRequestT& request, const UpdateMalwareProtectionPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::UpdateMalwareProtectionPlan, request, handler, context);
         }
 
         /**

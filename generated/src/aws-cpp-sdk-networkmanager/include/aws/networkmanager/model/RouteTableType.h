@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     TRANSIT_GATEWAY_ROUTE_TABLE,
-    CORE_NETWORK_SEGMENT
+    CORE_NETWORK_SEGMENT,
+    NETWORK_FUNCTION_GROUP
   };
 
 namespace RouteTableTypeMapper

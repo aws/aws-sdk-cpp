@@ -101,6 +101,10 @@ GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<Respons
   if(lastModifiedIter != headers.end())
   {
     m_lastModified = DateTime(lastModifiedIter->second, Aws::Utils::DateFormat::RFC822);
+    if(!m_lastModified.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("MediaStoreData::GetObjectResult", "Failed to parse lastModified header as an RFC822 timestamp: " << lastModifiedIter->second.c_str());
+    }
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");

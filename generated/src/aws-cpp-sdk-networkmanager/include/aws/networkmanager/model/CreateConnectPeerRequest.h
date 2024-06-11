@@ -78,42 +78,50 @@ namespace Model
 
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline const Aws::String& GetCoreNetworkAddress() const{ return m_coreNetworkAddress; }
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline bool CoreNetworkAddressHasBeenSet() const { return m_coreNetworkAddressHasBeenSet; }
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline void SetCoreNetworkAddress(const Aws::String& value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress = value; }
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline void SetCoreNetworkAddress(Aws::String&& value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress = std::move(value); }
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline void SetCoreNetworkAddress(const char* value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress.assign(value); }
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline CreateConnectPeerRequest& WithCoreNetworkAddress(const Aws::String& value) { SetCoreNetworkAddress(value); return *this;}
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline CreateConnectPeerRequest& WithCoreNetworkAddress(Aws::String&& value) { SetCoreNetworkAddress(std::move(value)); return *this;}
 
     /**
-     * <p>A Connect peer core network address.</p>
+     * <p>A Connect peer core network address. This only applies only when the protocol
+     * is <code>GRE</code>.</p>
      */
     inline CreateConnectPeerRequest& WithCoreNetworkAddress(const char* value) { SetCoreNetworkAddress(value); return *this;}
 
@@ -160,32 +168,38 @@ namespace Model
 
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline const BgpOptions& GetBgpOptions() const{ return m_bgpOptions; }
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline bool BgpOptionsHasBeenSet() const { return m_bgpOptionsHasBeenSet; }
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline void SetBgpOptions(const BgpOptions& value) { m_bgpOptionsHasBeenSet = true; m_bgpOptions = value; }
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline void SetBgpOptions(BgpOptions&& value) { m_bgpOptionsHasBeenSet = true; m_bgpOptions = std::move(value); }
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline CreateConnectPeerRequest& WithBgpOptions(const BgpOptions& value) { SetBgpOptions(value); return *this;}
 
     /**
-     * <p>The Connect peer BGP options.</p>
+     * <p>The Connect peer BGP options. This only applies only when the protocol is
+     * <code>GRE</code>.</p>
      */
     inline CreateConnectPeerRequest& WithBgpOptions(BgpOptions&& value) { SetBgpOptions(std::move(value)); return *this;}
 
@@ -319,42 +333,50 @@ namespace Model
 
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline CreateConnectPeerRequest& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline CreateConnectPeerRequest& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The subnet ARN for the Connect peer.</p>
+     * <p>The subnet ARN for the Connect peer. This only applies only when the protocol
+     * is NO_ENCAP.</p>
      */
     inline CreateConnectPeerRequest& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
 

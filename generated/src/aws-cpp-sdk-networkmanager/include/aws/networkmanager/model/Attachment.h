@@ -10,6 +10,7 @@
 #include <aws/networkmanager/model/AttachmentState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/model/ProposedSegmentChange.h>
+#include <aws/networkmanager/model/ProposedNetworkFunctionGroupChange.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/networkmanager/model/Tag.h>
 #include <utility>
@@ -414,6 +415,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the network function group.</p>
+     */
+    inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline Attachment& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline Attachment& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the network function group.</p>
+     */
+    inline Attachment& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
+
+
+    /**
      * <p>The tags associated with the attachment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -483,6 +525,43 @@ namespace Model
      * <p>The attachment to move from one segment to another.</p>
      */
     inline Attachment& WithProposedSegmentChange(ProposedSegmentChange&& value) { SetProposedSegmentChange(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline const ProposedNetworkFunctionGroupChange& GetProposedNetworkFunctionGroupChange() const{ return m_proposedNetworkFunctionGroupChange; }
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline bool ProposedNetworkFunctionGroupChangeHasBeenSet() const { return m_proposedNetworkFunctionGroupChangeHasBeenSet; }
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline void SetProposedNetworkFunctionGroupChange(const ProposedNetworkFunctionGroupChange& value) { m_proposedNetworkFunctionGroupChangeHasBeenSet = true; m_proposedNetworkFunctionGroupChange = value; }
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline void SetProposedNetworkFunctionGroupChange(ProposedNetworkFunctionGroupChange&& value) { m_proposedNetworkFunctionGroupChangeHasBeenSet = true; m_proposedNetworkFunctionGroupChange = std::move(value); }
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline Attachment& WithProposedNetworkFunctionGroupChange(const ProposedNetworkFunctionGroupChange& value) { SetProposedNetworkFunctionGroupChange(value); return *this;}
+
+    /**
+     * <p>Describes a proposed change to a network function group associated with the
+     * attachment.</p>
+     */
+    inline Attachment& WithProposedNetworkFunctionGroupChange(ProposedNetworkFunctionGroupChange&& value) { SetProposedNetworkFunctionGroupChange(std::move(value)); return *this;}
 
 
     /**
@@ -578,11 +657,17 @@ namespace Model
     Aws::String m_segmentName;
     bool m_segmentNameHasBeenSet = false;
 
+    Aws::String m_networkFunctionGroupName;
+    bool m_networkFunctionGroupNameHasBeenSet = false;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
     ProposedSegmentChange m_proposedSegmentChange;
     bool m_proposedSegmentChangeHasBeenSet = false;
+
+    ProposedNetworkFunctionGroupChange m_proposedNetworkFunctionGroupChange;
+    bool m_proposedNetworkFunctionGroupChangeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;

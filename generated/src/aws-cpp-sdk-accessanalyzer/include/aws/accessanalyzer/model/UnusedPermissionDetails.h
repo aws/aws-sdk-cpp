@@ -143,32 +143,32 @@ namespace Model
 
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline UnusedPermissionDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
 
     /**
-     * <p>The time at which the permission last accessed.</p>
+     * <p>The time at which the permission was last accessed.</p>
      */
     inline UnusedPermissionDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
 

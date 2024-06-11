@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline const Aws::String& GetVolumeArn() const{ return m_volumeArn; }
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline bool VolumeArnHasBeenSet() const { return m_volumeArnHasBeenSet; }
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline void SetVolumeArn(const Aws::String& value) { m_volumeArnHasBeenSet = true; m_volumeArn = value; }
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline void SetVolumeArn(Aws::String&& value) { m_volumeArnHasBeenSet = true; m_volumeArn = std::move(value); }
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline void SetVolumeArn(const char* value) { m_volumeArnHasBeenSet = true; m_volumeArn.assign(value); }
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline VolumeDetail& WithVolumeArn(const Aws::String& value) { SetVolumeArn(value); return *this;}
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline VolumeDetail& WithVolumeArn(Aws::String&& value) { SetVolumeArn(std::move(value)); return *this;}
 
     /**
-     * <p>EBS volume Arn information.</p>
+     * <p>EBS volume ARN information.</p>
      */
     inline VolumeDetail& WithVolumeArn(const char* value) { SetVolumeArn(value); return *this;}
 
@@ -223,83 +223,83 @@ namespace Model
 
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline VolumeDetail& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline VolumeDetail& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
 
     /**
-     * <p>Snapshot Arn of the EBS volume.</p>
+     * <p>Snapshot ARN of the EBS volume.</p>
      */
     inline VolumeDetail& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
 
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline VolumeDetail& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline VolumeDetail& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>KMS key Arn used to encrypt the EBS volume.</p>
+     * <p>KMS key ARN used to encrypt the EBS volume.</p>
      */
     inline VolumeDetail& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

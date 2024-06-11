@@ -26,6 +26,7 @@
 #include <aws/guardduty/model/CreateDetectorRequest.h>
 #include <aws/guardduty/model/CreateFilterRequest.h>
 #include <aws/guardduty/model/CreateIPSetRequest.h>
+#include <aws/guardduty/model/CreateMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/CreateMembersRequest.h>
 #include <aws/guardduty/model/CreatePublishingDestinationRequest.h>
 #include <aws/guardduty/model/CreateSampleFindingsRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/guardduty/model/DeleteFilterRequest.h>
 #include <aws/guardduty/model/DeleteIPSetRequest.h>
 #include <aws/guardduty/model/DeleteInvitationsRequest.h>
+#include <aws/guardduty/model/DeleteMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/DeleteMembersRequest.h>
 #include <aws/guardduty/model/DeletePublishingDestinationRequest.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/guardduty/model/GetFindingsStatisticsRequest.h>
 #include <aws/guardduty/model/GetIPSetRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
+#include <aws/guardduty/model/GetMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/GetMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
@@ -67,6 +70,7 @@
 #include <aws/guardduty/model/ListFindingsRequest.h>
 #include <aws/guardduty/model/ListIPSetsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
+#include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
 #include <aws/guardduty/model/ListMembersRequest.h>
 #include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/guardduty/model/ListPublishingDestinationsRequest.h>
@@ -82,6 +86,7 @@
 #include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
 #include <aws/guardduty/model/UpdateIPSetRequest.h>
+#include <aws/guardduty/model/UpdateMalwareProtectionPlanRequest.h>
 #include <aws/guardduty/model/UpdateMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/UpdateMemberDetectorsRequest.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationRequest.h>
@@ -391,6 +396,33 @@ CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& reques
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateMalwareProtectionPlanOutcome GuardDutyClient::CreateMalwareProtectionPlan(const CreateMalwareProtectionPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateMalwareProtectionPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMalwareProtectionPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateMalwareProtectionPlanOutcome>(
+    [&]()-> CreateMalwareProtectionPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan");
+      return CreateMalwareProtectionPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateMembers);
@@ -688,6 +720,39 @@ DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitati
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/delete");
       return DeleteInvitationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteMalwareProtectionPlanOutcome GuardDutyClient::DeleteMalwareProtectionPlan(const DeleteMalwareProtectionPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteMalwareProtectionPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MalwareProtectionPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMalwareProtectionPlan", "Required field: MalwareProtectionPlanId, is not set");
+    return DeleteMalwareProtectionPlanOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MalwareProtectionPlanId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMalwareProtectionPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteMalwareProtectionPlanOutcome>(
+    [&]()-> DeleteMalwareProtectionPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
+      return DeleteMalwareProtectionPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1314,6 +1379,39 @@ GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitat
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetMalwareProtectionPlanOutcome GuardDutyClient::GetMalwareProtectionPlan(const GetMalwareProtectionPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetMalwareProtectionPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MalwareProtectionPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMalwareProtectionPlan", "Required field: MalwareProtectionPlanId, is not set");
+    return GetMalwareProtectionPlanOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MalwareProtectionPlanId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMalwareProtectionPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetMalwareProtectionPlanOutcome>(
+    [&]()-> GetMalwareProtectionPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
+      return GetMalwareProtectionPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const
 {
   AWS_OPERATION_GUARD(GetMalwareScanSettings);
@@ -1769,6 +1867,33 @@ ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsReq
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/invitation");
       return ListInvitationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListMalwareProtectionPlansOutcome GuardDutyClient::ListMalwareProtectionPlans(const ListMalwareProtectionPlansRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMalwareProtectionPlans);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMalwareProtectionPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMalwareProtectionPlans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMalwareProtectionPlans, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMalwareProtectionPlans",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMalwareProtectionPlansOutcome>(
+    [&]()-> ListMalwareProtectionPlansOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMalwareProtectionPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan");
+      return ListMalwareProtectionPlansOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2278,6 +2403,39 @@ UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& reques
       endpointResolutionOutcome.GetResult().AddPathSegments("/ipset/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIpSetId());
       return UpdateIPSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateMalwareProtectionPlanOutcome GuardDutyClient::UpdateMalwareProtectionPlan(const UpdateMalwareProtectionPlanRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateMalwareProtectionPlan);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MalwareProtectionPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMalwareProtectionPlan", "Required field: MalwareProtectionPlanId, is not set");
+    return UpdateMalwareProtectionPlanOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MalwareProtectionPlanId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateMalwareProtectionPlan, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateMalwareProtectionPlan",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateMalwareProtectionPlanOutcome>(
+    [&]()-> UpdateMalwareProtectionPlanOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMalwareProtectionPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/malware-protection-plan/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
+      return UpdateMalwareProtectionPlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

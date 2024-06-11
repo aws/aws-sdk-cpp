@@ -244,137 +244,65 @@ namespace Model
 
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkTelemetryRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkTelemetryRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
-     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
-     * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <p>The resource type. The following are the supported resource types:</p> <ul>
+     * <li> <p> <code>connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
-     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkTelemetryRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}

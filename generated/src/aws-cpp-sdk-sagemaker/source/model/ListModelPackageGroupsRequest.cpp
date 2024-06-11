@@ -22,7 +22,9 @@ ListModelPackageGroupsRequest::ListModelPackageGroupsRequest() :
     m_sortBy(ModelPackageGroupSortBy::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+    m_sortOrderHasBeenSet(false),
+    m_crossAccountFilterOption(CrossAccountFilterOption::NOT_SET),
+    m_crossAccountFilterOptionHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,11 @@ Aws::String ListModelPackageGroupsRequest::SerializePayload() const
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_crossAccountFilterOptionHasBeenSet)
+  {
+   payload.WithString("CrossAccountFilterOption", CrossAccountFilterOptionMapper::GetNameForCrossAccountFilterOption(m_crossAccountFilterOption));
   }
 
   return payload.View().WriteReadable();

@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline const Aws::String& GetVolumeArn() const{ return m_volumeArn; }
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline bool VolumeArnHasBeenSet() const { return m_volumeArnHasBeenSet; }
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline void SetVolumeArn(const Aws::String& value) { m_volumeArnHasBeenSet = true; m_volumeArn = value; }
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline void SetVolumeArn(Aws::String&& value) { m_volumeArnHasBeenSet = true; m_volumeArn = std::move(value); }
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline void SetVolumeArn(const char* value) { m_volumeArnHasBeenSet = true; m_volumeArn.assign(value); }
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline ScanFilePath& WithVolumeArn(const Aws::String& value) { SetVolumeArn(value); return *this;}
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline ScanFilePath& WithVolumeArn(Aws::String&& value) { SetVolumeArn(std::move(value)); return *this;}
 
     /**
-     * <p>EBS volume Arn details of the infected file.</p>
+     * <p>EBS volume ARN details of the infected file.</p>
      */
     inline ScanFilePath& WithVolumeArn(const char* value) { SetVolumeArn(value); return *this;}
 

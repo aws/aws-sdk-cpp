@@ -210,6 +210,32 @@ namespace AccessAnalyzer
         }
 
         /**
+         * <p>Checks whether a resource policy can grant public access to the specified
+         * resource type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CheckNoPublicAccessOutcome CheckNoPublicAccess(const Model::CheckNoPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for CheckNoPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CheckNoPublicAccessRequestT = Model::CheckNoPublicAccessRequest>
+        Model::CheckNoPublicAccessOutcomeCallable CheckNoPublicAccessCallable(const CheckNoPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&AccessAnalyzerClient::CheckNoPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for CheckNoPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CheckNoPublicAccessRequestT = Model::CheckNoPublicAccessRequest>
+        void CheckNoPublicAccessAsync(const CheckNoPublicAccessRequestT& request, const CheckNoPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccessAnalyzerClient::CheckNoPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Creates an access preview that allows you to preview IAM Access Analyzer
          * findings for your resource before deploying resource permissions.</p><p><h3>See
          * Also:</h3>   <a
@@ -346,6 +372,32 @@ namespace AccessAnalyzer
         }
 
         /**
+         * <p>Creates a recommendation for an unused permissions finding.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateFindingRecommendationOutcome GenerateFindingRecommendation(const Model::GenerateFindingRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateFindingRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateFindingRecommendationRequestT = Model::GenerateFindingRecommendationRequest>
+        Model::GenerateFindingRecommendationOutcomeCallable GenerateFindingRecommendationCallable(const GenerateFindingRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&AccessAnalyzerClient::GenerateFindingRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateFindingRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateFindingRecommendationRequestT = Model::GenerateFindingRecommendationRequest>
+        void GenerateFindingRecommendationAsync(const GenerateFindingRecommendationRequestT& request, const GenerateFindingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccessAnalyzerClient::GenerateFindingRecommendation, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about an access preview for the specified
          * analyzer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview">AWS
@@ -479,6 +531,32 @@ namespace AccessAnalyzer
         void GetFindingAsync(const GetFindingRequestT& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AccessAnalyzerClient::GetFinding, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a finding recommendation for the specified
+         * analyzer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingRecommendationOutcome GetFindingRecommendation(const Model::GetFindingRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFindingRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFindingRecommendationRequestT = Model::GetFindingRecommendationRequest>
+        Model::GetFindingRecommendationOutcomeCallable GetFindingRecommendationCallable(const GetFindingRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&AccessAnalyzerClient::GetFindingRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for GetFindingRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFindingRecommendationRequestT = Model::GetFindingRecommendationRequest>
+        void GetFindingRecommendationAsync(const GetFindingRecommendationRequestT& request, const GetFindingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccessAnalyzerClient::GetFindingRecommendation, request, handler, context);
         }
 
         /**

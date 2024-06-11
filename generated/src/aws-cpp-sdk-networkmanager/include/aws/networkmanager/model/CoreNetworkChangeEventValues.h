@@ -120,6 +120,47 @@ namespace Model
 
 
     /**
+     * <p>The changed network function group name.</p>
+     */
+    inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline CoreNetworkChangeEventValues& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline CoreNetworkChangeEventValues& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The changed network function group name.</p>
+     */
+    inline CoreNetworkChangeEventValues& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
+
+
+    /**
      * <p>The ID of the attachment if the change event is associated with an
      * attachment. </p>
      */
@@ -215,6 +256,9 @@ namespace Model
 
     Aws::String m_segmentName;
     bool m_segmentNameHasBeenSet = false;
+
+    Aws::String m_networkFunctionGroupName;
+    bool m_networkFunctionGroupNameHasBeenSet = false;
 
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet = false;

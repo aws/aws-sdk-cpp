@@ -35,7 +35,8 @@ Service::Service() :
     m_featureNameHasBeenSet(false),
     m_ebsVolumeScanDetailsHasBeenSet(false),
     m_runtimeDetailsHasBeenSet(false),
-    m_detectionHasBeenSet(false)
+    m_detectionHasBeenSet(false),
+    m_malwareScanDetailsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Service::Service(JsonView jsonValue) :
     m_featureNameHasBeenSet(false),
     m_ebsVolumeScanDetailsHasBeenSet(false),
     m_runtimeDetailsHasBeenSet(false),
-    m_detectionHasBeenSet(false)
+    m_detectionHasBeenSet(false),
+    m_malwareScanDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +170,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_detectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("malwareScanDetails"))
+  {
+    m_malwareScanDetails = jsonValue.GetObject("malwareScanDetails");
+
+    m_malwareScanDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +271,12 @@ JsonValue Service::Jsonize() const
   if(m_detectionHasBeenSet)
   {
    payload.WithObject("detection", m_detection.Jsonize());
+
+  }
+
+  if(m_malwareScanDetailsHasBeenSet)
+  {
+   payload.WithObject("malwareScanDetails", m_malwareScanDetails.Jsonize());
 
   }
 

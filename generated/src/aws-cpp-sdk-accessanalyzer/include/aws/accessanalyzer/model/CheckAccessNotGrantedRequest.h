@@ -78,49 +78,89 @@ namespace Model
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline const Aws::Vector<Access>& GetAccess() const{ return m_access; }
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline bool AccessHasBeenSet() const { return m_accessHasBeenSet; }
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline void SetAccess(const Aws::Vector<Access>& value) { m_accessHasBeenSet = true; m_access = value; }
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline void SetAccess(Aws::Vector<Access>&& value) { m_accessHasBeenSet = true; m_access = std::move(value); }
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline CheckAccessNotGrantedRequest& WithAccess(const Aws::Vector<Access>& value) { SetAccess(value); return *this;}
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline CheckAccessNotGrantedRequest& WithAccess(Aws::Vector<Access>&& value) { SetAccess(std::move(value)); return *this;}
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline CheckAccessNotGrantedRequest& AddAccess(const Access& value) { m_accessHasBeenSet = true; m_access.push_back(value); return *this; }
 
     /**
      * <p>An access object containing the permissions that shouldn't be granted by the
-     * specified policy.</p>
+     * specified policy. If only actions are specified, IAM Access Analyzer checks for
+     * access of the actions on all resources in the policy. If only resources are
+     * specified, then IAM Access Analyzer checks which actions have access to the
+     * specified resources. If both actions and resources are specified, then IAM
+     * Access Analyzer checks which of the specified actions have access to the
+     * specified resources.</p>
      */
     inline CheckAccessNotGrantedRequest& AddAccess(Access&& value) { m_accessHasBeenSet = true; m_access.push_back(std::move(value)); return *this; }
 

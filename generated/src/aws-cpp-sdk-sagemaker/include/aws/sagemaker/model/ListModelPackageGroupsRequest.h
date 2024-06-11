@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ModelPackageGroupSortBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
+#include <aws/sagemaker/model/CrossAccountFilterOption.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,61 @@ namespace Model
      */
     inline ListModelPackageGroupsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline const CrossAccountFilterOption& GetCrossAccountFilterOption() const{ return m_crossAccountFilterOption; }
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline bool CrossAccountFilterOptionHasBeenSet() const { return m_crossAccountFilterOptionHasBeenSet; }
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline void SetCrossAccountFilterOption(const CrossAccountFilterOption& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = value; }
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline void SetCrossAccountFilterOption(CrossAccountFilterOption&& value) { m_crossAccountFilterOptionHasBeenSet = true; m_crossAccountFilterOption = std::move(value); }
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline ListModelPackageGroupsRequest& WithCrossAccountFilterOption(const CrossAccountFilterOption& value) { SetCrossAccountFilterOption(value); return *this;}
+
+    /**
+     * <p>A filter that returns either model groups shared with you or model groups in
+     * your own account. When the value is <code>CrossAccount</code>, the results show
+     * the resources made discoverable to you from other accounts. When the value is
+     * <code>SameAccount</code> or <code>null</code>, the results show resources from
+     * your account. The default is <code>SameAccount</code>.</p>
+     */
+    inline ListModelPackageGroupsRequest& WithCrossAccountFilterOption(CrossAccountFilterOption&& value) { SetCrossAccountFilterOption(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTimeAfter;
@@ -315,6 +371,9 @@ namespace Model
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
+
+    CrossAccountFilterOption m_crossAccountFilterOption;
+    bool m_crossAccountFilterOptionHasBeenSet = false;
   };
 
 } // namespace Model

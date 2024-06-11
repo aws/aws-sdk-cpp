@@ -10,6 +10,7 @@
 #include <aws/networkmanager/model/CoreNetworkState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/model/CoreNetworkSegment.h>
+#include <aws/networkmanager/model/CoreNetworkNetworkFunctionGroup.h>
 #include <aws/networkmanager/model/CoreNetworkEdge.h>
 #include <aws/networkmanager/model/Tag.h>
 #include <utility>
@@ -311,6 +312,47 @@ namespace Model
 
 
     /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline const Aws::Vector<CoreNetworkNetworkFunctionGroup>& GetNetworkFunctionGroups() const{ return m_networkFunctionGroups; }
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline bool NetworkFunctionGroupsHasBeenSet() const { return m_networkFunctionGroupsHasBeenSet; }
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline void SetNetworkFunctionGroups(const Aws::Vector<CoreNetworkNetworkFunctionGroup>& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = value; }
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline void SetNetworkFunctionGroups(Aws::Vector<CoreNetworkNetworkFunctionGroup>&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::move(value); }
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline CoreNetwork& WithNetworkFunctionGroups(const Aws::Vector<CoreNetworkNetworkFunctionGroup>& value) { SetNetworkFunctionGroups(value); return *this;}
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline CoreNetwork& WithNetworkFunctionGroups(Aws::Vector<CoreNetworkNetworkFunctionGroup>&& value) { SetNetworkFunctionGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline CoreNetwork& AddNetworkFunctionGroups(const CoreNetworkNetworkFunctionGroup& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The network function groups associated with a core network.</p>
+     */
+    inline CoreNetwork& AddNetworkFunctionGroups(CoreNetworkNetworkFunctionGroup&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The edges within a core network.</p>
      */
     inline const Aws::Vector<CoreNetworkEdge>& GetEdges() const{ return m_edges; }
@@ -413,6 +455,9 @@ namespace Model
 
     Aws::Vector<CoreNetworkSegment> m_segments;
     bool m_segmentsHasBeenSet = false;
+
+    Aws::Vector<CoreNetworkNetworkFunctionGroup> m_networkFunctionGroups;
+    bool m_networkFunctionGroupsHasBeenSet = false;
 
     Aws::Vector<CoreNetworkEdge> m_edges;
     bool m_edgesHasBeenSet = false;
