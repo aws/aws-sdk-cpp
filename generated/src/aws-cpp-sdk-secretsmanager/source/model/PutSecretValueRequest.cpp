@@ -19,7 +19,8 @@ PutSecretValueRequest::PutSecretValueRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_secretBinaryHasBeenSet(false),
     m_secretStringHasBeenSet(false),
-    m_versionStagesHasBeenSet(false)
+    m_versionStagesHasBeenSet(false),
+    m_rotationTokenHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String PutSecretValueRequest::SerializePayload() const
      versionStagesJsonList[versionStagesIndex].AsString(m_versionStages[versionStagesIndex]);
    }
    payload.WithArray("VersionStages", std::move(versionStagesJsonList));
+
+  }
+
+  if(m_rotationTokenHasBeenSet)
+  {
+   payload.WithString("RotationToken", m_rotationToken);
 
   }
 

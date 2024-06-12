@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The node type, such as, "ds2.8xlarge".</p>
+     * <p>The node type, such as, "ra3.4xlarge".</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }

@@ -10,6 +10,8 @@
 #include <aws/ec2/model/TrafficDirection.h>
 #include <aws/ec2/model/TrafficMirrorRuleAction.h>
 #include <aws/ec2/model/TrafficMirrorPortRange.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +181,20 @@ namespace Model
     inline TrafficMirrorFilterRule& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline TrafficMirrorFilterRule& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Tags on Traffic Mirroring filter rules.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline TrafficMirrorFilterRule& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline TrafficMirrorFilterRule& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline TrafficMirrorFilterRule& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline TrafficMirrorFilterRule& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_trafficMirrorFilterRuleId;
@@ -213,6 +229,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

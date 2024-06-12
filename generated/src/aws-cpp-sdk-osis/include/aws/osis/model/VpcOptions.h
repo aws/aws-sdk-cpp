@@ -7,6 +7,7 @@
 #include <aws/osis/OSIS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/osis/model/VpcAttachmentOptions.h>
+#include <aws/osis/model/VpcEndpointManagement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -81,6 +82,19 @@ namespace Model
     inline VpcOptions& WithVpcAttachmentOptions(const VpcAttachmentOptions& value) { SetVpcAttachmentOptions(value); return *this;}
     inline VpcOptions& WithVpcAttachmentOptions(VpcAttachmentOptions&& value) { SetVpcAttachmentOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage
+     * the VPC endpoint configured for the pipeline.</p>
+     */
+    inline const VpcEndpointManagement& GetVpcEndpointManagement() const{ return m_vpcEndpointManagement; }
+    inline bool VpcEndpointManagementHasBeenSet() const { return m_vpcEndpointManagementHasBeenSet; }
+    inline void SetVpcEndpointManagement(const VpcEndpointManagement& value) { m_vpcEndpointManagementHasBeenSet = true; m_vpcEndpointManagement = value; }
+    inline void SetVpcEndpointManagement(VpcEndpointManagement&& value) { m_vpcEndpointManagementHasBeenSet = true; m_vpcEndpointManagement = std::move(value); }
+    inline VpcOptions& WithVpcEndpointManagement(const VpcEndpointManagement& value) { SetVpcEndpointManagement(value); return *this;}
+    inline VpcOptions& WithVpcEndpointManagement(VpcEndpointManagement&& value) { SetVpcEndpointManagement(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -91,6 +105,9 @@ namespace Model
 
     VpcAttachmentOptions m_vpcAttachmentOptions;
     bool m_vpcAttachmentOptionsHasBeenSet = false;
+
+    VpcEndpointManagement m_vpcEndpointManagement;
+    bool m_vpcEndpointManagementHasBeenSet = false;
   };
 
 } // namespace Model

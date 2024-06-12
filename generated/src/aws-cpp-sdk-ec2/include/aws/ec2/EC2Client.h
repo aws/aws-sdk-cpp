@@ -10226,6 +10226,32 @@ namespace EC2
         }
 
         /**
+         * <p>Describe traffic mirror filters that determine the traffic that is
+         * mirrored.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrafficMirrorFilterRulesOutcome DescribeTrafficMirrorFilterRules(const Model::DescribeTrafficMirrorFilterRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrafficMirrorFilterRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTrafficMirrorFilterRulesRequestT = Model::DescribeTrafficMirrorFilterRulesRequest>
+        Model::DescribeTrafficMirrorFilterRulesOutcomeCallable DescribeTrafficMirrorFilterRulesCallable(const DescribeTrafficMirrorFilterRulesRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeTrafficMirrorFilterRules, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTrafficMirrorFilterRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTrafficMirrorFilterRulesRequestT = Model::DescribeTrafficMirrorFilterRulesRequest>
+        void DescribeTrafficMirrorFilterRulesAsync(const DescribeTrafficMirrorFilterRulesRequestT& request, const DescribeTrafficMirrorFilterRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeTrafficMirrorFilterRules, request, handler, context);
+        }
+
+        /**
          * <p>Describes one or more Traffic Mirror filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">AWS
          * API Reference</a></p>

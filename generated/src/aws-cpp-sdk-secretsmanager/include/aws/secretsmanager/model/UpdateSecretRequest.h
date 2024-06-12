@@ -136,7 +136,10 @@ namespace Model
      * recommend that you store your binary data in a file and then pass the contents
      * of the file as a parameter. </p> <p>Either <code>SecretBinary</code> or
      * <code>SecretString</code> must have a value, but not both.</p> <p>You can't
-     * access this parameter in the Secrets Manager console.</p>
+     * access this parameter in the Secrets Manager console.</p> <p>Sensitive: This
+     * field contains sensitive information, so the service does not include it in
+     * CloudTrail log entries. If you create your own log entries, you must also avoid
+     * logging the information in this field.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
     inline bool SecretBinaryHasBeenSet() const { return m_secretBinaryHasBeenSet; }
@@ -151,7 +154,10 @@ namespace Model
      * <p>The text data to encrypt and store in the new version of the secret. We
      * recommend you use a JSON structure of key/value pairs for your secret value.
      * </p> <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have
-     * a value, but not both. </p>
+     * a value, but not both. </p> <p>Sensitive: This field contains sensitive
+     * information, so the service does not include it in CloudTrail log entries. If
+     * you create your own log entries, you must also avoid logging the information in
+     * this field.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }

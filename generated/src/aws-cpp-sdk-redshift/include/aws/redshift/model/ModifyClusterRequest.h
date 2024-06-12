@@ -82,10 +82,9 @@ namespace Model
      * resizing clusters, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
-     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+     * Guide</i>.</p> <p>Valid Values: <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> |
+     * <code>ra3.16xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
@@ -459,8 +458,8 @@ namespace Model
      * Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the
      * ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an
      * existing cluster with ra3 nodes, it isn't required that you change the port to
-     * these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a
-     * port within the range <code>1150-65535</code>.</p> </li> </ul>
+     * these ranges.)</p> </li> <li> <p>For clusters with dc2 nodes - Select a port
+     * within the range <code>1150-65535</code>.</p> </li> </ul>
      */
     inline int GetPort() const{ return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }

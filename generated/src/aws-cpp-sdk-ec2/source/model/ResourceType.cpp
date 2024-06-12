@@ -103,6 +103,7 @@ namespace Aws
         static const int verified_access_trust_provider_HASH = HashingUtils::HashString("verified-access-trust-provider");
         static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
         static const int vpc_block_public_access_exclusion_HASH = HashingUtils::HashString("vpc-block-public-access-exclusion");
+        static const int vpc_encryption_control_HASH = HashingUtils::HashString("vpc-encryption-control");
         static const int ipam_resource_discovery_HASH = HashingUtils::HashString("ipam-resource-discovery");
         static const int ipam_resource_discovery_association_HASH = HashingUtils::HashString("ipam-resource-discovery-association");
         static const int instance_connect_endpoint_HASH = HashingUtils::HashString("instance-connect-endpoint");
@@ -443,6 +444,10 @@ namespace Aws
           {
             return ResourceType::vpc_block_public_access_exclusion;
           }
+          else if (hashCode == vpc_encryption_control_HASH)
+          {
+            return ResourceType::vpc_encryption_control;
+          }
           else if (hashCode == ipam_resource_discovery_HASH)
           {
             return ResourceType::ipam_resource_discovery;
@@ -637,6 +642,8 @@ namespace Aws
             return "vpn-connection-device-type";
           case ResourceType::vpc_block_public_access_exclusion:
             return "vpc-block-public-access-exclusion";
+          case ResourceType::vpc_encryption_control:
+            return "vpc-encryption-control";
           case ResourceType::ipam_resource_discovery:
             return "ipam-resource-discovery";
           case ResourceType::ipam_resource_discovery_association:

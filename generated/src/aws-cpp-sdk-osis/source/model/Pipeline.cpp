@@ -36,6 +36,7 @@ Pipeline::Pipeline() :
     m_vpcEndpointsHasBeenSet(false),
     m_bufferOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_vpcEndpointServiceHasBeenSet(false),
     m_serviceVpcEndpointsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -60,6 +61,7 @@ Pipeline::Pipeline(JsonView jsonValue) :
     m_vpcEndpointsHasBeenSet(false),
     m_bufferOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_vpcEndpointServiceHasBeenSet(false),
     m_serviceVpcEndpointsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -171,6 +173,13 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
 
     m_encryptionAtRestOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VpcEndpointService"))
+  {
+    m_vpcEndpointService = jsonValue.GetString("VpcEndpointService");
+
+    m_vpcEndpointServiceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServiceVpcEndpoints"))
@@ -298,6 +307,12 @@ JsonValue Pipeline::Jsonize() const
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_vpcEndpointServiceHasBeenSet)
+  {
+   payload.WithString("VpcEndpointService", m_vpcEndpointService);
 
   }
 

@@ -98,7 +98,9 @@ namespace Model
      * binary data in a file and then pass the contents of the file as a parameter.
      * </p> <p>You must include <code>SecretBinary</code> or <code>SecretString</code>,
      * but not both.</p> <p>You can't access this value from the Secrets Manager
-     * console.</p>
+     * console.</p> <p>Sensitive: This field contains sensitive information, so the
+     * service does not include it in CloudTrail log entries. If you create your own
+     * log entries, you must also avoid logging the information in this field.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
     inline bool SecretBinaryHasBeenSet() const { return m_secretBinaryHasBeenSet; }
@@ -113,7 +115,10 @@ namespace Model
      * <p>The text to encrypt and store in the new version of the secret. </p> <p>You
      * must include <code>SecretBinary</code> or <code>SecretString</code>, but not
      * both.</p> <p>We recommend you create the secret string as JSON key/value pairs,
-     * as shown in the example.</p>
+     * as shown in the example.</p> <p>Sensitive: This field contains sensitive
+     * information, so the service does not include it in CloudTrail log entries. If
+     * you create your own log entries, you must also avoid logging the information in
+     * this field.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
@@ -148,6 +153,28 @@ namespace Model
     inline PutSecretValueRequest& AddVersionStages(Aws::String&& value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(std::move(value)); return *this; }
     inline PutSecretValueRequest& AddVersionStages(const char* value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A unique identifier that indicates the source of the request. For
+     * cross-account rotation (when you rotate a secret in one account by using a
+     * Lambda rotation function in another account) and the Lambda rotation function
+     * assumes an IAM role to call Secrets Manager, Secrets Manager validates the
+     * identity with the rotation token. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">How
+     * rotation works</a>.</p> <p>Sensitive: This field contains sensitive information,
+     * so the service does not include it in CloudTrail log entries. If you create your
+     * own log entries, you must also avoid logging the information in this field.</p>
+     */
+    inline const Aws::String& GetRotationToken() const{ return m_rotationToken; }
+    inline bool RotationTokenHasBeenSet() const { return m_rotationTokenHasBeenSet; }
+    inline void SetRotationToken(const Aws::String& value) { m_rotationTokenHasBeenSet = true; m_rotationToken = value; }
+    inline void SetRotationToken(Aws::String&& value) { m_rotationTokenHasBeenSet = true; m_rotationToken = std::move(value); }
+    inline void SetRotationToken(const char* value) { m_rotationTokenHasBeenSet = true; m_rotationToken.assign(value); }
+    inline PutSecretValueRequest& WithRotationToken(const Aws::String& value) { SetRotationToken(value); return *this;}
+    inline PutSecretValueRequest& WithRotationToken(Aws::String&& value) { SetRotationToken(std::move(value)); return *this;}
+    inline PutSecretValueRequest& WithRotationToken(const char* value) { SetRotationToken(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_secretId;
@@ -164,6 +191,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_versionStages;
     bool m_versionStagesHasBeenSet = false;
+
+    Aws::String m_rotationToken;
+    bool m_rotationTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,8 @@
 #include <aws/ec2/model/TrafficDirection.h>
 #include <aws/ec2/model/TrafficMirrorRuleAction.h>
 #include <aws/ec2/model/TrafficMirrorPortRangeRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -186,7 +188,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -197,6 +199,20 @@ namespace Model
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline CreateTrafficMirrorFilterRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Traffic Mirroring tags specifications.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+    inline CreateTrafficMirrorFilterRuleRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+    inline CreateTrafficMirrorFilterRuleRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+    inline CreateTrafficMirrorFilterRuleRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline CreateTrafficMirrorFilterRuleRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -235,6 +251,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

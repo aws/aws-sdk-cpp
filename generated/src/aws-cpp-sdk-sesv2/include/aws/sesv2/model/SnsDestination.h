@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>An object that defines an Amazon SNS destination for email events. You can
-   * use Amazon SNS to send notification when certain email events
+   * use Amazon SNS to send notifications when certain email events
    * occur.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SnsDestination">AWS
    * API Reference</a></p>

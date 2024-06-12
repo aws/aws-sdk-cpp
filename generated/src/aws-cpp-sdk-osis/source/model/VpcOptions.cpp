@@ -21,14 +21,18 @@ namespace Model
 VpcOptions::VpcOptions() : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcAttachmentOptionsHasBeenSet(false)
+    m_vpcAttachmentOptionsHasBeenSet(false),
+    m_vpcEndpointManagement(VpcEndpointManagement::NOT_SET),
+    m_vpcEndpointManagementHasBeenSet(false)
 {
 }
 
 VpcOptions::VpcOptions(JsonView jsonValue) : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcAttachmentOptionsHasBeenSet(false)
+    m_vpcAttachmentOptionsHasBeenSet(false),
+    m_vpcEndpointManagement(VpcEndpointManagement::NOT_SET),
+    m_vpcEndpointManagementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ VpcOptions& VpcOptions::operator =(JsonView jsonValue)
     m_vpcAttachmentOptions = jsonValue.GetObject("VpcAttachmentOptions");
 
     m_vpcAttachmentOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VpcEndpointManagement"))
+  {
+    m_vpcEndpointManagement = VpcEndpointManagementMapper::GetVpcEndpointManagementForName(jsonValue.GetString("VpcEndpointManagement"));
+
+    m_vpcEndpointManagementHasBeenSet = true;
   }
 
   return *this;
@@ -95,6 +106,11 @@ JsonValue VpcOptions::Jsonize() const
   {
    payload.WithObject("VpcAttachmentOptions", m_vpcAttachmentOptions.Jsonize());
 
+  }
+
+  if(m_vpcEndpointManagementHasBeenSet)
+  {
+   payload.WithString("VpcEndpointManagement", VpcEndpointManagementMapper::GetNameForVpcEndpointManagement(m_vpcEndpointManagement));
   }
 
   return payload;
