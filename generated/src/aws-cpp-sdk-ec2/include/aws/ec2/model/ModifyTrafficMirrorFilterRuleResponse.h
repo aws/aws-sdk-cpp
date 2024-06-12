@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Modifies a Traffic Mirror rule.</p>
+     *  <p>Tags are not returned for ModifyTrafficMirrorFilterRule.</p> 
+     * <p>A Traffic Mirror rule.</p>
      */
     inline const TrafficMirrorFilterRule& GetTrafficMirrorFilterRule() const{ return m_trafficMirrorFilterRule; }
     inline void SetTrafficMirrorFilterRule(const TrafficMirrorFilterRule& value) { m_trafficMirrorFilterRule = value; }

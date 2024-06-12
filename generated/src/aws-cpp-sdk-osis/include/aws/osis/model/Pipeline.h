@@ -222,6 +222,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The VPC endpoint service name for the pipeline.</p>
+     */
+    inline const Aws::String& GetVpcEndpointService() const{ return m_vpcEndpointService; }
+    inline bool VpcEndpointServiceHasBeenSet() const { return m_vpcEndpointServiceHasBeenSet; }
+    inline void SetVpcEndpointService(const Aws::String& value) { m_vpcEndpointServiceHasBeenSet = true; m_vpcEndpointService = value; }
+    inline void SetVpcEndpointService(Aws::String&& value) { m_vpcEndpointServiceHasBeenSet = true; m_vpcEndpointService = std::move(value); }
+    inline void SetVpcEndpointService(const char* value) { m_vpcEndpointServiceHasBeenSet = true; m_vpcEndpointService.assign(value); }
+    inline Pipeline& WithVpcEndpointService(const Aws::String& value) { SetVpcEndpointService(value); return *this;}
+    inline Pipeline& WithVpcEndpointService(Aws::String&& value) { SetVpcEndpointService(std::move(value)); return *this;}
+    inline Pipeline& WithVpcEndpointService(const char* value) { SetVpcEndpointService(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other Amazon
      * Web Services services.</p>
      */
@@ -305,6 +319,9 @@ namespace Model
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet = false;
+
+    Aws::String m_vpcEndpointService;
+    bool m_vpcEndpointServiceHasBeenSet = false;
 
     Aws::Vector<ServiceVpcEndpoint> m_serviceVpcEndpoints;
     bool m_serviceVpcEndpointsHasBeenSet = false;

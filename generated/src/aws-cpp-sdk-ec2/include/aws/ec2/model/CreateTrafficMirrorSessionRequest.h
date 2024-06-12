@@ -116,9 +116,9 @@ namespace Model
     ///@{
     /**
      * <p>The VXLAN ID for the Traffic Mirror session. For more information about the
-     * VXLAN protocol, see <a href="https://tools.ietf.org/html/rfc7348">RFC 7348</a>.
-     * If you do not specify a <code>VirtualNetworkId</code>, an account-wide unique id
-     * is chosen at random.</p>
+     * VXLAN protocol, see <a href="https://datatracker.ietf.org/doc/html/rfc7348">RFC
+     * 7348</a>. If you do not specify a <code>VirtualNetworkId</code>, an account-wide
+     * unique ID is chosen at random.</p>
      */
     inline int GetVirtualNetworkId() const{ return m_virtualNetworkId; }
     inline bool VirtualNetworkIdHasBeenSet() const { return m_virtualNetworkIdHasBeenSet; }
@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }

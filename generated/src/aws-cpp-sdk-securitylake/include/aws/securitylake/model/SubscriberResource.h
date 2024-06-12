@@ -78,10 +78,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource
-     * share. Before accepting the RAM resource share invitation, you can view details
-     * related to the RAM resource share.</p> <p>This field is available only for Lake
-     * Formation subscribers created after March 8, 2023.</p>
+     * <p>The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services
+     * RAM resource share. Before accepting the RAM resource share invitation, you can
+     * view details related to the RAM resource share.</p> <p>This field is available
+     * only for Lake Formation subscribers created after March 8, 2023.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
@@ -212,7 +212,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS identity used to access your data.</p>
+     * <p>The Amazon Web Services identity used to access your data.</p>
      */
     inline const AwsIdentity& GetSubscriberIdentity() const{ return m_subscriberIdentity; }
     inline bool SubscriberIdentityHasBeenSet() const { return m_subscriberIdentityHasBeenSet; }

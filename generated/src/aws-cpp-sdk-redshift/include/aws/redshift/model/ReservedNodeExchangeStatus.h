@@ -99,7 +99,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source reserved-node type, for example ds2.xlarge.</p>
+     * <p>The source reserved-node type, for example ra3.4xlarge.</p>
      */
     inline const Aws::String& GetSourceReservedNodeType() const{ return m_sourceReservedNodeType; }
     inline bool SourceReservedNodeTypeHasBeenSet() const { return m_sourceReservedNodeTypeHasBeenSet; }

@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>A JSON format string of the Amazon Redshift API operation with input
      * parameters. </p>
-     * <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".
+     * <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ra3.4xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>".
      * </p>
      */
     inline const ScheduledActionType& GetTargetAction() const{ return m_targetAction; }

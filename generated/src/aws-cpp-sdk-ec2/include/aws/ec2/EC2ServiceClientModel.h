@@ -324,6 +324,7 @@
 #include <aws/ec2/model/DescribeStoreImageTasksResponse.h>
 #include <aws/ec2/model/DescribeSubnetsResponse.h>
 #include <aws/ec2/model/DescribeTagsResponse.h>
+#include <aws/ec2/model/DescribeTrafficMirrorFilterRulesResponse.h>
 #include <aws/ec2/model/DescribeTrafficMirrorFiltersResponse.h>
 #include <aws/ec2/model/DescribeTrafficMirrorSessionsResponse.h>
 #include <aws/ec2/model/DescribeTrafficMirrorTargetsResponse.h>
@@ -958,6 +959,7 @@ namespace Aws
       class DescribeStoreImageTasksRequest;
       class DescribeSubnetsRequest;
       class DescribeTagsRequest;
+      class DescribeTrafficMirrorFilterRulesRequest;
       class DescribeTrafficMirrorFiltersRequest;
       class DescribeTrafficMirrorSessionsRequest;
       class DescribeTrafficMirrorTargetsRequest;
@@ -1582,6 +1584,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeStoreImageTasksResponse, EC2Error> DescribeStoreImageTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeSubnetsResponse, EC2Error> DescribeSubnetsOutcome;
       typedef Aws::Utils::Outcome<DescribeTagsResponse, EC2Error> DescribeTagsOutcome;
+      typedef Aws::Utils::Outcome<DescribeTrafficMirrorFilterRulesResponse, EC2Error> DescribeTrafficMirrorFilterRulesOutcome;
       typedef Aws::Utils::Outcome<DescribeTrafficMirrorFiltersResponse, EC2Error> DescribeTrafficMirrorFiltersOutcome;
       typedef Aws::Utils::Outcome<DescribeTrafficMirrorSessionsResponse, EC2Error> DescribeTrafficMirrorSessionsOutcome;
       typedef Aws::Utils::Outcome<DescribeTrafficMirrorTargetsResponse, EC2Error> DescribeTrafficMirrorTargetsOutcome;
@@ -2206,6 +2209,7 @@ namespace Aws
       typedef std::future<DescribeStoreImageTasksOutcome> DescribeStoreImageTasksOutcomeCallable;
       typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
       typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+      typedef std::future<DescribeTrafficMirrorFilterRulesOutcome> DescribeTrafficMirrorFilterRulesOutcomeCallable;
       typedef std::future<DescribeTrafficMirrorFiltersOutcome> DescribeTrafficMirrorFiltersOutcomeCallable;
       typedef std::future<DescribeTrafficMirrorSessionsOutcome> DescribeTrafficMirrorSessionsOutcomeCallable;
       typedef std::future<DescribeTrafficMirrorTargetsOutcome> DescribeTrafficMirrorTargetsOutcomeCallable;
@@ -2833,6 +2837,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeStoreImageTasksRequest&, const Model::DescribeStoreImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStoreImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSubnetsRequest&, const Model::DescribeSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubnetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorFilterRulesRequest&, const Model::DescribeTrafficMirrorFilterRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorFilterRulesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorFiltersRequest&, const Model::DescribeTrafficMirrorFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorFiltersResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorSessionsRequest&, const Model::DescribeTrafficMirrorSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorSessionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorTargetsRequest&, const Model::DescribeTrafficMirrorTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorTargetsResponseReceivedHandler;

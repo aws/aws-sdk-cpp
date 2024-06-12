@@ -25,6 +25,7 @@ EventDestinationDefinition::EventDestinationDefinition() :
     m_kinesisFirehoseDestinationHasBeenSet(false),
     m_cloudWatchDestinationHasBeenSet(false),
     m_snsDestinationHasBeenSet(false),
+    m_eventBridgeDestinationHasBeenSet(false),
     m_pinpointDestinationHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue) :
     m_kinesisFirehoseDestinationHasBeenSet(false),
     m_cloudWatchDestinationHasBeenSet(false),
     m_snsDestinationHasBeenSet(false),
+    m_eventBridgeDestinationHasBeenSet(false),
     m_pinpointDestinationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -79,6 +81,13 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
     m_snsDestination = jsonValue.GetObject("SnsDestination");
 
     m_snsDestinationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventBridgeDestination"))
+  {
+    m_eventBridgeDestination = jsonValue.GetObject("EventBridgeDestination");
+
+    m_eventBridgeDestinationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PinpointDestination"))
@@ -127,6 +136,12 @@ JsonValue EventDestinationDefinition::Jsonize() const
   if(m_snsDestinationHasBeenSet)
   {
    payload.WithObject("SnsDestination", m_snsDestination.Jsonize());
+
+  }
+
+  if(m_eventBridgeDestinationHasBeenSet)
+  {
+   payload.WithObject("EventBridgeDestination", m_eventBridgeDestination.Jsonize());
 
   }
 

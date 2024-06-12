@@ -10,6 +10,7 @@
 #include <aws/sesv2/model/KinesisFirehoseDestination.h>
 #include <aws/sesv2/model/CloudWatchDestination.h>
 #include <aws/sesv2/model/SnsDestination.h>
+#include <aws/sesv2/model/EventBridgeDestination.h>
 #include <aws/sesv2/model/PinpointDestination.h>
 #include <aws/sesv2/model/EventType.h>
 #include <utility>
@@ -153,7 +154,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that defines an Amazon SNS destination for email events. You can
-     * use Amazon SNS to send notification when certain email events occur.</p>
+     * use Amazon SNS to send notifications when certain email events occur.</p>
      */
     inline const SnsDestination& GetSnsDestination() const{ return m_snsDestination; }
     inline bool SnsDestinationHasBeenSet() const { return m_snsDestinationHasBeenSet; }
@@ -161,6 +162,20 @@ namespace Model
     inline void SetSnsDestination(SnsDestination&& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = std::move(value); }
     inline EventDestination& WithSnsDestination(const SnsDestination& value) { SetSnsDestination(value); return *this;}
     inline EventDestination& WithSnsDestination(SnsDestination&& value) { SetSnsDestination(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that defines an Amazon EventBridge destination for email events.
+     * You can use Amazon EventBridge to send notifications when certain email events
+     * occur.</p>
+     */
+    inline const EventBridgeDestination& GetEventBridgeDestination() const{ return m_eventBridgeDestination; }
+    inline bool EventBridgeDestinationHasBeenSet() const { return m_eventBridgeDestinationHasBeenSet; }
+    inline void SetEventBridgeDestination(const EventBridgeDestination& value) { m_eventBridgeDestinationHasBeenSet = true; m_eventBridgeDestination = value; }
+    inline void SetEventBridgeDestination(EventBridgeDestination&& value) { m_eventBridgeDestinationHasBeenSet = true; m_eventBridgeDestination = std::move(value); }
+    inline EventDestination& WithEventBridgeDestination(const EventBridgeDestination& value) { SetEventBridgeDestination(value); return *this;}
+    inline EventDestination& WithEventBridgeDestination(EventBridgeDestination&& value) { SetEventBridgeDestination(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,6 +213,9 @@ namespace Model
 
     SnsDestination m_snsDestination;
     bool m_snsDestinationHasBeenSet = false;
+
+    EventBridgeDestination m_eventBridgeDestination;
+    bool m_eventBridgeDestinationHasBeenSet = false;
 
     PinpointDestination m_pinpointDestination;
     bool m_pinpointDestinationHasBeenSet = false;

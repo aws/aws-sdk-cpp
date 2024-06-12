@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/apptest/model/M2NonManagedActionType.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+
+using namespace Aws::Utils;
+
+
+namespace Aws
+{
+  namespace AppTest
+  {
+    namespace Model
+    {
+      namespace M2NonManagedActionTypeMapper
+      {
+
+        static const int Configure_HASH = HashingUtils::HashString("Configure");
+        static const int Deconfigure_HASH = HashingUtils::HashString("Deconfigure");
+
+
+        M2NonManagedActionType GetM2NonManagedActionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Configure_HASH)
+          {
+            return M2NonManagedActionType::Configure;
+          }
+          else if (hashCode == Deconfigure_HASH)
+          {
+            return M2NonManagedActionType::Deconfigure;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<M2NonManagedActionType>(hashCode);
+          }
+
+          return M2NonManagedActionType::NOT_SET;
+        }
+
+        Aws::String GetNameForM2NonManagedActionType(M2NonManagedActionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case M2NonManagedActionType::NOT_SET:
+            return {};
+          case M2NonManagedActionType::Configure:
+            return "Configure";
+          case M2NonManagedActionType::Deconfigure:
+            return "Deconfigure";
+          default:
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return {};
+          }
+        }
+
+      } // namespace M2NonManagedActionTypeMapper
+    } // namespace Model
+  } // namespace AppTest
+} // namespace Aws

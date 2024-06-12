@@ -142,7 +142,10 @@ namespace Model
      * recommend that you store your binary data in a file and then pass the contents
      * of the file as a parameter.</p> <p>Either <code>SecretString</code> or
      * <code>SecretBinary</code> must have a value, but not both.</p> <p>This parameter
-     * is not available in the Secrets Manager console.</p>
+     * is not available in the Secrets Manager console.</p> <p>Sensitive: This field
+     * contains sensitive information, so the service does not include it in CloudTrail
+     * log entries. If you create your own log entries, you must also avoid logging the
+     * information in this field.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
     inline bool SecretBinaryHasBeenSet() const { return m_secretBinaryHasBeenSet; }
@@ -161,7 +164,9 @@ namespace Model
      * console then Secrets Manager puts the protected secret text in only the
      * <code>SecretString</code> parameter. The Secrets Manager console stores the
      * information as a JSON structure of key/value pairs that a Lambda rotation
-     * function can parse.</p>
+     * function can parse.</p> <p>Sensitive: This field contains sensitive information,
+     * so the service does not include it in CloudTrail log entries. If you create your
+     * own log entries, you must also avoid logging the information in this field.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }

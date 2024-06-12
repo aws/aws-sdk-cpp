@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
      * Returns the average rate for a completed backup. This field is only updated when
-     * you restore to DC2 and DS2 node types. </p>
+     * you restore to DC2 node types. </p>
      */
     inline double GetCurrentRestoreRateInMegaBytesPerSecond() const{ return m_currentRestoreRateInMegaBytesPerSecond; }
     inline bool CurrentRestoreRateInMegaBytesPerSecondHasBeenSet() const { return m_currentRestoreRateInMegaBytesPerSecondHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>The size of the set of snapshot data used to restore the cluster. This field
-     * is only updated when you restore to DC2 and DS2 node types. </p>
+     * is only updated when you restore to DC2 node types. </p>
      */
     inline long long GetSnapshotSizeInMegaBytes() const{ return m_snapshotSizeInMegaBytes; }
     inline bool SnapshotSizeInMegaBytesHasBeenSet() const { return m_snapshotSizeInMegaBytesHasBeenSet; }
@@ -81,7 +81,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of megabytes that have been transferred from snapshot storage.
-     * This field is only updated when you restore to DC2 and DS2 node types. </p>
+     * This field is only updated when you restore to DC2 node types. </p>
      */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
     inline bool ProgressInMegaBytesHasBeenSet() const { return m_progressInMegaBytesHasBeenSet; }
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
      * time it took a completed restore to finish. This field is only updated when you
-     * restore to DC2 and DS2 node types. </p>
+     * restore to DC2 node types. </p>
      */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
     inline bool ElapsedTimeInSecondsHasBeenSet() const { return m_elapsedTimeInSecondsHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
      * 0 for a completed restore. This field is only updated when you restore to DC2
-     * and DS2 node types. </p>
+     * node types. </p>
      */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
     inline bool EstimatedTimeToCompletionInSecondsHasBeenSet() const { return m_estimatedTimeToCompletionInSecondsHasBeenSet; }

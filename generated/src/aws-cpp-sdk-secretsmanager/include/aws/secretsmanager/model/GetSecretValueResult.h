@@ -82,7 +82,10 @@ namespace Model
      * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
      * <p>If the secret was created by using the Secrets Manager console, or if the
      * secret value was originally provided as a string, then this field is omitted.
-     * The secret value appears in <code>SecretString</code> instead.</p>
+     * The secret value appears in <code>SecretString</code> instead.</p> <p>Sensitive:
+     * This field contains sensitive information, so the service does not include it in
+     * CloudTrail log entries. If you create your own log entries, you must also avoid
+     * logging the information in this field.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
     inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinary = value; }
@@ -96,7 +99,10 @@ namespace Model
      * <p>The decrypted secret value, if the secret value was originally provided as a
      * string or through the Secrets Manager console.</p> <p>If this secret was created
      * by using the console, then Secrets Manager stores the information as a JSON
-     * structure of key/value pairs. </p>
+     * structure of key/value pairs. </p> <p>Sensitive: This field contains sensitive
+     * information, so the service does not include it in CloudTrail log entries. If
+     * you create your own log entries, you must also avoid logging the information in
+     * this field.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
     inline void SetSecretString(const Aws::String& value) { m_secretString = value; }

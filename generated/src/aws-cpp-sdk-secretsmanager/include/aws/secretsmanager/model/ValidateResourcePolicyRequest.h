@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This field is reserved for internal use.</p>
+     * <p>The ARN or name of the secret with the resource-based policy you want to
+     * validate.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
