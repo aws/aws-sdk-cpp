@@ -96,7 +96,7 @@ Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig)
 #if defined(AWS_USER_AGENT_CUSTOMIZATION)
 #define XSTR(V) STR(V)
 #define STR(V) #V
-  ss << FilterUserAgentToken(" " XSTR(AWS_USER_AGENT_CUSTOMIZATION));
+  ss << " " << FilterUserAgentToken(XSTR(AWS_USER_AGENT_CUSTOMIZATION));
 #undef STR
 #undef XSTR
 #endif
