@@ -10,6 +10,7 @@
 #include <aws/mediapackagev2/model/ContainerType.h>
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
@@ -206,6 +207,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The failover settings for the endpoint.</p>
+     */
+    inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const{ return m_forceEndpointErrorConfiguration; }
+    inline bool ForceEndpointErrorConfigurationHasBeenSet() const { return m_forceEndpointErrorConfigurationHasBeenSet; }
+    inline void SetForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = value; }
+    inline void SetForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = std::move(value); }
+    inline CreateOriginEndpointRequest& WithForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { SetForceEndpointErrorConfiguration(value); return *this;}
+    inline CreateOriginEndpointRequest& WithForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { SetForceEndpointErrorConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A comma-separated list of tag key:value pairs that you define. For
      * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
      * "Value2"</code> </p>
@@ -258,6 +271,9 @@ namespace Model
 
     Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
     bool m_dashManifestsHasBeenSet = false;
+
+    ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+    bool m_forceEndpointErrorConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

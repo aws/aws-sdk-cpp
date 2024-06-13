@@ -9,6 +9,7 @@
 #include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudhsmv2/model/ClusterMode.h>
 #include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
 
@@ -51,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of HSM to use in the cluster. Currently the only allowed value is
-     * <code>hsm1.medium</code>.</p>
+     * <p>The type of HSM to use in the cluster. The allowed values are
+     * <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
      */
     inline const Aws::String& GetHsmType() const{ return m_hsmType; }
     inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
@@ -112,6 +113,19 @@ namespace Model
     inline CreateClusterRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
     inline CreateClusterRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and
+     * <code>NON_FIPS</code>.</p>
+     */
+    inline const ClusterMode& GetMode() const{ return m_mode; }
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+    inline void SetMode(const ClusterMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(ClusterMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+    inline CreateClusterRequest& WithMode(const ClusterMode& value) { SetMode(value); return *this;}
+    inline CreateClusterRequest& WithMode(ClusterMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     BackupRetentionPolicy m_backupRetentionPolicy;
@@ -128,6 +142,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
+
+    ClusterMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

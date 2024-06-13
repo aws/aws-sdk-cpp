@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/SigningAlgorithmSpec.h>
+#include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
 #include <utility>
 
 namespace Aws
@@ -81,10 +82,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The permitted use of the public key. Valid values are
-     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p> <p>This
-     * information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-     * encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+     * <p>The permitted use of the public key. Valid values for asymmetric key pairs
+     * are <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, and
+     * <code>KEY_AGREEMENT</code>. </p> <p>This information is critical. For example,
+     * if a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of
+     * KMS, the ciphertext cannot be decrypted. </p>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsage = value; }
@@ -126,6 +128,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The key agreement algorithm used to derive a shared secret. This field is
+     * present only when the KMS key has a <code>KeyUsage</code> value of
+     * <code>KEY_AGREEMENT</code>.</p>
+     */
+    inline const Aws::Vector<KeyAgreementAlgorithmSpec>& GetKeyAgreementAlgorithms() const{ return m_keyAgreementAlgorithms; }
+    inline void SetKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { m_keyAgreementAlgorithms = value; }
+    inline void SetKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { m_keyAgreementAlgorithms = std::move(value); }
+    inline GetPublicKeyResult& WithKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { SetKeyAgreementAlgorithms(value); return *this;}
+    inline GetPublicKeyResult& WithKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { SetKeyAgreementAlgorithms(std::move(value)); return *this;}
+    inline GetPublicKeyResult& AddKeyAgreementAlgorithms(const KeyAgreementAlgorithmSpec& value) { m_keyAgreementAlgorithms.push_back(value); return *this; }
+    inline GetPublicKeyResult& AddKeyAgreementAlgorithms(KeyAgreementAlgorithmSpec&& value) { m_keyAgreementAlgorithms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -148,6 +165,8 @@ namespace Model
     Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
 
     Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
+
+    Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
 
     Aws::String m_requestId;
   };

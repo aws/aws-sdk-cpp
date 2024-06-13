@@ -13,21 +13,18 @@ namespace KMS
 {
 namespace Model
 {
-  enum class KeyUsageType
+  enum class KeyAgreementAlgorithmSpec
   {
     NOT_SET,
-    SIGN_VERIFY,
-    ENCRYPT_DECRYPT,
-    GENERATE_VERIFY_MAC,
-    KEY_AGREEMENT
+    ECDH
   };
 
-namespace KeyUsageTypeMapper
+namespace KeyAgreementAlgorithmSpecMapper
 {
-AWS_KMS_API KeyUsageType GetKeyUsageTypeForName(const Aws::String& name);
+AWS_KMS_API KeyAgreementAlgorithmSpec GetKeyAgreementAlgorithmSpecForName(const Aws::String& name);
 
-AWS_KMS_API Aws::String GetNameForKeyUsageType(KeyUsageType value);
-} // namespace KeyUsageTypeMapper
+AWS_KMS_API Aws::String GetNameForKeyAgreementAlgorithmSpec(KeyAgreementAlgorithmSpec value);
+} // namespace KeyAgreementAlgorithmSpecMapper
 } // namespace Model
 } // namespace KMS
 } // namespace Aws

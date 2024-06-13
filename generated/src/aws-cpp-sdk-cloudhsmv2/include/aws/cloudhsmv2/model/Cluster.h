@@ -13,6 +13,7 @@
 #include <aws/cloudhsmv2/model/ClusterState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cloudhsmv2/model/Certificates.h>
+#include <aws/cloudhsmv2/model/ClusterMode.h>
 #include <aws/cloudhsmv2/model/Hsm.h>
 #include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
@@ -254,6 +255,18 @@ namespace Model
     inline Cluster& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
     inline Cluster& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The mode of the cluster.</p>
+     */
+    inline const ClusterMode& GetMode() const{ return m_mode; }
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+    inline void SetMode(const ClusterMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(ClusterMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+    inline Cluster& WithMode(const ClusterMode& value) { SetMode(value); return *this;}
+    inline Cluster& WithMode(ClusterMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     BackupPolicy m_backupPolicy;
@@ -300,6 +313,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
+
+    ClusterMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/mediapackagev2/model/ContainerType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListDashManifestConfiguration.h>
@@ -199,6 +200,18 @@ namespace Model
     inline OriginEndpointListConfiguration& AddDashManifests(const ListDashManifestConfiguration& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
     inline OriginEndpointListConfiguration& AddDashManifests(ListDashManifestConfiguration&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The failover settings for the endpoint.</p>
+     */
+    inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const{ return m_forceEndpointErrorConfiguration; }
+    inline bool ForceEndpointErrorConfigurationHasBeenSet() const { return m_forceEndpointErrorConfigurationHasBeenSet; }
+    inline void SetForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = value; }
+    inline void SetForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = std::move(value); }
+    inline OriginEndpointListConfiguration& WithForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { SetForceEndpointErrorConfiguration(value); return *this;}
+    inline OriginEndpointListConfiguration& WithForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { SetForceEndpointErrorConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -233,6 +246,9 @@ namespace Model
 
     Aws::Vector<ListDashManifestConfiguration> m_dashManifests;
     bool m_dashManifestsHasBeenSet = false;
+
+    ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+    bool m_forceEndpointErrorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

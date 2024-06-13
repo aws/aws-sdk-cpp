@@ -10,6 +10,7 @@
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
@@ -192,6 +193,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>A DASH manifest configuration.</p>
+     */
+    inline const Aws::Vector<GetDashManifestConfiguration>& GetGetDashManifests() const{ return m_dashManifests; }
+    inline void SetDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { m_dashManifests = value; }
+    inline void SetDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { m_dashManifests = std::move(value); }
+    inline GetOriginEndpointResult& WithDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
+    inline GetOriginEndpointResult& WithDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
+    inline GetOriginEndpointResult& AddDashManifests(const GetDashManifestConfiguration& value) { m_dashManifests.push_back(value); return *this; }
+    inline GetOriginEndpointResult& AddDashManifests(GetDashManifestConfiguration&& value) { m_dashManifests.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The failover settings for the endpoint.</p>
+     */
+    inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const{ return m_forceEndpointErrorConfiguration; }
+    inline void SetForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { m_forceEndpointErrorConfiguration = value; }
+    inline void SetForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { m_forceEndpointErrorConfiguration = std::move(value); }
+    inline GetOriginEndpointResult& WithForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { SetForceEndpointErrorConfiguration(value); return *this;}
+    inline GetOriginEndpointResult& WithForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { SetForceEndpointErrorConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
@@ -221,19 +246,6 @@ namespace Model
     inline GetOriginEndpointResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
     inline GetOriginEndpointResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
     inline GetOriginEndpointResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A DASH manifest configuration.</p>
-     */
-    inline const Aws::Vector<GetDashManifestConfiguration>& GetGetDashManifests() const{ return m_dashManifests; }
-    inline void SetDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { m_dashManifests = value; }
-    inline void SetDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { m_dashManifests = std::move(value); }
-    inline GetOriginEndpointResult& WithDashManifests(const Aws::Vector<GetDashManifestConfiguration>& value) { SetDashManifests(value); return *this;}
-    inline GetOriginEndpointResult& WithDashManifests(Aws::Vector<GetDashManifestConfiguration>&& value) { SetDashManifests(std::move(value)); return *this;}
-    inline GetOriginEndpointResult& AddDashManifests(const GetDashManifestConfiguration& value) { m_dashManifests.push_back(value); return *this; }
-    inline GetOriginEndpointResult& AddDashManifests(GetDashManifestConfiguration&& value) { m_dashManifests.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -272,11 +284,13 @@ namespace Model
 
     Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
 
+    Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
+
+    ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+
     Aws::String m_eTag;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-
-    Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
 
     Aws::String m_requestId;
   };

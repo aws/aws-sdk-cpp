@@ -141,20 +141,21 @@ namespace Model
      * document</a> from an Amazon Web Services Nitro enclave and the encryption
      * algorithm to use with the enclave's public key. The only valid encryption
      * algorithm is <code>RSAES_OAEP_SHA_256</code>. </p> <p>This parameter only
-     * supports attestation documents for Amazon Web Services Nitro Enclaves. To
-     * include this parameter, use the <a
+     * supports attestation documents for Amazon Web Services Nitro Enclaves. To call
+     * DeriveSharedSecret for an Amazon Web Services Nitro Enclaves, use the <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-     * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p> <p>When
-     * you use this parameter, instead of returning a plaintext copy of the private
-     * data key, KMS encrypts the plaintext private data key under the public key in
-     * the attestation document, and returns the resulting ciphertext in the
-     * <code>CiphertextForRecipient</code> field in the response. This ciphertext can
-     * be decrypted only with the private key in the enclave. The
-     * <code>CiphertextBlob</code> field in the response contains a copy of the private
-     * data key encrypted under the KMS key specified by the <code>KeyId</code>
-     * parameter. The <code>PrivateKeyPlaintext</code> field in the response is null or
-     * empty.</p> <p>For information about the interaction between KMS and Amazon Web
-     * Services Nitro Enclaves, see <a
+     * Web Services Nitro Enclaves SDK</a> to generate the attestation document and
+     * then use the Recipient parameter from any Amazon Web Services SDK to provide the
+     * attestation document for the enclave.</p> <p>When you use this parameter,
+     * instead of returning a plaintext copy of the private data key, KMS encrypts the
+     * plaintext private data key under the public key in the attestation document, and
+     * returns the resulting ciphertext in the <code>CiphertextForRecipient</code>
+     * field in the response. This ciphertext can be decrypted only with the private
+     * key in the enclave. The <code>CiphertextBlob</code> field in the response
+     * contains a copy of the private data key encrypted under the KMS key specified by
+     * the <code>KeyId</code> parameter. The <code>PrivateKeyPlaintext</code> field in
+     * the response is null or empty.</p> <p>For information about the interaction
+     * between KMS and Amazon Web Services Nitro Enclaves, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
      * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>

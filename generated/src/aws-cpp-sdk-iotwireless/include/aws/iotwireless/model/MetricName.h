@@ -18,6 +18,8 @@ namespace Model
     NOT_SET,
     DeviceRSSI,
     DeviceSNR,
+    DeviceRoamingRSSI,
+    DeviceRoamingSNR,
     DeviceUplinkCount,
     DeviceDownlinkCount,
     DeviceUplinkLostCount,

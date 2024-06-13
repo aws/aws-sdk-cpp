@@ -31,7 +31,10 @@ Backup::Backup() :
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
     m_deleteTimestampHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_hsmTypeHasBeenSet(false),
+    m_mode(ClusterMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ Backup::Backup(JsonView jsonValue) :
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
     m_deleteTimestampHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_hsmTypeHasBeenSet(false),
+    m_mode(ClusterMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +141,20 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_tagListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HsmType"))
+  {
+    m_hsmType = jsonValue.GetString("HsmType");
+
+    m_hsmTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +227,17 @@ JsonValue Backup::Jsonize() const
    }
    payload.WithArray("TagList", std::move(tagListJsonList));
 
+  }
+
+  if(m_hsmTypeHasBeenSet)
+  {
+   payload.WithString("HsmType", m_hsmType);
+
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
   }
 
   return payload;

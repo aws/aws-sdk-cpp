@@ -22,6 +22,8 @@ namespace Aws
 
         static const int DeviceRSSI_HASH = HashingUtils::HashString("DeviceRSSI");
         static const int DeviceSNR_HASH = HashingUtils::HashString("DeviceSNR");
+        static const int DeviceRoamingRSSI_HASH = HashingUtils::HashString("DeviceRoamingRSSI");
+        static const int DeviceRoamingSNR_HASH = HashingUtils::HashString("DeviceRoamingSNR");
         static const int DeviceUplinkCount_HASH = HashingUtils::HashString("DeviceUplinkCount");
         static const int DeviceDownlinkCount_HASH = HashingUtils::HashString("DeviceDownlinkCount");
         static const int DeviceUplinkLostCount_HASH = HashingUtils::HashString("DeviceUplinkLostCount");
@@ -62,6 +64,14 @@ namespace Aws
           else if (hashCode == DeviceSNR_HASH)
           {
             return MetricName::DeviceSNR;
+          }
+          else if (hashCode == DeviceRoamingRSSI_HASH)
+          {
+            return MetricName::DeviceRoamingRSSI;
+          }
+          else if (hashCode == DeviceRoamingSNR_HASH)
+          {
+            return MetricName::DeviceRoamingSNR;
           }
           else if (hashCode == DeviceUplinkCount_HASH)
           {
@@ -195,6 +205,10 @@ namespace Aws
             return "DeviceRSSI";
           case MetricName::DeviceSNR:
             return "DeviceSNR";
+          case MetricName::DeviceRoamingRSSI:
+            return "DeviceRoamingRSSI";
+          case MetricName::DeviceRoamingSNR:
+            return "DeviceRoamingSNR";
           case MetricName::DeviceUplinkCount:
             return "DeviceUplinkCount";
           case MetricName::DeviceDownlinkCount:

@@ -111,6 +111,12 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
     }
   }
 
+  if(jsonValue.ValueExists("ForceEndpointErrorConfiguration"))
+  {
+    m_forceEndpointErrorConfiguration = jsonValue.GetObject("ForceEndpointErrorConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");

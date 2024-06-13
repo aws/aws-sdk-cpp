@@ -7,6 +7,7 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediapackagev2/model/InputType.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,24 @@ namespace Model
     inline ChannelListConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline ChannelListConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The input type will be an immutable field which will be used to define
+     * whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will
+     * default to HLS to preserve current behavior.</p> <p>The allowed values are:</p>
+     * <ul> <li> <p> <code>HLS</code> - The HLS streaming specification (which defines
+     * M3U8 manifests and TS segments).</p> </li> <li> <p> <code>CMAF</code> - The
+     * DASH-IF CMAF Ingest specification (which defines CMAF segments with optional
+     * DASH manifests).</p> </li> </ul>
+     */
+    inline const InputType& GetInputType() const{ return m_inputType; }
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
+    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
+    inline ChannelListConfiguration& WithInputType(const InputType& value) { SetInputType(value); return *this;}
+    inline ChannelListConfiguration& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -141,6 +160,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    InputType m_inputType;
+    bool m_inputTypeHasBeenSet = false;
   };
 
 } // namespace Model

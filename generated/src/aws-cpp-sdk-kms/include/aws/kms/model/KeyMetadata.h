@@ -18,6 +18,7 @@
 #include <aws/kms/model/XksKeyConfigurationType.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/SigningAlgorithmSpec.h>
+#include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
 #include <aws/kms/model/MacAlgorithmSpec.h>
 #include <utility>
 
@@ -327,6 +328,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The key agreement algorithm used to derive a shared secret.</p>
+     */
+    inline const Aws::Vector<KeyAgreementAlgorithmSpec>& GetKeyAgreementAlgorithms() const{ return m_keyAgreementAlgorithms; }
+    inline bool KeyAgreementAlgorithmsHasBeenSet() const { return m_keyAgreementAlgorithmsHasBeenSet; }
+    inline void SetKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms = value; }
+    inline void SetKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms = std::move(value); }
+    inline KeyMetadata& WithKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { SetKeyAgreementAlgorithms(value); return *this;}
+    inline KeyMetadata& WithKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { SetKeyAgreementAlgorithms(std::move(value)); return *this;}
+    inline KeyMetadata& AddKeyAgreementAlgorithms(const KeyAgreementAlgorithmSpec& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms.push_back(value); return *this; }
+    inline KeyMetadata& AddKeyAgreementAlgorithms(KeyAgreementAlgorithmSpec&& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or
      * regional (<code>False</code>) key. This value is <code>True</code> for
      * multi-Region primary and replica keys and <code>False</code> for regional KMS
@@ -469,6 +484,9 @@ namespace Model
 
     Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
     bool m_signingAlgorithmsHasBeenSet = false;
+
+    Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
+    bool m_keyAgreementAlgorithmsHasBeenSet = false;
 
     bool m_multiRegion;
     bool m_multiRegionHasBeenSet = false;

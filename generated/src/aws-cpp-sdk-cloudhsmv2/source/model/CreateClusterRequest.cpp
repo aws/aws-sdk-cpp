@@ -17,7 +17,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_hsmTypeHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_mode(ClusterMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
    }
    payload.WithArray("TagList", std::move(tagListJsonList));
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
   }
 
   return payload.View().WriteReadable();
