@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/DQCompositeRuleEvaluationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,19 @@ namespace Model
     inline DataQualityEvaluationRunAdditionalRunOptions& WithResultsS3Prefix(Aws::String&& value) { SetResultsS3Prefix(std::move(value)); return *this;}
     inline DataQualityEvaluationRunAdditionalRunOptions& WithResultsS3Prefix(const char* value) { SetResultsS3Prefix(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Set the evaluation method for composite rules in the ruleset to
+     * ROW/COLUMN</p>
+     */
+    inline const DQCompositeRuleEvaluationMethod& GetCompositeRuleEvaluationMethod() const{ return m_compositeRuleEvaluationMethod; }
+    inline bool CompositeRuleEvaluationMethodHasBeenSet() const { return m_compositeRuleEvaluationMethodHasBeenSet; }
+    inline void SetCompositeRuleEvaluationMethod(const DQCompositeRuleEvaluationMethod& value) { m_compositeRuleEvaluationMethodHasBeenSet = true; m_compositeRuleEvaluationMethod = value; }
+    inline void SetCompositeRuleEvaluationMethod(DQCompositeRuleEvaluationMethod&& value) { m_compositeRuleEvaluationMethodHasBeenSet = true; m_compositeRuleEvaluationMethod = std::move(value); }
+    inline DataQualityEvaluationRunAdditionalRunOptions& WithCompositeRuleEvaluationMethod(const DQCompositeRuleEvaluationMethod& value) { SetCompositeRuleEvaluationMethod(value); return *this;}
+    inline DataQualityEvaluationRunAdditionalRunOptions& WithCompositeRuleEvaluationMethod(DQCompositeRuleEvaluationMethod&& value) { SetCompositeRuleEvaluationMethod(std::move(value)); return *this;}
+    ///@}
   private:
 
     bool m_cloudWatchMetricsEnabled;
@@ -68,6 +82,9 @@ namespace Model
 
     Aws::String m_resultsS3Prefix;
     bool m_resultsS3PrefixHasBeenSet = false;
+
+    DQCompositeRuleEvaluationMethod m_compositeRuleEvaluationMethod;
+    bool m_compositeRuleEvaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

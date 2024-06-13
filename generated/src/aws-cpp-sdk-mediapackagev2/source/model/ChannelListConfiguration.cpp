@@ -24,7 +24,9 @@ ChannelListConfiguration::ChannelListConfiguration() :
     m_channelGroupNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ChannelListConfiguration::ChannelListConfiguration(JsonView jsonValue) :
     m_channelGroupNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ ChannelListConfiguration& ChannelListConfiguration::operator =(JsonView jsonValu
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InputType"))
+  {
+    m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
+
+    m_inputTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +133,11 @@ JsonValue ChannelListConfiguration::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_inputTypeHasBeenSet)
+  {
+   payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/GetHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
@@ -208,6 +209,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The failover settings for the endpoint.</p>
+     */
+    inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const{ return m_forceEndpointErrorConfiguration; }
+    inline void SetForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { m_forceEndpointErrorConfiguration = value; }
+    inline void SetForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { m_forceEndpointErrorConfiguration = std::move(value); }
+    inline CreateOriginEndpointResult& WithForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { SetForceEndpointErrorConfiguration(value); return *this;}
+    inline CreateOriginEndpointResult& WithForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { SetForceEndpointErrorConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
@@ -276,6 +288,8 @@ namespace Model
     Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
 
     Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
+
+    ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
 
     Aws::String m_eTag;
 

@@ -10,6 +10,7 @@
 #include <aws/mediapackagev2/model/ContainerType.h>
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/CreateHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateDashManifestConfiguration.h>
@@ -187,6 +188,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The failover settings for the endpoint.</p>
+     */
+    inline const ForceEndpointErrorConfiguration& GetForceEndpointErrorConfiguration() const{ return m_forceEndpointErrorConfiguration; }
+    inline bool ForceEndpointErrorConfigurationHasBeenSet() const { return m_forceEndpointErrorConfigurationHasBeenSet; }
+    inline void SetForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = value; }
+    inline void SetForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { m_forceEndpointErrorConfigurationHasBeenSet = true; m_forceEndpointErrorConfiguration = std::move(value); }
+    inline UpdateOriginEndpointRequest& WithForceEndpointErrorConfiguration(const ForceEndpointErrorConfiguration& value) { SetForceEndpointErrorConfiguration(value); return *this;}
+    inline UpdateOriginEndpointRequest& WithForceEndpointErrorConfiguration(ForceEndpointErrorConfiguration&& value) { SetForceEndpointErrorConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The expected current Entity Tag (ETag) for the resource. If the specified
      * ETag does not match the resource's current entity tag, the update request will
      * be rejected.</p>
@@ -231,6 +244,9 @@ namespace Model
 
     Aws::Vector<CreateDashManifestConfiguration> m_dashManifests;
     bool m_dashManifestsHasBeenSet = false;
+
+    ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+    bool m_forceEndpointErrorConfigurationHasBeenSet = false;
 
     Aws::String m_eTag;
     bool m_eTagHasBeenSet = false;

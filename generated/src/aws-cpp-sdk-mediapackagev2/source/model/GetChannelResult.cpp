@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetChannelResult::GetChannelResult()
+GetChannelResult::GetChannelResult() : 
+    m_inputType(InputType::NOT_SET)
 {
 }
 
-GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_inputType(InputType::NOT_SET)
 {
   *this = result;
 }
@@ -72,6 +74,12 @@ GetChannelResult& GetChannelResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_ingestEndpoints.push_back(ingestEndpointsJsonList[ingestEndpointsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("InputType"))
+  {
+    m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
+
   }
 
   if(jsonValue.ValueExists("ETag"))

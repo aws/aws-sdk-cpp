@@ -31,7 +31,8 @@ namespace Model
     GenerateDataKeyPair,
     GenerateDataKeyPairWithoutPlaintext,
     GenerateMac,
-    VerifyMac
+    VerifyMac,
+    DeriveSharedSecret
   };
 
 namespace GrantOperationMapper

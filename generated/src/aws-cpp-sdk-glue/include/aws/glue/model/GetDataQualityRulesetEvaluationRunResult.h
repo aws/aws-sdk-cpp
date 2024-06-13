@@ -176,7 +176,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of ruleset names for the run.</p>
+     * <p>A list of ruleset names for the run. Currently, this parameter takes only one
+     * Ruleset name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRulesetNames() const{ return m_rulesetNames; }
     inline void SetRulesetNames(const Aws::Vector<Aws::String>& value) { m_rulesetNames = value; }

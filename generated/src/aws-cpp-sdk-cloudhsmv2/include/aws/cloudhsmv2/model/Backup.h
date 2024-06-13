@@ -9,6 +9,7 @@
 #include <aws/cloudhsmv2/model/BackupState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudhsmv2/model/ClusterMode.h>
 #include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
 
@@ -195,6 +196,32 @@ namespace Model
     inline Backup& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
     inline Backup& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The HSM type of the cluster that was backed up.</p>
+     */
+    inline const Aws::String& GetHsmType() const{ return m_hsmType; }
+    inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
+    inline void SetHsmType(const Aws::String& value) { m_hsmTypeHasBeenSet = true; m_hsmType = value; }
+    inline void SetHsmType(Aws::String&& value) { m_hsmTypeHasBeenSet = true; m_hsmType = std::move(value); }
+    inline void SetHsmType(const char* value) { m_hsmTypeHasBeenSet = true; m_hsmType.assign(value); }
+    inline Backup& WithHsmType(const Aws::String& value) { SetHsmType(value); return *this;}
+    inline Backup& WithHsmType(Aws::String&& value) { SetHsmType(std::move(value)); return *this;}
+    inline Backup& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The mode of the cluster that was backed up.</p>
+     */
+    inline const ClusterMode& GetMode() const{ return m_mode; }
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+    inline void SetMode(const ClusterMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline void SetMode(ClusterMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+    inline Backup& WithMode(const ClusterMode& value) { SetMode(value); return *this;}
+    inline Backup& WithMode(ClusterMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_backupId;
@@ -229,6 +256,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
+
+    Aws::String m_hsmType;
+    bool m_hsmTypeHasBeenSet = false;
+
+    ClusterMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

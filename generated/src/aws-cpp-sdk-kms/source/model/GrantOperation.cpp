@@ -36,6 +36,7 @@ namespace Aws
         static const int GenerateDataKeyPairWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyPairWithoutPlaintext");
         static const int GenerateMac_HASH = HashingUtils::HashString("GenerateMac");
         static const int VerifyMac_HASH = HashingUtils::HashString("VerifyMac");
+        static const int DeriveSharedSecret_HASH = HashingUtils::HashString("DeriveSharedSecret");
 
 
         GrantOperation GetGrantOperationForName(const Aws::String& name)
@@ -105,6 +106,10 @@ namespace Aws
           {
             return GrantOperation::VerifyMac;
           }
+          else if (hashCode == DeriveSharedSecret_HASH)
+          {
+            return GrantOperation::DeriveSharedSecret;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -153,6 +158,8 @@ namespace Aws
             return "GenerateMac";
           case GrantOperation::VerifyMac:
             return "VerifyMac";
+          case GrantOperation::DeriveSharedSecret:
+            return "DeriveSharedSecret";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

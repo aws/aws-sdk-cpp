@@ -35,7 +35,9 @@ Cluster::Cluster() :
     m_subnetMappingHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_certificatesHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_mode(ClusterMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_subnetMappingHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_certificatesHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_mode(ClusterMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +181,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_tagListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -284,6 +295,11 @@ JsonValue Cluster::Jsonize() const
    }
    payload.WithArray("TagList", std::move(tagListJsonList));
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
   }
 
   return payload;

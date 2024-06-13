@@ -65,6 +65,8 @@ namespace Aws
         static const int UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION_HASH = HashingUtils::HashString("UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION");
         static const int PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES_HASH = HashingUtils::HashString("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
         static const int DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH = HashingUtils::HashString("DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+        static const int SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH = HashingUtils::HashString("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -250,6 +252,14 @@ namespace Aws
           {
             return ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS;
           }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION;
+          }
+          else if (hashCode == SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH)
+          {
+            return ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -356,6 +366,10 @@ namespace Aws
             return "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES";
           case ValidationExceptionType::DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS:
             return "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
+          case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
+            return "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

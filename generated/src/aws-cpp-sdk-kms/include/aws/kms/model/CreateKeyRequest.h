@@ -107,12 +107,14 @@ namespace Model
      * valid value.</p> <ul> <li> <p>For symmetric encryption KMS keys, omit the
      * parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li> <p>For HMAC
      * KMS keys (symmetric), specify <code>GENERATE_VERIFY_MAC</code>.</p> </li> <li>
-     * <p>For asymmetric KMS keys with RSA key material, specify
+     * <p>For asymmetric KMS keys with RSA key pairs, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
-     * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
-     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
-     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
-     * </li> </ul>
+     * asymmetric KMS keys with NIST-recommended elliptic curve key pairs, specify
+     * <code>SIGN_VERIFY</code> or <code>KEY_AGREEMENT</code>.</p> </li> <li> <p>For
+     * asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs specify
+     * <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric KMS keys with SM2 key
+     * pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>,
+     * <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p> </li> </ul>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
@@ -153,16 +155,18 @@ namespace Model
      * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
-     * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
-     * <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p> </li> </ul>
-     * </li> <li> <p>Asymmetric NIST-recommended elliptic curve key pairs</p> <ul> <li>
-     * <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li> <p>
-     * <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
-     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
-     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
-     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
-     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
+     * pairs (encryption and decryption -or- signing and verification)</p> <ul> <li>
+     * <p> <code>RSA_2048</code> </p> </li> <li> <p> <code>RSA_3072</code> </p> </li>
+     * <li> <p> <code>RSA_4096</code> </p> </li> </ul> </li> <li> <p>Asymmetric
+     * NIST-recommended elliptic curve key pairs (signing and verification -or-
+     * deriving shared secrets)</p> <ul> <li> <p> <code>ECC_NIST_P256</code>
+     * (secp256r1)</p> </li> <li> <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li>
+     * <li> <p> <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li>
+     * <p>Other asymmetric elliptic curve key pairs (signing and verification)</p> <ul>
+     * <li> <p> <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (encryption and
+     * decryption -or- signing and verification -or- deriving shared secrets)</p> <ul>
+     * <li> <p> <code>SM2</code> (China Regions only)</p> </li> </ul> </li> </ul>
      */
     inline const KeySpec& GetKeySpec() const{ return m_keySpec; }
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }

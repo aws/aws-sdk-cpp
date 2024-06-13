@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackagev2/model/InputType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackagev2/model/IngestEndpoint.h>
 #include <utility>
@@ -127,6 +128,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The input type will be an immutable field which will be used to define
+     * whether the channel will allow CMAF ingest or HLS ingest. If unprovided, it will
+     * default to HLS to preserve current behavior.</p> <p>The allowed values are:</p>
+     * <ul> <li> <p> <code>HLS</code> - The HLS streaming specification (which defines
+     * M3U8 manifests and TS segments).</p> </li> <li> <p> <code>CMAF</code> - The
+     * DASH-IF CMAF Ingest specification (which defines CMAF segments with optional
+     * DASH manifests).</p> </li> </ul>
+     */
+    inline const InputType& GetInputType() const{ return m_inputType; }
+    inline void SetInputType(const InputType& value) { m_inputType = value; }
+    inline void SetInputType(InputType&& value) { m_inputType = std::move(value); }
+    inline UpdateChannelResult& WithInputType(const InputType& value) { SetInputType(value); return *this;}
+    inline UpdateChannelResult& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
@@ -182,6 +200,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<IngestEndpoint> m_ingestEndpoints;
+
+    InputType m_inputType;
 
     Aws::String m_eTag;
 

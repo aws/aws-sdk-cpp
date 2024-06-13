@@ -75,6 +75,15 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
+  {
+    Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
+    for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+    {
+      m_keyAgreementAlgorithms.push_back(KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString()));
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

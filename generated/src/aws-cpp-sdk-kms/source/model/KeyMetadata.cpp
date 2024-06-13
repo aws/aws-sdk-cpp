@@ -44,6 +44,7 @@ KeyMetadata::KeyMetadata() :
     m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
     m_signingAlgorithmsHasBeenSet(false),
+    m_keyAgreementAlgorithmsHasBeenSet(false),
     m_multiRegion(false),
     m_multiRegionHasBeenSet(false),
     m_multiRegionConfigurationHasBeenSet(false),
@@ -80,6 +81,7 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_keySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
     m_signingAlgorithmsHasBeenSet(false),
+    m_keyAgreementAlgorithmsHasBeenSet(false),
     m_multiRegion(false),
     m_multiRegionHasBeenSet(false),
     m_multiRegionConfigurationHasBeenSet(false),
@@ -223,6 +225,16 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
     }
     m_signingAlgorithmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
+  {
+    Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
+    for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+    {
+      m_keyAgreementAlgorithms.push_back(KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString()));
+    }
+    m_keyAgreementAlgorithmsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MultiRegion"))
@@ -376,6 +388,17 @@ JsonValue KeyMetadata::Jsonize() const
      signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString(SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithms[signingAlgorithmsIndex]));
    }
    payload.WithArray("SigningAlgorithms", std::move(signingAlgorithmsJsonList));
+
+  }
+
+  if(m_keyAgreementAlgorithmsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> keyAgreementAlgorithmsJsonList(m_keyAgreementAlgorithms.size());
+   for(unsigned keyAgreementAlgorithmsIndex = 0; keyAgreementAlgorithmsIndex < keyAgreementAlgorithmsJsonList.GetLength(); ++keyAgreementAlgorithmsIndex)
+   {
+     keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString(KeyAgreementAlgorithmSpecMapper::GetNameForKeyAgreementAlgorithmSpec(m_keyAgreementAlgorithms[keyAgreementAlgorithmsIndex]));
+   }
+   payload.WithArray("KeyAgreementAlgorithms", std::move(keyAgreementAlgorithmsJsonList));
 
   }
 

@@ -28,6 +28,7 @@ CreateOriginEndpointRequest::CreateOriginEndpointRequest() :
     m_hlsManifestsHasBeenSet(false),
     m_lowLatencyHlsManifestsHasBeenSet(false),
     m_dashManifestsHasBeenSet(false),
+    m_forceEndpointErrorConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -95,6 +96,12 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
      dashManifestsJsonList[dashManifestsIndex].AsObject(m_dashManifests[dashManifestsIndex].Jsonize());
    }
    payload.WithArray("DashManifests", std::move(dashManifestsJsonList));
+
+  }
+
+  if(m_forceEndpointErrorConfigurationHasBeenSet)
+  {
+   payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());
 
   }
 
