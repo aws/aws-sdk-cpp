@@ -20,6 +20,8 @@ namespace Model
 
 MatchingBucket::MatchingBucket() : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_classifiableObjectCount(0),
     m_classifiableObjectCountHasBeenSet(false),
@@ -46,6 +48,8 @@ MatchingBucket::MatchingBucket() :
 
 MatchingBucket::MatchingBucket(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_classifiableObjectCount(0),
     m_classifiableObjectCountHasBeenSet(false),
@@ -78,6 +82,13 @@ MatchingBucket& MatchingBucket::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automatedDiscoveryMonitoringStatus"))
+  {
+    m_automatedDiscoveryMonitoringStatus = AutomatedDiscoveryMonitoringStatusMapper::GetAutomatedDiscoveryMonitoringStatusForName(jsonValue.GetString("automatedDiscoveryMonitoringStatus"));
+
+    m_automatedDiscoveryMonitoringStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bucketName"))
@@ -189,6 +200,11 @@ JsonValue MatchingBucket::Jsonize() const
   {
    payload.WithString("accountId", m_accountId);
 
+  }
+
+  if(m_automatedDiscoveryMonitoringStatusHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryMonitoringStatus", AutomatedDiscoveryMonitoringStatusMapper::GetNameForAutomatedDiscoveryMonitoringStatus(m_automatedDiscoveryMonitoringStatus));
   }
 
   if(m_bucketNameHasBeenSet)

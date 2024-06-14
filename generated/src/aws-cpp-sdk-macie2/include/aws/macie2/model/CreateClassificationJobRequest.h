@@ -123,7 +123,7 @@ namespace Model
      * Run the job only once. If you specify this value, don't specify a value for the
      * scheduleFrequency property.</p></li> <li><p>SCHEDULED - Run the job on a daily,
      * weekly, or monthly basis. If you specify this value, use the scheduleFrequency
-     * property to define the recurrence pattern for the job.</p></li></ul>
+     * property to specify the recurrence pattern for the job.</p></li></ul>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
@@ -172,11 +172,11 @@ namespace Model
      * EXCLUDE, each job run automatically uses new managed data identifiers that are
      * released. If you don't specify a value for this property or you specify
      * RECOMMENDED for a recurring job, each job run automatically uses all the managed
-     * data identifiers that are in the recommended set when the run starts.</p> <p>For
-     * information about individual managed data identifiers or to determine which ones
-     * are in the recommended set, see <a
+     * data identifiers that are in the recommended set when the run starts.</p> <p>To
+     * learn about individual managed data identifiers or determine which ones are in
+     * the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
-     * managed data identifiers</a> and <a
+     * managed data identifiers</a> or <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
      * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */

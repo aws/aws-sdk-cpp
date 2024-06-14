@@ -221,7 +221,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot request status information helps
      * track your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
-     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const SpotInstanceState& GetState() const{ return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

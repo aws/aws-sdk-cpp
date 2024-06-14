@@ -129,6 +129,32 @@ namespace Macie2
         }
 
         /**
+         * <p>Changes the status of automated sensitive data discovery for one or more
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchUpdateAutomatedDiscoveryAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateAutomatedDiscoveryAccountsOutcome BatchUpdateAutomatedDiscoveryAccounts(const Model::BatchUpdateAutomatedDiscoveryAccountsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateAutomatedDiscoveryAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateAutomatedDiscoveryAccountsRequestT = Model::BatchUpdateAutomatedDiscoveryAccountsRequest>
+        Model::BatchUpdateAutomatedDiscoveryAccountsOutcomeCallable BatchUpdateAutomatedDiscoveryAccountsCallable(const BatchUpdateAutomatedDiscoveryAccountsRequestT& request) const
+        {
+            return SubmitCallable(&Macie2Client::BatchUpdateAutomatedDiscoveryAccounts, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateAutomatedDiscoveryAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateAutomatedDiscoveryAccountsRequestT = Model::BatchUpdateAutomatedDiscoveryAccountsRequest>
+        void BatchUpdateAutomatedDiscoveryAccountsAsync(const BatchUpdateAutomatedDiscoveryAccountsRequestT& request, const BatchUpdateAutomatedDiscoveryAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Macie2Client::BatchUpdateAutomatedDiscoveryAccounts, request, handler, context);
+        }
+
+        /**
          * <p>Creates and defines the settings for an allow list.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">AWS
@@ -779,7 +805,8 @@ namespace Macie2
 
         /**
          * <p>Retrieves the configuration settings and status of automated sensitive data
-         * discovery for an account.</p><p><h3>See Also:</h3>   <a
+         * discovery for an organization or standalone account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1325,6 +1352,32 @@ namespace Macie2
         }
 
         /**
+         * <p>Retrieves the status of automated sensitive data discovery for one or more
+         * accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAutomatedDiscoveryAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomatedDiscoveryAccountsOutcome ListAutomatedDiscoveryAccounts(const Model::ListAutomatedDiscoveryAccountsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAutomatedDiscoveryAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomatedDiscoveryAccountsRequestT = Model::ListAutomatedDiscoveryAccountsRequest>
+        Model::ListAutomatedDiscoveryAccountsOutcomeCallable ListAutomatedDiscoveryAccountsCallable(const ListAutomatedDiscoveryAccountsRequestT& request) const
+        {
+            return SubmitCallable(&Macie2Client::ListAutomatedDiscoveryAccounts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomatedDiscoveryAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomatedDiscoveryAccountsRequestT = Model::ListAutomatedDiscoveryAccountsRequest>
+        void ListAutomatedDiscoveryAccountsAsync(const ListAutomatedDiscoveryAccountsRequestT& request, const ListAutomatedDiscoveryAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Macie2Client::ListAutomatedDiscoveryAccounts, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a subset of information about one or more classification
          * jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
@@ -1455,7 +1508,7 @@ namespace Macie2
         }
 
         /**
-         * <p>Retrieves information about the Amazon Macie membership invitations that were
+         * <p>Retrieves information about Amazon Macie membership invitations that were
          * received by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
@@ -1559,8 +1612,8 @@ namespace Macie2
         }
 
         /**
-         * <p>Retrieves information about objects that were selected from an S3 bucket for
-         * automated sensitive data discovery.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about objects that Amazon Macie selected from an S3
+         * bucket for automated sensitive data discovery.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts">AWS
          * API Reference</a></p>
          */
@@ -1663,7 +1716,7 @@ namespace Macie2
         }
 
         /**
-         * <p>Creates or updates the configuration settings for storing data classification
+         * <p>Adds or updates the configuration settings for storing data classification
          * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
@@ -1768,7 +1821,7 @@ namespace Macie2
         }
 
         /**
-         * <p>Tests a custom data identifier.</p><p><h3>See Also:</h3>   <a
+         * <p>Tests criteria for a custom data identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
@@ -1844,8 +1897,9 @@ namespace Macie2
         }
 
         /**
-         * <p>Enables or disables automated sensitive data discovery for an
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the configuration settings and status of automated sensitive data
+         * discovery for an organization or standalone account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration">AWS
          * API Reference</a></p>
          */

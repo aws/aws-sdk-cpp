@@ -50,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token to include in another request to return the next page of snapshots.
-     * This value is <code>null</code> when there are no more snapshots to return.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

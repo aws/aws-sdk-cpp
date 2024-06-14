@@ -14,6 +14,7 @@
 #include <aws/datazone/model/DataSourceRunStatus.h>
 #include <aws/datazone/model/RecommendationConfiguration.h>
 #include <aws/datazone/model/ScheduleConfiguration.h>
+#include <aws/datazone/model/SelfGrantStatusOutput.h>
 #include <aws/datazone/model/DataSourceStatus.h>
 #include <aws/datazone/model/FormOutput.h>
 #include <utility>
@@ -242,6 +243,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies that the granted permissions are retained in case of a
+     * self-subscribe functionality failure for a data source.</p>
+     */
+    inline bool GetRetainPermissionsOnRevokeFailure() const{ return m_retainPermissionsOnRevokeFailure; }
+    inline void SetRetainPermissionsOnRevokeFailure(bool value) { m_retainPermissionsOnRevokeFailure = value; }
+    inline UpdateDataSourceResult& WithRetainPermissionsOnRevokeFailure(bool value) { SetRetainPermissionsOnRevokeFailure(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The schedule to be updated as part of the <code>UpdateDataSource</code>
      * action.</p>
      */
@@ -250,6 +261,17 @@ namespace Model
     inline void SetSchedule(ScheduleConfiguration&& value) { m_schedule = std::move(value); }
     inline UpdateDataSourceResult& WithSchedule(const ScheduleConfiguration& value) { SetSchedule(value); return *this;}
     inline UpdateDataSourceResult& WithSchedule(ScheduleConfiguration&& value) { SetSchedule(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the status of the self-granting functionality.</p>
+     */
+    inline const SelfGrantStatusOutput& GetSelfGrantStatus() const{ return m_selfGrantStatus; }
+    inline void SetSelfGrantStatus(const SelfGrantStatusOutput& value) { m_selfGrantStatus = value; }
+    inline void SetSelfGrantStatus(SelfGrantStatusOutput&& value) { m_selfGrantStatus = std::move(value); }
+    inline UpdateDataSourceResult& WithSelfGrantStatus(const SelfGrantStatusOutput& value) { SetSelfGrantStatus(value); return *this;}
+    inline UpdateDataSourceResult& WithSelfGrantStatus(SelfGrantStatusOutput&& value) { SetSelfGrantStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,7 +355,11 @@ namespace Model
 
     RecommendationConfiguration m_recommendation;
 
+    bool m_retainPermissionsOnRevokeFailure;
+
     ScheduleConfiguration m_schedule;
+
+    SelfGrantStatusOutput m_selfGrantStatus;
 
     DataSourceStatus m_status;
 

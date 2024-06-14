@@ -115,11 +115,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of volumes to return for this request. This value can be
-     * between 5 and 500; if you specify a value larger than 500, only 500 items are
-     * returned. If this parameter is not used, then all items are returned. You cannot
-     * specify this parameter and the volume IDs parameter in the same request. For
-     * more information, see <a
+     * <p>The maximum number of items to return for this request. To get the next page
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -131,7 +129,7 @@ namespace Model
     ///@{
     /**
      * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned from the previous request.</p>
+     * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

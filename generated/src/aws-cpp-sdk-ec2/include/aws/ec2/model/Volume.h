@@ -100,8 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
-     * that was used to protect the volume encryption key for the volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
+     * volume encryption key for the volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

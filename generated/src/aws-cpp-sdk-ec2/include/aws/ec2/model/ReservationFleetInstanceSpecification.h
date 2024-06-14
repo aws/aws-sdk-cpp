@@ -76,7 +76,7 @@ namespace Model
      * values are based on units that make sense for your workload. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
-     * target capacity</a> in the Amazon EC2 User Guide.</p>
+     * target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline double GetWeight() const{ return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
@@ -138,7 +138,7 @@ namespace Model
      * which of the instance types specified for the Fleet should be prioritized for
      * use. A lower value indicates a high priority. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance
-     * type priority</a> in the Amazon EC2 User Guide.</p>
+     * type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }

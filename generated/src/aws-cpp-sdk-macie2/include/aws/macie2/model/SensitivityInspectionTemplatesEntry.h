@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>Provides information about the sensitivity inspection template for an Amazon
-   * Macie account. Macie uses the template's settings when it performs automated
-   * sensitive data discovery for the account.</p><p><h3>See Also:</h3>   <a
+   * Macie account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitivityInspectionTemplatesEntry">AWS
    * API Reference</a></p>
    */

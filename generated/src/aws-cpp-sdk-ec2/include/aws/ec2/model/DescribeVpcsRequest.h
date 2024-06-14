@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
     inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }

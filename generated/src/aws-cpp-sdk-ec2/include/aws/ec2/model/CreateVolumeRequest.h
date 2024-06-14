@@ -85,7 +85,7 @@ namespace Model
      * - 16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
      * <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li> </ul> <p>For
      * <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
      * built on the Nitro System</a>. On other instances, you can achieve performance
      * up to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
      * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
@@ -100,9 +100,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
-     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
-     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <p>The identifier of the KMS key to use for Amazon EBS encryption. If this
+     * parameter is not specified, your KMS key for Amazon EBS is used. If
+     * <code>KmsKeyId</code> is specified, the encrypted state must be
      * <code>true</code>.</p> <p>You can specify the KMS key using any of the
      * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
@@ -224,7 +224,7 @@ namespace Model
     /**
      * <p>Indicates whether to enable Amazon EBS Multi-Attach. If you enable
      * Multi-Attach, you can attach the volume to up to 16 <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
@@ -253,7 +253,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }

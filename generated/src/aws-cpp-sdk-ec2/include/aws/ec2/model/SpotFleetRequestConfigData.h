@@ -80,16 +80,18 @@ namespace Model
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
      * On-Demand capacity.</p> </dd> <dt>diversified</dt> <dd> <p>Spot Fleet requests
      * instances from all of the Spot Instance pools that you specify.</p> </dd>
-     * <dt>lowestPrice</dt> <dd> <p>Spot Fleet requests instances from the lowest
-     * priced Spot Instance pool that has available capacity. If the lowest priced pool
-     * doesn't have available capacity, the Spot Instances come from the next lowest
-     * priced pool that has available capacity. If a pool runs out of capacity before
-     * fulfilling your desired capacity, Spot Fleet will continue to fulfill your
-     * request by drawing from the next lowest priced pool. To ensure that your desired
-     * capacity is met, you might receive Spot Instances from several pools. Because
-     * this strategy only considers instance price and not capacity availability, it
-     * might lead to high interruption rates.</p> </dd> </dl> <p>Default:
-     * <code>lowestPrice</code> </p>
+     * <dt>lowestPrice (not recommended)</dt> <dd>  <p>We don't recommend
+     * the <code>lowestPrice</code> allocation strategy because it has the highest risk
+     * of interruption for your Spot Instances.</p>  <p>Spot Fleet requests
+     * instances from the lowest priced Spot Instance pool that has available capacity.
+     * If the lowest priced pool doesn't have available capacity, the Spot Instances
+     * come from the next lowest priced pool that has available capacity. If a pool
+     * runs out of capacity before fulfilling your desired capacity, Spot Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To
+     * ensure that your desired capacity is met, you might receive Spot Instances from
+     * several pools. Because this strategy only considers instance price and not
+     * capacity availability, it might lead to high interruption rates.</p> </dd> </dl>
+     * <p>Default: <code>lowestPrice</code> </p>
      */
     inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
@@ -307,7 +309,7 @@ namespace Model
      * higher than what you specified for <code>onDemandMaxTotalPrice</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
+     * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetOnDemandMaxTotalPrice() const{ return m_onDemandMaxTotalPrice; }
     inline bool OnDemandMaxTotalPriceHasBeenSet() const { return m_onDemandMaxTotalPriceHasBeenSet; }
@@ -336,7 +338,7 @@ namespace Model
      * what you specified for <code>spotMaxTotalPrice</code>. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
+     * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetSpotMaxTotalPrice() const{ return m_spotMaxTotalPrice; }
     inline bool SpotMaxTotalPriceHasBeenSet() const { return m_spotMaxTotalPriceHasBeenSet; }

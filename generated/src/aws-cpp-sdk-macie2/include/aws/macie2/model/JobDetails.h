@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>Specifies whether any one-time or recurring classification jobs are
-   * configured to analyze data in an S3 bucket, and, if so, the details of the job
-   * that ran most recently.</p><p><h3>See Also:</h3>   <a
+   * configured to analyze objects in an S3 bucket, and, if so, the details of the
+   * job that ran most recently.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobDetails">AWS
    * API Reference</a></p>
    */
@@ -45,7 +45,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether any one-time or recurring jobs are configured to analyze
-     * data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is
+     * objects in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is
      * explicitly included in the bucket definition (S3BucketDefinitionForJob) for one
      * or more jobs and at least one of those jobs has a status other than CANCELLED.
      * Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether any recurring jobs are configured to analyze data in the
+     * <p>Specifies whether any recurring jobs are configured to analyze objects in the
      * bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly
      * included in the bucket definition (S3BucketDefinitionForJob) for one or more
      * recurring jobs or the bucket matches the bucket criteria
@@ -91,9 +91,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the job that ran most recently and is configured to
-     * analyze data in the bucket, either the latest run of a recurring job or the only
-     * run of a one-time job.</p> <p>This value is typically null if the value for the
-     * isDefinedInJob property is FALSE or UNKNOWN.</p>
+     * analyze objects in the bucket, either the latest run of a recurring job or the
+     * only run of a one-time job.</p> <p>This value is typically null if the value for
+     * the isDefinedInJob property is FALSE or UNKNOWN.</p>
      */
     inline const Aws::String& GetLastJobId() const{ return m_lastJobId; }
     inline bool LastJobIdHasBeenSet() const { return m_lastJobIdHasBeenSet; }

@@ -24,6 +24,7 @@ namespace Aws
         static const int S3_BUCKET_NAME_HASH = HashingUtils::HashString("S3_BUCKET_NAME");
         static const int S3_BUCKET_EFFECTIVE_PERMISSION_HASH = HashingUtils::HashString("S3_BUCKET_EFFECTIVE_PERMISSION");
         static const int S3_BUCKET_SHARED_ACCESS_HASH = HashingUtils::HashString("S3_BUCKET_SHARED_ACCESS");
+        static const int AUTOMATED_DISCOVERY_MONITORING_STATUS_HASH = HashingUtils::HashString("AUTOMATED_DISCOVERY_MONITORING_STATUS");
 
 
         SearchResourcesSimpleCriterionKey GetSearchResourcesSimpleCriterionKeyForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == S3_BUCKET_SHARED_ACCESS_HASH)
           {
             return SearchResourcesSimpleCriterionKey::S3_BUCKET_SHARED_ACCESS;
+          }
+          else if (hashCode == AUTOMATED_DISCOVERY_MONITORING_STATUS_HASH)
+          {
+            return SearchResourcesSimpleCriterionKey::AUTOMATED_DISCOVERY_MONITORING_STATUS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "S3_BUCKET_EFFECTIVE_PERMISSION";
           case SearchResourcesSimpleCriterionKey::S3_BUCKET_SHARED_ACCESS:
             return "S3_BUCKET_SHARED_ACCESS";
+          case SearchResourcesSimpleCriterionKey::AUTOMATED_DISCOVERY_MONITORING_STATUS:
+            return "AUTOMATED_DISCOVERY_MONITORING_STATUS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -54,11 +54,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone
-     * group. The only valid value is <code>opted-in</code>. You must contact <a
-     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon
-     * Web Services Support</a> to opt out of a Local Zone or Wavelength Zone
-     * group.</p>
+     * <p>Indicates whether to opt in to the zone group. The only valid value is
+     * <code>opted-in</code>. You must contact Amazon Web Services Support to opt out
+     * of a Local Zone or Wavelength Zone group.</p>
      */
     inline const ModifyAvailabilityZoneOptInStatus& GetOptInStatus() const{ return m_optInStatus; }
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }

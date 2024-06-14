@@ -95,8 +95,8 @@ namespace Model
     ///@{
     /**
      * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
+     * EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -178,14 +178,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of instances to launch. If you specify more instances than
-     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
-     * largest possible number of instances above <code>MinCount</code>.</p>
-     * <p>Constraints: Between 1 and the maximum number you're allowed for the
-     * specified instance type. For more information about the default limits, and how
-     * to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+     * <p>The maximum number of instances to launch. If you specify a value that is
+     * more capacity than Amazon EC2 can launch in the target Availability Zone, Amazon
+     * EC2 launches the largest possible number of instances above the specified
+     * minimum count.</p> <p>Constraints: Between 1 and the quota for the specified
+     * instance type for your account for this Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
+     * EC2 instance type quotas</a>.</p>
      */
     inline int GetMaxCount() const{ return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
@@ -195,13 +194,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum number of instances to launch. If you specify a minimum that is
-     * more instances than Amazon EC2 can launch in the target Availability Zone,
-     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
-     * number you're allowed for the specified instance type. For more information
-     * about the default limits, and how to request an increase, see <a
-     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * <p>The minimum number of instances to launch. If you specify a value that is
+     * more capacity than Amazon EC2 can provide in the target Availability Zone,
+     * Amazon EC2 does not launch any instances.</p> <p>Constraints: Between 1 and the
+     * quota for the specified instance type for your account for this Region. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
+     * EC2 instance type quotas</a>.</p>
      */
     inline int GetMinCount() const{ return m_minCount; }
     inline bool MinCountHasBeenSet() const { return m_minCountHasBeenSet; }
@@ -311,12 +310,10 @@ namespace Model
      * <p>The user data script to make available to the instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-     * commands on your Linux instance at launch</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
-     * commands on your Windows instance at launch</a>. If you are using a command line
-     * tool, base64-encoding is performed for you, and you can load the text from a
-     * file. Otherwise, you must provide base64-encoded text. User data is limited to
-     * 16 KB.</p>
+     * commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User
+     * Guide</i>. If you are using a command line tool, base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text. User data is limited to 16 KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
@@ -602,8 +599,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
+     * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You
+     * can't enable hibernation and Amazon Web Services Nitro Enclaves on the same
+     * instance.</p>
      */
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }

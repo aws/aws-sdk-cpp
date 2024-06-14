@@ -100,8 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
-     * ACLs.</p>
+     * <p>The IDs of the network ACLs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkAclIds() const{ return m_networkAclIds; }
     inline bool NetworkAclIdsHasBeenSet() const { return m_networkAclIdsHasBeenSet; }

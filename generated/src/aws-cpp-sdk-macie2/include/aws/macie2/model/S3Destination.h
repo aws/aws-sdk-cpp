@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the bucket.</p>
+     * <p>The name of the bucket. This must be the name of an existing general purpose
+     * bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }

@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the endpoints.</p>
+     * <p>Information about the VPC endpoints.</p>
      */
     inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
     inline void SetVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { m_vpcEndpoints = value; }

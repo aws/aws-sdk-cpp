@@ -138,8 +138,8 @@ namespace Model
      * <code>ResolveAlias</code> was configured as <code>false</code>, then this is the
      * parameter value.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
-     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -366,8 +366,8 @@ namespace Model
     ///@{
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateCpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
@@ -408,7 +408,7 @@ namespace Model
      * <p>Indicates whether an instance is configured for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateHibernationOptions& GetHibernationOptions() const{ return m_hibernationOptions; }
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
@@ -422,8 +422,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -489,8 +488,8 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for stop protection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+     * stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }

@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -248,7 +248,7 @@ namespace Model
      * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
      * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
      * gateway resource types.</p> <p>When a network interface is attached to a <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds or less, regardless
      * of the value that you specify.</p> <p>Default: 600</p>
      */

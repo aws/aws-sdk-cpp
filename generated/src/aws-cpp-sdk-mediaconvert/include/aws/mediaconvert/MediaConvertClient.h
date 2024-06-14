@@ -657,6 +657,34 @@ namespace MediaConvert
         }
 
         /**
+         * Retrieve a JSON array that includes job details for up to twenty of your most
+         * recent jobs. Optionally filter results further according to input file, queue,
+         * or status. To retrieve the twenty next most recent jobs, use the nextToken
+         * string returned with the array.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SearchJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchJobsOutcome SearchJobs(const Model::SearchJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchJobsRequestT = Model::SearchJobsRequest>
+        Model::SearchJobsOutcomeCallable SearchJobsCallable(const SearchJobsRequestT& request) const
+        {
+            return SubmitCallable(&MediaConvertClient::SearchJobs, request);
+        }
+
+        /**
+         * An Async wrapper for SearchJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchJobsRequestT = Model::SearchJobsRequest>
+        void SearchJobsAsync(const SearchJobsRequestT& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConvertClient::SearchJobs, request, handler, context);
+        }
+
+        /**
          * Add tags to a MediaConvert queue, preset, or job template. For information about
          * tagging, see the User Guide at
          * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See

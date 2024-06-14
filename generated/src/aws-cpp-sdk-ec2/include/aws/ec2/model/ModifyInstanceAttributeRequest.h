@@ -298,8 +298,8 @@ namespace Model
     /**
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.</p> <p/>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+     * stop protection for your instance</a>.</p> <p/>
      */
     inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }

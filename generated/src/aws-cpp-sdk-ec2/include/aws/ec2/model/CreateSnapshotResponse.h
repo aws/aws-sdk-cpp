@@ -86,8 +86,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
-     * that was used to protect the volume encryption key for the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
+     * volume encryption key for the parent volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
@@ -163,10 +163,9 @@ namespace Model
     ///@{
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper Key Management Service (KMS)
-     * permissions are not obtained) this field displays error state details to help
-     * you diagnose why the error occurred. This parameter is only returned by
-     * <a>DescribeSnapshots</a>.</p>
+     * operation fails (for example, if the proper KMS permissions are not obtained)
+     * this field displays error state details to help you diagnose why the error
+     * occurred. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
     inline void SetStateMessage(const Aws::String& value) { m_stateMessage = value; }

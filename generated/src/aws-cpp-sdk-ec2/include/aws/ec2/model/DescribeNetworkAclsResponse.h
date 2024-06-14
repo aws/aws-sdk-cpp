@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more network ACLs.</p>
+     * <p>Information about the network ACLs.</p>
      */
     inline const Aws::Vector<NetworkAcl>& GetNetworkAcls() const{ return m_networkAcls; }
     inline void SetNetworkAcls(const Aws::Vector<NetworkAcl>& value) { m_networkAcls = value; }

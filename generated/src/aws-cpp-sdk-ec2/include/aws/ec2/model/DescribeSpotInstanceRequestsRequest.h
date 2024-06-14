@@ -102,22 +102,22 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
-     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-     * </li> <li> <p> <code>status-code</code> - The short code describing the most
-     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
-     * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
-     * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
-     * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
-     * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
+     * request status</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li> <p>
+     * <code>status-code</code> - The short code describing the most recent evaluation
+     * of your Spot Instance request.</p> </li> <li> <p> <code>status-message</code> -
+     * The message explaining the status of the Spot Instance request.</p> </li> <li>
+     * <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p> <code>type</code>
+     * - The type of Spot Instance request (<code>one-time</code> |
+     * <code>persistent</code>).</p> </li> <li> <p> <code>valid-from</code> - The start
+     * date of the request.</p> </li> <li> <p> <code>valid-until</code> - The end date
+     * of the request.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

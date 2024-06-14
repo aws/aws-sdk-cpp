@@ -22,6 +22,8 @@ BucketMetadata::BucketMetadata() :
     m_accountIdHasBeenSet(false),
     m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
     m_allowsUnencryptedObjectUploadsHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketArnHasBeenSet(false),
     m_bucketCreatedAtHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
@@ -62,6 +64,8 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
     m_allowsUnencryptedObjectUploadsHasBeenSet(false),
+    m_automatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus::NOT_SET),
+    m_automatedDiscoveryMonitoringStatusHasBeenSet(false),
     m_bucketArnHasBeenSet(false),
     m_bucketCreatedAtHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
@@ -113,6 +117,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_allowsUnencryptedObjectUploads = AllowsUnencryptedObjectUploadsMapper::GetAllowsUnencryptedObjectUploadsForName(jsonValue.GetString("allowsUnencryptedObjectUploads"));
 
     m_allowsUnencryptedObjectUploadsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automatedDiscoveryMonitoringStatus"))
+  {
+    m_automatedDiscoveryMonitoringStatus = AutomatedDiscoveryMonitoringStatusMapper::GetAutomatedDiscoveryMonitoringStatusForName(jsonValue.GetString("automatedDiscoveryMonitoringStatus"));
+
+    m_automatedDiscoveryMonitoringStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bucketArn"))
@@ -302,6 +313,11 @@ JsonValue BucketMetadata::Jsonize() const
   if(m_allowsUnencryptedObjectUploadsHasBeenSet)
   {
    payload.WithString("allowsUnencryptedObjectUploads", AllowsUnencryptedObjectUploadsMapper::GetNameForAllowsUnencryptedObjectUploads(m_allowsUnencryptedObjectUploads));
+  }
+
+  if(m_automatedDiscoveryMonitoringStatusHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryMonitoringStatus", AutomatedDiscoveryMonitoringStatusMapper::GetNameForAutomatedDiscoveryMonitoringStatus(m_automatedDiscoveryMonitoringStatus));
   }
 
   if(m_bucketArnHasBeenSet)

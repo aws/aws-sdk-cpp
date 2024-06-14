@@ -45,8 +45,7 @@ namespace Model
     /**
      * <p>The status code. For a list of status codes, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html#spot-instance-request-status-understand">Spot
-     * request status codes</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * request status codes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

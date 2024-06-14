@@ -51,10 +51,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The managed data identifiers to explicitly exclude (not use) when analyzing
-     * data.</p> <p>To exclude an allow list or custom data identifier that's currently
-     * included by the template, update the values for the
-     * SensitivityInspectionTemplateIncludes.allowListIds and
+     * <p>The managed data identifiers to explicitly exclude (not use) when performing
+     * automated sensitive data discovery.</p> <p>To exclude an allow list or custom
+     * data identifier that's currently included by the template, update the values for
+     * the SensitivityInspectionTemplateIncludes.allowListIds and
      * SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties,
      * respectively.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
     ///@{
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers to
-     * explicitly include (use) when analyzing data.</p>
+     * explicitly include (use) when performing automated sensitive data discovery.</p>
      */
     inline const SensitivityInspectionTemplateIncludes& GetIncludes() const{ return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }

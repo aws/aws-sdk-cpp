@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/AllowsUnencryptedObjectUploads.h>
+#include <aws/macie2/model/AutomatedDiscoveryMonitoringStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/macie2/model/BucketMetadataErrorCode.h>
 #include <aws/macie2/model/JobDetails.h>
@@ -96,6 +97,22 @@ namespace Model
     inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = std::move(value); }
     inline BucketMetadata& WithAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
     inline BucketMetadata& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { SetAllowsUnencryptedObjectUploads(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether automated sensitive data discovery is currently configured
+     * to analyze objects in the bucket. Possible values are: MONITORED, the bucket is
+     * included in analyses; and, NOT_MONITORED, the bucket is excluded from analyses.
+     * If automated sensitive data discovery is disabled for your account, this value
+     * is NOT_MONITORED.</p>
+     */
+    inline const AutomatedDiscoveryMonitoringStatus& GetAutomatedDiscoveryMonitoringStatus() const{ return m_automatedDiscoveryMonitoringStatus; }
+    inline bool AutomatedDiscoveryMonitoringStatusHasBeenSet() const { return m_automatedDiscoveryMonitoringStatusHasBeenSet; }
+    inline void SetAutomatedDiscoveryMonitoringStatus(const AutomatedDiscoveryMonitoringStatus& value) { m_automatedDiscoveryMonitoringStatusHasBeenSet = true; m_automatedDiscoveryMonitoringStatus = value; }
+    inline void SetAutomatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus&& value) { m_automatedDiscoveryMonitoringStatusHasBeenSet = true; m_automatedDiscoveryMonitoringStatus = std::move(value); }
+    inline BucketMetadata& WithAutomatedDiscoveryMonitoringStatus(const AutomatedDiscoveryMonitoringStatus& value) { SetAutomatedDiscoveryMonitoringStatus(value); return *this;}
+    inline BucketMetadata& WithAutomatedDiscoveryMonitoringStatus(AutomatedDiscoveryMonitoringStatus&& value) { SetAutomatedDiscoveryMonitoringStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,7 +222,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether any one-time or recurring classification jobs are
-     * configured to analyze data in the bucket, and, if so, the details of the job
+     * configured to analyze objects in the bucket, and, if so, the details of the job
      * that ran most recently.</p>
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
@@ -219,9 +236,9 @@ namespace Model
     ///@{
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
-     * most recently analyzed data in the bucket while performing automated sensitive
-     * data discovery for your account. This value is null if automated sensitive data
-     * discovery is currently disabled for your account.</p>
+     * most recently analyzed objects in the bucket while performing automated
+     * sensitive data discovery. This value is null if automated sensitive data
+     * discovery is disabled for your account.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
     inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
@@ -314,8 +331,11 @@ namespace Model
     ///@{
     /**
      * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
-     * to 100 (sensitive). This value is null if automated sensitive data discovery is
-     * currently disabled for your account.</p>
+     * to 100 (sensitive).</p><p>If automated sensitive data discovery has never been
+     * enabled for your account or it’s been disabled for your organization or your
+     * standalone account for more than 30 days, possible values are: 1, the bucket is
+     * empty; or, 50, the bucket stores objects but it’s been excluded from recent
+     * analyses.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }
     inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
@@ -446,6 +466,9 @@ namespace Model
 
     AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
     bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
+
+    AutomatedDiscoveryMonitoringStatus m_automatedDiscoveryMonitoringStatus;
+    bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
 
     Aws::String m_bucketArn;
     bool m_bucketArnHasBeenSet = false;

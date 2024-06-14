@@ -146,9 +146,8 @@ namespace Model
     ///@{
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented
+     * limits</a>, contact Amazon Web Services Support.</p>
      */
     inline const ProvisionedBandwidth& GetProvisionedBandwidth() const{ return m_provisionedBandwidth; }
     inline bool ProvisionedBandwidthHasBeenSet() const { return m_provisionedBandwidthHasBeenSet; }

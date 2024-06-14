@@ -26,10 +26,8 @@ namespace Model
 
   /**
    * <p>Reserved. If you need to sustain traffic greater than the <a
-   * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-   * limits</a>, contact us through the <a
-   * href="https://console.aws.amazon.com/support/home?">Support
-   * Center</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-gateways">documented
+   * limits</a>, contact Amazon Web Services Support.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionedBandwidth">AWS
    * API Reference</a></p>
    */
@@ -46,10 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * <p>Reserved.</p>
      */
     inline const Aws::Utils::DateTime& GetProvisionTime() const{ return m_provisionTime; }
     inline bool ProvisionTimeHasBeenSet() const { return m_provisionTimeHasBeenSet; }
@@ -61,10 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * <p>Reserved.</p>
      */
     inline const Aws::String& GetProvisioned() const{ return m_provisioned; }
     inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
@@ -78,10 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * <p>Reserved.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
     inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
@@ -93,10 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * <p>Reserved.</p>
      */
     inline const Aws::String& GetRequested() const{ return m_requested; }
     inline bool RequestedHasBeenSet() const { return m_requestedHasBeenSet; }
@@ -110,10 +96,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved. If you need to sustain traffic greater than the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented
-     * limits</a>, contact us through the <a
-     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     * <p>Reserved.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

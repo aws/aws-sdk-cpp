@@ -115,7 +115,7 @@ namespace Model
      * <p>The total number of capacity units for which the Capacity Reservation Fleet
      * reserves capacity. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
-     * target capacity</a> in the Amazon EC2 User Guide.</p>
+     * target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
@@ -197,8 +197,8 @@ namespace Model
      * <p>The strategy used by the Capacity Reservation Fleet to determine which of the
      * specified instance types to use. For more information, see For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
-     * Allocation strategy</a> in the Amazon EC2 User Guide.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">Allocation
+     * strategy</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetAllocationStrategy() const{ return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }

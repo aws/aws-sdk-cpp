@@ -14,6 +14,7 @@
 #include <aws/datazone/model/DataSourceRunStatus.h>
 #include <aws/datazone/model/RecommendationConfiguration.h>
 #include <aws/datazone/model/ScheduleConfiguration.h>
+#include <aws/datazone/model/SelfGrantStatusOutput.h>
 #include <aws/datazone/model/DataSourceStatus.h>
 #include <aws/datazone/model/FormOutput.h>
 #include <utility>
@@ -256,6 +257,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the status of the self-granting functionality.</p>
+     */
+    inline const SelfGrantStatusOutput& GetSelfGrantStatus() const{ return m_selfGrantStatus; }
+    inline void SetSelfGrantStatus(const SelfGrantStatusOutput& value) { m_selfGrantStatus = value; }
+    inline void SetSelfGrantStatus(SelfGrantStatusOutput&& value) { m_selfGrantStatus = std::move(value); }
+    inline GetDataSourceResult& WithSelfGrantStatus(const SelfGrantStatusOutput& value) { SetSelfGrantStatus(value); return *this;}
+    inline GetDataSourceResult& WithSelfGrantStatus(SelfGrantStatusOutput&& value) { SetSelfGrantStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the data source.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
@@ -336,6 +348,8 @@ namespace Model
     RecommendationConfiguration m_recommendation;
 
     ScheduleConfiguration m_schedule;
+
+    SelfGrantStatusOutput m_selfGrantStatus;
 
     DataSourceStatus m_status;
 

@@ -49,8 +49,8 @@ namespace Model
      * specified instance types to use. Currently, only the <code>prioritized</code>
      * allocation strategy is supported. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy">
-     * Allocation strategy</a> in the Amazon EC2 User Guide.</p> <p>Valid values:
-     * <code>prioritized</code> </p>
+     * Allocation strategy</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Valid
+     * values: <code>prioritized</code> </p>
      */
     inline const Aws::String& GetAllocationStrategy() const{ return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
@@ -119,8 +119,8 @@ namespace Model
      * each instance type used by the Fleet determine the number of instances for which
      * the Fleet reserves capacity. Both values are based on units that make sense for
      * your workload. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
-     * Total target capacity</a> in the Amazon EC2 User Guide.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
+     * target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }

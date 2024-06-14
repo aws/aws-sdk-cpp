@@ -32,8 +32,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to enable Amazon Macie automatically for an account when
-     * the account is added to the organization in Organizations.</p>
+     * <p>Specifies whether to enable Amazon Macie automatically for accounts that are
+     * added to the organization in Organizations.</p>
      */
     inline bool GetAutoEnable() const{ return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }

@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more VPCs.</p>
+     * <p>Information about the VPCs.</p>
      */
     inline const Aws::Vector<Vpc>& GetVpcs() const{ return m_vpcs; }
     inline void SetVpcs(const Aws::Vector<Vpc>& value) { m_vpcs = value; }

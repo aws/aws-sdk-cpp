@@ -59,7 +59,7 @@ namespace Model
      * the Fleet reserves capacity. Both values are based on units that make sense for
      * your workload. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
-     * target capacity</a> in the Amazon EC2 User Guide.</p>
+     * target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }

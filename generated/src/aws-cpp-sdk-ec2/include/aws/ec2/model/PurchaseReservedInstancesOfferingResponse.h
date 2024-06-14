@@ -45,7 +45,7 @@ namespace Model
      * discounted pricing tier, the final Reserved Instances IDs might change. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-     * pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * pricing tiers</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesId = value; }
