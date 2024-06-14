@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The associations between the route table and one or more subnets or a
-     * gateway.</p>
+     * <p>The associations between the route table and your subnets or gateways.</p>
      */
     inline const Aws::Vector<RouteTableAssociation>& GetAssociations() const{ return m_associations; }
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }

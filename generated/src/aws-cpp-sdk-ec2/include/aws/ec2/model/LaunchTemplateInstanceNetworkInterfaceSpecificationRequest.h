@@ -134,9 +134,9 @@ namespace Model
      * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
      * specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you are not
+     * creating an EFA, specify <code>interface</code> or omit this parameter.</p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
@@ -340,8 +340,8 @@ namespace Model
      * <p>A security group connection tracking specification that enables you to set
      * the timeout for connection tracking on an Elastic network interface. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
-     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Idle
+     * connection tracking timeout</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const ConnectionTrackingSpecificationRequest& GetConnectionTrackingSpecification() const{ return m_connectionTrackingSpecification; }
     inline bool ConnectionTrackingSpecificationHasBeenSet() const { return m_connectionTrackingSpecificationHasBeenSet; }

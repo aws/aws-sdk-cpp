@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p>Details on the Elastic IP address transfer. For more information, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
-   * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Elastic IP addresses</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AddressTransfer">AWS
    * API Reference</a></p>
    */

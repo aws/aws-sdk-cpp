@@ -87,9 +87,7 @@ namespace Model
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
      * which Amazon Web Services advertises IP addresses. Use this parameter to limit
      * the IP address to this location. IP addresses cannot move between network border
-     * groups.</p> <p>Use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>
+     * groups.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }

@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more route tables.</p>
+     * <p>Information about the route tables.</p>
      */
     inline const Aws::Vector<RouteTable>& GetRouteTables() const{ return m_routeTables; }
     inline void SetRouteTables(const Aws::Vector<RouteTable>& value) { m_routeTables = value; }

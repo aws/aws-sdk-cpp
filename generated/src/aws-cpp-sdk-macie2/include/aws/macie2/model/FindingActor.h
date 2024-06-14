@@ -55,9 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address of the device that the entity used to perform the action on
-     * the affected resource. This object also provides information such as the owner
-     * and geographic location for the IP address.</p>
+     * <p>The IP address and related details about the device that the entity used to
+     * perform the action on the affected resource. The details can include information
+     * such as the owner and geographic location of the IP address.</p>
      */
     inline const IpAddressDetails& GetIpAddressDetails() const{ return m_ipAddressDetails; }
     inline bool IpAddressDetailsHasBeenSet() const { return m_ipAddressDetailsHasBeenSet; }
@@ -70,7 +70,8 @@ namespace Model
     ///@{
     /**
      * <p>The type and other characteristics of the entity that performed the action on
-     * the affected resource.</p>
+     * the affected resource. This value is null if the action was performed by an
+     * anonymous (unauthenticated) entity.</p>
      */
     inline const UserIdentity& GetUserIdentity() const{ return m_userIdentity; }
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }

@@ -23,6 +23,7 @@
 #include <aws/datazone/DataZoneEndpointProvider.h>
 #include <aws/datazone/model/AcceptPredictionsRequest.h>
 #include <aws/datazone/model/AcceptSubscriptionRequestRequest.h>
+#include <aws/datazone/model/AssociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/CancelMetadataGenerationRunRequest.h>
 #include <aws/datazone/model/CancelSubscriptionRequest.h>
 #include <aws/datazone/model/CreateAssetRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/datazone/model/CreateDataSourceRequest.h>
 #include <aws/datazone/model/CreateDomainRequest.h>
 #include <aws/datazone/model/CreateEnvironmentRequest.h>
+#include <aws/datazone/model/CreateEnvironmentActionRequest.h>
 #include <aws/datazone/model/CreateEnvironmentProfileRequest.h>
 #include <aws/datazone/model/CreateFormTypeRequest.h>
 #include <aws/datazone/model/CreateGlossaryRequest.h>
@@ -48,6 +50,7 @@
 #include <aws/datazone/model/DeleteDataSourceRequest.h>
 #include <aws/datazone/model/DeleteDomainRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentRequest.h>
+#include <aws/datazone/model/DeleteEnvironmentActionRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentProfileRequest.h>
 #include <aws/datazone/model/DeleteFormTypeRequest.h>
@@ -60,12 +63,14 @@
 #include <aws/datazone/model/DeleteSubscriptionRequestRequest.h>
 #include <aws/datazone/model/DeleteSubscriptionTargetRequest.h>
 #include <aws/datazone/model/DeleteTimeSeriesDataPointsRequest.h>
+#include <aws/datazone/model/DisassociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/GetAssetRequest.h>
 #include <aws/datazone/model/GetAssetTypeRequest.h>
 #include <aws/datazone/model/GetDataSourceRequest.h>
 #include <aws/datazone/model/GetDataSourceRunRequest.h>
 #include <aws/datazone/model/GetDomainRequest.h>
 #include <aws/datazone/model/GetEnvironmentRequest.h>
+#include <aws/datazone/model/GetEnvironmentActionRequest.h>
 #include <aws/datazone/model/GetEnvironmentBlueprintRequest.h>
 #include <aws/datazone/model/GetEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/GetEnvironmentProfileRequest.h>
@@ -88,6 +93,7 @@
 #include <aws/datazone/model/ListDataSourceRunsRequest.h>
 #include <aws/datazone/model/ListDataSourcesRequest.h>
 #include <aws/datazone/model/ListDomainsRequest.h>
+#include <aws/datazone/model/ListEnvironmentActionsRequest.h>
 #include <aws/datazone/model/ListEnvironmentBlueprintConfigurationsRequest.h>
 #include <aws/datazone/model/ListEnvironmentBlueprintsRequest.h>
 #include <aws/datazone/model/ListEnvironmentProfilesRequest.h>
@@ -119,6 +125,7 @@
 #include <aws/datazone/model/UpdateDataSourceRequest.h>
 #include <aws/datazone/model/UpdateDomainRequest.h>
 #include <aws/datazone/model/UpdateEnvironmentRequest.h>
+#include <aws/datazone/model/UpdateEnvironmentActionRequest.h>
 #include <aws/datazone/model/UpdateEnvironmentProfileRequest.h>
 #include <aws/datazone/model/UpdateGlossaryRequest.h>
 #include <aws/datazone/model/UpdateGlossaryTermRequest.h>
@@ -345,6 +352,53 @@ AcceptSubscriptionRequestOutcome DataZoneClient::AcceptSubscriptionRequest(const
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
       return AcceptSubscriptionRequestOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateEnvironmentRoleOutcome DataZoneClient::AssociateEnvironmentRole(const AssociateEnvironmentRoleRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateEnvironmentRole);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateEnvironmentRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateEnvironmentRole", "Required field: DomainIdentifier, is not set");
+    return AssociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateEnvironmentRole", "Required field: EnvironmentIdentifier, is not set");
+    return AssociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.EnvironmentRoleArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateEnvironmentRole", "Required field: EnvironmentRoleArn, is not set");
+    return AssociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentRoleArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateEnvironmentRole, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateEnvironmentRole, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateEnvironmentRole",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateEnvironmentRoleOutcome>(
+    [&]()-> AssociateEnvironmentRoleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateEnvironmentRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/roles/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
+      return AssociateEnvironmentRoleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -631,6 +685,47 @@ CreateEnvironmentOutcome DataZoneClient::CreateEnvironment(const CreateEnvironme
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
       return CreateEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateEnvironmentActionOutcome DataZoneClient::CreateEnvironmentAction(const CreateEnvironmentActionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateEnvironmentAction);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEnvironmentAction", "Required field: DomainIdentifier, is not set");
+    return CreateEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEnvironmentAction", "Required field: EnvironmentIdentifier, is not set");
+    return CreateEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateEnvironmentAction",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateEnvironmentActionOutcome>(
+    [&]()-> CreateEnvironmentActionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
+      return CreateEnvironmentActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1252,6 +1347,53 @@ DeleteEnvironmentOutcome DataZoneClient::DeleteEnvironment(const DeleteEnvironme
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteEnvironmentActionOutcome DataZoneClient::DeleteEnvironmentAction(const DeleteEnvironmentActionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteEnvironmentAction);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEnvironmentAction", "Required field: DomainIdentifier, is not set");
+    return DeleteEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEnvironmentAction", "Required field: EnvironmentIdentifier, is not set");
+    return DeleteEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEnvironmentAction", "Required field: Identifier, is not set");
+    return DeleteEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteEnvironmentAction",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteEnvironmentActionOutcome>(
+    [&]()-> DeleteEnvironmentActionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return DeleteEnvironmentActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteEnvironmentBlueprintConfigurationOutcome DataZoneClient::DeleteEnvironmentBlueprintConfiguration(const DeleteEnvironmentBlueprintConfigurationRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteEnvironmentBlueprintConfiguration);
@@ -1752,6 +1894,53 @@ DeleteTimeSeriesDataPointsOutcome DataZoneClient::DeleteTimeSeriesDataPoints(con
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociateEnvironmentRoleOutcome DataZoneClient::DisassociateEnvironmentRole(const DisassociateEnvironmentRoleRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateEnvironmentRole);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateEnvironmentRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateEnvironmentRole", "Required field: DomainIdentifier, is not set");
+    return DisassociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateEnvironmentRole", "Required field: EnvironmentIdentifier, is not set");
+    return DisassociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.EnvironmentRoleArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateEnvironmentRole", "Required field: EnvironmentRoleArn, is not set");
+    return DisassociateEnvironmentRoleOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentRoleArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateEnvironmentRole, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateEnvironmentRole, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateEnvironmentRole",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateEnvironmentRoleOutcome>(
+    [&]()-> DisassociateEnvironmentRoleOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateEnvironmentRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/roles/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
+      return DisassociateEnvironmentRoleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetAssetOutcome DataZoneClient::GetAsset(const GetAssetRequest& request) const
 {
   AWS_OPERATION_GUARD(GetAsset);
@@ -1979,6 +2168,53 @@ GetEnvironmentOutcome DataZoneClient::GetEnvironment(const GetEnvironmentRequest
       endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
       return GetEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetEnvironmentActionOutcome DataZoneClient::GetEnvironmentAction(const GetEnvironmentActionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetEnvironmentAction);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEnvironmentAction", "Required field: DomainIdentifier, is not set");
+    return GetEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEnvironmentAction", "Required field: EnvironmentIdentifier, is not set");
+    return GetEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEnvironmentAction", "Required field: Identifier, is not set");
+    return GetEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetEnvironmentAction",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetEnvironmentActionOutcome>(
+    [&]()-> GetEnvironmentActionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return GetEnvironmentActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2867,6 +3103,47 @@ ListDomainsOutcome DataZoneClient::ListDomains(const ListDomainsRequest& request
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains");
       return ListDomainsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListEnvironmentActionsOutcome DataZoneClient::ListEnvironmentActions(const ListEnvironmentActionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListEnvironmentActions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironmentActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListEnvironmentActions", "Required field: DomainIdentifier, is not set");
+    return ListEnvironmentActionsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListEnvironmentActions", "Required field: EnvironmentIdentifier, is not set");
+    return ListEnvironmentActionsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEnvironmentActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListEnvironmentActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListEnvironmentActions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListEnvironmentActionsOutcome>(
+    [&]()-> ListEnvironmentActionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironmentActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
+      return ListEnvironmentActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -4023,6 +4300,53 @@ UpdateEnvironmentOutcome DataZoneClient::UpdateEnvironment(const UpdateEnvironme
       endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
       return UpdateEnvironmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateEnvironmentActionOutcome DataZoneClient::UpdateEnvironmentAction(const UpdateEnvironmentActionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateEnvironmentAction);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEnvironmentAction", "Required field: DomainIdentifier, is not set");
+    return UpdateEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEnvironmentAction", "Required field: EnvironmentIdentifier, is not set");
+    return UpdateEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEnvironmentAction", "Required field: Identifier, is not set");
+    return UpdateEnvironmentActionOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateEnvironmentAction, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateEnvironmentAction",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateEnvironmentActionOutcome>(
+    [&]()-> UpdateEnvironmentActionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEnvironmentAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return UpdateEnvironmentActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

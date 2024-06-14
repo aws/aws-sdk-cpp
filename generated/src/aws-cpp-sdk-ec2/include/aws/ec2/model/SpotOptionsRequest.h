@@ -70,16 +70,19 @@ namespace Model
      * <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
      * priority is applied when fulfilling On-Demand capacity.</p> </dd>
      * <dt>diversified</dt> <dd> <p>EC2 Fleet requests instances from all of the Spot
-     * Instance pools that you specify.</p> </dd> <dt>lowest-price</dt> <dd> <p>EC2
-     * Fleet requests instances from the lowest priced Spot Instance pool that has
-     * available capacity. If the lowest priced pool doesn't have available capacity,
-     * the Spot Instances come from the next lowest priced pool that has available
-     * capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the
-     * next lowest priced pool. To ensure that your desired capacity is met, you might
-     * receive Spot Instances from several pools. Because this strategy only considers
-     * instance price and not capacity availability, it might lead to high interruption
-     * rates.</p> </dd> </dl> <p>Default: <code>lowest-price</code> </p>
+     * Instance pools that you specify.</p> </dd> <dt>lowest-price (not
+     * recommended)</dt> <dd>  <p>We don't recommend the
+     * <code>lowest-price</code> allocation strategy because it has the highest risk of
+     * interruption for your Spot Instances.</p>  <p>EC2 Fleet requests
+     * instances from the lowest priced Spot Instance pool that has available capacity.
+     * If the lowest priced pool doesn't have available capacity, the Spot Instances
+     * come from the next lowest priced pool that has available capacity. If a pool
+     * runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To
+     * ensure that your desired capacity is met, you might receive Spot Instances from
+     * several pools. Because this strategy only considers instance price and not
+     * capacity availability, it might lead to high interruption rates.</p> </dd> </dl>
+     * <p>Default: <code>lowest-price</code> </p>
      */
     inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
@@ -162,11 +165,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum
-     * target capacity is not reached, the fleet launches no instances.</p>
-     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
-     * of the following must be specified: <code>SingleAvailabilityZone</code> |
-     * <code>SingleInstanceType</code> </p>
+     * <p>The minimum target capacity for Spot Instances in the fleet. If this minimum
+     * capacity isn't reached, no instances are launched.</p> <p>Constraints: Maximum
+     * value of <code>1000</code>. Supported only for fleets of type
+     * <code>instant</code>.</p> <p>At least one of the following must be specified:
+     * <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
     inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
@@ -188,7 +191,7 @@ namespace Model
      * surplus credits, your final cost might be higher than what you specified for
      * <code>MaxTotalPrice</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
+     * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }

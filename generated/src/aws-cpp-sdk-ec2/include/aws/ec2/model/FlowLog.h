@@ -248,7 +248,7 @@ namespace Model
      * <p>The maximum interval of time, in seconds, during which a flow of packets is
      * captured and aggregated into a flow log record.</p> <p>When a network interface
      * is attached to a <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based
      * instance</a>, the aggregation interval is always 60 seconds (1 minute) or less,
      * regardless of the specified value.</p> <p>Valid Values: <code>60</code> |
      * <code>600</code> </p>

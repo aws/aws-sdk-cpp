@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAutomatedDiscoveryConfigurationRequest::UpdateAutomatedDiscoveryConfigurationRequest() : 
+    m_autoEnableOrganizationMembers(AutoEnableMode::NOT_SET),
+    m_autoEnableOrganizationMembersHasBeenSet(false),
     m_status(AutomatedDiscoveryStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -21,6 +23,11 @@ UpdateAutomatedDiscoveryConfigurationRequest::UpdateAutomatedDiscoveryConfigurat
 Aws::String UpdateAutomatedDiscoveryConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_autoEnableOrganizationMembersHasBeenSet)
+  {
+   payload.WithString("autoEnableOrganizationMembers", AutoEnableModeMapper::GetNameForAutoEnableMode(m_autoEnableOrganizationMembers));
+  }
 
   if(m_statusHasBeenSet)
   {

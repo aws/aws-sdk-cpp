@@ -19,7 +19,8 @@ namespace Model
     ACCOUNT_ID,
     S3_BUCKET_NAME,
     S3_BUCKET_EFFECTIVE_PERMISSION,
-    S3_BUCKET_SHARED_ACCESS
+    S3_BUCKET_SHARED_ACCESS,
+    AUTOMATED_DISCOVERY_MONITORING_STATUS
   };
 
 namespace SearchResourcesSimpleCriterionKeyMapper

@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more DHCP options sets.</p>
+     * <p>Information about the DHCP options sets.</p>
      */
     inline const Aws::Vector<DhcpOptions>& GetDhcpOptions() const{ return m_dhcpOptions; }
     inline void SetDhcpOptions(const Aws::Vector<DhcpOptions>& value) { m_dhcpOptions = value; }

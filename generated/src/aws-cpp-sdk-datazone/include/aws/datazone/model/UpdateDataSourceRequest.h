@@ -163,6 +163,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies that the granted permissions are retained in case of a
+     * self-subscribe functionality failure for a data source.</p>
+     */
+    inline bool GetRetainPermissionsOnRevokeFailure() const{ return m_retainPermissionsOnRevokeFailure; }
+    inline bool RetainPermissionsOnRevokeFailureHasBeenSet() const { return m_retainPermissionsOnRevokeFailureHasBeenSet; }
+    inline void SetRetainPermissionsOnRevokeFailure(bool value) { m_retainPermissionsOnRevokeFailureHasBeenSet = true; m_retainPermissionsOnRevokeFailure = value; }
+    inline UpdateDataSourceRequest& WithRetainPermissionsOnRevokeFailure(bool value) { SetRetainPermissionsOnRevokeFailure(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The schedule to be updated as part of the <code>UpdateDataSource</code>
      * action.</p>
      */
@@ -201,6 +212,9 @@ namespace Model
 
     RecommendationConfiguration m_recommendation;
     bool m_recommendationHasBeenSet = false;
+
+    bool m_retainPermissionsOnRevokeFailure;
+    bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
 
     ScheduleConfiguration m_schedule;
     bool m_scheduleHasBeenSet = false;

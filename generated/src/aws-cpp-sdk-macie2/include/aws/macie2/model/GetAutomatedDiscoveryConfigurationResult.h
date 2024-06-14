@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/model/AutoEnableMode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/macie2/model/AutomatedDiscoveryStatus.h>
@@ -36,10 +37,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether automated sensitive data discovery is enabled automatically
+     * for accounts in the organization. Possible values are: ALL, enable it for all
+     * existing accounts and new member accounts; NEW, enable it only for new member
+     * accounts; and, NONE, don't enable it for any accounts.</p>
+     */
+    inline const AutoEnableMode& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
+    inline void SetAutoEnableOrganizationMembers(const AutoEnableMode& value) { m_autoEnableOrganizationMembers = value; }
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMode&& value) { m_autoEnableOrganizationMembers = std::move(value); }
+    inline GetAutomatedDiscoveryConfigurationResult& WithAutoEnableOrganizationMembers(const AutoEnableMode& value) { SetAutoEnableOrganizationMembers(value); return *this;}
+    inline GetAutomatedDiscoveryConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMode&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier for the classification scope that's used when
-     * performing automated sensitive data discovery for the account. The
-     * classification scope specifies S3 buckets to exclude from automated sensitive
-     * data discovery.</p>
+     * performing automated sensitive data discovery. The classification scope
+     * specifies S3 buckets to exclude from analyses.</p>
      */
     inline const Aws::String& GetClassificationScopeId() const{ return m_classificationScopeId; }
     inline void SetClassificationScopeId(const Aws::String& value) { m_classificationScopeId = value; }
@@ -53,9 +67,8 @@ namespace Model
     ///@{
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when automated
-     * sensitive data discovery was most recently disabled for the account. This value
-     * is null if automated sensitive data discovery wasn't enabled and subsequently
-     * disabled for the account.</p>
+     * sensitive data discovery was most recently disabled. This value is null if
+     * automated sensitive data discovery is currently enabled.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledAt() const{ return m_disabledAt; }
     inline void SetDisabledAt(const Aws::Utils::DateTime& value) { m_disabledAt = value; }
@@ -67,9 +80,8 @@ namespace Model
     ///@{
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when automated
-     * sensitive data discovery was initially enabled for the account. This value is
-     * null if automated sensitive data discovery has never been enabled for the
-     * account.</p>
+     * sensitive data discovery was initially enabled. This value is null if automated
+     * sensitive data discovery has never been enabled.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstEnabledAt() const{ return m_firstEnabledAt; }
     inline void SetFirstEnabledAt(const Aws::Utils::DateTime& value) { m_firstEnabledAt = value; }
@@ -80,9 +92,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when automated
-     * sensitive data discovery was most recently enabled or disabled for the
-     * account.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when the
+     * configuration settings or status of automated sensitive data discovery was most
+     * recently changed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
@@ -94,9 +106,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the sensitivity inspection template that's used
-     * when performing automated sensitive data discovery for the account. The template
-     * specifies which allow lists, custom data identifiers, and managed data
-     * identifiers to use when analyzing data.</p>
+     * when performing automated sensitive data discovery. The template specifies which
+     * allow lists, custom data identifiers, and managed data identifiers to use when
+     * analyzing data.</p>
      */
     inline const Aws::String& GetSensitivityInspectionTemplateId() const{ return m_sensitivityInspectionTemplateId; }
     inline void SetSensitivityInspectionTemplateId(const Aws::String& value) { m_sensitivityInspectionTemplateId = value; }
@@ -109,11 +121,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the automated sensitive data discovery configuration
-     * for the account. Possible values are: ENABLED, use the specified settings to
-     * perform automated sensitive data discovery activities for the account; and,
-     * DISABLED, don't perform automated sensitive data discovery activities for the
-     * account.</p>
+     * <p>The current status of automated sensitive data discovery for the organization
+     * or account. Possible values are: ENABLED, use the specified settings to perform
+     * automated sensitive data discovery activities; and, DISABLED, don't perform
+     * automated sensitive data discovery activities.</p>
      */
     inline const AutomatedDiscoveryStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const AutomatedDiscoveryStatus& value) { m_status = value; }
@@ -133,6 +144,8 @@ namespace Model
     inline GetAutomatedDiscoveryConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    AutoEnableMode m_autoEnableOrganizationMembers;
 
     Aws::String m_classificationScopeId;
 

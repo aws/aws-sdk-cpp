@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more internet gateways.</p>
+     * <p>Information about the internet gateways.</p>
      */
     inline const Aws::Vector<InternetGateway>& GetInternetGateways() const{ return m_internetGateways; }
     inline void SetInternetGateways(const Aws::Vector<InternetGateway>& value) { m_internetGateways = value; }

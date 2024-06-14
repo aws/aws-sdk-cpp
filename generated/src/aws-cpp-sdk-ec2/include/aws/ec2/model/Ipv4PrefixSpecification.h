@@ -43,8 +43,8 @@ namespace Model
     /**
      * <p>The IPv4 prefix. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
-     * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * Assigning prefixes to network interfaces</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetIpv4Prefix() const{ return m_ipv4Prefix; }
     inline bool Ipv4PrefixHasBeenSet() const { return m_ipv4PrefixHasBeenSet; }

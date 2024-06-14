@@ -46,8 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of unique identifiers, one for each allow list that the job uses
-     * when it analyzes data.</p>
+     * <p>An array of unique identifiers, one for each allow list that the job is
+     * configured to use when it analyzes data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowListIds() const{ return m_allowListIds; }
     inline void SetAllowListIds(const Aws::Vector<Aws::String>& value) { m_allowListIds = value; }
@@ -88,8 +88,8 @@ namespace Model
     ///@{
     /**
      * <p>An array of unique identifiers, one for each custom data identifier that the
-     * job uses when it analyzes data. This value is null if the job uses only managed
-     * data identifiers to analyze data.</p>
+     * job is configured to use when it analyzes data. This value is null if the job is
+     * configured to use only managed data identifiers to analyze data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
     inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIds = value; }
@@ -253,11 +253,11 @@ namespace Model
      * the job is a recurring job and this value is ALL or EXCLUDE, each job run
      * automatically uses new managed data identifiers that are released. If this value
      * is null or RECOMMENDED for a recurring job, each job run uses all the managed
-     * data identifiers that are in the recommended set when the run starts.</p> <p>For
-     * information about individual managed data identifiers or to determine which ones
-     * are in the recommended set, see <a
+     * data identifiers that are in the recommended set when the run starts.</p> <p>To
+     * learn about individual managed data identifiers or determine which ones are in
+     * the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
-     * managed data identifiers</a> and <a
+     * managed data identifiers</a> or <a
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
      * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
@@ -330,7 +330,7 @@ namespace Model
     ///@{
     /**
      * <p>A map of key-value pairs that specifies which tags (keys and values) are
-     * associated with the classification job.</p>
+     * associated with the job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }

@@ -98,11 +98,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
-     * minimum target capacity is not reached, the fleet launches no instances.</p>
-     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
-     * of the following must be specified: <code>SingleAvailabilityZone</code> |
-     * <code>SingleInstanceType</code> </p>
+     * <p>The minimum target capacity for On-Demand Instances in the fleet. If this
+     * minimum capacity isn't reached, no instances are launched.</p> <p>Constraints:
+     * Maximum value of <code>1000</code>. Supported only for fleets of type
+     * <code>instant</code>.</p> <p>At least one of the following must be specified:
+     * <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
     inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
@@ -120,7 +120,7 @@ namespace Model
      * surplus credits, your final cost might be higher than what you specified for
      * <code>maxTotalPrice</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
+     * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }

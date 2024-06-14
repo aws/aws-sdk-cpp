@@ -48,7 +48,7 @@ namespace Model
      * instance launches that specify its unique host ID. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
      * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
-     * Guide</i>.</p> <p>Default: <code>on</code> </p>
+     * Guide</i>.</p> <p>Default: <code>off</code> </p>
      */
     inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
     inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }

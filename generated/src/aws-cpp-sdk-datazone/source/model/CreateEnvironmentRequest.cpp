@@ -15,6 +15,9 @@ using namespace Aws::Utils;
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
     m_descriptionHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
+    m_environmentAccountIdentifierHasBeenSet(false),
+    m_environmentAccountRegionHasBeenSet(false),
+    m_environmentBlueprintIdentifierHasBeenSet(false),
     m_environmentProfileIdentifierHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -30,6 +33,24 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_environmentAccountIdentifierHasBeenSet)
+  {
+   payload.WithString("environmentAccountIdentifier", m_environmentAccountIdentifier);
+
+  }
+
+  if(m_environmentAccountRegionHasBeenSet)
+  {
+   payload.WithString("environmentAccountRegion", m_environmentAccountRegion);
+
+  }
+
+  if(m_environmentBlueprintIdentifierHasBeenSet)
+  {
+   payload.WithString("environmentBlueprintIdentifier", m_environmentBlueprintIdentifier);
 
   }
 

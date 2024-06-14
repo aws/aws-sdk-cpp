@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about one or more subnets.</p>
+     * <p>Information about the subnets.</p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnets = value; }

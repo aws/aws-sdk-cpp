@@ -71,8 +71,8 @@ namespace Model
     /**
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host
+     * recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
     inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
@@ -124,8 +124,8 @@ namespace Model
     /**
      * <p>Indicates whether to enable or disable host maintenance for the Dedicated
      * Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">
-     * Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const HostMaintenance& GetHostMaintenance() const{ return m_hostMaintenance; }
     inline bool HostMaintenanceHasBeenSet() const { return m_hostMaintenanceHasBeenSet; }

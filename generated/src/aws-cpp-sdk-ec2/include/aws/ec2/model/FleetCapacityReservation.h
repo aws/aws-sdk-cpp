@@ -127,8 +127,8 @@ namespace Model
     /**
      * <p>The number of capacity units fulfilled by the Capacity Reservation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">
-     * Total target capacity</a> in the Amazon EC2 User Guide.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total
+     * target capacity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline double GetFulfilledCapacity() const{ return m_fulfilledCapacity; }
     inline bool FulfilledCapacityHasBeenSet() const { return m_fulfilledCapacityHasBeenSet; }
@@ -163,8 +163,8 @@ namespace Model
     /**
      * <p>The weight of the instance type in the Capacity Reservation Fleet. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">
-     * Instance type weight</a> in the Amazon EC2 User Guide.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight">Instance
+     * type weight</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline double GetWeight() const{ return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
@@ -176,8 +176,8 @@ namespace Model
     /**
      * <p>The priority of the instance type in the Capacity Reservation Fleet. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">
-     * Instance type priority</a> in the Amazon EC2 User Guide.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority">Instance
+     * type priority</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }

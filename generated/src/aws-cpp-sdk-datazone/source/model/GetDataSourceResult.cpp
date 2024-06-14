@@ -150,6 +150,12 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("selfGrantStatus"))
+  {
+    m_selfGrantStatus = jsonValue.GetObject("selfGrantStatus");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));

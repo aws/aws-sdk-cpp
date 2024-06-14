@@ -125,8 +125,8 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Up to 255 UTF-8 characters in length.</p>
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+     * idempotency</a>.</p> <p>Constraints: Up to 255 UTF-8 characters in length.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

@@ -23,11 +23,10 @@ namespace Model
 
   /**
    * <p>Provides statistical data for sensitive data discovery metrics that apply to
-   * an S3 bucket that Amazon Macie monitors and analyzes for your account. The
-   * statistics capture the results of automated sensitive data discovery activities
-   * that Macie has performed for the bucket. The data is available only if automated
-   * sensitive data discovery is currently enabled for your account.</p><p><h3>See
-   * Also:</h3>   <a
+   * an S3 bucket that Amazon Macie monitors and analyzes for an account, if
+   * automated sensitive data discovery has been enabled for the account. The data
+   * captures the results of automated sensitive data discovery activities that Macie
+   * has performed for the bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ResourceStatistics">AWS
    * API Reference</a></p>
    */

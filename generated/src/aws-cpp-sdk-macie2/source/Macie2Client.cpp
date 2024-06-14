@@ -23,6 +23,7 @@
 #include <aws/macie2/Macie2EndpointProvider.h>
 #include <aws/macie2/model/AcceptInvitationRequest.h>
 #include <aws/macie2/model/BatchGetCustomDataIdentifiersRequest.h>
+#include <aws/macie2/model/BatchUpdateAutomatedDiscoveryAccountsRequest.h>
 #include <aws/macie2/model/CreateAllowListRequest.h>
 #include <aws/macie2/model/CreateClassificationJobRequest.h>
 #include <aws/macie2/model/CreateCustomDataIdentifierRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/macie2/model/GetUsageStatisticsRequest.h>
 #include <aws/macie2/model/GetUsageTotalsRequest.h>
 #include <aws/macie2/model/ListAllowListsRequest.h>
+#include <aws/macie2/model/ListAutomatedDiscoveryAccountsRequest.h>
 #include <aws/macie2/model/ListClassificationJobsRequest.h>
 #include <aws/macie2/model/ListClassificationScopesRequest.h>
 #include <aws/macie2/model/ListCustomDataIdentifiersRequest.h>
@@ -289,6 +291,33 @@ BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetCustomDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/custom-data-identifiers/get");
       return BatchGetCustomDataIdentifiersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchUpdateAutomatedDiscoveryAccountsOutcome Macie2Client::BatchUpdateAutomatedDiscoveryAccounts(const BatchUpdateAutomatedDiscoveryAccountsRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchUpdateAutomatedDiscoveryAccounts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchUpdateAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchUpdateAutomatedDiscoveryAccounts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchUpdateAutomatedDiscoveryAccountsOutcome>(
+    [&]()-> BatchUpdateAutomatedDiscoveryAccountsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/accounts");
+      return BatchUpdateAutomatedDiscoveryAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1627,6 +1656,33 @@ ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& 
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAllowLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/allow-lists");
       return ListAllowListsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListAutomatedDiscoveryAccountsOutcome Macie2Client::ListAutomatedDiscoveryAccounts(const ListAutomatedDiscoveryAccountsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAutomatedDiscoveryAccounts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAutomatedDiscoveryAccounts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAutomatedDiscoveryAccountsOutcome>(
+    [&]()-> ListAutomatedDiscoveryAccountsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAutomatedDiscoveryAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/accounts");
+      return ListAutomatedDiscoveryAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

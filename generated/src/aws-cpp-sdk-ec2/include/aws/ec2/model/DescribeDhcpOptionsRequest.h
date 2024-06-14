@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
-     * DHCP options sets.</p>
+     * <p>The IDs of DHCP option sets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDhcpOptionsIds() const{ return m_dhcpOptionsIds; }
     inline bool DhcpOptionsIdsHasBeenSet() const { return m_dhcpOptionsIdsHasBeenSet; }

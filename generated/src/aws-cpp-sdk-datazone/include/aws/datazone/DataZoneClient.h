@@ -134,6 +134,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Associates the environment role in Amazon DataZone.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEnvironmentRoleOutcome AssociateEnvironmentRole(const Model::AssociateEnvironmentRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateEnvironmentRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateEnvironmentRoleRequestT = Model::AssociateEnvironmentRoleRequest>
+        Model::AssociateEnvironmentRoleOutcomeCallable AssociateEnvironmentRoleCallable(const AssociateEnvironmentRoleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::AssociateEnvironmentRole, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateEnvironmentRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateEnvironmentRoleRequestT = Model::AssociateEnvironmentRoleRequest>
+        void AssociateEnvironmentRoleAsync(const AssociateEnvironmentRoleRequestT& request, const AssociateEnvironmentRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::AssociateEnvironmentRole, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the metadata generation run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun">AWS
          * API Reference</a></p>
@@ -332,6 +358,33 @@ namespace DataZone
         void CreateEnvironmentAsync(const CreateEnvironmentRequestT& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::CreateEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an action for the environment, for example, creates a console link
+         * for an analytics tool that is available in this environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEnvironmentActionOutcome CreateEnvironmentAction(const Model::CreateEnvironmentActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEnvironmentAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEnvironmentActionRequestT = Model::CreateEnvironmentActionRequest>
+        Model::CreateEnvironmentActionOutcomeCallable CreateEnvironmentActionCallable(const CreateEnvironmentActionRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateEnvironmentAction, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEnvironmentAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEnvironmentActionRequestT = Model::CreateEnvironmentActionRequest>
+        void CreateEnvironmentActionAsync(const CreateEnvironmentActionRequestT& request, const CreateEnvironmentActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateEnvironmentAction, request, handler, context);
         }
 
         /**
@@ -765,6 +818,33 @@ namespace DataZone
         }
 
         /**
+         * <p>Deletes an action for the environment, for example, deletes a console link
+         * for an analytics tool that is available in this environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEnvironmentActionOutcome DeleteEnvironmentAction(const Model::DeleteEnvironmentActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEnvironmentAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEnvironmentActionRequestT = Model::DeleteEnvironmentActionRequest>
+        Model::DeleteEnvironmentActionOutcomeCallable DeleteEnvironmentActionCallable(const DeleteEnvironmentActionRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteEnvironmentAction, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEnvironmentAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEnvironmentActionRequestT = Model::DeleteEnvironmentActionRequest>
+        void DeleteEnvironmentActionAsync(const DeleteEnvironmentActionRequestT& request, const DeleteEnvironmentActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteEnvironmentAction, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the blueprint configuration in Amazon DataZone.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentBlueprintConfiguration">AWS
@@ -1074,6 +1154,32 @@ namespace DataZone
         }
 
         /**
+         * <p>Disassociates the environment role in Amazon DataZone.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEnvironmentRoleOutcome DisassociateEnvironmentRole(const Model::DisassociateEnvironmentRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateEnvironmentRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateEnvironmentRoleRequestT = Model::DisassociateEnvironmentRoleRequest>
+        Model::DisassociateEnvironmentRoleOutcomeCallable DisassociateEnvironmentRoleCallable(const DisassociateEnvironmentRoleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DisassociateEnvironmentRole, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateEnvironmentRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateEnvironmentRoleRequestT = Model::DisassociateEnvironmentRoleRequest>
+        void DisassociateEnvironmentRoleAsync(const DisassociateEnvironmentRoleRequestT& request, const DisassociateEnvironmentRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DisassociateEnvironmentRole, request, handler, context);
+        }
+
+        /**
          * <p>Gets an Amazon DataZone asset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAsset">AWS
          * API Reference</a></p>
@@ -1221,6 +1327,31 @@ namespace DataZone
         void GetEnvironmentAsync(const GetEnvironmentRequestT& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the specified environment action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEnvironmentActionOutcome GetEnvironmentAction(const Model::GetEnvironmentActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEnvironmentAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEnvironmentActionRequestT = Model::GetEnvironmentActionRequest>
+        Model::GetEnvironmentActionOutcomeCallable GetEnvironmentActionCallable(const GetEnvironmentActionRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetEnvironmentAction, request);
+        }
+
+        /**
+         * An Async wrapper for GetEnvironmentAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEnvironmentActionRequestT = Model::GetEnvironmentActionRequest>
+        void GetEnvironmentActionAsync(const GetEnvironmentActionRequestT& request, const GetEnvironmentActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetEnvironmentAction, request, handler, context);
         }
 
         /**
@@ -1778,6 +1909,31 @@ namespace DataZone
         void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListDomains, request, handler, context);
+        }
+
+        /**
+         * <p>Lists existing environment actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEnvironmentActionsOutcome ListEnvironmentActions(const Model::ListEnvironmentActionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEnvironmentActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEnvironmentActionsRequestT = Model::ListEnvironmentActionsRequest>
+        Model::ListEnvironmentActionsOutcomeCallable ListEnvironmentActionsCallable(const ListEnvironmentActionsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListEnvironmentActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListEnvironmentActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEnvironmentActionsRequestT = Model::ListEnvironmentActionsRequest>
+        void ListEnvironmentActionsAsync(const ListEnvironmentActionsRequestT& request, const ListEnvironmentActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListEnvironmentActions, request, handler, context);
         }
 
         /**
@@ -2564,6 +2720,31 @@ namespace DataZone
         void UpdateEnvironmentAsync(const UpdateEnvironmentRequestT& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::UpdateEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an environment action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEnvironmentActionOutcome UpdateEnvironmentAction(const Model::UpdateEnvironmentActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEnvironmentAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEnvironmentActionRequestT = Model::UpdateEnvironmentActionRequest>
+        Model::UpdateEnvironmentActionOutcomeCallable UpdateEnvironmentActionCallable(const UpdateEnvironmentActionRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::UpdateEnvironmentAction, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEnvironmentAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEnvironmentActionRequestT = Model::UpdateEnvironmentActionRequest>
+        void UpdateEnvironmentActionAsync(const UpdateEnvironmentActionRequestT& request, const UpdateEnvironmentActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::UpdateEnvironmentAction, request, handler, context);
         }
 
         /**

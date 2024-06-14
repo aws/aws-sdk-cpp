@@ -81,6 +81,17 @@ namespace Model
     inline DeleteDataSourceRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
     inline DeleteDataSourceRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies that the granted permissions are retained in case of a
+     * self-subscribe functionality failure for a data source.</p>
+     */
+    inline bool GetRetainPermissionsOnRevokeFailure() const{ return m_retainPermissionsOnRevokeFailure; }
+    inline bool RetainPermissionsOnRevokeFailureHasBeenSet() const { return m_retainPermissionsOnRevokeFailureHasBeenSet; }
+    inline void SetRetainPermissionsOnRevokeFailure(bool value) { m_retainPermissionsOnRevokeFailureHasBeenSet = true; m_retainPermissionsOnRevokeFailure = value; }
+    inline DeleteDataSourceRequest& WithRetainPermissionsOnRevokeFailure(bool value) { SetRetainPermissionsOnRevokeFailure(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -91,6 +102,9 @@ namespace Model
 
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
+
+    bool m_retainPermissionsOnRevokeFailure;
+    bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
   };
 
 } // namespace Model

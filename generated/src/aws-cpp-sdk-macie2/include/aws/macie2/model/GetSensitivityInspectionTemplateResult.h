@@ -50,7 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>The managed data identifiers that are explicitly excluded (not used) when
-     * analyzing data.</p>
+     * performing automated sensitive data discovery.</p>
      */
     inline const SensitivityInspectionTemplateExcludes& GetExcludes() const{ return m_excludes; }
     inline void SetExcludes(const SensitivityInspectionTemplateExcludes& value) { m_excludes = value; }
@@ -62,7 +62,8 @@ namespace Model
     ///@{
     /**
      * <p>The allow lists, custom data identifiers, and managed data identifiers that
-     * are explicitly included (used) when analyzing data.</p>
+     * are explicitly included (used) when performing automated sensitive data
+     * discovery.</p>
      */
     inline const SensitivityInspectionTemplateIncludes& GetIncludes() const{ return m_includes; }
     inline void SetIncludes(const SensitivityInspectionTemplateIncludes& value) { m_includes = value; }

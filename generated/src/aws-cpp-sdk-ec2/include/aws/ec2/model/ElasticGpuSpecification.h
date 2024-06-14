@@ -26,7 +26,7 @@ namespace Model
   /**
    *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For
    * workloads that require graphics acceleration, we recommend that you use Amazon
-   * EC2 G4ad, G4dn, or G5 instances.</p>  <p>A specification for an Elastic
+   * EC2 G4, G5, or G6 instances.</p>  <p>A specification for an Elastic
    * Graphics accelerator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuSpecification">AWS
    * API Reference</a></p>
@@ -44,11 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of Elastic Graphics accelerator. For more information about the
-     * values to specify for <code>Type</code>, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic
-     * Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in
-     * the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

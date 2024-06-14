@@ -76,7 +76,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }

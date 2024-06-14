@@ -113,9 +113,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
-     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
-     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <p>The identifier of the KMS key to use for Amazon EBS encryption. If this
+     * parameter is not specified, your KMS key for Amazon EBS is used. If
+     * <code>KmsKeyId</code> is specified, the encrypted state must be
      * <code>true</code>.</p> <p>You can specify the KMS key using any of the
      * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
@@ -150,12 +150,11 @@ namespace Model
      * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
      * stored in Amazon S3, the signing algorithm for this parameter uses the same
      * logic that is described in <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
-     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
-     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
-     * fail asynchronously, and the snapshot will move to an <code>error</code>
-     * state.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (Amazon Web Services Signature
+     * Version 4)</a> in the <i>Amazon S3 API Reference</i>. An invalid or improperly
+     * signed <code>PresignedUrl</code> will cause the copy operation to fail
+     * asynchronously, and the snapshot will move to an <code>error</code> state.</p>
      */
     inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
     inline bool PresignedUrlHasBeenSet() const { return m_presignedUrlHasBeenSet; }

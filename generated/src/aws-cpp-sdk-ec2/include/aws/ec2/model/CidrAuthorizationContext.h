@@ -28,8 +28,8 @@ namespace Model
    * specific Amazon Web Services account using bring your own IP addresses (BYOIP).
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Configuring
-   * your BYOIP address range</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * your BYOIP address range</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */

@@ -381,7 +381,7 @@ namespace Model
      * IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add
      * only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For
      * information on increasing the default limit, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for
      * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const IpamPoolPublicIpSource& GetPublicIpSource() const{ return m_publicIpSource; }

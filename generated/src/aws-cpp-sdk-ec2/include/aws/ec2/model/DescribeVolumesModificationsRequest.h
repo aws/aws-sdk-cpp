@@ -97,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token returned by a previous paginated request. Pagination continues from
-     * the end of the items returned by the previous request.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned by the previous request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

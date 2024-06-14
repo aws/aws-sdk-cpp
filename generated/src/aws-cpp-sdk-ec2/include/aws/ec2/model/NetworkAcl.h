@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Any associations between the network ACL and one or more subnets</p>
+     * <p>Any associations between the network ACL and your subnets</p>
      */
     inline const Aws::Vector<NetworkAclAssociation>& GetAssociations() const{ return m_associations; }
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }

@@ -68,8 +68,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-     * provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
@@ -148,8 +147,8 @@ namespace Model
      * If the launch template will be used by an EC2 Fleet or Spot Fleet, you must
      * specify the AMI ID.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
-     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -164,8 +163,8 @@ namespace Model
     ///@{
     /**
      * <p>The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
+     * EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you
      * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
@@ -226,8 +225,7 @@ namespace Model
      * <p>The ID of the RAM disk.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-     * provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetRamDiskId() const{ return m_ramDiskId; }
     inline bool RamDiskIdHasBeenSet() const { return m_ramDiskIdHasBeenSet; }
@@ -274,13 +272,11 @@ namespace Model
      * <p>The user data to make available to the instance. You must provide
      * base64-encoded text. User data is limited to 16 KB. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
-     * commands on your Linux instance at launch</a> (Linux) or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work
-     * with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud
-     * User Guide</i>.</p> <p>If you are creating the launch template for use with
-     * Batch, the user data must be provided in the <a
-     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">
-     * MIME multi-part archive format</a>. For more information, see <a
+     * commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>If you are creating the launch template for use with Batch,
+     * the user data must be provided in the <a
+     * href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME
+     * multi-part archive format</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon
      * EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
      */
@@ -413,8 +409,8 @@ namespace Model
     ///@{
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateCpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
@@ -460,7 +456,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateHibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
@@ -474,8 +470,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -489,7 +484,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -573,8 +568,8 @@ namespace Model
     /**
      * <p>Indicates whether to enable the instance for stop protection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+     * stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }

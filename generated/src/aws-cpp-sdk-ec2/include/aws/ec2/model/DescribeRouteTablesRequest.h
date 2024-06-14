@@ -112,8 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
-     * tables.</p>
+     * <p>The IDs of the route tables.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
