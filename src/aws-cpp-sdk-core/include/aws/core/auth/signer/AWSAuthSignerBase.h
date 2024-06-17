@@ -30,7 +30,7 @@ namespace Aws
     namespace Client
     {
         /**
-         * Auth Signer interface. Takes a generic AWS request and applies crypto tamper resistent signatures on the request.
+         * Auth Signer interface. Takes a generic AWS request and applies crypto tamper resistant signatures on the request.
          */
         class AWS_CORE_API AWSAuthSigner
         {

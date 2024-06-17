@@ -12,7 +12,6 @@ namespace smithy {
         virtual Aws::String accessKeyId() override;
         virtual Aws::String secretAccessKey() override;
         virtual Aws::Crt::Optional<Aws::String> sessionToken() override;
-
         virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() override;
 
     protected:
