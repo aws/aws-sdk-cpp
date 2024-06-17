@@ -25,6 +25,7 @@ CmafGroupSettings::CmafGroupSettings() :
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(CmafCodecSpecification::NOT_SET),
     m_codecSpecificationHasBeenSet(false),
+    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
     m_dashManifestStyle(DashManifestStyle::NOT_SET),
     m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -77,6 +78,7 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_clientCacheHasBeenSet(false),
     m_codecSpecification(CmafCodecSpecification::NOT_SET),
     m_codecSpecificationHasBeenSet(false),
+    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
     m_dashManifestStyle(DashManifestStyle::NOT_SET),
     m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -154,6 +156,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_codecSpecification = CmafCodecSpecificationMapper::GetCmafCodecSpecificationForName(jsonValue.GetString("codecSpecification"));
 
     m_codecSpecificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dashIFrameTrickPlayNameModifier"))
+  {
+    m_dashIFrameTrickPlayNameModifier = jsonValue.GetString("dashIFrameTrickPlayNameModifier");
+
+    m_dashIFrameTrickPlayNameModifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashManifestStyle"))
@@ -349,6 +358,12 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_codecSpecificationHasBeenSet)
   {
    payload.WithString("codecSpecification", CmafCodecSpecificationMapper::GetNameForCmafCodecSpecification(m_codecSpecification));
+  }
+
+  if(m_dashIFrameTrickPlayNameModifierHasBeenSet)
+  {
+   payload.WithString("dashIFrameTrickPlayNameModifier", m_dashIFrameTrickPlayNameModifier);
+
   }
 
   if(m_dashManifestStyleHasBeenSet)

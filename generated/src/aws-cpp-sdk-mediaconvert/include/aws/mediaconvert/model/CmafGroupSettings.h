@@ -125,6 +125,29 @@ namespace Model
 
     ///@{
     /**
+     * Specify whether MediaConvert generates I-frame only video segments for DASH
+     * trick play, also known as trick mode. When specified, the I-frame only video
+     * segments are included within an additional AdaptationSet in your DASH output
+     * manifest. To generate I-frame only video segments: Enter a name as a text
+     * string, up to 256 character long. This name is appended to the end of this
+     * output group's base filename, that you specify as part of your destination URI,
+     * and used for the I-frame only video segment files. You may also include format
+     * identifiers. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs
+     * To not generate I-frame only video segments: Leave blank.
+     */
+    inline const Aws::String& GetDashIFrameTrickPlayNameModifier() const{ return m_dashIFrameTrickPlayNameModifier; }
+    inline bool DashIFrameTrickPlayNameModifierHasBeenSet() const { return m_dashIFrameTrickPlayNameModifierHasBeenSet; }
+    inline void SetDashIFrameTrickPlayNameModifier(const Aws::String& value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier = value; }
+    inline void SetDashIFrameTrickPlayNameModifier(Aws::String&& value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier = std::move(value); }
+    inline void SetDashIFrameTrickPlayNameModifier(const char* value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier.assign(value); }
+    inline CmafGroupSettings& WithDashIFrameTrickPlayNameModifier(const Aws::String& value) { SetDashIFrameTrickPlayNameModifier(value); return *this;}
+    inline CmafGroupSettings& WithDashIFrameTrickPlayNameModifier(Aws::String&& value) { SetDashIFrameTrickPlayNameModifier(std::move(value)); return *this;}
+    inline CmafGroupSettings& WithDashIFrameTrickPlayNameModifier(const char* value) { SetDashIFrameTrickPlayNameModifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To
      * write a SegmentTimeline in each video Representation: Keep the default value,
      * Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose
@@ -486,6 +509,9 @@ namespace Model
 
     CmafCodecSpecification m_codecSpecification;
     bool m_codecSpecificationHasBeenSet = false;
+
+    Aws::String m_dashIFrameTrickPlayNameModifier;
+    bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
 
     DashManifestStyle m_dashManifestStyle;
     bool m_dashManifestStyleHasBeenSet = false;

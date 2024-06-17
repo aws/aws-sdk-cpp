@@ -466,6 +466,20 @@ namespace Model
     inline Job& WithMaintenanceWindow(Aws::String&& value) { SetMaintenanceWindow(std::move(value)); return *this;}
     inline Job& WithMaintenanceWindow(const char* value) { SetMaintenanceWindow(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of an Glue usage profile associated with the job.</p>
+     */
+    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
+    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
+    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
+    inline Job& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
+    inline Job& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
+    inline Job& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -539,6 +553,9 @@ namespace Model
 
     Aws::String m_maintenanceWindow;
     bool m_maintenanceWindowHasBeenSet = false;
+
+    Aws::String m_profileName;
+    bool m_profileNameHasBeenSet = false;
   };
 
 } // namespace Model

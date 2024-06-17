@@ -169,7 +169,7 @@ namespace Model
     ///@{
     /**
      * <p>Information describing the start of the validity period of the certificate.
-     * This parameter sets the “Not Before" date for the certificate.</p> <p>By
+     * This parameter sets the ��Not Before" date for the certificate.</p> <p>By
      * default, when issuing a certificate, Amazon Web Services Private CA sets the
      * "Not Before" date to the issuance time minus 60 minutes. This compensates for
      * clock inconsistencies across computer systems. The

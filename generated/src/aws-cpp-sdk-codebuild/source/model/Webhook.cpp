@@ -28,7 +28,8 @@ Webhook::Webhook() :
     m_buildTypeHasBeenSet(false),
     m_manualCreation(false),
     m_manualCreationHasBeenSet(false),
-    m_lastModifiedSecretHasBeenSet(false)
+    m_lastModifiedSecretHasBeenSet(false),
+    m_scopeConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Webhook::Webhook(JsonView jsonValue) :
     m_buildTypeHasBeenSet(false),
     m_manualCreation(false),
     m_manualCreationHasBeenSet(false),
-    m_lastModifiedSecretHasBeenSet(false)
+    m_lastModifiedSecretHasBeenSet(false),
+    m_scopeConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +117,13 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     m_lastModifiedSecretHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scopeConfiguration"))
+  {
+    m_scopeConfiguration = jsonValue.GetObject("scopeConfiguration");
+
+    m_scopeConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +185,12 @@ JsonValue Webhook::Jsonize() const
   if(m_lastModifiedSecretHasBeenSet)
   {
    payload.WithDouble("lastModifiedSecret", m_lastModifiedSecret.SecondsWithMSPrecision());
+  }
+
+  if(m_scopeConfigurationHasBeenSet)
+  {
+   payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
+
   }
 
   return payload;

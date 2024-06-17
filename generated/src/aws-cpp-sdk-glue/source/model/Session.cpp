@@ -45,7 +45,8 @@ Session::Session() :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+    m_idleTimeoutHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ Session::Session(JsonView jsonValue) :
     m_dPUSeconds(0.0),
     m_dPUSecondsHasBeenSet(false),
     m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
+    m_idleTimeoutHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -219,6 +221,13 @@ Session& Session::operator =(JsonView jsonValue)
     m_idleTimeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +347,12 @@ JsonValue Session::Jsonize() const
   if(m_idleTimeoutHasBeenSet)
   {
    payload.WithInteger("IdleTimeout", m_idleTimeout);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
 
   }
 

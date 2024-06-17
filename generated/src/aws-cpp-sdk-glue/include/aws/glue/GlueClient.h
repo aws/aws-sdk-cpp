@@ -1223,6 +1223,31 @@ namespace Glue
         }
 
         /**
+         * <p>Creates an Glue usage profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUsageProfileOutcome CreateUsageProfile(const Model::CreateUsageProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateUsageProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateUsageProfileRequestT = Model::CreateUsageProfileRequest>
+        Model::CreateUsageProfileOutcomeCallable CreateUsageProfileCallable(const CreateUsageProfileRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateUsageProfile, request);
+        }
+
+        /**
+         * An Async wrapper for CreateUsageProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateUsageProfileRequestT = Model::CreateUsageProfileRequest>
+        void CreateUsageProfileAsync(const CreateUsageProfileRequestT& request, const CreateUsageProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateUsageProfile, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new function definition in the Data Catalog.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">AWS
@@ -1930,6 +1955,31 @@ namespace Glue
         void DeleteTriggerAsync(const DeleteTriggerRequestT& request, const DeleteTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::DeleteTrigger, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the Glue specified usage profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUsageProfileOutcome DeleteUsageProfile(const Model::DeleteUsageProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteUsageProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteUsageProfileRequestT = Model::DeleteUsageProfileRequest>
+        Model::DeleteUsageProfileOutcomeCallable DeleteUsageProfileCallable(const DeleteUsageProfileRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteUsageProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteUsageProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteUsageProfileRequestT = Model::DeleteUsageProfileRequest>
+        void DeleteUsageProfileAsync(const DeleteUsageProfileRequestT& request, const DeleteUsageProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteUsageProfile, request, handler, context);
         }
 
         /**
@@ -2718,7 +2768,8 @@ namespace Glue
         }
 
         /**
-         * <p>Retrieves the metadata for a given job run.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the metadata for a given job run. Job run history is accessible for
+         * 90 days for your workflow and job run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">AWS API
          * Reference</a></p>
          */
@@ -3619,6 +3670,32 @@ namespace Glue
         }
 
         /**
+         * <p>Retrieves information about the specified Glue usage profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUsageProfileOutcome GetUsageProfile(const Model::GetUsageProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetUsageProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetUsageProfileRequestT = Model::GetUsageProfileRequest>
+        Model::GetUsageProfileOutcomeCallable GetUsageProfileCallable(const GetUsageProfileRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetUsageProfile, request);
+        }
+
+        /**
+         * An Async wrapper for GetUsageProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetUsageProfileRequestT = Model::GetUsageProfileRequest>
+        void GetUsageProfileAsync(const GetUsageProfileRequestT& request, const GetUsageProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetUsageProfile, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a specified function definition from the Data
          * Catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">AWS
@@ -3696,7 +3773,8 @@ namespace Glue
         }
 
         /**
-         * <p>Retrieves the metadata for a given workflow run. </p><p><h3>See Also:</h3>  
+         * <p>Retrieves the metadata for a given workflow run. Job run history is
+         * accessible for 90 days for your workflow and job run.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">AWS
          * API Reference</a></p>
@@ -4325,6 +4403,31 @@ namespace Glue
         void ListTriggersAsync(const ListTriggersRequestT& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::ListTriggers, request, handler, context);
+        }
+
+        /**
+         * <p>List all the Glue usage profiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUsageProfilesOutcome ListUsageProfiles(const Model::ListUsageProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUsageProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUsageProfilesRequestT = Model::ListUsageProfilesRequest>
+        Model::ListUsageProfilesOutcomeCallable ListUsageProfilesCallable(const ListUsageProfilesRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::ListUsageProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for ListUsageProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUsageProfilesRequestT = Model::ListUsageProfilesRequest>
+        void ListUsageProfilesAsync(const ListUsageProfilesRequestT& request, const ListUsageProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::ListUsageProfiles, request, handler, context);
         }
 
         /**
@@ -5799,6 +5902,31 @@ namespace Glue
         void UpdateTriggerAsync(const UpdateTriggerRequestT& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::UpdateTrigger, request, handler, context);
+        }
+
+        /**
+         * <p>Update an Glue usage profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUsageProfileOutcome UpdateUsageProfile(const Model::UpdateUsageProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateUsageProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateUsageProfileRequestT = Model::UpdateUsageProfileRequest>
+        Model::UpdateUsageProfileOutcomeCallable UpdateUsageProfileCallable(const UpdateUsageProfileRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateUsageProfile, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateUsageProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateUsageProfileRequestT = Model::UpdateUsageProfileRequest>
+        void UpdateUsageProfileAsync(const UpdateUsageProfileRequestT& request, const UpdateUsageProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateUsageProfile, request, handler, context);
         }
 
         /**
