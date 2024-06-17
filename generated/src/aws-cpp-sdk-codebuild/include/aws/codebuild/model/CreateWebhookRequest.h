@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/WebhookBuildType.h>
+#include <aws/codebuild/model/ScopeConfiguration.h>
 #include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
@@ -113,6 +114,20 @@ namespace Model
     inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
     inline CreateWebhookRequest& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scope configuration for global or organization webhooks.</p> 
+     * <p>Global or organization webhooks are only available for GitHub and Github
+     * Enterprise webhooks.</p> 
+     */
+    inline const ScopeConfiguration& GetScopeConfiguration() const{ return m_scopeConfiguration; }
+    inline bool ScopeConfigurationHasBeenSet() const { return m_scopeConfigurationHasBeenSet; }
+    inline void SetScopeConfiguration(const ScopeConfiguration& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = value; }
+    inline void SetScopeConfiguration(ScopeConfiguration&& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = std::move(value); }
+    inline CreateWebhookRequest& WithScopeConfiguration(const ScopeConfiguration& value) { SetScopeConfiguration(value); return *this;}
+    inline CreateWebhookRequest& WithScopeConfiguration(ScopeConfiguration&& value) { SetScopeConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_projectName;
@@ -129,6 +144,9 @@ namespace Model
 
     bool m_manualCreation;
     bool m_manualCreationHasBeenSet = false;
+
+    ScopeConfiguration m_scopeConfiguration;
+    bool m_scopeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -287,6 +287,20 @@ namespace Model
     inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
     inline Session& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of an Glue usage profile associated with the session.</p>
+     */
+    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
+    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
+    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
+    inline Session& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
+    inline Session& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
+    inline Session& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -345,6 +359,9 @@ namespace Model
 
     int m_idleTimeout;
     bool m_idleTimeoutHasBeenSet = false;
+
+    Aws::String m_profileName;
+    bool m_profileNameHasBeenSet = false;
   };
 
 } // namespace Model

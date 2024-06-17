@@ -86,7 +86,10 @@ namespace Model
      * <p>RELEASE_NAME</p> <ul> <li> <p>A webhook triggers a build when the release
      * name matches the regular expression <code>pattern</code>.</p>  <p> Works
      * with <code>RELEASED</code> and <code>PRERELEASED</code> events only. </p>
-     *  </li> </ul> </li> <li> <p>WORKFLOW_NAME</p> <ul> <li> <p>A webhook
+     *  </li> </ul> </li> <li> <p>REPOSITORY_NAME</p> <ul> <li> <p>A webhook
+     * triggers a build when the repository name matches the regular expression
+     * pattern.</p>  <p> Works with GitHub global or organization webhooks only.
+     * </p>  </li> </ul> </li> <li> <p>WORKFLOW_NAME</p> <ul> <li> <p>A webhook
      * triggers a build when the workflow name matches the regular expression
      * <code>pattern</code>.</p>  <p> Works with <code>WORKFLOW_JOB_QUEUED</code>
      * events only. </p>  </li> </ul> </li> </ul>

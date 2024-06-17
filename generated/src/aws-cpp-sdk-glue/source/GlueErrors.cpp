@@ -64,6 +64,7 @@ static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTim
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
 static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
+static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
 static const int COLUMN_STATISTICS_TASK_STOPPING_HASH = HashingUtils::HashString("ColumnStatisticsTaskStoppingException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
@@ -153,6 +154,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SCHEDULER_NOT_RUNNING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::SCHEDULER_NOT_RUNNING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == COLUMN_STATISTICS_TASK_STOPPING_HASH)
   {

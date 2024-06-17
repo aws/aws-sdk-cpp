@@ -19,7 +19,8 @@ CreateWebhookRequest::CreateWebhookRequest() :
     m_buildType(WebhookBuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
     m_manualCreation(false),
-    m_manualCreationHasBeenSet(false)
+    m_manualCreationHasBeenSet(false),
+    m_scopeConfigurationHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String CreateWebhookRequest::SerializePayload() const
   if(m_manualCreationHasBeenSet)
   {
    payload.WithBool("manualCreation", m_manualCreation);
+
+  }
+
+  if(m_scopeConfigurationHasBeenSet)
+  {
+   payload.WithObject("scopeConfiguration", m_scopeConfiguration.Jsonize());
 
   }
 

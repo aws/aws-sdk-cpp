@@ -49,7 +49,8 @@ Job::Job() :
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
     m_sourceControlDetailsHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false)
+    m_maintenanceWindowHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ Job::Job(JsonView jsonValue) :
     m_executionClass(ExecutionClass::NOT_SET),
     m_executionClassHasBeenSet(false),
     m_sourceControlDetailsHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false)
+    m_maintenanceWindowHasBeenSet(false),
+    m_profileNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -268,6 +270,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_maintenanceWindowHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfileName"))
+  {
+    m_profileName = jsonValue.GetString("ProfileName");
+
+    m_profileNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -426,6 +435,12 @@ JsonValue Job::Jsonize() const
   if(m_maintenanceWindowHasBeenSet)
   {
    payload.WithString("MaintenanceWindow", m_maintenanceWindow);
+
+  }
+
+  if(m_profileNameHasBeenSet)
+  {
+   payload.WithString("ProfileName", m_profileName);
 
   }
 

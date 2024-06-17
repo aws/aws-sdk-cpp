@@ -23,6 +23,7 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
     m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
+    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
     m_dashManifestStyle(DashManifestStyle::NOT_SET),
     m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -63,6 +64,7 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
     m_audioChannelConfigSchemeIdUriHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
+    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
     m_dashManifestStyle(DashManifestStyle::NOT_SET),
     m_dashManifestStyleHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -123,6 +125,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_baseUrl = jsonValue.GetString("baseUrl");
 
     m_baseUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dashIFrameTrickPlayNameModifier"))
+  {
+    m_dashIFrameTrickPlayNameModifier = jsonValue.GetString("dashIFrameTrickPlayNameModifier");
+
+    m_dashIFrameTrickPlayNameModifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashManifestStyle"))
@@ -277,6 +286,12 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   if(m_baseUrlHasBeenSet)
   {
    payload.WithString("baseUrl", m_baseUrl);
+
+  }
+
+  if(m_dashIFrameTrickPlayNameModifierHasBeenSet)
+  {
+   payload.WithString("dashIFrameTrickPlayNameModifier", m_dashIFrameTrickPlayNameModifier);
 
   }
 
