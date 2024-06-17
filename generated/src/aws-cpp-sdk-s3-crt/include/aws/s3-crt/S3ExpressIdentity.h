@@ -7,12 +7,11 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-
-#include <utility>
+#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
 
 namespace Aws {
     namespace S3Crt {
-        class S3ExpressIdentity final {
+        class S3ExpressIdentity final: public smithy::AwsCredentialIdentityBase {
         public:
             S3ExpressIdentity() = default;
 
@@ -39,6 +38,26 @@ namespace Aws {
 
             const Utils::DateTime &getExpiration() const {
                 return m_expiration;
+            }
+
+            String accessKeyId() override
+            {
+                return getAccessKeyId();
+            }
+
+            String secretAccessKey() override
+            {
+                return getSecretKeyId();
+            }
+
+            Crt::Optional<String> sessionToken() override
+            {
+                return getSessionToken();
+            }
+
+            Crt::Optional<DateTime> expiration() override
+            {
+                return getExpiration();
             }
 
 
