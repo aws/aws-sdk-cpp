@@ -17,5 +17,5 @@ jobs:
     - name: cspell
       run: |
         cd aws-sdk-cpp
-        sudo cspell --silent --fail-fast "src/**/*.txt" "*.txt" "src/aws-cpp-sdk-core/**/*.h" "src/aws-cpp-sdk-core/**/*.cpp"
+        sudo cspell --fail-fast "src/**/*.txt" "*.txt" "src/aws-cpp-sdk-core/**/*.h" "src/aws-cpp-sdk-core/**/*.cpp"
         if [ $? -ne 0  ]; then sudo cspell "src/**/*.txt" "*.txt" "src/aws-cpp-sdk-core/**/*.h" "src/aws-cpp-sdk-core/**/*.cpp"; exit 1; fi;

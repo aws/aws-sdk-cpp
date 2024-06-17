@@ -10,6 +10,7 @@
 #include <aws/core/utils/ConcurrentCache.h>
 #include <aws/core/auth/signer/AWSAuthSignerBase.h>
 #include <aws/s3-crt/S3ExpressIdentity.h>
+#include <smithy/identity/resolver/AwsIdentityResolverBase.h>
 #include <thread>
 #include <condition_variable>
 
@@ -20,12 +21,15 @@ namespace Aws {
 
     namespace S3Crt {
         class S3CrtClient;
-        class S3ExpressIdentityProvider {
+        class S3ExpressIdentityProvider: public smithy::IdentityResolverBase<S3ExpressIdentity> {
         public:
             explicit S3ExpressIdentityProvider(const S3CrtClient &s3Client) : m_s3Client(s3Client) {}
 
             virtual S3ExpressIdentity
             GetS3ExpressIdentity(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) = 0;
+
+            ResolveIdentityFutureOutcome
+            getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override;
 
             virtual ~S3ExpressIdentityProvider() {}
 
