@@ -34,7 +34,7 @@ namespace Aws
              */
             EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& = nullptr);
 
-            virtual ~EC2InstanceProfileConfigLoader() = default;
+            virtual ~EC2InstanceProfileConfigLoader() override = default;
 
         protected:
             virtual bool LoadInternal() override;

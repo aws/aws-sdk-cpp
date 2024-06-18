@@ -29,7 +29,7 @@ namespace Aws
                  * Initializes log system with logLevel
                  */
                 FormattedLogSystem(LogLevel logLevel);
-                virtual ~FormattedLogSystem() = default;
+                virtual ~FormattedLogSystem() override = default;
 
                 /**
                  * Gets the currently configured log level.
@@ -58,7 +58,7 @@ namespace Aws
                 /**
                  * Stops logging on this logger without destroying the object.
                  */
-                virtual void Stop() override { return SetLogLevel(Aws::Utils::Logging::LogLevel::Off); };
+                virtual void Stop() override { return SetLogLevel(Aws::Utils::Logging::LogLevel::Off); }
             protected:
                 /**
                  * This is the method that most logger implementations will want to override.

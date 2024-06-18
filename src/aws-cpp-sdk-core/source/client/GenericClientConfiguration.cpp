@@ -15,7 +15,7 @@ namespace Client
 {
 template struct AWS_CORE_API GenericClientConfiguration<false>;
 
-bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
+static bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
 {
   bool enabled = true;  // default value for AWS Services with enabled discovery trait
   if (!endpointOverride.empty())

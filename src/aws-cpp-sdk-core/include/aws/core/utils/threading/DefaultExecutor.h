@@ -27,7 +27,7 @@ namespace Aws
             {
             public:
                 DefaultExecutor() : m_state(State::Free) {}
-                ~DefaultExecutor();
+                ~DefaultExecutor() override;
 
                 void WaitUntilStopped() override;
             protected:

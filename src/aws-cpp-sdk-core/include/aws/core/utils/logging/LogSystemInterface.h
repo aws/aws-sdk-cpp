@@ -51,7 +51,7 @@ namespace Aws
                 /**
                  * Stops logging on this logger without destroying the object.
                  */
-                virtual void Stop() { return; };
+                virtual void Stop() { return; }
             };
 
         } // namespace Logging

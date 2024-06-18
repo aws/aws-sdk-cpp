@@ -57,7 +57,7 @@ namespace Aws
                         m_eventHeaderStaticValue.boolValue = aws_event_stream_header_value_as_bool(header) != 0;
                         break;
                     case EventHeaderType::BYTE:
-                        m_eventHeaderStaticValue.byteValue = aws_event_stream_header_value_as_byte(header);
+                        m_eventHeaderStaticValue.byteValue = static_cast<uint8_t>(aws_event_stream_header_value_as_byte(header));
                         break;
                     case EventHeaderType::INT16:
                         m_eventHeaderStaticValue.int16Value = aws_event_stream_header_value_as_int16(header);
@@ -81,11 +81,12 @@ namespace Aws
                         assert(header->header_value_len == 16u);
                         m_eventHeaderVariableLengthValue = ByteBuffer(static_cast<uint8_t*>(aws_event_stream_header_value_as_uuid(header).buffer), header->header_value_len);
                         break;
+                    case EventHeaderType::UNKNOWN:
                     default:
                         AWS_LOG_ERROR(CLASS_TAG, "Encountered unknown type of header.");
                         break;
                     }
-                };
+                }
 
                 EventHeaderValue(const Aws::String& s) :
                     m_eventHeaderType(EventHeaderType::STRING),

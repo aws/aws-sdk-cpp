@@ -94,7 +94,7 @@ namespace Aws
                       const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                       const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
-            virtual ~AWSClient() { };
+            virtual ~AWSClient() { }
 
             /**
              * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSeconds defaults

@@ -26,7 +26,7 @@ namespace Aws
              */
             AWSConfigFileProfileConfigLoader(const Aws::String& fileName, bool useProfilePrefix = false);
 
-            virtual ~AWSConfigFileProfileConfigLoader() = default;
+            virtual ~AWSConfigFileProfileConfigLoader() override= default;
 
             /**
              * File path being used for the config loader.
