@@ -10,7 +10,9 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
+#include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +134,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configurations of additional storage specified to the instance group
+     * where the instance (node) is launched.</p>
+     */
+    inline const Aws::Vector<ClusterInstanceStorageConfig>& GetInstanceStorageConfigs() const{ return m_instanceStorageConfigs; }
+    inline bool InstanceStorageConfigsHasBeenSet() const { return m_instanceStorageConfigsHasBeenSet; }
+    inline void SetInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = value; }
+    inline void SetInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = std::move(value); }
+    inline ClusterNodeDetails& WithInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { SetInstanceStorageConfigs(value); return *this;}
+    inline ClusterNodeDetails& WithInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { SetInstanceStorageConfigs(std::move(value)); return *this;}
+    inline ClusterNodeDetails& AddInstanceStorageConfigs(const ClusterInstanceStorageConfig& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(value); return *this; }
+    inline ClusterNodeDetails& AddInstanceStorageConfigs(ClusterInstanceStorageConfig&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
      */
     inline const Aws::String& GetPrivatePrimaryIp() const{ return m_privatePrimaryIp; }
@@ -191,6 +208,9 @@ namespace Model
 
     int m_threadsPerCore;
     bool m_threadsPerCoreHasBeenSet = false;
+
+    Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
+    bool m_instanceStorageConfigsHasBeenSet = false;
 
     Aws::String m_privatePrimaryIp;
     bool m_privatePrimaryIpHasBeenSet = false;

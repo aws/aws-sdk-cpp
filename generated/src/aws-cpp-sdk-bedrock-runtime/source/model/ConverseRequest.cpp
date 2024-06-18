@@ -18,6 +18,7 @@ ConverseRequest::ConverseRequest() :
     m_systemHasBeenSet(false),
     m_inferenceConfigHasBeenSet(false),
     m_toolConfigHasBeenSet(false),
+    m_guardrailConfigHasBeenSet(false),
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false)
 {
@@ -58,6 +59,12 @@ Aws::String ConverseRequest::SerializePayload() const
   if(m_toolConfigHasBeenSet)
   {
    payload.WithObject("toolConfig", m_toolConfig.Jsonize());
+
+  }
+
+  if(m_guardrailConfigHasBeenSet)
+  {
+   payload.WithObject("guardrailConfig", m_guardrailConfig.Jsonize());
 
   }
 

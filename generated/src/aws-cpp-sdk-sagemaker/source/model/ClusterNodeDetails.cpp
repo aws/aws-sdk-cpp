@@ -28,6 +28,7 @@ ClusterNodeDetails::ClusterNodeDetails() :
     m_lifeCycleConfigHasBeenSet(false),
     m_threadsPerCore(0),
     m_threadsPerCoreHasBeenSet(false),
+    m_instanceStorageConfigsHasBeenSet(false),
     m_privatePrimaryIpHasBeenSet(false),
     m_privateDnsHostnameHasBeenSet(false),
     m_placementHasBeenSet(false)
@@ -44,6 +45,7 @@ ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue) :
     m_lifeCycleConfigHasBeenSet(false),
     m_threadsPerCore(0),
     m_threadsPerCoreHasBeenSet(false),
+    m_instanceStorageConfigsHasBeenSet(false),
     m_privatePrimaryIpHasBeenSet(false),
     m_privateDnsHostnameHasBeenSet(false),
     m_placementHasBeenSet(false)
@@ -100,6 +102,16 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
 
     m_threadsPerCoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceStorageConfigs"))
+  {
+    Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
+    for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+    {
+      m_instanceStorageConfigs.push_back(instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject());
+    }
+    m_instanceStorageConfigsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PrivatePrimaryIp"))
@@ -167,6 +179,17 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_threadsPerCoreHasBeenSet)
   {
    payload.WithInteger("ThreadsPerCore", m_threadsPerCore);
+
+  }
+
+  if(m_instanceStorageConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceStorageConfigsJsonList(m_instanceStorageConfigs.size());
+   for(unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength(); ++instanceStorageConfigsIndex)
+   {
+     instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject(m_instanceStorageConfigs[instanceStorageConfigsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceStorageConfigs", std::move(instanceStorageConfigsJsonList));
 
   }
 

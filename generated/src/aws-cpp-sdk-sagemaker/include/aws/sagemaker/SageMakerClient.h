@@ -1334,6 +1334,34 @@ namespace SageMaker
         }
 
         /**
+         * <p>Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as
+         * the artifact store. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server.html">Create
+         * an MLflow Tracking Server</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMlflowTrackingServerOutcome CreateMlflowTrackingServer(const Model::CreateMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMlflowTrackingServerRequestT = Model::CreateMlflowTrackingServerRequest>
+        Model::CreateMlflowTrackingServerOutcomeCallable CreateMlflowTrackingServerCallable(const CreateMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMlflowTrackingServerRequestT = Model::CreateMlflowTrackingServerRequest>
+        void CreateMlflowTrackingServerAsync(const CreateMlflowTrackingServerRequestT& request, const CreateMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateMlflowTrackingServer, request, handler, context);
+        }
+
+        /**
          * <p>Creates a model in SageMaker. In the request, you name the model and describe
          * a primary container. For the primary container, you specify the Docker image
          * that contains inference code, artifacts (from prior training), and a custom
@@ -1755,6 +1783,34 @@ namespace SageMaker
         void CreatePresignedDomainUrlAsync(const CreatePresignedDomainUrlRequestT& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::CreatePresignedDomainUrl, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a presigned URL that you can use to connect to the MLflow UI attached
+         * to your tracking server. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+         * the MLflow UI using a presigned URL</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedMlflowTrackingServerUrlOutcome CreatePresignedMlflowTrackingServerUrl(const Model::CreatePresignedMlflowTrackingServerUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePresignedMlflowTrackingServerUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePresignedMlflowTrackingServerUrlRequestT = Model::CreatePresignedMlflowTrackingServerUrlRequest>
+        Model::CreatePresignedMlflowTrackingServerUrlOutcomeCallable CreatePresignedMlflowTrackingServerUrlCallable(const CreatePresignedMlflowTrackingServerUrlRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreatePresignedMlflowTrackingServerUrl, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePresignedMlflowTrackingServerUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePresignedMlflowTrackingServerUrlRequestT = Model::CreatePresignedMlflowTrackingServerUrlRequest>
+        void CreatePresignedMlflowTrackingServerUrlAsync(const CreatePresignedMlflowTrackingServerUrlRequestT& request, const CreatePresignedMlflowTrackingServerUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreatePresignedMlflowTrackingServerUrl, request, handler, context);
         }
 
         /**
@@ -2959,6 +3015,33 @@ namespace SageMaker
         }
 
         /**
+         * <p>Deletes an MLflow Tracking Server. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-cleanup.html.html">Clean
+         * up MLflow resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMlflowTrackingServerOutcome DeleteMlflowTrackingServer(const Model::DeleteMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMlflowTrackingServerRequestT = Model::DeleteMlflowTrackingServerRequest>
+        Model::DeleteMlflowTrackingServerOutcomeCallable DeleteMlflowTrackingServerCallable(const DeleteMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMlflowTrackingServerRequestT = Model::DeleteMlflowTrackingServerRequest>
+        void DeleteMlflowTrackingServerAsync(const DeleteMlflowTrackingServerRequestT& request, const DeleteMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteMlflowTrackingServer, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in SageMaker when you called the <code>CreateModel</code>
          * API. It does not delete model artifacts, inference code, or the IAM role that
@@ -3481,7 +3564,7 @@ namespace SageMaker
          * one or more work teams, you must use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
          * operation to delete all work teams before you delete the workforce. If you try
-         * to delete a workforce that contains one or more work teams, you will recieve a
+         * to delete a workforce that contains one or more work teams, you will receive a
          * <code>ResourceInUse</code> error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
          * API Reference</a></p>
@@ -4472,6 +4555,32 @@ namespace SageMaker
         }
 
         /**
+         * <p>Returns information about an MLflow Tracking Server.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMlflowTrackingServerOutcome DescribeMlflowTrackingServer(const Model::DescribeMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMlflowTrackingServerRequestT = Model::DescribeMlflowTrackingServerRequest>
+        Model::DescribeMlflowTrackingServerOutcomeCallable DescribeMlflowTrackingServerCallable(const DescribeMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DescribeMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMlflowTrackingServerRequestT = Model::DescribeMlflowTrackingServerRequest>
+        void DescribeMlflowTrackingServerAsync(const DescribeMlflowTrackingServerRequestT& request, const DescribeMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DescribeMlflowTrackingServer, request, handler, context);
+        }
+
+        /**
          * <p>Describes a model that you created using the <code>CreateModel</code>
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModel">AWS
@@ -5133,7 +5242,7 @@ namespace SageMaker
 
         /**
          * <p>Gets information about a specific work team. You can see information such as
-         * the create date, the last updated date, membership information, and the work
+         * the creation date, the last updated date, membership information, and the work
          * team's Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkteam">AWS
          * API Reference</a></p>
@@ -6449,6 +6558,31 @@ namespace SageMaker
         }
 
         /**
+         * <p>Lists all MLflow Tracking Servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMlflowTrackingServersOutcome ListMlflowTrackingServers(const Model::ListMlflowTrackingServersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMlflowTrackingServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMlflowTrackingServersRequestT = Model::ListMlflowTrackingServersRequest>
+        Model::ListMlflowTrackingServersOutcomeCallable ListMlflowTrackingServersCallable(const ListMlflowTrackingServersRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::ListMlflowTrackingServers, request);
+        }
+
+        /**
+         * An Async wrapper for ListMlflowTrackingServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMlflowTrackingServersRequestT = Model::ListMlflowTrackingServersRequest>
+        void ListMlflowTrackingServersAsync(const ListMlflowTrackingServersRequestT& request, const ListMlflowTrackingServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::ListMlflowTrackingServers, request, handler, context);
+        }
+
+        /**
          * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">AWS
@@ -7678,6 +7812,32 @@ namespace SageMaker
         }
 
         /**
+         * <p>Programmatically start an MLflow Tracking Server.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMlflowTrackingServerOutcome StartMlflowTrackingServer(const Model::StartMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMlflowTrackingServerRequestT = Model::StartMlflowTrackingServerRequest>
+        Model::StartMlflowTrackingServerOutcomeCallable StartMlflowTrackingServerCallable(const StartMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::StartMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for StartMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMlflowTrackingServerRequestT = Model::StartMlflowTrackingServerRequest>
+        void StartMlflowTrackingServerAsync(const StartMlflowTrackingServerRequestT& request, const StartMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::StartMlflowTrackingServer, request, handler, context);
+        }
+
+        /**
          * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
          * when you successfully create a new schedule, the status of a monitoring schedule
          * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
@@ -7970,6 +8130,32 @@ namespace SageMaker
         void StopLabelingJobAsync(const StopLabelingJobRequestT& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::StopLabelingJob, request, handler, context);
+        }
+
+        /**
+         * <p>Programmatically stop an MLflow Tracking Server.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMlflowTrackingServerOutcome StopMlflowTrackingServer(const Model::StopMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopMlflowTrackingServerRequestT = Model::StopMlflowTrackingServerRequest>
+        Model::StopMlflowTrackingServerOutcomeCallable StopMlflowTrackingServerCallable(const StopMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::StopMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for StopMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopMlflowTrackingServerRequestT = Model::StopMlflowTrackingServerRequest>
+        void StopMlflowTrackingServerAsync(const StopMlflowTrackingServerRequestT& request, const StopMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::StopMlflowTrackingServer, request, handler, context);
         }
 
         /**
@@ -8740,6 +8926,32 @@ namespace SageMaker
         void UpdateInferenceExperimentAsync(const UpdateInferenceExperimentRequestT& request, const UpdateInferenceExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::UpdateInferenceExperiment, request, handler, context);
+        }
+
+        /**
+         * <p>Updates properties of an existing MLflow Tracking Server.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMlflowTrackingServerOutcome UpdateMlflowTrackingServer(const Model::UpdateMlflowTrackingServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMlflowTrackingServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMlflowTrackingServerRequestT = Model::UpdateMlflowTrackingServerRequest>
+        Model::UpdateMlflowTrackingServerOutcomeCallable UpdateMlflowTrackingServerCallable(const UpdateMlflowTrackingServerRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::UpdateMlflowTrackingServer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMlflowTrackingServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMlflowTrackingServerRequestT = Model::UpdateMlflowTrackingServerRequest>
+        void UpdateMlflowTrackingServerAsync(const UpdateMlflowTrackingServerRequestT& request, const UpdateMlflowTrackingServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::UpdateMlflowTrackingServer, request, handler, context);
         }
 
         /**

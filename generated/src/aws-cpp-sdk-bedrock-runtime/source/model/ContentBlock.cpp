@@ -22,7 +22,8 @@ ContentBlock::ContentBlock() :
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_toolUseHasBeenSet(false),
-    m_toolResultHasBeenSet(false)
+    m_toolResultHasBeenSet(false),
+    m_guardContentHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ContentBlock::ContentBlock(JsonView jsonValue) :
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_toolUseHasBeenSet(false),
-    m_toolResultHasBeenSet(false)
+    m_toolResultHasBeenSet(false),
+    m_guardContentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
     m_toolResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("guardContent"))
+  {
+    m_guardContent = jsonValue.GetObject("guardContent");
+
+    m_guardContentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue ContentBlock::Jsonize() const
   if(m_toolResultHasBeenSet)
   {
    payload.WithObject("toolResult", m_toolResult.Jsonize());
+
+  }
+
+  if(m_guardContentHasBeenSet)
+  {
+   payload.WithObject("guardContent", m_guardContent.Jsonize());
 
   }
 

@@ -24,6 +24,7 @@ namespace Aws
         static const int tool_use_HASH = HashingUtils::HashString("tool_use");
         static const int max_tokens_HASH = HashingUtils::HashString("max_tokens");
         static const int stop_sequence_HASH = HashingUtils::HashString("stop_sequence");
+        static const int guardrail_intervened_HASH = HashingUtils::HashString("guardrail_intervened");
         static const int content_filtered_HASH = HashingUtils::HashString("content_filtered");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == stop_sequence_HASH)
           {
             return StopReason::stop_sequence;
+          }
+          else if (hashCode == guardrail_intervened_HASH)
+          {
+            return StopReason::guardrail_intervened;
           }
           else if (hashCode == content_filtered_HASH)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "max_tokens";
           case StopReason::stop_sequence:
             return "stop_sequence";
+          case StopReason::guardrail_intervened:
+            return "guardrail_intervened";
           case StopReason::content_filtered:
             return "content_filtered";
           default:

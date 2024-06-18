@@ -61,6 +61,12 @@ ConverseResult& ConverseResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("trace"))
+  {
+    m_trace = jsonValue.GetObject("trace");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

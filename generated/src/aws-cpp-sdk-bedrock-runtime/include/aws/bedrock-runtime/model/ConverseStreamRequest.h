@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-runtime/model/InferenceConfiguration.h>
 #include <aws/bedrock-runtime/model/ToolConfiguration.h>
+#include <aws/bedrock-runtime/model/GuardrailStreamConfiguration.h>
 #include <aws/core/utils/Document.h>
 #include <aws/bedrock-runtime/model/Message.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
@@ -147,6 +148,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Configuration information for a guardrail that you want to use in the
+     * request. </p>
+     */
+    inline const GuardrailStreamConfiguration& GetGuardrailConfig() const{ return m_guardrailConfig; }
+    inline bool GuardrailConfigHasBeenSet() const { return m_guardrailConfigHasBeenSet; }
+    inline void SetGuardrailConfig(const GuardrailStreamConfiguration& value) { m_guardrailConfigHasBeenSet = true; m_guardrailConfig = value; }
+    inline void SetGuardrailConfig(GuardrailStreamConfiguration&& value) { m_guardrailConfigHasBeenSet = true; m_guardrailConfig = std::move(value); }
+    inline ConverseStreamRequest& WithGuardrailConfig(const GuardrailStreamConfiguration& value) { SetGuardrailConfig(value); return *this;}
+    inline ConverseStreamRequest& WithGuardrailConfig(GuardrailStreamConfiguration&& value) { SetGuardrailConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Additional inference parameters that the model supports, beyond the base set
      * of inference parameters that <code>ConverseStream</code> supports in the
      * <code>inferenceConfig</code> field.</p>
@@ -163,7 +177,7 @@ namespace Model
     /**
      * <p>Additional model parameters field paths to return in the response.
      * <code>ConverseStream</code> returns the requested fields as a JSON Pointer
-     * object in the <code>additionalModelResultFields</code> field. The following is
+     * object in the <code>additionalModelResponseFields</code> field. The following is
      * example JSON for <code>additionalModelResponseFieldPaths</code>.</p> <p> <code>[
      * "/stop_sequence" ]</code> </p> <p>For information about the JSON Pointer syntax,
      * see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet
@@ -199,6 +213,9 @@ namespace Model
 
     ToolConfiguration m_toolConfig;
     bool m_toolConfigHasBeenSet = false;
+
+    GuardrailStreamConfiguration m_guardrailConfig;
+    bool m_guardrailConfigHasBeenSet = false;
 
     Aws::Utils::Document m_additionalModelRequestFields;
     bool m_additionalModelRequestFieldsHasBeenSet = false;

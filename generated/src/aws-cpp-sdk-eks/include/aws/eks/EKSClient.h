@@ -342,14 +342,14 @@ namespace EKS
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
-         * done through the profile���s selectors. Each profile can have up to five
-         * selectors that contain a namespace and labels. A namespace is required for every
-         * selector. The label field consists of multiple optional key-value pairs. Pods
-         * that match the selectors are scheduled on Fargate. If a to-be-scheduled pod
-         * matches any of the selectors in the Fargate profile, then that pod is run on
-         * Fargate.</p> <p>When you create a Fargate profile, you must specify a pod
-         * execution role to use with the pods that are scheduled with the profile. This
-         * role is added to the cluster's Kubernetes <a
+         * done through the profile’s selectors. Each profile can have up to five selectors
+         * that contain a namespace and labels. A namespace is required for every selector.
+         * The label field consists of multiple optional key-value pairs. Pods that match
+         * the selectors are scheduled on Fargate. If a to-be-scheduled pod matches any of
+         * the selectors in the Fargate profile, then that pod is run on Fargate.</p>
+         * <p>When you create a Fargate profile, you must specify a pod execution role to
+         * use with the pods that are scheduled with the profile. This role is added to the
+         * cluster's Kubernetes <a
          * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Role Based
          * Access Control</a> (RBAC) for authorization so that the <code>kubelet</code>
          * that is running on the Fargate infrastructure can register with your Amazon EKS

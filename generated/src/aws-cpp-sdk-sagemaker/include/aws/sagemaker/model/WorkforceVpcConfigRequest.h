@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must
-     * be for the same VPC as specified in the subnet.</p>
+     * <p>The VPC security group IDs, in the form <code>sg-xxxxxxxx</code>. The
+     * security groups must be for the same VPC as specified in the subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }

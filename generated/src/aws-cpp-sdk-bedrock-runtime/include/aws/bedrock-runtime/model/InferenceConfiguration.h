@@ -56,18 +56,7 @@ namespace Model
      * value is the maximum allowed value for the model that you are using. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
-     * parameters for foundatio{ "messages": [ { "role": "user", "content": [ { "text":
-     * "what's the weather in Queens, NY and Austin, TX?" } ] }, { "role": "assistant",
-     * "content": [ { "toolUse": { "toolUseId": "1", "name": "get_weather", "input": {
-     * "city": "Queens", "state": "NY" } } }, { "toolUse": { "toolUseId": "2", "name":
-     * "get_weather", "input": { "city": "Austin", "state": "TX" } } } ] }, { "role":
-     * "user", "content": [ { "toolResult": { "toolUseId": "2", "content": [ { "json":
-     * { "weather": "40" } } ] } }, { "text": "..." }, { "toolResult": { "toolUseId":
-     * "1", "content": [ { "text": "result text" } ] } } ] } ], "toolConfig": {
-     * "tools": [ { "name": "get_weather", "description": "Get weather", "inputSchema":
-     * { "type": "object", "properties": { "city": { "type": "string", "description":
-     * "City of location" }, "state": { "type": "string", "description": "State of
-     * location" } }, "required": ["city", "state"] } } ] } } n models</a>. </p>
+     * parameters for foundation models</a>. </p>
      */
     inline int GetMaxTokens() const{ return m_maxTokens; }
     inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }

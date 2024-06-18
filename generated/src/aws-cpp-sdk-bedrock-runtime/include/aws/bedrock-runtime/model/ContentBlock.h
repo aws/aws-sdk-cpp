@@ -9,6 +9,7 @@
 #include <aws/bedrock-runtime/model/ImageBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
+#include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -27,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>A block of content for a message.</p><p><h3>See Also:</h3>   <a
+   * <p>A block of content for a message that you pass to, or receive from, a model
+   * with the Converse API (<a>Converse</a> and <a>ConverseStream</a>).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ContentBlock">AWS
    * API Reference</a></p>
    */
@@ -90,6 +93,22 @@ namespace Model
     inline ContentBlock& WithToolResult(const ToolResultBlock& value) { SetToolResult(value); return *this;}
     inline ContentBlock& WithToolResult(ToolResultBlock&& value) { SetToolResult(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains the content to assess with the guardrail. If you don't specify
+     * <code>guardContent</code> in a call to the Converse API, the guardrail (if
+     * passed in the Converse API) assesses the entire message.</p> <p>For more
+     * information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
+     * Bedrock User Guide</i>. <pre><code> &lt;/p&gt; </code></pre>
+     */
+    inline const GuardrailConverseContentBlock& GetGuardContent() const{ return m_guardContent; }
+    inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }
+    inline void SetGuardContent(const GuardrailConverseContentBlock& value) { m_guardContentHasBeenSet = true; m_guardContent = value; }
+    inline void SetGuardContent(GuardrailConverseContentBlock&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::move(value); }
+    inline ContentBlock& WithGuardContent(const GuardrailConverseContentBlock& value) { SetGuardContent(value); return *this;}
+    inline ContentBlock& WithGuardContent(GuardrailConverseContentBlock&& value) { SetGuardContent(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
@@ -103,6 +122,9 @@ namespace Model
 
     ToolResultBlock m_toolResult;
     bool m_toolResultHasBeenSet = false;
+
+    GuardrailConverseContentBlock m_guardContent;
+    bool m_guardContentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,8 +28,8 @@ namespace Model
    * <p>A list of IP address ranges (<a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
    * Used to create an allow list of IP addresses for a private workforce. Workers
-   * will only be able to login to their worker portal from an IP address within this
-   * range. By default, a workforce isn't restricted to specific IP
+   * will only be able to log in to their worker portal from an IP address within
+   * this range. By default, a workforce isn't restricted to specific IP
    * addresses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SourceIpConfig">AWS
    * API Reference</a></p>

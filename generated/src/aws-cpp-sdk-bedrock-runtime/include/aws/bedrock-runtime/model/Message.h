@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>A message in the <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Message.html">Message</a>
-   * field. Use to send a message in a call to <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A message input, or returned from, a call to <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Message">AWS
    * API Reference</a></p>
    */

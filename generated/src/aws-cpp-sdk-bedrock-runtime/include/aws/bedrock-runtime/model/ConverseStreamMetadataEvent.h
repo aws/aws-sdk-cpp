@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/bedrock-runtime/model/ConverseStreamMetrics.h>
+#include <aws/bedrock-runtime/model/ConverseStreamTrace.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,19 @@ namespace Model
     inline ConverseStreamMetadataEvent& WithMetrics(const ConverseStreamMetrics& value) { SetMetrics(value); return *this;}
     inline ConverseStreamMetadataEvent& WithMetrics(ConverseStreamMetrics&& value) { SetMetrics(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The trace object in the response from <a>ConverseStream</a> that contains
+     * information about the guardrail behavior.</p>
+     */
+    inline const ConverseStreamTrace& GetTrace() const{ return m_trace; }
+    inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
+    inline void SetTrace(const ConverseStreamTrace& value) { m_traceHasBeenSet = true; m_trace = value; }
+    inline void SetTrace(ConverseStreamTrace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
+    inline ConverseStreamMetadataEvent& WithTrace(const ConverseStreamTrace& value) { SetTrace(value); return *this;}
+    inline ConverseStreamMetadataEvent& WithTrace(ConverseStreamTrace&& value) { SetTrace(std::move(value)); return *this;}
+    ///@}
   private:
 
     TokenUsage m_usage;
@@ -68,6 +82,9 @@ namespace Model
 
     ConverseStreamMetrics m_metrics;
     bool m_metricsHasBeenSet = false;
+
+    ConverseStreamTrace m_trace;
+    bool m_traceHasBeenSet = false;
   };
 
 } // namespace Model
