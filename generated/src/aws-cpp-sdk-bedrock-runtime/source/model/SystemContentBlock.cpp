@@ -19,12 +19,14 @@ namespace Model
 {
 
 SystemContentBlock::SystemContentBlock() : 
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_guardContentHasBeenSet(false)
 {
 }
 
 SystemContentBlock::SystemContentBlock(JsonView jsonValue) : 
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_guardContentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ SystemContentBlock& SystemContentBlock::operator =(JsonView jsonValue)
     m_textHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("guardContent"))
+  {
+    m_guardContent = jsonValue.GetObject("guardContent");
+
+    m_guardContentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue SystemContentBlock::Jsonize() const
   if(m_textHasBeenSet)
   {
    payload.WithString("text", m_text);
+
+  }
+
+  if(m_guardContentHasBeenSet)
+  {
+   payload.WithObject("guardContent", m_guardContent.Jsonize());
 
   }
 

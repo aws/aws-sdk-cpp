@@ -50,6 +50,7 @@
 #include <aws/sagemaker/model/CreateInferenceExperimentResult.h>
 #include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
+#include <aws/sagemaker/model/CreateMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionResult.h>
 #include <aws/sagemaker/model/CreateModelCardResult.h>
@@ -63,6 +64,7 @@
 #include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/CreatePipelineResult.h>
 #include <aws/sagemaker/model/CreatePresignedDomainUrlResult.h>
+#include <aws/sagemaker/model/CreatePresignedMlflowTrackingServerUrlResult.h>
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlResult.h>
 #include <aws/sagemaker/model/CreateProcessingJobResult.h>
 #include <aws/sagemaker/model/CreateProjectResult.h>
@@ -86,6 +88,7 @@
 #include <aws/sagemaker/model/DeleteImageResult.h>
 #include <aws/sagemaker/model/DeleteImageVersionResult.h>
 #include <aws/sagemaker/model/DeleteInferenceExperimentResult.h>
+#include <aws/sagemaker/model/DeleteMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/DeletePipelineResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
@@ -127,6 +130,7 @@
 #include <aws/sagemaker/model/DescribeInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeLineageGroupResult.h>
+#include <aws/sagemaker/model/DescribeMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeModelCardResult.h>
@@ -202,6 +206,7 @@
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
 #include <aws/sagemaker/model/ListLineageGroupsResult.h>
+#include <aws/sagemaker/model/ListMlflowTrackingServersResult.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelCardExportJobsResult.h>
 #include <aws/sagemaker/model/ListModelCardVersionsResult.h>
@@ -246,8 +251,10 @@
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
 #include <aws/sagemaker/model/StartInferenceExperimentResult.h>
+#include <aws/sagemaker/model/StartMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
 #include <aws/sagemaker/model/StopInferenceExperimentResult.h>
+#include <aws/sagemaker/model/StopMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>
 #include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
@@ -267,6 +274,7 @@
 #include <aws/sagemaker/model/UpdateInferenceComponentResult.h>
 #include <aws/sagemaker/model/UpdateInferenceComponentRuntimeConfigResult.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentResult.h>
+#include <aws/sagemaker/model/UpdateMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/UpdateModelCardResult.h>
 #include <aws/sagemaker/model/UpdateModelPackageResult.h>
 #include <aws/sagemaker/model/UpdateMonitoringAlertResult.h>
@@ -359,6 +367,7 @@ namespace Aws
       class CreateInferenceExperimentRequest;
       class CreateInferenceRecommendationsJobRequest;
       class CreateLabelingJobRequest;
+      class CreateMlflowTrackingServerRequest;
       class CreateModelRequest;
       class CreateModelBiasJobDefinitionRequest;
       class CreateModelCardRequest;
@@ -372,6 +381,7 @@ namespace Aws
       class CreateNotebookInstanceLifecycleConfigRequest;
       class CreatePipelineRequest;
       class CreatePresignedDomainUrlRequest;
+      class CreatePresignedMlflowTrackingServerUrlRequest;
       class CreatePresignedNotebookInstanceUrlRequest;
       class CreateProcessingJobRequest;
       class CreateProjectRequest;
@@ -412,6 +422,7 @@ namespace Aws
       class DeleteImageVersionRequest;
       class DeleteInferenceComponentRequest;
       class DeleteInferenceExperimentRequest;
+      class DeleteMlflowTrackingServerRequest;
       class DeleteModelRequest;
       class DeleteModelBiasJobDefinitionRequest;
       class DeleteModelCardRequest;
@@ -469,6 +480,7 @@ namespace Aws
       class DescribeInferenceRecommendationsJobRequest;
       class DescribeLabelingJobRequest;
       class DescribeLineageGroupRequest;
+      class DescribeMlflowTrackingServerRequest;
       class DescribeModelRequest;
       class DescribeModelBiasJobDefinitionRequest;
       class DescribeModelCardRequest;
@@ -544,6 +556,7 @@ namespace Aws
       class ListLabelingJobsRequest;
       class ListLabelingJobsForWorkteamRequest;
       class ListLineageGroupsRequest;
+      class ListMlflowTrackingServersRequest;
       class ListModelBiasJobDefinitionsRequest;
       class ListModelCardExportJobsRequest;
       class ListModelCardVersionsRequest;
@@ -590,6 +603,7 @@ namespace Aws
       class SendPipelineExecutionStepSuccessRequest;
       class StartEdgeDeploymentStageRequest;
       class StartInferenceExperimentRequest;
+      class StartMlflowTrackingServerRequest;
       class StartMonitoringScheduleRequest;
       class StartNotebookInstanceRequest;
       class StartPipelineExecutionRequest;
@@ -601,6 +615,7 @@ namespace Aws
       class StopInferenceExperimentRequest;
       class StopInferenceRecommendationsJobRequest;
       class StopLabelingJobRequest;
+      class StopMlflowTrackingServerRequest;
       class StopMonitoringScheduleRequest;
       class StopNotebookInstanceRequest;
       class StopPipelineExecutionRequest;
@@ -628,6 +643,7 @@ namespace Aws
       class UpdateInferenceComponentRequest;
       class UpdateInferenceComponentRuntimeConfigRequest;
       class UpdateInferenceExperimentRequest;
+      class UpdateMlflowTrackingServerRequest;
       class UpdateModelCardRequest;
       class UpdateModelPackageRequest;
       class UpdateMonitoringAlertRequest;
@@ -682,6 +698,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateInferenceExperimentResult, SageMakerError> CreateInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<CreateInferenceRecommendationsJobResult, SageMakerError> CreateInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<CreateLabelingJobResult, SageMakerError> CreateLabelingJobOutcome;
+      typedef Aws::Utils::Outcome<CreateMlflowTrackingServerResult, SageMakerError> CreateMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<CreateModelResult, SageMakerError> CreateModelOutcome;
       typedef Aws::Utils::Outcome<CreateModelBiasJobDefinitionResult, SageMakerError> CreateModelBiasJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateModelCardResult, SageMakerError> CreateModelCardOutcome;
@@ -695,6 +712,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateNotebookInstanceLifecycleConfigResult, SageMakerError> CreateNotebookInstanceLifecycleConfigOutcome;
       typedef Aws::Utils::Outcome<CreatePipelineResult, SageMakerError> CreatePipelineOutcome;
       typedef Aws::Utils::Outcome<CreatePresignedDomainUrlResult, SageMakerError> CreatePresignedDomainUrlOutcome;
+      typedef Aws::Utils::Outcome<CreatePresignedMlflowTrackingServerUrlResult, SageMakerError> CreatePresignedMlflowTrackingServerUrlOutcome;
       typedef Aws::Utils::Outcome<CreatePresignedNotebookInstanceUrlResult, SageMakerError> CreatePresignedNotebookInstanceUrlOutcome;
       typedef Aws::Utils::Outcome<CreateProcessingJobResult, SageMakerError> CreateProcessingJobOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, SageMakerError> CreateProjectOutcome;
@@ -735,6 +753,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteImageVersionResult, SageMakerError> DeleteImageVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteInferenceComponentOutcome;
       typedef Aws::Utils::Outcome<DeleteInferenceExperimentResult, SageMakerError> DeleteInferenceExperimentOutcome;
+      typedef Aws::Utils::Outcome<DeleteMlflowTrackingServerResult, SageMakerError> DeleteMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelBiasJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelCardOutcome;
@@ -792,6 +811,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeInferenceRecommendationsJobResult, SageMakerError> DescribeInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<DescribeLabelingJobResult, SageMakerError> DescribeLabelingJobOutcome;
       typedef Aws::Utils::Outcome<DescribeLineageGroupResult, SageMakerError> DescribeLineageGroupOutcome;
+      typedef Aws::Utils::Outcome<DescribeMlflowTrackingServerResult, SageMakerError> DescribeMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<DescribeModelResult, SageMakerError> DescribeModelOutcome;
       typedef Aws::Utils::Outcome<DescribeModelBiasJobDefinitionResult, SageMakerError> DescribeModelBiasJobDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeModelCardResult, SageMakerError> DescribeModelCardOutcome;
@@ -867,6 +887,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
       typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
       typedef Aws::Utils::Outcome<ListLineageGroupsResult, SageMakerError> ListLineageGroupsOutcome;
+      typedef Aws::Utils::Outcome<ListMlflowTrackingServersResult, SageMakerError> ListMlflowTrackingServersOutcome;
       typedef Aws::Utils::Outcome<ListModelBiasJobDefinitionsResult, SageMakerError> ListModelBiasJobDefinitionsOutcome;
       typedef Aws::Utils::Outcome<ListModelCardExportJobsResult, SageMakerError> ListModelCardExportJobsOutcome;
       typedef Aws::Utils::Outcome<ListModelCardVersionsResult, SageMakerError> ListModelCardVersionsOutcome;
@@ -913,6 +934,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartEdgeDeploymentStageOutcome;
       typedef Aws::Utils::Outcome<StartInferenceExperimentResult, SageMakerError> StartInferenceExperimentOutcome;
+      typedef Aws::Utils::Outcome<StartMlflowTrackingServerResult, SageMakerError> StartMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
       typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
@@ -924,6 +946,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopInferenceExperimentResult, SageMakerError> StopInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopInferenceRecommendationsJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopLabelingJobOutcome;
+      typedef Aws::Utils::Outcome<StopMlflowTrackingServerResult, SageMakerError> StopMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopMonitoringScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopNotebookInstanceOutcome;
       typedef Aws::Utils::Outcome<StopPipelineExecutionResult, SageMakerError> StopPipelineExecutionOutcome;
@@ -951,6 +974,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateInferenceComponentResult, SageMakerError> UpdateInferenceComponentOutcome;
       typedef Aws::Utils::Outcome<UpdateInferenceComponentRuntimeConfigResult, SageMakerError> UpdateInferenceComponentRuntimeConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateInferenceExperimentResult, SageMakerError> UpdateInferenceExperimentOutcome;
+      typedef Aws::Utils::Outcome<UpdateMlflowTrackingServerResult, SageMakerError> UpdateMlflowTrackingServerOutcome;
       typedef Aws::Utils::Outcome<UpdateModelCardResult, SageMakerError> UpdateModelCardOutcome;
       typedef Aws::Utils::Outcome<UpdateModelPackageResult, SageMakerError> UpdateModelPackageOutcome;
       typedef Aws::Utils::Outcome<UpdateMonitoringAlertResult, SageMakerError> UpdateMonitoringAlertOutcome;
@@ -1005,6 +1029,7 @@ namespace Aws
       typedef std::future<CreateInferenceExperimentOutcome> CreateInferenceExperimentOutcomeCallable;
       typedef std::future<CreateInferenceRecommendationsJobOutcome> CreateInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
+      typedef std::future<CreateMlflowTrackingServerOutcome> CreateMlflowTrackingServerOutcomeCallable;
       typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
       typedef std::future<CreateModelBiasJobDefinitionOutcome> CreateModelBiasJobDefinitionOutcomeCallable;
       typedef std::future<CreateModelCardOutcome> CreateModelCardOutcomeCallable;
@@ -1018,6 +1043,7 @@ namespace Aws
       typedef std::future<CreateNotebookInstanceLifecycleConfigOutcome> CreateNotebookInstanceLifecycleConfigOutcomeCallable;
       typedef std::future<CreatePipelineOutcome> CreatePipelineOutcomeCallable;
       typedef std::future<CreatePresignedDomainUrlOutcome> CreatePresignedDomainUrlOutcomeCallable;
+      typedef std::future<CreatePresignedMlflowTrackingServerUrlOutcome> CreatePresignedMlflowTrackingServerUrlOutcomeCallable;
       typedef std::future<CreatePresignedNotebookInstanceUrlOutcome> CreatePresignedNotebookInstanceUrlOutcomeCallable;
       typedef std::future<CreateProcessingJobOutcome> CreateProcessingJobOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
@@ -1058,6 +1084,7 @@ namespace Aws
       typedef std::future<DeleteImageVersionOutcome> DeleteImageVersionOutcomeCallable;
       typedef std::future<DeleteInferenceComponentOutcome> DeleteInferenceComponentOutcomeCallable;
       typedef std::future<DeleteInferenceExperimentOutcome> DeleteInferenceExperimentOutcomeCallable;
+      typedef std::future<DeleteMlflowTrackingServerOutcome> DeleteMlflowTrackingServerOutcomeCallable;
       typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
       typedef std::future<DeleteModelBiasJobDefinitionOutcome> DeleteModelBiasJobDefinitionOutcomeCallable;
       typedef std::future<DeleteModelCardOutcome> DeleteModelCardOutcomeCallable;
@@ -1115,6 +1142,7 @@ namespace Aws
       typedef std::future<DescribeInferenceRecommendationsJobOutcome> DescribeInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
       typedef std::future<DescribeLineageGroupOutcome> DescribeLineageGroupOutcomeCallable;
+      typedef std::future<DescribeMlflowTrackingServerOutcome> DescribeMlflowTrackingServerOutcomeCallable;
       typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
       typedef std::future<DescribeModelBiasJobDefinitionOutcome> DescribeModelBiasJobDefinitionOutcomeCallable;
       typedef std::future<DescribeModelCardOutcome> DescribeModelCardOutcomeCallable;
@@ -1190,6 +1218,7 @@ namespace Aws
       typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
       typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
       typedef std::future<ListLineageGroupsOutcome> ListLineageGroupsOutcomeCallable;
+      typedef std::future<ListMlflowTrackingServersOutcome> ListMlflowTrackingServersOutcomeCallable;
       typedef std::future<ListModelBiasJobDefinitionsOutcome> ListModelBiasJobDefinitionsOutcomeCallable;
       typedef std::future<ListModelCardExportJobsOutcome> ListModelCardExportJobsOutcomeCallable;
       typedef std::future<ListModelCardVersionsOutcome> ListModelCardVersionsOutcomeCallable;
@@ -1236,6 +1265,7 @@ namespace Aws
       typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
       typedef std::future<StartEdgeDeploymentStageOutcome> StartEdgeDeploymentStageOutcomeCallable;
       typedef std::future<StartInferenceExperimentOutcome> StartInferenceExperimentOutcomeCallable;
+      typedef std::future<StartMlflowTrackingServerOutcome> StartMlflowTrackingServerOutcomeCallable;
       typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
       typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
       typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
@@ -1247,6 +1277,7 @@ namespace Aws
       typedef std::future<StopInferenceExperimentOutcome> StopInferenceExperimentOutcomeCallable;
       typedef std::future<StopInferenceRecommendationsJobOutcome> StopInferenceRecommendationsJobOutcomeCallable;
       typedef std::future<StopLabelingJobOutcome> StopLabelingJobOutcomeCallable;
+      typedef std::future<StopMlflowTrackingServerOutcome> StopMlflowTrackingServerOutcomeCallable;
       typedef std::future<StopMonitoringScheduleOutcome> StopMonitoringScheduleOutcomeCallable;
       typedef std::future<StopNotebookInstanceOutcome> StopNotebookInstanceOutcomeCallable;
       typedef std::future<StopPipelineExecutionOutcome> StopPipelineExecutionOutcomeCallable;
@@ -1274,6 +1305,7 @@ namespace Aws
       typedef std::future<UpdateInferenceComponentOutcome> UpdateInferenceComponentOutcomeCallable;
       typedef std::future<UpdateInferenceComponentRuntimeConfigOutcome> UpdateInferenceComponentRuntimeConfigOutcomeCallable;
       typedef std::future<UpdateInferenceExperimentOutcome> UpdateInferenceExperimentOutcomeCallable;
+      typedef std::future<UpdateMlflowTrackingServerOutcome> UpdateMlflowTrackingServerOutcomeCallable;
       typedef std::future<UpdateModelCardOutcome> UpdateModelCardOutcomeCallable;
       typedef std::future<UpdateModelPackageOutcome> UpdateModelPackageOutcomeCallable;
       typedef std::future<UpdateMonitoringAlertOutcome> UpdateMonitoringAlertOutcomeCallable;
@@ -1331,6 +1363,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateInferenceExperimentRequest&, const Model::CreateInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateInferenceRecommendationsJobRequest&, const Model::CreateInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateMlflowTrackingServerRequest&, const Model::CreateMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelBiasJobDefinitionRequest&, const Model::CreateModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelBiasJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelCardRequest&, const Model::CreateModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCardResponseReceivedHandler;
@@ -1344,6 +1377,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceLifecycleConfigRequest&, const Model::CreateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedDomainUrlRequest&, const Model::CreatePresignedDomainUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedDomainUrlResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedMlflowTrackingServerUrlRequest&, const Model::CreatePresignedMlflowTrackingServerUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedMlflowTrackingServerUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedNotebookInstanceUrlRequest&, const Model::CreatePresignedNotebookInstanceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookInstanceUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProcessingJobRequest&, const Model::CreateProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
@@ -1384,6 +1418,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageVersionRequest&, const Model::DeleteImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteInferenceComponentRequest&, const Model::DeleteInferenceComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInferenceComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteInferenceExperimentRequest&, const Model::DeleteInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInferenceExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteMlflowTrackingServerRequest&, const Model::DeleteMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelBiasJobDefinitionRequest&, const Model::DeleteModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelBiasJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelCardRequest&, const Model::DeleteModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelCardResponseReceivedHandler;
@@ -1441,6 +1476,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DescribeInferenceRecommendationsJobRequest&, const Model::DescribeInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLineageGroupRequest&, const Model::DescribeLineageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLineageGroupResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeMlflowTrackingServerRequest&, const Model::DescribeMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelBiasJobDefinitionRequest&, const Model::DescribeModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelBiasJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelCardRequest&, const Model::DescribeModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelCardResponseReceivedHandler;
@@ -1516,6 +1552,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLineageGroupsRequest&, const Model::ListLineageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageGroupsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListMlflowTrackingServersRequest&, const Model::ListMlflowTrackingServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMlflowTrackingServersResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelBiasJobDefinitionsRequest&, const Model::ListModelBiasJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelBiasJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelCardExportJobsRequest&, const Model::ListModelCardExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCardExportJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelCardVersionsRequest&, const Model::ListModelCardVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelCardVersionsResponseReceivedHandler;
@@ -1562,6 +1599,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepSuccessRequest&, const Model::SendPipelineExecutionStepSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepSuccessResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartEdgeDeploymentStageRequest&, const Model::StartEdgeDeploymentStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEdgeDeploymentStageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartInferenceExperimentRequest&, const Model::StartInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInferenceExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StartMlflowTrackingServerRequest&, const Model::StartMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
@@ -1573,6 +1611,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::StopInferenceExperimentRequest&, const Model::StopInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopInferenceRecommendationsJobRequest&, const Model::StopInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopLabelingJobRequest&, const Model::StopLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLabelingJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopMlflowTrackingServerRequest&, const Model::StopMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopMonitoringScheduleRequest&, const Model::StopMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopNotebookInstanceRequest&, const Model::StopNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopPipelineExecutionRequest&, const Model::StopPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPipelineExecutionResponseReceivedHandler;
@@ -1600,6 +1639,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceComponentRequest&, const Model::UpdateInferenceComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceComponentRuntimeConfigRequest&, const Model::UpdateInferenceComponentRuntimeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceComponentRuntimeConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceExperimentRequest&, const Model::UpdateInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateMlflowTrackingServerRequest&, const Model::UpdateMlflowTrackingServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMlflowTrackingServerResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelCardRequest&, const Model::UpdateModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelCardResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelPackageRequest&, const Model::UpdateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringAlertRequest&, const Model::UpdateMonitoringAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringAlertResponseReceivedHandler;

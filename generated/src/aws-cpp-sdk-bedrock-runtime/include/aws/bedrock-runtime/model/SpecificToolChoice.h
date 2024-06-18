@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The model must request a specific tool.</p>  <p>This field is only
-   * supported by Anthropic Claude 3 models.</p> <p><h3>See Also:</h3>   <a
+   * <p>The model must request a specific tool. For example, <code>{"tool" : {"name"
+   * : "Your tool name"}}</code>.</p>  <p>This field is only supported by
+   * Anthropic Claude 3 models.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/SpecificToolChoice">AWS
    * API Reference</a></p>
    */

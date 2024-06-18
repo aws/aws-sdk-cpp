@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a work team of a vendor that does the a labelling
-   * job.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a work team of a vendor that does the labelling job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SubscribedWorkteam">AWS
    * API Reference</a></p>
    */

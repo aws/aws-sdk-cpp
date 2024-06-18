@@ -20,13 +20,15 @@ namespace Model
 
 ConverseStreamMetadataEvent::ConverseStreamMetadataEvent() : 
     m_usageHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_traceHasBeenSet(false)
 {
 }
 
 ConverseStreamMetadataEvent::ConverseStreamMetadataEvent(JsonView jsonValue) : 
     m_usageHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_traceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ConverseStreamMetadataEvent& ConverseStreamMetadataEvent::operator =(JsonView js
     m_metricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trace"))
+  {
+    m_trace = jsonValue.GetObject("trace");
+
+    m_traceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ConverseStreamMetadataEvent::Jsonize() const
   if(m_metricsHasBeenSet)
   {
    payload.WithObject("metrics", m_metrics.Jsonize());
+
+  }
+
+  if(m_traceHasBeenSet)
+  {
+   payload.WithObject("trace", m_trace.Jsonize());
 
   }
 

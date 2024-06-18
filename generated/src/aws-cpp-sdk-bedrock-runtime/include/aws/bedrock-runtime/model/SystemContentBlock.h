@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A system content block</p><p><h3>See Also:</h3>   <a
+   * <p>A system content block.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/SystemContentBlock">AWS
    * API Reference</a></p>
    */
@@ -50,10 +51,28 @@ namespace Model
     inline SystemContentBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
     inline SystemContentBlock& WithText(const char* value) { SetText(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A content block to assess with the guardrail. Use with the Converse API
+     * (<a>Converse</a> and <a>ConverseStream</a>). </p> <p>For more information, see
+     * <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User
+     * Guide</i>.</p>
+     */
+    inline const GuardrailConverseContentBlock& GetGuardContent() const{ return m_guardContent; }
+    inline bool GuardContentHasBeenSet() const { return m_guardContentHasBeenSet; }
+    inline void SetGuardContent(const GuardrailConverseContentBlock& value) { m_guardContentHasBeenSet = true; m_guardContent = value; }
+    inline void SetGuardContent(GuardrailConverseContentBlock&& value) { m_guardContentHasBeenSet = true; m_guardContent = std::move(value); }
+    inline SystemContentBlock& WithGuardContent(const GuardrailConverseContentBlock& value) { SetGuardContent(value); return *this;}
+    inline SystemContentBlock& WithGuardContent(GuardrailConverseContentBlock&& value) { SetGuardContent(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
+
+    GuardrailConverseContentBlock m_guardContent;
+    bool m_guardContentHasBeenSet = false;
   };
 
 } // namespace Model

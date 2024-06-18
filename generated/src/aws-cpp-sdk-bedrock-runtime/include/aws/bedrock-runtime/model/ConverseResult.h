@@ -10,6 +10,7 @@
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/bedrock-runtime/model/ConverseMetrics.h>
 #include <aws/core/utils/Document.h>
+#include <aws/bedrock-runtime/model/ConverseTrace.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -95,6 +96,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A trace object that contains information about the Guardrail behavior.</p>
+     */
+    inline const ConverseTrace& GetTrace() const{ return m_trace; }
+    inline void SetTrace(const ConverseTrace& value) { m_trace = value; }
+    inline void SetTrace(ConverseTrace&& value) { m_trace = std::move(value); }
+    inline ConverseResult& WithTrace(const ConverseTrace& value) { SetTrace(value); return *this;}
+    inline ConverseResult& WithTrace(ConverseTrace&& value) { SetTrace(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -115,6 +127,8 @@ namespace Model
     ConverseMetrics m_metrics;
 
     Aws::Utils::Document m_additionalModelResponseFields;
+
+    ConverseTrace m_trace;
 
     Aws::String m_requestId;
   };

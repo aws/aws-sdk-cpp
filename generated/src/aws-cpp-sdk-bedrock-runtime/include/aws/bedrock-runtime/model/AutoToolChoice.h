@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The Model automatically decides if a tool should be called or to whether to
-   * generate text instead.</p><p><h3>See Also:</h3>   <a
+   * <p>The Model automatically decides if a tool should be called or whether to
+   * generate text instead. For example, <code>{"auto" : {}}</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/AutoToolChoice">AWS
    * API Reference</a></p>
    */

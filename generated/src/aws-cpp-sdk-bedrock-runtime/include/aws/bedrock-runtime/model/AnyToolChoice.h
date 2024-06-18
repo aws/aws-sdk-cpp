@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The model must request at least one tool (no text is
-   * generated).</p><p><h3>See Also:</h3>   <a
+   * <p>The model must request at least one tool (no text is generated). For example,
+   * <code>{"any" : {}}</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/AnyToolChoice">AWS
    * API Reference</a></p>
    */

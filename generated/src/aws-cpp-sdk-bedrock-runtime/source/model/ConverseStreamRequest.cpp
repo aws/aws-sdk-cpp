@@ -18,6 +18,7 @@ ConverseStreamRequest::ConverseStreamRequest() :
     m_systemHasBeenSet(false),
     m_inferenceConfigHasBeenSet(false),
     m_toolConfigHasBeenSet(false),
+    m_guardrailConfigHasBeenSet(false),
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
@@ -59,6 +60,12 @@ Aws::String ConverseStreamRequest::SerializePayload() const
   if(m_toolConfigHasBeenSet)
   {
    payload.WithObject("toolConfig", m_toolConfig.Jsonize());
+
+  }
+
+  if(m_guardrailConfigHasBeenSet)
+  {
+   payload.WithObject("guardrailConfig", m_guardrailConfig.Jsonize());
 
   }
 

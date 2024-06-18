@@ -20,6 +20,7 @@ namespace Model
     tool_use,
     max_tokens,
     stop_sequence,
+    guardrail_intervened,
     content_filtered
   };
 

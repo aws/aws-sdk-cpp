@@ -82,11 +82,14 @@ namespace BedrockRuntime
          * provides a consistent interface that works with all models that support
          * messages. This allows you to write code once and use it with different models.
          * Should a model have unique inference parameters, you can also pass those unique
-         * parameters to the model. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-         * inference</a> in the Bedrock User Guide.</p> <p>This operation requires
-         * permission for the <code>bedrock:InvokeModel</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * parameters to the model.</p> <p>For information about the Converse API, see
+         * <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a
+         * guardrail, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
+         * Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use (Function
+         * calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For example code,
+         * see <i>Converse API examples</i> in the <i>Amazon Bedrock User Guide</i>. </p>
+         * <p>This operation requires permission for the <code>bedrock:InvokeModel</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">AWS
          * API Reference</a></p>
          */
@@ -115,17 +118,18 @@ namespace BedrockRuntime
          * in a stream. <code>ConverseStream</code> provides a consistent API that works
          * with all Amazon Bedrock models that support messages. This allows you to write
          * code once and use it with different models. Should a model have unique inference
-         * parameters, you can also pass those unique parameters to the model. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-         * inference</a> in the Bedrock User Guide.</p> <p>To find out if a model supports
-         * streaming, call <a
+         * parameters, you can also pass those unique parameters to the model. </p> <p>To
+         * find out if a model supports streaming, call <a
          * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
          * and check the <code>responseStreamingSupported</code> field in the response.</p>
-         * <p>For example code, see <i>Invoke model with streaming code example</i> in the
-         * <i>Amazon Bedrock User Guide</i>. </p> <p>This operation requires permission for
-         * the <code>bedrock:InvokeModelWithResponseStream</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For information about the Converse API, see <i>Use the Converse API</i> in
+         * the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail
+         * with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool
+         * with a model, see <i>Tool use (Function calling)</i> in the <i>Amazon Bedrock
+         * User Guide</i> </p> <p>For example code, see <i>Conversation streaming
+         * example</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This operation
+         * requires permission for the <code>bedrock:InvokeModelWithResponseStream</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">AWS
          * API Reference</a></p>
          */

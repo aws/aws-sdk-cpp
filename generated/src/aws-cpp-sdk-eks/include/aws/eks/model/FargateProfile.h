@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/FargateProfileStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/eks/model/FargateProfileHealth.h>
 #include <aws/eks/model/FargateProfileSelector.h>
 #include <utility>
 
@@ -176,6 +177,19 @@ namespace Model
     inline FargateProfile& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline FargateProfile& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The health status of the Fargate profile. If there are issues with your
+     * Fargate profile's health, they are listed here.</p>
+     */
+    inline const FargateProfileHealth& GetHealth() const{ return m_health; }
+    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+    inline void SetHealth(const FargateProfileHealth& value) { m_healthHasBeenSet = true; m_health = value; }
+    inline void SetHealth(FargateProfileHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
+    inline FargateProfile& WithHealth(const FargateProfileHealth& value) { SetHealth(value); return *this;}
+    inline FargateProfile& WithHealth(FargateProfileHealth&& value) { SetHealth(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_fargateProfileName;
@@ -204,6 +218,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    FargateProfileHealth m_health;
+    bool m_healthHasBeenSet = false;
   };
 
 } // namespace Model
