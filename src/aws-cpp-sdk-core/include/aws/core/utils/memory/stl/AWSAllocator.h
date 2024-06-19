@@ -71,7 +71,7 @@ namespace Aws
             return reinterpret_cast<Rawpointer>(Malloc("AWSSTL", n * sizeof(T)));
         }
 
-        void deallocate(Rawpointer p, size_type n)
+        void deallocate(RawPointer p, size_type n)
         {
             AWS_UNREFERENCED_PARAM(n);
 
