@@ -19,55 +19,122 @@ namespace Model
 {
 
 ReportSummary::ReportSummary() : 
-    m_arnHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_periodEndHasBeenSet(false),
-    m_periodStartHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_seriesHasBeenSet(false),
     m_state(PublishedState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_uploadState(UploadState::NOT_SET),
     m_uploadStateHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_periodStartHasBeenSet(false),
+    m_periodEndHasBeenSet(false),
+    m_seriesHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_companyNameHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
+    m_acceptanceType(AcceptanceType::NOT_SET),
+    m_acceptanceTypeHasBeenSet(false)
 {
 }
 
 ReportSummary::ReportSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_periodEndHasBeenSet(false),
-    m_periodStartHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_seriesHasBeenSet(false),
     m_state(PublishedState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_uploadState(UploadState::NOT_SET),
     m_uploadStateHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_periodStartHasBeenSet(false),
+    m_periodEndHasBeenSet(false),
+    m_seriesHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_companyNameHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
+    m_acceptanceType(AcceptanceType::NOT_SET),
+    m_acceptanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ReportSummary& ReportSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("state"))
+  {
+    m_state = PublishedStateMapper::GetPublishedStateForName(jsonValue.GetString("state"));
+
+    m_stateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("uploadState"))
+  {
+    m_uploadState = UploadStateMapper::GetUploadStateForName(jsonValue.GetString("uploadState"));
+
+    m_uploadStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("periodStart"))
+  {
+    m_periodStart = jsonValue.GetString("periodStart");
+
+    m_periodStartHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("periodEnd"))
+  {
+    m_periodEnd = jsonValue.GetString("periodEnd");
+
+    m_periodEndHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("series"))
+  {
+    m_series = jsonValue.GetString("series");
+
+    m_seriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("category"))
@@ -84,60 +151,11 @@ ReportSummary& ReportSummary::operator =(JsonView jsonValue)
     m_companyNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("periodEnd"))
-  {
-    m_periodEnd = jsonValue.GetString("periodEnd");
-
-    m_periodEndHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("periodStart"))
-  {
-    m_periodStart = jsonValue.GetString("periodStart");
-
-    m_periodStartHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("productName"))
   {
     m_productName = jsonValue.GetString("productName");
 
     m_productNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("series"))
-  {
-    m_series = jsonValue.GetString("series");
-
-    m_seriesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("state"))
-  {
-    m_state = PublishedStateMapper::GetPublishedStateForName(jsonValue.GetString("state"));
-
-    m_stateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("statusMessage"))
@@ -147,18 +165,11 @@ ReportSummary& ReportSummary::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("uploadState"))
+  if(jsonValue.ValueExists("acceptanceType"))
   {
-    m_uploadState = UploadStateMapper::GetUploadStateForName(jsonValue.GetString("uploadState"));
+    m_acceptanceType = AcceptanceTypeMapper::GetAcceptanceTypeForName(jsonValue.GetString("acceptanceType"));
 
-    m_uploadStateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("version"))
-  {
-    m_version = jsonValue.GetInt64("version");
-
-    m_versionHasBeenSet = true;
+    m_acceptanceTypeHasBeenSet = true;
   }
 
   return *this;
@@ -168,9 +179,59 @@ JsonValue ReportSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", PublishedStateMapper::GetNameForPublishedState(m_state));
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
+
+  }
+
+  if(m_uploadStateHasBeenSet)
+  {
+   payload.WithString("uploadState", UploadStateMapper::GetNameForUploadState(m_uploadState));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_periodStartHasBeenSet)
+  {
+   payload.WithString("periodStart", m_periodStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_periodEndHasBeenSet)
+  {
+   payload.WithString("periodEnd", m_periodEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_seriesHasBeenSet)
+  {
+   payload.WithString("series", m_series);
 
   }
 
@@ -186,49 +247,10 @@ JsonValue ReportSummary::Jsonize() const
 
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_periodEndHasBeenSet)
-  {
-   payload.WithString("periodEnd", m_periodEnd.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_periodStartHasBeenSet)
-  {
-   payload.WithString("periodStart", m_periodStart.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_productNameHasBeenSet)
   {
    payload.WithString("productName", m_productName);
 
-  }
-
-  if(m_seriesHasBeenSet)
-  {
-   payload.WithString("series", m_series);
-
-  }
-
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", PublishedStateMapper::GetNameForPublishedState(m_state));
   }
 
   if(m_statusMessageHasBeenSet)
@@ -237,15 +259,9 @@ JsonValue ReportSummary::Jsonize() const
 
   }
 
-  if(m_uploadStateHasBeenSet)
+  if(m_acceptanceTypeHasBeenSet)
   {
-   payload.WithString("uploadState", UploadStateMapper::GetNameForUploadState(m_uploadState));
-  }
-
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInt64("version", m_version);
-
+   payload.WithString("acceptanceType", AcceptanceTypeMapper::GetNameForAcceptanceType(m_acceptanceType));
   }
 
   return payload;

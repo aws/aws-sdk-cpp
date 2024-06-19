@@ -51,6 +51,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Code for the affected service.</p>
+     */
+    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
+    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
+    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
+    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
+    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
+    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Code for the affected quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
@@ -72,33 +86,19 @@ namespace Model
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Code for the affected service.</p>
-     */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_serviceCode;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet = false;
 
     int m_retryAfterSeconds;
     bool m_retryAfterSecondsHasBeenSet = false;
-
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model
