@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/SAMLOptionsOutput.h>
+#include <aws/opensearch/model/JWTOptionsOutput.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -74,6 +75,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Container for information about the JWT configuration of the Amazon
+     * OpenSearch Service.</p>
+     */
+    inline const JWTOptionsOutput& GetJWTOptions() const{ return m_jWTOptions; }
+    inline bool JWTOptionsHasBeenSet() const { return m_jWTOptionsHasBeenSet; }
+    inline void SetJWTOptions(const JWTOptionsOutput& value) { m_jWTOptionsHasBeenSet = true; m_jWTOptions = value; }
+    inline void SetJWTOptions(JWTOptionsOutput&& value) { m_jWTOptionsHasBeenSet = true; m_jWTOptions = std::move(value); }
+    inline AdvancedSecurityOptions& WithJWTOptions(const JWTOptionsOutput& value) { SetJWTOptions(value); return *this;}
+    inline AdvancedSecurityOptions& WithJWTOptions(JWTOptionsOutput&& value) { SetJWTOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Date and time when the migration period will be disabled. Only necessary when
      * <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
@@ -109,6 +123,9 @@ namespace Model
 
     SAMLOptionsOutput m_sAMLOptions;
     bool m_sAMLOptionsHasBeenSet = false;
+
+    JWTOptionsOutput m_jWTOptions;
+    bool m_jWTOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_anonymousAuthDisableDate;
     bool m_anonymousAuthDisableDateHasBeenSet = false;

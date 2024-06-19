@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the data source response.</p>
+     * <p>The status of the data source.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const DataSourceStatus& value) { m_status = value; }

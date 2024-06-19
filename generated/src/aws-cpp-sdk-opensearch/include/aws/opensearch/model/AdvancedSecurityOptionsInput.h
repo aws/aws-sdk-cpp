@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/MasterUserOptions.h>
 #include <aws/opensearch/model/SAMLOptionsInput.h>
+#include <aws/opensearch/model/JWTOptionsInput.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Container for information about the JWT configuration of the Amazon
+     * OpenSearch Service. </p>
+     */
+    inline const JWTOptionsInput& GetJWTOptions() const{ return m_jWTOptions; }
+    inline bool JWTOptionsHasBeenSet() const { return m_jWTOptionsHasBeenSet; }
+    inline void SetJWTOptions(const JWTOptionsInput& value) { m_jWTOptionsHasBeenSet = true; m_jWTOptions = value; }
+    inline void SetJWTOptions(JWTOptionsInput&& value) { m_jWTOptionsHasBeenSet = true; m_jWTOptions = std::move(value); }
+    inline AdvancedSecurityOptionsInput& WithJWTOptions(const JWTOptionsInput& value) { SetJWTOptions(value); return *this;}
+    inline AdvancedSecurityOptionsInput& WithJWTOptions(JWTOptionsInput&& value) { SetJWTOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>True to enable a 30-day migration period during which administrators can
      * create role mappings. Only necessary when <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
@@ -111,6 +125,9 @@ namespace Model
 
     SAMLOptionsInput m_sAMLOptions;
     bool m_sAMLOptionsHasBeenSet = false;
+
+    JWTOptionsInput m_jWTOptions;
+    bool m_jWTOptionsHasBeenSet = false;
 
     bool m_anonymousAuthEnabled;
     bool m_anonymousAuthEnabledHasBeenSet = false;

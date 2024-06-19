@@ -29,12 +29,6 @@ ListReportsResult::ListReportsResult(const Aws::AmazonWebServiceResult<JsonValue
 ListReportsResult& ListReportsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("reports"))
   {
     Aws::Utils::Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
@@ -42,6 +36,12 @@ ListReportsResult& ListReportsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_reports.push_back(reportsJsonList[reportsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

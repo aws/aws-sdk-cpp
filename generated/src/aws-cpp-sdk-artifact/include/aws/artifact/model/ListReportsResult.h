@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/artifact/Artifact_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/artifact/model/ReportSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Pagination token to request the next page of resources.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>List of report resources.</p>
      */
     inline const Aws::Vector<ReportSummary>& GetReports() const{ return m_reports; }
@@ -58,6 +45,19 @@ namespace Model
     inline ListReportsResult& WithReports(Aws::Vector<ReportSummary>&& value) { SetReports(std::move(value)); return *this;}
     inline ListReportsResult& AddReports(const ReportSummary& value) { m_reports.push_back(value); return *this; }
     inline ListReportsResult& AddReports(ReportSummary&& value) { m_reports.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Pagination token to request the next page of resources.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+    inline ListReportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListReportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListReportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
 
     ///@{
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<ReportSummary> m_reports;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

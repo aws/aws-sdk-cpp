@@ -94,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the data source update request.</p>
+     * <p>The status of the data source update.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
