@@ -62,7 +62,7 @@ namespace Aws
             typedef Allocator<U> other;
         };
 
-        using RawPointer = typename std::allocator_traitsstd::allocator<T>>::pointer;
+        using RawPointer = typename std::allocator_traits<std::allocator<T>>::pointer;
 
         RawPointer allocate(size_type n, const void *hint = nullptr)
         {
