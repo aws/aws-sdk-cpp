@@ -9,11 +9,11 @@
 #include <smithy/identity/identity/AwsCredentialIdentity.h>
 
 namespace smithy {
-    class AwsCredentialIdentityResolver : public IdentityResolverBase<AwsCredentialIdentity> {
+    class AwsCredentialIdentityResolver : public IdentityResolverBase<AwsCredentialIdentityBase> {
     public:
         using IdentityT = AwsCredentialIdentity;
         virtual ~AwsCredentialIdentityResolver() = default;
 
-        virtual ResolveIdentityFutureOutcome getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) = 0;
+        ResolveIdentityFutureOutcome getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) override = 0;
     };
 }

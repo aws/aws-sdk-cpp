@@ -40,22 +40,22 @@ namespace Aws {
                 return m_expiration;
             }
 
-            String accessKeyId() override
+            String accessKeyId() const override
             {
                 return getAccessKeyId();
             }
 
-            String secretAccessKey() override
+            String secretAccessKey() const override
             {
                 return getSecretKeyId();
             }
 
-            Crt::Optional<String> sessionToken() override
+            Crt::Optional<String> sessionToken() const override
             {
                 return getSessionToken();
             }
 
-            Crt::Optional<DateTime> expiration() override
+            Crt::Optional<DateTime> expiration() const override
             {
                 return getExpiration();
             }

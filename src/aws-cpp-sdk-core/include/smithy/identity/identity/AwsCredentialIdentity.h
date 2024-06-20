@@ -9,10 +9,17 @@
 namespace smithy {
     class AwsCredentialIdentity : public AwsCredentialIdentityBase {
     public:
-        virtual Aws::String accessKeyId() override;
-        virtual Aws::String secretAccessKey() override;
-        virtual Aws::Crt::Optional<Aws::String> sessionToken() override;
-        virtual Aws::Crt::Optional<AwsIdentity::DateTime> expiration() override;
+        AwsCredentialIdentity(const Aws::String& accessKeyId,
+                              const Aws::String& secretAccessKey,
+                              const Aws::Crt::Optional<Aws::String>& sessionToken,
+                              const Aws::Crt::Optional<AwsIdentity::DateTime>& expiration)
+            : m_accessKeyId(accessKeyId), m_secretAccessKey(secretAccessKey),
+              m_sessionToken(sessionToken), m_expiration(expiration) {}
+
+        Aws::String accessKeyId() const override;
+        Aws::String secretAccessKey() const override;
+        Aws::Crt::Optional<Aws::String> sessionToken() const override;
+        Aws::Crt::Optional<AwsIdentity::DateTime> expiration() const override;
 
     protected:
         Aws::String m_accessKeyId;

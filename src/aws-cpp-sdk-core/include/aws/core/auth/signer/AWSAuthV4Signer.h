@@ -20,6 +20,11 @@
 
 #include <memory>
 
+namespace smithy
+{
+    class AwsSigV4Signer;
+}
+
 namespace Aws
 {
     namespace Http
@@ -178,7 +183,6 @@ namespace Aws
             bool m_includeSha256HashHeader;
 
         private:
-
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
                     const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& region,
                     const Aws::String& serviceName) const;
@@ -192,6 +196,14 @@ namespace Aws
                     const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
             bool SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
                     bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const;
+
+            friend class smithy::AwsSigV4Signer;
+            /**
+             * Temporary method added for migration to the smithy architecture. Please do not use.
+             */
+            bool SignRequestWithCreds(Aws::Http::HttpRequest& request, const Auth::AWSCredentials& credentials,
+                                      const char* region, const char* serviceName, bool signBody) const;
+
 
             Aws::Auth::AWSSigningAlgorithm m_signingAlgorithm;
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
