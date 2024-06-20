@@ -66,7 +66,10 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_urlEscapePath(urlEscapePath)
 {
     //go ahead and warm up the signing cache.
-    ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
+    if (credentialsProvider)
+    {
+        ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(Aws::Auth::AWSAuthHelper::SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
+    }
 }
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
@@ -185,11 +188,11 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
     return m_unsignedHeaders.find(Aws::Utils::StringUtils::ToLower(header.c_str())) == m_unsignedHeaders.cend();
 }
 
-bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
+bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, const AWSCredentials& credentials,
+                                           const char* region, const char* serviceName, bool signBody) const
 {
     Aws::String signingRegion = region ? region : m_region;
     Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
-    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
@@ -345,6 +348,12 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signing request with: " << awsAuthString);
     request.SetAwsAuthorization(awsAuthString);
     return true;
+}
+
+bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
+{
+    AWSCredentials credentials = GetCredentials(request.GetServiceSpecificParameters());
+    return SignRequestWithCreds(request, credentials, region, serviceName, signBody);
 }
 
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long expirationTimeInSeconds) const

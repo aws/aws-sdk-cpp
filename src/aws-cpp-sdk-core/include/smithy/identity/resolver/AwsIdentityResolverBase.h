@@ -25,7 +25,7 @@ namespace smithy {
 
         using IdentityProperties = Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>>;
         // IdentityResolvers are asynchronous.
-        using ResolveIdentityFutureOutcome = Aws::Utils::FutureOutcome<IdentityT, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
+        using ResolveIdentityFutureOutcome = Aws::Utils::FutureOutcome<Aws::UniquePtr<IdentityT>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
         using AdditionalParameters = Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>>;
 
         // Each Identity has one or more identity resolvers that are able to load the customer’s
