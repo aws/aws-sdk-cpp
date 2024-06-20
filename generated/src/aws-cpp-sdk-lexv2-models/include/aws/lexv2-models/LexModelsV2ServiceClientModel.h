@@ -116,6 +116,12 @@
 #include <aws/lexv2-models/model/UpdateSlotResult.h>
 #include <aws/lexv2-models/model/UpdateSlotTypeResult.h>
 #include <aws/lexv2-models/model/UpdateTestSetResult.h>
+#include <aws/lexv2-models/model/ListImportsRequest.h>
+#include <aws/lexv2-models/model/ListTestExecutionsRequest.h>
+#include <aws/lexv2-models/model/ListTestSetsRequest.h>
+#include <aws/lexv2-models/model/CreateUploadUrlRequest.h>
+#include <aws/lexv2-models/model/ListBotsRequest.h>
+#include <aws/lexv2-models/model/ListExportsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in LexModelsV2Client header */
 

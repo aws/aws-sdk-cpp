@@ -26,6 +26,9 @@
 #include <aws/sms-voice/model/ListConfigurationSetsResult.h>
 #include <aws/sms-voice/model/SendVoiceMessageResult.h>
 #include <aws/sms-voice/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/sms-voice/model/SendVoiceMessageRequest.h>
+#include <aws/sms-voice/model/ListConfigurationSetsRequest.h>
+#include <aws/sms-voice/model/CreateConfigurationSetRequest.h>
 /* End of service model headers required in PinpointSMSVoiceClient header */
 
 namespace Aws

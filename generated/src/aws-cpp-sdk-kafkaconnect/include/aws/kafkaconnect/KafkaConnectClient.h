@@ -314,13 +314,13 @@ namespace KafkaConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request) const
+        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const
         {
             return SubmitCallable(&KafkaConnectClient::ListConnectors, request);
         }
@@ -329,7 +329,7 @@ namespace KafkaConnect
          * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        void ListConnectorsAsync(const ListConnectorsRequestT& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorsRequestT& request = {}) const
         {
             return SubmitAsync(&KafkaConnectClient::ListConnectors, request, handler, context);
         }
@@ -340,13 +340,13 @@ namespace KafkaConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListCustomPlugins">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomPluginsOutcome ListCustomPlugins(const Model::ListCustomPluginsRequest& request) const;
+        virtual Model::ListCustomPluginsOutcome ListCustomPlugins(const Model::ListCustomPluginsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomPlugins that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomPluginsRequestT = Model::ListCustomPluginsRequest>
-        Model::ListCustomPluginsOutcomeCallable ListCustomPluginsCallable(const ListCustomPluginsRequestT& request) const
+        Model::ListCustomPluginsOutcomeCallable ListCustomPluginsCallable(const ListCustomPluginsRequestT& request = {}) const
         {
             return SubmitCallable(&KafkaConnectClient::ListCustomPlugins, request);
         }
@@ -355,7 +355,7 @@ namespace KafkaConnect
          * An Async wrapper for ListCustomPlugins that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomPluginsRequestT = Model::ListCustomPluginsRequest>
-        void ListCustomPluginsAsync(const ListCustomPluginsRequestT& request, const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomPluginsAsync(const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomPluginsRequestT& request = {}) const
         {
             return SubmitAsync(&KafkaConnectClient::ListCustomPlugins, request, handler, context);
         }
@@ -392,13 +392,13 @@ namespace KafkaConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkerConfigurationsOutcome ListWorkerConfigurations(const Model::ListWorkerConfigurationsRequest& request) const;
+        virtual Model::ListWorkerConfigurationsOutcome ListWorkerConfigurations(const Model::ListWorkerConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkerConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkerConfigurationsRequestT = Model::ListWorkerConfigurationsRequest>
-        Model::ListWorkerConfigurationsOutcomeCallable ListWorkerConfigurationsCallable(const ListWorkerConfigurationsRequestT& request) const
+        Model::ListWorkerConfigurationsOutcomeCallable ListWorkerConfigurationsCallable(const ListWorkerConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&KafkaConnectClient::ListWorkerConfigurations, request);
         }
@@ -407,7 +407,7 @@ namespace KafkaConnect
          * An Async wrapper for ListWorkerConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkerConfigurationsRequestT = Model::ListWorkerConfigurationsRequest>
-        void ListWorkerConfigurationsAsync(const ListWorkerConfigurationsRequestT& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkerConfigurationsAsync(const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkerConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&KafkaConnectClient::ListWorkerConfigurations, request, handler, context);
         }

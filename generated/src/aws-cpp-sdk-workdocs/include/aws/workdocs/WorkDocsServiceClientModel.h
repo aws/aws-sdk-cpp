@@ -47,6 +47,11 @@
 #include <aws/workdocs/model/InitiateDocumentVersionUploadResult.h>
 #include <aws/workdocs/model/SearchResourcesResult.h>
 #include <aws/workdocs/model/UpdateUserResult.h>
+#include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
+#include <aws/workdocs/model/DescribeUsersRequest.h>
+#include <aws/workdocs/model/SearchResourcesRequest.h>
+#include <aws/workdocs/model/DescribeActivitiesRequest.h>
+#include <aws/workdocs/model/GetResourcesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in WorkDocsClient header */
 

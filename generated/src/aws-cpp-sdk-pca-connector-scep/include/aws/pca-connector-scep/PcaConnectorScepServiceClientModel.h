@@ -26,6 +26,7 @@
 #include <aws/pca-connector-scep/model/ListChallengeMetadataResult.h>
 #include <aws/pca-connector-scep/model/ListConnectorsResult.h>
 #include <aws/pca-connector-scep/model/ListTagsForResourceResult.h>
+#include <aws/pca-connector-scep/model/ListConnectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PcaConnectorScepClient header */
 

@@ -526,13 +526,13 @@ namespace CodeConnections
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeconnections-2023-12-01/ListConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
+        virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectionsRequestT = Model::ListConnectionsRequest>
-        Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const ListConnectionsRequestT& request) const
+        Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const ListConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeConnectionsClient::ListConnections, request);
         }
@@ -541,7 +541,7 @@ namespace CodeConnections
          * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectionsRequestT = Model::ListConnectionsRequest>
-        void ListConnectionsAsync(const ListConnectionsRequestT& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectionsAsync(const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeConnectionsClient::ListConnections, request, handler, context);
         }
@@ -551,13 +551,13 @@ namespace CodeConnections
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeconnections-2023-12-01/ListHosts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHostsOutcome ListHosts(const Model::ListHostsRequest& request) const;
+        virtual Model::ListHostsOutcome ListHosts(const Model::ListHostsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHosts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHostsRequestT = Model::ListHostsRequest>
-        Model::ListHostsOutcomeCallable ListHostsCallable(const ListHostsRequestT& request) const
+        Model::ListHostsOutcomeCallable ListHostsCallable(const ListHostsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeConnectionsClient::ListHosts, request);
         }
@@ -566,7 +566,7 @@ namespace CodeConnections
          * An Async wrapper for ListHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHostsRequestT = Model::ListHostsRequest>
-        void ListHostsAsync(const ListHostsRequestT& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHostsAsync(const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHostsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeConnectionsClient::ListHosts, request, handler, context);
         }
@@ -577,13 +577,13 @@ namespace CodeConnections
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeconnections-2023-12-01/ListRepositoryLinks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRepositoryLinksOutcome ListRepositoryLinks(const Model::ListRepositoryLinksRequest& request) const;
+        virtual Model::ListRepositoryLinksOutcome ListRepositoryLinks(const Model::ListRepositoryLinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRepositoryLinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRepositoryLinksRequestT = Model::ListRepositoryLinksRequest>
-        Model::ListRepositoryLinksOutcomeCallable ListRepositoryLinksCallable(const ListRepositoryLinksRequestT& request) const
+        Model::ListRepositoryLinksOutcomeCallable ListRepositoryLinksCallable(const ListRepositoryLinksRequestT& request = {}) const
         {
             return SubmitCallable(&CodeConnectionsClient::ListRepositoryLinks, request);
         }
@@ -592,7 +592,7 @@ namespace CodeConnections
          * An Async wrapper for ListRepositoryLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRepositoryLinksRequestT = Model::ListRepositoryLinksRequest>
-        void ListRepositoryLinksAsync(const ListRepositoryLinksRequestT& request, const ListRepositoryLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRepositoryLinksAsync(const ListRepositoryLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRepositoryLinksRequestT& request = {}) const
         {
             return SubmitAsync(&CodeConnectionsClient::ListRepositoryLinks, request, handler, context);
         }

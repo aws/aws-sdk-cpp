@@ -83,6 +83,10 @@
 #include <aws/clouddirectory/model/UpdateTypedLinkFacetResult.h>
 #include <aws/clouddirectory/model/UpgradeAppliedSchemaResult.h>
 #include <aws/clouddirectory/model/UpgradePublishedSchemaResult.h>
+#include <aws/clouddirectory/model/ListDevelopmentSchemaArnsRequest.h>
+#include <aws/clouddirectory/model/ListManagedSchemaArnsRequest.h>
+#include <aws/clouddirectory/model/ListPublishedSchemaArnsRequest.h>
+#include <aws/clouddirectory/model/ListDirectoriesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudDirectoryClient header */
 

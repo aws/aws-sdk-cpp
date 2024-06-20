@@ -996,13 +996,13 @@ namespace CustomerProfiles
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&CustomerProfilesClient::ListDomains, request);
         }
@@ -1011,7 +1011,7 @@ namespace CustomerProfiles
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListDomains, request, handler, context);
         }
@@ -1099,13 +1099,13 @@ namespace CustomerProfiles
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfileObjectTypeTemplatesOutcome ListProfileObjectTypeTemplates(const Model::ListProfileObjectTypeTemplatesRequest& request) const;
+        virtual Model::ListProfileObjectTypeTemplatesOutcome ListProfileObjectTypeTemplates(const Model::ListProfileObjectTypeTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfileObjectTypeTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfileObjectTypeTemplatesRequestT = Model::ListProfileObjectTypeTemplatesRequest>
-        Model::ListProfileObjectTypeTemplatesOutcomeCallable ListProfileObjectTypeTemplatesCallable(const ListProfileObjectTypeTemplatesRequestT& request) const
+        Model::ListProfileObjectTypeTemplatesOutcomeCallable ListProfileObjectTypeTemplatesCallable(const ListProfileObjectTypeTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&CustomerProfilesClient::ListProfileObjectTypeTemplates, request);
         }
@@ -1114,7 +1114,7 @@ namespace CustomerProfiles
          * An Async wrapper for ListProfileObjectTypeTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfileObjectTypeTemplatesRequestT = Model::ListProfileObjectTypeTemplatesRequest>
-        void ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesRequestT& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfileObjectTypeTemplatesAsync(const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfileObjectTypeTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListProfileObjectTypeTemplates, request, handler, context);
         }

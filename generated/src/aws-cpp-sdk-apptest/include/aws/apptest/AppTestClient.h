@@ -382,13 +382,13 @@ namespace AppTest
          * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestCases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTestCasesOutcome ListTestCases(const Model::ListTestCasesRequest& request) const;
+        virtual Model::ListTestCasesOutcome ListTestCases(const Model::ListTestCasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTestCases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTestCasesRequestT = Model::ListTestCasesRequest>
-        Model::ListTestCasesOutcomeCallable ListTestCasesCallable(const ListTestCasesRequestT& request) const
+        Model::ListTestCasesOutcomeCallable ListTestCasesCallable(const ListTestCasesRequestT& request = {}) const
         {
             return SubmitCallable(&AppTestClient::ListTestCases, request);
         }
@@ -397,7 +397,7 @@ namespace AppTest
          * An Async wrapper for ListTestCases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTestCasesRequestT = Model::ListTestCasesRequest>
-        void ListTestCasesAsync(const ListTestCasesRequestT& request, const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTestCasesAsync(const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTestCasesRequestT& request = {}) const
         {
             return SubmitAsync(&AppTestClient::ListTestCases, request, handler, context);
         }
@@ -407,13 +407,13 @@ namespace AppTest
          * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTestConfigurationsOutcome ListTestConfigurations(const Model::ListTestConfigurationsRequest& request) const;
+        virtual Model::ListTestConfigurationsOutcome ListTestConfigurations(const Model::ListTestConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTestConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTestConfigurationsRequestT = Model::ListTestConfigurationsRequest>
-        Model::ListTestConfigurationsOutcomeCallable ListTestConfigurationsCallable(const ListTestConfigurationsRequestT& request) const
+        Model::ListTestConfigurationsOutcomeCallable ListTestConfigurationsCallable(const ListTestConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppTestClient::ListTestConfigurations, request);
         }
@@ -422,7 +422,7 @@ namespace AppTest
          * An Async wrapper for ListTestConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTestConfigurationsRequestT = Model::ListTestConfigurationsRequest>
-        void ListTestConfigurationsAsync(const ListTestConfigurationsRequestT& request, const ListTestConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTestConfigurationsAsync(const ListTestConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTestConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppTestClient::ListTestConfigurations, request, handler, context);
         }
@@ -482,13 +482,13 @@ namespace AppTest
          * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestRuns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTestRunsOutcome ListTestRuns(const Model::ListTestRunsRequest& request) const;
+        virtual Model::ListTestRunsOutcome ListTestRuns(const Model::ListTestRunsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTestRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTestRunsRequestT = Model::ListTestRunsRequest>
-        Model::ListTestRunsOutcomeCallable ListTestRunsCallable(const ListTestRunsRequestT& request) const
+        Model::ListTestRunsOutcomeCallable ListTestRunsCallable(const ListTestRunsRequestT& request = {}) const
         {
             return SubmitCallable(&AppTestClient::ListTestRuns, request);
         }
@@ -497,7 +497,7 @@ namespace AppTest
          * An Async wrapper for ListTestRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTestRunsRequestT = Model::ListTestRunsRequest>
-        void ListTestRunsAsync(const ListTestRunsRequestT& request, const ListTestRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTestRunsAsync(const ListTestRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTestRunsRequestT& request = {}) const
         {
             return SubmitAsync(&AppTestClient::ListTestRuns, request, handler, context);
         }
@@ -507,13 +507,13 @@ namespace AppTest
          * href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestSuites">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTestSuitesOutcome ListTestSuites(const Model::ListTestSuitesRequest& request) const;
+        virtual Model::ListTestSuitesOutcome ListTestSuites(const Model::ListTestSuitesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTestSuites that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTestSuitesRequestT = Model::ListTestSuitesRequest>
-        Model::ListTestSuitesOutcomeCallable ListTestSuitesCallable(const ListTestSuitesRequestT& request) const
+        Model::ListTestSuitesOutcomeCallable ListTestSuitesCallable(const ListTestSuitesRequestT& request = {}) const
         {
             return SubmitCallable(&AppTestClient::ListTestSuites, request);
         }
@@ -522,7 +522,7 @@ namespace AppTest
          * An Async wrapper for ListTestSuites that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTestSuitesRequestT = Model::ListTestSuitesRequest>
-        void ListTestSuitesAsync(const ListTestSuitesRequestT& request, const ListTestSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTestSuitesAsync(const ListTestSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTestSuitesRequestT& request = {}) const
         {
             return SubmitAsync(&AppTestClient::ListTestSuites, request, handler, context);
         }

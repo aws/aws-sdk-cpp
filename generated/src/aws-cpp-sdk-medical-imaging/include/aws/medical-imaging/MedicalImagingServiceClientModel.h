@@ -36,6 +36,7 @@
 #include <aws/medical-imaging/model/TagResourceResult.h>
 #include <aws/medical-imaging/model/UntagResourceResult.h>
 #include <aws/medical-imaging/model/UpdateImageSetMetadataResult.h>
+#include <aws/medical-imaging/model/ListDatastoresRequest.h>
 /* End of service model headers required in MedicalImagingClient header */
 
 namespace Aws

@@ -67,6 +67,13 @@
 #include <aws/mediaconnect/model/UpdateFlowOutputResult.h>
 #include <aws/mediaconnect/model/UpdateFlowSourceResult.h>
 #include <aws/mediaconnect/model/UpdateGatewayInstanceResult.h>
+#include <aws/mediaconnect/model/ListOfferingsRequest.h>
+#include <aws/mediaconnect/model/ListBridgesRequest.h>
+#include <aws/mediaconnect/model/ListEntitlementsRequest.h>
+#include <aws/mediaconnect/model/ListGatewaysRequest.h>
+#include <aws/mediaconnect/model/ListReservationsRequest.h>
+#include <aws/mediaconnect/model/ListFlowsRequest.h>
+#include <aws/mediaconnect/model/ListGatewayInstancesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MediaConnectClient header */
 

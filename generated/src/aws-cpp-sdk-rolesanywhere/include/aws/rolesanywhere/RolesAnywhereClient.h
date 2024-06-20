@@ -563,13 +563,13 @@ namespace RolesAnywhere
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListCrls">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCrlsOutcome ListCrls(const Model::ListCrlsRequest& request) const;
+        virtual Model::ListCrlsOutcome ListCrls(const Model::ListCrlsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCrls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCrlsRequestT = Model::ListCrlsRequest>
-        Model::ListCrlsOutcomeCallable ListCrlsCallable(const ListCrlsRequestT& request) const
+        Model::ListCrlsOutcomeCallable ListCrlsCallable(const ListCrlsRequestT& request = {}) const
         {
             return SubmitCallable(&RolesAnywhereClient::ListCrls, request);
         }
@@ -578,7 +578,7 @@ namespace RolesAnywhere
          * An Async wrapper for ListCrls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCrlsRequestT = Model::ListCrlsRequest>
-        void ListCrlsAsync(const ListCrlsRequestT& request, const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCrlsAsync(const ListCrlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCrlsRequestT& request = {}) const
         {
             return SubmitAsync(&RolesAnywhereClient::ListCrls, request, handler, context);
         }
@@ -590,13 +590,13 @@ namespace RolesAnywhere
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request) const;
+        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request) const
+        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&RolesAnywhereClient::ListProfiles, request);
         }
@@ -605,7 +605,7 @@ namespace RolesAnywhere
          * An Async wrapper for ListProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        void ListProfilesAsync(const ListProfilesRequestT& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfilesAsync(const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&RolesAnywhereClient::ListProfiles, request, handler, context);
         }
@@ -617,13 +617,13 @@ namespace RolesAnywhere
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListSubjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSubjectsOutcome ListSubjects(const Model::ListSubjectsRequest& request) const;
+        virtual Model::ListSubjectsOutcome ListSubjects(const Model::ListSubjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSubjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSubjectsRequestT = Model::ListSubjectsRequest>
-        Model::ListSubjectsOutcomeCallable ListSubjectsCallable(const ListSubjectsRequestT& request) const
+        Model::ListSubjectsOutcomeCallable ListSubjectsCallable(const ListSubjectsRequestT& request = {}) const
         {
             return SubmitCallable(&RolesAnywhereClient::ListSubjects, request);
         }
@@ -632,7 +632,7 @@ namespace RolesAnywhere
          * An Async wrapper for ListSubjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSubjectsRequestT = Model::ListSubjectsRequest>
-        void ListSubjectsAsync(const ListSubjectsRequestT& request, const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSubjectsAsync(const ListSubjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSubjectsRequestT& request = {}) const
         {
             return SubmitAsync(&RolesAnywhereClient::ListSubjects, request, handler, context);
         }
@@ -671,13 +671,13 @@ namespace RolesAnywhere
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTrustAnchors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrustAnchorsOutcome ListTrustAnchors(const Model::ListTrustAnchorsRequest& request) const;
+        virtual Model::ListTrustAnchorsOutcome ListTrustAnchors(const Model::ListTrustAnchorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrustAnchors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrustAnchorsRequestT = Model::ListTrustAnchorsRequest>
-        Model::ListTrustAnchorsOutcomeCallable ListTrustAnchorsCallable(const ListTrustAnchorsRequestT& request) const
+        Model::ListTrustAnchorsOutcomeCallable ListTrustAnchorsCallable(const ListTrustAnchorsRequestT& request = {}) const
         {
             return SubmitCallable(&RolesAnywhereClient::ListTrustAnchors, request);
         }
@@ -686,7 +686,7 @@ namespace RolesAnywhere
          * An Async wrapper for ListTrustAnchors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrustAnchorsRequestT = Model::ListTrustAnchorsRequest>
-        void ListTrustAnchorsAsync(const ListTrustAnchorsRequestT& request, const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrustAnchorsAsync(const ListTrustAnchorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrustAnchorsRequestT& request = {}) const
         {
             return SubmitAsync(&RolesAnywhereClient::ListTrustAnchors, request, handler, context);
         }

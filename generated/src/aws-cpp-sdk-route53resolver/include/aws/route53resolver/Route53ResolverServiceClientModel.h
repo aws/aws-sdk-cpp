@@ -86,6 +86,18 @@
 #include <aws/route53resolver/model/UpdateResolverDnssecConfigResult.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointResult.h>
 #include <aws/route53resolver/model/UpdateResolverRuleResult.h>
+#include <aws/route53resolver/model/ListFirewallConfigsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
+#include <aws/route53resolver/model/ListOutpostResolversRequest.h>
+#include <aws/route53resolver/model/ListResolverRulesRequest.h>
+#include <aws/route53resolver/model/ListResolverDnssecConfigsRequest.h>
+#include <aws/route53resolver/model/ListResolverQueryLogConfigsRequest.h>
+#include <aws/route53resolver/model/ListResolverRuleAssociationsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
+#include <aws/route53resolver/model/ListFirewallDomainListsRequest.h>
+#include <aws/route53resolver/model/ListResolverQueryLogConfigAssociationsRequest.h>
+#include <aws/route53resolver/model/ListResolverConfigsRequest.h>
+#include <aws/route53resolver/model/ListResolverEndpointsRequest.h>
 /* End of service model headers required in Route53ResolverClient header */
 
 namespace Aws

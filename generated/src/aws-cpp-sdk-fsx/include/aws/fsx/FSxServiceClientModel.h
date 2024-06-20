@@ -63,6 +63,17 @@
 #include <aws/fsx/model/UpdateSnapshotResult.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineResult.h>
 #include <aws/fsx/model/UpdateVolumeResult.h>
+#include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
+#include <aws/fsx/model/DescribeFileSystemsRequest.h>
+#include <aws/fsx/model/DescribeBackupsRequest.h>
+#include <aws/fsx/model/DescribeSnapshotsRequest.h>
+#include <aws/fsx/model/DescribeVolumesRequest.h>
+#include <aws/fsx/model/UpdateSharedVpcConfigurationRequest.h>
+#include <aws/fsx/model/DescribeDataRepositoryAssociationsRequest.h>
+#include <aws/fsx/model/CreateBackupRequest.h>
+#include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
+#include <aws/fsx/model/DescribeSharedVpcConfigurationRequest.h>
+#include <aws/fsx/model/DescribeFileCachesRequest.h>
 /* End of service model headers required in FSxClient header */
 
 namespace Aws

@@ -321,13 +321,13 @@ namespace ApplicationSignals
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceLevelObjectives">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceLevelObjectivesOutcome ListServiceLevelObjectives(const Model::ListServiceLevelObjectivesRequest& request) const;
+        virtual Model::ListServiceLevelObjectivesOutcome ListServiceLevelObjectives(const Model::ListServiceLevelObjectivesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceLevelObjectives that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceLevelObjectivesRequestT = Model::ListServiceLevelObjectivesRequest>
-        Model::ListServiceLevelObjectivesOutcomeCallable ListServiceLevelObjectivesCallable(const ListServiceLevelObjectivesRequestT& request) const
+        Model::ListServiceLevelObjectivesOutcomeCallable ListServiceLevelObjectivesCallable(const ListServiceLevelObjectivesRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationSignalsClient::ListServiceLevelObjectives, request);
         }
@@ -336,7 +336,7 @@ namespace ApplicationSignals
          * An Async wrapper for ListServiceLevelObjectives that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceLevelObjectivesRequestT = Model::ListServiceLevelObjectivesRequest>
-        void ListServiceLevelObjectivesAsync(const ListServiceLevelObjectivesRequestT& request, const ListServiceLevelObjectivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceLevelObjectivesAsync(const ListServiceLevelObjectivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceLevelObjectivesRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationSignalsClient::ListServiceLevelObjectives, request, handler, context);
         }
@@ -441,13 +441,13 @@ namespace ApplicationSignals
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/StartDiscovery">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartDiscoveryOutcome StartDiscovery(const Model::StartDiscoveryRequest& request) const;
+        virtual Model::StartDiscoveryOutcome StartDiscovery(const Model::StartDiscoveryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartDiscovery that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartDiscoveryRequestT = Model::StartDiscoveryRequest>
-        Model::StartDiscoveryOutcomeCallable StartDiscoveryCallable(const StartDiscoveryRequestT& request) const
+        Model::StartDiscoveryOutcomeCallable StartDiscoveryCallable(const StartDiscoveryRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationSignalsClient::StartDiscovery, request);
         }
@@ -456,7 +456,7 @@ namespace ApplicationSignals
          * An Async wrapper for StartDiscovery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartDiscoveryRequestT = Model::StartDiscoveryRequest>
-        void StartDiscoveryAsync(const StartDiscoveryRequestT& request, const StartDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartDiscoveryAsync(const StartDiscoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartDiscoveryRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationSignalsClient::StartDiscovery, request, handler, context);
         }

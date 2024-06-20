@@ -10,11 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
-#include <aws/organizations/model/LeaveOrganizationRequest.h>
-#include <aws/organizations/model/DescribeResourcePolicyRequest.h>
-#include <aws/organizations/model/DeleteResourcePolicyRequest.h>
-#include <aws/organizations/model/DescribeOrganizationRequest.h>
-#include <aws/organizations/model/DeleteOrganizationRequest.h>
 
 namespace Aws
 {
@@ -534,13 +529,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateOrganizationOutcome CreateOrganization(const Model::CreateOrganizationRequest& request) const;
+        virtual Model::CreateOrganizationOutcome CreateOrganization(const Model::CreateOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateOrganizationRequestT = Model::CreateOrganizationRequest>
-        Model::CreateOrganizationOutcomeCallable CreateOrganizationCallable(const CreateOrganizationRequestT& request) const
+        Model::CreateOrganizationOutcomeCallable CreateOrganizationCallable(const CreateOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::CreateOrganization, request);
         }
@@ -549,7 +544,7 @@ namespace Organizations
          * An Async wrapper for CreateOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateOrganizationRequestT = Model::CreateOrganizationRequest>
-        void CreateOrganizationAsync(const CreateOrganizationRequestT& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateOrganizationAsync(const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::CreateOrganization, request, handler, context);
         }
@@ -1264,13 +1259,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableAllFeaturesOutcome EnableAllFeatures(const Model::EnableAllFeaturesRequest& request) const;
+        virtual Model::EnableAllFeaturesOutcome EnableAllFeatures(const Model::EnableAllFeaturesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableAllFeatures that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename EnableAllFeaturesRequestT = Model::EnableAllFeaturesRequest>
-        Model::EnableAllFeaturesOutcomeCallable EnableAllFeaturesCallable(const EnableAllFeaturesRequestT& request) const
+        Model::EnableAllFeaturesOutcomeCallable EnableAllFeaturesCallable(const EnableAllFeaturesRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::EnableAllFeatures, request);
         }
@@ -1279,7 +1274,7 @@ namespace Organizations
          * An Async wrapper for EnableAllFeatures that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename EnableAllFeaturesRequestT = Model::EnableAllFeaturesRequest>
-        void EnableAllFeaturesAsync(const EnableAllFeaturesRequestT& request, const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void EnableAllFeaturesAsync(const EnableAllFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableAllFeaturesRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::EnableAllFeatures, request, handler, context);
         }
@@ -1445,13 +1440,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAWSServiceAccessForOrganizationOutcome ListAWSServiceAccessForOrganization(const Model::ListAWSServiceAccessForOrganizationRequest& request) const;
+        virtual Model::ListAWSServiceAccessForOrganizationOutcome ListAWSServiceAccessForOrganization(const Model::ListAWSServiceAccessForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAWSServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAWSServiceAccessForOrganizationRequestT = Model::ListAWSServiceAccessForOrganizationRequest>
-        Model::ListAWSServiceAccessForOrganizationOutcomeCallable ListAWSServiceAccessForOrganizationCallable(const ListAWSServiceAccessForOrganizationRequestT& request) const
+        Model::ListAWSServiceAccessForOrganizationOutcomeCallable ListAWSServiceAccessForOrganizationCallable(const ListAWSServiceAccessForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListAWSServiceAccessForOrganization, request);
         }
@@ -1460,7 +1455,7 @@ namespace Organizations
          * An Async wrapper for ListAWSServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAWSServiceAccessForOrganizationRequestT = Model::ListAWSServiceAccessForOrganizationRequest>
-        void ListAWSServiceAccessForOrganizationAsync(const ListAWSServiceAccessForOrganizationRequestT& request, const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAWSServiceAccessForOrganizationAsync(const ListAWSServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAWSServiceAccessForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListAWSServiceAccessForOrganization, request, handler, context);
         }
@@ -1480,13 +1475,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request) const;
+        virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountsRequestT = Model::ListAccountsRequest>
-        Model::ListAccountsOutcomeCallable ListAccountsCallable(const ListAccountsRequestT& request) const
+        Model::ListAccountsOutcomeCallable ListAccountsCallable(const ListAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListAccounts, request);
         }
@@ -1495,7 +1490,7 @@ namespace Organizations
          * An Async wrapper for ListAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountsRequestT = Model::ListAccountsRequest>
-        void ListAccountsAsync(const ListAccountsRequestT& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountsAsync(const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListAccounts, request, handler, context);
         }
@@ -1586,13 +1581,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCreateAccountStatusOutcome ListCreateAccountStatus(const Model::ListCreateAccountStatusRequest& request) const;
+        virtual Model::ListCreateAccountStatusOutcome ListCreateAccountStatus(const Model::ListCreateAccountStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCreateAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCreateAccountStatusRequestT = Model::ListCreateAccountStatusRequest>
-        Model::ListCreateAccountStatusOutcomeCallable ListCreateAccountStatusCallable(const ListCreateAccountStatusRequestT& request) const
+        Model::ListCreateAccountStatusOutcomeCallable ListCreateAccountStatusCallable(const ListCreateAccountStatusRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListCreateAccountStatus, request);
         }
@@ -1601,7 +1596,7 @@ namespace Organizations
          * An Async wrapper for ListCreateAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCreateAccountStatusRequestT = Model::ListCreateAccountStatusRequest>
-        void ListCreateAccountStatusAsync(const ListCreateAccountStatusRequestT& request, const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCreateAccountStatusAsync(const ListCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCreateAccountStatusRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListCreateAccountStatus, request, handler, context);
         }
@@ -1615,13 +1610,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDelegatedAdministratorsOutcome ListDelegatedAdministrators(const Model::ListDelegatedAdministratorsRequest& request) const;
+        virtual Model::ListDelegatedAdministratorsOutcome ListDelegatedAdministrators(const Model::ListDelegatedAdministratorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDelegatedAdministrators that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDelegatedAdministratorsRequestT = Model::ListDelegatedAdministratorsRequest>
-        Model::ListDelegatedAdministratorsOutcomeCallable ListDelegatedAdministratorsCallable(const ListDelegatedAdministratorsRequestT& request) const
+        Model::ListDelegatedAdministratorsOutcomeCallable ListDelegatedAdministratorsCallable(const ListDelegatedAdministratorsRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListDelegatedAdministrators, request);
         }
@@ -1630,7 +1625,7 @@ namespace Organizations
          * An Async wrapper for ListDelegatedAdministrators that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDelegatedAdministratorsRequestT = Model::ListDelegatedAdministratorsRequest>
-        void ListDelegatedAdministratorsAsync(const ListDelegatedAdministratorsRequestT& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDelegatedAdministratorsAsync(const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDelegatedAdministratorsRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListDelegatedAdministrators, request, handler, context);
         }
@@ -1678,13 +1673,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHandshakesForAccountOutcome ListHandshakesForAccount(const Model::ListHandshakesForAccountRequest& request) const;
+        virtual Model::ListHandshakesForAccountOutcome ListHandshakesForAccount(const Model::ListHandshakesForAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHandshakesForAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHandshakesForAccountRequestT = Model::ListHandshakesForAccountRequest>
-        Model::ListHandshakesForAccountOutcomeCallable ListHandshakesForAccountCallable(const ListHandshakesForAccountRequestT& request) const
+        Model::ListHandshakesForAccountOutcomeCallable ListHandshakesForAccountCallable(const ListHandshakesForAccountRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListHandshakesForAccount, request);
         }
@@ -1693,7 +1688,7 @@ namespace Organizations
          * An Async wrapper for ListHandshakesForAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHandshakesForAccountRequestT = Model::ListHandshakesForAccountRequest>
-        void ListHandshakesForAccountAsync(const ListHandshakesForAccountRequestT& request, const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHandshakesForAccountAsync(const ListHandshakesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHandshakesForAccountRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListHandshakesForAccount, request, handler, context);
         }
@@ -1717,13 +1712,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHandshakesForOrganizationOutcome ListHandshakesForOrganization(const Model::ListHandshakesForOrganizationRequest& request) const;
+        virtual Model::ListHandshakesForOrganizationOutcome ListHandshakesForOrganization(const Model::ListHandshakesForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHandshakesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHandshakesForOrganizationRequestT = Model::ListHandshakesForOrganizationRequest>
-        Model::ListHandshakesForOrganizationOutcomeCallable ListHandshakesForOrganizationCallable(const ListHandshakesForOrganizationRequestT& request) const
+        Model::ListHandshakesForOrganizationOutcomeCallable ListHandshakesForOrganizationCallable(const ListHandshakesForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListHandshakesForOrganization, request);
         }
@@ -1732,7 +1727,7 @@ namespace Organizations
          * An Async wrapper for ListHandshakesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHandshakesForOrganizationRequestT = Model::ListHandshakesForOrganizationRequest>
-        void ListHandshakesForOrganizationAsync(const ListHandshakesForOrganizationRequestT& request, const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHandshakesForOrganizationAsync(const ListHandshakesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHandshakesForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListHandshakesForOrganization, request, handler, context);
         }
@@ -1893,13 +1888,13 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRootsOutcome ListRoots(const Model::ListRootsRequest& request) const;
+        virtual Model::ListRootsOutcome ListRoots(const Model::ListRootsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRoots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRootsRequestT = Model::ListRootsRequest>
-        Model::ListRootsOutcomeCallable ListRootsCallable(const ListRootsRequestT& request) const
+        Model::ListRootsOutcomeCallable ListRootsCallable(const ListRootsRequestT& request = {}) const
         {
             return SubmitCallable(&OrganizationsClient::ListRoots, request);
         }
@@ -1908,7 +1903,7 @@ namespace Organizations
          * An Async wrapper for ListRoots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRootsRequestT = Model::ListRootsRequest>
-        void ListRootsAsync(const ListRootsRequestT& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRootsAsync(const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRootsRequestT& request = {}) const
         {
             return SubmitAsync(&OrganizationsClient::ListRoots, request, handler, context);
         }

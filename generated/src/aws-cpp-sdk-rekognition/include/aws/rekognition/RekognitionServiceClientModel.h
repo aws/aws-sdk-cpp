@@ -93,6 +93,11 @@
 #include <aws/rekognition/model/UntagResourceResult.h>
 #include <aws/rekognition/model/UpdateDatasetEntriesResult.h>
 #include <aws/rekognition/model/UpdateStreamProcessorResult.h>
+#include <aws/rekognition/model/CreateFaceLivenessSessionRequest.h>
+#include <aws/rekognition/model/DescribeProjectsRequest.h>
+#include <aws/rekognition/model/ListCollectionsRequest.h>
+#include <aws/rekognition/model/ListStreamProcessorsRequest.h>
+#include <aws/rekognition/model/ListMediaAnalysisJobsRequest.h>
 /* End of service model headers required in RekognitionClient header */
 
 namespace Aws

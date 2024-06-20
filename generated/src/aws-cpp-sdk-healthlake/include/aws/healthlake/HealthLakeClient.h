@@ -215,13 +215,13 @@ namespace HealthLake
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFHIRDatastoresOutcome ListFHIRDatastores(const Model::ListFHIRDatastoresRequest& request) const;
+        virtual Model::ListFHIRDatastoresOutcome ListFHIRDatastores(const Model::ListFHIRDatastoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFHIRDatastores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFHIRDatastoresRequestT = Model::ListFHIRDatastoresRequest>
-        Model::ListFHIRDatastoresOutcomeCallable ListFHIRDatastoresCallable(const ListFHIRDatastoresRequestT& request) const
+        Model::ListFHIRDatastoresOutcomeCallable ListFHIRDatastoresCallable(const ListFHIRDatastoresRequestT& request = {}) const
         {
             return SubmitCallable(&HealthLakeClient::ListFHIRDatastores, request);
         }
@@ -230,7 +230,7 @@ namespace HealthLake
          * An Async wrapper for ListFHIRDatastores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFHIRDatastoresRequestT = Model::ListFHIRDatastoresRequest>
-        void ListFHIRDatastoresAsync(const ListFHIRDatastoresRequestT& request, const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFHIRDatastoresAsync(const ListFHIRDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFHIRDatastoresRequestT& request = {}) const
         {
             return SubmitAsync(&HealthLakeClient::ListFHIRDatastores, request, handler, context);
         }

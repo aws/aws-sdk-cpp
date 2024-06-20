@@ -36,6 +36,16 @@
 #include <aws/resource-groups/model/UpdateAccountSettingsResult.h>
 #include <aws/resource-groups/model/UpdateGroupResult.h>
 #include <aws/resource-groups/model/UpdateGroupQueryResult.h>
+#include <aws/resource-groups/model/GetGroupRequest.h>
+#include <aws/resource-groups/model/ListGroupResourcesRequest.h>
+#include <aws/resource-groups/model/PutGroupConfigurationRequest.h>
+#include <aws/resource-groups/model/GetGroupQueryRequest.h>
+#include <aws/resource-groups/model/UpdateAccountSettingsRequest.h>
+#include <aws/resource-groups/model/GetAccountSettingsRequest.h>
+#include <aws/resource-groups/model/ListGroupsRequest.h>
+#include <aws/resource-groups/model/GetGroupConfigurationRequest.h>
+#include <aws/resource-groups/model/DeleteGroupRequest.h>
+#include <aws/resource-groups/model/UpdateGroupRequest.h>
 /* End of service model headers required in ResourceGroupsClient header */
 
 namespace Aws

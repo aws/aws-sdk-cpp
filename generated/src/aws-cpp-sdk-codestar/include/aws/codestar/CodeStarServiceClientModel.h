@@ -36,6 +36,8 @@
 #include <aws/codestar/model/UpdateProjectResult.h>
 #include <aws/codestar/model/UpdateTeamMemberResult.h>
 #include <aws/codestar/model/UpdateUserProfileResult.h>
+#include <aws/codestar/model/ListProjectsRequest.h>
+#include <aws/codestar/model/ListUserProfilesRequest.h>
 /* End of service model headers required in CodeStarClient header */
 
 namespace Aws

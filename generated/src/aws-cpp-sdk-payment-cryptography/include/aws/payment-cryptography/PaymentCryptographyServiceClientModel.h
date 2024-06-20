@@ -38,6 +38,8 @@
 #include <aws/payment-cryptography/model/TagResourceResult.h>
 #include <aws/payment-cryptography/model/UntagResourceResult.h>
 #include <aws/payment-cryptography/model/UpdateAliasResult.h>
+#include <aws/payment-cryptography/model/ListAliasesRequest.h>
+#include <aws/payment-cryptography/model/ListKeysRequest.h>
 /* End of service model headers required in PaymentCryptographyClient header */
 
 namespace Aws

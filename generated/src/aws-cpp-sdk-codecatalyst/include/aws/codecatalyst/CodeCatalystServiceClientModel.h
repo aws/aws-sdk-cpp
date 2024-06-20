@@ -56,6 +56,10 @@
 #include <aws/codecatalyst/model/UpdateProjectResult.h>
 #include <aws/codecatalyst/model/UpdateSpaceResult.h>
 #include <aws/codecatalyst/model/VerifySessionResult.h>
+#include <aws/codecatalyst/model/VerifySessionRequest.h>
+#include <aws/codecatalyst/model/ListAccessTokensRequest.h>
+#include <aws/codecatalyst/model/GetUserDetailsRequest.h>
+#include <aws/codecatalyst/model/ListSpacesRequest.h>
 /* End of service model headers required in CodeCatalystClient header */
 
 namespace Aws

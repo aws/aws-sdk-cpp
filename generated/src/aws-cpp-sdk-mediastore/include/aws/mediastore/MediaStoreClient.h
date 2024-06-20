@@ -251,13 +251,13 @@ namespace MediaStore
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeContainerOutcome DescribeContainer(const Model::DescribeContainerRequest& request) const;
+        virtual Model::DescribeContainerOutcome DescribeContainer(const Model::DescribeContainerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeContainer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeContainerRequestT = Model::DescribeContainerRequest>
-        Model::DescribeContainerOutcomeCallable DescribeContainerCallable(const DescribeContainerRequestT& request) const
+        Model::DescribeContainerOutcomeCallable DescribeContainerCallable(const DescribeContainerRequestT& request = {}) const
         {
             return SubmitCallable(&MediaStoreClient::DescribeContainer, request);
         }
@@ -266,7 +266,7 @@ namespace MediaStore
          * An Async wrapper for DescribeContainer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeContainerRequestT = Model::DescribeContainerRequest>
-        void DescribeContainerAsync(const DescribeContainerRequestT& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeContainerAsync(const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeContainerRequestT& request = {}) const
         {
             return SubmitAsync(&MediaStoreClient::DescribeContainer, request, handler, context);
         }
@@ -393,13 +393,13 @@ namespace MediaStore
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContainersOutcome ListContainers(const Model::ListContainersRequest& request) const;
+        virtual Model::ListContainersOutcome ListContainers(const Model::ListContainersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContainers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContainersRequestT = Model::ListContainersRequest>
-        Model::ListContainersOutcomeCallable ListContainersCallable(const ListContainersRequestT& request) const
+        Model::ListContainersOutcomeCallable ListContainersCallable(const ListContainersRequestT& request = {}) const
         {
             return SubmitCallable(&MediaStoreClient::ListContainers, request);
         }
@@ -408,7 +408,7 @@ namespace MediaStore
          * An Async wrapper for ListContainers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContainersRequestT = Model::ListContainersRequest>
-        void ListContainersAsync(const ListContainersRequestT& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContainersAsync(const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContainersRequestT& request = {}) const
         {
             return SubmitAsync(&MediaStoreClient::ListContainers, request, handler, context);
         }

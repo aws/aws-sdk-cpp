@@ -50,6 +50,10 @@
 #include <aws/appconfig/model/UpdateEnvironmentResult.h>
 #include <aws/appconfig/model/UpdateExtensionResult.h>
 #include <aws/appconfig/model/UpdateExtensionAssociationResult.h>
+#include <aws/appconfig/model/ListApplicationsRequest.h>
+#include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
+#include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
+#include <aws/appconfig/model/ListExtensionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AppConfigClient header */
 

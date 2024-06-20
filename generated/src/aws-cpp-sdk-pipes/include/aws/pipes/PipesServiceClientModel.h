@@ -28,6 +28,7 @@
 #include <aws/pipes/model/TagResourceResult.h>
 #include <aws/pipes/model/UntagResourceResult.h>
 #include <aws/pipes/model/UpdatePipeResult.h>
+#include <aws/pipes/model/ListPipesRequest.h>
 /* End of service model headers required in PipesClient header */
 
 namespace Aws

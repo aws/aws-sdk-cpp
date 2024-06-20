@@ -119,6 +119,28 @@
 #include <aws/gamelift/model/UpdateRuntimeConfigurationResult.h>
 #include <aws/gamelift/model/UpdateScriptResult.h>
 #include <aws/gamelift/model/ValidateMatchmakingRuleSetResult.h>
+#include <aws/gamelift/model/ListAliasesRequest.h>
+#include <aws/gamelift/model/CreateScriptRequest.h>
+#include <aws/gamelift/model/SearchGameSessionsRequest.h>
+#include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
+#include <aws/gamelift/model/ListContainerGroupDefinitionsRequest.h>
+#include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
+#include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
+#include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
+#include <aws/gamelift/model/DescribeMatchmakingConfigurationsRequest.h>
+#include <aws/gamelift/model/ListFleetsRequest.h>
+#include <aws/gamelift/model/DescribeFleetCapacityRequest.h>
+#include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionQueuesRequest.h>
+#include <aws/gamelift/model/CreateBuildRequest.h>
+#include <aws/gamelift/model/ListBuildsRequest.h>
+#include <aws/gamelift/model/DescribeMatchmakingRuleSetsRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionsRequest.h>
+#include <aws/gamelift/model/DescribeVpcPeeringConnectionsRequest.h>
+#include <aws/gamelift/model/ListLocationsRequest.h>
+#include <aws/gamelift/model/ListScriptsRequest.h>
+#include <aws/gamelift/model/ListGameServerGroupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in GameLiftClient header */
 

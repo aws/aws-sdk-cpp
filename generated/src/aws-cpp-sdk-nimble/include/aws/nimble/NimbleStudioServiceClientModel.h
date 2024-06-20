@@ -67,6 +67,8 @@
 #include <aws/nimble/model/UpdateStreamingImageResult.h>
 #include <aws/nimble/model/UpdateStudioResult.h>
 #include <aws/nimble/model/UpdateStudioComponentResult.h>
+#include <aws/nimble/model/ListEulasRequest.h>
+#include <aws/nimble/model/ListStudiosRequest.h>
 /* End of service model headers required in NimbleStudioClient header */
 
 namespace Aws

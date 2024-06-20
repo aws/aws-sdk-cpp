@@ -43,6 +43,7 @@
 #include <aws/voice-id/model/UntagResourceResult.h>
 #include <aws/voice-id/model/UpdateDomainResult.h>
 #include <aws/voice-id/model/UpdateWatchlistResult.h>
+#include <aws/voice-id/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in VoiceIDClient header */
 

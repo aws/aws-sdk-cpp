@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
-#include <aws/config/model/GetComplianceSummaryByConfigRuleRequest.h>
 
 namespace Aws
 {
@@ -682,13 +681,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAggregationAuthorizationsOutcome DescribeAggregationAuthorizations(const Model::DescribeAggregationAuthorizationsRequest& request) const;
+        virtual Model::DescribeAggregationAuthorizationsOutcome DescribeAggregationAuthorizations(const Model::DescribeAggregationAuthorizationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAggregationAuthorizations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAggregationAuthorizationsRequestT = Model::DescribeAggregationAuthorizationsRequest>
-        Model::DescribeAggregationAuthorizationsOutcomeCallable DescribeAggregationAuthorizationsCallable(const DescribeAggregationAuthorizationsRequestT& request) const
+        Model::DescribeAggregationAuthorizationsOutcomeCallable DescribeAggregationAuthorizationsCallable(const DescribeAggregationAuthorizationsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeAggregationAuthorizations, request);
         }
@@ -697,7 +696,7 @@ namespace ConfigService
          * An Async wrapper for DescribeAggregationAuthorizations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAggregationAuthorizationsRequestT = Model::DescribeAggregationAuthorizationsRequest>
-        void DescribeAggregationAuthorizationsAsync(const DescribeAggregationAuthorizationsRequestT& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAggregationAuthorizationsAsync(const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAggregationAuthorizationsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeAggregationAuthorizations, request, handler, context);
         }
@@ -725,13 +724,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request) const;
+        virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeComplianceByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeComplianceByConfigRuleRequestT = Model::DescribeComplianceByConfigRuleRequest>
-        Model::DescribeComplianceByConfigRuleOutcomeCallable DescribeComplianceByConfigRuleCallable(const DescribeComplianceByConfigRuleRequestT& request) const
+        Model::DescribeComplianceByConfigRuleOutcomeCallable DescribeComplianceByConfigRuleCallable(const DescribeComplianceByConfigRuleRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeComplianceByConfigRule, request);
         }
@@ -740,7 +739,7 @@ namespace ConfigService
          * An Async wrapper for DescribeComplianceByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeComplianceByConfigRuleRequestT = Model::DescribeComplianceByConfigRuleRequest>
-        void DescribeComplianceByConfigRuleAsync(const DescribeComplianceByConfigRuleRequestT& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeComplianceByConfigRuleAsync(const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeComplianceByConfigRuleRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeComplianceByConfigRule, request, handler, context);
         }
@@ -769,13 +768,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request) const;
+        virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeComplianceByResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeComplianceByResourceRequestT = Model::DescribeComplianceByResourceRequest>
-        Model::DescribeComplianceByResourceOutcomeCallable DescribeComplianceByResourceCallable(const DescribeComplianceByResourceRequestT& request) const
+        Model::DescribeComplianceByResourceOutcomeCallable DescribeComplianceByResourceCallable(const DescribeComplianceByResourceRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeComplianceByResource, request);
         }
@@ -784,7 +783,7 @@ namespace ConfigService
          * An Async wrapper for DescribeComplianceByResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeComplianceByResourceRequestT = Model::DescribeComplianceByResourceRequest>
-        void DescribeComplianceByResourceAsync(const DescribeComplianceByResourceRequestT& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeComplianceByResourceAsync(const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeComplianceByResourceRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeComplianceByResource, request, handler, context);
         }
@@ -797,13 +796,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigRuleEvaluationStatusOutcome DescribeConfigRuleEvaluationStatus(const Model::DescribeConfigRuleEvaluationStatusRequest& request) const;
+        virtual Model::DescribeConfigRuleEvaluationStatusOutcome DescribeConfigRuleEvaluationStatus(const Model::DescribeConfigRuleEvaluationStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigRuleEvaluationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigRuleEvaluationStatusRequestT = Model::DescribeConfigRuleEvaluationStatusRequest>
-        Model::DescribeConfigRuleEvaluationStatusOutcomeCallable DescribeConfigRuleEvaluationStatusCallable(const DescribeConfigRuleEvaluationStatusRequestT& request) const
+        Model::DescribeConfigRuleEvaluationStatusOutcomeCallable DescribeConfigRuleEvaluationStatusCallable(const DescribeConfigRuleEvaluationStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConfigRuleEvaluationStatus, request);
         }
@@ -812,7 +811,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConfigRuleEvaluationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigRuleEvaluationStatusRequestT = Model::DescribeConfigRuleEvaluationStatusRequest>
-        void DescribeConfigRuleEvaluationStatusAsync(const DescribeConfigRuleEvaluationStatusRequestT& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigRuleEvaluationStatusAsync(const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigRuleEvaluationStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConfigRuleEvaluationStatus, request, handler, context);
         }
@@ -822,13 +821,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigRulesOutcome DescribeConfigRules(const Model::DescribeConfigRulesRequest& request) const;
+        virtual Model::DescribeConfigRulesOutcome DescribeConfigRules(const Model::DescribeConfigRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigRulesRequestT = Model::DescribeConfigRulesRequest>
-        Model::DescribeConfigRulesOutcomeCallable DescribeConfigRulesCallable(const DescribeConfigRulesRequestT& request) const
+        Model::DescribeConfigRulesOutcomeCallable DescribeConfigRulesCallable(const DescribeConfigRulesRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConfigRules, request);
         }
@@ -837,7 +836,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConfigRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigRulesRequestT = Model::DescribeConfigRulesRequest>
-        void DescribeConfigRulesAsync(const DescribeConfigRulesRequestT& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigRulesAsync(const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigRulesRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConfigRules, request, handler, context);
         }
@@ -878,13 +877,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigurationAggregatorsOutcome DescribeConfigurationAggregators(const Model::DescribeConfigurationAggregatorsRequest& request) const;
+        virtual Model::DescribeConfigurationAggregatorsOutcome DescribeConfigurationAggregators(const Model::DescribeConfigurationAggregatorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigurationAggregators that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigurationAggregatorsRequestT = Model::DescribeConfigurationAggregatorsRequest>
-        Model::DescribeConfigurationAggregatorsOutcomeCallable DescribeConfigurationAggregatorsCallable(const DescribeConfigurationAggregatorsRequestT& request) const
+        Model::DescribeConfigurationAggregatorsOutcomeCallable DescribeConfigurationAggregatorsCallable(const DescribeConfigurationAggregatorsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConfigurationAggregators, request);
         }
@@ -893,7 +892,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConfigurationAggregators that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigurationAggregatorsRequestT = Model::DescribeConfigurationAggregatorsRequest>
-        void DescribeConfigurationAggregatorsAsync(const DescribeConfigurationAggregatorsRequestT& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigurationAggregatorsAsync(const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationAggregatorsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConfigurationAggregators, request, handler, context);
         }
@@ -910,13 +909,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
+        virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigurationRecorderStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigurationRecorderStatusRequestT = Model::DescribeConfigurationRecorderStatusRequest>
-        Model::DescribeConfigurationRecorderStatusOutcomeCallable DescribeConfigurationRecorderStatusCallable(const DescribeConfigurationRecorderStatusRequestT& request) const
+        Model::DescribeConfigurationRecorderStatusOutcomeCallable DescribeConfigurationRecorderStatusCallable(const DescribeConfigurationRecorderStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConfigurationRecorderStatus, request);
         }
@@ -925,7 +924,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConfigurationRecorderStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigurationRecorderStatusRequestT = Model::DescribeConfigurationRecorderStatusRequest>
-        void DescribeConfigurationRecorderStatusAsync(const DescribeConfigurationRecorderStatusRequestT& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigurationRecorderStatusAsync(const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationRecorderStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConfigurationRecorderStatus, request, handler, context);
         }
@@ -939,13 +938,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigurationRecordersOutcome DescribeConfigurationRecorders(const Model::DescribeConfigurationRecordersRequest& request) const;
+        virtual Model::DescribeConfigurationRecordersOutcome DescribeConfigurationRecorders(const Model::DescribeConfigurationRecordersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigurationRecorders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigurationRecordersRequestT = Model::DescribeConfigurationRecordersRequest>
-        Model::DescribeConfigurationRecordersOutcomeCallable DescribeConfigurationRecordersCallable(const DescribeConfigurationRecordersRequestT& request) const
+        Model::DescribeConfigurationRecordersOutcomeCallable DescribeConfigurationRecordersCallable(const DescribeConfigurationRecordersRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConfigurationRecorders, request);
         }
@@ -954,7 +953,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConfigurationRecorders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigurationRecordersRequestT = Model::DescribeConfigurationRecordersRequest>
-        void DescribeConfigurationRecordersAsync(const DescribeConfigurationRecordersRequestT& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigurationRecordersAsync(const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationRecordersRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConfigurationRecorders, request, handler, context);
         }
@@ -992,13 +991,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConformancePackStatusOutcome DescribeConformancePackStatus(const Model::DescribeConformancePackStatusRequest& request) const;
+        virtual Model::DescribeConformancePackStatusOutcome DescribeConformancePackStatus(const Model::DescribeConformancePackStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConformancePackStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConformancePackStatusRequestT = Model::DescribeConformancePackStatusRequest>
-        Model::DescribeConformancePackStatusOutcomeCallable DescribeConformancePackStatusCallable(const DescribeConformancePackStatusRequestT& request) const
+        Model::DescribeConformancePackStatusOutcomeCallable DescribeConformancePackStatusCallable(const DescribeConformancePackStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConformancePackStatus, request);
         }
@@ -1007,7 +1006,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConformancePackStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConformancePackStatusRequestT = Model::DescribeConformancePackStatusRequest>
-        void DescribeConformancePackStatusAsync(const DescribeConformancePackStatusRequestT& request, const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConformancePackStatusAsync(const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConformancePackStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConformancePackStatus, request, handler, context);
         }
@@ -1018,13 +1017,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConformancePacksOutcome DescribeConformancePacks(const Model::DescribeConformancePacksRequest& request) const;
+        virtual Model::DescribeConformancePacksOutcome DescribeConformancePacks(const Model::DescribeConformancePacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConformancePacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConformancePacksRequestT = Model::DescribeConformancePacksRequest>
-        Model::DescribeConformancePacksOutcomeCallable DescribeConformancePacksCallable(const DescribeConformancePacksRequestT& request) const
+        Model::DescribeConformancePacksOutcomeCallable DescribeConformancePacksCallable(const DescribeConformancePacksRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeConformancePacks, request);
         }
@@ -1033,7 +1032,7 @@ namespace ConfigService
          * An Async wrapper for DescribeConformancePacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConformancePacksRequestT = Model::DescribeConformancePacksRequest>
-        void DescribeConformancePacksAsync(const DescribeConformancePacksRequestT& request, const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConformancePacksAsync(const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConformancePacksRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeConformancePacks, request, handler, context);
         }
@@ -1047,13 +1046,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request) const;
+        virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeliveryChannelStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeliveryChannelStatusRequestT = Model::DescribeDeliveryChannelStatusRequest>
-        Model::DescribeDeliveryChannelStatusOutcomeCallable DescribeDeliveryChannelStatusCallable(const DescribeDeliveryChannelStatusRequestT& request) const
+        Model::DescribeDeliveryChannelStatusOutcomeCallable DescribeDeliveryChannelStatusCallable(const DescribeDeliveryChannelStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeDeliveryChannelStatus, request);
         }
@@ -1062,7 +1061,7 @@ namespace ConfigService
          * An Async wrapper for DescribeDeliveryChannelStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeliveryChannelStatusRequestT = Model::DescribeDeliveryChannelStatusRequest>
-        void DescribeDeliveryChannelStatusAsync(const DescribeDeliveryChannelStatusRequestT& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeliveryChannelStatusAsync(const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeliveryChannelStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeDeliveryChannelStatus, request, handler, context);
         }
@@ -1076,13 +1075,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeliveryChannelsOutcome DescribeDeliveryChannels(const Model::DescribeDeliveryChannelsRequest& request) const;
+        virtual Model::DescribeDeliveryChannelsOutcome DescribeDeliveryChannels(const Model::DescribeDeliveryChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeliveryChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeliveryChannelsRequestT = Model::DescribeDeliveryChannelsRequest>
-        Model::DescribeDeliveryChannelsOutcomeCallable DescribeDeliveryChannelsCallable(const DescribeDeliveryChannelsRequestT& request) const
+        Model::DescribeDeliveryChannelsOutcomeCallable DescribeDeliveryChannelsCallable(const DescribeDeliveryChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeDeliveryChannels, request);
         }
@@ -1091,7 +1090,7 @@ namespace ConfigService
          * An Async wrapper for DescribeDeliveryChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeliveryChannelsRequestT = Model::DescribeDeliveryChannelsRequest>
-        void DescribeDeliveryChannelsAsync(const DescribeDeliveryChannelsRequestT& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeliveryChannelsAsync(const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeliveryChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeDeliveryChannels, request, handler, context);
         }
@@ -1107,13 +1106,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationConfigRuleStatusesOutcome DescribeOrganizationConfigRuleStatuses(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
+        virtual Model::DescribeOrganizationConfigRuleStatusesOutcome DescribeOrganizationConfigRuleStatuses(const Model::DescribeOrganizationConfigRuleStatusesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationConfigRuleStatuses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationConfigRuleStatusesRequestT = Model::DescribeOrganizationConfigRuleStatusesRequest>
-        Model::DescribeOrganizationConfigRuleStatusesOutcomeCallable DescribeOrganizationConfigRuleStatusesCallable(const DescribeOrganizationConfigRuleStatusesRequestT& request) const
+        Model::DescribeOrganizationConfigRuleStatusesOutcomeCallable DescribeOrganizationConfigRuleStatusesCallable(const DescribeOrganizationConfigRuleStatusesRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeOrganizationConfigRuleStatuses, request);
         }
@@ -1122,7 +1121,7 @@ namespace ConfigService
          * An Async wrapper for DescribeOrganizationConfigRuleStatuses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationConfigRuleStatusesRequestT = Model::DescribeOrganizationConfigRuleStatusesRequest>
-        void DescribeOrganizationConfigRuleStatusesAsync(const DescribeOrganizationConfigRuleStatusesRequestT& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationConfigRuleStatusesAsync(const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationConfigRuleStatusesRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeOrganizationConfigRuleStatuses, request, handler, context);
         }
@@ -1147,13 +1146,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
+        virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationConfigRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationConfigRulesRequestT = Model::DescribeOrganizationConfigRulesRequest>
-        Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const DescribeOrganizationConfigRulesRequestT& request) const
+        Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const DescribeOrganizationConfigRulesRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeOrganizationConfigRules, request);
         }
@@ -1162,7 +1161,7 @@ namespace ConfigService
          * An Async wrapper for DescribeOrganizationConfigRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationConfigRulesRequestT = Model::DescribeOrganizationConfigRulesRequest>
-        void DescribeOrganizationConfigRulesAsync(const DescribeOrganizationConfigRulesRequestT& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationConfigRulesAsync(const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationConfigRulesRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeOrganizationConfigRules, request, handler, context);
         }
@@ -1179,13 +1178,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationConformancePackStatusesOutcome DescribeOrganizationConformancePackStatuses(const Model::DescribeOrganizationConformancePackStatusesRequest& request) const;
+        virtual Model::DescribeOrganizationConformancePackStatusesOutcome DescribeOrganizationConformancePackStatuses(const Model::DescribeOrganizationConformancePackStatusesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationConformancePackStatuses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationConformancePackStatusesRequestT = Model::DescribeOrganizationConformancePackStatusesRequest>
-        Model::DescribeOrganizationConformancePackStatusesOutcomeCallable DescribeOrganizationConformancePackStatusesCallable(const DescribeOrganizationConformancePackStatusesRequestT& request) const
+        Model::DescribeOrganizationConformancePackStatusesOutcomeCallable DescribeOrganizationConformancePackStatusesCallable(const DescribeOrganizationConformancePackStatusesRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeOrganizationConformancePackStatuses, request);
         }
@@ -1194,7 +1193,7 @@ namespace ConfigService
          * An Async wrapper for DescribeOrganizationConformancePackStatuses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationConformancePackStatusesRequestT = Model::DescribeOrganizationConformancePackStatusesRequest>
-        void DescribeOrganizationConformancePackStatusesAsync(const DescribeOrganizationConformancePackStatusesRequestT& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationConformancePackStatusesAsync(const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationConformancePackStatusesRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeOrganizationConformancePackStatuses, request, handler, context);
         }
@@ -1219,13 +1218,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationConformancePacksOutcome DescribeOrganizationConformancePacks(const Model::DescribeOrganizationConformancePacksRequest& request) const;
+        virtual Model::DescribeOrganizationConformancePacksOutcome DescribeOrganizationConformancePacks(const Model::DescribeOrganizationConformancePacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationConformancePacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationConformancePacksRequestT = Model::DescribeOrganizationConformancePacksRequest>
-        Model::DescribeOrganizationConformancePacksOutcomeCallable DescribeOrganizationConformancePacksCallable(const DescribeOrganizationConformancePacksRequestT& request) const
+        Model::DescribeOrganizationConformancePacksOutcomeCallable DescribeOrganizationConformancePacksCallable(const DescribeOrganizationConformancePacksRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeOrganizationConformancePacks, request);
         }
@@ -1234,7 +1233,7 @@ namespace ConfigService
          * An Async wrapper for DescribeOrganizationConformancePacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationConformancePacksRequestT = Model::DescribeOrganizationConformancePacksRequest>
-        void DescribeOrganizationConformancePacksAsync(const DescribeOrganizationConformancePacksRequestT& request, const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationConformancePacksAsync(const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationConformancePacksRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeOrganizationConformancePacks, request, handler, context);
         }
@@ -1245,13 +1244,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePendingAggregationRequestsOutcome DescribePendingAggregationRequests(const Model::DescribePendingAggregationRequestsRequest& request) const;
+        virtual Model::DescribePendingAggregationRequestsOutcome DescribePendingAggregationRequests(const Model::DescribePendingAggregationRequestsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePendingAggregationRequests that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePendingAggregationRequestsRequestT = Model::DescribePendingAggregationRequestsRequest>
-        Model::DescribePendingAggregationRequestsOutcomeCallable DescribePendingAggregationRequestsCallable(const DescribePendingAggregationRequestsRequestT& request) const
+        Model::DescribePendingAggregationRequestsOutcomeCallable DescribePendingAggregationRequestsCallable(const DescribePendingAggregationRequestsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribePendingAggregationRequests, request);
         }
@@ -1260,7 +1259,7 @@ namespace ConfigService
          * An Async wrapper for DescribePendingAggregationRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePendingAggregationRequestsRequestT = Model::DescribePendingAggregationRequestsRequest>
-        void DescribePendingAggregationRequestsAsync(const DescribePendingAggregationRequestsRequestT& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePendingAggregationRequestsAsync(const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePendingAggregationRequestsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribePendingAggregationRequests, request, handler, context);
         }
@@ -1364,13 +1363,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRetentionConfigurationsOutcome DescribeRetentionConfigurations(const Model::DescribeRetentionConfigurationsRequest& request) const;
+        virtual Model::DescribeRetentionConfigurationsOutcome DescribeRetentionConfigurations(const Model::DescribeRetentionConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRetentionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRetentionConfigurationsRequestT = Model::DescribeRetentionConfigurationsRequest>
-        Model::DescribeRetentionConfigurationsOutcomeCallable DescribeRetentionConfigurationsCallable(const DescribeRetentionConfigurationsRequestT& request) const
+        Model::DescribeRetentionConfigurationsOutcomeCallable DescribeRetentionConfigurationsCallable(const DescribeRetentionConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::DescribeRetentionConfigurations, request);
         }
@@ -1379,7 +1378,7 @@ namespace ConfigService
          * An Async wrapper for DescribeRetentionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRetentionConfigurationsRequestT = Model::DescribeRetentionConfigurationsRequest>
-        void DescribeRetentionConfigurationsAsync(const DescribeRetentionConfigurationsRequestT& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRetentionConfigurationsAsync(const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRetentionConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeRetentionConfigurations, request, handler, context);
         }
@@ -1565,13 +1564,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetComplianceDetailsByResourceOutcome GetComplianceDetailsByResource(const Model::GetComplianceDetailsByResourceRequest& request) const;
+        virtual Model::GetComplianceDetailsByResourceOutcome GetComplianceDetailsByResource(const Model::GetComplianceDetailsByResourceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetComplianceDetailsByResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetComplianceDetailsByResourceRequestT = Model::GetComplianceDetailsByResourceRequest>
-        Model::GetComplianceDetailsByResourceOutcomeCallable GetComplianceDetailsByResourceCallable(const GetComplianceDetailsByResourceRequestT& request) const
+        Model::GetComplianceDetailsByResourceOutcomeCallable GetComplianceDetailsByResourceCallable(const GetComplianceDetailsByResourceRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::GetComplianceDetailsByResource, request);
         }
@@ -1580,7 +1579,7 @@ namespace ConfigService
          * An Async wrapper for GetComplianceDetailsByResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetComplianceDetailsByResourceRequestT = Model::GetComplianceDetailsByResourceRequest>
-        void GetComplianceDetailsByResourceAsync(const GetComplianceDetailsByResourceRequestT& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetComplianceDetailsByResourceAsync(const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetComplianceDetailsByResourceRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::GetComplianceDetailsByResource, request, handler, context);
         }
@@ -1619,13 +1618,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetComplianceSummaryByResourceTypeOutcome GetComplianceSummaryByResourceType(const Model::GetComplianceSummaryByResourceTypeRequest& request) const;
+        virtual Model::GetComplianceSummaryByResourceTypeOutcome GetComplianceSummaryByResourceType(const Model::GetComplianceSummaryByResourceTypeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetComplianceSummaryByResourceType that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetComplianceSummaryByResourceTypeRequestT = Model::GetComplianceSummaryByResourceTypeRequest>
-        Model::GetComplianceSummaryByResourceTypeOutcomeCallable GetComplianceSummaryByResourceTypeCallable(const GetComplianceSummaryByResourceTypeRequestT& request) const
+        Model::GetComplianceSummaryByResourceTypeOutcomeCallable GetComplianceSummaryByResourceTypeCallable(const GetComplianceSummaryByResourceTypeRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::GetComplianceSummaryByResourceType, request);
         }
@@ -1634,7 +1633,7 @@ namespace ConfigService
          * An Async wrapper for GetComplianceSummaryByResourceType that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetComplianceSummaryByResourceTypeRequestT = Model::GetComplianceSummaryByResourceTypeRequest>
-        void GetComplianceSummaryByResourceTypeAsync(const GetComplianceSummaryByResourceTypeRequestT& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetComplianceSummaryByResourceTypeAsync(const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetComplianceSummaryByResourceTypeRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::GetComplianceSummaryByResourceType, request, handler, context);
         }
@@ -1698,13 +1697,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCustomRulePolicyOutcome GetCustomRulePolicy(const Model::GetCustomRulePolicyRequest& request) const;
+        virtual Model::GetCustomRulePolicyOutcome GetCustomRulePolicy(const Model::GetCustomRulePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCustomRulePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCustomRulePolicyRequestT = Model::GetCustomRulePolicyRequest>
-        Model::GetCustomRulePolicyOutcomeCallable GetCustomRulePolicyCallable(const GetCustomRulePolicyRequestT& request) const
+        Model::GetCustomRulePolicyOutcomeCallable GetCustomRulePolicyCallable(const GetCustomRulePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::GetCustomRulePolicy, request);
         }
@@ -1713,7 +1712,7 @@ namespace ConfigService
          * An Async wrapper for GetCustomRulePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCustomRulePolicyRequestT = Model::GetCustomRulePolicyRequest>
-        void GetCustomRulePolicyAsync(const GetCustomRulePolicyRequestT& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCustomRulePolicyAsync(const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCustomRulePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::GetCustomRulePolicy, request, handler, context);
         }
@@ -1744,13 +1743,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDiscoveredResourceCountsOutcome GetDiscoveredResourceCounts(const Model::GetDiscoveredResourceCountsRequest& request) const;
+        virtual Model::GetDiscoveredResourceCountsOutcome GetDiscoveredResourceCounts(const Model::GetDiscoveredResourceCountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDiscoveredResourceCounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDiscoveredResourceCountsRequestT = Model::GetDiscoveredResourceCountsRequest>
-        Model::GetDiscoveredResourceCountsOutcomeCallable GetDiscoveredResourceCountsCallable(const GetDiscoveredResourceCountsRequestT& request) const
+        Model::GetDiscoveredResourceCountsOutcomeCallable GetDiscoveredResourceCountsCallable(const GetDiscoveredResourceCountsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::GetDiscoveredResourceCounts, request);
         }
@@ -1759,7 +1758,7 @@ namespace ConfigService
          * An Async wrapper for GetDiscoveredResourceCounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDiscoveredResourceCountsRequestT = Model::GetDiscoveredResourceCountsRequest>
-        void GetDiscoveredResourceCountsAsync(const GetDiscoveredResourceCountsRequestT& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDiscoveredResourceCountsAsync(const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDiscoveredResourceCountsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::GetDiscoveredResourceCounts, request, handler, context);
         }
@@ -1992,13 +1991,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConformancePackComplianceScoresOutcome ListConformancePackComplianceScores(const Model::ListConformancePackComplianceScoresRequest& request) const;
+        virtual Model::ListConformancePackComplianceScoresOutcome ListConformancePackComplianceScores(const Model::ListConformancePackComplianceScoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConformancePackComplianceScores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConformancePackComplianceScoresRequestT = Model::ListConformancePackComplianceScoresRequest>
-        Model::ListConformancePackComplianceScoresOutcomeCallable ListConformancePackComplianceScoresCallable(const ListConformancePackComplianceScoresRequestT& request) const
+        Model::ListConformancePackComplianceScoresOutcomeCallable ListConformancePackComplianceScoresCallable(const ListConformancePackComplianceScoresRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::ListConformancePackComplianceScores, request);
         }
@@ -2007,7 +2006,7 @@ namespace ConfigService
          * An Async wrapper for ListConformancePackComplianceScores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConformancePackComplianceScoresRequestT = Model::ListConformancePackComplianceScoresRequest>
-        void ListConformancePackComplianceScoresAsync(const ListConformancePackComplianceScoresRequestT& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConformancePackComplianceScoresAsync(const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConformancePackComplianceScoresRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::ListConformancePackComplianceScores, request, handler, context);
         }
@@ -2054,13 +2053,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceEvaluationsOutcome ListResourceEvaluations(const Model::ListResourceEvaluationsRequest& request) const;
+        virtual Model::ListResourceEvaluationsOutcome ListResourceEvaluations(const Model::ListResourceEvaluationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceEvaluationsRequestT = Model::ListResourceEvaluationsRequest>
-        Model::ListResourceEvaluationsOutcomeCallable ListResourceEvaluationsCallable(const ListResourceEvaluationsRequestT& request) const
+        Model::ListResourceEvaluationsOutcomeCallable ListResourceEvaluationsCallable(const ListResourceEvaluationsRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::ListResourceEvaluations, request);
         }
@@ -2069,7 +2068,7 @@ namespace ConfigService
          * An Async wrapper for ListResourceEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceEvaluationsRequestT = Model::ListResourceEvaluationsRequest>
-        void ListResourceEvaluationsAsync(const ListResourceEvaluationsRequestT& request, const ListResourceEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceEvaluationsAsync(const ListResourceEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceEvaluationsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::ListResourceEvaluations, request, handler, context);
         }
@@ -2081,13 +2080,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request) const;
+        virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStoredQueries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStoredQueriesRequestT = Model::ListStoredQueriesRequest>
-        Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const ListStoredQueriesRequestT& request) const
+        Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const ListStoredQueriesRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::ListStoredQueries, request);
         }
@@ -2096,7 +2095,7 @@ namespace ConfigService
          * An Async wrapper for ListStoredQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStoredQueriesRequestT = Model::ListStoredQueriesRequest>
-        void ListStoredQueriesAsync(const ListStoredQueriesRequestT& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStoredQueriesAsync(const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStoredQueriesRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::ListStoredQueries, request, handler, context);
         }
@@ -2864,13 +2863,13 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
+        virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartConfigRulesEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartConfigRulesEvaluationRequestT = Model::StartConfigRulesEvaluationRequest>
-        Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const StartConfigRulesEvaluationRequestT& request) const
+        Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const StartConfigRulesEvaluationRequestT& request = {}) const
         {
             return SubmitCallable(&ConfigServiceClient::StartConfigRulesEvaluation, request);
         }
@@ -2879,7 +2878,7 @@ namespace ConfigService
          * An Async wrapper for StartConfigRulesEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartConfigRulesEvaluationRequestT = Model::StartConfigRulesEvaluationRequest>
-        void StartConfigRulesEvaluationAsync(const StartConfigRulesEvaluationRequestT& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartConfigRulesEvaluationAsync(const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartConfigRulesEvaluationRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::StartConfigRulesEvaluation, request, handler, context);
         }

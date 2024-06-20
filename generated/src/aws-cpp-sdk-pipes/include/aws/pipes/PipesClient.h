@@ -174,13 +174,13 @@ namespace Pipes
          * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/ListPipes">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListPipesOutcome ListPipes(const Model::ListPipesRequest& request) const;
+        virtual Model::ListPipesOutcome ListPipes(const Model::ListPipesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipesRequestT = Model::ListPipesRequest>
-        Model::ListPipesOutcomeCallable ListPipesCallable(const ListPipesRequestT& request) const
+        Model::ListPipesOutcomeCallable ListPipesCallable(const ListPipesRequestT& request = {}) const
         {
             return SubmitCallable(&PipesClient::ListPipes, request);
         }
@@ -189,7 +189,7 @@ namespace Pipes
          * An Async wrapper for ListPipes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipesRequestT = Model::ListPipesRequest>
-        void ListPipesAsync(const ListPipesRequestT& request, const ListPipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipesAsync(const ListPipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipesRequestT& request = {}) const
         {
             return SubmitAsync(&PipesClient::ListPipes, request, handler, context);
         }

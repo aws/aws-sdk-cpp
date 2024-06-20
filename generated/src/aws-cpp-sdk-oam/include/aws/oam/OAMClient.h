@@ -338,13 +338,13 @@ namespace OAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListLinks">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListLinksOutcome ListLinks(const Model::ListLinksRequest& request) const;
+        virtual Model::ListLinksOutcome ListLinks(const Model::ListLinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLinksRequestT = Model::ListLinksRequest>
-        Model::ListLinksOutcomeCallable ListLinksCallable(const ListLinksRequestT& request) const
+        Model::ListLinksOutcomeCallable ListLinksCallable(const ListLinksRequestT& request = {}) const
         {
             return SubmitCallable(&OAMClient::ListLinks, request);
         }
@@ -353,7 +353,7 @@ namespace OAM
          * An Async wrapper for ListLinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLinksRequestT = Model::ListLinksRequest>
-        void ListLinksAsync(const ListLinksRequestT& request, const ListLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLinksAsync(const ListLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLinksRequestT& request = {}) const
         {
             return SubmitAsync(&OAMClient::ListLinks, request, handler, context);
         }
@@ -364,13 +364,13 @@ namespace OAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListSinks">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListSinksOutcome ListSinks(const Model::ListSinksRequest& request) const;
+        virtual Model::ListSinksOutcome ListSinks(const Model::ListSinksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSinks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSinksRequestT = Model::ListSinksRequest>
-        Model::ListSinksOutcomeCallable ListSinksCallable(const ListSinksRequestT& request) const
+        Model::ListSinksOutcomeCallable ListSinksCallable(const ListSinksRequestT& request = {}) const
         {
             return SubmitCallable(&OAMClient::ListSinks, request);
         }
@@ -379,7 +379,7 @@ namespace OAM
          * An Async wrapper for ListSinks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSinksRequestT = Model::ListSinksRequest>
-        void ListSinksAsync(const ListSinksRequestT& request, const ListSinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSinksAsync(const ListSinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSinksRequestT& request = {}) const
         {
             return SubmitAsync(&OAMClient::ListSinks, request, handler, context);
         }

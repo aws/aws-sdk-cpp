@@ -442,13 +442,13 @@ namespace CleanRoomsML
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAudienceExportJobsOutcome ListAudienceExportJobs(const Model::ListAudienceExportJobsRequest& request) const;
+        virtual Model::ListAudienceExportJobsOutcome ListAudienceExportJobs(const Model::ListAudienceExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAudienceExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAudienceExportJobsRequestT = Model::ListAudienceExportJobsRequest>
-        Model::ListAudienceExportJobsOutcomeCallable ListAudienceExportJobsCallable(const ListAudienceExportJobsRequestT& request) const
+        Model::ListAudienceExportJobsOutcomeCallable ListAudienceExportJobsCallable(const ListAudienceExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsMLClient::ListAudienceExportJobs, request);
         }
@@ -457,7 +457,7 @@ namespace CleanRoomsML
          * An Async wrapper for ListAudienceExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAudienceExportJobsRequestT = Model::ListAudienceExportJobsRequest>
-        void ListAudienceExportJobsAsync(const ListAudienceExportJobsRequestT& request, const ListAudienceExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAudienceExportJobsAsync(const ListAudienceExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAudienceExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListAudienceExportJobs, request, handler, context);
         }
@@ -467,13 +467,13 @@ namespace CleanRoomsML
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceGenerationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAudienceGenerationJobsOutcome ListAudienceGenerationJobs(const Model::ListAudienceGenerationJobsRequest& request) const;
+        virtual Model::ListAudienceGenerationJobsOutcome ListAudienceGenerationJobs(const Model::ListAudienceGenerationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAudienceGenerationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAudienceGenerationJobsRequestT = Model::ListAudienceGenerationJobsRequest>
-        Model::ListAudienceGenerationJobsOutcomeCallable ListAudienceGenerationJobsCallable(const ListAudienceGenerationJobsRequestT& request) const
+        Model::ListAudienceGenerationJobsOutcomeCallable ListAudienceGenerationJobsCallable(const ListAudienceGenerationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsMLClient::ListAudienceGenerationJobs, request);
         }
@@ -482,7 +482,7 @@ namespace CleanRoomsML
          * An Async wrapper for ListAudienceGenerationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAudienceGenerationJobsRequestT = Model::ListAudienceGenerationJobsRequest>
-        void ListAudienceGenerationJobsAsync(const ListAudienceGenerationJobsRequestT& request, const ListAudienceGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAudienceGenerationJobsAsync(const ListAudienceGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAudienceGenerationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListAudienceGenerationJobs, request, handler, context);
         }
@@ -492,13 +492,13 @@ namespace CleanRoomsML
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAudienceModelsOutcome ListAudienceModels(const Model::ListAudienceModelsRequest& request) const;
+        virtual Model::ListAudienceModelsOutcome ListAudienceModels(const Model::ListAudienceModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAudienceModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAudienceModelsRequestT = Model::ListAudienceModelsRequest>
-        Model::ListAudienceModelsOutcomeCallable ListAudienceModelsCallable(const ListAudienceModelsRequestT& request) const
+        Model::ListAudienceModelsOutcomeCallable ListAudienceModelsCallable(const ListAudienceModelsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsMLClient::ListAudienceModels, request);
         }
@@ -507,7 +507,7 @@ namespace CleanRoomsML
          * An Async wrapper for ListAudienceModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAudienceModelsRequestT = Model::ListAudienceModelsRequest>
-        void ListAudienceModelsAsync(const ListAudienceModelsRequestT& request, const ListAudienceModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAudienceModelsAsync(const ListAudienceModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAudienceModelsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListAudienceModels, request, handler, context);
         }
@@ -518,13 +518,13 @@ namespace CleanRoomsML
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConfiguredAudienceModelsOutcome ListConfiguredAudienceModels(const Model::ListConfiguredAudienceModelsRequest& request) const;
+        virtual Model::ListConfiguredAudienceModelsOutcome ListConfiguredAudienceModels(const Model::ListConfiguredAudienceModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConfiguredAudienceModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConfiguredAudienceModelsRequestT = Model::ListConfiguredAudienceModelsRequest>
-        Model::ListConfiguredAudienceModelsOutcomeCallable ListConfiguredAudienceModelsCallable(const ListConfiguredAudienceModelsRequestT& request) const
+        Model::ListConfiguredAudienceModelsOutcomeCallable ListConfiguredAudienceModelsCallable(const ListConfiguredAudienceModelsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsMLClient::ListConfiguredAudienceModels, request);
         }
@@ -533,7 +533,7 @@ namespace CleanRoomsML
          * An Async wrapper for ListConfiguredAudienceModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConfiguredAudienceModelsRequestT = Model::ListConfiguredAudienceModelsRequest>
-        void ListConfiguredAudienceModelsAsync(const ListConfiguredAudienceModelsRequestT& request, const ListConfiguredAudienceModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConfiguredAudienceModelsAsync(const ListConfiguredAudienceModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfiguredAudienceModelsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListConfiguredAudienceModels, request, handler, context);
         }
@@ -568,13 +568,13 @@ namespace CleanRoomsML
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainingDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrainingDatasetsOutcome ListTrainingDatasets(const Model::ListTrainingDatasetsRequest& request) const;
+        virtual Model::ListTrainingDatasetsOutcome ListTrainingDatasets(const Model::ListTrainingDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrainingDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrainingDatasetsRequestT = Model::ListTrainingDatasetsRequest>
-        Model::ListTrainingDatasetsOutcomeCallable ListTrainingDatasetsCallable(const ListTrainingDatasetsRequestT& request) const
+        Model::ListTrainingDatasetsOutcomeCallable ListTrainingDatasetsCallable(const ListTrainingDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsMLClient::ListTrainingDatasets, request);
         }
@@ -583,7 +583,7 @@ namespace CleanRoomsML
          * An Async wrapper for ListTrainingDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrainingDatasetsRequestT = Model::ListTrainingDatasetsRequest>
-        void ListTrainingDatasetsAsync(const ListTrainingDatasetsRequestT& request, const ListTrainingDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrainingDatasetsAsync(const ListTrainingDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrainingDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListTrainingDatasets, request, handler, context);
         }

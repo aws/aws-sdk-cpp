@@ -44,6 +44,17 @@
 #include <aws/compute-optimizer/model/GetRecommendationSummariesResult.h>
 #include <aws/compute-optimizer/model/PutRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusResult.h>
+#include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
+#include <aws/compute-optimizer/model/GetLicenseRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
+#include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
+#include <aws/compute-optimizer/model/GetECSServiceRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
+#include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 /* End of service model headers required in ComputeOptimizerClient header */
 
 namespace Aws

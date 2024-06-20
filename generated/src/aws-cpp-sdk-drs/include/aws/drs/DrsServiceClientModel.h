@@ -61,6 +61,15 @@
 #include <aws/drs/model/UpdateLaunchConfigurationTemplateResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationTemplateResult.h>
+#include <aws/drs/model/DescribeSourceNetworksRequest.h>
+#include <aws/drs/model/DescribeJobsRequest.h>
+#include <aws/drs/model/ListStagingAccountsRequest.h>
+#include <aws/drs/model/CreateLaunchConfigurationTemplateRequest.h>
+#include <aws/drs/model/DescribeRecoveryInstancesRequest.h>
+#include <aws/drs/model/InitializeServiceRequest.h>
+#include <aws/drs/model/DescribeSourceServersRequest.h>
+#include <aws/drs/model/DescribeReplicationConfigurationTemplatesRequest.h>
+#include <aws/drs/model/DescribeLaunchConfigurationTemplatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DrsClient header */
 

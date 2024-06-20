@@ -336,13 +336,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeChimeWebhookConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeChimeWebhookConfigurationsOutcome DescribeChimeWebhookConfigurations(const Model::DescribeChimeWebhookConfigurationsRequest& request) const;
+        virtual Model::DescribeChimeWebhookConfigurationsOutcome DescribeChimeWebhookConfigurations(const Model::DescribeChimeWebhookConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeChimeWebhookConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeChimeWebhookConfigurationsRequestT = Model::DescribeChimeWebhookConfigurationsRequest>
-        Model::DescribeChimeWebhookConfigurationsOutcomeCallable DescribeChimeWebhookConfigurationsCallable(const DescribeChimeWebhookConfigurationsRequestT& request) const
+        Model::DescribeChimeWebhookConfigurationsOutcomeCallable DescribeChimeWebhookConfigurationsCallable(const DescribeChimeWebhookConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::DescribeChimeWebhookConfigurations, request);
         }
@@ -351,7 +351,7 @@ namespace chatbot
          * An Async wrapper for DescribeChimeWebhookConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeChimeWebhookConfigurationsRequestT = Model::DescribeChimeWebhookConfigurationsRequest>
-        void DescribeChimeWebhookConfigurationsAsync(const DescribeChimeWebhookConfigurationsRequestT& request, const DescribeChimeWebhookConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeChimeWebhookConfigurationsAsync(const DescribeChimeWebhookConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeChimeWebhookConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::DescribeChimeWebhookConfigurations, request, handler, context);
         }
@@ -362,13 +362,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackChannelConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSlackChannelConfigurationsOutcome DescribeSlackChannelConfigurations(const Model::DescribeSlackChannelConfigurationsRequest& request) const;
+        virtual Model::DescribeSlackChannelConfigurationsOutcome DescribeSlackChannelConfigurations(const Model::DescribeSlackChannelConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSlackChannelConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSlackChannelConfigurationsRequestT = Model::DescribeSlackChannelConfigurationsRequest>
-        Model::DescribeSlackChannelConfigurationsOutcomeCallable DescribeSlackChannelConfigurationsCallable(const DescribeSlackChannelConfigurationsRequestT& request) const
+        Model::DescribeSlackChannelConfigurationsOutcomeCallable DescribeSlackChannelConfigurationsCallable(const DescribeSlackChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::DescribeSlackChannelConfigurations, request);
         }
@@ -377,7 +377,7 @@ namespace chatbot
          * An Async wrapper for DescribeSlackChannelConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSlackChannelConfigurationsRequestT = Model::DescribeSlackChannelConfigurationsRequest>
-        void DescribeSlackChannelConfigurationsAsync(const DescribeSlackChannelConfigurationsRequestT& request, const DescribeSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSlackChannelConfigurationsAsync(const DescribeSlackChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSlackChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::DescribeSlackChannelConfigurations, request, handler, context);
         }
@@ -387,13 +387,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackUserIdentities">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSlackUserIdentitiesOutcome DescribeSlackUserIdentities(const Model::DescribeSlackUserIdentitiesRequest& request) const;
+        virtual Model::DescribeSlackUserIdentitiesOutcome DescribeSlackUserIdentities(const Model::DescribeSlackUserIdentitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSlackUserIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSlackUserIdentitiesRequestT = Model::DescribeSlackUserIdentitiesRequest>
-        Model::DescribeSlackUserIdentitiesOutcomeCallable DescribeSlackUserIdentitiesCallable(const DescribeSlackUserIdentitiesRequestT& request) const
+        Model::DescribeSlackUserIdentitiesOutcomeCallable DescribeSlackUserIdentitiesCallable(const DescribeSlackUserIdentitiesRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::DescribeSlackUserIdentities, request);
         }
@@ -402,7 +402,7 @@ namespace chatbot
          * An Async wrapper for DescribeSlackUserIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSlackUserIdentitiesRequestT = Model::DescribeSlackUserIdentitiesRequest>
-        void DescribeSlackUserIdentitiesAsync(const DescribeSlackUserIdentitiesRequestT& request, const DescribeSlackUserIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSlackUserIdentitiesAsync(const DescribeSlackUserIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSlackUserIdentitiesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::DescribeSlackUserIdentities, request, handler, context);
         }
@@ -412,13 +412,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackWorkspaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSlackWorkspacesOutcome DescribeSlackWorkspaces(const Model::DescribeSlackWorkspacesRequest& request) const;
+        virtual Model::DescribeSlackWorkspacesOutcome DescribeSlackWorkspaces(const Model::DescribeSlackWorkspacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSlackWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSlackWorkspacesRequestT = Model::DescribeSlackWorkspacesRequest>
-        Model::DescribeSlackWorkspacesOutcomeCallable DescribeSlackWorkspacesCallable(const DescribeSlackWorkspacesRequestT& request) const
+        Model::DescribeSlackWorkspacesOutcomeCallable DescribeSlackWorkspacesCallable(const DescribeSlackWorkspacesRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::DescribeSlackWorkspaces, request);
         }
@@ -427,7 +427,7 @@ namespace chatbot
          * An Async wrapper for DescribeSlackWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSlackWorkspacesRequestT = Model::DescribeSlackWorkspacesRequest>
-        void DescribeSlackWorkspacesAsync(const DescribeSlackWorkspacesRequestT& request, const DescribeSlackWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSlackWorkspacesAsync(const DescribeSlackWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSlackWorkspacesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::DescribeSlackWorkspaces, request, handler, context);
         }
@@ -437,13 +437,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountPreferencesOutcome GetAccountPreferences(const Model::GetAccountPreferencesRequest& request) const;
+        virtual Model::GetAccountPreferencesOutcome GetAccountPreferences(const Model::GetAccountPreferencesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountPreferencesRequestT = Model::GetAccountPreferencesRequest>
-        Model::GetAccountPreferencesOutcomeCallable GetAccountPreferencesCallable(const GetAccountPreferencesRequestT& request) const
+        Model::GetAccountPreferencesOutcomeCallable GetAccountPreferencesCallable(const GetAccountPreferencesRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::GetAccountPreferences, request);
         }
@@ -452,7 +452,7 @@ namespace chatbot
          * An Async wrapper for GetAccountPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountPreferencesRequestT = Model::GetAccountPreferencesRequest>
-        void GetAccountPreferencesAsync(const GetAccountPreferencesRequestT& request, const GetAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountPreferencesAsync(const GetAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountPreferencesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::GetAccountPreferences, request, handler, context);
         }
@@ -488,13 +488,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsChannelConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMicrosoftTeamsChannelConfigurationsOutcome ListMicrosoftTeamsChannelConfigurations(const Model::ListMicrosoftTeamsChannelConfigurationsRequest& request) const;
+        virtual Model::ListMicrosoftTeamsChannelConfigurationsOutcome ListMicrosoftTeamsChannelConfigurations(const Model::ListMicrosoftTeamsChannelConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMicrosoftTeamsChannelConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMicrosoftTeamsChannelConfigurationsRequestT = Model::ListMicrosoftTeamsChannelConfigurationsRequest>
-        Model::ListMicrosoftTeamsChannelConfigurationsOutcomeCallable ListMicrosoftTeamsChannelConfigurationsCallable(const ListMicrosoftTeamsChannelConfigurationsRequestT& request) const
+        Model::ListMicrosoftTeamsChannelConfigurationsOutcomeCallable ListMicrosoftTeamsChannelConfigurationsCallable(const ListMicrosoftTeamsChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::ListMicrosoftTeamsChannelConfigurations, request);
         }
@@ -503,7 +503,7 @@ namespace chatbot
          * An Async wrapper for ListMicrosoftTeamsChannelConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMicrosoftTeamsChannelConfigurationsRequestT = Model::ListMicrosoftTeamsChannelConfigurationsRequest>
-        void ListMicrosoftTeamsChannelConfigurationsAsync(const ListMicrosoftTeamsChannelConfigurationsRequestT& request, const ListMicrosoftTeamsChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMicrosoftTeamsChannelConfigurationsAsync(const ListMicrosoftTeamsChannelConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMicrosoftTeamsChannelConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::ListMicrosoftTeamsChannelConfigurations, request, handler, context);
         }
@@ -513,13 +513,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsConfiguredTeams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMicrosoftTeamsConfiguredTeamsOutcome ListMicrosoftTeamsConfiguredTeams(const Model::ListMicrosoftTeamsConfiguredTeamsRequest& request) const;
+        virtual Model::ListMicrosoftTeamsConfiguredTeamsOutcome ListMicrosoftTeamsConfiguredTeams(const Model::ListMicrosoftTeamsConfiguredTeamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMicrosoftTeamsConfiguredTeams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMicrosoftTeamsConfiguredTeamsRequestT = Model::ListMicrosoftTeamsConfiguredTeamsRequest>
-        Model::ListMicrosoftTeamsConfiguredTeamsOutcomeCallable ListMicrosoftTeamsConfiguredTeamsCallable(const ListMicrosoftTeamsConfiguredTeamsRequestT& request) const
+        Model::ListMicrosoftTeamsConfiguredTeamsOutcomeCallable ListMicrosoftTeamsConfiguredTeamsCallable(const ListMicrosoftTeamsConfiguredTeamsRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::ListMicrosoftTeamsConfiguredTeams, request);
         }
@@ -528,7 +528,7 @@ namespace chatbot
          * An Async wrapper for ListMicrosoftTeamsConfiguredTeams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMicrosoftTeamsConfiguredTeamsRequestT = Model::ListMicrosoftTeamsConfiguredTeamsRequest>
-        void ListMicrosoftTeamsConfiguredTeamsAsync(const ListMicrosoftTeamsConfiguredTeamsRequestT& request, const ListMicrosoftTeamsConfiguredTeamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMicrosoftTeamsConfiguredTeamsAsync(const ListMicrosoftTeamsConfiguredTeamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMicrosoftTeamsConfiguredTeamsRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::ListMicrosoftTeamsConfiguredTeams, request, handler, context);
         }
@@ -539,13 +539,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListMicrosoftTeamsUserIdentities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMicrosoftTeamsUserIdentitiesOutcome ListMicrosoftTeamsUserIdentities(const Model::ListMicrosoftTeamsUserIdentitiesRequest& request) const;
+        virtual Model::ListMicrosoftTeamsUserIdentitiesOutcome ListMicrosoftTeamsUserIdentities(const Model::ListMicrosoftTeamsUserIdentitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMicrosoftTeamsUserIdentities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMicrosoftTeamsUserIdentitiesRequestT = Model::ListMicrosoftTeamsUserIdentitiesRequest>
-        Model::ListMicrosoftTeamsUserIdentitiesOutcomeCallable ListMicrosoftTeamsUserIdentitiesCallable(const ListMicrosoftTeamsUserIdentitiesRequestT& request) const
+        Model::ListMicrosoftTeamsUserIdentitiesOutcomeCallable ListMicrosoftTeamsUserIdentitiesCallable(const ListMicrosoftTeamsUserIdentitiesRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::ListMicrosoftTeamsUserIdentities, request);
         }
@@ -554,7 +554,7 @@ namespace chatbot
          * An Async wrapper for ListMicrosoftTeamsUserIdentities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMicrosoftTeamsUserIdentitiesRequestT = Model::ListMicrosoftTeamsUserIdentitiesRequest>
-        void ListMicrosoftTeamsUserIdentitiesAsync(const ListMicrosoftTeamsUserIdentitiesRequestT& request, const ListMicrosoftTeamsUserIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMicrosoftTeamsUserIdentitiesAsync(const ListMicrosoftTeamsUserIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMicrosoftTeamsUserIdentitiesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::ListMicrosoftTeamsUserIdentities, request, handler, context);
         }
@@ -639,13 +639,13 @@ namespace chatbot
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateAccountPreferences">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountPreferencesOutcome UpdateAccountPreferences(const Model::UpdateAccountPreferencesRequest& request) const;
+        virtual Model::UpdateAccountPreferencesOutcome UpdateAccountPreferences(const Model::UpdateAccountPreferencesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountPreferencesRequestT = Model::UpdateAccountPreferencesRequest>
-        Model::UpdateAccountPreferencesOutcomeCallable UpdateAccountPreferencesCallable(const UpdateAccountPreferencesRequestT& request) const
+        Model::UpdateAccountPreferencesOutcomeCallable UpdateAccountPreferencesCallable(const UpdateAccountPreferencesRequestT& request = {}) const
         {
             return SubmitCallable(&ChatbotClient::UpdateAccountPreferences, request);
         }
@@ -654,7 +654,7 @@ namespace chatbot
          * An Async wrapper for UpdateAccountPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountPreferencesRequestT = Model::UpdateAccountPreferencesRequest>
-        void UpdateAccountPreferencesAsync(const UpdateAccountPreferencesRequestT& request, const UpdateAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountPreferencesAsync(const UpdateAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountPreferencesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::UpdateAccountPreferences, request, handler, context);
         }

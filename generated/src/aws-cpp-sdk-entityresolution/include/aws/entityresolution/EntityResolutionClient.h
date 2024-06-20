@@ -651,13 +651,13 @@ namespace EntityResolution
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIdMappingWorkflowsOutcome ListIdMappingWorkflows(const Model::ListIdMappingWorkflowsRequest& request) const;
+        virtual Model::ListIdMappingWorkflowsOutcome ListIdMappingWorkflows(const Model::ListIdMappingWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIdMappingWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIdMappingWorkflowsRequestT = Model::ListIdMappingWorkflowsRequest>
-        Model::ListIdMappingWorkflowsOutcomeCallable ListIdMappingWorkflowsCallable(const ListIdMappingWorkflowsRequestT& request) const
+        Model::ListIdMappingWorkflowsOutcomeCallable ListIdMappingWorkflowsCallable(const ListIdMappingWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&EntityResolutionClient::ListIdMappingWorkflows, request);
         }
@@ -666,7 +666,7 @@ namespace EntityResolution
          * An Async wrapper for ListIdMappingWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIdMappingWorkflowsRequestT = Model::ListIdMappingWorkflowsRequest>
-        void ListIdMappingWorkflowsAsync(const ListIdMappingWorkflowsRequestT& request, const ListIdMappingWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIdMappingWorkflowsAsync(const ListIdMappingWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIdMappingWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&EntityResolutionClient::ListIdMappingWorkflows, request, handler, context);
         }
@@ -676,13 +676,13 @@ namespace EntityResolution
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIdNamespacesOutcome ListIdNamespaces(const Model::ListIdNamespacesRequest& request) const;
+        virtual Model::ListIdNamespacesOutcome ListIdNamespaces(const Model::ListIdNamespacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIdNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIdNamespacesRequestT = Model::ListIdNamespacesRequest>
-        Model::ListIdNamespacesOutcomeCallable ListIdNamespacesCallable(const ListIdNamespacesRequestT& request) const
+        Model::ListIdNamespacesOutcomeCallable ListIdNamespacesCallable(const ListIdNamespacesRequestT& request = {}) const
         {
             return SubmitCallable(&EntityResolutionClient::ListIdNamespaces, request);
         }
@@ -691,7 +691,7 @@ namespace EntityResolution
          * An Async wrapper for ListIdNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIdNamespacesRequestT = Model::ListIdNamespacesRequest>
-        void ListIdNamespacesAsync(const ListIdNamespacesRequestT& request, const ListIdNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIdNamespacesAsync(const ListIdNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIdNamespacesRequestT& request = {}) const
         {
             return SubmitAsync(&EntityResolutionClient::ListIdNamespaces, request, handler, context);
         }
@@ -727,13 +727,13 @@ namespace EntityResolution
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMatchingWorkflowsOutcome ListMatchingWorkflows(const Model::ListMatchingWorkflowsRequest& request) const;
+        virtual Model::ListMatchingWorkflowsOutcome ListMatchingWorkflows(const Model::ListMatchingWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMatchingWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMatchingWorkflowsRequestT = Model::ListMatchingWorkflowsRequest>
-        Model::ListMatchingWorkflowsOutcomeCallable ListMatchingWorkflowsCallable(const ListMatchingWorkflowsRequestT& request) const
+        Model::ListMatchingWorkflowsOutcomeCallable ListMatchingWorkflowsCallable(const ListMatchingWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&EntityResolutionClient::ListMatchingWorkflows, request);
         }
@@ -742,7 +742,7 @@ namespace EntityResolution
          * An Async wrapper for ListMatchingWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMatchingWorkflowsRequestT = Model::ListMatchingWorkflowsRequest>
-        void ListMatchingWorkflowsAsync(const ListMatchingWorkflowsRequestT& request, const ListMatchingWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMatchingWorkflowsAsync(const ListMatchingWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMatchingWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&EntityResolutionClient::ListMatchingWorkflows, request, handler, context);
         }
@@ -753,13 +753,13 @@ namespace EntityResolution
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProviderServicesOutcome ListProviderServices(const Model::ListProviderServicesRequest& request) const;
+        virtual Model::ListProviderServicesOutcome ListProviderServices(const Model::ListProviderServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProviderServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProviderServicesRequestT = Model::ListProviderServicesRequest>
-        Model::ListProviderServicesOutcomeCallable ListProviderServicesCallable(const ListProviderServicesRequestT& request) const
+        Model::ListProviderServicesOutcomeCallable ListProviderServicesCallable(const ListProviderServicesRequestT& request = {}) const
         {
             return SubmitCallable(&EntityResolutionClient::ListProviderServices, request);
         }
@@ -768,7 +768,7 @@ namespace EntityResolution
          * An Async wrapper for ListProviderServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProviderServicesRequestT = Model::ListProviderServicesRequest>
-        void ListProviderServicesAsync(const ListProviderServicesRequestT& request, const ListProviderServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProviderServicesAsync(const ListProviderServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProviderServicesRequestT& request = {}) const
         {
             return SubmitAsync(&EntityResolutionClient::ListProviderServices, request, handler, context);
         }
@@ -779,13 +779,13 @@ namespace EntityResolution
          * href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchemaMappingsOutcome ListSchemaMappings(const Model::ListSchemaMappingsRequest& request) const;
+        virtual Model::ListSchemaMappingsOutcome ListSchemaMappings(const Model::ListSchemaMappingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchemaMappings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchemaMappingsRequestT = Model::ListSchemaMappingsRequest>
-        Model::ListSchemaMappingsOutcomeCallable ListSchemaMappingsCallable(const ListSchemaMappingsRequestT& request) const
+        Model::ListSchemaMappingsOutcomeCallable ListSchemaMappingsCallable(const ListSchemaMappingsRequestT& request = {}) const
         {
             return SubmitCallable(&EntityResolutionClient::ListSchemaMappings, request);
         }
@@ -794,7 +794,7 @@ namespace EntityResolution
          * An Async wrapper for ListSchemaMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchemaMappingsRequestT = Model::ListSchemaMappingsRequest>
-        void ListSchemaMappingsAsync(const ListSchemaMappingsRequestT& request, const ListSchemaMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchemaMappingsAsync(const ListSchemaMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchemaMappingsRequestT& request = {}) const
         {
             return SubmitAsync(&EntityResolutionClient::ListSchemaMappings, request, handler, context);
         }

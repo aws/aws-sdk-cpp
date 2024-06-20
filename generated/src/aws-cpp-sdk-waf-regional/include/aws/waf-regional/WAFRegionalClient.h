@@ -1472,13 +1472,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetChangeToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetChangeTokenOutcome GetChangeToken(const Model::GetChangeTokenRequest& request) const;
+        virtual Model::GetChangeTokenOutcome GetChangeToken(const Model::GetChangeTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetChangeToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetChangeTokenRequestT = Model::GetChangeTokenRequest>
-        Model::GetChangeTokenOutcomeCallable GetChangeTokenCallable(const GetChangeTokenRequestT& request) const
+        Model::GetChangeTokenOutcomeCallable GetChangeTokenCallable(const GetChangeTokenRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::GetChangeToken, request);
         }
@@ -1487,7 +1487,7 @@ namespace WAFRegional
          * An Async wrapper for GetChangeToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetChangeTokenRequestT = Model::GetChangeTokenRequest>
-        void GetChangeTokenAsync(const GetChangeTokenRequestT& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetChangeTokenAsync(const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetChangeTokenRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::GetChangeToken, request, handler, context);
         }
@@ -2100,13 +2100,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActivatedRulesInRuleGroupOutcome ListActivatedRulesInRuleGroup(const Model::ListActivatedRulesInRuleGroupRequest& request) const;
+        virtual Model::ListActivatedRulesInRuleGroupOutcome ListActivatedRulesInRuleGroup(const Model::ListActivatedRulesInRuleGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActivatedRulesInRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActivatedRulesInRuleGroupRequestT = Model::ListActivatedRulesInRuleGroupRequest>
-        Model::ListActivatedRulesInRuleGroupOutcomeCallable ListActivatedRulesInRuleGroupCallable(const ListActivatedRulesInRuleGroupRequestT& request) const
+        Model::ListActivatedRulesInRuleGroupOutcomeCallable ListActivatedRulesInRuleGroupCallable(const ListActivatedRulesInRuleGroupRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListActivatedRulesInRuleGroup, request);
         }
@@ -2115,7 +2115,7 @@ namespace WAFRegional
          * An Async wrapper for ListActivatedRulesInRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActivatedRulesInRuleGroupRequestT = Model::ListActivatedRulesInRuleGroupRequest>
-        void ListActivatedRulesInRuleGroupAsync(const ListActivatedRulesInRuleGroupRequestT& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActivatedRulesInRuleGroupAsync(const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActivatedRulesInRuleGroupRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListActivatedRulesInRuleGroup, request, handler, context);
         }
@@ -2133,13 +2133,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request) const;
+        virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListByteMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListByteMatchSetsRequestT = Model::ListByteMatchSetsRequest>
-        Model::ListByteMatchSetsOutcomeCallable ListByteMatchSetsCallable(const ListByteMatchSetsRequestT& request) const
+        Model::ListByteMatchSetsOutcomeCallable ListByteMatchSetsCallable(const ListByteMatchSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListByteMatchSets, request);
         }
@@ -2148,7 +2148,7 @@ namespace WAFRegional
          * An Async wrapper for ListByteMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListByteMatchSetsRequestT = Model::ListByteMatchSetsRequest>
-        void ListByteMatchSetsAsync(const ListByteMatchSetsRequestT& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListByteMatchSetsAsync(const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListByteMatchSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListByteMatchSets, request, handler, context);
         }
@@ -2166,13 +2166,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGeoMatchSetsOutcome ListGeoMatchSets(const Model::ListGeoMatchSetsRequest& request) const;
+        virtual Model::ListGeoMatchSetsOutcome ListGeoMatchSets(const Model::ListGeoMatchSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGeoMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGeoMatchSetsRequestT = Model::ListGeoMatchSetsRequest>
-        Model::ListGeoMatchSetsOutcomeCallable ListGeoMatchSetsCallable(const ListGeoMatchSetsRequestT& request) const
+        Model::ListGeoMatchSetsOutcomeCallable ListGeoMatchSetsCallable(const ListGeoMatchSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListGeoMatchSets, request);
         }
@@ -2181,7 +2181,7 @@ namespace WAFRegional
          * An Async wrapper for ListGeoMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGeoMatchSetsRequestT = Model::ListGeoMatchSetsRequest>
-        void ListGeoMatchSetsAsync(const ListGeoMatchSetsRequestT& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGeoMatchSetsAsync(const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGeoMatchSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListGeoMatchSets, request, handler, context);
         }
@@ -2199,13 +2199,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
+        virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIPSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIPSetsRequestT = Model::ListIPSetsRequest>
-        Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const ListIPSetsRequestT& request) const
+        Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const ListIPSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListIPSets, request);
         }
@@ -2214,7 +2214,7 @@ namespace WAFRegional
          * An Async wrapper for ListIPSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIPSetsRequestT = Model::ListIPSetsRequest>
-        void ListIPSetsAsync(const ListIPSetsRequestT& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIPSetsAsync(const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIPSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListIPSets, request, handler, context);
         }
@@ -2232,13 +2232,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
+        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLoggingConfigurationsRequestT = Model::ListLoggingConfigurationsRequest>
-        Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequestT& request) const
+        Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListLoggingConfigurations, request);
         }
@@ -2247,7 +2247,7 @@ namespace WAFRegional
          * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLoggingConfigurationsRequestT = Model::ListLoggingConfigurationsRequest>
-        void ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequestT& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLoggingConfigurationsAsync(const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLoggingConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListLoggingConfigurations, request, handler, context);
         }
@@ -2265,13 +2265,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRateBasedRulesOutcome ListRateBasedRules(const Model::ListRateBasedRulesRequest& request) const;
+        virtual Model::ListRateBasedRulesOutcome ListRateBasedRules(const Model::ListRateBasedRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRateBasedRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRateBasedRulesRequestT = Model::ListRateBasedRulesRequest>
-        Model::ListRateBasedRulesOutcomeCallable ListRateBasedRulesCallable(const ListRateBasedRulesRequestT& request) const
+        Model::ListRateBasedRulesOutcomeCallable ListRateBasedRulesCallable(const ListRateBasedRulesRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListRateBasedRules, request);
         }
@@ -2280,7 +2280,7 @@ namespace WAFRegional
          * An Async wrapper for ListRateBasedRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRateBasedRulesRequestT = Model::ListRateBasedRulesRequest>
-        void ListRateBasedRulesAsync(const ListRateBasedRulesRequestT& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRateBasedRulesAsync(const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRateBasedRulesRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListRateBasedRules, request, handler, context);
         }
@@ -2298,13 +2298,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRegexMatchSetsOutcome ListRegexMatchSets(const Model::ListRegexMatchSetsRequest& request) const;
+        virtual Model::ListRegexMatchSetsOutcome ListRegexMatchSets(const Model::ListRegexMatchSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRegexMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRegexMatchSetsRequestT = Model::ListRegexMatchSetsRequest>
-        Model::ListRegexMatchSetsOutcomeCallable ListRegexMatchSetsCallable(const ListRegexMatchSetsRequestT& request) const
+        Model::ListRegexMatchSetsOutcomeCallable ListRegexMatchSetsCallable(const ListRegexMatchSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListRegexMatchSets, request);
         }
@@ -2313,7 +2313,7 @@ namespace WAFRegional
          * An Async wrapper for ListRegexMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRegexMatchSetsRequestT = Model::ListRegexMatchSetsRequest>
-        void ListRegexMatchSetsAsync(const ListRegexMatchSetsRequestT& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRegexMatchSetsAsync(const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegexMatchSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListRegexMatchSets, request, handler, context);
         }
@@ -2331,13 +2331,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
+        virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRegexPatternSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRegexPatternSetsRequestT = Model::ListRegexPatternSetsRequest>
-        Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const ListRegexPatternSetsRequestT& request) const
+        Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const ListRegexPatternSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListRegexPatternSets, request);
         }
@@ -2346,7 +2346,7 @@ namespace WAFRegional
          * An Async wrapper for ListRegexPatternSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRegexPatternSetsRequestT = Model::ListRegexPatternSetsRequest>
-        void ListRegexPatternSetsAsync(const ListRegexPatternSetsRequestT& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRegexPatternSetsAsync(const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegexPatternSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListRegexPatternSets, request, handler, context);
         }
@@ -2397,13 +2397,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
+        virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRuleGroupsRequestT = Model::ListRuleGroupsRequest>
-        Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const ListRuleGroupsRequestT& request) const
+        Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const ListRuleGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListRuleGroups, request);
         }
@@ -2412,7 +2412,7 @@ namespace WAFRegional
          * An Async wrapper for ListRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRuleGroupsRequestT = Model::ListRuleGroupsRequest>
-        void ListRuleGroupsAsync(const ListRuleGroupsRequestT& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRuleGroupsAsync(const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRuleGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListRuleGroups, request, handler, context);
         }
@@ -2430,13 +2430,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
+        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRulesRequestT = Model::ListRulesRequest>
-        Model::ListRulesOutcomeCallable ListRulesCallable(const ListRulesRequestT& request) const
+        Model::ListRulesOutcomeCallable ListRulesCallable(const ListRulesRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListRules, request);
         }
@@ -2445,7 +2445,7 @@ namespace WAFRegional
          * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRulesRequestT = Model::ListRulesRequest>
-        void ListRulesAsync(const ListRulesRequestT& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRulesAsync(const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRulesRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListRules, request, handler, context);
         }
@@ -2463,13 +2463,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSizeConstraintSetsOutcome ListSizeConstraintSets(const Model::ListSizeConstraintSetsRequest& request) const;
+        virtual Model::ListSizeConstraintSetsOutcome ListSizeConstraintSets(const Model::ListSizeConstraintSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSizeConstraintSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSizeConstraintSetsRequestT = Model::ListSizeConstraintSetsRequest>
-        Model::ListSizeConstraintSetsOutcomeCallable ListSizeConstraintSetsCallable(const ListSizeConstraintSetsRequestT& request) const
+        Model::ListSizeConstraintSetsOutcomeCallable ListSizeConstraintSetsCallable(const ListSizeConstraintSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListSizeConstraintSets, request);
         }
@@ -2478,7 +2478,7 @@ namespace WAFRegional
          * An Async wrapper for ListSizeConstraintSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSizeConstraintSetsRequestT = Model::ListSizeConstraintSetsRequest>
-        void ListSizeConstraintSetsAsync(const ListSizeConstraintSetsRequestT& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSizeConstraintSetsAsync(const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSizeConstraintSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListSizeConstraintSets, request, handler, context);
         }
@@ -2496,13 +2496,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSqlInjectionMatchSetsOutcome ListSqlInjectionMatchSets(const Model::ListSqlInjectionMatchSetsRequest& request) const;
+        virtual Model::ListSqlInjectionMatchSetsOutcome ListSqlInjectionMatchSets(const Model::ListSqlInjectionMatchSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSqlInjectionMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSqlInjectionMatchSetsRequestT = Model::ListSqlInjectionMatchSetsRequest>
-        Model::ListSqlInjectionMatchSetsOutcomeCallable ListSqlInjectionMatchSetsCallable(const ListSqlInjectionMatchSetsRequestT& request) const
+        Model::ListSqlInjectionMatchSetsOutcomeCallable ListSqlInjectionMatchSetsCallable(const ListSqlInjectionMatchSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListSqlInjectionMatchSets, request);
         }
@@ -2511,7 +2511,7 @@ namespace WAFRegional
          * An Async wrapper for ListSqlInjectionMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSqlInjectionMatchSetsRequestT = Model::ListSqlInjectionMatchSetsRequest>
-        void ListSqlInjectionMatchSetsAsync(const ListSqlInjectionMatchSetsRequestT& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSqlInjectionMatchSetsAsync(const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSqlInjectionMatchSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListSqlInjectionMatchSets, request, handler, context);
         }
@@ -2530,13 +2530,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSubscribedRuleGroupsOutcome ListSubscribedRuleGroups(const Model::ListSubscribedRuleGroupsRequest& request) const;
+        virtual Model::ListSubscribedRuleGroupsOutcome ListSubscribedRuleGroups(const Model::ListSubscribedRuleGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSubscribedRuleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSubscribedRuleGroupsRequestT = Model::ListSubscribedRuleGroupsRequest>
-        Model::ListSubscribedRuleGroupsOutcomeCallable ListSubscribedRuleGroupsCallable(const ListSubscribedRuleGroupsRequestT& request) const
+        Model::ListSubscribedRuleGroupsOutcomeCallable ListSubscribedRuleGroupsCallable(const ListSubscribedRuleGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListSubscribedRuleGroups, request);
         }
@@ -2545,7 +2545,7 @@ namespace WAFRegional
          * An Async wrapper for ListSubscribedRuleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSubscribedRuleGroupsRequestT = Model::ListSubscribedRuleGroupsRequest>
-        void ListSubscribedRuleGroupsAsync(const ListSubscribedRuleGroupsRequestT& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSubscribedRuleGroupsAsync(const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSubscribedRuleGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListSubscribedRuleGroups, request, handler, context);
         }
@@ -2603,13 +2603,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
+        virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWebACLs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWebACLsRequestT = Model::ListWebACLsRequest>
-        Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const ListWebACLsRequestT& request) const
+        Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const ListWebACLsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListWebACLs, request);
         }
@@ -2618,7 +2618,7 @@ namespace WAFRegional
          * An Async wrapper for ListWebACLs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWebACLsRequestT = Model::ListWebACLsRequest>
-        void ListWebACLsAsync(const ListWebACLsRequestT& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWebACLsAsync(const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWebACLsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListWebACLs, request, handler, context);
         }
@@ -2636,13 +2636,13 @@ namespace WAFRegional
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request) const;
+        virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListXssMatchSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListXssMatchSetsRequestT = Model::ListXssMatchSetsRequest>
-        Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const ListXssMatchSetsRequestT& request) const
+        Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const ListXssMatchSetsRequestT& request = {}) const
         {
             return SubmitCallable(&WAFRegionalClient::ListXssMatchSets, request);
         }
@@ -2651,7 +2651,7 @@ namespace WAFRegional
          * An Async wrapper for ListXssMatchSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListXssMatchSetsRequestT = Model::ListXssMatchSetsRequest>
-        void ListXssMatchSetsAsync(const ListXssMatchSetsRequestT& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListXssMatchSetsAsync(const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListXssMatchSetsRequestT& request = {}) const
         {
             return SubmitAsync(&WAFRegionalClient::ListXssMatchSets, request, handler, context);
         }

@@ -50,6 +50,12 @@
 #include <aws/billingconductor/model/UpdateCustomLineItemResult.h>
 #include <aws/billingconductor/model/UpdatePricingPlanResult.h>
 #include <aws/billingconductor/model/UpdatePricingRuleResult.h>
+#include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
+#include <aws/billingconductor/model/ListBillingGroupsRequest.h>
+#include <aws/billingconductor/model/ListPricingPlansRequest.h>
+#include <aws/billingconductor/model/ListPricingRulesRequest.h>
+#include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
+#include <aws/billingconductor/model/ListCustomLineItemsRequest.h>
 /* End of service model headers required in BillingConductorClient header */
 
 namespace Aws

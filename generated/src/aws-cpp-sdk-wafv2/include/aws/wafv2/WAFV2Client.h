@@ -989,13 +989,13 @@ namespace WAFV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
+        virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRuleGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRuleGroupRequestT = Model::GetRuleGroupRequest>
-        Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const GetRuleGroupRequestT& request) const
+        Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const GetRuleGroupRequestT& request = {}) const
         {
             return SubmitCallable(&WAFV2Client::GetRuleGroup, request);
         }
@@ -1004,7 +1004,7 @@ namespace WAFV2
          * An Async wrapper for GetRuleGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRuleGroupRequestT = Model::GetRuleGroupRequest>
-        void GetRuleGroupAsync(const GetRuleGroupRequestT& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRuleGroupAsync(const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRuleGroupRequestT& request = {}) const
         {
             return SubmitAsync(&WAFV2Client::GetRuleGroup, request, handler, context);
         }

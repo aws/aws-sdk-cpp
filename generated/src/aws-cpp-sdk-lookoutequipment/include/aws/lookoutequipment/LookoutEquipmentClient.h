@@ -722,13 +722,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataIngestionJobsOutcome ListDataIngestionJobs(const Model::ListDataIngestionJobsRequest& request) const;
+        virtual Model::ListDataIngestionJobsOutcome ListDataIngestionJobs(const Model::ListDataIngestionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataIngestionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataIngestionJobsRequestT = Model::ListDataIngestionJobsRequest>
-        Model::ListDataIngestionJobsOutcomeCallable ListDataIngestionJobsCallable(const ListDataIngestionJobsRequestT& request) const
+        Model::ListDataIngestionJobsOutcomeCallable ListDataIngestionJobsCallable(const ListDataIngestionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListDataIngestionJobs, request);
         }
@@ -737,7 +737,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListDataIngestionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataIngestionJobsRequestT = Model::ListDataIngestionJobsRequest>
-        void ListDataIngestionJobsAsync(const ListDataIngestionJobsRequestT& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataIngestionJobsAsync(const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataIngestionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListDataIngestionJobs, request, handler, context);
         }
@@ -748,13 +748,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListDatasets, request);
         }
@@ -763,7 +763,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListDatasets, request, handler, context);
         }
@@ -826,13 +826,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInferenceSchedulersOutcome ListInferenceSchedulers(const Model::ListInferenceSchedulersRequest& request) const;
+        virtual Model::ListInferenceSchedulersOutcome ListInferenceSchedulers(const Model::ListInferenceSchedulersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInferenceSchedulers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInferenceSchedulersRequestT = Model::ListInferenceSchedulersRequest>
-        Model::ListInferenceSchedulersOutcomeCallable ListInferenceSchedulersCallable(const ListInferenceSchedulersRequestT& request) const
+        Model::ListInferenceSchedulersOutcomeCallable ListInferenceSchedulersCallable(const ListInferenceSchedulersRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListInferenceSchedulers, request);
         }
@@ -841,7 +841,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListInferenceSchedulers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInferenceSchedulersRequestT = Model::ListInferenceSchedulersRequest>
-        void ListInferenceSchedulersAsync(const ListInferenceSchedulersRequestT& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInferenceSchedulersAsync(const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInferenceSchedulersRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListInferenceSchedulers, request, handler, context);
         }
@@ -851,13 +851,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLabelGroupsOutcome ListLabelGroups(const Model::ListLabelGroupsRequest& request) const;
+        virtual Model::ListLabelGroupsOutcome ListLabelGroups(const Model::ListLabelGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLabelGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLabelGroupsRequestT = Model::ListLabelGroupsRequest>
-        Model::ListLabelGroupsOutcomeCallable ListLabelGroupsCallable(const ListLabelGroupsRequestT& request) const
+        Model::ListLabelGroupsOutcomeCallable ListLabelGroupsCallable(const ListLabelGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListLabelGroups, request);
         }
@@ -866,7 +866,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListLabelGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLabelGroupsRequestT = Model::ListLabelGroupsRequest>
-        void ListLabelGroupsAsync(const ListLabelGroupsRequestT& request, const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLabelGroupsAsync(const ListLabelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLabelGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListLabelGroups, request, handler, context);
         }
@@ -930,13 +930,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
+        virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelsRequestT = Model::ListModelsRequest>
-        Model::ListModelsOutcomeCallable ListModelsCallable(const ListModelsRequestT& request) const
+        Model::ListModelsOutcomeCallable ListModelsCallable(const ListModelsRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListModels, request);
         }
@@ -945,7 +945,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelsRequestT = Model::ListModelsRequest>
-        void ListModelsAsync(const ListModelsRequestT& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelsAsync(const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelsRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListModels, request, handler, context);
         }
@@ -956,13 +956,13 @@ namespace LookoutEquipment
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRetrainingSchedulersOutcome ListRetrainingSchedulers(const Model::ListRetrainingSchedulersRequest& request) const;
+        virtual Model::ListRetrainingSchedulersOutcome ListRetrainingSchedulers(const Model::ListRetrainingSchedulersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRetrainingSchedulers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRetrainingSchedulersRequestT = Model::ListRetrainingSchedulersRequest>
-        Model::ListRetrainingSchedulersOutcomeCallable ListRetrainingSchedulersCallable(const ListRetrainingSchedulersRequestT& request) const
+        Model::ListRetrainingSchedulersOutcomeCallable ListRetrainingSchedulersCallable(const ListRetrainingSchedulersRequestT& request = {}) const
         {
             return SubmitCallable(&LookoutEquipmentClient::ListRetrainingSchedulers, request);
         }
@@ -971,7 +971,7 @@ namespace LookoutEquipment
          * An Async wrapper for ListRetrainingSchedulers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRetrainingSchedulersRequestT = Model::ListRetrainingSchedulersRequest>
-        void ListRetrainingSchedulersAsync(const ListRetrainingSchedulersRequestT& request, const ListRetrainingSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRetrainingSchedulersAsync(const ListRetrainingSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRetrainingSchedulersRequestT& request = {}) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListRetrainingSchedulers, request, handler, context);
         }

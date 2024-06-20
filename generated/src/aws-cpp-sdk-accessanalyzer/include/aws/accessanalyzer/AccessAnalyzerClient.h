@@ -698,13 +698,13 @@ namespace AccessAnalyzer
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAnalyzersOutcome ListAnalyzers(const Model::ListAnalyzersRequest& request) const;
+        virtual Model::ListAnalyzersOutcome ListAnalyzers(const Model::ListAnalyzersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAnalyzers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAnalyzersRequestT = Model::ListAnalyzersRequest>
-        Model::ListAnalyzersOutcomeCallable ListAnalyzersCallable(const ListAnalyzersRequestT& request) const
+        Model::ListAnalyzersOutcomeCallable ListAnalyzersCallable(const ListAnalyzersRequestT& request = {}) const
         {
             return SubmitCallable(&AccessAnalyzerClient::ListAnalyzers, request);
         }
@@ -713,7 +713,7 @@ namespace AccessAnalyzer
          * An Async wrapper for ListAnalyzers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAnalyzersRequestT = Model::ListAnalyzersRequest>
-        void ListAnalyzersAsync(const ListAnalyzersRequestT& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAnalyzersAsync(const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnalyzersRequestT& request = {}) const
         {
             return SubmitAsync(&AccessAnalyzerClient::ListAnalyzers, request, handler, context);
         }
@@ -816,13 +816,13 @@ namespace AccessAnalyzer
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPolicyGenerationsOutcome ListPolicyGenerations(const Model::ListPolicyGenerationsRequest& request) const;
+        virtual Model::ListPolicyGenerationsOutcome ListPolicyGenerations(const Model::ListPolicyGenerationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicyGenerations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPolicyGenerationsRequestT = Model::ListPolicyGenerationsRequest>
-        Model::ListPolicyGenerationsOutcomeCallable ListPolicyGenerationsCallable(const ListPolicyGenerationsRequestT& request) const
+        Model::ListPolicyGenerationsOutcomeCallable ListPolicyGenerationsCallable(const ListPolicyGenerationsRequestT& request = {}) const
         {
             return SubmitCallable(&AccessAnalyzerClient::ListPolicyGenerations, request);
         }
@@ -831,7 +831,7 @@ namespace AccessAnalyzer
          * An Async wrapper for ListPolicyGenerations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPolicyGenerationsRequestT = Model::ListPolicyGenerationsRequest>
-        void ListPolicyGenerationsAsync(const ListPolicyGenerationsRequestT& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPolicyGenerationsAsync(const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPolicyGenerationsRequestT& request = {}) const
         {
             return SubmitAsync(&AccessAnalyzerClient::ListPolicyGenerations, request, handler, context);
         }

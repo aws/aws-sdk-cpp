@@ -1085,13 +1085,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationDPUSizesOutcome ListApplicationDPUSizes(const Model::ListApplicationDPUSizesRequest& request) const;
+        virtual Model::ListApplicationDPUSizesOutcome ListApplicationDPUSizes(const Model::ListApplicationDPUSizesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplicationDPUSizes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationDPUSizesRequestT = Model::ListApplicationDPUSizesRequest>
-        Model::ListApplicationDPUSizesOutcomeCallable ListApplicationDPUSizesCallable(const ListApplicationDPUSizesRequestT& request) const
+        Model::ListApplicationDPUSizesOutcomeCallable ListApplicationDPUSizesCallable(const ListApplicationDPUSizesRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListApplicationDPUSizes, request);
         }
@@ -1100,7 +1100,7 @@ namespace Athena
          * An Async wrapper for ListApplicationDPUSizes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationDPUSizesRequestT = Model::ListApplicationDPUSizesRequest>
-        void ListApplicationDPUSizesAsync(const ListApplicationDPUSizesRequestT& request, const ListApplicationDPUSizesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationDPUSizesAsync(const ListApplicationDPUSizesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationDPUSizesRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListApplicationDPUSizes, request, handler, context);
         }
@@ -1138,13 +1138,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCapacityReservationsOutcome ListCapacityReservations(const Model::ListCapacityReservationsRequest& request) const;
+        virtual Model::ListCapacityReservationsOutcome ListCapacityReservations(const Model::ListCapacityReservationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCapacityReservations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
-        Model::ListCapacityReservationsOutcomeCallable ListCapacityReservationsCallable(const ListCapacityReservationsRequestT& request) const
+        Model::ListCapacityReservationsOutcomeCallable ListCapacityReservationsCallable(const ListCapacityReservationsRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListCapacityReservations, request);
         }
@@ -1153,7 +1153,7 @@ namespace Athena
          * An Async wrapper for ListCapacityReservations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCapacityReservationsRequestT = Model::ListCapacityReservationsRequest>
-        void ListCapacityReservationsAsync(const ListCapacityReservationsRequestT& request, const ListCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCapacityReservationsAsync(const ListCapacityReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCapacityReservationsRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListCapacityReservations, request, handler, context);
         }
@@ -1166,13 +1166,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataCatalogsOutcome ListDataCatalogs(const Model::ListDataCatalogsRequest& request) const;
+        virtual Model::ListDataCatalogsOutcome ListDataCatalogs(const Model::ListDataCatalogsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataCatalogsRequestT = Model::ListDataCatalogsRequest>
-        Model::ListDataCatalogsOutcomeCallable ListDataCatalogsCallable(const ListDataCatalogsRequestT& request) const
+        Model::ListDataCatalogsOutcomeCallable ListDataCatalogsCallable(const ListDataCatalogsRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListDataCatalogs, request);
         }
@@ -1181,7 +1181,7 @@ namespace Athena
          * An Async wrapper for ListDataCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataCatalogsRequestT = Model::ListDataCatalogsRequest>
-        void ListDataCatalogsAsync(const ListDataCatalogsRequestT& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataCatalogsAsync(const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataCatalogsRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListDataCatalogs, request, handler, context);
         }
@@ -1218,13 +1218,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEngineVersionsOutcome ListEngineVersions(const Model::ListEngineVersionsRequest& request) const;
+        virtual Model::ListEngineVersionsOutcome ListEngineVersions(const Model::ListEngineVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEngineVersionsRequestT = Model::ListEngineVersionsRequest>
-        Model::ListEngineVersionsOutcomeCallable ListEngineVersionsCallable(const ListEngineVersionsRequestT& request) const
+        Model::ListEngineVersionsOutcomeCallable ListEngineVersionsCallable(const ListEngineVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListEngineVersions, request);
         }
@@ -1233,7 +1233,7 @@ namespace Athena
          * An Async wrapper for ListEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEngineVersionsRequestT = Model::ListEngineVersionsRequest>
-        void ListEngineVersionsAsync(const ListEngineVersionsRequestT& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEngineVersionsAsync(const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEngineVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListEngineVersions, request, handler, context);
         }
@@ -1273,13 +1273,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNamedQueriesOutcome ListNamedQueries(const Model::ListNamedQueriesRequest& request) const;
+        virtual Model::ListNamedQueriesOutcome ListNamedQueries(const Model::ListNamedQueriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNamedQueries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNamedQueriesRequestT = Model::ListNamedQueriesRequest>
-        Model::ListNamedQueriesOutcomeCallable ListNamedQueriesCallable(const ListNamedQueriesRequestT& request) const
+        Model::ListNamedQueriesOutcomeCallable ListNamedQueriesCallable(const ListNamedQueriesRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListNamedQueries, request);
         }
@@ -1288,7 +1288,7 @@ namespace Athena
          * An Async wrapper for ListNamedQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNamedQueriesRequestT = Model::ListNamedQueriesRequest>
-        void ListNamedQueriesAsync(const ListNamedQueriesRequestT& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNamedQueriesAsync(const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNamedQueriesRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListNamedQueries, request, handler, context);
         }
@@ -1382,13 +1382,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListQueryExecutionsOutcome ListQueryExecutions(const Model::ListQueryExecutionsRequest& request) const;
+        virtual Model::ListQueryExecutionsOutcome ListQueryExecutions(const Model::ListQueryExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListQueryExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListQueryExecutionsRequestT = Model::ListQueryExecutionsRequest>
-        Model::ListQueryExecutionsOutcomeCallable ListQueryExecutionsCallable(const ListQueryExecutionsRequestT& request) const
+        Model::ListQueryExecutionsOutcomeCallable ListQueryExecutionsCallable(const ListQueryExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListQueryExecutions, request);
         }
@@ -1397,7 +1397,7 @@ namespace Athena
          * An Async wrapper for ListQueryExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListQueryExecutionsRequestT = Model::ListQueryExecutionsRequest>
-        void ListQueryExecutionsAsync(const ListQueryExecutionsRequestT& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListQueryExecutionsAsync(const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListQueryExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListQueryExecutions, request, handler, context);
         }
@@ -1487,13 +1487,13 @@ namespace Athena
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkGroupsOutcome ListWorkGroups(const Model::ListWorkGroupsRequest& request) const;
+        virtual Model::ListWorkGroupsOutcome ListWorkGroups(const Model::ListWorkGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkGroupsRequestT = Model::ListWorkGroupsRequest>
-        Model::ListWorkGroupsOutcomeCallable ListWorkGroupsCallable(const ListWorkGroupsRequestT& request) const
+        Model::ListWorkGroupsOutcomeCallable ListWorkGroupsCallable(const ListWorkGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&AthenaClient::ListWorkGroups, request);
         }
@@ -1502,7 +1502,7 @@ namespace Athena
          * An Async wrapper for ListWorkGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkGroupsRequestT = Model::ListWorkGroupsRequest>
-        void ListWorkGroupsAsync(const ListWorkGroupsRequestT& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkGroupsAsync(const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&AthenaClient::ListWorkGroups, request, handler, context);
         }

@@ -49,6 +49,9 @@
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowResult.h>
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowStepResult.h>
 #include <aws/migrationhuborchestrator/model/UpdateWorkflowStepGroupResult.h>
+#include <aws/migrationhuborchestrator/model/ListWorkflowsRequest.h>
+#include <aws/migrationhuborchestrator/model/ListPluginsRequest.h>
+#include <aws/migrationhuborchestrator/model/ListTemplatesRequest.h>
 /* End of service model headers required in MigrationHubOrchestratorClient header */
 
 namespace Aws

@@ -48,6 +48,10 @@
 #include <aws/rolesanywhere/model/UpdateCrlResult.h>
 #include <aws/rolesanywhere/model/UpdateProfileResult.h>
 #include <aws/rolesanywhere/model/UpdateTrustAnchorResult.h>
+#include <aws/rolesanywhere/model/ListSubjectsRequest.h>
+#include <aws/rolesanywhere/model/ListCrlsRequest.h>
+#include <aws/rolesanywhere/model/ListTrustAnchorsRequest.h>
+#include <aws/rolesanywhere/model/ListProfilesRequest.h>
 /* End of service model headers required in RolesAnywhereClient header */
 
 namespace Aws

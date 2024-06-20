@@ -787,13 +787,13 @@ namespace BedrockAgent
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAgentsOutcome ListAgents(const Model::ListAgentsRequest& request) const;
+        virtual Model::ListAgentsOutcome ListAgents(const Model::ListAgentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAgents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAgentsRequestT = Model::ListAgentsRequest>
-        Model::ListAgentsOutcomeCallable ListAgentsCallable(const ListAgentsRequestT& request) const
+        Model::ListAgentsOutcomeCallable ListAgentsCallable(const ListAgentsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockAgentClient::ListAgents, request);
         }
@@ -802,7 +802,7 @@ namespace BedrockAgent
          * An Async wrapper for ListAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAgentsRequestT = Model::ListAgentsRequest>
-        void ListAgentsAsync(const ListAgentsRequestT& request, const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAgentsAsync(const ListAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAgentsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockAgentClient::ListAgents, request, handler, context);
         }
@@ -865,13 +865,13 @@ namespace BedrockAgent
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request) const;
+        virtual Model::ListKnowledgeBasesOutcome ListKnowledgeBases(const Model::ListKnowledgeBasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKnowledgeBases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request) const
+        Model::ListKnowledgeBasesOutcomeCallable ListKnowledgeBasesCallable(const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockAgentClient::ListKnowledgeBases, request);
         }
@@ -880,7 +880,7 @@ namespace BedrockAgent
          * An Async wrapper for ListKnowledgeBases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKnowledgeBasesRequestT = Model::ListKnowledgeBasesRequest>
-        void ListKnowledgeBasesAsync(const ListKnowledgeBasesRequestT& request, const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKnowledgeBasesAsync(const ListKnowledgeBasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKnowledgeBasesRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockAgentClient::ListKnowledgeBases, request, handler, context);
         }

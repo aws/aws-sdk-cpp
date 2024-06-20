@@ -63,6 +63,21 @@
 #include <aws/autoscaling/model/SetInstanceProtectionResult.h>
 #include <aws/autoscaling/model/StartInstanceRefreshResult.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
+#include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
+#include <aws/autoscaling/model/DescribeTagsRequest.h>
+#include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
+#include <aws/autoscaling/model/DescribeScalingActivitiesRequest.h>
+#include <aws/autoscaling/model/DescribeNotificationConfigurationsRequest.h>
+#include <aws/autoscaling/model/DescribeAutoScalingNotificationTypesRequest.h>
+#include <aws/autoscaling/model/DescribePoliciesRequest.h>
+#include <aws/autoscaling/model/DescribeLaunchConfigurationsRequest.h>
+#include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
+#include <aws/autoscaling/model/DescribeScheduledActionsRequest.h>
+#include <aws/autoscaling/model/DescribeMetricCollectionTypesRequest.h>
+#include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
+#include <aws/autoscaling/model/DescribeScalingProcessTypesRequest.h>
+#include <aws/autoscaling/model/DescribeAutoScalingInstancesRequest.h>
+#include <aws/autoscaling/model/DescribeLifecycleHookTypesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AutoScalingClient header */
 

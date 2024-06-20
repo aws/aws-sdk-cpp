@@ -99,6 +99,22 @@
 #include <aws/waf-regional/model/UpdateSqlInjectionMatchSetResult.h>
 #include <aws/waf-regional/model/UpdateWebACLResult.h>
 #include <aws/waf-regional/model/UpdateXssMatchSetResult.h>
+#include <aws/waf-regional/model/ListByteMatchSetsRequest.h>
+#include <aws/waf-regional/model/ListActivatedRulesInRuleGroupRequest.h>
+#include <aws/waf-regional/model/ListRuleGroupsRequest.h>
+#include <aws/waf-regional/model/ListGeoMatchSetsRequest.h>
+#include <aws/waf-regional/model/ListLoggingConfigurationsRequest.h>
+#include <aws/waf-regional/model/ListRegexPatternSetsRequest.h>
+#include <aws/waf-regional/model/ListIPSetsRequest.h>
+#include <aws/waf-regional/model/GetChangeTokenRequest.h>
+#include <aws/waf-regional/model/ListRateBasedRulesRequest.h>
+#include <aws/waf-regional/model/ListSubscribedRuleGroupsRequest.h>
+#include <aws/waf-regional/model/ListWebACLsRequest.h>
+#include <aws/waf-regional/model/ListRegexMatchSetsRequest.h>
+#include <aws/waf-regional/model/ListSqlInjectionMatchSetsRequest.h>
+#include <aws/waf-regional/model/ListRulesRequest.h>
+#include <aws/waf-regional/model/ListSizeConstraintSetsRequest.h>
+#include <aws/waf-regional/model/ListXssMatchSetsRequest.h>
 /* End of service model headers required in WAFRegionalClient header */
 
 namespace Aws

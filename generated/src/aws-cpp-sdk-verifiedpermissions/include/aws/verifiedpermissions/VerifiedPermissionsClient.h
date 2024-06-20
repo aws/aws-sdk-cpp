@@ -742,13 +742,13 @@ namespace VerifiedPermissions
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPolicyStoresOutcome ListPolicyStores(const Model::ListPolicyStoresRequest& request) const;
+        virtual Model::ListPolicyStoresOutcome ListPolicyStores(const Model::ListPolicyStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicyStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPolicyStoresRequestT = Model::ListPolicyStoresRequest>
-        Model::ListPolicyStoresOutcomeCallable ListPolicyStoresCallable(const ListPolicyStoresRequestT& request) const
+        Model::ListPolicyStoresOutcomeCallable ListPolicyStoresCallable(const ListPolicyStoresRequestT& request = {}) const
         {
             return SubmitCallable(&VerifiedPermissionsClient::ListPolicyStores, request);
         }
@@ -757,7 +757,7 @@ namespace VerifiedPermissions
          * An Async wrapper for ListPolicyStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPolicyStoresRequestT = Model::ListPolicyStoresRequest>
-        void ListPolicyStoresAsync(const ListPolicyStoresRequestT& request, const ListPolicyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPolicyStoresAsync(const ListPolicyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPolicyStoresRequestT& request = {}) const
         {
             return SubmitAsync(&VerifiedPermissionsClient::ListPolicyStores, request, handler, context);
         }

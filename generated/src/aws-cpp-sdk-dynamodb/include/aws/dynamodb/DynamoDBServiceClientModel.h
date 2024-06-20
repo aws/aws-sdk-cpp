@@ -74,6 +74,14 @@
 #include <aws/dynamodb/model/UpdateTableResult.h>
 #include <aws/dynamodb/model/UpdateTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
+#include <aws/dynamodb/model/DescribeLimitsRequest.h>
+#include <aws/dynamodb/model/ListGlobalTablesRequest.h>
+#include <aws/dynamodb/model/ListImportsRequest.h>
+#include <aws/dynamodb/model/ListBackupsRequest.h>
+#include <aws/dynamodb/model/ListContributorInsightsRequest.h>
+#include <aws/dynamodb/model/ListTablesRequest.h>
+#include <aws/dynamodb/model/DescribeEndpointsRequest.h>
+#include <aws/dynamodb/model/ListExportsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DynamoDBClient header */
 

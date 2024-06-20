@@ -55,6 +55,11 @@
 #include <aws/entityresolution/model/UpdateIdNamespaceResult.h>
 #include <aws/entityresolution/model/UpdateMatchingWorkflowResult.h>
 #include <aws/entityresolution/model/UpdateSchemaMappingResult.h>
+#include <aws/entityresolution/model/ListProviderServicesRequest.h>
+#include <aws/entityresolution/model/ListIdNamespacesRequest.h>
+#include <aws/entityresolution/model/ListIdMappingWorkflowsRequest.h>
+#include <aws/entityresolution/model/ListSchemaMappingsRequest.h>
+#include <aws/entityresolution/model/ListMatchingWorkflowsRequest.h>
 /* End of service model headers required in EntityResolutionClient header */
 
 namespace Aws

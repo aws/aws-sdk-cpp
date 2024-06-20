@@ -56,6 +56,17 @@
 #include <aws/memorydb/model/UpdateParameterGroupResult.h>
 #include <aws/memorydb/model/UpdateSubnetGroupResult.h>
 #include <aws/memorydb/model/UpdateUserResult.h>
+#include <aws/memorydb/model/DescribeClustersRequest.h>
+#include <aws/memorydb/model/DescribeEventsRequest.h>
+#include <aws/memorydb/model/DescribeParameterGroupsRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesRequest.h>
+#include <aws/memorydb/model/DescribeSubnetGroupsRequest.h>
+#include <aws/memorydb/model/DescribeUsersRequest.h>
+#include <aws/memorydb/model/DescribeACLsRequest.h>
+#include <aws/memorydb/model/DescribeReservedNodesOfferingsRequest.h>
+#include <aws/memorydb/model/DescribeEngineVersionsRequest.h>
+#include <aws/memorydb/model/DescribeSnapshotsRequest.h>
+#include <aws/memorydb/model/DescribeServiceUpdatesRequest.h>
 /* End of service model headers required in MemoryDBClient header */
 
 namespace Aws

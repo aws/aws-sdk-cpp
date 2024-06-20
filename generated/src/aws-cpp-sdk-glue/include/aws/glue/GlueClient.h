@@ -708,13 +708,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateClassifierOutcome CreateClassifier(const Model::CreateClassifierRequest& request) const;
+        virtual Model::CreateClassifierOutcome CreateClassifier(const Model::CreateClassifierRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateClassifier that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateClassifierRequestT = Model::CreateClassifierRequest>
-        Model::CreateClassifierOutcomeCallable CreateClassifierCallable(const CreateClassifierRequestT& request) const
+        Model::CreateClassifierOutcomeCallable CreateClassifierCallable(const CreateClassifierRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::CreateClassifier, request);
         }
@@ -723,7 +723,7 @@ namespace Glue
          * An Async wrapper for CreateClassifier that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateClassifierRequestT = Model::CreateClassifierRequest>
-        void CreateClassifierAsync(const CreateClassifierRequestT& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateClassifierAsync(const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateClassifierRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::CreateClassifier, request, handler, context);
         }
@@ -1069,13 +1069,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request) const;
+        virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateScript that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateScriptRequestT = Model::CreateScriptRequest>
-        Model::CreateScriptOutcomeCallable CreateScriptCallable(const CreateScriptRequestT& request) const
+        Model::CreateScriptOutcomeCallable CreateScriptCallable(const CreateScriptRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::CreateScript, request);
         }
@@ -1084,7 +1084,7 @@ namespace Glue
          * An Async wrapper for CreateScript that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateScriptRequestT = Model::CreateScriptRequest>
-        void CreateScriptAsync(const CreateScriptRequestT& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateScriptAsync(const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateScriptRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::CreateScript, request, handler, context);
         }
@@ -1707,13 +1707,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::DeleteResourcePolicy, request);
         }
@@ -1722,7 +1722,7 @@ namespace Glue
          * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::DeleteResourcePolicy, request, handler, context);
         }
@@ -2114,13 +2114,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCatalogImportStatusOutcome GetCatalogImportStatus(const Model::GetCatalogImportStatusRequest& request) const;
+        virtual Model::GetCatalogImportStatusOutcome GetCatalogImportStatus(const Model::GetCatalogImportStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCatalogImportStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCatalogImportStatusRequestT = Model::GetCatalogImportStatusRequest>
-        Model::GetCatalogImportStatusOutcomeCallable GetCatalogImportStatusCallable(const GetCatalogImportStatusRequestT& request) const
+        Model::GetCatalogImportStatusOutcomeCallable GetCatalogImportStatusCallable(const GetCatalogImportStatusRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetCatalogImportStatus, request);
         }
@@ -2129,7 +2129,7 @@ namespace Glue
          * An Async wrapper for GetCatalogImportStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCatalogImportStatusRequestT = Model::GetCatalogImportStatusRequest>
-        void GetCatalogImportStatusAsync(const GetCatalogImportStatusRequestT& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCatalogImportStatusAsync(const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCatalogImportStatusRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetCatalogImportStatus, request, handler, context);
         }
@@ -2165,13 +2165,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetClassifiersOutcome GetClassifiers(const Model::GetClassifiersRequest& request) const;
+        virtual Model::GetClassifiersOutcome GetClassifiers(const Model::GetClassifiersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetClassifiers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetClassifiersRequestT = Model::GetClassifiersRequest>
-        Model::GetClassifiersOutcomeCallable GetClassifiersCallable(const GetClassifiersRequestT& request) const
+        Model::GetClassifiersOutcomeCallable GetClassifiersCallable(const GetClassifiersRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetClassifiers, request);
         }
@@ -2180,7 +2180,7 @@ namespace Glue
          * An Async wrapper for GetClassifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetClassifiersRequestT = Model::GetClassifiersRequest>
-        void GetClassifiersAsync(const GetClassifiersRequestT& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetClassifiersAsync(const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetClassifiersRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetClassifiers, request, handler, context);
         }
@@ -2323,13 +2323,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetConnectionsOutcome GetConnections(const Model::GetConnectionsRequest& request) const;
+        virtual Model::GetConnectionsOutcome GetConnections(const Model::GetConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetConnectionsRequestT = Model::GetConnectionsRequest>
-        Model::GetConnectionsOutcomeCallable GetConnectionsCallable(const GetConnectionsRequestT& request) const
+        Model::GetConnectionsOutcomeCallable GetConnectionsCallable(const GetConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetConnections, request);
         }
@@ -2338,7 +2338,7 @@ namespace Glue
          * An Async wrapper for GetConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetConnectionsRequestT = Model::GetConnectionsRequest>
-        void GetConnectionsAsync(const GetConnectionsRequestT& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetConnectionsAsync(const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetConnections, request, handler, context);
         }
@@ -2373,13 +2373,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCrawlerMetricsOutcome GetCrawlerMetrics(const Model::GetCrawlerMetricsRequest& request) const;
+        virtual Model::GetCrawlerMetricsOutcome GetCrawlerMetrics(const Model::GetCrawlerMetricsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCrawlerMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCrawlerMetricsRequestT = Model::GetCrawlerMetricsRequest>
-        Model::GetCrawlerMetricsOutcomeCallable GetCrawlerMetricsCallable(const GetCrawlerMetricsRequestT& request) const
+        Model::GetCrawlerMetricsOutcomeCallable GetCrawlerMetricsCallable(const GetCrawlerMetricsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetCrawlerMetrics, request);
         }
@@ -2388,7 +2388,7 @@ namespace Glue
          * An Async wrapper for GetCrawlerMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCrawlerMetricsRequestT = Model::GetCrawlerMetricsRequest>
-        void GetCrawlerMetricsAsync(const GetCrawlerMetricsRequestT& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCrawlerMetricsAsync(const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCrawlerMetricsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetCrawlerMetrics, request, handler, context);
         }
@@ -2399,13 +2399,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCrawlersOutcome GetCrawlers(const Model::GetCrawlersRequest& request) const;
+        virtual Model::GetCrawlersOutcome GetCrawlers(const Model::GetCrawlersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCrawlers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCrawlersRequestT = Model::GetCrawlersRequest>
-        Model::GetCrawlersOutcomeCallable GetCrawlersCallable(const GetCrawlersRequestT& request) const
+        Model::GetCrawlersOutcomeCallable GetCrawlersCallable(const GetCrawlersRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetCrawlers, request);
         }
@@ -2414,7 +2414,7 @@ namespace Glue
          * An Async wrapper for GetCrawlers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCrawlersRequestT = Model::GetCrawlersRequest>
-        void GetCrawlersAsync(const GetCrawlersRequestT& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCrawlersAsync(const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCrawlersRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetCrawlers, request, handler, context);
         }
@@ -2451,13 +2451,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDataCatalogEncryptionSettingsOutcome GetDataCatalogEncryptionSettings(const Model::GetDataCatalogEncryptionSettingsRequest& request) const;
+        virtual Model::GetDataCatalogEncryptionSettingsOutcome GetDataCatalogEncryptionSettings(const Model::GetDataCatalogEncryptionSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDataCatalogEncryptionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDataCatalogEncryptionSettingsRequestT = Model::GetDataCatalogEncryptionSettingsRequest>
-        Model::GetDataCatalogEncryptionSettingsOutcomeCallable GetDataCatalogEncryptionSettingsCallable(const GetDataCatalogEncryptionSettingsRequestT& request) const
+        Model::GetDataCatalogEncryptionSettingsOutcomeCallable GetDataCatalogEncryptionSettingsCallable(const GetDataCatalogEncryptionSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetDataCatalogEncryptionSettings, request);
         }
@@ -2466,7 +2466,7 @@ namespace Glue
          * An Async wrapper for GetDataCatalogEncryptionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDataCatalogEncryptionSettingsRequestT = Model::GetDataCatalogEncryptionSettingsRequest>
-        void GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncryptionSettingsRequestT& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDataCatalogEncryptionSettingsAsync(const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDataCatalogEncryptionSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetDataCatalogEncryptionSettings, request, handler, context);
         }
@@ -2606,13 +2606,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDatabasesOutcome GetDatabases(const Model::GetDatabasesRequest& request) const;
+        virtual Model::GetDatabasesOutcome GetDatabases(const Model::GetDatabasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDatabasesRequestT = Model::GetDatabasesRequest>
-        Model::GetDatabasesOutcomeCallable GetDatabasesCallable(const GetDatabasesRequestT& request) const
+        Model::GetDatabasesOutcomeCallable GetDatabasesCallable(const GetDatabasesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetDatabases, request);
         }
@@ -2621,7 +2621,7 @@ namespace Glue
          * An Async wrapper for GetDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDatabasesRequestT = Model::GetDatabasesRequest>
-        void GetDatabasesAsync(const GetDatabasesRequestT& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDatabasesAsync(const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDatabasesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetDatabases, request, handler, context);
         }
@@ -2632,13 +2632,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDataflowGraphOutcome GetDataflowGraph(const Model::GetDataflowGraphRequest& request) const;
+        virtual Model::GetDataflowGraphOutcome GetDataflowGraph(const Model::GetDataflowGraphRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDataflowGraph that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDataflowGraphRequestT = Model::GetDataflowGraphRequest>
-        Model::GetDataflowGraphOutcomeCallable GetDataflowGraphCallable(const GetDataflowGraphRequestT& request) const
+        Model::GetDataflowGraphOutcomeCallable GetDataflowGraphCallable(const GetDataflowGraphRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetDataflowGraph, request);
         }
@@ -2647,7 +2647,7 @@ namespace Glue
          * An Async wrapper for GetDataflowGraph that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDataflowGraphRequestT = Model::GetDataflowGraphRequest>
-        void GetDataflowGraphAsync(const GetDataflowGraphRequestT& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDataflowGraphAsync(const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDataflowGraphRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetDataflowGraph, request, handler, context);
         }
@@ -2690,13 +2690,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDevEndpointsOutcome GetDevEndpoints(const Model::GetDevEndpointsRequest& request) const;
+        virtual Model::GetDevEndpointsOutcome GetDevEndpoints(const Model::GetDevEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDevEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDevEndpointsRequestT = Model::GetDevEndpointsRequest>
-        Model::GetDevEndpointsOutcomeCallable GetDevEndpointsCallable(const GetDevEndpointsRequestT& request) const
+        Model::GetDevEndpointsOutcomeCallable GetDevEndpointsCallable(const GetDevEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetDevEndpoints, request);
         }
@@ -2705,7 +2705,7 @@ namespace Glue
          * An Async wrapper for GetDevEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDevEndpointsRequestT = Model::GetDevEndpointsRequest>
-        void GetDevEndpointsAsync(const GetDevEndpointsRequestT& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDevEndpointsAsync(const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDevEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetDevEndpoints, request, handler, context);
         }
@@ -2824,13 +2824,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetJobsOutcome GetJobs(const Model::GetJobsRequest& request) const;
+        virtual Model::GetJobsOutcome GetJobs(const Model::GetJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetJobsRequestT = Model::GetJobsRequest>
-        Model::GetJobsOutcomeCallable GetJobsCallable(const GetJobsRequestT& request) const
+        Model::GetJobsOutcomeCallable GetJobsCallable(const GetJobsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetJobs, request);
         }
@@ -2839,7 +2839,7 @@ namespace Glue
          * An Async wrapper for GetJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetJobsRequestT = Model::GetJobsRequest>
-        void GetJobsAsync(const GetJobsRequestT& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetJobsAsync(const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetJobsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetJobs, request, handler, context);
         }
@@ -2944,13 +2944,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetMLTransformsOutcome GetMLTransforms(const Model::GetMLTransformsRequest& request) const;
+        virtual Model::GetMLTransformsOutcome GetMLTransforms(const Model::GetMLTransformsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetMLTransforms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetMLTransformsRequestT = Model::GetMLTransformsRequest>
-        Model::GetMLTransformsOutcomeCallable GetMLTransformsCallable(const GetMLTransformsRequestT& request) const
+        Model::GetMLTransformsOutcomeCallable GetMLTransformsCallable(const GetMLTransformsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetMLTransforms, request);
         }
@@ -2959,7 +2959,7 @@ namespace Glue
          * An Async wrapper for GetMLTransforms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetMLTransformsRequestT = Model::GetMLTransformsRequest>
-        void GetMLTransformsAsync(const GetMLTransformsRequestT& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetMLTransformsAsync(const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetMLTransformsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetMLTransforms, request, handler, context);
         }
@@ -3126,13 +3126,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
+        virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetResourcePoliciesRequestT = Model::GetResourcePoliciesRequest>
-        Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const GetResourcePoliciesRequestT& request) const
+        Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const GetResourcePoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetResourcePolicies, request);
         }
@@ -3141,7 +3141,7 @@ namespace Glue
          * An Async wrapper for GetResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetResourcePoliciesRequestT = Model::GetResourcePoliciesRequest>
-        void GetResourcePoliciesAsync(const GetResourcePoliciesRequestT& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetResourcePoliciesAsync(const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcePoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetResourcePolicies, request, handler, context);
         }
@@ -3151,13 +3151,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetResourcePolicy, request);
         }
@@ -3166,7 +3166,7 @@ namespace Glue
          * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetResourcePolicyAsync(const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetResourcePolicy, request, handler, context);
         }
@@ -3234,13 +3234,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSchemaVersionOutcome GetSchemaVersion(const Model::GetSchemaVersionRequest& request) const;
+        virtual Model::GetSchemaVersionOutcome GetSchemaVersion(const Model::GetSchemaVersionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSchemaVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSchemaVersionRequestT = Model::GetSchemaVersionRequest>
-        Model::GetSchemaVersionOutcomeCallable GetSchemaVersionCallable(const GetSchemaVersionRequestT& request) const
+        Model::GetSchemaVersionOutcomeCallable GetSchemaVersionCallable(const GetSchemaVersionRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetSchemaVersion, request);
         }
@@ -3249,7 +3249,7 @@ namespace Glue
          * An Async wrapper for GetSchemaVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSchemaVersionRequestT = Model::GetSchemaVersionRequest>
-        void GetSchemaVersionAsync(const GetSchemaVersionRequestT& request, const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSchemaVersionAsync(const GetSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSchemaVersionRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetSchemaVersion, request, handler, context);
         }
@@ -3313,13 +3313,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSecurityConfigurationsOutcome GetSecurityConfigurations(const Model::GetSecurityConfigurationsRequest& request) const;
+        virtual Model::GetSecurityConfigurationsOutcome GetSecurityConfigurations(const Model::GetSecurityConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSecurityConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSecurityConfigurationsRequestT = Model::GetSecurityConfigurationsRequest>
-        Model::GetSecurityConfigurationsOutcomeCallable GetSecurityConfigurationsCallable(const GetSecurityConfigurationsRequestT& request) const
+        Model::GetSecurityConfigurationsOutcomeCallable GetSecurityConfigurationsCallable(const GetSecurityConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetSecurityConfigurations, request);
         }
@@ -3328,7 +3328,7 @@ namespace Glue
          * An Async wrapper for GetSecurityConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSecurityConfigurationsRequestT = Model::GetSecurityConfigurationsRequest>
-        void GetSecurityConfigurationsAsync(const GetSecurityConfigurationsRequestT& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSecurityConfigurationsAsync(const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSecurityConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetSecurityConfigurations, request, handler, context);
         }
@@ -3567,13 +3567,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetTriggersOutcome GetTriggers(const Model::GetTriggersRequest& request) const;
+        virtual Model::GetTriggersOutcome GetTriggers(const Model::GetTriggersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetTriggersRequestT = Model::GetTriggersRequest>
-        Model::GetTriggersOutcomeCallable GetTriggersCallable(const GetTriggersRequestT& request) const
+        Model::GetTriggersOutcomeCallable GetTriggersCallable(const GetTriggersRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::GetTriggers, request);
         }
@@ -3582,7 +3582,7 @@ namespace Glue
          * An Async wrapper for GetTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetTriggersRequestT = Model::GetTriggersRequest>
-        void GetTriggersAsync(const GetTriggersRequestT& request, const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetTriggersAsync(const GetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTriggersRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::GetTriggers, request, handler, context);
         }
@@ -3857,13 +3857,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
          */
-        virtual Model::ImportCatalogToGlueOutcome ImportCatalogToGlue(const Model::ImportCatalogToGlueRequest& request) const;
+        virtual Model::ImportCatalogToGlueOutcome ImportCatalogToGlue(const Model::ImportCatalogToGlueRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ImportCatalogToGlue that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ImportCatalogToGlueRequestT = Model::ImportCatalogToGlueRequest>
-        Model::ImportCatalogToGlueOutcomeCallable ImportCatalogToGlueCallable(const ImportCatalogToGlueRequestT& request) const
+        Model::ImportCatalogToGlueOutcomeCallable ImportCatalogToGlueCallable(const ImportCatalogToGlueRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ImportCatalogToGlue, request);
         }
@@ -3872,7 +3872,7 @@ namespace Glue
          * An Async wrapper for ImportCatalogToGlue that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ImportCatalogToGlueRequestT = Model::ImportCatalogToGlueRequest>
-        void ImportCatalogToGlueAsync(const ImportCatalogToGlueRequestT& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ImportCatalogToGlueAsync(const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ImportCatalogToGlueRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ImportCatalogToGlue, request, handler, context);
         }
@@ -3882,13 +3882,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBlueprintsOutcome ListBlueprints(const Model::ListBlueprintsRequest& request) const;
+        virtual Model::ListBlueprintsOutcome ListBlueprints(const Model::ListBlueprintsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBlueprints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBlueprintsRequestT = Model::ListBlueprintsRequest>
-        Model::ListBlueprintsOutcomeCallable ListBlueprintsCallable(const ListBlueprintsRequestT& request) const
+        Model::ListBlueprintsOutcomeCallable ListBlueprintsCallable(const ListBlueprintsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListBlueprints, request);
         }
@@ -3897,7 +3897,7 @@ namespace Glue
          * An Async wrapper for ListBlueprints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBlueprintsRequestT = Model::ListBlueprintsRequest>
-        void ListBlueprintsAsync(const ListBlueprintsRequestT& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBlueprintsAsync(const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBlueprintsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListBlueprints, request, handler, context);
         }
@@ -3907,13 +3907,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListColumnStatisticsTaskRunsOutcome ListColumnStatisticsTaskRuns(const Model::ListColumnStatisticsTaskRunsRequest& request) const;
+        virtual Model::ListColumnStatisticsTaskRunsOutcome ListColumnStatisticsTaskRuns(const Model::ListColumnStatisticsTaskRunsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListColumnStatisticsTaskRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
-        Model::ListColumnStatisticsTaskRunsOutcomeCallable ListColumnStatisticsTaskRunsCallable(const ListColumnStatisticsTaskRunsRequestT& request) const
+        Model::ListColumnStatisticsTaskRunsOutcomeCallable ListColumnStatisticsTaskRunsCallable(const ListColumnStatisticsTaskRunsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListColumnStatisticsTaskRuns, request);
         }
@@ -3922,7 +3922,7 @@ namespace Glue
          * An Async wrapper for ListColumnStatisticsTaskRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListColumnStatisticsTaskRunsRequestT = Model::ListColumnStatisticsTaskRunsRequest>
-        void ListColumnStatisticsTaskRunsAsync(const ListColumnStatisticsTaskRunsRequestT& request, const ListColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListColumnStatisticsTaskRunsAsync(const ListColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListColumnStatisticsTaskRunsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListColumnStatisticsTaskRuns, request, handler, context);
         }
@@ -3938,13 +3938,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCrawlersOutcome ListCrawlers(const Model::ListCrawlersRequest& request) const;
+        virtual Model::ListCrawlersOutcome ListCrawlers(const Model::ListCrawlersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCrawlers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCrawlersRequestT = Model::ListCrawlersRequest>
-        Model::ListCrawlersOutcomeCallable ListCrawlersCallable(const ListCrawlersRequestT& request) const
+        Model::ListCrawlersOutcomeCallable ListCrawlersCallable(const ListCrawlersRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListCrawlers, request);
         }
@@ -3953,7 +3953,7 @@ namespace Glue
          * An Async wrapper for ListCrawlers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCrawlersRequestT = Model::ListCrawlersRequest>
-        void ListCrawlersAsync(const ListCrawlersRequestT& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCrawlersAsync(const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCrawlersRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListCrawlers, request, handler, context);
         }
@@ -3997,13 +3997,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomEntityTypesOutcome ListCustomEntityTypes(const Model::ListCustomEntityTypesRequest& request) const;
+        virtual Model::ListCustomEntityTypesOutcome ListCustomEntityTypes(const Model::ListCustomEntityTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomEntityTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomEntityTypesRequestT = Model::ListCustomEntityTypesRequest>
-        Model::ListCustomEntityTypesOutcomeCallable ListCustomEntityTypesCallable(const ListCustomEntityTypesRequestT& request) const
+        Model::ListCustomEntityTypesOutcomeCallable ListCustomEntityTypesCallable(const ListCustomEntityTypesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListCustomEntityTypes, request);
         }
@@ -4012,7 +4012,7 @@ namespace Glue
          * An Async wrapper for ListCustomEntityTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomEntityTypesRequestT = Model::ListCustomEntityTypesRequest>
-        void ListCustomEntityTypesAsync(const ListCustomEntityTypesRequestT& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomEntityTypesAsync(const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomEntityTypesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListCustomEntityTypes, request, handler, context);
         }
@@ -4023,13 +4023,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataQualityResultsOutcome ListDataQualityResults(const Model::ListDataQualityResultsRequest& request) const;
+        virtual Model::ListDataQualityResultsOutcome ListDataQualityResults(const Model::ListDataQualityResultsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataQualityResults that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataQualityResultsRequestT = Model::ListDataQualityResultsRequest>
-        Model::ListDataQualityResultsOutcomeCallable ListDataQualityResultsCallable(const ListDataQualityResultsRequestT& request) const
+        Model::ListDataQualityResultsOutcomeCallable ListDataQualityResultsCallable(const ListDataQualityResultsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListDataQualityResults, request);
         }
@@ -4038,7 +4038,7 @@ namespace Glue
          * An Async wrapper for ListDataQualityResults that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataQualityResultsRequestT = Model::ListDataQualityResultsRequest>
-        void ListDataQualityResultsAsync(const ListDataQualityResultsRequestT& request, const ListDataQualityResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataQualityResultsAsync(const ListDataQualityResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityResultsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDataQualityResults, request, handler, context);
         }
@@ -4049,13 +4049,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataQualityRuleRecommendationRunsOutcome ListDataQualityRuleRecommendationRuns(const Model::ListDataQualityRuleRecommendationRunsRequest& request) const;
+        virtual Model::ListDataQualityRuleRecommendationRunsOutcome ListDataQualityRuleRecommendationRuns(const Model::ListDataQualityRuleRecommendationRunsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataQualityRuleRecommendationRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataQualityRuleRecommendationRunsRequestT = Model::ListDataQualityRuleRecommendationRunsRequest>
-        Model::ListDataQualityRuleRecommendationRunsOutcomeCallable ListDataQualityRuleRecommendationRunsCallable(const ListDataQualityRuleRecommendationRunsRequestT& request) const
+        Model::ListDataQualityRuleRecommendationRunsOutcomeCallable ListDataQualityRuleRecommendationRunsCallable(const ListDataQualityRuleRecommendationRunsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListDataQualityRuleRecommendationRuns, request);
         }
@@ -4064,7 +4064,7 @@ namespace Glue
          * An Async wrapper for ListDataQualityRuleRecommendationRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataQualityRuleRecommendationRunsRequestT = Model::ListDataQualityRuleRecommendationRunsRequest>
-        void ListDataQualityRuleRecommendationRunsAsync(const ListDataQualityRuleRecommendationRunsRequestT& request, const ListDataQualityRuleRecommendationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataQualityRuleRecommendationRunsAsync(const ListDataQualityRuleRecommendationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityRuleRecommendationRunsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDataQualityRuleRecommendationRuns, request, handler, context);
         }
@@ -4075,13 +4075,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataQualityRulesetEvaluationRunsOutcome ListDataQualityRulesetEvaluationRuns(const Model::ListDataQualityRulesetEvaluationRunsRequest& request) const;
+        virtual Model::ListDataQualityRulesetEvaluationRunsOutcome ListDataQualityRulesetEvaluationRuns(const Model::ListDataQualityRulesetEvaluationRunsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataQualityRulesetEvaluationRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataQualityRulesetEvaluationRunsRequestT = Model::ListDataQualityRulesetEvaluationRunsRequest>
-        Model::ListDataQualityRulesetEvaluationRunsOutcomeCallable ListDataQualityRulesetEvaluationRunsCallable(const ListDataQualityRulesetEvaluationRunsRequestT& request) const
+        Model::ListDataQualityRulesetEvaluationRunsOutcomeCallable ListDataQualityRulesetEvaluationRunsCallable(const ListDataQualityRulesetEvaluationRunsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListDataQualityRulesetEvaluationRuns, request);
         }
@@ -4090,7 +4090,7 @@ namespace Glue
          * An Async wrapper for ListDataQualityRulesetEvaluationRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataQualityRulesetEvaluationRunsRequestT = Model::ListDataQualityRulesetEvaluationRunsRequest>
-        void ListDataQualityRulesetEvaluationRunsAsync(const ListDataQualityRulesetEvaluationRunsRequestT& request, const ListDataQualityRulesetEvaluationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataQualityRulesetEvaluationRunsAsync(const ListDataQualityRulesetEvaluationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityRulesetEvaluationRunsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDataQualityRulesetEvaluationRuns, request, handler, context);
         }
@@ -4101,13 +4101,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataQualityRulesetsOutcome ListDataQualityRulesets(const Model::ListDataQualityRulesetsRequest& request) const;
+        virtual Model::ListDataQualityRulesetsOutcome ListDataQualityRulesets(const Model::ListDataQualityRulesetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataQualityRulesets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataQualityRulesetsRequestT = Model::ListDataQualityRulesetsRequest>
-        Model::ListDataQualityRulesetsOutcomeCallable ListDataQualityRulesetsCallable(const ListDataQualityRulesetsRequestT& request) const
+        Model::ListDataQualityRulesetsOutcomeCallable ListDataQualityRulesetsCallable(const ListDataQualityRulesetsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListDataQualityRulesets, request);
         }
@@ -4116,7 +4116,7 @@ namespace Glue
          * An Async wrapper for ListDataQualityRulesets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataQualityRulesetsRequestT = Model::ListDataQualityRulesetsRequest>
-        void ListDataQualityRulesetsAsync(const ListDataQualityRulesetsRequestT& request, const ListDataQualityRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataQualityRulesetsAsync(const ListDataQualityRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityRulesetsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDataQualityRulesets, request, handler, context);
         }
@@ -4132,13 +4132,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDevEndpointsOutcome ListDevEndpoints(const Model::ListDevEndpointsRequest& request) const;
+        virtual Model::ListDevEndpointsOutcome ListDevEndpoints(const Model::ListDevEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDevEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDevEndpointsRequestT = Model::ListDevEndpointsRequest>
-        Model::ListDevEndpointsOutcomeCallable ListDevEndpointsCallable(const ListDevEndpointsRequestT& request) const
+        Model::ListDevEndpointsOutcomeCallable ListDevEndpointsCallable(const ListDevEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListDevEndpoints, request);
         }
@@ -4147,7 +4147,7 @@ namespace Glue
          * An Async wrapper for ListDevEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDevEndpointsRequestT = Model::ListDevEndpointsRequest>
-        void ListDevEndpointsAsync(const ListDevEndpointsRequestT& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDevEndpointsAsync(const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDevEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListDevEndpoints, request, handler, context);
         }
@@ -4163,13 +4163,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListJobs, request);
         }
@@ -4178,7 +4178,7 @@ namespace Glue
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListJobs, request, handler, context);
         }
@@ -4193,13 +4193,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMLTransformsOutcome ListMLTransforms(const Model::ListMLTransformsRequest& request) const;
+        virtual Model::ListMLTransformsOutcome ListMLTransforms(const Model::ListMLTransformsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMLTransforms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMLTransformsRequestT = Model::ListMLTransformsRequest>
-        Model::ListMLTransformsOutcomeCallable ListMLTransformsCallable(const ListMLTransformsRequestT& request) const
+        Model::ListMLTransformsOutcomeCallable ListMLTransformsCallable(const ListMLTransformsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListMLTransforms, request);
         }
@@ -4208,7 +4208,7 @@ namespace Glue
          * An Async wrapper for ListMLTransforms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMLTransformsRequestT = Model::ListMLTransformsRequest>
-        void ListMLTransformsAsync(const ListMLTransformsRequestT& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMLTransformsAsync(const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMLTransformsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListMLTransforms, request, handler, context);
         }
@@ -4221,13 +4221,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRegistriesOutcome ListRegistries(const Model::ListRegistriesRequest& request) const;
+        virtual Model::ListRegistriesOutcome ListRegistries(const Model::ListRegistriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRegistries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRegistriesRequestT = Model::ListRegistriesRequest>
-        Model::ListRegistriesOutcomeCallable ListRegistriesCallable(const ListRegistriesRequestT& request) const
+        Model::ListRegistriesOutcomeCallable ListRegistriesCallable(const ListRegistriesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListRegistries, request);
         }
@@ -4236,7 +4236,7 @@ namespace Glue
          * An Async wrapper for ListRegistries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRegistriesRequestT = Model::ListRegistriesRequest>
-        void ListRegistriesAsync(const ListRegistriesRequestT& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRegistriesAsync(const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegistriesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListRegistries, request, handler, context);
         }
@@ -4278,13 +4278,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request) const;
+        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request) const
+        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListSchemas, request);
         }
@@ -4293,7 +4293,7 @@ namespace Glue
          * An Async wrapper for ListSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        void ListSchemasAsync(const ListSchemasRequestT& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchemasAsync(const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchemasRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListSchemas, request, handler, context);
         }
@@ -4303,13 +4303,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSessionsRequestT = Model::ListSessionsRequest>
-        Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request) const
+        Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListSessions, request);
         }
@@ -4318,7 +4318,7 @@ namespace Glue
          * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSessionsRequestT = Model::ListSessionsRequest>
-        void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSessionsAsync(const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSessionsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListSessions, request, handler, context);
         }
@@ -4385,13 +4385,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTriggersOutcome ListTriggers(const Model::ListTriggersRequest& request) const;
+        virtual Model::ListTriggersOutcome ListTriggers(const Model::ListTriggersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTriggersRequestT = Model::ListTriggersRequest>
-        Model::ListTriggersOutcomeCallable ListTriggersCallable(const ListTriggersRequestT& request) const
+        Model::ListTriggersOutcomeCallable ListTriggersCallable(const ListTriggersRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListTriggers, request);
         }
@@ -4400,7 +4400,7 @@ namespace Glue
          * An Async wrapper for ListTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTriggersRequestT = Model::ListTriggersRequest>
-        void ListTriggersAsync(const ListTriggersRequestT& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTriggersAsync(const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTriggersRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListTriggers, request, handler, context);
         }
@@ -4410,13 +4410,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUsageProfilesOutcome ListUsageProfiles(const Model::ListUsageProfilesRequest& request) const;
+        virtual Model::ListUsageProfilesOutcome ListUsageProfiles(const Model::ListUsageProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUsageProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUsageProfilesRequestT = Model::ListUsageProfilesRequest>
-        Model::ListUsageProfilesOutcomeCallable ListUsageProfilesCallable(const ListUsageProfilesRequestT& request) const
+        Model::ListUsageProfilesOutcomeCallable ListUsageProfilesCallable(const ListUsageProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListUsageProfiles, request);
         }
@@ -4425,7 +4425,7 @@ namespace Glue
          * An Async wrapper for ListUsageProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUsageProfilesRequestT = Model::ListUsageProfilesRequest>
-        void ListUsageProfilesAsync(const ListUsageProfilesRequestT& request, const ListUsageProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUsageProfilesAsync(const ListUsageProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUsageProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListUsageProfiles, request, handler, context);
         }
@@ -4436,13 +4436,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::ListWorkflows, request);
         }
@@ -4451,7 +4451,7 @@ namespace Glue
          * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::ListWorkflows, request, handler, context);
         }
@@ -4570,13 +4570,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">AWS
          * API Reference</a></p>
          */
-        virtual Model::QuerySchemaVersionMetadataOutcome QuerySchemaVersionMetadata(const Model::QuerySchemaVersionMetadataRequest& request) const;
+        virtual Model::QuerySchemaVersionMetadataOutcome QuerySchemaVersionMetadata(const Model::QuerySchemaVersionMetadataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for QuerySchemaVersionMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename QuerySchemaVersionMetadataRequestT = Model::QuerySchemaVersionMetadataRequest>
-        Model::QuerySchemaVersionMetadataOutcomeCallable QuerySchemaVersionMetadataCallable(const QuerySchemaVersionMetadataRequestT& request) const
+        Model::QuerySchemaVersionMetadataOutcomeCallable QuerySchemaVersionMetadataCallable(const QuerySchemaVersionMetadataRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::QuerySchemaVersionMetadata, request);
         }
@@ -4585,7 +4585,7 @@ namespace Glue
          * An Async wrapper for QuerySchemaVersionMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename QuerySchemaVersionMetadataRequestT = Model::QuerySchemaVersionMetadataRequest>
-        void QuerySchemaVersionMetadataAsync(const QuerySchemaVersionMetadataRequestT& request, const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void QuerySchemaVersionMetadataAsync(const QuerySchemaVersionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const QuerySchemaVersionMetadataRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::QuerySchemaVersionMetadata, request, handler, context);
         }
@@ -4749,13 +4749,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchTablesOutcome SearchTables(const Model::SearchTablesRequest& request) const;
+        virtual Model::SearchTablesOutcome SearchTables(const Model::SearchTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchTablesRequestT = Model::SearchTablesRequest>
-        Model::SearchTablesOutcomeCallable SearchTablesCallable(const SearchTablesRequestT& request) const
+        Model::SearchTablesOutcomeCallable SearchTablesCallable(const SearchTablesRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::SearchTables, request);
         }
@@ -4764,7 +4764,7 @@ namespace Glue
          * An Async wrapper for SearchTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchTablesRequestT = Model::SearchTablesRequest>
-        void SearchTablesAsync(const SearchTablesRequestT& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchTablesAsync(const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchTablesRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::SearchTables, request, handler, context);
         }
@@ -5400,13 +5400,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateClassifierOutcome UpdateClassifier(const Model::UpdateClassifierRequest& request) const;
+        virtual Model::UpdateClassifierOutcome UpdateClassifier(const Model::UpdateClassifierRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateClassifier that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateClassifierRequestT = Model::UpdateClassifierRequest>
-        Model::UpdateClassifierOutcomeCallable UpdateClassifierCallable(const UpdateClassifierRequestT& request) const
+        Model::UpdateClassifierOutcomeCallable UpdateClassifierCallable(const UpdateClassifierRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::UpdateClassifier, request);
         }
@@ -5415,7 +5415,7 @@ namespace Glue
          * An Async wrapper for UpdateClassifier that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateClassifierRequestT = Model::UpdateClassifierRequest>
-        void UpdateClassifierAsync(const UpdateClassifierRequestT& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateClassifierAsync(const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateClassifierRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::UpdateClassifier, request, handler, context);
         }
@@ -5663,13 +5663,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJobFromSourceControl">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateJobFromSourceControlOutcome UpdateJobFromSourceControl(const Model::UpdateJobFromSourceControlRequest& request) const;
+        virtual Model::UpdateJobFromSourceControlOutcome UpdateJobFromSourceControl(const Model::UpdateJobFromSourceControlRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateJobFromSourceControl that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateJobFromSourceControlRequestT = Model::UpdateJobFromSourceControlRequest>
-        Model::UpdateJobFromSourceControlOutcomeCallable UpdateJobFromSourceControlCallable(const UpdateJobFromSourceControlRequestT& request) const
+        Model::UpdateJobFromSourceControlOutcomeCallable UpdateJobFromSourceControlCallable(const UpdateJobFromSourceControlRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::UpdateJobFromSourceControl, request);
         }
@@ -5678,7 +5678,7 @@ namespace Glue
          * An Async wrapper for UpdateJobFromSourceControl that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateJobFromSourceControlRequestT = Model::UpdateJobFromSourceControlRequest>
-        void UpdateJobFromSourceControlAsync(const UpdateJobFromSourceControlRequestT& request, const UpdateJobFromSourceControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateJobFromSourceControlAsync(const UpdateJobFromSourceControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateJobFromSourceControlRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::UpdateJobFromSourceControl, request, handler, context);
         }
@@ -5808,13 +5808,13 @@ namespace Glue
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSourceControlFromJob">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateSourceControlFromJobOutcome UpdateSourceControlFromJob(const Model::UpdateSourceControlFromJobRequest& request) const;
+        virtual Model::UpdateSourceControlFromJobOutcome UpdateSourceControlFromJob(const Model::UpdateSourceControlFromJobRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateSourceControlFromJob that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateSourceControlFromJobRequestT = Model::UpdateSourceControlFromJobRequest>
-        Model::UpdateSourceControlFromJobOutcomeCallable UpdateSourceControlFromJobCallable(const UpdateSourceControlFromJobRequestT& request) const
+        Model::UpdateSourceControlFromJobOutcomeCallable UpdateSourceControlFromJobCallable(const UpdateSourceControlFromJobRequestT& request = {}) const
         {
             return SubmitCallable(&GlueClient::UpdateSourceControlFromJob, request);
         }
@@ -5823,7 +5823,7 @@ namespace Glue
          * An Async wrapper for UpdateSourceControlFromJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateSourceControlFromJobRequestT = Model::UpdateSourceControlFromJobRequest>
-        void UpdateSourceControlFromJobAsync(const UpdateSourceControlFromJobRequestT& request, const UpdateSourceControlFromJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateSourceControlFromJobAsync(const UpdateSourceControlFromJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateSourceControlFromJobRequestT& request = {}) const
         {
             return SubmitAsync(&GlueClient::UpdateSourceControlFromJob, request, handler, context);
         }

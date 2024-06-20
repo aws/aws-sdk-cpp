@@ -85,6 +85,9 @@
 #include <aws/sso-admin/model/UpdateInstanceAccessControlAttributeConfigurationResult.h>
 #include <aws/sso-admin/model/UpdatePermissionSetResult.h>
 #include <aws/sso-admin/model/UpdateTrustedTokenIssuerResult.h>
+#include <aws/sso-admin/model/ListInstancesRequest.h>
+#include <aws/sso-admin/model/ListApplicationProvidersRequest.h>
+#include <aws/sso-admin/model/CreateInstanceRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SSOAdminClient header */
 

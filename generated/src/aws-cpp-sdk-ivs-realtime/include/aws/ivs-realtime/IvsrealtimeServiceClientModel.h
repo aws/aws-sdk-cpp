@@ -45,6 +45,12 @@
 #include <aws/ivs-realtime/model/TagResourceResult.h>
 #include <aws/ivs-realtime/model/UntagResourceResult.h>
 #include <aws/ivs-realtime/model/UpdateStageResult.h>
+#include <aws/ivs-realtime/model/CreateEncoderConfigurationRequest.h>
+#include <aws/ivs-realtime/model/ListStorageConfigurationsRequest.h>
+#include <aws/ivs-realtime/model/CreateStageRequest.h>
+#include <aws/ivs-realtime/model/ListStagesRequest.h>
+#include <aws/ivs-realtime/model/ListEncoderConfigurationsRequest.h>
+#include <aws/ivs-realtime/model/ListCompositionsRequest.h>
 /* End of service model headers required in IvsrealtimeClient header */
 
 namespace Aws

@@ -26,6 +26,8 @@
 #include <aws/iotsecuretunneling/model/RotateTunnelAccessTokenResult.h>
 #include <aws/iotsecuretunneling/model/TagResourceResult.h>
 #include <aws/iotsecuretunneling/model/UntagResourceResult.h>
+#include <aws/iotsecuretunneling/model/ListTunnelsRequest.h>
+#include <aws/iotsecuretunneling/model/OpenTunnelRequest.h>
 /* End of service model headers required in IoTSecureTunnelingClient header */
 
 namespace Aws

@@ -78,6 +78,12 @@
 #include <aws/location/model/UpdateRouteCalculatorResult.h>
 #include <aws/location/model/UpdateTrackerResult.h>
 #include <aws/location/model/VerifyDevicePositionResult.h>
+#include <aws/location/model/ListRouteCalculatorsRequest.h>
+#include <aws/location/model/ListTrackersRequest.h>
+#include <aws/location/model/ListKeysRequest.h>
+#include <aws/location/model/ListMapsRequest.h>
+#include <aws/location/model/ListGeofenceCollectionsRequest.h>
+#include <aws/location/model/ListPlaceIndexesRequest.h>
 /* End of service model headers required in LocationServiceClient header */
 
 namespace Aws

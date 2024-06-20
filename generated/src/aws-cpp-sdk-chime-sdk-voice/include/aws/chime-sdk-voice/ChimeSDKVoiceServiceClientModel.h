@@ -88,6 +88,18 @@
 #include <aws/chime-sdk-voice/model/UpdateVoiceProfileResult.h>
 #include <aws/chime-sdk-voice/model/UpdateVoiceProfileDomainResult.h>
 #include <aws/chime-sdk-voice/model/ValidateE911AddressResult.h>
+#include <aws/chime-sdk-voice/model/ListPhoneNumbersRequest.h>
+#include <aws/chime-sdk-voice/model/SearchAvailablePhoneNumbersRequest.h>
+#include <aws/chime-sdk-voice/model/GetPhoneNumberSettingsRequest.h>
+#include <aws/chime-sdk-voice/model/ListSipMediaApplicationsRequest.h>
+#include <aws/chime-sdk-voice/model/ListVoiceConnectorGroupsRequest.h>
+#include <aws/chime-sdk-voice/model/ListPhoneNumberOrdersRequest.h>
+#include <aws/chime-sdk-voice/model/ListSipRulesRequest.h>
+#include <aws/chime-sdk-voice/model/ListVoiceConnectorsRequest.h>
+#include <aws/chime-sdk-voice/model/UpdateGlobalSettingsRequest.h>
+#include <aws/chime-sdk-voice/model/ListAvailableVoiceConnectorRegionsRequest.h>
+#include <aws/chime-sdk-voice/model/GetGlobalSettingsRequest.h>
+#include <aws/chime-sdk-voice/model/ListVoiceProfileDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeSDKVoiceClient header */
 

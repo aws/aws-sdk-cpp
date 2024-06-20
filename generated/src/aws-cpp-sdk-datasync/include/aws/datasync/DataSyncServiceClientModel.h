@@ -78,6 +78,12 @@
 #include <aws/datasync/model/UpdateStorageSystemResult.h>
 #include <aws/datasync/model/UpdateTaskResult.h>
 #include <aws/datasync/model/UpdateTaskExecutionResult.h>
+#include <aws/datasync/model/ListAgentsRequest.h>
+#include <aws/datasync/model/ListStorageSystemsRequest.h>
+#include <aws/datasync/model/ListDiscoveryJobsRequest.h>
+#include <aws/datasync/model/ListTasksRequest.h>
+#include <aws/datasync/model/ListTaskExecutionsRequest.h>
+#include <aws/datasync/model/ListLocationsRequest.h>
 /* End of service model headers required in DataSyncClient header */
 
 namespace Aws

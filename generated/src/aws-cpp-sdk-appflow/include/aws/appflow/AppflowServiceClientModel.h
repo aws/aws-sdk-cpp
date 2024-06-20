@@ -43,6 +43,13 @@
 #include <aws/appflow/model/UpdateConnectorProfileResult.h>
 #include <aws/appflow/model/UpdateConnectorRegistrationResult.h>
 #include <aws/appflow/model/UpdateFlowResult.h>
+#include <aws/appflow/model/RegisterConnectorRequest.h>
+#include <aws/appflow/model/ResetConnectorMetadataCacheRequest.h>
+#include <aws/appflow/model/DescribeConnectorsRequest.h>
+#include <aws/appflow/model/ListConnectorEntitiesRequest.h>
+#include <aws/appflow/model/ListConnectorsRequest.h>
+#include <aws/appflow/model/DescribeConnectorProfilesRequest.h>
+#include <aws/appflow/model/ListFlowsRequest.h>
 /* End of service model headers required in AppflowClient header */
 
 namespace Aws

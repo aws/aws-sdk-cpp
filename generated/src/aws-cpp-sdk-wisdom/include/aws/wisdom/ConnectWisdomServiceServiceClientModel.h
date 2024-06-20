@@ -57,6 +57,8 @@
 #include <aws/wisdom/model/UpdateContentResult.h>
 #include <aws/wisdom/model/UpdateKnowledgeBaseTemplateUriResult.h>
 #include <aws/wisdom/model/UpdateQuickResponseResult.h>
+#include <aws/wisdom/model/ListKnowledgeBasesRequest.h>
+#include <aws/wisdom/model/ListAssistantsRequest.h>
 /* End of service model headers required in ConnectWisdomServiceClient header */
 
 namespace Aws

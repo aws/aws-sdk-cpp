@@ -77,6 +77,26 @@
 #include <aws/inspector2/model/UpdateFilterResult.h>
 #include <aws/inspector2/model/UpdateOrgEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateOrganizationConfigurationResult.h>
+#include <aws/inspector2/model/ListCisScansRequest.h>
+#include <aws/inspector2/model/GetEc2DeepInspectionConfigurationRequest.h>
+#include <aws/inspector2/model/GetFindingsReportStatusRequest.h>
+#include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationRequest.h>
+#include <aws/inspector2/model/ListMembersRequest.h>
+#include <aws/inspector2/model/UpdateConfigurationRequest.h>
+#include <aws/inspector2/model/ListCoverageRequest.h>
+#include <aws/inspector2/model/ListFiltersRequest.h>
+#include <aws/inspector2/model/ListCoverageStatisticsRequest.h>
+#include <aws/inspector2/model/ListCisScanConfigurationsRequest.h>
+#include <aws/inspector2/model/ListAccountPermissionsRequest.h>
+#include <aws/inspector2/model/BatchGetAccountStatusRequest.h>
+#include <aws/inspector2/model/ListDelegatedAdminAccountsRequest.h>
+#include <aws/inspector2/model/GetConfigurationRequest.h>
+#include <aws/inspector2/model/GetDelegatedAdminAccountRequest.h>
+#include <aws/inspector2/model/DescribeOrganizationConfigurationRequest.h>
+#include <aws/inspector2/model/BatchGetMemberEc2DeepInspectionStatusRequest.h>
+#include <aws/inspector2/model/ListFindingsRequest.h>
+#include <aws/inspector2/model/ListUsageTotalsRequest.h>
+#include <aws/inspector2/model/DisableRequest.h>
 /* End of service model headers required in Inspector2Client header */
 
 namespace Aws

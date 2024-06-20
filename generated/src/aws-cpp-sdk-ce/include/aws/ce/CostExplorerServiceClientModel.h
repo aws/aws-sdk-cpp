@@ -59,6 +59,13 @@
 #include <aws/ce/model/UpdateAnomalySubscriptionResult.h>
 #include <aws/ce/model/UpdateCostAllocationTagsStatusResult.h>
 #include <aws/ce/model/UpdateCostCategoryDefinitionResult.h>
+#include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationRequest.h>
+#include <aws/ce/model/GetAnomalyMonitorsRequest.h>
+#include <aws/ce/model/ListCostAllocationTagBackfillHistoryRequest.h>
+#include <aws/ce/model/ListCostAllocationTagsRequest.h>
+#include <aws/ce/model/GetAnomalySubscriptionsRequest.h>
+#include <aws/ce/model/StartSavingsPlansPurchaseRecommendationGenerationRequest.h>
+#include <aws/ce/model/ListCostCategoryDefinitionsRequest.h>
 /* End of service model headers required in CostExplorerClient header */
 
 namespace Aws

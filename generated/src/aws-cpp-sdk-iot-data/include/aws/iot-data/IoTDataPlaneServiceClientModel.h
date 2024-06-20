@@ -24,6 +24,7 @@
 #include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
 #include <aws/iot-data/model/ListRetainedMessagesResult.h>
 #include <aws/iot-data/model/UpdateThingShadowResult.h>
+#include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoTDataPlaneClient header */
 

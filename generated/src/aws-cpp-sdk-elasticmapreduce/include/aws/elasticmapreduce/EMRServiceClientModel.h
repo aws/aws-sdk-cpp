@@ -60,6 +60,15 @@
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
 #include <aws/elasticmapreduce/model/StartNotebookExecutionResult.h>
+#include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
+#include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
+#include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
+#include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/ListClustersRequest.h>
+#include <aws/elasticmapreduce/model/ListNotebookExecutionsRequest.h>
+#include <aws/elasticmapreduce/model/ListReleaseLabelsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
+#include <aws/elasticmapreduce/model/ListStudiosRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in EMRClient header */
 

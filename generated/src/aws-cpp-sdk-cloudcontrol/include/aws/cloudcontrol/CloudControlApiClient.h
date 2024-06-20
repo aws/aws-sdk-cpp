@@ -243,13 +243,13 @@ namespace CloudControlApi
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResourceRequests">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceRequestsOutcome ListResourceRequests(const Model::ListResourceRequestsRequest& request) const;
+        virtual Model::ListResourceRequestsOutcome ListResourceRequests(const Model::ListResourceRequestsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceRequests that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceRequestsRequestT = Model::ListResourceRequestsRequest>
-        Model::ListResourceRequestsOutcomeCallable ListResourceRequestsCallable(const ListResourceRequestsRequestT& request) const
+        Model::ListResourceRequestsOutcomeCallable ListResourceRequestsCallable(const ListResourceRequestsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudControlApiClient::ListResourceRequests, request);
         }
@@ -258,7 +258,7 @@ namespace CloudControlApi
          * An Async wrapper for ListResourceRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceRequestsRequestT = Model::ListResourceRequestsRequest>
-        void ListResourceRequestsAsync(const ListResourceRequestsRequestT& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceRequestsAsync(const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceRequestsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudControlApiClient::ListResourceRequests, request, handler, context);
         }

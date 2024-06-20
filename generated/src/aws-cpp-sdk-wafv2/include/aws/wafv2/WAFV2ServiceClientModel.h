@@ -72,6 +72,7 @@
 #include <aws/wafv2/model/UpdateRegexPatternSetResult.h>
 #include <aws/wafv2/model/UpdateRuleGroupResult.h>
 #include <aws/wafv2/model/UpdateWebACLResult.h>
+#include <aws/wafv2/model/GetRuleGroupRequest.h>
 /* End of service model headers required in WAFV2Client header */
 
 namespace Aws

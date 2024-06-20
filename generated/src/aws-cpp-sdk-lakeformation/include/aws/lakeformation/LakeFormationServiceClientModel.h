@@ -73,6 +73,21 @@
 #include <aws/lakeformation/model/UpdateResourceResult.h>
 #include <aws/lakeformation/model/UpdateTableObjectsResult.h>
 #include <aws/lakeformation/model/UpdateTableStorageOptimizerResult.h>
+#include <aws/lakeformation/model/ListResourcesRequest.h>
+#include <aws/lakeformation/model/ListTransactionsRequest.h>
+#include <aws/lakeformation/model/DeleteDataCellsFilterRequest.h>
+#include <aws/lakeformation/model/UpdateLakeFormationIdentityCenterConfigurationRequest.h>
+#include <aws/lakeformation/model/GetDataLakeSettingsRequest.h>
+#include <aws/lakeformation/model/CreateLakeFormationIdentityCenterConfigurationRequest.h>
+#include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationRequest.h>
+#include <aws/lakeformation/model/ListLakeFormationOptInsRequest.h>
+#include <aws/lakeformation/model/ListPermissionsRequest.h>
+#include <aws/lakeformation/model/ExtendTransactionRequest.h>
+#include <aws/lakeformation/model/DeleteLakeFormationIdentityCenterConfigurationRequest.h>
+#include <aws/lakeformation/model/GetDataLakePrincipalRequest.h>
+#include <aws/lakeformation/model/ListLFTagsRequest.h>
+#include <aws/lakeformation/model/StartTransactionRequest.h>
+#include <aws/lakeformation/model/ListDataCellsFilterRequest.h>
 /* End of service model headers required in LakeFormationClient header */
 
 namespace Aws

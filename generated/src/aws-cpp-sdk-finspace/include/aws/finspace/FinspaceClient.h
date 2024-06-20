@@ -859,13 +859,13 @@ namespace finspace
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKxEnvironmentsOutcome ListKxEnvironments(const Model::ListKxEnvironmentsRequest& request) const;
+        virtual Model::ListKxEnvironmentsOutcome ListKxEnvironments(const Model::ListKxEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKxEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKxEnvironmentsRequestT = Model::ListKxEnvironmentsRequest>
-        Model::ListKxEnvironmentsOutcomeCallable ListKxEnvironmentsCallable(const ListKxEnvironmentsRequestT& request) const
+        Model::ListKxEnvironmentsOutcomeCallable ListKxEnvironmentsCallable(const ListKxEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&FinspaceClient::ListKxEnvironments, request);
         }
@@ -874,7 +874,7 @@ namespace finspace
          * An Async wrapper for ListKxEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKxEnvironmentsRequestT = Model::ListKxEnvironmentsRequest>
-        void ListKxEnvironmentsAsync(const ListKxEnvironmentsRequestT& request, const ListKxEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKxEnvironmentsAsync(const ListKxEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKxEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&FinspaceClient::ListKxEnvironments, request, handler, context);
         }

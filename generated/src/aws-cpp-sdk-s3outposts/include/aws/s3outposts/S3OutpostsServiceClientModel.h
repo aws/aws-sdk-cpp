@@ -22,6 +22,8 @@
 #include <aws/s3outposts/model/ListEndpointsResult.h>
 #include <aws/s3outposts/model/ListOutpostsWithS3Result.h>
 #include <aws/s3outposts/model/ListSharedEndpointsResult.h>
+#include <aws/s3outposts/model/ListEndpointsRequest.h>
+#include <aws/s3outposts/model/ListOutpostsWithS3Request.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in S3OutpostsClient header */
 

@@ -49,6 +49,14 @@
 #include <aws/sns/model/TagResourceResult.h>
 #include <aws/sns/model/UntagResourceResult.h>
 #include <aws/sns/model/VerifySMSSandboxPhoneNumberResult.h>
+#include <aws/sns/model/ListTopicsRequest.h>
+#include <aws/sns/model/ListOriginationNumbersRequest.h>
+#include <aws/sns/model/GetSMSSandboxAccountStatusRequest.h>
+#include <aws/sns/model/ListPhoneNumbersOptedOutRequest.h>
+#include <aws/sns/model/ListSMSSandboxPhoneNumbersRequest.h>
+#include <aws/sns/model/ListSubscriptionsRequest.h>
+#include <aws/sns/model/GetSMSAttributesRequest.h>
+#include <aws/sns/model/ListPlatformApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SNSClient header */
 

@@ -41,6 +41,9 @@
 #include <aws/dataexchange/model/UpdateDataSetResult.h>
 #include <aws/dataexchange/model/UpdateEventActionResult.h>
 #include <aws/dataexchange/model/UpdateRevisionResult.h>
+#include <aws/dataexchange/model/ListEventActionsRequest.h>
+#include <aws/dataexchange/model/ListDataSetsRequest.h>
+#include <aws/dataexchange/model/ListJobsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DataExchangeClient header */
 

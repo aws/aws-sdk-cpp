@@ -7,10 +7,10 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
@@ -18,6 +18,7 @@ import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Sets;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -28,7 +29,16 @@ import org.slf4j.helpers.NOPLoggerFactory;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -38,6 +48,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private static final int MAX_OPERATIONS_IN_CLIENT_FILE = 200;
 
     protected final VelocityEngine velocityEngine;
+    protected final Set<String> requestlessOperations = new HashSet<>();
 
     public CppClientGenerator() throws Exception {
         velocityEngine = new VelocityEngine();
@@ -54,6 +65,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+
+        //Add requests objects for requests that have no modeled request shapes
+        addRequestlessRequestObjectS(serviceModel);
 
         //for c++, the way serialization works, we want to remove all required fields so we can do a value has been set
         //check on all fields.
@@ -134,7 +148,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 .event(true)
                 .eventPayloadType("structure")
                 .members(
-                    operation.getValue().getResult().getShape().getMembers().entrySet().stream()          
+                    operation.getValue().getResult().getShape().getMembers().entrySet().stream()
                         .filter(member -> !member.getValue().getShape().isEventStream())
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
                 .build())
@@ -275,9 +289,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
             for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
                 String key = opEntry.getKey();
                 Operation op = opEntry.getValue();
-                
-                if (op.getRequest() != null && 
-                    op.getRequest().getShape().getName().equals(shape.getName()) && 
+
+                if (op.getRequest() != null &&
+                    op.getRequest().getShape().getName().equals(shape.getName()) &&
                     op.getResult() != null) {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
@@ -320,6 +334,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("RequestlessOperations", requestlessOperations);
 
         String fileName = String.format("include/aws/%s/%sServiceClientModel.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
@@ -656,5 +671,27 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected Set<String> getOperationsToRemove(){
         return new HashSet<String>();
+    }
+
+    private void addRequestlessRequestObjectS(final ServiceModel serviceModel) {
+        serviceModel.getOperations().values().stream()
+                .filter(operation -> !operation.hasRequest() || operation.getRequest().getShape().getMembers().values().stream().noneMatch(ShapeMember::isRequired))
+                .forEach(operation -> {
+                    if (!operation.hasRequest()) {
+                        final Shape requestShape = Shape.builder()
+                                .name(operation.getName() + "Request")
+                                .referencedBy(Sets.newHashSet(operation.getName()))
+                                .type("structure")
+                                .isRequest(true)
+                                .isReferenced(true)
+                                .members(ImmutableMap.of())
+                                .enumValues(ImmutableList.of())
+                                .build();
+                        serviceModel.getShapes().put(requestShape.getName(), requestShape);
+                        operation.addRequest(ShapeMember.builder().shape(requestShape).build());
+                    }
+                    operation.setRequestlessDefault(true);
+                    requestlessOperations.add(operation.getName());
+                });
     }
 }

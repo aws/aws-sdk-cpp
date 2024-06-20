@@ -51,6 +51,11 @@
 #include <aws/groundstation/model/UpdateConfigResult.h>
 #include <aws/groundstation/model/UpdateEphemerisResult.h>
 #include <aws/groundstation/model/UpdateMissionProfileResult.h>
+#include <aws/groundstation/model/ListDataflowEndpointGroupsRequest.h>
+#include <aws/groundstation/model/ListMissionProfilesRequest.h>
+#include <aws/groundstation/model/ListConfigsRequest.h>
+#include <aws/groundstation/model/ListSatellitesRequest.h>
+#include <aws/groundstation/model/ListGroundStationsRequest.h>
 /* End of service model headers required in GroundStationClient header */
 
 namespace Aws

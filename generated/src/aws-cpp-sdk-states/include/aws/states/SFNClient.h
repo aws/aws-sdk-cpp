@@ -667,13 +667,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request) const;
+        virtual Model::ListActivitiesOutcome ListActivities(const Model::ListActivitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActivities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActivitiesRequestT = Model::ListActivitiesRequest>
-        Model::ListActivitiesOutcomeCallable ListActivitiesCallable(const ListActivitiesRequestT& request) const
+        Model::ListActivitiesOutcomeCallable ListActivitiesCallable(const ListActivitiesRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListActivities, request);
         }
@@ -682,7 +682,7 @@ namespace SFN
          * An Async wrapper for ListActivities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActivitiesRequestT = Model::ListActivitiesRequest>
-        void ListActivitiesAsync(const ListActivitiesRequestT& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActivitiesAsync(const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActivitiesRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListActivities, request, handler, context);
         }
@@ -711,13 +711,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request) const;
+        virtual Model::ListExecutionsOutcome ListExecutions(const Model::ListExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExecutionsRequestT = Model::ListExecutionsRequest>
-        Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const ListExecutionsRequestT& request) const
+        Model::ListExecutionsOutcomeCallable ListExecutionsCallable(const ListExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListExecutions, request);
         }
@@ -726,7 +726,7 @@ namespace SFN
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExecutionsRequestT = Model::ListExecutionsRequest>
-        void ListExecutionsAsync(const ListExecutionsRequestT& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExecutionsAsync(const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListExecutions, request, handler, context);
         }
@@ -848,13 +848,13 @@ namespace SFN
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request) const;
+        virtual Model::ListStateMachinesOutcome ListStateMachines(const Model::ListStateMachinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStateMachines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStateMachinesRequestT = Model::ListStateMachinesRequest>
-        Model::ListStateMachinesOutcomeCallable ListStateMachinesCallable(const ListStateMachinesRequestT& request) const
+        Model::ListStateMachinesOutcomeCallable ListStateMachinesCallable(const ListStateMachinesRequestT& request = {}) const
         {
             return SubmitCallable(&SFNClient::ListStateMachines, request);
         }
@@ -863,7 +863,7 @@ namespace SFN
          * An Async wrapper for ListStateMachines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStateMachinesRequestT = Model::ListStateMachinesRequest>
-        void ListStateMachinesAsync(const ListStateMachinesRequestT& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStateMachinesAsync(const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStateMachinesRequestT& request = {}) const
         {
             return SubmitAsync(&SFNClient::ListStateMachines, request, handler, context);
         }

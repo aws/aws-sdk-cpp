@@ -43,6 +43,8 @@
 #include <aws/grafana/model/UpdateWorkspaceResult.h>
 #include <aws/grafana/model/UpdateWorkspaceAuthenticationResult.h>
 #include <aws/grafana/model/UpdateWorkspaceConfigurationResult.h>
+#include <aws/grafana/model/ListWorkspacesRequest.h>
+#include <aws/grafana/model/ListVersionsRequest.h>
 /* End of service model headers required in ManagedGrafanaClient header */
 
 namespace Aws

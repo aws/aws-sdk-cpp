@@ -56,6 +56,8 @@
 #include <aws/evidently/model/UpdateLaunchResult.h>
 #include <aws/evidently/model/UpdateProjectResult.h>
 #include <aws/evidently/model/UpdateProjectDataDeliveryResult.h>
+#include <aws/evidently/model/ListProjectsRequest.h>
+#include <aws/evidently/model/ListSegmentsRequest.h>
 /* End of service model headers required in CloudWatchEvidentlyClient header */
 
 namespace Aws

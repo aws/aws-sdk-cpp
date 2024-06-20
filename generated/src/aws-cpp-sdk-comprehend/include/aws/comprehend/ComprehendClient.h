@@ -1099,13 +1099,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">AWS
          * API Reference</a></p>
          */
-        virtual Model::DetectEntitiesOutcome DetectEntities(const Model::DetectEntitiesRequest& request) const;
+        virtual Model::DetectEntitiesOutcome DetectEntities(const Model::DetectEntitiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DetectEntities that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DetectEntitiesRequestT = Model::DetectEntitiesRequest>
-        Model::DetectEntitiesOutcomeCallable DetectEntitiesCallable(const DetectEntitiesRequestT& request) const
+        Model::DetectEntitiesOutcomeCallable DetectEntitiesCallable(const DetectEntitiesRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::DetectEntities, request);
         }
@@ -1114,7 +1114,7 @@ namespace Comprehend
          * An Async wrapper for DetectEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DetectEntitiesRequestT = Model::DetectEntitiesRequest>
-        void DetectEntitiesAsync(const DetectEntitiesRequestT& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DetectEntitiesAsync(const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DetectEntitiesRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::DetectEntities, request, handler, context);
         }
@@ -1327,13 +1327,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListDatasets, request);
         }
@@ -1342,7 +1342,7 @@ namespace Comprehend
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListDatasets, request, handler, context);
         }
@@ -1353,13 +1353,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDocumentClassificationJobsOutcome ListDocumentClassificationJobs(const Model::ListDocumentClassificationJobsRequest& request) const;
+        virtual Model::ListDocumentClassificationJobsOutcome ListDocumentClassificationJobs(const Model::ListDocumentClassificationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDocumentClassificationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDocumentClassificationJobsRequestT = Model::ListDocumentClassificationJobsRequest>
-        Model::ListDocumentClassificationJobsOutcomeCallable ListDocumentClassificationJobsCallable(const ListDocumentClassificationJobsRequestT& request) const
+        Model::ListDocumentClassificationJobsOutcomeCallable ListDocumentClassificationJobsCallable(const ListDocumentClassificationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListDocumentClassificationJobs, request);
         }
@@ -1368,7 +1368,7 @@ namespace Comprehend
          * An Async wrapper for ListDocumentClassificationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDocumentClassificationJobsRequestT = Model::ListDocumentClassificationJobsRequest>
-        void ListDocumentClassificationJobsAsync(const ListDocumentClassificationJobsRequestT& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDocumentClassificationJobsAsync(const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDocumentClassificationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListDocumentClassificationJobs, request, handler, context);
         }
@@ -1379,13 +1379,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDocumentClassifierSummariesOutcome ListDocumentClassifierSummaries(const Model::ListDocumentClassifierSummariesRequest& request) const;
+        virtual Model::ListDocumentClassifierSummariesOutcome ListDocumentClassifierSummaries(const Model::ListDocumentClassifierSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDocumentClassifierSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDocumentClassifierSummariesRequestT = Model::ListDocumentClassifierSummariesRequest>
-        Model::ListDocumentClassifierSummariesOutcomeCallable ListDocumentClassifierSummariesCallable(const ListDocumentClassifierSummariesRequestT& request) const
+        Model::ListDocumentClassifierSummariesOutcomeCallable ListDocumentClassifierSummariesCallable(const ListDocumentClassifierSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListDocumentClassifierSummaries, request);
         }
@@ -1394,7 +1394,7 @@ namespace Comprehend
          * An Async wrapper for ListDocumentClassifierSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDocumentClassifierSummariesRequestT = Model::ListDocumentClassifierSummariesRequest>
-        void ListDocumentClassifierSummariesAsync(const ListDocumentClassifierSummariesRequestT& request, const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDocumentClassifierSummariesAsync(const ListDocumentClassifierSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDocumentClassifierSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListDocumentClassifierSummaries, request, handler, context);
         }
@@ -1405,13 +1405,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDocumentClassifiersOutcome ListDocumentClassifiers(const Model::ListDocumentClassifiersRequest& request) const;
+        virtual Model::ListDocumentClassifiersOutcome ListDocumentClassifiers(const Model::ListDocumentClassifiersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDocumentClassifiers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDocumentClassifiersRequestT = Model::ListDocumentClassifiersRequest>
-        Model::ListDocumentClassifiersOutcomeCallable ListDocumentClassifiersCallable(const ListDocumentClassifiersRequestT& request) const
+        Model::ListDocumentClassifiersOutcomeCallable ListDocumentClassifiersCallable(const ListDocumentClassifiersRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListDocumentClassifiers, request);
         }
@@ -1420,7 +1420,7 @@ namespace Comprehend
          * An Async wrapper for ListDocumentClassifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDocumentClassifiersRequestT = Model::ListDocumentClassifiersRequest>
-        void ListDocumentClassifiersAsync(const ListDocumentClassifiersRequestT& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDocumentClassifiersAsync(const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDocumentClassifiersRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListDocumentClassifiers, request, handler, context);
         }
@@ -1431,13 +1431,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDominantLanguageDetectionJobsOutcome ListDominantLanguageDetectionJobs(const Model::ListDominantLanguageDetectionJobsRequest& request) const;
+        virtual Model::ListDominantLanguageDetectionJobsOutcome ListDominantLanguageDetectionJobs(const Model::ListDominantLanguageDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDominantLanguageDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDominantLanguageDetectionJobsRequestT = Model::ListDominantLanguageDetectionJobsRequest>
-        Model::ListDominantLanguageDetectionJobsOutcomeCallable ListDominantLanguageDetectionJobsCallable(const ListDominantLanguageDetectionJobsRequestT& request) const
+        Model::ListDominantLanguageDetectionJobsOutcomeCallable ListDominantLanguageDetectionJobsCallable(const ListDominantLanguageDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListDominantLanguageDetectionJobs, request);
         }
@@ -1446,7 +1446,7 @@ namespace Comprehend
          * An Async wrapper for ListDominantLanguageDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDominantLanguageDetectionJobsRequestT = Model::ListDominantLanguageDetectionJobsRequest>
-        void ListDominantLanguageDetectionJobsAsync(const ListDominantLanguageDetectionJobsRequestT& request, const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDominantLanguageDetectionJobsAsync(const ListDominantLanguageDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDominantLanguageDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListDominantLanguageDetectionJobs, request, handler, context);
         }
@@ -1459,13 +1459,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
+        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request) const
+        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListEndpoints, request);
         }
@@ -1474,7 +1474,7 @@ namespace Comprehend
          * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        void ListEndpointsAsync(const ListEndpointsRequestT& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointsAsync(const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListEndpoints, request, handler, context);
         }
@@ -1485,13 +1485,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEntitiesDetectionJobsOutcome ListEntitiesDetectionJobs(const Model::ListEntitiesDetectionJobsRequest& request) const;
+        virtual Model::ListEntitiesDetectionJobsOutcome ListEntitiesDetectionJobs(const Model::ListEntitiesDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEntitiesDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEntitiesDetectionJobsRequestT = Model::ListEntitiesDetectionJobsRequest>
-        Model::ListEntitiesDetectionJobsOutcomeCallable ListEntitiesDetectionJobsCallable(const ListEntitiesDetectionJobsRequestT& request) const
+        Model::ListEntitiesDetectionJobsOutcomeCallable ListEntitiesDetectionJobsCallable(const ListEntitiesDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListEntitiesDetectionJobs, request);
         }
@@ -1500,7 +1500,7 @@ namespace Comprehend
          * An Async wrapper for ListEntitiesDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEntitiesDetectionJobsRequestT = Model::ListEntitiesDetectionJobsRequest>
-        void ListEntitiesDetectionJobsAsync(const ListEntitiesDetectionJobsRequestT& request, const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEntitiesDetectionJobsAsync(const ListEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEntitiesDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListEntitiesDetectionJobs, request, handler, context);
         }
@@ -1511,13 +1511,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEntityRecognizerSummariesOutcome ListEntityRecognizerSummaries(const Model::ListEntityRecognizerSummariesRequest& request) const;
+        virtual Model::ListEntityRecognizerSummariesOutcome ListEntityRecognizerSummaries(const Model::ListEntityRecognizerSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEntityRecognizerSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEntityRecognizerSummariesRequestT = Model::ListEntityRecognizerSummariesRequest>
-        Model::ListEntityRecognizerSummariesOutcomeCallable ListEntityRecognizerSummariesCallable(const ListEntityRecognizerSummariesRequestT& request) const
+        Model::ListEntityRecognizerSummariesOutcomeCallable ListEntityRecognizerSummariesCallable(const ListEntityRecognizerSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListEntityRecognizerSummaries, request);
         }
@@ -1526,7 +1526,7 @@ namespace Comprehend
          * An Async wrapper for ListEntityRecognizerSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEntityRecognizerSummariesRequestT = Model::ListEntityRecognizerSummariesRequest>
-        void ListEntityRecognizerSummariesAsync(const ListEntityRecognizerSummariesRequestT& request, const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEntityRecognizerSummariesAsync(const ListEntityRecognizerSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEntityRecognizerSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListEntityRecognizerSummaries, request, handler, context);
         }
@@ -1542,13 +1542,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEntityRecognizersOutcome ListEntityRecognizers(const Model::ListEntityRecognizersRequest& request) const;
+        virtual Model::ListEntityRecognizersOutcome ListEntityRecognizers(const Model::ListEntityRecognizersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEntityRecognizers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEntityRecognizersRequestT = Model::ListEntityRecognizersRequest>
-        Model::ListEntityRecognizersOutcomeCallable ListEntityRecognizersCallable(const ListEntityRecognizersRequestT& request) const
+        Model::ListEntityRecognizersOutcomeCallable ListEntityRecognizersCallable(const ListEntityRecognizersRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListEntityRecognizers, request);
         }
@@ -1557,7 +1557,7 @@ namespace Comprehend
          * An Async wrapper for ListEntityRecognizers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEntityRecognizersRequestT = Model::ListEntityRecognizersRequest>
-        void ListEntityRecognizersAsync(const ListEntityRecognizersRequestT& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEntityRecognizersAsync(const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEntityRecognizersRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListEntityRecognizers, request, handler, context);
         }
@@ -1568,13 +1568,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventsDetectionJobsOutcome ListEventsDetectionJobs(const Model::ListEventsDetectionJobsRequest& request) const;
+        virtual Model::ListEventsDetectionJobsOutcome ListEventsDetectionJobs(const Model::ListEventsDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventsDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventsDetectionJobsRequestT = Model::ListEventsDetectionJobsRequest>
-        Model::ListEventsDetectionJobsOutcomeCallable ListEventsDetectionJobsCallable(const ListEventsDetectionJobsRequestT& request) const
+        Model::ListEventsDetectionJobsOutcomeCallable ListEventsDetectionJobsCallable(const ListEventsDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListEventsDetectionJobs, request);
         }
@@ -1583,7 +1583,7 @@ namespace Comprehend
          * An Async wrapper for ListEventsDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventsDetectionJobsRequestT = Model::ListEventsDetectionJobsRequest>
-        void ListEventsDetectionJobsAsync(const ListEventsDetectionJobsRequestT& request, const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventsDetectionJobsAsync(const ListEventsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventsDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListEventsDetectionJobs, request, handler, context);
         }
@@ -1623,13 +1623,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFlywheelsOutcome ListFlywheels(const Model::ListFlywheelsRequest& request) const;
+        virtual Model::ListFlywheelsOutcome ListFlywheels(const Model::ListFlywheelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFlywheels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFlywheelsRequestT = Model::ListFlywheelsRequest>
-        Model::ListFlywheelsOutcomeCallable ListFlywheelsCallable(const ListFlywheelsRequestT& request) const
+        Model::ListFlywheelsOutcomeCallable ListFlywheelsCallable(const ListFlywheelsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListFlywheels, request);
         }
@@ -1638,7 +1638,7 @@ namespace Comprehend
          * An Async wrapper for ListFlywheels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFlywheelsRequestT = Model::ListFlywheelsRequest>
-        void ListFlywheelsAsync(const ListFlywheelsRequestT& request, const ListFlywheelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFlywheelsAsync(const ListFlywheelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFlywheelsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListFlywheels, request, handler, context);
         }
@@ -1649,13 +1649,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKeyPhrasesDetectionJobsOutcome ListKeyPhrasesDetectionJobs(const Model::ListKeyPhrasesDetectionJobsRequest& request) const;
+        virtual Model::ListKeyPhrasesDetectionJobsOutcome ListKeyPhrasesDetectionJobs(const Model::ListKeyPhrasesDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeyPhrasesDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeyPhrasesDetectionJobsRequestT = Model::ListKeyPhrasesDetectionJobsRequest>
-        Model::ListKeyPhrasesDetectionJobsOutcomeCallable ListKeyPhrasesDetectionJobsCallable(const ListKeyPhrasesDetectionJobsRequestT& request) const
+        Model::ListKeyPhrasesDetectionJobsOutcomeCallable ListKeyPhrasesDetectionJobsCallable(const ListKeyPhrasesDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListKeyPhrasesDetectionJobs, request);
         }
@@ -1664,7 +1664,7 @@ namespace Comprehend
          * An Async wrapper for ListKeyPhrasesDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeyPhrasesDetectionJobsRequestT = Model::ListKeyPhrasesDetectionJobsRequest>
-        void ListKeyPhrasesDetectionJobsAsync(const ListKeyPhrasesDetectionJobsRequestT& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeyPhrasesDetectionJobsAsync(const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeyPhrasesDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListKeyPhrasesDetectionJobs, request, handler, context);
         }
@@ -1675,13 +1675,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPiiEntitiesDetectionJobsOutcome ListPiiEntitiesDetectionJobs(const Model::ListPiiEntitiesDetectionJobsRequest& request) const;
+        virtual Model::ListPiiEntitiesDetectionJobsOutcome ListPiiEntitiesDetectionJobs(const Model::ListPiiEntitiesDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPiiEntitiesDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPiiEntitiesDetectionJobsRequestT = Model::ListPiiEntitiesDetectionJobsRequest>
-        Model::ListPiiEntitiesDetectionJobsOutcomeCallable ListPiiEntitiesDetectionJobsCallable(const ListPiiEntitiesDetectionJobsRequestT& request) const
+        Model::ListPiiEntitiesDetectionJobsOutcomeCallable ListPiiEntitiesDetectionJobsCallable(const ListPiiEntitiesDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListPiiEntitiesDetectionJobs, request);
         }
@@ -1690,7 +1690,7 @@ namespace Comprehend
          * An Async wrapper for ListPiiEntitiesDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPiiEntitiesDetectionJobsRequestT = Model::ListPiiEntitiesDetectionJobsRequest>
-        void ListPiiEntitiesDetectionJobsAsync(const ListPiiEntitiesDetectionJobsRequestT& request, const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPiiEntitiesDetectionJobsAsync(const ListPiiEntitiesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPiiEntitiesDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListPiiEntitiesDetectionJobs, request, handler, context);
         }
@@ -1701,13 +1701,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSentimentDetectionJobsOutcome ListSentimentDetectionJobs(const Model::ListSentimentDetectionJobsRequest& request) const;
+        virtual Model::ListSentimentDetectionJobsOutcome ListSentimentDetectionJobs(const Model::ListSentimentDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSentimentDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSentimentDetectionJobsRequestT = Model::ListSentimentDetectionJobsRequest>
-        Model::ListSentimentDetectionJobsOutcomeCallable ListSentimentDetectionJobsCallable(const ListSentimentDetectionJobsRequestT& request) const
+        Model::ListSentimentDetectionJobsOutcomeCallable ListSentimentDetectionJobsCallable(const ListSentimentDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListSentimentDetectionJobs, request);
         }
@@ -1716,7 +1716,7 @@ namespace Comprehend
          * An Async wrapper for ListSentimentDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSentimentDetectionJobsRequestT = Model::ListSentimentDetectionJobsRequest>
-        void ListSentimentDetectionJobsAsync(const ListSentimentDetectionJobsRequestT& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSentimentDetectionJobsAsync(const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSentimentDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListSentimentDetectionJobs, request, handler, context);
         }
@@ -1753,13 +1753,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTargetedSentimentDetectionJobsOutcome ListTargetedSentimentDetectionJobs(const Model::ListTargetedSentimentDetectionJobsRequest& request) const;
+        virtual Model::ListTargetedSentimentDetectionJobsOutcome ListTargetedSentimentDetectionJobs(const Model::ListTargetedSentimentDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTargetedSentimentDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTargetedSentimentDetectionJobsRequestT = Model::ListTargetedSentimentDetectionJobsRequest>
-        Model::ListTargetedSentimentDetectionJobsOutcomeCallable ListTargetedSentimentDetectionJobsCallable(const ListTargetedSentimentDetectionJobsRequestT& request) const
+        Model::ListTargetedSentimentDetectionJobsOutcomeCallable ListTargetedSentimentDetectionJobsCallable(const ListTargetedSentimentDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListTargetedSentimentDetectionJobs, request);
         }
@@ -1768,7 +1768,7 @@ namespace Comprehend
          * An Async wrapper for ListTargetedSentimentDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTargetedSentimentDetectionJobsRequestT = Model::ListTargetedSentimentDetectionJobsRequest>
-        void ListTargetedSentimentDetectionJobsAsync(const ListTargetedSentimentDetectionJobsRequestT& request, const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTargetedSentimentDetectionJobsAsync(const ListTargetedSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTargetedSentimentDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListTargetedSentimentDetectionJobs, request, handler, context);
         }
@@ -1779,13 +1779,13 @@ namespace Comprehend
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTopicsDetectionJobsOutcome ListTopicsDetectionJobs(const Model::ListTopicsDetectionJobsRequest& request) const;
+        virtual Model::ListTopicsDetectionJobsOutcome ListTopicsDetectionJobs(const Model::ListTopicsDetectionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTopicsDetectionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTopicsDetectionJobsRequestT = Model::ListTopicsDetectionJobsRequest>
-        Model::ListTopicsDetectionJobsOutcomeCallable ListTopicsDetectionJobsCallable(const ListTopicsDetectionJobsRequestT& request) const
+        Model::ListTopicsDetectionJobsOutcomeCallable ListTopicsDetectionJobsCallable(const ListTopicsDetectionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&ComprehendClient::ListTopicsDetectionJobs, request);
         }
@@ -1794,7 +1794,7 @@ namespace Comprehend
          * An Async wrapper for ListTopicsDetectionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTopicsDetectionJobsRequestT = Model::ListTopicsDetectionJobsRequest>
-        void ListTopicsDetectionJobsAsync(const ListTopicsDetectionJobsRequestT& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTopicsDetectionJobsAsync(const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTopicsDetectionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&ComprehendClient::ListTopicsDetectionJobs, request, handler, context);
         }

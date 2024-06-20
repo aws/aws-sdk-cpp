@@ -1299,13 +1299,13 @@ namespace CognitoIdentityProvider
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request) const;
+        virtual Model::AssociateSoftwareTokenOutcome AssociateSoftwareToken(const Model::AssociateSoftwareTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AssociateSoftwareToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AssociateSoftwareTokenRequestT = Model::AssociateSoftwareTokenRequest>
-        Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequestT& request) const
+        Model::AssociateSoftwareTokenOutcomeCallable AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequestT& request = {}) const
         {
             return SubmitCallable(&CognitoIdentityProviderClient::AssociateSoftwareToken, request);
         }
@@ -1314,7 +1314,7 @@ namespace CognitoIdentityProvider
          * An Async wrapper for AssociateSoftwareToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AssociateSoftwareTokenRequestT = Model::AssociateSoftwareTokenRequest>
-        void AssociateSoftwareTokenAsync(const AssociateSoftwareTokenRequestT& request, const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AssociateSoftwareTokenAsync(const AssociateSoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AssociateSoftwareTokenRequestT& request = {}) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::AssociateSoftwareToken, request, handler, context);
         }

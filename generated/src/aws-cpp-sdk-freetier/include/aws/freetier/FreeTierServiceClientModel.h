@@ -19,6 +19,7 @@
 
 /* Service model headers required in FreeTierClient header */
 #include <aws/freetier/model/GetFreeTierUsageResult.h>
+#include <aws/freetier/model/GetFreeTierUsageRequest.h>
 /* End of service model headers required in FreeTierClient header */
 
 namespace Aws

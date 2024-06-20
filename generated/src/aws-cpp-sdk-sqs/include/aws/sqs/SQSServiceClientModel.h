@@ -32,6 +32,7 @@
 #include <aws/sqs/model/SendMessageResult.h>
 #include <aws/sqs/model/SendMessageBatchResult.h>
 #include <aws/sqs/model/StartMessageMoveTaskResult.h>
+#include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SQSClient header */
 

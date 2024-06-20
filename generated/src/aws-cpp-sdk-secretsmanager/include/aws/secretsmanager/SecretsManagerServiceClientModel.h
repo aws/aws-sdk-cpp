@@ -39,6 +39,9 @@
 #include <aws/secretsmanager/model/UpdateSecretResult.h>
 #include <aws/secretsmanager/model/UpdateSecretVersionStageResult.h>
 #include <aws/secretsmanager/model/ValidateResourcePolicyResult.h>
+#include <aws/secretsmanager/model/ListSecretsRequest.h>
+#include <aws/secretsmanager/model/GetRandomPasswordRequest.h>
+#include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SecretsManagerClient header */
 

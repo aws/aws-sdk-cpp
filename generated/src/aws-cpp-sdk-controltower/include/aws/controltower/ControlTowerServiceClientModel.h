@@ -44,6 +44,11 @@
 #include <aws/controltower/model/UpdateEnabledBaselineResult.h>
 #include <aws/controltower/model/UpdateEnabledControlResult.h>
 #include <aws/controltower/model/UpdateLandingZoneResult.h>
+#include <aws/controltower/model/ListEnabledControlsRequest.h>
+#include <aws/controltower/model/ListBaselinesRequest.h>
+#include <aws/controltower/model/ListControlOperationsRequest.h>
+#include <aws/controltower/model/ListEnabledBaselinesRequest.h>
+#include <aws/controltower/model/ListLandingZonesRequest.h>
 /* End of service model headers required in ControlTowerClient header */
 
 namespace Aws

@@ -31,6 +31,10 @@
 #include <aws/timestream-query/model/TagResourceResult.h>
 #include <aws/timestream-query/model/UntagResourceResult.h>
 #include <aws/timestream-query/model/UpdateAccountSettingsResult.h>
+#include <aws/timestream-query/model/DescribeAccountSettingsRequest.h>
+#include <aws/timestream-query/model/UpdateAccountSettingsRequest.h>
+#include <aws/timestream-query/model/DescribeEndpointsRequest.h>
+#include <aws/timestream-query/model/ListScheduledQueriesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TimestreamQueryClient header */
 

@@ -1470,13 +1470,13 @@ namespace deadline
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListAvailableMeteredProducts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAvailableMeteredProductsOutcome ListAvailableMeteredProducts(const Model::ListAvailableMeteredProductsRequest& request) const;
+        virtual Model::ListAvailableMeteredProductsOutcome ListAvailableMeteredProducts(const Model::ListAvailableMeteredProductsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAvailableMeteredProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAvailableMeteredProductsRequestT = Model::ListAvailableMeteredProductsRequest>
-        Model::ListAvailableMeteredProductsOutcomeCallable ListAvailableMeteredProductsCallable(const ListAvailableMeteredProductsRequestT& request) const
+        Model::ListAvailableMeteredProductsOutcomeCallable ListAvailableMeteredProductsCallable(const ListAvailableMeteredProductsRequestT& request = {}) const
         {
             return SubmitCallable(&DeadlineClient::ListAvailableMeteredProducts, request);
         }
@@ -1485,7 +1485,7 @@ namespace deadline
          * An Async wrapper for ListAvailableMeteredProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAvailableMeteredProductsRequestT = Model::ListAvailableMeteredProductsRequest>
-        void ListAvailableMeteredProductsAsync(const ListAvailableMeteredProductsRequestT& request, const ListAvailableMeteredProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAvailableMeteredProductsAsync(const ListAvailableMeteredProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAvailableMeteredProductsRequestT& request = {}) const
         {
             return SubmitAsync(&DeadlineClient::ListAvailableMeteredProducts, request, handler, context);
         }
@@ -1545,13 +1545,13 @@ namespace deadline
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarms">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFarmsOutcome ListFarms(const Model::ListFarmsRequest& request) const;
+        virtual Model::ListFarmsOutcome ListFarms(const Model::ListFarmsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFarms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFarmsRequestT = Model::ListFarmsRequest>
-        Model::ListFarmsOutcomeCallable ListFarmsCallable(const ListFarmsRequestT& request) const
+        Model::ListFarmsOutcomeCallable ListFarmsCallable(const ListFarmsRequestT& request = {}) const
         {
             return SubmitCallable(&DeadlineClient::ListFarms, request);
         }
@@ -1560,7 +1560,7 @@ namespace deadline
          * An Async wrapper for ListFarms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFarmsRequestT = Model::ListFarmsRequest>
-        void ListFarmsAsync(const ListFarmsRequestT& request, const ListFarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFarmsAsync(const ListFarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFarmsRequestT& request = {}) const
         {
             return SubmitAsync(&DeadlineClient::ListFarms, request, handler, context);
         }
@@ -1670,13 +1670,13 @@ namespace deadline
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLicenseEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLicenseEndpointsOutcome ListLicenseEndpoints(const Model::ListLicenseEndpointsRequest& request) const;
+        virtual Model::ListLicenseEndpointsOutcome ListLicenseEndpoints(const Model::ListLicenseEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLicenseEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLicenseEndpointsRequestT = Model::ListLicenseEndpointsRequest>
-        Model::ListLicenseEndpointsOutcomeCallable ListLicenseEndpointsCallable(const ListLicenseEndpointsRequestT& request) const
+        Model::ListLicenseEndpointsOutcomeCallable ListLicenseEndpointsCallable(const ListLicenseEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&DeadlineClient::ListLicenseEndpoints, request);
         }
@@ -1685,7 +1685,7 @@ namespace deadline
          * An Async wrapper for ListLicenseEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLicenseEndpointsRequestT = Model::ListLicenseEndpointsRequest>
-        void ListLicenseEndpointsAsync(const ListLicenseEndpointsRequestT& request, const ListLicenseEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLicenseEndpointsAsync(const ListLicenseEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLicenseEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&DeadlineClient::ListLicenseEndpoints, request, handler, context);
         }
@@ -1720,13 +1720,13 @@ namespace deadline
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request) const;
+        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request) const
+        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&DeadlineClient::ListMonitors, request);
         }
@@ -1735,7 +1735,7 @@ namespace deadline
          * An Async wrapper for ListMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        void ListMonitorsAsync(const ListMonitorsRequestT& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitorsAsync(const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&DeadlineClient::ListMonitors, request, handler, context);
         }

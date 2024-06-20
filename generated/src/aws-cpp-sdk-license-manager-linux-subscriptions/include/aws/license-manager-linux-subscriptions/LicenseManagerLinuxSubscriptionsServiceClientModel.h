@@ -22,6 +22,9 @@
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesResult.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsResult.h>
 #include <aws/license-manager-linux-subscriptions/model/UpdateServiceSettingsResult.h>
+#include <aws/license-manager-linux-subscriptions/model/GetServiceSettingsRequest.h>
+#include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsRequest.h>
+#include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesRequest.h>
 /* End of service model headers required in LicenseManagerLinuxSubscriptionsClient header */
 
 namespace Aws

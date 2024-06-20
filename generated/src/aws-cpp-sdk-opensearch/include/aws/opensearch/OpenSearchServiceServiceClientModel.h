@@ -79,6 +79,15 @@
 #include <aws/opensearch/model/UpdateScheduledActionResult.h>
 #include <aws/opensearch/model/UpdateVpcEndpointResult.h>
 #include <aws/opensearch/model/UpgradeDomainResult.h>
+#include <aws/opensearch/model/DescribeReservedInstanceOfferingsRequest.h>
+#include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
+#include <aws/opensearch/model/DescribePackagesRequest.h>
+#include <aws/opensearch/model/ListDomainNamesRequest.h>
+#include <aws/opensearch/model/DescribeReservedInstancesRequest.h>
+#include <aws/opensearch/model/GetCompatibleVersionsRequest.h>
+#include <aws/opensearch/model/ListVersionsRequest.h>
+#include <aws/opensearch/model/DescribeOutboundConnectionsRequest.h>
+#include <aws/opensearch/model/ListVpcEndpointsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in OpenSearchServiceClient header */
 

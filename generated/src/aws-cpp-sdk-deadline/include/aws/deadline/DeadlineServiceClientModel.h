@@ -120,6 +120,10 @@
 #include <aws/deadline/model/UpdateTaskResult.h>
 #include <aws/deadline/model/UpdateWorkerResult.h>
 #include <aws/deadline/model/UpdateWorkerScheduleResult.h>
+#include <aws/deadline/model/ListLicenseEndpointsRequest.h>
+#include <aws/deadline/model/ListAvailableMeteredProductsRequest.h>
+#include <aws/deadline/model/ListFarmsRequest.h>
+#include <aws/deadline/model/ListMonitorsRequest.h>
 /* End of service model headers required in DeadlineClient header */
 
 namespace Aws

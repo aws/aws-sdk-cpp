@@ -46,6 +46,10 @@
 #include <aws/machinelearning/model/UpdateDataSourceResult.h>
 #include <aws/machinelearning/model/UpdateEvaluationResult.h>
 #include <aws/machinelearning/model/UpdateMLModelResult.h>
+#include <aws/machinelearning/model/DescribeDataSourcesRequest.h>
+#include <aws/machinelearning/model/DescribeMLModelsRequest.h>
+#include <aws/machinelearning/model/DescribeBatchPredictionsRequest.h>
+#include <aws/machinelearning/model/DescribeEvaluationsRequest.h>
 /* End of service model headers required in MachineLearningClient header */
 
 namespace Aws

@@ -100,6 +100,25 @@
 #include <aws/pinpoint-sms-voice-v2/model/UpdateProtectConfigurationCountryRuleSetResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/UpdateSenderIdResult.h>
 #include <aws/pinpoint-sms-voice-v2/model/VerifyDestinationNumberResult.h>
+#include <aws/pinpoint-sms-voice-v2/model/CreateRegistrationAttachmentRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeSenderIdsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/CreateProtectConfigurationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeAccountAttributesRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteAccountDefaultProtectConfigurationRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteTextMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationAttachmentsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeVerifiedDestinationNumbersRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeRegistrationTypeDefinitionsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeAccountLimitsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteMediaMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeConfigurationSetsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DeleteVoiceMessageSpendLimitOverrideRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeOptOutListsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeSpendLimitsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribeProtectConfigurationsRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribePhoneNumbersRequest.h>
+#include <aws/pinpoint-sms-voice-v2/model/DescribePoolsRequest.h>
 /* End of service model headers required in PinpointSMSVoiceV2Client header */
 
 namespace Aws

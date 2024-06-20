@@ -187,13 +187,13 @@ namespace DynamoDBStreams
          * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
+        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request) const
+        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBStreamsClient::ListStreams, request);
         }
@@ -202,7 +202,7 @@ namespace DynamoDBStreams
          * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        void ListStreamsAsync(const ListStreamsRequestT& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStreamsAsync(const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBStreamsClient::ListStreams, request, handler, context);
         }

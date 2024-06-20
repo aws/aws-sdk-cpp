@@ -73,6 +73,9 @@
 #include <aws/apigatewayv2/model/UpdateRouteResponseResult.h>
 #include <aws/apigatewayv2/model/UpdateStageResult.h>
 #include <aws/apigatewayv2/model/UpdateVpcLinkResult.h>
+#include <aws/apigatewayv2/model/GetDomainNamesRequest.h>
+#include <aws/apigatewayv2/model/GetApisRequest.h>
+#include <aws/apigatewayv2/model/GetVpcLinksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ApiGatewayV2Client header */
 

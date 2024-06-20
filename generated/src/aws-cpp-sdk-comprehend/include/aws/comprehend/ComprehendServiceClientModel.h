@@ -103,6 +103,23 @@
 #include <aws/comprehend/model/UntagResourceResult.h>
 #include <aws/comprehend/model/UpdateEndpointResult.h>
 #include <aws/comprehend/model/UpdateFlywheelResult.h>
+#include <aws/comprehend/model/ListEntityRecognizersRequest.h>
+#include <aws/comprehend/model/ListDominantLanguageDetectionJobsRequest.h>
+#include <aws/comprehend/model/DetectEntitiesRequest.h>
+#include <aws/comprehend/model/ListFlywheelsRequest.h>
+#include <aws/comprehend/model/ListDatasetsRequest.h>
+#include <aws/comprehend/model/ListEntityRecognizerSummariesRequest.h>
+#include <aws/comprehend/model/ListDocumentClassifiersRequest.h>
+#include <aws/comprehend/model/ListEntitiesDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListKeyPhrasesDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListEventsDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListEndpointsRequest.h>
+#include <aws/comprehend/model/ListDocumentClassifierSummariesRequest.h>
+#include <aws/comprehend/model/ListTopicsDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListPiiEntitiesDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListSentimentDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListTargetedSentimentDetectionJobsRequest.h>
+#include <aws/comprehend/model/ListDocumentClassificationJobsRequest.h>
 /* End of service model headers required in ComprehendClient header */
 
 namespace Aws

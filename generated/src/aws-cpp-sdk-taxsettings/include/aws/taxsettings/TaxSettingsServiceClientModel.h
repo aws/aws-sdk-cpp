@@ -25,6 +25,9 @@
 #include <aws/taxsettings/model/GetTaxRegistrationDocumentResult.h>
 #include <aws/taxsettings/model/ListTaxRegistrationsResult.h>
 #include <aws/taxsettings/model/PutTaxRegistrationResult.h>
+#include <aws/taxsettings/model/ListTaxRegistrationsRequest.h>
+#include <aws/taxsettings/model/DeleteTaxRegistrationRequest.h>
+#include <aws/taxsettings/model/GetTaxRegistrationRequest.h>
 /* End of service model headers required in TaxSettingsClient header */
 
 namespace Aws

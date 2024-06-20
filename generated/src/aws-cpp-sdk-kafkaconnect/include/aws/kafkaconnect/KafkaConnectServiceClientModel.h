@@ -34,6 +34,9 @@
 #include <aws/kafkaconnect/model/TagResourceResult.h>
 #include <aws/kafkaconnect/model/UntagResourceResult.h>
 #include <aws/kafkaconnect/model/UpdateConnectorResult.h>
+#include <aws/kafkaconnect/model/ListWorkerConfigurationsRequest.h>
+#include <aws/kafkaconnect/model/ListCustomPluginsRequest.h>
+#include <aws/kafkaconnect/model/ListConnectorsRequest.h>
 /* End of service model headers required in KafkaConnectClient header */
 
 namespace Aws

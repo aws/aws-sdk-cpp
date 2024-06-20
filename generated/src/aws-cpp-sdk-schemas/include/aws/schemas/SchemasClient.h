@@ -208,13 +208,13 @@ namespace Schemas
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&SchemasClient::DeleteResourcePolicy, request);
         }
@@ -223,7 +223,7 @@ namespace Schemas
          * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&SchemasClient::DeleteResourcePolicy, request, handler, context);
         }
@@ -458,13 +458,13 @@ namespace Schemas
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&SchemasClient::GetResourcePolicy, request);
         }
@@ -473,7 +473,7 @@ namespace Schemas
          * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetResourcePolicyAsync(const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetResourcePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&SchemasClient::GetResourcePolicy, request, handler, context);
         }
@@ -483,13 +483,13 @@ namespace Schemas
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDiscoverersOutcome ListDiscoverers(const Model::ListDiscoverersRequest& request) const;
+        virtual Model::ListDiscoverersOutcome ListDiscoverers(const Model::ListDiscoverersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDiscoverers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDiscoverersRequestT = Model::ListDiscoverersRequest>
-        Model::ListDiscoverersOutcomeCallable ListDiscoverersCallable(const ListDiscoverersRequestT& request) const
+        Model::ListDiscoverersOutcomeCallable ListDiscoverersCallable(const ListDiscoverersRequestT& request = {}) const
         {
             return SubmitCallable(&SchemasClient::ListDiscoverers, request);
         }
@@ -498,7 +498,7 @@ namespace Schemas
          * An Async wrapper for ListDiscoverers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDiscoverersRequestT = Model::ListDiscoverersRequest>
-        void ListDiscoverersAsync(const ListDiscoverersRequestT& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDiscoverersAsync(const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDiscoverersRequestT& request = {}) const
         {
             return SubmitAsync(&SchemasClient::ListDiscoverers, request, handler, context);
         }
@@ -508,13 +508,13 @@ namespace Schemas
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRegistriesOutcome ListRegistries(const Model::ListRegistriesRequest& request) const;
+        virtual Model::ListRegistriesOutcome ListRegistries(const Model::ListRegistriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRegistries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRegistriesRequestT = Model::ListRegistriesRequest>
-        Model::ListRegistriesOutcomeCallable ListRegistriesCallable(const ListRegistriesRequestT& request) const
+        Model::ListRegistriesOutcomeCallable ListRegistriesCallable(const ListRegistriesRequestT& request = {}) const
         {
             return SubmitCallable(&SchemasClient::ListRegistries, request);
         }
@@ -523,7 +523,7 @@ namespace Schemas
          * An Async wrapper for ListRegistries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRegistriesRequestT = Model::ListRegistriesRequest>
-        void ListRegistriesAsync(const ListRegistriesRequestT& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRegistriesAsync(const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegistriesRequestT& request = {}) const
         {
             return SubmitAsync(&SchemasClient::ListRegistries, request, handler, context);
         }

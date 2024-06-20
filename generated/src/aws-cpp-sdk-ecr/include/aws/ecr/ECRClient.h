@@ -348,13 +348,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteRegistryPolicyOutcome DeleteRegistryPolicy(const Model::DeleteRegistryPolicyRequest& request) const;
+        virtual Model::DeleteRegistryPolicyOutcome DeleteRegistryPolicy(const Model::DeleteRegistryPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteRegistryPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteRegistryPolicyRequestT = Model::DeleteRegistryPolicyRequest>
-        Model::DeleteRegistryPolicyOutcomeCallable DeleteRegistryPolicyCallable(const DeleteRegistryPolicyRequestT& request) const
+        Model::DeleteRegistryPolicyOutcomeCallable DeleteRegistryPolicyCallable(const DeleteRegistryPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::DeleteRegistryPolicy, request);
         }
@@ -363,7 +363,7 @@ namespace ECR
          * An Async wrapper for DeleteRegistryPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteRegistryPolicyRequestT = Model::DeleteRegistryPolicyRequest>
-        void DeleteRegistryPolicyAsync(const DeleteRegistryPolicyRequestT& request, const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteRegistryPolicyAsync(const DeleteRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteRegistryPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::DeleteRegistryPolicy, request, handler, context);
         }
@@ -510,13 +510,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePullThroughCacheRulesOutcome DescribePullThroughCacheRules(const Model::DescribePullThroughCacheRulesRequest& request) const;
+        virtual Model::DescribePullThroughCacheRulesOutcome DescribePullThroughCacheRules(const Model::DescribePullThroughCacheRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePullThroughCacheRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePullThroughCacheRulesRequestT = Model::DescribePullThroughCacheRulesRequest>
-        Model::DescribePullThroughCacheRulesOutcomeCallable DescribePullThroughCacheRulesCallable(const DescribePullThroughCacheRulesRequestT& request) const
+        Model::DescribePullThroughCacheRulesOutcomeCallable DescribePullThroughCacheRulesCallable(const DescribePullThroughCacheRulesRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::DescribePullThroughCacheRules, request);
         }
@@ -525,7 +525,7 @@ namespace ECR
          * An Async wrapper for DescribePullThroughCacheRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePullThroughCacheRulesRequestT = Model::DescribePullThroughCacheRulesRequest>
-        void DescribePullThroughCacheRulesAsync(const DescribePullThroughCacheRulesRequestT& request, const DescribePullThroughCacheRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePullThroughCacheRulesAsync(const DescribePullThroughCacheRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePullThroughCacheRulesRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::DescribePullThroughCacheRules, request, handler, context);
         }
@@ -537,13 +537,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegistryOutcome DescribeRegistry(const Model::DescribeRegistryRequest& request) const;
+        virtual Model::DescribeRegistryOutcome DescribeRegistry(const Model::DescribeRegistryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegistry that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegistryRequestT = Model::DescribeRegistryRequest>
-        Model::DescribeRegistryOutcomeCallable DescribeRegistryCallable(const DescribeRegistryRequestT& request) const
+        Model::DescribeRegistryOutcomeCallable DescribeRegistryCallable(const DescribeRegistryRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::DescribeRegistry, request);
         }
@@ -552,7 +552,7 @@ namespace ECR
          * An Async wrapper for DescribeRegistry that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegistryRequestT = Model::DescribeRegistryRequest>
-        void DescribeRegistryAsync(const DescribeRegistryRequestT& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegistryAsync(const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegistryRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::DescribeRegistry, request, handler, context);
         }
@@ -562,13 +562,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request) const;
+        virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRepositoriesRequestT = Model::DescribeRepositoriesRequest>
-        Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const DescribeRepositoriesRequestT& request) const
+        Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const DescribeRepositoriesRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::DescribeRepositories, request);
         }
@@ -577,7 +577,7 @@ namespace ECR
          * An Async wrapper for DescribeRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRepositoriesRequestT = Model::DescribeRepositoriesRequest>
-        void DescribeRepositoriesAsync(const DescribeRepositoriesRequestT& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRepositoriesAsync(const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::DescribeRepositories, request, handler, context);
         }
@@ -596,13 +596,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
+        virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAuthorizationToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAuthorizationTokenRequestT = Model::GetAuthorizationTokenRequest>
-        Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const GetAuthorizationTokenRequestT& request) const
+        Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const GetAuthorizationTokenRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::GetAuthorizationToken, request);
         }
@@ -611,7 +611,7 @@ namespace ECR
          * An Async wrapper for GetAuthorizationToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAuthorizationTokenRequestT = Model::GetAuthorizationTokenRequest>
-        void GetAuthorizationTokenAsync(const GetAuthorizationTokenRequestT& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAuthorizationTokenAsync(const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAuthorizationTokenRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::GetAuthorizationToken, request, handler, context);
         }
@@ -705,13 +705,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRegistryPolicyOutcome GetRegistryPolicy(const Model::GetRegistryPolicyRequest& request) const;
+        virtual Model::GetRegistryPolicyOutcome GetRegistryPolicy(const Model::GetRegistryPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRegistryPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRegistryPolicyRequestT = Model::GetRegistryPolicyRequest>
-        Model::GetRegistryPolicyOutcomeCallable GetRegistryPolicyCallable(const GetRegistryPolicyRequestT& request) const
+        Model::GetRegistryPolicyOutcomeCallable GetRegistryPolicyCallable(const GetRegistryPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::GetRegistryPolicy, request);
         }
@@ -720,7 +720,7 @@ namespace ECR
          * An Async wrapper for GetRegistryPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRegistryPolicyRequestT = Model::GetRegistryPolicyRequest>
-        void GetRegistryPolicyAsync(const GetRegistryPolicyRequestT& request, const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRegistryPolicyAsync(const GetRegistryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRegistryPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::GetRegistryPolicy, request, handler, context);
         }
@@ -731,13 +731,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRegistryScanningConfigurationOutcome GetRegistryScanningConfiguration(const Model::GetRegistryScanningConfigurationRequest& request) const;
+        virtual Model::GetRegistryScanningConfigurationOutcome GetRegistryScanningConfiguration(const Model::GetRegistryScanningConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRegistryScanningConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRegistryScanningConfigurationRequestT = Model::GetRegistryScanningConfigurationRequest>
-        Model::GetRegistryScanningConfigurationOutcomeCallable GetRegistryScanningConfigurationCallable(const GetRegistryScanningConfigurationRequestT& request) const
+        Model::GetRegistryScanningConfigurationOutcomeCallable GetRegistryScanningConfigurationCallable(const GetRegistryScanningConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::GetRegistryScanningConfiguration, request);
         }
@@ -746,7 +746,7 @@ namespace ECR
          * An Async wrapper for GetRegistryScanningConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRegistryScanningConfigurationRequestT = Model::GetRegistryScanningConfigurationRequest>
-        void GetRegistryScanningConfigurationAsync(const GetRegistryScanningConfigurationRequestT& request, const GetRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRegistryScanningConfigurationAsync(const GetRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRegistryScanningConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::GetRegistryScanningConfiguration, request, handler, context);
         }
@@ -1021,13 +1021,13 @@ namespace ECR
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::PutRegistryScanningConfigurationOutcome PutRegistryScanningConfiguration(const Model::PutRegistryScanningConfigurationRequest& request) const;
+        virtual Model::PutRegistryScanningConfigurationOutcome PutRegistryScanningConfiguration(const Model::PutRegistryScanningConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for PutRegistryScanningConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename PutRegistryScanningConfigurationRequestT = Model::PutRegistryScanningConfigurationRequest>
-        Model::PutRegistryScanningConfigurationOutcomeCallable PutRegistryScanningConfigurationCallable(const PutRegistryScanningConfigurationRequestT& request) const
+        Model::PutRegistryScanningConfigurationOutcomeCallable PutRegistryScanningConfigurationCallable(const PutRegistryScanningConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&ECRClient::PutRegistryScanningConfiguration, request);
         }
@@ -1036,7 +1036,7 @@ namespace ECR
          * An Async wrapper for PutRegistryScanningConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename PutRegistryScanningConfigurationRequestT = Model::PutRegistryScanningConfigurationRequest>
-        void PutRegistryScanningConfigurationAsync(const PutRegistryScanningConfigurationRequestT& request, const PutRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void PutRegistryScanningConfigurationAsync(const PutRegistryScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutRegistryScanningConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&ECRClient::PutRegistryScanningConfiguration, request, handler, context);
         }

@@ -62,6 +62,13 @@
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSecurityGroupsResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsResult.h>
+#include <aws/elasticloadbalancingv2/model/DescribeTrustStoresRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeTargetGroupsRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeSSLPoliciesRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeRulesRequest.h>
 /* End of service model headers required in ElasticLoadBalancingv2Client header */
 
 namespace Aws

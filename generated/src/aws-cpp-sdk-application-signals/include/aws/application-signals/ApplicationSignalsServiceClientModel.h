@@ -33,6 +33,8 @@
 #include <aws/application-signals/model/TagResourceResult.h>
 #include <aws/application-signals/model/UntagResourceResult.h>
 #include <aws/application-signals/model/UpdateServiceLevelObjectiveResult.h>
+#include <aws/application-signals/model/StartDiscoveryRequest.h>
+#include <aws/application-signals/model/ListServiceLevelObjectivesRequest.h>
 /* End of service model headers required in ApplicationSignalsClient header */
 
 namespace Aws

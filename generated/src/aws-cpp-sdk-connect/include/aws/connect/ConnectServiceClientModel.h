@@ -202,6 +202,9 @@
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
 #include <aws/connect/model/UpdateViewContentResult.h>
 #include <aws/connect/model/UpdateViewMetadataResult.h>
+#include <aws/connect/model/ListPhoneNumbersV2Request.h>
+#include <aws/connect/model/ListInstancesRequest.h>
+#include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectClient header */
 

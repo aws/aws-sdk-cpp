@@ -422,13 +422,13 @@ namespace QLDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJournalS3ExportsOutcome ListJournalS3Exports(const Model::ListJournalS3ExportsRequest& request) const;
+        virtual Model::ListJournalS3ExportsOutcome ListJournalS3Exports(const Model::ListJournalS3ExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJournalS3Exports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJournalS3ExportsRequestT = Model::ListJournalS3ExportsRequest>
-        Model::ListJournalS3ExportsOutcomeCallable ListJournalS3ExportsCallable(const ListJournalS3ExportsRequestT& request) const
+        Model::ListJournalS3ExportsOutcomeCallable ListJournalS3ExportsCallable(const ListJournalS3ExportsRequestT& request = {}) const
         {
             return SubmitCallable(&QLDBClient::ListJournalS3Exports, request);
         }
@@ -437,7 +437,7 @@ namespace QLDB
          * An Async wrapper for ListJournalS3Exports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJournalS3ExportsRequestT = Model::ListJournalS3ExportsRequest>
-        void ListJournalS3ExportsAsync(const ListJournalS3ExportsRequestT& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJournalS3ExportsAsync(const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJournalS3ExportsRequestT& request = {}) const
         {
             return SubmitAsync(&QLDBClient::ListJournalS3Exports, request, handler, context);
         }
@@ -483,13 +483,13 @@ namespace QLDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLedgersOutcome ListLedgers(const Model::ListLedgersRequest& request) const;
+        virtual Model::ListLedgersOutcome ListLedgers(const Model::ListLedgersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLedgers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLedgersRequestT = Model::ListLedgersRequest>
-        Model::ListLedgersOutcomeCallable ListLedgersCallable(const ListLedgersRequestT& request) const
+        Model::ListLedgersOutcomeCallable ListLedgersCallable(const ListLedgersRequestT& request = {}) const
         {
             return SubmitCallable(&QLDBClient::ListLedgers, request);
         }
@@ -498,7 +498,7 @@ namespace QLDB
          * An Async wrapper for ListLedgers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLedgersRequestT = Model::ListLedgersRequest>
-        void ListLedgersAsync(const ListLedgersRequestT& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLedgersAsync(const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLedgersRequestT& request = {}) const
         {
             return SubmitAsync(&QLDBClient::ListLedgers, request, handler, context);
         }

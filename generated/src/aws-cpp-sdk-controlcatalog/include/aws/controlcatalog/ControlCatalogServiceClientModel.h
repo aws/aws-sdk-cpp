@@ -21,6 +21,9 @@
 #include <aws/controlcatalog/model/ListCommonControlsResult.h>
 #include <aws/controlcatalog/model/ListDomainsResult.h>
 #include <aws/controlcatalog/model/ListObjectivesResult.h>
+#include <aws/controlcatalog/model/ListCommonControlsRequest.h>
+#include <aws/controlcatalog/model/ListDomainsRequest.h>
+#include <aws/controlcatalog/model/ListObjectivesRequest.h>
 /* End of service model headers required in ControlCatalogClient header */
 
 namespace Aws

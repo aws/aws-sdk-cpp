@@ -39,6 +39,10 @@
 #include <aws/synthetics/model/TagResourceResult.h>
 #include <aws/synthetics/model/UntagResourceResult.h>
 #include <aws/synthetics/model/UpdateCanaryResult.h>
+#include <aws/synthetics/model/DescribeRuntimeVersionsRequest.h>
+#include <aws/synthetics/model/ListGroupsRequest.h>
+#include <aws/synthetics/model/DescribeCanariesLastRunRequest.h>
+#include <aws/synthetics/model/DescribeCanariesRequest.h>
 /* End of service model headers required in SyntheticsClient header */
 
 namespace Aws

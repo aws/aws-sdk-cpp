@@ -300,13 +300,13 @@ namespace signer
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSigningJobsOutcome ListSigningJobs(const Model::ListSigningJobsRequest& request) const;
+        virtual Model::ListSigningJobsOutcome ListSigningJobs(const Model::ListSigningJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSigningJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSigningJobsRequestT = Model::ListSigningJobsRequest>
-        Model::ListSigningJobsOutcomeCallable ListSigningJobsCallable(const ListSigningJobsRequestT& request) const
+        Model::ListSigningJobsOutcomeCallable ListSigningJobsCallable(const ListSigningJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SignerClient::ListSigningJobs, request);
         }
@@ -315,7 +315,7 @@ namespace signer
          * An Async wrapper for ListSigningJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSigningJobsRequestT = Model::ListSigningJobsRequest>
-        void ListSigningJobsAsync(const ListSigningJobsRequestT& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSigningJobsAsync(const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSigningJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SignerClient::ListSigningJobs, request, handler, context);
         }
@@ -331,13 +331,13 @@ namespace signer
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSigningPlatformsOutcome ListSigningPlatforms(const Model::ListSigningPlatformsRequest& request) const;
+        virtual Model::ListSigningPlatformsOutcome ListSigningPlatforms(const Model::ListSigningPlatformsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSigningPlatforms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSigningPlatformsRequestT = Model::ListSigningPlatformsRequest>
-        Model::ListSigningPlatformsOutcomeCallable ListSigningPlatformsCallable(const ListSigningPlatformsRequestT& request) const
+        Model::ListSigningPlatformsOutcomeCallable ListSigningPlatformsCallable(const ListSigningPlatformsRequestT& request = {}) const
         {
             return SubmitCallable(&SignerClient::ListSigningPlatforms, request);
         }
@@ -346,7 +346,7 @@ namespace signer
          * An Async wrapper for ListSigningPlatforms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSigningPlatformsRequestT = Model::ListSigningPlatformsRequest>
-        void ListSigningPlatformsAsync(const ListSigningPlatformsRequestT& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSigningPlatformsAsync(const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSigningPlatformsRequestT& request = {}) const
         {
             return SubmitAsync(&SignerClient::ListSigningPlatforms, request, handler, context);
         }
@@ -364,13 +364,13 @@ namespace signer
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSigningProfilesOutcome ListSigningProfiles(const Model::ListSigningProfilesRequest& request) const;
+        virtual Model::ListSigningProfilesOutcome ListSigningProfiles(const Model::ListSigningProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSigningProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSigningProfilesRequestT = Model::ListSigningProfilesRequest>
-        Model::ListSigningProfilesOutcomeCallable ListSigningProfilesCallable(const ListSigningProfilesRequestT& request) const
+        Model::ListSigningProfilesOutcomeCallable ListSigningProfilesCallable(const ListSigningProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&SignerClient::ListSigningProfiles, request);
         }
@@ -379,7 +379,7 @@ namespace signer
          * An Async wrapper for ListSigningProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSigningProfilesRequestT = Model::ListSigningProfilesRequest>
-        void ListSigningProfilesAsync(const ListSigningProfilesRequestT& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSigningProfilesAsync(const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSigningProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&SignerClient::ListSigningProfiles, request, handler, context);
         }

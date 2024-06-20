@@ -26,6 +26,7 @@
 #include <aws/cloudcontrol/model/ListResourceRequestsResult.h>
 #include <aws/cloudcontrol/model/ListResourcesResult.h>
 #include <aws/cloudcontrol/model/UpdateResourceResult.h>
+#include <aws/cloudcontrol/model/ListResourceRequestsRequest.h>
 /* End of service model headers required in CloudControlApiClient header */
 
 namespace Aws

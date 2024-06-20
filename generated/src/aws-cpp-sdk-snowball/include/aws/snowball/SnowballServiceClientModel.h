@@ -45,6 +45,14 @@
 #include <aws/snowball/model/UpdateJobResult.h>
 #include <aws/snowball/model/UpdateJobShipmentStateResult.h>
 #include <aws/snowball/model/UpdateLongTermPricingResult.h>
+#include <aws/snowball/model/ListPickupLocationsRequest.h>
+#include <aws/snowball/model/ListLongTermPricingRequest.h>
+#include <aws/snowball/model/DescribeAddressesRequest.h>
+#include <aws/snowball/model/ListClustersRequest.h>
+#include <aws/snowball/model/CreateJobRequest.h>
+#include <aws/snowball/model/ListCompatibleImagesRequest.h>
+#include <aws/snowball/model/ListJobsRequest.h>
+#include <aws/snowball/model/GetSnowballUsageRequest.h>
 /* End of service model headers required in SnowballClient header */
 
 namespace Aws

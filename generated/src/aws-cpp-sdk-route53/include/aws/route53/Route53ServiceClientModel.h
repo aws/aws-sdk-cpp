@@ -88,6 +88,20 @@
 #include <aws/route53/model/UpdateHostedZoneCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentResult.h>
 #include <aws/route53/model/UpdateTrafficPolicyInstanceResult.h>
+#include <aws/route53/model/GetGeoLocationRequest.h>
+#include <aws/route53/model/ListTrafficPoliciesRequest.h>
+#include <aws/route53/model/ListCidrCollectionsRequest.h>
+#include <aws/route53/model/ListHostedZonesRequest.h>
+#include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
+#include <aws/route53/model/GetHealthCheckCountRequest.h>
+#include <aws/route53/model/ListGeoLocationsRequest.h>
+#include <aws/route53/model/ListReusableDelegationSetsRequest.h>
+#include <aws/route53/model/GetCheckerIpRangesRequest.h>
+#include <aws/route53/model/GetHostedZoneCountRequest.h>
+#include <aws/route53/model/ListTrafficPolicyInstancesRequest.h>
+#include <aws/route53/model/ListHostedZonesByNameRequest.h>
+#include <aws/route53/model/GetTrafficPolicyInstanceCountRequest.h>
+#include <aws/route53/model/ListHealthChecksRequest.h>
 /* End of service model headers required in Route53Client header */
 
 namespace Aws

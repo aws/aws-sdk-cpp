@@ -3885,13 +3885,13 @@ namespace Connect
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
+        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request) const
+        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectClient::ListInstances, request);
         }
@@ -3900,7 +3900,7 @@ namespace Connect
          * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        void ListInstancesAsync(const ListInstancesRequestT& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInstancesAsync(const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectClient::ListInstances, request, handler, context);
         }
@@ -4047,13 +4047,13 @@ namespace Connect
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersV2">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPhoneNumbersV2Outcome ListPhoneNumbersV2(const Model::ListPhoneNumbersV2Request& request) const;
+        virtual Model::ListPhoneNumbersV2Outcome ListPhoneNumbersV2(const Model::ListPhoneNumbersV2Request& request = {}) const;
 
         /**
          * A Callable wrapper for ListPhoneNumbersV2 that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPhoneNumbersV2RequestT = Model::ListPhoneNumbersV2Request>
-        Model::ListPhoneNumbersV2OutcomeCallable ListPhoneNumbersV2Callable(const ListPhoneNumbersV2RequestT& request) const
+        Model::ListPhoneNumbersV2OutcomeCallable ListPhoneNumbersV2Callable(const ListPhoneNumbersV2RequestT& request = {}) const
         {
             return SubmitCallable(&ConnectClient::ListPhoneNumbersV2, request);
         }
@@ -4062,7 +4062,7 @@ namespace Connect
          * An Async wrapper for ListPhoneNumbersV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPhoneNumbersV2RequestT = Model::ListPhoneNumbersV2Request>
-        void ListPhoneNumbersV2Async(const ListPhoneNumbersV2RequestT& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPhoneNumbersV2Async(const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPhoneNumbersV2RequestT& request = {}) const
         {
             return SubmitAsync(&ConnectClient::ListPhoneNumbersV2, request, handler, context);
         }
@@ -4509,13 +4509,13 @@ namespace Connect
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrafficDistributionGroupsOutcome ListTrafficDistributionGroups(const Model::ListTrafficDistributionGroupsRequest& request) const;
+        virtual Model::ListTrafficDistributionGroupsOutcome ListTrafficDistributionGroups(const Model::ListTrafficDistributionGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrafficDistributionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrafficDistributionGroupsRequestT = Model::ListTrafficDistributionGroupsRequest>
-        Model::ListTrafficDistributionGroupsOutcomeCallable ListTrafficDistributionGroupsCallable(const ListTrafficDistributionGroupsRequestT& request) const
+        Model::ListTrafficDistributionGroupsOutcomeCallable ListTrafficDistributionGroupsCallable(const ListTrafficDistributionGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ConnectClient::ListTrafficDistributionGroups, request);
         }
@@ -4524,7 +4524,7 @@ namespace Connect
          * An Async wrapper for ListTrafficDistributionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrafficDistributionGroupsRequestT = Model::ListTrafficDistributionGroupsRequest>
-        void ListTrafficDistributionGroupsAsync(const ListTrafficDistributionGroupsRequestT& request, const ListTrafficDistributionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrafficDistributionGroupsAsync(const ListTrafficDistributionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrafficDistributionGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ConnectClient::ListTrafficDistributionGroups, request, handler, context);
         }

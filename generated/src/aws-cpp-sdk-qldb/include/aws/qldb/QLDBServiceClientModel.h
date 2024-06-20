@@ -37,6 +37,8 @@
 #include <aws/qldb/model/UntagResourceResult.h>
 #include <aws/qldb/model/UpdateLedgerResult.h>
 #include <aws/qldb/model/UpdateLedgerPermissionsModeResult.h>
+#include <aws/qldb/model/ListLedgersRequest.h>
+#include <aws/qldb/model/ListJournalS3ExportsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in QLDBClient header */
 

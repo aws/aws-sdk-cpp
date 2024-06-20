@@ -45,6 +45,12 @@
 #include <aws/route53-recovery-readiness/model/UpdateReadinessCheckResult.h>
 #include <aws/route53-recovery-readiness/model/UpdateRecoveryGroupResult.h>
 #include <aws/route53-recovery-readiness/model/UpdateResourceSetResult.h>
+#include <aws/route53-recovery-readiness/model/ListResourceSetsRequest.h>
+#include <aws/route53-recovery-readiness/model/ListReadinessChecksRequest.h>
+#include <aws/route53-recovery-readiness/model/ListCellsRequest.h>
+#include <aws/route53-recovery-readiness/model/ListRecoveryGroupsRequest.h>
+#include <aws/route53-recovery-readiness/model/ListRulesRequest.h>
+#include <aws/route53-recovery-readiness/model/ListCrossAccountAuthorizationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in Route53RecoveryReadinessClient header */
 

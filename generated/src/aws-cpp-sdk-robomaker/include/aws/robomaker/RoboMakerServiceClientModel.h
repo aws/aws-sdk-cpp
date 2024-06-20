@@ -60,6 +60,16 @@
 #include <aws/robomaker/model/UpdateRobotApplicationResult.h>
 #include <aws/robomaker/model/UpdateSimulationApplicationResult.h>
 #include <aws/robomaker/model/UpdateWorldTemplateResult.h>
+#include <aws/robomaker/model/ListWorldTemplatesRequest.h>
+#include <aws/robomaker/model/ListWorldGenerationJobsRequest.h>
+#include <aws/robomaker/model/GetWorldTemplateBodyRequest.h>
+#include <aws/robomaker/model/ListSimulationJobsRequest.h>
+#include <aws/robomaker/model/CreateWorldTemplateRequest.h>
+#include <aws/robomaker/model/ListSimulationApplicationsRequest.h>
+#include <aws/robomaker/model/ListRobotApplicationsRequest.h>
+#include <aws/robomaker/model/ListSimulationJobBatchesRequest.h>
+#include <aws/robomaker/model/ListWorldExportJobsRequest.h>
+#include <aws/robomaker/model/ListWorldsRequest.h>
 /* End of service model headers required in RoboMakerClient header */
 
 namespace Aws

@@ -164,13 +164,13 @@ namespace SavingsPlans
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSavingsPlansOutcome DescribeSavingsPlans(const Model::DescribeSavingsPlansRequest& request) const;
+        virtual Model::DescribeSavingsPlansOutcome DescribeSavingsPlans(const Model::DescribeSavingsPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSavingsPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSavingsPlansRequestT = Model::DescribeSavingsPlansRequest>
-        Model::DescribeSavingsPlansOutcomeCallable DescribeSavingsPlansCallable(const DescribeSavingsPlansRequestT& request) const
+        Model::DescribeSavingsPlansOutcomeCallable DescribeSavingsPlansCallable(const DescribeSavingsPlansRequestT& request = {}) const
         {
             return SubmitCallable(&SavingsPlansClient::DescribeSavingsPlans, request);
         }
@@ -179,7 +179,7 @@ namespace SavingsPlans
          * An Async wrapper for DescribeSavingsPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSavingsPlansRequestT = Model::DescribeSavingsPlansRequest>
-        void DescribeSavingsPlansAsync(const DescribeSavingsPlansRequestT& request, const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSavingsPlansAsync(const DescribeSavingsPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSavingsPlansRequestT& request = {}) const
         {
             return SubmitAsync(&SavingsPlansClient::DescribeSavingsPlans, request, handler, context);
         }
@@ -190,13 +190,13 @@ namespace SavingsPlans
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferingRates">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSavingsPlansOfferingRatesOutcome DescribeSavingsPlansOfferingRates(const Model::DescribeSavingsPlansOfferingRatesRequest& request) const;
+        virtual Model::DescribeSavingsPlansOfferingRatesOutcome DescribeSavingsPlansOfferingRates(const Model::DescribeSavingsPlansOfferingRatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSavingsPlansOfferingRates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSavingsPlansOfferingRatesRequestT = Model::DescribeSavingsPlansOfferingRatesRequest>
-        Model::DescribeSavingsPlansOfferingRatesOutcomeCallable DescribeSavingsPlansOfferingRatesCallable(const DescribeSavingsPlansOfferingRatesRequestT& request) const
+        Model::DescribeSavingsPlansOfferingRatesOutcomeCallable DescribeSavingsPlansOfferingRatesCallable(const DescribeSavingsPlansOfferingRatesRequestT& request = {}) const
         {
             return SubmitCallable(&SavingsPlansClient::DescribeSavingsPlansOfferingRates, request);
         }
@@ -205,7 +205,7 @@ namespace SavingsPlans
          * An Async wrapper for DescribeSavingsPlansOfferingRates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSavingsPlansOfferingRatesRequestT = Model::DescribeSavingsPlansOfferingRatesRequest>
-        void DescribeSavingsPlansOfferingRatesAsync(const DescribeSavingsPlansOfferingRatesRequestT& request, const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSavingsPlansOfferingRatesAsync(const DescribeSavingsPlansOfferingRatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSavingsPlansOfferingRatesRequestT& request = {}) const
         {
             return SubmitAsync(&SavingsPlansClient::DescribeSavingsPlansOfferingRates, request, handler, context);
         }
@@ -216,13 +216,13 @@ namespace SavingsPlans
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSavingsPlansOfferingsOutcome DescribeSavingsPlansOfferings(const Model::DescribeSavingsPlansOfferingsRequest& request) const;
+        virtual Model::DescribeSavingsPlansOfferingsOutcome DescribeSavingsPlansOfferings(const Model::DescribeSavingsPlansOfferingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSavingsPlansOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSavingsPlansOfferingsRequestT = Model::DescribeSavingsPlansOfferingsRequest>
-        Model::DescribeSavingsPlansOfferingsOutcomeCallable DescribeSavingsPlansOfferingsCallable(const DescribeSavingsPlansOfferingsRequestT& request) const
+        Model::DescribeSavingsPlansOfferingsOutcomeCallable DescribeSavingsPlansOfferingsCallable(const DescribeSavingsPlansOfferingsRequestT& request = {}) const
         {
             return SubmitCallable(&SavingsPlansClient::DescribeSavingsPlansOfferings, request);
         }
@@ -231,7 +231,7 @@ namespace SavingsPlans
          * An Async wrapper for DescribeSavingsPlansOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSavingsPlansOfferingsRequestT = Model::DescribeSavingsPlansOfferingsRequest>
-        void DescribeSavingsPlansOfferingsAsync(const DescribeSavingsPlansOfferingsRequestT& request, const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSavingsPlansOfferingsAsync(const DescribeSavingsPlansOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSavingsPlansOfferingsRequestT& request = {}) const
         {
             return SubmitAsync(&SavingsPlansClient::DescribeSavingsPlansOfferings, request, handler, context);
         }

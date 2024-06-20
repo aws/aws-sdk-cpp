@@ -39,6 +39,10 @@
 #include <aws/amp/model/TagResourceResult.h>
 #include <aws/amp/model/UntagResourceResult.h>
 #include <aws/amp/model/UpdateLoggingConfigurationResult.h>
+#include <aws/amp/model/ListWorkspacesRequest.h>
+#include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
+#include <aws/amp/model/ListScrapersRequest.h>
+#include <aws/amp/model/CreateWorkspaceRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PrometheusServiceClient header */
 

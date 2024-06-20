@@ -483,13 +483,13 @@ namespace DataExchange
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataSetsOutcome ListDataSets(const Model::ListDataSetsRequest& request) const;
+        virtual Model::ListDataSetsOutcome ListDataSets(const Model::ListDataSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataSetsRequestT = Model::ListDataSetsRequest>
-        Model::ListDataSetsOutcomeCallable ListDataSetsCallable(const ListDataSetsRequestT& request) const
+        Model::ListDataSetsOutcomeCallable ListDataSetsCallable(const ListDataSetsRequestT& request = {}) const
         {
             return SubmitCallable(&DataExchangeClient::ListDataSets, request);
         }
@@ -498,7 +498,7 @@ namespace DataExchange
          * An Async wrapper for ListDataSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataSetsRequestT = Model::ListDataSetsRequest>
-        void ListDataSetsAsync(const ListDataSetsRequestT& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataSetsAsync(const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataSetsRequestT& request = {}) const
         {
             return SubmitAsync(&DataExchangeClient::ListDataSets, request, handler, context);
         }
@@ -508,13 +508,13 @@ namespace DataExchange
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventActionsOutcome ListEventActions(const Model::ListEventActionsRequest& request) const;
+        virtual Model::ListEventActionsOutcome ListEventActions(const Model::ListEventActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventActionsRequestT = Model::ListEventActionsRequest>
-        Model::ListEventActionsOutcomeCallable ListEventActionsCallable(const ListEventActionsRequestT& request) const
+        Model::ListEventActionsOutcomeCallable ListEventActionsCallable(const ListEventActionsRequestT& request = {}) const
         {
             return SubmitCallable(&DataExchangeClient::ListEventActions, request);
         }
@@ -523,7 +523,7 @@ namespace DataExchange
          * An Async wrapper for ListEventActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventActionsRequestT = Model::ListEventActionsRequest>
-        void ListEventActionsAsync(const ListEventActionsRequestT& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventActionsAsync(const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventActionsRequestT& request = {}) const
         {
             return SubmitAsync(&DataExchangeClient::ListEventActions, request, handler, context);
         }
@@ -534,13 +534,13 @@ namespace DataExchange
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&DataExchangeClient::ListJobs, request);
         }
@@ -549,7 +549,7 @@ namespace DataExchange
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&DataExchangeClient::ListJobs, request, handler, context);
         }

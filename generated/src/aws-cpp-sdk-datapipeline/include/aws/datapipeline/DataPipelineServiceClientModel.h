@@ -35,6 +35,7 @@
 #include <aws/datapipeline/model/ReportTaskRunnerHeartbeatResult.h>
 #include <aws/datapipeline/model/SetTaskStatusResult.h>
 #include <aws/datapipeline/model/ValidatePipelineDefinitionResult.h>
+#include <aws/datapipeline/model/ListPipelinesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DataPipelineClient header */
 

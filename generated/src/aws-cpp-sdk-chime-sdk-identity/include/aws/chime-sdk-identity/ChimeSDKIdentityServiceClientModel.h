@@ -41,6 +41,7 @@
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceBotResult.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserResult.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserEndpointResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstancesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeSDKIdentityClient header */
 

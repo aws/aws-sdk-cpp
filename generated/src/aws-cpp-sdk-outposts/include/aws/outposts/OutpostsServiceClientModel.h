@@ -49,6 +49,11 @@
 #include <aws/outposts/model/UpdateSiteResult.h>
 #include <aws/outposts/model/UpdateSiteAddressResult.h>
 #include <aws/outposts/model/UpdateSiteRackPhysicalPropertiesResult.h>
+#include <aws/outposts/model/ListSitesRequest.h>
+#include <aws/outposts/model/ListOutpostsRequest.h>
+#include <aws/outposts/model/ListCatalogItemsRequest.h>
+#include <aws/outposts/model/ListCapacityTasksRequest.h>
+#include <aws/outposts/model/ListOrdersRequest.h>
 /* End of service model headers required in OutpostsClient header */
 
 namespace Aws

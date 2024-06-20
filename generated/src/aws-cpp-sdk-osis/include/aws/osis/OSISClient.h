@@ -228,13 +228,13 @@ namespace OSIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineBlueprints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelineBlueprintsOutcome ListPipelineBlueprints(const Model::ListPipelineBlueprintsRequest& request) const;
+        virtual Model::ListPipelineBlueprintsOutcome ListPipelineBlueprints(const Model::ListPipelineBlueprintsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelineBlueprints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelineBlueprintsRequestT = Model::ListPipelineBlueprintsRequest>
-        Model::ListPipelineBlueprintsOutcomeCallable ListPipelineBlueprintsCallable(const ListPipelineBlueprintsRequestT& request) const
+        Model::ListPipelineBlueprintsOutcomeCallable ListPipelineBlueprintsCallable(const ListPipelineBlueprintsRequestT& request = {}) const
         {
             return SubmitCallable(&OSISClient::ListPipelineBlueprints, request);
         }
@@ -243,7 +243,7 @@ namespace OSIS
          * An Async wrapper for ListPipelineBlueprints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelineBlueprintsRequestT = Model::ListPipelineBlueprintsRequest>
-        void ListPipelineBlueprintsAsync(const ListPipelineBlueprintsRequestT& request, const ListPipelineBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelineBlueprintsAsync(const ListPipelineBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelineBlueprintsRequestT& request = {}) const
         {
             return SubmitAsync(&OSISClient::ListPipelineBlueprints, request, handler, context);
         }
@@ -256,13 +256,13 @@ namespace OSIS
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
+        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request) const
+        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&OSISClient::ListPipelines, request);
         }
@@ -271,7 +271,7 @@ namespace OSIS
          * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        void ListPipelinesAsync(const ListPipelinesRequestT& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelinesAsync(const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&OSISClient::ListPipelines, request, handler, context);
         }

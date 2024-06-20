@@ -317,13 +317,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
+        virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateChannelRequestT = Model::CreateChannelRequest>
-        Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request) const
+        Model::CreateChannelOutcomeCallable CreateChannelCallable(const CreateChannelRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::CreateChannel, request);
         }
@@ -332,7 +332,7 @@ namespace IVS
          * An Async wrapper for CreateChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateChannelRequestT = Model::CreateChannelRequest>
-        void CreateChannelAsync(const CreateChannelRequestT& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateChannelAsync(const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateChannelRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::CreateChannel, request, handler, context);
         }
@@ -343,13 +343,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreatePlaybackRestrictionPolicyOutcome CreatePlaybackRestrictionPolicy(const Model::CreatePlaybackRestrictionPolicyRequest& request) const;
+        virtual Model::CreatePlaybackRestrictionPolicyOutcome CreatePlaybackRestrictionPolicy(const Model::CreatePlaybackRestrictionPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreatePlaybackRestrictionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreatePlaybackRestrictionPolicyRequestT = Model::CreatePlaybackRestrictionPolicyRequest>
-        Model::CreatePlaybackRestrictionPolicyOutcomeCallable CreatePlaybackRestrictionPolicyCallable(const CreatePlaybackRestrictionPolicyRequestT& request) const
+        Model::CreatePlaybackRestrictionPolicyOutcomeCallable CreatePlaybackRestrictionPolicyCallable(const CreatePlaybackRestrictionPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::CreatePlaybackRestrictionPolicy, request);
         }
@@ -358,7 +358,7 @@ namespace IVS
          * An Async wrapper for CreatePlaybackRestrictionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreatePlaybackRestrictionPolicyRequestT = Model::CreatePlaybackRestrictionPolicyRequest>
-        void CreatePlaybackRestrictionPolicyAsync(const CreatePlaybackRestrictionPolicyRequestT& request, const CreatePlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreatePlaybackRestrictionPolicyAsync(const CreatePlaybackRestrictionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreatePlaybackRestrictionPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::CreatePlaybackRestrictionPolicy, request, handler, context);
         }
@@ -795,13 +795,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const
+        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::ListChannels, request);
         }
@@ -810,7 +810,7 @@ namespace IVS
          * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::ListChannels, request, handler, context);
         }
@@ -824,13 +824,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlaybackKeyPairsOutcome ListPlaybackKeyPairs(const Model::ListPlaybackKeyPairsRequest& request) const;
+        virtual Model::ListPlaybackKeyPairsOutcome ListPlaybackKeyPairs(const Model::ListPlaybackKeyPairsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlaybackKeyPairs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlaybackKeyPairsRequestT = Model::ListPlaybackKeyPairsRequest>
-        Model::ListPlaybackKeyPairsOutcomeCallable ListPlaybackKeyPairsCallable(const ListPlaybackKeyPairsRequestT& request) const
+        Model::ListPlaybackKeyPairsOutcomeCallable ListPlaybackKeyPairsCallable(const ListPlaybackKeyPairsRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::ListPlaybackKeyPairs, request);
         }
@@ -839,7 +839,7 @@ namespace IVS
          * An Async wrapper for ListPlaybackKeyPairs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlaybackKeyPairsRequestT = Model::ListPlaybackKeyPairsRequest>
-        void ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsRequestT& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlaybackKeyPairsAsync(const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlaybackKeyPairsRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::ListPlaybackKeyPairs, request, handler, context);
         }
@@ -850,13 +850,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlaybackRestrictionPoliciesOutcome ListPlaybackRestrictionPolicies(const Model::ListPlaybackRestrictionPoliciesRequest& request) const;
+        virtual Model::ListPlaybackRestrictionPoliciesOutcome ListPlaybackRestrictionPolicies(const Model::ListPlaybackRestrictionPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlaybackRestrictionPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlaybackRestrictionPoliciesRequestT = Model::ListPlaybackRestrictionPoliciesRequest>
-        Model::ListPlaybackRestrictionPoliciesOutcomeCallable ListPlaybackRestrictionPoliciesCallable(const ListPlaybackRestrictionPoliciesRequestT& request) const
+        Model::ListPlaybackRestrictionPoliciesOutcomeCallable ListPlaybackRestrictionPoliciesCallable(const ListPlaybackRestrictionPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::ListPlaybackRestrictionPolicies, request);
         }
@@ -865,7 +865,7 @@ namespace IVS
          * An Async wrapper for ListPlaybackRestrictionPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlaybackRestrictionPoliciesRequestT = Model::ListPlaybackRestrictionPoliciesRequest>
-        void ListPlaybackRestrictionPoliciesAsync(const ListPlaybackRestrictionPoliciesRequestT& request, const ListPlaybackRestrictionPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlaybackRestrictionPoliciesAsync(const ListPlaybackRestrictionPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlaybackRestrictionPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::ListPlaybackRestrictionPolicies, request, handler, context);
         }
@@ -877,13 +877,13 @@ namespace IVS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecordingConfigurationsOutcome ListRecordingConfigurations(const Model::ListRecordingConfigurationsRequest& request) const;
+        virtual Model::ListRecordingConfigurationsOutcome ListRecordingConfigurations(const Model::ListRecordingConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecordingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecordingConfigurationsRequestT = Model::ListRecordingConfigurationsRequest>
-        Model::ListRecordingConfigurationsOutcomeCallable ListRecordingConfigurationsCallable(const ListRecordingConfigurationsRequestT& request) const
+        Model::ListRecordingConfigurationsOutcomeCallable ListRecordingConfigurationsCallable(const ListRecordingConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::ListRecordingConfigurations, request);
         }
@@ -892,7 +892,7 @@ namespace IVS
          * An Async wrapper for ListRecordingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecordingConfigurationsRequestT = Model::ListRecordingConfigurationsRequest>
-        void ListRecordingConfigurationsAsync(const ListRecordingConfigurationsRequestT& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecordingConfigurationsAsync(const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecordingConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::ListRecordingConfigurations, request, handler, context);
         }
@@ -956,13 +956,13 @@ namespace IVS
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
+        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request) const
+        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&IVSClient::ListStreams, request);
         }
@@ -971,7 +971,7 @@ namespace IVS
          * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        void ListStreamsAsync(const ListStreamsRequestT& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStreamsAsync(const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&IVSClient::ListStreams, request, handler, context);
         }

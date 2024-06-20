@@ -85,6 +85,12 @@
 #include <aws/ds/model/UpdateSettingsResult.h>
 #include <aws/ds/model/UpdateTrustResult.h>
 #include <aws/ds/model/VerifyTrustResult.h>
+#include <aws/ds/model/GetDirectoryLimitsRequest.h>
+#include <aws/ds/model/DescribeTrustsRequest.h>
+#include <aws/ds/model/DescribeSnapshotsRequest.h>
+#include <aws/ds/model/DescribeEventTopicsRequest.h>
+#include <aws/ds/model/DescribeDirectoriesRequest.h>
+#include <aws/ds/model/ListLogSubscriptionsRequest.h>
 /* End of service model headers required in DirectoryServiceClient header */
 
 namespace Aws

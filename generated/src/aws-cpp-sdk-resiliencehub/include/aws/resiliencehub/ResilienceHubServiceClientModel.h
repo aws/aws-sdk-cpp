@@ -73,6 +73,11 @@
 #include <aws/resiliencehub/model/UpdateAppVersionAppComponentResult.h>
 #include <aws/resiliencehub/model/UpdateAppVersionResourceResult.h>
 #include <aws/resiliencehub/model/UpdateResiliencyPolicyResult.h>
+#include <aws/resiliencehub/model/ListRecommendationTemplatesRequest.h>
+#include <aws/resiliencehub/model/ListSuggestedResiliencyPoliciesRequest.h>
+#include <aws/resiliencehub/model/ListAppsRequest.h>
+#include <aws/resiliencehub/model/ListAppAssessmentsRequest.h>
+#include <aws/resiliencehub/model/ListResiliencyPoliciesRequest.h>
 /* End of service model headers required in ResilienceHubClient header */
 
 namespace Aws

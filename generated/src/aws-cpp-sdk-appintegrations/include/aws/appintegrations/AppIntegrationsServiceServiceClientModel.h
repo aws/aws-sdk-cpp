@@ -39,6 +39,9 @@
 #include <aws/appintegrations/model/UpdateApplicationResult.h>
 #include <aws/appintegrations/model/UpdateDataIntegrationResult.h>
 #include <aws/appintegrations/model/UpdateEventIntegrationResult.h>
+#include <aws/appintegrations/model/ListDataIntegrationsRequest.h>
+#include <aws/appintegrations/model/ListApplicationsRequest.h>
+#include <aws/appintegrations/model/ListEventIntegrationsRequest.h>
 /* End of service model headers required in AppIntegrationsServiceClient header */
 
 namespace Aws

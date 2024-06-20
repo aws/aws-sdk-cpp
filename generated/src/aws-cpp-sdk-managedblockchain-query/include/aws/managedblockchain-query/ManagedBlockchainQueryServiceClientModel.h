@@ -27,6 +27,7 @@
 #include <aws/managedblockchain-query/model/ListTokenBalancesResult.h>
 #include <aws/managedblockchain-query/model/ListTransactionEventsResult.h>
 #include <aws/managedblockchain-query/model/ListTransactionsResult.h>
+#include <aws/managedblockchain-query/model/BatchGetTokenBalanceRequest.h>
 /* End of service model headers required in ManagedBlockchainQueryClient header */
 
 namespace Aws
