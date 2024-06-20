@@ -38,6 +38,7 @@ namespace Aws
      * Base level abstraction for all modeled AWS requests
      */
     class AWS_CORE_API AmazonWebServiceRequest
+    class AWS_CORE_API AmazonWebServiceRequest
     {
     public:
         /**

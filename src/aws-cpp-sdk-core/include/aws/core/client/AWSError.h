@@ -208,6 +208,10 @@ namespace Aws
              * Return whether or not the error should throttle retry strategies.
              */
             inline bool ShouldThrottle() const { return m_retryableType == RetryableType::RETRYABLE_THROTTLING; }
+            /**
+             * Sets the response code from the http response
+             */
+            inline void SetRetryableType(const RetryableType retryableType) { m_retryableType = retryableType; }
 
         protected:
             inline ErrorPayloadType GetErrorPayloadType() { return m_errorPayloadType; }

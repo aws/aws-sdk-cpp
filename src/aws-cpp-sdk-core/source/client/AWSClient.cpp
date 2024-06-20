@@ -527,7 +527,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         [&]() -> void {
             BuildHttpRequest(request, httpRequest);
         },
-        TracingUtils::SMITHY_CLIENT_SERIALIZATION_METRIC,
+        TracingUtils::  SMITHY_CLIENT_SERIALIZATION_METRIC,
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
