@@ -4,21 +4,35 @@
  */
 #pragma once
 
-#include <smithy/identity/auth/AuthOption.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/identity/signer/AwsSignerBase.h>
 
 #include <aws/crt/Variant.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
 namespace smithy {
-    template<typename ServiceAuthSchemeParametersT = Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>>>
+    /**
+    * A base interface for code-generated interfaces for passing in the data required for determining the
+    * authentication scheme. By default, this only includes the operation name.
+    */
+    class DefaultAuthSchemeResolverParameters
+    {
+    public:
+        Aws::String serviceName;
+        Aws::String operation;
+        Aws::Crt::Optional<Aws::String> region;
+
+        Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<Aws::String, bool>> additionalProperties;
+    };
+
+    template<typename ServiceAuthSchemeParametersT = DefaultAuthSchemeResolverParameters>
     class AuthSchemeResolverBase
     {
     public:
         using ServiceAuthSchemeParameters = ServiceAuthSchemeParametersT;
 
         virtual ~AuthSchemeResolverBase() = default;
-        // AuthScheme Resolver returns a list of AuthOptions for some reason, according to the SRA...
-        virtual std::vector<AuthOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) = 0;
+        // AuthScheme Resolver returns a list of AuthSchemeOptions for some reason, according to the SRA...
+        virtual Aws::Vector<AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) = 0;
     };
 }

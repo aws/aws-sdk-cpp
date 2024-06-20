@@ -73,12 +73,22 @@ file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
 file(GLOB CJSON_HEADERS "include/aws/core/external/cjson/*.h")
 file(GLOB TINYXML2_HEADERS "include/aws/core/external/tinyxml2/tinyxml2.h")
 file(GLOB SMITHY_HEADERS "include/smithy/*.h")
-file(GLOB SMITHY_CLIENT_HEADERS "include/smithy/client/*.h" "include/smithy/client/impl/*.h")
+file(GLOB SMITHY_CLIENT_HEADERS "include/smithy/client/*.h")
+file(GLOB SMITHY_CLIENT_IMPL_HEADERS "include/smithy/client/impl/*.h")
+file(GLOB SMITHY_CLIENT_COMMON_HEADERS "include/smithy/client/common/*.h")
+file(GLOB SMITHY_CLIENT_FEATURES_HEADERS "include/smithy/client/features/*.h")
 file(GLOB SMITHY_TRACING_HEADERS "include/smithy/tracing/*.h")
 file(GLOB SMITHY_IDENTITY_HEADERS "include/smithy/identity/*.h")
-file(GLOB SMITHY_IDENTITY_AUTH_HEADERS "include/smithy/identity/auth/*.h" "include/smithy/identity/auth/impl/*.h")
-file(GLOB SMITHY_IDENTITY_IDENTITY_HEADERS "include/smithy/identity/identity/*.h" "include/smithy/identity/identity/impl/*.h")
-file(GLOB SMITHY_IDENTITY_RESOLVER_HEADERS "include/smithy/identity/resolver/*.h" "include/smithy/identity/resolver/impl/*.h")
+file(GLOB SMITHY_IDENTITY_AUTH_HEADERS "include/smithy/identity/auth/*.h")
+file(GLOB SMITHY_IDENTITY_AUTH_IMPL_HEADERS "include/smithy/identity/auth/impl/*.h")
+file(GLOB SMITHY_IDENTITY_AUTH_BUILTIN_HEADERS "include/smithy/identity/auth/built-in/*.h")
+file(GLOB SMITHY_IDENTITY_IDENTITY_HEADERS "include/smithy/identity/identity/*.h")
+file(GLOB SMITHY_IDENTITY_RESOLVER_HEADERS "include/smithy/identity/resolver/*.h")
+file(GLOB SMITHY_IDENTITY_RESOLVER_BUILTIN_HEADERS "include/smithy/identity/resolver/built-in/*.h")
+file(GLOB SMITHY_IDENTITY_IDENTITY_IMPL_HEADERS "include/smithy/identity/identity/impl/*.h")
+file(GLOB SMITHY_IDENTITY_RESOLVER_IMPL_HEADERS "include/smithy/identity/resolver/impl/*.h")
+file(GLOB SMITHY_IDENTITY_SIGNER_HEADERS "include/smithy/identity/signer/*.h")
+file(GLOB SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS "include/smithy/identity/signer/built-in/*.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
@@ -333,11 +343,21 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_WINDOWS_CLIENT_HEADERS}
   ${SMITHY_HEADERS}
   ${SMITHY_CLIENT_HEADERS}
+  ${SMITHY_CLIENT_IMPL_HEADERS}
+  ${SMITHY_CLIENT_COMMON_HEADERS}
+  ${SMITHY_CLIENT_FEATURES_HEADERS}
   ${SMITHY_TRACING_HEADERS}
   ${SMITHY_IDENTITY_HEADERS}
   ${SMITHY_IDENTITY_AUTH_HEADERS}
+  ${SMITHY_IDENTITY_AUTH_IMPL_HEADERS}
+  ${SMITHY_IDENTITY_AUTH_BUILTIN_HEADERS}
   ${SMITHY_IDENTITY_IDENTITY_HEADERS}
+  ${SMITHY_IDENTITY_SIGNER_HEADERS}
+  ${SMITHY_IDENTITY_IDENTITY_IMPL_HEADERS}
+  ${SMITHY_IDENTITY_SIGNER_IMPL_HEADERS}
+  ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS}
   ${SMITHY_IDENTITY_RESOLVER_HEADERS}
+  ${SMITHY_IDENTITY_RESOLVER_BUILTIN_HEADERS}
   ${OPTEL_HEADERS}
 )
 
@@ -455,10 +475,20 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
     source_group("Header Files\\smithy" FILES ${SMITHY_HEADERS})
     source_group("Header Files\\smithy\\client" FILES ${SMITHY_CLIENT_HEADERS})
+    source_group("Header Files\\smithy\\client" FILES ${SMITHY_CLIENT_IMPL_HEADERS})
+    source_group("Header Files\\smithy\\client" FILES ${SMITHY_CLIENT_COMMON_HEADERS})
+    source_group("Header Files\\smithy\\client" FILES ${SMITHY_CLIENT_FEATURES_HEADERS})
     source_group("Header Files\\smithy\\tracing" FILES ${SMITHY_TRACING_HEADERS})
     source_group("Header Files\\smithy\\identity\\auth" FILES ${SMITHY_IDENTITY_AUTH_HEADERS})
+    source_group("Header Files\\smithy\\identity\\auth\\impl" FILES ${SMITHY_IDENTITY_AUTH_IMPL_HEADERS})
+    source_group("Header Files\\smithy\\identity\\auth\\built-in" FILES ${SMITHY_IDENTITY_AUTH_BUILTIN_HEADERS})
     source_group("Header Files\\smithy\\identity\\identity" FILES ${SMITHY_IDENTITY_IDENTITY_HEADERS})
     source_group("Header Files\\smithy\\identity\\resolver" FILES ${SMITHY_IDENTITY_RESOLVER_HEADERS})
+    source_group("Header Files\\smithy\\identity\\resolver\\built-in" FILES ${SMITHY_IDENTITY_RESOLVER_BUILTIN_HEADERS})
+    source_group("Header Files\\smithy\\identity\\identity\\impl" FILES ${SMITHY_IDENTITY_IDENTITY_IMPL_HEADERS})
+    source_group("Header Files\\smithy\\identity\\resolver\\impl" FILES ${SMITHY_IDENTITY_RESOLVER_IMPL_HEADERS})
+    source_group("Header Files\\smithy\\identity\\signer" FILES ${SMITHY_IDENTITY_SIGNER_HEADERS})
+    source_group("Header Files\\smithy\\identity\\signer\\built-in" FILES ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS})
 
     # http client conditional headers
     if(ENABLE_CURL_CLIENT)
@@ -724,8 +754,14 @@ install (FILES ${SMITHY_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/
 install (FILES ${SMITHY_TRACING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/tracing)
 install (FILES ${SMITHY_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity)
 install (FILES ${SMITHY_IDENTITY_AUTH_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/auth)
+install (FILES ${SMITHY_IDENTITY_AUTH_IMPL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/auth/impl)
+install (FILES ${SMITHY_IDENTITY_AUTH_BUILTIN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/auth/built-in)
 install (FILES ${SMITHY_IDENTITY_IDENTITY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/identity)
 install (FILES ${SMITHY_IDENTITY_RESOLVER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/resolver)
+install (FILES ${SMITHY_IDENTITY_IDENTITY_IMPL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/identity/impl)
+install (FILES ${SMITHY_IDENTITY_RESOLVER_IMPL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/resolver/impl)
+install (FILES ${SMITHY_IDENTITY_SIGNER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/signer)
+install (FILES ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/signer/built-in)
 
 # android logcat headers
 if(PLATFORM_ANDROID)

@@ -14,7 +14,7 @@ namespace smithy {
         using DateTime = Aws::Utils::DateTime;
 
         virtual ~AwsIdentity(){};
-        virtual Aws::Crt::Optional<DateTime> expiration() {
+        virtual Aws::Crt::Optional<DateTime> expiration() const {
             return Aws::Crt::Optional<DateTime>();
         };
     };
