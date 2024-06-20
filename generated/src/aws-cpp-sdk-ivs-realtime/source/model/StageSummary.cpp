@@ -19,17 +19,17 @@ namespace Model
 {
 
 StageSummary::StageSummary() : 
-    m_activeSessionIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_activeSessionIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 StageSummary::StageSummary(JsonView jsonValue) : 
-    m_activeSessionIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_activeSessionIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,13 +37,6 @@ StageSummary::StageSummary(JsonView jsonValue) :
 
 StageSummary& StageSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("activeSessionId"))
-  {
-    m_activeSessionId = jsonValue.GetString("activeSessionId");
-
-    m_activeSessionIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -56,6 +49,13 @@ StageSummary& StageSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("activeSessionId"))
+  {
+    m_activeSessionId = jsonValue.GetString("activeSessionId");
+
+    m_activeSessionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -75,12 +75,6 @@ JsonValue StageSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_activeSessionIdHasBeenSet)
-  {
-   payload.WithString("activeSessionId", m_activeSessionId);
-
-  }
-
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
@@ -90,6 +84,12 @@ JsonValue StageSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_activeSessionIdHasBeenSet)
+  {
+   payload.WithString("activeSessionId", m_activeSessionId);
 
   }
 

@@ -27,6 +27,7 @@ namespace Aws
         static const int generic_HASH = HashingUtils::HashString("generic");
         static const int ruby_HASH = HashingUtils::HashString("ruby");
         static const int swift_HASH = HashingUtils::HashString("swift");
+        static const int cargo_HASH = HashingUtils::HashString("cargo");
 
 
         PackageFormat GetPackageFormatForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return PackageFormat::swift;
           }
+          else if (hashCode == cargo_HASH)
+          {
+            return PackageFormat::cargo;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "ruby";
           case PackageFormat::swift:
             return "swift";
+          case PackageFormat::cargo:
+            return "cargo";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

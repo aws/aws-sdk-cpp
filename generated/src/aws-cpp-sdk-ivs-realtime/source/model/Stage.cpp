@@ -19,31 +19,26 @@ namespace Model
 {
 
 Stage::Stage() : 
-    m_activeSessionIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_activeSessionIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_autoParticipantRecordingConfigurationHasBeenSet(false)
 {
 }
 
 Stage::Stage(JsonView jsonValue) : 
-    m_activeSessionIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_activeSessionIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_autoParticipantRecordingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Stage& Stage::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("activeSessionId"))
-  {
-    m_activeSessionId = jsonValue.GetString("activeSessionId");
-
-    m_activeSessionIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -58,6 +53,13 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("activeSessionId"))
+  {
+    m_activeSessionId = jsonValue.GetString("activeSessionId");
+
+    m_activeSessionIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -68,18 +70,19 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoParticipantRecordingConfiguration"))
+  {
+    m_autoParticipantRecordingConfiguration = jsonValue.GetObject("autoParticipantRecordingConfiguration");
+
+    m_autoParticipantRecordingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Stage::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_activeSessionIdHasBeenSet)
-  {
-   payload.WithString("activeSessionId", m_activeSessionId);
-
-  }
 
   if(m_arnHasBeenSet)
   {
@@ -93,6 +96,12 @@ JsonValue Stage::Jsonize() const
 
   }
 
+  if(m_activeSessionIdHasBeenSet)
+  {
+   payload.WithString("activeSessionId", m_activeSessionId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -101,6 +110,12 @@ JsonValue Stage::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_autoParticipantRecordingConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoParticipantRecordingConfiguration", m_autoParticipantRecordingConfiguration.Jsonize());
 
   }
 

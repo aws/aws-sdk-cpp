@@ -34,6 +34,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>ARN of the stage to which the participant is attached.</p>
+     */
+    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
+    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
+    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
+    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
+    inline DisconnectParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
+    inline DisconnectParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
+    inline DisconnectParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
      * returned by <a>CreateParticipantToken</a>.</p>
      */
@@ -60,30 +74,16 @@ namespace Model
     inline DisconnectParticipantRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
     inline DisconnectParticipantRequest& WithReason(const char* value) { SetReason(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>ARN of the stage to which the participant is attached.</p>
-     */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline DisconnectParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline DisconnectParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline DisconnectParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
 
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
-
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
   };
 
 } // namespace Model

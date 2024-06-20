@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p>Describes the recommendation preferences to return in the response of a
    * <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>,
-   * and <a>GetEC2RecommendationProjectedMetrics</a> request.</p><p><h3>See
+   * <a>GetEC2RecommendationProjectedMetrics</a>,
+   * <a>GetRDSDatabaseRecommendations</a>, and
+   * <a>GetRDSDatabaseRecommendationProjectedMetrics</a> request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendationPreferences">AWS
    * API Reference</a></p>
@@ -48,13 +50,12 @@ namespace Model
      * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
      * <a>GetEC2InstanceRecommendations</a> or
      * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns
-     * recommendations that consist of Graviton2 instance types only.</p> </li> <li>
+     * recommendations that consist of Graviton instance types only.</p> </li> <li>
      * <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer
-     * returns projected utilization metrics for Graviton2 instance type
-     * recommendations only.</p> </li> <li> <p>A
-     * <a>ExportEC2InstanceRecommendations</a> or
+     * returns projected utilization metrics for Graviton instance type recommendations
+     * only.</p> </li> <li> <p>A <a>ExportEC2InstanceRecommendations</a> or
      * <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer exports
-     * recommendations that consist of Graviton2 instance types only.</p> </li> </ul>
+     * recommendations that consist of Graviton instance types only.</p> </li> </ul>
      */
     inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const{ return m_cpuVendorArchitectures; }
     inline bool CpuVendorArchitecturesHasBeenSet() const { return m_cpuVendorArchitecturesHasBeenSet; }

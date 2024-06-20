@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/ParticipantTokenCapability.h>
 #include <utility>
 
@@ -43,64 +43,6 @@ namespace Model
     AWS_IVSREALTIME_API ParticipantToken& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
-
-    ///@{
-    /**
-     * <p>Application-provided attributes to encode into the token and attach to a
-     * stage. <i>This field is exposed to all stage participants and should not be used
-     * for personally identifying, confidential, or sensitive information.</i> </p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ParticipantToken& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline ParticipantToken& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ParticipantToken& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline ParticipantToken& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline ParticipantToken& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline ParticipantToken& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ParticipantToken& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline ParticipantToken& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline ParticipantToken& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-     */
-    inline const Aws::Vector<ParticipantTokenCapability>& GetCapabilities() const{ return m_capabilities; }
-    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline ParticipantToken& WithCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { SetCapabilities(value); return *this;}
-    inline ParticipantToken& WithCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline ParticipantToken& AddCapabilities(const ParticipantTokenCapability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline ParticipantToken& AddCapabilities(ParticipantTokenCapability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Duration (in minutes), after which the participant token expires. Default:
-     * 720 (12 hours).</p>
-     */
-    inline int GetDuration() const{ return m_duration; }
-    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline ParticipantToken& WithDuration(int value) { SetDuration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
-     */
-    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
-    inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-    inline ParticipantToken& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-    inline ParticipantToken& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -147,19 +89,65 @@ namespace Model
     inline ParticipantToken& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
     inline ParticipantToken& WithUserId(const char* value) { SetUserId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Application-provided attributes to encode into the token and attach to a
+     * stage. <i>This field is exposed to all stage participants and should not be used
+     * for personally identifying, confidential, or sensitive information.</i> </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
+    inline ParticipantToken& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
+    inline ParticipantToken& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
+    inline ParticipantToken& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    inline ParticipantToken& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
+    inline ParticipantToken& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
+    inline ParticipantToken& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
+    inline ParticipantToken& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
+    inline ParticipantToken& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
+    inline ParticipantToken& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Duration (in minutes), after which the participant token expires. Default:
+     * 720 (12 hours).</p>
+     */
+    inline int GetDuration() const{ return m_duration; }
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline ParticipantToken& WithDuration(int value) { SetDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Set of capabilities that the user is allowed to perform in the stage.</p>
+     */
+    inline const Aws::Vector<ParticipantTokenCapability>& GetCapabilities() const{ return m_capabilities; }
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+    inline void SetCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+    inline void SetCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+    inline ParticipantToken& WithCapabilities(const Aws::Vector<ParticipantTokenCapability>& value) { SetCapabilities(value); return *this;}
+    inline ParticipantToken& WithCapabilities(Aws::Vector<ParticipantTokenCapability>&& value) { SetCapabilities(std::move(value)); return *this;}
+    inline ParticipantToken& AddCapabilities(const ParticipantTokenCapability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
+    inline ParticipantToken& AddCapabilities(ParticipantTokenCapability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
+     */
+    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+    inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
+    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
+    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
+    inline ParticipantToken& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
+    inline ParticipantToken& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    ///@}
   private:
-
-    Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet = false;
-
-    Aws::Vector<ParticipantTokenCapability> m_capabilities;
-    bool m_capabilitiesHasBeenSet = false;
-
-    int m_duration;
-    bool m_durationHasBeenSet = false;
-
-    Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
@@ -169,6 +157,18 @@ namespace Model
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet = false;
+
+    int m_duration;
+    bool m_durationHasBeenSet = false;
+
+    Aws::Vector<ParticipantTokenCapability> m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
+
+    Aws::Utils::DateTime m_expirationTime;
+    bool m_expirationTimeHasBeenSet = false;
   };
 
 } // namespace Model

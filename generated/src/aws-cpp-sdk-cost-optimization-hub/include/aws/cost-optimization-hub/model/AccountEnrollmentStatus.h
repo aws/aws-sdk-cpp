@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/cost-optimization-hub/model/EnrollmentStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -56,14 +56,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time when the account enrollment status was created.</p>
+     * <p>The account enrollment status.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline AccountEnrollmentStatus& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline AccountEnrollmentStatus& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const EnrollmentStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const EnrollmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(EnrollmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline AccountEnrollmentStatus& WithStatus(const EnrollmentStatus& value) { SetStatus(value); return *this;}
+    inline AccountEnrollmentStatus& WithStatus(EnrollmentStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,28 +80,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account enrollment status.</p>
+     * <p>The time when the account enrollment status was created.</p>
      */
-    inline const EnrollmentStatus& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EnrollmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EnrollmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccountEnrollmentStatus& WithStatus(const EnrollmentStatus& value) { SetStatus(value); return *this;}
-    inline AccountEnrollmentStatus& WithStatus(EnrollmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
+    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
+    inline AccountEnrollmentStatus& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
+    inline AccountEnrollmentStatus& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet = false;
+    EnrollmentStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    EnrollmentStatus m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdTimestamp;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

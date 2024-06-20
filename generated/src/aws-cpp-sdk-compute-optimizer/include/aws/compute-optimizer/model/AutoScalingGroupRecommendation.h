@@ -9,10 +9,10 @@
 #include <aws/compute-optimizer/model/Finding.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupConfiguration.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
-#include <aws/compute-optimizer/model/GpuInfo.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendationOption.h>
 #include <aws/compute-optimizer/model/InferredWorkloadType.h>
@@ -150,6 +150,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> Describes the GPU accelerator settings for the current instance type of the
+     * Auto Scaling group. </p>
+     */
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+    inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
+    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
+    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
+    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
+    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An array of objects that describe the recommendation options for the Auto
      * Scaling group.</p>
      */
@@ -232,19 +245,6 @@ namespace Model
     inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
     inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p> Describes the GPU accelerator settings for the current instance type of the
-     * Auto Scaling group. </p>
-     */
-    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
-    inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
-    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
-    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountId;
@@ -268,6 +268,9 @@ namespace Model
     AutoScalingGroupConfiguration m_currentConfiguration;
     bool m_currentConfigurationHasBeenSet = false;
 
+    GpuInfo m_currentInstanceGpuInfo;
+    bool m_currentInstanceGpuInfoHasBeenSet = false;
+
     Aws::Vector<AutoScalingGroupRecommendationOption> m_recommendationOptions;
     bool m_recommendationOptionsHasBeenSet = false;
 
@@ -282,9 +285,6 @@ namespace Model
 
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
-
-    GpuInfo m_currentInstanceGpuInfo;
-    bool m_currentInstanceGpuInfoHasBeenSet = false;
   };
 
 } // namespace Model

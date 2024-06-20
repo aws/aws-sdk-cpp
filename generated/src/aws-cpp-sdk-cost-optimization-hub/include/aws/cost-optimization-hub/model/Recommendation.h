@@ -43,6 +43,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID for the recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
+    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
+    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
+    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
+    inline Recommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
+    inline Recommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
+    inline Recommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The account that the recommendation is for.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
@@ -57,44 +71,44 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of tasks that can be carried out by this action.</p>
+     * <p>The Amazon Web Services Region of the resource.</p>
      */
-    inline const Aws::String& GetActionType() const{ return m_actionType; }
-    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
-    inline Recommendation& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
-    inline Recommendation& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
-    inline Recommendation& WithActionType(const char* value) { SetActionType(value); return *this;}
+    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+    inline Recommendation& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+    inline Recommendation& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+    inline Recommendation& WithRegion(const char* value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The currency code used for the recommendation.</p>
+     * <p>The resource ID for the recommendation.</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline Recommendation& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline Recommendation& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline Recommendation& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+    inline Recommendation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline Recommendation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+    inline Recommendation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Describes the current resource.</p>
+     * <p>The Amazon Resource Name (ARN) for the recommendation.</p>
      */
-    inline const Aws::String& GetCurrentResourceSummary() const{ return m_currentResourceSummary; }
-    inline bool CurrentResourceSummaryHasBeenSet() const { return m_currentResourceSummaryHasBeenSet; }
-    inline void SetCurrentResourceSummary(const Aws::String& value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary = value; }
-    inline void SetCurrentResourceSummary(Aws::String&& value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary = std::move(value); }
-    inline void SetCurrentResourceSummary(const char* value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary.assign(value); }
-    inline Recommendation& WithCurrentResourceSummary(const Aws::String& value) { SetCurrentResourceSummary(value); return *this;}
-    inline Recommendation& WithCurrentResourceSummary(Aws::String&& value) { SetCurrentResourceSummary(std::move(value)); return *this;}
-    inline Recommendation& WithCurrentResourceSummary(const char* value) { SetCurrentResourceSummary(value); return *this;}
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+    inline Recommendation& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+    inline Recommendation& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+    inline Recommendation& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +127,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated monthly cost for the recommendation.</p>
+     * <p>The recommended resource type.</p>
      */
-    inline double GetEstimatedMonthlyCost() const{ return m_estimatedMonthlyCost; }
-    inline bool EstimatedMonthlyCostHasBeenSet() const { return m_estimatedMonthlyCostHasBeenSet; }
-    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCostHasBeenSet = true; m_estimatedMonthlyCost = value; }
-    inline Recommendation& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
+    inline const Aws::String& GetRecommendedResourceType() const{ return m_recommendedResourceType; }
+    inline bool RecommendedResourceTypeHasBeenSet() const { return m_recommendedResourceTypeHasBeenSet; }
+    inline void SetRecommendedResourceType(const Aws::String& value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType = value; }
+    inline void SetRecommendedResourceType(Aws::String&& value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType = std::move(value); }
+    inline void SetRecommendedResourceType(const char* value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType.assign(value); }
+    inline Recommendation& WithRecommendedResourceType(const Aws::String& value) { SetRecommendedResourceType(value); return *this;}
+    inline Recommendation& WithRecommendedResourceType(Aws::String&& value) { SetRecommendedResourceType(std::move(value)); return *this;}
+    inline Recommendation& WithRecommendedResourceType(const char* value) { SetRecommendedResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -144,6 +162,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>The estimated monthly cost of the current resource. For Reserved Instances
+     * and Savings Plans, it refers to the cost for eligible usage.</p>
+     */
+    inline double GetEstimatedMonthlyCost() const{ return m_estimatedMonthlyCost; }
+    inline bool EstimatedMonthlyCostHasBeenSet() const { return m_estimatedMonthlyCostHasBeenSet; }
+    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCostHasBeenSet = true; m_estimatedMonthlyCost = value; }
+    inline Recommendation& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The currency code used for the recommendation.</p>
+     */
+    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
+    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
+    inline Recommendation& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
+    inline Recommendation& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline Recommendation& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The effort required to implement the recommendation.</p>
      */
     inline const Aws::String& GetImplementationEffort() const{ return m_implementationEffort; }
@@ -158,38 +201,50 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time when the recommendation was last generated.</p>
+     * <p>Whether or not implementing the recommendation requires a restart.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
-    inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline Recommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline Recommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    inline bool GetRestartNeeded() const{ return m_restartNeeded; }
+    inline bool RestartNeededHasBeenSet() const { return m_restartNeededHasBeenSet; }
+    inline void SetRestartNeeded(bool value) { m_restartNeededHasBeenSet = true; m_restartNeeded = value; }
+    inline Recommendation& WithRestartNeeded(bool value) { SetRestartNeeded(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The ID for the recommendation.</p>
+     * <p>The type of tasks that can be carried out by this action.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline Recommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline Recommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline Recommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    inline const Aws::String& GetActionType() const{ return m_actionType; }
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+    inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
+    inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
+    inline Recommendation& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
+    inline Recommendation& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
+    inline Recommendation& WithActionType(const char* value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The lookback period that's used to generate the recommendation.</p>
+     * <p>Whether or not implementing the recommendation can be rolled back.</p>
      */
-    inline int GetRecommendationLookbackPeriodInDays() const{ return m_recommendationLookbackPeriodInDays; }
-    inline bool RecommendationLookbackPeriodInDaysHasBeenSet() const { return m_recommendationLookbackPeriodInDaysHasBeenSet; }
-    inline void SetRecommendationLookbackPeriodInDays(int value) { m_recommendationLookbackPeriodInDaysHasBeenSet = true; m_recommendationLookbackPeriodInDays = value; }
-    inline Recommendation& WithRecommendationLookbackPeriodInDays(int value) { SetRecommendationLookbackPeriodInDays(value); return *this;}
+    inline bool GetRollbackPossible() const{ return m_rollbackPossible; }
+    inline bool RollbackPossibleHasBeenSet() const { return m_rollbackPossibleHasBeenSet; }
+    inline void SetRollbackPossible(bool value) { m_rollbackPossibleHasBeenSet = true; m_rollbackPossible = value; }
+    inline Recommendation& WithRollbackPossible(bool value) { SetRollbackPossible(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Describes the current resource.</p>
+     */
+    inline const Aws::String& GetCurrentResourceSummary() const{ return m_currentResourceSummary; }
+    inline bool CurrentResourceSummaryHasBeenSet() const { return m_currentResourceSummaryHasBeenSet; }
+    inline void SetCurrentResourceSummary(const Aws::String& value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary = value; }
+    inline void SetCurrentResourceSummary(Aws::String&& value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary = std::move(value); }
+    inline void SetCurrentResourceSummary(const char* value) { m_currentResourceSummaryHasBeenSet = true; m_currentResourceSummary.assign(value); }
+    inline Recommendation& WithCurrentResourceSummary(const Aws::String& value) { SetCurrentResourceSummary(value); return *this;}
+    inline Recommendation& WithCurrentResourceSummary(Aws::String&& value) { SetCurrentResourceSummary(std::move(value)); return *this;}
+    inline Recommendation& WithCurrentResourceSummary(const char* value) { SetCurrentResourceSummary(value); return *this;}
     ///@}
 
     ///@{
@@ -208,78 +263,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The recommended resource type.</p>
+     * <p>The time when the recommendation was last generated.</p>
      */
-    inline const Aws::String& GetRecommendedResourceType() const{ return m_recommendedResourceType; }
-    inline bool RecommendedResourceTypeHasBeenSet() const { return m_recommendedResourceTypeHasBeenSet; }
-    inline void SetRecommendedResourceType(const Aws::String& value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType = value; }
-    inline void SetRecommendedResourceType(Aws::String&& value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType = std::move(value); }
-    inline void SetRecommendedResourceType(const char* value) { m_recommendedResourceTypeHasBeenSet = true; m_recommendedResourceType.assign(value); }
-    inline Recommendation& WithRecommendedResourceType(const Aws::String& value) { SetRecommendedResourceType(value); return *this;}
-    inline Recommendation& WithRecommendedResourceType(Aws::String&& value) { SetRecommendedResourceType(std::move(value)); return *this;}
-    inline Recommendation& WithRecommendedResourceType(const char* value) { SetRecommendedResourceType(value); return *this;}
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
+    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
+    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
+    inline Recommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
+    inline Recommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region of the resource.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
-    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Recommendation& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Recommendation& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Recommendation& WithRegion(const char* value) { SetRegion(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation.</p>
-     */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline Recommendation& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline Recommendation& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline Recommendation& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource ID for the recommendation.</p>
-     */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline Recommendation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline Recommendation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline Recommendation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Whether or not implementing the recommendation requires a restart.</p>
-     */
-    inline bool GetRestartNeeded() const{ return m_restartNeeded; }
-    inline bool RestartNeededHasBeenSet() const { return m_restartNeededHasBeenSet; }
-    inline void SetRestartNeeded(bool value) { m_restartNeededHasBeenSet = true; m_restartNeeded = value; }
-    inline Recommendation& WithRestartNeeded(bool value) { SetRestartNeeded(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Whether or not implementing the recommendation can be rolled back.</p>
-     */
-    inline bool GetRollbackPossible() const{ return m_rollbackPossible; }
-    inline bool RollbackPossibleHasBeenSet() const { return m_rollbackPossibleHasBeenSet; }
-    inline void SetRollbackPossible(bool value) { m_rollbackPossibleHasBeenSet = true; m_rollbackPossible = value; }
-    inline Recommendation& WithRollbackPossible(bool value) { SetRollbackPossible(value); return *this;}
+    inline int GetRecommendationLookbackPeriodInDays() const{ return m_recommendationLookbackPeriodInDays; }
+    inline bool RecommendationLookbackPeriodInDaysHasBeenSet() const { return m_recommendationLookbackPeriodInDaysHasBeenSet; }
+    inline void SetRecommendationLookbackPeriodInDays(int value) { m_recommendationLookbackPeriodInDaysHasBeenSet = true; m_recommendationLookbackPeriodInDays = value; }
+    inline Recommendation& WithRecommendationLookbackPeriodInDays(int value) { SetRecommendationLookbackPeriodInDays(value); return *this;}
     ///@}
 
     ///@{
@@ -309,23 +310,26 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_recommendationId;
+    bool m_recommendationIdHasBeenSet = false;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::String m_actionType;
-    bool m_actionTypeHasBeenSet = false;
+    Aws::String m_region;
+    bool m_regionHasBeenSet = false;
 
-    Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet = false;
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
-    Aws::String m_currentResourceSummary;
-    bool m_currentResourceSummaryHasBeenSet = false;
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_currentResourceType;
     bool m_currentResourceTypeHasBeenSet = false;
 
-    double m_estimatedMonthlyCost;
-    bool m_estimatedMonthlyCostHasBeenSet = false;
+    Aws::String m_recommendedResourceType;
+    bool m_recommendedResourceTypeHasBeenSet = false;
 
     double m_estimatedMonthlySavings;
     bool m_estimatedMonthlySavingsHasBeenSet = false;
@@ -333,38 +337,35 @@ namespace Model
     double m_estimatedSavingsPercentage;
     bool m_estimatedSavingsPercentageHasBeenSet = false;
 
+    double m_estimatedMonthlyCost;
+    bool m_estimatedMonthlyCostHasBeenSet = false;
+
+    Aws::String m_currencyCode;
+    bool m_currencyCodeHasBeenSet = false;
+
     Aws::String m_implementationEffort;
     bool m_implementationEffortHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
-    bool m_lastRefreshTimestampHasBeenSet = false;
-
-    Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet = false;
-
-    int m_recommendationLookbackPeriodInDays;
-    bool m_recommendationLookbackPeriodInDaysHasBeenSet = false;
-
-    Aws::String m_recommendedResourceSummary;
-    bool m_recommendedResourceSummaryHasBeenSet = false;
-
-    Aws::String m_recommendedResourceType;
-    bool m_recommendedResourceTypeHasBeenSet = false;
-
-    Aws::String m_region;
-    bool m_regionHasBeenSet = false;
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
 
     bool m_restartNeeded;
     bool m_restartNeededHasBeenSet = false;
 
+    Aws::String m_actionType;
+    bool m_actionTypeHasBeenSet = false;
+
     bool m_rollbackPossible;
     bool m_rollbackPossibleHasBeenSet = false;
+
+    Aws::String m_currentResourceSummary;
+    bool m_currentResourceSummaryHasBeenSet = false;
+
+    Aws::String m_recommendedResourceSummary;
+    bool m_recommendedResourceSummaryHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    bool m_lastRefreshTimestampHasBeenSet = false;
+
+    int m_recommendationLookbackPeriodInDays;
+    bool m_recommendationLookbackPeriodInDaysHasBeenSet = false;
 
     Source m_source;
     bool m_sourceHasBeenSet = false;

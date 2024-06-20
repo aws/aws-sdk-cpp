@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cost-optimization-hub/model/RecommendationSummary.h>
 #include <utility>
 
@@ -36,24 +36,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The currency code used for the recommendation.</p>
-     */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
-    inline ListRecommendationSummariesResult& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline ListRecommendationSummariesResult& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The total overall savings for the aggregated view.</p>
      */
     inline double GetEstimatedTotalDedupedSavings() const{ return m_estimatedTotalDedupedSavings; }
     inline void SetEstimatedTotalDedupedSavings(double value) { m_estimatedTotalDedupedSavings = value; }
     inline ListRecommendationSummariesResult& WithEstimatedTotalDedupedSavings(double value) { SetEstimatedTotalDedupedSavings(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of all savings recommendations.</p>
+     */
+    inline const Aws::Vector<RecommendationSummary>& GetItems() const{ return m_items; }
+    inline void SetItems(const Aws::Vector<RecommendationSummary>& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<RecommendationSummary>&& value) { m_items = std::move(value); }
+    inline ListRecommendationSummariesResult& WithItems(const Aws::Vector<RecommendationSummary>& value) { SetItems(value); return *this;}
+    inline ListRecommendationSummariesResult& WithItems(Aws::Vector<RecommendationSummary>&& value) { SetItems(std::move(value)); return *this;}
+    inline ListRecommendationSummariesResult& AddItems(const RecommendationSummary& value) { m_items.push_back(value); return *this; }
+    inline ListRecommendationSummariesResult& AddItems(RecommendationSummary&& value) { m_items.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,15 +71,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of all savings recommendations.</p>
+     * <p>The currency code used for the recommendation.</p>
      */
-    inline const Aws::Vector<RecommendationSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<RecommendationSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<RecommendationSummary>&& value) { m_items = std::move(value); }
-    inline ListRecommendationSummariesResult& WithItems(const Aws::Vector<RecommendationSummary>& value) { SetItems(value); return *this;}
-    inline ListRecommendationSummariesResult& WithItems(Aws::Vector<RecommendationSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListRecommendationSummariesResult& AddItems(const RecommendationSummary& value) { m_items.push_back(value); return *this; }
-    inline ListRecommendationSummariesResult& AddItems(RecommendationSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
+    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
+    inline ListRecommendationSummariesResult& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
+    inline ListRecommendationSummariesResult& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline ListRecommendationSummariesResult& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
     ///@}
 
     ///@{
@@ -107,13 +107,13 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_currencyCode;
-
     double m_estimatedTotalDedupedSavings;
+
+    Aws::Vector<RecommendationSummary> m_items;
 
     Aws::String m_groupBy;
 
-    Aws::Vector<RecommendationSummary> m_items;
+    Aws::String m_currencyCode;
 
     Aws::String m_nextToken;
 

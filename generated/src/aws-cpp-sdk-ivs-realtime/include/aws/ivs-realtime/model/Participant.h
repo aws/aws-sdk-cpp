@@ -5,10 +5,11 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/ivs-realtime/model/ParticipantState.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingState.h>
 #include <utility>
 
 namespace Aws
@@ -43,6 +44,63 @@ namespace Model
 
     ///@{
     /**
+     * <p>Unique identifier for this participant, assigned by IVS.</p>
+     */
+    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
+    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
+    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
+    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
+    inline Participant& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
+    inline Participant& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
+    inline Participant& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive
+     * information</i>.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+    inline Participant& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+    inline Participant& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+    inline Participant& WithUserId(const char* value) { SetUserId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether the participant is connected to or disconnected from the stage.</p>
+     */
+    inline const ParticipantState& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const ParticipantState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ParticipantState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline Participant& WithState(const ParticipantState& value) { SetState(value); return *this;}
+    inline Participant& WithState(ParticipantState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ISO 8601 timestamp (returned as a string) when the participant first joined
+     * the stage session.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFirstJoinTime() const{ return m_firstJoinTime; }
+    inline bool FirstJoinTimeHasBeenSet() const { return m_firstJoinTimeHasBeenSet; }
+    inline void SetFirstJoinTime(const Aws::Utils::DateTime& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = value; }
+    inline void SetFirstJoinTime(Aws::Utils::DateTime&& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = std::move(value); }
+    inline Participant& WithFirstJoinTime(const Aws::Utils::DateTime& value) { SetFirstJoinTime(value); return *this;}
+    inline Participant& WithFirstJoinTime(Aws::Utils::DateTime&& value) { SetFirstJoinTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Application-provided attributes to encode into the token and attach to a
      * stage. Map keys and values can contain UTF-8 encoded text. The maximum length of
      * this field is 1 KB total. <i>This field is exposed to all stage participants and
@@ -66,43 +124,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The participant’s browser.</p>
+     * <p>Whether the participant ever published to the stage session.</p>
      */
-    inline const Aws::String& GetBrowserName() const{ return m_browserName; }
-    inline bool BrowserNameHasBeenSet() const { return m_browserNameHasBeenSet; }
-    inline void SetBrowserName(const Aws::String& value) { m_browserNameHasBeenSet = true; m_browserName = value; }
-    inline void SetBrowserName(Aws::String&& value) { m_browserNameHasBeenSet = true; m_browserName = std::move(value); }
-    inline void SetBrowserName(const char* value) { m_browserNameHasBeenSet = true; m_browserName.assign(value); }
-    inline Participant& WithBrowserName(const Aws::String& value) { SetBrowserName(value); return *this;}
-    inline Participant& WithBrowserName(Aws::String&& value) { SetBrowserName(std::move(value)); return *this;}
-    inline Participant& WithBrowserName(const char* value) { SetBrowserName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The participant’s browser version.</p>
-     */
-    inline const Aws::String& GetBrowserVersion() const{ return m_browserVersion; }
-    inline bool BrowserVersionHasBeenSet() const { return m_browserVersionHasBeenSet; }
-    inline void SetBrowserVersion(const Aws::String& value) { m_browserVersionHasBeenSet = true; m_browserVersion = value; }
-    inline void SetBrowserVersion(Aws::String&& value) { m_browserVersionHasBeenSet = true; m_browserVersion = std::move(value); }
-    inline void SetBrowserVersion(const char* value) { m_browserVersionHasBeenSet = true; m_browserVersion.assign(value); }
-    inline Participant& WithBrowserVersion(const Aws::String& value) { SetBrowserVersion(value); return *this;}
-    inline Participant& WithBrowserVersion(Aws::String&& value) { SetBrowserVersion(std::move(value)); return *this;}
-    inline Participant& WithBrowserVersion(const char* value) { SetBrowserVersion(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ISO 8601 timestamp (returned as a string) when the participant first joined
-     * the stage session.</p>
-     */
-    inline const Aws::Utils::DateTime& GetFirstJoinTime() const{ return m_firstJoinTime; }
-    inline bool FirstJoinTimeHasBeenSet() const { return m_firstJoinTimeHasBeenSet; }
-    inline void SetFirstJoinTime(const Aws::Utils::DateTime& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = value; }
-    inline void SetFirstJoinTime(Aws::Utils::DateTime&& value) { m_firstJoinTimeHasBeenSet = true; m_firstJoinTime = std::move(value); }
-    inline Participant& WithFirstJoinTime(const Aws::Utils::DateTime& value) { SetFirstJoinTime(value); return *this;}
-    inline Participant& WithFirstJoinTime(Aws::Utils::DateTime&& value) { SetFirstJoinTime(std::move(value)); return *this;}
+    inline bool GetPublished() const{ return m_published; }
+    inline bool PublishedHasBeenSet() const { return m_publishedHasBeenSet; }
+    inline void SetPublished(bool value) { m_publishedHasBeenSet = true; m_published = value; }
+    inline Participant& WithPublished(bool value) { SetPublished(value); return *this;}
     ///@}
 
     ///@{
@@ -149,26 +176,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for this participant, assigned by IVS.</p>
+     * <p>The participant’s browser.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
-    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline Participant& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline Participant& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline Participant& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    inline const Aws::String& GetBrowserName() const{ return m_browserName; }
+    inline bool BrowserNameHasBeenSet() const { return m_browserNameHasBeenSet; }
+    inline void SetBrowserName(const Aws::String& value) { m_browserNameHasBeenSet = true; m_browserName = value; }
+    inline void SetBrowserName(Aws::String&& value) { m_browserNameHasBeenSet = true; m_browserName = std::move(value); }
+    inline void SetBrowserName(const char* value) { m_browserNameHasBeenSet = true; m_browserName.assign(value); }
+    inline Participant& WithBrowserName(const Aws::String& value) { SetBrowserName(value); return *this;}
+    inline Participant& WithBrowserName(Aws::String&& value) { SetBrowserName(std::move(value)); return *this;}
+    inline Participant& WithBrowserName(const char* value) { SetBrowserName(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Whether the participant ever published to the stage session.</p>
+     * <p>The participant’s browser version.</p>
      */
-    inline bool GetPublished() const{ return m_published; }
-    inline bool PublishedHasBeenSet() const { return m_publishedHasBeenSet; }
-    inline void SetPublished(bool value) { m_publishedHasBeenSet = true; m_published = value; }
-    inline Participant& WithPublished(bool value) { SetPublished(value); return *this;}
+    inline const Aws::String& GetBrowserVersion() const{ return m_browserVersion; }
+    inline bool BrowserVersionHasBeenSet() const { return m_browserVersionHasBeenSet; }
+    inline void SetBrowserVersion(const Aws::String& value) { m_browserVersionHasBeenSet = true; m_browserVersion = value; }
+    inline void SetBrowserVersion(Aws::String&& value) { m_browserVersionHasBeenSet = true; m_browserVersion = std::move(value); }
+    inline void SetBrowserVersion(const char* value) { m_browserVersionHasBeenSet = true; m_browserVersion.assign(value); }
+    inline Participant& WithBrowserVersion(const Aws::String& value) { SetBrowserVersion(value); return *this;}
+    inline Participant& WithBrowserVersion(Aws::String&& value) { SetBrowserVersion(std::move(value)); return *this;}
+    inline Participant& WithBrowserVersion(const char* value) { SetBrowserVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -187,46 +218,66 @@ namespace Model
 
     ///@{
     /**
-     * <p>Whether the participant is connected to or disconnected from the stage.</p>
+     * <p>Name of the S3 bucket to where the participant is being recorded, if
+     * individual participant recording is enabled, or "" (empty string), if recording
+     * is not enabled.</p>
      */
-    inline const ParticipantState& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ParticipantState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ParticipantState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Participant& WithState(const ParticipantState& value) { SetState(value); return *this;}
-    inline Participant& WithState(ParticipantState&& value) { SetState(std::move(value)); return *this;}
+    inline const Aws::String& GetRecordingS3BucketName() const{ return m_recordingS3BucketName; }
+    inline bool RecordingS3BucketNameHasBeenSet() const { return m_recordingS3BucketNameHasBeenSet; }
+    inline void SetRecordingS3BucketName(const Aws::String& value) { m_recordingS3BucketNameHasBeenSet = true; m_recordingS3BucketName = value; }
+    inline void SetRecordingS3BucketName(Aws::String&& value) { m_recordingS3BucketNameHasBeenSet = true; m_recordingS3BucketName = std::move(value); }
+    inline void SetRecordingS3BucketName(const char* value) { m_recordingS3BucketNameHasBeenSet = true; m_recordingS3BucketName.assign(value); }
+    inline Participant& WithRecordingS3BucketName(const Aws::String& value) { SetRecordingS3BucketName(value); return *this;}
+    inline Participant& WithRecordingS3BucketName(Aws::String&& value) { SetRecordingS3BucketName(std::move(value)); return *this;}
+    inline Participant& WithRecordingS3BucketName(const char* value) { SetRecordingS3BucketName(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Customer-assigned name to help identify the token; this can be used to link a
-     * participant to a user in the customer’s own systems. This can be any UTF-8
-     * encoded text. <i>This field is exposed to all stage participants and should not
-     * be used for personally identifying, confidential, or sensitive
-     * information</i>.</p>
+     * <p>S3 prefix of the S3 bucket to where the participant is being recorded, if
+     * individual participant recording is enabled, or "" (empty string), if recording
+     * is not enabled.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline Participant& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline Participant& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline Participant& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetRecordingS3Prefix() const{ return m_recordingS3Prefix; }
+    inline bool RecordingS3PrefixHasBeenSet() const { return m_recordingS3PrefixHasBeenSet; }
+    inline void SetRecordingS3Prefix(const Aws::String& value) { m_recordingS3PrefixHasBeenSet = true; m_recordingS3Prefix = value; }
+    inline void SetRecordingS3Prefix(Aws::String&& value) { m_recordingS3PrefixHasBeenSet = true; m_recordingS3Prefix = std::move(value); }
+    inline void SetRecordingS3Prefix(const char* value) { m_recordingS3PrefixHasBeenSet = true; m_recordingS3Prefix.assign(value); }
+    inline Participant& WithRecordingS3Prefix(const Aws::String& value) { SetRecordingS3Prefix(value); return *this;}
+    inline Participant& WithRecordingS3Prefix(Aws::String&& value) { SetRecordingS3Prefix(std::move(value)); return *this;}
+    inline Participant& WithRecordingS3Prefix(const char* value) { SetRecordingS3Prefix(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Participant’s recording state.</p>
+     */
+    inline const ParticipantRecordingState& GetRecordingState() const{ return m_recordingState; }
+    inline bool RecordingStateHasBeenSet() const { return m_recordingStateHasBeenSet; }
+    inline void SetRecordingState(const ParticipantRecordingState& value) { m_recordingStateHasBeenSet = true; m_recordingState = value; }
+    inline void SetRecordingState(ParticipantRecordingState&& value) { m_recordingStateHasBeenSet = true; m_recordingState = std::move(value); }
+    inline Participant& WithRecordingState(const ParticipantRecordingState& value) { SetRecordingState(value); return *this;}
+    inline Participant& WithRecordingState(ParticipantRecordingState&& value) { SetRecordingState(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_participantId;
+    bool m_participantIdHasBeenSet = false;
+
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
+
+    ParticipantState m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::Utils::DateTime m_firstJoinTime;
+    bool m_firstJoinTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    Aws::String m_browserName;
-    bool m_browserNameHasBeenSet = false;
-
-    Aws::String m_browserVersion;
-    bool m_browserVersionHasBeenSet = false;
-
-    Aws::Utils::DateTime m_firstJoinTime;
-    bool m_firstJoinTimeHasBeenSet = false;
+    bool m_published;
+    bool m_publishedHasBeenSet = false;
 
     Aws::String m_ispName;
     bool m_ispNameHasBeenSet = false;
@@ -237,20 +288,23 @@ namespace Model
     Aws::String m_osVersion;
     bool m_osVersionHasBeenSet = false;
 
-    Aws::String m_participantId;
-    bool m_participantIdHasBeenSet = false;
+    Aws::String m_browserName;
+    bool m_browserNameHasBeenSet = false;
 
-    bool m_published;
-    bool m_publishedHasBeenSet = false;
+    Aws::String m_browserVersion;
+    bool m_browserVersionHasBeenSet = false;
 
     Aws::String m_sdkVersion;
     bool m_sdkVersionHasBeenSet = false;
 
-    ParticipantState m_state;
-    bool m_stateHasBeenSet = false;
+    Aws::String m_recordingS3BucketName;
+    bool m_recordingS3BucketNameHasBeenSet = false;
 
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
+    Aws::String m_recordingS3Prefix;
+    bool m_recordingS3PrefixHasBeenSet = false;
+
+    ParticipantRecordingState m_recordingState;
+    bool m_recordingStateHasBeenSet = false;
   };
 
 } // namespace Model

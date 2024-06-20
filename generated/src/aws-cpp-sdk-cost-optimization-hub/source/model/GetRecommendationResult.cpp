@@ -18,36 +18,36 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRecommendationResult::GetRecommendationResult() : 
-    m_actionType(ActionType::NOT_SET),
-    m_costCalculationLookbackPeriodInDays(0),
-    m_currentResourceType(ResourceType::NOT_SET),
-    m_estimatedMonthlyCost(0.0),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedSavingsOverCostCalculationLookbackPeriod(0.0),
-    m_estimatedSavingsPercentage(0.0),
-    m_implementationEffort(ImplementationEffort::NOT_SET),
     m_recommendationLookbackPeriodInDays(0),
+    m_costCalculationLookbackPeriodInDays(0),
+    m_estimatedSavingsPercentage(0.0),
+    m_estimatedSavingsOverCostCalculationLookbackPeriod(0.0),
+    m_currentResourceType(ResourceType::NOT_SET),
     m_recommendedResourceType(ResourceType::NOT_SET),
+    m_source(Source::NOT_SET),
+    m_estimatedMonthlySavings(0.0),
+    m_estimatedMonthlyCost(0.0),
+    m_implementationEffort(ImplementationEffort::NOT_SET),
     m_restartNeeded(false),
-    m_rollbackPossible(false),
-    m_source(Source::NOT_SET)
+    m_actionType(ActionType::NOT_SET),
+    m_rollbackPossible(false)
 {
 }
 
 GetRecommendationResult::GetRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_actionType(ActionType::NOT_SET),
-    m_costCalculationLookbackPeriodInDays(0),
-    m_currentResourceType(ResourceType::NOT_SET),
-    m_estimatedMonthlyCost(0.0),
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedSavingsOverCostCalculationLookbackPeriod(0.0),
-    m_estimatedSavingsPercentage(0.0),
-    m_implementationEffort(ImplementationEffort::NOT_SET),
     m_recommendationLookbackPeriodInDays(0),
+    m_costCalculationLookbackPeriodInDays(0),
+    m_estimatedSavingsPercentage(0.0),
+    m_estimatedSavingsOverCostCalculationLookbackPeriod(0.0),
+    m_currentResourceType(ResourceType::NOT_SET),
     m_recommendedResourceType(ResourceType::NOT_SET),
+    m_source(Source::NOT_SET),
+    m_estimatedMonthlySavings(0.0),
+    m_estimatedMonthlyCost(0.0),
+    m_implementationEffort(ImplementationEffort::NOT_SET),
     m_restartNeeded(false),
-    m_rollbackPossible(false),
-    m_source(Source::NOT_SET)
+    m_actionType(ActionType::NOT_SET),
+    m_rollbackPossible(false)
 {
   *this = result;
 }
@@ -55,21 +55,27 @@ GetRecommendationResult::GetRecommendationResult(const Aws::AmazonWebServiceResu
 GetRecommendationResult& GetRecommendationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("recommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("recommendationId");
+
+  }
+
+  if(jsonValue.ValueExists("resourceId"))
+  {
+    m_resourceId = jsonValue.GetString("resourceId");
+
+  }
+
+  if(jsonValue.ValueExists("resourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("resourceArn");
+
+  }
+
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
-  }
-
-  if(jsonValue.ValueExists("actionType"))
-  {
-    m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("actionType"));
-
-  }
-
-  if(jsonValue.ValueExists("costCalculationLookbackPeriodInDays"))
-  {
-    m_costCalculationLookbackPeriodInDays = jsonValue.GetInteger("costCalculationLookbackPeriodInDays");
 
   }
 
@@ -79,33 +85,15 @@ GetRecommendationResult& GetRecommendationResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("currentResourceDetails"))
+  if(jsonValue.ValueExists("recommendationLookbackPeriodInDays"))
   {
-    m_currentResourceDetails = jsonValue.GetObject("currentResourceDetails");
+    m_recommendationLookbackPeriodInDays = jsonValue.GetInteger("recommendationLookbackPeriodInDays");
 
   }
 
-  if(jsonValue.ValueExists("currentResourceType"))
+  if(jsonValue.ValueExists("costCalculationLookbackPeriodInDays"))
   {
-    m_currentResourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("currentResourceType"));
-
-  }
-
-  if(jsonValue.ValueExists("estimatedMonthlyCost"))
-  {
-    m_estimatedMonthlyCost = jsonValue.GetDouble("estimatedMonthlyCost");
-
-  }
-
-  if(jsonValue.ValueExists("estimatedMonthlySavings"))
-  {
-    m_estimatedMonthlySavings = jsonValue.GetDouble("estimatedMonthlySavings");
-
-  }
-
-  if(jsonValue.ValueExists("estimatedSavingsOverCostCalculationLookbackPeriod"))
-  {
-    m_estimatedSavingsOverCostCalculationLookbackPeriod = jsonValue.GetDouble("estimatedSavingsOverCostCalculationLookbackPeriod");
+    m_costCalculationLookbackPeriodInDays = jsonValue.GetInteger("costCalculationLookbackPeriodInDays");
 
   }
 
@@ -115,33 +103,15 @@ GetRecommendationResult& GetRecommendationResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("implementationEffort"))
+  if(jsonValue.ValueExists("estimatedSavingsOverCostCalculationLookbackPeriod"))
   {
-    m_implementationEffort = ImplementationEffortMapper::GetImplementationEffortForName(jsonValue.GetString("implementationEffort"));
+    m_estimatedSavingsOverCostCalculationLookbackPeriod = jsonValue.GetDouble("estimatedSavingsOverCostCalculationLookbackPeriod");
 
   }
 
-  if(jsonValue.ValueExists("lastRefreshTimestamp"))
+  if(jsonValue.ValueExists("currentResourceType"))
   {
-    m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
-  }
-
-  if(jsonValue.ValueExists("recommendationId"))
-  {
-    m_recommendationId = jsonValue.GetString("recommendationId");
-
-  }
-
-  if(jsonValue.ValueExists("recommendationLookbackPeriodInDays"))
-  {
-    m_recommendationLookbackPeriodInDays = jsonValue.GetInteger("recommendationLookbackPeriodInDays");
-
-  }
-
-  if(jsonValue.ValueExists("recommendedResourceDetails"))
-  {
-    m_recommendedResourceDetails = jsonValue.GetObject("recommendedResourceDetails");
+    m_currentResourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("currentResourceType"));
 
   }
 
@@ -157,15 +127,33 @@ GetRecommendationResult& GetRecommendationResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("resourceArn"))
+  if(jsonValue.ValueExists("source"))
   {
-    m_resourceArn = jsonValue.GetString("resourceArn");
+    m_source = SourceMapper::GetSourceForName(jsonValue.GetString("source"));
 
   }
 
-  if(jsonValue.ValueExists("resourceId"))
+  if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
-    m_resourceId = jsonValue.GetString("resourceId");
+    m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("estimatedMonthlySavings"))
+  {
+    m_estimatedMonthlySavings = jsonValue.GetDouble("estimatedMonthlySavings");
+
+  }
+
+  if(jsonValue.ValueExists("estimatedMonthlyCost"))
+  {
+    m_estimatedMonthlyCost = jsonValue.GetDouble("estimatedMonthlyCost");
+
+  }
+
+  if(jsonValue.ValueExists("implementationEffort"))
+  {
+    m_implementationEffort = ImplementationEffortMapper::GetImplementationEffortForName(jsonValue.GetString("implementationEffort"));
 
   }
 
@@ -175,15 +163,27 @@ GetRecommendationResult& GetRecommendationResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("actionType"))
+  {
+    m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("actionType"));
+
+  }
+
   if(jsonValue.ValueExists("rollbackPossible"))
   {
     m_rollbackPossible = jsonValue.GetBool("rollbackPossible");
 
   }
 
-  if(jsonValue.ValueExists("source"))
+  if(jsonValue.ValueExists("currentResourceDetails"))
   {
-    m_source = SourceMapper::GetSourceForName(jsonValue.GetString("source"));
+    m_currentResourceDetails = jsonValue.GetObject("currentResourceDetails");
+
+  }
+
+  if(jsonValue.ValueExists("recommendedResourceDetails"))
+  {
+    m_recommendedResourceDetails = jsonValue.GetObject("recommendedResourceDetails");
 
   }
 

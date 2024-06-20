@@ -8,6 +8,7 @@
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
+#include <aws/bedrock-runtime/model/DocumentBlock.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,18 @@ namespace Model
     inline ToolResultContentBlock& WithImage(const ImageBlock& value) { SetImage(value); return *this;}
     inline ToolResultContentBlock& WithImage(ImageBlock&& value) { SetImage(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A tool result that is a document.</p>
+     */
+    inline const DocumentBlock& GetDocument() const{ return m_document; }
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+    inline void SetDocument(const DocumentBlock& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(DocumentBlock&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
+    inline ToolResultContentBlock& WithDocument(const DocumentBlock& value) { SetDocument(value); return *this;}
+    inline ToolResultContentBlock& WithDocument(DocumentBlock&& value) { SetDocument(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::Document m_json;
@@ -87,6 +100,9 @@ namespace Model
 
     ImageBlock m_image;
     bool m_imageHasBeenSet = false;
+
+    DocumentBlock m_document;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

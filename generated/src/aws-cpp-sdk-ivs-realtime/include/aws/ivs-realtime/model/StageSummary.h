@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>ID of the active session within the stage.</p>
-     */
-    inline const Aws::String& GetActiveSessionId() const{ return m_activeSessionId; }
-    inline bool ActiveSessionIdHasBeenSet() const { return m_activeSessionIdHasBeenSet; }
-    inline void SetActiveSessionId(const Aws::String& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = value; }
-    inline void SetActiveSessionId(Aws::String&& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = std::move(value); }
-    inline void SetActiveSessionId(const char* value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId.assign(value); }
-    inline StageSummary& WithActiveSessionId(const Aws::String& value) { SetActiveSessionId(value); return *this;}
-    inline StageSummary& WithActiveSessionId(Aws::String&& value) { SetActiveSessionId(std::move(value)); return *this;}
-    inline StageSummary& WithActiveSessionId(const char* value) { SetActiveSessionId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Stage ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -82,6 +68,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>ID of the active session within the stage.</p>
+     */
+    inline const Aws::String& GetActiveSessionId() const{ return m_activeSessionId; }
+    inline bool ActiveSessionIdHasBeenSet() const { return m_activeSessionIdHasBeenSet; }
+    inline void SetActiveSessionId(const Aws::String& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = value; }
+    inline void SetActiveSessionId(Aws::String&& value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId = std::move(value); }
+    inline void SetActiveSessionId(const char* value) { m_activeSessionIdHasBeenSet = true; m_activeSessionId.assign(value); }
+    inline StageSummary& WithActiveSessionId(const Aws::String& value) { SetActiveSessionId(value); return *this;}
+    inline StageSummary& WithActiveSessionId(Aws::String&& value) { SetActiveSessionId(std::move(value)); return *this;}
+    inline StageSummary& WithActiveSessionId(const char* value) { SetActiveSessionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags attached to the resource. Array of maps, each of the form
      * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -105,14 +105,14 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_activeSessionId;
-    bool m_activeSessionIdHasBeenSet = false;
-
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_activeSessionId;
+    bool m_activeSessionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

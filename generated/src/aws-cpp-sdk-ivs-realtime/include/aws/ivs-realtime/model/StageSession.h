@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -44,19 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This
-     * is null if the stage is active.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline StageSession& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline StageSession& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>ID of the session within the stage.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
@@ -80,16 +67,29 @@ namespace Model
     inline StageSession& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
     inline StageSession& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>ISO 8601 timestamp (returned as a string) when the stage session ended. This
+     * is null if the stage is active.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+    inline StageSession& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+    inline StageSession& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

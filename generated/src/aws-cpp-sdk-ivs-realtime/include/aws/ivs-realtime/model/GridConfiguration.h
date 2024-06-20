@@ -60,17 +60,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the spacing between participant tiles in pixels. Default:
-     * <code>2</code>.</p>
-     */
-    inline int GetGridGap() const{ return m_gridGap; }
-    inline bool GridGapHasBeenSet() const { return m_gridGapHasBeenSet; }
-    inline void SetGridGap(int value) { m_gridGapHasBeenSet = true; m_gridGap = value; }
-    inline GridConfiguration& WithGridGap(int value) { SetGridGap(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Determines whether to omit participants with stopped video in the
      * composition. Default: <code>false</code>.</p>
      */
@@ -107,13 +96,21 @@ namespace Model
     inline GridConfiguration& WithVideoFillMode(const VideoFillMode& value) { SetVideoFillMode(value); return *this;}
     inline GridConfiguration& WithVideoFillMode(VideoFillMode&& value) { SetVideoFillMode(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the spacing between participant tiles in pixels. Default:
+     * <code>2</code>.</p>
+     */
+    inline int GetGridGap() const{ return m_gridGap; }
+    inline bool GridGapHasBeenSet() const { return m_gridGapHasBeenSet; }
+    inline void SetGridGap(int value) { m_gridGapHasBeenSet = true; m_gridGap = value; }
+    inline GridConfiguration& WithGridGap(int value) { SetGridGap(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_featuredParticipantAttribute;
     bool m_featuredParticipantAttributeHasBeenSet = false;
-
-    int m_gridGap;
-    bool m_gridGapHasBeenSet = false;
 
     bool m_omitStoppedVideo;
     bool m_omitStoppedVideoHasBeenSet = false;
@@ -123,6 +120,9 @@ namespace Model
 
     VideoFillMode m_videoFillMode;
     bool m_videoFillModeHasBeenSet = false;
+
+    int m_gridGap;
+    bool m_gridGapHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,122 +19,42 @@ namespace Model
 {
 
 Filter::Filter() : 
-    m_accountIdsHasBeenSet(false),
-    m_actionTypesHasBeenSet(false),
-    m_implementationEffortsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
     m_restartNeeded(false),
     m_restartNeededHasBeenSet(false),
     m_rollbackPossible(false),
     m_rollbackPossibleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_implementationEffortsHasBeenSet(false),
+    m_accountIdsHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_resourceTypesHasBeenSet(false),
+    m_actionTypesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false),
+    m_resourceArnsHasBeenSet(false),
+    m_recommendationIdsHasBeenSet(false)
 {
 }
 
 Filter::Filter(JsonView jsonValue) : 
-    m_accountIdsHasBeenSet(false),
-    m_actionTypesHasBeenSet(false),
-    m_implementationEffortsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
     m_restartNeeded(false),
     m_restartNeededHasBeenSet(false),
     m_rollbackPossible(false),
     m_rollbackPossibleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_implementationEffortsHasBeenSet(false),
+    m_accountIdsHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_resourceTypesHasBeenSet(false),
+    m_actionTypesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false),
+    m_resourceArnsHasBeenSet(false),
+    m_recommendationIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Filter& Filter::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("accountIds"))
-  {
-    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
-    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-    {
-      m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
-    }
-    m_accountIdsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("actionTypes"))
-  {
-    Aws::Utils::Array<JsonView> actionTypesJsonList = jsonValue.GetArray("actionTypes");
-    for(unsigned actionTypesIndex = 0; actionTypesIndex < actionTypesJsonList.GetLength(); ++actionTypesIndex)
-    {
-      m_actionTypes.push_back(ActionTypeMapper::GetActionTypeForName(actionTypesJsonList[actionTypesIndex].AsString()));
-    }
-    m_actionTypesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("implementationEfforts"))
-  {
-    Aws::Utils::Array<JsonView> implementationEffortsJsonList = jsonValue.GetArray("implementationEfforts");
-    for(unsigned implementationEffortsIndex = 0; implementationEffortsIndex < implementationEffortsJsonList.GetLength(); ++implementationEffortsIndex)
-    {
-      m_implementationEfforts.push_back(ImplementationEffortMapper::GetImplementationEffortForName(implementationEffortsJsonList[implementationEffortsIndex].AsString()));
-    }
-    m_implementationEffortsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("recommendationIds"))
-  {
-    Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
-    for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
-    {
-      m_recommendationIds.push_back(recommendationIdsJsonList[recommendationIdsIndex].AsString());
-    }
-    m_recommendationIdsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("regions"))
-  {
-    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
-    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
-    {
-      m_regions.push_back(regionsJsonList[regionsIndex].AsString());
-    }
-    m_regionsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceArns"))
-  {
-    Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
-    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
-    {
-      m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());
-    }
-    m_resourceArnsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceIds"))
-  {
-    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
-    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-    {
-      m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
-    }
-    m_resourceIdsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceTypes"))
-  {
-    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
-    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
-    {
-      m_resourceTypes.push_back(ResourceTypeMapper::GetResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
-    }
-    m_resourceTypesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("restartNeeded"))
   {
     m_restartNeeded = jsonValue.GetBool("restartNeeded");
@@ -149,6 +69,56 @@ Filter& Filter::operator =(JsonView jsonValue)
     m_rollbackPossibleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("implementationEfforts"))
+  {
+    Aws::Utils::Array<JsonView> implementationEffortsJsonList = jsonValue.GetArray("implementationEfforts");
+    for(unsigned implementationEffortsIndex = 0; implementationEffortsIndex < implementationEffortsJsonList.GetLength(); ++implementationEffortsIndex)
+    {
+      m_implementationEfforts.push_back(ImplementationEffortMapper::GetImplementationEffortForName(implementationEffortsJsonList[implementationEffortsIndex].AsString()));
+    }
+    m_implementationEffortsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("accountIds"))
+  {
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
+    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
+    {
+      m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
+    }
+    m_accountIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("regions"))
+  {
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
+    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
+    {
+      m_regions.push_back(regionsJsonList[regionsIndex].AsString());
+    }
+    m_regionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceTypes"))
+  {
+    Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
+    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
+    {
+      m_resourceTypes.push_back(ResourceTypeMapper::GetResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
+    }
+    m_resourceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("actionTypes"))
+  {
+    Aws::Utils::Array<JsonView> actionTypesJsonList = jsonValue.GetArray("actionTypes");
+    for(unsigned actionTypesIndex = 0; actionTypesIndex < actionTypesJsonList.GetLength(); ++actionTypesIndex)
+    {
+      m_actionTypes.push_back(ActionTypeMapper::GetActionTypeForName(actionTypesJsonList[actionTypesIndex].AsString()));
+    }
+    m_actionTypesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -159,6 +129,36 @@ Filter& Filter::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceIds"))
+  {
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
+    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
+    {
+      m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
+    }
+    m_resourceIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceArns"))
+  {
+    Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
+    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
+    {
+      m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());
+    }
+    m_resourceArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recommendationIds"))
+  {
+    Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
+    for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
+    {
+      m_recommendationIds.push_back(recommendationIdsJsonList[recommendationIdsIndex].AsString());
+    }
+    m_recommendationIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -166,25 +166,15 @@ JsonValue Filter::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_accountIdsHasBeenSet)
+  if(m_restartNeededHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
-   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
-   {
-     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
-   }
-   payload.WithArray("accountIds", std::move(accountIdsJsonList));
+   payload.WithBool("restartNeeded", m_restartNeeded);
 
   }
 
-  if(m_actionTypesHasBeenSet)
+  if(m_rollbackPossibleHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> actionTypesJsonList(m_actionTypes.size());
-   for(unsigned actionTypesIndex = 0; actionTypesIndex < actionTypesJsonList.GetLength(); ++actionTypesIndex)
-   {
-     actionTypesJsonList[actionTypesIndex].AsString(ActionTypeMapper::GetNameForActionType(m_actionTypes[actionTypesIndex]));
-   }
-   payload.WithArray("actionTypes", std::move(actionTypesJsonList));
+   payload.WithBool("rollbackPossible", m_rollbackPossible);
 
   }
 
@@ -199,14 +189,14 @@ JsonValue Filter::Jsonize() const
 
   }
 
-  if(m_recommendationIdsHasBeenSet)
+  if(m_accountIdsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
-   for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
-     recommendationIdsJsonList[recommendationIdsIndex].AsString(m_recommendationIds[recommendationIdsIndex]);
+     accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
    }
-   payload.WithArray("recommendationIds", std::move(recommendationIdsJsonList));
+   payload.WithArray("accountIds", std::move(accountIdsJsonList));
 
   }
 
@@ -221,14 +211,36 @@ JsonValue Filter::Jsonize() const
 
   }
 
-  if(m_resourceArnsHasBeenSet)
+  if(m_resourceTypesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
-   for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
-     resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
+     resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
    }
-   payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
+   payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
+
+  }
+
+  if(m_actionTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> actionTypesJsonList(m_actionTypes.size());
+   for(unsigned actionTypesIndex = 0; actionTypesIndex < actionTypesJsonList.GetLength(); ++actionTypesIndex)
+   {
+     actionTypesJsonList[actionTypesIndex].AsString(ActionTypeMapper::GetNameForActionType(m_actionTypes[actionTypesIndex]));
+   }
+   payload.WithArray("actionTypes", std::move(actionTypesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 
@@ -243,37 +255,25 @@ JsonValue Filter::Jsonize() const
 
   }
 
-  if(m_resourceTypesHasBeenSet)
+  if(m_resourceArnsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
-   for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
-     resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeMapper::GetNameForResourceType(m_resourceTypes[resourceTypesIndex]));
+     resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
    }
-   payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
+   payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
 
   }
 
-  if(m_restartNeededHasBeenSet)
+  if(m_recommendationIdsHasBeenSet)
   {
-   payload.WithBool("restartNeeded", m_restartNeeded);
-
-  }
-
-  if(m_rollbackPossibleHasBeenSet)
-  {
-   payload.WithBool("rollbackPossible", m_rollbackPossible);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   Aws::Utils::Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
+   for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
    {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+     recommendationIdsJsonList[recommendationIdsIndex].AsString(m_recommendationIds[recommendationIdsIndex]);
    }
-   payload.WithArray("tags", std::move(tagsJsonList));
+   payload.WithArray("recommendationIds", std::move(recommendationIdsJsonList));
 
   }
 

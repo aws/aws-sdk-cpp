@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cost-optimization-hub/model/ValidationExceptionReason.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cost-optimization-hub/model/ValidationExceptionDetail.h>
 #include <utility>
 
@@ -42,20 +42,6 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The list of fields that are invalid.</p>
-     */
-    inline const Aws::Vector<ValidationExceptionDetail>& GetFields() const{ return m_fields; }
-    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<ValidationExceptionDetail>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<ValidationExceptionDetail>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline ValidationException& WithFields(const Aws::Vector<ValidationExceptionDetail>& value) { SetFields(value); return *this;}
-    inline ValidationException& WithFields(Aws::Vector<ValidationExceptionDetail>&& value) { SetFields(std::move(value)); return *this;}
-    inline ValidationException& AddFields(const ValidationExceptionDetail& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline ValidationException& AddFields(ValidationExceptionDetail&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -78,16 +64,30 @@ namespace Model
     inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
     inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<ValidationExceptionDetail> m_fields;
-    bool m_fieldsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The list of fields that are invalid.</p>
+     */
+    inline const Aws::Vector<ValidationExceptionDetail>& GetFields() const{ return m_fields; }
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
+    inline void SetFields(const Aws::Vector<ValidationExceptionDetail>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
+    inline void SetFields(Aws::Vector<ValidationExceptionDetail>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
+    inline ValidationException& WithFields(const Aws::Vector<ValidationExceptionDetail>& value) { SetFields(value); return *this;}
+    inline ValidationException& WithFields(Aws::Vector<ValidationExceptionDetail>&& value) { SetFields(std::move(value)); return *this;}
+    inline ValidationException& AddFields(const ValidationExceptionDetail& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+    inline ValidationException& AddFields(ValidationExceptionDetail&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
     bool m_reasonHasBeenSet = false;
+
+    Aws::Vector<ValidationExceptionDetail> m_fields;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

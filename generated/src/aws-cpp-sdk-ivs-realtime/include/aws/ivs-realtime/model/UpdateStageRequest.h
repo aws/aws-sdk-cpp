@@ -7,6 +7,7 @@
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/IvsrealtimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/model/AutoParticipantRecordingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +60,20 @@ namespace Model
     inline UpdateStageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline UpdateStageRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Auto-participant-recording configuration object to attach to the stage.
+     * Auto-participant-recording configuration cannot be updated while recording is
+     * active.</p>
+     */
+    inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
+    inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }
+    inline void SetAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = value; }
+    inline void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::move(value); }
+    inline UpdateStageRequest& WithAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { SetAutoParticipantRecordingConfiguration(value); return *this;}
+    inline UpdateStageRequest& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { SetAutoParticipantRecordingConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -66,6 +81,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    AutoParticipantRecordingConfiguration m_autoParticipantRecordingConfiguration;
+    bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,33 +19,33 @@ namespace Model
 {
 
 ComputeConfiguration::ComputeConfiguration() : 
-    m_architectureHasBeenSet(false),
+    m_vCpu(0.0),
+    m_vCpuHasBeenSet(false),
     m_memorySizeInMB(0),
     m_memorySizeInMBHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_vCpu(0.0),
-    m_vCpuHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
 }
 
 ComputeConfiguration::ComputeConfiguration(JsonView jsonValue) : 
-    m_architectureHasBeenSet(false),
+    m_vCpu(0.0),
+    m_vCpuHasBeenSet(false),
     m_memorySizeInMB(0),
     m_memorySizeInMBHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_vCpu(0.0),
-    m_vCpuHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("architecture"))
+  if(jsonValue.ValueExists("vCpu"))
   {
-    m_architecture = jsonValue.GetString("architecture");
+    m_vCpu = jsonValue.GetDouble("vCpu");
 
-    m_architectureHasBeenSet = true;
+    m_vCpuHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("memorySizeInMB"))
@@ -55,18 +55,18 @@ ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
     m_memorySizeInMBHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("architecture"))
+  {
+    m_architecture = jsonValue.GetString("architecture");
+
+    m_architectureHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
 
     m_platformHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("vCpu"))
-  {
-    m_vCpu = jsonValue.GetDouble("vCpu");
-
-    m_vCpuHasBeenSet = true;
   }
 
   return *this;
@@ -76,9 +76,9 @@ JsonValue ComputeConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_architectureHasBeenSet)
+  if(m_vCpuHasBeenSet)
   {
-   payload.WithString("architecture", m_architecture);
+   payload.WithDouble("vCpu", m_vCpu);
 
   }
 
@@ -88,15 +88,15 @@ JsonValue ComputeConfiguration::Jsonize() const
 
   }
 
-  if(m_platformHasBeenSet)
+  if(m_architectureHasBeenSet)
   {
-   payload.WithString("platform", m_platform);
+   payload.WithString("architecture", m_architecture);
 
   }
 
-  if(m_vCpuHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-   payload.WithDouble("vCpu", m_vCpu);
+   payload.WithString("platform", m_platform);
 
   }
 

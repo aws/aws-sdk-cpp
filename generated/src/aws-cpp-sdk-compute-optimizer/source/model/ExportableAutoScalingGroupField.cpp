@@ -72,6 +72,8 @@ namespace Aws
         static const int EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesCpuVendorArchitectures");
         static const int EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
         static const int EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesInferredWorkloadTypes");
+        static const int EffectiveRecommendationPreferencesPreferredResources_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesPreferredResources");
+        static const int EffectiveRecommendationPreferencesLookBackPeriod_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesLookBackPeriod");
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
         static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
         static const int CurrentInstanceGpuInfo_HASH = HashingUtils::HashString("CurrentInstanceGpuInfo");
@@ -84,8 +86,6 @@ namespace Aws
         static const int RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
         static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
         static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
-        static const int EffectiveRecommendationPreferencesPreferredResources_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesPreferredResources");
-        static const int EffectiveRecommendationPreferencesLookBackPeriod_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesLookBackPeriod");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -299,6 +299,14 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes;
           }
+          else if (hashCode == EffectiveRecommendationPreferencesPreferredResources_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesLookBackPeriod_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod;
+          }
           else if (hashCode == InferredWorkloadTypes_HASH)
           {
             return ExportableAutoScalingGroupField::InferredWorkloadTypes;
@@ -346,14 +354,6 @@ namespace Aws
           else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH)
           {
             return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
-          }
-          else if (hashCode == EffectiveRecommendationPreferencesPreferredResources_HASH)
-          {
-            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources;
-          }
-          else if (hashCode == EffectiveRecommendationPreferencesLookBackPeriod_HASH)
-          {
-            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -475,6 +475,10 @@ namespace Aws
             return "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics";
           case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes:
             return "EffectiveRecommendationPreferencesInferredWorkloadTypes";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources:
+            return "EffectiveRecommendationPreferencesPreferredResources";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod:
+            return "EffectiveRecommendationPreferencesLookBackPeriod";
           case ExportableAutoScalingGroupField::InferredWorkloadTypes:
             return "InferredWorkloadTypes";
           case ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort:
@@ -499,10 +503,6 @@ namespace Aws
             return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
           case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
             return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
-          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources:
-            return "EffectiveRecommendationPreferencesPreferredResources";
-          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookBackPeriod:
-            return "EffectiveRecommendationPreferencesLookBackPeriod";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

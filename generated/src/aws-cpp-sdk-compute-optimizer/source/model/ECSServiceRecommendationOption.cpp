@@ -24,9 +24,9 @@ ECSServiceRecommendationOption::ECSServiceRecommendationOption() :
     m_cpu(0),
     m_cpuHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_containerRecommendationsHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
+    m_containerRecommendationsHasBeenSet(false)
 {
 }
 
@@ -36,9 +36,9 @@ ECSServiceRecommendationOption::ECSServiceRecommendationOption(JsonView jsonValu
     m_cpu(0),
     m_cpuHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_containerRecommendationsHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
+    m_containerRecommendationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +66,13 @@ ECSServiceRecommendationOption& ECSServiceRecommendationOption::operator =(JsonV
     m_savingsOpportunityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
+  {
+    m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
+
+    m_savingsOpportunityAfterDiscountsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
@@ -84,13 +91,6 @@ ECSServiceRecommendationOption& ECSServiceRecommendationOption::operator =(JsonV
       m_containerRecommendations.push_back(containerRecommendationsJsonList[containerRecommendationsIndex].AsObject());
     }
     m_containerRecommendationsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
-  {
-    m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
-    m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
 
   return *this;
@@ -118,6 +118,12 @@ JsonValue ECSServiceRecommendationOption::Jsonize() const
 
   }
 
+  if(m_savingsOpportunityAfterDiscountsHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
+
+  }
+
   if(m_projectedUtilizationMetricsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
@@ -137,12 +143,6 @@ JsonValue ECSServiceRecommendationOption::Jsonize() const
      containerRecommendationsJsonList[containerRecommendationsIndex].AsObject(m_containerRecommendations[containerRecommendationsIndex].Jsonize());
    }
    payload.WithArray("containerRecommendations", std::move(containerRecommendationsJsonList));
-
-  }
-
-  if(m_savingsOpportunityAfterDiscountsHasBeenSet)
-  {
-   payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
 
   }
 

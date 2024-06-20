@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/DestinationState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,19 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that
-     * this is returned as a string</i>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline DestinationSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DestinationSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Unique identifier for this destination, assigned by IVS.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -64,6 +51,18 @@ namespace Model
     inline DestinationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline DestinationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline DestinationSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>State of the Composition Destination.</p>
+     */
+    inline const DestinationState& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const DestinationState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(DestinationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline DestinationSummary& WithState(const DestinationState& value) { SetState(value); return *this;}
+    inline DestinationSummary& WithState(DestinationState&& value) { SetState(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,28 +80,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>State of the Composition Destination.</p>
+     * <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
-    inline const DestinationState& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DestinationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DestinationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline DestinationSummary& WithState(const DestinationState& value) { SetState(value); return *this;}
-    inline DestinationSummary& WithState(DestinationState&& value) { SetState(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+    inline DestinationSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+    inline DestinationSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    DestinationState m_state;
+    bool m_stateHasBeenSet = false;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
 
-    DestinationState m_state;
-    bool m_stateHasBeenSet = false;
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

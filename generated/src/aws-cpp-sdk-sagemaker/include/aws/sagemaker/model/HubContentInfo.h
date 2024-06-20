@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/HubContentType.h>
+#include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/HubContentStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -67,6 +68,20 @@ namespace Model
     inline HubContentInfo& WithHubContentArn(const Aws::String& value) { SetHubContentArn(value); return *this;}
     inline HubContentInfo& WithHubContentArn(Aws::String&& value) { SetHubContentArn(std::move(value)); return *this;}
     inline HubContentInfo& WithHubContentArn(const char* value) { SetHubContentArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the public hub content.</p>
+     */
+    inline const Aws::String& GetSageMakerPublicHubContentArn() const{ return m_sageMakerPublicHubContentArn; }
+    inline bool SageMakerPublicHubContentArnHasBeenSet() const { return m_sageMakerPublicHubContentArnHasBeenSet; }
+    inline void SetSageMakerPublicHubContentArn(const Aws::String& value) { m_sageMakerPublicHubContentArnHasBeenSet = true; m_sageMakerPublicHubContentArn = value; }
+    inline void SetSageMakerPublicHubContentArn(Aws::String&& value) { m_sageMakerPublicHubContentArnHasBeenSet = true; m_sageMakerPublicHubContentArn = std::move(value); }
+    inline void SetSageMakerPublicHubContentArn(const char* value) { m_sageMakerPublicHubContentArnHasBeenSet = true; m_sageMakerPublicHubContentArn.assign(value); }
+    inline HubContentInfo& WithSageMakerPublicHubContentArn(const Aws::String& value) { SetSageMakerPublicHubContentArn(value); return *this;}
+    inline HubContentInfo& WithSageMakerPublicHubContentArn(Aws::String&& value) { SetSageMakerPublicHubContentArn(std::move(value)); return *this;}
+    inline HubContentInfo& WithSageMakerPublicHubContentArn(const char* value) { SetSageMakerPublicHubContentArn(value); return *this;}
     ///@}
 
     ///@{
@@ -139,6 +154,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The support status of the hub content.</p>
+     */
+    inline const HubContentSupportStatus& GetSupportStatus() const{ return m_supportStatus; }
+    inline bool SupportStatusHasBeenSet() const { return m_supportStatusHasBeenSet; }
+    inline void SetSupportStatus(const HubContentSupportStatus& value) { m_supportStatusHasBeenSet = true; m_supportStatus = value; }
+    inline void SetSupportStatus(HubContentSupportStatus&& value) { m_supportStatusHasBeenSet = true; m_supportStatus = std::move(value); }
+    inline HubContentInfo& WithSupportStatus(const HubContentSupportStatus& value) { SetSupportStatus(value); return *this;}
+    inline HubContentInfo& WithSupportStatus(HubContentSupportStatus&& value) { SetSupportStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The searchable keywords for the hub content.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHubContentSearchKeywords() const{ return m_hubContentSearchKeywords; }
@@ -175,6 +202,19 @@ namespace Model
     inline HubContentInfo& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
     inline HubContentInfo& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the hub content was originally created, before any
+     * updates or revisions.</p>
+     */
+    inline const Aws::Utils::DateTime& GetOriginalCreationTime() const{ return m_originalCreationTime; }
+    inline bool OriginalCreationTimeHasBeenSet() const { return m_originalCreationTimeHasBeenSet; }
+    inline void SetOriginalCreationTime(const Aws::Utils::DateTime& value) { m_originalCreationTimeHasBeenSet = true; m_originalCreationTime = value; }
+    inline void SetOriginalCreationTime(Aws::Utils::DateTime&& value) { m_originalCreationTimeHasBeenSet = true; m_originalCreationTime = std::move(value); }
+    inline HubContentInfo& WithOriginalCreationTime(const Aws::Utils::DateTime& value) { SetOriginalCreationTime(value); return *this;}
+    inline HubContentInfo& WithOriginalCreationTime(Aws::Utils::DateTime&& value) { SetOriginalCreationTime(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_hubContentName;
@@ -182,6 +222,9 @@ namespace Model
 
     Aws::String m_hubContentArn;
     bool m_hubContentArnHasBeenSet = false;
+
+    Aws::String m_sageMakerPublicHubContentArn;
+    bool m_sageMakerPublicHubContentArnHasBeenSet = false;
 
     Aws::String m_hubContentVersion;
     bool m_hubContentVersionHasBeenSet = false;
@@ -198,6 +241,9 @@ namespace Model
     Aws::String m_hubContentDescription;
     bool m_hubContentDescriptionHasBeenSet = false;
 
+    HubContentSupportStatus m_supportStatus;
+    bool m_supportStatusHasBeenSet = false;
+
     Aws::Vector<Aws::String> m_hubContentSearchKeywords;
     bool m_hubContentSearchKeywordsHasBeenSet = false;
 
@@ -206,6 +252,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_originalCreationTime;
+    bool m_originalCreationTimeHasBeenSet = false;
   };
 
 } // namespace Model

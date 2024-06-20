@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/ivs-realtime/model/ChannelDestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/model/ChannelDestinationConfiguration.h>
 #include <aws/ivs-realtime/model/S3DestinationConfiguration.h>
 #include <utility>
 
@@ -42,19 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>An IVS channel to be used for broadcasting, for server-side composition.
-     * Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
-     */
-    inline const ChannelDestinationConfiguration& GetChannel() const{ return m_channel; }
-    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const ChannelDestinationConfiguration& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(ChannelDestinationConfiguration&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline DestinationConfiguration& WithChannel(const ChannelDestinationConfiguration& value) { SetChannel(value); return *this;}
-    inline DestinationConfiguration& WithChannel(ChannelDestinationConfiguration&& value) { SetChannel(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Name that can be specified to help identify the destination.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -65,6 +52,19 @@ namespace Model
     inline DestinationConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline DestinationConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline DestinationConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An IVS channel to be used for broadcasting, for server-side composition.
+     * Either a <code>channel</code> or an <code>s3</code> must be specified. </p>
+     */
+    inline const ChannelDestinationConfiguration& GetChannel() const{ return m_channel; }
+    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+    inline void SetChannel(const ChannelDestinationConfiguration& value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline void SetChannel(ChannelDestinationConfiguration&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
+    inline DestinationConfiguration& WithChannel(const ChannelDestinationConfiguration& value) { SetChannel(value); return *this;}
+    inline DestinationConfiguration& WithChannel(ChannelDestinationConfiguration&& value) { SetChannel(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,11 +81,11 @@ namespace Model
     ///@}
   private:
 
-    ChannelDestinationConfiguration m_channel;
-    bool m_channelHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    ChannelDestinationConfiguration m_channel;
+    bool m_channelHasBeenSet = false;
 
     S3DestinationConfiguration m_s3;
     bool m_s3HasBeenSet = false;

@@ -25,9 +25,10 @@ namespace Model
 {
 
   /**
-   * <p> The preference to control the resource’s CPU utilization thresholds -
-   * threshold and headroom. </p>  <p>This preference is only available for the
-   * Amazon EC2 instance resource type.</p> <p><h3>See Also:</h3>   <a
+   * <p> The preference to control the resource’s CPU utilization threshold, CPU
+   * utilization headroom, and memory utilization headroom. </p>  <p>This
+   * preference is only available for the Amazon EC2 instance resource type.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UtilizationPreference">AWS
    * API Reference</a></p>
    */

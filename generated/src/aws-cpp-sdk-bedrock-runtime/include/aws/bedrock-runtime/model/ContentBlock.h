@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
+#include <aws/bedrock-runtime/model/DocumentBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
@@ -72,6 +73,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>A document to include in the message.</p>
+     */
+    inline const DocumentBlock& GetDocument() const{ return m_document; }
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+    inline void SetDocument(const DocumentBlock& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(DocumentBlock&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
+    inline ContentBlock& WithDocument(const DocumentBlock& value) { SetDocument(value); return *this;}
+    inline ContentBlock& WithDocument(DocumentBlock&& value) { SetDocument(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about a tool use request from a model. </p>
      */
     inline const ToolUseBlock& GetToolUse() const{ return m_toolUse; }
@@ -116,6 +129,9 @@ namespace Model
 
     ImageBlock m_image;
     bool m_imageHasBeenSet = false;
+
+    DocumentBlock m_document;
+    bool m_documentHasBeenSet = false;
 
     ToolUseBlock m_toolUse;
     bool m_toolUseHasBeenSet = false;

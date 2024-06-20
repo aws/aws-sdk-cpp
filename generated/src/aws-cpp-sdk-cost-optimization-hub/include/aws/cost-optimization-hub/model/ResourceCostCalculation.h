@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
-#include <aws/cost-optimization-hub/model/ResourcePricing.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cost-optimization-hub/model/ResourcePricing.h>
 #include <aws/cost-optimization-hub/model/Usage.h>
 #include <utility>
 
@@ -41,18 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Pricing details of the resource recommendation.</p>
-     */
-    inline const ResourcePricing& GetPricing() const{ return m_pricing; }
-    inline bool PricingHasBeenSet() const { return m_pricingHasBeenSet; }
-    inline void SetPricing(const ResourcePricing& value) { m_pricingHasBeenSet = true; m_pricing = value; }
-    inline void SetPricing(ResourcePricing&& value) { m_pricingHasBeenSet = true; m_pricing = std::move(value); }
-    inline ResourceCostCalculation& WithPricing(const ResourcePricing& value) { SetPricing(value); return *this;}
-    inline ResourceCostCalculation& WithPricing(ResourcePricing&& value) { SetPricing(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Usage details of the resource recommendation.</p>
      */
     inline const Aws::Vector<Usage>& GetUsages() const{ return m_usages; }
@@ -64,13 +52,25 @@ namespace Model
     inline ResourceCostCalculation& AddUsages(const Usage& value) { m_usagesHasBeenSet = true; m_usages.push_back(value); return *this; }
     inline ResourceCostCalculation& AddUsages(Usage&& value) { m_usagesHasBeenSet = true; m_usages.push_back(std::move(value)); return *this; }
     ///@}
-  private:
 
-    ResourcePricing m_pricing;
-    bool m_pricingHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Pricing details of the resource recommendation.</p>
+     */
+    inline const ResourcePricing& GetPricing() const{ return m_pricing; }
+    inline bool PricingHasBeenSet() const { return m_pricingHasBeenSet; }
+    inline void SetPricing(const ResourcePricing& value) { m_pricingHasBeenSet = true; m_pricing = value; }
+    inline void SetPricing(ResourcePricing&& value) { m_pricingHasBeenSet = true; m_pricing = std::move(value); }
+    inline ResourceCostCalculation& WithPricing(const ResourcePricing& value) { SetPricing(value); return *this;}
+    inline ResourceCostCalculation& WithPricing(ResourcePricing&& value) { SetPricing(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::Vector<Usage> m_usages;
     bool m_usagesHasBeenSet = false;
+
+    ResourcePricing m_pricing;
+    bool m_pricingHasBeenSet = false;
   };
 
 } // namespace Model

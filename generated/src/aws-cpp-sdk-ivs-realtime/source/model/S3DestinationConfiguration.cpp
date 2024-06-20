@@ -19,22 +19,29 @@ namespace Model
 {
 
 S3DestinationConfiguration::S3DestinationConfiguration() : 
+    m_storageConfigurationArnHasBeenSet(false),
     m_encoderConfigurationArnsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false),
-    m_storageConfigurationArnHasBeenSet(false)
+    m_recordingConfigurationHasBeenSet(false)
 {
 }
 
 S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue) : 
+    m_storageConfigurationArnHasBeenSet(false),
     m_encoderConfigurationArnsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false),
-    m_storageConfigurationArnHasBeenSet(false)
+    m_recordingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("storageConfigurationArn"))
+  {
+    m_storageConfigurationArn = jsonValue.GetString("storageConfigurationArn");
+
+    m_storageConfigurationArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encoderConfigurationArns"))
   {
     Aws::Utils::Array<JsonView> encoderConfigurationArnsJsonList = jsonValue.GetArray("encoderConfigurationArns");
@@ -52,19 +59,18 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
     m_recordingConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("storageConfigurationArn"))
-  {
-    m_storageConfigurationArn = jsonValue.GetString("storageConfigurationArn");
-
-    m_storageConfigurationArnHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue S3DestinationConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_storageConfigurationArnHasBeenSet)
+  {
+   payload.WithString("storageConfigurationArn", m_storageConfigurationArn);
+
+  }
 
   if(m_encoderConfigurationArnsHasBeenSet)
   {
@@ -80,12 +86,6 @@ JsonValue S3DestinationConfiguration::Jsonize() const
   if(m_recordingConfigurationHasBeenSet)
   {
    payload.WithObject("recordingConfiguration", m_recordingConfiguration.Jsonize());
-
-  }
-
-  if(m_storageConfigurationArnHasBeenSet)
-  {
-   payload.WithString("storageConfigurationArn", m_storageConfigurationArn);
 
   }
 

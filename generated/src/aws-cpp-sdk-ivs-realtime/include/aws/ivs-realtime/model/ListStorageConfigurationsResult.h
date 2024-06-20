@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/StorageConfigurationSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of the matching storage configurations.</p>
+     */
+    inline const Aws::Vector<StorageConfigurationSummary>& GetStorageConfigurations() const{ return m_storageConfigurations; }
+    inline void SetStorageConfigurations(const Aws::Vector<StorageConfigurationSummary>& value) { m_storageConfigurations = value; }
+    inline void SetStorageConfigurations(Aws::Vector<StorageConfigurationSummary>&& value) { m_storageConfigurations = std::move(value); }
+    inline ListStorageConfigurationsResult& WithStorageConfigurations(const Aws::Vector<StorageConfigurationSummary>& value) { SetStorageConfigurations(value); return *this;}
+    inline ListStorageConfigurationsResult& WithStorageConfigurations(Aws::Vector<StorageConfigurationSummary>&& value) { SetStorageConfigurations(std::move(value)); return *this;}
+    inline ListStorageConfigurationsResult& AddStorageConfigurations(const StorageConfigurationSummary& value) { m_storageConfigurations.push_back(value); return *this; }
+    inline ListStorageConfigurationsResult& AddStorageConfigurations(StorageConfigurationSummary&& value) { m_storageConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If there are more storage configurations than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -46,19 +59,6 @@ namespace Model
     inline ListStorageConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListStorageConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStorageConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>List of the matching storage configurations.</p>
-     */
-    inline const Aws::Vector<StorageConfigurationSummary>& GetStorageConfigurations() const{ return m_storageConfigurations; }
-    inline void SetStorageConfigurations(const Aws::Vector<StorageConfigurationSummary>& value) { m_storageConfigurations = value; }
-    inline void SetStorageConfigurations(Aws::Vector<StorageConfigurationSummary>&& value) { m_storageConfigurations = std::move(value); }
-    inline ListStorageConfigurationsResult& WithStorageConfigurations(const Aws::Vector<StorageConfigurationSummary>& value) { SetStorageConfigurations(value); return *this;}
-    inline ListStorageConfigurationsResult& WithStorageConfigurations(Aws::Vector<StorageConfigurationSummary>&& value) { SetStorageConfigurations(std::move(value)); return *this;}
-    inline ListStorageConfigurationsResult& AddStorageConfigurations(const StorageConfigurationSummary& value) { m_storageConfigurations.push_back(value); return *this; }
-    inline ListStorageConfigurationsResult& AddStorageConfigurations(StorageConfigurationSummary&& value) { m_storageConfigurations.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<StorageConfigurationSummary> m_storageConfigurations;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

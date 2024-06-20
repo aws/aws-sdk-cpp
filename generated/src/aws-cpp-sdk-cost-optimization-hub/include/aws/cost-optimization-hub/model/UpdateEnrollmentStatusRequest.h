@@ -36,17 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether to enroll member accounts of the organization if the
-     * account is the management account.</p>
-     */
-    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
-    inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
-    inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
-    inline UpdateEnrollmentStatusRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Sets the account status.</p>
      */
     inline const EnrollmentStatus& GetStatus() const{ return m_status; }
@@ -56,13 +45,24 @@ namespace Model
     inline UpdateEnrollmentStatusRequest& WithStatus(const EnrollmentStatus& value) { SetStatus(value); return *this;}
     inline UpdateEnrollmentStatusRequest& WithStatus(EnrollmentStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
-  private:
 
-    bool m_includeMemberAccounts;
-    bool m_includeMemberAccountsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Indicates whether to enroll member accounts of the organization if the
+     * account is the management account.</p>
+     */
+    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
+    inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
+    inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
+    inline UpdateEnrollmentStatusRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
+    ///@}
+  private:
 
     EnrollmentStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    bool m_includeMemberAccounts;
+    bool m_includeMemberAccountsHasBeenSet = false;
   };
 
 } // namespace Model

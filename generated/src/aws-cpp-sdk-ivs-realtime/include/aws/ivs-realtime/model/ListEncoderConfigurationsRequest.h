@@ -34,16 +34,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return. Default: 100.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListEncoderConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The first encoder configuration to retrieve. This is used for pagination; see
      * the <code>nextToken</code> response field.</p>
      */
@@ -56,13 +46,23 @@ namespace Model
     inline ListEncoderConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListEncoderConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-  private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Maximum number of results to return. Default: 100.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListEncoderConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

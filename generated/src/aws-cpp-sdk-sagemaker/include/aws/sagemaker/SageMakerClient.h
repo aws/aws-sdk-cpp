@@ -1034,8 +1034,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Create a hub.</p>  <p>Hub APIs are only callable through SageMaker
-         * Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Create a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub">AWS
          * API Reference</a></p>
          */
@@ -1057,6 +1056,32 @@ namespace SageMaker
         void CreateHubAsync(const CreateHubRequestT& request, const CreateHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::CreateHub, request, handler, context);
+        }
+
+        /**
+         * <p>Create a hub content reference in order to add a model in the JumpStart
+         * public hub to a private hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHubContentReferenceOutcome CreateHubContentReference(const Model::CreateHubContentReferenceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateHubContentReference that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateHubContentReferenceRequestT = Model::CreateHubContentReferenceRequest>
+        Model::CreateHubContentReferenceOutcomeCallable CreateHubContentReferenceCallable(const CreateHubContentReferenceRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::CreateHubContentReference, request);
+        }
+
+        /**
+         * An Async wrapper for CreateHubContentReference that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateHubContentReferenceRequestT = Model::CreateHubContentReferenceRequest>
+        void CreateHubContentReferenceAsync(const CreateHubContentReferenceRequestT& request, const CreateHubContentReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::CreateHubContentReference, request, handler, context);
         }
 
         /**
@@ -2799,8 +2824,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Delete a hub.</p>  <p>Hub APIs are only callable through SageMaker
-         * Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Delete a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub">AWS
          * API Reference</a></p>
          */
@@ -2825,8 +2849,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Delete the contents of a hub.</p>  <p>Hub APIs are only callable
-         * through SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Delete the contents of a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent">AWS
          * API Reference</a></p>
          */
@@ -2848,6 +2871,32 @@ namespace SageMaker
         void DeleteHubContentAsync(const DeleteHubContentRequestT& request, const DeleteHubContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SageMakerClient::DeleteHubContent, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a hub content reference in order to remove a model from a private
+         * hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHubContentReferenceOutcome DeleteHubContentReference(const Model::DeleteHubContentReferenceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHubContentReference that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteHubContentReferenceRequestT = Model::DeleteHubContentReferenceRequest>
+        Model::DeleteHubContentReferenceOutcomeCallable DeleteHubContentReferenceCallable(const DeleteHubContentReferenceRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::DeleteHubContentReference, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteHubContentReference that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteHubContentReferenceRequestT = Model::DeleteHubContentReferenceRequest>
+        void DeleteHubContentReferenceAsync(const DeleteHubContentReferenceRequestT& request, const DeleteHubContentReferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::DeleteHubContentReference, request, handler, context);
         }
 
         /**
@@ -4269,8 +4318,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describe a hub.</p>  <p>Hub APIs are only callable through SageMaker
-         * Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Describes a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub">AWS
          * API Reference</a></p>
          */
@@ -4295,8 +4343,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describe the content of a hub.</p>  <p>Hub APIs are only callable
-         * through SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Describe the content of a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent">AWS
          * API Reference</a></p>
          */
@@ -5516,8 +5563,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Import hub content.</p>  <p>Hub APIs are only callable through
-         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Import hub content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent">AWS
          * API Reference</a></p>
          */
@@ -6189,8 +6235,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>List hub content versions.</p>  <p>Hub APIs are only callable through
-         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>List hub content versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions">AWS
          * API Reference</a></p>
          */
@@ -6215,8 +6260,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>List the contents of a hub.</p>  <p>Hub APIs are only callable through
-         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>List the contents of a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents">AWS
          * API Reference</a></p>
          */
@@ -6241,8 +6285,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>List all existing hubs.</p>  <p>Hub APIs are only callable through
-         * SageMaker Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>List all existing hubs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">AWS
          * API Reference</a></p>
          */
@@ -8766,8 +8809,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Update a hub.</p>  <p>Hub APIs are only callable through SageMaker
-         * Studio.</p> <p><h3>See Also:</h3>   <a
+         * <p>Update a hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub">AWS
          * API Reference</a></p>
          */

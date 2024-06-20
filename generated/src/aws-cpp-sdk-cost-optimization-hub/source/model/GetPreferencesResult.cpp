@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPreferencesResult::GetPreferencesResult() : 
-    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET),
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET)
+    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
+    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET)
 {
 }
 
 GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET),
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET)
+    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
+    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET)
 {
   *this = result;
 }
@@ -33,15 +33,15 @@ GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<Jso
 GetPreferencesResult& GetPreferencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("memberAccountDiscountVisibility"))
-  {
-    m_memberAccountDiscountVisibility = MemberAccountDiscountVisibilityMapper::GetMemberAccountDiscountVisibilityForName(jsonValue.GetString("memberAccountDiscountVisibility"));
-
-  }
-
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = SavingsEstimationModeMapper::GetSavingsEstimationModeForName(jsonValue.GetString("savingsEstimationMode"));
+
+  }
+
+  if(jsonValue.ValueExists("memberAccountDiscountVisibility"))
+  {
+    m_memberAccountDiscountVisibility = MemberAccountDiscountVisibilityMapper::GetMemberAccountDiscountVisibilityForName(jsonValue.GetString("memberAccountDiscountVisibility"));
 
   }
 

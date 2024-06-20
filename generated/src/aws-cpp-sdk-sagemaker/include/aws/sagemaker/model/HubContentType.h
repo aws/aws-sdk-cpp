@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Model,
-    Notebook
+    Notebook,
+    ModelReference
   };
 
 namespace HubContentTypeMapper

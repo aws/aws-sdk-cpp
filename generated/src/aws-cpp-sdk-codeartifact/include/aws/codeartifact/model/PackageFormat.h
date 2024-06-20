@@ -22,7 +22,8 @@ namespace Model
     nuget,
     generic,
     ruby,
-    swift
+    swift,
+    cargo
   };
 
 namespace PackageFormatMapper

@@ -34,17 +34,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for the participant. This is assigned by IVS and returned
-     * by <a>CreateParticipantToken</a>.</p>
+     * <p>Stage ARN.</p>
      */
-    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
-    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
-    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
-    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
-    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
-    inline GetParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
-    inline GetParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
-    inline GetParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
+    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
+    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
+    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
+    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
+    inline GetParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
+    inline GetParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
+    inline GetParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
     ///@}
 
     ///@{
@@ -63,27 +62,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>Stage ARN.</p>
+     * <p>Unique identifier for the participant. This is assigned by IVS and returned
+     * by <a>CreateParticipantToken</a>.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline GetParticipantRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline GetParticipantRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline GetParticipantRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    inline const Aws::String& GetParticipantId() const{ return m_participantId; }
+    inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
+    inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
+    inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
+    inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
+    inline GetParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
+    inline GetParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
+    inline GetParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_participantId;
-    bool m_participantIdHasBeenSet = false;
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
+    Aws::String m_participantId;
+    bool m_participantIdHasBeenSet = false;
   };
 
 } // namespace Model

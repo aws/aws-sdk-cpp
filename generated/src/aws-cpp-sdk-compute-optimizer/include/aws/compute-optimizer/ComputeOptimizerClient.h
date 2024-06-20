@@ -346,6 +346,39 @@ namespace ComputeOptimizer
         }
 
         /**
+         * <p> Export optimization recommendations for your Amazon Relational Database
+         * Service (Amazon RDS). </p> <p>Recommendations are exported in a comma-separated
+         * values (CSV) file, and its metadata in a JavaScript Object Notation (JSON) file,
+         * to an existing Amazon Simple Storage Service (Amazon S3) bucket that you
+         * specify. For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Amazon RDS export job in progress per Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportRDSDatabaseRecommendationsOutcome ExportRDSDatabaseRecommendations(const Model::ExportRDSDatabaseRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportRDSDatabaseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportRDSDatabaseRecommendationsRequestT = Model::ExportRDSDatabaseRecommendationsRequest>
+        Model::ExportRDSDatabaseRecommendationsOutcomeCallable ExportRDSDatabaseRecommendationsCallable(const ExportRDSDatabaseRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::ExportRDSDatabaseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ExportRDSDatabaseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportRDSDatabaseRecommendationsRequestT = Model::ExportRDSDatabaseRecommendationsRequest>
+        void ExportRDSDatabaseRecommendationsAsync(const ExportRDSDatabaseRecommendationsRequestT& request, const ExportRDSDatabaseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::ExportRDSDatabaseRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
@@ -673,6 +706,62 @@ namespace ComputeOptimizer
         void GetLicenseRecommendationsAsync(const GetLicenseRecommendationsRequestT& request, const GetLicenseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetLicenseRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p> Returns the projected metrics of Amazon RDS recommendations. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRDSDatabaseRecommendationProjectedMetricsOutcome GetRDSDatabaseRecommendationProjectedMetrics(const Model::GetRDSDatabaseRecommendationProjectedMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRDSDatabaseRecommendationProjectedMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRDSDatabaseRecommendationProjectedMetricsRequestT = Model::GetRDSDatabaseRecommendationProjectedMetricsRequest>
+        Model::GetRDSDatabaseRecommendationProjectedMetricsOutcomeCallable GetRDSDatabaseRecommendationProjectedMetricsCallable(const GetRDSDatabaseRecommendationProjectedMetricsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetRDSDatabaseRecommendationProjectedMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetRDSDatabaseRecommendationProjectedMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRDSDatabaseRecommendationProjectedMetricsRequestT = Model::GetRDSDatabaseRecommendationProjectedMetricsRequest>
+        void GetRDSDatabaseRecommendationProjectedMetricsAsync(const GetRDSDatabaseRecommendationProjectedMetricsRequestT& request, const GetRDSDatabaseRecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetRDSDatabaseRecommendationProjectedMetrics, request, handler, context);
+        }
+
+        /**
+         * <p> Returns Amazon RDS recommendations. </p> <p>Compute Optimizer generates
+         * recommendations for Amazon RDS that meet a specific set of requirements. For
+         * more information, see the <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRDSDatabaseRecommendationsOutcome GetRDSDatabaseRecommendations(const Model::GetRDSDatabaseRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRDSDatabaseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRDSDatabaseRecommendationsRequestT = Model::GetRDSDatabaseRecommendationsRequest>
+        Model::GetRDSDatabaseRecommendationsOutcomeCallable GetRDSDatabaseRecommendationsCallable(const GetRDSDatabaseRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetRDSDatabaseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for GetRDSDatabaseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRDSDatabaseRecommendationsRequestT = Model::GetRDSDatabaseRecommendationsRequest>
+        void GetRDSDatabaseRecommendationsAsync(const GetRDSDatabaseRecommendationsRequestT& request, const GetRDSDatabaseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetRDSDatabaseRecommendations, request, handler, context);
         }
 
         /**

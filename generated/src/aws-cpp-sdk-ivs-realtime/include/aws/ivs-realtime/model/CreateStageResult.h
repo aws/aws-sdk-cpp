@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs-realtime/model/Stage.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/ParticipantToken.h>
 #include <utility>
@@ -37,6 +37,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The stage that was created.</p>
+     */
+    inline const Stage& GetStage() const{ return m_stage; }
+    inline void SetStage(const Stage& value) { m_stage = value; }
+    inline void SetStage(Stage&& value) { m_stage = std::move(value); }
+    inline CreateStageResult& WithStage(const Stage& value) { SetStage(value); return *this;}
+    inline CreateStageResult& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Participant tokens attached to the stage. These correspond to the
      * <code>participants</code> in the request.</p>
      */
@@ -47,17 +58,6 @@ namespace Model
     inline CreateStageResult& WithParticipantTokens(Aws::Vector<ParticipantToken>&& value) { SetParticipantTokens(std::move(value)); return *this;}
     inline CreateStageResult& AddParticipantTokens(const ParticipantToken& value) { m_participantTokens.push_back(value); return *this; }
     inline CreateStageResult& AddParticipantTokens(ParticipantToken&& value) { m_participantTokens.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The stage that was created.</p>
-     */
-    inline const Stage& GetStage() const{ return m_stage; }
-    inline void SetStage(const Stage& value) { m_stage = value; }
-    inline void SetStage(Stage&& value) { m_stage = std::move(value); }
-    inline CreateStageResult& WithStage(const Stage& value) { SetStage(value); return *this;}
-    inline CreateStageResult& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<ParticipantToken> m_participantTokens;
-
     Stage m_stage;
+
+    Aws::Vector<ParticipantToken> m_participantTokens;
 
     Aws::String m_requestId;
   };

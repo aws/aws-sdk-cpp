@@ -29,12 +29,6 @@ ListStageSessionsResult::ListStageSessionsResult(const Aws::AmazonWebServiceResu
 ListStageSessionsResult& ListStageSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("stageSessions"))
   {
     Aws::Utils::Array<JsonView> stageSessionsJsonList = jsonValue.GetArray("stageSessions");
@@ -42,6 +36,12 @@ ListStageSessionsResult& ListStageSessionsResult::operator =(const Aws::AmazonWe
     {
       m_stageSessions.push_back(stageSessionsJsonList[stageSessionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

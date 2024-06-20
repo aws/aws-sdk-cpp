@@ -19,39 +19,32 @@ namespace Model
 {
 
 ReservedInstancesPricing::ReservedInstancesPricing() : 
-    m_estimatedMonthlyAmortizedReservationCost(0.0),
-    m_estimatedMonthlyAmortizedReservationCostHasBeenSet(false),
     m_estimatedOnDemandCost(0.0),
     m_estimatedOnDemandCostHasBeenSet(false),
     m_monthlyReservationEligibleCost(0.0),
     m_monthlyReservationEligibleCostHasBeenSet(false),
     m_savingsPercentage(0.0),
-    m_savingsPercentageHasBeenSet(false)
+    m_savingsPercentageHasBeenSet(false),
+    m_estimatedMonthlyAmortizedReservationCost(0.0),
+    m_estimatedMonthlyAmortizedReservationCostHasBeenSet(false)
 {
 }
 
 ReservedInstancesPricing::ReservedInstancesPricing(JsonView jsonValue) : 
-    m_estimatedMonthlyAmortizedReservationCost(0.0),
-    m_estimatedMonthlyAmortizedReservationCostHasBeenSet(false),
     m_estimatedOnDemandCost(0.0),
     m_estimatedOnDemandCostHasBeenSet(false),
     m_monthlyReservationEligibleCost(0.0),
     m_monthlyReservationEligibleCostHasBeenSet(false),
     m_savingsPercentage(0.0),
-    m_savingsPercentageHasBeenSet(false)
+    m_savingsPercentageHasBeenSet(false),
+    m_estimatedMonthlyAmortizedReservationCost(0.0),
+    m_estimatedMonthlyAmortizedReservationCostHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ReservedInstancesPricing& ReservedInstancesPricing::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("estimatedMonthlyAmortizedReservationCost"))
-  {
-    m_estimatedMonthlyAmortizedReservationCost = jsonValue.GetDouble("estimatedMonthlyAmortizedReservationCost");
-
-    m_estimatedMonthlyAmortizedReservationCostHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("estimatedOnDemandCost"))
   {
     m_estimatedOnDemandCost = jsonValue.GetDouble("estimatedOnDemandCost");
@@ -73,18 +66,19 @@ ReservedInstancesPricing& ReservedInstancesPricing::operator =(JsonView jsonValu
     m_savingsPercentageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("estimatedMonthlyAmortizedReservationCost"))
+  {
+    m_estimatedMonthlyAmortizedReservationCost = jsonValue.GetDouble("estimatedMonthlyAmortizedReservationCost");
+
+    m_estimatedMonthlyAmortizedReservationCostHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ReservedInstancesPricing::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_estimatedMonthlyAmortizedReservationCostHasBeenSet)
-  {
-   payload.WithDouble("estimatedMonthlyAmortizedReservationCost", m_estimatedMonthlyAmortizedReservationCost);
-
-  }
 
   if(m_estimatedOnDemandCostHasBeenSet)
   {
@@ -101,6 +95,12 @@ JsonValue ReservedInstancesPricing::Jsonize() const
   if(m_savingsPercentageHasBeenSet)
   {
    payload.WithDouble("savingsPercentage", m_savingsPercentage);
+
+  }
+
+  if(m_estimatedMonthlyAmortizedReservationCostHasBeenSet)
+  {
+   payload.WithDouble("estimatedMonthlyAmortizedReservationCost", m_estimatedMonthlyAmortizedReservationCost);
 
   }
 

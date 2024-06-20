@@ -29,6 +29,12 @@ CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue
 CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("stage"))
+  {
+    m_stage = jsonValue.GetObject("stage");
+
+  }
+
   if(jsonValue.ValueExists("participantTokens"))
   {
     Aws::Utils::Array<JsonView> participantTokensJsonList = jsonValue.GetArray("participantTokens");
@@ -36,12 +42,6 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_participantTokens.push_back(participantTokensJsonList[participantTokensIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("stage"))
-  {
-    m_stage = jsonValue.GetObject("stage");
-
   }
 
 

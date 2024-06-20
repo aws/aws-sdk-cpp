@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/S3ModelDataType.h>
 #include <aws/sagemaker/model/ModelCompressionType.h>
 #include <aws/sagemaker/model/ModelAccessConfig.h>
+#include <aws/sagemaker/model/InferenceHubAccessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,18 @@ namespace Model
     inline S3ModelDataSource& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
     inline S3ModelDataSource& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration information for hub access.</p>
+     */
+    inline const InferenceHubAccessConfig& GetHubAccessConfig() const{ return m_hubAccessConfig; }
+    inline bool HubAccessConfigHasBeenSet() const { return m_hubAccessConfigHasBeenSet; }
+    inline void SetHubAccessConfig(const InferenceHubAccessConfig& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = value; }
+    inline void SetHubAccessConfig(InferenceHubAccessConfig&& value) { m_hubAccessConfigHasBeenSet = true; m_hubAccessConfig = std::move(value); }
+    inline S3ModelDataSource& WithHubAccessConfig(const InferenceHubAccessConfig& value) { SetHubAccessConfig(value); return *this;}
+    inline S3ModelDataSource& WithHubAccessConfig(InferenceHubAccessConfig&& value) { SetHubAccessConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
@@ -153,6 +166,9 @@ namespace Model
 
     ModelAccessConfig m_modelAccessConfig;
     bool m_modelAccessConfigHasBeenSet = false;
+
+    InferenceHubAccessConfig m_hubAccessConfig;
+    bool m_hubAccessConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,9 @@ namespace Model
     RdsReservedInstances,
     OpenSearchReservedInstances,
     RedshiftReservedInstances,
-    ElastiCacheReservedInstances
+    ElastiCacheReservedInstances,
+    RdsDbInstanceStorage,
+    RdsDbInstance
   };
 
 namespace ResourceTypeMapper

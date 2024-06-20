@@ -21,6 +21,7 @@ namespace Model
 ContentBlock::ContentBlock() : 
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_documentHasBeenSet(false),
     m_toolUseHasBeenSet(false),
     m_toolResultHasBeenSet(false),
     m_guardContentHasBeenSet(false)
@@ -30,6 +31,7 @@ ContentBlock::ContentBlock() :
 ContentBlock::ContentBlock(JsonView jsonValue) : 
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_documentHasBeenSet(false),
     m_toolUseHasBeenSet(false),
     m_toolResultHasBeenSet(false),
     m_guardContentHasBeenSet(false)
@@ -51,6 +53,13 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
     m_image = jsonValue.GetObject("image");
 
     m_imageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("document"))
+  {
+    m_document = jsonValue.GetObject("document");
+
+    m_documentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("toolUse"))
@@ -90,6 +99,12 @@ JsonValue ContentBlock::Jsonize() const
   if(m_imageHasBeenSet)
   {
    payload.WithObject("image", m_image.Jsonize());
+
+  }
+
+  if(m_documentHasBeenSet)
+  {
+   payload.WithObject("document", m_document.Jsonize());
 
   }
 

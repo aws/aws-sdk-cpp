@@ -19,28 +19,42 @@ namespace Model
 {
 
 Usage::Usage() : 
-    m_operationHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_unitHasBeenSet(false),
+    m_usageTypeHasBeenSet(false),
     m_usageAmount(0.0),
     m_usageAmountHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
 Usage::Usage(JsonView jsonValue) : 
-    m_operationHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_unitHasBeenSet(false),
+    m_usageTypeHasBeenSet(false),
     m_usageAmount(0.0),
     m_usageAmountHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+    m_operationHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Usage& Usage::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("usageType"))
+  {
+    m_usageType = jsonValue.GetString("usageType");
+
+    m_usageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("usageAmount"))
+  {
+    m_usageAmount = jsonValue.GetDouble("usageAmount");
+
+    m_usageAmountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
@@ -62,26 +76,24 @@ Usage& Usage::operator =(JsonView jsonValue)
     m_unitHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("usageAmount"))
-  {
-    m_usageAmount = jsonValue.GetDouble("usageAmount");
-
-    m_usageAmountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("usageType"))
-  {
-    m_usageType = jsonValue.GetString("usageType");
-
-    m_usageTypeHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue Usage::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_usageTypeHasBeenSet)
+  {
+   payload.WithString("usageType", m_usageType);
+
+  }
+
+  if(m_usageAmountHasBeenSet)
+  {
+   payload.WithDouble("usageAmount", m_usageAmount);
+
+  }
 
   if(m_operationHasBeenSet)
   {
@@ -98,18 +110,6 @@ JsonValue Usage::Jsonize() const
   if(m_unitHasBeenSet)
   {
    payload.WithString("unit", m_unit);
-
-  }
-
-  if(m_usageAmountHasBeenSet)
-  {
-   payload.WithDouble("usageAmount", m_usageAmount);
-
-  }
-
-  if(m_usageTypeHasBeenSet)
-  {
-   payload.WithString("usageType", m_usageType);
 
   }
 

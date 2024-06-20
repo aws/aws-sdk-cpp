@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/IvsrealtimeRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/LayoutConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs-realtime/model/DestinationConfiguration.h>
 #include <utility>
@@ -39,16 +39,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Array of destination configuration.</p>
+     * <p>ARN of the stage to be used for compositing.</p>
      */
-    inline const Aws::Vector<DestinationConfiguration>& GetDestinations() const{ return m_destinations; }
-    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<DestinationConfiguration>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<DestinationConfiguration>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline StartCompositionRequest& WithDestinations(const Aws::Vector<DestinationConfiguration>& value) { SetDestinations(value); return *this;}
-    inline StartCompositionRequest& WithDestinations(Aws::Vector<DestinationConfiguration>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline StartCompositionRequest& AddDestinations(const DestinationConfiguration& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline StartCompositionRequest& AddDestinations(DestinationConfiguration&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
+    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
+    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
+    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
+    inline StartCompositionRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
+    inline StartCompositionRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
+    inline StartCompositionRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
     ///@}
 
     ///@{
@@ -79,16 +79,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>ARN of the stage to be used for compositing.</p>
+     * <p>Array of destination configuration.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline StartCompositionRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline StartCompositionRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline StartCompositionRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    inline const Aws::Vector<DestinationConfiguration>& GetDestinations() const{ return m_destinations; }
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+    inline void SetDestinations(const Aws::Vector<DestinationConfiguration>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+    inline void SetDestinations(Aws::Vector<DestinationConfiguration>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
+    inline StartCompositionRequest& WithDestinations(const Aws::Vector<DestinationConfiguration>& value) { SetDestinations(value); return *this;}
+    inline StartCompositionRequest& WithDestinations(Aws::Vector<DestinationConfiguration>&& value) { SetDestinations(std::move(value)); return *this;}
+    inline StartCompositionRequest& AddDestinations(const DestinationConfiguration& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+    inline StartCompositionRequest& AddDestinations(DestinationConfiguration&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,8 +116,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<DestinationConfiguration> m_destinations;
-    bool m_destinationsHasBeenSet = false;
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet = false;
@@ -125,8 +125,8 @@ namespace Model
     LayoutConfiguration m_layout;
     bool m_layoutHasBeenSet = false;
 
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
+    Aws::Vector<DestinationConfiguration> m_destinations;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

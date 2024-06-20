@@ -54,45 +54,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether the recommendation is for a current generation
-     * instance.</p>
+     * <p>The service that you want your recommendations for.</p>
      */
-    inline const Aws::String& GetCurrentGeneration() const{ return m_currentGeneration; }
-    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
-    inline void SetCurrentGeneration(const Aws::String& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
-    inline void SetCurrentGeneration(Aws::String&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::move(value); }
-    inline void SetCurrentGeneration(const char* value) { m_currentGenerationHasBeenSet = true; m_currentGeneration.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(const Aws::String& value) { SetCurrentGeneration(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(Aws::String&& value) { SetCurrentGeneration(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(const char* value) { SetCurrentGeneration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of instance that Amazon Web Services recommends.</p>
-     */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>How much purchasing reserved instances costs you on a monthly basis.</p>
-     */
-    inline const Aws::String& GetMonthlyRecurringCost() const{ return m_monthlyRecurringCost; }
-    inline bool MonthlyRecurringCostHasBeenSet() const { return m_monthlyRecurringCostHasBeenSet; }
-    inline void SetMonthlyRecurringCost(const Aws::String& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = value; }
-    inline void SetMonthlyRecurringCost(Aws::String&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::move(value); }
-    inline void SetMonthlyRecurringCost(const char* value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(const Aws::String& value) { SetMonthlyRecurringCost(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(Aws::String&& value) { SetMonthlyRecurringCost(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(const char* value) { SetMonthlyRecurringCost(value); return *this;}
+    inline const Aws::String& GetService() const{ return m_service; }
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
+    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithService(const Aws::String& value) { SetService(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithService(const char* value) { SetService(value); return *this;}
     ///@}
 
     ///@{
@@ -112,17 +83,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The reserved instances recommendation term in years.</p>
      */
-    inline const Aws::String& GetNumberOfInstancesToPurchase() const{ return m_numberOfInstancesToPurchase; }
-    inline bool NumberOfInstancesToPurchaseHasBeenSet() const { return m_numberOfInstancesToPurchaseHasBeenSet; }
-    inline void SetNumberOfInstancesToPurchase(const Aws::String& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = value; }
-    inline void SetNumberOfInstancesToPurchase(Aws::String&& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = std::move(value); }
-    inline void SetNumberOfInstancesToPurchase(const char* value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const Aws::String& value) { SetNumberOfInstancesToPurchase(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(Aws::String&& value) { SetNumberOfInstancesToPurchase(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const char* value) { SetNumberOfInstancesToPurchase(value); return *this;}
+    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
+    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
+    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
     ///@}
 
     ///@{
@@ -141,6 +111,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of instances that Amazon Web Services recommends that you
+     * purchase.</p>
+     */
+    inline const Aws::String& GetNumberOfInstancesToPurchase() const{ return m_numberOfInstancesToPurchase; }
+    inline bool NumberOfInstancesToPurchaseHasBeenSet() const { return m_numberOfInstancesToPurchaseHasBeenSet; }
+    inline void SetNumberOfInstancesToPurchase(const Aws::String& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = value; }
+    inline void SetNumberOfInstancesToPurchase(Aws::String&& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = std::move(value); }
+    inline void SetNumberOfInstancesToPurchase(const char* value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const Aws::String& value) { SetNumberOfInstancesToPurchase(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(Aws::String&& value) { SetNumberOfInstancesToPurchase(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const char* value) { SetNumberOfInstancesToPurchase(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of instance that Amazon Web Services recommends.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services Region of the commitment.</p>
      */
     inline const Aws::String& GetReservedInstancesRegion() const{ return m_reservedInstancesRegion; }
@@ -155,16 +154,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The service that you want your recommendations for.</p>
+     * <p>Determines whether the recommendation is for a current generation
+     * instance.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
-    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithService(const char* value) { SetService(value); return *this;}
+    inline const Aws::String& GetCurrentGeneration() const{ return m_currentGeneration; }
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+    inline void SetCurrentGeneration(const Aws::String& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
+    inline void SetCurrentGeneration(Aws::String&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::move(value); }
+    inline void SetCurrentGeneration(const char* value) { m_currentGenerationHasBeenSet = true; m_currentGeneration.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(const Aws::String& value) { SetCurrentGeneration(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(Aws::String&& value) { SetCurrentGeneration(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithCurrentGeneration(const char* value) { SetCurrentGeneration(value); return *this;}
     ///@}
 
     ///@{
@@ -175,20 +175,6 @@ namespace Model
     inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
     inline void SetSizeFlexEligible(bool value) { m_sizeFlexEligibleHasBeenSet = true; m_sizeFlexEligible = value; }
     inline OpenSearchReservedInstancesConfiguration& WithSizeFlexEligible(bool value) { SetSizeFlexEligible(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The reserved instances recommendation term in years.</p>
-     */
-    inline const Aws::String& GetTerm() const{ return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline OpenSearchReservedInstancesConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline OpenSearchReservedInstancesConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
     ///@}
 
     ///@{
@@ -204,43 +190,57 @@ namespace Model
     inline OpenSearchReservedInstancesConfiguration& WithUpfrontCost(Aws::String&& value) { SetUpfrontCost(std::move(value)); return *this;}
     inline OpenSearchReservedInstancesConfiguration& WithUpfrontCost(const char* value) { SetUpfrontCost(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>How much purchasing reserved instances costs you on a monthly basis.</p>
+     */
+    inline const Aws::String& GetMonthlyRecurringCost() const{ return m_monthlyRecurringCost; }
+    inline bool MonthlyRecurringCostHasBeenSet() const { return m_monthlyRecurringCostHasBeenSet; }
+    inline void SetMonthlyRecurringCost(const Aws::String& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = value; }
+    inline void SetMonthlyRecurringCost(Aws::String&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::move(value); }
+    inline void SetMonthlyRecurringCost(const char* value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost.assign(value); }
+    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(const Aws::String& value) { SetMonthlyRecurringCost(value); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(Aws::String&& value) { SetMonthlyRecurringCost(std::move(value)); return *this;}
+    inline OpenSearchReservedInstancesConfiguration& WithMonthlyRecurringCost(const char* value) { SetMonthlyRecurringCost(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountScope;
     bool m_accountScopeHasBeenSet = false;
 
-    Aws::String m_currentGeneration;
-    bool m_currentGenerationHasBeenSet = false;
-
-    Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet = false;
-
-    Aws::String m_monthlyRecurringCost;
-    bool m_monthlyRecurringCostHasBeenSet = false;
+    Aws::String m_service;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_normalizedUnitsToPurchase;
     bool m_normalizedUnitsToPurchaseHasBeenSet = false;
 
-    Aws::String m_numberOfInstancesToPurchase;
-    bool m_numberOfInstancesToPurchaseHasBeenSet = false;
+    Aws::String m_term;
+    bool m_termHasBeenSet = false;
 
     Aws::String m_paymentOption;
     bool m_paymentOptionHasBeenSet = false;
 
+    Aws::String m_numberOfInstancesToPurchase;
+    bool m_numberOfInstancesToPurchaseHasBeenSet = false;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
+
     Aws::String m_reservedInstancesRegion;
     bool m_reservedInstancesRegionHasBeenSet = false;
 
-    Aws::String m_service;
-    bool m_serviceHasBeenSet = false;
+    Aws::String m_currentGeneration;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
     bool m_sizeFlexEligibleHasBeenSet = false;
 
-    Aws::String m_term;
-    bool m_termHasBeenSet = false;
-
     Aws::String m_upfrontCost;
     bool m_upfrontCostHasBeenSet = false;
+
+    Aws::String m_monthlyRecurringCost;
+    bool m_monthlyRecurringCostHasBeenSet = false;
   };
 
 } // namespace Model

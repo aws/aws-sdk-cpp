@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/ivs-realtime/model/EventErrorCode.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/ivs-realtime/model/EventName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/ivs-realtime/model/EventErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -42,40 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the event is an error event, the error code is provided to give insight
-     * into the specific error that occurred. If the event is not an error event, this
-     * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
-     * participant tried to take an action that the participant’s token is not allowed
-     * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
-     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
-     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
-     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
-     * tried to subscribe to a publisher that doesn’t exist. </p>
-     */
-    inline const EventErrorCode& GetErrorCode() const{ return m_errorCode; }
-    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const EventErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(EventErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline Event& WithErrorCode(const EventErrorCode& value) { SetErrorCode(value); return *this;}
-    inline Event& WithErrorCode(EventErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
-    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the event.</p>
      */
     inline const EventName& GetName() const{ return m_name; }
@@ -103,6 +69,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>ISO 8601 timestamp (returned as a string) for when the event occurred.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
+    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Unique identifier for the remote participant. For a subscribe event, this is
      * the publisher. For a publish or join event, this is null. This is assigned by
      * IVS.</p>
@@ -116,13 +94,29 @@ namespace Model
     inline Event& WithRemoteParticipantId(Aws::String&& value) { SetRemoteParticipantId(std::move(value)); return *this;}
     inline Event& WithRemoteParticipantId(const char* value) { SetRemoteParticipantId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If the event is an error event, the error code is provided to give insight
+     * into the specific error that occurred. If the event is not an error event, this
+     * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
+     * participant tried to take an action that the participant’s token is not allowed
+     * to do. For more information about participant capabilities, see the
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
+     */
+    inline const EventErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+    inline void SetErrorCode(const EventErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(EventErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
+    inline Event& WithErrorCode(const EventErrorCode& value) { SetErrorCode(value); return *this;}
+    inline Event& WithErrorCode(EventErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
   private:
-
-    EventErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet = false;
 
     EventName m_name;
     bool m_nameHasBeenSet = false;
@@ -130,8 +124,14 @@ namespace Model
     Aws::String m_participantId;
     bool m_participantIdHasBeenSet = false;
 
+    Aws::Utils::DateTime m_eventTime;
+    bool m_eventTimeHasBeenSet = false;
+
     Aws::String m_remoteParticipantId;
     bool m_remoteParticipantIdHasBeenSet = false;
+
+    EventErrorCode m_errorCode;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

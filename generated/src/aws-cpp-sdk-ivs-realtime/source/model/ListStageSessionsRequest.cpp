@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListStageSessionsRequest::ListStageSessionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_stageArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_stageArnHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -24,9 +24,9 @@ Aws::String ListStageSessionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_stageArnHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
+   payload.WithString("stageArn", m_stageArn);
 
   }
 
@@ -36,9 +36,9 @@ Aws::String ListStageSessionsRequest::SerializePayload() const
 
   }
 
-  if(m_stageArnHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("stageArn", m_stageArn);
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 
