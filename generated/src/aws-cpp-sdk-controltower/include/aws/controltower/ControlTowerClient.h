@@ -568,13 +568,13 @@ namespace ControlTower
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBaselinesOutcome ListBaselines(const Model::ListBaselinesRequest& request) const;
+        virtual Model::ListBaselinesOutcome ListBaselines(const Model::ListBaselinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBaselines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBaselinesRequestT = Model::ListBaselinesRequest>
-        Model::ListBaselinesOutcomeCallable ListBaselinesCallable(const ListBaselinesRequestT& request) const
+        Model::ListBaselinesOutcomeCallable ListBaselinesCallable(const ListBaselinesRequestT& request = {}) const
         {
             return SubmitCallable(&ControlTowerClient::ListBaselines, request);
         }
@@ -583,7 +583,7 @@ namespace ControlTower
          * An Async wrapper for ListBaselines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBaselinesRequestT = Model::ListBaselinesRequest>
-        void ListBaselinesAsync(const ListBaselinesRequestT& request, const ListBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBaselinesAsync(const ListBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBaselinesRequestT& request = {}) const
         {
             return SubmitAsync(&ControlTowerClient::ListBaselines, request, handler, context);
         }
@@ -594,13 +594,13 @@ namespace ControlTower
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListControlOperations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListControlOperationsOutcome ListControlOperations(const Model::ListControlOperationsRequest& request) const;
+        virtual Model::ListControlOperationsOutcome ListControlOperations(const Model::ListControlOperationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListControlOperations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListControlOperationsRequestT = Model::ListControlOperationsRequest>
-        Model::ListControlOperationsOutcomeCallable ListControlOperationsCallable(const ListControlOperationsRequestT& request) const
+        Model::ListControlOperationsOutcomeCallable ListControlOperationsCallable(const ListControlOperationsRequestT& request = {}) const
         {
             return SubmitCallable(&ControlTowerClient::ListControlOperations, request);
         }
@@ -609,7 +609,7 @@ namespace ControlTower
          * An Async wrapper for ListControlOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListControlOperationsRequestT = Model::ListControlOperationsRequest>
-        void ListControlOperationsAsync(const ListControlOperationsRequestT& request, const ListControlOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListControlOperationsAsync(const ListControlOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListControlOperationsRequestT& request = {}) const
         {
             return SubmitAsync(&ControlTowerClient::ListControlOperations, request, handler, context);
         }
@@ -625,13 +625,13 @@ namespace ControlTower
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnabledBaselinesOutcome ListEnabledBaselines(const Model::ListEnabledBaselinesRequest& request) const;
+        virtual Model::ListEnabledBaselinesOutcome ListEnabledBaselines(const Model::ListEnabledBaselinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnabledBaselines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnabledBaselinesRequestT = Model::ListEnabledBaselinesRequest>
-        Model::ListEnabledBaselinesOutcomeCallable ListEnabledBaselinesCallable(const ListEnabledBaselinesRequestT& request) const
+        Model::ListEnabledBaselinesOutcomeCallable ListEnabledBaselinesCallable(const ListEnabledBaselinesRequestT& request = {}) const
         {
             return SubmitCallable(&ControlTowerClient::ListEnabledBaselines, request);
         }
@@ -640,7 +640,7 @@ namespace ControlTower
          * An Async wrapper for ListEnabledBaselines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnabledBaselinesRequestT = Model::ListEnabledBaselinesRequest>
-        void ListEnabledBaselinesAsync(const ListEnabledBaselinesRequestT& request, const ListEnabledBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnabledBaselinesAsync(const ListEnabledBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnabledBaselinesRequestT& request = {}) const
         {
             return SubmitAsync(&ControlTowerClient::ListEnabledBaselines, request, handler, context);
         }
@@ -655,13 +655,13 @@ namespace ControlTower
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnabledControlsOutcome ListEnabledControls(const Model::ListEnabledControlsRequest& request) const;
+        virtual Model::ListEnabledControlsOutcome ListEnabledControls(const Model::ListEnabledControlsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnabledControls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnabledControlsRequestT = Model::ListEnabledControlsRequest>
-        Model::ListEnabledControlsOutcomeCallable ListEnabledControlsCallable(const ListEnabledControlsRequestT& request) const
+        Model::ListEnabledControlsOutcomeCallable ListEnabledControlsCallable(const ListEnabledControlsRequestT& request = {}) const
         {
             return SubmitCallable(&ControlTowerClient::ListEnabledControls, request);
         }
@@ -670,7 +670,7 @@ namespace ControlTower
          * An Async wrapper for ListEnabledControls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnabledControlsRequestT = Model::ListEnabledControlsRequest>
-        void ListEnabledControlsAsync(const ListEnabledControlsRequestT& request, const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnabledControlsAsync(const ListEnabledControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnabledControlsRequestT& request = {}) const
         {
             return SubmitAsync(&ControlTowerClient::ListEnabledControls, request, handler, context);
         }
@@ -683,13 +683,13 @@ namespace ControlTower
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLandingZonesOutcome ListLandingZones(const Model::ListLandingZonesRequest& request) const;
+        virtual Model::ListLandingZonesOutcome ListLandingZones(const Model::ListLandingZonesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLandingZones that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLandingZonesRequestT = Model::ListLandingZonesRequest>
-        Model::ListLandingZonesOutcomeCallable ListLandingZonesCallable(const ListLandingZonesRequestT& request) const
+        Model::ListLandingZonesOutcomeCallable ListLandingZonesCallable(const ListLandingZonesRequestT& request = {}) const
         {
             return SubmitCallable(&ControlTowerClient::ListLandingZones, request);
         }
@@ -698,7 +698,7 @@ namespace ControlTower
          * An Async wrapper for ListLandingZones that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLandingZonesRequestT = Model::ListLandingZonesRequest>
-        void ListLandingZonesAsync(const ListLandingZonesRequestT& request, const ListLandingZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLandingZonesAsync(const ListLandingZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLandingZonesRequestT& request = {}) const
         {
             return SubmitAsync(&ControlTowerClient::ListLandingZones, request, handler, context);
         }

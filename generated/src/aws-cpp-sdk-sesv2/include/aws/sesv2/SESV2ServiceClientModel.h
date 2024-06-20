@@ -110,6 +110,23 @@
 #include <aws/sesv2/model/UpdateCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/UpdateEmailIdentityPolicyResult.h>
 #include <aws/sesv2/model/UpdateEmailTemplateResult.h>
+#include <aws/sesv2/model/ListContactListsRequest.h>
+#include <aws/sesv2/model/ListRecommendationsRequest.h>
+#include <aws/sesv2/model/ListExportJobsRequest.h>
+#include <aws/sesv2/model/GetAccountRequest.h>
+#include <aws/sesv2/model/ListDeliverabilityTestReportsRequest.h>
+#include <aws/sesv2/model/ListImportJobsRequest.h>
+#include <aws/sesv2/model/ListDedicatedIpPoolsRequest.h>
+#include <aws/sesv2/model/ListCustomVerificationEmailTemplatesRequest.h>
+#include <aws/sesv2/model/GetDeliverabilityDashboardOptionsRequest.h>
+#include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
+#include <aws/sesv2/model/ListEmailTemplatesRequest.h>
+#include <aws/sesv2/model/ListConfigurationSetsRequest.h>
+#include <aws/sesv2/model/GetDedicatedIpsRequest.h>
+#include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
+#include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
+#include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 /* End of service model headers required in SESV2Client header */
 
 namespace Aws

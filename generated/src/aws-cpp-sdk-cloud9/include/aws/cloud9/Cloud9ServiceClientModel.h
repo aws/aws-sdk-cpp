@@ -31,6 +31,8 @@
 #include <aws/cloud9/model/UntagResourceResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentMembershipResult.h>
+#include <aws/cloud9/model/ListEnvironmentsRequest.h>
+#include <aws/cloud9/model/DescribeEnvironmentMembershipsRequest.h>
 /* End of service model headers required in Cloud9Client header */
 
 namespace Aws

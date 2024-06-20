@@ -45,6 +45,8 @@
 #include <aws/accessanalyzer/model/TagResourceResult.h>
 #include <aws/accessanalyzer/model/UntagResourceResult.h>
 #include <aws/accessanalyzer/model/ValidatePolicyResult.h>
+#include <aws/accessanalyzer/model/ListAnalyzersRequest.h>
+#include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AccessAnalyzerClient header */
 

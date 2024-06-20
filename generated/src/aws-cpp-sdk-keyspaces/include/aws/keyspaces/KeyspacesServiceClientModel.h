@@ -32,6 +32,7 @@
 #include <aws/keyspaces/model/TagResourceResult.h>
 #include <aws/keyspaces/model/UntagResourceResult.h>
 #include <aws/keyspaces/model/UpdateTableResult.h>
+#include <aws/keyspaces/model/ListKeyspacesRequest.h>
 /* End of service model headers required in KeyspacesClient header */
 
 namespace Aws

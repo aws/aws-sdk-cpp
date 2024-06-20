@@ -349,13 +349,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreatePortal">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request) const;
+        virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreatePortal that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreatePortalRequestT = Model::CreatePortalRequest>
-        Model::CreatePortalOutcomeCallable CreatePortalCallable(const CreatePortalRequestT& request) const
+        Model::CreatePortalOutcomeCallable CreatePortalCallable(const CreatePortalRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::CreatePortal, request);
         }
@@ -364,7 +364,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for CreatePortal that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreatePortalRequestT = Model::CreatePortalRequest>
-        void CreatePortalAsync(const CreatePortalRequestT& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreatePortalAsync(const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreatePortalRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::CreatePortal, request, handler, context);
         }
@@ -1062,13 +1062,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListBrowserSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBrowserSettingsOutcome ListBrowserSettings(const Model::ListBrowserSettingsRequest& request) const;
+        virtual Model::ListBrowserSettingsOutcome ListBrowserSettings(const Model::ListBrowserSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBrowserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBrowserSettingsRequestT = Model::ListBrowserSettingsRequest>
-        Model::ListBrowserSettingsOutcomeCallable ListBrowserSettingsCallable(const ListBrowserSettingsRequestT& request) const
+        Model::ListBrowserSettingsOutcomeCallable ListBrowserSettingsCallable(const ListBrowserSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListBrowserSettings, request);
         }
@@ -1077,7 +1077,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListBrowserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBrowserSettingsRequestT = Model::ListBrowserSettingsRequest>
-        void ListBrowserSettingsAsync(const ListBrowserSettingsRequestT& request, const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBrowserSettingsAsync(const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBrowserSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListBrowserSettings, request, handler, context);
         }
@@ -1113,13 +1113,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIpAccessSettingsOutcome ListIpAccessSettings(const Model::ListIpAccessSettingsRequest& request) const;
+        virtual Model::ListIpAccessSettingsOutcome ListIpAccessSettings(const Model::ListIpAccessSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIpAccessSettingsRequestT = Model::ListIpAccessSettingsRequest>
-        Model::ListIpAccessSettingsOutcomeCallable ListIpAccessSettingsCallable(const ListIpAccessSettingsRequestT& request) const
+        Model::ListIpAccessSettingsOutcomeCallable ListIpAccessSettingsCallable(const ListIpAccessSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListIpAccessSettings, request);
         }
@@ -1128,7 +1128,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIpAccessSettingsRequestT = Model::ListIpAccessSettingsRequest>
-        void ListIpAccessSettingsAsync(const ListIpAccessSettingsRequestT& request, const ListIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIpAccessSettingsAsync(const ListIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIpAccessSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListIpAccessSettings, request, handler, context);
         }
@@ -1138,13 +1138,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListNetworkSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNetworkSettingsOutcome ListNetworkSettings(const Model::ListNetworkSettingsRequest& request) const;
+        virtual Model::ListNetworkSettingsOutcome ListNetworkSettings(const Model::ListNetworkSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNetworkSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNetworkSettingsRequestT = Model::ListNetworkSettingsRequest>
-        Model::ListNetworkSettingsOutcomeCallable ListNetworkSettingsCallable(const ListNetworkSettingsRequestT& request) const
+        Model::ListNetworkSettingsOutcomeCallable ListNetworkSettingsCallable(const ListNetworkSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListNetworkSettings, request);
         }
@@ -1153,7 +1153,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListNetworkSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNetworkSettingsRequestT = Model::ListNetworkSettingsRequest>
-        void ListNetworkSettingsAsync(const ListNetworkSettingsRequestT& request, const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNetworkSettingsAsync(const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNetworkSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListNetworkSettings, request, handler, context);
         }
@@ -1163,13 +1163,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListPortals">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPortalsOutcome ListPortals(const Model::ListPortalsRequest& request) const;
+        virtual Model::ListPortalsOutcome ListPortals(const Model::ListPortalsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPortals that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPortalsRequestT = Model::ListPortalsRequest>
-        Model::ListPortalsOutcomeCallable ListPortalsCallable(const ListPortalsRequestT& request) const
+        Model::ListPortalsOutcomeCallable ListPortalsCallable(const ListPortalsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListPortals, request);
         }
@@ -1178,7 +1178,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListPortals that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPortalsRequestT = Model::ListPortalsRequest>
-        void ListPortalsAsync(const ListPortalsRequestT& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPortalsAsync(const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPortalsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListPortals, request, handler, context);
         }
@@ -1238,13 +1238,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrustStoresOutcome ListTrustStores(const Model::ListTrustStoresRequest& request) const;
+        virtual Model::ListTrustStoresOutcome ListTrustStores(const Model::ListTrustStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrustStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrustStoresRequestT = Model::ListTrustStoresRequest>
-        Model::ListTrustStoresOutcomeCallable ListTrustStoresCallable(const ListTrustStoresRequestT& request) const
+        Model::ListTrustStoresOutcomeCallable ListTrustStoresCallable(const ListTrustStoresRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListTrustStores, request);
         }
@@ -1253,7 +1253,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListTrustStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrustStoresRequestT = Model::ListTrustStoresRequest>
-        void ListTrustStoresAsync(const ListTrustStoresRequestT& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrustStoresAsync(const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrustStoresRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListTrustStores, request, handler, context);
         }
@@ -1264,13 +1264,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUserAccessLoggingSettingsOutcome ListUserAccessLoggingSettings(const Model::ListUserAccessLoggingSettingsRequest& request) const;
+        virtual Model::ListUserAccessLoggingSettingsOutcome ListUserAccessLoggingSettings(const Model::ListUserAccessLoggingSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUserAccessLoggingSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUserAccessLoggingSettingsRequestT = Model::ListUserAccessLoggingSettingsRequest>
-        Model::ListUserAccessLoggingSettingsOutcomeCallable ListUserAccessLoggingSettingsCallable(const ListUserAccessLoggingSettingsRequestT& request) const
+        Model::ListUserAccessLoggingSettingsOutcomeCallable ListUserAccessLoggingSettingsCallable(const ListUserAccessLoggingSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListUserAccessLoggingSettings, request);
         }
@@ -1279,7 +1279,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListUserAccessLoggingSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUserAccessLoggingSettingsRequestT = Model::ListUserAccessLoggingSettingsRequest>
-        void ListUserAccessLoggingSettingsAsync(const ListUserAccessLoggingSettingsRequestT& request, const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUserAccessLoggingSettingsAsync(const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUserAccessLoggingSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListUserAccessLoggingSettings, request, handler, context);
         }
@@ -1289,13 +1289,13 @@ namespace WorkSpacesWeb
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUserSettingsOutcome ListUserSettings(const Model::ListUserSettingsRequest& request) const;
+        virtual Model::ListUserSettingsOutcome ListUserSettings(const Model::ListUserSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUserSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUserSettingsRequestT = Model::ListUserSettingsRequest>
-        Model::ListUserSettingsOutcomeCallable ListUserSettingsCallable(const ListUserSettingsRequestT& request) const
+        Model::ListUserSettingsOutcomeCallable ListUserSettingsCallable(const ListUserSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&WorkSpacesWebClient::ListUserSettings, request);
         }
@@ -1304,7 +1304,7 @@ namespace WorkSpacesWeb
          * An Async wrapper for ListUserSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUserSettingsRequestT = Model::ListUserSettingsRequest>
-        void ListUserSettingsAsync(const ListUserSettingsRequestT& request, const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUserSettingsAsync(const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUserSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListUserSettings, request, handler, context);
         }

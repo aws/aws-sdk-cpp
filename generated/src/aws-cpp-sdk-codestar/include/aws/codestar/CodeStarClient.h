@@ -329,13 +329,13 @@ namespace CodeStar
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
+        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request) const
+        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeStarClient::ListProjects, request);
         }
@@ -344,7 +344,7 @@ namespace CodeStar
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeStarClient::ListProjects, request, handler, context);
         }
@@ -432,13 +432,13 @@ namespace CodeStar
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request) const;
+        virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUserProfilesRequestT = Model::ListUserProfilesRequest>
-        Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const ListUserProfilesRequestT& request) const
+        Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const ListUserProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&CodeStarClient::ListUserProfiles, request);
         }
@@ -447,7 +447,7 @@ namespace CodeStar
          * An Async wrapper for ListUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUserProfilesRequestT = Model::ListUserProfilesRequest>
-        void ListUserProfilesAsync(const ListUserProfilesRequestT& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUserProfilesAsync(const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUserProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&CodeStarClient::ListUserProfiles, request, handler, context);
         }

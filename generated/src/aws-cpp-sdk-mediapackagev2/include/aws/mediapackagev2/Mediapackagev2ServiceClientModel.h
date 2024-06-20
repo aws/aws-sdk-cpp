@@ -40,6 +40,7 @@
 #include <aws/mediapackagev2/model/UpdateChannelResult.h>
 #include <aws/mediapackagev2/model/UpdateChannelGroupResult.h>
 #include <aws/mediapackagev2/model/UpdateOriginEndpointResult.h>
+#include <aws/mediapackagev2/model/ListChannelGroupsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in Mediapackagev2Client header */
 

@@ -72,6 +72,7 @@
 #include <aws/qbusiness/model/UpdateRetrieverResult.h>
 #include <aws/qbusiness/model/UpdateUserResult.h>
 #include <aws/qbusiness/model/UpdateWebExperienceResult.h>
+#include <aws/qbusiness/model/ListApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in QBusinessClient header */
 

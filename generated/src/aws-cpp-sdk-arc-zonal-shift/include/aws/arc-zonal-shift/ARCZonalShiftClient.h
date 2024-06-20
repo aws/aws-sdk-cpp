@@ -231,13 +231,13 @@ namespace ARCZonalShift
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListAutoshifts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAutoshiftsOutcome ListAutoshifts(const Model::ListAutoshiftsRequest& request) const;
+        virtual Model::ListAutoshiftsOutcome ListAutoshifts(const Model::ListAutoshiftsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAutoshifts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAutoshiftsRequestT = Model::ListAutoshiftsRequest>
-        Model::ListAutoshiftsOutcomeCallable ListAutoshiftsCallable(const ListAutoshiftsRequestT& request) const
+        Model::ListAutoshiftsOutcomeCallable ListAutoshiftsCallable(const ListAutoshiftsRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListAutoshifts, request);
         }
@@ -246,7 +246,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListAutoshifts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAutoshiftsRequestT = Model::ListAutoshiftsRequest>
-        void ListAutoshiftsAsync(const ListAutoshiftsRequestT& request, const ListAutoshiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAutoshiftsAsync(const ListAutoshiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutoshiftsRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListAutoshifts, request, handler, context);
         }
@@ -261,13 +261,13 @@ namespace ARCZonalShift
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListManagedResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListManagedResourcesOutcome ListManagedResources(const Model::ListManagedResourcesRequest& request) const;
+        virtual Model::ListManagedResourcesOutcome ListManagedResources(const Model::ListManagedResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListManagedResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListManagedResourcesRequestT = Model::ListManagedResourcesRequest>
-        Model::ListManagedResourcesOutcomeCallable ListManagedResourcesCallable(const ListManagedResourcesRequestT& request) const
+        Model::ListManagedResourcesOutcomeCallable ListManagedResourcesCallable(const ListManagedResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListManagedResources, request);
         }
@@ -276,7 +276,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListManagedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListManagedResourcesRequestT = Model::ListManagedResourcesRequest>
-        void ListManagedResourcesAsync(const ListManagedResourcesRequestT& request, const ListManagedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListManagedResourcesAsync(const ListManagedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListManagedResources, request, handler, context);
         }
@@ -293,13 +293,13 @@ namespace ARCZonalShift
          * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ListZonalShifts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListZonalShiftsOutcome ListZonalShifts(const Model::ListZonalShiftsRequest& request) const;
+        virtual Model::ListZonalShiftsOutcome ListZonalShifts(const Model::ListZonalShiftsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListZonalShifts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListZonalShiftsRequestT = Model::ListZonalShiftsRequest>
-        Model::ListZonalShiftsOutcomeCallable ListZonalShiftsCallable(const ListZonalShiftsRequestT& request) const
+        Model::ListZonalShiftsOutcomeCallable ListZonalShiftsCallable(const ListZonalShiftsRequestT& request = {}) const
         {
             return SubmitCallable(&ARCZonalShiftClient::ListZonalShifts, request);
         }
@@ -308,7 +308,7 @@ namespace ARCZonalShift
          * An Async wrapper for ListZonalShifts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListZonalShiftsRequestT = Model::ListZonalShiftsRequest>
-        void ListZonalShiftsAsync(const ListZonalShiftsRequestT& request, const ListZonalShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListZonalShiftsAsync(const ListZonalShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListZonalShiftsRequestT& request = {}) const
         {
             return SubmitAsync(&ARCZonalShiftClient::ListZonalShifts, request, handler, context);
         }

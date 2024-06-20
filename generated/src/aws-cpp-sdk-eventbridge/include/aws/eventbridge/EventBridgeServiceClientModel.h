@@ -66,6 +66,18 @@
 #include <aws/eventbridge/model/UpdateConnectionResult.h>
 #include <aws/eventbridge/model/UpdateEndpointResult.h>
 #include <aws/eventbridge/model/UpdateEventBusResult.h>
+#include <aws/eventbridge/model/DescribeEventBusRequest.h>
+#include <aws/eventbridge/model/ListReplaysRequest.h>
+#include <aws/eventbridge/model/ListEndpointsRequest.h>
+#include <aws/eventbridge/model/PutPermissionRequest.h>
+#include <aws/eventbridge/model/ListArchivesRequest.h>
+#include <aws/eventbridge/model/UpdateEventBusRequest.h>
+#include <aws/eventbridge/model/ListApiDestinationsRequest.h>
+#include <aws/eventbridge/model/ListEventBusesRequest.h>
+#include <aws/eventbridge/model/ListEventSourcesRequest.h>
+#include <aws/eventbridge/model/ListConnectionsRequest.h>
+#include <aws/eventbridge/model/ListRulesRequest.h>
+#include <aws/eventbridge/model/RemovePermissionRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in EventBridgeClient header */
 

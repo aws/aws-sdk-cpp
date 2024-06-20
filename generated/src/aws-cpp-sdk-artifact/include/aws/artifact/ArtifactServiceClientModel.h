@@ -24,6 +24,9 @@
 #include <aws/artifact/model/GetTermForReportResult.h>
 #include <aws/artifact/model/ListReportsResult.h>
 #include <aws/artifact/model/PutAccountSettingsResult.h>
+#include <aws/artifact/model/ListReportsRequest.h>
+#include <aws/artifact/model/PutAccountSettingsRequest.h>
+#include <aws/artifact/model/GetAccountSettingsRequest.h>
 /* End of service model headers required in ArtifactClient header */
 
 namespace Aws

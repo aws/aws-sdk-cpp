@@ -42,6 +42,10 @@
 #include <aws/fis/model/UntagResourceResult.h>
 #include <aws/fis/model/UpdateExperimentTemplateResult.h>
 #include <aws/fis/model/UpdateTargetAccountConfigurationResult.h>
+#include <aws/fis/model/ListTargetResourceTypesRequest.h>
+#include <aws/fis/model/ListExperimentsRequest.h>
+#include <aws/fis/model/ListExperimentTemplatesRequest.h>
+#include <aws/fis/model/ListActionsRequest.h>
 /* End of service model headers required in FISClient header */
 
 namespace Aws

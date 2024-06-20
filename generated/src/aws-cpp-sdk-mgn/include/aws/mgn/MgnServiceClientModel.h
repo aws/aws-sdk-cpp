@@ -84,6 +84,19 @@
 #include <aws/mgn/model/UpdateSourceServerResult.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeResult.h>
 #include <aws/mgn/model/UpdateWaveResult.h>
+#include <aws/mgn/model/ListImportsRequest.h>
+#include <aws/mgn/model/ListManagedAccountsRequest.h>
+#include <aws/mgn/model/DescribeJobsRequest.h>
+#include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
+#include <aws/mgn/model/DescribeSourceServersRequest.h>
+#include <aws/mgn/model/DescribeReplicationConfigurationTemplatesRequest.h>
+#include <aws/mgn/model/DescribeLaunchConfigurationTemplatesRequest.h>
+#include <aws/mgn/model/DescribeVcenterClientsRequest.h>
+#include <aws/mgn/model/ListApplicationsRequest.h>
+#include <aws/mgn/model/InitializeServiceRequest.h>
+#include <aws/mgn/model/ListExportsRequest.h>
+#include <aws/mgn/model/ListConnectorsRequest.h>
+#include <aws/mgn/model/ListWavesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MgnClient header */
 

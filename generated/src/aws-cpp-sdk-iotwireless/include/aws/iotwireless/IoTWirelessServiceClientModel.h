@@ -125,6 +125,29 @@
 #include <aws/iotwireless/model/UpdateWirelessDeviceResult.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceImportTaskResult.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayResult.h>
+#include <aws/iotwireless/model/UpdateMetricConfigurationRequest.h>
+#include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
+#include <aws/iotwireless/model/GetEventConfigurationByResourceTypesRequest.h>
+#include <aws/iotwireless/model/ListDeviceProfilesRequest.h>
+#include <aws/iotwireless/model/ListServiceProfilesRequest.h>
+#include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
+#include <aws/iotwireless/model/GetMetricConfigurationRequest.h>
+#include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/UpdateEventConfigurationByResourceTypesRequest.h>
+#include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
+#include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/CreateDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetPositionEstimateRequest.h>
+#include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
+#include <aws/iotwireless/model/CreateServiceProfileRequest.h>
+#include <aws/iotwireless/model/GetServiceEndpointRequest.h>
+#include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
+#include <aws/iotwireless/model/ListFuotaTasksRequest.h>
+#include <aws/iotwireless/model/ListWirelessDeviceImportTasksRequest.h>
+#include <aws/iotwireless/model/ListDestinationsRequest.h>
+#include <aws/iotwireless/model/GetMetricsRequest.h>
+#include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
 /* End of service model headers required in IoTWirelessClient header */
 
 namespace Aws

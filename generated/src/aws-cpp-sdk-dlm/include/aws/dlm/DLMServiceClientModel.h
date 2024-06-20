@@ -26,6 +26,7 @@
 #include <aws/dlm/model/TagResourceResult.h>
 #include <aws/dlm/model/UntagResourceResult.h>
 #include <aws/dlm/model/UpdateLifecyclePolicyResult.h>
+#include <aws/dlm/model/GetLifecyclePoliciesRequest.h>
 /* End of service model headers required in DLMClient header */
 
 namespace Aws

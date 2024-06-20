@@ -1249,13 +1249,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAnnotationImportJobsOutcome ListAnnotationImportJobs(const Model::ListAnnotationImportJobsRequest& request) const;
+        virtual Model::ListAnnotationImportJobsOutcome ListAnnotationImportJobs(const Model::ListAnnotationImportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAnnotationImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAnnotationImportJobsRequestT = Model::ListAnnotationImportJobsRequest>
-        Model::ListAnnotationImportJobsOutcomeCallable ListAnnotationImportJobsCallable(const ListAnnotationImportJobsRequestT& request) const
+        Model::ListAnnotationImportJobsOutcomeCallable ListAnnotationImportJobsCallable(const ListAnnotationImportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListAnnotationImportJobs, request);
         }
@@ -1264,7 +1264,7 @@ namespace Omics
          * An Async wrapper for ListAnnotationImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAnnotationImportJobsRequestT = Model::ListAnnotationImportJobsRequest>
-        void ListAnnotationImportJobsAsync(const ListAnnotationImportJobsRequestT& request, const ListAnnotationImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAnnotationImportJobsAsync(const ListAnnotationImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnnotationImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListAnnotationImportJobs, request, handler, context);
         }
@@ -1299,13 +1299,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAnnotationStoresOutcome ListAnnotationStores(const Model::ListAnnotationStoresRequest& request) const;
+        virtual Model::ListAnnotationStoresOutcome ListAnnotationStores(const Model::ListAnnotationStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAnnotationStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAnnotationStoresRequestT = Model::ListAnnotationStoresRequest>
-        Model::ListAnnotationStoresOutcomeCallable ListAnnotationStoresCallable(const ListAnnotationStoresRequestT& request) const
+        Model::ListAnnotationStoresOutcomeCallable ListAnnotationStoresCallable(const ListAnnotationStoresRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListAnnotationStores, request);
         }
@@ -1314,7 +1314,7 @@ namespace Omics
          * An Async wrapper for ListAnnotationStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAnnotationStoresRequestT = Model::ListAnnotationStoresRequest>
-        void ListAnnotationStoresAsync(const ListAnnotationStoresRequestT& request, const ListAnnotationStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAnnotationStoresAsync(const ListAnnotationStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAnnotationStoresRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListAnnotationStores, request, handler, context);
         }
@@ -1502,13 +1502,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReferenceStoresOutcome ListReferenceStores(const Model::ListReferenceStoresRequest& request) const;
+        virtual Model::ListReferenceStoresOutcome ListReferenceStores(const Model::ListReferenceStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReferenceStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReferenceStoresRequestT = Model::ListReferenceStoresRequest>
-        Model::ListReferenceStoresOutcomeCallable ListReferenceStoresCallable(const ListReferenceStoresRequestT& request) const
+        Model::ListReferenceStoresOutcomeCallable ListReferenceStoresCallable(const ListReferenceStoresRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListReferenceStores, request);
         }
@@ -1517,7 +1517,7 @@ namespace Omics
          * An Async wrapper for ListReferenceStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReferenceStoresRequestT = Model::ListReferenceStoresRequest>
-        void ListReferenceStoresAsync(const ListReferenceStoresRequestT& request, const ListReferenceStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReferenceStoresAsync(const ListReferenceStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReferenceStoresRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListReferenceStores, request, handler, context);
         }
@@ -1552,13 +1552,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRunGroupsOutcome ListRunGroups(const Model::ListRunGroupsRequest& request) const;
+        virtual Model::ListRunGroupsOutcome ListRunGroups(const Model::ListRunGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRunGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRunGroupsRequestT = Model::ListRunGroupsRequest>
-        Model::ListRunGroupsOutcomeCallable ListRunGroupsCallable(const ListRunGroupsRequestT& request) const
+        Model::ListRunGroupsOutcomeCallable ListRunGroupsCallable(const ListRunGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListRunGroups, request);
         }
@@ -1567,7 +1567,7 @@ namespace Omics
          * An Async wrapper for ListRunGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRunGroupsRequestT = Model::ListRunGroupsRequest>
-        void ListRunGroupsAsync(const ListRunGroupsRequestT& request, const ListRunGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRunGroupsAsync(const ListRunGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRunGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListRunGroups, request, handler, context);
         }
@@ -1602,13 +1602,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListRunsOutcome ListRuns(const Model::ListRunsRequest& request) const;
+        virtual Model::ListRunsOutcome ListRuns(const Model::ListRunsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRuns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRunsRequestT = Model::ListRunsRequest>
-        Model::ListRunsOutcomeCallable ListRunsCallable(const ListRunsRequestT& request) const
+        Model::ListRunsOutcomeCallable ListRunsCallable(const ListRunsRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListRuns, request);
         }
@@ -1617,7 +1617,7 @@ namespace Omics
          * An Async wrapper for ListRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRunsRequestT = Model::ListRunsRequest>
-        void ListRunsAsync(const ListRunsRequestT& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRunsAsync(const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRunsRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListRuns, request, handler, context);
         }
@@ -1627,13 +1627,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListSequenceStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSequenceStoresOutcome ListSequenceStores(const Model::ListSequenceStoresRequest& request) const;
+        virtual Model::ListSequenceStoresOutcome ListSequenceStores(const Model::ListSequenceStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSequenceStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSequenceStoresRequestT = Model::ListSequenceStoresRequest>
-        Model::ListSequenceStoresOutcomeCallable ListSequenceStoresCallable(const ListSequenceStoresRequestT& request) const
+        Model::ListSequenceStoresOutcomeCallable ListSequenceStoresCallable(const ListSequenceStoresRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListSequenceStores, request);
         }
@@ -1642,7 +1642,7 @@ namespace Omics
          * An Async wrapper for ListSequenceStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSequenceStoresRequestT = Model::ListSequenceStoresRequest>
-        void ListSequenceStoresAsync(const ListSequenceStoresRequestT& request, const ListSequenceStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSequenceStoresAsync(const ListSequenceStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSequenceStoresRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListSequenceStores, request, handler, context);
         }
@@ -1703,13 +1703,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVariantImportJobsOutcome ListVariantImportJobs(const Model::ListVariantImportJobsRequest& request) const;
+        virtual Model::ListVariantImportJobsOutcome ListVariantImportJobs(const Model::ListVariantImportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVariantImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVariantImportJobsRequestT = Model::ListVariantImportJobsRequest>
-        Model::ListVariantImportJobsOutcomeCallable ListVariantImportJobsCallable(const ListVariantImportJobsRequestT& request) const
+        Model::ListVariantImportJobsOutcomeCallable ListVariantImportJobsCallable(const ListVariantImportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListVariantImportJobs, request);
         }
@@ -1718,7 +1718,7 @@ namespace Omics
          * An Async wrapper for ListVariantImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVariantImportJobsRequestT = Model::ListVariantImportJobsRequest>
-        void ListVariantImportJobsAsync(const ListVariantImportJobsRequestT& request, const ListVariantImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVariantImportJobsAsync(const ListVariantImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVariantImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListVariantImportJobs, request, handler, context);
         }
@@ -1728,13 +1728,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVariantStoresOutcome ListVariantStores(const Model::ListVariantStoresRequest& request) const;
+        virtual Model::ListVariantStoresOutcome ListVariantStores(const Model::ListVariantStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVariantStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVariantStoresRequestT = Model::ListVariantStoresRequest>
-        Model::ListVariantStoresOutcomeCallable ListVariantStoresCallable(const ListVariantStoresRequestT& request) const
+        Model::ListVariantStoresOutcomeCallable ListVariantStoresCallable(const ListVariantStoresRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListVariantStores, request);
         }
@@ -1743,7 +1743,7 @@ namespace Omics
          * An Async wrapper for ListVariantStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVariantStoresRequestT = Model::ListVariantStoresRequest>
-        void ListVariantStoresAsync(const ListVariantStoresRequestT& request, const ListVariantStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVariantStoresAsync(const ListVariantStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVariantStoresRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListVariantStores, request, handler, context);
         }
@@ -1753,13 +1753,13 @@ namespace Omics
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&OmicsClient::ListWorkflows, request);
         }
@@ -1768,7 +1768,7 @@ namespace Omics
          * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&OmicsClient::ListWorkflows, request, handler, context);
         }

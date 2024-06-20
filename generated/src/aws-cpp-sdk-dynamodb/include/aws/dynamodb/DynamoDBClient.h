@@ -666,13 +666,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
+        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request) const
+        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::DescribeEndpoints, request);
         }
@@ -681,7 +681,7 @@ namespace DynamoDB
          * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEndpointsAsync(const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::DescribeEndpoints, request, handler, context);
         }
@@ -880,13 +880,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
+        virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLimitsRequestT = Model::DescribeLimitsRequest>
-        Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const DescribeLimitsRequestT& request) const
+        Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const DescribeLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::DescribeLimits, request);
         }
@@ -895,7 +895,7 @@ namespace DynamoDB
          * An Async wrapper for DescribeLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLimitsRequestT = Model::DescribeLimitsRequest>
-        void DescribeLimitsAsync(const DescribeLimitsRequestT& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLimitsAsync(const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::DescribeLimits, request, handler, context);
         }
@@ -1263,13 +1263,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request) const;
+        virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupsRequestT = Model::ListBackupsRequest>
-        Model::ListBackupsOutcomeCallable ListBackupsCallable(const ListBackupsRequestT& request) const
+        Model::ListBackupsOutcomeCallable ListBackupsCallable(const ListBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListBackups, request);
         }
@@ -1278,7 +1278,7 @@ namespace DynamoDB
          * An Async wrapper for ListBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupsRequestT = Model::ListBackupsRequest>
-        void ListBackupsAsync(const ListBackupsRequestT& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupsAsync(const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListBackups, request, handler, context);
         }
@@ -1289,13 +1289,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContributorInsightsOutcome ListContributorInsights(const Model::ListContributorInsightsRequest& request) const;
+        virtual Model::ListContributorInsightsOutcome ListContributorInsights(const Model::ListContributorInsightsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContributorInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContributorInsightsRequestT = Model::ListContributorInsightsRequest>
-        Model::ListContributorInsightsOutcomeCallable ListContributorInsightsCallable(const ListContributorInsightsRequestT& request) const
+        Model::ListContributorInsightsOutcomeCallable ListContributorInsightsCallable(const ListContributorInsightsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListContributorInsights, request);
         }
@@ -1304,7 +1304,7 @@ namespace DynamoDB
          * An Async wrapper for ListContributorInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContributorInsightsRequestT = Model::ListContributorInsightsRequest>
-        void ListContributorInsightsAsync(const ListContributorInsightsRequestT& request, const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContributorInsightsAsync(const ListContributorInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContributorInsightsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListContributorInsights, request, handler, context);
         }
@@ -1315,13 +1315,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExportsRequestT = Model::ListExportsRequest>
-        Model::ListExportsOutcomeCallable ListExportsCallable(const ListExportsRequestT& request) const
+        Model::ListExportsOutcomeCallable ListExportsCallable(const ListExportsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListExports, request);
         }
@@ -1330,7 +1330,7 @@ namespace DynamoDB
          * An Async wrapper for ListExports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExportsRequestT = Model::ListExportsRequest>
-        void ListExportsAsync(const ListExportsRequestT& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExportsAsync(const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExportsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListExports, request, handler, context);
         }
@@ -1351,13 +1351,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
+        virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGlobalTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGlobalTablesRequestT = Model::ListGlobalTablesRequest>
-        Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const ListGlobalTablesRequestT& request) const
+        Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const ListGlobalTablesRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListGlobalTables, request);
         }
@@ -1366,7 +1366,7 @@ namespace DynamoDB
          * An Async wrapper for ListGlobalTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGlobalTablesRequestT = Model::ListGlobalTablesRequest>
-        void ListGlobalTablesAsync(const ListGlobalTablesRequestT& request, const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGlobalTablesAsync(const ListGlobalTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGlobalTablesRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListGlobalTables, request, handler, context);
         }
@@ -1377,13 +1377,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request) const
+        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListImports, request);
         }
@@ -1392,7 +1392,7 @@ namespace DynamoDB
          * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListImportsAsync(const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportsRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListImports, request, handler, context);
         }
@@ -1404,13 +1404,13 @@ namespace DynamoDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
+        virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTablesRequestT = Model::ListTablesRequest>
-        Model::ListTablesOutcomeCallable ListTablesCallable(const ListTablesRequestT& request) const
+        Model::ListTablesOutcomeCallable ListTablesCallable(const ListTablesRequestT& request = {}) const
         {
             return SubmitCallable(&DynamoDBClient::ListTables, request);
         }
@@ -1419,7 +1419,7 @@ namespace DynamoDB
          * An Async wrapper for ListTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTablesRequestT = Model::ListTablesRequest>
-        void ListTablesAsync(const ListTablesRequestT& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTablesAsync(const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTablesRequestT& request = {}) const
         {
             return SubmitAsync(&DynamoDBClient::ListTables, request, handler, context);
         }

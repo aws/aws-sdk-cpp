@@ -407,13 +407,13 @@ namespace Batch
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeComputeEnvironmentsOutcome DescribeComputeEnvironments(const Model::DescribeComputeEnvironmentsRequest& request) const;
+        virtual Model::DescribeComputeEnvironmentsOutcome DescribeComputeEnvironments(const Model::DescribeComputeEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeComputeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeComputeEnvironmentsRequestT = Model::DescribeComputeEnvironmentsRequest>
-        Model::DescribeComputeEnvironmentsOutcomeCallable DescribeComputeEnvironmentsCallable(const DescribeComputeEnvironmentsRequestT& request) const
+        Model::DescribeComputeEnvironmentsOutcomeCallable DescribeComputeEnvironmentsCallable(const DescribeComputeEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&BatchClient::DescribeComputeEnvironments, request);
         }
@@ -422,7 +422,7 @@ namespace Batch
          * An Async wrapper for DescribeComputeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeComputeEnvironmentsRequestT = Model::DescribeComputeEnvironmentsRequest>
-        void DescribeComputeEnvironmentsAsync(const DescribeComputeEnvironmentsRequestT& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeComputeEnvironmentsAsync(const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeComputeEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&BatchClient::DescribeComputeEnvironments, request, handler, context);
         }
@@ -434,13 +434,13 @@ namespace Batch
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeJobDefinitionsOutcome DescribeJobDefinitions(const Model::DescribeJobDefinitionsRequest& request) const;
+        virtual Model::DescribeJobDefinitionsOutcome DescribeJobDefinitions(const Model::DescribeJobDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeJobDefinitionsRequestT = Model::DescribeJobDefinitionsRequest>
-        Model::DescribeJobDefinitionsOutcomeCallable DescribeJobDefinitionsCallable(const DescribeJobDefinitionsRequestT& request) const
+        Model::DescribeJobDefinitionsOutcomeCallable DescribeJobDefinitionsCallable(const DescribeJobDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&BatchClient::DescribeJobDefinitions, request);
         }
@@ -449,7 +449,7 @@ namespace Batch
          * An Async wrapper for DescribeJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeJobDefinitionsRequestT = Model::DescribeJobDefinitionsRequest>
-        void DescribeJobDefinitionsAsync(const DescribeJobDefinitionsRequestT& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeJobDefinitionsAsync(const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeJobDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&BatchClient::DescribeJobDefinitions, request, handler, context);
         }
@@ -459,13 +459,13 @@ namespace Batch
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeJobQueuesOutcome DescribeJobQueues(const Model::DescribeJobQueuesRequest& request) const;
+        virtual Model::DescribeJobQueuesOutcome DescribeJobQueues(const Model::DescribeJobQueuesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeJobQueues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeJobQueuesRequestT = Model::DescribeJobQueuesRequest>
-        Model::DescribeJobQueuesOutcomeCallable DescribeJobQueuesCallable(const DescribeJobQueuesRequestT& request) const
+        Model::DescribeJobQueuesOutcomeCallable DescribeJobQueuesCallable(const DescribeJobQueuesRequestT& request = {}) const
         {
             return SubmitCallable(&BatchClient::DescribeJobQueues, request);
         }
@@ -474,7 +474,7 @@ namespace Batch
          * An Async wrapper for DescribeJobQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeJobQueuesRequestT = Model::DescribeJobQueuesRequest>
-        void DescribeJobQueuesAsync(const DescribeJobQueuesRequestT& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeJobQueuesAsync(const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeJobQueuesRequestT& request = {}) const
         {
             return SubmitAsync(&BatchClient::DescribeJobQueues, request, handler, context);
         }
@@ -567,13 +567,13 @@ namespace Batch
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BatchClient::ListJobs, request);
         }
@@ -582,7 +582,7 @@ namespace Batch
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BatchClient::ListJobs, request, handler, context);
         }
@@ -592,13 +592,13 @@ namespace Batch
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchedulingPoliciesOutcome ListSchedulingPolicies(const Model::ListSchedulingPoliciesRequest& request) const;
+        virtual Model::ListSchedulingPoliciesOutcome ListSchedulingPolicies(const Model::ListSchedulingPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchedulingPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchedulingPoliciesRequestT = Model::ListSchedulingPoliciesRequest>
-        Model::ListSchedulingPoliciesOutcomeCallable ListSchedulingPoliciesCallable(const ListSchedulingPoliciesRequestT& request) const
+        Model::ListSchedulingPoliciesOutcomeCallable ListSchedulingPoliciesCallable(const ListSchedulingPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&BatchClient::ListSchedulingPolicies, request);
         }
@@ -607,7 +607,7 @@ namespace Batch
          * An Async wrapper for ListSchedulingPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchedulingPoliciesRequestT = Model::ListSchedulingPoliciesRequest>
-        void ListSchedulingPoliciesAsync(const ListSchedulingPoliciesRequestT& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchedulingPoliciesAsync(const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchedulingPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&BatchClient::ListSchedulingPolicies, request, handler, context);
         }

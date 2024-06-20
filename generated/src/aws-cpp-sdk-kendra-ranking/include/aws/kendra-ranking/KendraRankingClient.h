@@ -171,13 +171,13 @@ namespace KendraRanking
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/ListRescoreExecutionPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRescoreExecutionPlansOutcome ListRescoreExecutionPlans(const Model::ListRescoreExecutionPlansRequest& request) const;
+        virtual Model::ListRescoreExecutionPlansOutcome ListRescoreExecutionPlans(const Model::ListRescoreExecutionPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRescoreExecutionPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRescoreExecutionPlansRequestT = Model::ListRescoreExecutionPlansRequest>
-        Model::ListRescoreExecutionPlansOutcomeCallable ListRescoreExecutionPlansCallable(const ListRescoreExecutionPlansRequestT& request) const
+        Model::ListRescoreExecutionPlansOutcomeCallable ListRescoreExecutionPlansCallable(const ListRescoreExecutionPlansRequestT& request = {}) const
         {
             return SubmitCallable(&KendraRankingClient::ListRescoreExecutionPlans, request);
         }
@@ -186,7 +186,7 @@ namespace KendraRanking
          * An Async wrapper for ListRescoreExecutionPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRescoreExecutionPlansRequestT = Model::ListRescoreExecutionPlansRequest>
-        void ListRescoreExecutionPlansAsync(const ListRescoreExecutionPlansRequestT& request, const ListRescoreExecutionPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRescoreExecutionPlansAsync(const ListRescoreExecutionPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRescoreExecutionPlansRequestT& request = {}) const
         {
             return SubmitAsync(&KendraRankingClient::ListRescoreExecutionPlans, request, handler, context);
         }

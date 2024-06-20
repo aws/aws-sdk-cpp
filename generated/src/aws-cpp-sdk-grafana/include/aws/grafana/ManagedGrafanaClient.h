@@ -530,13 +530,13 @@ namespace ManagedGrafana
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request) const;
+        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVersionsRequestT = Model::ListVersionsRequest>
-        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request) const
+        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&ManagedGrafanaClient::ListVersions, request);
         }
@@ -545,7 +545,7 @@ namespace ManagedGrafana
          * An Async wrapper for ListVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVersionsRequestT = Model::ListVersionsRequest>
-        void ListVersionsAsync(const ListVersionsRequestT& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVersionsAsync(const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&ManagedGrafanaClient::ListVersions, request, handler, context);
         }
@@ -615,13 +615,13 @@ namespace ManagedGrafana
          * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request) const;
+        virtual Model::ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
-        Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const ListWorkspacesRequestT& request) const
+        Model::ListWorkspacesOutcomeCallable ListWorkspacesCallable(const ListWorkspacesRequestT& request = {}) const
         {
             return SubmitCallable(&ManagedGrafanaClient::ListWorkspaces, request);
         }
@@ -630,7 +630,7 @@ namespace ManagedGrafana
          * An Async wrapper for ListWorkspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkspacesRequestT = Model::ListWorkspacesRequest>
-        void ListWorkspacesAsync(const ListWorkspacesRequestT& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkspacesAsync(const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkspacesRequestT& request = {}) const
         {
             return SubmitAsync(&ManagedGrafanaClient::ListWorkspaces, request, handler, context);
         }

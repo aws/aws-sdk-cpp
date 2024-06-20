@@ -44,6 +44,15 @@
 #include <aws/chatbot/model/UpdateChimeWebhookConfigurationResult.h>
 #include <aws/chatbot/model/UpdateMicrosoftTeamsChannelConfigurationResult.h>
 #include <aws/chatbot/model/UpdateSlackChannelConfigurationResult.h>
+#include <aws/chatbot/model/DescribeSlackUserIdentitiesRequest.h>
+#include <aws/chatbot/model/ListMicrosoftTeamsChannelConfigurationsRequest.h>
+#include <aws/chatbot/model/ListMicrosoftTeamsConfiguredTeamsRequest.h>
+#include <aws/chatbot/model/DescribeSlackChannelConfigurationsRequest.h>
+#include <aws/chatbot/model/ListMicrosoftTeamsUserIdentitiesRequest.h>
+#include <aws/chatbot/model/DescribeSlackWorkspacesRequest.h>
+#include <aws/chatbot/model/DescribeChimeWebhookConfigurationsRequest.h>
+#include <aws/chatbot/model/GetAccountPreferencesRequest.h>
+#include <aws/chatbot/model/UpdateAccountPreferencesRequest.h>
 /* End of service model headers required in ChatbotClient header */
 
 namespace Aws

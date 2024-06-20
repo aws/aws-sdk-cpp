@@ -30,6 +30,7 @@
 #include <aws/firehose/model/TagDeliveryStreamResult.h>
 #include <aws/firehose/model/UntagDeliveryStreamResult.h>
 #include <aws/firehose/model/UpdateDestinationResult.h>
+#include <aws/firehose/model/ListDeliveryStreamsRequest.h>
 /* End of service model headers required in FirehoseClient header */
 
 namespace Aws

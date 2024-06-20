@@ -132,13 +132,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::AddThingToBillingGroupOutcome AddThingToBillingGroup(const Model::AddThingToBillingGroupRequest& request) const;
+        virtual Model::AddThingToBillingGroupOutcome AddThingToBillingGroup(const Model::AddThingToBillingGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AddThingToBillingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AddThingToBillingGroupRequestT = Model::AddThingToBillingGroupRequest>
-        Model::AddThingToBillingGroupOutcomeCallable AddThingToBillingGroupCallable(const AddThingToBillingGroupRequestT& request) const
+        Model::AddThingToBillingGroupOutcomeCallable AddThingToBillingGroupCallable(const AddThingToBillingGroupRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::AddThingToBillingGroup, request);
         }
@@ -147,7 +147,7 @@ namespace IoT
          * An Async wrapper for AddThingToBillingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AddThingToBillingGroupRequestT = Model::AddThingToBillingGroupRequest>
-        void AddThingToBillingGroupAsync(const AddThingToBillingGroupRequestT& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AddThingToBillingGroupAsync(const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AddThingToBillingGroupRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::AddThingToBillingGroup, request, handler, context);
         }
@@ -159,13 +159,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToThingGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::AddThingToThingGroupOutcome AddThingToThingGroup(const Model::AddThingToThingGroupRequest& request) const;
+        virtual Model::AddThingToThingGroupOutcome AddThingToThingGroup(const Model::AddThingToThingGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AddThingToThingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AddThingToThingGroupRequestT = Model::AddThingToThingGroupRequest>
-        Model::AddThingToThingGroupOutcomeCallable AddThingToThingGroupCallable(const AddThingToThingGroupRequestT& request) const
+        Model::AddThingToThingGroupOutcomeCallable AddThingToThingGroupCallable(const AddThingToThingGroupRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::AddThingToThingGroup, request);
         }
@@ -174,7 +174,7 @@ namespace IoT
          * An Async wrapper for AddThingToThingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AddThingToThingGroupRequestT = Model::AddThingToThingGroupRequest>
-        void AddThingToThingGroupAsync(const AddThingToThingGroupRequestT& request, const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AddThingToThingGroupAsync(const AddThingToThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AddThingToThingGroupRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::AddThingToThingGroup, request, handler, context);
         }
@@ -479,13 +479,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ClearDefaultAuthorizer">AWS
          * API Reference</a></p>
          */
-        virtual Model::ClearDefaultAuthorizerOutcome ClearDefaultAuthorizer(const Model::ClearDefaultAuthorizerRequest& request) const;
+        virtual Model::ClearDefaultAuthorizerOutcome ClearDefaultAuthorizer(const Model::ClearDefaultAuthorizerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ClearDefaultAuthorizer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ClearDefaultAuthorizerRequestT = Model::ClearDefaultAuthorizerRequest>
-        Model::ClearDefaultAuthorizerOutcomeCallable ClearDefaultAuthorizerCallable(const ClearDefaultAuthorizerRequestT& request) const
+        Model::ClearDefaultAuthorizerOutcomeCallable ClearDefaultAuthorizerCallable(const ClearDefaultAuthorizerRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ClearDefaultAuthorizer, request);
         }
@@ -494,7 +494,7 @@ namespace IoT
          * An Async wrapper for ClearDefaultAuthorizer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ClearDefaultAuthorizerRequestT = Model::ClearDefaultAuthorizerRequest>
-        void ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerRequestT& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ClearDefaultAuthorizerRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ClearDefaultAuthorizer, request, handler, context);
         }
@@ -916,13 +916,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificate">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateKeysAndCertificateOutcome CreateKeysAndCertificate(const Model::CreateKeysAndCertificateRequest& request) const;
+        virtual Model::CreateKeysAndCertificateOutcome CreateKeysAndCertificate(const Model::CreateKeysAndCertificateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateKeysAndCertificate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateKeysAndCertificateRequestT = Model::CreateKeysAndCertificateRequest>
-        Model::CreateKeysAndCertificateOutcomeCallable CreateKeysAndCertificateCallable(const CreateKeysAndCertificateRequestT& request) const
+        Model::CreateKeysAndCertificateOutcomeCallable CreateKeysAndCertificateCallable(const CreateKeysAndCertificateRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::CreateKeysAndCertificate, request);
         }
@@ -931,7 +931,7 @@ namespace IoT
          * An Async wrapper for CreateKeysAndCertificate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateKeysAndCertificateRequestT = Model::CreateKeysAndCertificateRequest>
-        void CreateKeysAndCertificateAsync(const CreateKeysAndCertificateRequestT& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateKeysAndCertificateAsync(const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateKeysAndCertificateRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::CreateKeysAndCertificate, request, handler, context);
         }
@@ -1473,13 +1473,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAccountAuditConfigurationOutcome DeleteAccountAuditConfiguration(const Model::DeleteAccountAuditConfigurationRequest& request) const;
+        virtual Model::DeleteAccountAuditConfigurationOutcome DeleteAccountAuditConfiguration(const Model::DeleteAccountAuditConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAccountAuditConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAccountAuditConfigurationRequestT = Model::DeleteAccountAuditConfigurationRequest>
-        Model::DeleteAccountAuditConfigurationOutcomeCallable DeleteAccountAuditConfigurationCallable(const DeleteAccountAuditConfigurationRequestT& request) const
+        Model::DeleteAccountAuditConfigurationOutcomeCallable DeleteAccountAuditConfigurationCallable(const DeleteAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DeleteAccountAuditConfiguration, request);
         }
@@ -1488,7 +1488,7 @@ namespace IoT
          * An Async wrapper for DeleteAccountAuditConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAccountAuditConfigurationRequestT = Model::DeleteAccountAuditConfigurationRequest>
-        void DeleteAccountAuditConfigurationAsync(const DeleteAccountAuditConfigurationRequestT& request, const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAccountAuditConfigurationAsync(const DeleteAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DeleteAccountAuditConfiguration, request, handler, context);
         }
@@ -2135,13 +2135,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRegistrationCode">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteRegistrationCodeOutcome DeleteRegistrationCode(const Model::DeleteRegistrationCodeRequest& request) const;
+        virtual Model::DeleteRegistrationCodeOutcome DeleteRegistrationCode(const Model::DeleteRegistrationCodeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteRegistrationCode that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteRegistrationCodeRequestT = Model::DeleteRegistrationCodeRequest>
-        Model::DeleteRegistrationCodeOutcomeCallable DeleteRegistrationCodeCallable(const DeleteRegistrationCodeRequestT& request) const
+        Model::DeleteRegistrationCodeOutcomeCallable DeleteRegistrationCodeCallable(const DeleteRegistrationCodeRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DeleteRegistrationCode, request);
         }
@@ -2150,7 +2150,7 @@ namespace IoT
          * An Async wrapper for DeleteRegistrationCode that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteRegistrationCodeRequestT = Model::DeleteRegistrationCodeRequest>
-        void DeleteRegistrationCodeAsync(const DeleteRegistrationCodeRequestT& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteRegistrationCodeAsync(const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteRegistrationCodeRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DeleteRegistrationCode, request, handler, context);
         }
@@ -2470,13 +2470,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountAuditConfigurationOutcome DescribeAccountAuditConfiguration(const Model::DescribeAccountAuditConfigurationRequest& request) const;
+        virtual Model::DescribeAccountAuditConfigurationOutcome DescribeAccountAuditConfiguration(const Model::DescribeAccountAuditConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountAuditConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountAuditConfigurationRequestT = Model::DescribeAccountAuditConfigurationRequest>
-        Model::DescribeAccountAuditConfigurationOutcomeCallable DescribeAccountAuditConfigurationCallable(const DescribeAccountAuditConfigurationRequestT& request) const
+        Model::DescribeAccountAuditConfigurationOutcomeCallable DescribeAccountAuditConfigurationCallable(const DescribeAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DescribeAccountAuditConfiguration, request);
         }
@@ -2485,7 +2485,7 @@ namespace IoT
          * An Async wrapper for DescribeAccountAuditConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountAuditConfigurationRequestT = Model::DescribeAccountAuditConfigurationRequest>
-        void DescribeAccountAuditConfigurationAsync(const DescribeAccountAuditConfigurationRequestT& request, const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountAuditConfigurationAsync(const DescribeAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DescribeAccountAuditConfiguration, request, handler, context);
         }
@@ -2774,13 +2774,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDefaultAuthorizerOutcome DescribeDefaultAuthorizer(const Model::DescribeDefaultAuthorizerRequest& request) const;
+        virtual Model::DescribeDefaultAuthorizerOutcome DescribeDefaultAuthorizer(const Model::DescribeDefaultAuthorizerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDefaultAuthorizer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDefaultAuthorizerRequestT = Model::DescribeDefaultAuthorizerRequest>
-        Model::DescribeDefaultAuthorizerOutcomeCallable DescribeDefaultAuthorizerCallable(const DescribeDefaultAuthorizerRequestT& request) const
+        Model::DescribeDefaultAuthorizerOutcomeCallable DescribeDefaultAuthorizerCallable(const DescribeDefaultAuthorizerRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DescribeDefaultAuthorizer, request);
         }
@@ -2789,7 +2789,7 @@ namespace IoT
          * An Async wrapper for DescribeDefaultAuthorizer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDefaultAuthorizerRequestT = Model::DescribeDefaultAuthorizerRequest>
-        void DescribeDefaultAuthorizerAsync(const DescribeDefaultAuthorizerRequestT& request, const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDefaultAuthorizerAsync(const DescribeDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDefaultAuthorizerRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DescribeDefaultAuthorizer, request, handler, context);
         }
@@ -2889,13 +2889,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEndpoint">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request) const;
+        virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEndpointRequestT = Model::DescribeEndpointRequest>
-        Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const DescribeEndpointRequestT& request) const
+        Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const DescribeEndpointRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DescribeEndpoint, request);
         }
@@ -2904,7 +2904,7 @@ namespace IoT
          * An Async wrapper for DescribeEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEndpointRequestT = Model::DescribeEndpointRequest>
-        void DescribeEndpointAsync(const DescribeEndpointRequestT& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEndpointAsync(const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEndpointRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DescribeEndpoint, request, handler, context);
         }
@@ -2916,13 +2916,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEventConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventConfigurationsOutcome DescribeEventConfigurations(const Model::DescribeEventConfigurationsRequest& request) const;
+        virtual Model::DescribeEventConfigurationsOutcome DescribeEventConfigurations(const Model::DescribeEventConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEventConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventConfigurationsRequestT = Model::DescribeEventConfigurationsRequest>
-        Model::DescribeEventConfigurationsOutcomeCallable DescribeEventConfigurationsCallable(const DescribeEventConfigurationsRequestT& request) const
+        Model::DescribeEventConfigurationsOutcomeCallable DescribeEventConfigurationsCallable(const DescribeEventConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::DescribeEventConfigurations, request);
         }
@@ -2931,7 +2931,7 @@ namespace IoT
          * An Async wrapper for DescribeEventConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventConfigurationsRequestT = Model::DescribeEventConfigurationsRequest>
-        void DescribeEventConfigurationsAsync(const DescribeEventConfigurationsRequestT& request, const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventConfigurationsAsync(const DescribeEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::DescribeEventConfigurations, request, handler, context);
         }
@@ -3551,13 +3551,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetBehaviorModelTrainingSummariesOutcome GetBehaviorModelTrainingSummaries(const Model::GetBehaviorModelTrainingSummariesRequest& request) const;
+        virtual Model::GetBehaviorModelTrainingSummariesOutcome GetBehaviorModelTrainingSummaries(const Model::GetBehaviorModelTrainingSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetBehaviorModelTrainingSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetBehaviorModelTrainingSummariesRequestT = Model::GetBehaviorModelTrainingSummariesRequest>
-        Model::GetBehaviorModelTrainingSummariesOutcomeCallable GetBehaviorModelTrainingSummariesCallable(const GetBehaviorModelTrainingSummariesRequestT& request) const
+        Model::GetBehaviorModelTrainingSummariesOutcomeCallable GetBehaviorModelTrainingSummariesCallable(const GetBehaviorModelTrainingSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetBehaviorModelTrainingSummaries, request);
         }
@@ -3566,7 +3566,7 @@ namespace IoT
          * An Async wrapper for GetBehaviorModelTrainingSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetBehaviorModelTrainingSummariesRequestT = Model::GetBehaviorModelTrainingSummariesRequest>
-        void GetBehaviorModelTrainingSummariesAsync(const GetBehaviorModelTrainingSummariesRequestT& request, const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetBehaviorModelTrainingSummariesAsync(const GetBehaviorModelTrainingSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetBehaviorModelTrainingSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetBehaviorModelTrainingSummaries, request, handler, context);
         }
@@ -3636,13 +3636,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetEffectivePolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEffectivePoliciesOutcome GetEffectivePolicies(const Model::GetEffectivePoliciesRequest& request) const;
+        virtual Model::GetEffectivePoliciesOutcome GetEffectivePolicies(const Model::GetEffectivePoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEffectivePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEffectivePoliciesRequestT = Model::GetEffectivePoliciesRequest>
-        Model::GetEffectivePoliciesOutcomeCallable GetEffectivePoliciesCallable(const GetEffectivePoliciesRequestT& request) const
+        Model::GetEffectivePoliciesOutcomeCallable GetEffectivePoliciesCallable(const GetEffectivePoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetEffectivePolicies, request);
         }
@@ -3651,7 +3651,7 @@ namespace IoT
          * An Async wrapper for GetEffectivePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEffectivePoliciesRequestT = Model::GetEffectivePoliciesRequest>
-        void GetEffectivePoliciesAsync(const GetEffectivePoliciesRequestT& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEffectivePoliciesAsync(const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEffectivePoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetEffectivePolicies, request, handler, context);
         }
@@ -3663,13 +3663,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetIndexingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetIndexingConfigurationOutcome GetIndexingConfiguration(const Model::GetIndexingConfigurationRequest& request) const;
+        virtual Model::GetIndexingConfigurationOutcome GetIndexingConfiguration(const Model::GetIndexingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetIndexingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetIndexingConfigurationRequestT = Model::GetIndexingConfigurationRequest>
-        Model::GetIndexingConfigurationOutcomeCallable GetIndexingConfigurationCallable(const GetIndexingConfigurationRequestT& request) const
+        Model::GetIndexingConfigurationOutcomeCallable GetIndexingConfigurationCallable(const GetIndexingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetIndexingConfiguration, request);
         }
@@ -3678,7 +3678,7 @@ namespace IoT
          * An Async wrapper for GetIndexingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetIndexingConfigurationRequestT = Model::GetIndexingConfigurationRequest>
-        void GetIndexingConfigurationAsync(const GetIndexingConfigurationRequestT& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetIndexingConfigurationAsync(const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetIndexingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetIndexingConfiguration, request, handler, context);
         }
@@ -3719,13 +3719,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLoggingOptionsOutcome GetLoggingOptions(const Model::GetLoggingOptionsRequest& request) const;
+        virtual Model::GetLoggingOptionsOutcome GetLoggingOptions(const Model::GetLoggingOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLoggingOptionsRequestT = Model::GetLoggingOptionsRequest>
-        Model::GetLoggingOptionsOutcomeCallable GetLoggingOptionsCallable(const GetLoggingOptionsRequestT& request) const
+        Model::GetLoggingOptionsOutcomeCallable GetLoggingOptionsCallable(const GetLoggingOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetLoggingOptions, request);
         }
@@ -3734,7 +3734,7 @@ namespace IoT
          * An Async wrapper for GetLoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLoggingOptionsRequestT = Model::GetLoggingOptionsRequest>
-        void GetLoggingOptionsAsync(const GetLoggingOptionsRequestT& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLoggingOptionsAsync(const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLoggingOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetLoggingOptions, request, handler, context);
         }
@@ -3802,13 +3802,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPackageConfigurationOutcome GetPackageConfiguration(const Model::GetPackageConfigurationRequest& request) const;
+        virtual Model::GetPackageConfigurationOutcome GetPackageConfiguration(const Model::GetPackageConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetPackageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetPackageConfigurationRequestT = Model::GetPackageConfigurationRequest>
-        Model::GetPackageConfigurationOutcomeCallable GetPackageConfigurationCallable(const GetPackageConfigurationRequestT& request) const
+        Model::GetPackageConfigurationOutcomeCallable GetPackageConfigurationCallable(const GetPackageConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetPackageConfiguration, request);
         }
@@ -3817,7 +3817,7 @@ namespace IoT
          * An Async wrapper for GetPackageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetPackageConfigurationRequestT = Model::GetPackageConfigurationRequest>
-        void GetPackageConfigurationAsync(const GetPackageConfigurationRequestT& request, const GetPackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetPackageConfigurationAsync(const GetPackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetPackageConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetPackageConfiguration, request, handler, context);
         }
@@ -3953,13 +3953,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetRegistrationCode">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRegistrationCodeOutcome GetRegistrationCode(const Model::GetRegistrationCodeRequest& request) const;
+        virtual Model::GetRegistrationCodeOutcome GetRegistrationCode(const Model::GetRegistrationCodeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRegistrationCode that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRegistrationCodeRequestT = Model::GetRegistrationCodeRequest>
-        Model::GetRegistrationCodeOutcomeCallable GetRegistrationCodeCallable(const GetRegistrationCodeRequestT& request) const
+        Model::GetRegistrationCodeOutcomeCallable GetRegistrationCodeCallable(const GetRegistrationCodeRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetRegistrationCode, request);
         }
@@ -3968,7 +3968,7 @@ namespace IoT
          * An Async wrapper for GetRegistrationCode that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRegistrationCodeRequestT = Model::GetRegistrationCodeRequest>
-        void GetRegistrationCodeAsync(const GetRegistrationCodeRequestT& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRegistrationCodeAsync(const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRegistrationCodeRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetRegistrationCode, request, handler, context);
         }
@@ -4066,13 +4066,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetV2LoggingOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetV2LoggingOptionsOutcome GetV2LoggingOptions(const Model::GetV2LoggingOptionsRequest& request) const;
+        virtual Model::GetV2LoggingOptionsOutcome GetV2LoggingOptions(const Model::GetV2LoggingOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetV2LoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetV2LoggingOptionsRequestT = Model::GetV2LoggingOptionsRequest>
-        Model::GetV2LoggingOptionsOutcomeCallable GetV2LoggingOptionsCallable(const GetV2LoggingOptionsRequestT& request) const
+        Model::GetV2LoggingOptionsOutcomeCallable GetV2LoggingOptionsCallable(const GetV2LoggingOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::GetV2LoggingOptions, request);
         }
@@ -4081,7 +4081,7 @@ namespace IoT
          * An Async wrapper for GetV2LoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetV2LoggingOptionsRequestT = Model::GetV2LoggingOptionsRequest>
-        void GetV2LoggingOptionsAsync(const GetV2LoggingOptionsRequestT& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetV2LoggingOptionsAsync(const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetV2LoggingOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::GetV2LoggingOptions, request, handler, context);
         }
@@ -4094,13 +4094,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActiveViolationsOutcome ListActiveViolations(const Model::ListActiveViolationsRequest& request) const;
+        virtual Model::ListActiveViolationsOutcome ListActiveViolations(const Model::ListActiveViolationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActiveViolations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActiveViolationsRequestT = Model::ListActiveViolationsRequest>
-        Model::ListActiveViolationsOutcomeCallable ListActiveViolationsCallable(const ListActiveViolationsRequestT& request) const
+        Model::ListActiveViolationsOutcomeCallable ListActiveViolationsCallable(const ListActiveViolationsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListActiveViolations, request);
         }
@@ -4109,7 +4109,7 @@ namespace IoT
          * An Async wrapper for ListActiveViolations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActiveViolationsRequestT = Model::ListActiveViolationsRequest>
-        void ListActiveViolationsAsync(const ListActiveViolationsRequestT& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActiveViolationsAsync(const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActiveViolationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListActiveViolations, request, handler, context);
         }
@@ -4151,13 +4151,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAuditFindingsOutcome ListAuditFindings(const Model::ListAuditFindingsRequest& request) const;
+        virtual Model::ListAuditFindingsOutcome ListAuditFindings(const Model::ListAuditFindingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAuditFindings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAuditFindingsRequestT = Model::ListAuditFindingsRequest>
-        Model::ListAuditFindingsOutcomeCallable ListAuditFindingsCallable(const ListAuditFindingsRequestT& request) const
+        Model::ListAuditFindingsOutcomeCallable ListAuditFindingsCallable(const ListAuditFindingsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListAuditFindings, request);
         }
@@ -4166,7 +4166,7 @@ namespace IoT
          * An Async wrapper for ListAuditFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAuditFindingsRequestT = Model::ListAuditFindingsRequest>
-        void ListAuditFindingsAsync(const ListAuditFindingsRequestT& request, const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAuditFindingsAsync(const ListAuditFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAuditFindingsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListAuditFindings, request, handler, context);
         }
@@ -4235,13 +4235,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditSuppressions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAuditSuppressionsOutcome ListAuditSuppressions(const Model::ListAuditSuppressionsRequest& request) const;
+        virtual Model::ListAuditSuppressionsOutcome ListAuditSuppressions(const Model::ListAuditSuppressionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAuditSuppressions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAuditSuppressionsRequestT = Model::ListAuditSuppressionsRequest>
-        Model::ListAuditSuppressionsOutcomeCallable ListAuditSuppressionsCallable(const ListAuditSuppressionsRequestT& request) const
+        Model::ListAuditSuppressionsOutcomeCallable ListAuditSuppressionsCallable(const ListAuditSuppressionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListAuditSuppressions, request);
         }
@@ -4250,7 +4250,7 @@ namespace IoT
          * An Async wrapper for ListAuditSuppressions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAuditSuppressionsRequestT = Model::ListAuditSuppressionsRequest>
-        void ListAuditSuppressionsAsync(const ListAuditSuppressionsRequestT& request, const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAuditSuppressionsAsync(const ListAuditSuppressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAuditSuppressionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListAuditSuppressions, request, handler, context);
         }
@@ -4291,13 +4291,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuthorizers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAuthorizersOutcome ListAuthorizers(const Model::ListAuthorizersRequest& request) const;
+        virtual Model::ListAuthorizersOutcome ListAuthorizers(const Model::ListAuthorizersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAuthorizers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAuthorizersRequestT = Model::ListAuthorizersRequest>
-        Model::ListAuthorizersOutcomeCallable ListAuthorizersCallable(const ListAuthorizersRequestT& request) const
+        Model::ListAuthorizersOutcomeCallable ListAuthorizersCallable(const ListAuthorizersRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListAuthorizers, request);
         }
@@ -4306,7 +4306,7 @@ namespace IoT
          * An Async wrapper for ListAuthorizers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAuthorizersRequestT = Model::ListAuthorizersRequest>
-        void ListAuthorizersAsync(const ListAuthorizersRequestT& request, const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAuthorizersAsync(const ListAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAuthorizersRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListAuthorizers, request, handler, context);
         }
@@ -4319,13 +4319,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBillingGroupsOutcome ListBillingGroups(const Model::ListBillingGroupsRequest& request) const;
+        virtual Model::ListBillingGroupsOutcome ListBillingGroups(const Model::ListBillingGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBillingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBillingGroupsRequestT = Model::ListBillingGroupsRequest>
-        Model::ListBillingGroupsOutcomeCallable ListBillingGroupsCallable(const ListBillingGroupsRequestT& request) const
+        Model::ListBillingGroupsOutcomeCallable ListBillingGroupsCallable(const ListBillingGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListBillingGroups, request);
         }
@@ -4334,7 +4334,7 @@ namespace IoT
          * An Async wrapper for ListBillingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBillingGroupsRequestT = Model::ListBillingGroupsRequest>
-        void ListBillingGroupsAsync(const ListBillingGroupsRequestT& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBillingGroupsAsync(const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBillingGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListBillingGroups, request, handler, context);
         }
@@ -4349,13 +4349,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCACertificatesOutcome ListCACertificates(const Model::ListCACertificatesRequest& request) const;
+        virtual Model::ListCACertificatesOutcome ListCACertificates(const Model::ListCACertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCACertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCACertificatesRequestT = Model::ListCACertificatesRequest>
-        Model::ListCACertificatesOutcomeCallable ListCACertificatesCallable(const ListCACertificatesRequestT& request) const
+        Model::ListCACertificatesOutcomeCallable ListCACertificatesCallable(const ListCACertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListCACertificates, request);
         }
@@ -4364,7 +4364,7 @@ namespace IoT
          * An Async wrapper for ListCACertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCACertificatesRequestT = Model::ListCACertificatesRequest>
-        void ListCACertificatesAsync(const ListCACertificatesRequestT& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCACertificatesAsync(const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCACertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListCACertificates, request, handler, context);
         }
@@ -4377,13 +4377,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificateProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificateProvidersOutcome ListCertificateProviders(const Model::ListCertificateProvidersRequest& request) const;
+        virtual Model::ListCertificateProvidersOutcome ListCertificateProviders(const Model::ListCertificateProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificateProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificateProvidersRequestT = Model::ListCertificateProvidersRequest>
-        Model::ListCertificateProvidersOutcomeCallable ListCertificateProvidersCallable(const ListCertificateProvidersRequestT& request) const
+        Model::ListCertificateProvidersOutcomeCallable ListCertificateProvidersCallable(const ListCertificateProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListCertificateProviders, request);
         }
@@ -4392,7 +4392,7 @@ namespace IoT
          * An Async wrapper for ListCertificateProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificateProvidersRequestT = Model::ListCertificateProvidersRequest>
-        void ListCertificateProvidersAsync(const ListCertificateProvidersRequestT& request, const ListCertificateProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificateProvidersAsync(const ListCertificateProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificateProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListCertificateProviders, request, handler, context);
         }
@@ -4407,13 +4407,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request) const
+        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListCertificates, request);
         }
@@ -4422,7 +4422,7 @@ namespace IoT
          * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        void ListCertificatesAsync(const ListCertificatesRequestT& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificatesAsync(const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListCertificates, request, handler, context);
         }
@@ -4463,13 +4463,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomMetricsOutcome ListCustomMetrics(const Model::ListCustomMetricsRequest& request) const;
+        virtual Model::ListCustomMetricsOutcome ListCustomMetrics(const Model::ListCustomMetricsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomMetricsRequestT = Model::ListCustomMetricsRequest>
-        Model::ListCustomMetricsOutcomeCallable ListCustomMetricsCallable(const ListCustomMetricsRequestT& request) const
+        Model::ListCustomMetricsOutcomeCallable ListCustomMetricsCallable(const ListCustomMetricsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListCustomMetrics, request);
         }
@@ -4478,7 +4478,7 @@ namespace IoT
          * An Async wrapper for ListCustomMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomMetricsRequestT = Model::ListCustomMetricsRequest>
-        void ListCustomMetricsAsync(const ListCustomMetricsRequestT& request, const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomMetricsAsync(const ListCustomMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomMetricsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListCustomMetrics, request, handler, context);
         }
@@ -4491,13 +4491,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDetectMitigationActionsExecutionsOutcome ListDetectMitigationActionsExecutions(const Model::ListDetectMitigationActionsExecutionsRequest& request) const;
+        virtual Model::ListDetectMitigationActionsExecutionsOutcome ListDetectMitigationActionsExecutions(const Model::ListDetectMitigationActionsExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDetectMitigationActionsExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDetectMitigationActionsExecutionsRequestT = Model::ListDetectMitigationActionsExecutionsRequest>
-        Model::ListDetectMitigationActionsExecutionsOutcomeCallable ListDetectMitigationActionsExecutionsCallable(const ListDetectMitigationActionsExecutionsRequestT& request) const
+        Model::ListDetectMitigationActionsExecutionsOutcomeCallable ListDetectMitigationActionsExecutionsCallable(const ListDetectMitigationActionsExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListDetectMitigationActionsExecutions, request);
         }
@@ -4506,7 +4506,7 @@ namespace IoT
          * An Async wrapper for ListDetectMitigationActionsExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDetectMitigationActionsExecutionsRequestT = Model::ListDetectMitigationActionsExecutionsRequest>
-        void ListDetectMitigationActionsExecutionsAsync(const ListDetectMitigationActionsExecutionsRequestT& request, const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDetectMitigationActionsExecutionsAsync(const ListDetectMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDetectMitigationActionsExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListDetectMitigationActionsExecutions, request, handler, context);
         }
@@ -4547,13 +4547,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDimensions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDimensionsOutcome ListDimensions(const Model::ListDimensionsRequest& request) const;
+        virtual Model::ListDimensionsOutcome ListDimensions(const Model::ListDimensionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDimensions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDimensionsRequestT = Model::ListDimensionsRequest>
-        Model::ListDimensionsOutcomeCallable ListDimensionsCallable(const ListDimensionsRequestT& request) const
+        Model::ListDimensionsOutcomeCallable ListDimensionsCallable(const ListDimensionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListDimensions, request);
         }
@@ -4562,7 +4562,7 @@ namespace IoT
          * An Async wrapper for ListDimensions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDimensionsRequestT = Model::ListDimensionsRequest>
-        void ListDimensionsAsync(const ListDimensionsRequestT& request, const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDimensionsAsync(const ListDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDimensionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListDimensions, request, handler, context);
         }
@@ -4576,13 +4576,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainConfigurationsOutcome ListDomainConfigurations(const Model::ListDomainConfigurationsRequest& request) const;
+        virtual Model::ListDomainConfigurationsOutcome ListDomainConfigurations(const Model::ListDomainConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomainConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainConfigurationsRequestT = Model::ListDomainConfigurationsRequest>
-        Model::ListDomainConfigurationsOutcomeCallable ListDomainConfigurationsCallable(const ListDomainConfigurationsRequestT& request) const
+        Model::ListDomainConfigurationsOutcomeCallable ListDomainConfigurationsCallable(const ListDomainConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListDomainConfigurations, request);
         }
@@ -4591,7 +4591,7 @@ namespace IoT
          * An Async wrapper for ListDomainConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainConfigurationsRequestT = Model::ListDomainConfigurationsRequest>
-        void ListDomainConfigurationsAsync(const ListDomainConfigurationsRequestT& request, const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainConfigurationsAsync(const ListDomainConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListDomainConfigurations, request, handler, context);
         }
@@ -4603,13 +4603,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListFleetMetrics">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFleetMetricsOutcome ListFleetMetrics(const Model::ListFleetMetricsRequest& request) const;
+        virtual Model::ListFleetMetricsOutcome ListFleetMetrics(const Model::ListFleetMetricsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFleetMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFleetMetricsRequestT = Model::ListFleetMetricsRequest>
-        Model::ListFleetMetricsOutcomeCallable ListFleetMetricsCallable(const ListFleetMetricsRequestT& request) const
+        Model::ListFleetMetricsOutcomeCallable ListFleetMetricsCallable(const ListFleetMetricsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListFleetMetrics, request);
         }
@@ -4618,7 +4618,7 @@ namespace IoT
          * An Async wrapper for ListFleetMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFleetMetricsRequestT = Model::ListFleetMetricsRequest>
-        void ListFleetMetricsAsync(const ListFleetMetricsRequestT& request, const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFleetMetricsAsync(const ListFleetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFleetMetricsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListFleetMetrics, request, handler, context);
         }
@@ -4630,13 +4630,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListIndices">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
+        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIndices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request) const
+        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListIndices, request);
         }
@@ -4645,7 +4645,7 @@ namespace IoT
          * An Async wrapper for ListIndices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        void ListIndicesAsync(const ListIndicesRequestT& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIndicesAsync(const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIndicesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListIndices, request, handler, context);
         }
@@ -4713,13 +4713,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
+        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request) const
+        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListJobTemplates, request);
         }
@@ -4728,7 +4728,7 @@ namespace IoT
          * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        void ListJobTemplatesAsync(const ListJobTemplatesRequestT& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobTemplatesAsync(const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListJobTemplates, request, handler, context);
         }
@@ -4740,13 +4740,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListJobs, request);
         }
@@ -4755,7 +4755,7 @@ namespace IoT
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListJobs, request, handler, context);
         }
@@ -4765,13 +4765,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListManagedJobTemplatesOutcome ListManagedJobTemplates(const Model::ListManagedJobTemplatesRequest& request) const;
+        virtual Model::ListManagedJobTemplatesOutcome ListManagedJobTemplates(const Model::ListManagedJobTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListManagedJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListManagedJobTemplatesRequestT = Model::ListManagedJobTemplatesRequest>
-        Model::ListManagedJobTemplatesOutcomeCallable ListManagedJobTemplatesCallable(const ListManagedJobTemplatesRequestT& request) const
+        Model::ListManagedJobTemplatesOutcomeCallable ListManagedJobTemplatesCallable(const ListManagedJobTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListManagedJobTemplates, request);
         }
@@ -4780,7 +4780,7 @@ namespace IoT
          * An Async wrapper for ListManagedJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListManagedJobTemplatesRequestT = Model::ListManagedJobTemplatesRequest>
-        void ListManagedJobTemplatesAsync(const ListManagedJobTemplatesRequestT& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListManagedJobTemplatesAsync(const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedJobTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListManagedJobTemplates, request, handler, context);
         }
@@ -4820,13 +4820,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMitigationActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMitigationActionsOutcome ListMitigationActions(const Model::ListMitigationActionsRequest& request) const;
+        virtual Model::ListMitigationActionsOutcome ListMitigationActions(const Model::ListMitigationActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMitigationActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMitigationActionsRequestT = Model::ListMitigationActionsRequest>
-        Model::ListMitigationActionsOutcomeCallable ListMitigationActionsCallable(const ListMitigationActionsRequestT& request) const
+        Model::ListMitigationActionsOutcomeCallable ListMitigationActionsCallable(const ListMitigationActionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListMitigationActions, request);
         }
@@ -4835,7 +4835,7 @@ namespace IoT
          * An Async wrapper for ListMitigationActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMitigationActionsRequestT = Model::ListMitigationActionsRequest>
-        void ListMitigationActionsAsync(const ListMitigationActionsRequestT& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMitigationActionsAsync(const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMitigationActionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListMitigationActions, request, handler, context);
         }
@@ -4847,13 +4847,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOTAUpdatesOutcome ListOTAUpdates(const Model::ListOTAUpdatesRequest& request) const;
+        virtual Model::ListOTAUpdatesOutcome ListOTAUpdates(const Model::ListOTAUpdatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOTAUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOTAUpdatesRequestT = Model::ListOTAUpdatesRequest>
-        Model::ListOTAUpdatesOutcomeCallable ListOTAUpdatesCallable(const ListOTAUpdatesRequestT& request) const
+        Model::ListOTAUpdatesOutcomeCallable ListOTAUpdatesCallable(const ListOTAUpdatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListOTAUpdates, request);
         }
@@ -4862,7 +4862,7 @@ namespace IoT
          * An Async wrapper for ListOTAUpdates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOTAUpdatesRequestT = Model::ListOTAUpdatesRequest>
-        void ListOTAUpdatesAsync(const ListOTAUpdatesRequestT& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOTAUpdatesAsync(const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOTAUpdatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListOTAUpdates, request, handler, context);
         }
@@ -4875,13 +4875,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOutgoingCertificatesOutcome ListOutgoingCertificates(const Model::ListOutgoingCertificatesRequest& request) const;
+        virtual Model::ListOutgoingCertificatesOutcome ListOutgoingCertificates(const Model::ListOutgoingCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOutgoingCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOutgoingCertificatesRequestT = Model::ListOutgoingCertificatesRequest>
-        Model::ListOutgoingCertificatesOutcomeCallable ListOutgoingCertificatesCallable(const ListOutgoingCertificatesRequestT& request) const
+        Model::ListOutgoingCertificatesOutcomeCallable ListOutgoingCertificatesCallable(const ListOutgoingCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListOutgoingCertificates, request);
         }
@@ -4890,7 +4890,7 @@ namespace IoT
          * An Async wrapper for ListOutgoingCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOutgoingCertificatesRequestT = Model::ListOutgoingCertificatesRequest>
-        void ListOutgoingCertificatesAsync(const ListOutgoingCertificatesRequestT& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOutgoingCertificatesAsync(const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOutgoingCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListOutgoingCertificates, request, handler, context);
         }
@@ -4931,13 +4931,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPackagesOutcome ListPackages(const Model::ListPackagesRequest& request) const;
+        virtual Model::ListPackagesOutcome ListPackages(const Model::ListPackagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPackages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPackagesRequestT = Model::ListPackagesRequest>
-        Model::ListPackagesOutcomeCallable ListPackagesCallable(const ListPackagesRequestT& request) const
+        Model::ListPackagesOutcomeCallable ListPackagesCallable(const ListPackagesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListPackages, request);
         }
@@ -4946,7 +4946,7 @@ namespace IoT
          * An Async wrapper for ListPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPackagesRequestT = Model::ListPackagesRequest>
-        void ListPackagesAsync(const ListPackagesRequestT& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPackagesAsync(const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPackagesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListPackages, request, handler, context);
         }
@@ -4958,13 +4958,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
+        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request) const
+        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListPolicies, request);
         }
@@ -4973,7 +4973,7 @@ namespace IoT
          * An Async wrapper for ListPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        void ListPoliciesAsync(const ListPoliciesRequestT& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPoliciesAsync(const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListPolicies, request, handler, context);
         }
@@ -5071,13 +5071,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListProvisioningTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProvisioningTemplatesOutcome ListProvisioningTemplates(const Model::ListProvisioningTemplatesRequest& request) const;
+        virtual Model::ListProvisioningTemplatesOutcome ListProvisioningTemplates(const Model::ListProvisioningTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProvisioningTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProvisioningTemplatesRequestT = Model::ListProvisioningTemplatesRequest>
-        Model::ListProvisioningTemplatesOutcomeCallable ListProvisioningTemplatesCallable(const ListProvisioningTemplatesRequestT& request) const
+        Model::ListProvisioningTemplatesOutcomeCallable ListProvisioningTemplatesCallable(const ListProvisioningTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListProvisioningTemplates, request);
         }
@@ -5086,7 +5086,7 @@ namespace IoT
          * An Async wrapper for ListProvisioningTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProvisioningTemplatesRequestT = Model::ListProvisioningTemplatesRequest>
-        void ListProvisioningTemplatesAsync(const ListProvisioningTemplatesRequestT& request, const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProvisioningTemplatesAsync(const ListProvisioningTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProvisioningTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListProvisioningTemplates, request, handler, context);
         }
@@ -5137,13 +5137,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRoleAliasesOutcome ListRoleAliases(const Model::ListRoleAliasesRequest& request) const;
+        virtual Model::ListRoleAliasesOutcome ListRoleAliases(const Model::ListRoleAliasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRoleAliases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRoleAliasesRequestT = Model::ListRoleAliasesRequest>
-        Model::ListRoleAliasesOutcomeCallable ListRoleAliasesCallable(const ListRoleAliasesRequestT& request) const
+        Model::ListRoleAliasesOutcomeCallable ListRoleAliasesCallable(const ListRoleAliasesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListRoleAliases, request);
         }
@@ -5152,7 +5152,7 @@ namespace IoT
          * An Async wrapper for ListRoleAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRoleAliasesRequestT = Model::ListRoleAliasesRequest>
-        void ListRoleAliasesAsync(const ListRoleAliasesRequestT& request, const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRoleAliasesAsync(const ListRoleAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRoleAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListRoleAliases, request, handler, context);
         }
@@ -5165,13 +5165,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScheduledAuditsOutcome ListScheduledAudits(const Model::ListScheduledAuditsRequest& request) const;
+        virtual Model::ListScheduledAuditsOutcome ListScheduledAudits(const Model::ListScheduledAuditsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScheduledAudits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScheduledAuditsRequestT = Model::ListScheduledAuditsRequest>
-        Model::ListScheduledAuditsOutcomeCallable ListScheduledAuditsCallable(const ListScheduledAuditsRequestT& request) const
+        Model::ListScheduledAuditsOutcomeCallable ListScheduledAuditsCallable(const ListScheduledAuditsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListScheduledAudits, request);
         }
@@ -5180,7 +5180,7 @@ namespace IoT
          * An Async wrapper for ListScheduledAudits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScheduledAuditsRequestT = Model::ListScheduledAuditsRequest>
-        void ListScheduledAuditsAsync(const ListScheduledAuditsRequestT& request, const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScheduledAuditsAsync(const ListScheduledAuditsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScheduledAuditsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListScheduledAudits, request, handler, context);
         }
@@ -5195,13 +5195,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSecurityProfilesOutcome ListSecurityProfiles(const Model::ListSecurityProfilesRequest& request) const;
+        virtual Model::ListSecurityProfilesOutcome ListSecurityProfiles(const Model::ListSecurityProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSecurityProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSecurityProfilesRequestT = Model::ListSecurityProfilesRequest>
-        Model::ListSecurityProfilesOutcomeCallable ListSecurityProfilesCallable(const ListSecurityProfilesRequestT& request) const
+        Model::ListSecurityProfilesOutcomeCallable ListSecurityProfilesCallable(const ListSecurityProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListSecurityProfiles, request);
         }
@@ -5210,7 +5210,7 @@ namespace IoT
          * An Async wrapper for ListSecurityProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSecurityProfilesRequestT = Model::ListSecurityProfilesRequest>
-        void ListSecurityProfilesAsync(const ListSecurityProfilesRequestT& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSecurityProfilesAsync(const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecurityProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListSecurityProfiles, request, handler, context);
         }
@@ -5251,13 +5251,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
+        virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request) const
+        Model::ListStreamsOutcomeCallable ListStreamsCallable(const ListStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListStreams, request);
         }
@@ -5266,7 +5266,7 @@ namespace IoT
          * An Async wrapper for ListStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStreamsRequestT = Model::ListStreamsRequest>
-        void ListStreamsAsync(const ListStreamsRequestT& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStreamsAsync(const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListStreams, request, handler, context);
         }
@@ -5363,13 +5363,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListThingGroupsOutcome ListThingGroups(const Model::ListThingGroupsRequest& request) const;
+        virtual Model::ListThingGroupsOutcome ListThingGroups(const Model::ListThingGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListThingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListThingGroupsRequestT = Model::ListThingGroupsRequest>
-        Model::ListThingGroupsOutcomeCallable ListThingGroupsCallable(const ListThingGroupsRequestT& request) const
+        Model::ListThingGroupsOutcomeCallable ListThingGroupsCallable(const ListThingGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListThingGroups, request);
         }
@@ -5378,7 +5378,7 @@ namespace IoT
          * An Async wrapper for ListThingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListThingGroupsRequestT = Model::ListThingGroupsRequest>
-        void ListThingGroupsAsync(const ListThingGroupsRequestT& request, const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListThingGroupsAsync(const ListThingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListThingGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListThingGroups, request, handler, context);
         }
@@ -5473,13 +5473,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingRegistrationTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListThingRegistrationTasksOutcome ListThingRegistrationTasks(const Model::ListThingRegistrationTasksRequest& request) const;
+        virtual Model::ListThingRegistrationTasksOutcome ListThingRegistrationTasks(const Model::ListThingRegistrationTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListThingRegistrationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListThingRegistrationTasksRequestT = Model::ListThingRegistrationTasksRequest>
-        Model::ListThingRegistrationTasksOutcomeCallable ListThingRegistrationTasksCallable(const ListThingRegistrationTasksRequestT& request) const
+        Model::ListThingRegistrationTasksOutcomeCallable ListThingRegistrationTasksCallable(const ListThingRegistrationTasksRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListThingRegistrationTasks, request);
         }
@@ -5488,7 +5488,7 @@ namespace IoT
          * An Async wrapper for ListThingRegistrationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListThingRegistrationTasksRequestT = Model::ListThingRegistrationTasksRequest>
-        void ListThingRegistrationTasksAsync(const ListThingRegistrationTasksRequestT& request, const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListThingRegistrationTasksAsync(const ListThingRegistrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListThingRegistrationTasksRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListThingRegistrationTasks, request, handler, context);
         }
@@ -5500,13 +5500,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListThingTypesOutcome ListThingTypes(const Model::ListThingTypesRequest& request) const;
+        virtual Model::ListThingTypesOutcome ListThingTypes(const Model::ListThingTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListThingTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListThingTypesRequestT = Model::ListThingTypesRequest>
-        Model::ListThingTypesOutcomeCallable ListThingTypesCallable(const ListThingTypesRequestT& request) const
+        Model::ListThingTypesOutcomeCallable ListThingTypesCallable(const ListThingTypesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListThingTypes, request);
         }
@@ -5515,7 +5515,7 @@ namespace IoT
          * An Async wrapper for ListThingTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListThingTypesRequestT = Model::ListThingTypesRequest>
-        void ListThingTypesAsync(const ListThingTypesRequestT& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListThingTypesAsync(const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListThingTypesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListThingTypes, request, handler, context);
         }
@@ -5537,13 +5537,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThings">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListThingsOutcome ListThings(const Model::ListThingsRequest& request) const;
+        virtual Model::ListThingsOutcome ListThings(const Model::ListThingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListThings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListThingsRequestT = Model::ListThingsRequest>
-        Model::ListThingsOutcomeCallable ListThingsCallable(const ListThingsRequestT& request) const
+        Model::ListThingsOutcomeCallable ListThingsCallable(const ListThingsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListThings, request);
         }
@@ -5552,7 +5552,7 @@ namespace IoT
          * An Async wrapper for ListThings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListThingsRequestT = Model::ListThingsRequest>
-        void ListThingsAsync(const ListThingsRequestT& request, const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListThingsAsync(const ListThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListThingsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListThings, request, handler, context);
         }
@@ -5621,13 +5621,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRuleDestinations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTopicRuleDestinationsOutcome ListTopicRuleDestinations(const Model::ListTopicRuleDestinationsRequest& request) const;
+        virtual Model::ListTopicRuleDestinationsOutcome ListTopicRuleDestinations(const Model::ListTopicRuleDestinationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTopicRuleDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTopicRuleDestinationsRequestT = Model::ListTopicRuleDestinationsRequest>
-        Model::ListTopicRuleDestinationsOutcomeCallable ListTopicRuleDestinationsCallable(const ListTopicRuleDestinationsRequestT& request) const
+        Model::ListTopicRuleDestinationsOutcomeCallable ListTopicRuleDestinationsCallable(const ListTopicRuleDestinationsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListTopicRuleDestinations, request);
         }
@@ -5636,7 +5636,7 @@ namespace IoT
          * An Async wrapper for ListTopicRuleDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTopicRuleDestinationsRequestT = Model::ListTopicRuleDestinationsRequest>
-        void ListTopicRuleDestinationsAsync(const ListTopicRuleDestinationsRequestT& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTopicRuleDestinationsAsync(const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTopicRuleDestinationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListTopicRuleDestinations, request, handler, context);
         }
@@ -5649,13 +5649,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTopicRulesOutcome ListTopicRules(const Model::ListTopicRulesRequest& request) const;
+        virtual Model::ListTopicRulesOutcome ListTopicRules(const Model::ListTopicRulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTopicRules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTopicRulesRequestT = Model::ListTopicRulesRequest>
-        Model::ListTopicRulesOutcomeCallable ListTopicRulesCallable(const ListTopicRulesRequestT& request) const
+        Model::ListTopicRulesOutcomeCallable ListTopicRulesCallable(const ListTopicRulesRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListTopicRules, request);
         }
@@ -5664,7 +5664,7 @@ namespace IoT
          * An Async wrapper for ListTopicRules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTopicRulesRequestT = Model::ListTopicRulesRequest>
-        void ListTopicRulesAsync(const ListTopicRulesRequestT& request, const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTopicRulesAsync(const ListTopicRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTopicRulesRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListTopicRules, request, handler, context);
         }
@@ -5676,13 +5676,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListV2LoggingLevels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListV2LoggingLevelsOutcome ListV2LoggingLevels(const Model::ListV2LoggingLevelsRequest& request) const;
+        virtual Model::ListV2LoggingLevelsOutcome ListV2LoggingLevels(const Model::ListV2LoggingLevelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListV2LoggingLevels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListV2LoggingLevelsRequestT = Model::ListV2LoggingLevelsRequest>
-        Model::ListV2LoggingLevelsOutcomeCallable ListV2LoggingLevelsCallable(const ListV2LoggingLevelsRequestT& request) const
+        Model::ListV2LoggingLevelsOutcomeCallable ListV2LoggingLevelsCallable(const ListV2LoggingLevelsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::ListV2LoggingLevels, request);
         }
@@ -5691,7 +5691,7 @@ namespace IoT
          * An Async wrapper for ListV2LoggingLevels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListV2LoggingLevelsRequestT = Model::ListV2LoggingLevelsRequest>
-        void ListV2LoggingLevelsAsync(const ListV2LoggingLevelsRequestT& request, const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListV2LoggingLevelsAsync(const ListV2LoggingLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListV2LoggingLevelsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::ListV2LoggingLevels, request, handler, context);
         }
@@ -5919,13 +5919,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::RemoveThingFromBillingGroupOutcome RemoveThingFromBillingGroup(const Model::RemoveThingFromBillingGroupRequest& request) const;
+        virtual Model::RemoveThingFromBillingGroupOutcome RemoveThingFromBillingGroup(const Model::RemoveThingFromBillingGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RemoveThingFromBillingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RemoveThingFromBillingGroupRequestT = Model::RemoveThingFromBillingGroupRequest>
-        Model::RemoveThingFromBillingGroupOutcomeCallable RemoveThingFromBillingGroupCallable(const RemoveThingFromBillingGroupRequestT& request) const
+        Model::RemoveThingFromBillingGroupOutcomeCallable RemoveThingFromBillingGroupCallable(const RemoveThingFromBillingGroupRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::RemoveThingFromBillingGroup, request);
         }
@@ -5934,7 +5934,7 @@ namespace IoT
          * An Async wrapper for RemoveThingFromBillingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RemoveThingFromBillingGroupRequestT = Model::RemoveThingFromBillingGroupRequest>
-        void RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupRequestT& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RemoveThingFromBillingGroupRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::RemoveThingFromBillingGroup, request, handler, context);
         }
@@ -5950,13 +5950,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
          */
-        virtual Model::RemoveThingFromThingGroupOutcome RemoveThingFromThingGroup(const Model::RemoveThingFromThingGroupRequest& request) const;
+        virtual Model::RemoveThingFromThingGroupOutcome RemoveThingFromThingGroup(const Model::RemoveThingFromThingGroupRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RemoveThingFromThingGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RemoveThingFromThingGroupRequestT = Model::RemoveThingFromThingGroupRequest>
-        Model::RemoveThingFromThingGroupOutcomeCallable RemoveThingFromThingGroupCallable(const RemoveThingFromThingGroupRequestT& request) const
+        Model::RemoveThingFromThingGroupOutcomeCallable RemoveThingFromThingGroupCallable(const RemoveThingFromThingGroupRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::RemoveThingFromThingGroup, request);
         }
@@ -5965,7 +5965,7 @@ namespace IoT
          * An Async wrapper for RemoveThingFromThingGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RemoveThingFromThingGroupRequestT = Model::RemoveThingFromThingGroupRequest>
-        void RemoveThingFromThingGroupAsync(const RemoveThingFromThingGroupRequestT& request, const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RemoveThingFromThingGroupAsync(const RemoveThingFromThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RemoveThingFromThingGroupRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::RemoveThingFromThingGroup, request, handler, context);
         }
@@ -6150,13 +6150,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SetV2LoggingOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::SetV2LoggingOptionsOutcome SetV2LoggingOptions(const Model::SetV2LoggingOptionsRequest& request) const;
+        virtual Model::SetV2LoggingOptionsOutcome SetV2LoggingOptions(const Model::SetV2LoggingOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SetV2LoggingOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SetV2LoggingOptionsRequestT = Model::SetV2LoggingOptionsRequest>
-        Model::SetV2LoggingOptionsOutcomeCallable SetV2LoggingOptionsCallable(const SetV2LoggingOptionsRequestT& request) const
+        Model::SetV2LoggingOptionsOutcomeCallable SetV2LoggingOptionsCallable(const SetV2LoggingOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::SetV2LoggingOptions, request);
         }
@@ -6165,7 +6165,7 @@ namespace IoT
          * An Async wrapper for SetV2LoggingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SetV2LoggingOptionsRequestT = Model::SetV2LoggingOptionsRequest>
-        void SetV2LoggingOptionsAsync(const SetV2LoggingOptionsRequestT& request, const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SetV2LoggingOptionsAsync(const SetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SetV2LoggingOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::SetV2LoggingOptions, request, handler, context);
         }
@@ -6469,13 +6469,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountAuditConfigurationOutcome UpdateAccountAuditConfiguration(const Model::UpdateAccountAuditConfigurationRequest& request) const;
+        virtual Model::UpdateAccountAuditConfigurationOutcome UpdateAccountAuditConfiguration(const Model::UpdateAccountAuditConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountAuditConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountAuditConfigurationRequestT = Model::UpdateAccountAuditConfigurationRequest>
-        Model::UpdateAccountAuditConfigurationOutcomeCallable UpdateAccountAuditConfigurationCallable(const UpdateAccountAuditConfigurationRequestT& request) const
+        Model::UpdateAccountAuditConfigurationOutcomeCallable UpdateAccountAuditConfigurationCallable(const UpdateAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::UpdateAccountAuditConfiguration, request);
         }
@@ -6484,7 +6484,7 @@ namespace IoT
          * An Async wrapper for UpdateAccountAuditConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountAuditConfigurationRequestT = Model::UpdateAccountAuditConfigurationRequest>
-        void UpdateAccountAuditConfigurationAsync(const UpdateAccountAuditConfigurationRequestT& request, const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountAuditConfigurationAsync(const UpdateAccountAuditConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountAuditConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdateAccountAuditConfiguration, request, handler, context);
         }
@@ -6776,13 +6776,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEventConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateEventConfigurationsOutcome UpdateEventConfigurations(const Model::UpdateEventConfigurationsRequest& request) const;
+        virtual Model::UpdateEventConfigurationsOutcome UpdateEventConfigurations(const Model::UpdateEventConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateEventConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateEventConfigurationsRequestT = Model::UpdateEventConfigurationsRequest>
-        Model::UpdateEventConfigurationsOutcomeCallable UpdateEventConfigurationsCallable(const UpdateEventConfigurationsRequestT& request) const
+        Model::UpdateEventConfigurationsOutcomeCallable UpdateEventConfigurationsCallable(const UpdateEventConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::UpdateEventConfigurations, request);
         }
@@ -6791,7 +6791,7 @@ namespace IoT
          * An Async wrapper for UpdateEventConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateEventConfigurationsRequestT = Model::UpdateEventConfigurationsRequest>
-        void UpdateEventConfigurationsAsync(const UpdateEventConfigurationsRequestT& request, const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateEventConfigurationsAsync(const UpdateEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEventConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdateEventConfigurations, request, handler, context);
         }
@@ -6831,13 +6831,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateIndexingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateIndexingConfigurationOutcome UpdateIndexingConfiguration(const Model::UpdateIndexingConfigurationRequest& request) const;
+        virtual Model::UpdateIndexingConfigurationOutcome UpdateIndexingConfiguration(const Model::UpdateIndexingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateIndexingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateIndexingConfigurationRequestT = Model::UpdateIndexingConfigurationRequest>
-        Model::UpdateIndexingConfigurationOutcomeCallable UpdateIndexingConfigurationCallable(const UpdateIndexingConfigurationRequestT& request) const
+        Model::UpdateIndexingConfigurationOutcomeCallable UpdateIndexingConfigurationCallable(const UpdateIndexingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::UpdateIndexingConfiguration, request);
         }
@@ -6846,7 +6846,7 @@ namespace IoT
          * An Async wrapper for UpdateIndexingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateIndexingConfigurationRequestT = Model::UpdateIndexingConfigurationRequest>
-        void UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurationRequestT& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateIndexingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdateIndexingConfiguration, request, handler, context);
         }
@@ -6947,13 +6947,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdatePackageConfigurationOutcome UpdatePackageConfiguration(const Model::UpdatePackageConfigurationRequest& request) const;
+        virtual Model::UpdatePackageConfigurationOutcome UpdatePackageConfiguration(const Model::UpdatePackageConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdatePackageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdatePackageConfigurationRequestT = Model::UpdatePackageConfigurationRequest>
-        Model::UpdatePackageConfigurationOutcomeCallable UpdatePackageConfigurationCallable(const UpdatePackageConfigurationRequestT& request) const
+        Model::UpdatePackageConfigurationOutcomeCallable UpdatePackageConfigurationCallable(const UpdatePackageConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::UpdatePackageConfiguration, request);
         }
@@ -6962,7 +6962,7 @@ namespace IoT
          * An Async wrapper for UpdatePackageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdatePackageConfigurationRequestT = Model::UpdatePackageConfigurationRequest>
-        void UpdatePackageConfigurationAsync(const UpdatePackageConfigurationRequestT& request, const UpdatePackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdatePackageConfigurationAsync(const UpdatePackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdatePackageConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdatePackageConfiguration, request, handler, context);
         }
@@ -7197,13 +7197,13 @@ namespace IoT
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateThingGroupsForThingOutcome UpdateThingGroupsForThing(const Model::UpdateThingGroupsForThingRequest& request) const;
+        virtual Model::UpdateThingGroupsForThingOutcome UpdateThingGroupsForThing(const Model::UpdateThingGroupsForThingRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateThingGroupsForThing that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateThingGroupsForThingRequestT = Model::UpdateThingGroupsForThingRequest>
-        Model::UpdateThingGroupsForThingOutcomeCallable UpdateThingGroupsForThingCallable(const UpdateThingGroupsForThingRequestT& request) const
+        Model::UpdateThingGroupsForThingOutcomeCallable UpdateThingGroupsForThingCallable(const UpdateThingGroupsForThingRequestT& request = {}) const
         {
             return SubmitCallable(&IoTClient::UpdateThingGroupsForThing, request);
         }
@@ -7212,7 +7212,7 @@ namespace IoT
          * An Async wrapper for UpdateThingGroupsForThing that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateThingGroupsForThingRequestT = Model::UpdateThingGroupsForThingRequest>
-        void UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingRequestT& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateThingGroupsForThingRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdateThingGroupsForThing, request, handler, context);
         }

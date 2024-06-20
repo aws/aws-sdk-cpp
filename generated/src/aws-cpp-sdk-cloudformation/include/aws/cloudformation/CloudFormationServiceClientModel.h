@@ -95,6 +95,35 @@
 #include <aws/cloudformation/model/UpdateStackSetResult.h>
 #include <aws/cloudformation/model/UpdateTerminationProtectionResult.h>
 #include <aws/cloudformation/model/ValidateTemplateResult.h>
+#include <aws/cloudformation/model/DescribeOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/DescribeTypeRequest.h>
+#include <aws/cloudformation/model/ListStacksRequest.h>
+#include <aws/cloudformation/model/DeactivateOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/ListTypeVersionsRequest.h>
+#include <aws/cloudformation/model/DeactivateTypeRequest.h>
+#include <aws/cloudformation/model/ValidateTemplateRequest.h>
+#include <aws/cloudformation/model/SetTypeDefaultVersionRequest.h>
+#include <aws/cloudformation/model/TestTypeRequest.h>
+#include <aws/cloudformation/model/GetTemplateSummaryRequest.h>
+#include <aws/cloudformation/model/PublishTypeRequest.h>
+#include <aws/cloudformation/model/DeregisterTypeRequest.h>
+#include <aws/cloudformation/model/RegisterPublisherRequest.h>
+#include <aws/cloudformation/model/ListTypeRegistrationsRequest.h>
+#include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
+#include <aws/cloudformation/model/DescribeStackEventsRequest.h>
+#include <aws/cloudformation/model/ListExportsRequest.h>
+#include <aws/cloudformation/model/StartResourceScanRequest.h>
+#include <aws/cloudformation/model/DescribePublisherRequest.h>
+#include <aws/cloudformation/model/ListResourceScansRequest.h>
+#include <aws/cloudformation/model/DescribeStacksRequest.h>
+#include <aws/cloudformation/model/GetTemplateRequest.h>
+#include <aws/cloudformation/model/ListStackSetsRequest.h>
+#include <aws/cloudformation/model/DescribeStackResourcesRequest.h>
+#include <aws/cloudformation/model/ActivateOrganizationsAccessRequest.h>
+#include <aws/cloudformation/model/ActivateTypeRequest.h>
+#include <aws/cloudformation/model/ListTypesRequest.h>
+#include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
+#include <aws/cloudformation/model/ListGeneratedTemplatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudFormationClient header */
 

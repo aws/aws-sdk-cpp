@@ -102,13 +102,13 @@ namespace ControlCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListCommonControls">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCommonControlsOutcome ListCommonControls(const Model::ListCommonControlsRequest& request) const;
+        virtual Model::ListCommonControlsOutcome ListCommonControls(const Model::ListCommonControlsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCommonControls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCommonControlsRequestT = Model::ListCommonControlsRequest>
-        Model::ListCommonControlsOutcomeCallable ListCommonControlsCallable(const ListCommonControlsRequestT& request) const
+        Model::ListCommonControlsOutcomeCallable ListCommonControlsCallable(const ListCommonControlsRequestT& request = {}) const
         {
             return SubmitCallable(&ControlCatalogClient::ListCommonControls, request);
         }
@@ -117,7 +117,7 @@ namespace ControlCatalog
          * An Async wrapper for ListCommonControls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCommonControlsRequestT = Model::ListCommonControlsRequest>
-        void ListCommonControlsAsync(const ListCommonControlsRequestT& request, const ListCommonControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCommonControlsAsync(const ListCommonControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCommonControlsRequestT& request = {}) const
         {
             return SubmitAsync(&ControlCatalogClient::ListCommonControls, request, handler, context);
         }
@@ -128,13 +128,13 @@ namespace ControlCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&ControlCatalogClient::ListDomains, request);
         }
@@ -143,7 +143,7 @@ namespace ControlCatalog
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&ControlCatalogClient::ListDomains, request, handler, context);
         }
@@ -156,13 +156,13 @@ namespace ControlCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListObjectives">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListObjectivesOutcome ListObjectives(const Model::ListObjectivesRequest& request) const;
+        virtual Model::ListObjectivesOutcome ListObjectives(const Model::ListObjectivesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListObjectives that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListObjectivesRequestT = Model::ListObjectivesRequest>
-        Model::ListObjectivesOutcomeCallable ListObjectivesCallable(const ListObjectivesRequestT& request) const
+        Model::ListObjectivesOutcomeCallable ListObjectivesCallable(const ListObjectivesRequestT& request = {}) const
         {
             return SubmitCallable(&ControlCatalogClient::ListObjectives, request);
         }
@@ -171,7 +171,7 @@ namespace ControlCatalog
          * An Async wrapper for ListObjectives that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListObjectivesRequestT = Model::ListObjectivesRequest>
-        void ListObjectivesAsync(const ListObjectivesRequestT& request, const ListObjectivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListObjectivesAsync(const ListObjectivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListObjectivesRequestT& request = {}) const
         {
             return SubmitAsync(&ControlCatalogClient::ListObjectives, request, handler, context);
         }

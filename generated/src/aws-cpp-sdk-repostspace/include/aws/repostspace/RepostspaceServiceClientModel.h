@@ -24,6 +24,7 @@
 #include <aws/repostspace/model/ListTagsForResourceResult.h>
 #include <aws/repostspace/model/TagResourceResult.h>
 #include <aws/repostspace/model/UntagResourceResult.h>
+#include <aws/repostspace/model/ListSpacesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RepostspaceClient header */
 

@@ -61,6 +61,24 @@
 #include <aws/logs/model/StartQueryResult.h>
 #include <aws/logs/model/StopQueryResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
+#include <aws/logs/model/DeleteResourcePolicyRequest.h>
+#include <aws/logs/model/ListAnomaliesRequest.h>
+#include <aws/logs/model/DescribeQueriesRequest.h>
+#include <aws/logs/model/DescribeDeliverySourcesRequest.h>
+#include <aws/logs/model/FilterLogEventsRequest.h>
+#include <aws/logs/model/DescribeMetricFiltersRequest.h>
+#include <aws/logs/model/DescribeResourcePoliciesRequest.h>
+#include <aws/logs/model/PutResourcePolicyRequest.h>
+#include <aws/logs/model/DescribeDeliveriesRequest.h>
+#include <aws/logs/model/DescribeQueryDefinitionsRequest.h>
+#include <aws/logs/model/DescribeExportTasksRequest.h>
+#include <aws/logs/model/DescribeDestinationsRequest.h>
+#include <aws/logs/model/DescribeLogGroupsRequest.h>
+#include <aws/logs/model/DescribeLogStreamsRequest.h>
+#include <aws/logs/model/GetLogGroupFieldsRequest.h>
+#include <aws/logs/model/DescribeDeliveryDestinationsRequest.h>
+#include <aws/logs/model/DisassociateKmsKeyRequest.h>
+#include <aws/logs/model/ListLogAnomalyDetectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CloudWatchLogsClient header */
 

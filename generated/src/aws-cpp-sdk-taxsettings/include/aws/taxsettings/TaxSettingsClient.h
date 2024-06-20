@@ -224,13 +224,13 @@ namespace TaxSettings
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteTaxRegistration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteTaxRegistrationOutcome DeleteTaxRegistration(const Model::DeleteTaxRegistrationRequest& request) const;
+        virtual Model::DeleteTaxRegistrationOutcome DeleteTaxRegistration(const Model::DeleteTaxRegistrationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteTaxRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteTaxRegistrationRequestT = Model::DeleteTaxRegistrationRequest>
-        Model::DeleteTaxRegistrationOutcomeCallable DeleteTaxRegistrationCallable(const DeleteTaxRegistrationRequestT& request) const
+        Model::DeleteTaxRegistrationOutcomeCallable DeleteTaxRegistrationCallable(const DeleteTaxRegistrationRequestT& request = {}) const
         {
             return SubmitCallable(&TaxSettingsClient::DeleteTaxRegistration, request);
         }
@@ -239,7 +239,7 @@ namespace TaxSettings
          * An Async wrapper for DeleteTaxRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteTaxRegistrationRequestT = Model::DeleteTaxRegistrationRequest>
-        void DeleteTaxRegistrationAsync(const DeleteTaxRegistrationRequestT& request, const DeleteTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteTaxRegistrationAsync(const DeleteTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteTaxRegistrationRequestT& request = {}) const
         {
             return SubmitAsync(&TaxSettingsClient::DeleteTaxRegistration, request, handler, context);
         }
@@ -250,13 +250,13 @@ namespace TaxSettings
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetTaxRegistrationOutcome GetTaxRegistration(const Model::GetTaxRegistrationRequest& request) const;
+        virtual Model::GetTaxRegistrationOutcome GetTaxRegistration(const Model::GetTaxRegistrationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetTaxRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetTaxRegistrationRequestT = Model::GetTaxRegistrationRequest>
-        Model::GetTaxRegistrationOutcomeCallable GetTaxRegistrationCallable(const GetTaxRegistrationRequestT& request) const
+        Model::GetTaxRegistrationOutcomeCallable GetTaxRegistrationCallable(const GetTaxRegistrationRequestT& request = {}) const
         {
             return SubmitCallable(&TaxSettingsClient::GetTaxRegistration, request);
         }
@@ -265,7 +265,7 @@ namespace TaxSettings
          * An Async wrapper for GetTaxRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetTaxRegistrationRequestT = Model::GetTaxRegistrationRequest>
-        void GetTaxRegistrationAsync(const GetTaxRegistrationRequestT& request, const GetTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetTaxRegistrationAsync(const GetTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTaxRegistrationRequestT& request = {}) const
         {
             return SubmitAsync(&TaxSettingsClient::GetTaxRegistration, request, handler, context);
         }
@@ -303,13 +303,13 @@ namespace TaxSettings
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxRegistrations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTaxRegistrationsOutcome ListTaxRegistrations(const Model::ListTaxRegistrationsRequest& request) const;
+        virtual Model::ListTaxRegistrationsOutcome ListTaxRegistrations(const Model::ListTaxRegistrationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTaxRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTaxRegistrationsRequestT = Model::ListTaxRegistrationsRequest>
-        Model::ListTaxRegistrationsOutcomeCallable ListTaxRegistrationsCallable(const ListTaxRegistrationsRequestT& request) const
+        Model::ListTaxRegistrationsOutcomeCallable ListTaxRegistrationsCallable(const ListTaxRegistrationsRequestT& request = {}) const
         {
             return SubmitCallable(&TaxSettingsClient::ListTaxRegistrations, request);
         }
@@ -318,7 +318,7 @@ namespace TaxSettings
          * An Async wrapper for ListTaxRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTaxRegistrationsRequestT = Model::ListTaxRegistrationsRequest>
-        void ListTaxRegistrationsAsync(const ListTaxRegistrationsRequestT& request, const ListTaxRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTaxRegistrationsAsync(const ListTaxRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTaxRegistrationsRequestT& request = {}) const
         {
             return SubmitAsync(&TaxSettingsClient::ListTaxRegistrations, request, handler, context);
         }

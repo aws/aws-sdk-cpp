@@ -34,6 +34,8 @@
 #include <aws/route53profiles/model/TagResourceResult.h>
 #include <aws/route53profiles/model/UntagResourceResult.h>
 #include <aws/route53profiles/model/UpdateProfileResourceAssociationResult.h>
+#include <aws/route53profiles/model/ListProfileAssociationsRequest.h>
+#include <aws/route53profiles/model/ListProfilesRequest.h>
 /* End of service model headers required in Route53ProfilesClient header */
 
 namespace Aws

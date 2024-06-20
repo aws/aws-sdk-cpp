@@ -29,6 +29,7 @@
 #include <aws/iot1click-devices/model/ListTagsForResourceResult.h>
 #include <aws/iot1click-devices/model/UnclaimDeviceResult.h>
 #include <aws/iot1click-devices/model/UpdateDeviceStateResult.h>
+#include <aws/iot1click-devices/model/ListDevicesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoT1ClickDevicesServiceClient header */
 

@@ -24,6 +24,8 @@
 #include <aws/elastic-inference/model/ListTagsForResourceResult.h>
 #include <aws/elastic-inference/model/TagResourceResult.h>
 #include <aws/elastic-inference/model/UntagResourceResult.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorTypesRequest.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorsRequest.h>
 /* End of service model headers required in ElasticInferenceClient header */
 
 namespace Aws

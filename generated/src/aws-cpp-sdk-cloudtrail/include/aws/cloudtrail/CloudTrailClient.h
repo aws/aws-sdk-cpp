@@ -391,13 +391,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeQueryOutcome DescribeQuery(const Model::DescribeQueryRequest& request) const;
+        virtual Model::DescribeQueryOutcome DescribeQuery(const Model::DescribeQueryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeQuery that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeQueryRequestT = Model::DescribeQueryRequest>
-        Model::DescribeQueryOutcomeCallable DescribeQueryCallable(const DescribeQueryRequestT& request) const
+        Model::DescribeQueryOutcomeCallable DescribeQueryCallable(const DescribeQueryRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::DescribeQuery, request);
         }
@@ -406,7 +406,7 @@ namespace CloudTrail
          * An Async wrapper for DescribeQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeQueryRequestT = Model::DescribeQueryRequest>
-        void DescribeQueryAsync(const DescribeQueryRequestT& request, const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeQueryAsync(const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeQueryRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::DescribeQuery, request, handler, context);
         }
@@ -417,13 +417,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTrailsOutcome DescribeTrails(const Model::DescribeTrailsRequest& request) const;
+        virtual Model::DescribeTrailsOutcome DescribeTrails(const Model::DescribeTrailsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeTrails that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeTrailsRequestT = Model::DescribeTrailsRequest>
-        Model::DescribeTrailsOutcomeCallable DescribeTrailsCallable(const DescribeTrailsRequestT& request) const
+        Model::DescribeTrailsOutcomeCallable DescribeTrailsCallable(const DescribeTrailsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::DescribeTrails, request);
         }
@@ -432,7 +432,7 @@ namespace CloudTrail
          * An Async wrapper for DescribeTrails that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeTrailsRequestT = Model::DescribeTrailsRequest>
-        void DescribeTrailsAsync(const DescribeTrailsRequestT& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeTrailsAsync(const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeTrailsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::DescribeTrails, request, handler, context);
         }
@@ -640,13 +640,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetInsightSelectorsOutcome GetInsightSelectors(const Model::GetInsightSelectorsRequest& request) const;
+        virtual Model::GetInsightSelectorsOutcome GetInsightSelectors(const Model::GetInsightSelectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetInsightSelectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetInsightSelectorsRequestT = Model::GetInsightSelectorsRequest>
-        Model::GetInsightSelectorsOutcomeCallable GetInsightSelectorsCallable(const GetInsightSelectorsRequestT& request) const
+        Model::GetInsightSelectorsOutcomeCallable GetInsightSelectorsCallable(const GetInsightSelectorsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::GetInsightSelectors, request);
         }
@@ -655,7 +655,7 @@ namespace CloudTrail
          * An Async wrapper for GetInsightSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetInsightSelectorsRequestT = Model::GetInsightSelectorsRequest>
-        void GetInsightSelectorsAsync(const GetInsightSelectorsRequestT& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetInsightSelectorsAsync(const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetInsightSelectorsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::GetInsightSelectors, request, handler, context);
         }
@@ -774,13 +774,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const
+        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::ListChannels, request);
         }
@@ -789,7 +789,7 @@ namespace CloudTrail
          * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListChannels, request, handler, context);
         }
@@ -800,13 +800,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventDataStoresOutcome ListEventDataStores(const Model::ListEventDataStoresRequest& request) const;
+        virtual Model::ListEventDataStoresOutcome ListEventDataStores(const Model::ListEventDataStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventDataStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventDataStoresRequestT = Model::ListEventDataStoresRequest>
-        Model::ListEventDataStoresOutcomeCallable ListEventDataStoresCallable(const ListEventDataStoresRequestT& request) const
+        Model::ListEventDataStoresOutcomeCallable ListEventDataStoresCallable(const ListEventDataStoresRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::ListEventDataStores, request);
         }
@@ -815,7 +815,7 @@ namespace CloudTrail
          * An Async wrapper for ListEventDataStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventDataStoresRequestT = Model::ListEventDataStoresRequest>
-        void ListEventDataStoresAsync(const ListEventDataStoresRequestT& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventDataStoresAsync(const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventDataStoresRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListEventDataStores, request, handler, context);
         }
@@ -853,13 +853,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request) const
+        Model::ListImportsOutcomeCallable ListImportsCallable(const ListImportsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::ListImports, request);
         }
@@ -868,7 +868,7 @@ namespace CloudTrail
          * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListImportsRequestT = Model::ListImportsRequest>
-        void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListImportsAsync(const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListImports, request, handler, context);
         }
@@ -922,13 +922,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPublicKeysOutcome ListPublicKeys(const Model::ListPublicKeysRequest& request) const;
+        virtual Model::ListPublicKeysOutcome ListPublicKeys(const Model::ListPublicKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPublicKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPublicKeysRequestT = Model::ListPublicKeysRequest>
-        Model::ListPublicKeysOutcomeCallable ListPublicKeysCallable(const ListPublicKeysRequestT& request) const
+        Model::ListPublicKeysOutcomeCallable ListPublicKeysCallable(const ListPublicKeysRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::ListPublicKeys, request);
         }
@@ -937,7 +937,7 @@ namespace CloudTrail
          * An Async wrapper for ListPublicKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPublicKeysRequestT = Model::ListPublicKeysRequest>
-        void ListPublicKeysAsync(const ListPublicKeysRequestT& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPublicKeysAsync(const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPublicKeysRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListPublicKeys, request, handler, context);
         }
@@ -1005,13 +1005,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrailsOutcome ListTrails(const Model::ListTrailsRequest& request) const;
+        virtual Model::ListTrailsOutcome ListTrails(const Model::ListTrailsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrails that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrailsRequestT = Model::ListTrailsRequest>
-        Model::ListTrailsOutcomeCallable ListTrailsCallable(const ListTrailsRequestT& request) const
+        Model::ListTrailsOutcomeCallable ListTrailsCallable(const ListTrailsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::ListTrails, request);
         }
@@ -1020,7 +1020,7 @@ namespace CloudTrail
          * An Async wrapper for ListTrails that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrailsRequestT = Model::ListTrailsRequest>
-        void ListTrailsAsync(const ListTrailsRequestT& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrailsAsync(const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrailsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListTrails, request, handler, context);
         }
@@ -1050,13 +1050,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request) const;
+        virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for LookupEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename LookupEventsRequestT = Model::LookupEventsRequest>
-        Model::LookupEventsOutcomeCallable LookupEventsCallable(const LookupEventsRequestT& request) const
+        Model::LookupEventsOutcomeCallable LookupEventsCallable(const LookupEventsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::LookupEvents, request);
         }
@@ -1065,7 +1065,7 @@ namespace CloudTrail
          * An Async wrapper for LookupEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename LookupEventsRequestT = Model::LookupEventsRequest>
-        void LookupEventsAsync(const LookupEventsRequestT& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void LookupEventsAsync(const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const LookupEventsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::LookupEvents, request, handler, context);
         }
@@ -1350,13 +1350,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartImportRequestT = Model::StartImportRequest>
-        Model::StartImportOutcomeCallable StartImportCallable(const StartImportRequestT& request) const
+        Model::StartImportOutcomeCallable StartImportCallable(const StartImportRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::StartImport, request);
         }
@@ -1365,7 +1365,7 @@ namespace CloudTrail
          * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartImportRequestT = Model::StartImportRequest>
-        void StartImportAsync(const StartImportRequestT& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartImportAsync(const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartImportRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::StartImport, request, handler, context);
         }
@@ -1412,13 +1412,13 @@ namespace CloudTrail
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
+        virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartQuery that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartQueryRequestT = Model::StartQueryRequest>
-        Model::StartQueryOutcomeCallable StartQueryCallable(const StartQueryRequestT& request) const
+        Model::StartQueryOutcomeCallable StartQueryCallable(const StartQueryRequestT& request = {}) const
         {
             return SubmitCallable(&CloudTrailClient::StartQuery, request);
         }
@@ -1427,7 +1427,7 @@ namespace CloudTrail
          * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartQueryRequestT = Model::StartQueryRequest>
-        void StartQueryAsync(const StartQueryRequestT& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartQueryAsync(const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartQueryRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::StartQuery, request, handler, context);
         }

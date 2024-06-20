@@ -26,6 +26,10 @@
 #include <aws/resourcegroupstaggingapi/model/StartReportCreationResult.h>
 #include <aws/resourcegroupstaggingapi/model/TagResourcesResult.h>
 #include <aws/resourcegroupstaggingapi/model/UntagResourcesResult.h>
+#include <aws/resourcegroupstaggingapi/model/GetComplianceSummaryRequest.h>
+#include <aws/resourcegroupstaggingapi/model/GetResourcesRequest.h>
+#include <aws/resourcegroupstaggingapi/model/DescribeReportCreationRequest.h>
+#include <aws/resourcegroupstaggingapi/model/GetTagKeysRequest.h>
 /* End of service model headers required in ResourceGroupsTaggingAPIClient header */
 
 namespace Aws

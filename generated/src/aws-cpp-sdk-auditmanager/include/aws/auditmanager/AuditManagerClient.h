@@ -537,13 +537,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeregisterAccountOutcome DeregisterAccount(const Model::DeregisterAccountRequest& request) const;
+        virtual Model::DeregisterAccountOutcome DeregisterAccount(const Model::DeregisterAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeregisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeregisterAccountRequestT = Model::DeregisterAccountRequest>
-        Model::DeregisterAccountOutcomeCallable DeregisterAccountCallable(const DeregisterAccountRequestT& request) const
+        Model::DeregisterAccountOutcomeCallable DeregisterAccountCallable(const DeregisterAccountRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::DeregisterAccount, request);
         }
@@ -552,7 +552,7 @@ namespace AuditManager
          * An Async wrapper for DeregisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeregisterAccountRequestT = Model::DeregisterAccountRequest>
-        void DeregisterAccountAsync(const DeregisterAccountRequestT& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeregisterAccountAsync(const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeregisterAccountRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::DeregisterAccount, request, handler, context);
         }
@@ -617,13 +617,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeregisterOrganizationAdminAccountOutcome DeregisterOrganizationAdminAccount(const Model::DeregisterOrganizationAdminAccountRequest& request) const;
+        virtual Model::DeregisterOrganizationAdminAccountOutcome DeregisterOrganizationAdminAccount(const Model::DeregisterOrganizationAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeregisterOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeregisterOrganizationAdminAccountRequestT = Model::DeregisterOrganizationAdminAccountRequest>
-        Model::DeregisterOrganizationAdminAccountOutcomeCallable DeregisterOrganizationAdminAccountCallable(const DeregisterOrganizationAdminAccountRequestT& request) const
+        Model::DeregisterOrganizationAdminAccountOutcomeCallable DeregisterOrganizationAdminAccountCallable(const DeregisterOrganizationAdminAccountRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::DeregisterOrganizationAdminAccount, request);
         }
@@ -632,7 +632,7 @@ namespace AuditManager
          * An Async wrapper for DeregisterOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeregisterOrganizationAdminAccountRequestT = Model::DeregisterOrganizationAdminAccountRequest>
-        void DeregisterOrganizationAdminAccountAsync(const DeregisterOrganizationAdminAccountRequestT& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeregisterOrganizationAdminAccountAsync(const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeregisterOrganizationAdminAccountRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::DeregisterOrganizationAdminAccount, request, handler, context);
         }
@@ -669,13 +669,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountStatusOutcome GetAccountStatus(const Model::GetAccountStatusRequest& request) const;
+        virtual Model::GetAccountStatusOutcome GetAccountStatus(const Model::GetAccountStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountStatusRequestT = Model::GetAccountStatusRequest>
-        Model::GetAccountStatusOutcomeCallable GetAccountStatusCallable(const GetAccountStatusRequestT& request) const
+        Model::GetAccountStatusOutcomeCallable GetAccountStatusCallable(const GetAccountStatusRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::GetAccountStatus, request);
         }
@@ -684,7 +684,7 @@ namespace AuditManager
          * An Async wrapper for GetAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountStatusRequestT = Model::GetAccountStatusRequest>
-        void GetAccountStatusAsync(const GetAccountStatusRequestT& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountStatusAsync(const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountStatusRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::GetAccountStatus, request, handler, context);
         }
@@ -821,13 +821,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDelegationsOutcome GetDelegations(const Model::GetDelegationsRequest& request) const;
+        virtual Model::GetDelegationsOutcome GetDelegations(const Model::GetDelegationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDelegations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDelegationsRequestT = Model::GetDelegationsRequest>
-        Model::GetDelegationsOutcomeCallable GetDelegationsCallable(const GetDelegationsRequestT& request) const
+        Model::GetDelegationsOutcomeCallable GetDelegationsCallable(const GetDelegationsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::GetDelegations, request);
         }
@@ -836,7 +836,7 @@ namespace AuditManager
          * An Async wrapper for GetDelegations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDelegationsRequestT = Model::GetDelegationsRequest>
-        void GetDelegationsAsync(const GetDelegationsRequestT& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDelegationsAsync(const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDelegationsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::GetDelegations, request, handler, context);
         }
@@ -1015,13 +1015,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
+        virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetInsightsRequestT = Model::GetInsightsRequest>
-        Model::GetInsightsOutcomeCallable GetInsightsCallable(const GetInsightsRequestT& request) const
+        Model::GetInsightsOutcomeCallable GetInsightsCallable(const GetInsightsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::GetInsights, request);
         }
@@ -1030,7 +1030,7 @@ namespace AuditManager
          * An Async wrapper for GetInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetInsightsRequestT = Model::GetInsightsRequest>
-        void GetInsightsAsync(const GetInsightsRequestT& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetInsightsAsync(const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetInsightsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::GetInsights, request, handler, context);
         }
@@ -1067,13 +1067,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetOrganizationAdminAccountOutcome GetOrganizationAdminAccount(const Model::GetOrganizationAdminAccountRequest& request) const;
+        virtual Model::GetOrganizationAdminAccountOutcome GetOrganizationAdminAccount(const Model::GetOrganizationAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetOrganizationAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetOrganizationAdminAccountRequestT = Model::GetOrganizationAdminAccountRequest>
-        Model::GetOrganizationAdminAccountOutcomeCallable GetOrganizationAdminAccountCallable(const GetOrganizationAdminAccountRequestT& request) const
+        Model::GetOrganizationAdminAccountOutcomeCallable GetOrganizationAdminAccountCallable(const GetOrganizationAdminAccountRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::GetOrganizationAdminAccount, request);
         }
@@ -1082,7 +1082,7 @@ namespace AuditManager
          * An Async wrapper for GetOrganizationAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetOrganizationAdminAccountRequestT = Model::GetOrganizationAdminAccountRequest>
-        void GetOrganizationAdminAccountAsync(const GetOrganizationAdminAccountRequestT& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetOrganizationAdminAccountAsync(const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetOrganizationAdminAccountRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::GetOrganizationAdminAccount, request, handler, context);
         }
@@ -1102,13 +1102,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetServicesInScopeOutcome GetServicesInScope(const Model::GetServicesInScopeRequest& request) const;
+        virtual Model::GetServicesInScopeOutcome GetServicesInScope(const Model::GetServicesInScopeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetServicesInScope that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetServicesInScopeRequestT = Model::GetServicesInScopeRequest>
-        Model::GetServicesInScopeOutcomeCallable GetServicesInScopeCallable(const GetServicesInScopeRequestT& request) const
+        Model::GetServicesInScopeOutcomeCallable GetServicesInScopeCallable(const GetServicesInScopeRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::GetServicesInScope, request);
         }
@@ -1117,7 +1117,7 @@ namespace AuditManager
          * An Async wrapper for GetServicesInScope that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetServicesInScopeRequestT = Model::GetServicesInScopeRequest>
-        void GetServicesInScopeAsync(const GetServicesInScopeRequestT& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetServicesInScopeAsync(const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetServicesInScopeRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::GetServicesInScope, request, handler, context);
         }
@@ -1237,13 +1237,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentReports">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssessmentReportsOutcome ListAssessmentReports(const Model::ListAssessmentReportsRequest& request) const;
+        virtual Model::ListAssessmentReportsOutcome ListAssessmentReports(const Model::ListAssessmentReportsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssessmentReports that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssessmentReportsRequestT = Model::ListAssessmentReportsRequest>
-        Model::ListAssessmentReportsOutcomeCallable ListAssessmentReportsCallable(const ListAssessmentReportsRequestT& request) const
+        Model::ListAssessmentReportsOutcomeCallable ListAssessmentReportsCallable(const ListAssessmentReportsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::ListAssessmentReports, request);
         }
@@ -1252,7 +1252,7 @@ namespace AuditManager
          * An Async wrapper for ListAssessmentReports that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssessmentReportsRequestT = Model::ListAssessmentReportsRequest>
-        void ListAssessmentReportsAsync(const ListAssessmentReportsRequestT& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssessmentReportsAsync(const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssessmentReportsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::ListAssessmentReports, request, handler, context);
         }
@@ -1263,13 +1263,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request) const;
+        virtual Model::ListAssessmentsOutcome ListAssessments(const Model::ListAssessmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
-        Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const ListAssessmentsRequestT& request) const
+        Model::ListAssessmentsOutcomeCallable ListAssessmentsCallable(const ListAssessmentsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::ListAssessments, request);
         }
@@ -1278,7 +1278,7 @@ namespace AuditManager
          * An Async wrapper for ListAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssessmentsRequestT = Model::ListAssessmentsRequest>
-        void ListAssessmentsAsync(const ListAssessmentsRequestT& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssessmentsAsync(const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssessmentsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::ListAssessments, request, handler, context);
         }
@@ -1297,13 +1297,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListControlDomainInsightsOutcome ListControlDomainInsights(const Model::ListControlDomainInsightsRequest& request) const;
+        virtual Model::ListControlDomainInsightsOutcome ListControlDomainInsights(const Model::ListControlDomainInsightsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListControlDomainInsights that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListControlDomainInsightsRequestT = Model::ListControlDomainInsightsRequest>
-        Model::ListControlDomainInsightsOutcomeCallable ListControlDomainInsightsCallable(const ListControlDomainInsightsRequestT& request) const
+        Model::ListControlDomainInsightsOutcomeCallable ListControlDomainInsightsCallable(const ListControlDomainInsightsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::ListControlDomainInsights, request);
         }
@@ -1312,7 +1312,7 @@ namespace AuditManager
          * An Async wrapper for ListControlDomainInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListControlDomainInsightsRequestT = Model::ListControlDomainInsightsRequest>
-        void ListControlDomainInsightsAsync(const ListControlDomainInsightsRequestT& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListControlDomainInsightsAsync(const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListControlDomainInsightsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::ListControlDomainInsights, request, handler, context);
         }
@@ -1439,13 +1439,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListNotifications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNotificationsOutcome ListNotifications(const Model::ListNotificationsRequest& request) const;
+        virtual Model::ListNotificationsOutcome ListNotifications(const Model::ListNotificationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNotifications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNotificationsRequestT = Model::ListNotificationsRequest>
-        Model::ListNotificationsOutcomeCallable ListNotificationsCallable(const ListNotificationsRequestT& request) const
+        Model::ListNotificationsOutcomeCallable ListNotificationsCallable(const ListNotificationsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::ListNotifications, request);
         }
@@ -1454,7 +1454,7 @@ namespace AuditManager
          * An Async wrapper for ListNotifications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNotificationsRequestT = Model::ListNotificationsRequest>
-        void ListNotificationsAsync(const ListNotificationsRequestT& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNotificationsAsync(const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNotificationsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::ListNotifications, request, handler, context);
         }
@@ -1491,13 +1491,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request) const;
+        virtual Model::RegisterAccountOutcome RegisterAccount(const Model::RegisterAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RegisterAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RegisterAccountRequestT = Model::RegisterAccountRequest>
-        Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const RegisterAccountRequestT& request) const
+        Model::RegisterAccountOutcomeCallable RegisterAccountCallable(const RegisterAccountRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::RegisterAccount, request);
         }
@@ -1506,7 +1506,7 @@ namespace AuditManager
          * An Async wrapper for RegisterAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RegisterAccountRequestT = Model::RegisterAccountRequest>
-        void RegisterAccountAsync(const RegisterAccountRequestT& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RegisterAccountAsync(const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RegisterAccountRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::RegisterAccount, request, handler, context);
         }
@@ -1825,13 +1825,13 @@ namespace AuditManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request) const;
+        virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateSettingsRequestT = Model::UpdateSettingsRequest>
-        Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const UpdateSettingsRequestT& request) const
+        Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const UpdateSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&AuditManagerClient::UpdateSettings, request);
         }
@@ -1840,7 +1840,7 @@ namespace AuditManager
          * An Async wrapper for UpdateSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateSettingsRequestT = Model::UpdateSettingsRequest>
-        void UpdateSettingsAsync(const UpdateSettingsRequestT& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateSettingsAsync(const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&AuditManagerClient::UpdateSettings, request, handler, context);
         }

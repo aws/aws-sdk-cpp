@@ -41,6 +41,9 @@
 #include <aws/servicecatalog-appregistry/model/UntagResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/UpdateApplicationResult.h>
 #include <aws/servicecatalog-appregistry/model/UpdateAttributeGroupResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsRequest.h>
+#include <aws/servicecatalog-appregistry/model/ListApplicationsRequest.h>
+#include <aws/servicecatalog-appregistry/model/GetConfigurationRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AppRegistryClient header */
 

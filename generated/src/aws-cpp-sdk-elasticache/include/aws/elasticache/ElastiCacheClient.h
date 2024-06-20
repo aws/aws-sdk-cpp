@@ -1088,13 +1088,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request) const;
+        virtual Model::DescribeCacheClustersOutcome DescribeCacheClusters(const Model::DescribeCacheClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCacheClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCacheClustersRequestT = Model::DescribeCacheClustersRequest>
-        Model::DescribeCacheClustersOutcomeCallable DescribeCacheClustersCallable(const DescribeCacheClustersRequestT& request) const
+        Model::DescribeCacheClustersOutcomeCallable DescribeCacheClustersCallable(const DescribeCacheClustersRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeCacheClusters, request);
         }
@@ -1103,7 +1103,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeCacheClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCacheClustersRequestT = Model::DescribeCacheClustersRequest>
-        void DescribeCacheClustersAsync(const DescribeCacheClustersRequestT& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCacheClustersAsync(const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCacheClustersRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeCacheClusters, request, handler, context);
         }
@@ -1114,13 +1114,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCacheEngineVersionsOutcome DescribeCacheEngineVersions(const Model::DescribeCacheEngineVersionsRequest& request) const;
+        virtual Model::DescribeCacheEngineVersionsOutcome DescribeCacheEngineVersions(const Model::DescribeCacheEngineVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCacheEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCacheEngineVersionsRequestT = Model::DescribeCacheEngineVersionsRequest>
-        Model::DescribeCacheEngineVersionsOutcomeCallable DescribeCacheEngineVersionsCallable(const DescribeCacheEngineVersionsRequestT& request) const
+        Model::DescribeCacheEngineVersionsOutcomeCallable DescribeCacheEngineVersionsCallable(const DescribeCacheEngineVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeCacheEngineVersions, request);
         }
@@ -1129,7 +1129,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeCacheEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCacheEngineVersionsRequestT = Model::DescribeCacheEngineVersionsRequest>
-        void DescribeCacheEngineVersionsAsync(const DescribeCacheEngineVersionsRequestT& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCacheEngineVersionsAsync(const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCacheEngineVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeCacheEngineVersions, request, handler, context);
         }
@@ -1141,13 +1141,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCacheParameterGroupsOutcome DescribeCacheParameterGroups(const Model::DescribeCacheParameterGroupsRequest& request) const;
+        virtual Model::DescribeCacheParameterGroupsOutcome DescribeCacheParameterGroups(const Model::DescribeCacheParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCacheParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCacheParameterGroupsRequestT = Model::DescribeCacheParameterGroupsRequest>
-        Model::DescribeCacheParameterGroupsOutcomeCallable DescribeCacheParameterGroupsCallable(const DescribeCacheParameterGroupsRequestT& request) const
+        Model::DescribeCacheParameterGroupsOutcomeCallable DescribeCacheParameterGroupsCallable(const DescribeCacheParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeCacheParameterGroups, request);
         }
@@ -1156,7 +1156,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeCacheParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCacheParameterGroupsRequestT = Model::DescribeCacheParameterGroupsRequest>
-        void DescribeCacheParameterGroupsAsync(const DescribeCacheParameterGroupsRequestT& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCacheParameterGroupsAsync(const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCacheParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeCacheParameterGroups, request, handler, context);
         }
@@ -1195,13 +1195,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCacheSecurityGroupsOutcome DescribeCacheSecurityGroups(const Model::DescribeCacheSecurityGroupsRequest& request) const;
+        virtual Model::DescribeCacheSecurityGroupsOutcome DescribeCacheSecurityGroups(const Model::DescribeCacheSecurityGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCacheSecurityGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCacheSecurityGroupsRequestT = Model::DescribeCacheSecurityGroupsRequest>
-        Model::DescribeCacheSecurityGroupsOutcomeCallable DescribeCacheSecurityGroupsCallable(const DescribeCacheSecurityGroupsRequestT& request) const
+        Model::DescribeCacheSecurityGroupsOutcomeCallable DescribeCacheSecurityGroupsCallable(const DescribeCacheSecurityGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeCacheSecurityGroups, request);
         }
@@ -1210,7 +1210,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeCacheSecurityGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCacheSecurityGroupsRequestT = Model::DescribeCacheSecurityGroupsRequest>
-        void DescribeCacheSecurityGroupsAsync(const DescribeCacheSecurityGroupsRequestT& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCacheSecurityGroupsAsync(const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCacheSecurityGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeCacheSecurityGroups, request, handler, context);
         }
@@ -1223,13 +1223,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCacheSubnetGroupsOutcome DescribeCacheSubnetGroups(const Model::DescribeCacheSubnetGroupsRequest& request) const;
+        virtual Model::DescribeCacheSubnetGroupsOutcome DescribeCacheSubnetGroups(const Model::DescribeCacheSubnetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCacheSubnetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCacheSubnetGroupsRequestT = Model::DescribeCacheSubnetGroupsRequest>
-        Model::DescribeCacheSubnetGroupsOutcomeCallable DescribeCacheSubnetGroupsCallable(const DescribeCacheSubnetGroupsRequestT& request) const
+        Model::DescribeCacheSubnetGroupsOutcomeCallable DescribeCacheSubnetGroupsCallable(const DescribeCacheSubnetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeCacheSubnetGroups, request);
         }
@@ -1238,7 +1238,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeCacheSubnetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCacheSubnetGroupsRequestT = Model::DescribeCacheSubnetGroupsRequest>
-        void DescribeCacheSubnetGroupsAsync(const DescribeCacheSubnetGroupsRequestT& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCacheSubnetGroupsAsync(const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCacheSubnetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeCacheSubnetGroups, request, handler, context);
         }
@@ -1279,13 +1279,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeEvents, request);
         }
@@ -1294,7 +1294,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeEvents, request, handler, context);
         }
@@ -1306,13 +1306,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeGlobalReplicationGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGlobalReplicationGroupsOutcome DescribeGlobalReplicationGroups(const Model::DescribeGlobalReplicationGroupsRequest& request) const;
+        virtual Model::DescribeGlobalReplicationGroupsOutcome DescribeGlobalReplicationGroups(const Model::DescribeGlobalReplicationGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGlobalReplicationGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGlobalReplicationGroupsRequestT = Model::DescribeGlobalReplicationGroupsRequest>
-        Model::DescribeGlobalReplicationGroupsOutcomeCallable DescribeGlobalReplicationGroupsCallable(const DescribeGlobalReplicationGroupsRequestT& request) const
+        Model::DescribeGlobalReplicationGroupsOutcomeCallable DescribeGlobalReplicationGroupsCallable(const DescribeGlobalReplicationGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeGlobalReplicationGroups, request);
         }
@@ -1321,7 +1321,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeGlobalReplicationGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGlobalReplicationGroupsRequestT = Model::DescribeGlobalReplicationGroupsRequest>
-        void DescribeGlobalReplicationGroupsAsync(const DescribeGlobalReplicationGroupsRequestT& request, const DescribeGlobalReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGlobalReplicationGroupsAsync(const DescribeGlobalReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGlobalReplicationGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeGlobalReplicationGroups, request, handler, context);
         }
@@ -1334,13 +1334,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReplicationGroupsOutcome DescribeReplicationGroups(const Model::DescribeReplicationGroupsRequest& request) const;
+        virtual Model::DescribeReplicationGroupsOutcome DescribeReplicationGroups(const Model::DescribeReplicationGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReplicationGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReplicationGroupsRequestT = Model::DescribeReplicationGroupsRequest>
-        Model::DescribeReplicationGroupsOutcomeCallable DescribeReplicationGroupsCallable(const DescribeReplicationGroupsRequestT& request) const
+        Model::DescribeReplicationGroupsOutcomeCallable DescribeReplicationGroupsCallable(const DescribeReplicationGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeReplicationGroups, request);
         }
@@ -1349,7 +1349,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeReplicationGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReplicationGroupsRequestT = Model::DescribeReplicationGroupsRequest>
-        void DescribeReplicationGroupsAsync(const DescribeReplicationGroupsRequestT& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReplicationGroupsAsync(const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReplicationGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeReplicationGroups, request, handler, context);
         }
@@ -1360,13 +1360,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReservedCacheNodesOutcome DescribeReservedCacheNodes(const Model::DescribeReservedCacheNodesRequest& request) const;
+        virtual Model::DescribeReservedCacheNodesOutcome DescribeReservedCacheNodes(const Model::DescribeReservedCacheNodesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReservedCacheNodes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReservedCacheNodesRequestT = Model::DescribeReservedCacheNodesRequest>
-        Model::DescribeReservedCacheNodesOutcomeCallable DescribeReservedCacheNodesCallable(const DescribeReservedCacheNodesRequestT& request) const
+        Model::DescribeReservedCacheNodesOutcomeCallable DescribeReservedCacheNodesCallable(const DescribeReservedCacheNodesRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeReservedCacheNodes, request);
         }
@@ -1375,7 +1375,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeReservedCacheNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReservedCacheNodesRequestT = Model::DescribeReservedCacheNodesRequest>
-        void DescribeReservedCacheNodesAsync(const DescribeReservedCacheNodesRequestT& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReservedCacheNodesAsync(const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReservedCacheNodesRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeReservedCacheNodes, request, handler, context);
         }
@@ -1385,13 +1385,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReservedCacheNodesOfferingsOutcome DescribeReservedCacheNodesOfferings(const Model::DescribeReservedCacheNodesOfferingsRequest& request) const;
+        virtual Model::DescribeReservedCacheNodesOfferingsOutcome DescribeReservedCacheNodesOfferings(const Model::DescribeReservedCacheNodesOfferingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReservedCacheNodesOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReservedCacheNodesOfferingsRequestT = Model::DescribeReservedCacheNodesOfferingsRequest>
-        Model::DescribeReservedCacheNodesOfferingsOutcomeCallable DescribeReservedCacheNodesOfferingsCallable(const DescribeReservedCacheNodesOfferingsRequestT& request) const
+        Model::DescribeReservedCacheNodesOfferingsOutcomeCallable DescribeReservedCacheNodesOfferingsCallable(const DescribeReservedCacheNodesOfferingsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeReservedCacheNodesOfferings, request);
         }
@@ -1400,7 +1400,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeReservedCacheNodesOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReservedCacheNodesOfferingsRequestT = Model::DescribeReservedCacheNodesOfferingsRequest>
-        void DescribeReservedCacheNodesOfferingsAsync(const DescribeReservedCacheNodesOfferingsRequestT& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReservedCacheNodesOfferingsAsync(const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReservedCacheNodesOfferingsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeReservedCacheNodesOfferings, request, handler, context);
         }
@@ -1413,13 +1413,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServerlessCacheSnapshotsOutcome DescribeServerlessCacheSnapshots(const Model::DescribeServerlessCacheSnapshotsRequest& request) const;
+        virtual Model::DescribeServerlessCacheSnapshotsOutcome DescribeServerlessCacheSnapshots(const Model::DescribeServerlessCacheSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServerlessCacheSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServerlessCacheSnapshotsRequestT = Model::DescribeServerlessCacheSnapshotsRequest>
-        Model::DescribeServerlessCacheSnapshotsOutcomeCallable DescribeServerlessCacheSnapshotsCallable(const DescribeServerlessCacheSnapshotsRequestT& request) const
+        Model::DescribeServerlessCacheSnapshotsOutcomeCallable DescribeServerlessCacheSnapshotsCallable(const DescribeServerlessCacheSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeServerlessCacheSnapshots, request);
         }
@@ -1428,7 +1428,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeServerlessCacheSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServerlessCacheSnapshotsRequestT = Model::DescribeServerlessCacheSnapshotsRequest>
-        void DescribeServerlessCacheSnapshotsAsync(const DescribeServerlessCacheSnapshotsRequestT& request, const DescribeServerlessCacheSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServerlessCacheSnapshotsAsync(const DescribeServerlessCacheSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServerlessCacheSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeServerlessCacheSnapshots, request, handler, context);
         }
@@ -1440,13 +1440,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServerlessCachesOutcome DescribeServerlessCaches(const Model::DescribeServerlessCachesRequest& request) const;
+        virtual Model::DescribeServerlessCachesOutcome DescribeServerlessCaches(const Model::DescribeServerlessCachesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServerlessCaches that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServerlessCachesRequestT = Model::DescribeServerlessCachesRequest>
-        Model::DescribeServerlessCachesOutcomeCallable DescribeServerlessCachesCallable(const DescribeServerlessCachesRequestT& request) const
+        Model::DescribeServerlessCachesOutcomeCallable DescribeServerlessCachesCallable(const DescribeServerlessCachesRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeServerlessCaches, request);
         }
@@ -1455,7 +1455,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeServerlessCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServerlessCachesRequestT = Model::DescribeServerlessCachesRequest>
-        void DescribeServerlessCachesAsync(const DescribeServerlessCachesRequestT& request, const DescribeServerlessCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServerlessCachesAsync(const DescribeServerlessCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServerlessCachesRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeServerlessCaches, request, handler, context);
         }
@@ -1465,13 +1465,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServiceUpdatesOutcome DescribeServiceUpdates(const Model::DescribeServiceUpdatesRequest& request) const;
+        virtual Model::DescribeServiceUpdatesOutcome DescribeServiceUpdates(const Model::DescribeServiceUpdatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServiceUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServiceUpdatesRequestT = Model::DescribeServiceUpdatesRequest>
-        Model::DescribeServiceUpdatesOutcomeCallable DescribeServiceUpdatesCallable(const DescribeServiceUpdatesRequestT& request) const
+        Model::DescribeServiceUpdatesOutcomeCallable DescribeServiceUpdatesCallable(const DescribeServiceUpdatesRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeServiceUpdates, request);
         }
@@ -1480,7 +1480,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeServiceUpdates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServiceUpdatesRequestT = Model::DescribeServiceUpdatesRequest>
-        void DescribeServiceUpdatesAsync(const DescribeServiceUpdatesRequestT& request, const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServiceUpdatesAsync(const DescribeServiceUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServiceUpdatesRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeServiceUpdates, request, handler, context);
         }
@@ -1494,13 +1494,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request) const;
+        virtual Model::DescribeSnapshotsOutcome DescribeSnapshots(const Model::DescribeSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request) const
+        Model::DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeSnapshots, request);
         }
@@ -1509,7 +1509,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSnapshotsRequestT = Model::DescribeSnapshotsRequest>
-        void DescribeSnapshotsAsync(const DescribeSnapshotsRequestT& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSnapshotsAsync(const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeSnapshots, request, handler, context);
         }
@@ -1519,13 +1519,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUpdateActionsOutcome DescribeUpdateActions(const Model::DescribeUpdateActionsRequest& request) const;
+        virtual Model::DescribeUpdateActionsOutcome DescribeUpdateActions(const Model::DescribeUpdateActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUpdateActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUpdateActionsRequestT = Model::DescribeUpdateActionsRequest>
-        Model::DescribeUpdateActionsOutcomeCallable DescribeUpdateActionsCallable(const DescribeUpdateActionsRequestT& request) const
+        Model::DescribeUpdateActionsOutcomeCallable DescribeUpdateActionsCallable(const DescribeUpdateActionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeUpdateActions, request);
         }
@@ -1534,7 +1534,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeUpdateActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUpdateActionsRequestT = Model::DescribeUpdateActionsRequest>
-        void DescribeUpdateActionsAsync(const DescribeUpdateActionsRequestT& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUpdateActionsAsync(const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUpdateActionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeUpdateActions, request, handler, context);
         }
@@ -1544,13 +1544,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest& request) const;
+        virtual Model::DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUserGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUserGroupsRequestT = Model::DescribeUserGroupsRequest>
-        Model::DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const DescribeUserGroupsRequestT& request) const
+        Model::DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const DescribeUserGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeUserGroups, request);
         }
@@ -1559,7 +1559,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeUserGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUserGroupsRequestT = Model::DescribeUserGroupsRequest>
-        void DescribeUserGroupsAsync(const DescribeUserGroupsRequestT& request, const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUserGroupsAsync(const DescribeUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUserGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeUserGroups, request, handler, context);
         }
@@ -1569,13 +1569,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest& request) const;
+        virtual Model::DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUsersRequestT = Model::DescribeUsersRequest>
-        Model::DescribeUsersOutcomeCallable DescribeUsersCallable(const DescribeUsersRequestT& request) const
+        Model::DescribeUsersOutcomeCallable DescribeUsersCallable(const DescribeUsersRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::DescribeUsers, request);
         }
@@ -1584,7 +1584,7 @@ namespace ElastiCache
          * An Async wrapper for DescribeUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUsersRequestT = Model::DescribeUsersRequest>
-        void DescribeUsersAsync(const DescribeUsersRequestT& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUsersAsync(const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUsersRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::DescribeUsers, request, handler, context);
         }
@@ -1734,13 +1734,13 @@ namespace ElastiCache
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAllowedNodeTypeModificationsOutcome ListAllowedNodeTypeModifications(const Model::ListAllowedNodeTypeModificationsRequest& request) const;
+        virtual Model::ListAllowedNodeTypeModificationsOutcome ListAllowedNodeTypeModifications(const Model::ListAllowedNodeTypeModificationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAllowedNodeTypeModifications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAllowedNodeTypeModificationsRequestT = Model::ListAllowedNodeTypeModificationsRequest>
-        Model::ListAllowedNodeTypeModificationsOutcomeCallable ListAllowedNodeTypeModificationsCallable(const ListAllowedNodeTypeModificationsRequestT& request) const
+        Model::ListAllowedNodeTypeModificationsOutcomeCallable ListAllowedNodeTypeModificationsCallable(const ListAllowedNodeTypeModificationsRequestT& request = {}) const
         {
             return SubmitCallable(&ElastiCacheClient::ListAllowedNodeTypeModifications, request);
         }
@@ -1749,7 +1749,7 @@ namespace ElastiCache
          * An Async wrapper for ListAllowedNodeTypeModifications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAllowedNodeTypeModificationsRequestT = Model::ListAllowedNodeTypeModificationsRequest>
-        void ListAllowedNodeTypeModificationsAsync(const ListAllowedNodeTypeModificationsRequestT& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAllowedNodeTypeModificationsAsync(const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAllowedNodeTypeModificationsRequestT& request = {}) const
         {
             return SubmitAsync(&ElastiCacheClient::ListAllowedNodeTypeModifications, request, handler, context);
         }

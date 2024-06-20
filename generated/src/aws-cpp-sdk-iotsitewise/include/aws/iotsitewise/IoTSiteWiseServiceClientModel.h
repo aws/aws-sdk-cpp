@@ -94,6 +94,20 @@
 #include <aws/iotsitewise/model/UpdateGatewayCapabilityConfigurationResult.h>
 #include <aws/iotsitewise/model/UpdatePortalResult.h>
 #include <aws/iotsitewise/model/UpdateProjectResult.h>
+#include <aws/iotsitewise/model/ListAssetModelsRequest.h>
+#include <aws/iotsitewise/model/DescribeTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/ListTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/ListPortalsRequest.h>
+#include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
+#include <aws/iotsitewise/model/ListBulkImportJobsRequest.h>
+#include <aws/iotsitewise/model/DescribeDefaultEncryptionConfigurationRequest.h>
+#include <aws/iotsitewise/model/DescribeLoggingOptionsRequest.h>
+#include <aws/iotsitewise/model/ListAssetsRequest.h>
+#include <aws/iotsitewise/model/DescribeStorageConfigurationRequest.h>
+#include <aws/iotsitewise/model/ListAccessPoliciesRequest.h>
+#include <aws/iotsitewise/model/DeleteTimeSeriesRequest.h>
+#include <aws/iotsitewise/model/GetAssetPropertyValueRequest.h>
+#include <aws/iotsitewise/model/ListGatewaysRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoTSiteWiseClient header */
 

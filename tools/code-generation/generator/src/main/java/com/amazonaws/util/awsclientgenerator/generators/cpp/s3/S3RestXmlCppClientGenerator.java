@@ -45,6 +45,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
     );
 
     private final Set<String> opsThatDoNotSupportBucketArguments = ImmutableSet.of(
+            "ListBuckets",
             "ListDirectoryBuckets",
             "WriteGetObjectResponse"
     );

@@ -155,13 +155,13 @@ namespace DLM
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLifecyclePoliciesOutcome GetLifecyclePolicies(const Model::GetLifecyclePoliciesRequest& request) const;
+        virtual Model::GetLifecyclePoliciesOutcome GetLifecyclePolicies(const Model::GetLifecyclePoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLifecyclePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLifecyclePoliciesRequestT = Model::GetLifecyclePoliciesRequest>
-        Model::GetLifecyclePoliciesOutcomeCallable GetLifecyclePoliciesCallable(const GetLifecyclePoliciesRequestT& request) const
+        Model::GetLifecyclePoliciesOutcomeCallable GetLifecyclePoliciesCallable(const GetLifecyclePoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&DLMClient::GetLifecyclePolicies, request);
         }
@@ -170,7 +170,7 @@ namespace DLM
          * An Async wrapper for GetLifecyclePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLifecyclePoliciesRequestT = Model::GetLifecyclePoliciesRequest>
-        void GetLifecyclePoliciesAsync(const GetLifecyclePoliciesRequestT& request, const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLifecyclePoliciesAsync(const GetLifecyclePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLifecyclePoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&DLMClient::GetLifecyclePolicies, request, handler, context);
         }

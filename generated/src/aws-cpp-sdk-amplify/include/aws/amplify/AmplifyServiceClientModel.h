@@ -55,6 +55,7 @@
 #include <aws/amplify/model/UpdateBranchResult.h>
 #include <aws/amplify/model/UpdateDomainAssociationResult.h>
 #include <aws/amplify/model/UpdateWebhookResult.h>
+#include <aws/amplify/model/ListAppsRequest.h>
 /* End of service model headers required in AmplifyClient header */
 
 namespace Aws

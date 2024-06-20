@@ -255,13 +255,13 @@ namespace SSOAdmin
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request) const;
+        virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
-        Model::CreateInstanceOutcomeCallable CreateInstanceCallable(const CreateInstanceRequestT& request) const
+        Model::CreateInstanceOutcomeCallable CreateInstanceCallable(const CreateInstanceRequestT& request = {}) const
         {
             return SubmitCallable(&SSOAdminClient::CreateInstance, request);
         }
@@ -270,7 +270,7 @@ namespace SSOAdmin
          * An Async wrapper for CreateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
-        void CreateInstanceAsync(const CreateInstanceRequestT& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateInstanceAsync(const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateInstanceRequestT& request = {}) const
         {
             return SubmitAsync(&SSOAdminClient::CreateInstance, request, handler, context);
         }
@@ -1442,13 +1442,13 @@ namespace SSOAdmin
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationProvidersOutcome ListApplicationProviders(const Model::ListApplicationProvidersRequest& request) const;
+        virtual Model::ListApplicationProvidersOutcome ListApplicationProviders(const Model::ListApplicationProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplicationProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationProvidersRequestT = Model::ListApplicationProvidersRequest>
-        Model::ListApplicationProvidersOutcomeCallable ListApplicationProvidersCallable(const ListApplicationProvidersRequestT& request) const
+        Model::ListApplicationProvidersOutcomeCallable ListApplicationProvidersCallable(const ListApplicationProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&SSOAdminClient::ListApplicationProviders, request);
         }
@@ -1457,7 +1457,7 @@ namespace SSOAdmin
          * An Async wrapper for ListApplicationProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationProvidersRequestT = Model::ListApplicationProvidersRequest>
-        void ListApplicationProvidersAsync(const ListApplicationProvidersRequestT& request, const ListApplicationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationProvidersAsync(const ListApplicationProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&SSOAdminClient::ListApplicationProviders, request, handler, context);
         }
@@ -1524,13 +1524,13 @@ namespace SSOAdmin
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
+        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request) const
+        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&SSOAdminClient::ListInstances, request);
         }
@@ -1539,7 +1539,7 @@ namespace SSOAdmin
          * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInstancesRequestT = Model::ListInstancesRequest>
-        void ListInstancesAsync(const ListInstancesRequestT& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInstancesAsync(const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&SSOAdminClient::ListInstances, request, handler, context);
         }

@@ -37,6 +37,11 @@
 #include <aws/detective/model/StartInvestigationResult.h>
 #include <aws/detective/model/TagResourceResult.h>
 #include <aws/detective/model/UntagResourceResult.h>
+#include <aws/detective/model/DisableOrganizationAdminAccountRequest.h>
+#include <aws/detective/model/ListInvitationsRequest.h>
+#include <aws/detective/model/ListGraphsRequest.h>
+#include <aws/detective/model/CreateGraphRequest.h>
+#include <aws/detective/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DetectiveClient header */
 

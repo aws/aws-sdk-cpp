@@ -43,6 +43,9 @@
 #include <aws/backup-gateway/model/UpdateGatewayInformationResult.h>
 #include <aws/backup-gateway/model/UpdateGatewaySoftwareNowResult.h>
 #include <aws/backup-gateway/model/UpdateHypervisorResult.h>
+#include <aws/backup-gateway/model/ListVirtualMachinesRequest.h>
+#include <aws/backup-gateway/model/ListHypervisorsRequest.h>
+#include <aws/backup-gateway/model/ListGatewaysRequest.h>
 /* End of service model headers required in BackupGatewayClient header */
 
 namespace Aws

@@ -45,6 +45,9 @@
 #include <aws/codestar-connections/model/UpdateRepositoryLinkResult.h>
 #include <aws/codestar-connections/model/UpdateSyncBlockerResult.h>
 #include <aws/codestar-connections/model/UpdateSyncConfigurationResult.h>
+#include <aws/codestar-connections/model/ListRepositoryLinksRequest.h>
+#include <aws/codestar-connections/model/ListHostsRequest.h>
+#include <aws/codestar-connections/model/ListConnectionsRequest.h>
 /* End of service model headers required in CodeStarconnectionsClient header */
 
 namespace Aws

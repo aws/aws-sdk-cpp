@@ -170,13 +170,13 @@ namespace ApplicationCostProfiler
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ListReportDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReportDefinitionsOutcome ListReportDefinitions(const Model::ListReportDefinitionsRequest& request) const;
+        virtual Model::ListReportDefinitionsOutcome ListReportDefinitions(const Model::ListReportDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReportDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReportDefinitionsRequestT = Model::ListReportDefinitionsRequest>
-        Model::ListReportDefinitionsOutcomeCallable ListReportDefinitionsCallable(const ListReportDefinitionsRequestT& request) const
+        Model::ListReportDefinitionsOutcomeCallable ListReportDefinitionsCallable(const ListReportDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&ApplicationCostProfilerClient::ListReportDefinitions, request);
         }
@@ -185,7 +185,7 @@ namespace ApplicationCostProfiler
          * An Async wrapper for ListReportDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReportDefinitionsRequestT = Model::ListReportDefinitionsRequest>
-        void ListReportDefinitionsAsync(const ListReportDefinitionsRequestT& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReportDefinitionsAsync(const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReportDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&ApplicationCostProfilerClient::ListReportDefinitions, request, handler, context);
         }

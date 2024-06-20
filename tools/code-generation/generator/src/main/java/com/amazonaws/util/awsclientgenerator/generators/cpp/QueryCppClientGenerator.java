@@ -157,6 +157,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("RequestlessOperations", requestlessOperations);
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());

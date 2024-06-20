@@ -86,6 +86,9 @@
 #include <aws/codecommit/model/UpdatePullRequestStatusResult.h>
 #include <aws/codecommit/model/UpdatePullRequestTitleResult.h>
 #include <aws/codecommit/model/UpdateRepositoryEncryptionKeyResult.h>
+#include <aws/codecommit/model/GetBranchRequest.h>
+#include <aws/codecommit/model/ListRepositoriesRequest.h>
+#include <aws/codecommit/model/ListApprovalRuleTemplatesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CodeCommitClient header */
 

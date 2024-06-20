@@ -1097,13 +1097,13 @@ namespace CleanRooms
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCollaborationsOutcome ListCollaborations(const Model::ListCollaborationsRequest& request) const;
+        virtual Model::ListCollaborationsOutcome ListCollaborations(const Model::ListCollaborationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCollaborations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCollaborationsRequestT = Model::ListCollaborationsRequest>
-        Model::ListCollaborationsOutcomeCallable ListCollaborationsCallable(const ListCollaborationsRequestT& request) const
+        Model::ListCollaborationsOutcomeCallable ListCollaborationsCallable(const ListCollaborationsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsClient::ListCollaborations, request);
         }
@@ -1112,7 +1112,7 @@ namespace CleanRooms
          * An Async wrapper for ListCollaborations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCollaborationsRequestT = Model::ListCollaborationsRequest>
-        void ListCollaborationsAsync(const ListCollaborationsRequestT& request, const ListCollaborationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCollaborationsAsync(const ListCollaborationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCollaborationsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsClient::ListCollaborations, request, handler, context);
         }
@@ -1174,13 +1174,13 @@ namespace CleanRooms
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredTables">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConfiguredTablesOutcome ListConfiguredTables(const Model::ListConfiguredTablesRequest& request) const;
+        virtual Model::ListConfiguredTablesOutcome ListConfiguredTables(const Model::ListConfiguredTablesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConfiguredTables that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConfiguredTablesRequestT = Model::ListConfiguredTablesRequest>
-        Model::ListConfiguredTablesOutcomeCallable ListConfiguredTablesCallable(const ListConfiguredTablesRequestT& request) const
+        Model::ListConfiguredTablesOutcomeCallable ListConfiguredTablesCallable(const ListConfiguredTablesRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsClient::ListConfiguredTables, request);
         }
@@ -1189,7 +1189,7 @@ namespace CleanRooms
          * An Async wrapper for ListConfiguredTables that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConfiguredTablesRequestT = Model::ListConfiguredTablesRequest>
-        void ListConfiguredTablesAsync(const ListConfiguredTablesRequestT& request, const ListConfiguredTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConfiguredTablesAsync(const ListConfiguredTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfiguredTablesRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsClient::ListConfiguredTables, request, handler, context);
         }
@@ -1225,13 +1225,13 @@ namespace CleanRooms
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListMemberships">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMembershipsOutcome ListMemberships(const Model::ListMembershipsRequest& request) const;
+        virtual Model::ListMembershipsOutcome ListMemberships(const Model::ListMembershipsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMembershipsRequestT = Model::ListMembershipsRequest>
-        Model::ListMembershipsOutcomeCallable ListMembershipsCallable(const ListMembershipsRequestT& request) const
+        Model::ListMembershipsOutcomeCallable ListMembershipsCallable(const ListMembershipsRequestT& request = {}) const
         {
             return SubmitCallable(&CleanRoomsClient::ListMemberships, request);
         }
@@ -1240,7 +1240,7 @@ namespace CleanRooms
          * An Async wrapper for ListMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMembershipsRequestT = Model::ListMembershipsRequest>
-        void ListMembershipsAsync(const ListMembershipsRequestT& request, const ListMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMembershipsAsync(const ListMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMembershipsRequestT& request = {}) const
         {
             return SubmitAsync(&CleanRoomsClient::ListMemberships, request, handler, context);
         }

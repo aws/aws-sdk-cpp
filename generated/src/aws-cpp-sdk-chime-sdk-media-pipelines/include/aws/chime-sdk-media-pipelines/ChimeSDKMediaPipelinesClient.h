@@ -517,13 +517,13 @@ namespace ChimeSDKMediaPipelines
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaCapturePipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMediaCapturePipelinesOutcome ListMediaCapturePipelines(const Model::ListMediaCapturePipelinesRequest& request) const;
+        virtual Model::ListMediaCapturePipelinesOutcome ListMediaCapturePipelines(const Model::ListMediaCapturePipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMediaCapturePipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMediaCapturePipelinesRequestT = Model::ListMediaCapturePipelinesRequest>
-        Model::ListMediaCapturePipelinesOutcomeCallable ListMediaCapturePipelinesCallable(const ListMediaCapturePipelinesRequestT& request) const
+        Model::ListMediaCapturePipelinesOutcomeCallable ListMediaCapturePipelinesCallable(const ListMediaCapturePipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines, request);
         }
@@ -532,7 +532,7 @@ namespace ChimeSDKMediaPipelines
          * An Async wrapper for ListMediaCapturePipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMediaCapturePipelinesRequestT = Model::ListMediaCapturePipelinesRequest>
-        void ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequestT& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMediaCapturePipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines, request, handler, context);
         }
@@ -543,13 +543,13 @@ namespace ChimeSDKMediaPipelines
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaInsightsPipelineConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMediaInsightsPipelineConfigurationsOutcome ListMediaInsightsPipelineConfigurations(const Model::ListMediaInsightsPipelineConfigurationsRequest& request) const;
+        virtual Model::ListMediaInsightsPipelineConfigurationsOutcome ListMediaInsightsPipelineConfigurations(const Model::ListMediaInsightsPipelineConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMediaInsightsPipelineConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMediaInsightsPipelineConfigurationsRequestT = Model::ListMediaInsightsPipelineConfigurationsRequest>
-        Model::ListMediaInsightsPipelineConfigurationsOutcomeCallable ListMediaInsightsPipelineConfigurationsCallable(const ListMediaInsightsPipelineConfigurationsRequestT& request) const
+        Model::ListMediaInsightsPipelineConfigurationsOutcomeCallable ListMediaInsightsPipelineConfigurationsCallable(const ListMediaInsightsPipelineConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations, request);
         }
@@ -558,7 +558,7 @@ namespace ChimeSDKMediaPipelines
          * An Async wrapper for ListMediaInsightsPipelineConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMediaInsightsPipelineConfigurationsRequestT = Model::ListMediaInsightsPipelineConfigurationsRequest>
-        void ListMediaInsightsPipelineConfigurationsAsync(const ListMediaInsightsPipelineConfigurationsRequestT& request, const ListMediaInsightsPipelineConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMediaInsightsPipelineConfigurationsAsync(const ListMediaInsightsPipelineConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMediaInsightsPipelineConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations, request, handler, context);
         }
@@ -569,13 +569,13 @@ namespace ChimeSDKMediaPipelines
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMediaPipelineKinesisVideoStreamPoolsOutcome ListMediaPipelineKinesisVideoStreamPools(const Model::ListMediaPipelineKinesisVideoStreamPoolsRequest& request) const;
+        virtual Model::ListMediaPipelineKinesisVideoStreamPoolsOutcome ListMediaPipelineKinesisVideoStreamPools(const Model::ListMediaPipelineKinesisVideoStreamPoolsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMediaPipelineKinesisVideoStreamPools that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMediaPipelineKinesisVideoStreamPoolsRequestT = Model::ListMediaPipelineKinesisVideoStreamPoolsRequest>
-        Model::ListMediaPipelineKinesisVideoStreamPoolsOutcomeCallable ListMediaPipelineKinesisVideoStreamPoolsCallable(const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request) const
+        Model::ListMediaPipelineKinesisVideoStreamPoolsOutcomeCallable ListMediaPipelineKinesisVideoStreamPoolsCallable(const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools, request);
         }
@@ -584,7 +584,7 @@ namespace ChimeSDKMediaPipelines
          * An Async wrapper for ListMediaPipelineKinesisVideoStreamPools that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMediaPipelineKinesisVideoStreamPoolsRequestT = Model::ListMediaPipelineKinesisVideoStreamPoolsRequest>
-        void ListMediaPipelineKinesisVideoStreamPoolsAsync(const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request, const ListMediaPipelineKinesisVideoStreamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMediaPipelineKinesisVideoStreamPoolsAsync(const ListMediaPipelineKinesisVideoStreamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools, request, handler, context);
         }
@@ -594,13 +594,13 @@ namespace ChimeSDKMediaPipelines
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMediaPipelinesOutcome ListMediaPipelines(const Model::ListMediaPipelinesRequest& request) const;
+        virtual Model::ListMediaPipelinesOutcome ListMediaPipelines(const Model::ListMediaPipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMediaPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMediaPipelinesRequestT = Model::ListMediaPipelinesRequest>
-        Model::ListMediaPipelinesOutcomeCallable ListMediaPipelinesCallable(const ListMediaPipelinesRequestT& request) const
+        Model::ListMediaPipelinesOutcomeCallable ListMediaPipelinesCallable(const ListMediaPipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaPipelines, request);
         }
@@ -609,7 +609,7 @@ namespace ChimeSDKMediaPipelines
          * An Async wrapper for ListMediaPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMediaPipelinesRequestT = Model::ListMediaPipelinesRequest>
-        void ListMediaPipelinesAsync(const ListMediaPipelinesRequestT& request, const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMediaPipelinesAsync(const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMediaPipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaPipelines, request, handler, context);
         }

@@ -357,13 +357,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateAccessKeyOutcome CreateAccessKey(const Model::CreateAccessKeyRequest& request) const;
+        virtual Model::CreateAccessKeyOutcome CreateAccessKey(const Model::CreateAccessKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateAccessKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateAccessKeyRequestT = Model::CreateAccessKeyRequest>
-        Model::CreateAccessKeyOutcomeCallable CreateAccessKeyCallable(const CreateAccessKeyRequestT& request) const
+        Model::CreateAccessKeyOutcomeCallable CreateAccessKeyCallable(const CreateAccessKeyRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::CreateAccessKey, request);
         }
@@ -372,7 +372,7 @@ namespace IAM
          * An Async wrapper for CreateAccessKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateAccessKeyRequestT = Model::CreateAccessKeyRequest>
-        void CreateAccessKeyAsync(const CreateAccessKeyRequestT& request, const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateAccessKeyAsync(const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateAccessKeyRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::CreateAccessKey, request, handler, context);
         }
@@ -935,13 +935,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAccountPasswordPolicyOutcome DeleteAccountPasswordPolicy(const Model::DeleteAccountPasswordPolicyRequest& request) const;
+        virtual Model::DeleteAccountPasswordPolicyOutcome DeleteAccountPasswordPolicy(const Model::DeleteAccountPasswordPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAccountPasswordPolicyRequestT = Model::DeleteAccountPasswordPolicyRequest>
-        Model::DeleteAccountPasswordPolicyOutcomeCallable DeleteAccountPasswordPolicyCallable(const DeleteAccountPasswordPolicyRequestT& request) const
+        Model::DeleteAccountPasswordPolicyOutcomeCallable DeleteAccountPasswordPolicyCallable(const DeleteAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::DeleteAccountPasswordPolicy, request);
         }
@@ -950,7 +950,7 @@ namespace IAM
          * An Async wrapper for DeleteAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAccountPasswordPolicyRequestT = Model::DeleteAccountPasswordPolicyRequest>
-        void DeleteAccountPasswordPolicyAsync(const DeleteAccountPasswordPolicyRequestT& request, const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAccountPasswordPolicyAsync(const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::DeleteAccountPasswordPolicy, request, handler, context);
         }
@@ -1741,13 +1741,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateCredentialReportOutcome GenerateCredentialReport(const Model::GenerateCredentialReportRequest& request) const;
+        virtual Model::GenerateCredentialReportOutcome GenerateCredentialReport(const Model::GenerateCredentialReportRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateCredentialReport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateCredentialReportRequestT = Model::GenerateCredentialReportRequest>
-        Model::GenerateCredentialReportOutcomeCallable GenerateCredentialReportCallable(const GenerateCredentialReportRequestT& request) const
+        Model::GenerateCredentialReportOutcomeCallable GenerateCredentialReportCallable(const GenerateCredentialReportRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GenerateCredentialReport, request);
         }
@@ -1756,7 +1756,7 @@ namespace IAM
          * An Async wrapper for GenerateCredentialReport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateCredentialReportRequestT = Model::GenerateCredentialReportRequest>
-        void GenerateCredentialReportAsync(const GenerateCredentialReportRequestT& request, const GenerateCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateCredentialReportAsync(const GenerateCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateCredentialReportRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GenerateCredentialReport, request, handler, context);
         }
@@ -2001,13 +2001,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountAuthorizationDetailsOutcome GetAccountAuthorizationDetails(const Model::GetAccountAuthorizationDetailsRequest& request) const;
+        virtual Model::GetAccountAuthorizationDetailsOutcome GetAccountAuthorizationDetails(const Model::GetAccountAuthorizationDetailsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountAuthorizationDetails that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountAuthorizationDetailsRequestT = Model::GetAccountAuthorizationDetailsRequest>
-        Model::GetAccountAuthorizationDetailsOutcomeCallable GetAccountAuthorizationDetailsCallable(const GetAccountAuthorizationDetailsRequestT& request) const
+        Model::GetAccountAuthorizationDetailsOutcomeCallable GetAccountAuthorizationDetailsCallable(const GetAccountAuthorizationDetailsRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetAccountAuthorizationDetails, request);
         }
@@ -2016,7 +2016,7 @@ namespace IAM
          * An Async wrapper for GetAccountAuthorizationDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountAuthorizationDetailsRequestT = Model::GetAccountAuthorizationDetailsRequest>
-        void GetAccountAuthorizationDetailsAsync(const GetAccountAuthorizationDetailsRequestT& request, const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountAuthorizationDetailsAsync(const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountAuthorizationDetailsRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetAccountAuthorizationDetails, request, handler, context);
         }
@@ -2031,13 +2031,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountPasswordPolicyOutcome GetAccountPasswordPolicy(const Model::GetAccountPasswordPolicyRequest& request) const;
+        virtual Model::GetAccountPasswordPolicyOutcome GetAccountPasswordPolicy(const Model::GetAccountPasswordPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountPasswordPolicyRequestT = Model::GetAccountPasswordPolicyRequest>
-        Model::GetAccountPasswordPolicyOutcomeCallable GetAccountPasswordPolicyCallable(const GetAccountPasswordPolicyRequestT& request) const
+        Model::GetAccountPasswordPolicyOutcomeCallable GetAccountPasswordPolicyCallable(const GetAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetAccountPasswordPolicy, request);
         }
@@ -2046,7 +2046,7 @@ namespace IAM
          * An Async wrapper for GetAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountPasswordPolicyRequestT = Model::GetAccountPasswordPolicyRequest>
-        void GetAccountPasswordPolicyAsync(const GetAccountPasswordPolicyRequestT& request, const GetAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountPasswordPolicyAsync(const GetAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetAccountPasswordPolicy, request, handler, context);
         }
@@ -2059,13 +2059,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSummaryOutcome GetAccountSummary(const Model::GetAccountSummaryRequest& request) const;
+        virtual Model::GetAccountSummaryOutcome GetAccountSummary(const Model::GetAccountSummaryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSummary that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountSummaryRequestT = Model::GetAccountSummaryRequest>
-        Model::GetAccountSummaryOutcomeCallable GetAccountSummaryCallable(const GetAccountSummaryRequestT& request) const
+        Model::GetAccountSummaryOutcomeCallable GetAccountSummaryCallable(const GetAccountSummaryRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetAccountSummary, request);
         }
@@ -2074,7 +2074,7 @@ namespace IAM
          * An Async wrapper for GetAccountSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountSummaryRequestT = Model::GetAccountSummaryRequest>
-        void GetAccountSummaryAsync(const GetAccountSummaryRequestT& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountSummaryAsync(const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSummaryRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetAccountSummary, request, handler, context);
         }
@@ -2163,13 +2163,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCredentialReportOutcome GetCredentialReport(const Model::GetCredentialReportRequest& request) const;
+        virtual Model::GetCredentialReportOutcome GetCredentialReport(const Model::GetCredentialReportRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCredentialReport that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCredentialReportRequestT = Model::GetCredentialReportRequest>
-        Model::GetCredentialReportOutcomeCallable GetCredentialReportCallable(const GetCredentialReportRequestT& request) const
+        Model::GetCredentialReportOutcomeCallable GetCredentialReportCallable(const GetCredentialReportRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetCredentialReport, request);
         }
@@ -2178,7 +2178,7 @@ namespace IAM
          * An Async wrapper for GetCredentialReport that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCredentialReportRequestT = Model::GetCredentialReportRequest>
-        void GetCredentialReportAsync(const GetCredentialReportRequestT& request, const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCredentialReportAsync(const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCredentialReportRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetCredentialReport, request, handler, context);
         }
@@ -2797,13 +2797,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">AWS API
          * Reference</a></p>
          */
-        virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
+        virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetUser that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetUserRequestT = Model::GetUserRequest>
-        Model::GetUserOutcomeCallable GetUserCallable(const GetUserRequestT& request) const
+        Model::GetUserOutcomeCallable GetUserCallable(const GetUserRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetUser, request);
         }
@@ -2812,7 +2812,7 @@ namespace IAM
          * An Async wrapper for GetUser that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetUserRequestT = Model::GetUserRequest>
-        void GetUserAsync(const GetUserRequestT& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetUserAsync(const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetUserRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetUser, request, handler, context);
         }
@@ -2873,13 +2873,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest& request) const;
+        virtual Model::ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccessKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccessKeysRequestT = Model::ListAccessKeysRequest>
-        Model::ListAccessKeysOutcomeCallable ListAccessKeysCallable(const ListAccessKeysRequestT& request) const
+        Model::ListAccessKeysOutcomeCallable ListAccessKeysCallable(const ListAccessKeysRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListAccessKeys, request);
         }
@@ -2888,7 +2888,7 @@ namespace IAM
          * An Async wrapper for ListAccessKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccessKeysRequestT = Model::ListAccessKeysRequest>
-        void ListAccessKeysAsync(const ListAccessKeysRequestT& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccessKeysAsync(const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccessKeysRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListAccessKeys, request, handler, context);
         }
@@ -2903,13 +2903,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountAliasesOutcome ListAccountAliases(const Model::ListAccountAliasesRequest& request) const;
+        virtual Model::ListAccountAliasesOutcome ListAccountAliases(const Model::ListAccountAliasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccountAliases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountAliasesRequestT = Model::ListAccountAliasesRequest>
-        Model::ListAccountAliasesOutcomeCallable ListAccountAliasesCallable(const ListAccountAliasesRequestT& request) const
+        Model::ListAccountAliasesOutcomeCallable ListAccountAliasesCallable(const ListAccountAliasesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListAccountAliases, request);
         }
@@ -2918,7 +2918,7 @@ namespace IAM
          * An Async wrapper for ListAccountAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountAliasesRequestT = Model::ListAccountAliasesRequest>
-        void ListAccountAliasesAsync(const ListAccountAliasesRequestT& request, const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountAliasesAsync(const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListAccountAliases, request, handler, context);
         }
@@ -3099,13 +3099,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
+        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request) const
+        Model::ListGroupsOutcomeCallable ListGroupsCallable(const ListGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListGroups, request);
         }
@@ -3114,7 +3114,7 @@ namespace IAM
          * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGroupsRequestT = Model::ListGroupsRequest>
-        void ListGroupsAsync(const ListGroupsRequestT& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGroupsAsync(const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListGroups, request, handler, context);
         }
@@ -3190,13 +3190,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInstanceProfilesOutcome ListInstanceProfiles(const Model::ListInstanceProfilesRequest& request) const;
+        virtual Model::ListInstanceProfilesOutcome ListInstanceProfiles(const Model::ListInstanceProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInstanceProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInstanceProfilesRequestT = Model::ListInstanceProfilesRequest>
-        Model::ListInstanceProfilesOutcomeCallable ListInstanceProfilesCallable(const ListInstanceProfilesRequestT& request) const
+        Model::ListInstanceProfilesOutcomeCallable ListInstanceProfilesCallable(const ListInstanceProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListInstanceProfiles, request);
         }
@@ -3205,7 +3205,7 @@ namespace IAM
          * An Async wrapper for ListInstanceProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInstanceProfilesRequestT = Model::ListInstanceProfilesRequest>
-        void ListInstanceProfilesAsync(const ListInstanceProfilesRequestT& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInstanceProfilesAsync(const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInstanceProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListInstanceProfiles, request, handler, context);
         }
@@ -3281,13 +3281,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMFADevicesOutcome ListMFADevices(const Model::ListMFADevicesRequest& request) const;
+        virtual Model::ListMFADevicesOutcome ListMFADevices(const Model::ListMFADevicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMFADevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMFADevicesRequestT = Model::ListMFADevicesRequest>
-        Model::ListMFADevicesOutcomeCallable ListMFADevicesCallable(const ListMFADevicesRequestT& request) const
+        Model::ListMFADevicesOutcomeCallable ListMFADevicesCallable(const ListMFADevicesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListMFADevices, request);
         }
@@ -3296,7 +3296,7 @@ namespace IAM
          * An Async wrapper for ListMFADevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMFADevicesRequestT = Model::ListMFADevicesRequest>
-        void ListMFADevicesAsync(const ListMFADevicesRequestT& request, const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMFADevicesAsync(const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMFADevicesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListMFADevices, request, handler, context);
         }
@@ -3343,13 +3343,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOpenIDConnectProvidersOutcome ListOpenIDConnectProviders(const Model::ListOpenIDConnectProvidersRequest& request) const;
+        virtual Model::ListOpenIDConnectProvidersOutcome ListOpenIDConnectProviders(const Model::ListOpenIDConnectProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOpenIDConnectProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOpenIDConnectProvidersRequestT = Model::ListOpenIDConnectProvidersRequest>
-        Model::ListOpenIDConnectProvidersOutcomeCallable ListOpenIDConnectProvidersCallable(const ListOpenIDConnectProvidersRequestT& request) const
+        Model::ListOpenIDConnectProvidersOutcomeCallable ListOpenIDConnectProvidersCallable(const ListOpenIDConnectProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListOpenIDConnectProviders, request);
         }
@@ -3358,7 +3358,7 @@ namespace IAM
          * An Async wrapper for ListOpenIDConnectProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOpenIDConnectProvidersRequestT = Model::ListOpenIDConnectProvidersRequest>
-        void ListOpenIDConnectProvidersAsync(const ListOpenIDConnectProvidersRequestT& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOpenIDConnectProvidersAsync(const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOpenIDConnectProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListOpenIDConnectProviders, request, handler, context);
         }
@@ -3383,13 +3383,13 @@ namespace IAM
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
+        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request) const
+        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListPolicies, request);
         }
@@ -3398,7 +3398,7 @@ namespace IAM
          * An Async wrapper for ListPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        void ListPoliciesAsync(const ListPoliciesRequestT& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPoliciesAsync(const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListPolicies, request, handler, context);
         }
@@ -3590,13 +3590,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListRolesOutcome ListRoles(const Model::ListRolesRequest& request) const;
+        virtual Model::ListRolesOutcome ListRoles(const Model::ListRolesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRoles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRolesRequestT = Model::ListRolesRequest>
-        Model::ListRolesOutcomeCallable ListRolesCallable(const ListRolesRequestT& request) const
+        Model::ListRolesOutcomeCallable ListRolesCallable(const ListRolesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListRoles, request);
         }
@@ -3605,7 +3605,7 @@ namespace IAM
          * An Async wrapper for ListRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRolesRequestT = Model::ListRolesRequest>
-        void ListRolesAsync(const ListRolesRequestT& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRolesAsync(const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRolesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListRoles, request, handler, context);
         }
@@ -3653,13 +3653,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSAMLProvidersOutcome ListSAMLProviders(const Model::ListSAMLProvidersRequest& request) const;
+        virtual Model::ListSAMLProvidersOutcome ListSAMLProviders(const Model::ListSAMLProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSAMLProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSAMLProvidersRequestT = Model::ListSAMLProvidersRequest>
-        Model::ListSAMLProvidersOutcomeCallable ListSAMLProvidersCallable(const ListSAMLProvidersRequestT& request) const
+        Model::ListSAMLProvidersOutcomeCallable ListSAMLProvidersCallable(const ListSAMLProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListSAMLProviders, request);
         }
@@ -3668,7 +3668,7 @@ namespace IAM
          * An Async wrapper for ListSAMLProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSAMLProvidersRequestT = Model::ListSAMLProvidersRequest>
-        void ListSAMLProvidersAsync(const ListSAMLProvidersRequestT& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSAMLProvidersAsync(const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSAMLProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListSAMLProviders, request, handler, context);
         }
@@ -3687,13 +3687,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSSHPublicKeysOutcome ListSSHPublicKeys(const Model::ListSSHPublicKeysRequest& request) const;
+        virtual Model::ListSSHPublicKeysOutcome ListSSHPublicKeys(const Model::ListSSHPublicKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSSHPublicKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSSHPublicKeysRequestT = Model::ListSSHPublicKeysRequest>
-        Model::ListSSHPublicKeysOutcomeCallable ListSSHPublicKeysCallable(const ListSSHPublicKeysRequestT& request) const
+        Model::ListSSHPublicKeysOutcomeCallable ListSSHPublicKeysCallable(const ListSSHPublicKeysRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListSSHPublicKeys, request);
         }
@@ -3702,7 +3702,7 @@ namespace IAM
          * An Async wrapper for ListSSHPublicKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSSHPublicKeysRequestT = Model::ListSSHPublicKeysRequest>
-        void ListSSHPublicKeysAsync(const ListSSHPublicKeysRequestT& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSSHPublicKeysAsync(const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSSHPublicKeysRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListSSHPublicKeys, request, handler, context);
         }
@@ -3759,13 +3759,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServerCertificatesOutcome ListServerCertificates(const Model::ListServerCertificatesRequest& request) const;
+        virtual Model::ListServerCertificatesOutcome ListServerCertificates(const Model::ListServerCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServerCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServerCertificatesRequestT = Model::ListServerCertificatesRequest>
-        Model::ListServerCertificatesOutcomeCallable ListServerCertificatesCallable(const ListServerCertificatesRequestT& request) const
+        Model::ListServerCertificatesOutcomeCallable ListServerCertificatesCallable(const ListServerCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListServerCertificates, request);
         }
@@ -3774,7 +3774,7 @@ namespace IAM
          * An Async wrapper for ListServerCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServerCertificatesRequestT = Model::ListServerCertificatesRequest>
-        void ListServerCertificatesAsync(const ListServerCertificatesRequestT& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServerCertificatesAsync(const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServerCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListServerCertificates, request, handler, context);
         }
@@ -3792,13 +3792,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceSpecificCredentialsOutcome ListServiceSpecificCredentials(const Model::ListServiceSpecificCredentialsRequest& request) const;
+        virtual Model::ListServiceSpecificCredentialsOutcome ListServiceSpecificCredentials(const Model::ListServiceSpecificCredentialsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceSpecificCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceSpecificCredentialsRequestT = Model::ListServiceSpecificCredentialsRequest>
-        Model::ListServiceSpecificCredentialsOutcomeCallable ListServiceSpecificCredentialsCallable(const ListServiceSpecificCredentialsRequestT& request) const
+        Model::ListServiceSpecificCredentialsOutcomeCallable ListServiceSpecificCredentialsCallable(const ListServiceSpecificCredentialsRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListServiceSpecificCredentials, request);
         }
@@ -3807,7 +3807,7 @@ namespace IAM
          * An Async wrapper for ListServiceSpecificCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceSpecificCredentialsRequestT = Model::ListServiceSpecificCredentialsRequest>
-        void ListServiceSpecificCredentialsAsync(const ListServiceSpecificCredentialsRequestT& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceSpecificCredentialsAsync(const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceSpecificCredentialsRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListServiceSpecificCredentials, request, handler, context);
         }
@@ -3827,13 +3827,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSigningCertificatesOutcome ListSigningCertificates(const Model::ListSigningCertificatesRequest& request) const;
+        virtual Model::ListSigningCertificatesOutcome ListSigningCertificates(const Model::ListSigningCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSigningCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSigningCertificatesRequestT = Model::ListSigningCertificatesRequest>
-        Model::ListSigningCertificatesOutcomeCallable ListSigningCertificatesCallable(const ListSigningCertificatesRequestT& request) const
+        Model::ListSigningCertificatesOutcomeCallable ListSigningCertificatesCallable(const ListSigningCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListSigningCertificates, request);
         }
@@ -3842,7 +3842,7 @@ namespace IAM
          * An Async wrapper for ListSigningCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSigningCertificatesRequestT = Model::ListSigningCertificatesRequest>
-        void ListSigningCertificatesAsync(const ListSigningCertificatesRequestT& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSigningCertificatesAsync(const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSigningCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListSigningCertificates, request, handler, context);
         }
@@ -3922,13 +3922,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
+        virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUsersRequestT = Model::ListUsersRequest>
-        Model::ListUsersOutcomeCallable ListUsersCallable(const ListUsersRequestT& request) const
+        Model::ListUsersOutcomeCallable ListUsersCallable(const ListUsersRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListUsers, request);
         }
@@ -3937,7 +3937,7 @@ namespace IAM
          * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUsersRequestT = Model::ListUsersRequest>
-        void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUsersAsync(const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUsersRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListUsers, request, handler, context);
         }
@@ -3956,13 +3956,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVirtualMFADevicesOutcome ListVirtualMFADevices(const Model::ListVirtualMFADevicesRequest& request) const;
+        virtual Model::ListVirtualMFADevicesOutcome ListVirtualMFADevices(const Model::ListVirtualMFADevicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVirtualMFADevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVirtualMFADevicesRequestT = Model::ListVirtualMFADevicesRequest>
-        Model::ListVirtualMFADevicesOutcomeCallable ListVirtualMFADevicesCallable(const ListVirtualMFADevicesRequestT& request) const
+        Model::ListVirtualMFADevicesOutcomeCallable ListVirtualMFADevicesCallable(const ListVirtualMFADevicesRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::ListVirtualMFADevices, request);
         }
@@ -3971,7 +3971,7 @@ namespace IAM
          * An Async wrapper for ListVirtualMFADevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVirtualMFADevicesRequestT = Model::ListVirtualMFADevicesRequest>
-        void ListVirtualMFADevicesAsync(const ListVirtualMFADevicesRequestT& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVirtualMFADevicesAsync(const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVirtualMFADevicesRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::ListVirtualMFADevices, request, handler, context);
         }
@@ -5207,13 +5207,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountPasswordPolicyOutcome UpdateAccountPasswordPolicy(const Model::UpdateAccountPasswordPolicyRequest& request) const;
+        virtual Model::UpdateAccountPasswordPolicyOutcome UpdateAccountPasswordPolicy(const Model::UpdateAccountPasswordPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountPasswordPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountPasswordPolicyRequestT = Model::UpdateAccountPasswordPolicyRequest>
-        Model::UpdateAccountPasswordPolicyOutcomeCallable UpdateAccountPasswordPolicyCallable(const UpdateAccountPasswordPolicyRequestT& request) const
+        Model::UpdateAccountPasswordPolicyOutcomeCallable UpdateAccountPasswordPolicyCallable(const UpdateAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::UpdateAccountPasswordPolicy, request);
         }
@@ -5222,7 +5222,7 @@ namespace IAM
          * An Async wrapper for UpdateAccountPasswordPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountPasswordPolicyRequestT = Model::UpdateAccountPasswordPolicyRequest>
-        void UpdateAccountPasswordPolicyAsync(const UpdateAccountPasswordPolicyRequestT& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountPasswordPolicyAsync(const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountPasswordPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::UpdateAccountPasswordPolicy, request, handler, context);
         }

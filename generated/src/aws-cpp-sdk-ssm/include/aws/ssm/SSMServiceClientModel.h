@@ -158,6 +158,35 @@
 #include <aws/ssm/model/UpdatePatchBaselineResult.h>
 #include <aws/ssm/model/UpdateResourceDataSyncResult.h>
 #include <aws/ssm/model/UpdateServiceSettingResult.h>
+#include <aws/ssm/model/DescribeAutomationExecutionsRequest.h>
+#include <aws/ssm/model/GetInventorySchemaRequest.h>
+#include <aws/ssm/model/GetInventoryRequest.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowScheduleRequest.h>
+#include <aws/ssm/model/DescribePatchGroupsRequest.h>
+#include <aws/ssm/model/DeleteAssociationRequest.h>
+#include <aws/ssm/model/ListOpsMetadataRequest.h>
+#include <aws/ssm/model/ListComplianceItemsRequest.h>
+#include <aws/ssm/model/DescribeAvailablePatchesRequest.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowsRequest.h>
+#include <aws/ssm/model/ListOpsItemRelatedItemsRequest.h>
+#include <aws/ssm/model/ListAssociationsRequest.h>
+#include <aws/ssm/model/ListCommandsRequest.h>
+#include <aws/ssm/model/GetDefaultPatchBaselineRequest.h>
+#include <aws/ssm/model/DescribeInventoryDeletionsRequest.h>
+#include <aws/ssm/model/DescribeInstanceInformationRequest.h>
+#include <aws/ssm/model/GetOpsSummaryRequest.h>
+#include <aws/ssm/model/ListResourceDataSyncRequest.h>
+#include <aws/ssm/model/DescribeOpsItemsRequest.h>
+#include <aws/ssm/model/DescribePatchBaselinesRequest.h>
+#include <aws/ssm/model/ListDocumentsRequest.h>
+#include <aws/ssm/model/DescribeActivationsRequest.h>
+#include <aws/ssm/model/DescribeAssociationRequest.h>
+#include <aws/ssm/model/ListCommandInvocationsRequest.h>
+#include <aws/ssm/model/ListOpsItemEventsRequest.h>
+#include <aws/ssm/model/ListResourceComplianceSummariesRequest.h>
+#include <aws/ssm/model/DescribeParametersRequest.h>
+#include <aws/ssm/model/ListComplianceSummariesRequest.h>
+#include <aws/ssm/model/DescribeInstancePropertiesRequest.h>
 /* End of service model headers required in SSMClient header */
 
 namespace Aws

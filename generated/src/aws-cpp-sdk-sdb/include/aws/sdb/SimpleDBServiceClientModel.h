@@ -22,6 +22,7 @@
 #include <aws/sdb/model/GetAttributesResult.h>
 #include <aws/sdb/model/ListDomainsResult.h>
 #include <aws/sdb/model/SelectResult.h>
+#include <aws/sdb/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SimpleDBClient header */
 

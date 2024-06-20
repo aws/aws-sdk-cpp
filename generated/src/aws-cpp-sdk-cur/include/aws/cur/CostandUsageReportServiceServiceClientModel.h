@@ -25,6 +25,7 @@
 #include <aws/cur/model/PutReportDefinitionResult.h>
 #include <aws/cur/model/TagResourceResult.h>
 #include <aws/cur/model/UntagResourceResult.h>
+#include <aws/cur/model/DescribeReportDefinitionsRequest.h>
 /* End of service model headers required in CostandUsageReportServiceClient header */
 
 namespace Aws

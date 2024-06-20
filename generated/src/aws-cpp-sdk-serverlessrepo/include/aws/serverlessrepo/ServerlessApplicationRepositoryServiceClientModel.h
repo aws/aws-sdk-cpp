@@ -30,6 +30,7 @@
 #include <aws/serverlessrepo/model/ListApplicationsResult.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyResult.h>
 #include <aws/serverlessrepo/model/UpdateApplicationResult.h>
+#include <aws/serverlessrepo/model/ListApplicationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ServerlessApplicationRepositoryClient header */
 

@@ -486,13 +486,13 @@ namespace Rekognition
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateFaceLivenessSessionOutcome CreateFaceLivenessSession(const Model::CreateFaceLivenessSessionRequest& request) const;
+        virtual Model::CreateFaceLivenessSessionOutcome CreateFaceLivenessSession(const Model::CreateFaceLivenessSessionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateFaceLivenessSession that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateFaceLivenessSessionRequestT = Model::CreateFaceLivenessSessionRequest>
-        Model::CreateFaceLivenessSessionOutcomeCallable CreateFaceLivenessSessionCallable(const CreateFaceLivenessSessionRequestT& request) const
+        Model::CreateFaceLivenessSessionOutcomeCallable CreateFaceLivenessSessionCallable(const CreateFaceLivenessSessionRequestT& request = {}) const
         {
             return SubmitCallable(&RekognitionClient::CreateFaceLivenessSession, request);
         }
@@ -501,7 +501,7 @@ namespace Rekognition
          * An Async wrapper for CreateFaceLivenessSession that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateFaceLivenessSessionRequestT = Model::CreateFaceLivenessSessionRequest>
-        void CreateFaceLivenessSessionAsync(const CreateFaceLivenessSessionRequestT& request, const CreateFaceLivenessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateFaceLivenessSessionAsync(const CreateFaceLivenessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateFaceLivenessSessionRequestT& request = {}) const
         {
             return SubmitAsync(&RekognitionClient::CreateFaceLivenessSession, request, handler, context);
         }
@@ -1016,13 +1016,13 @@ namespace Rekognition
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest& request) const;
+        virtual Model::DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProjectsRequestT = Model::DescribeProjectsRequest>
-        Model::DescribeProjectsOutcomeCallable DescribeProjectsCallable(const DescribeProjectsRequestT& request) const
+        Model::DescribeProjectsOutcomeCallable DescribeProjectsCallable(const DescribeProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&RekognitionClient::DescribeProjects, request);
         }
@@ -1031,7 +1031,7 @@ namespace Rekognition
          * An Async wrapper for DescribeProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProjectsRequestT = Model::DescribeProjectsRequest>
-        void DescribeProjectsAsync(const DescribeProjectsRequestT& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProjectsAsync(const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&RekognitionClient::DescribeProjects, request, handler, context);
         }
@@ -2109,13 +2109,13 @@ namespace Rekognition
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCollectionsOutcome ListCollections(const Model::ListCollectionsRequest& request) const;
+        virtual Model::ListCollectionsOutcome ListCollections(const Model::ListCollectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCollections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCollectionsRequestT = Model::ListCollectionsRequest>
-        Model::ListCollectionsOutcomeCallable ListCollectionsCallable(const ListCollectionsRequestT& request) const
+        Model::ListCollectionsOutcomeCallable ListCollectionsCallable(const ListCollectionsRequestT& request = {}) const
         {
             return SubmitCallable(&RekognitionClient::ListCollections, request);
         }
@@ -2124,7 +2124,7 @@ namespace Rekognition
          * An Async wrapper for ListCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCollectionsRequestT = Model::ListCollectionsRequest>
-        void ListCollectionsAsync(const ListCollectionsRequestT& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCollectionsAsync(const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCollectionsRequestT& request = {}) const
         {
             return SubmitAsync(&RekognitionClient::ListCollections, request, handler, context);
         }
@@ -2237,13 +2237,13 @@ namespace Rekognition
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMediaAnalysisJobsOutcome ListMediaAnalysisJobs(const Model::ListMediaAnalysisJobsRequest& request) const;
+        virtual Model::ListMediaAnalysisJobsOutcome ListMediaAnalysisJobs(const Model::ListMediaAnalysisJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMediaAnalysisJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
-        Model::ListMediaAnalysisJobsOutcomeCallable ListMediaAnalysisJobsCallable(const ListMediaAnalysisJobsRequestT& request) const
+        Model::ListMediaAnalysisJobsOutcomeCallable ListMediaAnalysisJobsCallable(const ListMediaAnalysisJobsRequestT& request = {}) const
         {
             return SubmitCallable(&RekognitionClient::ListMediaAnalysisJobs, request);
         }
@@ -2252,7 +2252,7 @@ namespace Rekognition
          * An Async wrapper for ListMediaAnalysisJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMediaAnalysisJobsRequestT = Model::ListMediaAnalysisJobsRequest>
-        void ListMediaAnalysisJobsAsync(const ListMediaAnalysisJobsRequestT& request, const ListMediaAnalysisJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMediaAnalysisJobsAsync(const ListMediaAnalysisJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMediaAnalysisJobsRequestT& request = {}) const
         {
             return SubmitAsync(&RekognitionClient::ListMediaAnalysisJobs, request, handler, context);
         }
@@ -2294,13 +2294,13 @@ namespace Rekognition
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStreamProcessorsOutcome ListStreamProcessors(const Model::ListStreamProcessorsRequest& request) const;
+        virtual Model::ListStreamProcessorsOutcome ListStreamProcessors(const Model::ListStreamProcessorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStreamProcessors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStreamProcessorsRequestT = Model::ListStreamProcessorsRequest>
-        Model::ListStreamProcessorsOutcomeCallable ListStreamProcessorsCallable(const ListStreamProcessorsRequestT& request) const
+        Model::ListStreamProcessorsOutcomeCallable ListStreamProcessorsCallable(const ListStreamProcessorsRequestT& request = {}) const
         {
             return SubmitCallable(&RekognitionClient::ListStreamProcessors, request);
         }
@@ -2309,7 +2309,7 @@ namespace Rekognition
          * An Async wrapper for ListStreamProcessors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStreamProcessorsRequestT = Model::ListStreamProcessorsRequest>
-        void ListStreamProcessorsAsync(const ListStreamProcessorsRequestT& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStreamProcessorsAsync(const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStreamProcessorsRequestT& request = {}) const
         {
             return SubmitAsync(&RekognitionClient::ListStreamProcessors, request, handler, context);
         }

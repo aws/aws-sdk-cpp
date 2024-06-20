@@ -82,13 +82,13 @@ namespace LicenseManagerLinuxSubscriptions
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetServiceSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetServiceSettingsOutcome GetServiceSettings(const Model::GetServiceSettingsRequest& request) const;
+        virtual Model::GetServiceSettingsOutcome GetServiceSettings(const Model::GetServiceSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetServiceSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetServiceSettingsRequestT = Model::GetServiceSettingsRequest>
-        Model::GetServiceSettingsOutcomeCallable GetServiceSettingsCallable(const GetServiceSettingsRequestT& request) const
+        Model::GetServiceSettingsOutcomeCallable GetServiceSettingsCallable(const GetServiceSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerLinuxSubscriptionsClient::GetServiceSettings, request);
         }
@@ -97,7 +97,7 @@ namespace LicenseManagerLinuxSubscriptions
          * An Async wrapper for GetServiceSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetServiceSettingsRequestT = Model::GetServiceSettingsRequest>
-        void GetServiceSettingsAsync(const GetServiceSettingsRequestT& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetServiceSettingsAsync(const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetServiceSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerLinuxSubscriptionsClient::GetServiceSettings, request, handler, context);
         }
@@ -108,13 +108,13 @@ namespace LicenseManagerLinuxSubscriptions
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptionInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLinuxSubscriptionInstancesOutcome ListLinuxSubscriptionInstances(const Model::ListLinuxSubscriptionInstancesRequest& request) const;
+        virtual Model::ListLinuxSubscriptionInstancesOutcome ListLinuxSubscriptionInstances(const Model::ListLinuxSubscriptionInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLinuxSubscriptionInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLinuxSubscriptionInstancesRequestT = Model::ListLinuxSubscriptionInstancesRequest>
-        Model::ListLinuxSubscriptionInstancesOutcomeCallable ListLinuxSubscriptionInstancesCallable(const ListLinuxSubscriptionInstancesRequestT& request) const
+        Model::ListLinuxSubscriptionInstancesOutcomeCallable ListLinuxSubscriptionInstancesCallable(const ListLinuxSubscriptionInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptionInstances, request);
         }
@@ -123,7 +123,7 @@ namespace LicenseManagerLinuxSubscriptions
          * An Async wrapper for ListLinuxSubscriptionInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLinuxSubscriptionInstancesRequestT = Model::ListLinuxSubscriptionInstancesRequest>
-        void ListLinuxSubscriptionInstancesAsync(const ListLinuxSubscriptionInstancesRequestT& request, const ListLinuxSubscriptionInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLinuxSubscriptionInstancesAsync(const ListLinuxSubscriptionInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLinuxSubscriptionInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptionInstances, request, handler, context);
         }
@@ -135,13 +135,13 @@ namespace LicenseManagerLinuxSubscriptions
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLinuxSubscriptionsOutcome ListLinuxSubscriptions(const Model::ListLinuxSubscriptionsRequest& request) const;
+        virtual Model::ListLinuxSubscriptionsOutcome ListLinuxSubscriptions(const Model::ListLinuxSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLinuxSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLinuxSubscriptionsRequestT = Model::ListLinuxSubscriptionsRequest>
-        Model::ListLinuxSubscriptionsOutcomeCallable ListLinuxSubscriptionsCallable(const ListLinuxSubscriptionsRequestT& request) const
+        Model::ListLinuxSubscriptionsOutcomeCallable ListLinuxSubscriptionsCallable(const ListLinuxSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptions, request);
         }
@@ -150,7 +150,7 @@ namespace LicenseManagerLinuxSubscriptions
          * An Async wrapper for ListLinuxSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLinuxSubscriptionsRequestT = Model::ListLinuxSubscriptionsRequest>
-        void ListLinuxSubscriptionsAsync(const ListLinuxSubscriptionsRequestT& request, const ListLinuxSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLinuxSubscriptionsAsync(const ListLinuxSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLinuxSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptions, request, handler, context);
         }

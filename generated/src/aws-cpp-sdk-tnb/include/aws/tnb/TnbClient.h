@@ -123,13 +123,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolFunctionPackage">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateSolFunctionPackageOutcome CreateSolFunctionPackage(const Model::CreateSolFunctionPackageRequest& request) const;
+        virtual Model::CreateSolFunctionPackageOutcome CreateSolFunctionPackage(const Model::CreateSolFunctionPackageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateSolFunctionPackage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateSolFunctionPackageRequestT = Model::CreateSolFunctionPackageRequest>
-        Model::CreateSolFunctionPackageOutcomeCallable CreateSolFunctionPackageCallable(const CreateSolFunctionPackageRequestT& request) const
+        Model::CreateSolFunctionPackageOutcomeCallable CreateSolFunctionPackageCallable(const CreateSolFunctionPackageRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::CreateSolFunctionPackage, request);
         }
@@ -138,7 +138,7 @@ namespace tnb
          * An Async wrapper for CreateSolFunctionPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateSolFunctionPackageRequestT = Model::CreateSolFunctionPackageRequest>
-        void CreateSolFunctionPackageAsync(const CreateSolFunctionPackageRequestT& request, const CreateSolFunctionPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateSolFunctionPackageAsync(const CreateSolFunctionPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSolFunctionPackageRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::CreateSolFunctionPackage, request, handler, context);
         }
@@ -197,13 +197,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkPackage">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateSolNetworkPackageOutcome CreateSolNetworkPackage(const Model::CreateSolNetworkPackageRequest& request) const;
+        virtual Model::CreateSolNetworkPackageOutcome CreateSolNetworkPackage(const Model::CreateSolNetworkPackageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateSolNetworkPackage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateSolNetworkPackageRequestT = Model::CreateSolNetworkPackageRequest>
-        Model::CreateSolNetworkPackageOutcomeCallable CreateSolNetworkPackageCallable(const CreateSolNetworkPackageRequestT& request) const
+        Model::CreateSolNetworkPackageOutcomeCallable CreateSolNetworkPackageCallable(const CreateSolNetworkPackageRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::CreateSolNetworkPackage, request);
         }
@@ -212,7 +212,7 @@ namespace tnb
          * An Async wrapper for CreateSolNetworkPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateSolNetworkPackageRequestT = Model::CreateSolNetworkPackageRequest>
-        void CreateSolNetworkPackageAsync(const CreateSolNetworkPackageRequestT& request, const CreateSolNetworkPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateSolNetworkPackageAsync(const CreateSolNetworkPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateSolNetworkPackageRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::CreateSolNetworkPackage, request, handler, context);
         }
@@ -608,13 +608,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolFunctionInstancesOutcome ListSolFunctionInstances(const Model::ListSolFunctionInstancesRequest& request) const;
+        virtual Model::ListSolFunctionInstancesOutcome ListSolFunctionInstances(const Model::ListSolFunctionInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolFunctionInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolFunctionInstancesRequestT = Model::ListSolFunctionInstancesRequest>
-        Model::ListSolFunctionInstancesOutcomeCallable ListSolFunctionInstancesCallable(const ListSolFunctionInstancesRequestT& request) const
+        Model::ListSolFunctionInstancesOutcomeCallable ListSolFunctionInstancesCallable(const ListSolFunctionInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::ListSolFunctionInstances, request);
         }
@@ -623,7 +623,7 @@ namespace tnb
          * An Async wrapper for ListSolFunctionInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolFunctionInstancesRequestT = Model::ListSolFunctionInstancesRequest>
-        void ListSolFunctionInstancesAsync(const ListSolFunctionInstancesRequestT& request, const ListSolFunctionInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolFunctionInstancesAsync(const ListSolFunctionInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolFunctionInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::ListSolFunctionInstances, request, handler, context);
         }
@@ -637,13 +637,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionPackages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolFunctionPackagesOutcome ListSolFunctionPackages(const Model::ListSolFunctionPackagesRequest& request) const;
+        virtual Model::ListSolFunctionPackagesOutcome ListSolFunctionPackages(const Model::ListSolFunctionPackagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolFunctionPackages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolFunctionPackagesRequestT = Model::ListSolFunctionPackagesRequest>
-        Model::ListSolFunctionPackagesOutcomeCallable ListSolFunctionPackagesCallable(const ListSolFunctionPackagesRequestT& request) const
+        Model::ListSolFunctionPackagesOutcomeCallable ListSolFunctionPackagesCallable(const ListSolFunctionPackagesRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::ListSolFunctionPackages, request);
         }
@@ -652,7 +652,7 @@ namespace tnb
          * An Async wrapper for ListSolFunctionPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolFunctionPackagesRequestT = Model::ListSolFunctionPackagesRequest>
-        void ListSolFunctionPackagesAsync(const ListSolFunctionPackagesRequestT& request, const ListSolFunctionPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolFunctionPackagesAsync(const ListSolFunctionPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolFunctionPackagesRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::ListSolFunctionPackages, request, handler, context);
         }
@@ -665,13 +665,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolNetworkInstancesOutcome ListSolNetworkInstances(const Model::ListSolNetworkInstancesRequest& request) const;
+        virtual Model::ListSolNetworkInstancesOutcome ListSolNetworkInstances(const Model::ListSolNetworkInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolNetworkInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolNetworkInstancesRequestT = Model::ListSolNetworkInstancesRequest>
-        Model::ListSolNetworkInstancesOutcomeCallable ListSolNetworkInstancesCallable(const ListSolNetworkInstancesRequestT& request) const
+        Model::ListSolNetworkInstancesOutcomeCallable ListSolNetworkInstancesCallable(const ListSolNetworkInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::ListSolNetworkInstances, request);
         }
@@ -680,7 +680,7 @@ namespace tnb
          * An Async wrapper for ListSolNetworkInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolNetworkInstancesRequestT = Model::ListSolNetworkInstancesRequest>
-        void ListSolNetworkInstancesAsync(const ListSolNetworkInstancesRequestT& request, const ListSolNetworkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolNetworkInstancesAsync(const ListSolNetworkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolNetworkInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::ListSolNetworkInstances, request, handler, context);
         }
@@ -693,13 +693,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkOperations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolNetworkOperationsOutcome ListSolNetworkOperations(const Model::ListSolNetworkOperationsRequest& request) const;
+        virtual Model::ListSolNetworkOperationsOutcome ListSolNetworkOperations(const Model::ListSolNetworkOperationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolNetworkOperations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolNetworkOperationsRequestT = Model::ListSolNetworkOperationsRequest>
-        Model::ListSolNetworkOperationsOutcomeCallable ListSolNetworkOperationsCallable(const ListSolNetworkOperationsRequestT& request) const
+        Model::ListSolNetworkOperationsOutcomeCallable ListSolNetworkOperationsCallable(const ListSolNetworkOperationsRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::ListSolNetworkOperations, request);
         }
@@ -708,7 +708,7 @@ namespace tnb
          * An Async wrapper for ListSolNetworkOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolNetworkOperationsRequestT = Model::ListSolNetworkOperationsRequest>
-        void ListSolNetworkOperationsAsync(const ListSolNetworkOperationsRequestT& request, const ListSolNetworkOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolNetworkOperationsAsync(const ListSolNetworkOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolNetworkOperationsRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::ListSolNetworkOperations, request, handler, context);
         }
@@ -721,13 +721,13 @@ namespace tnb
          * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkPackages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolNetworkPackagesOutcome ListSolNetworkPackages(const Model::ListSolNetworkPackagesRequest& request) const;
+        virtual Model::ListSolNetworkPackagesOutcome ListSolNetworkPackages(const Model::ListSolNetworkPackagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolNetworkPackages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolNetworkPackagesRequestT = Model::ListSolNetworkPackagesRequest>
-        Model::ListSolNetworkPackagesOutcomeCallable ListSolNetworkPackagesCallable(const ListSolNetworkPackagesRequestT& request) const
+        Model::ListSolNetworkPackagesOutcomeCallable ListSolNetworkPackagesCallable(const ListSolNetworkPackagesRequestT& request = {}) const
         {
             return SubmitCallable(&TnbClient::ListSolNetworkPackages, request);
         }
@@ -736,7 +736,7 @@ namespace tnb
          * An Async wrapper for ListSolNetworkPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolNetworkPackagesRequestT = Model::ListSolNetworkPackagesRequest>
-        void ListSolNetworkPackagesAsync(const ListSolNetworkPackagesRequestT& request, const ListSolNetworkPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolNetworkPackagesAsync(const ListSolNetworkPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolNetworkPackagesRequestT& request = {}) const
         {
             return SubmitAsync(&TnbClient::ListSolNetworkPackages, request, handler, context);
         }

@@ -28,6 +28,10 @@
 #include <aws/support-app/model/PutAccountAliasResult.h>
 #include <aws/support-app/model/RegisterSlackWorkspaceForOrganizationResult.h>
 #include <aws/support-app/model/UpdateSlackChannelConfigurationResult.h>
+#include <aws/support-app/model/DeleteAccountAliasRequest.h>
+#include <aws/support-app/model/GetAccountAliasRequest.h>
+#include <aws/support-app/model/ListSlackChannelConfigurationsRequest.h>
+#include <aws/support-app/model/ListSlackWorkspaceConfigurationsRequest.h>
 /* End of service model headers required in SupportAppClient header */
 
 namespace Aws

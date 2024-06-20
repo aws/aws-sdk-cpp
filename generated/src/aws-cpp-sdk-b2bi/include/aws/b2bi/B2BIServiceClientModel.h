@@ -39,6 +39,10 @@
 #include <aws/b2bi/model/UpdatePartnershipResult.h>
 #include <aws/b2bi/model/UpdateProfileResult.h>
 #include <aws/b2bi/model/UpdateTransformerResult.h>
+#include <aws/b2bi/model/ListTransformersRequest.h>
+#include <aws/b2bi/model/ListCapabilitiesRequest.h>
+#include <aws/b2bi/model/ListPartnershipsRequest.h>
+#include <aws/b2bi/model/ListProfilesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in B2BIClient header */
 

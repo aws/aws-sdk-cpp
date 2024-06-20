@@ -73,6 +73,18 @@
 #include <aws/redshift-serverless/model/UpdateSnapshotCopyConfigurationResult.h>
 #include <aws/redshift-serverless/model/UpdateUsageLimitResult.h>
 #include <aws/redshift-serverless/model/UpdateWorkgroupResult.h>
+#include <aws/redshift-serverless/model/GetCredentialsRequest.h>
+#include <aws/redshift-serverless/model/ListWorkgroupsRequest.h>
+#include <aws/redshift-serverless/model/ListUsageLimitsRequest.h>
+#include <aws/redshift-serverless/model/ListCustomDomainAssociationsRequest.h>
+#include <aws/redshift-serverless/model/GetSnapshotRequest.h>
+#include <aws/redshift-serverless/model/ListTableRestoreStatusRequest.h>
+#include <aws/redshift-serverless/model/ListEndpointAccessRequest.h>
+#include <aws/redshift-serverless/model/ListSnapshotsRequest.h>
+#include <aws/redshift-serverless/model/ListNamespacesRequest.h>
+#include <aws/redshift-serverless/model/ListSnapshotCopyConfigurationsRequest.h>
+#include <aws/redshift-serverless/model/ListScheduledActionsRequest.h>
+#include <aws/redshift-serverless/model/ListRecoveryPointsRequest.h>
 /* End of service model headers required in RedshiftServerlessClient header */
 
 namespace Aws

@@ -42,6 +42,11 @@
 #include <aws/iotanalytics/model/StartPipelineReprocessingResult.h>
 #include <aws/iotanalytics/model/TagResourceResult.h>
 #include <aws/iotanalytics/model/UntagResourceResult.h>
+#include <aws/iotanalytics/model/ListDatastoresRequest.h>
+#include <aws/iotanalytics/model/ListChannelsRequest.h>
+#include <aws/iotanalytics/model/ListPipelinesRequest.h>
+#include <aws/iotanalytics/model/ListDatasetsRequest.h>
+#include <aws/iotanalytics/model/DescribeLoggingOptionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in IoTAnalyticsClient header */
 

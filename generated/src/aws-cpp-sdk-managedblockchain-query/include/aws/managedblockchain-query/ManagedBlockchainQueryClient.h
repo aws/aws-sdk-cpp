@@ -92,13 +92,13 @@ namespace ManagedBlockchainQuery
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetTokenBalanceOutcome BatchGetTokenBalance(const Model::BatchGetTokenBalanceRequest& request) const;
+        virtual Model::BatchGetTokenBalanceOutcome BatchGetTokenBalance(const Model::BatchGetTokenBalanceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetTokenBalance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetTokenBalanceRequestT = Model::BatchGetTokenBalanceRequest>
-        Model::BatchGetTokenBalanceOutcomeCallable BatchGetTokenBalanceCallable(const BatchGetTokenBalanceRequestT& request) const
+        Model::BatchGetTokenBalanceOutcomeCallable BatchGetTokenBalanceCallable(const BatchGetTokenBalanceRequestT& request = {}) const
         {
             return SubmitCallable(&ManagedBlockchainQueryClient::BatchGetTokenBalance, request);
         }
@@ -107,7 +107,7 @@ namespace ManagedBlockchainQuery
          * An Async wrapper for BatchGetTokenBalance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetTokenBalanceRequestT = Model::BatchGetTokenBalanceRequest>
-        void BatchGetTokenBalanceAsync(const BatchGetTokenBalanceRequestT& request, const BatchGetTokenBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetTokenBalanceAsync(const BatchGetTokenBalanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetTokenBalanceRequestT& request = {}) const
         {
             return SubmitAsync(&ManagedBlockchainQueryClient::BatchGetTokenBalance, request, handler, context);
         }

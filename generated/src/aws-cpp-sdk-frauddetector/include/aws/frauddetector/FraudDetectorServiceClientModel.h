@@ -91,6 +91,20 @@
 #include <aws/frauddetector/model/UpdateRuleMetadataResult.h>
 #include <aws/frauddetector/model/UpdateRuleVersionResult.h>
 #include <aws/frauddetector/model/UpdateVariableResult.h>
+#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
+#include <aws/frauddetector/model/GetEventTypesRequest.h>
+#include <aws/frauddetector/model/GetEntityTypesRequest.h>
+#include <aws/frauddetector/model/ListEventPredictionsRequest.h>
+#include <aws/frauddetector/model/GetExternalModelsRequest.h>
+#include <aws/frauddetector/model/GetLabelsRequest.h>
+#include <aws/frauddetector/model/GetOutcomesRequest.h>
+#include <aws/frauddetector/model/GetVariablesRequest.h>
+#include <aws/frauddetector/model/GetBatchPredictionJobsRequest.h>
+#include <aws/frauddetector/model/GetModelsRequest.h>
+#include <aws/frauddetector/model/DescribeModelVersionsRequest.h>
+#include <aws/frauddetector/model/GetDetectorsRequest.h>
+#include <aws/frauddetector/model/GetBatchImportJobsRequest.h>
+#include <aws/frauddetector/model/GetListsMetadataRequest.h>
 /* End of service model headers required in FraudDetectorClient header */
 
 namespace Aws

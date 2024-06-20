@@ -6,16 +6,18 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
@@ -43,6 +45,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
+        context.put("RequestlessOperations", requestlessOperations);
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());

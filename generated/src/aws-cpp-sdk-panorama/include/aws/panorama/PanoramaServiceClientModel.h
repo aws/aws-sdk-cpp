@@ -52,6 +52,13 @@
 #include <aws/panorama/model/TagResourceResult.h>
 #include <aws/panorama/model/UntagResourceResult.h>
 #include <aws/panorama/model/UpdateDeviceMetadataResult.h>
+#include <aws/panorama/model/ListApplicationInstancesRequest.h>
+#include <aws/panorama/model/ListDevicesRequest.h>
+#include <aws/panorama/model/ListDevicesJobsRequest.h>
+#include <aws/panorama/model/ListNodesRequest.h>
+#include <aws/panorama/model/ListPackageImportJobsRequest.h>
+#include <aws/panorama/model/ListNodeFromTemplateJobsRequest.h>
+#include <aws/panorama/model/ListPackagesRequest.h>
 /* End of service model headers required in PanoramaClient header */
 
 namespace Aws

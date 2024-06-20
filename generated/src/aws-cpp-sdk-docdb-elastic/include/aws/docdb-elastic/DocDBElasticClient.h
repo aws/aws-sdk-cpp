@@ -270,13 +270,13 @@ namespace DocDBElastic
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusterSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClusterSnapshotsOutcome ListClusterSnapshots(const Model::ListClusterSnapshotsRequest& request) const;
+        virtual Model::ListClusterSnapshotsOutcome ListClusterSnapshots(const Model::ListClusterSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusterSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClusterSnapshotsRequestT = Model::ListClusterSnapshotsRequest>
-        Model::ListClusterSnapshotsOutcomeCallable ListClusterSnapshotsCallable(const ListClusterSnapshotsRequestT& request) const
+        Model::ListClusterSnapshotsOutcomeCallable ListClusterSnapshotsCallable(const ListClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBElasticClient::ListClusterSnapshots, request);
         }
@@ -285,7 +285,7 @@ namespace DocDBElastic
          * An Async wrapper for ListClusterSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClusterSnapshotsRequestT = Model::ListClusterSnapshotsRequest>
-        void ListClusterSnapshotsAsync(const ListClusterSnapshotsRequestT& request, const ListClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClusterSnapshotsAsync(const ListClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClusterSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBElasticClient::ListClusterSnapshots, request, handler, context);
         }
@@ -296,13 +296,13 @@ namespace DocDBElastic
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&DocDBElasticClient::ListClusters, request);
         }
@@ -311,7 +311,7 @@ namespace DocDBElastic
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBElasticClient::ListClusters, request, handler, context);
         }

@@ -58,6 +58,7 @@
 #include <aws/chime-sdk-messaging/model/UpdateChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelReadMarkerResult.h>
+#include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeSDKMessagingClient header */
 

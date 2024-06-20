@@ -28,6 +28,9 @@
 #include <aws/savingsplans/model/ReturnSavingsPlanResult.h>
 #include <aws/savingsplans/model/TagResourceResult.h>
 #include <aws/savingsplans/model/UntagResourceResult.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansOfferingRatesRequest.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansOfferingsRequest.h>
+#include <aws/savingsplans/model/DescribeSavingsPlansRequest.h>
 /* End of service model headers required in SavingsPlansClient header */
 
 namespace Aws

@@ -34,6 +34,7 @@
 #include <aws/cognito-sync/model/SubscribeToDatasetResult.h>
 #include <aws/cognito-sync/model/UnsubscribeFromDatasetResult.h>
 #include <aws/cognito-sync/model/UpdateRecordsResult.h>
+#include <aws/cognito-sync/model/ListIdentityPoolUsageRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CognitoSyncClient header */
 

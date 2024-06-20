@@ -1550,13 +1550,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateModelPackageOutcome CreateModelPackage(const Model::CreateModelPackageRequest& request) const;
+        virtual Model::CreateModelPackageOutcome CreateModelPackage(const Model::CreateModelPackageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateModelPackage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateModelPackageRequestT = Model::CreateModelPackageRequest>
-        Model::CreateModelPackageOutcomeCallable CreateModelPackageCallable(const CreateModelPackageRequestT& request) const
+        Model::CreateModelPackageOutcomeCallable CreateModelPackageCallable(const CreateModelPackageRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::CreateModelPackage, request);
         }
@@ -1565,7 +1565,7 @@ namespace SageMaker
          * An Async wrapper for CreateModelPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateModelPackageRequestT = Model::CreateModelPackageRequest>
-        void CreateModelPackageAsync(const CreateModelPackageRequestT& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateModelPackageAsync(const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateModelPackageRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::CreateModelPackage, request, handler, context);
         }
@@ -2382,13 +2382,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteArtifactOutcome DeleteArtifact(const Model::DeleteArtifactRequest& request) const;
+        virtual Model::DeleteArtifactOutcome DeleteArtifact(const Model::DeleteArtifactRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteArtifactRequestT = Model::DeleteArtifactRequest>
-        Model::DeleteArtifactOutcomeCallable DeleteArtifactCallable(const DeleteArtifactRequestT& request) const
+        Model::DeleteArtifactOutcomeCallable DeleteArtifactCallable(const DeleteArtifactRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::DeleteArtifact, request);
         }
@@ -2397,7 +2397,7 @@ namespace SageMaker
          * An Async wrapper for DeleteArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteArtifactRequestT = Model::DeleteArtifactRequest>
-        void DeleteArtifactAsync(const DeleteArtifactRequestT& request, const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteArtifactAsync(const DeleteArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteArtifactRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::DeleteArtifact, request, handler, context);
         }
@@ -5320,13 +5320,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisableSagemakerServicecatalogPortfolio">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableSagemakerServicecatalogPortfolioOutcome DisableSagemakerServicecatalogPortfolio(const Model::DisableSagemakerServicecatalogPortfolioRequest& request) const;
+        virtual Model::DisableSagemakerServicecatalogPortfolioOutcome DisableSagemakerServicecatalogPortfolio(const Model::DisableSagemakerServicecatalogPortfolioRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableSagemakerServicecatalogPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisableSagemakerServicecatalogPortfolioRequestT = Model::DisableSagemakerServicecatalogPortfolioRequest>
-        Model::DisableSagemakerServicecatalogPortfolioOutcomeCallable DisableSagemakerServicecatalogPortfolioCallable(const DisableSagemakerServicecatalogPortfolioRequestT& request) const
+        Model::DisableSagemakerServicecatalogPortfolioOutcomeCallable DisableSagemakerServicecatalogPortfolioCallable(const DisableSagemakerServicecatalogPortfolioRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::DisableSagemakerServicecatalogPortfolio, request);
         }
@@ -5335,7 +5335,7 @@ namespace SageMaker
          * An Async wrapper for DisableSagemakerServicecatalogPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisableSagemakerServicecatalogPortfolioRequestT = Model::DisableSagemakerServicecatalogPortfolioRequest>
-        void DisableSagemakerServicecatalogPortfolioAsync(const DisableSagemakerServicecatalogPortfolioRequestT& request, const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisableSagemakerServicecatalogPortfolioAsync(const DisableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableSagemakerServicecatalogPortfolioRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::DisableSagemakerServicecatalogPortfolio, request, handler, context);
         }
@@ -5381,13 +5381,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EnableSagemakerServicecatalogPortfolio">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableSagemakerServicecatalogPortfolioOutcome EnableSagemakerServicecatalogPortfolio(const Model::EnableSagemakerServicecatalogPortfolioRequest& request) const;
+        virtual Model::EnableSagemakerServicecatalogPortfolioOutcome EnableSagemakerServicecatalogPortfolio(const Model::EnableSagemakerServicecatalogPortfolioRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableSagemakerServicecatalogPortfolio that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename EnableSagemakerServicecatalogPortfolioRequestT = Model::EnableSagemakerServicecatalogPortfolioRequest>
-        Model::EnableSagemakerServicecatalogPortfolioOutcomeCallable EnableSagemakerServicecatalogPortfolioCallable(const EnableSagemakerServicecatalogPortfolioRequestT& request) const
+        Model::EnableSagemakerServicecatalogPortfolioOutcomeCallable EnableSagemakerServicecatalogPortfolioCallable(const EnableSagemakerServicecatalogPortfolioRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::EnableSagemakerServicecatalogPortfolio, request);
         }
@@ -5396,7 +5396,7 @@ namespace SageMaker
          * An Async wrapper for EnableSagemakerServicecatalogPortfolio that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename EnableSagemakerServicecatalogPortfolioRequestT = Model::EnableSagemakerServicecatalogPortfolioRequest>
-        void EnableSagemakerServicecatalogPortfolioAsync(const EnableSagemakerServicecatalogPortfolioRequestT& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void EnableSagemakerServicecatalogPortfolioAsync(const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableSagemakerServicecatalogPortfolioRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::EnableSagemakerServicecatalogPortfolio, request, handler, context);
         }
@@ -5486,13 +5486,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSagemakerServicecatalogPortfolioStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSagemakerServicecatalogPortfolioStatusOutcome GetSagemakerServicecatalogPortfolioStatus(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request) const;
+        virtual Model::GetSagemakerServicecatalogPortfolioStatusOutcome GetSagemakerServicecatalogPortfolioStatus(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSagemakerServicecatalogPortfolioStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSagemakerServicecatalogPortfolioStatusRequestT = Model::GetSagemakerServicecatalogPortfolioStatusRequest>
-        Model::GetSagemakerServicecatalogPortfolioStatusOutcomeCallable GetSagemakerServicecatalogPortfolioStatusCallable(const GetSagemakerServicecatalogPortfolioStatusRequestT& request) const
+        Model::GetSagemakerServicecatalogPortfolioStatusOutcomeCallable GetSagemakerServicecatalogPortfolioStatusCallable(const GetSagemakerServicecatalogPortfolioStatusRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::GetSagemakerServicecatalogPortfolioStatus, request);
         }
@@ -5501,7 +5501,7 @@ namespace SageMaker
          * An Async wrapper for GetSagemakerServicecatalogPortfolioStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSagemakerServicecatalogPortfolioStatusRequestT = Model::GetSagemakerServicecatalogPortfolioStatusRequest>
-        void GetSagemakerServicecatalogPortfolioStatusAsync(const GetSagemakerServicecatalogPortfolioStatusRequestT& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSagemakerServicecatalogPortfolioStatusAsync(const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSagemakerServicecatalogPortfolioStatusRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::GetSagemakerServicecatalogPortfolioStatus, request, handler, context);
         }
@@ -5593,13 +5593,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
+        virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActionsRequestT = Model::ListActionsRequest>
-        Model::ListActionsOutcomeCallable ListActionsCallable(const ListActionsRequestT& request) const
+        Model::ListActionsOutcomeCallable ListActionsCallable(const ListActionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListActions, request);
         }
@@ -5608,7 +5608,7 @@ namespace SageMaker
          * An Async wrapper for ListActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActionsRequestT = Model::ListActionsRequest>
-        void ListActionsAsync(const ListActionsRequestT& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActionsAsync(const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListActions, request, handler, context);
         }
@@ -5619,13 +5619,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAlgorithms">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAlgorithmsOutcome ListAlgorithms(const Model::ListAlgorithmsRequest& request) const;
+        virtual Model::ListAlgorithmsOutcome ListAlgorithms(const Model::ListAlgorithmsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAlgorithms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAlgorithmsRequestT = Model::ListAlgorithmsRequest>
-        Model::ListAlgorithmsOutcomeCallable ListAlgorithmsCallable(const ListAlgorithmsRequestT& request) const
+        Model::ListAlgorithmsOutcomeCallable ListAlgorithmsCallable(const ListAlgorithmsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListAlgorithms, request);
         }
@@ -5634,7 +5634,7 @@ namespace SageMaker
          * An Async wrapper for ListAlgorithms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAlgorithmsRequestT = Model::ListAlgorithmsRequest>
-        void ListAlgorithmsAsync(const ListAlgorithmsRequestT& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAlgorithmsAsync(const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAlgorithmsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListAlgorithms, request, handler, context);
         }
@@ -5672,13 +5672,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAppImageConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppImageConfigsOutcome ListAppImageConfigs(const Model::ListAppImageConfigsRequest& request) const;
+        virtual Model::ListAppImageConfigsOutcome ListAppImageConfigs(const Model::ListAppImageConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAppImageConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppImageConfigsRequestT = Model::ListAppImageConfigsRequest>
-        Model::ListAppImageConfigsOutcomeCallable ListAppImageConfigsCallable(const ListAppImageConfigsRequestT& request) const
+        Model::ListAppImageConfigsOutcomeCallable ListAppImageConfigsCallable(const ListAppImageConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListAppImageConfigs, request);
         }
@@ -5687,7 +5687,7 @@ namespace SageMaker
          * An Async wrapper for ListAppImageConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppImageConfigsRequestT = Model::ListAppImageConfigsRequest>
-        void ListAppImageConfigsAsync(const ListAppImageConfigsRequestT& request, const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppImageConfigsAsync(const ListAppImageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppImageConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListAppImageConfigs, request, handler, context);
         }
@@ -5697,13 +5697,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
+        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request) const
+        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListApps, request);
         }
@@ -5712,7 +5712,7 @@ namespace SageMaker
          * An Async wrapper for ListApps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        void ListAppsAsync(const ListAppsRequestT& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppsAsync(const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListApps, request, handler, context);
         }
@@ -5723,13 +5723,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListArtifactsOutcome ListArtifacts(const Model::ListArtifactsRequest& request) const;
+        virtual Model::ListArtifactsOutcome ListArtifacts(const Model::ListArtifactsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListArtifacts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListArtifactsRequestT = Model::ListArtifactsRequest>
-        Model::ListArtifactsOutcomeCallable ListArtifactsCallable(const ListArtifactsRequestT& request) const
+        Model::ListArtifactsOutcomeCallable ListArtifactsCallable(const ListArtifactsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListArtifacts, request);
         }
@@ -5738,7 +5738,7 @@ namespace SageMaker
          * An Async wrapper for ListArtifacts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListArtifactsRequestT = Model::ListArtifactsRequest>
-        void ListArtifactsAsync(const ListArtifactsRequestT& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListArtifactsAsync(const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListArtifactsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListArtifacts, request, handler, context);
         }
@@ -5749,13 +5749,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
+        virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssociationsRequestT = Model::ListAssociationsRequest>
-        Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const ListAssociationsRequestT& request) const
+        Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const ListAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListAssociations, request);
         }
@@ -5764,7 +5764,7 @@ namespace SageMaker
          * An Async wrapper for ListAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssociationsRequestT = Model::ListAssociationsRequest>
-        void ListAssociationsAsync(const ListAssociationsRequestT& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssociationsAsync(const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListAssociations, request, handler, context);
         }
@@ -5774,13 +5774,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAutoMLJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAutoMLJobsOutcome ListAutoMLJobs(const Model::ListAutoMLJobsRequest& request) const;
+        virtual Model::ListAutoMLJobsOutcome ListAutoMLJobs(const Model::ListAutoMLJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAutoMLJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAutoMLJobsRequestT = Model::ListAutoMLJobsRequest>
-        Model::ListAutoMLJobsOutcomeCallable ListAutoMLJobsCallable(const ListAutoMLJobsRequestT& request) const
+        Model::ListAutoMLJobsOutcomeCallable ListAutoMLJobsCallable(const ListAutoMLJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListAutoMLJobs, request);
         }
@@ -5789,7 +5789,7 @@ namespace SageMaker
          * An Async wrapper for ListAutoMLJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAutoMLJobsRequestT = Model::ListAutoMLJobsRequest>
-        void ListAutoMLJobsAsync(const ListAutoMLJobsRequestT& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAutoMLJobsAsync(const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAutoMLJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListAutoMLJobs, request, handler, context);
         }
@@ -5851,13 +5851,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListClusters, request);
         }
@@ -5866,7 +5866,7 @@ namespace SageMaker
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListClusters, request, handler, context);
         }
@@ -5877,13 +5877,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCodeRepositoriesOutcome ListCodeRepositories(const Model::ListCodeRepositoriesRequest& request) const;
+        virtual Model::ListCodeRepositoriesOutcome ListCodeRepositories(const Model::ListCodeRepositoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCodeRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCodeRepositoriesRequestT = Model::ListCodeRepositoriesRequest>
-        Model::ListCodeRepositoriesOutcomeCallable ListCodeRepositoriesCallable(const ListCodeRepositoriesRequestT& request) const
+        Model::ListCodeRepositoriesOutcomeCallable ListCodeRepositoriesCallable(const ListCodeRepositoriesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListCodeRepositories, request);
         }
@@ -5892,7 +5892,7 @@ namespace SageMaker
          * An Async wrapper for ListCodeRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCodeRepositoriesRequestT = Model::ListCodeRepositoriesRequest>
-        void ListCodeRepositoriesAsync(const ListCodeRepositoriesRequestT& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCodeRepositoriesAsync(const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCodeRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListCodeRepositories, request, handler, context);
         }
@@ -5908,13 +5908,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCompilationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCompilationJobsOutcome ListCompilationJobs(const Model::ListCompilationJobsRequest& request) const;
+        virtual Model::ListCompilationJobsOutcome ListCompilationJobs(const Model::ListCompilationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCompilationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCompilationJobsRequestT = Model::ListCompilationJobsRequest>
-        Model::ListCompilationJobsOutcomeCallable ListCompilationJobsCallable(const ListCompilationJobsRequestT& request) const
+        Model::ListCompilationJobsOutcomeCallable ListCompilationJobsCallable(const ListCompilationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListCompilationJobs, request);
         }
@@ -5923,7 +5923,7 @@ namespace SageMaker
          * An Async wrapper for ListCompilationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCompilationJobsRequestT = Model::ListCompilationJobsRequest>
-        void ListCompilationJobsAsync(const ListCompilationJobsRequestT& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCompilationJobsAsync(const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCompilationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListCompilationJobs, request, handler, context);
         }
@@ -5934,13 +5934,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContextsOutcome ListContexts(const Model::ListContextsRequest& request) const;
+        virtual Model::ListContextsOutcome ListContexts(const Model::ListContextsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContexts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContextsRequestT = Model::ListContextsRequest>
-        Model::ListContextsOutcomeCallable ListContextsCallable(const ListContextsRequestT& request) const
+        Model::ListContextsOutcomeCallable ListContextsCallable(const ListContextsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListContexts, request);
         }
@@ -5949,7 +5949,7 @@ namespace SageMaker
          * An Async wrapper for ListContexts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContextsRequestT = Model::ListContextsRequest>
-        void ListContextsAsync(const ListContextsRequestT& request, const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContextsAsync(const ListContextsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContextsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListContexts, request, handler, context);
         }
@@ -5960,13 +5960,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataQualityJobDefinitionsOutcome ListDataQualityJobDefinitions(const Model::ListDataQualityJobDefinitionsRequest& request) const;
+        virtual Model::ListDataQualityJobDefinitionsOutcome ListDataQualityJobDefinitions(const Model::ListDataQualityJobDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataQualityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataQualityJobDefinitionsRequestT = Model::ListDataQualityJobDefinitionsRequest>
-        Model::ListDataQualityJobDefinitionsOutcomeCallable ListDataQualityJobDefinitionsCallable(const ListDataQualityJobDefinitionsRequestT& request) const
+        Model::ListDataQualityJobDefinitionsOutcomeCallable ListDataQualityJobDefinitionsCallable(const ListDataQualityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListDataQualityJobDefinitions, request);
         }
@@ -5975,7 +5975,7 @@ namespace SageMaker
          * An Async wrapper for ListDataQualityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataQualityJobDefinitionsRequestT = Model::ListDataQualityJobDefinitionsRequest>
-        void ListDataQualityJobDefinitionsAsync(const ListDataQualityJobDefinitionsRequestT& request, const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataQualityJobDefinitionsAsync(const ListDataQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataQualityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListDataQualityJobDefinitions, request, handler, context);
         }
@@ -5985,13 +5985,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeviceFleetsOutcome ListDeviceFleets(const Model::ListDeviceFleetsRequest& request) const;
+        virtual Model::ListDeviceFleetsOutcome ListDeviceFleets(const Model::ListDeviceFleetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeviceFleets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeviceFleetsRequestT = Model::ListDeviceFleetsRequest>
-        Model::ListDeviceFleetsOutcomeCallable ListDeviceFleetsCallable(const ListDeviceFleetsRequestT& request) const
+        Model::ListDeviceFleetsOutcomeCallable ListDeviceFleetsCallable(const ListDeviceFleetsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListDeviceFleets, request);
         }
@@ -6000,7 +6000,7 @@ namespace SageMaker
          * An Async wrapper for ListDeviceFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeviceFleetsRequestT = Model::ListDeviceFleetsRequest>
-        void ListDeviceFleetsAsync(const ListDeviceFleetsRequestT& request, const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeviceFleetsAsync(const ListDeviceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeviceFleetsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListDeviceFleets, request, handler, context);
         }
@@ -6010,13 +6010,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
+        virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request) const
+        Model::ListDevicesOutcomeCallable ListDevicesCallable(const ListDevicesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListDevices, request);
         }
@@ -6025,7 +6025,7 @@ namespace SageMaker
          * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDevicesRequestT = Model::ListDevicesRequest>
-        void ListDevicesAsync(const ListDevicesRequestT& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDevicesAsync(const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDevicesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListDevices, request, handler, context);
         }
@@ -6035,13 +6035,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListDomains, request);
         }
@@ -6050,7 +6050,7 @@ namespace SageMaker
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListDomains, request, handler, context);
         }
@@ -6060,13 +6060,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEdgeDeploymentPlansOutcome ListEdgeDeploymentPlans(const Model::ListEdgeDeploymentPlansRequest& request) const;
+        virtual Model::ListEdgeDeploymentPlansOutcome ListEdgeDeploymentPlans(const Model::ListEdgeDeploymentPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEdgeDeploymentPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEdgeDeploymentPlansRequestT = Model::ListEdgeDeploymentPlansRequest>
-        Model::ListEdgeDeploymentPlansOutcomeCallable ListEdgeDeploymentPlansCallable(const ListEdgeDeploymentPlansRequestT& request) const
+        Model::ListEdgeDeploymentPlansOutcomeCallable ListEdgeDeploymentPlansCallable(const ListEdgeDeploymentPlansRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListEdgeDeploymentPlans, request);
         }
@@ -6075,7 +6075,7 @@ namespace SageMaker
          * An Async wrapper for ListEdgeDeploymentPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEdgeDeploymentPlansRequestT = Model::ListEdgeDeploymentPlansRequest>
-        void ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansRequestT& request, const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEdgeDeploymentPlansAsync(const ListEdgeDeploymentPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEdgeDeploymentPlansRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListEdgeDeploymentPlans, request, handler, context);
         }
@@ -6085,13 +6085,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEdgePackagingJobsOutcome ListEdgePackagingJobs(const Model::ListEdgePackagingJobsRequest& request) const;
+        virtual Model::ListEdgePackagingJobsOutcome ListEdgePackagingJobs(const Model::ListEdgePackagingJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEdgePackagingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEdgePackagingJobsRequestT = Model::ListEdgePackagingJobsRequest>
-        Model::ListEdgePackagingJobsOutcomeCallable ListEdgePackagingJobsCallable(const ListEdgePackagingJobsRequestT& request) const
+        Model::ListEdgePackagingJobsOutcomeCallable ListEdgePackagingJobsCallable(const ListEdgePackagingJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListEdgePackagingJobs, request);
         }
@@ -6100,7 +6100,7 @@ namespace SageMaker
          * An Async wrapper for ListEdgePackagingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEdgePackagingJobsRequestT = Model::ListEdgePackagingJobsRequest>
-        void ListEdgePackagingJobsAsync(const ListEdgePackagingJobsRequestT& request, const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEdgePackagingJobsAsync(const ListEdgePackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEdgePackagingJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListEdgePackagingJobs, request, handler, context);
         }
@@ -6110,13 +6110,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpointConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointConfigsOutcome ListEndpointConfigs(const Model::ListEndpointConfigsRequest& request) const;
+        virtual Model::ListEndpointConfigsOutcome ListEndpointConfigs(const Model::ListEndpointConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpointConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointConfigsRequestT = Model::ListEndpointConfigsRequest>
-        Model::ListEndpointConfigsOutcomeCallable ListEndpointConfigsCallable(const ListEndpointConfigsRequestT& request) const
+        Model::ListEndpointConfigsOutcomeCallable ListEndpointConfigsCallable(const ListEndpointConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListEndpointConfigs, request);
         }
@@ -6125,7 +6125,7 @@ namespace SageMaker
          * An Async wrapper for ListEndpointConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointConfigsRequestT = Model::ListEndpointConfigsRequest>
-        void ListEndpointConfigsAsync(const ListEndpointConfigsRequestT& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointConfigsAsync(const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListEndpointConfigs, request, handler, context);
         }
@@ -6135,13 +6135,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
+        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request) const
+        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListEndpoints, request);
         }
@@ -6150,7 +6150,7 @@ namespace SageMaker
          * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        void ListEndpointsAsync(const ListEndpointsRequestT& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointsAsync(const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListEndpoints, request, handler, context);
         }
@@ -6162,13 +6162,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListExperiments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
+        virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExperimentsRequestT = Model::ListExperimentsRequest>
-        Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const ListExperimentsRequestT& request) const
+        Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const ListExperimentsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListExperiments, request);
         }
@@ -6177,7 +6177,7 @@ namespace SageMaker
          * An Async wrapper for ListExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExperimentsRequestT = Model::ListExperimentsRequest>
-        void ListExperimentsAsync(const ListExperimentsRequestT& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExperimentsAsync(const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExperimentsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListExperiments, request, handler, context);
         }
@@ -6188,13 +6188,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFeatureGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFeatureGroupsOutcome ListFeatureGroups(const Model::ListFeatureGroupsRequest& request) const;
+        virtual Model::ListFeatureGroupsOutcome ListFeatureGroups(const Model::ListFeatureGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFeatureGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFeatureGroupsRequestT = Model::ListFeatureGroupsRequest>
-        Model::ListFeatureGroupsOutcomeCallable ListFeatureGroupsCallable(const ListFeatureGroupsRequestT& request) const
+        Model::ListFeatureGroupsOutcomeCallable ListFeatureGroupsCallable(const ListFeatureGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListFeatureGroups, request);
         }
@@ -6203,7 +6203,7 @@ namespace SageMaker
          * An Async wrapper for ListFeatureGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFeatureGroupsRequestT = Model::ListFeatureGroupsRequest>
-        void ListFeatureGroupsAsync(const ListFeatureGroupsRequestT& request, const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFeatureGroupsAsync(const ListFeatureGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFeatureGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListFeatureGroups, request, handler, context);
         }
@@ -6214,13 +6214,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFlowDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFlowDefinitionsOutcome ListFlowDefinitions(const Model::ListFlowDefinitionsRequest& request) const;
+        virtual Model::ListFlowDefinitionsOutcome ListFlowDefinitions(const Model::ListFlowDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFlowDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFlowDefinitionsRequestT = Model::ListFlowDefinitionsRequest>
-        Model::ListFlowDefinitionsOutcomeCallable ListFlowDefinitionsCallable(const ListFlowDefinitionsRequestT& request) const
+        Model::ListFlowDefinitionsOutcomeCallable ListFlowDefinitionsCallable(const ListFlowDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListFlowDefinitions, request);
         }
@@ -6229,7 +6229,7 @@ namespace SageMaker
          * An Async wrapper for ListFlowDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFlowDefinitionsRequestT = Model::ListFlowDefinitionsRequest>
-        void ListFlowDefinitionsAsync(const ListFlowDefinitionsRequestT& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFlowDefinitionsAsync(const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFlowDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListFlowDefinitions, request, handler, context);
         }
@@ -6289,13 +6289,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHubsOutcome ListHubs(const Model::ListHubsRequest& request) const;
+        virtual Model::ListHubsOutcome ListHubs(const Model::ListHubsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHubs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHubsRequestT = Model::ListHubsRequest>
-        Model::ListHubsOutcomeCallable ListHubsCallable(const ListHubsRequestT& request) const
+        Model::ListHubsOutcomeCallable ListHubsCallable(const ListHubsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListHubs, request);
         }
@@ -6304,7 +6304,7 @@ namespace SageMaker
          * An Async wrapper for ListHubs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHubsRequestT = Model::ListHubsRequest>
-        void ListHubsAsync(const ListHubsRequestT& request, const ListHubsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHubsAsync(const ListHubsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHubsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListHubs, request, handler, context);
         }
@@ -6315,13 +6315,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHumanTaskUis">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHumanTaskUisOutcome ListHumanTaskUis(const Model::ListHumanTaskUisRequest& request) const;
+        virtual Model::ListHumanTaskUisOutcome ListHumanTaskUis(const Model::ListHumanTaskUisRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHumanTaskUis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHumanTaskUisRequestT = Model::ListHumanTaskUisRequest>
-        Model::ListHumanTaskUisOutcomeCallable ListHumanTaskUisCallable(const ListHumanTaskUisRequestT& request) const
+        Model::ListHumanTaskUisOutcomeCallable ListHumanTaskUisCallable(const ListHumanTaskUisRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListHumanTaskUis, request);
         }
@@ -6330,7 +6330,7 @@ namespace SageMaker
          * An Async wrapper for ListHumanTaskUis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHumanTaskUisRequestT = Model::ListHumanTaskUisRequest>
-        void ListHumanTaskUisAsync(const ListHumanTaskUisRequestT& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHumanTaskUisAsync(const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHumanTaskUisRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListHumanTaskUis, request, handler, context);
         }
@@ -6343,13 +6343,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHyperParameterTuningJobsOutcome ListHyperParameterTuningJobs(const Model::ListHyperParameterTuningJobsRequest& request) const;
+        virtual Model::ListHyperParameterTuningJobsOutcome ListHyperParameterTuningJobs(const Model::ListHyperParameterTuningJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHyperParameterTuningJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHyperParameterTuningJobsRequestT = Model::ListHyperParameterTuningJobsRequest>
-        Model::ListHyperParameterTuningJobsOutcomeCallable ListHyperParameterTuningJobsCallable(const ListHyperParameterTuningJobsRequestT& request) const
+        Model::ListHyperParameterTuningJobsOutcomeCallable ListHyperParameterTuningJobsCallable(const ListHyperParameterTuningJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListHyperParameterTuningJobs, request);
         }
@@ -6358,7 +6358,7 @@ namespace SageMaker
          * An Async wrapper for ListHyperParameterTuningJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHyperParameterTuningJobsRequestT = Model::ListHyperParameterTuningJobsRequest>
-        void ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsRequestT& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHyperParameterTuningJobsAsync(const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHyperParameterTuningJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListHyperParameterTuningJobs, request, handler, context);
         }
@@ -6396,13 +6396,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
+        virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListImages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListImagesRequestT = Model::ListImagesRequest>
-        Model::ListImagesOutcomeCallable ListImagesCallable(const ListImagesRequestT& request) const
+        Model::ListImagesOutcomeCallable ListImagesCallable(const ListImagesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListImages, request);
         }
@@ -6411,7 +6411,7 @@ namespace SageMaker
          * An Async wrapper for ListImages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListImagesRequestT = Model::ListImagesRequest>
-        void ListImagesAsync(const ListImagesRequestT& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListImagesAsync(const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImagesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListImages, request, handler, context);
         }
@@ -6422,13 +6422,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInferenceComponentsOutcome ListInferenceComponents(const Model::ListInferenceComponentsRequest& request) const;
+        virtual Model::ListInferenceComponentsOutcome ListInferenceComponents(const Model::ListInferenceComponentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInferenceComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInferenceComponentsRequestT = Model::ListInferenceComponentsRequest>
-        Model::ListInferenceComponentsOutcomeCallable ListInferenceComponentsCallable(const ListInferenceComponentsRequestT& request) const
+        Model::ListInferenceComponentsOutcomeCallable ListInferenceComponentsCallable(const ListInferenceComponentsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListInferenceComponents, request);
         }
@@ -6437,7 +6437,7 @@ namespace SageMaker
          * An Async wrapper for ListInferenceComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInferenceComponentsRequestT = Model::ListInferenceComponentsRequest>
-        void ListInferenceComponentsAsync(const ListInferenceComponentsRequestT& request, const ListInferenceComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInferenceComponentsAsync(const ListInferenceComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInferenceComponentsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListInferenceComponents, request, handler, context);
         }
@@ -6447,13 +6447,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInferenceExperimentsOutcome ListInferenceExperiments(const Model::ListInferenceExperimentsRequest& request) const;
+        virtual Model::ListInferenceExperimentsOutcome ListInferenceExperiments(const Model::ListInferenceExperimentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInferenceExperiments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInferenceExperimentsRequestT = Model::ListInferenceExperimentsRequest>
-        Model::ListInferenceExperimentsOutcomeCallable ListInferenceExperimentsCallable(const ListInferenceExperimentsRequestT& request) const
+        Model::ListInferenceExperimentsOutcomeCallable ListInferenceExperimentsCallable(const ListInferenceExperimentsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListInferenceExperiments, request);
         }
@@ -6462,7 +6462,7 @@ namespace SageMaker
          * An Async wrapper for ListInferenceExperiments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInferenceExperimentsRequestT = Model::ListInferenceExperimentsRequest>
-        void ListInferenceExperimentsAsync(const ListInferenceExperimentsRequestT& request, const ListInferenceExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInferenceExperimentsAsync(const ListInferenceExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInferenceExperimentsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListInferenceExperiments, request, handler, context);
         }
@@ -6500,13 +6500,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInferenceRecommendationsJobsOutcome ListInferenceRecommendationsJobs(const Model::ListInferenceRecommendationsJobsRequest& request) const;
+        virtual Model::ListInferenceRecommendationsJobsOutcome ListInferenceRecommendationsJobs(const Model::ListInferenceRecommendationsJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInferenceRecommendationsJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInferenceRecommendationsJobsRequestT = Model::ListInferenceRecommendationsJobsRequest>
-        Model::ListInferenceRecommendationsJobsOutcomeCallable ListInferenceRecommendationsJobsCallable(const ListInferenceRecommendationsJobsRequestT& request) const
+        Model::ListInferenceRecommendationsJobsOutcomeCallable ListInferenceRecommendationsJobsCallable(const ListInferenceRecommendationsJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListInferenceRecommendationsJobs, request);
         }
@@ -6515,7 +6515,7 @@ namespace SageMaker
          * An Async wrapper for ListInferenceRecommendationsJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInferenceRecommendationsJobsRequestT = Model::ListInferenceRecommendationsJobsRequest>
-        void ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsRequestT& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInferenceRecommendationsJobsAsync(const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInferenceRecommendationsJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListInferenceRecommendationsJobs, request, handler, context);
         }
@@ -6525,13 +6525,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLabelingJobsOutcome ListLabelingJobs(const Model::ListLabelingJobsRequest& request) const;
+        virtual Model::ListLabelingJobsOutcome ListLabelingJobs(const Model::ListLabelingJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLabelingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLabelingJobsRequestT = Model::ListLabelingJobsRequest>
-        Model::ListLabelingJobsOutcomeCallable ListLabelingJobsCallable(const ListLabelingJobsRequestT& request) const
+        Model::ListLabelingJobsOutcomeCallable ListLabelingJobsCallable(const ListLabelingJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListLabelingJobs, request);
         }
@@ -6540,7 +6540,7 @@ namespace SageMaker
          * An Async wrapper for ListLabelingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLabelingJobsRequestT = Model::ListLabelingJobsRequest>
-        void ListLabelingJobsAsync(const ListLabelingJobsRequestT& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLabelingJobsAsync(const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLabelingJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListLabelingJobs, request, handler, context);
         }
@@ -6580,13 +6580,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLineageGroupsOutcome ListLineageGroups(const Model::ListLineageGroupsRequest& request) const;
+        virtual Model::ListLineageGroupsOutcome ListLineageGroups(const Model::ListLineageGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLineageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLineageGroupsRequestT = Model::ListLineageGroupsRequest>
-        Model::ListLineageGroupsOutcomeCallable ListLineageGroupsCallable(const ListLineageGroupsRequestT& request) const
+        Model::ListLineageGroupsOutcomeCallable ListLineageGroupsCallable(const ListLineageGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListLineageGroups, request);
         }
@@ -6595,7 +6595,7 @@ namespace SageMaker
          * An Async wrapper for ListLineageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLineageGroupsRequestT = Model::ListLineageGroupsRequest>
-        void ListLineageGroupsAsync(const ListLineageGroupsRequestT& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLineageGroupsAsync(const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLineageGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListLineageGroups, request, handler, context);
         }
@@ -6605,13 +6605,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMlflowTrackingServersOutcome ListMlflowTrackingServers(const Model::ListMlflowTrackingServersRequest& request) const;
+        virtual Model::ListMlflowTrackingServersOutcome ListMlflowTrackingServers(const Model::ListMlflowTrackingServersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMlflowTrackingServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMlflowTrackingServersRequestT = Model::ListMlflowTrackingServersRequest>
-        Model::ListMlflowTrackingServersOutcomeCallable ListMlflowTrackingServersCallable(const ListMlflowTrackingServersRequestT& request) const
+        Model::ListMlflowTrackingServersOutcomeCallable ListMlflowTrackingServersCallable(const ListMlflowTrackingServersRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListMlflowTrackingServers, request);
         }
@@ -6620,7 +6620,7 @@ namespace SageMaker
          * An Async wrapper for ListMlflowTrackingServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMlflowTrackingServersRequestT = Model::ListMlflowTrackingServersRequest>
-        void ListMlflowTrackingServersAsync(const ListMlflowTrackingServersRequestT& request, const ListMlflowTrackingServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMlflowTrackingServersAsync(const ListMlflowTrackingServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMlflowTrackingServersRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListMlflowTrackingServers, request, handler, context);
         }
@@ -6631,13 +6631,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelBiasJobDefinitionsOutcome ListModelBiasJobDefinitions(const Model::ListModelBiasJobDefinitionsRequest& request) const;
+        virtual Model::ListModelBiasJobDefinitionsOutcome ListModelBiasJobDefinitions(const Model::ListModelBiasJobDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelBiasJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelBiasJobDefinitionsRequestT = Model::ListModelBiasJobDefinitionsRequest>
-        Model::ListModelBiasJobDefinitionsOutcomeCallable ListModelBiasJobDefinitionsCallable(const ListModelBiasJobDefinitionsRequestT& request) const
+        Model::ListModelBiasJobDefinitionsOutcomeCallable ListModelBiasJobDefinitionsCallable(const ListModelBiasJobDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelBiasJobDefinitions, request);
         }
@@ -6646,7 +6646,7 @@ namespace SageMaker
          * An Async wrapper for ListModelBiasJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelBiasJobDefinitionsRequestT = Model::ListModelBiasJobDefinitionsRequest>
-        void ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDefinitionsRequestT& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelBiasJobDefinitionsAsync(const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelBiasJobDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelBiasJobDefinitions, request, handler, context);
         }
@@ -6708,13 +6708,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelCardsOutcome ListModelCards(const Model::ListModelCardsRequest& request) const;
+        virtual Model::ListModelCardsOutcome ListModelCards(const Model::ListModelCardsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelCards that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelCardsRequestT = Model::ListModelCardsRequest>
-        Model::ListModelCardsOutcomeCallable ListModelCardsCallable(const ListModelCardsRequestT& request) const
+        Model::ListModelCardsOutcomeCallable ListModelCardsCallable(const ListModelCardsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelCards, request);
         }
@@ -6723,7 +6723,7 @@ namespace SageMaker
          * An Async wrapper for ListModelCards that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelCardsRequestT = Model::ListModelCardsRequest>
-        void ListModelCardsAsync(const ListModelCardsRequestT& request, const ListModelCardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelCardsAsync(const ListModelCardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelCardsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelCards, request, handler, context);
         }
@@ -6734,13 +6734,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelExplainabilityJobDefinitionsOutcome ListModelExplainabilityJobDefinitions(const Model::ListModelExplainabilityJobDefinitionsRequest& request) const;
+        virtual Model::ListModelExplainabilityJobDefinitionsOutcome ListModelExplainabilityJobDefinitions(const Model::ListModelExplainabilityJobDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelExplainabilityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelExplainabilityJobDefinitionsRequestT = Model::ListModelExplainabilityJobDefinitionsRequest>
-        Model::ListModelExplainabilityJobDefinitionsOutcomeCallable ListModelExplainabilityJobDefinitionsCallable(const ListModelExplainabilityJobDefinitionsRequestT& request) const
+        Model::ListModelExplainabilityJobDefinitionsOutcomeCallable ListModelExplainabilityJobDefinitionsCallable(const ListModelExplainabilityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelExplainabilityJobDefinitions, request);
         }
@@ -6749,7 +6749,7 @@ namespace SageMaker
          * An Async wrapper for ListModelExplainabilityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelExplainabilityJobDefinitionsRequestT = Model::ListModelExplainabilityJobDefinitionsRequest>
-        void ListModelExplainabilityJobDefinitionsAsync(const ListModelExplainabilityJobDefinitionsRequestT& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelExplainabilityJobDefinitionsAsync(const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelExplainabilityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelExplainabilityJobDefinitions, request, handler, context);
         }
@@ -6760,13 +6760,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelMetadataOutcome ListModelMetadata(const Model::ListModelMetadataRequest& request) const;
+        virtual Model::ListModelMetadataOutcome ListModelMetadata(const Model::ListModelMetadataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelMetadataRequestT = Model::ListModelMetadataRequest>
-        Model::ListModelMetadataOutcomeCallable ListModelMetadataCallable(const ListModelMetadataRequestT& request) const
+        Model::ListModelMetadataOutcomeCallable ListModelMetadataCallable(const ListModelMetadataRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelMetadata, request);
         }
@@ -6775,7 +6775,7 @@ namespace SageMaker
          * An Async wrapper for ListModelMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelMetadataRequestT = Model::ListModelMetadataRequest>
-        void ListModelMetadataAsync(const ListModelMetadataRequestT& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelMetadataAsync(const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelMetadataRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelMetadata, request, handler, context);
         }
@@ -6786,13 +6786,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelPackageGroupsOutcome ListModelPackageGroups(const Model::ListModelPackageGroupsRequest& request) const;
+        virtual Model::ListModelPackageGroupsOutcome ListModelPackageGroups(const Model::ListModelPackageGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelPackageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelPackageGroupsRequestT = Model::ListModelPackageGroupsRequest>
-        Model::ListModelPackageGroupsOutcomeCallable ListModelPackageGroupsCallable(const ListModelPackageGroupsRequestT& request) const
+        Model::ListModelPackageGroupsOutcomeCallable ListModelPackageGroupsCallable(const ListModelPackageGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelPackageGroups, request);
         }
@@ -6801,7 +6801,7 @@ namespace SageMaker
          * An Async wrapper for ListModelPackageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelPackageGroupsRequestT = Model::ListModelPackageGroupsRequest>
-        void ListModelPackageGroupsAsync(const ListModelPackageGroupsRequestT& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelPackageGroupsAsync(const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelPackageGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelPackageGroups, request, handler, context);
         }
@@ -6812,13 +6812,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelPackagesOutcome ListModelPackages(const Model::ListModelPackagesRequest& request) const;
+        virtual Model::ListModelPackagesOutcome ListModelPackages(const Model::ListModelPackagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelPackages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelPackagesRequestT = Model::ListModelPackagesRequest>
-        Model::ListModelPackagesOutcomeCallable ListModelPackagesCallable(const ListModelPackagesRequestT& request) const
+        Model::ListModelPackagesOutcomeCallable ListModelPackagesCallable(const ListModelPackagesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelPackages, request);
         }
@@ -6827,7 +6827,7 @@ namespace SageMaker
          * An Async wrapper for ListModelPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelPackagesRequestT = Model::ListModelPackagesRequest>
-        void ListModelPackagesAsync(const ListModelPackagesRequestT& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelPackagesAsync(const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelPackagesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelPackages, request, handler, context);
         }
@@ -6838,13 +6838,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelQualityJobDefinitionsOutcome ListModelQualityJobDefinitions(const Model::ListModelQualityJobDefinitionsRequest& request) const;
+        virtual Model::ListModelQualityJobDefinitionsOutcome ListModelQualityJobDefinitions(const Model::ListModelQualityJobDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelQualityJobDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelQualityJobDefinitionsRequestT = Model::ListModelQualityJobDefinitionsRequest>
-        Model::ListModelQualityJobDefinitionsOutcomeCallable ListModelQualityJobDefinitionsCallable(const ListModelQualityJobDefinitionsRequestT& request) const
+        Model::ListModelQualityJobDefinitionsOutcomeCallable ListModelQualityJobDefinitionsCallable(const ListModelQualityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModelQualityJobDefinitions, request);
         }
@@ -6853,7 +6853,7 @@ namespace SageMaker
          * An Async wrapper for ListModelQualityJobDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelQualityJobDefinitionsRequestT = Model::ListModelQualityJobDefinitionsRequest>
-        void ListModelQualityJobDefinitionsAsync(const ListModelQualityJobDefinitionsRequestT& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelQualityJobDefinitionsAsync(const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelQualityJobDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModelQualityJobDefinitions, request, handler, context);
         }
@@ -6864,13 +6864,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
+        virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelsRequestT = Model::ListModelsRequest>
-        Model::ListModelsOutcomeCallable ListModelsCallable(const ListModelsRequestT& request) const
+        Model::ListModelsOutcomeCallable ListModelsCallable(const ListModelsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListModels, request);
         }
@@ -6879,7 +6879,7 @@ namespace SageMaker
          * An Async wrapper for ListModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelsRequestT = Model::ListModelsRequest>
-        void ListModelsAsync(const ListModelsRequestT& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelsAsync(const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListModels, request, handler, context);
         }
@@ -6890,13 +6890,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitoringAlertHistoryOutcome ListMonitoringAlertHistory(const Model::ListMonitoringAlertHistoryRequest& request) const;
+        virtual Model::ListMonitoringAlertHistoryOutcome ListMonitoringAlertHistory(const Model::ListMonitoringAlertHistoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitoringAlertHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitoringAlertHistoryRequestT = Model::ListMonitoringAlertHistoryRequest>
-        Model::ListMonitoringAlertHistoryOutcomeCallable ListMonitoringAlertHistoryCallable(const ListMonitoringAlertHistoryRequestT& request) const
+        Model::ListMonitoringAlertHistoryOutcomeCallable ListMonitoringAlertHistoryCallable(const ListMonitoringAlertHistoryRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListMonitoringAlertHistory, request);
         }
@@ -6905,7 +6905,7 @@ namespace SageMaker
          * An Async wrapper for ListMonitoringAlertHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitoringAlertHistoryRequestT = Model::ListMonitoringAlertHistoryRequest>
-        void ListMonitoringAlertHistoryAsync(const ListMonitoringAlertHistoryRequestT& request, const ListMonitoringAlertHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitoringAlertHistoryAsync(const ListMonitoringAlertHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitoringAlertHistoryRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListMonitoringAlertHistory, request, handler, context);
         }
@@ -6941,13 +6941,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringExecutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitoringExecutionsOutcome ListMonitoringExecutions(const Model::ListMonitoringExecutionsRequest& request) const;
+        virtual Model::ListMonitoringExecutionsOutcome ListMonitoringExecutions(const Model::ListMonitoringExecutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitoringExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitoringExecutionsRequestT = Model::ListMonitoringExecutionsRequest>
-        Model::ListMonitoringExecutionsOutcomeCallable ListMonitoringExecutionsCallable(const ListMonitoringExecutionsRequestT& request) const
+        Model::ListMonitoringExecutionsOutcomeCallable ListMonitoringExecutionsCallable(const ListMonitoringExecutionsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListMonitoringExecutions, request);
         }
@@ -6956,7 +6956,7 @@ namespace SageMaker
          * An Async wrapper for ListMonitoringExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitoringExecutionsRequestT = Model::ListMonitoringExecutionsRequest>
-        void ListMonitoringExecutionsAsync(const ListMonitoringExecutionsRequestT& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitoringExecutionsAsync(const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitoringExecutionsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListMonitoringExecutions, request, handler, context);
         }
@@ -6966,13 +6966,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringSchedules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitoringSchedulesOutcome ListMonitoringSchedules(const Model::ListMonitoringSchedulesRequest& request) const;
+        virtual Model::ListMonitoringSchedulesOutcome ListMonitoringSchedules(const Model::ListMonitoringSchedulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitoringSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitoringSchedulesRequestT = Model::ListMonitoringSchedulesRequest>
-        Model::ListMonitoringSchedulesOutcomeCallable ListMonitoringSchedulesCallable(const ListMonitoringSchedulesRequestT& request) const
+        Model::ListMonitoringSchedulesOutcomeCallable ListMonitoringSchedulesCallable(const ListMonitoringSchedulesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListMonitoringSchedules, request);
         }
@@ -6981,7 +6981,7 @@ namespace SageMaker
          * An Async wrapper for ListMonitoringSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitoringSchedulesRequestT = Model::ListMonitoringSchedulesRequest>
-        void ListMonitoringSchedulesAsync(const ListMonitoringSchedulesRequestT& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitoringSchedulesAsync(const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitoringSchedulesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListMonitoringSchedules, request, handler, context);
         }
@@ -6993,13 +6993,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNotebookInstanceLifecycleConfigsOutcome ListNotebookInstanceLifecycleConfigs(const Model::ListNotebookInstanceLifecycleConfigsRequest& request) const;
+        virtual Model::ListNotebookInstanceLifecycleConfigsOutcome ListNotebookInstanceLifecycleConfigs(const Model::ListNotebookInstanceLifecycleConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNotebookInstanceLifecycleConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNotebookInstanceLifecycleConfigsRequestT = Model::ListNotebookInstanceLifecycleConfigsRequest>
-        Model::ListNotebookInstanceLifecycleConfigsOutcomeCallable ListNotebookInstanceLifecycleConfigsCallable(const ListNotebookInstanceLifecycleConfigsRequestT& request) const
+        Model::ListNotebookInstanceLifecycleConfigsOutcomeCallable ListNotebookInstanceLifecycleConfigsCallable(const ListNotebookInstanceLifecycleConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListNotebookInstanceLifecycleConfigs, request);
         }
@@ -7008,7 +7008,7 @@ namespace SageMaker
          * An Async wrapper for ListNotebookInstanceLifecycleConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNotebookInstanceLifecycleConfigsRequestT = Model::ListNotebookInstanceLifecycleConfigsRequest>
-        void ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsRequestT& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNotebookInstanceLifecycleConfigsAsync(const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNotebookInstanceLifecycleConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListNotebookInstanceLifecycleConfigs, request, handler, context);
         }
@@ -7019,13 +7019,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNotebookInstancesOutcome ListNotebookInstances(const Model::ListNotebookInstancesRequest& request) const;
+        virtual Model::ListNotebookInstancesOutcome ListNotebookInstances(const Model::ListNotebookInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNotebookInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNotebookInstancesRequestT = Model::ListNotebookInstancesRequest>
-        Model::ListNotebookInstancesOutcomeCallable ListNotebookInstancesCallable(const ListNotebookInstancesRequestT& request) const
+        Model::ListNotebookInstancesOutcomeCallable ListNotebookInstancesCallable(const ListNotebookInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListNotebookInstances, request);
         }
@@ -7034,7 +7034,7 @@ namespace SageMaker
          * An Async wrapper for ListNotebookInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNotebookInstancesRequestT = Model::ListNotebookInstancesRequest>
-        void ListNotebookInstancesAsync(const ListNotebookInstancesRequestT& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNotebookInstancesAsync(const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNotebookInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListNotebookInstances, request, handler, context);
         }
@@ -7045,13 +7045,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelineExecutionStepsOutcome ListPipelineExecutionSteps(const Model::ListPipelineExecutionStepsRequest& request) const;
+        virtual Model::ListPipelineExecutionStepsOutcome ListPipelineExecutionSteps(const Model::ListPipelineExecutionStepsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelineExecutionSteps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelineExecutionStepsRequestT = Model::ListPipelineExecutionStepsRequest>
-        Model::ListPipelineExecutionStepsOutcomeCallable ListPipelineExecutionStepsCallable(const ListPipelineExecutionStepsRequestT& request) const
+        Model::ListPipelineExecutionStepsOutcomeCallable ListPipelineExecutionStepsCallable(const ListPipelineExecutionStepsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListPipelineExecutionSteps, request);
         }
@@ -7060,7 +7060,7 @@ namespace SageMaker
          * An Async wrapper for ListPipelineExecutionSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelineExecutionStepsRequestT = Model::ListPipelineExecutionStepsRequest>
-        void ListPipelineExecutionStepsAsync(const ListPipelineExecutionStepsRequestT& request, const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelineExecutionStepsAsync(const ListPipelineExecutionStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelineExecutionStepsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListPipelineExecutionSteps, request, handler, context);
         }
@@ -7121,13 +7121,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
+        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request) const
+        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListPipelines, request);
         }
@@ -7136,7 +7136,7 @@ namespace SageMaker
          * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        void ListPipelinesAsync(const ListPipelinesRequestT& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelinesAsync(const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListPipelines, request, handler, context);
         }
@@ -7147,13 +7147,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProcessingJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProcessingJobsOutcome ListProcessingJobs(const Model::ListProcessingJobsRequest& request) const;
+        virtual Model::ListProcessingJobsOutcome ListProcessingJobs(const Model::ListProcessingJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProcessingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProcessingJobsRequestT = Model::ListProcessingJobsRequest>
-        Model::ListProcessingJobsOutcomeCallable ListProcessingJobsCallable(const ListProcessingJobsRequestT& request) const
+        Model::ListProcessingJobsOutcomeCallable ListProcessingJobsCallable(const ListProcessingJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListProcessingJobs, request);
         }
@@ -7162,7 +7162,7 @@ namespace SageMaker
          * An Async wrapper for ListProcessingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProcessingJobsRequestT = Model::ListProcessingJobsRequest>
-        void ListProcessingJobsAsync(const ListProcessingJobsRequestT& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProcessingJobsAsync(const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProcessingJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListProcessingJobs, request, handler, context);
         }
@@ -7173,13 +7173,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
+        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request) const
+        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListProjects, request);
         }
@@ -7188,7 +7188,7 @@ namespace SageMaker
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListProjects, request, handler, context);
         }
@@ -7200,13 +7200,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceCatalogsOutcome ListResourceCatalogs(const Model::ListResourceCatalogsRequest& request) const;
+        virtual Model::ListResourceCatalogsOutcome ListResourceCatalogs(const Model::ListResourceCatalogsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceCatalogsRequestT = Model::ListResourceCatalogsRequest>
-        Model::ListResourceCatalogsOutcomeCallable ListResourceCatalogsCallable(const ListResourceCatalogsRequestT& request) const
+        Model::ListResourceCatalogsOutcomeCallable ListResourceCatalogsCallable(const ListResourceCatalogsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListResourceCatalogs, request);
         }
@@ -7215,7 +7215,7 @@ namespace SageMaker
          * An Async wrapper for ListResourceCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceCatalogsRequestT = Model::ListResourceCatalogsRequest>
-        void ListResourceCatalogsAsync(const ListResourceCatalogsRequestT& request, const ListResourceCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceCatalogsAsync(const ListResourceCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceCatalogsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListResourceCatalogs, request, handler, context);
         }
@@ -7225,13 +7225,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSpacesOutcome ListSpaces(const Model::ListSpacesRequest& request) const;
+        virtual Model::ListSpacesOutcome ListSpaces(const Model::ListSpacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSpaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSpacesRequestT = Model::ListSpacesRequest>
-        Model::ListSpacesOutcomeCallable ListSpacesCallable(const ListSpacesRequestT& request) const
+        Model::ListSpacesOutcomeCallable ListSpacesCallable(const ListSpacesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListSpaces, request);
         }
@@ -7240,7 +7240,7 @@ namespace SageMaker
          * An Async wrapper for ListSpaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSpacesRequestT = Model::ListSpacesRequest>
-        void ListSpacesAsync(const ListSpacesRequestT& request, const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSpacesAsync(const ListSpacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSpacesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListSpaces, request, handler, context);
         }
@@ -7277,13 +7277,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStudioLifecycleConfigsOutcome ListStudioLifecycleConfigs(const Model::ListStudioLifecycleConfigsRequest& request) const;
+        virtual Model::ListStudioLifecycleConfigsOutcome ListStudioLifecycleConfigs(const Model::ListStudioLifecycleConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStudioLifecycleConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStudioLifecycleConfigsRequestT = Model::ListStudioLifecycleConfigsRequest>
-        Model::ListStudioLifecycleConfigsOutcomeCallable ListStudioLifecycleConfigsCallable(const ListStudioLifecycleConfigsRequestT& request) const
+        Model::ListStudioLifecycleConfigsOutcomeCallable ListStudioLifecycleConfigsCallable(const ListStudioLifecycleConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListStudioLifecycleConfigs, request);
         }
@@ -7292,7 +7292,7 @@ namespace SageMaker
          * An Async wrapper for ListStudioLifecycleConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStudioLifecycleConfigsRequestT = Model::ListStudioLifecycleConfigsRequest>
-        void ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsRequestT& request, const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStudioLifecycleConfigsAsync(const ListStudioLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStudioLifecycleConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListStudioLifecycleConfigs, request, handler, context);
         }
@@ -7305,13 +7305,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSubscribedWorkteamsOutcome ListSubscribedWorkteams(const Model::ListSubscribedWorkteamsRequest& request) const;
+        virtual Model::ListSubscribedWorkteamsOutcome ListSubscribedWorkteams(const Model::ListSubscribedWorkteamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSubscribedWorkteams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSubscribedWorkteamsRequestT = Model::ListSubscribedWorkteamsRequest>
-        Model::ListSubscribedWorkteamsOutcomeCallable ListSubscribedWorkteamsCallable(const ListSubscribedWorkteamsRequestT& request) const
+        Model::ListSubscribedWorkteamsOutcomeCallable ListSubscribedWorkteamsCallable(const ListSubscribedWorkteamsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListSubscribedWorkteams, request);
         }
@@ -7320,7 +7320,7 @@ namespace SageMaker
          * An Async wrapper for ListSubscribedWorkteams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSubscribedWorkteamsRequestT = Model::ListSubscribedWorkteamsRequest>
-        void ListSubscribedWorkteamsAsync(const ListSubscribedWorkteamsRequestT& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSubscribedWorkteamsAsync(const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSubscribedWorkteamsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListSubscribedWorkteams, request, handler, context);
         }
@@ -7369,13 +7369,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrainingJobsOutcome ListTrainingJobs(const Model::ListTrainingJobsRequest& request) const;
+        virtual Model::ListTrainingJobsOutcome ListTrainingJobs(const Model::ListTrainingJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrainingJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrainingJobsRequestT = Model::ListTrainingJobsRequest>
-        Model::ListTrainingJobsOutcomeCallable ListTrainingJobsCallable(const ListTrainingJobsRequestT& request) const
+        Model::ListTrainingJobsOutcomeCallable ListTrainingJobsCallable(const ListTrainingJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListTrainingJobs, request);
         }
@@ -7384,7 +7384,7 @@ namespace SageMaker
          * An Async wrapper for ListTrainingJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrainingJobsRequestT = Model::ListTrainingJobsRequest>
-        void ListTrainingJobsAsync(const ListTrainingJobsRequestT& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrainingJobsAsync(const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrainingJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListTrainingJobs, request, handler, context);
         }
@@ -7422,13 +7422,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTransformJobsOutcome ListTransformJobs(const Model::ListTransformJobsRequest& request) const;
+        virtual Model::ListTransformJobsOutcome ListTransformJobs(const Model::ListTransformJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTransformJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTransformJobsRequestT = Model::ListTransformJobsRequest>
-        Model::ListTransformJobsOutcomeCallable ListTransformJobsCallable(const ListTransformJobsRequestT& request) const
+        Model::ListTransformJobsOutcomeCallable ListTransformJobsCallable(const ListTransformJobsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListTransformJobs, request);
         }
@@ -7437,7 +7437,7 @@ namespace SageMaker
          * An Async wrapper for ListTransformJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTransformJobsRequestT = Model::ListTransformJobsRequest>
-        void ListTransformJobsAsync(const ListTransformJobsRequestT& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTransformJobsAsync(const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTransformJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListTransformJobs, request, handler, context);
         }
@@ -7452,13 +7452,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrialComponentsOutcome ListTrialComponents(const Model::ListTrialComponentsRequest& request) const;
+        virtual Model::ListTrialComponentsOutcome ListTrialComponents(const Model::ListTrialComponentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrialComponents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrialComponentsRequestT = Model::ListTrialComponentsRequest>
-        Model::ListTrialComponentsOutcomeCallable ListTrialComponentsCallable(const ListTrialComponentsRequestT& request) const
+        Model::ListTrialComponentsOutcomeCallable ListTrialComponentsCallable(const ListTrialComponentsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListTrialComponents, request);
         }
@@ -7467,7 +7467,7 @@ namespace SageMaker
          * An Async wrapper for ListTrialComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrialComponentsRequestT = Model::ListTrialComponentsRequest>
-        void ListTrialComponentsAsync(const ListTrialComponentsRequestT& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrialComponentsAsync(const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrialComponentsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListTrialComponents, request, handler, context);
         }
@@ -7482,13 +7482,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrialsOutcome ListTrials(const Model::ListTrialsRequest& request) const;
+        virtual Model::ListTrialsOutcome ListTrials(const Model::ListTrialsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrials that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrialsRequestT = Model::ListTrialsRequest>
-        Model::ListTrialsOutcomeCallable ListTrialsCallable(const ListTrialsRequestT& request) const
+        Model::ListTrialsOutcomeCallable ListTrialsCallable(const ListTrialsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListTrials, request);
         }
@@ -7497,7 +7497,7 @@ namespace SageMaker
          * An Async wrapper for ListTrials that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrialsRequestT = Model::ListTrialsRequest>
-        void ListTrialsAsync(const ListTrialsRequestT& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrialsAsync(const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrialsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListTrials, request, handler, context);
         }
@@ -7507,13 +7507,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUserProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request) const;
+        virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUserProfilesRequestT = Model::ListUserProfilesRequest>
-        Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const ListUserProfilesRequestT& request) const
+        Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const ListUserProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListUserProfiles, request);
         }
@@ -7522,7 +7522,7 @@ namespace SageMaker
          * An Async wrapper for ListUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUserProfilesRequestT = Model::ListUserProfilesRequest>
-        void ListUserProfilesAsync(const ListUserProfilesRequestT& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUserProfilesAsync(const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUserProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListUserProfiles, request, handler, context);
         }
@@ -7534,13 +7534,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkforcesOutcome ListWorkforces(const Model::ListWorkforcesRequest& request) const;
+        virtual Model::ListWorkforcesOutcome ListWorkforces(const Model::ListWorkforcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkforces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkforcesRequestT = Model::ListWorkforcesRequest>
-        Model::ListWorkforcesOutcomeCallable ListWorkforcesCallable(const ListWorkforcesRequestT& request) const
+        Model::ListWorkforcesOutcomeCallable ListWorkforcesCallable(const ListWorkforcesRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListWorkforces, request);
         }
@@ -7549,7 +7549,7 @@ namespace SageMaker
          * An Async wrapper for ListWorkforces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkforcesRequestT = Model::ListWorkforcesRequest>
-        void ListWorkforcesAsync(const ListWorkforcesRequestT& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkforcesAsync(const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkforcesRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListWorkforces, request, handler, context);
         }
@@ -7561,13 +7561,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkteams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkteamsOutcome ListWorkteams(const Model::ListWorkteamsRequest& request) const;
+        virtual Model::ListWorkteamsOutcome ListWorkteams(const Model::ListWorkteamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkteams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkteamsRequestT = Model::ListWorkteamsRequest>
-        Model::ListWorkteamsOutcomeCallable ListWorkteamsCallable(const ListWorkteamsRequestT& request) const
+        Model::ListWorkteamsOutcomeCallable ListWorkteamsCallable(const ListWorkteamsRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::ListWorkteams, request);
         }
@@ -7576,7 +7576,7 @@ namespace SageMaker
          * An Async wrapper for ListWorkteams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkteamsRequestT = Model::ListWorkteamsRequest>
-        void ListWorkteamsAsync(const ListWorkteamsRequestT& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkteamsAsync(const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkteamsRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::ListWorkteams, request, handler, context);
         }
@@ -7619,13 +7619,13 @@ namespace SageMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">AWS
          * API Reference</a></p>
          */
-        virtual Model::QueryLineageOutcome QueryLineage(const Model::QueryLineageRequest& request) const;
+        virtual Model::QueryLineageOutcome QueryLineage(const Model::QueryLineageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for QueryLineage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename QueryLineageRequestT = Model::QueryLineageRequest>
-        Model::QueryLineageOutcomeCallable QueryLineageCallable(const QueryLineageRequestT& request) const
+        Model::QueryLineageOutcomeCallable QueryLineageCallable(const QueryLineageRequestT& request = {}) const
         {
             return SubmitCallable(&SageMakerClient::QueryLineage, request);
         }
@@ -7634,7 +7634,7 @@ namespace SageMaker
          * An Async wrapper for QueryLineage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename QueryLineageRequestT = Model::QueryLineageRequest>
-        void QueryLineageAsync(const QueryLineageRequestT& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void QueryLineageAsync(const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const QueryLineageRequestT& request = {}) const
         {
             return SubmitAsync(&SageMakerClient::QueryLineage, request, handler, context);
         }

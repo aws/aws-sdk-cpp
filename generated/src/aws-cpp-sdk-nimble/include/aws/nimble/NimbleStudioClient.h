@@ -799,13 +799,13 @@ namespace NimbleStudio
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEulasOutcome ListEulas(const Model::ListEulasRequest& request) const;
+        virtual Model::ListEulasOutcome ListEulas(const Model::ListEulasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEulas that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEulasRequestT = Model::ListEulasRequest>
-        Model::ListEulasOutcomeCallable ListEulasCallable(const ListEulasRequestT& request) const
+        Model::ListEulasOutcomeCallable ListEulasCallable(const ListEulasRequestT& request = {}) const
         {
             return SubmitCallable(&NimbleStudioClient::ListEulas, request);
         }
@@ -814,7 +814,7 @@ namespace NimbleStudio
          * An Async wrapper for ListEulas that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEulasRequestT = Model::ListEulasRequest>
-        void ListEulasAsync(const ListEulasRequestT& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEulasAsync(const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEulasRequestT& request = {}) const
         {
             return SubmitAsync(&NimbleStudioClient::ListEulas, request, handler, context);
         }
@@ -1007,13 +1007,13 @@ namespace NimbleStudio
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStudiosOutcome ListStudios(const Model::ListStudiosRequest& request) const;
+        virtual Model::ListStudiosOutcome ListStudios(const Model::ListStudiosRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStudios that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStudiosRequestT = Model::ListStudiosRequest>
-        Model::ListStudiosOutcomeCallable ListStudiosCallable(const ListStudiosRequestT& request) const
+        Model::ListStudiosOutcomeCallable ListStudiosCallable(const ListStudiosRequestT& request = {}) const
         {
             return SubmitCallable(&NimbleStudioClient::ListStudios, request);
         }
@@ -1022,7 +1022,7 @@ namespace NimbleStudio
          * An Async wrapper for ListStudios that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStudiosRequestT = Model::ListStudiosRequest>
-        void ListStudiosAsync(const ListStudiosRequestT& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStudiosAsync(const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStudiosRequestT& request = {}) const
         {
             return SubmitAsync(&NimbleStudioClient::ListStudios, request, handler, context);
         }

@@ -339,13 +339,13 @@ namespace MediaPackageVod
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListAssets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
+        virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAssets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAssetsRequestT = Model::ListAssetsRequest>
-        Model::ListAssetsOutcomeCallable ListAssetsCallable(const ListAssetsRequestT& request) const
+        Model::ListAssetsOutcomeCallable ListAssetsCallable(const ListAssetsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageVodClient::ListAssets, request);
         }
@@ -354,7 +354,7 @@ namespace MediaPackageVod
          * An Async wrapper for ListAssets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAssetsRequestT = Model::ListAssetsRequest>
-        void ListAssetsAsync(const ListAssetsRequestT& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAssetsAsync(const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAssetsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageVodClient::ListAssets, request, handler, context);
         }
@@ -365,13 +365,13 @@ namespace MediaPackageVod
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPackagingConfigurationsOutcome ListPackagingConfigurations(const Model::ListPackagingConfigurationsRequest& request) const;
+        virtual Model::ListPackagingConfigurationsOutcome ListPackagingConfigurations(const Model::ListPackagingConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPackagingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPackagingConfigurationsRequestT = Model::ListPackagingConfigurationsRequest>
-        Model::ListPackagingConfigurationsOutcomeCallable ListPackagingConfigurationsCallable(const ListPackagingConfigurationsRequestT& request) const
+        Model::ListPackagingConfigurationsOutcomeCallable ListPackagingConfigurationsCallable(const ListPackagingConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageVodClient::ListPackagingConfigurations, request);
         }
@@ -380,7 +380,7 @@ namespace MediaPackageVod
          * An Async wrapper for ListPackagingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPackagingConfigurationsRequestT = Model::ListPackagingConfigurationsRequest>
-        void ListPackagingConfigurationsAsync(const ListPackagingConfigurationsRequestT& request, const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPackagingConfigurationsAsync(const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPackagingConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageVodClient::ListPackagingConfigurations, request, handler, context);
         }
@@ -391,13 +391,13 @@ namespace MediaPackageVod
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPackagingGroupsOutcome ListPackagingGroups(const Model::ListPackagingGroupsRequest& request) const;
+        virtual Model::ListPackagingGroupsOutcome ListPackagingGroups(const Model::ListPackagingGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPackagingGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPackagingGroupsRequestT = Model::ListPackagingGroupsRequest>
-        Model::ListPackagingGroupsOutcomeCallable ListPackagingGroupsCallable(const ListPackagingGroupsRequestT& request) const
+        Model::ListPackagingGroupsOutcomeCallable ListPackagingGroupsCallable(const ListPackagingGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageVodClient::ListPackagingGroups, request);
         }
@@ -406,7 +406,7 @@ namespace MediaPackageVod
          * An Async wrapper for ListPackagingGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPackagingGroupsRequestT = Model::ListPackagingGroupsRequest>
-        void ListPackagingGroupsAsync(const ListPackagingGroupsRequestT& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPackagingGroupsAsync(const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPackagingGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageVodClient::ListPackagingGroups, request, handler, context);
         }

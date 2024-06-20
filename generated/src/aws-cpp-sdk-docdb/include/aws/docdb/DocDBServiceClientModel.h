@@ -68,6 +68,19 @@
 #include <aws/docdb/model/StartDBClusterResult.h>
 #include <aws/docdb/model/StopDBClusterResult.h>
 #include <aws/docdb/model/SwitchoverGlobalClusterResult.h>
+#include <aws/docdb/model/DescribeEventSubscriptionsRequest.h>
+#include <aws/docdb/model/DescribeDBInstancesRequest.h>
+#include <aws/docdb/model/DescribeCertificatesRequest.h>
+#include <aws/docdb/model/DescribeDBClustersRequest.h>
+#include <aws/docdb/model/DescribeEventCategoriesRequest.h>
+#include <aws/docdb/model/DescribeDBClusterParameterGroupsRequest.h>
+#include <aws/docdb/model/DescribeDBEngineVersionsRequest.h>
+#include <aws/docdb/model/DescribePendingMaintenanceActionsRequest.h>
+#include <aws/docdb/model/DescribeEventsRequest.h>
+#include <aws/docdb/model/DescribeGlobalClustersRequest.h>
+#include <aws/docdb/model/DescribeDBSubnetGroupsRequest.h>
+#include <aws/docdb/model/DescribeDBClusterSnapshotsRequest.h>
+#include <aws/docdb/model/FailoverDBClusterRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DocDBClient header */
 

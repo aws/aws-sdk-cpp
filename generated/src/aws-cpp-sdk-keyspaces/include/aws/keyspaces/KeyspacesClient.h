@@ -324,13 +324,13 @@ namespace Keyspaces
          * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListKeyspaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKeyspacesOutcome ListKeyspaces(const Model::ListKeyspacesRequest& request) const;
+        virtual Model::ListKeyspacesOutcome ListKeyspaces(const Model::ListKeyspacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeyspaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeyspacesRequestT = Model::ListKeyspacesRequest>
-        Model::ListKeyspacesOutcomeCallable ListKeyspacesCallable(const ListKeyspacesRequestT& request) const
+        Model::ListKeyspacesOutcomeCallable ListKeyspacesCallable(const ListKeyspacesRequestT& request = {}) const
         {
             return SubmitCallable(&KeyspacesClient::ListKeyspaces, request);
         }
@@ -339,7 +339,7 @@ namespace Keyspaces
          * An Async wrapper for ListKeyspaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeyspacesRequestT = Model::ListKeyspacesRequest>
-        void ListKeyspacesAsync(const ListKeyspacesRequestT& request, const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeyspacesAsync(const ListKeyspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeyspacesRequestT& request = {}) const
         {
             return SubmitAsync(&KeyspacesClient::ListKeyspaces, request, handler, context);
         }

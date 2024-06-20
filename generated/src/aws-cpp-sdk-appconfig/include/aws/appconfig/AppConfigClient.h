@@ -812,13 +812,13 @@ namespace AppConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppConfigClient::ListApplications, request);
         }
@@ -827,7 +827,7 @@ namespace AppConfig
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppConfigClient::ListApplications, request, handler, context);
         }
@@ -863,13 +863,13 @@ namespace AppConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeploymentStrategies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeploymentStrategiesOutcome ListDeploymentStrategies(const Model::ListDeploymentStrategiesRequest& request) const;
+        virtual Model::ListDeploymentStrategiesOutcome ListDeploymentStrategies(const Model::ListDeploymentStrategiesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeploymentStrategies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeploymentStrategiesRequestT = Model::ListDeploymentStrategiesRequest>
-        Model::ListDeploymentStrategiesOutcomeCallable ListDeploymentStrategiesCallable(const ListDeploymentStrategiesRequestT& request) const
+        Model::ListDeploymentStrategiesOutcomeCallable ListDeploymentStrategiesCallable(const ListDeploymentStrategiesRequestT& request = {}) const
         {
             return SubmitCallable(&AppConfigClient::ListDeploymentStrategies, request);
         }
@@ -878,7 +878,7 @@ namespace AppConfig
          * An Async wrapper for ListDeploymentStrategies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeploymentStrategiesRequestT = Model::ListDeploymentStrategiesRequest>
-        void ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequestT& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeploymentStrategiesAsync(const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeploymentStrategiesRequestT& request = {}) const
         {
             return SubmitAsync(&AppConfigClient::ListDeploymentStrategies, request, handler, context);
         }
@@ -942,13 +942,13 @@ namespace AppConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExtensionAssociationsOutcome ListExtensionAssociations(const Model::ListExtensionAssociationsRequest& request) const;
+        virtual Model::ListExtensionAssociationsOutcome ListExtensionAssociations(const Model::ListExtensionAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExtensionAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExtensionAssociationsRequestT = Model::ListExtensionAssociationsRequest>
-        Model::ListExtensionAssociationsOutcomeCallable ListExtensionAssociationsCallable(const ListExtensionAssociationsRequestT& request) const
+        Model::ListExtensionAssociationsOutcomeCallable ListExtensionAssociationsCallable(const ListExtensionAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppConfigClient::ListExtensionAssociations, request);
         }
@@ -957,7 +957,7 @@ namespace AppConfig
          * An Async wrapper for ListExtensionAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExtensionAssociationsRequestT = Model::ListExtensionAssociationsRequest>
-        void ListExtensionAssociationsAsync(const ListExtensionAssociationsRequestT& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExtensionAssociationsAsync(const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExtensionAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppConfigClient::ListExtensionAssociations, request, handler, context);
         }
@@ -970,13 +970,13 @@ namespace AppConfig
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListExtensionsOutcome ListExtensions(const Model::ListExtensionsRequest& request) const;
+        virtual Model::ListExtensionsOutcome ListExtensions(const Model::ListExtensionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListExtensions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListExtensionsRequestT = Model::ListExtensionsRequest>
-        Model::ListExtensionsOutcomeCallable ListExtensionsCallable(const ListExtensionsRequestT& request) const
+        Model::ListExtensionsOutcomeCallable ListExtensionsCallable(const ListExtensionsRequestT& request = {}) const
         {
             return SubmitCallable(&AppConfigClient::ListExtensions, request);
         }
@@ -985,7 +985,7 @@ namespace AppConfig
          * An Async wrapper for ListExtensions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListExtensionsRequestT = Model::ListExtensionsRequest>
-        void ListExtensionsAsync(const ListExtensionsRequestT& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListExtensionsAsync(const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListExtensionsRequestT& request = {}) const
         {
             return SubmitAsync(&AppConfigClient::ListExtensions, request, handler, context);
         }

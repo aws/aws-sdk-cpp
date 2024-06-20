@@ -56,6 +56,7 @@
 #include <aws/appmesh/model/UpdateVirtualNodeResult.h>
 #include <aws/appmesh/model/UpdateVirtualRouterResult.h>
 #include <aws/appmesh/model/UpdateVirtualServiceResult.h>
+#include <aws/appmesh/model/ListMeshesRequest.h>
 /* End of service model headers required in AppMeshClient header */
 
 namespace Aws

@@ -32,6 +32,8 @@
 #include <aws/osis/model/UntagResourceResult.h>
 #include <aws/osis/model/UpdatePipelineResult.h>
 #include <aws/osis/model/ValidatePipelineResult.h>
+#include <aws/osis/model/ListPipelinesRequest.h>
+#include <aws/osis/model/ListPipelineBlueprintsRequest.h>
 /* End of service model headers required in OSISClient header */
 
 namespace Aws

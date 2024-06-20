@@ -49,6 +49,11 @@
 #include <aws/codepipeline/model/TagResourceResult.h>
 #include <aws/codepipeline/model/UntagResourceResult.h>
 #include <aws/codepipeline/model/UpdatePipelineResult.h>
+#include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyRequest.h>
+#include <aws/codepipeline/model/RegisterWebhookWithThirdPartyRequest.h>
+#include <aws/codepipeline/model/ListWebhooksRequest.h>
+#include <aws/codepipeline/model/ListActionTypesRequest.h>
+#include <aws/codepipeline/model/ListPipelinesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CodePipelineClient header */
 

@@ -103,6 +103,27 @@
 #include <aws/medialive/model/UpdateMultiplexResult.h>
 #include <aws/medialive/model/UpdateMultiplexProgramResult.h>
 #include <aws/medialive/model/UpdateReservationResult.h>
+#include <aws/medialive/model/DescribeAccountConfigurationRequest.h>
+#include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
+#include <aws/medialive/model/ListCloudWatchAlarmTemplateGroupsRequest.h>
+#include <aws/medialive/model/UpdateAccountConfigurationRequest.h>
+#include <aws/medialive/model/ClaimDeviceRequest.h>
+#include <aws/medialive/model/BatchStartRequest.h>
+#include <aws/medialive/model/BatchStopRequest.h>
+#include <aws/medialive/model/ListOfferingsRequest.h>
+#include <aws/medialive/model/ListChannelsRequest.h>
+#include <aws/medialive/model/ListCloudWatchAlarmTemplatesRequest.h>
+#include <aws/medialive/model/ListInputDevicesRequest.h>
+#include <aws/medialive/model/ListInputsRequest.h>
+#include <aws/medialive/model/CreateInputRequest.h>
+#include <aws/medialive/model/ListReservationsRequest.h>
+#include <aws/medialive/model/ListEventBridgeRuleTemplateGroupsRequest.h>
+#include <aws/medialive/model/BatchDeleteRequest.h>
+#include <aws/medialive/model/ListEventBridgeRuleTemplatesRequest.h>
+#include <aws/medialive/model/ListSignalMapsRequest.h>
+#include <aws/medialive/model/CreateChannelRequest.h>
+#include <aws/medialive/model/CreateInputSecurityGroupRequest.h>
+#include <aws/medialive/model/ListMultiplexesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MediaLiveClient header */
 

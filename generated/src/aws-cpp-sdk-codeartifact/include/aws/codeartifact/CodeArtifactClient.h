@@ -1060,13 +1060,13 @@ namespace CodeArtifact
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomains that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request) const
+        Model::ListDomainsOutcomeCallable ListDomainsCallable(const ListDomainsRequestT& request = {}) const
         {
             return SubmitCallable(&CodeArtifactClient::ListDomains, request);
         }
@@ -1075,7 +1075,7 @@ namespace CodeArtifact
          * An Async wrapper for ListDomains that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainsRequestT = Model::ListDomainsRequest>
-        void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainsAsync(const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainsRequestT& request = {}) const
         {
             return SubmitAsync(&CodeArtifactClient::ListDomains, request, handler, context);
         }
@@ -1232,13 +1232,13 @@ namespace CodeArtifact
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
+        virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRepositories that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRepositoriesRequestT = Model::ListRepositoriesRequest>
-        Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const ListRepositoriesRequestT& request) const
+        Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const ListRepositoriesRequestT& request = {}) const
         {
             return SubmitCallable(&CodeArtifactClient::ListRepositories, request);
         }
@@ -1247,7 +1247,7 @@ namespace CodeArtifact
          * An Async wrapper for ListRepositories that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRepositoriesRequestT = Model::ListRepositoriesRequest>
-        void ListRepositoriesAsync(const ListRepositoriesRequestT& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRepositoriesAsync(const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRepositoriesRequestT& request = {}) const
         {
             return SubmitAsync(&CodeArtifactClient::ListRepositories, request, handler, context);
         }

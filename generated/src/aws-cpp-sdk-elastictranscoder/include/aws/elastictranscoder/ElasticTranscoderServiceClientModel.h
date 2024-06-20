@@ -34,6 +34,8 @@
 #include <aws/elastictranscoder/model/UpdatePipelineResult.h>
 #include <aws/elastictranscoder/model/UpdatePipelineNotificationsResult.h>
 #include <aws/elastictranscoder/model/UpdatePipelineStatusResult.h>
+#include <aws/elastictranscoder/model/ListPipelinesRequest.h>
+#include <aws/elastictranscoder/model/ListPresetsRequest.h>
 /* End of service model headers required in ElasticTranscoderClient header */
 
 namespace Aws

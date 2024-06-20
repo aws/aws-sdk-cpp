@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
-#include <aws/servicecatalog-appregistry/model/GetConfigurationRequest.h>
 
 namespace Aws
 {
@@ -446,13 +445,13 @@ namespace AppRegistry
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
+        virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request) const
+        Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const ListApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&AppRegistryClient::ListApplications, request);
         }
@@ -461,7 +460,7 @@ namespace AppRegistry
          * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationsRequestT = Model::ListApplicationsRequest>
-        void ListApplicationsAsync(const ListApplicationsRequestT& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&AppRegistryClient::ListApplications, request, handler, context);
         }
@@ -528,13 +527,13 @@ namespace AppRegistry
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAttributeGroupsOutcome ListAttributeGroups(const Model::ListAttributeGroupsRequest& request) const;
+        virtual Model::ListAttributeGroupsOutcome ListAttributeGroups(const Model::ListAttributeGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAttributeGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAttributeGroupsRequestT = Model::ListAttributeGroupsRequest>
-        Model::ListAttributeGroupsOutcomeCallable ListAttributeGroupsCallable(const ListAttributeGroupsRequestT& request) const
+        Model::ListAttributeGroupsOutcomeCallable ListAttributeGroupsCallable(const ListAttributeGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&AppRegistryClient::ListAttributeGroups, request);
         }
@@ -543,7 +542,7 @@ namespace AppRegistry
          * An Async wrapper for ListAttributeGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAttributeGroupsRequestT = Model::ListAttributeGroupsRequest>
-        void ListAttributeGroupsAsync(const ListAttributeGroupsRequestT& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAttributeGroupsAsync(const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAttributeGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&AppRegistryClient::ListAttributeGroups, request, handler, context);
         }

@@ -35,6 +35,7 @@
 #include <aws/rum/model/UntagResourceResult.h>
 #include <aws/rum/model/UpdateAppMonitorResult.h>
 #include <aws/rum/model/UpdateRumMetricDefinitionResult.h>
+#include <aws/rum/model/ListAppMonitorsRequest.h>
 /* End of service model headers required in CloudWatchRUMClient header */
 
 namespace Aws

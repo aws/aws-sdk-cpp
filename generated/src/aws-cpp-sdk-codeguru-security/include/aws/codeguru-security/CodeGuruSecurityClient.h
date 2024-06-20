@@ -171,13 +171,13 @@ namespace CodeGuruSecurity
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetAccountConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration(const Model::GetAccountConfigurationRequest& request) const;
+        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration(const Model::GetAccountConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
-        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable(const GetAccountConfigurationRequestT& request) const
+        Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable(const GetAccountConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruSecurityClient::GetAccountConfiguration, request);
         }
@@ -186,7 +186,7 @@ namespace CodeGuruSecurity
          * An Async wrapper for GetAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountConfigurationRequestT = Model::GetAccountConfigurationRequest>
-        void GetAccountConfigurationAsync(const GetAccountConfigurationRequestT& request, const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruSecurityClient::GetAccountConfiguration, request, handler, context);
         }
@@ -303,13 +303,13 @@ namespace CodeGuruSecurity
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListScans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScansOutcome ListScans(const Model::ListScansRequest& request) const;
+        virtual Model::ListScansOutcome ListScans(const Model::ListScansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScansRequestT = Model::ListScansRequest>
-        Model::ListScansOutcomeCallable ListScansCallable(const ListScansRequestT& request) const
+        Model::ListScansOutcomeCallable ListScansCallable(const ListScansRequestT& request = {}) const
         {
             return SubmitCallable(&CodeGuruSecurityClient::ListScans, request);
         }
@@ -318,7 +318,7 @@ namespace CodeGuruSecurity
          * An Async wrapper for ListScans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScansRequestT = Model::ListScansRequest>
-        void ListScansAsync(const ListScansRequestT& request, const ListScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScansAsync(const ListScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScansRequestT& request = {}) const
         {
             return SubmitAsync(&CodeGuruSecurityClient::ListScans, request, handler, context);
         }

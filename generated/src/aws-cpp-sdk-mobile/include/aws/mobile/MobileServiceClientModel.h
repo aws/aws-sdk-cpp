@@ -27,6 +27,9 @@
 #include <aws/mobile/model/ListBundlesResult.h>
 #include <aws/mobile/model/ListProjectsResult.h>
 #include <aws/mobile/model/UpdateProjectResult.h>
+#include <aws/mobile/model/ListProjectsRequest.h>
+#include <aws/mobile/model/ListBundlesRequest.h>
+#include <aws/mobile/model/CreateProjectRequest.h>
 /* End of service model headers required in MobileClient header */
 
 namespace Aws

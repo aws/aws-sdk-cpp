@@ -59,6 +59,8 @@
 #include <aws/qconnect/model/UpdateKnowledgeBaseTemplateUriResult.h>
 #include <aws/qconnect/model/UpdateQuickResponseResult.h>
 #include <aws/qconnect/model/UpdateSessionResult.h>
+#include <aws/qconnect/model/ListKnowledgeBasesRequest.h>
+#include <aws/qconnect/model/ListAssistantsRequest.h>
 /* End of service model headers required in QConnectClient header */
 
 namespace Aws

@@ -219,13 +219,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
+        virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateServerRequestT = Model::CreateServerRequest>
-        Model::CreateServerOutcomeCallable CreateServerCallable(const CreateServerRequestT& request) const
+        Model::CreateServerOutcomeCallable CreateServerCallable(const CreateServerRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::CreateServer, request);
         }
@@ -234,7 +234,7 @@ namespace Transfer
          * An Async wrapper for CreateServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateServerRequestT = Model::CreateServerRequest>
-        void CreateServerAsync(const CreateServerRequestT& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateServerAsync(const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateServerRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::CreateServer, request, handler, context);
         }
@@ -1010,13 +1010,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request) const
+        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListCertificates, request);
         }
@@ -1025,7 +1025,7 @@ namespace Transfer
          * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        void ListCertificatesAsync(const ListCertificatesRequestT& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificatesAsync(const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListCertificates, request, handler, context);
         }
@@ -1035,13 +1035,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request) const
+        Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const ListConnectorsRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListConnectors, request);
         }
@@ -1050,7 +1050,7 @@ namespace Transfer
          * An Async wrapper for ListConnectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectorsRequestT = Model::ListConnectorsRequest>
-        void ListConnectorsAsync(const ListConnectorsRequestT& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectorsAsync(const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectorsRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListConnectors, request, handler, context);
         }
@@ -1117,13 +1117,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request) const;
+        virtual Model::ListProfilesOutcome ListProfiles(const Model::ListProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request) const
+        Model::ListProfilesOutcomeCallable ListProfilesCallable(const ListProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListProfiles, request);
         }
@@ -1132,7 +1132,7 @@ namespace Transfer
          * An Async wrapper for ListProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProfilesRequestT = Model::ListProfilesRequest>
-        void ListProfilesAsync(const ListProfilesRequestT& request, const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProfilesAsync(const ListProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListProfiles, request, handler, context);
         }
@@ -1147,13 +1147,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request) const;
+        virtual Model::ListSecurityPoliciesOutcome ListSecurityPolicies(const Model::ListSecurityPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSecurityPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSecurityPoliciesRequestT = Model::ListSecurityPoliciesRequest>
-        Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const ListSecurityPoliciesRequestT& request) const
+        Model::ListSecurityPoliciesOutcomeCallable ListSecurityPoliciesCallable(const ListSecurityPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListSecurityPolicies, request);
         }
@@ -1162,7 +1162,7 @@ namespace Transfer
          * An Async wrapper for ListSecurityPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSecurityPoliciesRequestT = Model::ListSecurityPoliciesRequest>
-        void ListSecurityPoliciesAsync(const ListSecurityPoliciesRequestT& request, const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSecurityPoliciesAsync(const ListSecurityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecurityPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListSecurityPolicies, request, handler, context);
         }
@@ -1173,13 +1173,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
+        virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServersRequestT = Model::ListServersRequest>
-        Model::ListServersOutcomeCallable ListServersCallable(const ListServersRequestT& request) const
+        Model::ListServersOutcomeCallable ListServersCallable(const ListServersRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListServers, request);
         }
@@ -1188,7 +1188,7 @@ namespace Transfer
          * An Async wrapper for ListServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServersRequestT = Model::ListServersRequest>
-        void ListServersAsync(const ListServersRequestT& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServersAsync(const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServersRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListServers, request, handler, context);
         }
@@ -1252,13 +1252,13 @@ namespace Transfer
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWorkflows">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request) const;
+        virtual Model::ListWorkflowsOutcome ListWorkflows(const Model::ListWorkflowsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkflows that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request) const
+        Model::ListWorkflowsOutcomeCallable ListWorkflowsCallable(const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitCallable(&TransferClient::ListWorkflows, request);
         }
@@ -1267,7 +1267,7 @@ namespace Transfer
          * An Async wrapper for ListWorkflows that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkflowsRequestT = Model::ListWorkflowsRequest>
-        void ListWorkflowsAsync(const ListWorkflowsRequestT& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkflowsAsync(const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkflowsRequestT& request = {}) const
         {
             return SubmitAsync(&TransferClient::ListWorkflows, request, handler, context);
         }

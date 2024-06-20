@@ -635,13 +635,13 @@ namespace SQS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request) const;
+        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request) const
+        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request = {}) const
         {
             return SubmitCallable(&SQSClient::ListQueues, request);
         }
@@ -650,7 +650,7 @@ namespace SQS
          * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        void ListQueuesAsync(const ListQueuesRequestT& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListQueuesAsync(const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListQueuesRequestT& request = {}) const
         {
             return SubmitAsync(&SQSClient::ListQueues, request, handler, context);
         }

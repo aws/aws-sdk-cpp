@@ -936,13 +936,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProductOutcome DescribeProduct(const Model::DescribeProductRequest& request) const;
+        virtual Model::DescribeProductOutcome DescribeProduct(const Model::DescribeProductRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProductRequestT = Model::DescribeProductRequest>
-        Model::DescribeProductOutcomeCallable DescribeProductCallable(const DescribeProductRequestT& request) const
+        Model::DescribeProductOutcomeCallable DescribeProductCallable(const DescribeProductRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DescribeProduct, request);
         }
@@ -951,7 +951,7 @@ namespace ServiceCatalog
          * An Async wrapper for DescribeProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProductRequestT = Model::DescribeProductRequest>
-        void DescribeProductAsync(const DescribeProductRequestT& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProductAsync(const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProductRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DescribeProduct, request, handler, context);
         }
@@ -962,13 +962,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProductAsAdminOutcome DescribeProductAsAdmin(const Model::DescribeProductAsAdminRequest& request) const;
+        virtual Model::DescribeProductAsAdminOutcome DescribeProductAsAdmin(const Model::DescribeProductAsAdminRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProductAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProductAsAdminRequestT = Model::DescribeProductAsAdminRequest>
-        Model::DescribeProductAsAdminOutcomeCallable DescribeProductAsAdminCallable(const DescribeProductAsAdminRequestT& request) const
+        Model::DescribeProductAsAdminOutcomeCallable DescribeProductAsAdminCallable(const DescribeProductAsAdminRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DescribeProductAsAdmin, request);
         }
@@ -977,7 +977,7 @@ namespace ServiceCatalog
          * An Async wrapper for DescribeProductAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProductAsAdminRequestT = Model::DescribeProductAsAdminRequest>
-        void DescribeProductAsAdminAsync(const DescribeProductAsAdminRequestT& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProductAsAdminAsync(const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProductAsAdminRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DescribeProductAsAdmin, request, handler, context);
         }
@@ -1013,13 +1013,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProvisionedProductOutcome DescribeProvisionedProduct(const Model::DescribeProvisionedProductRequest& request) const;
+        virtual Model::DescribeProvisionedProductOutcome DescribeProvisionedProduct(const Model::DescribeProvisionedProductRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProvisionedProduct that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProvisionedProductRequestT = Model::DescribeProvisionedProductRequest>
-        Model::DescribeProvisionedProductOutcomeCallable DescribeProvisionedProductCallable(const DescribeProvisionedProductRequestT& request) const
+        Model::DescribeProvisionedProductOutcomeCallable DescribeProvisionedProductCallable(const DescribeProvisionedProductRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DescribeProvisionedProduct, request);
         }
@@ -1028,7 +1028,7 @@ namespace ServiceCatalog
          * An Async wrapper for DescribeProvisionedProduct that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProvisionedProductRequestT = Model::DescribeProvisionedProductRequest>
-        void DescribeProvisionedProductAsync(const DescribeProvisionedProductRequestT& request, const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProvisionedProductAsync(const DescribeProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProvisionedProductRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DescribeProvisionedProduct, request, handler, context);
         }
@@ -1065,13 +1065,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProvisioningArtifactOutcome DescribeProvisioningArtifact(const Model::DescribeProvisioningArtifactRequest& request) const;
+        virtual Model::DescribeProvisioningArtifactOutcome DescribeProvisioningArtifact(const Model::DescribeProvisioningArtifactRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProvisioningArtifact that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProvisioningArtifactRequestT = Model::DescribeProvisioningArtifactRequest>
-        Model::DescribeProvisioningArtifactOutcomeCallable DescribeProvisioningArtifactCallable(const DescribeProvisioningArtifactRequestT& request) const
+        Model::DescribeProvisioningArtifactOutcomeCallable DescribeProvisioningArtifactCallable(const DescribeProvisioningArtifactRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DescribeProvisioningArtifact, request);
         }
@@ -1080,7 +1080,7 @@ namespace ServiceCatalog
          * An Async wrapper for DescribeProvisioningArtifact that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProvisioningArtifactRequestT = Model::DescribeProvisioningArtifactRequest>
-        void DescribeProvisioningArtifactAsync(const DescribeProvisioningArtifactRequestT& request, const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProvisioningArtifactAsync(const DescribeProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProvisioningArtifactRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DescribeProvisioningArtifact, request, handler, context);
         }
@@ -1099,13 +1099,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProvisioningParametersOutcome DescribeProvisioningParameters(const Model::DescribeProvisioningParametersRequest& request) const;
+        virtual Model::DescribeProvisioningParametersOutcome DescribeProvisioningParameters(const Model::DescribeProvisioningParametersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProvisioningParameters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProvisioningParametersRequestT = Model::DescribeProvisioningParametersRequest>
-        Model::DescribeProvisioningParametersOutcomeCallable DescribeProvisioningParametersCallable(const DescribeProvisioningParametersRequestT& request) const
+        Model::DescribeProvisioningParametersOutcomeCallable DescribeProvisioningParametersCallable(const DescribeProvisioningParametersRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DescribeProvisioningParameters, request);
         }
@@ -1114,7 +1114,7 @@ namespace ServiceCatalog
          * An Async wrapper for DescribeProvisioningParameters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProvisioningParametersRequestT = Model::DescribeProvisioningParametersRequest>
-        void DescribeProvisioningParametersAsync(const DescribeProvisioningParametersRequestT& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProvisioningParametersAsync(const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProvisioningParametersRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DescribeProvisioningParameters, request, handler, context);
         }
@@ -1247,13 +1247,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableAWSOrganizationsAccessOutcome DisableAWSOrganizationsAccess(const Model::DisableAWSOrganizationsAccessRequest& request) const;
+        virtual Model::DisableAWSOrganizationsAccessOutcome DisableAWSOrganizationsAccess(const Model::DisableAWSOrganizationsAccessRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisableAWSOrganizationsAccessRequestT = Model::DisableAWSOrganizationsAccessRequest>
-        Model::DisableAWSOrganizationsAccessOutcomeCallable DisableAWSOrganizationsAccessCallable(const DisableAWSOrganizationsAccessRequestT& request) const
+        Model::DisableAWSOrganizationsAccessOutcomeCallable DisableAWSOrganizationsAccessCallable(const DisableAWSOrganizationsAccessRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::DisableAWSOrganizationsAccess, request);
         }
@@ -1262,7 +1262,7 @@ namespace ServiceCatalog
          * An Async wrapper for DisableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisableAWSOrganizationsAccessRequestT = Model::DisableAWSOrganizationsAccessRequest>
-        void DisableAWSOrganizationsAccessAsync(const DisableAWSOrganizationsAccessRequestT& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisableAWSOrganizationsAccessAsync(const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableAWSOrganizationsAccessRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::DisableAWSOrganizationsAccess, request, handler, context);
         }
@@ -1437,13 +1437,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableAWSOrganizationsAccessOutcome EnableAWSOrganizationsAccess(const Model::EnableAWSOrganizationsAccessRequest& request) const;
+        virtual Model::EnableAWSOrganizationsAccessOutcome EnableAWSOrganizationsAccess(const Model::EnableAWSOrganizationsAccessRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableAWSOrganizationsAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename EnableAWSOrganizationsAccessRequestT = Model::EnableAWSOrganizationsAccessRequest>
-        Model::EnableAWSOrganizationsAccessOutcomeCallable EnableAWSOrganizationsAccessCallable(const EnableAWSOrganizationsAccessRequestT& request) const
+        Model::EnableAWSOrganizationsAccessOutcomeCallable EnableAWSOrganizationsAccessCallable(const EnableAWSOrganizationsAccessRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::EnableAWSOrganizationsAccess, request);
         }
@@ -1452,7 +1452,7 @@ namespace ServiceCatalog
          * An Async wrapper for EnableAWSOrganizationsAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename EnableAWSOrganizationsAccessRequestT = Model::EnableAWSOrganizationsAccessRequest>
-        void EnableAWSOrganizationsAccessAsync(const EnableAWSOrganizationsAccessRequestT& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void EnableAWSOrganizationsAccessAsync(const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableAWSOrganizationsAccessRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::EnableAWSOrganizationsAccess, request, handler, context);
         }
@@ -1516,13 +1516,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAWSOrganizationsAccessStatusOutcome GetAWSOrganizationsAccessStatus(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
+        virtual Model::GetAWSOrganizationsAccessStatusOutcome GetAWSOrganizationsAccessStatus(const Model::GetAWSOrganizationsAccessStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAWSOrganizationsAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAWSOrganizationsAccessStatusRequestT = Model::GetAWSOrganizationsAccessStatusRequest>
-        Model::GetAWSOrganizationsAccessStatusOutcomeCallable GetAWSOrganizationsAccessStatusCallable(const GetAWSOrganizationsAccessStatusRequestT& request) const
+        Model::GetAWSOrganizationsAccessStatusOutcomeCallable GetAWSOrganizationsAccessStatusCallable(const GetAWSOrganizationsAccessStatusRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::GetAWSOrganizationsAccessStatus, request);
         }
@@ -1531,7 +1531,7 @@ namespace ServiceCatalog
          * An Async wrapper for GetAWSOrganizationsAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAWSOrganizationsAccessStatusRequestT = Model::GetAWSOrganizationsAccessStatusRequest>
-        void GetAWSOrganizationsAccessStatusAsync(const GetAWSOrganizationsAccessStatusRequestT& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAWSOrganizationsAccessStatusAsync(const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAWSOrganizationsAccessStatusRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::GetAWSOrganizationsAccessStatus, request, handler, context);
         }
@@ -1544,13 +1544,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetProvisionedProductOutputsOutcome GetProvisionedProductOutputs(const Model::GetProvisionedProductOutputsRequest& request) const;
+        virtual Model::GetProvisionedProductOutputsOutcome GetProvisionedProductOutputs(const Model::GetProvisionedProductOutputsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetProvisionedProductOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetProvisionedProductOutputsRequestT = Model::GetProvisionedProductOutputsRequest>
-        Model::GetProvisionedProductOutputsOutcomeCallable GetProvisionedProductOutputsCallable(const GetProvisionedProductOutputsRequestT& request) const
+        Model::GetProvisionedProductOutputsOutcomeCallable GetProvisionedProductOutputsCallable(const GetProvisionedProductOutputsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::GetProvisionedProductOutputs, request);
         }
@@ -1559,7 +1559,7 @@ namespace ServiceCatalog
          * An Async wrapper for GetProvisionedProductOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetProvisionedProductOutputsRequestT = Model::GetProvisionedProductOutputsRequest>
-        void GetProvisionedProductOutputsAsync(const GetProvisionedProductOutputsRequestT& request, const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetProvisionedProductOutputsAsync(const GetProvisionedProductOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetProvisionedProductOutputsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::GetProvisionedProductOutputs, request, handler, context);
         }
@@ -1616,13 +1616,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAcceptedPortfolioSharesOutcome ListAcceptedPortfolioShares(const Model::ListAcceptedPortfolioSharesRequest& request) const;
+        virtual Model::ListAcceptedPortfolioSharesOutcome ListAcceptedPortfolioShares(const Model::ListAcceptedPortfolioSharesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAcceptedPortfolioShares that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAcceptedPortfolioSharesRequestT = Model::ListAcceptedPortfolioSharesRequest>
-        Model::ListAcceptedPortfolioSharesOutcomeCallable ListAcceptedPortfolioSharesCallable(const ListAcceptedPortfolioSharesRequestT& request) const
+        Model::ListAcceptedPortfolioSharesOutcomeCallable ListAcceptedPortfolioSharesCallable(const ListAcceptedPortfolioSharesRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListAcceptedPortfolioShares, request);
         }
@@ -1631,7 +1631,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListAcceptedPortfolioShares that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAcceptedPortfolioSharesRequestT = Model::ListAcceptedPortfolioSharesRequest>
-        void ListAcceptedPortfolioSharesAsync(const ListAcceptedPortfolioSharesRequestT& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAcceptedPortfolioSharesAsync(const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAcceptedPortfolioSharesRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListAcceptedPortfolioShares, request, handler, context);
         }
@@ -1782,13 +1782,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPortfoliosOutcome ListPortfolios(const Model::ListPortfoliosRequest& request) const;
+        virtual Model::ListPortfoliosOutcome ListPortfolios(const Model::ListPortfoliosRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPortfolios that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPortfoliosRequestT = Model::ListPortfoliosRequest>
-        Model::ListPortfoliosOutcomeCallable ListPortfoliosCallable(const ListPortfoliosRequestT& request) const
+        Model::ListPortfoliosOutcomeCallable ListPortfoliosCallable(const ListPortfoliosRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListPortfolios, request);
         }
@@ -1797,7 +1797,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListPortfolios that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPortfoliosRequestT = Model::ListPortfoliosRequest>
-        void ListPortfoliosAsync(const ListPortfoliosRequestT& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPortfoliosAsync(const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPortfoliosRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListPortfolios, request, handler, context);
         }
@@ -1861,13 +1861,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProvisionedProductPlansOutcome ListProvisionedProductPlans(const Model::ListProvisionedProductPlansRequest& request) const;
+        virtual Model::ListProvisionedProductPlansOutcome ListProvisionedProductPlans(const Model::ListProvisionedProductPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProvisionedProductPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProvisionedProductPlansRequestT = Model::ListProvisionedProductPlansRequest>
-        Model::ListProvisionedProductPlansOutcomeCallable ListProvisionedProductPlansCallable(const ListProvisionedProductPlansRequestT& request) const
+        Model::ListProvisionedProductPlansOutcomeCallable ListProvisionedProductPlansCallable(const ListProvisionedProductPlansRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListProvisionedProductPlans, request);
         }
@@ -1876,7 +1876,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListProvisionedProductPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProvisionedProductPlansRequestT = Model::ListProvisionedProductPlansRequest>
-        void ListProvisionedProductPlansAsync(const ListProvisionedProductPlansRequestT& request, const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProvisionedProductPlansAsync(const ListProvisionedProductPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProvisionedProductPlansRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListProvisionedProductPlans, request, handler, context);
         }
@@ -1939,13 +1939,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecordHistoryOutcome ListRecordHistory(const Model::ListRecordHistoryRequest& request) const;
+        virtual Model::ListRecordHistoryOutcome ListRecordHistory(const Model::ListRecordHistoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecordHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecordHistoryRequestT = Model::ListRecordHistoryRequest>
-        Model::ListRecordHistoryOutcomeCallable ListRecordHistoryCallable(const ListRecordHistoryRequestT& request) const
+        Model::ListRecordHistoryOutcomeCallable ListRecordHistoryCallable(const ListRecordHistoryRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListRecordHistory, request);
         }
@@ -1954,7 +1954,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListRecordHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecordHistoryRequestT = Model::ListRecordHistoryRequest>
-        void ListRecordHistoryAsync(const ListRecordHistoryRequestT& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecordHistoryAsync(const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecordHistoryRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListRecordHistory, request, handler, context);
         }
@@ -1990,13 +1990,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceActionsOutcome ListServiceActions(const Model::ListServiceActionsRequest& request) const;
+        virtual Model::ListServiceActionsOutcome ListServiceActions(const Model::ListServiceActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceActionsRequestT = Model::ListServiceActionsRequest>
-        Model::ListServiceActionsOutcomeCallable ListServiceActionsCallable(const ListServiceActionsRequestT& request) const
+        Model::ListServiceActionsOutcomeCallable ListServiceActionsCallable(const ListServiceActionsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListServiceActions, request);
         }
@@ -2005,7 +2005,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListServiceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceActionsRequestT = Model::ListServiceActionsRequest>
-        void ListServiceActionsAsync(const ListServiceActionsRequestT& request, const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceActionsAsync(const ListServiceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceActionsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListServiceActions, request, handler, context);
         }
@@ -2070,13 +2070,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTagOptionsOutcome ListTagOptions(const Model::ListTagOptionsRequest& request) const;
+        virtual Model::ListTagOptionsOutcome ListTagOptions(const Model::ListTagOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTagOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTagOptionsRequestT = Model::ListTagOptionsRequest>
-        Model::ListTagOptionsOutcomeCallable ListTagOptionsCallable(const ListTagOptionsRequestT& request) const
+        Model::ListTagOptionsOutcomeCallable ListTagOptionsCallable(const ListTagOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ListTagOptions, request);
         }
@@ -2085,7 +2085,7 @@ namespace ServiceCatalog
          * An Async wrapper for ListTagOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTagOptionsRequestT = Model::ListTagOptionsRequest>
-        void ListTagOptionsAsync(const ListTagOptionsRequestT& request, const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTagOptionsAsync(const ListTagOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTagOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ListTagOptions, request, handler, context);
         }
@@ -2238,13 +2238,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ScanProvisionedProductsOutcome ScanProvisionedProducts(const Model::ScanProvisionedProductsRequest& request) const;
+        virtual Model::ScanProvisionedProductsOutcome ScanProvisionedProducts(const Model::ScanProvisionedProductsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ScanProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ScanProvisionedProductsRequestT = Model::ScanProvisionedProductsRequest>
-        Model::ScanProvisionedProductsOutcomeCallable ScanProvisionedProductsCallable(const ScanProvisionedProductsRequestT& request) const
+        Model::ScanProvisionedProductsOutcomeCallable ScanProvisionedProductsCallable(const ScanProvisionedProductsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::ScanProvisionedProducts, request);
         }
@@ -2253,7 +2253,7 @@ namespace ServiceCatalog
          * An Async wrapper for ScanProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ScanProvisionedProductsRequestT = Model::ScanProvisionedProductsRequest>
-        void ScanProvisionedProductsAsync(const ScanProvisionedProductsRequestT& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ScanProvisionedProductsAsync(const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ScanProvisionedProductsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::ScanProvisionedProducts, request, handler, context);
         }
@@ -2264,13 +2264,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchProductsOutcome SearchProducts(const Model::SearchProductsRequest& request) const;
+        virtual Model::SearchProductsOutcome SearchProducts(const Model::SearchProductsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchProductsRequestT = Model::SearchProductsRequest>
-        Model::SearchProductsOutcomeCallable SearchProductsCallable(const SearchProductsRequestT& request) const
+        Model::SearchProductsOutcomeCallable SearchProductsCallable(const SearchProductsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::SearchProducts, request);
         }
@@ -2279,7 +2279,7 @@ namespace ServiceCatalog
          * An Async wrapper for SearchProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchProductsRequestT = Model::SearchProductsRequest>
-        void SearchProductsAsync(const SearchProductsRequestT& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchProductsAsync(const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchProductsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::SearchProducts, request, handler, context);
         }
@@ -2290,13 +2290,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchProductsAsAdminOutcome SearchProductsAsAdmin(const Model::SearchProductsAsAdminRequest& request) const;
+        virtual Model::SearchProductsAsAdminOutcome SearchProductsAsAdmin(const Model::SearchProductsAsAdminRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchProductsAsAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchProductsAsAdminRequestT = Model::SearchProductsAsAdminRequest>
-        Model::SearchProductsAsAdminOutcomeCallable SearchProductsAsAdminCallable(const SearchProductsAsAdminRequestT& request) const
+        Model::SearchProductsAsAdminOutcomeCallable SearchProductsAsAdminCallable(const SearchProductsAsAdminRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::SearchProductsAsAdmin, request);
         }
@@ -2305,7 +2305,7 @@ namespace ServiceCatalog
          * An Async wrapper for SearchProductsAsAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchProductsAsAdminRequestT = Model::SearchProductsAsAdminRequest>
-        void SearchProductsAsAdminAsync(const SearchProductsAsAdminRequestT& request, const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchProductsAsAdminAsync(const SearchProductsAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchProductsAsAdminRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::SearchProductsAsAdmin, request, handler, context);
         }
@@ -2316,13 +2316,13 @@ namespace ServiceCatalog
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchProvisionedProductsOutcome SearchProvisionedProducts(const Model::SearchProvisionedProductsRequest& request) const;
+        virtual Model::SearchProvisionedProductsOutcome SearchProvisionedProducts(const Model::SearchProvisionedProductsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchProvisionedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchProvisionedProductsRequestT = Model::SearchProvisionedProductsRequest>
-        Model::SearchProvisionedProductsOutcomeCallable SearchProvisionedProductsCallable(const SearchProvisionedProductsRequestT& request) const
+        Model::SearchProvisionedProductsOutcomeCallable SearchProvisionedProductsCallable(const SearchProvisionedProductsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceCatalogClient::SearchProvisionedProducts, request);
         }
@@ -2331,7 +2331,7 @@ namespace ServiceCatalog
          * An Async wrapper for SearchProvisionedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchProvisionedProductsRequestT = Model::SearchProvisionedProductsRequest>
-        void SearchProvisionedProductsAsync(const SearchProvisionedProductsRequestT& request, const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchProvisionedProductsAsync(const SearchProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchProvisionedProductsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceCatalogClient::SearchProvisionedProducts, request, handler, context);
         }

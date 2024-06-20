@@ -32,6 +32,7 @@
 #include <aws/codeguru-reviewer/model/PutRecommendationFeedbackResult.h>
 #include <aws/codeguru-reviewer/model/TagResourceResult.h>
 #include <aws/codeguru-reviewer/model/UntagResourceResult.h>
+#include <aws/codeguru-reviewer/model/ListRepositoryAssociationsRequest.h>
 /* End of service model headers required in CodeGuruReviewerClient header */
 
 namespace Aws

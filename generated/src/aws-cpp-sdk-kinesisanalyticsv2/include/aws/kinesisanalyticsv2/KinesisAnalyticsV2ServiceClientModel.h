@@ -49,6 +49,7 @@
 #include <aws/kinesisanalyticsv2/model/UntagResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationMaintenanceConfigurationResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 /* End of service model headers required in KinesisAnalyticsV2Client header */
 
 namespace Aws

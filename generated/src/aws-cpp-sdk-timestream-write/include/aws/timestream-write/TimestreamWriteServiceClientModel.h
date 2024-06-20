@@ -36,6 +36,10 @@
 #include <aws/timestream-write/model/UpdateDatabaseResult.h>
 #include <aws/timestream-write/model/UpdateTableResult.h>
 #include <aws/timestream-write/model/WriteRecordsResult.h>
+#include <aws/timestream-write/model/ListBatchLoadTasksRequest.h>
+#include <aws/timestream-write/model/ListTablesRequest.h>
+#include <aws/timestream-write/model/DescribeEndpointsRequest.h>
+#include <aws/timestream-write/model/ListDatabasesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TimestreamWriteClient header */
 

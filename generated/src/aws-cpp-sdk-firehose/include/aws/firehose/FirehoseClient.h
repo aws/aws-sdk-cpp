@@ -257,13 +257,13 @@ namespace Firehose
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeliveryStreamsOutcome ListDeliveryStreams(const Model::ListDeliveryStreamsRequest& request) const;
+        virtual Model::ListDeliveryStreamsOutcome ListDeliveryStreams(const Model::ListDeliveryStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeliveryStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeliveryStreamsRequestT = Model::ListDeliveryStreamsRequest>
-        Model::ListDeliveryStreamsOutcomeCallable ListDeliveryStreamsCallable(const ListDeliveryStreamsRequestT& request) const
+        Model::ListDeliveryStreamsOutcomeCallable ListDeliveryStreamsCallable(const ListDeliveryStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&FirehoseClient::ListDeliveryStreams, request);
         }
@@ -272,7 +272,7 @@ namespace Firehose
          * An Async wrapper for ListDeliveryStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeliveryStreamsRequestT = Model::ListDeliveryStreamsRequest>
-        void ListDeliveryStreamsAsync(const ListDeliveryStreamsRequestT& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeliveryStreamsAsync(const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeliveryStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&FirehoseClient::ListDeliveryStreams, request, handler, context);
         }

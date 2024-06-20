@@ -39,6 +39,11 @@
 #include <aws/ssm-sap/model/TagResourceResult.h>
 #include <aws/ssm-sap/model/UntagResourceResult.h>
 #include <aws/ssm-sap/model/UpdateApplicationSettingsResult.h>
+#include <aws/ssm-sap/model/ListApplicationsRequest.h>
+#include <aws/ssm-sap/model/GetApplicationRequest.h>
+#include <aws/ssm-sap/model/ListDatabasesRequest.h>
+#include <aws/ssm-sap/model/GetDatabaseRequest.h>
+#include <aws/ssm-sap/model/ListComponentsRequest.h>
 /* End of service model headers required in SsmSapClient header */
 
 namespace Aws

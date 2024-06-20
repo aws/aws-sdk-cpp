@@ -306,13 +306,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAnomalyMonitorsOutcome GetAnomalyMonitors(const Model::GetAnomalyMonitorsRequest& request) const;
+        virtual Model::GetAnomalyMonitorsOutcome GetAnomalyMonitors(const Model::GetAnomalyMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAnomalyMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAnomalyMonitorsRequestT = Model::GetAnomalyMonitorsRequest>
-        Model::GetAnomalyMonitorsOutcomeCallable GetAnomalyMonitorsCallable(const GetAnomalyMonitorsRequestT& request) const
+        Model::GetAnomalyMonitorsOutcomeCallable GetAnomalyMonitorsCallable(const GetAnomalyMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::GetAnomalyMonitors, request);
         }
@@ -321,7 +321,7 @@ namespace CostExplorer
          * An Async wrapper for GetAnomalyMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAnomalyMonitorsRequestT = Model::GetAnomalyMonitorsRequest>
-        void GetAnomalyMonitorsAsync(const GetAnomalyMonitorsRequestT& request, const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAnomalyMonitorsAsync(const GetAnomalyMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAnomalyMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::GetAnomalyMonitors, request, handler, context);
         }
@@ -333,13 +333,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAnomalySubscriptionsOutcome GetAnomalySubscriptions(const Model::GetAnomalySubscriptionsRequest& request) const;
+        virtual Model::GetAnomalySubscriptionsOutcome GetAnomalySubscriptions(const Model::GetAnomalySubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAnomalySubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAnomalySubscriptionsRequestT = Model::GetAnomalySubscriptionsRequest>
-        Model::GetAnomalySubscriptionsOutcomeCallable GetAnomalySubscriptionsCallable(const GetAnomalySubscriptionsRequestT& request) const
+        Model::GetAnomalySubscriptionsOutcomeCallable GetAnomalySubscriptionsCallable(const GetAnomalySubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::GetAnomalySubscriptions, request);
         }
@@ -348,7 +348,7 @@ namespace CostExplorer
          * An Async wrapper for GetAnomalySubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAnomalySubscriptionsRequestT = Model::GetAnomalySubscriptionsRequest>
-        void GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsRequestT& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAnomalySubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::GetAnomalySubscriptions, request, handler, context);
         }
@@ -889,13 +889,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCostAllocationTagBackfillHistoryOutcome ListCostAllocationTagBackfillHistory(const Model::ListCostAllocationTagBackfillHistoryRequest& request) const;
+        virtual Model::ListCostAllocationTagBackfillHistoryOutcome ListCostAllocationTagBackfillHistory(const Model::ListCostAllocationTagBackfillHistoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCostAllocationTagBackfillHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCostAllocationTagBackfillHistoryRequestT = Model::ListCostAllocationTagBackfillHistoryRequest>
-        Model::ListCostAllocationTagBackfillHistoryOutcomeCallable ListCostAllocationTagBackfillHistoryCallable(const ListCostAllocationTagBackfillHistoryRequestT& request) const
+        Model::ListCostAllocationTagBackfillHistoryOutcomeCallable ListCostAllocationTagBackfillHistoryCallable(const ListCostAllocationTagBackfillHistoryRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::ListCostAllocationTagBackfillHistory, request);
         }
@@ -904,7 +904,7 @@ namespace CostExplorer
          * An Async wrapper for ListCostAllocationTagBackfillHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCostAllocationTagBackfillHistoryRequestT = Model::ListCostAllocationTagBackfillHistoryRequest>
-        void ListCostAllocationTagBackfillHistoryAsync(const ListCostAllocationTagBackfillHistoryRequestT& request, const ListCostAllocationTagBackfillHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCostAllocationTagBackfillHistoryAsync(const ListCostAllocationTagBackfillHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCostAllocationTagBackfillHistoryRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::ListCostAllocationTagBackfillHistory, request, handler, context);
         }
@@ -916,13 +916,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCostAllocationTagsOutcome ListCostAllocationTags(const Model::ListCostAllocationTagsRequest& request) const;
+        virtual Model::ListCostAllocationTagsOutcome ListCostAllocationTags(const Model::ListCostAllocationTagsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCostAllocationTags that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCostAllocationTagsRequestT = Model::ListCostAllocationTagsRequest>
-        Model::ListCostAllocationTagsOutcomeCallable ListCostAllocationTagsCallable(const ListCostAllocationTagsRequestT& request) const
+        Model::ListCostAllocationTagsOutcomeCallable ListCostAllocationTagsCallable(const ListCostAllocationTagsRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::ListCostAllocationTags, request);
         }
@@ -931,7 +931,7 @@ namespace CostExplorer
          * An Async wrapper for ListCostAllocationTags that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCostAllocationTagsRequestT = Model::ListCostAllocationTagsRequest>
-        void ListCostAllocationTagsAsync(const ListCostAllocationTagsRequestT& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCostAllocationTagsAsync(const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCostAllocationTagsRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::ListCostAllocationTags, request, handler, context);
         }
@@ -949,13 +949,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request) const;
+        virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCostCategoryDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCostCategoryDefinitionsRequestT = Model::ListCostCategoryDefinitionsRequest>
-        Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const ListCostCategoryDefinitionsRequestT& request) const
+        Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const ListCostCategoryDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::ListCostCategoryDefinitions, request);
         }
@@ -964,7 +964,7 @@ namespace CostExplorer
          * An Async wrapper for ListCostCategoryDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCostCategoryDefinitionsRequestT = Model::ListCostCategoryDefinitionsRequest>
-        void ListCostCategoryDefinitionsAsync(const ListCostCategoryDefinitionsRequestT& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCostCategoryDefinitionsAsync(const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCostCategoryDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::ListCostCategoryDefinitions, request, handler, context);
         }
@@ -975,13 +975,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSavingsPlansPurchaseRecommendationGenerationOutcome ListSavingsPlansPurchaseRecommendationGeneration(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+        virtual Model::ListSavingsPlansPurchaseRecommendationGenerationOutcome ListSavingsPlansPurchaseRecommendationGeneration(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSavingsPlansPurchaseRecommendationGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSavingsPlansPurchaseRecommendationGenerationRequestT = Model::ListSavingsPlansPurchaseRecommendationGenerationRequest>
-        Model::ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable ListSavingsPlansPurchaseRecommendationGenerationCallable(const ListSavingsPlansPurchaseRecommendationGenerationRequestT& request) const
+        Model::ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable ListSavingsPlansPurchaseRecommendationGenerationCallable(const ListSavingsPlansPurchaseRecommendationGenerationRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::ListSavingsPlansPurchaseRecommendationGeneration, request);
         }
@@ -990,7 +990,7 @@ namespace CostExplorer
          * An Async wrapper for ListSavingsPlansPurchaseRecommendationGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSavingsPlansPurchaseRecommendationGenerationRequestT = Model::ListSavingsPlansPurchaseRecommendationGenerationRequest>
-        void ListSavingsPlansPurchaseRecommendationGenerationAsync(const ListSavingsPlansPurchaseRecommendationGenerationRequestT& request, const ListSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSavingsPlansPurchaseRecommendationGenerationAsync(const ListSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSavingsPlansPurchaseRecommendationGenerationRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::ListSavingsPlansPurchaseRecommendationGeneration, request, handler, context);
         }
@@ -1088,13 +1088,13 @@ namespace CostExplorer
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartSavingsPlansPurchaseRecommendationGenerationOutcome StartSavingsPlansPurchaseRecommendationGeneration(const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+        virtual Model::StartSavingsPlansPurchaseRecommendationGenerationOutcome StartSavingsPlansPurchaseRecommendationGeneration(const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartSavingsPlansPurchaseRecommendationGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartSavingsPlansPurchaseRecommendationGenerationRequestT = Model::StartSavingsPlansPurchaseRecommendationGenerationRequest>
-        Model::StartSavingsPlansPurchaseRecommendationGenerationOutcomeCallable StartSavingsPlansPurchaseRecommendationGenerationCallable(const StartSavingsPlansPurchaseRecommendationGenerationRequestT& request) const
+        Model::StartSavingsPlansPurchaseRecommendationGenerationOutcomeCallable StartSavingsPlansPurchaseRecommendationGenerationCallable(const StartSavingsPlansPurchaseRecommendationGenerationRequestT& request = {}) const
         {
             return SubmitCallable(&CostExplorerClient::StartSavingsPlansPurchaseRecommendationGeneration, request);
         }
@@ -1103,7 +1103,7 @@ namespace CostExplorer
          * An Async wrapper for StartSavingsPlansPurchaseRecommendationGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartSavingsPlansPurchaseRecommendationGenerationRequestT = Model::StartSavingsPlansPurchaseRecommendationGenerationRequest>
-        void StartSavingsPlansPurchaseRecommendationGenerationAsync(const StartSavingsPlansPurchaseRecommendationGenerationRequestT& request, const StartSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartSavingsPlansPurchaseRecommendationGenerationAsync(const StartSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartSavingsPlansPurchaseRecommendationGenerationRequestT& request = {}) const
         {
             return SubmitAsync(&CostExplorerClient::StartSavingsPlansPurchaseRecommendationGeneration, request, handler, context);
         }

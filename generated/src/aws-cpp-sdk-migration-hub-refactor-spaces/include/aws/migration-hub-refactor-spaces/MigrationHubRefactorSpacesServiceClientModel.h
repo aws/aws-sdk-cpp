@@ -42,6 +42,7 @@
 #include <aws/migration-hub-refactor-spaces/model/TagResourceResult.h>
 #include <aws/migration-hub-refactor-spaces/model/UntagResourceResult.h>
 #include <aws/migration-hub-refactor-spaces/model/UpdateRouteResult.h>
+#include <aws/migration-hub-refactor-spaces/model/ListEnvironmentsRequest.h>
 /* End of service model headers required in MigrationHubRefactorSpacesClient header */
 
 namespace Aws

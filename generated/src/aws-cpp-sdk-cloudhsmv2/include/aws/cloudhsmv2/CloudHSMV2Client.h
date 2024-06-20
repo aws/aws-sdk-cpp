@@ -250,13 +250,13 @@ namespace CloudHSMV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
+        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request) const
+        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudHSMV2Client::DescribeBackups, request);
         }
@@ -265,7 +265,7 @@ namespace CloudHSMV2
          * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        void DescribeBackupsAsync(const DescribeBackupsRequestT& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeBackupsAsync(const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudHSMV2Client::DescribeBackups, request, handler, context);
         }
@@ -281,13 +281,13 @@ namespace CloudHSMV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
+        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request) const
+        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request = {}) const
         {
             return SubmitCallable(&CloudHSMV2Client::DescribeClusters, request);
         }
@@ -296,7 +296,7 @@ namespace CloudHSMV2
          * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        void DescribeClustersAsync(const DescribeClustersRequestT& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeClustersAsync(const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeClustersRequestT& request = {}) const
         {
             return SubmitAsync(&CloudHSMV2Client::DescribeClusters, request, handler, context);
         }

@@ -23,6 +23,7 @@
 #include <aws/mediastore-data/model/GetObjectResult.h>
 #include <aws/mediastore-data/model/ListItemsResult.h>
 #include <aws/mediastore-data/model/PutObjectResult.h>
+#include <aws/mediastore-data/model/ListItemsRequest.h>
 /* End of service model headers required in MediaStoreDataClient header */
 
 namespace Aws

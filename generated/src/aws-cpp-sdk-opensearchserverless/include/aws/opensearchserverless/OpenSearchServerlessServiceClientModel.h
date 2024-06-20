@@ -55,6 +55,12 @@
 #include <aws/opensearchserverless/model/UpdateSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/UpdateSecurityPolicyResult.h>
 #include <aws/opensearchserverless/model/UpdateVpcEndpointResult.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionRequest.h>
+#include <aws/opensearchserverless/model/UpdateAccountSettingsRequest.h>
+#include <aws/opensearchserverless/model/ListCollectionsRequest.h>
+#include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
+#include <aws/opensearchserverless/model/GetPoliciesStatsRequest.h>
+#include <aws/opensearchserverless/model/ListVpcEndpointsRequest.h>
 /* End of service model headers required in OpenSearchServerlessClient header */
 
 namespace Aws

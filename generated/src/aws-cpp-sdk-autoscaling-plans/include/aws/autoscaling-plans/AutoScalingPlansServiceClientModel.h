@@ -24,6 +24,7 @@
 #include <aws/autoscaling-plans/model/DescribeScalingPlansResult.h>
 #include <aws/autoscaling-plans/model/GetScalingPlanResourceForecastDataResult.h>
 #include <aws/autoscaling-plans/model/UpdateScalingPlanResult.h>
+#include <aws/autoscaling-plans/model/DescribeScalingPlansRequest.h>
 /* End of service model headers required in AutoScalingPlansClient header */
 
 namespace Aws

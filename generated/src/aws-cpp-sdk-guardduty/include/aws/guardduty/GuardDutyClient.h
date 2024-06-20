@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
-#include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
 
 namespace Aws
 {
@@ -1090,13 +1089,13 @@ namespace GuardDuty
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetInvitationsCountOutcome GetInvitationsCount(const Model::GetInvitationsCountRequest& request) const;
+        virtual Model::GetInvitationsCountOutcome GetInvitationsCount(const Model::GetInvitationsCountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetInvitationsCount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetInvitationsCountRequestT = Model::GetInvitationsCountRequest>
-        Model::GetInvitationsCountOutcomeCallable GetInvitationsCountCallable(const GetInvitationsCountRequestT& request) const
+        Model::GetInvitationsCountOutcomeCallable GetInvitationsCountCallable(const GetInvitationsCountRequestT& request = {}) const
         {
             return SubmitCallable(&GuardDutyClient::GetInvitationsCount, request);
         }
@@ -1105,7 +1104,7 @@ namespace GuardDuty
          * An Async wrapper for GetInvitationsCount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetInvitationsCountRequestT = Model::GetInvitationsCountRequest>
-        void GetInvitationsCountAsync(const GetInvitationsCountRequestT& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetInvitationsCountAsync(const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetInvitationsCountRequestT& request = {}) const
         {
             return SubmitAsync(&GuardDutyClient::GetInvitationsCount, request, handler, context);
         }
@@ -1430,13 +1429,13 @@ namespace GuardDuty
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDetectorsOutcome ListDetectors(const Model::ListDetectorsRequest& request) const;
+        virtual Model::ListDetectorsOutcome ListDetectors(const Model::ListDetectorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDetectors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDetectorsRequestT = Model::ListDetectorsRequest>
-        Model::ListDetectorsOutcomeCallable ListDetectorsCallable(const ListDetectorsRequestT& request) const
+        Model::ListDetectorsOutcomeCallable ListDetectorsCallable(const ListDetectorsRequestT& request = {}) const
         {
             return SubmitCallable(&GuardDutyClient::ListDetectors, request);
         }
@@ -1445,7 +1444,7 @@ namespace GuardDuty
          * An Async wrapper for ListDetectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDetectorsRequestT = Model::ListDetectorsRequest>
-        void ListDetectorsAsync(const ListDetectorsRequestT& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDetectorsAsync(const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDetectorsRequestT& request = {}) const
         {
             return SubmitAsync(&GuardDutyClient::ListDetectors, request, handler, context);
         }
@@ -1538,13 +1537,13 @@ namespace GuardDuty
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
+        virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInvitations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInvitationsRequestT = Model::ListInvitationsRequest>
-        Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const ListInvitationsRequestT& request) const
+        Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const ListInvitationsRequestT& request = {}) const
         {
             return SubmitCallable(&GuardDutyClient::ListInvitations, request);
         }
@@ -1553,7 +1552,7 @@ namespace GuardDuty
          * An Async wrapper for ListInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInvitationsRequestT = Model::ListInvitationsRequest>
-        void ListInvitationsAsync(const ListInvitationsRequestT& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInvitationsAsync(const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInvitationsRequestT& request = {}) const
         {
             return SubmitAsync(&GuardDutyClient::ListInvitations, request, handler, context);
         }
@@ -1564,13 +1563,13 @@ namespace GuardDuty
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMalwareProtectionPlansOutcome ListMalwareProtectionPlans(const Model::ListMalwareProtectionPlansRequest& request) const;
+        virtual Model::ListMalwareProtectionPlansOutcome ListMalwareProtectionPlans(const Model::ListMalwareProtectionPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMalwareProtectionPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMalwareProtectionPlansRequestT = Model::ListMalwareProtectionPlansRequest>
-        Model::ListMalwareProtectionPlansOutcomeCallable ListMalwareProtectionPlansCallable(const ListMalwareProtectionPlansRequestT& request) const
+        Model::ListMalwareProtectionPlansOutcomeCallable ListMalwareProtectionPlansCallable(const ListMalwareProtectionPlansRequestT& request = {}) const
         {
             return SubmitCallable(&GuardDutyClient::ListMalwareProtectionPlans, request);
         }
@@ -1579,7 +1578,7 @@ namespace GuardDuty
          * An Async wrapper for ListMalwareProtectionPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMalwareProtectionPlansRequestT = Model::ListMalwareProtectionPlansRequest>
-        void ListMalwareProtectionPlansAsync(const ListMalwareProtectionPlansRequestT& request, const ListMalwareProtectionPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMalwareProtectionPlansAsync(const ListMalwareProtectionPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMalwareProtectionPlansRequestT& request = {}) const
         {
             return SubmitAsync(&GuardDutyClient::ListMalwareProtectionPlans, request, handler, context);
         }
@@ -1617,13 +1616,13 @@ namespace GuardDuty
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
+        virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOrganizationAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOrganizationAdminAccountsRequestT = Model::ListOrganizationAdminAccountsRequest>
-        Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequestT& request) const
+        Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&GuardDutyClient::ListOrganizationAdminAccounts, request);
         }
@@ -1632,7 +1631,7 @@ namespace GuardDuty
          * An Async wrapper for ListOrganizationAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOrganizationAdminAccountsRequestT = Model::ListOrganizationAdminAccountsRequest>
-        void ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequestT& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationAdminAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&GuardDutyClient::ListOrganizationAdminAccounts, request, handler, context);
         }

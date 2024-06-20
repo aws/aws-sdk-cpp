@@ -719,13 +719,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request) const
+        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::GetAccountSettings, request);
         }
@@ -734,7 +734,7 @@ namespace Lambda
          * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
-        void GetAccountSettingsAsync(const GetAccountSettingsRequestT& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::GetAccountSettings, request, handler, context);
         }
@@ -1288,13 +1288,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCodeSigningConfigsOutcome ListCodeSigningConfigs(const Model::ListCodeSigningConfigsRequest& request) const;
+        virtual Model::ListCodeSigningConfigsOutcome ListCodeSigningConfigs(const Model::ListCodeSigningConfigsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCodeSigningConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCodeSigningConfigsRequestT = Model::ListCodeSigningConfigsRequest>
-        Model::ListCodeSigningConfigsOutcomeCallable ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequestT& request) const
+        Model::ListCodeSigningConfigsOutcomeCallable ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListCodeSigningConfigs, request);
         }
@@ -1303,7 +1303,7 @@ namespace Lambda
          * An Async wrapper for ListCodeSigningConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCodeSigningConfigsRequestT = Model::ListCodeSigningConfigsRequest>
-        void ListCodeSigningConfigsAsync(const ListCodeSigningConfigsRequestT& request, const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCodeSigningConfigsAsync(const ListCodeSigningConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCodeSigningConfigsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListCodeSigningConfigs, request, handler, context);
         }
@@ -1315,13 +1315,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request) const;
+        virtual Model::ListEventSourceMappingsOutcome ListEventSourceMappings(const Model::ListEventSourceMappingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventSourceMappings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventSourceMappingsRequestT = Model::ListEventSourceMappingsRequest>
-        Model::ListEventSourceMappingsOutcomeCallable ListEventSourceMappingsCallable(const ListEventSourceMappingsRequestT& request) const
+        Model::ListEventSourceMappingsOutcomeCallable ListEventSourceMappingsCallable(const ListEventSourceMappingsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListEventSourceMappings, request);
         }
@@ -1330,7 +1330,7 @@ namespace Lambda
          * An Async wrapper for ListEventSourceMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventSourceMappingsRequestT = Model::ListEventSourceMappingsRequest>
-        void ListEventSourceMappingsAsync(const ListEventSourceMappingsRequestT& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventSourceMappingsAsync(const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventSourceMappingsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListEventSourceMappings, request, handler, context);
         }
@@ -1401,13 +1401,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request) const;
+        virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFunctions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFunctionsRequestT = Model::ListFunctionsRequest>
-        Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const ListFunctionsRequestT& request) const
+        Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const ListFunctionsRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListFunctions, request);
         }
@@ -1416,7 +1416,7 @@ namespace Lambda
          * An Async wrapper for ListFunctions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFunctionsRequestT = Model::ListFunctionsRequest>
-        void ListFunctionsAsync(const ListFunctionsRequestT& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFunctionsAsync(const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFunctionsRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListFunctions, request, handler, context);
         }
@@ -1492,13 +1492,13 @@ namespace Lambda
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request) const;
+        virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLayers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLayersRequestT = Model::ListLayersRequest>
-        Model::ListLayersOutcomeCallable ListLayersCallable(const ListLayersRequestT& request) const
+        Model::ListLayersOutcomeCallable ListLayersCallable(const ListLayersRequestT& request = {}) const
         {
             return SubmitCallable(&LambdaClient::ListLayers, request);
         }
@@ -1507,7 +1507,7 @@ namespace Lambda
          * An Async wrapper for ListLayers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLayersRequestT = Model::ListLayersRequest>
-        void ListLayersAsync(const ListLayersRequestT& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLayersAsync(const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLayersRequestT& request = {}) const
         {
             return SubmitAsync(&LambdaClient::ListLayers, request, handler, context);
         }

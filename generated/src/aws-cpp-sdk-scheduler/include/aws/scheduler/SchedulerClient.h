@@ -244,13 +244,13 @@ namespace Scheduler
          * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListScheduleGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScheduleGroupsOutcome ListScheduleGroups(const Model::ListScheduleGroupsRequest& request) const;
+        virtual Model::ListScheduleGroupsOutcome ListScheduleGroups(const Model::ListScheduleGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScheduleGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScheduleGroupsRequestT = Model::ListScheduleGroupsRequest>
-        Model::ListScheduleGroupsOutcomeCallable ListScheduleGroupsCallable(const ListScheduleGroupsRequestT& request) const
+        Model::ListScheduleGroupsOutcomeCallable ListScheduleGroupsCallable(const ListScheduleGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&SchedulerClient::ListScheduleGroups, request);
         }
@@ -259,7 +259,7 @@ namespace Scheduler
          * An Async wrapper for ListScheduleGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScheduleGroupsRequestT = Model::ListScheduleGroupsRequest>
-        void ListScheduleGroupsAsync(const ListScheduleGroupsRequestT& request, const ListScheduleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScheduleGroupsAsync(const ListScheduleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScheduleGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&SchedulerClient::ListScheduleGroups, request, handler, context);
         }
@@ -270,13 +270,13 @@ namespace Scheduler
          * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ListSchedules">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request) const;
+        virtual Model::ListSchedulesOutcome ListSchedules(const Model::ListSchedulesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchedulesRequestT = Model::ListSchedulesRequest>
-        Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const ListSchedulesRequestT& request) const
+        Model::ListSchedulesOutcomeCallable ListSchedulesCallable(const ListSchedulesRequestT& request = {}) const
         {
             return SubmitCallable(&SchedulerClient::ListSchedules, request);
         }
@@ -285,7 +285,7 @@ namespace Scheduler
          * An Async wrapper for ListSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchedulesRequestT = Model::ListSchedulesRequest>
-        void ListSchedulesAsync(const ListSchedulesRequestT& request, const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchedulesAsync(const ListSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchedulesRequestT& request = {}) const
         {
             return SubmitAsync(&SchedulerClient::ListSchedules, request, handler, context);
         }

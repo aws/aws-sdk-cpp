@@ -64,6 +64,13 @@
 #include <aws/awstransfer/model/UpdateProfileResult.h>
 #include <aws/awstransfer/model/UpdateServerResult.h>
 #include <aws/awstransfer/model/UpdateUserResult.h>
+#include <aws/awstransfer/model/ListWorkflowsRequest.h>
+#include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
+#include <aws/awstransfer/model/ListServersRequest.h>
+#include <aws/awstransfer/model/ListCertificatesRequest.h>
+#include <aws/awstransfer/model/CreateServerRequest.h>
+#include <aws/awstransfer/model/ListConnectorsRequest.h>
+#include <aws/awstransfer/model/ListProfilesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in TransferClient header */
 

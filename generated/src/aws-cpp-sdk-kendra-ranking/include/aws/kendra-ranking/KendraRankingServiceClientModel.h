@@ -25,6 +25,7 @@
 #include <aws/kendra-ranking/model/RescoreResult.h>
 #include <aws/kendra-ranking/model/TagResourceResult.h>
 #include <aws/kendra-ranking/model/UntagResourceResult.h>
+#include <aws/kendra-ranking/model/ListRescoreExecutionPlansRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KendraRankingClient header */
 

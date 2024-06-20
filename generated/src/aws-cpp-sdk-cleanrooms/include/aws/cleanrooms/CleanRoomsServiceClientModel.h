@@ -81,6 +81,9 @@
 #include <aws/cleanrooms/model/UpdateMembershipResult.h>
 #include <aws/cleanrooms/model/UpdatePrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/UpdateProtectedQueryResult.h>
+#include <aws/cleanrooms/model/ListCollaborationsRequest.h>
+#include <aws/cleanrooms/model/ListConfiguredTablesRequest.h>
+#include <aws/cleanrooms/model/ListMembershipsRequest.h>
 /* End of service model headers required in CleanRoomsClient header */
 
 namespace Aws

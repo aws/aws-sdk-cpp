@@ -3569,25 +3569,26 @@ namespace Aws
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBucketsOutcome ListBuckets() const;
+        virtual Model::ListBucketsOutcome ListBuckets(const Model::ListBucketsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::ListBucketsOutcomeCallable ListBucketsCallable() const
+        template<typename ListBucketsRequestT = Model::ListBucketsRequest>
+        Model::ListBucketsOutcomeCallable ListBucketsCallable(const ListBucketsRequestT& request = {}) const
         {
-            return SubmitCallable(&S3CrtClient::ListBuckets);
+            return SubmitCallable(&S3CrtClient::ListBuckets, request);
         }
 
         /**
          * An Async wrapper for ListBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void ListBucketsAsync(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename ListBucketsRequestT = Model::ListBucketsRequest>
+        void ListBucketsAsync(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBucketsRequestT& request = {}) const
         {
-            return SubmitAsync(&S3CrtClient::ListBuckets, handler, context);
+            return SubmitAsync(&S3CrtClient::ListBuckets, request, handler, context);
         }
+
         /**
          * <p>Returns a list of all Amazon S3 directory buckets owned by the authenticated
          * sender of the request. For more information about directory buckets, see <a
@@ -3616,13 +3617,13 @@ namespace Aws
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDirectoryBucketsOutcome ListDirectoryBuckets(const Model::ListDirectoryBucketsRequest& request) const;
+        virtual Model::ListDirectoryBucketsOutcome ListDirectoryBuckets(const Model::ListDirectoryBucketsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDirectoryBuckets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDirectoryBucketsRequestT = Model::ListDirectoryBucketsRequest>
-        Model::ListDirectoryBucketsOutcomeCallable ListDirectoryBucketsCallable(const ListDirectoryBucketsRequestT& request) const
+        Model::ListDirectoryBucketsOutcomeCallable ListDirectoryBucketsCallable(const ListDirectoryBucketsRequestT& request = {}) const
         {
             return SubmitCallable(&S3CrtClient::ListDirectoryBuckets, request);
         }
@@ -3631,7 +3632,7 @@ namespace Aws
          * An Async wrapper for ListDirectoryBuckets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDirectoryBucketsRequestT = Model::ListDirectoryBucketsRequest>
-        void ListDirectoryBucketsAsync(const ListDirectoryBucketsRequestT& request, const ListDirectoryBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDirectoryBucketsAsync(const ListDirectoryBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDirectoryBucketsRequestT& request = {}) const
         {
             return SubmitAsync(&S3CrtClient::ListDirectoryBuckets, request, handler, context);
         }

@@ -318,13 +318,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteModelInvocationLoggingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteModelInvocationLoggingConfigurationOutcome DeleteModelInvocationLoggingConfiguration(const Model::DeleteModelInvocationLoggingConfigurationRequest& request) const;
+        virtual Model::DeleteModelInvocationLoggingConfigurationOutcome DeleteModelInvocationLoggingConfiguration(const Model::DeleteModelInvocationLoggingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteModelInvocationLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteModelInvocationLoggingConfigurationRequestT = Model::DeleteModelInvocationLoggingConfigurationRequest>
-        Model::DeleteModelInvocationLoggingConfigurationOutcomeCallable DeleteModelInvocationLoggingConfigurationCallable(const DeleteModelInvocationLoggingConfigurationRequestT& request) const
+        Model::DeleteModelInvocationLoggingConfigurationOutcomeCallable DeleteModelInvocationLoggingConfigurationCallable(const DeleteModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::DeleteModelInvocationLoggingConfiguration, request);
         }
@@ -333,7 +333,7 @@ namespace Bedrock
          * An Async wrapper for DeleteModelInvocationLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteModelInvocationLoggingConfigurationRequestT = Model::DeleteModelInvocationLoggingConfigurationRequest>
-        void DeleteModelInvocationLoggingConfigurationAsync(const DeleteModelInvocationLoggingConfigurationRequestT& request, const DeleteModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteModelInvocationLoggingConfigurationAsync(const DeleteModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::DeleteModelInvocationLoggingConfiguration, request, handler, context);
         }
@@ -509,13 +509,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationLoggingConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetModelInvocationLoggingConfigurationOutcome GetModelInvocationLoggingConfiguration(const Model::GetModelInvocationLoggingConfigurationRequest& request) const;
+        virtual Model::GetModelInvocationLoggingConfigurationOutcome GetModelInvocationLoggingConfiguration(const Model::GetModelInvocationLoggingConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetModelInvocationLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetModelInvocationLoggingConfigurationRequestT = Model::GetModelInvocationLoggingConfigurationRequest>
-        Model::GetModelInvocationLoggingConfigurationOutcomeCallable GetModelInvocationLoggingConfigurationCallable(const GetModelInvocationLoggingConfigurationRequestT& request) const
+        Model::GetModelInvocationLoggingConfigurationOutcomeCallable GetModelInvocationLoggingConfigurationCallable(const GetModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::GetModelInvocationLoggingConfiguration, request);
         }
@@ -524,7 +524,7 @@ namespace Bedrock
          * An Async wrapper for GetModelInvocationLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetModelInvocationLoggingConfigurationRequestT = Model::GetModelInvocationLoggingConfigurationRequest>
-        void GetModelInvocationLoggingConfigurationAsync(const GetModelInvocationLoggingConfigurationRequestT& request, const GetModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetModelInvocationLoggingConfigurationAsync(const GetModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetModelInvocationLoggingConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::GetModelInvocationLoggingConfiguration, request, handler, context);
         }
@@ -565,13 +565,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomModelsOutcome ListCustomModels(const Model::ListCustomModelsRequest& request) const;
+        virtual Model::ListCustomModelsOutcome ListCustomModels(const Model::ListCustomModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomModelsRequestT = Model::ListCustomModelsRequest>
-        Model::ListCustomModelsOutcomeCallable ListCustomModelsCallable(const ListCustomModelsRequestT& request) const
+        Model::ListCustomModelsOutcomeCallable ListCustomModelsCallable(const ListCustomModelsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListCustomModels, request);
         }
@@ -580,7 +580,7 @@ namespace Bedrock
          * An Async wrapper for ListCustomModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomModelsRequestT = Model::ListCustomModelsRequest>
-        void ListCustomModelsAsync(const ListCustomModelsRequestT& request, const ListCustomModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomModelsAsync(const ListCustomModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomModelsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListCustomModels, request, handler, context);
         }
@@ -590,13 +590,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEvaluationJobsOutcome ListEvaluationJobs(const Model::ListEvaluationJobsRequest& request) const;
+        virtual Model::ListEvaluationJobsOutcome ListEvaluationJobs(const Model::ListEvaluationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEvaluationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEvaluationJobsRequestT = Model::ListEvaluationJobsRequest>
-        Model::ListEvaluationJobsOutcomeCallable ListEvaluationJobsCallable(const ListEvaluationJobsRequestT& request) const
+        Model::ListEvaluationJobsOutcomeCallable ListEvaluationJobsCallable(const ListEvaluationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListEvaluationJobs, request);
         }
@@ -605,7 +605,7 @@ namespace Bedrock
          * An Async wrapper for ListEvaluationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEvaluationJobsRequestT = Model::ListEvaluationJobsRequest>
-        void ListEvaluationJobsAsync(const ListEvaluationJobsRequestT& request, const ListEvaluationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEvaluationJobsAsync(const ListEvaluationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEvaluationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListEvaluationJobs, request, handler, context);
         }
@@ -618,13 +618,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFoundationModelsOutcome ListFoundationModels(const Model::ListFoundationModelsRequest& request) const;
+        virtual Model::ListFoundationModelsOutcome ListFoundationModels(const Model::ListFoundationModelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFoundationModels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFoundationModelsRequestT = Model::ListFoundationModelsRequest>
-        Model::ListFoundationModelsOutcomeCallable ListFoundationModelsCallable(const ListFoundationModelsRequestT& request) const
+        Model::ListFoundationModelsOutcomeCallable ListFoundationModelsCallable(const ListFoundationModelsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListFoundationModels, request);
         }
@@ -633,7 +633,7 @@ namespace Bedrock
          * An Async wrapper for ListFoundationModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFoundationModelsRequestT = Model::ListFoundationModelsRequest>
-        void ListFoundationModelsAsync(const ListFoundationModelsRequestT& request, const ListFoundationModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFoundationModelsAsync(const ListFoundationModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFoundationModelsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListFoundationModels, request, handler, context);
         }
@@ -651,13 +651,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGuardrailsOutcome ListGuardrails(const Model::ListGuardrailsRequest& request) const;
+        virtual Model::ListGuardrailsOutcome ListGuardrails(const Model::ListGuardrailsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGuardrails that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGuardrailsRequestT = Model::ListGuardrailsRequest>
-        Model::ListGuardrailsOutcomeCallable ListGuardrailsCallable(const ListGuardrailsRequestT& request) const
+        Model::ListGuardrailsOutcomeCallable ListGuardrailsCallable(const ListGuardrailsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListGuardrails, request);
         }
@@ -666,7 +666,7 @@ namespace Bedrock
          * An Async wrapper for ListGuardrails that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGuardrailsRequestT = Model::ListGuardrailsRequest>
-        void ListGuardrailsAsync(const ListGuardrailsRequestT& request, const ListGuardrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGuardrailsAsync(const ListGuardrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGuardrailsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListGuardrails, request, handler, context);
         }
@@ -680,13 +680,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCustomizationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListModelCustomizationJobsOutcome ListModelCustomizationJobs(const Model::ListModelCustomizationJobsRequest& request) const;
+        virtual Model::ListModelCustomizationJobsOutcome ListModelCustomizationJobs(const Model::ListModelCustomizationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListModelCustomizationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListModelCustomizationJobsRequestT = Model::ListModelCustomizationJobsRequest>
-        Model::ListModelCustomizationJobsOutcomeCallable ListModelCustomizationJobsCallable(const ListModelCustomizationJobsRequestT& request) const
+        Model::ListModelCustomizationJobsOutcomeCallable ListModelCustomizationJobsCallable(const ListModelCustomizationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListModelCustomizationJobs, request);
         }
@@ -695,7 +695,7 @@ namespace Bedrock
          * An Async wrapper for ListModelCustomizationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListModelCustomizationJobsRequestT = Model::ListModelCustomizationJobsRequest>
-        void ListModelCustomizationJobsAsync(const ListModelCustomizationJobsRequestT& request, const ListModelCustomizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListModelCustomizationJobsAsync(const ListModelCustomizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListModelCustomizationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListModelCustomizationJobs, request, handler, context);
         }
@@ -708,13 +708,13 @@ namespace Bedrock
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProvisionedModelThroughputsOutcome ListProvisionedModelThroughputs(const Model::ListProvisionedModelThroughputsRequest& request) const;
+        virtual Model::ListProvisionedModelThroughputsOutcome ListProvisionedModelThroughputs(const Model::ListProvisionedModelThroughputsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProvisionedModelThroughputs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProvisionedModelThroughputsRequestT = Model::ListProvisionedModelThroughputsRequest>
-        Model::ListProvisionedModelThroughputsOutcomeCallable ListProvisionedModelThroughputsCallable(const ListProvisionedModelThroughputsRequestT& request) const
+        Model::ListProvisionedModelThroughputsOutcomeCallable ListProvisionedModelThroughputsCallable(const ListProvisionedModelThroughputsRequestT& request = {}) const
         {
             return SubmitCallable(&BedrockClient::ListProvisionedModelThroughputs, request);
         }
@@ -723,7 +723,7 @@ namespace Bedrock
          * An Async wrapper for ListProvisionedModelThroughputs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProvisionedModelThroughputsRequestT = Model::ListProvisionedModelThroughputsRequest>
-        void ListProvisionedModelThroughputsAsync(const ListProvisionedModelThroughputsRequestT& request, const ListProvisionedModelThroughputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProvisionedModelThroughputsAsync(const ListProvisionedModelThroughputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProvisionedModelThroughputsRequestT& request = {}) const
         {
             return SubmitAsync(&BedrockClient::ListProvisionedModelThroughputs, request, handler, context);
         }

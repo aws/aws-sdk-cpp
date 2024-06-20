@@ -269,13 +269,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
+        virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeletePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeletePolicyRequestT = Model::DeletePolicyRequest>
-        Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const DeletePolicyRequestT& request) const
+        Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const DeletePolicyRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::DeletePolicy, request);
         }
@@ -284,7 +284,7 @@ namespace MediaConvert
          * An Async wrapper for DeletePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeletePolicyRequestT = Model::DeletePolicyRequest>
-        void DeletePolicyAsync(const DeletePolicyRequestT& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeletePolicyAsync(const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeletePolicyRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::DeletePolicy, request, handler, context);
         }
@@ -421,13 +421,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
+        virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetPolicyRequestT = Model::GetPolicyRequest>
-        Model::GetPolicyOutcomeCallable GetPolicyCallable(const GetPolicyRequestT& request) const
+        Model::GetPolicyOutcomeCallable GetPolicyCallable(const GetPolicyRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::GetPolicy, request);
         }
@@ -436,7 +436,7 @@ namespace MediaConvert
          * An Async wrapper for GetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetPolicyRequestT = Model::GetPolicyRequest>
-        void GetPolicyAsync(const GetPolicyRequestT& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetPolicyAsync(const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetPolicyRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::GetPolicy, request, handler, context);
         }
@@ -499,13 +499,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
+        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request) const
+        Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::ListJobTemplates, request);
         }
@@ -514,7 +514,7 @@ namespace MediaConvert
          * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobTemplatesRequestT = Model::ListJobTemplatesRequest>
-        void ListJobTemplatesAsync(const ListJobTemplatesRequestT& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobTemplatesAsync(const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::ListJobTemplates, request, handler, context);
         }
@@ -528,13 +528,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
+        virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request) const
+        Model::ListJobsOutcomeCallable ListJobsCallable(const ListJobsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::ListJobs, request);
         }
@@ -543,7 +543,7 @@ namespace MediaConvert
          * An Async wrapper for ListJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListJobsRequestT = Model::ListJobsRequest>
-        void ListJobsAsync(const ListJobsRequestT& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListJobsAsync(const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListJobsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::ListJobs, request, handler, context);
         }
@@ -556,13 +556,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListPresets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request) const;
+        virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPresets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPresetsRequestT = Model::ListPresetsRequest>
-        Model::ListPresetsOutcomeCallable ListPresetsCallable(const ListPresetsRequestT& request) const
+        Model::ListPresetsOutcomeCallable ListPresetsCallable(const ListPresetsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::ListPresets, request);
         }
@@ -571,7 +571,7 @@ namespace MediaConvert
          * An Async wrapper for ListPresets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPresetsRequestT = Model::ListPresetsRequest>
-        void ListPresetsAsync(const ListPresetsRequestT& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPresetsAsync(const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPresetsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::ListPresets, request, handler, context);
         }
@@ -583,13 +583,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListQueues">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request) const;
+        virtual Model::ListQueuesOutcome ListQueues(const Model::ListQueuesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListQueues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request) const
+        Model::ListQueuesOutcomeCallable ListQueuesCallable(const ListQueuesRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::ListQueues, request);
         }
@@ -598,7 +598,7 @@ namespace MediaConvert
          * An Async wrapper for ListQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListQueuesRequestT = Model::ListQueuesRequest>
-        void ListQueuesAsync(const ListQueuesRequestT& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListQueuesAsync(const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListQueuesRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::ListQueues, request, handler, context);
         }
@@ -664,13 +664,13 @@ namespace MediaConvert
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SearchJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchJobsOutcome SearchJobs(const Model::SearchJobsRequest& request) const;
+        virtual Model::SearchJobsOutcome SearchJobs(const Model::SearchJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchJobsRequestT = Model::SearchJobsRequest>
-        Model::SearchJobsOutcomeCallable SearchJobsCallable(const SearchJobsRequestT& request) const
+        Model::SearchJobsOutcomeCallable SearchJobsCallable(const SearchJobsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaConvertClient::SearchJobs, request);
         }
@@ -679,7 +679,7 @@ namespace MediaConvert
          * An Async wrapper for SearchJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchJobsRequestT = Model::SearchJobsRequest>
-        void SearchJobsAsync(const SearchJobsRequestT& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchJobsAsync(const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchJobsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaConvertClient::SearchJobs, request, handler, context);
         }

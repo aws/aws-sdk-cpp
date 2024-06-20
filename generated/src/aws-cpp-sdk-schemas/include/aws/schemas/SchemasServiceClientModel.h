@@ -42,6 +42,10 @@
 #include <aws/schemas/model/UpdateDiscovererResult.h>
 #include <aws/schemas/model/UpdateRegistryResult.h>
 #include <aws/schemas/model/UpdateSchemaResult.h>
+#include <aws/schemas/model/DeleteResourcePolicyRequest.h>
+#include <aws/schemas/model/ListDiscoverersRequest.h>
+#include <aws/schemas/model/GetResourcePolicyRequest.h>
+#include <aws/schemas/model/ListRegistriesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SchemasClient header */
 

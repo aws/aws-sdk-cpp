@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/ACMServiceClientModel.h>
-#include <aws/acm/model/GetAccountConfigurationRequest.h>
 
 namespace Aws
 {
@@ -348,13 +347,13 @@ namespace ACM
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCertificates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request) const
+        Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const ListCertificatesRequestT& request = {}) const
         {
             return SubmitCallable(&ACMClient::ListCertificates, request);
         }
@@ -363,7 +362,7 @@ namespace ACM
          * An Async wrapper for ListCertificates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCertificatesRequestT = Model::ListCertificatesRequest>
-        void ListCertificatesAsync(const ListCertificatesRequestT& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCertificatesAsync(const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCertificatesRequestT& request = {}) const
         {
             return SubmitAsync(&ACMClient::ListCertificates, request, handler, context);
         }

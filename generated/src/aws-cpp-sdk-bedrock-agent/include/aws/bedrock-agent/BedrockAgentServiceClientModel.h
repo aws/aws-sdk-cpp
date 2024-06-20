@@ -58,6 +58,8 @@
 #include <aws/bedrock-agent/model/UpdateAgentKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/UpdateDataSourceResult.h>
 #include <aws/bedrock-agent/model/UpdateKnowledgeBaseResult.h>
+#include <aws/bedrock-agent/model/ListAgentsRequest.h>
+#include <aws/bedrock-agent/model/ListKnowledgeBasesRequest.h>
 /* End of service model headers required in BedrockAgentClient header */
 
 namespace Aws

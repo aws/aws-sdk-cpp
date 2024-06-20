@@ -1119,13 +1119,13 @@ namespace AppSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
+        virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainNamesRequestT = Model::ListDomainNamesRequest>
-        Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const ListDomainNamesRequestT& request) const
+        Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const ListDomainNamesRequestT& request = {}) const
         {
             return SubmitCallable(&AppSyncClient::ListDomainNames, request);
         }
@@ -1134,7 +1134,7 @@ namespace AppSync
          * An Async wrapper for ListDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainNamesRequestT = Model::ListDomainNamesRequest>
-        void ListDomainNamesAsync(const ListDomainNamesRequestT& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainNamesAsync(const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainNamesRequestT& request = {}) const
         {
             return SubmitAsync(&AppSyncClient::ListDomainNames, request, handler, context);
         }
@@ -1169,13 +1169,13 @@ namespace AppSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGraphqlApisOutcome ListGraphqlApis(const Model::ListGraphqlApisRequest& request) const;
+        virtual Model::ListGraphqlApisOutcome ListGraphqlApis(const Model::ListGraphqlApisRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGraphqlApis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGraphqlApisRequestT = Model::ListGraphqlApisRequest>
-        Model::ListGraphqlApisOutcomeCallable ListGraphqlApisCallable(const ListGraphqlApisRequestT& request) const
+        Model::ListGraphqlApisOutcomeCallable ListGraphqlApisCallable(const ListGraphqlApisRequestT& request = {}) const
         {
             return SubmitCallable(&AppSyncClient::ListGraphqlApis, request);
         }
@@ -1184,7 +1184,7 @@ namespace AppSync
          * An Async wrapper for ListGraphqlApis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGraphqlApisRequestT = Model::ListGraphqlApisRequest>
-        void ListGraphqlApisAsync(const ListGraphqlApisRequestT& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGraphqlApisAsync(const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGraphqlApisRequestT& request = {}) const
         {
             return SubmitAsync(&AppSyncClient::ListGraphqlApis, request, handler, context);
         }
@@ -1394,13 +1394,13 @@ namespace AppSync
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection">AWS
          * API Reference</a></p>
          */
-        virtual Model::StartDataSourceIntrospectionOutcome StartDataSourceIntrospection(const Model::StartDataSourceIntrospectionRequest& request) const;
+        virtual Model::StartDataSourceIntrospectionOutcome StartDataSourceIntrospection(const Model::StartDataSourceIntrospectionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for StartDataSourceIntrospection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename StartDataSourceIntrospectionRequestT = Model::StartDataSourceIntrospectionRequest>
-        Model::StartDataSourceIntrospectionOutcomeCallable StartDataSourceIntrospectionCallable(const StartDataSourceIntrospectionRequestT& request) const
+        Model::StartDataSourceIntrospectionOutcomeCallable StartDataSourceIntrospectionCallable(const StartDataSourceIntrospectionRequestT& request = {}) const
         {
             return SubmitCallable(&AppSyncClient::StartDataSourceIntrospection, request);
         }
@@ -1409,7 +1409,7 @@ namespace AppSync
          * An Async wrapper for StartDataSourceIntrospection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename StartDataSourceIntrospectionRequestT = Model::StartDataSourceIntrospectionRequest>
-        void StartDataSourceIntrospectionAsync(const StartDataSourceIntrospectionRequestT& request, const StartDataSourceIntrospectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void StartDataSourceIntrospectionAsync(const StartDataSourceIntrospectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartDataSourceIntrospectionRequestT& request = {}) const
         {
             return SubmitAsync(&AppSyncClient::StartDataSourceIntrospection, request, handler, context);
         }

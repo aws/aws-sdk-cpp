@@ -25,6 +25,10 @@
 #include <aws/cost-optimization-hub/model/ListRecommendationsResult.h>
 #include <aws/cost-optimization-hub/model/UpdateEnrollmentStatusResult.h>
 #include <aws/cost-optimization-hub/model/UpdatePreferencesResult.h>
+#include <aws/cost-optimization-hub/model/ListRecommendationsRequest.h>
+#include <aws/cost-optimization-hub/model/GetPreferencesRequest.h>
+#include <aws/cost-optimization-hub/model/ListEnrollmentStatusesRequest.h>
+#include <aws/cost-optimization-hub/model/UpdatePreferencesRequest.h>
 /* End of service model headers required in CostOptimizationHubClient header */
 
 namespace Aws

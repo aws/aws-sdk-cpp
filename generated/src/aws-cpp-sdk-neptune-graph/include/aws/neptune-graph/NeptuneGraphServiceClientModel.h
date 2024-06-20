@@ -45,6 +45,9 @@
 #include <aws/neptune-graph/model/TagResourceResult.h>
 #include <aws/neptune-graph/model/UntagResourceResult.h>
 #include <aws/neptune-graph/model/UpdateGraphResult.h>
+#include <aws/neptune-graph/model/ListGraphSnapshotsRequest.h>
+#include <aws/neptune-graph/model/ListImportTasksRequest.h>
+#include <aws/neptune-graph/model/ListGraphsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in NeptuneGraphClient header */
 

@@ -660,13 +660,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">AWS API
          * Reference</a></p>
          */
-        virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request) const;
+        virtual Model::CreateKeyOutcome CreateKey(const Model::CreateKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateKeyRequestT = Model::CreateKeyRequest>
-        Model::CreateKeyOutcomeCallable CreateKeyCallable(const CreateKeyRequestT& request) const
+        Model::CreateKeyOutcomeCallable CreateKeyCallable(const CreateKeyRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::CreateKey, request);
         }
@@ -675,7 +675,7 @@ namespace KMS
          * An Async wrapper for CreateKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateKeyRequestT = Model::CreateKeyRequest>
-        void CreateKeyAsync(const CreateKeyRequestT& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateKeyAsync(const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateKeyRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::CreateKey, request, handler, context);
         }
@@ -1063,13 +1063,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCustomKeyStoresOutcome DescribeCustomKeyStores(const Model::DescribeCustomKeyStoresRequest& request) const;
+        virtual Model::DescribeCustomKeyStoresOutcome DescribeCustomKeyStores(const Model::DescribeCustomKeyStoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCustomKeyStores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCustomKeyStoresRequestT = Model::DescribeCustomKeyStoresRequest>
-        Model::DescribeCustomKeyStoresOutcomeCallable DescribeCustomKeyStoresCallable(const DescribeCustomKeyStoresRequestT& request) const
+        Model::DescribeCustomKeyStoresOutcomeCallable DescribeCustomKeyStoresCallable(const DescribeCustomKeyStoresRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::DescribeCustomKeyStores, request);
         }
@@ -1078,7 +1078,7 @@ namespace KMS
          * An Async wrapper for DescribeCustomKeyStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCustomKeyStoresRequestT = Model::DescribeCustomKeyStoresRequest>
-        void DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresRequestT& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCustomKeyStoresAsync(const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCustomKeyStoresRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::DescribeCustomKeyStores, request, handler, context);
         }
@@ -1966,13 +1966,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
          * API Reference</a></p>
          */
-        virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request) const;
+        virtual Model::GenerateRandomOutcome GenerateRandom(const Model::GenerateRandomRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GenerateRandom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GenerateRandomRequestT = Model::GenerateRandomRequest>
-        Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const GenerateRandomRequestT& request) const
+        Model::GenerateRandomOutcomeCallable GenerateRandomCallable(const GenerateRandomRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::GenerateRandom, request);
         }
@@ -1981,7 +1981,7 @@ namespace KMS
          * An Async wrapper for GenerateRandom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GenerateRandomRequestT = Model::GenerateRandomRequest>
-        void GenerateRandomAsync(const GenerateRandomRequestT& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GenerateRandomAsync(const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GenerateRandomRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::GenerateRandom, request, handler, context);
         }
@@ -2402,13 +2402,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
+        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request) const
+        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::ListAliases, request);
         }
@@ -2417,7 +2417,7 @@ namespace KMS
          * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        void ListAliasesAsync(const ListAliasesRequestT& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAliasesAsync(const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::ListAliases, request, handler, context);
         }
@@ -2566,13 +2566,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
+        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request) const
+        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::ListKeys, request);
         }
@@ -2581,7 +2581,7 @@ namespace KMS
          * An Async wrapper for ListKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        void ListKeysAsync(const ListKeysRequestT& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeysAsync(const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeysRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::ListKeys, request, handler, context);
         }
@@ -2966,13 +2966,13 @@ namespace KMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">AWS API
          * Reference</a></p>
          */
-        virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request) const;
+        virtual Model::RetireGrantOutcome RetireGrant(const Model::RetireGrantRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RetireGrant that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RetireGrantRequestT = Model::RetireGrantRequest>
-        Model::RetireGrantOutcomeCallable RetireGrantCallable(const RetireGrantRequestT& request) const
+        Model::RetireGrantOutcomeCallable RetireGrantCallable(const RetireGrantRequestT& request = {}) const
         {
             return SubmitCallable(&KMSClient::RetireGrant, request);
         }
@@ -2981,7 +2981,7 @@ namespace KMS
          * An Async wrapper for RetireGrant that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RetireGrantRequestT = Model::RetireGrantRequest>
-        void RetireGrantAsync(const RetireGrantRequestT& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RetireGrantAsync(const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RetireGrantRequestT& request = {}) const
         {
             return SubmitAsync(&KMSClient::RetireGrant, request, handler, context);
         }

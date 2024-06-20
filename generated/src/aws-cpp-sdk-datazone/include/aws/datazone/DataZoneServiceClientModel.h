@@ -127,6 +127,7 @@
 #include <aws/datazone/model/UpdateSubscriptionRequestResult.h>
 #include <aws/datazone/model/UpdateSubscriptionTargetResult.h>
 #include <aws/datazone/model/UpdateUserProfileResult.h>
+#include <aws/datazone/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in DataZoneClient header */
 
