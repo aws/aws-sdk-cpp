@@ -20,37 +20,37 @@ namespace Model
 
 ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration() : 
     m_accountScopeHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
+    m_serviceHasBeenSet(false),
+    m_normalizedUnitsToPurchaseHasBeenSet(false),
+    m_termHasBeenSet(false),
+    m_paymentOptionHasBeenSet(false),
+    m_numberOfInstancesToPurchaseHasBeenSet(false),
     m_instanceFamilyHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
     m_reservedInstancesRegionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
+    m_currentGenerationHasBeenSet(false),
     m_sizeFlexEligible(false),
     m_sizeFlexEligibleHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false)
+    m_upfrontCostHasBeenSet(false),
+    m_monthlyRecurringCostHasBeenSet(false)
 {
 }
 
 ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration(JsonView jsonValue) : 
     m_accountScopeHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
+    m_serviceHasBeenSet(false),
+    m_normalizedUnitsToPurchaseHasBeenSet(false),
+    m_termHasBeenSet(false),
+    m_paymentOptionHasBeenSet(false),
+    m_numberOfInstancesToPurchaseHasBeenSet(false),
     m_instanceFamilyHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
     m_reservedInstancesRegionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
+    m_currentGenerationHasBeenSet(false),
     m_sizeFlexEligible(false),
     m_sizeFlexEligibleHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false)
+    m_upfrontCostHasBeenSet(false),
+    m_monthlyRecurringCostHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,11 +64,39 @@ ElastiCacheReservedInstancesConfiguration& ElastiCacheReservedInstancesConfigura
     m_accountScopeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("currentGeneration"))
+  if(jsonValue.ValueExists("service"))
   {
-    m_currentGeneration = jsonValue.GetString("currentGeneration");
+    m_service = jsonValue.GetString("service");
 
-    m_currentGenerationHasBeenSet = true;
+    m_serviceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("normalizedUnitsToPurchase"))
+  {
+    m_normalizedUnitsToPurchase = jsonValue.GetString("normalizedUnitsToPurchase");
+
+    m_normalizedUnitsToPurchaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("term"))
+  {
+    m_term = jsonValue.GetString("term");
+
+    m_termHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("paymentOption"))
+  {
+    m_paymentOption = jsonValue.GetString("paymentOption");
+
+    m_paymentOptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("numberOfInstancesToPurchase"))
+  {
+    m_numberOfInstancesToPurchase = jsonValue.GetString("numberOfInstancesToPurchase");
+
+    m_numberOfInstancesToPurchaseHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("instanceFamily"))
@@ -85,34 +113,6 @@ ElastiCacheReservedInstancesConfiguration& ElastiCacheReservedInstancesConfigura
     m_instanceTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("monthlyRecurringCost"))
-  {
-    m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
-
-    m_monthlyRecurringCostHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("normalizedUnitsToPurchase"))
-  {
-    m_normalizedUnitsToPurchase = jsonValue.GetString("normalizedUnitsToPurchase");
-
-    m_normalizedUnitsToPurchaseHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("numberOfInstancesToPurchase"))
-  {
-    m_numberOfInstancesToPurchase = jsonValue.GetString("numberOfInstancesToPurchase");
-
-    m_numberOfInstancesToPurchaseHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("paymentOption"))
-  {
-    m_paymentOption = jsonValue.GetString("paymentOption");
-
-    m_paymentOptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("reservedInstancesRegion"))
   {
     m_reservedInstancesRegion = jsonValue.GetString("reservedInstancesRegion");
@@ -120,11 +120,11 @@ ElastiCacheReservedInstancesConfiguration& ElastiCacheReservedInstancesConfigura
     m_reservedInstancesRegionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("service"))
+  if(jsonValue.ValueExists("currentGeneration"))
   {
-    m_service = jsonValue.GetString("service");
+    m_currentGeneration = jsonValue.GetString("currentGeneration");
 
-    m_serviceHasBeenSet = true;
+    m_currentGenerationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sizeFlexEligible"))
@@ -134,18 +134,18 @@ ElastiCacheReservedInstancesConfiguration& ElastiCacheReservedInstancesConfigura
     m_sizeFlexEligibleHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("term"))
-  {
-    m_term = jsonValue.GetString("term");
-
-    m_termHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("upfrontCost"))
   {
     m_upfrontCost = jsonValue.GetString("upfrontCost");
 
     m_upfrontCostHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("monthlyRecurringCost"))
+  {
+    m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
+
+    m_monthlyRecurringCostHasBeenSet = true;
   }
 
   return *this;
@@ -161,9 +161,33 @@ JsonValue ElastiCacheReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_currentGenerationHasBeenSet)
+  if(m_serviceHasBeenSet)
   {
-   payload.WithString("currentGeneration", m_currentGeneration);
+   payload.WithString("service", m_service);
+
+  }
+
+  if(m_normalizedUnitsToPurchaseHasBeenSet)
+  {
+   payload.WithString("normalizedUnitsToPurchase", m_normalizedUnitsToPurchase);
+
+  }
+
+  if(m_termHasBeenSet)
+  {
+   payload.WithString("term", m_term);
+
+  }
+
+  if(m_paymentOptionHasBeenSet)
+  {
+   payload.WithString("paymentOption", m_paymentOption);
+
+  }
+
+  if(m_numberOfInstancesToPurchaseHasBeenSet)
+  {
+   payload.WithString("numberOfInstancesToPurchase", m_numberOfInstancesToPurchase);
 
   }
 
@@ -179,39 +203,15 @@ JsonValue ElastiCacheReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_monthlyRecurringCostHasBeenSet)
-  {
-   payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
-
-  }
-
-  if(m_normalizedUnitsToPurchaseHasBeenSet)
-  {
-   payload.WithString("normalizedUnitsToPurchase", m_normalizedUnitsToPurchase);
-
-  }
-
-  if(m_numberOfInstancesToPurchaseHasBeenSet)
-  {
-   payload.WithString("numberOfInstancesToPurchase", m_numberOfInstancesToPurchase);
-
-  }
-
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("paymentOption", m_paymentOption);
-
-  }
-
   if(m_reservedInstancesRegionHasBeenSet)
   {
    payload.WithString("reservedInstancesRegion", m_reservedInstancesRegion);
 
   }
 
-  if(m_serviceHasBeenSet)
+  if(m_currentGenerationHasBeenSet)
   {
-   payload.WithString("service", m_service);
+   payload.WithString("currentGeneration", m_currentGeneration);
 
   }
 
@@ -221,15 +221,15 @@ JsonValue ElastiCacheReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_termHasBeenSet)
-  {
-   payload.WithString("term", m_term);
-
-  }
-
   if(m_upfrontCostHasBeenSet)
   {
    payload.WithString("upfrontCost", m_upfrontCost);
+
+  }
+
+  if(m_monthlyRecurringCostHasBeenSet)
+  {
+   payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
 
   }
 

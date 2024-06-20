@@ -125,7 +125,9 @@ namespace Model
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
      * and is not over provisioned. For optimized resources, Compute Optimizer might
-     * recommend a new generation instance type.</p> </li> </ul>
+     * recommend a new generation instance type.</p> </li> </ul>  <p>The valid
+     * values in your API responses appear as OVER_PROVISIONED, UNDER_PROVISIONED, or
+     * OPTIMIZED.</p> 
      */
     inline const Finding& GetFinding() const{ return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }

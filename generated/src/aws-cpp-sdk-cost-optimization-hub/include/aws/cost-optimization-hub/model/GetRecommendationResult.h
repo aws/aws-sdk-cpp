@@ -6,12 +6,12 @@
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/model/ResourceType.h>
+#include <aws/cost-optimization-hub/model/Source.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/cost-optimization-hub/model/ImplementationEffort.h>
 #include <aws/cost-optimization-hub/model/ActionType.h>
 #include <aws/cost-optimization-hub/model/ResourceDetails.h>
-#include <aws/cost-optimization-hub/model/ResourceType.h>
-#include <aws/cost-optimization-hub/model/ImplementationEffort.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/cost-optimization-hub/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cost-optimization-hub/model/Tag.h>
 #include <utility>
@@ -42,6 +42,46 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID for the recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
+    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
+    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
+    inline GetRecommendationResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
+    inline GetRecommendationResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
+    inline GetRecommendationResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier for the resource. This is the same as the Amazon
+     * Resource Name (ARN), if available.</p>
+     */
+    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
+    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
+    inline GetRecommendationResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline GetRecommendationResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+    inline GetRecommendationResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
+    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
+    inline GetRecommendationResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+    inline GetRecommendationResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+    inline GetRecommendationResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The account that the recommendation is for.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
@@ -51,26 +91,6 @@ namespace Model
     inline GetRecommendationResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
     inline GetRecommendationResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
     inline GetRecommendationResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of action you can take by adopting the recommendation.</p>
-     */
-    inline const ActionType& GetActionType() const{ return m_actionType; }
-    inline void SetActionType(const ActionType& value) { m_actionType = value; }
-    inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
-    inline GetRecommendationResult& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
-    inline GetRecommendationResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The lookback period used to calculate cost impact for a recommendation.</p>
-     */
-    inline int GetCostCalculationLookbackPeriodInDays() const{ return m_costCalculationLookbackPeriodInDays; }
-    inline void SetCostCalculationLookbackPeriodInDays(int value) { m_costCalculationLookbackPeriodInDays = value; }
-    inline GetRecommendationResult& WithCostCalculationLookbackPeriodInDays(int value) { SetCostCalculationLookbackPeriodInDays(value); return *this;}
     ///@}
 
     ///@{
@@ -88,52 +108,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The details for the resource.</p>
+     * <p>The lookback period that's used to generate the recommendation.</p>
      */
-    inline const ResourceDetails& GetCurrentResourceDetails() const{ return m_currentResourceDetails; }
-    inline void SetCurrentResourceDetails(const ResourceDetails& value) { m_currentResourceDetails = value; }
-    inline void SetCurrentResourceDetails(ResourceDetails&& value) { m_currentResourceDetails = std::move(value); }
-    inline GetRecommendationResult& WithCurrentResourceDetails(const ResourceDetails& value) { SetCurrentResourceDetails(value); return *this;}
-    inline GetRecommendationResult& WithCurrentResourceDetails(ResourceDetails&& value) { SetCurrentResourceDetails(std::move(value)); return *this;}
+    inline int GetRecommendationLookbackPeriodInDays() const{ return m_recommendationLookbackPeriodInDays; }
+    inline void SetRecommendationLookbackPeriodInDays(int value) { m_recommendationLookbackPeriodInDays = value; }
+    inline GetRecommendationResult& WithRecommendationLookbackPeriodInDays(int value) { SetRecommendationLookbackPeriodInDays(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The type of resource.</p>
+     * <p>The lookback period used to calculate cost impact for a recommendation.</p>
      */
-    inline const ResourceType& GetCurrentResourceType() const{ return m_currentResourceType; }
-    inline void SetCurrentResourceType(const ResourceType& value) { m_currentResourceType = value; }
-    inline void SetCurrentResourceType(ResourceType&& value) { m_currentResourceType = std::move(value); }
-    inline GetRecommendationResult& WithCurrentResourceType(const ResourceType& value) { SetCurrentResourceType(value); return *this;}
-    inline GetRecommendationResult& WithCurrentResourceType(ResourceType&& value) { SetCurrentResourceType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The estimated monthly cost of the recommendation.</p>
-     */
-    inline double GetEstimatedMonthlyCost() const{ return m_estimatedMonthlyCost; }
-    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCost = value; }
-    inline GetRecommendationResult& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The estimated monthly savings amount for the recommendation.</p>
-     */
-    inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
-    inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavings = value; }
-    inline GetRecommendationResult& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The estimated savings amount over the lookback period used to calculate cost
-     * impact for a recommendation.</p>
-     */
-    inline double GetEstimatedSavingsOverCostCalculationLookbackPeriod() const{ return m_estimatedSavingsOverCostCalculationLookbackPeriod; }
-    inline void SetEstimatedSavingsOverCostCalculationLookbackPeriod(double value) { m_estimatedSavingsOverCostCalculationLookbackPeriod = value; }
-    inline GetRecommendationResult& WithEstimatedSavingsOverCostCalculationLookbackPeriod(double value) { SetEstimatedSavingsOverCostCalculationLookbackPeriod(value); return *this;}
+    inline int GetCostCalculationLookbackPeriodInDays() const{ return m_costCalculationLookbackPeriodInDays; }
+    inline void SetCostCalculationLookbackPeriodInDays(int value) { m_costCalculationLookbackPeriodInDays = value; }
+    inline GetRecommendationResult& WithCostCalculationLookbackPeriodInDays(int value) { SetCostCalculationLookbackPeriodInDays(value); return *this;}
     ///@}
 
     ///@{
@@ -148,57 +136,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The effort required to implement the recommendation.</p>
+     * <p>The estimated savings amount over the lookback period used to calculate cost
+     * impact for a recommendation.</p>
      */
-    inline const ImplementationEffort& GetImplementationEffort() const{ return m_implementationEffort; }
-    inline void SetImplementationEffort(const ImplementationEffort& value) { m_implementationEffort = value; }
-    inline void SetImplementationEffort(ImplementationEffort&& value) { m_implementationEffort = std::move(value); }
-    inline GetRecommendationResult& WithImplementationEffort(const ImplementationEffort& value) { SetImplementationEffort(value); return *this;}
-    inline GetRecommendationResult& WithImplementationEffort(ImplementationEffort&& value) { SetImplementationEffort(std::move(value)); return *this;}
+    inline double GetEstimatedSavingsOverCostCalculationLookbackPeriod() const{ return m_estimatedSavingsOverCostCalculationLookbackPeriod; }
+    inline void SetEstimatedSavingsOverCostCalculationLookbackPeriod(double value) { m_estimatedSavingsOverCostCalculationLookbackPeriod = value; }
+    inline GetRecommendationResult& WithEstimatedSavingsOverCostCalculationLookbackPeriod(double value) { SetEstimatedSavingsOverCostCalculationLookbackPeriod(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The time when the recommendation was last generated.</p>
+     * <p>The type of resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestamp = std::move(value); }
-    inline GetRecommendationResult& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline GetRecommendationResult& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID for the recommendation.</p>
-     */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
-    inline GetRecommendationResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline GetRecommendationResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline GetRecommendationResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The lookback period that's used to generate the recommendation.</p>
-     */
-    inline int GetRecommendationLookbackPeriodInDays() const{ return m_recommendationLookbackPeriodInDays; }
-    inline void SetRecommendationLookbackPeriodInDays(int value) { m_recommendationLookbackPeriodInDays = value; }
-    inline GetRecommendationResult& WithRecommendationLookbackPeriodInDays(int value) { SetRecommendationLookbackPeriodInDays(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The details about the recommended resource.</p>
-     */
-    inline const ResourceDetails& GetRecommendedResourceDetails() const{ return m_recommendedResourceDetails; }
-    inline void SetRecommendedResourceDetails(const ResourceDetails& value) { m_recommendedResourceDetails = value; }
-    inline void SetRecommendedResourceDetails(ResourceDetails&& value) { m_recommendedResourceDetails = std::move(value); }
-    inline GetRecommendationResult& WithRecommendedResourceDetails(const ResourceDetails& value) { SetRecommendedResourceDetails(value); return *this;}
-    inline GetRecommendationResult& WithRecommendedResourceDetails(ResourceDetails&& value) { SetRecommendedResourceDetails(std::move(value)); return *this;}
+    inline const ResourceType& GetCurrentResourceType() const{ return m_currentResourceType; }
+    inline void SetCurrentResourceType(const ResourceType& value) { m_currentResourceType = value; }
+    inline void SetCurrentResourceType(ResourceType&& value) { m_currentResourceType = std::move(value); }
+    inline GetRecommendationResult& WithCurrentResourceType(const ResourceType& value) { SetCurrentResourceType(value); return *this;}
+    inline GetRecommendationResult& WithCurrentResourceType(ResourceType&& value) { SetCurrentResourceType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,29 +181,54 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The source of the recommendation.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline GetRecommendationResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetRecommendationResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetRecommendationResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Source& GetSource() const{ return m_source; }
+    inline void SetSource(const Source& value) { m_source = value; }
+    inline void SetSource(Source&& value) { m_source = std::move(value); }
+    inline GetRecommendationResult& WithSource(const Source& value) { SetSource(value); return *this;}
+    inline GetRecommendationResult& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The unique identifier for the resource. This is the same as the Amazon
-     * Resource Name (ARN), if available.</p>
+     * <p>The time when the recommendation was last generated.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-    inline GetRecommendationResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline GetRecommendationResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline GetRecommendationResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestamp = value; }
+    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestamp = std::move(value); }
+    inline GetRecommendationResult& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
+    inline GetRecommendationResult& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The estimated monthly savings amount for the recommendation.</p>
+     */
+    inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
+    inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavings = value; }
+    inline GetRecommendationResult& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The estimated monthly cost of the current resource. For Reserved Instances
+     * and Savings Plans, it refers to the cost for eligible usage.</p>
+     */
+    inline double GetEstimatedMonthlyCost() const{ return m_estimatedMonthlyCost; }
+    inline void SetEstimatedMonthlyCost(double value) { m_estimatedMonthlyCost = value; }
+    inline GetRecommendationResult& WithEstimatedMonthlyCost(double value) { SetEstimatedMonthlyCost(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The effort required to implement the recommendation.</p>
+     */
+    inline const ImplementationEffort& GetImplementationEffort() const{ return m_implementationEffort; }
+    inline void SetImplementationEffort(const ImplementationEffort& value) { m_implementationEffort = value; }
+    inline void SetImplementationEffort(ImplementationEffort&& value) { m_implementationEffort = std::move(value); }
+    inline GetRecommendationResult& WithImplementationEffort(const ImplementationEffort& value) { SetImplementationEffort(value); return *this;}
+    inline GetRecommendationResult& WithImplementationEffort(ImplementationEffort&& value) { SetImplementationEffort(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,6 +242,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of action you can take by adopting the recommendation.</p>
+     */
+    inline const ActionType& GetActionType() const{ return m_actionType; }
+    inline void SetActionType(const ActionType& value) { m_actionType = value; }
+    inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
+    inline GetRecommendationResult& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
+    inline GetRecommendationResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Whether or not implementing the recommendation can be rolled back.</p>
      */
     inline bool GetRollbackPossible() const{ return m_rollbackPossible; }
@@ -272,13 +262,24 @@ namespace Model
 
     ///@{
     /**
-     * <p>The source of the recommendation.</p>
+     * <p>The details for the resource.</p>
      */
-    inline const Source& GetSource() const{ return m_source; }
-    inline void SetSource(const Source& value) { m_source = value; }
-    inline void SetSource(Source&& value) { m_source = std::move(value); }
-    inline GetRecommendationResult& WithSource(const Source& value) { SetSource(value); return *this;}
-    inline GetRecommendationResult& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    inline const ResourceDetails& GetCurrentResourceDetails() const{ return m_currentResourceDetails; }
+    inline void SetCurrentResourceDetails(const ResourceDetails& value) { m_currentResourceDetails = value; }
+    inline void SetCurrentResourceDetails(ResourceDetails&& value) { m_currentResourceDetails = std::move(value); }
+    inline GetRecommendationResult& WithCurrentResourceDetails(const ResourceDetails& value) { SetCurrentResourceDetails(value); return *this;}
+    inline GetRecommendationResult& WithCurrentResourceDetails(ResourceDetails&& value) { SetCurrentResourceDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The details about the recommended resource.</p>
+     */
+    inline const ResourceDetails& GetRecommendedResourceDetails() const{ return m_recommendedResourceDetails; }
+    inline void SetRecommendedResourceDetails(const ResourceDetails& value) { m_recommendedResourceDetails = value; }
+    inline void SetRecommendedResourceDetails(ResourceDetails&& value) { m_recommendedResourceDetails = std::move(value); }
+    inline GetRecommendationResult& WithRecommendedResourceDetails(const ResourceDetails& value) { SetRecommendedResourceDetails(value); return *this;}
+    inline GetRecommendationResult& WithRecommendedResourceDetails(ResourceDetails&& value) { SetRecommendedResourceDetails(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -307,49 +308,49 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_recommendationId;
+
+    Aws::String m_resourceId;
+
+    Aws::String m_resourceArn;
+
     Aws::String m_accountId;
-
-    ActionType m_actionType;
-
-    int m_costCalculationLookbackPeriodInDays;
 
     Aws::String m_currencyCode;
 
-    ResourceDetails m_currentResourceDetails;
+    int m_recommendationLookbackPeriodInDays;
 
-    ResourceType m_currentResourceType;
-
-    double m_estimatedMonthlyCost;
-
-    double m_estimatedMonthlySavings;
-
-    double m_estimatedSavingsOverCostCalculationLookbackPeriod;
+    int m_costCalculationLookbackPeriodInDays;
 
     double m_estimatedSavingsPercentage;
 
-    ImplementationEffort m_implementationEffort;
+    double m_estimatedSavingsOverCostCalculationLookbackPeriod;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
-
-    Aws::String m_recommendationId;
-
-    int m_recommendationLookbackPeriodInDays;
-
-    ResourceDetails m_recommendedResourceDetails;
+    ResourceType m_currentResourceType;
 
     ResourceType m_recommendedResourceType;
 
     Aws::String m_region;
 
-    Aws::String m_resourceArn;
+    Source m_source;
 
-    Aws::String m_resourceId;
+    Aws::Utils::DateTime m_lastRefreshTimestamp;
+
+    double m_estimatedMonthlySavings;
+
+    double m_estimatedMonthlyCost;
+
+    ImplementationEffort m_implementationEffort;
 
     bool m_restartNeeded;
 
+    ActionType m_actionType;
+
     bool m_rollbackPossible;
 
-    Source m_source;
+    ResourceDetails m_currentResourceDetails;
+
+    ResourceDetails m_recommendedResourceDetails;
 
     Aws::Vector<Tag> m_tags;
 

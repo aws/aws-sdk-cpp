@@ -40,16 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage volume.</p>
-     */
-    inline double GetSizeInGb() const{ return m_sizeInGb; }
-    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
-    inline void SetSizeInGb(double value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
-    inline StorageConfiguration& WithSizeInGb(double value) { SetSizeInGb(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The storage type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
@@ -61,13 +51,23 @@ namespace Model
     inline StorageConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
     inline StorageConfiguration& WithType(const char* value) { SetType(value); return *this;}
     ///@}
-  private:
 
-    double m_sizeInGb;
-    bool m_sizeInGbHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The storage volume.</p>
+     */
+    inline double GetSizeInGb() const{ return m_sizeInGb; }
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+    inline void SetSizeInGb(double value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
+    inline StorageConfiguration& WithSizeInGb(double value) { SetSizeInGb(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    double m_sizeInGb;
+    bool m_sizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

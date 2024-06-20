@@ -21,14 +21,16 @@ namespace Model
 ToolResultContentBlock::ToolResultContentBlock() : 
     m_jsonHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_documentHasBeenSet(false)
 {
 }
 
 ToolResultContentBlock::ToolResultContentBlock(JsonView jsonValue) : 
     m_jsonHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_documentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ToolResultContentBlock& ToolResultContentBlock::operator =(JsonView jsonValue)
     m_imageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("document"))
+  {
+    m_document = jsonValue.GetObject("document");
+
+    m_documentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue ToolResultContentBlock::Jsonize() const
   if(m_imageHasBeenSet)
   {
    payload.WithObject("image", m_image.Jsonize());
+
+  }
+
+  if(m_documentHasBeenSet)
+  {
+   payload.WithObject("document", m_document.Jsonize());
 
   }
 

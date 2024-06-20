@@ -99,7 +99,7 @@ namespace Model
      * instance’s CPU configuration doesn't meet the performance requirements of your
      * workload and there is an alternative instance type that provides better CPU
      * performance.</p> </li> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> —
-     * The instance’s memory configuration can be sized down while still meeting the
+     * The instance��s memory configuration can be sized down while still meeting the
      * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration
      * doesn't meet the performance requirements of your workload and there is an

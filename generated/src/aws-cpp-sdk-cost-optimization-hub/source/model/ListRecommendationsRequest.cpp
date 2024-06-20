@@ -14,12 +14,12 @@ using namespace Aws::Utils;
 
 ListRecommendationsRequest::ListRecommendationsRequest() : 
     m_filterHasBeenSet(false),
+    m_orderByHasBeenSet(false),
     m_includeAllRecommendations(false),
     m_includeAllRecommendationsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_orderByHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,12 @@ Aws::String ListRecommendationsRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("filter", m_filter.Jsonize());
+
+  }
+
+  if(m_orderByHasBeenSet)
+  {
+   payload.WithObject("orderBy", m_orderBy.Jsonize());
 
   }
 
@@ -48,12 +54,6 @@ Aws::String ListRecommendationsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
-
-  }
-
-  if(m_orderByHasBeenSet)
-  {
-   payload.WithObject("orderBy", m_orderBy.Jsonize());
 
   }
 

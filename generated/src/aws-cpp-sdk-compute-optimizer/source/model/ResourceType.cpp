@@ -27,6 +27,7 @@ namespace Aws
         static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
         static const int EcsService_HASH = HashingUtils::HashString("EcsService");
         static const int License_HASH = HashingUtils::HashString("License");
+        static const int RdsDBInstance_HASH = HashingUtils::HashString("RdsDBInstance");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ResourceType::License;
           }
+          else if (hashCode == RdsDBInstance_HASH)
+          {
+            return ResourceType::RdsDBInstance;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "EcsService";
           case ResourceType::License:
             return "License";
+          case ResourceType::RdsDBInstance:
+            return "RdsDBInstance";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

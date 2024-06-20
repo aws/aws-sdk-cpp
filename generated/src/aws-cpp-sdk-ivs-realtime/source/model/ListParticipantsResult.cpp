@@ -29,12 +29,6 @@ ListParticipantsResult::ListParticipantsResult(const Aws::AmazonWebServiceResult
 ListParticipantsResult& ListParticipantsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("participants"))
   {
     Aws::Utils::Array<JsonView> participantsJsonList = jsonValue.GetArray("participants");
@@ -42,6 +36,12 @@ ListParticipantsResult& ListParticipantsResult::operator =(const Aws::AmazonWebS
     {
       m_participants.push_back(participantsJsonList[participantsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

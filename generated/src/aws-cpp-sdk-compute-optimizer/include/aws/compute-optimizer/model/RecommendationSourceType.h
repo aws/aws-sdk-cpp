@@ -21,7 +21,9 @@ namespace Model
     EbsVolume,
     LambdaFunction,
     EcsService,
-    License
+    License,
+    RdsDBInstance,
+    RdsDBInstanceStorage
   };
 
 namespace RecommendationSourceTypeMapper

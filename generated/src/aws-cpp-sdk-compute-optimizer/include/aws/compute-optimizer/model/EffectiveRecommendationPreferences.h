@@ -53,13 +53,12 @@ namespace Model
      * <code>AWS_ARM64</code> with:</p> <ul> <li> <p>A
      * <a>GetEC2InstanceRecommendations</a> or
      * <a>GetAutoScalingGroupRecommendations</a> request, Compute Optimizer returns
-     * recommendations that consist of Graviton2 instance types only.</p> </li> <li>
+     * recommendations that consist of Graviton instance types only.</p> </li> <li>
      * <p>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer
-     * returns projected utilization metrics for Graviton2 instance type
-     * recommendations only.</p> </li> <li> <p>A
-     * <a>ExportEC2InstanceRecommendations</a> or
+     * returns projected utilization metrics for Graviton instance type recommendations
+     * only.</p> </li> <li> <p>A <a>ExportEC2InstanceRecommendations</a> or
      * <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer exports
-     * recommendations that consist of Graviton2 instance types only.</p> </li> </ul>
+     * recommendations that consist of Graviton instance types only.</p> </li> </ul>
      */
     inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const{ return m_cpuVendorArchitectures; }
     inline bool CpuVendorArchitecturesHasBeenSet() const { return m_cpuVendorArchitecturesHasBeenSet; }

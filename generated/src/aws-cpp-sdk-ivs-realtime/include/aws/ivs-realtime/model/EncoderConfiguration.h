@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs-realtime/model/Video.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +69,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Video configuration. Default: video resolution 1280x720, bitrate 2500 kbps,
+     * 30 fps</p>
+     */
+    inline const Video& GetVideo() const{ return m_video; }
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+    inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
+    inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
+    inline EncoderConfiguration& WithVideo(const Video& value) { SetVideo(value); return *this;}
+    inline EncoderConfiguration& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags attached to the resource. Array of maps, each of the form
      * <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -90,19 +103,6 @@ namespace Model
     inline EncoderConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline EncoderConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Video configuration. Default: video resolution 1280x720, bitrate 2500 kbps,
-     * 30 fps</p>
-     */
-    inline const Video& GetVideo() const{ return m_video; }
-    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline EncoderConfiguration& WithVideo(const Video& value) { SetVideo(value); return *this;}
-    inline EncoderConfiguration& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
-    ///@}
   private:
 
     Aws::String m_arn;
@@ -111,11 +111,11 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-
     Video m_video;
     bool m_videoHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

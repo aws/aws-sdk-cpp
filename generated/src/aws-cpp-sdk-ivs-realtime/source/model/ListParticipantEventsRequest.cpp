@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListParticipantEventsRequest::ListParticipantEventsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
+    m_stageArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_stageArnHasBeenSet(false)
+    m_participantIdHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -26,21 +26,9 @@ Aws::String ListParticipantEventsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
+  if(m_stageArnHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
-  }
-
-  if(m_participantIdHasBeenSet)
-  {
-   payload.WithString("participantId", m_participantId);
+   payload.WithString("stageArn", m_stageArn);
 
   }
 
@@ -50,9 +38,21 @@ Aws::String ListParticipantEventsRequest::SerializePayload() const
 
   }
 
-  if(m_stageArnHasBeenSet)
+  if(m_participantIdHasBeenSet)
   {
-   payload.WithString("stageArn", m_stageArn);
+   payload.WithString("participantId", m_participantId);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

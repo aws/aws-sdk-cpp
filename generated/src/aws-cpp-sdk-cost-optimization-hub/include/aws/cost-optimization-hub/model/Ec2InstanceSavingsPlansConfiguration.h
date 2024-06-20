@@ -54,6 +54,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Savings Plans recommendation term in years.</p>
+     */
+    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
+    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
+    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
+    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
+    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
+    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The payment option for the commitment.</p>
+     */
+    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
+    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
+    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
+    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
+    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The hourly commitment for the Savings Plans type.</p>
      */
     inline const Aws::String& GetHourlyCommitment() const{ return m_hourlyCommitment; }
@@ -82,20 +110,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The payment option for the commitment.</p>
-     */
-    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
-    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
-    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
-    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
-    inline Ec2InstanceSavingsPlansConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Web Services Region of the commitment.</p>
      */
     inline const Aws::String& GetSavingsPlansRegion() const{ return m_savingsPlansRegion; }
@@ -107,24 +121,16 @@ namespace Model
     inline Ec2InstanceSavingsPlansConfiguration& WithSavingsPlansRegion(Aws::String&& value) { SetSavingsPlansRegion(std::move(value)); return *this;}
     inline Ec2InstanceSavingsPlansConfiguration& WithSavingsPlansRegion(const char* value) { SetSavingsPlansRegion(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The Savings Plans recommendation term in years.</p>
-     */
-    inline const Aws::String& GetTerm() const{ return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline Ec2InstanceSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_accountScope;
     bool m_accountScopeHasBeenSet = false;
+
+    Aws::String m_term;
+    bool m_termHasBeenSet = false;
+
+    Aws::String m_paymentOption;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::String m_hourlyCommitment;
     bool m_hourlyCommitmentHasBeenSet = false;
@@ -132,14 +138,8 @@ namespace Model
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet = false;
 
-    Aws::String m_paymentOption;
-    bool m_paymentOptionHasBeenSet = false;
-
     Aws::String m_savingsPlansRegion;
     bool m_savingsPlansRegionHasBeenSet = false;
-
-    Aws::String m_term;
-    bool m_termHasBeenSet = false;
   };
 
 } // namespace Model

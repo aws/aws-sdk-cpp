@@ -20,45 +20,45 @@ namespace Model
 
 PipConfiguration::PipConfiguration() : 
     m_featuredParticipantAttributeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
     m_omitStoppedVideo(false),
     m_omitStoppedVideoHasBeenSet(false),
+    m_videoFillMode(VideoFillMode::NOT_SET),
+    m_videoFillModeHasBeenSet(false),
+    m_gridGap(0),
+    m_gridGapHasBeenSet(false),
+    m_pipParticipantAttributeHasBeenSet(false),
     m_pipBehavior(PipBehavior::NOT_SET),
     m_pipBehaviorHasBeenSet(false),
-    m_pipHeight(0),
-    m_pipHeightHasBeenSet(false),
     m_pipOffset(0),
     m_pipOffsetHasBeenSet(false),
-    m_pipParticipantAttributeHasBeenSet(false),
     m_pipPosition(PipPosition::NOT_SET),
     m_pipPositionHasBeenSet(false),
     m_pipWidth(0),
     m_pipWidthHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false)
+    m_pipHeight(0),
+    m_pipHeightHasBeenSet(false)
 {
 }
 
 PipConfiguration::PipConfiguration(JsonView jsonValue) : 
     m_featuredParticipantAttributeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
     m_omitStoppedVideo(false),
     m_omitStoppedVideoHasBeenSet(false),
+    m_videoFillMode(VideoFillMode::NOT_SET),
+    m_videoFillModeHasBeenSet(false),
+    m_gridGap(0),
+    m_gridGapHasBeenSet(false),
+    m_pipParticipantAttributeHasBeenSet(false),
     m_pipBehavior(PipBehavior::NOT_SET),
     m_pipBehaviorHasBeenSet(false),
-    m_pipHeight(0),
-    m_pipHeightHasBeenSet(false),
     m_pipOffset(0),
     m_pipOffsetHasBeenSet(false),
-    m_pipParticipantAttributeHasBeenSet(false),
     m_pipPosition(PipPosition::NOT_SET),
     m_pipPositionHasBeenSet(false),
     m_pipWidth(0),
     m_pipWidthHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false)
+    m_pipHeight(0),
+    m_pipHeightHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +72,20 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
     m_featuredParticipantAttributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("omitStoppedVideo"))
+  {
+    m_omitStoppedVideo = jsonValue.GetBool("omitStoppedVideo");
+
+    m_omitStoppedVideoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoFillMode"))
+  {
+    m_videoFillMode = VideoFillModeMapper::GetVideoFillModeForName(jsonValue.GetString("videoFillMode"));
+
+    m_videoFillModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("gridGap"))
   {
     m_gridGap = jsonValue.GetInteger("gridGap");
@@ -79,11 +93,11 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
     m_gridGapHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("omitStoppedVideo"))
+  if(jsonValue.ValueExists("pipParticipantAttribute"))
   {
-    m_omitStoppedVideo = jsonValue.GetBool("omitStoppedVideo");
+    m_pipParticipantAttribute = jsonValue.GetString("pipParticipantAttribute");
 
-    m_omitStoppedVideoHasBeenSet = true;
+    m_pipParticipantAttributeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pipBehavior"))
@@ -93,25 +107,11 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
     m_pipBehaviorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("pipHeight"))
-  {
-    m_pipHeight = jsonValue.GetInteger("pipHeight");
-
-    m_pipHeightHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("pipOffset"))
   {
     m_pipOffset = jsonValue.GetInteger("pipOffset");
 
     m_pipOffsetHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("pipParticipantAttribute"))
-  {
-    m_pipParticipantAttribute = jsonValue.GetString("pipParticipantAttribute");
-
-    m_pipParticipantAttributeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pipPosition"))
@@ -128,11 +128,11 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
     m_pipWidthHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("videoFillMode"))
+  if(jsonValue.ValueExists("pipHeight"))
   {
-    m_videoFillMode = VideoFillModeMapper::GetVideoFillModeForName(jsonValue.GetString("videoFillMode"));
+    m_pipHeight = jsonValue.GetInteger("pipHeight");
 
-    m_videoFillModeHasBeenSet = true;
+    m_pipHeightHasBeenSet = true;
   }
 
   return *this;
@@ -148,15 +148,26 @@ JsonValue PipConfiguration::Jsonize() const
 
   }
 
+  if(m_omitStoppedVideoHasBeenSet)
+  {
+   payload.WithBool("omitStoppedVideo", m_omitStoppedVideo);
+
+  }
+
+  if(m_videoFillModeHasBeenSet)
+  {
+   payload.WithString("videoFillMode", VideoFillModeMapper::GetNameForVideoFillMode(m_videoFillMode));
+  }
+
   if(m_gridGapHasBeenSet)
   {
    payload.WithInteger("gridGap", m_gridGap);
 
   }
 
-  if(m_omitStoppedVideoHasBeenSet)
+  if(m_pipParticipantAttributeHasBeenSet)
   {
-   payload.WithBool("omitStoppedVideo", m_omitStoppedVideo);
+   payload.WithString("pipParticipantAttribute", m_pipParticipantAttribute);
 
   }
 
@@ -165,21 +176,9 @@ JsonValue PipConfiguration::Jsonize() const
    payload.WithString("pipBehavior", PipBehaviorMapper::GetNameForPipBehavior(m_pipBehavior));
   }
 
-  if(m_pipHeightHasBeenSet)
-  {
-   payload.WithInteger("pipHeight", m_pipHeight);
-
-  }
-
   if(m_pipOffsetHasBeenSet)
   {
    payload.WithInteger("pipOffset", m_pipOffset);
-
-  }
-
-  if(m_pipParticipantAttributeHasBeenSet)
-  {
-   payload.WithString("pipParticipantAttribute", m_pipParticipantAttribute);
 
   }
 
@@ -194,9 +193,10 @@ JsonValue PipConfiguration::Jsonize() const
 
   }
 
-  if(m_videoFillModeHasBeenSet)
+  if(m_pipHeightHasBeenSet)
   {
-   payload.WithString("videoFillMode", VideoFillModeMapper::GetNameForVideoFillMode(m_videoFillMode));
+   payload.WithInteger("pipHeight", m_pipHeight);
+
   }
 
   return payload;

@@ -36,16 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The enrollment status of all member accounts in the organization if the
-     * account is the management account.</p>
-     */
-    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
-    inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccounts = value; }
-    inline ListEnrollmentStatusesResult& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The enrollment status of a specific account ID, including creation and last
      * updated timestamps.</p>
      */
@@ -56,6 +46,16 @@ namespace Model
     inline ListEnrollmentStatusesResult& WithItems(Aws::Vector<AccountEnrollmentStatus>&& value) { SetItems(std::move(value)); return *this;}
     inline ListEnrollmentStatusesResult& AddItems(const AccountEnrollmentStatus& value) { m_items.push_back(value); return *this; }
     inline ListEnrollmentStatusesResult& AddItems(AccountEnrollmentStatus&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The enrollment status of all member accounts in the organization if the
+     * account is the management account.</p>
+     */
+    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
+    inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccounts = value; }
+    inline ListEnrollmentStatusesResult& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
     ///@}
 
     ///@{
@@ -83,9 +83,9 @@ namespace Model
     ///@}
   private:
 
-    bool m_includeMemberAccounts;
-
     Aws::Vector<AccountEnrollmentStatus> m_items;
+
+    bool m_includeMemberAccounts;
 
     Aws::String m_nextToken;
 

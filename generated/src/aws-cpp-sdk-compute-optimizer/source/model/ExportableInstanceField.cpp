@@ -73,8 +73,8 @@ namespace Aws
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
         static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
         static const int EffectiveRecommendationPreferencesExternalMetricsSource_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesExternalMetricsSource");
-        static const int InstanceState_HASH = HashingUtils::HashString("InstanceState");
         static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static const int InstanceState_HASH = HashingUtils::HashString("InstanceState");
         static const int ExternalMetricStatusCode_HASH = HashingUtils::HashString("ExternalMetricStatusCode");
         static const int ExternalMetricStatusReason_HASH = HashingUtils::HashString("ExternalMetricStatusReason");
         static const int CurrentInstanceGpuInfo_HASH = HashingUtils::HashString("CurrentInstanceGpuInfo");
@@ -308,13 +308,13 @@ namespace Aws
           {
             return ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource;
           }
-          else if (hashCode == InstanceState_HASH)
-          {
-            return ExportableInstanceField::InstanceState;
-          }
           else if (hashCode == Tags_HASH)
           {
             return ExportableInstanceField::Tags;
+          }
+          else if (hashCode == InstanceState_HASH)
+          {
+            return ExportableInstanceField::InstanceState;
           }
           else if (hashCode == ExternalMetricStatusCode_HASH)
           {
@@ -502,10 +502,10 @@ namespace Aws
             return "RecommendationOptionsMigrationEffort";
           case ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource:
             return "EffectiveRecommendationPreferencesExternalMetricsSource";
-          case ExportableInstanceField::InstanceState:
-            return "InstanceState";
           case ExportableInstanceField::Tags:
             return "Tags";
+          case ExportableInstanceField::InstanceState:
+            return "InstanceState";
           case ExportableInstanceField::ExternalMetricStatusCode:
             return "ExternalMetricStatusCode";
           case ExportableInstanceField::ExternalMetricStatusReason:

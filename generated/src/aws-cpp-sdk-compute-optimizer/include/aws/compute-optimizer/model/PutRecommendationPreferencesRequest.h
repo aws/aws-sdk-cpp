@@ -49,8 +49,7 @@ namespace Model
      * <p>The <code>Ec2Instance</code> option encompasses standalone instances and
      * instances that are part of Auto Scaling groups. The
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
-     * an Auto Scaling group.</p>  <p>The valid values for this parameter are
-     * <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
+     * an Auto Scaling group.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

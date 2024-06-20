@@ -29,12 +29,6 @@ ListStorageConfigurationsResult::ListStorageConfigurationsResult(const Aws::Amaz
 ListStorageConfigurationsResult& ListStorageConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("storageConfigurations"))
   {
     Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
@@ -42,6 +36,12 @@ ListStorageConfigurationsResult& ListStorageConfigurationsResult::operator =(con
     {
       m_storageConfigurations.push_back(storageConfigurationsJsonList[storageConfigurationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

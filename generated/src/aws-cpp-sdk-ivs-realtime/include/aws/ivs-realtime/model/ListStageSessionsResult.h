@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/StageSessionSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of matching stage sessions.</p>
+     */
+    inline const Aws::Vector<StageSessionSummary>& GetStageSessions() const{ return m_stageSessions; }
+    inline void SetStageSessions(const Aws::Vector<StageSessionSummary>& value) { m_stageSessions = value; }
+    inline void SetStageSessions(Aws::Vector<StageSessionSummary>&& value) { m_stageSessions = std::move(value); }
+    inline ListStageSessionsResult& WithStageSessions(const Aws::Vector<StageSessionSummary>& value) { SetStageSessions(value); return *this;}
+    inline ListStageSessionsResult& WithStageSessions(Aws::Vector<StageSessionSummary>&& value) { SetStageSessions(std::move(value)); return *this;}
+    inline ListStageSessionsResult& AddStageSessions(const StageSessionSummary& value) { m_stageSessions.push_back(value); return *this; }
+    inline ListStageSessionsResult& AddStageSessions(StageSessionSummary&& value) { m_stageSessions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If there are more stage sessions than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -46,19 +59,6 @@ namespace Model
     inline ListStageSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListStageSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStageSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>List of matching stage sessions.</p>
-     */
-    inline const Aws::Vector<StageSessionSummary>& GetStageSessions() const{ return m_stageSessions; }
-    inline void SetStageSessions(const Aws::Vector<StageSessionSummary>& value) { m_stageSessions = value; }
-    inline void SetStageSessions(Aws::Vector<StageSessionSummary>&& value) { m_stageSessions = std::move(value); }
-    inline ListStageSessionsResult& WithStageSessions(const Aws::Vector<StageSessionSummary>& value) { SetStageSessions(value); return *this;}
-    inline ListStageSessionsResult& WithStageSessions(Aws::Vector<StageSessionSummary>&& value) { SetStageSessions(std::move(value)); return *this;}
-    inline ListStageSessionsResult& AddStageSessions(const StageSessionSummary& value) { m_stageSessions.push_back(value); return *this; }
-    inline ListStageSessionsResult& AddStageSessions(StageSessionSummary&& value) { m_stageSessions.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<StageSessionSummary> m_stageSessions;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

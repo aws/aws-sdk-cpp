@@ -93,7 +93,9 @@ namespace Model
      * <code>public:maven-gradleplugins</code> - for the Gradle plugins repository.
      * </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare
      * Android repository. </p> </li> <li> <p> <code>public:maven-clojars</code> - for
-     * the Clojars repository. </p> </li> </ul>
+     * the Clojars repository. </p> </li> <li> <p> <code>public:ruby-gems-org</code> -
+     * for RubyGems.org. </p> </li> <li> <p> <code>public:crates-io</code> - for
+     * Crates.io. </p> </li> </ul>
      */
     inline const Aws::String& GetExternalConnection() const{ return m_externalConnection; }
     inline bool ExternalConnectionHasBeenSet() const { return m_externalConnectionHasBeenSet; }

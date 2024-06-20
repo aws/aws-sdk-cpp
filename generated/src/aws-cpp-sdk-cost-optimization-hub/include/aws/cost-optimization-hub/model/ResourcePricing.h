@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The savings estimate incorporating all discounts with Amazon Web Services,
-     * such as Reserved Instances and Savings Plans.</p>
-     */
-    inline double GetEstimatedCostAfterDiscounts() const{ return m_estimatedCostAfterDiscounts; }
-    inline bool EstimatedCostAfterDiscountsHasBeenSet() const { return m_estimatedCostAfterDiscountsHasBeenSet; }
-    inline void SetEstimatedCostAfterDiscounts(double value) { m_estimatedCostAfterDiscountsHasBeenSet = true; m_estimatedCostAfterDiscounts = value; }
-    inline ResourcePricing& WithEstimatedCostAfterDiscounts(double value) { SetEstimatedCostAfterDiscounts(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The savings estimate using Amazon Web Services public pricing without
      * incorporating any discounts.</p>
      */
@@ -58,6 +47,16 @@ namespace Model
     inline bool EstimatedCostBeforeDiscountsHasBeenSet() const { return m_estimatedCostBeforeDiscountsHasBeenSet; }
     inline void SetEstimatedCostBeforeDiscounts(double value) { m_estimatedCostBeforeDiscountsHasBeenSet = true; m_estimatedCostBeforeDiscounts = value; }
     inline ResourcePricing& WithEstimatedCostBeforeDiscounts(double value) { SetEstimatedCostBeforeDiscounts(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The estimated net unused amortized commitment for the recommendation.</p>
+     */
+    inline double GetEstimatedNetUnusedAmortizedCommitments() const{ return m_estimatedNetUnusedAmortizedCommitments; }
+    inline bool EstimatedNetUnusedAmortizedCommitmentsHasBeenSet() const { return m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet; }
+    inline void SetEstimatedNetUnusedAmortizedCommitments(double value) { m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = true; m_estimatedNetUnusedAmortizedCommitments = value; }
+    inline ResourcePricing& WithEstimatedNetUnusedAmortizedCommitments(double value) { SetEstimatedNetUnusedAmortizedCommitments(value); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +73,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated net unused amortized commitment for the recommendation.</p>
+     * <p>The savings estimate incorporating all discounts with Amazon Web Services,
+     * such as Reserved Instances and Savings Plans.</p>
      */
-    inline double GetEstimatedNetUnusedAmortizedCommitments() const{ return m_estimatedNetUnusedAmortizedCommitments; }
-    inline bool EstimatedNetUnusedAmortizedCommitmentsHasBeenSet() const { return m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet; }
-    inline void SetEstimatedNetUnusedAmortizedCommitments(double value) { m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = true; m_estimatedNetUnusedAmortizedCommitments = value; }
-    inline ResourcePricing& WithEstimatedNetUnusedAmortizedCommitments(double value) { SetEstimatedNetUnusedAmortizedCommitments(value); return *this;}
+    inline double GetEstimatedCostAfterDiscounts() const{ return m_estimatedCostAfterDiscounts; }
+    inline bool EstimatedCostAfterDiscountsHasBeenSet() const { return m_estimatedCostAfterDiscountsHasBeenSet; }
+    inline void SetEstimatedCostAfterDiscounts(double value) { m_estimatedCostAfterDiscountsHasBeenSet = true; m_estimatedCostAfterDiscounts = value; }
+    inline ResourcePricing& WithEstimatedCostAfterDiscounts(double value) { SetEstimatedCostAfterDiscounts(value); return *this;}
     ///@}
   private:
-
-    double m_estimatedCostAfterDiscounts;
-    bool m_estimatedCostAfterDiscountsHasBeenSet = false;
 
     double m_estimatedCostBeforeDiscounts;
     bool m_estimatedCostBeforeDiscountsHasBeenSet = false;
 
+    double m_estimatedNetUnusedAmortizedCommitments;
+    bool m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = false;
+
     EstimatedDiscounts m_estimatedDiscounts;
     bool m_estimatedDiscountsHasBeenSet = false;
 
-    double m_estimatedNetUnusedAmortizedCommitments;
-    bool m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = false;
+    double m_estimatedCostAfterDiscounts;
+    bool m_estimatedCostAfterDiscountsHasBeenSet = false;
   };
 
 } // namespace Model

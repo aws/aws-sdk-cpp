@@ -54,59 +54,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether the recommendation is for a current generation
-     * instance.</p>
+     * <p>The service that you want your recommendations for.</p>
      */
-    inline const Aws::String& GetCurrentGeneration() const{ return m_currentGeneration; }
-    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
-    inline void SetCurrentGeneration(const Aws::String& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
-    inline void SetCurrentGeneration(Aws::String&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::move(value); }
-    inline void SetCurrentGeneration(const char* value) { m_currentGenerationHasBeenSet = true; m_currentGeneration.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const Aws::String& value) { SetCurrentGeneration(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(Aws::String&& value) { SetCurrentGeneration(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const char* value) { SetCurrentGeneration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The instance family of the recommended reservation.</p>
-     */
-    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
-    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of instance that Amazon Web Services recommends.</p>
-     */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>How much purchasing reserved instances costs you on a monthly basis.</p>
-     */
-    inline const Aws::String& GetMonthlyRecurringCost() const{ return m_monthlyRecurringCost; }
-    inline bool MonthlyRecurringCostHasBeenSet() const { return m_monthlyRecurringCostHasBeenSet; }
-    inline void SetMonthlyRecurringCost(const Aws::String& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = value; }
-    inline void SetMonthlyRecurringCost(Aws::String&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::move(value); }
-    inline void SetMonthlyRecurringCost(const char* value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const Aws::String& value) { SetMonthlyRecurringCost(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(Aws::String&& value) { SetMonthlyRecurringCost(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const char* value) { SetMonthlyRecurringCost(value); return *this;}
+    inline const Aws::String& GetService() const{ return m_service; }
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
+    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithService(const Aws::String& value) { SetService(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithService(const char* value) { SetService(value); return *this;}
     ///@}
 
     ///@{
@@ -122,6 +79,34 @@ namespace Model
     inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(const Aws::String& value) { SetNormalizedUnitsToPurchase(value); return *this;}
     inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(Aws::String&& value) { SetNormalizedUnitsToPurchase(std::move(value)); return *this;}
     inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(const char* value) { SetNormalizedUnitsToPurchase(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The reserved instances recommendation term in years.</p>
+     */
+    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
+    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
+    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The payment option for the commitment.</p>
+     */
+    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
+    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
     ///@}
 
     ///@{
@@ -156,16 +141,59 @@ namespace Model
 
     ///@{
     /**
-     * <p>The payment option for the commitment.</p>
+     * <p>The instance family of the recommended reservation.</p>
      */
-    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
-    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
+    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
+    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
+    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of instance that Amazon Web Services recommends.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services Region of the commitment.</p>
+     */
+    inline const Aws::String& GetReservedInstancesRegion() const{ return m_reservedInstancesRegion; }
+    inline bool ReservedInstancesRegionHasBeenSet() const { return m_reservedInstancesRegionHasBeenSet; }
+    inline void SetReservedInstancesRegion(const Aws::String& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = value; }
+    inline void SetReservedInstancesRegion(Aws::String&& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = std::move(value); }
+    inline void SetReservedInstancesRegion(const char* value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const Aws::String& value) { SetReservedInstancesRegion(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(Aws::String&& value) { SetReservedInstancesRegion(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const char* value) { SetReservedInstancesRegion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether the recommendation is for a current generation
+     * instance.</p>
+     */
+    inline const Aws::String& GetCurrentGeneration() const{ return m_currentGeneration; }
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+    inline void SetCurrentGeneration(const Aws::String& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
+    inline void SetCurrentGeneration(Aws::String&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::move(value); }
+    inline void SetCurrentGeneration(const char* value) { m_currentGenerationHasBeenSet = true; m_currentGeneration.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const Aws::String& value) { SetCurrentGeneration(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(Aws::String&& value) { SetCurrentGeneration(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const char* value) { SetCurrentGeneration(value); return *this;}
     ///@}
 
     ///@{
@@ -185,44 +213,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services Region of the commitment.</p>
-     */
-    inline const Aws::String& GetReservedInstancesRegion() const{ return m_reservedInstancesRegion; }
-    inline bool ReservedInstancesRegionHasBeenSet() const { return m_reservedInstancesRegionHasBeenSet; }
-    inline void SetReservedInstancesRegion(const Aws::String& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = value; }
-    inline void SetReservedInstancesRegion(Aws::String&& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = std::move(value); }
-    inline void SetReservedInstancesRegion(const char* value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const Aws::String& value) { SetReservedInstancesRegion(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(Aws::String&& value) { SetReservedInstancesRegion(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const char* value) { SetReservedInstancesRegion(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The service that you want your recommendations for.</p>
-     */
-    inline const Aws::String& GetService() const{ return m_service; }
-    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithService(const char* value) { SetService(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Determines whether the recommendation is size flexible.</p>
-     */
-    inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
-    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
-    inline void SetSizeFlexEligible(bool value) { m_sizeFlexEligibleHasBeenSet = true; m_sizeFlexEligible = value; }
-    inline Ec2ReservedInstancesConfiguration& WithSizeFlexEligible(bool value) { SetSizeFlexEligible(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Determines whether the recommended reservation is dedicated or shared.</p>
      */
     inline const Aws::String& GetTenancy() const{ return m_tenancy; }
@@ -237,16 +227,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reserved instances recommendation term in years.</p>
+     * <p>Determines whether the recommendation is size flexible.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
+    inline void SetSizeFlexEligible(bool value) { m_sizeFlexEligibleHasBeenSet = true; m_sizeFlexEligible = value; }
+    inline Ec2ReservedInstancesConfiguration& WithSizeFlexEligible(bool value) { SetSizeFlexEligible(value); return *this;}
     ///@}
 
     ///@{
@@ -262,25 +248,36 @@ namespace Model
     inline Ec2ReservedInstancesConfiguration& WithUpfrontCost(Aws::String&& value) { SetUpfrontCost(std::move(value)); return *this;}
     inline Ec2ReservedInstancesConfiguration& WithUpfrontCost(const char* value) { SetUpfrontCost(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>How much purchasing reserved instances costs you on a monthly basis.</p>
+     */
+    inline const Aws::String& GetMonthlyRecurringCost() const{ return m_monthlyRecurringCost; }
+    inline bool MonthlyRecurringCostHasBeenSet() const { return m_monthlyRecurringCostHasBeenSet; }
+    inline void SetMonthlyRecurringCost(const Aws::String& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = value; }
+    inline void SetMonthlyRecurringCost(Aws::String&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::move(value); }
+    inline void SetMonthlyRecurringCost(const char* value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost.assign(value); }
+    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const Aws::String& value) { SetMonthlyRecurringCost(value); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(Aws::String&& value) { SetMonthlyRecurringCost(std::move(value)); return *this;}
+    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const char* value) { SetMonthlyRecurringCost(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountScope;
     bool m_accountScopeHasBeenSet = false;
 
-    Aws::String m_currentGeneration;
-    bool m_currentGenerationHasBeenSet = false;
-
-    Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet = false;
-
-    Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet = false;
-
-    Aws::String m_monthlyRecurringCost;
-    bool m_monthlyRecurringCostHasBeenSet = false;
+    Aws::String m_service;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_normalizedUnitsToPurchase;
     bool m_normalizedUnitsToPurchaseHasBeenSet = false;
+
+    Aws::String m_term;
+    bool m_termHasBeenSet = false;
+
+    Aws::String m_paymentOption;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::String m_numberOfInstancesToPurchase;
     bool m_numberOfInstancesToPurchaseHasBeenSet = false;
@@ -288,29 +285,32 @@ namespace Model
     Aws::String m_offeringClass;
     bool m_offeringClassHasBeenSet = false;
 
-    Aws::String m_paymentOption;
-    bool m_paymentOptionHasBeenSet = false;
+    Aws::String m_instanceFamily;
+    bool m_instanceFamilyHasBeenSet = false;
 
-    Aws::String m_platform;
-    bool m_platformHasBeenSet = false;
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_reservedInstancesRegion;
     bool m_reservedInstancesRegionHasBeenSet = false;
 
-    Aws::String m_service;
-    bool m_serviceHasBeenSet = false;
+    Aws::String m_currentGeneration;
+    bool m_currentGenerationHasBeenSet = false;
 
-    bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet = false;
+    Aws::String m_platform;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_tenancy;
     bool m_tenancyHasBeenSet = false;
 
-    Aws::String m_term;
-    bool m_termHasBeenSet = false;
+    bool m_sizeFlexEligible;
+    bool m_sizeFlexEligibleHasBeenSet = false;
 
     Aws::String m_upfrontCost;
     bool m_upfrontCostHasBeenSet = false;
+
+    Aws::String m_monthlyRecurringCost;
+    bool m_monthlyRecurringCostHasBeenSet = false;
   };
 
 } // namespace Model

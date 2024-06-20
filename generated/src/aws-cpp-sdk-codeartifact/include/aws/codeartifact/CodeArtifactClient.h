@@ -47,7 +47,7 @@ namespace CodeArtifact
    * published artifacts so that teams can find and share packages across their
    * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
    * software and the metadata required to resolve dependencies and install the
-   * software. CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, and
+   * software. CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, Cargo, and
    * generic package formats. For more information about the supported package
    * formats and how to use CodeArtifact with them, see the <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
@@ -129,12 +129,13 @@ namespace CodeArtifact
    * Gets the readme file or descriptive text for a package version.</p> </li> <li>
    * <p> <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
    * a specific package format. A repository has one endpoint for each package
-   * format: </p> <ul> <li> <p> <code>generic</code> </p> </li> <li> <p>
-   * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
-   * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-   * <code>ruby</code> </p> </li> <li> <p> <code>swift</code> </p> </li> </ul> </li>
-   * <li> <p> <code>GetRepositoryPermissionsPolicy</code>: Returns the resource
-   * policy that is set on a repository. </p> </li> <li> <p>
+   * format: </p> <ul> <li> <p> <code>cargo</code> </p> </li> <li> <p>
+   * <code>generic</code> </p> </li> <li> <p> <code>maven</code> </p> </li> <li> <p>
+   * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
+   * <code>pypi</code> </p> </li> <li> <p> <code>ruby</code> </p> </li> <li> <p>
+   * <code>swift</code> </p> </li> </ul> </li> <li> <p>
+   * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
+   * set on a repository. </p> </li> <li> <p>
    * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for
    * a package group that has origin configuration set to
    * <code>ALLOW_SPECIFIC_REPOSITORIES</code>.</p> </li> <li> <p>
@@ -937,10 +938,11 @@ namespace CodeArtifact
         /**
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
-         * <code>generic</code> </p> </li> <li> <p> <code>maven</code> </p> </li> <li> <p>
-         * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
-         * <code>pypi</code> </p> </li> <li> <p> <code>ruby</code> </p> </li> <li> <p>
-         * <code>swift</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>cargo</code> </p> </li> <li> <p> <code>generic</code> </p> </li> <li> <p>
+         * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
+         * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
+         * <code>ruby</code> </p> </li> <li> <p> <code>swift</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          */

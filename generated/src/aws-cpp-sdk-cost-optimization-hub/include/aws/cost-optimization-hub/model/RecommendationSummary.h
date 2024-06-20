@@ -40,17 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated total savings resulting from modifications, on a monthly
-     * basis.</p>
-     */
-    inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
-    inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-    inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-    inline RecommendationSummary& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The grouping of recommendations.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
@@ -65,6 +54,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The estimated total savings resulting from modifications, on a monthly
+     * basis.</p>
+     */
+    inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
+    inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
+    inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
+    inline RecommendationSummary& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The total number of instance recommendations.</p>
      */
     inline int GetRecommendationCount() const{ return m_recommendationCount; }
@@ -74,11 +74,11 @@ namespace Model
     ///@}
   private:
 
-    double m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet = false;
-
     Aws::String m_group;
     bool m_groupHasBeenSet = false;
+
+    double m_estimatedMonthlySavings;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     int m_recommendationCount;
     bool m_recommendationCountHasBeenSet = false;

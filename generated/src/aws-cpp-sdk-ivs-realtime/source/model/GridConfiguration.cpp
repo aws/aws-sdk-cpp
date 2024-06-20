@@ -20,27 +20,27 @@ namespace Model
 
 GridConfiguration::GridConfiguration() : 
     m_featuredParticipantAttributeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
     m_omitStoppedVideo(false),
     m_omitStoppedVideoHasBeenSet(false),
     m_videoAspectRatio(VideoAspectRatio::NOT_SET),
     m_videoAspectRatioHasBeenSet(false),
     m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false)
+    m_videoFillModeHasBeenSet(false),
+    m_gridGap(0),
+    m_gridGapHasBeenSet(false)
 {
 }
 
 GridConfiguration::GridConfiguration(JsonView jsonValue) : 
     m_featuredParticipantAttributeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
     m_omitStoppedVideo(false),
     m_omitStoppedVideoHasBeenSet(false),
     m_videoAspectRatio(VideoAspectRatio::NOT_SET),
     m_videoAspectRatioHasBeenSet(false),
     m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false)
+    m_videoFillModeHasBeenSet(false),
+    m_gridGap(0),
+    m_gridGapHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,13 +52,6 @@ GridConfiguration& GridConfiguration::operator =(JsonView jsonValue)
     m_featuredParticipantAttribute = jsonValue.GetString("featuredParticipantAttribute");
 
     m_featuredParticipantAttributeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("gridGap"))
-  {
-    m_gridGap = jsonValue.GetInteger("gridGap");
-
-    m_gridGapHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("omitStoppedVideo"))
@@ -82,6 +75,13 @@ GridConfiguration& GridConfiguration::operator =(JsonView jsonValue)
     m_videoFillModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("gridGap"))
+  {
+    m_gridGap = jsonValue.GetInteger("gridGap");
+
+    m_gridGapHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,12 +92,6 @@ JsonValue GridConfiguration::Jsonize() const
   if(m_featuredParticipantAttributeHasBeenSet)
   {
    payload.WithString("featuredParticipantAttribute", m_featuredParticipantAttribute);
-
-  }
-
-  if(m_gridGapHasBeenSet)
-  {
-   payload.WithInteger("gridGap", m_gridGap);
 
   }
 
@@ -115,6 +109,12 @@ JsonValue GridConfiguration::Jsonize() const
   if(m_videoFillModeHasBeenSet)
   {
    payload.WithString("videoFillMode", VideoFillModeMapper::GetNameForVideoFillMode(m_videoFillMode));
+  }
+
+  if(m_gridGapHasBeenSet)
+  {
+   payload.WithInteger("gridGap", m_gridGap);
+
   }
 
   return payload;

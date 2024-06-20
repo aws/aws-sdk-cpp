@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/HubContentType.h>
+#include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/HubContentStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -182,6 +183,43 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the public hub content.</p>
+     */
+    inline const Aws::String& GetSageMakerPublicHubContentArn() const{ return m_sageMakerPublicHubContentArn; }
+    inline void SetSageMakerPublicHubContentArn(const Aws::String& value) { m_sageMakerPublicHubContentArn = value; }
+    inline void SetSageMakerPublicHubContentArn(Aws::String&& value) { m_sageMakerPublicHubContentArn = std::move(value); }
+    inline void SetSageMakerPublicHubContentArn(const char* value) { m_sageMakerPublicHubContentArn.assign(value); }
+    inline DescribeHubContentResult& WithSageMakerPublicHubContentArn(const Aws::String& value) { SetSageMakerPublicHubContentArn(value); return *this;}
+    inline DescribeHubContentResult& WithSageMakerPublicHubContentArn(Aws::String&& value) { SetSageMakerPublicHubContentArn(std::move(value)); return *this;}
+    inline DescribeHubContentResult& WithSageMakerPublicHubContentArn(const char* value) { SetSageMakerPublicHubContentArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum version of the hub content.</p>
+     */
+    inline const Aws::String& GetReferenceMinVersion() const{ return m_referenceMinVersion; }
+    inline void SetReferenceMinVersion(const Aws::String& value) { m_referenceMinVersion = value; }
+    inline void SetReferenceMinVersion(Aws::String&& value) { m_referenceMinVersion = std::move(value); }
+    inline void SetReferenceMinVersion(const char* value) { m_referenceMinVersion.assign(value); }
+    inline DescribeHubContentResult& WithReferenceMinVersion(const Aws::String& value) { SetReferenceMinVersion(value); return *this;}
+    inline DescribeHubContentResult& WithReferenceMinVersion(Aws::String&& value) { SetReferenceMinVersion(std::move(value)); return *this;}
+    inline DescribeHubContentResult& WithReferenceMinVersion(const char* value) { SetReferenceMinVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The support status of the hub content.</p>
+     */
+    inline const HubContentSupportStatus& GetSupportStatus() const{ return m_supportStatus; }
+    inline void SetSupportStatus(const HubContentSupportStatus& value) { m_supportStatus = value; }
+    inline void SetSupportStatus(HubContentSupportStatus&& value) { m_supportStatus = std::move(value); }
+    inline DescribeHubContentResult& WithSupportStatus(const HubContentSupportStatus& value) { SetSupportStatus(value); return *this;}
+    inline DescribeHubContentResult& WithSupportStatus(HubContentSupportStatus&& value) { SetSupportStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The searchable keywords for the hub content.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHubContentSearchKeywords() const{ return m_hubContentSearchKeywords; }
@@ -276,6 +314,12 @@ namespace Model
     Aws::String m_hubContentMarkdown;
 
     Aws::String m_hubContentDocument;
+
+    Aws::String m_sageMakerPublicHubContentArn;
+
+    Aws::String m_referenceMinVersion;
+
+    HubContentSupportStatus m_supportStatus;
 
     Aws::Vector<Aws::String> m_hubContentSearchKeywords;
 

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/cost-optimization-hub/model/BlockStoragePerformanceConfiguration.h>
 #include <aws/cost-optimization-hub/model/StorageConfiguration.h>
+#include <aws/cost-optimization-hub/model/BlockStoragePerformanceConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -42,16 +42,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Elastic Block Store attachment state.</p>
+     * <p>The disk storage of the Amazon Elastic Block Store volume.</p>
      */
-    inline const Aws::String& GetAttachmentState() const{ return m_attachmentState; }
-    inline bool AttachmentStateHasBeenSet() const { return m_attachmentStateHasBeenSet; }
-    inline void SetAttachmentState(const Aws::String& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
-    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
-    inline void SetAttachmentState(const char* value) { m_attachmentStateHasBeenSet = true; m_attachmentState.assign(value); }
-    inline EbsVolumeConfiguration& WithAttachmentState(const Aws::String& value) { SetAttachmentState(value); return *this;}
-    inline EbsVolumeConfiguration& WithAttachmentState(Aws::String&& value) { SetAttachmentState(std::move(value)); return *this;}
-    inline EbsVolumeConfiguration& WithAttachmentState(const char* value) { SetAttachmentState(value); return *this;}
+    inline const StorageConfiguration& GetStorage() const{ return m_storage; }
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+    inline void SetStorage(const StorageConfiguration& value) { m_storageHasBeenSet = true; m_storage = value; }
+    inline void SetStorage(StorageConfiguration&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
+    inline EbsVolumeConfiguration& WithStorage(const StorageConfiguration& value) { SetStorage(value); return *this;}
+    inline EbsVolumeConfiguration& WithStorage(StorageConfiguration&& value) { SetStorage(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,25 +66,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The disk storage of the Amazon Elastic Block Store volume.</p>
+     * <p>The Amazon Elastic Block Store attachment state.</p>
      */
-    inline const StorageConfiguration& GetStorage() const{ return m_storage; }
-    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const StorageConfiguration& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(StorageConfiguration&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline EbsVolumeConfiguration& WithStorage(const StorageConfiguration& value) { SetStorage(value); return *this;}
-    inline EbsVolumeConfiguration& WithStorage(StorageConfiguration&& value) { SetStorage(std::move(value)); return *this;}
+    inline const Aws::String& GetAttachmentState() const{ return m_attachmentState; }
+    inline bool AttachmentStateHasBeenSet() const { return m_attachmentStateHasBeenSet; }
+    inline void SetAttachmentState(const Aws::String& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = value; }
+    inline void SetAttachmentState(Aws::String&& value) { m_attachmentStateHasBeenSet = true; m_attachmentState = std::move(value); }
+    inline void SetAttachmentState(const char* value) { m_attachmentStateHasBeenSet = true; m_attachmentState.assign(value); }
+    inline EbsVolumeConfiguration& WithAttachmentState(const Aws::String& value) { SetAttachmentState(value); return *this;}
+    inline EbsVolumeConfiguration& WithAttachmentState(Aws::String&& value) { SetAttachmentState(std::move(value)); return *this;}
+    inline EbsVolumeConfiguration& WithAttachmentState(const char* value) { SetAttachmentState(value); return *this;}
     ///@}
   private:
 
-    Aws::String m_attachmentState;
-    bool m_attachmentStateHasBeenSet = false;
+    StorageConfiguration m_storage;
+    bool m_storageHasBeenSet = false;
 
     BlockStoragePerformanceConfiguration m_performance;
     bool m_performanceHasBeenSet = false;
 
-    StorageConfiguration m_storage;
-    bool m_storageHasBeenSet = false;
+    Aws::String m_attachmentState;
+    bool m_attachmentStateHasBeenSet = false;
   };
 
 } // namespace Model

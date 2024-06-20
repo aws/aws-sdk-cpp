@@ -20,43 +20,43 @@ namespace Model
 
 Ec2ReservedInstancesConfiguration::Ec2ReservedInstancesConfiguration() : 
     m_accountScopeHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false),
+    m_serviceHasBeenSet(false),
     m_normalizedUnitsToPurchaseHasBeenSet(false),
+    m_termHasBeenSet(false),
+    m_paymentOptionHasBeenSet(false),
     m_numberOfInstancesToPurchaseHasBeenSet(false),
     m_offeringClassHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_platformHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_reservedInstancesRegionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
+    m_currentGenerationHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
     m_sizeFlexEligible(false),
     m_sizeFlexEligibleHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false)
+    m_upfrontCostHasBeenSet(false),
+    m_monthlyRecurringCostHasBeenSet(false)
 {
 }
 
 Ec2ReservedInstancesConfiguration::Ec2ReservedInstancesConfiguration(JsonView jsonValue) : 
     m_accountScopeHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false),
+    m_serviceHasBeenSet(false),
     m_normalizedUnitsToPurchaseHasBeenSet(false),
+    m_termHasBeenSet(false),
+    m_paymentOptionHasBeenSet(false),
     m_numberOfInstancesToPurchaseHasBeenSet(false),
     m_offeringClassHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_platformHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_reservedInstancesRegionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
+    m_currentGenerationHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
     m_sizeFlexEligible(false),
     m_sizeFlexEligibleHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false)
+    m_upfrontCostHasBeenSet(false),
+    m_monthlyRecurringCostHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,32 +70,11 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_accountScopeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("currentGeneration"))
+  if(jsonValue.ValueExists("service"))
   {
-    m_currentGeneration = jsonValue.GetString("currentGeneration");
+    m_service = jsonValue.GetString("service");
 
-    m_currentGenerationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("instanceFamily"))
-  {
-    m_instanceFamily = jsonValue.GetString("instanceFamily");
-
-    m_instanceFamilyHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("instanceType"))
-  {
-    m_instanceType = jsonValue.GetString("instanceType");
-
-    m_instanceTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("monthlyRecurringCost"))
-  {
-    m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
-
-    m_monthlyRecurringCostHasBeenSet = true;
+    m_serviceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("normalizedUnitsToPurchase"))
@@ -103,6 +82,20 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_normalizedUnitsToPurchase = jsonValue.GetString("normalizedUnitsToPurchase");
 
     m_normalizedUnitsToPurchaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("term"))
+  {
+    m_term = jsonValue.GetString("term");
+
+    m_termHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("paymentOption"))
+  {
+    m_paymentOption = jsonValue.GetString("paymentOption");
+
+    m_paymentOptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("numberOfInstancesToPurchase"))
@@ -119,18 +112,18 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_offeringClassHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("paymentOption"))
+  if(jsonValue.ValueExists("instanceFamily"))
   {
-    m_paymentOption = jsonValue.GetString("paymentOption");
+    m_instanceFamily = jsonValue.GetString("instanceFamily");
 
-    m_paymentOptionHasBeenSet = true;
+    m_instanceFamilyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("platform"))
+  if(jsonValue.ValueExists("instanceType"))
   {
-    m_platform = jsonValue.GetString("platform");
+    m_instanceType = jsonValue.GetString("instanceType");
 
-    m_platformHasBeenSet = true;
+    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("reservedInstancesRegion"))
@@ -140,18 +133,18 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_reservedInstancesRegionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("service"))
+  if(jsonValue.ValueExists("currentGeneration"))
   {
-    m_service = jsonValue.GetString("service");
+    m_currentGeneration = jsonValue.GetString("currentGeneration");
 
-    m_serviceHasBeenSet = true;
+    m_currentGenerationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("sizeFlexEligible"))
+  if(jsonValue.ValueExists("platform"))
   {
-    m_sizeFlexEligible = jsonValue.GetBool("sizeFlexEligible");
+    m_platform = jsonValue.GetString("platform");
 
-    m_sizeFlexEligibleHasBeenSet = true;
+    m_platformHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tenancy"))
@@ -161,11 +154,11 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_tenancyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("term"))
+  if(jsonValue.ValueExists("sizeFlexEligible"))
   {
-    m_term = jsonValue.GetString("term");
+    m_sizeFlexEligible = jsonValue.GetBool("sizeFlexEligible");
 
-    m_termHasBeenSet = true;
+    m_sizeFlexEligibleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("upfrontCost"))
@@ -173,6 +166,13 @@ Ec2ReservedInstancesConfiguration& Ec2ReservedInstancesConfiguration::operator =
     m_upfrontCost = jsonValue.GetString("upfrontCost");
 
     m_upfrontCostHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("monthlyRecurringCost"))
+  {
+    m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
+
+    m_monthlyRecurringCostHasBeenSet = true;
   }
 
   return *this;
@@ -188,33 +188,27 @@ JsonValue Ec2ReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_currentGenerationHasBeenSet)
+  if(m_serviceHasBeenSet)
   {
-   payload.WithString("currentGeneration", m_currentGeneration);
-
-  }
-
-  if(m_instanceFamilyHasBeenSet)
-  {
-   payload.WithString("instanceFamily", m_instanceFamily);
-
-  }
-
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", m_instanceType);
-
-  }
-
-  if(m_monthlyRecurringCostHasBeenSet)
-  {
-   payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
+   payload.WithString("service", m_service);
 
   }
 
   if(m_normalizedUnitsToPurchaseHasBeenSet)
   {
    payload.WithString("normalizedUnitsToPurchase", m_normalizedUnitsToPurchase);
+
+  }
+
+  if(m_termHasBeenSet)
+  {
+   payload.WithString("term", m_term);
+
+  }
+
+  if(m_paymentOptionHasBeenSet)
+  {
+   payload.WithString("paymentOption", m_paymentOption);
 
   }
 
@@ -230,15 +224,15 @@ JsonValue Ec2ReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_paymentOptionHasBeenSet)
+  if(m_instanceFamilyHasBeenSet)
   {
-   payload.WithString("paymentOption", m_paymentOption);
+   payload.WithString("instanceFamily", m_instanceFamily);
 
   }
 
-  if(m_platformHasBeenSet)
+  if(m_instanceTypeHasBeenSet)
   {
-   payload.WithString("platform", m_platform);
+   payload.WithString("instanceType", m_instanceType);
 
   }
 
@@ -248,15 +242,15 @@ JsonValue Ec2ReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_serviceHasBeenSet)
+  if(m_currentGenerationHasBeenSet)
   {
-   payload.WithString("service", m_service);
+   payload.WithString("currentGeneration", m_currentGeneration);
 
   }
 
-  if(m_sizeFlexEligibleHasBeenSet)
+  if(m_platformHasBeenSet)
   {
-   payload.WithBool("sizeFlexEligible", m_sizeFlexEligible);
+   payload.WithString("platform", m_platform);
 
   }
 
@@ -266,15 +260,21 @@ JsonValue Ec2ReservedInstancesConfiguration::Jsonize() const
 
   }
 
-  if(m_termHasBeenSet)
+  if(m_sizeFlexEligibleHasBeenSet)
   {
-   payload.WithString("term", m_term);
+   payload.WithBool("sizeFlexEligible", m_sizeFlexEligible);
 
   }
 
   if(m_upfrontCostHasBeenSet)
   {
    payload.WithString("upfrontCost", m_upfrontCost);
+
+  }
+
+  if(m_monthlyRecurringCostHasBeenSet)
+  {
+   payload.WithString("monthlyRecurringCost", m_monthlyRecurringCost);
 
   }
 

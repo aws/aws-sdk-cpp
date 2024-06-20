@@ -31,8 +31,8 @@ VolumeRecommendation::VolumeRecommendation() :
     m_lastRefreshTimestampHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,8 +49,8 @@ VolumeRecommendation::VolumeRecommendation(JsonView jsonValue) :
     m_lastRefreshTimestampHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +126,13 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
     m_currentPerformanceRiskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -134,13 +141,6 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
-  {
-    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
-    m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
 
   return *this;
@@ -211,6 +211,12 @@ JsonValue VolumeRecommendation::Jsonize() const
    payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
   }
 
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -219,12 +225,6 @@ JsonValue VolumeRecommendation::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_effectiveRecommendationPreferencesHasBeenSet)
-  {
-   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
 
   }
 

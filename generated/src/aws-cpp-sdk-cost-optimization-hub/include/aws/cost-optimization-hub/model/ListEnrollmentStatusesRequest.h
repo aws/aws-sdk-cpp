@@ -36,20 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account ID of a member account in the organization.</p>
-     */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListEnrollmentStatusesRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListEnrollmentStatusesRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListEnrollmentStatusesRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether to return the enrollment status for the organization.</p>
      */
     inline bool GetIncludeOrganizationInfo() const{ return m_includeOrganizationInfo; }
@@ -60,12 +46,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of objects that are returned for the request.</p>
+     * <p>The account ID of a member account in the organization.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListEnrollmentStatusesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+    inline ListEnrollmentStatusesRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+    inline ListEnrollmentStatusesRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+    inline ListEnrollmentStatusesRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
     ///@}
 
     ///@{
@@ -81,19 +71,29 @@ namespace Model
     inline ListEnrollmentStatusesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListEnrollmentStatusesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The maximum number of objects that are returned for the request.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListEnrollmentStatusesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+  private:
 
     bool m_includeOrganizationInfo;
     bool m_includeOrganizationInfoHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

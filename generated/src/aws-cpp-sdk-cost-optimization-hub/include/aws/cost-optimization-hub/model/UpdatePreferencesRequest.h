@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubRequest.h>
-#include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>
 #include <aws/cost-optimization-hub/model/SavingsEstimationMode.h>
+#include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>
 #include <utility>
 
 namespace Aws
@@ -37,18 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the "member account discount visibility" preference.</p>
-     */
-    inline const MemberAccountDiscountVisibility& GetMemberAccountDiscountVisibility() const{ return m_memberAccountDiscountVisibility; }
-    inline bool MemberAccountDiscountVisibilityHasBeenSet() const { return m_memberAccountDiscountVisibilityHasBeenSet; }
-    inline void SetMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { m_memberAccountDiscountVisibilityHasBeenSet = true; m_memberAccountDiscountVisibility = value; }
-    inline void SetMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { m_memberAccountDiscountVisibilityHasBeenSet = true; m_memberAccountDiscountVisibility = std::move(value); }
-    inline UpdatePreferencesRequest& WithMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { SetMemberAccountDiscountVisibility(value); return *this;}
-    inline UpdatePreferencesRequest& WithMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { SetMemberAccountDiscountVisibility(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Sets the "savings estimation mode" preference.</p>
      */
     inline const SavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
@@ -58,13 +46,25 @@ namespace Model
     inline UpdatePreferencesRequest& WithSavingsEstimationMode(const SavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
     inline UpdatePreferencesRequest& WithSavingsEstimationMode(SavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
     ///@}
-  private:
 
-    MemberAccountDiscountVisibility m_memberAccountDiscountVisibility;
-    bool m_memberAccountDiscountVisibilityHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Sets the "member account discount visibility" preference.</p>
+     */
+    inline const MemberAccountDiscountVisibility& GetMemberAccountDiscountVisibility() const{ return m_memberAccountDiscountVisibility; }
+    inline bool MemberAccountDiscountVisibilityHasBeenSet() const { return m_memberAccountDiscountVisibilityHasBeenSet; }
+    inline void SetMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { m_memberAccountDiscountVisibilityHasBeenSet = true; m_memberAccountDiscountVisibility = value; }
+    inline void SetMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { m_memberAccountDiscountVisibilityHasBeenSet = true; m_memberAccountDiscountVisibility = std::move(value); }
+    inline UpdatePreferencesRequest& WithMemberAccountDiscountVisibility(const MemberAccountDiscountVisibility& value) { SetMemberAccountDiscountVisibility(value); return *this;}
+    inline UpdatePreferencesRequest& WithMemberAccountDiscountVisibility(MemberAccountDiscountVisibility&& value) { SetMemberAccountDiscountVisibility(std::move(value)); return *this;}
+    ///@}
+  private:
 
     SavingsEstimationMode m_savingsEstimationMode;
     bool m_savingsEstimationModeHasBeenSet = false;
+
+    MemberAccountDiscountVisibility m_memberAccountDiscountVisibility;
+    bool m_memberAccountDiscountVisibilityHasBeenSet = false;
   };
 
 } // namespace Model

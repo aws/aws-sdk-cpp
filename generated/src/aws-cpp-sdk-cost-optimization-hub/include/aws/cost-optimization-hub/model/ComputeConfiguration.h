@@ -40,16 +40,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The architecture of the resource.</p>
+     * <p>The number of vCPU cores in the resource.</p>
      */
-    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
-    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-    inline ComputeConfiguration& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-    inline ComputeConfiguration& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-    inline ComputeConfiguration& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    inline double GetVCpu() const{ return m_vCpu; }
+    inline bool VCpuHasBeenSet() const { return m_vCpuHasBeenSet; }
+    inline void SetVCpu(double value) { m_vCpuHasBeenSet = true; m_vCpu = value; }
+    inline ComputeConfiguration& WithVCpu(double value) { SetVCpu(value); return *this;}
     ///@}
 
     ///@{
@@ -60,6 +56,20 @@ namespace Model
     inline bool MemorySizeInMBHasBeenSet() const { return m_memorySizeInMBHasBeenSet; }
     inline void SetMemorySizeInMB(int value) { m_memorySizeInMBHasBeenSet = true; m_memorySizeInMB = value; }
     inline ComputeConfiguration& WithMemorySizeInMB(int value) { SetMemorySizeInMB(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The architecture of the resource.</p>
+     */
+    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
+    inline ComputeConfiguration& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
+    inline ComputeConfiguration& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline ComputeConfiguration& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
     ///@}
 
     ///@{
@@ -76,29 +86,19 @@ namespace Model
     inline ComputeConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
     inline ComputeConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The number of vCPU cores in the resource.</p>
-     */
-    inline double GetVCpu() const{ return m_vCpu; }
-    inline bool VCpuHasBeenSet() const { return m_vCpuHasBeenSet; }
-    inline void SetVCpu(double value) { m_vCpuHasBeenSet = true; m_vCpu = value; }
-    inline ComputeConfiguration& WithVCpu(double value) { SetVCpu(value); return *this;}
-    ///@}
   private:
 
-    Aws::String m_architecture;
-    bool m_architectureHasBeenSet = false;
+    double m_vCpu;
+    bool m_vCpuHasBeenSet = false;
 
     int m_memorySizeInMB;
     bool m_memorySizeInMBHasBeenSet = false;
 
+    Aws::String m_architecture;
+    bool m_architectureHasBeenSet = false;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
-
-    double m_vCpu;
-    bool m_vCpuHasBeenSet = false;
   };
 
 } // namespace Model

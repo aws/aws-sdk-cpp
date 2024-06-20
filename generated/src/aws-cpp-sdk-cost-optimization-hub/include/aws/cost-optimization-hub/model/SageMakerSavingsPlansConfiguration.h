@@ -54,16 +54,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The hourly commitment for the Savings Plans type.</p>
+     * <p>The Savings Plans recommendation term in years.</p>
      */
-    inline const Aws::String& GetHourlyCommitment() const{ return m_hourlyCommitment; }
-    inline bool HourlyCommitmentHasBeenSet() const { return m_hourlyCommitmentHasBeenSet; }
-    inline void SetHourlyCommitment(const Aws::String& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = value; }
-    inline void SetHourlyCommitment(Aws::String&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::move(value); }
-    inline void SetHourlyCommitment(const char* value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const Aws::String& value) { SetHourlyCommitment(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(Aws::String&& value) { SetHourlyCommitment(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const char* value) { SetHourlyCommitment(value); return *this;}
+    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
+    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
+    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
+    inline SageMakerSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
+    inline SageMakerSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
+    inline SageMakerSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
     ///@}
 
     ///@{
@@ -82,30 +82,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Savings Plans recommendation term in years.</p>
+     * <p>The hourly commitment for the Savings Plans type.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    inline const Aws::String& GetHourlyCommitment() const{ return m_hourlyCommitment; }
+    inline bool HourlyCommitmentHasBeenSet() const { return m_hourlyCommitmentHasBeenSet; }
+    inline void SetHourlyCommitment(const Aws::String& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = value; }
+    inline void SetHourlyCommitment(Aws::String&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::move(value); }
+    inline void SetHourlyCommitment(const char* value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment.assign(value); }
+    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const Aws::String& value) { SetHourlyCommitment(value); return *this;}
+    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(Aws::String&& value) { SetHourlyCommitment(std::move(value)); return *this;}
+    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const char* value) { SetHourlyCommitment(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountScope;
     bool m_accountScopeHasBeenSet = false;
 
-    Aws::String m_hourlyCommitment;
-    bool m_hourlyCommitmentHasBeenSet = false;
+    Aws::String m_term;
+    bool m_termHasBeenSet = false;
 
     Aws::String m_paymentOption;
     bool m_paymentOptionHasBeenSet = false;
 
-    Aws::String m_term;
-    bool m_termHasBeenSet = false;
+    Aws::String m_hourlyCommitment;
+    bool m_hourlyCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/StageSummary.h>
 #include <utility>
 
@@ -36,6 +36,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of the matching stages (summary information only).</p>
+     */
+    inline const Aws::Vector<StageSummary>& GetStages() const{ return m_stages; }
+    inline void SetStages(const Aws::Vector<StageSummary>& value) { m_stages = value; }
+    inline void SetStages(Aws::Vector<StageSummary>&& value) { m_stages = std::move(value); }
+    inline ListStagesResult& WithStages(const Aws::Vector<StageSummary>& value) { SetStages(value); return *this;}
+    inline ListStagesResult& WithStages(Aws::Vector<StageSummary>&& value) { SetStages(std::move(value)); return *this;}
+    inline ListStagesResult& AddStages(const StageSummary& value) { m_stages.push_back(value); return *this; }
+    inline ListStagesResult& AddStages(StageSummary&& value) { m_stages.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>If there are more stages than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -46,19 +59,6 @@ namespace Model
     inline ListStagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListStagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>List of the matching stages (summary information only).</p>
-     */
-    inline const Aws::Vector<StageSummary>& GetStages() const{ return m_stages; }
-    inline void SetStages(const Aws::Vector<StageSummary>& value) { m_stages = value; }
-    inline void SetStages(Aws::Vector<StageSummary>&& value) { m_stages = std::move(value); }
-    inline ListStagesResult& WithStages(const Aws::Vector<StageSummary>& value) { SetStages(value); return *this;}
-    inline ListStagesResult& WithStages(Aws::Vector<StageSummary>&& value) { SetStages(std::move(value)); return *this;}
-    inline ListStagesResult& AddStages(const StageSummary& value) { m_stages.push_back(value); return *this; }
-    inline ListStagesResult& AddStages(StageSummary&& value) { m_stages.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<StageSummary> m_stages;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

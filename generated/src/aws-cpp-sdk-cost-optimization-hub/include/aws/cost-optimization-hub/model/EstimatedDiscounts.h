@@ -38,14 +38,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Estimated other discounts include all discounts that are not itemized.
-     * Itemized discounts include <code>reservedInstanceDiscount</code> and
-     * <code>savingsPlansDiscount</code>.</p>
+     * <p>Estimated Savings Plans discounts.</p>
      */
-    inline double GetOtherDiscount() const{ return m_otherDiscount; }
-    inline bool OtherDiscountHasBeenSet() const { return m_otherDiscountHasBeenSet; }
-    inline void SetOtherDiscount(double value) { m_otherDiscountHasBeenSet = true; m_otherDiscount = value; }
-    inline EstimatedDiscounts& WithOtherDiscount(double value) { SetOtherDiscount(value); return *this;}
+    inline double GetSavingsPlansDiscount() const{ return m_savingsPlansDiscount; }
+    inline bool SavingsPlansDiscountHasBeenSet() const { return m_savingsPlansDiscountHasBeenSet; }
+    inline void SetSavingsPlansDiscount(double value) { m_savingsPlansDiscountHasBeenSet = true; m_savingsPlansDiscount = value; }
+    inline EstimatedDiscounts& WithSavingsPlansDiscount(double value) { SetSavingsPlansDiscount(value); return *this;}
     ///@}
 
     ///@{
@@ -60,23 +58,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>Estimated Savings Plans discounts.</p>
+     * <p>Estimated other discounts include all discounts that are not itemized.
+     * Itemized discounts include <code>reservedInstanceDiscount</code> and
+     * <code>savingsPlansDiscount</code>.</p>
      */
-    inline double GetSavingsPlansDiscount() const{ return m_savingsPlansDiscount; }
-    inline bool SavingsPlansDiscountHasBeenSet() const { return m_savingsPlansDiscountHasBeenSet; }
-    inline void SetSavingsPlansDiscount(double value) { m_savingsPlansDiscountHasBeenSet = true; m_savingsPlansDiscount = value; }
-    inline EstimatedDiscounts& WithSavingsPlansDiscount(double value) { SetSavingsPlansDiscount(value); return *this;}
+    inline double GetOtherDiscount() const{ return m_otherDiscount; }
+    inline bool OtherDiscountHasBeenSet() const { return m_otherDiscountHasBeenSet; }
+    inline void SetOtherDiscount(double value) { m_otherDiscountHasBeenSet = true; m_otherDiscount = value; }
+    inline EstimatedDiscounts& WithOtherDiscount(double value) { SetOtherDiscount(value); return *this;}
     ///@}
   private:
 
-    double m_otherDiscount;
-    bool m_otherDiscountHasBeenSet = false;
+    double m_savingsPlansDiscount;
+    bool m_savingsPlansDiscountHasBeenSet = false;
 
     double m_reservedInstancesDiscount;
     bool m_reservedInstancesDiscountHasBeenSet = false;
 
-    double m_savingsPlansDiscount;
-    bool m_savingsPlansDiscountHasBeenSet = false;
+    double m_otherDiscount;
+    bool m_otherDiscountHasBeenSet = false;
   };
 
 } // namespace Model

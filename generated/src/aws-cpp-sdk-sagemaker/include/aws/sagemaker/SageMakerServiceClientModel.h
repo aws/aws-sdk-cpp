@@ -42,6 +42,7 @@
 #include <aws/sagemaker/model/CreateFeatureGroupResult.h>
 #include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
 #include <aws/sagemaker/model/CreateHubResult.h>
+#include <aws/sagemaker/model/CreateHubContentReferenceResult.h>
 #include <aws/sagemaker/model/CreateHumanTaskUiResult.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/CreateImageResult.h>
@@ -359,6 +360,7 @@ namespace Aws
       class CreateFeatureGroupRequest;
       class CreateFlowDefinitionRequest;
       class CreateHubRequest;
+      class CreateHubContentReferenceRequest;
       class CreateHumanTaskUiRequest;
       class CreateHyperParameterTuningJobRequest;
       class CreateImageRequest;
@@ -416,6 +418,7 @@ namespace Aws
       class DeleteFlowDefinitionRequest;
       class DeleteHubRequest;
       class DeleteHubContentRequest;
+      class DeleteHubContentReferenceRequest;
       class DeleteHumanTaskUiRequest;
       class DeleteHyperParameterTuningJobRequest;
       class DeleteImageRequest;
@@ -690,6 +693,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateFeatureGroupResult, SageMakerError> CreateFeatureGroupOutcome;
       typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, SageMakerError> CreateFlowDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateHubResult, SageMakerError> CreateHubOutcome;
+      typedef Aws::Utils::Outcome<CreateHubContentReferenceResult, SageMakerError> CreateHubContentReferenceOutcome;
       typedef Aws::Utils::Outcome<CreateHumanTaskUiResult, SageMakerError> CreateHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, SageMakerError> CreateHyperParameterTuningJobOutcome;
       typedef Aws::Utils::Outcome<CreateImageResult, SageMakerError> CreateImageOutcome;
@@ -747,6 +751,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, SageMakerError> DeleteFlowDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubContentOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHubContentReferenceOutcome;
       typedef Aws::Utils::Outcome<DeleteHumanTaskUiResult, SageMakerError> DeleteHumanTaskUiOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteHyperParameterTuningJobOutcome;
       typedef Aws::Utils::Outcome<DeleteImageResult, SageMakerError> DeleteImageOutcome;
@@ -1021,6 +1026,7 @@ namespace Aws
       typedef std::future<CreateFeatureGroupOutcome> CreateFeatureGroupOutcomeCallable;
       typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
       typedef std::future<CreateHubOutcome> CreateHubOutcomeCallable;
+      typedef std::future<CreateHubContentReferenceOutcome> CreateHubContentReferenceOutcomeCallable;
       typedef std::future<CreateHumanTaskUiOutcome> CreateHumanTaskUiOutcomeCallable;
       typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
       typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
@@ -1078,6 +1084,7 @@ namespace Aws
       typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
       typedef std::future<DeleteHubOutcome> DeleteHubOutcomeCallable;
       typedef std::future<DeleteHubContentOutcome> DeleteHubContentOutcomeCallable;
+      typedef std::future<DeleteHubContentReferenceOutcome> DeleteHubContentReferenceOutcomeCallable;
       typedef std::future<DeleteHumanTaskUiOutcome> DeleteHumanTaskUiOutcomeCallable;
       typedef std::future<DeleteHyperParameterTuningJobOutcome> DeleteHyperParameterTuningJobOutcomeCallable;
       typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
@@ -1355,6 +1362,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::CreateFeatureGroupRequest&, const Model::CreateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFeatureGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHubRequest&, const Model::CreateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateHubContentReferenceRequest&, const Model::CreateHubContentReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHubContentReferenceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHumanTaskUiRequest&, const Model::CreateHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
@@ -1412,6 +1420,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHubRequest&, const Model::DeleteHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHubResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHubContentRequest&, const Model::DeleteHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHubContentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteHubContentReferenceRequest&, const Model::DeleteHubContentReferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHubContentReferenceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHumanTaskUiRequest&, const Model::DeleteHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteHyperParameterTuningJobRequest&, const Model::DeleteHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;

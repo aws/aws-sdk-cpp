@@ -7,8 +7,8 @@
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubRequest.h>
 #include <aws/cost-optimization-hub/model/Filter.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cost-optimization-hub/model/OrderBy.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ordering of recommendations by a dimension.</p>
+     */
+    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
+    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
+    inline ListRecommendationsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
+    inline ListRecommendationsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of all recommendations for a resource, or a single recommendation if
      * de-duped by <code>resourceId</code>.</p>
      */
@@ -82,22 +94,13 @@ namespace Model
     inline ListRecommendationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListRecommendationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The ordering of recommendations by a dimension.</p>
-     */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
-    inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline ListRecommendationsRequest& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline ListRecommendationsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
-    ///@}
   private:
 
     Filter m_filter;
     bool m_filterHasBeenSet = false;
+
+    OrderBy m_orderBy;
+    bool m_orderByHasBeenSet = false;
 
     bool m_includeAllRecommendations;
     bool m_includeAllRecommendationsHasBeenSet = false;
@@ -107,9 +110,6 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    OrderBy m_orderBy;
-    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

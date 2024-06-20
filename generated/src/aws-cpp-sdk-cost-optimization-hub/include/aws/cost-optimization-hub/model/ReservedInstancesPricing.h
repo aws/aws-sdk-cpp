@@ -38,17 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated cost of your recurring monthly fees for the recommended
-     * reserved instance across the month.</p>
-     */
-    inline double GetEstimatedMonthlyAmortizedReservationCost() const{ return m_estimatedMonthlyAmortizedReservationCost; }
-    inline bool EstimatedMonthlyAmortizedReservationCostHasBeenSet() const { return m_estimatedMonthlyAmortizedReservationCostHasBeenSet; }
-    inline void SetEstimatedMonthlyAmortizedReservationCost(double value) { m_estimatedMonthlyAmortizedReservationCostHasBeenSet = true; m_estimatedMonthlyAmortizedReservationCost = value; }
-    inline ReservedInstancesPricing& WithEstimatedMonthlyAmortizedReservationCost(double value) { SetEstimatedMonthlyAmortizedReservationCost(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The remaining On-Demand cost estimated to not be covered by the recommended
      * reserved instance, over the length of the lookback period.</p>
      */
@@ -78,10 +67,18 @@ namespace Model
     inline void SetSavingsPercentage(double value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = value; }
     inline ReservedInstancesPricing& WithSavingsPercentage(double value) { SetSavingsPercentage(value); return *this;}
     ///@}
-  private:
 
-    double m_estimatedMonthlyAmortizedReservationCost;
-    bool m_estimatedMonthlyAmortizedReservationCostHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The estimated cost of your recurring monthly fees for the recommended
+     * reserved instance across the month.</p>
+     */
+    inline double GetEstimatedMonthlyAmortizedReservationCost() const{ return m_estimatedMonthlyAmortizedReservationCost; }
+    inline bool EstimatedMonthlyAmortizedReservationCostHasBeenSet() const { return m_estimatedMonthlyAmortizedReservationCostHasBeenSet; }
+    inline void SetEstimatedMonthlyAmortizedReservationCost(double value) { m_estimatedMonthlyAmortizedReservationCostHasBeenSet = true; m_estimatedMonthlyAmortizedReservationCost = value; }
+    inline ReservedInstancesPricing& WithEstimatedMonthlyAmortizedReservationCost(double value) { SetEstimatedMonthlyAmortizedReservationCost(value); return *this;}
+    ///@}
+  private:
 
     double m_estimatedOnDemandCost;
     bool m_estimatedOnDemandCostHasBeenSet = false;
@@ -91,6 +88,9 @@ namespace Model
 
     double m_savingsPercentage;
     bool m_savingsPercentageHasBeenSet = false;
+
+    double m_estimatedMonthlyAmortizedReservationCost;
+    bool m_estimatedMonthlyAmortizedReservationCostHasBeenSet = false;
   };
 
 } // namespace Model

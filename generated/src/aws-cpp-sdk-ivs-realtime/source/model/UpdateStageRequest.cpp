@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UpdateStageRequest::UpdateStageRequest() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_autoParticipantRecordingConfigurationHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String UpdateStageRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_autoParticipantRecordingConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoParticipantRecordingConfiguration", m_autoParticipantRecordingConfiguration.Jsonize());
 
   }
 

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/model/VideoFillMode.h>
 #include <aws/ivs-realtime/model/PipBehavior.h>
 #include <aws/ivs-realtime/model/PipPosition.h>
-#include <aws/ivs-realtime/model/VideoFillMode.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +60,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Determines whether to omit participants with stopped video in the
+     * composition. Default: <code>false</code>.</p>
+     */
+    inline bool GetOmitStoppedVideo() const{ return m_omitStoppedVideo; }
+    inline bool OmitStoppedVideoHasBeenSet() const { return m_omitStoppedVideoHasBeenSet; }
+    inline void SetOmitStoppedVideo(bool value) { m_omitStoppedVideoHasBeenSet = true; m_omitStoppedVideo = value; }
+    inline PipConfiguration& WithOmitStoppedVideo(bool value) { SetOmitStoppedVideo(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Defines how video fits within the participant tile. Default:
+     * <code>COVER</code>. </p>
+     */
+    inline const VideoFillMode& GetVideoFillMode() const{ return m_videoFillMode; }
+    inline bool VideoFillModeHasBeenSet() const { return m_videoFillModeHasBeenSet; }
+    inline void SetVideoFillMode(const VideoFillMode& value) { m_videoFillModeHasBeenSet = true; m_videoFillMode = value; }
+    inline void SetVideoFillMode(VideoFillMode&& value) { m_videoFillModeHasBeenSet = true; m_videoFillMode = std::move(value); }
+    inline PipConfiguration& WithVideoFillMode(const VideoFillMode& value) { SetVideoFillMode(value); return *this;}
+    inline PipConfiguration& WithVideoFillMode(VideoFillMode&& value) { SetVideoFillMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the spacing between participant tiles in pixels. Default:
      * <code>0</code>.</p>
      */
@@ -71,13 +95,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether to omit participants with stopped video in the
-     * composition. Default: <code>false</code>.</p>
+     * <p>Identifies the PiP slot. A participant with this attribute set to
+     * <code>"true"</code> (as a string value) in <a>ParticipantTokenConfiguration</a>
+     * is placed in the PiP slot.</p>
      */
-    inline bool GetOmitStoppedVideo() const{ return m_omitStoppedVideo; }
-    inline bool OmitStoppedVideoHasBeenSet() const { return m_omitStoppedVideoHasBeenSet; }
-    inline void SetOmitStoppedVideo(bool value) { m_omitStoppedVideoHasBeenSet = true; m_omitStoppedVideo = value; }
-    inline PipConfiguration& WithOmitStoppedVideo(bool value) { SetOmitStoppedVideo(value); return *this;}
+    inline const Aws::String& GetPipParticipantAttribute() const{ return m_pipParticipantAttribute; }
+    inline bool PipParticipantAttributeHasBeenSet() const { return m_pipParticipantAttributeHasBeenSet; }
+    inline void SetPipParticipantAttribute(const Aws::String& value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute = value; }
+    inline void SetPipParticipantAttribute(Aws::String&& value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute = std::move(value); }
+    inline void SetPipParticipantAttribute(const char* value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute.assign(value); }
+    inline PipConfiguration& WithPipParticipantAttribute(const Aws::String& value) { SetPipParticipantAttribute(value); return *this;}
+    inline PipConfiguration& WithPipParticipantAttribute(Aws::String&& value) { SetPipParticipantAttribute(std::move(value)); return *this;}
+    inline PipConfiguration& WithPipParticipantAttribute(const char* value) { SetPipParticipantAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -95,18 +124,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the height of the PiP window in pixels. When this is not set
-     * explicitly, <code>pipHeight</code>’s value will be based on the size of the
-     * composition and the aspect ratio of the participant’s video.</p>
-     */
-    inline int GetPipHeight() const{ return m_pipHeight; }
-    inline bool PipHeightHasBeenSet() const { return m_pipHeightHasBeenSet; }
-    inline void SetPipHeight(int value) { m_pipHeightHasBeenSet = true; m_pipHeight = value; }
-    inline PipConfiguration& WithPipHeight(int value) { SetPipHeight(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Sets the PiP window’s offset position in pixels from the closest edges
      * determined by <code>PipPosition</code>. Default: <code>0</code>.</p>
      */
@@ -114,22 +131,6 @@ namespace Model
     inline bool PipOffsetHasBeenSet() const { return m_pipOffsetHasBeenSet; }
     inline void SetPipOffset(int value) { m_pipOffsetHasBeenSet = true; m_pipOffset = value; }
     inline PipConfiguration& WithPipOffset(int value) { SetPipOffset(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Identifies the PiP slot. A participant with this attribute set to
-     * <code>"true"</code> (as a string value) in <a>ParticipantTokenConfiguration</a>
-     * is placed in the PiP slot.</p>
-     */
-    inline const Aws::String& GetPipParticipantAttribute() const{ return m_pipParticipantAttribute; }
-    inline bool PipParticipantAttributeHasBeenSet() const { return m_pipParticipantAttributeHasBeenSet; }
-    inline void SetPipParticipantAttribute(const Aws::String& value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute = value; }
-    inline void SetPipParticipantAttribute(Aws::String&& value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute = std::move(value); }
-    inline void SetPipParticipantAttribute(const char* value) { m_pipParticipantAttributeHasBeenSet = true; m_pipParticipantAttribute.assign(value); }
-    inline PipConfiguration& WithPipParticipantAttribute(const Aws::String& value) { SetPipParticipantAttribute(value); return *this;}
-    inline PipConfiguration& WithPipParticipantAttribute(Aws::String&& value) { SetPipParticipantAttribute(std::move(value)); return *this;}
-    inline PipConfiguration& WithPipParticipantAttribute(const char* value) { SetPipParticipantAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -159,38 +160,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines how video fits within the participant tile. Default:
-     * <code>COVER</code>. </p>
+     * <p>Specifies the height of the PiP window in pixels. When this is not set
+     * explicitly, <code>pipHeight</code>’s value will be based on the size of the
+     * composition and the aspect ratio of the participant’s video.</p>
      */
-    inline const VideoFillMode& GetVideoFillMode() const{ return m_videoFillMode; }
-    inline bool VideoFillModeHasBeenSet() const { return m_videoFillModeHasBeenSet; }
-    inline void SetVideoFillMode(const VideoFillMode& value) { m_videoFillModeHasBeenSet = true; m_videoFillMode = value; }
-    inline void SetVideoFillMode(VideoFillMode&& value) { m_videoFillModeHasBeenSet = true; m_videoFillMode = std::move(value); }
-    inline PipConfiguration& WithVideoFillMode(const VideoFillMode& value) { SetVideoFillMode(value); return *this;}
-    inline PipConfiguration& WithVideoFillMode(VideoFillMode&& value) { SetVideoFillMode(std::move(value)); return *this;}
+    inline int GetPipHeight() const{ return m_pipHeight; }
+    inline bool PipHeightHasBeenSet() const { return m_pipHeightHasBeenSet; }
+    inline void SetPipHeight(int value) { m_pipHeightHasBeenSet = true; m_pipHeight = value; }
+    inline PipConfiguration& WithPipHeight(int value) { SetPipHeight(value); return *this;}
     ///@}
   private:
 
     Aws::String m_featuredParticipantAttribute;
     bool m_featuredParticipantAttributeHasBeenSet = false;
 
+    bool m_omitStoppedVideo;
+    bool m_omitStoppedVideoHasBeenSet = false;
+
+    VideoFillMode m_videoFillMode;
+    bool m_videoFillModeHasBeenSet = false;
+
     int m_gridGap;
     bool m_gridGapHasBeenSet = false;
 
-    bool m_omitStoppedVideo;
-    bool m_omitStoppedVideoHasBeenSet = false;
+    Aws::String m_pipParticipantAttribute;
+    bool m_pipParticipantAttributeHasBeenSet = false;
 
     PipBehavior m_pipBehavior;
     bool m_pipBehaviorHasBeenSet = false;
 
-    int m_pipHeight;
-    bool m_pipHeightHasBeenSet = false;
-
     int m_pipOffset;
     bool m_pipOffsetHasBeenSet = false;
-
-    Aws::String m_pipParticipantAttribute;
-    bool m_pipParticipantAttributeHasBeenSet = false;
 
     PipPosition m_pipPosition;
     bool m_pipPositionHasBeenSet = false;
@@ -198,8 +198,8 @@ namespace Model
     int m_pipWidth;
     bool m_pipWidthHasBeenSet = false;
 
-    VideoFillMode m_videoFillMode;
-    bool m_videoFillModeHasBeenSet = false;
+    int m_pipHeight;
+    bool m_pipHeightHasBeenSet = false;
   };
 
 } // namespace Model

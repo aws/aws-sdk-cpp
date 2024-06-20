@@ -6,8 +6,9 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/IvsrealtimeRequest.h>
-#include <aws/ivs-realtime/model/ParticipantState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/model/ParticipantState.h>
+#include <aws/ivs-realtime/model/ParticipantRecordingFilterByRecordingState.h>
 #include <utility>
 
 namespace Aws
@@ -35,38 +36,40 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the response list to only show participants who published during the
-     * stage session. Only one of <code>filterByUserId</code>,
-     * <code>filterByPublished</code>, or <code>filterByState</code> can be provided
-     * per request.</p>
+     * <p>Stage ARN.</p>
      */
-    inline bool GetFilterByPublished() const{ return m_filterByPublished; }
-    inline bool FilterByPublishedHasBeenSet() const { return m_filterByPublishedHasBeenSet; }
-    inline void SetFilterByPublished(bool value) { m_filterByPublishedHasBeenSet = true; m_filterByPublished = value; }
-    inline ListParticipantsRequest& WithFilterByPublished(bool value) { SetFilterByPublished(value); return *this;}
+    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
+    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
+    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
+    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
+    inline ListParticipantsRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
+    inline ListParticipantsRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
+    inline ListParticipantsRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Filters the response list to only show participants in the specified state.
-     * Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or
-     * <code>filterByState</code> can be provided per request.</p>
+     * <p>ID of the session within the stage.</p>
      */
-    inline const ParticipantState& GetFilterByState() const{ return m_filterByState; }
-    inline bool FilterByStateHasBeenSet() const { return m_filterByStateHasBeenSet; }
-    inline void SetFilterByState(const ParticipantState& value) { m_filterByStateHasBeenSet = true; m_filterByState = value; }
-    inline void SetFilterByState(ParticipantState&& value) { m_filterByStateHasBeenSet = true; m_filterByState = std::move(value); }
-    inline ListParticipantsRequest& WithFilterByState(const ParticipantState& value) { SetFilterByState(value); return *this;}
-    inline ListParticipantsRequest& WithFilterByState(ParticipantState&& value) { SetFilterByState(std::move(value)); return *this;}
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline ListParticipantsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline ListParticipantsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline ListParticipantsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters the response list to match the specified user ID. Only one of
-     * <code>filterByUserId</code>, <code>filterByPublished</code>, or
-     * <code>filterByState</code> can be provided per request. A <code>userId</code> is
-     * a customer-assigned name to help identify the token; this can be used to link a
-     * participant to a user in the customer’s own systems.</p>
+     * <code>filterByUserId</code>, <code>filterByPublished</code>,
+     * <code>filterByState</code>, or <code>filterByRecordingState</code> can be
+     * provided per request. A <code>userId</code> is a customer-assigned name to help
+     * identify the token; this can be used to link a participant to a user in the
+     * customer’s own systems.</p>
      */
     inline const Aws::String& GetFilterByUserId() const{ return m_filterByUserId; }
     inline bool FilterByUserIdHasBeenSet() const { return m_filterByUserIdHasBeenSet; }
@@ -80,12 +83,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return. Default: 50.</p>
+     * <p>Filters the response list to only show participants who published during the
+     * stage session. Only one of <code>filterByUserId</code>,
+     * <code>filterByPublished</code>, <code>filterByState</code>, or
+     * <code>filterByRecordingState</code> can be provided per request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListParticipantsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline bool GetFilterByPublished() const{ return m_filterByPublished; }
+    inline bool FilterByPublishedHasBeenSet() const { return m_filterByPublishedHasBeenSet; }
+    inline void SetFilterByPublished(bool value) { m_filterByPublishedHasBeenSet = true; m_filterByPublished = value; }
+    inline ListParticipantsRequest& WithFilterByPublished(bool value) { SetFilterByPublished(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filters the response list to only show participants in the specified state.
+     * Only one of <code>filterByUserId</code>, <code>filterByPublished</code>,
+     * <code>filterByState</code>, or <code>filterByRecordingState</code> can be
+     * provided per request.</p>
+     */
+    inline const ParticipantState& GetFilterByState() const{ return m_filterByState; }
+    inline bool FilterByStateHasBeenSet() const { return m_filterByStateHasBeenSet; }
+    inline void SetFilterByState(const ParticipantState& value) { m_filterByStateHasBeenSet = true; m_filterByState = value; }
+    inline void SetFilterByState(ParticipantState&& value) { m_filterByStateHasBeenSet = true; m_filterByState = std::move(value); }
+    inline ListParticipantsRequest& WithFilterByState(const ParticipantState& value) { SetFilterByState(value); return *this;}
+    inline ListParticipantsRequest& WithFilterByState(ParticipantState&& value) { SetFilterByState(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,32 +126,38 @@ namespace Model
 
     ///@{
     /**
-     * <p>ID of the session within the stage.</p>
+     * <p>Maximum number of results to return. Default: 50.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ListParticipantsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListParticipantsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListParticipantsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Stage ARN.</p>
+     * <p>Filters the response list to only show participants with the specified
+     * recording state. Only one of <code>filterByUserId</code>,
+     * <code>filterByPublished</code>, <code>filterByState</code>, or
+     * <code>filterByRecordingState</code> can be provided per request.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline ListParticipantsRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline ListParticipantsRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    inline const ParticipantRecordingFilterByRecordingState& GetFilterByRecordingState() const{ return m_filterByRecordingState; }
+    inline bool FilterByRecordingStateHasBeenSet() const { return m_filterByRecordingStateHasBeenSet; }
+    inline void SetFilterByRecordingState(const ParticipantRecordingFilterByRecordingState& value) { m_filterByRecordingStateHasBeenSet = true; m_filterByRecordingState = value; }
+    inline void SetFilterByRecordingState(ParticipantRecordingFilterByRecordingState&& value) { m_filterByRecordingStateHasBeenSet = true; m_filterByRecordingState = std::move(value); }
+    inline ListParticipantsRequest& WithFilterByRecordingState(const ParticipantRecordingFilterByRecordingState& value) { SetFilterByRecordingState(value); return *this;}
+    inline ListParticipantsRequest& WithFilterByRecordingState(ParticipantRecordingFilterByRecordingState&& value) { SetFilterByRecordingState(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
+
+    Aws::String m_filterByUserId;
+    bool m_filterByUserIdHasBeenSet = false;
 
     bool m_filterByPublished;
     bool m_filterByPublishedHasBeenSet = false;
@@ -138,20 +165,14 @@ namespace Model
     ParticipantState m_filterByState;
     bool m_filterByStateHasBeenSet = false;
 
-    Aws::String m_filterByUserId;
-    bool m_filterByUserIdHasBeenSet = false;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet = false;
-
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
+    ParticipantRecordingFilterByRecordingState m_filterByRecordingState;
+    bool m_filterByRecordingStateHasBeenSet = false;
   };
 
 } // namespace Model

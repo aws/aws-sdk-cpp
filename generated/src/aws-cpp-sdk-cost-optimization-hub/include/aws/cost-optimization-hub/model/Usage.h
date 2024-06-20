@@ -39,6 +39,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>The usage type.</p>
+     */
+    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
+    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
+    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
+    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
+    inline Usage& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
+    inline Usage& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
+    inline Usage& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The usage amount.</p>
+     */
+    inline double GetUsageAmount() const{ return m_usageAmount; }
+    inline bool UsageAmountHasBeenSet() const { return m_usageAmountHasBeenSet; }
+    inline void SetUsageAmount(double value) { m_usageAmountHasBeenSet = true; m_usageAmount = value; }
+    inline Usage& WithUsageAmount(double value) { SetUsageAmount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The operation value.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
@@ -78,31 +102,13 @@ namespace Model
     inline Usage& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
     inline Usage& WithUnit(const char* value) { SetUnit(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The usage amount.</p>
-     */
-    inline double GetUsageAmount() const{ return m_usageAmount; }
-    inline bool UsageAmountHasBeenSet() const { return m_usageAmountHasBeenSet; }
-    inline void SetUsageAmount(double value) { m_usageAmountHasBeenSet = true; m_usageAmount = value; }
-    inline Usage& WithUsageAmount(double value) { SetUsageAmount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The usage type.</p>
-     */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
-    inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline Usage& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline Usage& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline Usage& WithUsageType(const char* value) { SetUsageType(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_usageType;
+    bool m_usageTypeHasBeenSet = false;
+
+    double m_usageAmount;
+    bool m_usageAmountHasBeenSet = false;
 
     Aws::String m_operation;
     bool m_operationHasBeenSet = false;
@@ -112,12 +118,6 @@ namespace Model
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
-
-    double m_usageAmount;
-    bool m_usageAmountHasBeenSet = false;
-
-    Aws::String m_usageType;
-    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

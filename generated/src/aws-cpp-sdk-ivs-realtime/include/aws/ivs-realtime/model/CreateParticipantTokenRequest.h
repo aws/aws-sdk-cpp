@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/IvsrealtimeRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/model/ParticipantTokenCapability.h>
 #include <utility>
 
@@ -34,6 +34,48 @@ namespace Model
 
     AWS_IVSREALTIME_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>ARN of the stage to which this token is scoped.</p>
+     */
+    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
+    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
+    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
+    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
+    inline CreateParticipantTokenRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
+    inline CreateParticipantTokenRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
+    inline CreateParticipantTokenRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
+     * hours).</p>
+     */
+    inline int GetDuration() const{ return m_duration; }
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline CreateParticipantTokenRequest& WithDuration(int value) { SetDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Name that can be specified to help identify the token. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+    inline CreateParticipantTokenRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+    inline CreateParticipantTokenRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+    inline CreateParticipantTokenRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -72,64 +114,22 @@ namespace Model
     inline CreateParticipantTokenRequest& AddCapabilities(const ParticipantTokenCapability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     inline CreateParticipantTokenRequest& AddCapabilities(ParticipantTokenCapability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Duration (in minutes), after which the token expires. Default: 720 (12
-     * hours).</p>
-     */
-    inline int GetDuration() const{ return m_duration; }
-    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline CreateParticipantTokenRequest& WithDuration(int value) { SetDuration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ARN of the stage to which this token is scoped.</p>
-     */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
-    inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline CreateParticipantTokenRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline CreateParticipantTokenRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Name that can be specified to help identify the token. This can be any UTF-8
-     * encoded text. <i>This field is exposed to all stage participants and should not
-     * be used for personally identifying, confidential, or sensitive information.</i>
-     * </p>
-     */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline CreateParticipantTokenRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline CreateParticipantTokenRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline CreateParticipantTokenRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-    ///@}
   private:
+
+    Aws::String m_stageArn;
+    bool m_stageArnHasBeenSet = false;
+
+    int m_duration;
+    bool m_durationHasBeenSet = false;
+
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
     Aws::Vector<ParticipantTokenCapability> m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
-
-    int m_duration;
-    bool m_durationHasBeenSet = false;
-
-    Aws::String m_stageArn;
-    bool m_stageArnHasBeenSet = false;
-
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

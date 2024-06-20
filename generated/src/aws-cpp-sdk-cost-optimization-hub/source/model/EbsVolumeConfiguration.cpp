@@ -19,27 +19,27 @@ namespace Model
 {
 
 EbsVolumeConfiguration::EbsVolumeConfiguration() : 
-    m_attachmentStateHasBeenSet(false),
+    m_storageHasBeenSet(false),
     m_performanceHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_attachmentStateHasBeenSet(false)
 {
 }
 
 EbsVolumeConfiguration::EbsVolumeConfiguration(JsonView jsonValue) : 
-    m_attachmentStateHasBeenSet(false),
+    m_storageHasBeenSet(false),
     m_performanceHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_attachmentStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 EbsVolumeConfiguration& EbsVolumeConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("attachmentState"))
+  if(jsonValue.ValueExists("storage"))
   {
-    m_attachmentState = jsonValue.GetString("attachmentState");
+    m_storage = jsonValue.GetObject("storage");
 
-    m_attachmentStateHasBeenSet = true;
+    m_storageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("performance"))
@@ -49,11 +49,11 @@ EbsVolumeConfiguration& EbsVolumeConfiguration::operator =(JsonView jsonValue)
     m_performanceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("storage"))
+  if(jsonValue.ValueExists("attachmentState"))
   {
-    m_storage = jsonValue.GetObject("storage");
+    m_attachmentState = jsonValue.GetString("attachmentState");
 
-    m_storageHasBeenSet = true;
+    m_attachmentStateHasBeenSet = true;
   }
 
   return *this;
@@ -63,9 +63,9 @@ JsonValue EbsVolumeConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_attachmentStateHasBeenSet)
+  if(m_storageHasBeenSet)
   {
-   payload.WithString("attachmentState", m_attachmentState);
+   payload.WithObject("storage", m_storage.Jsonize());
 
   }
 
@@ -75,9 +75,9 @@ JsonValue EbsVolumeConfiguration::Jsonize() const
 
   }
 
-  if(m_storageHasBeenSet)
+  if(m_attachmentStateHasBeenSet)
   {
-   payload.WithObject("storage", m_storage.Jsonize());
+   payload.WithString("attachmentState", m_attachmentState);
 
   }
 
