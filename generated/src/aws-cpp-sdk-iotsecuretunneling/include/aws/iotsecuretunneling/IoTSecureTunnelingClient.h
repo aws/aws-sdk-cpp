@@ -172,13 +172,13 @@ namespace IoTSecureTunneling
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ListTunnels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTunnelsOutcome ListTunnels(const Model::ListTunnelsRequest& request) const;
+        virtual Model::ListTunnelsOutcome ListTunnels(const Model::ListTunnelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTunnels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTunnelsRequestT = Model::ListTunnelsRequest>
-        Model::ListTunnelsOutcomeCallable ListTunnelsCallable(const ListTunnelsRequestT& request) const
+        Model::ListTunnelsOutcomeCallable ListTunnelsCallable(const ListTunnelsRequestT& request = {}) const
         {
             return SubmitCallable(&IoTSecureTunnelingClient::ListTunnels, request);
         }
@@ -187,7 +187,7 @@ namespace IoTSecureTunneling
          * An Async wrapper for ListTunnels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTunnelsRequestT = Model::ListTunnelsRequest>
-        void ListTunnelsAsync(const ListTunnelsRequestT& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTunnelsAsync(const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTunnelsRequestT& request = {}) const
         {
             return SubmitAsync(&IoTSecureTunnelingClient::ListTunnels, request, handler, context);
         }
@@ -201,13 +201,13 @@ namespace IoTSecureTunneling
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">AWS
          * API Reference</a></p>
          */
-        virtual Model::OpenTunnelOutcome OpenTunnel(const Model::OpenTunnelRequest& request) const;
+        virtual Model::OpenTunnelOutcome OpenTunnel(const Model::OpenTunnelRequest& request = {}) const;
 
         /**
          * A Callable wrapper for OpenTunnel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename OpenTunnelRequestT = Model::OpenTunnelRequest>
-        Model::OpenTunnelOutcomeCallable OpenTunnelCallable(const OpenTunnelRequestT& request) const
+        Model::OpenTunnelOutcomeCallable OpenTunnelCallable(const OpenTunnelRequestT& request = {}) const
         {
             return SubmitCallable(&IoTSecureTunnelingClient::OpenTunnel, request);
         }
@@ -216,7 +216,7 @@ namespace IoTSecureTunneling
          * An Async wrapper for OpenTunnel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename OpenTunnelRequestT = Model::OpenTunnelRequest>
-        void OpenTunnelAsync(const OpenTunnelRequestT& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void OpenTunnelAsync(const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const OpenTunnelRequestT& request = {}) const
         {
             return SubmitAsync(&IoTSecureTunnelingClient::OpenTunnel, request, handler, context);
         }

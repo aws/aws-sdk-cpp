@@ -598,13 +598,13 @@ namespace STS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest& request) const;
+        virtual Model::GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCallerIdentity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCallerIdentityRequestT = Model::GetCallerIdentityRequest>
-        Model::GetCallerIdentityOutcomeCallable GetCallerIdentityCallable(const GetCallerIdentityRequestT& request) const
+        Model::GetCallerIdentityOutcomeCallable GetCallerIdentityCallable(const GetCallerIdentityRequestT& request = {}) const
         {
             return SubmitCallable(&STSClient::GetCallerIdentity, request);
         }
@@ -613,7 +613,7 @@ namespace STS
          * An Async wrapper for GetCallerIdentity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCallerIdentityRequestT = Model::GetCallerIdentityRequest>
-        void GetCallerIdentityAsync(const GetCallerIdentityRequestT& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCallerIdentityAsync(const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCallerIdentityRequestT& request = {}) const
         {
             return SubmitAsync(&STSClient::GetCallerIdentity, request, handler, context);
         }
@@ -781,13 +781,13 @@ namespace STS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest& request) const;
+        virtual Model::GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSessionToken that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSessionTokenRequestT = Model::GetSessionTokenRequest>
-        Model::GetSessionTokenOutcomeCallable GetSessionTokenCallable(const GetSessionTokenRequestT& request) const
+        Model::GetSessionTokenOutcomeCallable GetSessionTokenCallable(const GetSessionTokenRequestT& request = {}) const
         {
             return SubmitCallable(&STSClient::GetSessionToken, request);
         }
@@ -796,7 +796,7 @@ namespace STS
          * An Async wrapper for GetSessionToken that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSessionTokenRequestT = Model::GetSessionTokenRequest>
-        void GetSessionTokenAsync(const GetSessionTokenRequestT& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSessionTokenAsync(const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSessionTokenRequestT& request = {}) const
         {
             return SubmitAsync(&STSClient::GetSessionToken, request, handler, context);
         }

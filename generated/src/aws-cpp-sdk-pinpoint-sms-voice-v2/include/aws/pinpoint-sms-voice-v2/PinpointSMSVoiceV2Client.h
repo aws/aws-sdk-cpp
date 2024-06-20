@@ -309,13 +309,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateProtectConfigurationOutcome CreateProtectConfiguration(const Model::CreateProtectConfigurationRequest& request) const;
+        virtual Model::CreateProtectConfigurationOutcome CreateProtectConfiguration(const Model::CreateProtectConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateProtectConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateProtectConfigurationRequestT = Model::CreateProtectConfigurationRequest>
-        Model::CreateProtectConfigurationOutcomeCallable CreateProtectConfigurationCallable(const CreateProtectConfigurationRequestT& request) const
+        Model::CreateProtectConfigurationOutcomeCallable CreateProtectConfigurationCallable(const CreateProtectConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::CreateProtectConfiguration, request);
         }
@@ -324,7 +324,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for CreateProtectConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateProtectConfigurationRequestT = Model::CreateProtectConfigurationRequest>
-        void CreateProtectConfigurationAsync(const CreateProtectConfigurationRequestT& request, const CreateProtectConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateProtectConfigurationAsync(const CreateProtectConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateProtectConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::CreateProtectConfiguration, request, handler, context);
         }
@@ -389,13 +389,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateRegistrationAttachmentOutcome CreateRegistrationAttachment(const Model::CreateRegistrationAttachmentRequest& request) const;
+        virtual Model::CreateRegistrationAttachmentOutcome CreateRegistrationAttachment(const Model::CreateRegistrationAttachmentRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateRegistrationAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateRegistrationAttachmentRequestT = Model::CreateRegistrationAttachmentRequest>
-        Model::CreateRegistrationAttachmentOutcomeCallable CreateRegistrationAttachmentCallable(const CreateRegistrationAttachmentRequestT& request) const
+        Model::CreateRegistrationAttachmentOutcomeCallable CreateRegistrationAttachmentCallable(const CreateRegistrationAttachmentRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::CreateRegistrationAttachment, request);
         }
@@ -404,7 +404,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for CreateRegistrationAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateRegistrationAttachmentRequestT = Model::CreateRegistrationAttachmentRequest>
-        void CreateRegistrationAttachmentAsync(const CreateRegistrationAttachmentRequestT& request, const CreateRegistrationAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateRegistrationAttachmentAsync(const CreateRegistrationAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateRegistrationAttachmentRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::CreateRegistrationAttachment, request, handler, context);
         }
@@ -469,13 +469,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteAccountDefaultProtectConfigurationOutcome DeleteAccountDefaultProtectConfiguration(const Model::DeleteAccountDefaultProtectConfigurationRequest& request) const;
+        virtual Model::DeleteAccountDefaultProtectConfigurationOutcome DeleteAccountDefaultProtectConfiguration(const Model::DeleteAccountDefaultProtectConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteAccountDefaultProtectConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteAccountDefaultProtectConfigurationRequestT = Model::DeleteAccountDefaultProtectConfigurationRequest>
-        Model::DeleteAccountDefaultProtectConfigurationOutcomeCallable DeleteAccountDefaultProtectConfigurationCallable(const DeleteAccountDefaultProtectConfigurationRequestT& request) const
+        Model::DeleteAccountDefaultProtectConfigurationOutcomeCallable DeleteAccountDefaultProtectConfigurationCallable(const DeleteAccountDefaultProtectConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteAccountDefaultProtectConfiguration, request);
         }
@@ -484,7 +484,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DeleteAccountDefaultProtectConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteAccountDefaultProtectConfigurationRequestT = Model::DeleteAccountDefaultProtectConfigurationRequest>
-        void DeleteAccountDefaultProtectConfigurationAsync(const DeleteAccountDefaultProtectConfigurationRequestT& request, const DeleteAccountDefaultProtectConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteAccountDefaultProtectConfigurationAsync(const DeleteAccountDefaultProtectConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteAccountDefaultProtectConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteAccountDefaultProtectConfiguration, request, handler, context);
         }
@@ -649,13 +649,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteMediaMessageSpendLimitOverrideOutcome DeleteMediaMessageSpendLimitOverride(const Model::DeleteMediaMessageSpendLimitOverrideRequest& request) const;
+        virtual Model::DeleteMediaMessageSpendLimitOverrideOutcome DeleteMediaMessageSpendLimitOverride(const Model::DeleteMediaMessageSpendLimitOverrideRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteMediaMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteMediaMessageSpendLimitOverrideRequestT = Model::DeleteMediaMessageSpendLimitOverrideRequest>
-        Model::DeleteMediaMessageSpendLimitOverrideOutcomeCallable DeleteMediaMessageSpendLimitOverrideCallable(const DeleteMediaMessageSpendLimitOverrideRequestT& request) const
+        Model::DeleteMediaMessageSpendLimitOverrideOutcomeCallable DeleteMediaMessageSpendLimitOverrideCallable(const DeleteMediaMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteMediaMessageSpendLimitOverride, request);
         }
@@ -664,7 +664,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DeleteMediaMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteMediaMessageSpendLimitOverrideRequestT = Model::DeleteMediaMessageSpendLimitOverrideRequest>
-        void DeleteMediaMessageSpendLimitOverrideAsync(const DeleteMediaMessageSpendLimitOverrideRequestT& request, const DeleteMediaMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteMediaMessageSpendLimitOverrideAsync(const DeleteMediaMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteMediaMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteMediaMessageSpendLimitOverride, request, handler, context);
         }
@@ -873,13 +873,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteTextMessageSpendLimitOverride">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteTextMessageSpendLimitOverrideOutcome DeleteTextMessageSpendLimitOverride(const Model::DeleteTextMessageSpendLimitOverrideRequest& request) const;
+        virtual Model::DeleteTextMessageSpendLimitOverrideOutcome DeleteTextMessageSpendLimitOverride(const Model::DeleteTextMessageSpendLimitOverrideRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteTextMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteTextMessageSpendLimitOverrideRequestT = Model::DeleteTextMessageSpendLimitOverrideRequest>
-        Model::DeleteTextMessageSpendLimitOverrideOutcomeCallable DeleteTextMessageSpendLimitOverrideCallable(const DeleteTextMessageSpendLimitOverrideRequestT& request) const
+        Model::DeleteTextMessageSpendLimitOverrideOutcomeCallable DeleteTextMessageSpendLimitOverrideCallable(const DeleteTextMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverride, request);
         }
@@ -888,7 +888,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DeleteTextMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteTextMessageSpendLimitOverrideRequestT = Model::DeleteTextMessageSpendLimitOverrideRequest>
-        void DeleteTextMessageSpendLimitOverrideAsync(const DeleteTextMessageSpendLimitOverrideRequestT& request, const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteTextMessageSpendLimitOverrideAsync(const DeleteTextMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteTextMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteTextMessageSpendLimitOverride, request, handler, context);
         }
@@ -929,13 +929,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVoiceMessageSpendLimitOverride">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteVoiceMessageSpendLimitOverrideOutcome DeleteVoiceMessageSpendLimitOverride(const Model::DeleteVoiceMessageSpendLimitOverrideRequest& request) const;
+        virtual Model::DeleteVoiceMessageSpendLimitOverrideOutcome DeleteVoiceMessageSpendLimitOverride(const Model::DeleteVoiceMessageSpendLimitOverrideRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteVoiceMessageSpendLimitOverride that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteVoiceMessageSpendLimitOverrideRequestT = Model::DeleteVoiceMessageSpendLimitOverrideRequest>
-        Model::DeleteVoiceMessageSpendLimitOverrideOutcomeCallable DeleteVoiceMessageSpendLimitOverrideCallable(const DeleteVoiceMessageSpendLimitOverrideRequestT& request) const
+        Model::DeleteVoiceMessageSpendLimitOverrideOutcomeCallable DeleteVoiceMessageSpendLimitOverrideCallable(const DeleteVoiceMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverride, request);
         }
@@ -944,7 +944,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DeleteVoiceMessageSpendLimitOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteVoiceMessageSpendLimitOverrideRequestT = Model::DeleteVoiceMessageSpendLimitOverrideRequest>
-        void DeleteVoiceMessageSpendLimitOverrideAsync(const DeleteVoiceMessageSpendLimitOverrideRequestT& request, const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteVoiceMessageSpendLimitOverrideAsync(const DeleteVoiceMessageSpendLimitOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteVoiceMessageSpendLimitOverrideRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteVoiceMessageSpendLimitOverride, request, handler, context);
         }
@@ -961,13 +961,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
+        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request) const
+        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeAccountAttributes, request);
         }
@@ -976,7 +976,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        void DescribeAccountAttributesAsync(const DescribeAccountAttributesRequestT& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountAttributesAsync(const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeAccountAttributes, request, handler, context);
         }
@@ -994,13 +994,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeAccountLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
+        virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountLimitsRequestT = Model::DescribeAccountLimitsRequest>
-        Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const DescribeAccountLimitsRequestT& request) const
+        Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const DescribeAccountLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeAccountLimits, request);
         }
@@ -1009,7 +1009,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeAccountLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountLimitsRequestT = Model::DescribeAccountLimitsRequest>
-        void DescribeAccountLimitsAsync(const DescribeAccountLimitsRequestT& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountLimitsAsync(const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeAccountLimits, request, handler, context);
         }
@@ -1025,13 +1025,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeConfigurationSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigurationSetsOutcome DescribeConfigurationSets(const Model::DescribeConfigurationSetsRequest& request) const;
+        virtual Model::DescribeConfigurationSetsOutcome DescribeConfigurationSets(const Model::DescribeConfigurationSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigurationSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigurationSetsRequestT = Model::DescribeConfigurationSetsRequest>
-        Model::DescribeConfigurationSetsOutcomeCallable DescribeConfigurationSetsCallable(const DescribeConfigurationSetsRequestT& request) const
+        Model::DescribeConfigurationSetsOutcomeCallable DescribeConfigurationSetsCallable(const DescribeConfigurationSetsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeConfigurationSets, request);
         }
@@ -1040,7 +1040,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeConfigurationSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigurationSetsRequestT = Model::DescribeConfigurationSetsRequest>
-        void DescribeConfigurationSetsAsync(const DescribeConfigurationSetsRequestT& request, const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigurationSetsAsync(const DescribeConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationSetsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeConfigurationSets, request, handler, context);
         }
@@ -1088,13 +1088,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptOutLists">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOptOutListsOutcome DescribeOptOutLists(const Model::DescribeOptOutListsRequest& request) const;
+        virtual Model::DescribeOptOutListsOutcome DescribeOptOutLists(const Model::DescribeOptOutListsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOptOutLists that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOptOutListsRequestT = Model::DescribeOptOutListsRequest>
-        Model::DescribeOptOutListsOutcomeCallable DescribeOptOutListsCallable(const DescribeOptOutListsRequestT& request) const
+        Model::DescribeOptOutListsOutcomeCallable DescribeOptOutListsCallable(const DescribeOptOutListsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeOptOutLists, request);
         }
@@ -1103,7 +1103,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeOptOutLists that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOptOutListsRequestT = Model::DescribeOptOutListsRequest>
-        void DescribeOptOutListsAsync(const DescribeOptOutListsRequestT& request, const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOptOutListsAsync(const DescribeOptOutListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOptOutListsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeOptOutLists, request, handler, context);
         }
@@ -1151,13 +1151,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribePhoneNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePhoneNumbersOutcome DescribePhoneNumbers(const Model::DescribePhoneNumbersRequest& request) const;
+        virtual Model::DescribePhoneNumbersOutcome DescribePhoneNumbers(const Model::DescribePhoneNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePhoneNumbersRequestT = Model::DescribePhoneNumbersRequest>
-        Model::DescribePhoneNumbersOutcomeCallable DescribePhoneNumbersCallable(const DescribePhoneNumbersRequestT& request) const
+        Model::DescribePhoneNumbersOutcomeCallable DescribePhoneNumbersCallable(const DescribePhoneNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribePhoneNumbers, request);
         }
@@ -1166,7 +1166,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribePhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePhoneNumbersRequestT = Model::DescribePhoneNumbersRequest>
-        void DescribePhoneNumbersAsync(const DescribePhoneNumbersRequestT& request, const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePhoneNumbersAsync(const DescribePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePhoneNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribePhoneNumbers, request, handler, context);
         }
@@ -1184,13 +1184,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribePools">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePoolsOutcome DescribePools(const Model::DescribePoolsRequest& request) const;
+        virtual Model::DescribePoolsOutcome DescribePools(const Model::DescribePoolsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePools that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePoolsRequestT = Model::DescribePoolsRequest>
-        Model::DescribePoolsOutcomeCallable DescribePoolsCallable(const DescribePoolsRequestT& request) const
+        Model::DescribePoolsOutcomeCallable DescribePoolsCallable(const DescribePoolsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribePools, request);
         }
@@ -1199,7 +1199,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribePools that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePoolsRequestT = Model::DescribePoolsRequest>
-        void DescribePoolsAsync(const DescribePoolsRequestT& request, const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePoolsAsync(const DescribePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePoolsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribePools, request, handler, context);
         }
@@ -1211,13 +1211,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeProtectConfigurationsOutcome DescribeProtectConfigurations(const Model::DescribeProtectConfigurationsRequest& request) const;
+        virtual Model::DescribeProtectConfigurationsOutcome DescribeProtectConfigurations(const Model::DescribeProtectConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeProtectConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeProtectConfigurationsRequestT = Model::DescribeProtectConfigurationsRequest>
-        Model::DescribeProtectConfigurationsOutcomeCallable DescribeProtectConfigurationsCallable(const DescribeProtectConfigurationsRequestT& request) const
+        Model::DescribeProtectConfigurationsOutcomeCallable DescribeProtectConfigurationsCallable(const DescribeProtectConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeProtectConfigurations, request);
         }
@@ -1226,7 +1226,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeProtectConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeProtectConfigurationsRequestT = Model::DescribeProtectConfigurationsRequest>
-        void DescribeProtectConfigurationsAsync(const DescribeProtectConfigurationsRequestT& request, const DescribeProtectConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeProtectConfigurationsAsync(const DescribeProtectConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeProtectConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeProtectConfigurations, request, handler, context);
         }
@@ -1238,13 +1238,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegistrationAttachmentsOutcome DescribeRegistrationAttachments(const Model::DescribeRegistrationAttachmentsRequest& request) const;
+        virtual Model::DescribeRegistrationAttachmentsOutcome DescribeRegistrationAttachments(const Model::DescribeRegistrationAttachmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegistrationAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegistrationAttachmentsRequestT = Model::DescribeRegistrationAttachmentsRequest>
-        Model::DescribeRegistrationAttachmentsOutcomeCallable DescribeRegistrationAttachmentsCallable(const DescribeRegistrationAttachmentsRequestT& request) const
+        Model::DescribeRegistrationAttachmentsOutcomeCallable DescribeRegistrationAttachmentsCallable(const DescribeRegistrationAttachmentsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationAttachments, request);
         }
@@ -1253,7 +1253,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeRegistrationAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegistrationAttachmentsRequestT = Model::DescribeRegistrationAttachmentsRequest>
-        void DescribeRegistrationAttachmentsAsync(const DescribeRegistrationAttachmentsRequestT& request, const DescribeRegistrationAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegistrationAttachmentsAsync(const DescribeRegistrationAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegistrationAttachmentsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationAttachments, request, handler, context);
         }
@@ -1348,13 +1348,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegistrationTypeDefinitionsOutcome DescribeRegistrationTypeDefinitions(const Model::DescribeRegistrationTypeDefinitionsRequest& request) const;
+        virtual Model::DescribeRegistrationTypeDefinitionsOutcome DescribeRegistrationTypeDefinitions(const Model::DescribeRegistrationTypeDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegistrationTypeDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegistrationTypeDefinitionsRequestT = Model::DescribeRegistrationTypeDefinitionsRequest>
-        Model::DescribeRegistrationTypeDefinitionsOutcomeCallable DescribeRegistrationTypeDefinitionsCallable(const DescribeRegistrationTypeDefinitionsRequestT& request) const
+        Model::DescribeRegistrationTypeDefinitionsOutcomeCallable DescribeRegistrationTypeDefinitionsCallable(const DescribeRegistrationTypeDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrationTypeDefinitions, request);
         }
@@ -1363,7 +1363,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeRegistrationTypeDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegistrationTypeDefinitionsRequestT = Model::DescribeRegistrationTypeDefinitionsRequest>
-        void DescribeRegistrationTypeDefinitionsAsync(const DescribeRegistrationTypeDefinitionsRequestT& request, const DescribeRegistrationTypeDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegistrationTypeDefinitionsAsync(const DescribeRegistrationTypeDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegistrationTypeDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrationTypeDefinitions, request, handler, context);
         }
@@ -1398,13 +1398,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegistrationsOutcome DescribeRegistrations(const Model::DescribeRegistrationsRequest& request) const;
+        virtual Model::DescribeRegistrationsOutcome DescribeRegistrations(const Model::DescribeRegistrationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegistrationsRequestT = Model::DescribeRegistrationsRequest>
-        Model::DescribeRegistrationsOutcomeCallable DescribeRegistrationsCallable(const DescribeRegistrationsRequestT& request) const
+        Model::DescribeRegistrationsOutcomeCallable DescribeRegistrationsCallable(const DescribeRegistrationsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeRegistrations, request);
         }
@@ -1413,7 +1413,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegistrationsRequestT = Model::DescribeRegistrationsRequest>
-        void DescribeRegistrationsAsync(const DescribeRegistrationsRequestT& request, const DescribeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegistrationsAsync(const DescribeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegistrationsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeRegistrations, request, handler, context);
         }
@@ -1429,13 +1429,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeSenderIds">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSenderIdsOutcome DescribeSenderIds(const Model::DescribeSenderIdsRequest& request) const;
+        virtual Model::DescribeSenderIdsOutcome DescribeSenderIds(const Model::DescribeSenderIdsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSenderIds that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSenderIdsRequestT = Model::DescribeSenderIdsRequest>
-        Model::DescribeSenderIdsOutcomeCallable DescribeSenderIdsCallable(const DescribeSenderIdsRequestT& request) const
+        Model::DescribeSenderIdsOutcomeCallable DescribeSenderIdsCallable(const DescribeSenderIdsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeSenderIds, request);
         }
@@ -1444,7 +1444,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeSenderIds that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSenderIdsRequestT = Model::DescribeSenderIdsRequest>
-        void DescribeSenderIdsAsync(const DescribeSenderIdsRequestT& request, const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSenderIdsAsync(const DescribeSenderIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSenderIdsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeSenderIds, request, handler, context);
         }
@@ -1460,13 +1460,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeSpendLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeSpendLimitsOutcome DescribeSpendLimits(const Model::DescribeSpendLimitsRequest& request) const;
+        virtual Model::DescribeSpendLimitsOutcome DescribeSpendLimits(const Model::DescribeSpendLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeSpendLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeSpendLimitsRequestT = Model::DescribeSpendLimitsRequest>
-        Model::DescribeSpendLimitsOutcomeCallable DescribeSpendLimitsCallable(const DescribeSpendLimitsRequestT& request) const
+        Model::DescribeSpendLimitsOutcomeCallable DescribeSpendLimitsCallable(const DescribeSpendLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeSpendLimits, request);
         }
@@ -1475,7 +1475,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeSpendLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeSpendLimitsRequestT = Model::DescribeSpendLimitsRequest>
-        void DescribeSpendLimitsAsync(const DescribeSpendLimitsRequestT& request, const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeSpendLimitsAsync(const DescribeSpendLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSpendLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeSpendLimits, request, handler, context);
         }
@@ -1486,13 +1486,13 @@ namespace PinpointSMSVoiceV2
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVerifiedDestinationNumbersOutcome DescribeVerifiedDestinationNumbers(const Model::DescribeVerifiedDestinationNumbersRequest& request) const;
+        virtual Model::DescribeVerifiedDestinationNumbersOutcome DescribeVerifiedDestinationNumbers(const Model::DescribeVerifiedDestinationNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVerifiedDestinationNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVerifiedDestinationNumbersRequestT = Model::DescribeVerifiedDestinationNumbersRequest>
-        Model::DescribeVerifiedDestinationNumbersOutcomeCallable DescribeVerifiedDestinationNumbersCallable(const DescribeVerifiedDestinationNumbersRequestT& request) const
+        Model::DescribeVerifiedDestinationNumbersOutcomeCallable DescribeVerifiedDestinationNumbersCallable(const DescribeVerifiedDestinationNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&PinpointSMSVoiceV2Client::DescribeVerifiedDestinationNumbers, request);
         }
@@ -1501,7 +1501,7 @@ namespace PinpointSMSVoiceV2
          * An Async wrapper for DescribeVerifiedDestinationNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVerifiedDestinationNumbersRequestT = Model::DescribeVerifiedDestinationNumbersRequest>
-        void DescribeVerifiedDestinationNumbersAsync(const DescribeVerifiedDestinationNumbersRequestT& request, const DescribeVerifiedDestinationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVerifiedDestinationNumbersAsync(const DescribeVerifiedDestinationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVerifiedDestinationNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::DescribeVerifiedDestinationNumbers, request, handler, context);
         }

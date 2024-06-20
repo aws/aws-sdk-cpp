@@ -21,6 +21,8 @@
 #include <aws/personalize-runtime/model/GetActionRecommendationsResult.h>
 #include <aws/personalize-runtime/model/GetPersonalizedRankingResult.h>
 #include <aws/personalize-runtime/model/GetRecommendationsResult.h>
+#include <aws/personalize-runtime/model/GetActionRecommendationsRequest.h>
+#include <aws/personalize-runtime/model/GetRecommendationsRequest.h>
 /* End of service model headers required in PersonalizeRuntimeClient header */
 
 namespace Aws

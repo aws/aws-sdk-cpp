@@ -41,6 +41,11 @@
 #include <aws/ecr-public/model/TagResourceResult.h>
 #include <aws/ecr-public/model/UntagResourceResult.h>
 #include <aws/ecr-public/model/UploadLayerPartResult.h>
+#include <aws/ecr-public/model/DescribeRepositoriesRequest.h>
+#include <aws/ecr-public/model/DescribeRegistriesRequest.h>
+#include <aws/ecr-public/model/PutRegistryCatalogDataRequest.h>
+#include <aws/ecr-public/model/GetAuthorizationTokenRequest.h>
+#include <aws/ecr-public/model/GetRegistryCatalogDataRequest.h>
 /* End of service model headers required in ECRPublicClient header */
 
 namespace Aws

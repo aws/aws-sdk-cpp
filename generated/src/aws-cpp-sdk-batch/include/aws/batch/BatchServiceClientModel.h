@@ -43,6 +43,11 @@
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
+#include <aws/batch/model/ListSchedulingPoliciesRequest.h>
+#include <aws/batch/model/DescribeJobQueuesRequest.h>
+#include <aws/batch/model/DescribeJobDefinitionsRequest.h>
+#include <aws/batch/model/DescribeComputeEnvironmentsRequest.h>
+#include <aws/batch/model/ListJobsRequest.h>
 /* End of service model headers required in BatchClient header */
 
 namespace Aws

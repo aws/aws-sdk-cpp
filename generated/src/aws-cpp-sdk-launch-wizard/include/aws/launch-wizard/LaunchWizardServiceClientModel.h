@@ -30,6 +30,8 @@
 #include <aws/launch-wizard/model/ListWorkloadsResult.h>
 #include <aws/launch-wizard/model/TagResourceResult.h>
 #include <aws/launch-wizard/model/UntagResourceResult.h>
+#include <aws/launch-wizard/model/ListWorkloadsRequest.h>
+#include <aws/launch-wizard/model/ListDeploymentsRequest.h>
 /* End of service model headers required in LaunchWizardClient header */
 
 namespace Aws

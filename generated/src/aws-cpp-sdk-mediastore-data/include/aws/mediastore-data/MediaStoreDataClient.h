@@ -163,13 +163,13 @@ namespace MediaStoreData
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListItemsOutcome ListItems(const Model::ListItemsRequest& request) const;
+        virtual Model::ListItemsOutcome ListItems(const Model::ListItemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListItems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListItemsRequestT = Model::ListItemsRequest>
-        Model::ListItemsOutcomeCallable ListItemsCallable(const ListItemsRequestT& request) const
+        Model::ListItemsOutcomeCallable ListItemsCallable(const ListItemsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaStoreDataClient::ListItems, request);
         }
@@ -178,7 +178,7 @@ namespace MediaStoreData
          * An Async wrapper for ListItems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListItemsRequestT = Model::ListItemsRequest>
-        void ListItemsAsync(const ListItemsRequestT& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListItemsAsync(const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListItemsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaStoreDataClient::ListItems, request, handler, context);
         }

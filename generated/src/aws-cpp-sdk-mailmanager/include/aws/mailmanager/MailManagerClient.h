@@ -758,13 +758,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddonInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAddonInstancesOutcome ListAddonInstances(const Model::ListAddonInstancesRequest& request) const;
+        virtual Model::ListAddonInstancesOutcome ListAddonInstances(const Model::ListAddonInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAddonInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAddonInstancesRequestT = Model::ListAddonInstancesRequest>
-        Model::ListAddonInstancesOutcomeCallable ListAddonInstancesCallable(const ListAddonInstancesRequestT& request) const
+        Model::ListAddonInstancesOutcomeCallable ListAddonInstancesCallable(const ListAddonInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListAddonInstances, request);
         }
@@ -773,7 +773,7 @@ namespace MailManager
          * An Async wrapper for ListAddonInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAddonInstancesRequestT = Model::ListAddonInstancesRequest>
-        void ListAddonInstancesAsync(const ListAddonInstancesRequestT& request, const ListAddonInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAddonInstancesAsync(const ListAddonInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAddonInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListAddonInstances, request, handler, context);
         }
@@ -783,13 +783,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddonSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAddonSubscriptionsOutcome ListAddonSubscriptions(const Model::ListAddonSubscriptionsRequest& request) const;
+        virtual Model::ListAddonSubscriptionsOutcome ListAddonSubscriptions(const Model::ListAddonSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAddonSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAddonSubscriptionsRequestT = Model::ListAddonSubscriptionsRequest>
-        Model::ListAddonSubscriptionsOutcomeCallable ListAddonSubscriptionsCallable(const ListAddonSubscriptionsRequestT& request) const
+        Model::ListAddonSubscriptionsOutcomeCallable ListAddonSubscriptionsCallable(const ListAddonSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListAddonSubscriptions, request);
         }
@@ -798,7 +798,7 @@ namespace MailManager
          * An Async wrapper for ListAddonSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAddonSubscriptionsRequestT = Model::ListAddonSubscriptionsRequest>
-        void ListAddonSubscriptionsAsync(const ListAddonSubscriptionsRequestT& request, const ListAddonSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAddonSubscriptionsAsync(const ListAddonSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAddonSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListAddonSubscriptions, request, handler, context);
         }
@@ -859,13 +859,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListArchives">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request) const;
+        virtual Model::ListArchivesOutcome ListArchives(const Model::ListArchivesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListArchives that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListArchivesRequestT = Model::ListArchivesRequest>
-        Model::ListArchivesOutcomeCallable ListArchivesCallable(const ListArchivesRequestT& request) const
+        Model::ListArchivesOutcomeCallable ListArchivesCallable(const ListArchivesRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListArchives, request);
         }
@@ -874,7 +874,7 @@ namespace MailManager
          * An Async wrapper for ListArchives that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListArchivesRequestT = Model::ListArchivesRequest>
-        void ListArchivesAsync(const ListArchivesRequestT& request, const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListArchivesAsync(const ListArchivesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListArchivesRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListArchives, request, handler, context);
         }
@@ -884,13 +884,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListIngressPoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIngressPointsOutcome ListIngressPoints(const Model::ListIngressPointsRequest& request) const;
+        virtual Model::ListIngressPointsOutcome ListIngressPoints(const Model::ListIngressPointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIngressPoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIngressPointsRequestT = Model::ListIngressPointsRequest>
-        Model::ListIngressPointsOutcomeCallable ListIngressPointsCallable(const ListIngressPointsRequestT& request) const
+        Model::ListIngressPointsOutcomeCallable ListIngressPointsCallable(const ListIngressPointsRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListIngressPoints, request);
         }
@@ -899,7 +899,7 @@ namespace MailManager
          * An Async wrapper for ListIngressPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIngressPointsRequestT = Model::ListIngressPointsRequest>
-        void ListIngressPointsAsync(const ListIngressPointsRequestT& request, const ListIngressPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIngressPointsAsync(const ListIngressPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIngressPointsRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListIngressPoints, request, handler, context);
         }
@@ -909,13 +909,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListRelays">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRelaysOutcome ListRelays(const Model::ListRelaysRequest& request) const;
+        virtual Model::ListRelaysOutcome ListRelays(const Model::ListRelaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRelays that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRelaysRequestT = Model::ListRelaysRequest>
-        Model::ListRelaysOutcomeCallable ListRelaysCallable(const ListRelaysRequestT& request) const
+        Model::ListRelaysOutcomeCallable ListRelaysCallable(const ListRelaysRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListRelays, request);
         }
@@ -924,7 +924,7 @@ namespace MailManager
          * An Async wrapper for ListRelays that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRelaysRequestT = Model::ListRelaysRequest>
-        void ListRelaysAsync(const ListRelaysRequestT& request, const ListRelaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRelaysAsync(const ListRelaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRelaysRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListRelays, request, handler, context);
         }
@@ -934,13 +934,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListRuleSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRuleSetsOutcome ListRuleSets(const Model::ListRuleSetsRequest& request) const;
+        virtual Model::ListRuleSetsOutcome ListRuleSets(const Model::ListRuleSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRuleSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRuleSetsRequestT = Model::ListRuleSetsRequest>
-        Model::ListRuleSetsOutcomeCallable ListRuleSetsCallable(const ListRuleSetsRequestT& request) const
+        Model::ListRuleSetsOutcomeCallable ListRuleSetsCallable(const ListRuleSetsRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListRuleSets, request);
         }
@@ -949,7 +949,7 @@ namespace MailManager
          * An Async wrapper for ListRuleSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRuleSetsRequestT = Model::ListRuleSetsRequest>
-        void ListRuleSetsAsync(const ListRuleSetsRequestT& request, const ListRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRuleSetsAsync(const ListRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRuleSetsRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListRuleSets, request, handler, context);
         }
@@ -985,13 +985,13 @@ namespace MailManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListTrafficPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrafficPoliciesOutcome ListTrafficPolicies(const Model::ListTrafficPoliciesRequest& request) const;
+        virtual Model::ListTrafficPoliciesOutcome ListTrafficPolicies(const Model::ListTrafficPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrafficPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrafficPoliciesRequestT = Model::ListTrafficPoliciesRequest>
-        Model::ListTrafficPoliciesOutcomeCallable ListTrafficPoliciesCallable(const ListTrafficPoliciesRequestT& request) const
+        Model::ListTrafficPoliciesOutcomeCallable ListTrafficPoliciesCallable(const ListTrafficPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&MailManagerClient::ListTrafficPolicies, request);
         }
@@ -1000,7 +1000,7 @@ namespace MailManager
          * An Async wrapper for ListTrafficPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrafficPoliciesRequestT = Model::ListTrafficPoliciesRequest>
-        void ListTrafficPoliciesAsync(const ListTrafficPoliciesRequestT& request, const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrafficPoliciesAsync(const ListTrafficPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrafficPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&MailManagerClient::ListTrafficPolicies, request, handler, context);
         }

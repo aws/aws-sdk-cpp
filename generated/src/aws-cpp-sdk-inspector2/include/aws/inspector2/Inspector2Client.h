@@ -116,13 +116,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetAccountStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetAccountStatusOutcome BatchGetAccountStatus(const Model::BatchGetAccountStatusRequest& request) const;
+        virtual Model::BatchGetAccountStatusOutcome BatchGetAccountStatus(const Model::BatchGetAccountStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetAccountStatusRequestT = Model::BatchGetAccountStatusRequest>
-        Model::BatchGetAccountStatusOutcomeCallable BatchGetAccountStatusCallable(const BatchGetAccountStatusRequestT& request) const
+        Model::BatchGetAccountStatusOutcomeCallable BatchGetAccountStatusCallable(const BatchGetAccountStatusRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::BatchGetAccountStatus, request);
         }
@@ -131,7 +131,7 @@ namespace Inspector2
          * An Async wrapper for BatchGetAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetAccountStatusRequestT = Model::BatchGetAccountStatusRequest>
-        void BatchGetAccountStatusAsync(const BatchGetAccountStatusRequestT& request, const BatchGetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetAccountStatusAsync(const BatchGetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetAccountStatusRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::BatchGetAccountStatus, request, handler, context);
         }
@@ -221,13 +221,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetMemberEc2DeepInspectionStatusOutcome BatchGetMemberEc2DeepInspectionStatus(const Model::BatchGetMemberEc2DeepInspectionStatusRequest& request) const;
+        virtual Model::BatchGetMemberEc2DeepInspectionStatusOutcome BatchGetMemberEc2DeepInspectionStatus(const Model::BatchGetMemberEc2DeepInspectionStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetMemberEc2DeepInspectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetMemberEc2DeepInspectionStatusRequestT = Model::BatchGetMemberEc2DeepInspectionStatusRequest>
-        Model::BatchGetMemberEc2DeepInspectionStatusOutcomeCallable BatchGetMemberEc2DeepInspectionStatusCallable(const BatchGetMemberEc2DeepInspectionStatusRequestT& request) const
+        Model::BatchGetMemberEc2DeepInspectionStatusOutcomeCallable BatchGetMemberEc2DeepInspectionStatusCallable(const BatchGetMemberEc2DeepInspectionStatusRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::BatchGetMemberEc2DeepInspectionStatus, request);
         }
@@ -236,7 +236,7 @@ namespace Inspector2
          * An Async wrapper for BatchGetMemberEc2DeepInspectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetMemberEc2DeepInspectionStatusRequestT = Model::BatchGetMemberEc2DeepInspectionStatusRequest>
-        void BatchGetMemberEc2DeepInspectionStatusAsync(const BatchGetMemberEc2DeepInspectionStatusRequestT& request, const BatchGetMemberEc2DeepInspectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetMemberEc2DeepInspectionStatusAsync(const BatchGetMemberEc2DeepInspectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetMemberEc2DeepInspectionStatusRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::BatchGetMemberEc2DeepInspectionStatus, request, handler, context);
         }
@@ -482,13 +482,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
+        virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOrganizationConfigurationRequestT = Model::DescribeOrganizationConfigurationRequest>
-        Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequestT& request) const
+        Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::DescribeOrganizationConfiguration, request);
         }
@@ -497,7 +497,7 @@ namespace Inspector2
          * An Async wrapper for DescribeOrganizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOrganizationConfigurationRequestT = Model::DescribeOrganizationConfigurationRequest>
-        void DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequestT& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::DescribeOrganizationConfiguration, request, handler, context);
         }
@@ -509,13 +509,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Disable">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableOutcome Disable(const Model::DisableRequest& request) const;
+        virtual Model::DisableOutcome Disable(const Model::DisableRequest& request = {}) const;
 
         /**
          * A Callable wrapper for Disable that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisableRequestT = Model::DisableRequest>
-        Model::DisableOutcomeCallable DisableCallable(const DisableRequestT& request) const
+        Model::DisableOutcomeCallable DisableCallable(const DisableRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::Disable, request);
         }
@@ -524,7 +524,7 @@ namespace Inspector2
          * An Async wrapper for Disable that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisableRequestT = Model::DisableRequest>
-        void DisableAsync(const DisableRequestT& request, const DisableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisableAsync(const DisableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::Disable, request, handler, context);
         }
@@ -689,13 +689,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
+        virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
-        Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const GetConfigurationRequestT& request) const
+        Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const GetConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::GetConfiguration, request);
         }
@@ -704,7 +704,7 @@ namespace Inspector2
          * An Async wrapper for GetConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
-        void GetConfigurationAsync(const GetConfigurationRequestT& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetConfigurationAsync(const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::GetConfiguration, request, handler, context);
         }
@@ -715,13 +715,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetDelegatedAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDelegatedAdminAccountOutcome GetDelegatedAdminAccount(const Model::GetDelegatedAdminAccountRequest& request) const;
+        virtual Model::GetDelegatedAdminAccountOutcome GetDelegatedAdminAccount(const Model::GetDelegatedAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetDelegatedAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetDelegatedAdminAccountRequestT = Model::GetDelegatedAdminAccountRequest>
-        Model::GetDelegatedAdminAccountOutcomeCallable GetDelegatedAdminAccountCallable(const GetDelegatedAdminAccountRequestT& request) const
+        Model::GetDelegatedAdminAccountOutcomeCallable GetDelegatedAdminAccountCallable(const GetDelegatedAdminAccountRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::GetDelegatedAdminAccount, request);
         }
@@ -730,7 +730,7 @@ namespace Inspector2
          * An Async wrapper for GetDelegatedAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetDelegatedAdminAccountRequestT = Model::GetDelegatedAdminAccountRequest>
-        void GetDelegatedAdminAccountAsync(const GetDelegatedAdminAccountRequestT& request, const GetDelegatedAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetDelegatedAdminAccountAsync(const GetDelegatedAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDelegatedAdminAccountRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::GetDelegatedAdminAccount, request, handler, context);
         }
@@ -741,13 +741,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEc2DeepInspectionConfigurationOutcome GetEc2DeepInspectionConfiguration(const Model::GetEc2DeepInspectionConfigurationRequest& request) const;
+        virtual Model::GetEc2DeepInspectionConfigurationOutcome GetEc2DeepInspectionConfiguration(const Model::GetEc2DeepInspectionConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEc2DeepInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetEc2DeepInspectionConfigurationRequestT = Model::GetEc2DeepInspectionConfigurationRequest>
-        Model::GetEc2DeepInspectionConfigurationOutcomeCallable GetEc2DeepInspectionConfigurationCallable(const GetEc2DeepInspectionConfigurationRequestT& request) const
+        Model::GetEc2DeepInspectionConfigurationOutcomeCallable GetEc2DeepInspectionConfigurationCallable(const GetEc2DeepInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::GetEc2DeepInspectionConfiguration, request);
         }
@@ -756,7 +756,7 @@ namespace Inspector2
          * An Async wrapper for GetEc2DeepInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetEc2DeepInspectionConfigurationRequestT = Model::GetEc2DeepInspectionConfigurationRequest>
-        void GetEc2DeepInspectionConfigurationAsync(const GetEc2DeepInspectionConfigurationRequestT& request, const GetEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetEc2DeepInspectionConfigurationAsync(const GetEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEc2DeepInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::GetEc2DeepInspectionConfiguration, request, handler, context);
         }
@@ -791,13 +791,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetFindingsReportStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFindingsReportStatusOutcome GetFindingsReportStatus(const Model::GetFindingsReportStatusRequest& request) const;
+        virtual Model::GetFindingsReportStatusOutcome GetFindingsReportStatus(const Model::GetFindingsReportStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetFindingsReportStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetFindingsReportStatusRequestT = Model::GetFindingsReportStatusRequest>
-        Model::GetFindingsReportStatusOutcomeCallable GetFindingsReportStatusCallable(const GetFindingsReportStatusRequestT& request) const
+        Model::GetFindingsReportStatusOutcomeCallable GetFindingsReportStatusCallable(const GetFindingsReportStatusRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::GetFindingsReportStatus, request);
         }
@@ -806,7 +806,7 @@ namespace Inspector2
          * An Async wrapper for GetFindingsReportStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetFindingsReportStatusRequestT = Model::GetFindingsReportStatusRequest>
-        void GetFindingsReportStatusAsync(const GetFindingsReportStatusRequestT& request, const GetFindingsReportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetFindingsReportStatusAsync(const GetFindingsReportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFindingsReportStatusRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::GetFindingsReportStatus, request, handler, context);
         }
@@ -868,13 +868,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListAccountPermissions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountPermissionsOutcome ListAccountPermissions(const Model::ListAccountPermissionsRequest& request) const;
+        virtual Model::ListAccountPermissionsOutcome ListAccountPermissions(const Model::ListAccountPermissionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccountPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountPermissionsRequestT = Model::ListAccountPermissionsRequest>
-        Model::ListAccountPermissionsOutcomeCallable ListAccountPermissionsCallable(const ListAccountPermissionsRequestT& request) const
+        Model::ListAccountPermissionsOutcomeCallable ListAccountPermissionsCallable(const ListAccountPermissionsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListAccountPermissions, request);
         }
@@ -883,7 +883,7 @@ namespace Inspector2
          * An Async wrapper for ListAccountPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountPermissionsRequestT = Model::ListAccountPermissionsRequest>
-        void ListAccountPermissionsAsync(const ListAccountPermissionsRequestT& request, const ListAccountPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountPermissionsAsync(const ListAccountPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountPermissionsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListAccountPermissions, request, handler, context);
         }
@@ -893,13 +893,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCisScanConfigurationsOutcome ListCisScanConfigurations(const Model::ListCisScanConfigurationsRequest& request) const;
+        virtual Model::ListCisScanConfigurationsOutcome ListCisScanConfigurations(const Model::ListCisScanConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCisScanConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCisScanConfigurationsRequestT = Model::ListCisScanConfigurationsRequest>
-        Model::ListCisScanConfigurationsOutcomeCallable ListCisScanConfigurationsCallable(const ListCisScanConfigurationsRequestT& request) const
+        Model::ListCisScanConfigurationsOutcomeCallable ListCisScanConfigurationsCallable(const ListCisScanConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListCisScanConfigurations, request);
         }
@@ -908,7 +908,7 @@ namespace Inspector2
          * An Async wrapper for ListCisScanConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCisScanConfigurationsRequestT = Model::ListCisScanConfigurationsRequest>
-        void ListCisScanConfigurationsAsync(const ListCisScanConfigurationsRequestT& request, const ListCisScanConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCisScanConfigurationsAsync(const ListCisScanConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCisScanConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListCisScanConfigurations, request, handler, context);
         }
@@ -969,13 +969,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCisScansOutcome ListCisScans(const Model::ListCisScansRequest& request) const;
+        virtual Model::ListCisScansOutcome ListCisScans(const Model::ListCisScansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCisScans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCisScansRequestT = Model::ListCisScansRequest>
-        Model::ListCisScansOutcomeCallable ListCisScansCallable(const ListCisScansRequestT& request) const
+        Model::ListCisScansOutcomeCallable ListCisScansCallable(const ListCisScansRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListCisScans, request);
         }
@@ -984,7 +984,7 @@ namespace Inspector2
          * An Async wrapper for ListCisScans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCisScansRequestT = Model::ListCisScansRequest>
-        void ListCisScansAsync(const ListCisScansRequestT& request, const ListCisScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCisScansAsync(const ListCisScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCisScansRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListCisScans, request, handler, context);
         }
@@ -994,13 +994,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCoverage">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCoverageOutcome ListCoverage(const Model::ListCoverageRequest& request) const;
+        virtual Model::ListCoverageOutcome ListCoverage(const Model::ListCoverageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCoverage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCoverageRequestT = Model::ListCoverageRequest>
-        Model::ListCoverageOutcomeCallable ListCoverageCallable(const ListCoverageRequestT& request) const
+        Model::ListCoverageOutcomeCallable ListCoverageCallable(const ListCoverageRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListCoverage, request);
         }
@@ -1009,7 +1009,7 @@ namespace Inspector2
          * An Async wrapper for ListCoverage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCoverageRequestT = Model::ListCoverageRequest>
-        void ListCoverageAsync(const ListCoverageRequestT& request, const ListCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCoverageAsync(const ListCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCoverageRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListCoverage, request, handler, context);
         }
@@ -1020,13 +1020,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCoverageStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCoverageStatisticsOutcome ListCoverageStatistics(const Model::ListCoverageStatisticsRequest& request) const;
+        virtual Model::ListCoverageStatisticsOutcome ListCoverageStatistics(const Model::ListCoverageStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCoverageStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCoverageStatisticsRequestT = Model::ListCoverageStatisticsRequest>
-        Model::ListCoverageStatisticsOutcomeCallable ListCoverageStatisticsCallable(const ListCoverageStatisticsRequestT& request) const
+        Model::ListCoverageStatisticsOutcomeCallable ListCoverageStatisticsCallable(const ListCoverageStatisticsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListCoverageStatistics, request);
         }
@@ -1035,7 +1035,7 @@ namespace Inspector2
          * An Async wrapper for ListCoverageStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCoverageStatisticsRequestT = Model::ListCoverageStatisticsRequest>
-        void ListCoverageStatisticsAsync(const ListCoverageStatisticsRequestT& request, const ListCoverageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCoverageStatisticsAsync(const ListCoverageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCoverageStatisticsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListCoverageStatistics, request, handler, context);
         }
@@ -1046,13 +1046,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListDelegatedAdminAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDelegatedAdminAccountsOutcome ListDelegatedAdminAccounts(const Model::ListDelegatedAdminAccountsRequest& request) const;
+        virtual Model::ListDelegatedAdminAccountsOutcome ListDelegatedAdminAccounts(const Model::ListDelegatedAdminAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDelegatedAdminAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDelegatedAdminAccountsRequestT = Model::ListDelegatedAdminAccountsRequest>
-        Model::ListDelegatedAdminAccountsOutcomeCallable ListDelegatedAdminAccountsCallable(const ListDelegatedAdminAccountsRequestT& request) const
+        Model::ListDelegatedAdminAccountsOutcomeCallable ListDelegatedAdminAccountsCallable(const ListDelegatedAdminAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListDelegatedAdminAccounts, request);
         }
@@ -1061,7 +1061,7 @@ namespace Inspector2
          * An Async wrapper for ListDelegatedAdminAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDelegatedAdminAccountsRequestT = Model::ListDelegatedAdminAccountsRequest>
-        void ListDelegatedAdminAccountsAsync(const ListDelegatedAdminAccountsRequestT& request, const ListDelegatedAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDelegatedAdminAccountsAsync(const ListDelegatedAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDelegatedAdminAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListDelegatedAdminAccounts, request, handler, context);
         }
@@ -1071,13 +1071,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListFilters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
+        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request) const
+        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListFilters, request);
         }
@@ -1086,7 +1086,7 @@ namespace Inspector2
          * An Async wrapper for ListFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        void ListFiltersAsync(const ListFiltersRequestT& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFiltersAsync(const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFiltersRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListFilters, request, handler, context);
         }
@@ -1122,13 +1122,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListFindings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFindingsOutcome ListFindings(const Model::ListFindingsRequest& request) const;
+        virtual Model::ListFindingsOutcome ListFindings(const Model::ListFindingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFindings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFindingsRequestT = Model::ListFindingsRequest>
-        Model::ListFindingsOutcomeCallable ListFindingsCallable(const ListFindingsRequestT& request) const
+        Model::ListFindingsOutcomeCallable ListFindingsCallable(const ListFindingsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListFindings, request);
         }
@@ -1137,7 +1137,7 @@ namespace Inspector2
          * An Async wrapper for ListFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFindingsRequestT = Model::ListFindingsRequest>
-        void ListFindingsAsync(const ListFindingsRequestT& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFindingsAsync(const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFindingsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListFindings, request, handler, context);
         }
@@ -1148,13 +1148,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListMembers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
+        virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMembers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMembersRequestT = Model::ListMembersRequest>
-        Model::ListMembersOutcomeCallable ListMembersCallable(const ListMembersRequestT& request) const
+        Model::ListMembersOutcomeCallable ListMembersCallable(const ListMembersRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListMembers, request);
         }
@@ -1163,7 +1163,7 @@ namespace Inspector2
          * An Async wrapper for ListMembers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMembersRequestT = Model::ListMembersRequest>
-        void ListMembersAsync(const ListMembersRequestT& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMembersAsync(const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMembersRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListMembers, request, handler, context);
         }
@@ -1199,13 +1199,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListUsageTotals">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUsageTotalsOutcome ListUsageTotals(const Model::ListUsageTotalsRequest& request) const;
+        virtual Model::ListUsageTotalsOutcome ListUsageTotals(const Model::ListUsageTotalsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUsageTotals that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUsageTotalsRequestT = Model::ListUsageTotalsRequest>
-        Model::ListUsageTotalsOutcomeCallable ListUsageTotalsCallable(const ListUsageTotalsRequestT& request) const
+        Model::ListUsageTotalsOutcomeCallable ListUsageTotalsCallable(const ListUsageTotalsRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::ListUsageTotals, request);
         }
@@ -1214,7 +1214,7 @@ namespace Inspector2
          * An Async wrapper for ListUsageTotals that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUsageTotalsRequestT = Model::ListUsageTotalsRequest>
-        void ListUsageTotalsAsync(const ListUsageTotalsRequestT& request, const ListUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUsageTotalsAsync(const ListUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUsageTotalsRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::ListUsageTotals, request, handler, context);
         }
@@ -1466,13 +1466,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
+        virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
-        Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const UpdateConfigurationRequestT& request) const
+        Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const UpdateConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::UpdateConfiguration, request);
         }
@@ -1481,7 +1481,7 @@ namespace Inspector2
          * An Async wrapper for UpdateConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateConfigurationRequestT = Model::UpdateConfigurationRequest>
-        void UpdateConfigurationAsync(const UpdateConfigurationRequestT& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateConfigurationAsync(const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::UpdateConfiguration, request, handler, context);
         }
@@ -1492,13 +1492,13 @@ namespace Inspector2
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateEc2DeepInspectionConfigurationOutcome UpdateEc2DeepInspectionConfiguration(const Model::UpdateEc2DeepInspectionConfigurationRequest& request) const;
+        virtual Model::UpdateEc2DeepInspectionConfigurationOutcome UpdateEc2DeepInspectionConfiguration(const Model::UpdateEc2DeepInspectionConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateEc2DeepInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateEc2DeepInspectionConfigurationRequestT = Model::UpdateEc2DeepInspectionConfigurationRequest>
-        Model::UpdateEc2DeepInspectionConfigurationOutcomeCallable UpdateEc2DeepInspectionConfigurationCallable(const UpdateEc2DeepInspectionConfigurationRequestT& request) const
+        Model::UpdateEc2DeepInspectionConfigurationOutcomeCallable UpdateEc2DeepInspectionConfigurationCallable(const UpdateEc2DeepInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&Inspector2Client::UpdateEc2DeepInspectionConfiguration, request);
         }
@@ -1507,7 +1507,7 @@ namespace Inspector2
          * An Async wrapper for UpdateEc2DeepInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateEc2DeepInspectionConfigurationRequestT = Model::UpdateEc2DeepInspectionConfigurationRequest>
-        void UpdateEc2DeepInspectionConfigurationAsync(const UpdateEc2DeepInspectionConfigurationRequestT& request, const UpdateEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateEc2DeepInspectionConfigurationAsync(const UpdateEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEc2DeepInspectionConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&Inspector2Client::UpdateEc2DeepInspectionConfiguration, request, handler, context);
         }

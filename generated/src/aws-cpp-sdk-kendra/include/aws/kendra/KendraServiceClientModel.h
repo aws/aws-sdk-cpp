@@ -68,6 +68,7 @@
 #include <aws/kendra/model/UntagResourceResult.h>
 #include <aws/kendra/model/UpdateAccessControlConfigurationResult.h>
 #include <aws/kendra/model/UpdateFeaturedResultsSetResult.h>
+#include <aws/kendra/model/ListIndicesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KendraClient header */
 

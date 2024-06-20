@@ -175,13 +175,13 @@ namespace AutoScalingPlans
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeScalingPlansOutcome DescribeScalingPlans(const Model::DescribeScalingPlansRequest& request) const;
+        virtual Model::DescribeScalingPlansOutcome DescribeScalingPlans(const Model::DescribeScalingPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeScalingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeScalingPlansRequestT = Model::DescribeScalingPlansRequest>
-        Model::DescribeScalingPlansOutcomeCallable DescribeScalingPlansCallable(const DescribeScalingPlansRequestT& request) const
+        Model::DescribeScalingPlansOutcomeCallable DescribeScalingPlansCallable(const DescribeScalingPlansRequestT& request = {}) const
         {
             return SubmitCallable(&AutoScalingPlansClient::DescribeScalingPlans, request);
         }
@@ -190,7 +190,7 @@ namespace AutoScalingPlans
          * An Async wrapper for DescribeScalingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeScalingPlansRequestT = Model::DescribeScalingPlansRequest>
-        void DescribeScalingPlansAsync(const DescribeScalingPlansRequestT& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeScalingPlansAsync(const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeScalingPlansRequestT& request = {}) const
         {
             return SubmitAsync(&AutoScalingPlansClient::DescribeScalingPlans, request, handler, context);
         }

@@ -34,6 +34,9 @@
 #include <aws/signer/model/StartSigningJobResult.h>
 #include <aws/signer/model/TagResourceResult.h>
 #include <aws/signer/model/UntagResourceResult.h>
+#include <aws/signer/model/ListSigningPlatformsRequest.h>
+#include <aws/signer/model/ListSigningJobsRequest.h>
+#include <aws/signer/model/ListSigningProfilesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SignerClient header */
 

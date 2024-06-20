@@ -37,6 +37,9 @@
 #include <aws/sagemaker-geospatial/model/StopVectorEnrichmentJobResult.h>
 #include <aws/sagemaker-geospatial/model/TagResourceResult.h>
 #include <aws/sagemaker-geospatial/model/UntagResourceResult.h>
+#include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsRequest.h>
+#include <aws/sagemaker-geospatial/model/ListVectorEnrichmentJobsRequest.h>
+#include <aws/sagemaker-geospatial/model/ListEarthObservationJobsRequest.h>
 /* End of service model headers required in SageMakerGeospatialClient header */
 
 namespace Aws

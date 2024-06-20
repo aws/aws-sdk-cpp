@@ -31,6 +31,7 @@
 #include <aws/healthlake/model/StartFHIRImportJobResult.h>
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/UntagResourceResult.h>
+#include <aws/healthlake/model/ListFHIRDatastoresRequest.h>
 /* End of service model headers required in HealthLakeClient header */
 
 namespace Aws

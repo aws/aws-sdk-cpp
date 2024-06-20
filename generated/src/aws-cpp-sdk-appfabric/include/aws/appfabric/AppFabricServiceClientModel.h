@@ -44,6 +44,8 @@
 #include <aws/appfabric/model/UntagResourceResult.h>
 #include <aws/appfabric/model/UpdateAppAuthorizationResult.h>
 #include <aws/appfabric/model/UpdateIngestionDestinationResult.h>
+#include <aws/appfabric/model/ListAppBundlesRequest.h>
+#include <aws/appfabric/model/CreateAppBundleRequest.h>
 /* End of service model headers required in AppFabricClient header */
 
 namespace Aws

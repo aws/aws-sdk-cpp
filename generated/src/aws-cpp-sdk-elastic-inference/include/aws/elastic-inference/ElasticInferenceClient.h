@@ -130,13 +130,13 @@ namespace ElasticInference
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAcceleratorTypesOutcome DescribeAcceleratorTypes(const Model::DescribeAcceleratorTypesRequest& request) const;
+        virtual Model::DescribeAcceleratorTypesOutcome DescribeAcceleratorTypes(const Model::DescribeAcceleratorTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAcceleratorTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAcceleratorTypesRequestT = Model::DescribeAcceleratorTypesRequest>
-        Model::DescribeAcceleratorTypesOutcomeCallable DescribeAcceleratorTypesCallable(const DescribeAcceleratorTypesRequestT& request) const
+        Model::DescribeAcceleratorTypesOutcomeCallable DescribeAcceleratorTypesCallable(const DescribeAcceleratorTypesRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticInferenceClient::DescribeAcceleratorTypes, request);
         }
@@ -145,7 +145,7 @@ namespace ElasticInference
          * An Async wrapper for DescribeAcceleratorTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAcceleratorTypesRequestT = Model::DescribeAcceleratorTypesRequest>
-        void DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequestT& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAcceleratorTypesRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticInferenceClient::DescribeAcceleratorTypes, request, handler, context);
         }
@@ -163,13 +163,13 @@ namespace ElasticInference
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAcceleratorsOutcome DescribeAccelerators(const Model::DescribeAcceleratorsRequest& request) const;
+        virtual Model::DescribeAcceleratorsOutcome DescribeAccelerators(const Model::DescribeAcceleratorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccelerators that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAcceleratorsRequestT = Model::DescribeAcceleratorsRequest>
-        Model::DescribeAcceleratorsOutcomeCallable DescribeAcceleratorsCallable(const DescribeAcceleratorsRequestT& request) const
+        Model::DescribeAcceleratorsOutcomeCallable DescribeAcceleratorsCallable(const DescribeAcceleratorsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticInferenceClient::DescribeAccelerators, request);
         }
@@ -178,7 +178,7 @@ namespace ElasticInference
          * An Async wrapper for DescribeAccelerators that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAcceleratorsRequestT = Model::DescribeAcceleratorsRequest>
-        void DescribeAcceleratorsAsync(const DescribeAcceleratorsRequestT& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAcceleratorsAsync(const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAcceleratorsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticInferenceClient::DescribeAccelerators, request, handler, context);
         }

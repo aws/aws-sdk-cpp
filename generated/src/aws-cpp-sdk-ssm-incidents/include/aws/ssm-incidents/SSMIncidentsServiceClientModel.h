@@ -49,6 +49,9 @@
 #include <aws/ssm-incidents/model/UpdateReplicationSetResult.h>
 #include <aws/ssm-incidents/model/UpdateResponsePlanResult.h>
 #include <aws/ssm-incidents/model/UpdateTimelineEventResult.h>
+#include <aws/ssm-incidents/model/ListResponsePlansRequest.h>
+#include <aws/ssm-incidents/model/ListIncidentRecordsRequest.h>
+#include <aws/ssm-incidents/model/ListReplicationSetsRequest.h>
 /* End of service model headers required in SSMIncidentsClient header */
 
 namespace Aws

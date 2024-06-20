@@ -572,13 +572,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCredentialsOutcome GetCredentials(const Model::GetCredentialsRequest& request) const;
+        virtual Model::GetCredentialsOutcome GetCredentials(const Model::GetCredentialsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCredentialsRequestT = Model::GetCredentialsRequest>
-        Model::GetCredentialsOutcomeCallable GetCredentialsCallable(const GetCredentialsRequestT& request) const
+        Model::GetCredentialsOutcomeCallable GetCredentialsCallable(const GetCredentialsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::GetCredentials, request);
         }
@@ -587,7 +587,7 @@ namespace RedshiftServerless
          * An Async wrapper for GetCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCredentialsRequestT = Model::GetCredentialsRequest>
-        void GetCredentialsAsync(const GetCredentialsRequestT& request, const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCredentialsAsync(const GetCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCredentialsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::GetCredentials, request, handler, context);
         }
@@ -750,13 +750,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSnapshotOutcome GetSnapshot(const Model::GetSnapshotRequest& request) const;
+        virtual Model::GetSnapshotOutcome GetSnapshot(const Model::GetSnapshotRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSnapshotRequestT = Model::GetSnapshotRequest>
-        Model::GetSnapshotOutcomeCallable GetSnapshotCallable(const GetSnapshotRequestT& request) const
+        Model::GetSnapshotOutcomeCallable GetSnapshotCallable(const GetSnapshotRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::GetSnapshot, request);
         }
@@ -765,7 +765,7 @@ namespace RedshiftServerless
          * An Async wrapper for GetSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSnapshotRequestT = Model::GetSnapshotRequest>
-        void GetSnapshotAsync(const GetSnapshotRequestT& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSnapshotAsync(const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSnapshotRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::GetSnapshot, request, handler, context);
         }
@@ -852,13 +852,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCustomDomainAssociationsOutcome ListCustomDomainAssociations(const Model::ListCustomDomainAssociationsRequest& request) const;
+        virtual Model::ListCustomDomainAssociationsOutcome ListCustomDomainAssociations(const Model::ListCustomDomainAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCustomDomainAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCustomDomainAssociationsRequestT = Model::ListCustomDomainAssociationsRequest>
-        Model::ListCustomDomainAssociationsOutcomeCallable ListCustomDomainAssociationsCallable(const ListCustomDomainAssociationsRequestT& request) const
+        Model::ListCustomDomainAssociationsOutcomeCallable ListCustomDomainAssociationsCallable(const ListCustomDomainAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListCustomDomainAssociations, request);
         }
@@ -867,7 +867,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListCustomDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCustomDomainAssociationsRequestT = Model::ListCustomDomainAssociationsRequest>
-        void ListCustomDomainAssociationsAsync(const ListCustomDomainAssociationsRequestT& request, const ListCustomDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCustomDomainAssociationsAsync(const ListCustomDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomDomainAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListCustomDomainAssociations, request, handler, context);
         }
@@ -878,13 +878,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointAccessOutcome ListEndpointAccess(const Model::ListEndpointAccessRequest& request) const;
+        virtual Model::ListEndpointAccessOutcome ListEndpointAccess(const Model::ListEndpointAccessRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointAccessRequestT = Model::ListEndpointAccessRequest>
-        Model::ListEndpointAccessOutcomeCallable ListEndpointAccessCallable(const ListEndpointAccessRequestT& request) const
+        Model::ListEndpointAccessOutcomeCallable ListEndpointAccessCallable(const ListEndpointAccessRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListEndpointAccess, request);
         }
@@ -893,7 +893,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointAccessRequestT = Model::ListEndpointAccessRequest>
-        void ListEndpointAccessAsync(const ListEndpointAccessRequestT& request, const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointAccessAsync(const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointAccessRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListEndpointAccess, request, handler, context);
         }
@@ -904,13 +904,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListNamespaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
+        virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNamespacesRequestT = Model::ListNamespacesRequest>
-        Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const ListNamespacesRequestT& request) const
+        Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const ListNamespacesRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListNamespaces, request);
         }
@@ -919,7 +919,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNamespacesRequestT = Model::ListNamespacesRequest>
-        void ListNamespacesAsync(const ListNamespacesRequestT& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNamespacesAsync(const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNamespacesRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListNamespaces, request, handler, context);
         }
@@ -929,13 +929,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListRecoveryPoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecoveryPointsOutcome ListRecoveryPoints(const Model::ListRecoveryPointsRequest& request) const;
+        virtual Model::ListRecoveryPointsOutcome ListRecoveryPoints(const Model::ListRecoveryPointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecoveryPoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecoveryPointsRequestT = Model::ListRecoveryPointsRequest>
-        Model::ListRecoveryPointsOutcomeCallable ListRecoveryPointsCallable(const ListRecoveryPointsRequestT& request) const
+        Model::ListRecoveryPointsOutcomeCallable ListRecoveryPointsCallable(const ListRecoveryPointsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListRecoveryPoints, request);
         }
@@ -944,7 +944,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListRecoveryPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecoveryPointsRequestT = Model::ListRecoveryPointsRequest>
-        void ListRecoveryPointsAsync(const ListRecoveryPointsRequestT& request, const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecoveryPointsAsync(const ListRecoveryPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecoveryPointsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListRecoveryPoints, request, handler, context);
         }
@@ -955,13 +955,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScheduledActionsOutcome ListScheduledActions(const Model::ListScheduledActionsRequest& request) const;
+        virtual Model::ListScheduledActionsOutcome ListScheduledActions(const Model::ListScheduledActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScheduledActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
-        Model::ListScheduledActionsOutcomeCallable ListScheduledActionsCallable(const ListScheduledActionsRequestT& request) const
+        Model::ListScheduledActionsOutcomeCallable ListScheduledActionsCallable(const ListScheduledActionsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListScheduledActions, request);
         }
@@ -970,7 +970,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListScheduledActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScheduledActionsRequestT = Model::ListScheduledActionsRequest>
-        void ListScheduledActionsAsync(const ListScheduledActionsRequestT& request, const ListScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScheduledActionsAsync(const ListScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScheduledActionsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListScheduledActions, request, handler, context);
         }
@@ -980,13 +980,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSnapshotCopyConfigurationsOutcome ListSnapshotCopyConfigurations(const Model::ListSnapshotCopyConfigurationsRequest& request) const;
+        virtual Model::ListSnapshotCopyConfigurationsOutcome ListSnapshotCopyConfigurations(const Model::ListSnapshotCopyConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSnapshotCopyConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSnapshotCopyConfigurationsRequestT = Model::ListSnapshotCopyConfigurationsRequest>
-        Model::ListSnapshotCopyConfigurationsOutcomeCallable ListSnapshotCopyConfigurationsCallable(const ListSnapshotCopyConfigurationsRequestT& request) const
+        Model::ListSnapshotCopyConfigurationsOutcomeCallable ListSnapshotCopyConfigurationsCallable(const ListSnapshotCopyConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListSnapshotCopyConfigurations, request);
         }
@@ -995,7 +995,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListSnapshotCopyConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSnapshotCopyConfigurationsRequestT = Model::ListSnapshotCopyConfigurationsRequest>
-        void ListSnapshotCopyConfigurationsAsync(const ListSnapshotCopyConfigurationsRequestT& request, const ListSnapshotCopyConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSnapshotCopyConfigurationsAsync(const ListSnapshotCopyConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSnapshotCopyConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListSnapshotCopyConfigurations, request, handler, context);
         }
@@ -1005,13 +1005,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSnapshotsOutcome ListSnapshots(const Model::ListSnapshotsRequest& request) const;
+        virtual Model::ListSnapshotsOutcome ListSnapshots(const Model::ListSnapshotsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSnapshotsRequestT = Model::ListSnapshotsRequest>
-        Model::ListSnapshotsOutcomeCallable ListSnapshotsCallable(const ListSnapshotsRequestT& request) const
+        Model::ListSnapshotsOutcomeCallable ListSnapshotsCallable(const ListSnapshotsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListSnapshots, request);
         }
@@ -1020,7 +1020,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSnapshotsRequestT = Model::ListSnapshotsRequest>
-        void ListSnapshotsAsync(const ListSnapshotsRequestT& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSnapshotsAsync(const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSnapshotsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListSnapshots, request, handler, context);
         }
@@ -1031,13 +1031,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTableRestoreStatusOutcome ListTableRestoreStatus(const Model::ListTableRestoreStatusRequest& request) const;
+        virtual Model::ListTableRestoreStatusOutcome ListTableRestoreStatus(const Model::ListTableRestoreStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTableRestoreStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTableRestoreStatusRequestT = Model::ListTableRestoreStatusRequest>
-        Model::ListTableRestoreStatusOutcomeCallable ListTableRestoreStatusCallable(const ListTableRestoreStatusRequestT& request) const
+        Model::ListTableRestoreStatusOutcomeCallable ListTableRestoreStatusCallable(const ListTableRestoreStatusRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListTableRestoreStatus, request);
         }
@@ -1046,7 +1046,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListTableRestoreStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTableRestoreStatusRequestT = Model::ListTableRestoreStatusRequest>
-        void ListTableRestoreStatusAsync(const ListTableRestoreStatusRequestT& request, const ListTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTableRestoreStatusAsync(const ListTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTableRestoreStatusRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListTableRestoreStatus, request, handler, context);
         }
@@ -1082,13 +1082,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListUsageLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListUsageLimitsOutcome ListUsageLimits(const Model::ListUsageLimitsRequest& request) const;
+        virtual Model::ListUsageLimitsOutcome ListUsageLimits(const Model::ListUsageLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListUsageLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListUsageLimitsRequestT = Model::ListUsageLimitsRequest>
-        Model::ListUsageLimitsOutcomeCallable ListUsageLimitsCallable(const ListUsageLimitsRequestT& request) const
+        Model::ListUsageLimitsOutcomeCallable ListUsageLimitsCallable(const ListUsageLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListUsageLimits, request);
         }
@@ -1097,7 +1097,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListUsageLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListUsageLimitsRequestT = Model::ListUsageLimitsRequest>
-        void ListUsageLimitsAsync(const ListUsageLimitsRequestT& request, const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListUsageLimitsAsync(const ListUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListUsageLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListUsageLimits, request, handler, context);
         }
@@ -1108,13 +1108,13 @@ namespace RedshiftServerless
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListWorkgroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkgroupsOutcome ListWorkgroups(const Model::ListWorkgroupsRequest& request) const;
+        virtual Model::ListWorkgroupsOutcome ListWorkgroups(const Model::ListWorkgroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkgroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkgroupsRequestT = Model::ListWorkgroupsRequest>
-        Model::ListWorkgroupsOutcomeCallable ListWorkgroupsCallable(const ListWorkgroupsRequestT& request) const
+        Model::ListWorkgroupsOutcomeCallable ListWorkgroupsCallable(const ListWorkgroupsRequestT& request = {}) const
         {
             return SubmitCallable(&RedshiftServerlessClient::ListWorkgroups, request);
         }
@@ -1123,7 +1123,7 @@ namespace RedshiftServerless
          * An Async wrapper for ListWorkgroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkgroupsRequestT = Model::ListWorkgroupsRequest>
-        void ListWorkgroupsAsync(const ListWorkgroupsRequestT& request, const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkgroupsAsync(const ListWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkgroupsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListWorkgroups, request, handler, context);
         }

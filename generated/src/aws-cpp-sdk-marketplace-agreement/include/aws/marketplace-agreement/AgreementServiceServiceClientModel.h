@@ -21,6 +21,7 @@
 #include <aws/marketplace-agreement/model/DescribeAgreementResult.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsResult.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsResult.h>
+#include <aws/marketplace-agreement/model/SearchAgreementsRequest.h>
 /* End of service model headers required in AgreementServiceClient header */
 
 namespace Aws

@@ -242,13 +242,13 @@ namespace LaunchWizard
          * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeployments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
+        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request) const
+        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitCallable(&LaunchWizardClient::ListDeployments, request);
         }
@@ -257,7 +257,7 @@ namespace LaunchWizard
          * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
-        void ListDeploymentsAsync(const ListDeploymentsRequestT& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDeploymentsAsync(const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDeploymentsRequestT& request = {}) const
         {
             return SubmitAsync(&LaunchWizardClient::ListDeployments, request, handler, context);
         }
@@ -325,13 +325,13 @@ namespace LaunchWizard
          * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListWorkloads">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorkloadsOutcome ListWorkloads(const Model::ListWorkloadsRequest& request) const;
+        virtual Model::ListWorkloadsOutcome ListWorkloads(const Model::ListWorkloadsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorkloads that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorkloadsRequestT = Model::ListWorkloadsRequest>
-        Model::ListWorkloadsOutcomeCallable ListWorkloadsCallable(const ListWorkloadsRequestT& request) const
+        Model::ListWorkloadsOutcomeCallable ListWorkloadsCallable(const ListWorkloadsRequestT& request = {}) const
         {
             return SubmitCallable(&LaunchWizardClient::ListWorkloads, request);
         }
@@ -340,7 +340,7 @@ namespace LaunchWizard
          * An Async wrapper for ListWorkloads that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorkloadsRequestT = Model::ListWorkloadsRequest>
-        void ListWorkloadsAsync(const ListWorkloadsRequestT& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorkloadsAsync(const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorkloadsRequestT& request = {}) const
         {
             return SubmitAsync(&LaunchWizardClient::ListWorkloads, request, handler, context);
         }

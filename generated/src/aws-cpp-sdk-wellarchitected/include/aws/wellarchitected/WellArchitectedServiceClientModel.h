@@ -73,6 +73,16 @@
 #include <aws/wellarchitected/model/UpdateShareInvitationResult.h>
 #include <aws/wellarchitected/model/UpdateWorkloadResult.h>
 #include <aws/wellarchitected/model/UpdateWorkloadShareResult.h>
+#include <aws/wellarchitected/model/GetProfileTemplateRequest.h>
+#include <aws/wellarchitected/model/ListProfileNotificationsRequest.h>
+#include <aws/wellarchitected/model/ListWorkloadsRequest.h>
+#include <aws/wellarchitected/model/ListLensesRequest.h>
+#include <aws/wellarchitected/model/ListShareInvitationsRequest.h>
+#include <aws/wellarchitected/model/ListReviewTemplatesRequest.h>
+#include <aws/wellarchitected/model/UpdateGlobalSettingsRequest.h>
+#include <aws/wellarchitected/model/GetGlobalSettingsRequest.h>
+#include <aws/wellarchitected/model/ListNotificationsRequest.h>
+#include <aws/wellarchitected/model/ListProfilesRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in WellArchitectedClient header */
 

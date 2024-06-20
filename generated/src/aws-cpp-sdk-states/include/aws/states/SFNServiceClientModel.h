@@ -55,6 +55,9 @@
 #include <aws/states/model/UpdateStateMachineResult.h>
 #include <aws/states/model/UpdateStateMachineAliasResult.h>
 #include <aws/states/model/ValidateStateMachineDefinitionResult.h>
+#include <aws/states/model/ListStateMachinesRequest.h>
+#include <aws/states/model/ListExecutionsRequest.h>
+#include <aws/states/model/ListActivitiesRequest.h>
 /* End of service model headers required in SFNClient header */
 
 namespace Aws

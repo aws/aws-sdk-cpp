@@ -433,13 +433,13 @@ namespace MedicalImaging
          * href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListDatastores">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatastoresOutcome ListDatastores(const Model::ListDatastoresRequest& request) const;
+        virtual Model::ListDatastoresOutcome ListDatastores(const Model::ListDatastoresRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatastores that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatastoresRequestT = Model::ListDatastoresRequest>
-        Model::ListDatastoresOutcomeCallable ListDatastoresCallable(const ListDatastoresRequestT& request) const
+        Model::ListDatastoresOutcomeCallable ListDatastoresCallable(const ListDatastoresRequestT& request = {}) const
         {
             return SubmitCallable(&MedicalImagingClient::ListDatastores, request);
         }
@@ -448,7 +448,7 @@ namespace MedicalImaging
          * An Async wrapper for ListDatastores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatastoresRequestT = Model::ListDatastoresRequest>
-        void ListDatastoresAsync(const ListDatastoresRequestT& request, const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatastoresAsync(const ListDatastoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatastoresRequestT& request = {}) const
         {
             return SubmitAsync(&MedicalImagingClient::ListDatastores, request, handler, context);
         }

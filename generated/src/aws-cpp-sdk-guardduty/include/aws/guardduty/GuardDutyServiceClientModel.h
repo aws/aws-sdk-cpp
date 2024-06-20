@@ -87,6 +87,12 @@
 #include <aws/guardduty/model/UpdateOrganizationConfigurationResult.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationResult.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetResult.h>
+#include <aws/guardduty/model/ListInvitationsRequest.h>
+#include <aws/guardduty/model/GetInvitationsCountRequest.h>
+#include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
+#include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
+#include <aws/guardduty/model/ListDetectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in GuardDutyClient header */
 

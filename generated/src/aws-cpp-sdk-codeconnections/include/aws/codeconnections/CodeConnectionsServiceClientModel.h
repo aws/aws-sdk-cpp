@@ -45,6 +45,9 @@
 #include <aws/codeconnections/model/UpdateRepositoryLinkResult.h>
 #include <aws/codeconnections/model/UpdateSyncBlockerResult.h>
 #include <aws/codeconnections/model/UpdateSyncConfigurationResult.h>
+#include <aws/codeconnections/model/ListRepositoryLinksRequest.h>
+#include <aws/codeconnections/model/ListHostsRequest.h>
+#include <aws/codeconnections/model/ListConnectionsRequest.h>
 /* End of service model headers required in CodeConnectionsClient header */
 
 namespace Aws

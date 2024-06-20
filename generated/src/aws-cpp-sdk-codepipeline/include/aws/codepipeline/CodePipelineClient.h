@@ -356,13 +356,13 @@ namespace CodePipeline
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeregisterWebhookWithThirdPartyOutcome DeregisterWebhookWithThirdParty(const Model::DeregisterWebhookWithThirdPartyRequest& request) const;
+        virtual Model::DeregisterWebhookWithThirdPartyOutcome DeregisterWebhookWithThirdParty(const Model::DeregisterWebhookWithThirdPartyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeregisterWebhookWithThirdParty that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeregisterWebhookWithThirdPartyRequestT = Model::DeregisterWebhookWithThirdPartyRequest>
-        Model::DeregisterWebhookWithThirdPartyOutcomeCallable DeregisterWebhookWithThirdPartyCallable(const DeregisterWebhookWithThirdPartyRequestT& request) const
+        Model::DeregisterWebhookWithThirdPartyOutcomeCallable DeregisterWebhookWithThirdPartyCallable(const DeregisterWebhookWithThirdPartyRequestT& request = {}) const
         {
             return SubmitCallable(&CodePipelineClient::DeregisterWebhookWithThirdParty, request);
         }
@@ -371,7 +371,7 @@ namespace CodePipeline
          * An Async wrapper for DeregisterWebhookWithThirdParty that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeregisterWebhookWithThirdPartyRequestT = Model::DeregisterWebhookWithThirdPartyRequest>
-        void DeregisterWebhookWithThirdPartyAsync(const DeregisterWebhookWithThirdPartyRequestT& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeregisterWebhookWithThirdPartyAsync(const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeregisterWebhookWithThirdPartyRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::DeregisterWebhookWithThirdParty, request, handler, context);
         }
@@ -631,13 +631,13 @@ namespace CodePipeline
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListActionTypesOutcome ListActionTypes(const Model::ListActionTypesRequest& request) const;
+        virtual Model::ListActionTypesOutcome ListActionTypes(const Model::ListActionTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListActionTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListActionTypesRequestT = Model::ListActionTypesRequest>
-        Model::ListActionTypesOutcomeCallable ListActionTypesCallable(const ListActionTypesRequestT& request) const
+        Model::ListActionTypesOutcomeCallable ListActionTypesCallable(const ListActionTypesRequestT& request = {}) const
         {
             return SubmitCallable(&CodePipelineClient::ListActionTypes, request);
         }
@@ -646,7 +646,7 @@ namespace CodePipeline
          * An Async wrapper for ListActionTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListActionTypesRequestT = Model::ListActionTypesRequest>
-        void ListActionTypesAsync(const ListActionTypesRequestT& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListActionTypesAsync(const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListActionTypesRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::ListActionTypes, request, handler, context);
         }
@@ -685,13 +685,13 @@ namespace CodePipeline
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
+        virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request) const
+        Model::ListPipelinesOutcomeCallable ListPipelinesCallable(const ListPipelinesRequestT& request = {}) const
         {
             return SubmitCallable(&CodePipelineClient::ListPipelines, request);
         }
@@ -700,7 +700,7 @@ namespace CodePipeline
          * An Async wrapper for ListPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPipelinesRequestT = Model::ListPipelinesRequest>
-        void ListPipelinesAsync(const ListPipelinesRequestT& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPipelinesAsync(const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPipelinesRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::ListPipelines, request, handler, context);
         }
@@ -738,13 +738,13 @@ namespace CodePipeline
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWebhooksOutcome ListWebhooks(const Model::ListWebhooksRequest& request) const;
+        virtual Model::ListWebhooksOutcome ListWebhooks(const Model::ListWebhooksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWebhooks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWebhooksRequestT = Model::ListWebhooksRequest>
-        Model::ListWebhooksOutcomeCallable ListWebhooksCallable(const ListWebhooksRequestT& request) const
+        Model::ListWebhooksOutcomeCallable ListWebhooksCallable(const ListWebhooksRequestT& request = {}) const
         {
             return SubmitCallable(&CodePipelineClient::ListWebhooks, request);
         }
@@ -753,7 +753,7 @@ namespace CodePipeline
          * An Async wrapper for ListWebhooks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWebhooksRequestT = Model::ListWebhooksRequest>
-        void ListWebhooksAsync(const ListWebhooksRequestT& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWebhooksAsync(const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWebhooksRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::ListWebhooks, request, handler, context);
         }
@@ -1014,13 +1014,13 @@ namespace CodePipeline
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">AWS
          * API Reference</a></p>
          */
-        virtual Model::RegisterWebhookWithThirdPartyOutcome RegisterWebhookWithThirdParty(const Model::RegisterWebhookWithThirdPartyRequest& request) const;
+        virtual Model::RegisterWebhookWithThirdPartyOutcome RegisterWebhookWithThirdParty(const Model::RegisterWebhookWithThirdPartyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RegisterWebhookWithThirdParty that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RegisterWebhookWithThirdPartyRequestT = Model::RegisterWebhookWithThirdPartyRequest>
-        Model::RegisterWebhookWithThirdPartyOutcomeCallable RegisterWebhookWithThirdPartyCallable(const RegisterWebhookWithThirdPartyRequestT& request) const
+        Model::RegisterWebhookWithThirdPartyOutcomeCallable RegisterWebhookWithThirdPartyCallable(const RegisterWebhookWithThirdPartyRequestT& request = {}) const
         {
             return SubmitCallable(&CodePipelineClient::RegisterWebhookWithThirdParty, request);
         }
@@ -1029,7 +1029,7 @@ namespace CodePipeline
          * An Async wrapper for RegisterWebhookWithThirdParty that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RegisterWebhookWithThirdPartyRequestT = Model::RegisterWebhookWithThirdPartyRequest>
-        void RegisterWebhookWithThirdPartyAsync(const RegisterWebhookWithThirdPartyRequestT& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RegisterWebhookWithThirdPartyAsync(const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RegisterWebhookWithThirdPartyRequestT& request = {}) const
         {
             return SubmitAsync(&CodePipelineClient::RegisterWebhookWithThirdParty, request, handler, context);
         }

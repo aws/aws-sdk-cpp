@@ -33,6 +33,9 @@
 #include <aws/mediapackage-vod/model/ListPackagingGroupsResult.h>
 #include <aws/mediapackage-vod/model/ListTagsForResourceResult.h>
 #include <aws/mediapackage-vod/model/UpdatePackagingGroupResult.h>
+#include <aws/mediapackage-vod/model/ListPackagingConfigurationsRequest.h>
+#include <aws/mediapackage-vod/model/ListPackagingGroupsRequest.h>
+#include <aws/mediapackage-vod/model/ListAssetsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in MediaPackageVodClient header */
 

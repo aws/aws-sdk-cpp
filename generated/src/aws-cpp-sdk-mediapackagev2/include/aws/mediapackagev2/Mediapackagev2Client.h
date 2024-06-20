@@ -460,13 +460,13 @@ namespace mediapackagev2
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannelGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChannelGroupsOutcome ListChannelGroups(const Model::ListChannelGroupsRequest& request) const;
+        virtual Model::ListChannelGroupsOutcome ListChannelGroups(const Model::ListChannelGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChannelGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChannelGroupsRequestT = Model::ListChannelGroupsRequest>
-        Model::ListChannelGroupsOutcomeCallable ListChannelGroupsCallable(const ListChannelGroupsRequestT& request) const
+        Model::ListChannelGroupsOutcomeCallable ListChannelGroupsCallable(const ListChannelGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&Mediapackagev2Client::ListChannelGroups, request);
         }
@@ -475,7 +475,7 @@ namespace mediapackagev2
          * An Async wrapper for ListChannelGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChannelGroupsRequestT = Model::ListChannelGroupsRequest>
-        void ListChannelGroupsAsync(const ListChannelGroupsRequestT& request, const ListChannelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChannelGroupsAsync(const ListChannelGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&Mediapackagev2Client::ListChannelGroups, request, handler, context);
         }

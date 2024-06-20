@@ -82,6 +82,9 @@
 #include <aws/appsync/model/UpdateResolverResult.h>
 #include <aws/appsync/model/UpdateSourceApiAssociationResult.h>
 #include <aws/appsync/model/UpdateTypeResult.h>
+#include <aws/appsync/model/ListGraphqlApisRequest.h>
+#include <aws/appsync/model/StartDataSourceIntrospectionRequest.h>
+#include <aws/appsync/model/ListDomainNamesRequest.h>
 /* End of service model headers required in AppSyncClient header */
 
 namespace Aws

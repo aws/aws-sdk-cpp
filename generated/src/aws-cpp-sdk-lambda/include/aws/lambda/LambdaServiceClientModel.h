@@ -70,6 +70,11 @@
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
 #include <aws/lambda/model/UpdateFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/UpdateFunctionUrlConfigResult.h>
+#include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
+#include <aws/lambda/model/ListEventSourceMappingsRequest.h>
+#include <aws/lambda/model/ListLayersRequest.h>
+#include <aws/lambda/model/GetAccountSettingsRequest.h>
+#include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in LambdaClient header */
 

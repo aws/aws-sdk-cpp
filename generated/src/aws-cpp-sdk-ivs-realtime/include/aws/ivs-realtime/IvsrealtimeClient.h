@@ -164,13 +164,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateEncoderConfigurationOutcome CreateEncoderConfiguration(const Model::CreateEncoderConfigurationRequest& request) const;
+        virtual Model::CreateEncoderConfigurationOutcome CreateEncoderConfiguration(const Model::CreateEncoderConfigurationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateEncoderConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateEncoderConfigurationRequestT = Model::CreateEncoderConfigurationRequest>
-        Model::CreateEncoderConfigurationOutcomeCallable CreateEncoderConfigurationCallable(const CreateEncoderConfigurationRequestT& request) const
+        Model::CreateEncoderConfigurationOutcomeCallable CreateEncoderConfigurationCallable(const CreateEncoderConfigurationRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::CreateEncoderConfiguration, request);
         }
@@ -179,7 +179,7 @@ namespace ivsrealtime
          * An Async wrapper for CreateEncoderConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateEncoderConfigurationRequestT = Model::CreateEncoderConfigurationRequest>
-        void CreateEncoderConfigurationAsync(const CreateEncoderConfigurationRequestT& request, const CreateEncoderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateEncoderConfigurationAsync(const CreateEncoderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateEncoderConfigurationRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::CreateEncoderConfiguration, request, handler, context);
         }
@@ -218,13 +218,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStage">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateStageOutcome CreateStage(const Model::CreateStageRequest& request) const;
+        virtual Model::CreateStageOutcome CreateStage(const Model::CreateStageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateStage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateStageRequestT = Model::CreateStageRequest>
-        Model::CreateStageOutcomeCallable CreateStageCallable(const CreateStageRequestT& request) const
+        Model::CreateStageOutcomeCallable CreateStageCallable(const CreateStageRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::CreateStage, request);
         }
@@ -233,7 +233,7 @@ namespace ivsrealtime
          * An Async wrapper for CreateStage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateStageRequestT = Model::CreateStageRequest>
-        void CreateStageAsync(const CreateStageRequestT& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateStageAsync(const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateStageRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::CreateStage, request, handler, context);
         }
@@ -535,13 +535,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCompositionsOutcome ListCompositions(const Model::ListCompositionsRequest& request) const;
+        virtual Model::ListCompositionsOutcome ListCompositions(const Model::ListCompositionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCompositions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCompositionsRequestT = Model::ListCompositionsRequest>
-        Model::ListCompositionsOutcomeCallable ListCompositionsCallable(const ListCompositionsRequestT& request) const
+        Model::ListCompositionsOutcomeCallable ListCompositionsCallable(const ListCompositionsRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::ListCompositions, request);
         }
@@ -550,7 +550,7 @@ namespace ivsrealtime
          * An Async wrapper for ListCompositions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCompositionsRequestT = Model::ListCompositionsRequest>
-        void ListCompositionsAsync(const ListCompositionsRequestT& request, const ListCompositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCompositionsAsync(const ListCompositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCompositionsRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::ListCompositions, request, handler, context);
         }
@@ -561,13 +561,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEncoderConfigurationsOutcome ListEncoderConfigurations(const Model::ListEncoderConfigurationsRequest& request) const;
+        virtual Model::ListEncoderConfigurationsOutcome ListEncoderConfigurations(const Model::ListEncoderConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEncoderConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEncoderConfigurationsRequestT = Model::ListEncoderConfigurationsRequest>
-        Model::ListEncoderConfigurationsOutcomeCallable ListEncoderConfigurationsCallable(const ListEncoderConfigurationsRequestT& request) const
+        Model::ListEncoderConfigurationsOutcomeCallable ListEncoderConfigurationsCallable(const ListEncoderConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::ListEncoderConfigurations, request);
         }
@@ -576,7 +576,7 @@ namespace ivsrealtime
          * An Async wrapper for ListEncoderConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEncoderConfigurationsRequestT = Model::ListEncoderConfigurationsRequest>
-        void ListEncoderConfigurationsAsync(const ListEncoderConfigurationsRequestT& request, const ListEncoderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEncoderConfigurationsAsync(const ListEncoderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEncoderConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::ListEncoderConfigurations, request, handler, context);
         }
@@ -664,13 +664,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStages">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStagesOutcome ListStages(const Model::ListStagesRequest& request) const;
+        virtual Model::ListStagesOutcome ListStages(const Model::ListStagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStagesRequestT = Model::ListStagesRequest>
-        Model::ListStagesOutcomeCallable ListStagesCallable(const ListStagesRequestT& request) const
+        Model::ListStagesOutcomeCallable ListStagesCallable(const ListStagesRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::ListStages, request);
         }
@@ -679,7 +679,7 @@ namespace ivsrealtime
          * An Async wrapper for ListStages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStagesRequestT = Model::ListStagesRequest>
-        void ListStagesAsync(const ListStagesRequestT& request, const ListStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStagesAsync(const ListStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStagesRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::ListStages, request, handler, context);
         }
@@ -690,13 +690,13 @@ namespace ivsrealtime
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStorageConfigurationsOutcome ListStorageConfigurations(const Model::ListStorageConfigurationsRequest& request) const;
+        virtual Model::ListStorageConfigurationsOutcome ListStorageConfigurations(const Model::ListStorageConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListStorageConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListStorageConfigurationsRequestT = Model::ListStorageConfigurationsRequest>
-        Model::ListStorageConfigurationsOutcomeCallable ListStorageConfigurationsCallable(const ListStorageConfigurationsRequestT& request) const
+        Model::ListStorageConfigurationsOutcomeCallable ListStorageConfigurationsCallable(const ListStorageConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IvsrealtimeClient::ListStorageConfigurations, request);
         }
@@ -705,7 +705,7 @@ namespace ivsrealtime
          * An Async wrapper for ListStorageConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListStorageConfigurationsRequestT = Model::ListStorageConfigurationsRequest>
-        void ListStorageConfigurationsAsync(const ListStorageConfigurationsRequestT& request, const ListStorageConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListStorageConfigurationsAsync(const ListStorageConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStorageConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IvsrealtimeClient::ListStorageConfigurations, request, handler, context);
         }

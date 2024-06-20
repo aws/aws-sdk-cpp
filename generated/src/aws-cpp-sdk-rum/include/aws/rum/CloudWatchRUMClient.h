@@ -355,13 +355,13 @@ namespace CloudWatchRUM
          * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListAppMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppMonitorsOutcome ListAppMonitors(const Model::ListAppMonitorsRequest& request) const;
+        virtual Model::ListAppMonitorsOutcome ListAppMonitors(const Model::ListAppMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAppMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppMonitorsRequestT = Model::ListAppMonitorsRequest>
-        Model::ListAppMonitorsOutcomeCallable ListAppMonitorsCallable(const ListAppMonitorsRequestT& request) const
+        Model::ListAppMonitorsOutcomeCallable ListAppMonitorsCallable(const ListAppMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&CloudWatchRUMClient::ListAppMonitors, request);
         }
@@ -370,7 +370,7 @@ namespace CloudWatchRUM
          * An Async wrapper for ListAppMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppMonitorsRequestT = Model::ListAppMonitorsRequest>
-        void ListAppMonitorsAsync(const ListAppMonitorsRequestT& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppMonitorsAsync(const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudWatchRUMClient::ListAppMonitors, request, handler, context);
         }

@@ -252,13 +252,13 @@ namespace ivschat
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateRoom">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request) const;
+        virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateRoom that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateRoomRequestT = Model::CreateRoomRequest>
-        Model::CreateRoomOutcomeCallable CreateRoomCallable(const CreateRoomRequestT& request) const
+        Model::CreateRoomOutcomeCallable CreateRoomCallable(const CreateRoomRequestT& request = {}) const
         {
             return SubmitCallable(&IvschatClient::CreateRoom, request);
         }
@@ -267,7 +267,7 @@ namespace ivschat
          * An Async wrapper for CreateRoom that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateRoomRequestT = Model::CreateRoomRequest>
-        void CreateRoomAsync(const CreateRoomRequestT& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateRoomAsync(const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateRoomRequestT& request = {}) const
         {
             return SubmitAsync(&IvschatClient::CreateRoom, request, handler, context);
         }
@@ -438,13 +438,13 @@ namespace ivschat
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
+        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLoggingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLoggingConfigurationsRequestT = Model::ListLoggingConfigurationsRequest>
-        Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequestT& request) const
+        Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const ListLoggingConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&IvschatClient::ListLoggingConfigurations, request);
         }
@@ -453,7 +453,7 @@ namespace ivschat
          * An Async wrapper for ListLoggingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLoggingConfigurationsRequestT = Model::ListLoggingConfigurationsRequest>
-        void ListLoggingConfigurationsAsync(const ListLoggingConfigurationsRequestT& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLoggingConfigurationsAsync(const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLoggingConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&IvschatClient::ListLoggingConfigurations, request, handler, context);
         }
@@ -465,13 +465,13 @@ namespace ivschat
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListRooms">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRoomsOutcome ListRooms(const Model::ListRoomsRequest& request) const;
+        virtual Model::ListRoomsOutcome ListRooms(const Model::ListRoomsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRooms that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRoomsRequestT = Model::ListRoomsRequest>
-        Model::ListRoomsOutcomeCallable ListRoomsCallable(const ListRoomsRequestT& request) const
+        Model::ListRoomsOutcomeCallable ListRoomsCallable(const ListRoomsRequestT& request = {}) const
         {
             return SubmitCallable(&IvschatClient::ListRooms, request);
         }
@@ -480,7 +480,7 @@ namespace ivschat
          * An Async wrapper for ListRooms that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRoomsRequestT = Model::ListRoomsRequest>
-        void ListRoomsAsync(const ListRoomsRequestT& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRoomsAsync(const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRoomsRequestT& request = {}) const
         {
             return SubmitAsync(&IvschatClient::ListRooms, request, handler, context);
         }

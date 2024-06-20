@@ -778,13 +778,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeInboundConnectionsOutcome DescribeInboundConnections(const Model::DescribeInboundConnectionsRequest& request) const;
+        virtual Model::DescribeInboundConnectionsOutcome DescribeInboundConnections(const Model::DescribeInboundConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeInboundConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeInboundConnectionsRequestT = Model::DescribeInboundConnectionsRequest>
-        Model::DescribeInboundConnectionsOutcomeCallable DescribeInboundConnectionsCallable(const DescribeInboundConnectionsRequestT& request) const
+        Model::DescribeInboundConnectionsOutcomeCallable DescribeInboundConnectionsCallable(const DescribeInboundConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::DescribeInboundConnections, request);
         }
@@ -793,7 +793,7 @@ namespace OpenSearchService
          * An Async wrapper for DescribeInboundConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeInboundConnectionsRequestT = Model::DescribeInboundConnectionsRequest>
-        void DescribeInboundConnectionsAsync(const DescribeInboundConnectionsRequestT& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeInboundConnectionsAsync(const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInboundConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DescribeInboundConnections, request, handler, context);
         }
@@ -833,13 +833,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOutboundConnectionsOutcome DescribeOutboundConnections(const Model::DescribeOutboundConnectionsRequest& request) const;
+        virtual Model::DescribeOutboundConnectionsOutcome DescribeOutboundConnections(const Model::DescribeOutboundConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOutboundConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeOutboundConnectionsRequestT = Model::DescribeOutboundConnectionsRequest>
-        Model::DescribeOutboundConnectionsOutcomeCallable DescribeOutboundConnectionsCallable(const DescribeOutboundConnectionsRequestT& request) const
+        Model::DescribeOutboundConnectionsOutcomeCallable DescribeOutboundConnectionsCallable(const DescribeOutboundConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::DescribeOutboundConnections, request);
         }
@@ -848,7 +848,7 @@ namespace OpenSearchService
          * An Async wrapper for DescribeOutboundConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeOutboundConnectionsRequestT = Model::DescribeOutboundConnectionsRequest>
-        void DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsRequestT& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeOutboundConnectionsAsync(const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOutboundConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DescribeOutboundConnections, request, handler, context);
         }
@@ -861,13 +861,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest& request) const;
+        virtual Model::DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePackages that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePackagesRequestT = Model::DescribePackagesRequest>
-        Model::DescribePackagesOutcomeCallable DescribePackagesCallable(const DescribePackagesRequestT& request) const
+        Model::DescribePackagesOutcomeCallable DescribePackagesCallable(const DescribePackagesRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::DescribePackages, request);
         }
@@ -876,7 +876,7 @@ namespace OpenSearchService
          * An Async wrapper for DescribePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePackagesRequestT = Model::DescribePackagesRequest>
-        void DescribePackagesAsync(const DescribePackagesRequestT& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePackagesAsync(const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePackagesRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DescribePackages, request, handler, context);
         }
@@ -889,13 +889,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReservedInstanceOfferingsOutcome DescribeReservedInstanceOfferings(const Model::DescribeReservedInstanceOfferingsRequest& request) const;
+        virtual Model::DescribeReservedInstanceOfferingsOutcome DescribeReservedInstanceOfferings(const Model::DescribeReservedInstanceOfferingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReservedInstanceOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReservedInstanceOfferingsRequestT = Model::DescribeReservedInstanceOfferingsRequest>
-        Model::DescribeReservedInstanceOfferingsOutcomeCallable DescribeReservedInstanceOfferingsCallable(const DescribeReservedInstanceOfferingsRequestT& request) const
+        Model::DescribeReservedInstanceOfferingsOutcomeCallable DescribeReservedInstanceOfferingsCallable(const DescribeReservedInstanceOfferingsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::DescribeReservedInstanceOfferings, request);
         }
@@ -904,7 +904,7 @@ namespace OpenSearchService
          * An Async wrapper for DescribeReservedInstanceOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReservedInstanceOfferingsRequestT = Model::DescribeReservedInstanceOfferingsRequest>
-        void DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsRequestT& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReservedInstanceOfferingsAsync(const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReservedInstanceOfferingsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DescribeReservedInstanceOfferings, request, handler, context);
         }
@@ -917,13 +917,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReservedInstancesOutcome DescribeReservedInstances(const Model::DescribeReservedInstancesRequest& request) const;
+        virtual Model::DescribeReservedInstancesOutcome DescribeReservedInstances(const Model::DescribeReservedInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReservedInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReservedInstancesRequestT = Model::DescribeReservedInstancesRequest>
-        Model::DescribeReservedInstancesOutcomeCallable DescribeReservedInstancesCallable(const DescribeReservedInstancesRequestT& request) const
+        Model::DescribeReservedInstancesOutcomeCallable DescribeReservedInstancesCallable(const DescribeReservedInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::DescribeReservedInstances, request);
         }
@@ -932,7 +932,7 @@ namespace OpenSearchService
          * An Async wrapper for DescribeReservedInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReservedInstancesRequestT = Model::DescribeReservedInstancesRequest>
-        void DescribeReservedInstancesAsync(const DescribeReservedInstancesRequestT& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReservedInstancesAsync(const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReservedInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DescribeReservedInstances, request, handler, context);
         }
@@ -999,13 +999,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCompatibleVersionsOutcome GetCompatibleVersions(const Model::GetCompatibleVersionsRequest& request) const;
+        virtual Model::GetCompatibleVersionsOutcome GetCompatibleVersions(const Model::GetCompatibleVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetCompatibleVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetCompatibleVersionsRequestT = Model::GetCompatibleVersionsRequest>
-        Model::GetCompatibleVersionsOutcomeCallable GetCompatibleVersionsCallable(const GetCompatibleVersionsRequestT& request) const
+        Model::GetCompatibleVersionsOutcomeCallable GetCompatibleVersionsCallable(const GetCompatibleVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::GetCompatibleVersions, request);
         }
@@ -1014,7 +1014,7 @@ namespace OpenSearchService
          * An Async wrapper for GetCompatibleVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetCompatibleVersionsRequestT = Model::GetCompatibleVersionsRequest>
-        void GetCompatibleVersionsAsync(const GetCompatibleVersionsRequestT& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetCompatibleVersionsAsync(const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetCompatibleVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::GetCompatibleVersions, request, handler, context);
         }
@@ -1212,13 +1212,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
+        virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDomainNames that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDomainNamesRequestT = Model::ListDomainNamesRequest>
-        Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const ListDomainNamesRequestT& request) const
+        Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const ListDomainNamesRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::ListDomainNames, request);
         }
@@ -1227,7 +1227,7 @@ namespace OpenSearchService
          * An Async wrapper for ListDomainNames that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDomainNamesRequestT = Model::ListDomainNamesRequest>
-        void ListDomainNamesAsync(const ListDomainNamesRequestT& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDomainNamesAsync(const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDomainNamesRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::ListDomainNames, request, handler, context);
         }
@@ -1378,13 +1378,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request) const;
+        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVersionsRequestT = Model::ListVersionsRequest>
-        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request) const
+        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::ListVersions, request);
         }
@@ -1393,7 +1393,7 @@ namespace OpenSearchService
          * An Async wrapper for ListVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVersionsRequestT = Model::ListVersionsRequest>
-        void ListVersionsAsync(const ListVersionsRequestT& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVersionsAsync(const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::ListVersions, request, handler, context);
         }
@@ -1431,13 +1431,13 @@ namespace OpenSearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListVpcEndpointsOutcome ListVpcEndpoints(const Model::ListVpcEndpointsRequest& request) const;
+        virtual Model::ListVpcEndpointsOutcome ListVpcEndpoints(const Model::ListVpcEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListVpcEndpointsRequestT = Model::ListVpcEndpointsRequest>
-        Model::ListVpcEndpointsOutcomeCallable ListVpcEndpointsCallable(const ListVpcEndpointsRequestT& request) const
+        Model::ListVpcEndpointsOutcomeCallable ListVpcEndpointsCallable(const ListVpcEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&OpenSearchServiceClient::ListVpcEndpoints, request);
         }
@@ -1446,7 +1446,7 @@ namespace OpenSearchService
          * An Async wrapper for ListVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListVpcEndpointsRequestT = Model::ListVpcEndpointsRequest>
-        void ListVpcEndpointsAsync(const ListVpcEndpointsRequestT& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListVpcEndpointsAsync(const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVpcEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&OpenSearchServiceClient::ListVpcEndpoints, request, handler, context);
         }

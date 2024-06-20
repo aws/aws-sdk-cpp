@@ -49,6 +49,7 @@
 #include <aws/amplifybackend/model/UpdateBackendConfigResult.h>
 #include <aws/amplifybackend/model/UpdateBackendJobResult.h>
 #include <aws/amplifybackend/model/UpdateBackendStorageResult.h>
+#include <aws/amplifybackend/model/ListS3BucketsRequest.h>
 /* End of service model headers required in AmplifyBackendClient header */
 
 namespace Aws

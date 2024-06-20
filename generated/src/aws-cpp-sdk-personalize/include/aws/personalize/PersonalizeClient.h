@@ -1616,13 +1616,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request) const;
+        virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBatchInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBatchInferenceJobsRequestT = Model::ListBatchInferenceJobsRequest>
-        Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequestT& request) const
+        Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListBatchInferenceJobs, request);
         }
@@ -1631,7 +1631,7 @@ namespace Personalize
          * An Async wrapper for ListBatchInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBatchInferenceJobsRequestT = Model::ListBatchInferenceJobsRequest>
-        void ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequestT& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBatchInferenceJobsAsync(const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBatchInferenceJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListBatchInferenceJobs, request, handler, context);
         }
@@ -1642,13 +1642,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request) const;
+        virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBatchSegmentJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBatchSegmentJobsRequestT = Model::ListBatchSegmentJobsRequest>
-        Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequestT& request) const
+        Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListBatchSegmentJobs, request);
         }
@@ -1657,7 +1657,7 @@ namespace Personalize
          * An Async wrapper for ListBatchSegmentJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBatchSegmentJobsRequestT = Model::ListBatchSegmentJobsRequest>
-        void ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequestT& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBatchSegmentJobsAsync(const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBatchSegmentJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListBatchSegmentJobs, request, handler, context);
         }
@@ -1672,13 +1672,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request) const;
+        virtual Model::ListCampaignsOutcome ListCampaigns(const Model::ListCampaignsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCampaigns that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request) const
+        Model::ListCampaignsOutcomeCallable ListCampaignsCallable(const ListCampaignsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListCampaigns, request);
         }
@@ -1687,7 +1687,7 @@ namespace Personalize
          * An Async wrapper for ListCampaigns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCampaignsRequestT = Model::ListCampaignsRequest>
-        void ListCampaignsAsync(const ListCampaignsRequestT& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCampaignsAsync(const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCampaignsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListCampaigns, request, handler, context);
         }
@@ -1703,13 +1703,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDataDeletionJobsOutcome ListDataDeletionJobs(const Model::ListDataDeletionJobsRequest& request) const;
+        virtual Model::ListDataDeletionJobsOutcome ListDataDeletionJobs(const Model::ListDataDeletionJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDataDeletionJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
-        Model::ListDataDeletionJobsOutcomeCallable ListDataDeletionJobsCallable(const ListDataDeletionJobsRequestT& request) const
+        Model::ListDataDeletionJobsOutcomeCallable ListDataDeletionJobsCallable(const ListDataDeletionJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDataDeletionJobs, request);
         }
@@ -1718,7 +1718,7 @@ namespace Personalize
          * An Async wrapper for ListDataDeletionJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDataDeletionJobsRequestT = Model::ListDataDeletionJobsRequest>
-        void ListDataDeletionJobsAsync(const ListDataDeletionJobsRequestT& request, const ListDataDeletionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDataDeletionJobsAsync(const ListDataDeletionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataDeletionJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDataDeletionJobs, request, handler, context);
         }
@@ -1736,13 +1736,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request) const;
+        virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetExportJobsRequestT = Model::ListDatasetExportJobsRequest>
-        Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const ListDatasetExportJobsRequestT& request) const
+        Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const ListDatasetExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetExportJobs, request);
         }
@@ -1751,7 +1751,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetExportJobsRequestT = Model::ListDatasetExportJobsRequest>
-        void ListDatasetExportJobsAsync(const ListDatasetExportJobsRequestT& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetExportJobsAsync(const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetExportJobs, request, handler, context);
         }
@@ -1765,13 +1765,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request) const;
+        virtual Model::ListDatasetGroupsOutcome ListDatasetGroups(const Model::ListDatasetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request) const
+        Model::ListDatasetGroupsOutcomeCallable ListDatasetGroupsCallable(const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetGroups, request);
         }
@@ -1780,7 +1780,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetGroupsRequestT = Model::ListDatasetGroupsRequest>
-        void ListDatasetGroupsAsync(const ListDatasetGroupsRequestT& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetGroupsAsync(const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetGroups, request, handler, context);
         }
@@ -1798,13 +1798,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetImportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request) const;
+        virtual Model::ListDatasetImportJobsOutcome ListDatasetImportJobs(const Model::ListDatasetImportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasetImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request) const
+        Model::ListDatasetImportJobsOutcomeCallable ListDatasetImportJobsCallable(const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasetImportJobs, request);
         }
@@ -1813,7 +1813,7 @@ namespace Personalize
          * An Async wrapper for ListDatasetImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetImportJobsRequestT = Model::ListDatasetImportJobsRequest>
-        void ListDatasetImportJobsAsync(const ListDatasetImportJobsRequestT& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetImportJobsAsync(const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasetImportJobs, request, handler, context);
         }
@@ -1827,13 +1827,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListDatasets, request);
         }
@@ -1842,7 +1842,7 @@ namespace Personalize
          * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
-        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDatasetsAsync(const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDatasetsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListDatasets, request, handler, context);
         }
@@ -1856,13 +1856,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListEventTrackers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEventTrackersOutcome ListEventTrackers(const Model::ListEventTrackersRequest& request) const;
+        virtual Model::ListEventTrackersOutcome ListEventTrackers(const Model::ListEventTrackersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEventTrackers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEventTrackersRequestT = Model::ListEventTrackersRequest>
-        Model::ListEventTrackersOutcomeCallable ListEventTrackersCallable(const ListEventTrackersRequestT& request) const
+        Model::ListEventTrackersOutcomeCallable ListEventTrackersCallable(const ListEventTrackersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListEventTrackers, request);
         }
@@ -1871,7 +1871,7 @@ namespace Personalize
          * An Async wrapper for ListEventTrackers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEventTrackersRequestT = Model::ListEventTrackersRequest>
-        void ListEventTrackersAsync(const ListEventTrackersRequestT& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEventTrackersAsync(const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEventTrackersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListEventTrackers, request, handler, context);
         }
@@ -1882,13 +1882,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
+        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFilters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request) const
+        Model::ListFiltersOutcomeCallable ListFiltersCallable(const ListFiltersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListFilters, request);
         }
@@ -1897,7 +1897,7 @@ namespace Personalize
          * An Async wrapper for ListFilters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFiltersRequestT = Model::ListFiltersRequest>
-        void ListFiltersAsync(const ListFiltersRequestT& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFiltersAsync(const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFiltersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListFilters, request, handler, context);
         }
@@ -1907,13 +1907,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request) const;
+        virtual Model::ListMetricAttributionMetricsOutcome ListMetricAttributionMetrics(const Model::ListMetricAttributionMetricsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMetricAttributionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMetricAttributionMetricsRequestT = Model::ListMetricAttributionMetricsRequest>
-        Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequestT& request) const
+        Model::ListMetricAttributionMetricsOutcomeCallable ListMetricAttributionMetricsCallable(const ListMetricAttributionMetricsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListMetricAttributionMetrics, request);
         }
@@ -1922,7 +1922,7 @@ namespace Personalize
          * An Async wrapper for ListMetricAttributionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMetricAttributionMetricsRequestT = Model::ListMetricAttributionMetricsRequest>
-        void ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsRequestT& request, const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMetricAttributionMetricsAsync(const ListMetricAttributionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricAttributionMetricsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListMetricAttributionMetrics, request, handler, context);
         }
@@ -1932,13 +1932,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request) const;
+        virtual Model::ListMetricAttributionsOutcome ListMetricAttributions(const Model::ListMetricAttributionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMetricAttributions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMetricAttributionsRequestT = Model::ListMetricAttributionsRequest>
-        Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const ListMetricAttributionsRequestT& request) const
+        Model::ListMetricAttributionsOutcomeCallable ListMetricAttributionsCallable(const ListMetricAttributionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListMetricAttributions, request);
         }
@@ -1947,7 +1947,7 @@ namespace Personalize
          * An Async wrapper for ListMetricAttributions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMetricAttributionsRequestT = Model::ListMetricAttributionsRequest>
-        void ListMetricAttributionsAsync(const ListMetricAttributionsRequestT& request, const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMetricAttributionsAsync(const ListMetricAttributionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricAttributionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListMetricAttributions, request, handler, context);
         }
@@ -1959,13 +1959,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecipes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request) const;
+        virtual Model::ListRecipesOutcome ListRecipes(const Model::ListRecipesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecipes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request) const
+        Model::ListRecipesOutcomeCallable ListRecipesCallable(const ListRecipesRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListRecipes, request);
         }
@@ -1974,7 +1974,7 @@ namespace Personalize
          * An Async wrapper for ListRecipes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecipesRequestT = Model::ListRecipesRequest>
-        void ListRecipesAsync(const ListRecipesRequestT& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecipesAsync(const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecipesRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListRecipes, request, handler, context);
         }
@@ -1989,13 +1989,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request) const;
+        virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecommenders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecommendersRequestT = Model::ListRecommendersRequest>
-        Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const ListRecommendersRequestT& request) const
+        Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const ListRecommendersRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListRecommenders, request);
         }
@@ -2004,7 +2004,7 @@ namespace Personalize
          * An Async wrapper for ListRecommenders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecommendersRequestT = Model::ListRecommendersRequest>
-        void ListRecommendersAsync(const ListRecommendersRequestT& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecommendersAsync(const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecommendersRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListRecommenders, request, handler, context);
         }
@@ -2018,13 +2018,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSchemas">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request) const;
+        virtual Model::ListSchemasOutcome ListSchemas(const Model::ListSchemasRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request) const
+        Model::ListSchemasOutcomeCallable ListSchemasCallable(const ListSchemasRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSchemas, request);
         }
@@ -2033,7 +2033,7 @@ namespace Personalize
          * An Async wrapper for ListSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSchemasRequestT = Model::ListSchemasRequest>
-        void ListSchemasAsync(const ListSchemasRequestT& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSchemasAsync(const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSchemasRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSchemas, request, handler, context);
         }
@@ -2046,13 +2046,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolutionVersionsOutcome ListSolutionVersions(const Model::ListSolutionVersionsRequest& request) const;
+        virtual Model::ListSolutionVersionsOutcome ListSolutionVersions(const Model::ListSolutionVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolutionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolutionVersionsRequestT = Model::ListSolutionVersionsRequest>
-        Model::ListSolutionVersionsOutcomeCallable ListSolutionVersionsCallable(const ListSolutionVersionsRequestT& request) const
+        Model::ListSolutionVersionsOutcomeCallable ListSolutionVersionsCallable(const ListSolutionVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSolutionVersions, request);
         }
@@ -2061,7 +2061,7 @@ namespace Personalize
          * An Async wrapper for ListSolutionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolutionVersionsRequestT = Model::ListSolutionVersionsRequest>
-        void ListSolutionVersionsAsync(const ListSolutionVersionsRequestT& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolutionVersionsAsync(const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolutionVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSolutionVersions, request, handler, context);
         }
@@ -2076,13 +2076,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSolutionsOutcome ListSolutions(const Model::ListSolutionsRequest& request) const;
+        virtual Model::ListSolutionsOutcome ListSolutions(const Model::ListSolutionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSolutions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSolutionsRequestT = Model::ListSolutionsRequest>
-        Model::ListSolutionsOutcomeCallable ListSolutionsCallable(const ListSolutionsRequestT& request) const
+        Model::ListSolutionsOutcomeCallable ListSolutionsCallable(const ListSolutionsRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::ListSolutions, request);
         }
@@ -2091,7 +2091,7 @@ namespace Personalize
          * An Async wrapper for ListSolutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSolutionsRequestT = Model::ListSolutionsRequest>
-        void ListSolutionsAsync(const ListSolutionsRequestT& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSolutionsAsync(const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSolutionsRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::ListSolutions, request, handler, context);
         }
@@ -2340,13 +2340,13 @@ namespace Personalize
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request) const;
+        virtual Model::UpdateMetricAttributionOutcome UpdateMetricAttribution(const Model::UpdateMetricAttributionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateMetricAttribution that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateMetricAttributionRequestT = Model::UpdateMetricAttributionRequest>
-        Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const UpdateMetricAttributionRequestT& request) const
+        Model::UpdateMetricAttributionOutcomeCallable UpdateMetricAttributionCallable(const UpdateMetricAttributionRequestT& request = {}) const
         {
             return SubmitCallable(&PersonalizeClient::UpdateMetricAttribution, request);
         }
@@ -2355,7 +2355,7 @@ namespace Personalize
          * An Async wrapper for UpdateMetricAttribution that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateMetricAttributionRequestT = Model::UpdateMetricAttributionRequest>
-        void UpdateMetricAttributionAsync(const UpdateMetricAttributionRequestT& request, const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateMetricAttributionAsync(const UpdateMetricAttributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateMetricAttributionRequestT& request = {}) const
         {
             return SubmitAsync(&PersonalizeClient::UpdateMetricAttribution, request, handler, context);
         }

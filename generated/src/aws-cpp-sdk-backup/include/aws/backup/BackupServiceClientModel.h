@@ -88,6 +88,26 @@
 #include <aws/backup/model/UpdateReportPlanResult.h>
 #include <aws/backup/model/UpdateRestoreTestingPlanResult.h>
 #include <aws/backup/model/UpdateRestoreTestingSelectionResult.h>
+#include <aws/backup/model/ListRestoreTestingPlansRequest.h>
+#include <aws/backup/model/DescribeRegionSettingsRequest.h>
+#include <aws/backup/model/ListRestoreJobsRequest.h>
+#include <aws/backup/model/ListBackupPlanTemplatesRequest.h>
+#include <aws/backup/model/ListLegalHoldsRequest.h>
+#include <aws/backup/model/ListProtectedResourcesRequest.h>
+#include <aws/backup/model/GetSupportedResourceTypesRequest.h>
+#include <aws/backup/model/ListReportJobsRequest.h>
+#include <aws/backup/model/UpdateRegionSettingsRequest.h>
+#include <aws/backup/model/ListBackupJobSummariesRequest.h>
+#include <aws/backup/model/ListBackupPlansRequest.h>
+#include <aws/backup/model/ListReportPlansRequest.h>
+#include <aws/backup/model/ListCopyJobsRequest.h>
+#include <aws/backup/model/ListBackupJobsRequest.h>
+#include <aws/backup/model/ListBackupVaultsRequest.h>
+#include <aws/backup/model/ListFrameworksRequest.h>
+#include <aws/backup/model/ListCopyJobSummariesRequest.h>
+#include <aws/backup/model/UpdateGlobalSettingsRequest.h>
+#include <aws/backup/model/ListRestoreJobSummariesRequest.h>
+#include <aws/backup/model/DescribeGlobalSettingsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in BackupClient header */
 

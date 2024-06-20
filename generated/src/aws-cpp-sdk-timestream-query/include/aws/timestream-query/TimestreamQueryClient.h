@@ -170,13 +170,13 @@ namespace TimestreamQuery
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request) const;
+        virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
-        Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const DescribeAccountSettingsRequestT& request) const
+        Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const DescribeAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamQueryClient::DescribeAccountSettings, request);
         }
@@ -185,7 +185,7 @@ namespace TimestreamQuery
          * An Async wrapper for DescribeAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
-        void DescribeAccountSettingsAsync(const DescribeAccountSettingsRequestT& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountSettingsAsync(const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamQueryClient::DescribeAccountSettings, request, handler, context);
         }
@@ -208,13 +208,13 @@ namespace TimestreamQuery
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
+        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request) const
+        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamQueryClient::DescribeEndpoints, request);
         }
@@ -223,7 +223,7 @@ namespace TimestreamQuery
          * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEndpointsAsync(const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamQueryClient::DescribeEndpoints, request, handler, context);
         }
@@ -287,13 +287,13 @@ namespace TimestreamQuery
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ListScheduledQueries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScheduledQueriesOutcome ListScheduledQueries(const Model::ListScheduledQueriesRequest& request) const;
+        virtual Model::ListScheduledQueriesOutcome ListScheduledQueries(const Model::ListScheduledQueriesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScheduledQueries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScheduledQueriesRequestT = Model::ListScheduledQueriesRequest>
-        Model::ListScheduledQueriesOutcomeCallable ListScheduledQueriesCallable(const ListScheduledQueriesRequestT& request) const
+        Model::ListScheduledQueriesOutcomeCallable ListScheduledQueriesCallable(const ListScheduledQueriesRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamQueryClient::ListScheduledQueries, request);
         }
@@ -302,7 +302,7 @@ namespace TimestreamQuery
          * An Async wrapper for ListScheduledQueries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScheduledQueriesRequestT = Model::ListScheduledQueriesRequest>
-        void ListScheduledQueriesAsync(const ListScheduledQueriesRequestT& request, const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScheduledQueriesAsync(const ListScheduledQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScheduledQueriesRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamQueryClient::ListScheduledQueries, request, handler, context);
         }
@@ -465,13 +465,13 @@ namespace TimestreamQuery
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request) const;
+        virtual Model::UpdateAccountSettingsOutcome UpdateAccountSettings(const Model::UpdateAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request) const
+        Model::UpdateAccountSettingsOutcomeCallable UpdateAccountSettingsCallable(const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamQueryClient::UpdateAccountSettings, request);
         }
@@ -480,7 +480,7 @@ namespace TimestreamQuery
          * An Async wrapper for UpdateAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateAccountSettingsRequestT = Model::UpdateAccountSettingsRequest>
-        void UpdateAccountSettingsAsync(const UpdateAccountSettingsRequestT& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateAccountSettingsAsync(const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamQueryClient::UpdateAccountSettings, request, handler, context);
         }

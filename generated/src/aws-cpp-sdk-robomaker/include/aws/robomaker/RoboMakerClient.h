@@ -412,13 +412,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateWorldTemplate">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateWorldTemplateOutcome CreateWorldTemplate(const Model::CreateWorldTemplateRequest& request) const;
+        virtual Model::CreateWorldTemplateOutcome CreateWorldTemplate(const Model::CreateWorldTemplateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateWorldTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateWorldTemplateRequestT = Model::CreateWorldTemplateRequest>
-        Model::CreateWorldTemplateOutcomeCallable CreateWorldTemplateCallable(const CreateWorldTemplateRequestT& request) const
+        Model::CreateWorldTemplateOutcomeCallable CreateWorldTemplateCallable(const CreateWorldTemplateRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::CreateWorldTemplate, request);
         }
@@ -427,7 +427,7 @@ namespace RoboMaker
          * An Async wrapper for CreateWorldTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateWorldTemplateRequestT = Model::CreateWorldTemplateRequest>
-        void CreateWorldTemplateAsync(const CreateWorldTemplateRequestT& request, const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateWorldTemplateAsync(const CreateWorldTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateWorldTemplateRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::CreateWorldTemplate, request, handler, context);
         }
@@ -712,13 +712,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/GetWorldTemplateBody">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetWorldTemplateBodyOutcome GetWorldTemplateBody(const Model::GetWorldTemplateBodyRequest& request) const;
+        virtual Model::GetWorldTemplateBodyOutcome GetWorldTemplateBody(const Model::GetWorldTemplateBodyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetWorldTemplateBody that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetWorldTemplateBodyRequestT = Model::GetWorldTemplateBodyRequest>
-        Model::GetWorldTemplateBodyOutcomeCallable GetWorldTemplateBodyCallable(const GetWorldTemplateBodyRequestT& request) const
+        Model::GetWorldTemplateBodyOutcomeCallable GetWorldTemplateBodyCallable(const GetWorldTemplateBodyRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::GetWorldTemplateBody, request);
         }
@@ -727,7 +727,7 @@ namespace RoboMaker
          * An Async wrapper for GetWorldTemplateBody that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetWorldTemplateBodyRequestT = Model::GetWorldTemplateBodyRequest>
-        void GetWorldTemplateBodyAsync(const GetWorldTemplateBodyRequestT& request, const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetWorldTemplateBodyAsync(const GetWorldTemplateBodyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetWorldTemplateBodyRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::GetWorldTemplateBody, request, handler, context);
         }
@@ -738,13 +738,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobotApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRobotApplicationsOutcome ListRobotApplications(const Model::ListRobotApplicationsRequest& request) const;
+        virtual Model::ListRobotApplicationsOutcome ListRobotApplications(const Model::ListRobotApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRobotApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRobotApplicationsRequestT = Model::ListRobotApplicationsRequest>
-        Model::ListRobotApplicationsOutcomeCallable ListRobotApplicationsCallable(const ListRobotApplicationsRequestT& request) const
+        Model::ListRobotApplicationsOutcomeCallable ListRobotApplicationsCallable(const ListRobotApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListRobotApplications, request);
         }
@@ -753,7 +753,7 @@ namespace RoboMaker
          * An Async wrapper for ListRobotApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRobotApplicationsRequestT = Model::ListRobotApplicationsRequest>
-        void ListRobotApplicationsAsync(const ListRobotApplicationsRequestT& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRobotApplicationsAsync(const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRobotApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListRobotApplications, request, handler, context);
         }
@@ -764,13 +764,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSimulationApplicationsOutcome ListSimulationApplications(const Model::ListSimulationApplicationsRequest& request) const;
+        virtual Model::ListSimulationApplicationsOutcome ListSimulationApplications(const Model::ListSimulationApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSimulationApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSimulationApplicationsRequestT = Model::ListSimulationApplicationsRequest>
-        Model::ListSimulationApplicationsOutcomeCallable ListSimulationApplicationsCallable(const ListSimulationApplicationsRequestT& request) const
+        Model::ListSimulationApplicationsOutcomeCallable ListSimulationApplicationsCallable(const ListSimulationApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListSimulationApplications, request);
         }
@@ -779,7 +779,7 @@ namespace RoboMaker
          * An Async wrapper for ListSimulationApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSimulationApplicationsRequestT = Model::ListSimulationApplicationsRequest>
-        void ListSimulationApplicationsAsync(const ListSimulationApplicationsRequestT& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSimulationApplicationsAsync(const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSimulationApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListSimulationApplications, request, handler, context);
         }
@@ -790,13 +790,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSimulationJobBatchesOutcome ListSimulationJobBatches(const Model::ListSimulationJobBatchesRequest& request) const;
+        virtual Model::ListSimulationJobBatchesOutcome ListSimulationJobBatches(const Model::ListSimulationJobBatchesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSimulationJobBatches that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSimulationJobBatchesRequestT = Model::ListSimulationJobBatchesRequest>
-        Model::ListSimulationJobBatchesOutcomeCallable ListSimulationJobBatchesCallable(const ListSimulationJobBatchesRequestT& request) const
+        Model::ListSimulationJobBatchesOutcomeCallable ListSimulationJobBatchesCallable(const ListSimulationJobBatchesRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListSimulationJobBatches, request);
         }
@@ -805,7 +805,7 @@ namespace RoboMaker
          * An Async wrapper for ListSimulationJobBatches that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSimulationJobBatchesRequestT = Model::ListSimulationJobBatchesRequest>
-        void ListSimulationJobBatchesAsync(const ListSimulationJobBatchesRequestT& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSimulationJobBatchesAsync(const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSimulationJobBatchesRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListSimulationJobBatches, request, handler, context);
         }
@@ -816,13 +816,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSimulationJobsOutcome ListSimulationJobs(const Model::ListSimulationJobsRequest& request) const;
+        virtual Model::ListSimulationJobsOutcome ListSimulationJobs(const Model::ListSimulationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSimulationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSimulationJobsRequestT = Model::ListSimulationJobsRequest>
-        Model::ListSimulationJobsOutcomeCallable ListSimulationJobsCallable(const ListSimulationJobsRequestT& request) const
+        Model::ListSimulationJobsOutcomeCallable ListSimulationJobsCallable(const ListSimulationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListSimulationJobs, request);
         }
@@ -831,7 +831,7 @@ namespace RoboMaker
          * An Async wrapper for ListSimulationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSimulationJobsRequestT = Model::ListSimulationJobsRequest>
-        void ListSimulationJobsAsync(const ListSimulationJobsRequestT& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSimulationJobsAsync(const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSimulationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListSimulationJobs, request, handler, context);
         }
@@ -866,13 +866,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldExportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorldExportJobsOutcome ListWorldExportJobs(const Model::ListWorldExportJobsRequest& request) const;
+        virtual Model::ListWorldExportJobsOutcome ListWorldExportJobs(const Model::ListWorldExportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorldExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorldExportJobsRequestT = Model::ListWorldExportJobsRequest>
-        Model::ListWorldExportJobsOutcomeCallable ListWorldExportJobsCallable(const ListWorldExportJobsRequestT& request) const
+        Model::ListWorldExportJobsOutcomeCallable ListWorldExportJobsCallable(const ListWorldExportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListWorldExportJobs, request);
         }
@@ -881,7 +881,7 @@ namespace RoboMaker
          * An Async wrapper for ListWorldExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorldExportJobsRequestT = Model::ListWorldExportJobsRequest>
-        void ListWorldExportJobsAsync(const ListWorldExportJobsRequestT& request, const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorldExportJobsAsync(const ListWorldExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorldExportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListWorldExportJobs, request, handler, context);
         }
@@ -891,13 +891,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldGenerationJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorldGenerationJobsOutcome ListWorldGenerationJobs(const Model::ListWorldGenerationJobsRequest& request) const;
+        virtual Model::ListWorldGenerationJobsOutcome ListWorldGenerationJobs(const Model::ListWorldGenerationJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorldGenerationJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorldGenerationJobsRequestT = Model::ListWorldGenerationJobsRequest>
-        Model::ListWorldGenerationJobsOutcomeCallable ListWorldGenerationJobsCallable(const ListWorldGenerationJobsRequestT& request) const
+        Model::ListWorldGenerationJobsOutcomeCallable ListWorldGenerationJobsCallable(const ListWorldGenerationJobsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListWorldGenerationJobs, request);
         }
@@ -906,7 +906,7 @@ namespace RoboMaker
          * An Async wrapper for ListWorldGenerationJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorldGenerationJobsRequestT = Model::ListWorldGenerationJobsRequest>
-        void ListWorldGenerationJobsAsync(const ListWorldGenerationJobsRequestT& request, const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorldGenerationJobsAsync(const ListWorldGenerationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorldGenerationJobsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListWorldGenerationJobs, request, handler, context);
         }
@@ -916,13 +916,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorldTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorldTemplatesOutcome ListWorldTemplates(const Model::ListWorldTemplatesRequest& request) const;
+        virtual Model::ListWorldTemplatesOutcome ListWorldTemplates(const Model::ListWorldTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorldTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorldTemplatesRequestT = Model::ListWorldTemplatesRequest>
-        Model::ListWorldTemplatesOutcomeCallable ListWorldTemplatesCallable(const ListWorldTemplatesRequestT& request) const
+        Model::ListWorldTemplatesOutcomeCallable ListWorldTemplatesCallable(const ListWorldTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListWorldTemplates, request);
         }
@@ -931,7 +931,7 @@ namespace RoboMaker
          * An Async wrapper for ListWorldTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorldTemplatesRequestT = Model::ListWorldTemplatesRequest>
-        void ListWorldTemplatesAsync(const ListWorldTemplatesRequestT& request, const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorldTemplatesAsync(const ListWorldTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorldTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListWorldTemplates, request, handler, context);
         }
@@ -941,13 +941,13 @@ namespace RoboMaker
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListWorlds">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListWorldsOutcome ListWorlds(const Model::ListWorldsRequest& request) const;
+        virtual Model::ListWorldsOutcome ListWorlds(const Model::ListWorldsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListWorlds that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListWorldsRequestT = Model::ListWorldsRequest>
-        Model::ListWorldsOutcomeCallable ListWorldsCallable(const ListWorldsRequestT& request) const
+        Model::ListWorldsOutcomeCallable ListWorldsCallable(const ListWorldsRequestT& request = {}) const
         {
             return SubmitCallable(&RoboMakerClient::ListWorlds, request);
         }
@@ -956,7 +956,7 @@ namespace RoboMaker
          * An Async wrapper for ListWorlds that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListWorldsRequestT = Model::ListWorldsRequest>
-        void ListWorldsAsync(const ListWorldsRequestT& request, const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListWorldsAsync(const ListWorldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWorldsRequestT& request = {}) const
         {
             return SubmitAsync(&RoboMakerClient::ListWorlds, request, handler, context);
         }

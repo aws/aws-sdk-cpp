@@ -571,13 +571,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSMSAttributesOutcome GetSMSAttributes(const Model::GetSMSAttributesRequest& request) const;
+        virtual Model::GetSMSAttributesOutcome GetSMSAttributes(const Model::GetSMSAttributesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSMSAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSMSAttributesRequestT = Model::GetSMSAttributesRequest>
-        Model::GetSMSAttributesOutcomeCallable GetSMSAttributesCallable(const GetSMSAttributesRequestT& request) const
+        Model::GetSMSAttributesOutcomeCallable GetSMSAttributesCallable(const GetSMSAttributesRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::GetSMSAttributes, request);
         }
@@ -586,7 +586,7 @@ namespace SNS
          * An Async wrapper for GetSMSAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSMSAttributesRequestT = Model::GetSMSAttributesRequest>
-        void GetSMSAttributesAsync(const GetSMSAttributesRequestT& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSMSAttributesAsync(const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSMSAttributesRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::GetSMSAttributes, request, handler, context);
         }
@@ -607,13 +607,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSMSSandboxAccountStatusOutcome GetSMSSandboxAccountStatus(const Model::GetSMSSandboxAccountStatusRequest& request) const;
+        virtual Model::GetSMSSandboxAccountStatusOutcome GetSMSSandboxAccountStatus(const Model::GetSMSSandboxAccountStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSMSSandboxAccountStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetSMSSandboxAccountStatusRequestT = Model::GetSMSSandboxAccountStatusRequest>
-        Model::GetSMSSandboxAccountStatusOutcomeCallable GetSMSSandboxAccountStatusCallable(const GetSMSSandboxAccountStatusRequestT& request) const
+        Model::GetSMSSandboxAccountStatusOutcomeCallable GetSMSSandboxAccountStatusCallable(const GetSMSSandboxAccountStatusRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::GetSMSSandboxAccountStatus, request);
         }
@@ -622,7 +622,7 @@ namespace SNS
          * An Async wrapper for GetSMSSandboxAccountStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetSMSSandboxAccountStatusRequestT = Model::GetSMSSandboxAccountStatusRequest>
-        void GetSMSSandboxAccountStatusAsync(const GetSMSSandboxAccountStatusRequestT& request, const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetSMSSandboxAccountStatusAsync(const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSMSSandboxAccountStatusRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::GetSMSSandboxAccountStatus, request, handler, context);
         }
@@ -724,13 +724,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOriginationNumbersOutcome ListOriginationNumbers(const Model::ListOriginationNumbersRequest& request) const;
+        virtual Model::ListOriginationNumbersOutcome ListOriginationNumbers(const Model::ListOriginationNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOriginationNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOriginationNumbersRequestT = Model::ListOriginationNumbersRequest>
-        Model::ListOriginationNumbersOutcomeCallable ListOriginationNumbersCallable(const ListOriginationNumbersRequestT& request) const
+        Model::ListOriginationNumbersOutcomeCallable ListOriginationNumbersCallable(const ListOriginationNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListOriginationNumbers, request);
         }
@@ -739,7 +739,7 @@ namespace SNS
          * An Async wrapper for ListOriginationNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOriginationNumbersRequestT = Model::ListOriginationNumbersRequest>
-        void ListOriginationNumbersAsync(const ListOriginationNumbersRequestT& request, const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOriginationNumbersAsync(const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOriginationNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListOriginationNumbers, request, handler, context);
         }
@@ -757,13 +757,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPhoneNumbersOptedOutOutcome ListPhoneNumbersOptedOut(const Model::ListPhoneNumbersOptedOutRequest& request) const;
+        virtual Model::ListPhoneNumbersOptedOutOutcome ListPhoneNumbersOptedOut(const Model::ListPhoneNumbersOptedOutRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPhoneNumbersOptedOut that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPhoneNumbersOptedOutRequestT = Model::ListPhoneNumbersOptedOutRequest>
-        Model::ListPhoneNumbersOptedOutOutcomeCallable ListPhoneNumbersOptedOutCallable(const ListPhoneNumbersOptedOutRequestT& request) const
+        Model::ListPhoneNumbersOptedOutOutcomeCallable ListPhoneNumbersOptedOutCallable(const ListPhoneNumbersOptedOutRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListPhoneNumbersOptedOut, request);
         }
@@ -772,7 +772,7 @@ namespace SNS
          * An Async wrapper for ListPhoneNumbersOptedOut that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPhoneNumbersOptedOutRequestT = Model::ListPhoneNumbersOptedOutRequest>
-        void ListPhoneNumbersOptedOutAsync(const ListPhoneNumbersOptedOutRequestT& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPhoneNumbersOptedOutAsync(const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPhoneNumbersOptedOutRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListPhoneNumbersOptedOut, request, handler, context);
         }
@@ -792,13 +792,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlatformApplicationsOutcome ListPlatformApplications(const Model::ListPlatformApplicationsRequest& request) const;
+        virtual Model::ListPlatformApplicationsOutcome ListPlatformApplications(const Model::ListPlatformApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlatformApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlatformApplicationsRequestT = Model::ListPlatformApplicationsRequest>
-        Model::ListPlatformApplicationsOutcomeCallable ListPlatformApplicationsCallable(const ListPlatformApplicationsRequestT& request) const
+        Model::ListPlatformApplicationsOutcomeCallable ListPlatformApplicationsCallable(const ListPlatformApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListPlatformApplications, request);
         }
@@ -807,7 +807,7 @@ namespace SNS
          * An Async wrapper for ListPlatformApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlatformApplicationsRequestT = Model::ListPlatformApplicationsRequest>
-        void ListPlatformApplicationsAsync(const ListPlatformApplicationsRequestT& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlatformApplicationsAsync(const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlatformApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListPlatformApplications, request, handler, context);
         }
@@ -828,13 +828,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSMSSandboxPhoneNumbersOutcome ListSMSSandboxPhoneNumbers(const Model::ListSMSSandboxPhoneNumbersRequest& request) const;
+        virtual Model::ListSMSSandboxPhoneNumbersOutcome ListSMSSandboxPhoneNumbers(const Model::ListSMSSandboxPhoneNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSMSSandboxPhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSMSSandboxPhoneNumbersRequestT = Model::ListSMSSandboxPhoneNumbersRequest>
-        Model::ListSMSSandboxPhoneNumbersOutcomeCallable ListSMSSandboxPhoneNumbersCallable(const ListSMSSandboxPhoneNumbersRequestT& request) const
+        Model::ListSMSSandboxPhoneNumbersOutcomeCallable ListSMSSandboxPhoneNumbersCallable(const ListSMSSandboxPhoneNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListSMSSandboxPhoneNumbers, request);
         }
@@ -843,7 +843,7 @@ namespace SNS
          * An Async wrapper for ListSMSSandboxPhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSMSSandboxPhoneNumbersRequestT = Model::ListSMSSandboxPhoneNumbersRequest>
-        void ListSMSSandboxPhoneNumbersAsync(const ListSMSSandboxPhoneNumbersRequestT& request, const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSMSSandboxPhoneNumbersAsync(const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSMSSandboxPhoneNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListSMSSandboxPhoneNumbers, request, handler, context);
         }
@@ -858,13 +858,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSubscriptionsOutcome ListSubscriptions(const Model::ListSubscriptionsRequest& request) const;
+        virtual Model::ListSubscriptionsOutcome ListSubscriptions(const Model::ListSubscriptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSubscriptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSubscriptionsRequestT = Model::ListSubscriptionsRequest>
-        Model::ListSubscriptionsOutcomeCallable ListSubscriptionsCallable(const ListSubscriptionsRequestT& request) const
+        Model::ListSubscriptionsOutcomeCallable ListSubscriptionsCallable(const ListSubscriptionsRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListSubscriptions, request);
         }
@@ -873,7 +873,7 @@ namespace SNS
          * An Async wrapper for ListSubscriptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSubscriptionsRequestT = Model::ListSubscriptionsRequest>
-        void ListSubscriptionsAsync(const ListSubscriptionsRequestT& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSubscriptionsAsync(const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSubscriptionsRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListSubscriptions, request, handler, context);
         }
@@ -945,13 +945,13 @@ namespace SNS
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request) const;
+        virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTopics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTopicsRequestT = Model::ListTopicsRequest>
-        Model::ListTopicsOutcomeCallable ListTopicsCallable(const ListTopicsRequestT& request) const
+        Model::ListTopicsOutcomeCallable ListTopicsCallable(const ListTopicsRequestT& request = {}) const
         {
             return SubmitCallable(&SNSClient::ListTopics, request);
         }
@@ -960,7 +960,7 @@ namespace SNS
          * An Async wrapper for ListTopics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTopicsRequestT = Model::ListTopicsRequest>
-        void ListTopicsAsync(const ListTopicsRequestT& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTopicsAsync(const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTopicsRequestT& request = {}) const
         {
             return SubmitAsync(&SNSClient::ListTopics, request, handler, context);
         }

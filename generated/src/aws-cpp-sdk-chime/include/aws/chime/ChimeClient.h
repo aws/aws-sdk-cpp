@@ -10,8 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime/ChimeServiceClientModel.h>
-#include <aws/chime/model/GetPhoneNumberSettingsRequest.h>
-#include <aws/chime/model/GetGlobalSettingsRequest.h>
 
 namespace Aws
 {
@@ -1107,13 +1105,13 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request) const;
+        virtual Model::ListAccountsOutcome ListAccounts(const Model::ListAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountsRequestT = Model::ListAccountsRequest>
-        Model::ListAccountsOutcomeCallable ListAccountsCallable(const ListAccountsRequestT& request) const
+        Model::ListAccountsOutcomeCallable ListAccountsCallable(const ListAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeClient::ListAccounts, request);
         }
@@ -1122,7 +1120,7 @@ namespace Chime
          * An Async wrapper for ListAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountsRequestT = Model::ListAccountsRequest>
-        void ListAccountsAsync(const ListAccountsRequestT& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountsAsync(const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeClient::ListAccounts, request, handler, context);
         }
@@ -1159,13 +1157,13 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumberOrders">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPhoneNumberOrdersOutcome ListPhoneNumberOrders(const Model::ListPhoneNumberOrdersRequest& request) const;
+        virtual Model::ListPhoneNumberOrdersOutcome ListPhoneNumberOrders(const Model::ListPhoneNumberOrdersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPhoneNumberOrders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPhoneNumberOrdersRequestT = Model::ListPhoneNumberOrdersRequest>
-        Model::ListPhoneNumberOrdersOutcomeCallable ListPhoneNumberOrdersCallable(const ListPhoneNumberOrdersRequestT& request) const
+        Model::ListPhoneNumberOrdersOutcomeCallable ListPhoneNumberOrdersCallable(const ListPhoneNumberOrdersRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeClient::ListPhoneNumberOrders, request);
         }
@@ -1174,7 +1172,7 @@ namespace Chime
          * An Async wrapper for ListPhoneNumberOrders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPhoneNumberOrdersRequestT = Model::ListPhoneNumberOrdersRequest>
-        void ListPhoneNumberOrdersAsync(const ListPhoneNumberOrdersRequestT& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPhoneNumberOrdersAsync(const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPhoneNumberOrdersRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeClient::ListPhoneNumberOrders, request, handler, context);
         }
@@ -1186,13 +1184,13 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListPhoneNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPhoneNumbersOutcome ListPhoneNumbers(const Model::ListPhoneNumbersRequest& request) const;
+        virtual Model::ListPhoneNumbersOutcome ListPhoneNumbers(const Model::ListPhoneNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPhoneNumbersRequestT = Model::ListPhoneNumbersRequest>
-        Model::ListPhoneNumbersOutcomeCallable ListPhoneNumbersCallable(const ListPhoneNumbersRequestT& request) const
+        Model::ListPhoneNumbersOutcomeCallable ListPhoneNumbersCallable(const ListPhoneNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeClient::ListPhoneNumbers, request);
         }
@@ -1201,7 +1199,7 @@ namespace Chime
          * An Async wrapper for ListPhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPhoneNumbersRequestT = Model::ListPhoneNumbersRequest>
-        void ListPhoneNumbersAsync(const ListPhoneNumbersRequestT& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPhoneNumbersAsync(const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPhoneNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeClient::ListPhoneNumbers, request, handler, context);
         }
@@ -1541,13 +1539,13 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchAvailablePhoneNumbersOutcome SearchAvailablePhoneNumbers(const Model::SearchAvailablePhoneNumbersRequest& request) const;
+        virtual Model::SearchAvailablePhoneNumbersOutcome SearchAvailablePhoneNumbers(const Model::SearchAvailablePhoneNumbersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchAvailablePhoneNumbers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchAvailablePhoneNumbersRequestT = Model::SearchAvailablePhoneNumbersRequest>
-        Model::SearchAvailablePhoneNumbersOutcomeCallable SearchAvailablePhoneNumbersCallable(const SearchAvailablePhoneNumbersRequestT& request) const
+        Model::SearchAvailablePhoneNumbersOutcomeCallable SearchAvailablePhoneNumbersCallable(const SearchAvailablePhoneNumbersRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeClient::SearchAvailablePhoneNumbers, request);
         }
@@ -1556,7 +1554,7 @@ namespace Chime
          * An Async wrapper for SearchAvailablePhoneNumbers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchAvailablePhoneNumbersRequestT = Model::SearchAvailablePhoneNumbersRequest>
-        void SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneNumbersRequestT& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchAvailablePhoneNumbersAsync(const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchAvailablePhoneNumbersRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeClient::SearchAvailablePhoneNumbers, request, handler, context);
         }
@@ -1651,13 +1649,13 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateGlobalSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
+        virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-        Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request) const
+        Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ChimeClient::UpdateGlobalSettings, request);
         }
@@ -1666,7 +1664,7 @@ namespace Chime
          * An Async wrapper for UpdateGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-        void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequestT& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGlobalSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ChimeClient::UpdateGlobalSettings, request, handler, context);
         }

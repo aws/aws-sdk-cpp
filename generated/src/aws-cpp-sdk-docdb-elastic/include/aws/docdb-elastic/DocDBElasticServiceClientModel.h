@@ -34,6 +34,8 @@
 #include <aws/docdb-elastic/model/TagResourceResult.h>
 #include <aws/docdb-elastic/model/UntagResourceResult.h>
 #include <aws/docdb-elastic/model/UpdateClusterResult.h>
+#include <aws/docdb-elastic/model/ListClusterSnapshotsRequest.h>
+#include <aws/docdb-elastic/model/ListClustersRequest.h>
 /* End of service model headers required in DocDBElasticClient header */
 
 namespace Aws

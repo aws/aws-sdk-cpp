@@ -29,6 +29,8 @@
 #include <aws/snow-device-management/model/ListExecutionsResult.h>
 #include <aws/snow-device-management/model/ListTagsForResourceResult.h>
 #include <aws/snow-device-management/model/ListTasksResult.h>
+#include <aws/snow-device-management/model/ListDevicesRequest.h>
+#include <aws/snow-device-management/model/ListTasksRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SnowDeviceManagementClient header */
 

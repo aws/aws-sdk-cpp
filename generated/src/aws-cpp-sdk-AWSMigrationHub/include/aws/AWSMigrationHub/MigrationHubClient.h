@@ -360,13 +360,13 @@ namespace MigrationHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListApplicationStatesOutcome ListApplicationStates(const Model::ListApplicationStatesRequest& request) const;
+        virtual Model::ListApplicationStatesOutcome ListApplicationStates(const Model::ListApplicationStatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApplicationStates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListApplicationStatesRequestT = Model::ListApplicationStatesRequest>
-        Model::ListApplicationStatesOutcomeCallable ListApplicationStatesCallable(const ListApplicationStatesRequestT& request) const
+        Model::ListApplicationStatesOutcomeCallable ListApplicationStatesCallable(const ListApplicationStatesRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubClient::ListApplicationStates, request);
         }
@@ -375,7 +375,7 @@ namespace MigrationHub
          * An Async wrapper for ListApplicationStates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListApplicationStatesRequestT = Model::ListApplicationStatesRequest>
-        void ListApplicationStatesAsync(const ListApplicationStatesRequestT& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListApplicationStatesAsync(const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationStatesRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubClient::ListApplicationStates, request, handler, context);
         }
@@ -446,13 +446,13 @@ namespace MigrationHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMigrationTasksOutcome ListMigrationTasks(const Model::ListMigrationTasksRequest& request) const;
+        virtual Model::ListMigrationTasksOutcome ListMigrationTasks(const Model::ListMigrationTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMigrationTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMigrationTasksRequestT = Model::ListMigrationTasksRequest>
-        Model::ListMigrationTasksOutcomeCallable ListMigrationTasksCallable(const ListMigrationTasksRequestT& request) const
+        Model::ListMigrationTasksOutcomeCallable ListMigrationTasksCallable(const ListMigrationTasksRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubClient::ListMigrationTasks, request);
         }
@@ -461,7 +461,7 @@ namespace MigrationHub
          * An Async wrapper for ListMigrationTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMigrationTasksRequestT = Model::ListMigrationTasksRequest>
-        void ListMigrationTasksAsync(const ListMigrationTasksRequestT& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMigrationTasksAsync(const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMigrationTasksRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubClient::ListMigrationTasks, request, handler, context);
         }
@@ -472,13 +472,13 @@ namespace MigrationHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProgressUpdateStreamsOutcome ListProgressUpdateStreams(const Model::ListProgressUpdateStreamsRequest& request) const;
+        virtual Model::ListProgressUpdateStreamsOutcome ListProgressUpdateStreams(const Model::ListProgressUpdateStreamsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProgressUpdateStreams that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProgressUpdateStreamsRequestT = Model::ListProgressUpdateStreamsRequest>
-        Model::ListProgressUpdateStreamsOutcomeCallable ListProgressUpdateStreamsCallable(const ListProgressUpdateStreamsRequestT& request) const
+        Model::ListProgressUpdateStreamsOutcomeCallable ListProgressUpdateStreamsCallable(const ListProgressUpdateStreamsRequestT& request = {}) const
         {
             return SubmitCallable(&MigrationHubClient::ListProgressUpdateStreams, request);
         }
@@ -487,7 +487,7 @@ namespace MigrationHub
          * An Async wrapper for ListProgressUpdateStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProgressUpdateStreamsRequestT = Model::ListProgressUpdateStreamsRequest>
-        void ListProgressUpdateStreamsAsync(const ListProgressUpdateStreamsRequestT& request, const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProgressUpdateStreamsAsync(const ListProgressUpdateStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProgressUpdateStreamsRequestT& request = {}) const
         {
             return SubmitAsync(&MigrationHubClient::ListProgressUpdateStreams, request, handler, context);
         }

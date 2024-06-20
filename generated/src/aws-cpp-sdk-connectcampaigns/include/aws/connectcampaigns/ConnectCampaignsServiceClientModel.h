@@ -28,6 +28,7 @@
 #include <aws/connectcampaigns/model/ListTagsForResourceResult.h>
 #include <aws/connectcampaigns/model/PutDialRequestBatchResult.h>
 #include <aws/connectcampaigns/model/StartInstanceOnboardingJobResult.h>
+#include <aws/connectcampaigns/model/ListCampaignsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectCampaignsClient header */
 

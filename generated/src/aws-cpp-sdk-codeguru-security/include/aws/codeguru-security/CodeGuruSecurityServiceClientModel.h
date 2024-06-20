@@ -31,6 +31,8 @@
 #include <aws/codeguru-security/model/TagResourceResult.h>
 #include <aws/codeguru-security/model/UntagResourceResult.h>
 #include <aws/codeguru-security/model/UpdateAccountConfigurationResult.h>
+#include <aws/codeguru-security/model/ListScansRequest.h>
+#include <aws/codeguru-security/model/GetAccountConfigurationRequest.h>
 /* End of service model headers required in CodeGuruSecurityClient header */
 
 namespace Aws

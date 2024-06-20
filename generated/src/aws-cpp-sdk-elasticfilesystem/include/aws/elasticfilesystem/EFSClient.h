@@ -576,13 +576,13 @@ namespace EFS
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccessPointsOutcome DescribeAccessPoints(const Model::DescribeAccessPointsRequest& request) const;
+        virtual Model::DescribeAccessPointsOutcome DescribeAccessPoints(const Model::DescribeAccessPointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccessPoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccessPointsRequestT = Model::DescribeAccessPointsRequest>
-        Model::DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const DescribeAccessPointsRequestT& request) const
+        Model::DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const DescribeAccessPointsRequestT& request = {}) const
         {
             return SubmitCallable(&EFSClient::DescribeAccessPoints, request);
         }
@@ -591,7 +591,7 @@ namespace EFS
          * An Async wrapper for DescribeAccessPoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccessPointsRequestT = Model::DescribeAccessPointsRequest>
-        void DescribeAccessPointsAsync(const DescribeAccessPointsRequestT& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccessPointsAsync(const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccessPointsRequestT& request = {}) const
         {
             return SubmitAsync(&EFSClient::DescribeAccessPoints, request, handler, context);
         }
@@ -603,13 +603,13 @@ namespace EFS
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountPreferencesOutcome DescribeAccountPreferences(const Model::DescribeAccountPreferencesRequest& request) const;
+        virtual Model::DescribeAccountPreferencesOutcome DescribeAccountPreferences(const Model::DescribeAccountPreferencesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountPreferences that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountPreferencesRequestT = Model::DescribeAccountPreferencesRequest>
-        Model::DescribeAccountPreferencesOutcomeCallable DescribeAccountPreferencesCallable(const DescribeAccountPreferencesRequestT& request) const
+        Model::DescribeAccountPreferencesOutcomeCallable DescribeAccountPreferencesCallable(const DescribeAccountPreferencesRequestT& request = {}) const
         {
             return SubmitCallable(&EFSClient::DescribeAccountPreferences, request);
         }
@@ -618,7 +618,7 @@ namespace EFS
          * An Async wrapper for DescribeAccountPreferences that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountPreferencesRequestT = Model::DescribeAccountPreferencesRequest>
-        void DescribeAccountPreferencesAsync(const DescribeAccountPreferencesRequestT& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountPreferencesAsync(const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountPreferencesRequestT& request = {}) const
         {
             return SubmitAsync(&EFSClient::DescribeAccountPreferences, request, handler, context);
         }
@@ -702,13 +702,13 @@ namespace EFS
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request) const;
+        virtual Model::DescribeFileSystemsOutcome DescribeFileSystems(const Model::DescribeFileSystemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFileSystems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFileSystemsRequestT = Model::DescribeFileSystemsRequest>
-        Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const DescribeFileSystemsRequestT& request) const
+        Model::DescribeFileSystemsOutcomeCallable DescribeFileSystemsCallable(const DescribeFileSystemsRequestT& request = {}) const
         {
             return SubmitCallable(&EFSClient::DescribeFileSystems, request);
         }
@@ -717,7 +717,7 @@ namespace EFS
          * An Async wrapper for DescribeFileSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFileSystemsRequestT = Model::DescribeFileSystemsRequest>
-        void DescribeFileSystemsAsync(const DescribeFileSystemsRequestT& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFileSystemsAsync(const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFileSystemsRequestT& request = {}) const
         {
             return SubmitAsync(&EFSClient::DescribeFileSystems, request, handler, context);
         }
@@ -799,13 +799,13 @@ namespace EFS
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMountTargetsOutcome DescribeMountTargets(const Model::DescribeMountTargetsRequest& request) const;
+        virtual Model::DescribeMountTargetsOutcome DescribeMountTargets(const Model::DescribeMountTargetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMountTargets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeMountTargetsRequestT = Model::DescribeMountTargetsRequest>
-        Model::DescribeMountTargetsOutcomeCallable DescribeMountTargetsCallable(const DescribeMountTargetsRequestT& request) const
+        Model::DescribeMountTargetsOutcomeCallable DescribeMountTargetsCallable(const DescribeMountTargetsRequestT& request = {}) const
         {
             return SubmitCallable(&EFSClient::DescribeMountTargets, request);
         }
@@ -814,7 +814,7 @@ namespace EFS
          * An Async wrapper for DescribeMountTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeMountTargetsRequestT = Model::DescribeMountTargetsRequest>
-        void DescribeMountTargetsAsync(const DescribeMountTargetsRequestT& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeMountTargetsAsync(const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMountTargetsRequestT& request = {}) const
         {
             return SubmitAsync(&EFSClient::DescribeMountTargets, request, handler, context);
         }
@@ -827,13 +827,13 @@ namespace EFS
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeReplicationConfigurationsOutcome DescribeReplicationConfigurations(const Model::DescribeReplicationConfigurationsRequest& request) const;
+        virtual Model::DescribeReplicationConfigurationsOutcome DescribeReplicationConfigurations(const Model::DescribeReplicationConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeReplicationConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeReplicationConfigurationsRequestT = Model::DescribeReplicationConfigurationsRequest>
-        Model::DescribeReplicationConfigurationsOutcomeCallable DescribeReplicationConfigurationsCallable(const DescribeReplicationConfigurationsRequestT& request) const
+        Model::DescribeReplicationConfigurationsOutcomeCallable DescribeReplicationConfigurationsCallable(const DescribeReplicationConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&EFSClient::DescribeReplicationConfigurations, request);
         }
@@ -842,7 +842,7 @@ namespace EFS
          * An Async wrapper for DescribeReplicationConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeReplicationConfigurationsRequestT = Model::DescribeReplicationConfigurationsRequest>
-        void DescribeReplicationConfigurationsAsync(const DescribeReplicationConfigurationsRequestT& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeReplicationConfigurationsAsync(const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeReplicationConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&EFSClient::DescribeReplicationConfigurations, request, handler, context);
         }

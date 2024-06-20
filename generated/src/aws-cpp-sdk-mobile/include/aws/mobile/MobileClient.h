@@ -84,13 +84,13 @@ namespace Mobile
          * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
+        virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateProject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateProjectRequestT = Model::CreateProjectRequest>
-        Model::CreateProjectOutcomeCallable CreateProjectCallable(const CreateProjectRequestT& request) const
+        Model::CreateProjectOutcomeCallable CreateProjectCallable(const CreateProjectRequestT& request = {}) const
         {
             return SubmitCallable(&MobileClient::CreateProject, request);
         }
@@ -99,7 +99,7 @@ namespace Mobile
          * An Async wrapper for CreateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateProjectRequestT = Model::CreateProjectRequest>
-        void CreateProjectAsync(const CreateProjectRequestT& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateProjectAsync(const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateProjectRequestT& request = {}) const
         {
             return SubmitAsync(&MobileClient::CreateProject, request, handler, context);
         }
@@ -241,13 +241,13 @@ namespace Mobile
          * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBundlesOutcome ListBundles(const Model::ListBundlesRequest& request) const;
+        virtual Model::ListBundlesOutcome ListBundles(const Model::ListBundlesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBundles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBundlesRequestT = Model::ListBundlesRequest>
-        Model::ListBundlesOutcomeCallable ListBundlesCallable(const ListBundlesRequestT& request) const
+        Model::ListBundlesOutcomeCallable ListBundlesCallable(const ListBundlesRequestT& request = {}) const
         {
             return SubmitCallable(&MobileClient::ListBundles, request);
         }
@@ -256,7 +256,7 @@ namespace Mobile
          * An Async wrapper for ListBundles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBundlesRequestT = Model::ListBundlesRequest>
-        void ListBundlesAsync(const ListBundlesRequestT& request, const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBundlesAsync(const ListBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBundlesRequestT& request = {}) const
         {
             return SubmitAsync(&MobileClient::ListBundles, request, handler, context);
         }
@@ -266,13 +266,13 @@ namespace Mobile
          * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
+        virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProjects that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request) const
+        Model::ListProjectsOutcomeCallable ListProjectsCallable(const ListProjectsRequestT& request = {}) const
         {
             return SubmitCallable(&MobileClient::ListProjects, request);
         }
@@ -281,7 +281,7 @@ namespace Mobile
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProjectsRequestT = Model::ListProjectsRequest>
-        void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProjectsAsync(const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProjectsRequestT& request = {}) const
         {
             return SubmitAsync(&MobileClient::ListProjects, request, handler, context);
         }

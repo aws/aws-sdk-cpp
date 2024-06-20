@@ -372,13 +372,13 @@ namespace InternetMonitor
          * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInternetEventsOutcome ListInternetEvents(const Model::ListInternetEventsRequest& request) const;
+        virtual Model::ListInternetEventsOutcome ListInternetEvents(const Model::ListInternetEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListInternetEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListInternetEventsRequestT = Model::ListInternetEventsRequest>
-        Model::ListInternetEventsOutcomeCallable ListInternetEventsCallable(const ListInternetEventsRequestT& request) const
+        Model::ListInternetEventsOutcomeCallable ListInternetEventsCallable(const ListInternetEventsRequestT& request = {}) const
         {
             return SubmitCallable(&InternetMonitorClient::ListInternetEvents, request);
         }
@@ -387,7 +387,7 @@ namespace InternetMonitor
          * An Async wrapper for ListInternetEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListInternetEventsRequestT = Model::ListInternetEventsRequest>
-        void ListInternetEventsAsync(const ListInternetEventsRequestT& request, const ListInternetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListInternetEventsAsync(const ListInternetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInternetEventsRequestT& request = {}) const
         {
             return SubmitAsync(&InternetMonitorClient::ListInternetEvents, request, handler, context);
         }
@@ -399,13 +399,13 @@ namespace InternetMonitor
          * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListMonitors">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request) const;
+        virtual Model::ListMonitorsOutcome ListMonitors(const Model::ListMonitorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMonitors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request) const
+        Model::ListMonitorsOutcomeCallable ListMonitorsCallable(const ListMonitorsRequestT& request = {}) const
         {
             return SubmitCallable(&InternetMonitorClient::ListMonitors, request);
         }
@@ -414,7 +414,7 @@ namespace InternetMonitor
          * An Async wrapper for ListMonitors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMonitorsRequestT = Model::ListMonitorsRequest>
-        void ListMonitorsAsync(const ListMonitorsRequestT& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMonitorsAsync(const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMonitorsRequestT& request = {}) const
         {
             return SubmitAsync(&InternetMonitorClient::ListMonitors, request, handler, context);
         }

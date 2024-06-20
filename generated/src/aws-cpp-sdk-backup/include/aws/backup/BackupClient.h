@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup/BackupServiceClientModel.h>
-#include <aws/backup/model/GetSupportedResourceTypesRequest.h>
 
 namespace Aws
 {
@@ -793,13 +792,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGlobalSettingsOutcome DescribeGlobalSettings(const Model::DescribeGlobalSettingsRequest& request) const;
+        virtual Model::DescribeGlobalSettingsOutcome DescribeGlobalSettings(const Model::DescribeGlobalSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGlobalSettingsRequestT = Model::DescribeGlobalSettingsRequest>
-        Model::DescribeGlobalSettingsOutcomeCallable DescribeGlobalSettingsCallable(const DescribeGlobalSettingsRequestT& request) const
+        Model::DescribeGlobalSettingsOutcomeCallable DescribeGlobalSettingsCallable(const DescribeGlobalSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::DescribeGlobalSettings, request);
         }
@@ -808,7 +807,7 @@ namespace Backup
          * An Async wrapper for DescribeGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGlobalSettingsRequestT = Model::DescribeGlobalSettingsRequest>
-        void DescribeGlobalSettingsAsync(const DescribeGlobalSettingsRequestT& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGlobalSettingsAsync(const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGlobalSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::DescribeGlobalSettings, request, handler, context);
         }
@@ -875,13 +874,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRegionSettingsOutcome DescribeRegionSettings(const Model::DescribeRegionSettingsRequest& request) const;
+        virtual Model::DescribeRegionSettingsOutcome DescribeRegionSettings(const Model::DescribeRegionSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRegionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRegionSettingsRequestT = Model::DescribeRegionSettingsRequest>
-        Model::DescribeRegionSettingsOutcomeCallable DescribeRegionSettingsCallable(const DescribeRegionSettingsRequestT& request) const
+        Model::DescribeRegionSettingsOutcomeCallable DescribeRegionSettingsCallable(const DescribeRegionSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::DescribeRegionSettings, request);
         }
@@ -890,7 +889,7 @@ namespace Backup
          * An Async wrapper for DescribeRegionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRegionSettingsRequestT = Model::DescribeRegionSettingsRequest>
-        void DescribeRegionSettingsAsync(const DescribeRegionSettingsRequestT& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRegionSettingsAsync(const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRegionSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::DescribeRegionSettings, request, handler, context);
         }
@@ -1411,13 +1410,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupJobSummariesOutcome ListBackupJobSummaries(const Model::ListBackupJobSummariesRequest& request) const;
+        virtual Model::ListBackupJobSummariesOutcome ListBackupJobSummaries(const Model::ListBackupJobSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackupJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupJobSummariesRequestT = Model::ListBackupJobSummariesRequest>
-        Model::ListBackupJobSummariesOutcomeCallable ListBackupJobSummariesCallable(const ListBackupJobSummariesRequestT& request) const
+        Model::ListBackupJobSummariesOutcomeCallable ListBackupJobSummariesCallable(const ListBackupJobSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListBackupJobSummaries, request);
         }
@@ -1426,7 +1425,7 @@ namespace Backup
          * An Async wrapper for ListBackupJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupJobSummariesRequestT = Model::ListBackupJobSummariesRequest>
-        void ListBackupJobSummariesAsync(const ListBackupJobSummariesRequestT& request, const ListBackupJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupJobSummariesAsync(const ListBackupJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupJobSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListBackupJobSummaries, request, handler, context);
         }
@@ -1439,13 +1438,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupJobsOutcome ListBackupJobs(const Model::ListBackupJobsRequest& request) const;
+        virtual Model::ListBackupJobsOutcome ListBackupJobs(const Model::ListBackupJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackupJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupJobsRequestT = Model::ListBackupJobsRequest>
-        Model::ListBackupJobsOutcomeCallable ListBackupJobsCallable(const ListBackupJobsRequestT& request) const
+        Model::ListBackupJobsOutcomeCallable ListBackupJobsCallable(const ListBackupJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListBackupJobs, request);
         }
@@ -1454,7 +1453,7 @@ namespace Backup
          * An Async wrapper for ListBackupJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupJobsRequestT = Model::ListBackupJobsRequest>
-        void ListBackupJobsAsync(const ListBackupJobsRequestT& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupJobsAsync(const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListBackupJobs, request, handler, context);
         }
@@ -1465,13 +1464,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupPlanTemplatesOutcome ListBackupPlanTemplates(const Model::ListBackupPlanTemplatesRequest& request) const;
+        virtual Model::ListBackupPlanTemplatesOutcome ListBackupPlanTemplates(const Model::ListBackupPlanTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackupPlanTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupPlanTemplatesRequestT = Model::ListBackupPlanTemplatesRequest>
-        Model::ListBackupPlanTemplatesOutcomeCallable ListBackupPlanTemplatesCallable(const ListBackupPlanTemplatesRequestT& request) const
+        Model::ListBackupPlanTemplatesOutcomeCallable ListBackupPlanTemplatesCallable(const ListBackupPlanTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListBackupPlanTemplates, request);
         }
@@ -1480,7 +1479,7 @@ namespace Backup
          * An Async wrapper for ListBackupPlanTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupPlanTemplatesRequestT = Model::ListBackupPlanTemplatesRequest>
-        void ListBackupPlanTemplatesAsync(const ListBackupPlanTemplatesRequestT& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupPlanTemplatesAsync(const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupPlanTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListBackupPlanTemplates, request, handler, context);
         }
@@ -1520,13 +1519,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupPlansOutcome ListBackupPlans(const Model::ListBackupPlansRequest& request) const;
+        virtual Model::ListBackupPlansOutcome ListBackupPlans(const Model::ListBackupPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackupPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupPlansRequestT = Model::ListBackupPlansRequest>
-        Model::ListBackupPlansOutcomeCallable ListBackupPlansCallable(const ListBackupPlansRequestT& request) const
+        Model::ListBackupPlansOutcomeCallable ListBackupPlansCallable(const ListBackupPlansRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListBackupPlans, request);
         }
@@ -1535,7 +1534,7 @@ namespace Backup
          * An Async wrapper for ListBackupPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupPlansRequestT = Model::ListBackupPlansRequest>
-        void ListBackupPlansAsync(const ListBackupPlansRequestT& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupPlansAsync(const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupPlansRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListBackupPlans, request, handler, context);
         }
@@ -1572,13 +1571,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupVaults">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBackupVaultsOutcome ListBackupVaults(const Model::ListBackupVaultsRequest& request) const;
+        virtual Model::ListBackupVaultsOutcome ListBackupVaults(const Model::ListBackupVaultsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBackupVaults that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBackupVaultsRequestT = Model::ListBackupVaultsRequest>
-        Model::ListBackupVaultsOutcomeCallable ListBackupVaultsCallable(const ListBackupVaultsRequestT& request) const
+        Model::ListBackupVaultsOutcomeCallable ListBackupVaultsCallable(const ListBackupVaultsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListBackupVaults, request);
         }
@@ -1587,7 +1586,7 @@ namespace Backup
          * An Async wrapper for ListBackupVaults that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBackupVaultsRequestT = Model::ListBackupVaultsRequest>
-        void ListBackupVaultsAsync(const ListBackupVaultsRequestT& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBackupVaultsAsync(const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBackupVaultsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListBackupVaults, request, handler, context);
         }
@@ -1602,13 +1601,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCopyJobSummariesOutcome ListCopyJobSummaries(const Model::ListCopyJobSummariesRequest& request) const;
+        virtual Model::ListCopyJobSummariesOutcome ListCopyJobSummaries(const Model::ListCopyJobSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCopyJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCopyJobSummariesRequestT = Model::ListCopyJobSummariesRequest>
-        Model::ListCopyJobSummariesOutcomeCallable ListCopyJobSummariesCallable(const ListCopyJobSummariesRequestT& request) const
+        Model::ListCopyJobSummariesOutcomeCallable ListCopyJobSummariesCallable(const ListCopyJobSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListCopyJobSummaries, request);
         }
@@ -1617,7 +1616,7 @@ namespace Backup
          * An Async wrapper for ListCopyJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCopyJobSummariesRequestT = Model::ListCopyJobSummariesRequest>
-        void ListCopyJobSummariesAsync(const ListCopyJobSummariesRequestT& request, const ListCopyJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCopyJobSummariesAsync(const ListCopyJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCopyJobSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListCopyJobSummaries, request, handler, context);
         }
@@ -1627,13 +1626,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCopyJobsOutcome ListCopyJobs(const Model::ListCopyJobsRequest& request) const;
+        virtual Model::ListCopyJobsOutcome ListCopyJobs(const Model::ListCopyJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCopyJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCopyJobsRequestT = Model::ListCopyJobsRequest>
-        Model::ListCopyJobsOutcomeCallable ListCopyJobsCallable(const ListCopyJobsRequestT& request) const
+        Model::ListCopyJobsOutcomeCallable ListCopyJobsCallable(const ListCopyJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListCopyJobs, request);
         }
@@ -1642,7 +1641,7 @@ namespace Backup
          * An Async wrapper for ListCopyJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCopyJobsRequestT = Model::ListCopyJobsRequest>
-        void ListCopyJobsAsync(const ListCopyJobsRequestT& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCopyJobsAsync(const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCopyJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListCopyJobs, request, handler, context);
         }
@@ -1653,13 +1652,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFrameworksOutcome ListFrameworks(const Model::ListFrameworksRequest& request) const;
+        virtual Model::ListFrameworksOutcome ListFrameworks(const Model::ListFrameworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFrameworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFrameworksRequestT = Model::ListFrameworksRequest>
-        Model::ListFrameworksOutcomeCallable ListFrameworksCallable(const ListFrameworksRequestT& request) const
+        Model::ListFrameworksOutcomeCallable ListFrameworksCallable(const ListFrameworksRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListFrameworks, request);
         }
@@ -1668,7 +1667,7 @@ namespace Backup
          * An Async wrapper for ListFrameworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFrameworksRequestT = Model::ListFrameworksRequest>
-        void ListFrameworksAsync(const ListFrameworksRequestT& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFrameworksAsync(const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFrameworksRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListFrameworks, request, handler, context);
         }
@@ -1679,13 +1678,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLegalHoldsOutcome ListLegalHolds(const Model::ListLegalHoldsRequest& request) const;
+        virtual Model::ListLegalHoldsOutcome ListLegalHolds(const Model::ListLegalHoldsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLegalHolds that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLegalHoldsRequestT = Model::ListLegalHoldsRequest>
-        Model::ListLegalHoldsOutcomeCallable ListLegalHoldsCallable(const ListLegalHoldsRequestT& request) const
+        Model::ListLegalHoldsOutcomeCallable ListLegalHoldsCallable(const ListLegalHoldsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListLegalHolds, request);
         }
@@ -1694,7 +1693,7 @@ namespace Backup
          * An Async wrapper for ListLegalHolds that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLegalHoldsRequestT = Model::ListLegalHoldsRequest>
-        void ListLegalHoldsAsync(const ListLegalHoldsRequestT& request, const ListLegalHoldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLegalHoldsAsync(const ListLegalHoldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLegalHoldsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListLegalHolds, request, handler, context);
         }
@@ -1706,13 +1705,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListProtectedResourcesOutcome ListProtectedResources(const Model::ListProtectedResourcesRequest& request) const;
+        virtual Model::ListProtectedResourcesOutcome ListProtectedResources(const Model::ListProtectedResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListProtectedResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListProtectedResourcesRequestT = Model::ListProtectedResourcesRequest>
-        Model::ListProtectedResourcesOutcomeCallable ListProtectedResourcesCallable(const ListProtectedResourcesRequestT& request) const
+        Model::ListProtectedResourcesOutcomeCallable ListProtectedResourcesCallable(const ListProtectedResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListProtectedResources, request);
         }
@@ -1721,7 +1720,7 @@ namespace Backup
          * An Async wrapper for ListProtectedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListProtectedResourcesRequestT = Model::ListProtectedResourcesRequest>
-        void ListProtectedResourcesAsync(const ListProtectedResourcesRequestT& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListProtectedResourcesAsync(const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListProtectedResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListProtectedResources, request, handler, context);
         }
@@ -1837,13 +1836,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReportJobsOutcome ListReportJobs(const Model::ListReportJobsRequest& request) const;
+        virtual Model::ListReportJobsOutcome ListReportJobs(const Model::ListReportJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReportJobsRequestT = Model::ListReportJobsRequest>
-        Model::ListReportJobsOutcomeCallable ListReportJobsCallable(const ListReportJobsRequestT& request) const
+        Model::ListReportJobsOutcomeCallable ListReportJobsCallable(const ListReportJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListReportJobs, request);
         }
@@ -1852,7 +1851,7 @@ namespace Backup
          * An Async wrapper for ListReportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReportJobsRequestT = Model::ListReportJobsRequest>
-        void ListReportJobsAsync(const ListReportJobsRequestT& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReportJobsAsync(const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListReportJobs, request, handler, context);
         }
@@ -1863,13 +1862,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReportPlansOutcome ListReportPlans(const Model::ListReportPlansRequest& request) const;
+        virtual Model::ListReportPlansOutcome ListReportPlans(const Model::ListReportPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReportPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReportPlansRequestT = Model::ListReportPlansRequest>
-        Model::ListReportPlansOutcomeCallable ListReportPlansCallable(const ListReportPlansRequestT& request) const
+        Model::ListReportPlansOutcomeCallable ListReportPlansCallable(const ListReportPlansRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListReportPlans, request);
         }
@@ -1878,7 +1877,7 @@ namespace Backup
          * An Async wrapper for ListReportPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReportPlansRequestT = Model::ListReportPlansRequest>
-        void ListReportPlansAsync(const ListReportPlansRequestT& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReportPlansAsync(const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReportPlansRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListReportPlans, request, handler, context);
         }
@@ -1893,13 +1892,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRestoreJobSummariesOutcome ListRestoreJobSummaries(const Model::ListRestoreJobSummariesRequest& request) const;
+        virtual Model::ListRestoreJobSummariesOutcome ListRestoreJobSummaries(const Model::ListRestoreJobSummariesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRestoreJobSummaries that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRestoreJobSummariesRequestT = Model::ListRestoreJobSummariesRequest>
-        Model::ListRestoreJobSummariesOutcomeCallable ListRestoreJobSummariesCallable(const ListRestoreJobSummariesRequestT& request) const
+        Model::ListRestoreJobSummariesOutcomeCallable ListRestoreJobSummariesCallable(const ListRestoreJobSummariesRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListRestoreJobSummaries, request);
         }
@@ -1908,7 +1907,7 @@ namespace Backup
          * An Async wrapper for ListRestoreJobSummaries that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRestoreJobSummariesRequestT = Model::ListRestoreJobSummariesRequest>
-        void ListRestoreJobSummariesAsync(const ListRestoreJobSummariesRequestT& request, const ListRestoreJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRestoreJobSummariesAsync(const ListRestoreJobSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRestoreJobSummariesRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListRestoreJobSummaries, request, handler, context);
         }
@@ -1919,13 +1918,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRestoreJobsOutcome ListRestoreJobs(const Model::ListRestoreJobsRequest& request) const;
+        virtual Model::ListRestoreJobsOutcome ListRestoreJobs(const Model::ListRestoreJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRestoreJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRestoreJobsRequestT = Model::ListRestoreJobsRequest>
-        Model::ListRestoreJobsOutcomeCallable ListRestoreJobsCallable(const ListRestoreJobsRequestT& request) const
+        Model::ListRestoreJobsOutcomeCallable ListRestoreJobsCallable(const ListRestoreJobsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListRestoreJobs, request);
         }
@@ -1934,7 +1933,7 @@ namespace Backup
          * An Async wrapper for ListRestoreJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRestoreJobsRequestT = Model::ListRestoreJobsRequest>
-        void ListRestoreJobsAsync(const ListRestoreJobsRequestT& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRestoreJobsAsync(const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRestoreJobsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListRestoreJobs, request, handler, context);
         }
@@ -1973,13 +1972,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRestoreTestingPlansOutcome ListRestoreTestingPlans(const Model::ListRestoreTestingPlansRequest& request) const;
+        virtual Model::ListRestoreTestingPlansOutcome ListRestoreTestingPlans(const Model::ListRestoreTestingPlansRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRestoreTestingPlans that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRestoreTestingPlansRequestT = Model::ListRestoreTestingPlansRequest>
-        Model::ListRestoreTestingPlansOutcomeCallable ListRestoreTestingPlansCallable(const ListRestoreTestingPlansRequestT& request) const
+        Model::ListRestoreTestingPlansOutcomeCallable ListRestoreTestingPlansCallable(const ListRestoreTestingPlansRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::ListRestoreTestingPlans, request);
         }
@@ -1988,7 +1987,7 @@ namespace Backup
          * An Async wrapper for ListRestoreTestingPlans that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRestoreTestingPlansRequestT = Model::ListRestoreTestingPlansRequest>
-        void ListRestoreTestingPlansAsync(const ListRestoreTestingPlansRequestT& request, const ListRestoreTestingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRestoreTestingPlansAsync(const ListRestoreTestingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRestoreTestingPlansRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::ListRestoreTestingPlans, request, handler, context);
         }
@@ -2413,13 +2412,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
+        virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-        Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request) const
+        Model::UpdateGlobalSettingsOutcomeCallable UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::UpdateGlobalSettings, request);
         }
@@ -2428,7 +2427,7 @@ namespace Backup
          * An Async wrapper for UpdateGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateGlobalSettingsRequestT = Model::UpdateGlobalSettingsRequest>
-        void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequestT& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateGlobalSettingsAsync(const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateGlobalSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::UpdateGlobalSettings, request, handler, context);
         }
@@ -2478,13 +2477,13 @@ namespace Backup
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateRegionSettingsOutcome UpdateRegionSettings(const Model::UpdateRegionSettingsRequest& request) const;
+        virtual Model::UpdateRegionSettingsOutcome UpdateRegionSettings(const Model::UpdateRegionSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateRegionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateRegionSettingsRequestT = Model::UpdateRegionSettingsRequest>
-        Model::UpdateRegionSettingsOutcomeCallable UpdateRegionSettingsCallable(const UpdateRegionSettingsRequestT& request) const
+        Model::UpdateRegionSettingsOutcomeCallable UpdateRegionSettingsCallable(const UpdateRegionSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&BackupClient::UpdateRegionSettings, request);
         }
@@ -2493,7 +2492,7 @@ namespace Backup
          * An Async wrapper for UpdateRegionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateRegionSettingsRequestT = Model::UpdateRegionSettingsRequest>
-        void UpdateRegionSettingsAsync(const UpdateRegionSettingsRequestT& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateRegionSettingsAsync(const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateRegionSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&BackupClient::UpdateRegionSettings, request, handler, context);
         }

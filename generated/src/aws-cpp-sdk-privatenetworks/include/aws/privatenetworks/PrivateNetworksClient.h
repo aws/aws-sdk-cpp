@@ -10,7 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/privatenetworks/PrivateNetworksServiceClientModel.h>
-#include <aws/privatenetworks/model/PingRequest.h>
 
 namespace Aws
 {
@@ -540,13 +539,13 @@ namespace PrivateNetworks
          * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/ListNetworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNetworksOutcome ListNetworks(const Model::ListNetworksRequest& request) const;
+        virtual Model::ListNetworksOutcome ListNetworks(const Model::ListNetworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNetworksRequestT = Model::ListNetworksRequest>
-        Model::ListNetworksOutcomeCallable ListNetworksCallable(const ListNetworksRequestT& request) const
+        Model::ListNetworksOutcomeCallable ListNetworksCallable(const ListNetworksRequestT& request = {}) const
         {
             return SubmitCallable(&PrivateNetworksClient::ListNetworks, request);
         }
@@ -555,7 +554,7 @@ namespace PrivateNetworks
          * An Async wrapper for ListNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNetworksRequestT = Model::ListNetworksRequest>
-        void ListNetworksAsync(const ListNetworksRequestT& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNetworksAsync(const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNetworksRequestT& request = {}) const
         {
             return SubmitAsync(&PrivateNetworksClient::ListNetworks, request, handler, context);
         }

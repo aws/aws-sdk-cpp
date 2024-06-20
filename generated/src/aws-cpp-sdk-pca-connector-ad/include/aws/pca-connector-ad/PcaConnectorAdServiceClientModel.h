@@ -32,6 +32,8 @@
 #include <aws/pca-connector-ad/model/ListTagsForResourceResult.h>
 #include <aws/pca-connector-ad/model/ListTemplateGroupAccessControlEntriesResult.h>
 #include <aws/pca-connector-ad/model/ListTemplatesResult.h>
+#include <aws/pca-connector-ad/model/ListDirectoryRegistrationsRequest.h>
+#include <aws/pca-connector-ad/model/ListConnectorsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PcaConnectorAdClient header */
 

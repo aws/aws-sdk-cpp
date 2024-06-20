@@ -93,6 +93,21 @@
 #include <aws/appstream/model/UpdateFleetResult.h>
 #include <aws/appstream/model/UpdateImagePermissionsResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
+#include <aws/appstream/model/DescribeAppBlockBuildersRequest.h>
+#include <aws/appstream/model/DescribeImagesRequest.h>
+#include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
+#include <aws/appstream/model/DescribeUsageReportSubscriptionsRequest.h>
+#include <aws/appstream/model/DescribeImageBuildersRequest.h>
+#include <aws/appstream/model/CreateUsageReportSubscriptionRequest.h>
+#include <aws/appstream/model/DeleteUsageReportSubscriptionRequest.h>
+#include <aws/appstream/model/DescribeUserStackAssociationsRequest.h>
+#include <aws/appstream/model/DescribeFleetsRequest.h>
+#include <aws/appstream/model/DescribeStacksRequest.h>
+#include <aws/appstream/model/DescribeApplicationsRequest.h>
+#include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsRequest.h>
+#include <aws/appstream/model/UpdateFleetRequest.h>
+#include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
+#include <aws/appstream/model/DescribeAppBlocksRequest.h>
 /* End of service model headers required in AppStreamClient header */
 
 namespace Aws

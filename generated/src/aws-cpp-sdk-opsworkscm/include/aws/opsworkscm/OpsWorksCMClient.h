@@ -314,13 +314,13 @@ namespace OpsWorksCM
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
+        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request) const
+        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksCMClient::DescribeAccountAttributes, request);
         }
@@ -329,7 +329,7 @@ namespace OpsWorksCM
          * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        void DescribeAccountAttributesAsync(const DescribeAccountAttributesRequestT& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountAttributesAsync(const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksCMClient::DescribeAccountAttributes, request, handler, context);
         }
@@ -344,13 +344,13 @@ namespace OpsWorksCM
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
+        virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeBackups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request) const
+        Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksCMClient::DescribeBackups, request);
         }
@@ -359,7 +359,7 @@ namespace OpsWorksCM
          * An Async wrapper for DescribeBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeBackupsRequestT = Model::DescribeBackupsRequest>
-        void DescribeBackupsAsync(const DescribeBackupsRequestT& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeBackupsAsync(const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeBackupsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksCMClient::DescribeBackups, request, handler, context);
         }
@@ -432,13 +432,13 @@ namespace OpsWorksCM
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServersOutcome DescribeServers(const Model::DescribeServersRequest& request) const;
+        virtual Model::DescribeServersOutcome DescribeServers(const Model::DescribeServersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServersRequestT = Model::DescribeServersRequest>
-        Model::DescribeServersOutcomeCallable DescribeServersCallable(const DescribeServersRequestT& request) const
+        Model::DescribeServersOutcomeCallable DescribeServersCallable(const DescribeServersRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksCMClient::DescribeServers, request);
         }
@@ -447,7 +447,7 @@ namespace OpsWorksCM
          * An Async wrapper for DescribeServers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServersRequestT = Model::DescribeServersRequest>
-        void DescribeServersAsync(const DescribeServersRequestT& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServersAsync(const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServersRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksCMClient::DescribeServers, request, handler, context);
         }

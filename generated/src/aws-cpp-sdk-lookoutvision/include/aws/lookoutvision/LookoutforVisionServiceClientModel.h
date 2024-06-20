@@ -40,6 +40,7 @@
 #include <aws/lookoutvision/model/TagResourceResult.h>
 #include <aws/lookoutvision/model/UntagResourceResult.h>
 #include <aws/lookoutvision/model/UpdateDatasetEntriesResult.h>
+#include <aws/lookoutvision/model/ListProjectsRequest.h>
 /* End of service model headers required in LookoutforVisionClient header */
 
 namespace Aws

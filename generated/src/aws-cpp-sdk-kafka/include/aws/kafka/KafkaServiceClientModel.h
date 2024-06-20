@@ -68,6 +68,13 @@
 #include <aws/kafka/model/UpdateReplicationInfoResult.h>
 #include <aws/kafka/model/UpdateSecurityResult.h>
 #include <aws/kafka/model/UpdateStorageResult.h>
+#include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
+#include <aws/kafka/model/ListVpcConnectionsRequest.h>
+#include <aws/kafka/model/ListConfigurationsRequest.h>
+#include <aws/kafka/model/ListClustersRequest.h>
+#include <aws/kafka/model/ListClustersV2Request.h>
+#include <aws/kafka/model/ListReplicatorsRequest.h>
+#include <aws/kafka/model/ListKafkaVersionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KafkaClient header */
 

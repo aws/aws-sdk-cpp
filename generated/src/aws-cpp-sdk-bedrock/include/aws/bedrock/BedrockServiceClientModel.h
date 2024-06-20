@@ -48,6 +48,14 @@
 #include <aws/bedrock/model/UntagResourceResult.h>
 #include <aws/bedrock/model/UpdateGuardrailResult.h>
 #include <aws/bedrock/model/UpdateProvisionedModelThroughputResult.h>
+#include <aws/bedrock/model/ListGuardrailsRequest.h>
+#include <aws/bedrock/model/ListCustomModelsRequest.h>
+#include <aws/bedrock/model/GetModelInvocationLoggingConfigurationRequest.h>
+#include <aws/bedrock/model/ListEvaluationJobsRequest.h>
+#include <aws/bedrock/model/ListModelCustomizationJobsRequest.h>
+#include <aws/bedrock/model/ListProvisionedModelThroughputsRequest.h>
+#include <aws/bedrock/model/ListFoundationModelsRequest.h>
+#include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationRequest.h>
 /* End of service model headers required in BedrockClient header */
 
 namespace Aws

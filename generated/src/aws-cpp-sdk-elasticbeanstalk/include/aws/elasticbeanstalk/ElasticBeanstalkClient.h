@@ -103,13 +103,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">AWS
          * API Reference</a></p>
          */
-        virtual Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request) const;
+        virtual Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request = {}) const;
 
         /**
          * A Callable wrapper for AbortEnvironmentUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename AbortEnvironmentUpdateRequestT = Model::AbortEnvironmentUpdateRequest>
-        Model::AbortEnvironmentUpdateOutcomeCallable AbortEnvironmentUpdateCallable(const AbortEnvironmentUpdateRequestT& request) const
+        Model::AbortEnvironmentUpdateOutcomeCallable AbortEnvironmentUpdateCallable(const AbortEnvironmentUpdateRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::AbortEnvironmentUpdate, request);
         }
@@ -118,7 +118,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for AbortEnvironmentUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename AbortEnvironmentUpdateRequestT = Model::AbortEnvironmentUpdateRequest>
-        void AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateRequestT& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void AbortEnvironmentUpdateAsync(const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AbortEnvironmentUpdateRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::AbortEnvironmentUpdate, request, handler, context);
         }
@@ -218,13 +218,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ComposeEnvironmentsOutcome ComposeEnvironments(const Model::ComposeEnvironmentsRequest& request) const;
+        virtual Model::ComposeEnvironmentsOutcome ComposeEnvironments(const Model::ComposeEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ComposeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ComposeEnvironmentsRequestT = Model::ComposeEnvironmentsRequest>
-        Model::ComposeEnvironmentsOutcomeCallable ComposeEnvironmentsCallable(const ComposeEnvironmentsRequestT& request) const
+        Model::ComposeEnvironmentsOutcomeCallable ComposeEnvironmentsCallable(const ComposeEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::ComposeEnvironments, request);
         }
@@ -233,7 +233,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for ComposeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ComposeEnvironmentsRequestT = Model::ComposeEnvironmentsRequest>
-        void ComposeEnvironmentsAsync(const ComposeEnvironmentsRequestT& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ComposeEnvironmentsAsync(const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ComposeEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::ComposeEnvironments, request, handler, context);
         }
@@ -396,13 +396,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
+        virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateStorageLocation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateStorageLocationRequestT = Model::CreateStorageLocationRequest>
-        Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const CreateStorageLocationRequestT& request) const
+        Model::CreateStorageLocationOutcomeCallable CreateStorageLocationCallable(const CreateStorageLocationRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::CreateStorageLocation, request);
         }
@@ -411,7 +411,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for CreateStorageLocation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateStorageLocationRequestT = Model::CreateStorageLocationRequest>
-        void CreateStorageLocationAsync(const CreateStorageLocationRequestT& request, const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateStorageLocationAsync(const CreateStorageLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateStorageLocationRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::CreateStorageLocation, request, handler, context);
         }
@@ -537,13 +537,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeletePlatformVersionOutcome DeletePlatformVersion(const Model::DeletePlatformVersionRequest& request) const;
+        virtual Model::DeletePlatformVersionOutcome DeletePlatformVersion(const Model::DeletePlatformVersionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeletePlatformVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeletePlatformVersionRequestT = Model::DeletePlatformVersionRequest>
-        Model::DeletePlatformVersionOutcomeCallable DeletePlatformVersionCallable(const DeletePlatformVersionRequestT& request) const
+        Model::DeletePlatformVersionOutcomeCallable DeletePlatformVersionCallable(const DeletePlatformVersionRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DeletePlatformVersion, request);
         }
@@ -552,7 +552,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DeletePlatformVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeletePlatformVersionRequestT = Model::DeletePlatformVersionRequest>
-        void DeletePlatformVersionAsync(const DeletePlatformVersionRequestT& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeletePlatformVersionAsync(const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeletePlatformVersionRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DeletePlatformVersion, request, handler, context);
         }
@@ -564,13 +564,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
+        virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAccountAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request) const
+        Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeAccountAttributes, request);
         }
@@ -579,7 +579,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeAccountAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAccountAttributesRequestT = Model::DescribeAccountAttributesRequest>
-        void DescribeAccountAttributesAsync(const DescribeAccountAttributesRequestT& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAccountAttributesAsync(const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAccountAttributesRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeAccountAttributes, request, handler, context);
         }
@@ -589,13 +589,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
+        virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeApplicationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeApplicationVersionsRequestT = Model::DescribeApplicationVersionsRequest>
-        Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const DescribeApplicationVersionsRequestT& request) const
+        Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const DescribeApplicationVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeApplicationVersions, request);
         }
@@ -604,7 +604,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeApplicationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeApplicationVersionsRequestT = Model::DescribeApplicationVersionsRequest>
-        void DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequestT& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeApplicationVersionsAsync(const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeApplicationVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeApplicationVersions, request, handler, context);
         }
@@ -615,13 +615,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
+        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
-        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const DescribeApplicationsRequestT& request) const
+        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const DescribeApplicationsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeApplications, request);
         }
@@ -630,7 +630,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
-        void DescribeApplicationsAsync(const DescribeApplicationsRequestT& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeApplicationsAsync(const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeApplications, request, handler, context);
         }
@@ -644,13 +644,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
+        virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeConfigurationOptions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeConfigurationOptionsRequestT = Model::DescribeConfigurationOptionsRequest>
-        Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const DescribeConfigurationOptionsRequestT& request) const
+        Model::DescribeConfigurationOptionsOutcomeCallable DescribeConfigurationOptionsCallable(const DescribeConfigurationOptionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeConfigurationOptions, request);
         }
@@ -659,7 +659,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeConfigurationOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeConfigurationOptionsRequestT = Model::DescribeConfigurationOptionsRequest>
-        void DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsRequestT& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeConfigurationOptionsAsync(const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeConfigurationOptionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeConfigurationOptions, request, handler, context);
         }
@@ -704,13 +704,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request) const;
+        virtual Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironmentHealth that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentHealthRequestT = Model::DescribeEnvironmentHealthRequest>
-        Model::DescribeEnvironmentHealthOutcomeCallable DescribeEnvironmentHealthCallable(const DescribeEnvironmentHealthRequestT& request) const
+        Model::DescribeEnvironmentHealthOutcomeCallable DescribeEnvironmentHealthCallable(const DescribeEnvironmentHealthRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEnvironmentHealth, request);
         }
@@ -719,7 +719,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEnvironmentHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentHealthRequestT = Model::DescribeEnvironmentHealthRequest>
-        void DescribeEnvironmentHealthAsync(const DescribeEnvironmentHealthRequestT& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentHealthAsync(const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentHealthRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEnvironmentHealth, request, handler, context);
         }
@@ -730,13 +730,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentManagedActionHistoryOutcome DescribeEnvironmentManagedActionHistory(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
+        virtual Model::DescribeEnvironmentManagedActionHistoryOutcome DescribeEnvironmentManagedActionHistory(const Model::DescribeEnvironmentManagedActionHistoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironmentManagedActionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentManagedActionHistoryRequestT = Model::DescribeEnvironmentManagedActionHistoryRequest>
-        Model::DescribeEnvironmentManagedActionHistoryOutcomeCallable DescribeEnvironmentManagedActionHistoryCallable(const DescribeEnvironmentManagedActionHistoryRequestT& request) const
+        Model::DescribeEnvironmentManagedActionHistoryOutcomeCallable DescribeEnvironmentManagedActionHistoryCallable(const DescribeEnvironmentManagedActionHistoryRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory, request);
         }
@@ -745,7 +745,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEnvironmentManagedActionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentManagedActionHistoryRequestT = Model::DescribeEnvironmentManagedActionHistoryRequest>
-        void DescribeEnvironmentManagedActionHistoryAsync(const DescribeEnvironmentManagedActionHistoryRequestT& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentManagedActionHistoryAsync(const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentManagedActionHistoryRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory, request, handler, context);
         }
@@ -756,13 +756,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentManagedActionsOutcome DescribeEnvironmentManagedActions(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
+        virtual Model::DescribeEnvironmentManagedActionsOutcome DescribeEnvironmentManagedActions(const Model::DescribeEnvironmentManagedActionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironmentManagedActions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentManagedActionsRequestT = Model::DescribeEnvironmentManagedActionsRequest>
-        Model::DescribeEnvironmentManagedActionsOutcomeCallable DescribeEnvironmentManagedActionsCallable(const DescribeEnvironmentManagedActionsRequestT& request) const
+        Model::DescribeEnvironmentManagedActionsOutcomeCallable DescribeEnvironmentManagedActionsCallable(const DescribeEnvironmentManagedActionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEnvironmentManagedActions, request);
         }
@@ -771,7 +771,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEnvironmentManagedActions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentManagedActionsRequestT = Model::DescribeEnvironmentManagedActionsRequest>
-        void DescribeEnvironmentManagedActionsAsync(const DescribeEnvironmentManagedActionsRequestT& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentManagedActionsAsync(const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentManagedActionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEnvironmentManagedActions, request, handler, context);
         }
@@ -781,13 +781,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
+        virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironmentResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentResourcesRequestT = Model::DescribeEnvironmentResourcesRequest>
-        Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const DescribeEnvironmentResourcesRequestT& request) const
+        Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const DescribeEnvironmentResourcesRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEnvironmentResources, request);
         }
@@ -796,7 +796,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEnvironmentResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentResourcesRequestT = Model::DescribeEnvironmentResourcesRequest>
-        void DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesRequestT& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentResourcesAsync(const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentResourcesRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEnvironmentResources, request, handler, context);
         }
@@ -806,13 +806,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
+        virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentsRequestT = Model::DescribeEnvironmentsRequest>
-        Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const DescribeEnvironmentsRequestT& request) const
+        Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const DescribeEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEnvironments, request);
         }
@@ -821,7 +821,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentsRequestT = Model::DescribeEnvironmentsRequest>
-        void DescribeEnvironmentsAsync(const DescribeEnvironmentsRequestT& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentsAsync(const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEnvironments, request, handler, context);
         }
@@ -833,13 +833,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
+        virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request) const
+        Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const DescribeEventsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeEvents, request);
         }
@@ -848,7 +848,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEventsRequestT = Model::DescribeEventsRequest>
-        void DescribeEventsAsync(const DescribeEventsRequestT& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeEvents, request, handler, context);
         }
@@ -861,13 +861,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
+        virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeInstancesHealth that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeInstancesHealthRequestT = Model::DescribeInstancesHealthRequest>
-        Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const DescribeInstancesHealthRequestT& request) const
+        Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const DescribeInstancesHealthRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribeInstancesHealth, request);
         }
@@ -876,7 +876,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribeInstancesHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeInstancesHealthRequestT = Model::DescribeInstancesHealthRequest>
-        void DescribeInstancesHealthAsync(const DescribeInstancesHealthRequestT& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeInstancesHealthAsync(const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInstancesHealthRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribeInstancesHealth, request, handler, context);
         }
@@ -891,13 +891,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePlatformVersionOutcome DescribePlatformVersion(const Model::DescribePlatformVersionRequest& request) const;
+        virtual Model::DescribePlatformVersionOutcome DescribePlatformVersion(const Model::DescribePlatformVersionRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePlatformVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePlatformVersionRequestT = Model::DescribePlatformVersionRequest>
-        Model::DescribePlatformVersionOutcomeCallable DescribePlatformVersionCallable(const DescribePlatformVersionRequestT& request) const
+        Model::DescribePlatformVersionOutcomeCallable DescribePlatformVersionCallable(const DescribePlatformVersionRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::DescribePlatformVersion, request);
         }
@@ -906,7 +906,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for DescribePlatformVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePlatformVersionRequestT = Model::DescribePlatformVersionRequest>
-        void DescribePlatformVersionAsync(const DescribePlatformVersionRequestT& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePlatformVersionAsync(const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePlatformVersionRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::DescribePlatformVersion, request, handler, context);
         }
@@ -948,13 +948,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
+        virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAvailableSolutionStacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAvailableSolutionStacksRequestT = Model::ListAvailableSolutionStacksRequest>
-        Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const ListAvailableSolutionStacksRequestT& request) const
+        Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const ListAvailableSolutionStacksRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::ListAvailableSolutionStacks, request);
         }
@@ -963,7 +963,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for ListAvailableSolutionStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAvailableSolutionStacksRequestT = Model::ListAvailableSolutionStacksRequest>
-        void ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksRequestT& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAvailableSolutionStacksAsync(const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAvailableSolutionStacksRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::ListAvailableSolutionStacks, request, handler, context);
         }
@@ -977,13 +977,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlatformBranchesOutcome ListPlatformBranches(const Model::ListPlatformBranchesRequest& request) const;
+        virtual Model::ListPlatformBranchesOutcome ListPlatformBranches(const Model::ListPlatformBranchesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlatformBranches that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlatformBranchesRequestT = Model::ListPlatformBranchesRequest>
-        Model::ListPlatformBranchesOutcomeCallable ListPlatformBranchesCallable(const ListPlatformBranchesRequestT& request) const
+        Model::ListPlatformBranchesOutcomeCallable ListPlatformBranchesCallable(const ListPlatformBranchesRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::ListPlatformBranches, request);
         }
@@ -992,7 +992,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for ListPlatformBranches that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlatformBranchesRequestT = Model::ListPlatformBranchesRequest>
-        void ListPlatformBranchesAsync(const ListPlatformBranchesRequestT& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlatformBranchesAsync(const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlatformBranchesRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::ListPlatformBranches, request, handler, context);
         }
@@ -1008,13 +1008,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlatformVersionsOutcome ListPlatformVersions(const Model::ListPlatformVersionsRequest& request) const;
+        virtual Model::ListPlatformVersionsOutcome ListPlatformVersions(const Model::ListPlatformVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlatformVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlatformVersionsRequestT = Model::ListPlatformVersionsRequest>
-        Model::ListPlatformVersionsOutcomeCallable ListPlatformVersionsCallable(const ListPlatformVersionsRequestT& request) const
+        Model::ListPlatformVersionsOutcomeCallable ListPlatformVersionsCallable(const ListPlatformVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::ListPlatformVersions, request);
         }
@@ -1023,7 +1023,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for ListPlatformVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlatformVersionsRequestT = Model::ListPlatformVersionsRequest>
-        void ListPlatformVersionsAsync(const ListPlatformVersionsRequestT& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlatformVersionsAsync(const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlatformVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::ListPlatformVersions, request, handler, context);
         }
@@ -1064,13 +1064,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">AWS
          * API Reference</a></p>
          */
-        virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
+        virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RebuildEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RebuildEnvironmentRequestT = Model::RebuildEnvironmentRequest>
-        Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const RebuildEnvironmentRequestT& request) const
+        Model::RebuildEnvironmentOutcomeCallable RebuildEnvironmentCallable(const RebuildEnvironmentRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::RebuildEnvironment, request);
         }
@@ -1079,7 +1079,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for RebuildEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RebuildEnvironmentRequestT = Model::RebuildEnvironmentRequest>
-        void RebuildEnvironmentAsync(const RebuildEnvironmentRequestT& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RebuildEnvironmentAsync(const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RebuildEnvironmentRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::RebuildEnvironment, request, handler, context);
         }
@@ -1124,13 +1124,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">AWS
          * API Reference</a></p>
          */
-        virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
+        virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RestartAppServer that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RestartAppServerRequestT = Model::RestartAppServerRequest>
-        Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const RestartAppServerRequestT& request) const
+        Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const RestartAppServerRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::RestartAppServer, request);
         }
@@ -1139,7 +1139,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for RestartAppServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RestartAppServerRequestT = Model::RestartAppServerRequest>
-        void RestartAppServerAsync(const RestartAppServerRequestT& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RestartAppServerAsync(const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RestartAppServerRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::RestartAppServer, request, handler, context);
         }
@@ -1176,13 +1176,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">AWS
          * API Reference</a></p>
          */
-        virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
+        virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SwapEnvironmentCNAMEs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SwapEnvironmentCNAMEsRequestT = Model::SwapEnvironmentCNAMEsRequest>
-        Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const SwapEnvironmentCNAMEsRequestT& request) const
+        Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const SwapEnvironmentCNAMEsRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::SwapEnvironmentCNAMEs, request);
         }
@@ -1191,7 +1191,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for SwapEnvironmentCNAMEs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SwapEnvironmentCNAMEsRequestT = Model::SwapEnvironmentCNAMEsRequest>
-        void SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsRequestT& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SwapEnvironmentCNAMEsAsync(const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SwapEnvironmentCNAMEsRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::SwapEnvironmentCNAMEs, request, handler, context);
         }
@@ -1201,13 +1201,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">AWS
          * API Reference</a></p>
          */
-        virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
+        virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request = {}) const;
 
         /**
          * A Callable wrapper for TerminateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename TerminateEnvironmentRequestT = Model::TerminateEnvironmentRequest>
-        Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const TerminateEnvironmentRequestT& request) const
+        Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const TerminateEnvironmentRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::TerminateEnvironment, request);
         }
@@ -1216,7 +1216,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for TerminateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename TerminateEnvironmentRequestT = Model::TerminateEnvironmentRequest>
-        void TerminateEnvironmentAsync(const TerminateEnvironmentRequestT& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void TerminateEnvironmentAsync(const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const TerminateEnvironmentRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::TerminateEnvironment, request, handler, context);
         }
@@ -1346,13 +1346,13 @@ namespace ElasticBeanstalk
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
+        virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateEnvironment that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateEnvironmentRequestT = Model::UpdateEnvironmentRequest>
-        Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const UpdateEnvironmentRequestT& request) const
+        Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const UpdateEnvironmentRequestT& request = {}) const
         {
             return SubmitCallable(&ElasticBeanstalkClient::UpdateEnvironment, request);
         }
@@ -1361,7 +1361,7 @@ namespace ElasticBeanstalk
          * An Async wrapper for UpdateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateEnvironmentRequestT = Model::UpdateEnvironmentRequest>
-        void UpdateEnvironmentAsync(const UpdateEnvironmentRequestT& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateEnvironmentAsync(const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateEnvironmentRequestT& request = {}) const
         {
             return SubmitAsync(&ElasticBeanstalkClient::UpdateEnvironment, request, handler, context);
         }

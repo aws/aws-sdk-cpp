@@ -70,6 +70,11 @@
 #include <aws/vpc-lattice/model/UpdateServiceNetworkResult.h>
 #include <aws/vpc-lattice/model/UpdateServiceNetworkVpcAssociationResult.h>
 #include <aws/vpc-lattice/model/UpdateTargetGroupResult.h>
+#include <aws/vpc-lattice/model/ListServiceNetworksRequest.h>
+#include <aws/vpc-lattice/model/ListServicesRequest.h>
+#include <aws/vpc-lattice/model/ListTargetGroupsRequest.h>
+#include <aws/vpc-lattice/model/ListServiceNetworkServiceAssociationsRequest.h>
+#include <aws/vpc-lattice/model/ListServiceNetworkVpcAssociationsRequest.h>
 /* End of service model headers required in VPCLatticeClient header */
 
 namespace Aws

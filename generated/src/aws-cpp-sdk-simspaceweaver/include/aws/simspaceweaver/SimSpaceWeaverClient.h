@@ -269,13 +269,13 @@ namespace SimSpaceWeaver
          * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/ListSimulations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSimulationsOutcome ListSimulations(const Model::ListSimulationsRequest& request) const;
+        virtual Model::ListSimulationsOutcome ListSimulations(const Model::ListSimulationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSimulations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSimulationsRequestT = Model::ListSimulationsRequest>
-        Model::ListSimulationsOutcomeCallable ListSimulationsCallable(const ListSimulationsRequestT& request) const
+        Model::ListSimulationsOutcomeCallable ListSimulationsCallable(const ListSimulationsRequestT& request = {}) const
         {
             return SubmitCallable(&SimSpaceWeaverClient::ListSimulations, request);
         }
@@ -284,7 +284,7 @@ namespace SimSpaceWeaver
          * An Async wrapper for ListSimulations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSimulationsRequestT = Model::ListSimulationsRequest>
-        void ListSimulationsAsync(const ListSimulationsRequestT& request, const ListSimulationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSimulationsAsync(const ListSimulationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSimulationsRequestT& request = {}) const
         {
             return SubmitAsync(&SimSpaceWeaverClient::ListSimulations, request, handler, context);
         }

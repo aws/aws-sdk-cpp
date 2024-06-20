@@ -34,6 +34,7 @@
 #include <aws/simspaceweaver/model/StopSimulationResult.h>
 #include <aws/simspaceweaver/model/TagResourceResult.h>
 #include <aws/simspaceweaver/model/UntagResourceResult.h>
+#include <aws/simspaceweaver/model/ListSimulationsRequest.h>
 /* End of service model headers required in SimSpaceWeaverClient header */
 
 namespace Aws

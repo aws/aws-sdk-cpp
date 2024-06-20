@@ -29,6 +29,8 @@
 #include <aws/license-manager-user-subscriptions/model/StartProductSubscriptionResult.h>
 #include <aws/license-manager-user-subscriptions/model/StopProductSubscriptionResult.h>
 #include <aws/license-manager-user-subscriptions/model/UpdateIdentityProviderSettingsResult.h>
+#include <aws/license-manager-user-subscriptions/model/ListInstancesRequest.h>
+#include <aws/license-manager-user-subscriptions/model/ListIdentityProvidersRequest.h>
 /* End of service model headers required in LicenseManagerUserSubscriptionsClient header */
 
 namespace Aws

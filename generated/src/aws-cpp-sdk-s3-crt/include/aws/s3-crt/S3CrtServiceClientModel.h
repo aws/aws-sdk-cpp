@@ -78,6 +78,8 @@
 #include <aws/s3-crt/model/RestoreObjectResult.h>
 #include <aws/s3-crt/model/UploadPartResult.h>
 #include <aws/s3-crt/model/UploadPartCopyResult.h>
+#include <aws/s3-crt/model/ListDirectoryBucketsRequest.h>
+#include <aws/s3-crt/model/ListBucketsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in S3CrtClient header */
 
@@ -176,6 +178,7 @@ namespace Aws
       class ListBucketIntelligentTieringConfigurationsRequest;
       class ListBucketInventoryConfigurationsRequest;
       class ListBucketMetricsConfigurationsRequest;
+      class ListBucketsRequest;
       class ListDirectoryBucketsRequest;
       class ListMultipartUploadsRequest;
       class ListObjectVersionsRequest;
@@ -469,7 +472,7 @@ namespace Aws
     typedef std::function<void(const S3CrtClient*, const Model::ListBucketIntelligentTieringConfigurationsRequest&, const Model::ListBucketIntelligentTieringConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketIntelligentTieringConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::ListBucketInventoryConfigurationsRequest&, const Model::ListBucketInventoryConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketInventoryConfigurationsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::ListBucketMetricsConfigurationsRequest&, const Model::ListBucketMetricsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketMetricsConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const S3CrtClient*, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
+    typedef std::function<void(const S3CrtClient*, const Model::ListBucketsRequest&, const Model::ListBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::ListDirectoryBucketsRequest&, const Model::ListDirectoryBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDirectoryBucketsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartUploadsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectVersionsResponseReceivedHandler;

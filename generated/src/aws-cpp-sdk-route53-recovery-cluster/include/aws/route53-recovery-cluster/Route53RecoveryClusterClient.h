@@ -194,13 +194,13 @@ namespace Route53RecoveryCluster
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/ListRoutingControls">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRoutingControlsOutcome ListRoutingControls(const Model::ListRoutingControlsRequest& request) const;
+        virtual Model::ListRoutingControlsOutcome ListRoutingControls(const Model::ListRoutingControlsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRoutingControls that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRoutingControlsRequestT = Model::ListRoutingControlsRequest>
-        Model::ListRoutingControlsOutcomeCallable ListRoutingControlsCallable(const ListRoutingControlsRequestT& request) const
+        Model::ListRoutingControlsOutcomeCallable ListRoutingControlsCallable(const ListRoutingControlsRequestT& request = {}) const
         {
             return SubmitCallable(&Route53RecoveryClusterClient::ListRoutingControls, request);
         }
@@ -209,7 +209,7 @@ namespace Route53RecoveryCluster
          * An Async wrapper for ListRoutingControls that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRoutingControlsRequestT = Model::ListRoutingControlsRequest>
-        void ListRoutingControlsAsync(const ListRoutingControlsRequestT& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRoutingControlsAsync(const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRoutingControlsRequestT& request = {}) const
         {
             return SubmitAsync(&Route53RecoveryClusterClient::ListRoutingControls, request, handler, context);
         }

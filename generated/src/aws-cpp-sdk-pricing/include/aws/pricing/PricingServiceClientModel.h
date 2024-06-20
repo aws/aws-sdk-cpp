@@ -23,6 +23,7 @@
 #include <aws/pricing/model/GetPriceListFileUrlResult.h>
 #include <aws/pricing/model/GetProductsResult.h>
 #include <aws/pricing/model/ListPriceListsResult.h>
+#include <aws/pricing/model/DescribeServicesRequest.h>
 /* End of service model headers required in PricingClient header */
 
 namespace Aws

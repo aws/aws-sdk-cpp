@@ -369,13 +369,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateGlobalNetworkOutcome CreateGlobalNetwork(const Model::CreateGlobalNetworkRequest& request) const;
+        virtual Model::CreateGlobalNetworkOutcome CreateGlobalNetwork(const Model::CreateGlobalNetworkRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateGlobalNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateGlobalNetworkRequestT = Model::CreateGlobalNetworkRequest>
-        Model::CreateGlobalNetworkOutcomeCallable CreateGlobalNetworkCallable(const CreateGlobalNetworkRequestT& request) const
+        Model::CreateGlobalNetworkOutcomeCallable CreateGlobalNetworkCallable(const CreateGlobalNetworkRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::CreateGlobalNetwork, request);
         }
@@ -384,7 +384,7 @@ namespace NetworkManager
          * An Async wrapper for CreateGlobalNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateGlobalNetworkRequestT = Model::CreateGlobalNetworkRequest>
-        void CreateGlobalNetworkAsync(const CreateGlobalNetworkRequestT& request, const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateGlobalNetworkAsync(const CreateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateGlobalNetworkRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::CreateGlobalNetwork, request, handler, context);
         }
@@ -865,13 +865,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGlobalNetworksOutcome DescribeGlobalNetworks(const Model::DescribeGlobalNetworksRequest& request) const;
+        virtual Model::DescribeGlobalNetworksOutcome DescribeGlobalNetworks(const Model::DescribeGlobalNetworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGlobalNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGlobalNetworksRequestT = Model::DescribeGlobalNetworksRequest>
-        Model::DescribeGlobalNetworksOutcomeCallable DescribeGlobalNetworksCallable(const DescribeGlobalNetworksRequestT& request) const
+        Model::DescribeGlobalNetworksOutcomeCallable DescribeGlobalNetworksCallable(const DescribeGlobalNetworksRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::DescribeGlobalNetworks, request);
         }
@@ -880,7 +880,7 @@ namespace NetworkManager
          * An Async wrapper for DescribeGlobalNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGlobalNetworksRequestT = Model::DescribeGlobalNetworksRequest>
-        void DescribeGlobalNetworksAsync(const DescribeGlobalNetworksRequestT& request, const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGlobalNetworksAsync(const DescribeGlobalNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGlobalNetworksRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::DescribeGlobalNetworks, request, handler, context);
         }
@@ -1700,13 +1700,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAttachmentsOutcome ListAttachments(const Model::ListAttachmentsRequest& request) const;
+        virtual Model::ListAttachmentsOutcome ListAttachments(const Model::ListAttachmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAttachmentsRequestT = Model::ListAttachmentsRequest>
-        Model::ListAttachmentsOutcomeCallable ListAttachmentsCallable(const ListAttachmentsRequestT& request) const
+        Model::ListAttachmentsOutcomeCallable ListAttachmentsCallable(const ListAttachmentsRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::ListAttachments, request);
         }
@@ -1715,7 +1715,7 @@ namespace NetworkManager
          * An Async wrapper for ListAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAttachmentsRequestT = Model::ListAttachmentsRequest>
-        void ListAttachmentsAsync(const ListAttachmentsRequestT& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAttachmentsAsync(const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAttachmentsRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::ListAttachments, request, handler, context);
         }
@@ -1725,13 +1725,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListConnectPeersOutcome ListConnectPeers(const Model::ListConnectPeersRequest& request) const;
+        virtual Model::ListConnectPeersOutcome ListConnectPeers(const Model::ListConnectPeersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListConnectPeers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListConnectPeersRequestT = Model::ListConnectPeersRequest>
-        Model::ListConnectPeersOutcomeCallable ListConnectPeersCallable(const ListConnectPeersRequestT& request) const
+        Model::ListConnectPeersOutcomeCallable ListConnectPeersCallable(const ListConnectPeersRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::ListConnectPeers, request);
         }
@@ -1740,7 +1740,7 @@ namespace NetworkManager
          * An Async wrapper for ListConnectPeers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListConnectPeersRequestT = Model::ListConnectPeersRequest>
-        void ListConnectPeersAsync(const ListConnectPeersRequestT& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListConnectPeersAsync(const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConnectPeersRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::ListConnectPeers, request, handler, context);
         }
@@ -1776,13 +1776,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCoreNetworksOutcome ListCoreNetworks(const Model::ListCoreNetworksRequest& request) const;
+        virtual Model::ListCoreNetworksOutcome ListCoreNetworks(const Model::ListCoreNetworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListCoreNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListCoreNetworksRequestT = Model::ListCoreNetworksRequest>
-        Model::ListCoreNetworksOutcomeCallable ListCoreNetworksCallable(const ListCoreNetworksRequestT& request) const
+        Model::ListCoreNetworksOutcomeCallable ListCoreNetworksCallable(const ListCoreNetworksRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::ListCoreNetworks, request);
         }
@@ -1791,7 +1791,7 @@ namespace NetworkManager
          * An Async wrapper for ListCoreNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListCoreNetworksRequestT = Model::ListCoreNetworksRequest>
-        void ListCoreNetworksAsync(const ListCoreNetworksRequestT& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListCoreNetworksAsync(const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCoreNetworksRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::ListCoreNetworks, request, handler, context);
         }
@@ -1802,13 +1802,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOrganizationServiceAccessStatusOutcome ListOrganizationServiceAccessStatus(const Model::ListOrganizationServiceAccessStatusRequest& request) const;
+        virtual Model::ListOrganizationServiceAccessStatusOutcome ListOrganizationServiceAccessStatus(const Model::ListOrganizationServiceAccessStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOrganizationServiceAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOrganizationServiceAccessStatusRequestT = Model::ListOrganizationServiceAccessStatusRequest>
-        Model::ListOrganizationServiceAccessStatusOutcomeCallable ListOrganizationServiceAccessStatusCallable(const ListOrganizationServiceAccessStatusRequestT& request) const
+        Model::ListOrganizationServiceAccessStatusOutcomeCallable ListOrganizationServiceAccessStatusCallable(const ListOrganizationServiceAccessStatusRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::ListOrganizationServiceAccessStatus, request);
         }
@@ -1817,7 +1817,7 @@ namespace NetworkManager
          * An Async wrapper for ListOrganizationServiceAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOrganizationServiceAccessStatusRequestT = Model::ListOrganizationServiceAccessStatusRequest>
-        void ListOrganizationServiceAccessStatusAsync(const ListOrganizationServiceAccessStatusRequestT& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOrganizationServiceAccessStatusAsync(const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationServiceAccessStatusRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::ListOrganizationServiceAccessStatus, request, handler, context);
         }
@@ -1827,13 +1827,13 @@ namespace NetworkManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPeeringsOutcome ListPeerings(const Model::ListPeeringsRequest& request) const;
+        virtual Model::ListPeeringsOutcome ListPeerings(const Model::ListPeeringsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPeerings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPeeringsRequestT = Model::ListPeeringsRequest>
-        Model::ListPeeringsOutcomeCallable ListPeeringsCallable(const ListPeeringsRequestT& request) const
+        Model::ListPeeringsOutcomeCallable ListPeeringsCallable(const ListPeeringsRequestT& request = {}) const
         {
             return SubmitCallable(&NetworkManagerClient::ListPeerings, request);
         }
@@ -1842,7 +1842,7 @@ namespace NetworkManager
          * An Async wrapper for ListPeerings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPeeringsRequestT = Model::ListPeeringsRequest>
-        void ListPeeringsAsync(const ListPeeringsRequestT& request, const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPeeringsAsync(const ListPeeringsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPeeringsRequestT& request = {}) const
         {
             return SubmitAsync(&NetworkManagerClient::ListPeerings, request, handler, context);
         }

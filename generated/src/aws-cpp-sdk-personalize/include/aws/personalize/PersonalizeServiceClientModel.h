@@ -78,6 +78,24 @@
 #include <aws/personalize/model/UpdateDatasetResult.h>
 #include <aws/personalize/model/UpdateMetricAttributionResult.h>
 #include <aws/personalize/model/UpdateRecommenderResult.h>
+#include <aws/personalize/model/ListDatasetGroupsRequest.h>
+#include <aws/personalize/model/ListDatasetImportJobsRequest.h>
+#include <aws/personalize/model/ListRecipesRequest.h>
+#include <aws/personalize/model/ListDataDeletionJobsRequest.h>
+#include <aws/personalize/model/UpdateMetricAttributionRequest.h>
+#include <aws/personalize/model/ListDatasetExportJobsRequest.h>
+#include <aws/personalize/model/ListMetricAttributionMetricsRequest.h>
+#include <aws/personalize/model/ListMetricAttributionsRequest.h>
+#include <aws/personalize/model/ListSolutionsRequest.h>
+#include <aws/personalize/model/ListCampaignsRequest.h>
+#include <aws/personalize/model/ListDatasetsRequest.h>
+#include <aws/personalize/model/ListFiltersRequest.h>
+#include <aws/personalize/model/ListBatchSegmentJobsRequest.h>
+#include <aws/personalize/model/ListEventTrackersRequest.h>
+#include <aws/personalize/model/ListSolutionVersionsRequest.h>
+#include <aws/personalize/model/ListRecommendersRequest.h>
+#include <aws/personalize/model/ListBatchInferenceJobsRequest.h>
+#include <aws/personalize/model/ListSchemasRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in PersonalizeClient header */
 

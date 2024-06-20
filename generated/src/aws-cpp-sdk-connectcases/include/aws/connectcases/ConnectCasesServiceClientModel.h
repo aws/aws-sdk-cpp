@@ -50,6 +50,7 @@
 #include <aws/connectcases/model/UpdateFieldResult.h>
 #include <aws/connectcases/model/UpdateLayoutResult.h>
 #include <aws/connectcases/model/UpdateTemplateResult.h>
+#include <aws/connectcases/model/ListDomainsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectCasesClient header */
 

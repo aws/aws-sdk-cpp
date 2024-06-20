@@ -97,6 +97,21 @@
 #include <aws/workspaces/model/UpdateRulesOfIpGroupResult.h>
 #include <aws/workspaces/model/UpdateWorkspaceBundleResult.h>
 #include <aws/workspaces/model/UpdateWorkspaceImagePermissionResult.h>
+#include <aws/workspaces/model/DescribeAccountRequest.h>
+#include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
+#include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
+#include <aws/workspaces/model/GetAccountLinkRequest.h>
+#include <aws/workspaces/model/DescribeApplicationsRequest.h>
+#include <aws/workspaces/model/DescribeWorkspaceImagesRequest.h>
+#include <aws/workspaces/model/ModifyAccountRequest.h>
+#include <aws/workspaces/model/DeleteWorkspaceBundleRequest.h>
+#include <aws/workspaces/model/UpdateWorkspaceBundleRequest.h>
+#include <aws/workspaces/model/DescribeConnectionAliasesRequest.h>
+#include <aws/workspaces/model/DescribeIpGroupsRequest.h>
+#include <aws/workspaces/model/DescribeWorkspacesRequest.h>
+#include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
+#include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
+#include <aws/workspaces/model/ListAccountLinksRequest.h>
 /* End of service model headers required in WorkSpacesClient header */
 
 namespace Aws

@@ -61,6 +61,14 @@
 #include <aws/ecr/model/UpdatePullThroughCacheRuleResult.h>
 #include <aws/ecr/model/UploadLayerPartResult.h>
 #include <aws/ecr/model/ValidatePullThroughCacheRuleResult.h>
+#include <aws/ecr/model/DescribeRepositoriesRequest.h>
+#include <aws/ecr/model/DescribeRegistryRequest.h>
+#include <aws/ecr/model/PutRegistryScanningConfigurationRequest.h>
+#include <aws/ecr/model/DeleteRegistryPolicyRequest.h>
+#include <aws/ecr/model/GetRegistryPolicyRequest.h>
+#include <aws/ecr/model/GetAuthorizationTokenRequest.h>
+#include <aws/ecr/model/GetRegistryScanningConfigurationRequest.h>
+#include <aws/ecr/model/DescribePullThroughCacheRulesRequest.h>
 /* End of service model headers required in ECRClient header */
 
 namespace Aws

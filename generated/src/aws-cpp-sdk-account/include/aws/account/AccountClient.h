@@ -235,13 +235,13 @@ namespace Account
          * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetContactInformationOutcome GetContactInformation(const Model::GetContactInformationRequest& request) const;
+        virtual Model::GetContactInformationOutcome GetContactInformation(const Model::GetContactInformationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetContactInformation that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetContactInformationRequestT = Model::GetContactInformationRequest>
-        Model::GetContactInformationOutcomeCallable GetContactInformationCallable(const GetContactInformationRequestT& request) const
+        Model::GetContactInformationOutcomeCallable GetContactInformationCallable(const GetContactInformationRequestT& request = {}) const
         {
             return SubmitCallable(&AccountClient::GetContactInformation, request);
         }
@@ -250,7 +250,7 @@ namespace Account
          * An Async wrapper for GetContactInformation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetContactInformationRequestT = Model::GetContactInformationRequest>
-        void GetContactInformationAsync(const GetContactInformationRequestT& request, const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetContactInformationAsync(const GetContactInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetContactInformationRequestT& request = {}) const
         {
             return SubmitAsync(&AccountClient::GetContactInformation, request, handler, context);
         }
@@ -315,13 +315,13 @@ namespace Account
          * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRegionsOutcome ListRegions(const Model::ListRegionsRequest& request) const;
+        virtual Model::ListRegionsOutcome ListRegions(const Model::ListRegionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRegions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRegionsRequestT = Model::ListRegionsRequest>
-        Model::ListRegionsOutcomeCallable ListRegionsCallable(const ListRegionsRequestT& request) const
+        Model::ListRegionsOutcomeCallable ListRegionsCallable(const ListRegionsRequestT& request = {}) const
         {
             return SubmitCallable(&AccountClient::ListRegions, request);
         }
@@ -330,7 +330,7 @@ namespace Account
          * An Async wrapper for ListRegions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRegionsRequestT = Model::ListRegionsRequest>
-        void ListRegionsAsync(const ListRegionsRequestT& request, const ListRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRegionsAsync(const ListRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRegionsRequestT& request = {}) const
         {
             return SubmitAsync(&AccountClient::ListRegions, request, handler, context);
         }

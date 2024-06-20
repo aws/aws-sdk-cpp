@@ -1459,13 +1459,13 @@ namespace kendra
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request) const;
+        virtual Model::ListIndicesOutcome ListIndices(const Model::ListIndicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIndices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request) const
+        Model::ListIndicesOutcomeCallable ListIndicesCallable(const ListIndicesRequestT& request = {}) const
         {
             return SubmitCallable(&KendraClient::ListIndices, request);
         }
@@ -1474,7 +1474,7 @@ namespace kendra
          * An Async wrapper for ListIndices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIndicesRequestT = Model::ListIndicesRequest>
-        void ListIndicesAsync(const ListIndicesRequestT& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIndicesAsync(const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIndicesRequestT& request = {}) const
         {
             return SubmitAsync(&KendraClient::ListIndices, request, handler, context);
         }

@@ -19,6 +19,7 @@
 
 /* Service model headers required in QLDBSessionClient header */
 #include <aws/qldb-session/model/SendCommandResult.h>
+#include <aws/qldb-session/model/SendCommandRequest.h>
 /* End of service model headers required in QLDBSessionClient header */
 
 namespace Aws

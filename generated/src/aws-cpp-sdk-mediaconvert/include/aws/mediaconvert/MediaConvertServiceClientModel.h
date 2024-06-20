@@ -46,6 +46,13 @@
 #include <aws/mediaconvert/model/UpdateJobTemplateResult.h>
 #include <aws/mediaconvert/model/UpdatePresetResult.h>
 #include <aws/mediaconvert/model/UpdateQueueResult.h>
+#include <aws/mediaconvert/model/ListQueuesRequest.h>
+#include <aws/mediaconvert/model/ListJobTemplatesRequest.h>
+#include <aws/mediaconvert/model/SearchJobsRequest.h>
+#include <aws/mediaconvert/model/DeletePolicyRequest.h>
+#include <aws/mediaconvert/model/ListPresetsRequest.h>
+#include <aws/mediaconvert/model/GetPolicyRequest.h>
+#include <aws/mediaconvert/model/ListJobsRequest.h>
 /* End of service model headers required in MediaConvertClient header */
 
 namespace Aws

@@ -90,13 +90,13 @@ namespace FreeTier
          * href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFreeTierUsageOutcome GetFreeTierUsage(const Model::GetFreeTierUsageRequest& request) const;
+        virtual Model::GetFreeTierUsageOutcome GetFreeTierUsage(const Model::GetFreeTierUsageRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetFreeTierUsage that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetFreeTierUsageRequestT = Model::GetFreeTierUsageRequest>
-        Model::GetFreeTierUsageOutcomeCallable GetFreeTierUsageCallable(const GetFreeTierUsageRequestT& request) const
+        Model::GetFreeTierUsageOutcomeCallable GetFreeTierUsageCallable(const GetFreeTierUsageRequestT& request = {}) const
         {
             return SubmitCallable(&FreeTierClient::GetFreeTierUsage, request);
         }
@@ -105,7 +105,7 @@ namespace FreeTier
          * An Async wrapper for GetFreeTierUsage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetFreeTierUsageRequestT = Model::GetFreeTierUsageRequest>
-        void GetFreeTierUsageAsync(const GetFreeTierUsageRequestT& request, const GetFreeTierUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetFreeTierUsageAsync(const GetFreeTierUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetFreeTierUsageRequestT& request = {}) const
         {
             return SubmitAsync(&FreeTierClient::GetFreeTierUsage, request, handler, context);
         }

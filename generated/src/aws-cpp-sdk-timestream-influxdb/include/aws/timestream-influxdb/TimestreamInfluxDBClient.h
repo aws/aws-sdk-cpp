@@ -215,13 +215,13 @@ namespace TimestreamInfluxDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDbInstancesOutcome ListDbInstances(const Model::ListDbInstancesRequest& request) const;
+        virtual Model::ListDbInstancesOutcome ListDbInstances(const Model::ListDbInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDbInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDbInstancesRequestT = Model::ListDbInstancesRequest>
-        Model::ListDbInstancesOutcomeCallable ListDbInstancesCallable(const ListDbInstancesRequestT& request) const
+        Model::ListDbInstancesOutcomeCallable ListDbInstancesCallable(const ListDbInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamInfluxDBClient::ListDbInstances, request);
         }
@@ -230,7 +230,7 @@ namespace TimestreamInfluxDB
          * An Async wrapper for ListDbInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDbInstancesRequestT = Model::ListDbInstancesRequest>
-        void ListDbInstancesAsync(const ListDbInstancesRequestT& request, const ListDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDbInstancesAsync(const ListDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDbInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamInfluxDBClient::ListDbInstances, request, handler, context);
         }
@@ -241,13 +241,13 @@ namespace TimestreamInfluxDB
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbParameterGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDbParameterGroupsOutcome ListDbParameterGroups(const Model::ListDbParameterGroupsRequest& request) const;
+        virtual Model::ListDbParameterGroupsOutcome ListDbParameterGroups(const Model::ListDbParameterGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDbParameterGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDbParameterGroupsRequestT = Model::ListDbParameterGroupsRequest>
-        Model::ListDbParameterGroupsOutcomeCallable ListDbParameterGroupsCallable(const ListDbParameterGroupsRequestT& request) const
+        Model::ListDbParameterGroupsOutcomeCallable ListDbParameterGroupsCallable(const ListDbParameterGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&TimestreamInfluxDBClient::ListDbParameterGroups, request);
         }
@@ -256,7 +256,7 @@ namespace TimestreamInfluxDB
          * An Async wrapper for ListDbParameterGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDbParameterGroupsRequestT = Model::ListDbParameterGroupsRequest>
-        void ListDbParameterGroupsAsync(const ListDbParameterGroupsRequestT& request, const ListDbParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDbParameterGroupsAsync(const ListDbParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDbParameterGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&TimestreamInfluxDBClient::ListDbParameterGroups, request, handler, context);
         }

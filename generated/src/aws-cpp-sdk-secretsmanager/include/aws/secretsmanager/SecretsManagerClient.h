@@ -133,13 +133,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetSecretValueOutcome BatchGetSecretValue(const Model::BatchGetSecretValueRequest& request) const;
+        virtual Model::BatchGetSecretValueOutcome BatchGetSecretValue(const Model::BatchGetSecretValueRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetSecretValue that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
-        Model::BatchGetSecretValueOutcomeCallable BatchGetSecretValueCallable(const BatchGetSecretValueRequestT& request) const
+        Model::BatchGetSecretValueOutcomeCallable BatchGetSecretValueCallable(const BatchGetSecretValueRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::BatchGetSecretValue, request);
         }
@@ -148,7 +148,7 @@ namespace SecretsManager
          * An Async wrapper for BatchGetSecretValue that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetSecretValueRequestT = Model::BatchGetSecretValueRequest>
-        void BatchGetSecretValueAsync(const BatchGetSecretValueRequestT& request, const BatchGetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetSecretValueAsync(const BatchGetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetSecretValueRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::BatchGetSecretValue, request, handler, context);
         }
@@ -420,13 +420,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetRandomPasswordOutcome GetRandomPassword(const Model::GetRandomPasswordRequest& request) const;
+        virtual Model::GetRandomPasswordOutcome GetRandomPassword(const Model::GetRandomPasswordRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetRandomPassword that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetRandomPasswordRequestT = Model::GetRandomPasswordRequest>
-        Model::GetRandomPasswordOutcomeCallable GetRandomPasswordCallable(const GetRandomPasswordRequestT& request) const
+        Model::GetRandomPasswordOutcomeCallable GetRandomPasswordCallable(const GetRandomPasswordRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::GetRandomPassword, request);
         }
@@ -435,7 +435,7 @@ namespace SecretsManager
          * An Async wrapper for GetRandomPassword that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetRandomPasswordRequestT = Model::GetRandomPasswordRequest>
-        void GetRandomPasswordAsync(const GetRandomPasswordRequestT& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetRandomPasswordAsync(const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetRandomPasswordRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::GetRandomPassword, request, handler, context);
         }
@@ -589,13 +589,13 @@ namespace SecretsManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSecretsOutcome ListSecrets(const Model::ListSecretsRequest& request) const;
+        virtual Model::ListSecretsOutcome ListSecrets(const Model::ListSecretsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSecrets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSecretsRequestT = Model::ListSecretsRequest>
-        Model::ListSecretsOutcomeCallable ListSecretsCallable(const ListSecretsRequestT& request) const
+        Model::ListSecretsOutcomeCallable ListSecretsCallable(const ListSecretsRequestT& request = {}) const
         {
             return SubmitCallable(&SecretsManagerClient::ListSecrets, request);
         }
@@ -604,7 +604,7 @@ namespace SecretsManager
          * An Async wrapper for ListSecrets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSecretsRequestT = Model::ListSecretsRequest>
-        void ListSecretsAsync(const ListSecretsRequestT& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSecretsAsync(const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSecretsRequestT& request = {}) const
         {
             return SubmitAsync(&SecretsManagerClient::ListSecrets, request, handler, context);
         }

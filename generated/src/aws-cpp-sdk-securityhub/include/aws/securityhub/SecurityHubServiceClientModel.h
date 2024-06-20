@@ -94,6 +94,29 @@
 #include <aws/securityhub/model/UpdateSecurityControlResult.h>
 #include <aws/securityhub/model/UpdateSecurityHubConfigurationResult.h>
 #include <aws/securityhub/model/UpdateStandardsControlResult.h>
+#include <aws/securityhub/model/GetAdministratorAccountRequest.h>
+#include <aws/securityhub/model/ListConfigurationPolicyAssociationsRequest.h>
+#include <aws/securityhub/model/DisableSecurityHubRequest.h>
+#include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
+#include <aws/securityhub/model/DescribeProductsRequest.h>
+#include <aws/securityhub/model/ListMembersRequest.h>
+#include <aws/securityhub/model/UpdateSecurityHubConfigurationRequest.h>
+#include <aws/securityhub/model/DisassociateFromAdministratorAccountRequest.h>
+#include <aws/securityhub/model/GetEnabledStandardsRequest.h>
+#include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
+#include <aws/securityhub/model/ListOrganizationAdminAccountsRequest.h>
+#include <aws/securityhub/model/GetFindingsRequest.h>
+#include <aws/securityhub/model/GetInsightsRequest.h>
+#include <aws/securityhub/model/ListInvitationsRequest.h>
+#include <aws/securityhub/model/ListSecurityControlDefinitionsRequest.h>
+#include <aws/securityhub/model/DescribeActionTargetsRequest.h>
+#include <aws/securityhub/model/DescribeHubRequest.h>
+#include <aws/securityhub/model/DescribeOrganizationConfigurationRequest.h>
+#include <aws/securityhub/model/EnableSecurityHubRequest.h>
+#include <aws/securityhub/model/ListConfigurationPoliciesRequest.h>
+#include <aws/securityhub/model/GetInvitationsCountRequest.h>
+#include <aws/securityhub/model/ListAutomationRulesRequest.h>
+#include <aws/securityhub/model/DescribeStandardsRequest.h>
 /* End of service model headers required in SecurityHubClient header */
 
 namespace Aws

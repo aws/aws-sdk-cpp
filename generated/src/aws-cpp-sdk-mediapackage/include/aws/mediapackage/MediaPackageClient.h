@@ -307,13 +307,13 @@ namespace MediaPackage
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListChannels">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request) const
+        Model::ListChannelsOutcomeCallable ListChannelsCallable(const ListChannelsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageClient::ListChannels, request);
         }
@@ -322,7 +322,7 @@ namespace MediaPackage
          * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListChannelsRequestT = Model::ListChannelsRequest>
-        void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageClient::ListChannels, request, handler, context);
         }
@@ -332,13 +332,13 @@ namespace MediaPackage
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListHarvestJobsOutcome ListHarvestJobs(const Model::ListHarvestJobsRequest& request) const;
+        virtual Model::ListHarvestJobsOutcome ListHarvestJobs(const Model::ListHarvestJobsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListHarvestJobs that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListHarvestJobsRequestT = Model::ListHarvestJobsRequest>
-        Model::ListHarvestJobsOutcomeCallable ListHarvestJobsCallable(const ListHarvestJobsRequestT& request) const
+        Model::ListHarvestJobsOutcomeCallable ListHarvestJobsCallable(const ListHarvestJobsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageClient::ListHarvestJobs, request);
         }
@@ -347,7 +347,7 @@ namespace MediaPackage
          * An Async wrapper for ListHarvestJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListHarvestJobsRequestT = Model::ListHarvestJobsRequest>
-        void ListHarvestJobsAsync(const ListHarvestJobsRequestT& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListHarvestJobsAsync(const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListHarvestJobsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageClient::ListHarvestJobs, request, handler, context);
         }
@@ -357,13 +357,13 @@ namespace MediaPackage
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListOriginEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOriginEndpointsOutcome ListOriginEndpoints(const Model::ListOriginEndpointsRequest& request) const;
+        virtual Model::ListOriginEndpointsOutcome ListOriginEndpoints(const Model::ListOriginEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOriginEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOriginEndpointsRequestT = Model::ListOriginEndpointsRequest>
-        Model::ListOriginEndpointsOutcomeCallable ListOriginEndpointsCallable(const ListOriginEndpointsRequestT& request) const
+        Model::ListOriginEndpointsOutcomeCallable ListOriginEndpointsCallable(const ListOriginEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&MediaPackageClient::ListOriginEndpoints, request);
         }
@@ -372,7 +372,7 @@ namespace MediaPackage
          * An Async wrapper for ListOriginEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOriginEndpointsRequestT = Model::ListOriginEndpointsRequest>
-        void ListOriginEndpointsAsync(const ListOriginEndpointsRequestT& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOriginEndpointsAsync(const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOriginEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&MediaPackageClient::ListOriginEndpoints, request, handler, context);
         }

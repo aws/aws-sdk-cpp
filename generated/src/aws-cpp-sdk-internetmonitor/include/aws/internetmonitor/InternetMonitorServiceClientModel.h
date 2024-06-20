@@ -34,6 +34,8 @@
 #include <aws/internetmonitor/model/TagResourceResult.h>
 #include <aws/internetmonitor/model/UntagResourceResult.h>
 #include <aws/internetmonitor/model/UpdateMonitorResult.h>
+#include <aws/internetmonitor/model/ListMonitorsRequest.h>
+#include <aws/internetmonitor/model/ListInternetEventsRequest.h>
 /* End of service model headers required in InternetMonitorClient header */
 
 namespace Aws

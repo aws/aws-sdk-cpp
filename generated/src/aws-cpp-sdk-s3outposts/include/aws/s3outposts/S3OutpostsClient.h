@@ -148,13 +148,13 @@ namespace S3Outposts
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request) const;
+        virtual Model::ListEndpointsOutcome ListEndpoints(const Model::ListEndpointsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request) const
+        Model::ListEndpointsOutcomeCallable ListEndpointsCallable(const ListEndpointsRequestT& request = {}) const
         {
             return SubmitCallable(&S3OutpostsClient::ListEndpoints, request);
         }
@@ -163,7 +163,7 @@ namespace S3Outposts
          * An Async wrapper for ListEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEndpointsRequestT = Model::ListEndpointsRequest>
-        void ListEndpointsAsync(const ListEndpointsRequestT& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEndpointsAsync(const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointsRequestT& request = {}) const
         {
             return SubmitAsync(&S3OutpostsClient::ListEndpoints, request, handler, context);
         }
@@ -176,13 +176,13 @@ namespace S3Outposts
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOutpostsWithS3Outcome ListOutpostsWithS3(const Model::ListOutpostsWithS3Request& request) const;
+        virtual Model::ListOutpostsWithS3Outcome ListOutpostsWithS3(const Model::ListOutpostsWithS3Request& request = {}) const;
 
         /**
          * A Callable wrapper for ListOutpostsWithS3 that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOutpostsWithS3RequestT = Model::ListOutpostsWithS3Request>
-        Model::ListOutpostsWithS3OutcomeCallable ListOutpostsWithS3Callable(const ListOutpostsWithS3RequestT& request) const
+        Model::ListOutpostsWithS3OutcomeCallable ListOutpostsWithS3Callable(const ListOutpostsWithS3RequestT& request = {}) const
         {
             return SubmitCallable(&S3OutpostsClient::ListOutpostsWithS3, request);
         }
@@ -191,7 +191,7 @@ namespace S3Outposts
          * An Async wrapper for ListOutpostsWithS3 that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOutpostsWithS3RequestT = Model::ListOutpostsWithS3Request>
-        void ListOutpostsWithS3Async(const ListOutpostsWithS3RequestT& request, const ListOutpostsWithS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOutpostsWithS3Async(const ListOutpostsWithS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOutpostsWithS3RequestT& request = {}) const
         {
             return SubmitAsync(&S3OutpostsClient::ListOutpostsWithS3, request, handler, context);
         }

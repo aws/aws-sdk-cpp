@@ -230,13 +230,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteNotificationChannelOutcome DeleteNotificationChannel(const Model::DeleteNotificationChannelRequest& request) const;
+        virtual Model::DeleteNotificationChannelOutcome DeleteNotificationChannel(const Model::DeleteNotificationChannelRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteNotificationChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteNotificationChannelRequestT = Model::DeleteNotificationChannelRequest>
-        Model::DeleteNotificationChannelOutcomeCallable DeleteNotificationChannelCallable(const DeleteNotificationChannelRequestT& request) const
+        Model::DeleteNotificationChannelOutcomeCallable DeleteNotificationChannelCallable(const DeleteNotificationChannelRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::DeleteNotificationChannel, request);
         }
@@ -245,7 +245,7 @@ namespace FMS
          * An Async wrapper for DeleteNotificationChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteNotificationChannelRequestT = Model::DeleteNotificationChannelRequest>
-        void DeleteNotificationChannelAsync(const DeleteNotificationChannelRequestT& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteNotificationChannelAsync(const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteNotificationChannelRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::DeleteNotificationChannel, request, handler, context);
         }
@@ -338,13 +338,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisassociateAdminAccountOutcome DisassociateAdminAccount(const Model::DisassociateAdminAccountRequest& request) const;
+        virtual Model::DisassociateAdminAccountOutcome DisassociateAdminAccount(const Model::DisassociateAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisassociateAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DisassociateAdminAccountRequestT = Model::DisassociateAdminAccountRequest>
-        Model::DisassociateAdminAccountOutcomeCallable DisassociateAdminAccountCallable(const DisassociateAdminAccountRequestT& request) const
+        Model::DisassociateAdminAccountOutcomeCallable DisassociateAdminAccountCallable(const DisassociateAdminAccountRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::DisassociateAdminAccount, request);
         }
@@ -353,7 +353,7 @@ namespace FMS
          * An Async wrapper for DisassociateAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DisassociateAdminAccountRequestT = Model::DisassociateAdminAccountRequest>
-        void DisassociateAdminAccountAsync(const DisassociateAdminAccountRequestT& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DisassociateAdminAccountAsync(const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisassociateAdminAccountRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::DisassociateAdminAccount, request, handler, context);
         }
@@ -392,13 +392,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAdminAccountOutcome GetAdminAccount(const Model::GetAdminAccountRequest& request) const;
+        virtual Model::GetAdminAccountOutcome GetAdminAccount(const Model::GetAdminAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAdminAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetAdminAccountRequestT = Model::GetAdminAccountRequest>
-        Model::GetAdminAccountOutcomeCallable GetAdminAccountCallable(const GetAdminAccountRequestT& request) const
+        Model::GetAdminAccountOutcomeCallable GetAdminAccountCallable(const GetAdminAccountRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::GetAdminAccount, request);
         }
@@ -407,7 +407,7 @@ namespace FMS
          * An Async wrapper for GetAdminAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetAdminAccountRequestT = Model::GetAdminAccountRequest>
-        void GetAdminAccountAsync(const GetAdminAccountRequestT& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetAdminAccountAsync(const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAdminAccountRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::GetAdminAccount, request, handler, context);
         }
@@ -499,13 +499,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetNotificationChannelOutcome GetNotificationChannel(const Model::GetNotificationChannelRequest& request) const;
+        virtual Model::GetNotificationChannelOutcome GetNotificationChannel(const Model::GetNotificationChannelRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetNotificationChannel that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetNotificationChannelRequestT = Model::GetNotificationChannelRequest>
-        Model::GetNotificationChannelOutcomeCallable GetNotificationChannelCallable(const GetNotificationChannelRequestT& request) const
+        Model::GetNotificationChannelOutcomeCallable GetNotificationChannelCallable(const GetNotificationChannelRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::GetNotificationChannel, request);
         }
@@ -514,7 +514,7 @@ namespace FMS
          * An Async wrapper for GetNotificationChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetNotificationChannelRequestT = Model::GetNotificationChannelRequest>
-        void GetNotificationChannelAsync(const GetNotificationChannelRequestT& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetNotificationChannelAsync(const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetNotificationChannelRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::GetNotificationChannel, request, handler, context);
         }
@@ -683,13 +683,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAdminAccountsForOrganizationOutcome ListAdminAccountsForOrganization(const Model::ListAdminAccountsForOrganizationRequest& request) const;
+        virtual Model::ListAdminAccountsForOrganizationOutcome ListAdminAccountsForOrganization(const Model::ListAdminAccountsForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAdminAccountsForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAdminAccountsForOrganizationRequestT = Model::ListAdminAccountsForOrganizationRequest>
-        Model::ListAdminAccountsForOrganizationOutcomeCallable ListAdminAccountsForOrganizationCallable(const ListAdminAccountsForOrganizationRequestT& request) const
+        Model::ListAdminAccountsForOrganizationOutcomeCallable ListAdminAccountsForOrganizationCallable(const ListAdminAccountsForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::ListAdminAccountsForOrganization, request);
         }
@@ -698,7 +698,7 @@ namespace FMS
          * An Async wrapper for ListAdminAccountsForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAdminAccountsForOrganizationRequestT = Model::ListAdminAccountsForOrganizationRequest>
-        void ListAdminAccountsForOrganizationAsync(const ListAdminAccountsForOrganizationRequestT& request, const ListAdminAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAdminAccountsForOrganizationAsync(const ListAdminAccountsForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAdminAccountsForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::ListAdminAccountsForOrganization, request, handler, context);
         }
@@ -712,13 +712,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAdminsManagingAccountOutcome ListAdminsManagingAccount(const Model::ListAdminsManagingAccountRequest& request) const;
+        virtual Model::ListAdminsManagingAccountOutcome ListAdminsManagingAccount(const Model::ListAdminsManagingAccountRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAdminsManagingAccount that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAdminsManagingAccountRequestT = Model::ListAdminsManagingAccountRequest>
-        Model::ListAdminsManagingAccountOutcomeCallable ListAdminsManagingAccountCallable(const ListAdminsManagingAccountRequestT& request) const
+        Model::ListAdminsManagingAccountOutcomeCallable ListAdminsManagingAccountCallable(const ListAdminsManagingAccountRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::ListAdminsManagingAccount, request);
         }
@@ -727,7 +727,7 @@ namespace FMS
          * An Async wrapper for ListAdminsManagingAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAdminsManagingAccountRequestT = Model::ListAdminsManagingAccountRequest>
-        void ListAdminsManagingAccountAsync(const ListAdminsManagingAccountRequestT& request, const ListAdminsManagingAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAdminsManagingAccountAsync(const ListAdminsManagingAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAdminsManagingAccountRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::ListAdminsManagingAccount, request, handler, context);
         }
@@ -819,13 +819,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
+        virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMemberAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMemberAccountsRequestT = Model::ListMemberAccountsRequest>
-        Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const ListMemberAccountsRequestT& request) const
+        Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const ListMemberAccountsRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::ListMemberAccounts, request);
         }
@@ -834,7 +834,7 @@ namespace FMS
          * An Async wrapper for ListMemberAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMemberAccountsRequestT = Model::ListMemberAccountsRequest>
-        void ListMemberAccountsAsync(const ListMemberAccountsRequestT& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMemberAccountsAsync(const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMemberAccountsRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::ListMemberAccounts, request, handler, context);
         }
@@ -845,13 +845,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
+        virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request) const
+        Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const ListPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::ListPolicies, request);
         }
@@ -860,7 +860,7 @@ namespace FMS
          * An Async wrapper for ListPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPoliciesRequestT = Model::ListPoliciesRequest>
-        void ListPoliciesAsync(const ListPoliciesRequestT& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPoliciesAsync(const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::ListPolicies, request, handler, context);
         }
@@ -923,13 +923,13 @@ namespace FMS
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceSetsOutcome ListResourceSets(const Model::ListResourceSetsRequest& request) const;
+        virtual Model::ListResourceSetsOutcome ListResourceSets(const Model::ListResourceSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceSetsRequestT = Model::ListResourceSetsRequest>
-        Model::ListResourceSetsOutcomeCallable ListResourceSetsCallable(const ListResourceSetsRequestT& request) const
+        Model::ListResourceSetsOutcomeCallable ListResourceSetsCallable(const ListResourceSetsRequestT& request = {}) const
         {
             return SubmitCallable(&FMSClient::ListResourceSets, request);
         }
@@ -938,7 +938,7 @@ namespace FMS
          * An Async wrapper for ListResourceSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceSetsRequestT = Model::ListResourceSetsRequest>
-        void ListResourceSetsAsync(const ListResourceSetsRequestT& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceSetsAsync(const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceSetsRequestT& request = {}) const
         {
             return SubmitAsync(&FMSClient::ListResourceSets, request, handler, context);
         }

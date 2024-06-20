@@ -1029,13 +1029,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkServiceAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworkServiceAssociationsOutcome ListServiceNetworkServiceAssociations(const Model::ListServiceNetworkServiceAssociationsRequest& request) const;
+        virtual Model::ListServiceNetworkServiceAssociationsOutcome ListServiceNetworkServiceAssociations(const Model::ListServiceNetworkServiceAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworkServiceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworkServiceAssociationsRequestT = Model::ListServiceNetworkServiceAssociationsRequest>
-        Model::ListServiceNetworkServiceAssociationsOutcomeCallable ListServiceNetworkServiceAssociationsCallable(const ListServiceNetworkServiceAssociationsRequestT& request) const
+        Model::ListServiceNetworkServiceAssociationsOutcomeCallable ListServiceNetworkServiceAssociationsCallable(const ListServiceNetworkServiceAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworkServiceAssociations, request);
         }
@@ -1044,7 +1044,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworkServiceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworkServiceAssociationsRequestT = Model::ListServiceNetworkServiceAssociationsRequest>
-        void ListServiceNetworkServiceAssociationsAsync(const ListServiceNetworkServiceAssociationsRequestT& request, const ListServiceNetworkServiceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworkServiceAssociationsAsync(const ListServiceNetworkServiceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworkServiceAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworkServiceAssociations, request, handler, context);
         }
@@ -1056,13 +1056,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcAssociations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworkVpcAssociationsOutcome ListServiceNetworkVpcAssociations(const Model::ListServiceNetworkVpcAssociationsRequest& request) const;
+        virtual Model::ListServiceNetworkVpcAssociationsOutcome ListServiceNetworkVpcAssociations(const Model::ListServiceNetworkVpcAssociationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworkVpcAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworkVpcAssociationsRequestT = Model::ListServiceNetworkVpcAssociationsRequest>
-        Model::ListServiceNetworkVpcAssociationsOutcomeCallable ListServiceNetworkVpcAssociationsCallable(const ListServiceNetworkVpcAssociationsRequestT& request) const
+        Model::ListServiceNetworkVpcAssociationsOutcomeCallable ListServiceNetworkVpcAssociationsCallable(const ListServiceNetworkVpcAssociationsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworkVpcAssociations, request);
         }
@@ -1071,7 +1071,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworkVpcAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworkVpcAssociationsRequestT = Model::ListServiceNetworkVpcAssociationsRequest>
-        void ListServiceNetworkVpcAssociationsAsync(const ListServiceNetworkVpcAssociationsRequestT& request, const ListServiceNetworkVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworkVpcAssociationsAsync(const ListServiceNetworkVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworkVpcAssociationsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworkVpcAssociations, request, handler, context);
         }
@@ -1083,13 +1083,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServiceNetworksOutcome ListServiceNetworks(const Model::ListServiceNetworksRequest& request) const;
+        virtual Model::ListServiceNetworksOutcome ListServiceNetworks(const Model::ListServiceNetworksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServiceNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServiceNetworksRequestT = Model::ListServiceNetworksRequest>
-        Model::ListServiceNetworksOutcomeCallable ListServiceNetworksCallable(const ListServiceNetworksRequestT& request) const
+        Model::ListServiceNetworksOutcomeCallable ListServiceNetworksCallable(const ListServiceNetworksRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServiceNetworks, request);
         }
@@ -1098,7 +1098,7 @@ namespace VPCLattice
          * An Async wrapper for ListServiceNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServiceNetworksRequestT = Model::ListServiceNetworksRequest>
-        void ListServiceNetworksAsync(const ListServiceNetworksRequestT& request, const ListServiceNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServiceNetworksAsync(const ListServiceNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServiceNetworksRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServiceNetworks, request, handler, context);
         }
@@ -1109,13 +1109,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
+        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request) const
+        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListServices, request);
         }
@@ -1124,7 +1124,7 @@ namespace VPCLattice
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        void ListServicesAsync(const ListServicesRequestT& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServicesAsync(const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServicesRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListServices, request, handler, context);
         }
@@ -1160,13 +1160,13 @@ namespace VPCLattice
          * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargetGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTargetGroupsOutcome ListTargetGroups(const Model::ListTargetGroupsRequest& request) const;
+        virtual Model::ListTargetGroupsOutcome ListTargetGroups(const Model::ListTargetGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTargetGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTargetGroupsRequestT = Model::ListTargetGroupsRequest>
-        Model::ListTargetGroupsOutcomeCallable ListTargetGroupsCallable(const ListTargetGroupsRequestT& request) const
+        Model::ListTargetGroupsOutcomeCallable ListTargetGroupsCallable(const ListTargetGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&VPCLatticeClient::ListTargetGroups, request);
         }
@@ -1175,7 +1175,7 @@ namespace VPCLattice
          * An Async wrapper for ListTargetGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTargetGroupsRequestT = Model::ListTargetGroupsRequest>
-        void ListTargetGroupsAsync(const ListTargetGroupsRequestT& request, const ListTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTargetGroupsAsync(const ListTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTargetGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&VPCLatticeClient::ListTargetGroups, request, handler, context);
         }

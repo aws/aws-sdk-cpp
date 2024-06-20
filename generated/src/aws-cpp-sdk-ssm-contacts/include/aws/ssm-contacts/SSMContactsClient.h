@@ -592,13 +592,13 @@ namespace SSMContacts
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContacts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContactsOutcome ListContacts(const Model::ListContactsRequest& request) const;
+        virtual Model::ListContactsOutcome ListContacts(const Model::ListContactsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContacts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContactsRequestT = Model::ListContactsRequest>
-        Model::ListContactsOutcomeCallable ListContactsCallable(const ListContactsRequestT& request) const
+        Model::ListContactsOutcomeCallable ListContactsCallable(const ListContactsRequestT& request = {}) const
         {
             return SubmitCallable(&SSMContactsClient::ListContacts, request);
         }
@@ -607,7 +607,7 @@ namespace SSMContacts
          * An Async wrapper for ListContacts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContactsRequestT = Model::ListContactsRequest>
-        void ListContactsAsync(const ListContactsRequestT& request, const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContactsAsync(const ListContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContactsRequestT& request = {}) const
         {
             return SubmitAsync(&SSMContactsClient::ListContacts, request, handler, context);
         }
@@ -618,13 +618,13 @@ namespace SSMContacts
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListEngagements">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEngagementsOutcome ListEngagements(const Model::ListEngagementsRequest& request) const;
+        virtual Model::ListEngagementsOutcome ListEngagements(const Model::ListEngagementsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEngagements that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEngagementsRequestT = Model::ListEngagementsRequest>
-        Model::ListEngagementsOutcomeCallable ListEngagementsCallable(const ListEngagementsRequestT& request) const
+        Model::ListEngagementsOutcomeCallable ListEngagementsCallable(const ListEngagementsRequestT& request = {}) const
         {
             return SubmitCallable(&SSMContactsClient::ListEngagements, request);
         }
@@ -633,7 +633,7 @@ namespace SSMContacts
          * An Async wrapper for ListEngagements that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEngagementsRequestT = Model::ListEngagementsRequest>
-        void ListEngagementsAsync(const ListEngagementsRequestT& request, const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEngagementsAsync(const ListEngagementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEngagementsRequestT& request = {}) const
         {
             return SubmitAsync(&SSMContactsClient::ListEngagements, request, handler, context);
         }
@@ -830,13 +830,13 @@ namespace SSMContacts
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRotationsOutcome ListRotations(const Model::ListRotationsRequest& request) const;
+        virtual Model::ListRotationsOutcome ListRotations(const Model::ListRotationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRotations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRotationsRequestT = Model::ListRotationsRequest>
-        Model::ListRotationsOutcomeCallable ListRotationsCallable(const ListRotationsRequestT& request) const
+        Model::ListRotationsOutcomeCallable ListRotationsCallable(const ListRotationsRequestT& request = {}) const
         {
             return SubmitCallable(&SSMContactsClient::ListRotations, request);
         }
@@ -845,7 +845,7 @@ namespace SSMContacts
          * An Async wrapper for ListRotations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRotationsRequestT = Model::ListRotationsRequest>
-        void ListRotationsAsync(const ListRotationsRequestT& request, const ListRotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRotationsAsync(const ListRotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRotationsRequestT& request = {}) const
         {
             return SubmitAsync(&SSMContactsClient::ListRotations, request, handler, context);
         }

@@ -34,6 +34,7 @@
 #include <aws/emr-serverless/model/TagResourceResult.h>
 #include <aws/emr-serverless/model/UntagResourceResult.h>
 #include <aws/emr-serverless/model/UpdateApplicationResult.h>
+#include <aws/emr-serverless/model/ListApplicationsRequest.h>
 /* End of service model headers required in EMRServerlessClient header */
 
 namespace Aws

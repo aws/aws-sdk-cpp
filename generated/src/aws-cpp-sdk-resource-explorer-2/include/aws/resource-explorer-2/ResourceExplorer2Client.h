@@ -10,10 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
-#include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationRequest.h>
-#include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
-#include <aws/resource-explorer-2/model/DisassociateDefaultViewRequest.h>
-#include <aws/resource-explorer-2/model/GetIndexRequest.h>
 
 namespace Aws
 {
@@ -145,13 +141,13 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/BatchGetView">AWS
          * API Reference</a></p>
          */
-        virtual Model::BatchGetViewOutcome BatchGetView(const Model::BatchGetViewRequest& request) const;
+        virtual Model::BatchGetViewOutcome BatchGetView(const Model::BatchGetViewRequest& request = {}) const;
 
         /**
          * A Callable wrapper for BatchGetView that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename BatchGetViewRequestT = Model::BatchGetViewRequest>
-        Model::BatchGetViewOutcomeCallable BatchGetViewCallable(const BatchGetViewRequestT& request) const
+        Model::BatchGetViewOutcomeCallable BatchGetViewCallable(const BatchGetViewRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceExplorer2Client::BatchGetView, request);
         }
@@ -160,7 +156,7 @@ namespace ResourceExplorer2
          * An Async wrapper for BatchGetView that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename BatchGetViewRequestT = Model::BatchGetViewRequest>
-        void BatchGetViewAsync(const BatchGetViewRequestT& request, const BatchGetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void BatchGetViewAsync(const BatchGetViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const BatchGetViewRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::BatchGetView, request, handler, context);
         }
@@ -210,13 +206,13 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateIndex">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
+        virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateIndex that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateIndexRequestT = Model::CreateIndexRequest>
-        Model::CreateIndexOutcomeCallable CreateIndexCallable(const CreateIndexRequestT& request) const
+        Model::CreateIndexOutcomeCallable CreateIndexCallable(const CreateIndexRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceExplorer2Client::CreateIndex, request);
         }
@@ -225,7 +221,7 @@ namespace ResourceExplorer2
          * An Async wrapper for CreateIndex that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateIndexRequestT = Model::CreateIndexRequest>
-        void CreateIndexAsync(const CreateIndexRequestT& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateIndexAsync(const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateIndexRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::CreateIndex, request, handler, context);
         }
@@ -476,13 +472,13 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListIndexesOutcome ListIndexes(const Model::ListIndexesRequest& request) const;
+        virtual Model::ListIndexesOutcome ListIndexes(const Model::ListIndexesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListIndexes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListIndexesRequestT = Model::ListIndexesRequest>
-        Model::ListIndexesOutcomeCallable ListIndexesCallable(const ListIndexesRequestT& request) const
+        Model::ListIndexesOutcomeCallable ListIndexesCallable(const ListIndexesRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceExplorer2Client::ListIndexes, request);
         }
@@ -491,7 +487,7 @@ namespace ResourceExplorer2
          * An Async wrapper for ListIndexes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListIndexesRequestT = Model::ListIndexesRequest>
-        void ListIndexesAsync(const ListIndexesRequestT& request, const ListIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListIndexesAsync(const ListIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListIndexesRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListIndexes, request, handler, context);
         }
@@ -530,13 +526,13 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListSupportedResourceTypes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSupportedResourceTypesOutcome ListSupportedResourceTypes(const Model::ListSupportedResourceTypesRequest& request) const;
+        virtual Model::ListSupportedResourceTypesOutcome ListSupportedResourceTypes(const Model::ListSupportedResourceTypesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSupportedResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSupportedResourceTypesRequestT = Model::ListSupportedResourceTypesRequest>
-        Model::ListSupportedResourceTypesOutcomeCallable ListSupportedResourceTypesCallable(const ListSupportedResourceTypesRequestT& request) const
+        Model::ListSupportedResourceTypesOutcomeCallable ListSupportedResourceTypesCallable(const ListSupportedResourceTypesRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceExplorer2Client::ListSupportedResourceTypes, request);
         }
@@ -545,7 +541,7 @@ namespace ResourceExplorer2
          * An Async wrapper for ListSupportedResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSupportedResourceTypesRequestT = Model::ListSupportedResourceTypesRequest>
-        void ListSupportedResourceTypesAsync(const ListSupportedResourceTypesRequestT& request, const ListSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSupportedResourceTypesAsync(const ListSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSupportedResourceTypesRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListSupportedResourceTypes, request, handler, context);
         }
@@ -589,13 +585,13 @@ namespace ResourceExplorer2
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListViews">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListViewsOutcome ListViews(const Model::ListViewsRequest& request) const;
+        virtual Model::ListViewsOutcome ListViews(const Model::ListViewsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListViews that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListViewsRequestT = Model::ListViewsRequest>
-        Model::ListViewsOutcomeCallable ListViewsCallable(const ListViewsRequestT& request) const
+        Model::ListViewsOutcomeCallable ListViewsCallable(const ListViewsRequestT& request = {}) const
         {
             return SubmitCallable(&ResourceExplorer2Client::ListViews, request);
         }
@@ -604,7 +600,7 @@ namespace ResourceExplorer2
          * An Async wrapper for ListViews that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListViewsRequestT = Model::ListViewsRequest>
-        void ListViewsAsync(const ListViewsRequestT& request, const ListViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListViewsAsync(const ListViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListViewsRequestT& request = {}) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListViews, request, handler, context);
         }

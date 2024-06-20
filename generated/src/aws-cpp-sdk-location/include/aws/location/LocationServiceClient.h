@@ -1216,13 +1216,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceCollections">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGeofenceCollectionsOutcome ListGeofenceCollections(const Model::ListGeofenceCollectionsRequest& request) const;
+        virtual Model::ListGeofenceCollectionsOutcome ListGeofenceCollections(const Model::ListGeofenceCollectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGeofenceCollections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGeofenceCollectionsRequestT = Model::ListGeofenceCollectionsRequest>
-        Model::ListGeofenceCollectionsOutcomeCallable ListGeofenceCollectionsCallable(const ListGeofenceCollectionsRequestT& request) const
+        Model::ListGeofenceCollectionsOutcomeCallable ListGeofenceCollectionsCallable(const ListGeofenceCollectionsRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListGeofenceCollections, request);
         }
@@ -1231,7 +1231,7 @@ namespace LocationService
          * An Async wrapper for ListGeofenceCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGeofenceCollectionsRequestT = Model::ListGeofenceCollectionsRequest>
-        void ListGeofenceCollectionsAsync(const ListGeofenceCollectionsRequestT& request, const ListGeofenceCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGeofenceCollectionsAsync(const ListGeofenceCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGeofenceCollectionsRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListGeofenceCollections, request, handler, context);
         }
@@ -1268,13 +1268,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request) const;
+        virtual Model::ListKeysOutcome ListKeys(const Model::ListKeysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListKeys that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request) const
+        Model::ListKeysOutcomeCallable ListKeysCallable(const ListKeysRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListKeys, request);
         }
@@ -1283,7 +1283,7 @@ namespace LocationService
          * An Async wrapper for ListKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListKeysRequestT = Model::ListKeysRequest>
-        void ListKeysAsync(const ListKeysRequestT& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListKeysAsync(const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListKeysRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListKeys, request, handler, context);
         }
@@ -1294,13 +1294,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListMaps">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListMapsOutcome ListMaps(const Model::ListMapsRequest& request) const;
+        virtual Model::ListMapsOutcome ListMaps(const Model::ListMapsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListMaps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListMapsRequestT = Model::ListMapsRequest>
-        Model::ListMapsOutcomeCallable ListMapsCallable(const ListMapsRequestT& request) const
+        Model::ListMapsOutcomeCallable ListMapsCallable(const ListMapsRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListMaps, request);
         }
@@ -1309,7 +1309,7 @@ namespace LocationService
          * An Async wrapper for ListMaps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListMapsRequestT = Model::ListMapsRequest>
-        void ListMapsAsync(const ListMapsRequestT& request, const ListMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListMapsAsync(const ListMapsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMapsRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListMaps, request, handler, context);
         }
@@ -1320,13 +1320,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexes">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPlaceIndexesOutcome ListPlaceIndexes(const Model::ListPlaceIndexesRequest& request) const;
+        virtual Model::ListPlaceIndexesOutcome ListPlaceIndexes(const Model::ListPlaceIndexesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListPlaceIndexes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListPlaceIndexesRequestT = Model::ListPlaceIndexesRequest>
-        Model::ListPlaceIndexesOutcomeCallable ListPlaceIndexesCallable(const ListPlaceIndexesRequestT& request) const
+        Model::ListPlaceIndexesOutcomeCallable ListPlaceIndexesCallable(const ListPlaceIndexesRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListPlaceIndexes, request);
         }
@@ -1335,7 +1335,7 @@ namespace LocationService
          * An Async wrapper for ListPlaceIndexes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListPlaceIndexesRequestT = Model::ListPlaceIndexesRequest>
-        void ListPlaceIndexesAsync(const ListPlaceIndexesRequestT& request, const ListPlaceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListPlaceIndexesAsync(const ListPlaceIndexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPlaceIndexesRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListPlaceIndexes, request, handler, context);
         }
@@ -1346,13 +1346,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRouteCalculatorsOutcome ListRouteCalculators(const Model::ListRouteCalculatorsRequest& request) const;
+        virtual Model::ListRouteCalculatorsOutcome ListRouteCalculators(const Model::ListRouteCalculatorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRouteCalculators that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRouteCalculatorsRequestT = Model::ListRouteCalculatorsRequest>
-        Model::ListRouteCalculatorsOutcomeCallable ListRouteCalculatorsCallable(const ListRouteCalculatorsRequestT& request) const
+        Model::ListRouteCalculatorsOutcomeCallable ListRouteCalculatorsCallable(const ListRouteCalculatorsRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListRouteCalculators, request);
         }
@@ -1361,7 +1361,7 @@ namespace LocationService
          * An Async wrapper for ListRouteCalculators that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRouteCalculatorsRequestT = Model::ListRouteCalculatorsRequest>
-        void ListRouteCalculatorsAsync(const ListRouteCalculatorsRequestT& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRouteCalculatorsAsync(const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRouteCalculatorsRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListRouteCalculators, request, handler, context);
         }
@@ -1424,13 +1424,13 @@ namespace LocationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTrackers">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTrackersOutcome ListTrackers(const Model::ListTrackersRequest& request) const;
+        virtual Model::ListTrackersOutcome ListTrackers(const Model::ListTrackersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTrackers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTrackersRequestT = Model::ListTrackersRequest>
-        Model::ListTrackersOutcomeCallable ListTrackersCallable(const ListTrackersRequestT& request) const
+        Model::ListTrackersOutcomeCallable ListTrackersCallable(const ListTrackersRequestT& request = {}) const
         {
             return SubmitCallable(&LocationServiceClient::ListTrackers, request);
         }
@@ -1439,7 +1439,7 @@ namespace LocationService
          * An Async wrapper for ListTrackers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTrackersRequestT = Model::ListTrackersRequest>
-        void ListTrackersAsync(const ListTrackersRequestT& request, const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTrackersAsync(const ListTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTrackersRequestT& request = {}) const
         {
             return SubmitAsync(&LocationServiceClient::ListTrackers, request, handler, context);
         }

@@ -58,6 +58,8 @@
 #include <aws/iottwinmaker/model/UpdatePricingPlanResult.h>
 #include <aws/iottwinmaker/model/UpdateSceneResult.h>
 #include <aws/iottwinmaker/model/UpdateWorkspaceResult.h>
+#include <aws/iottwinmaker/model/GetPricingPlanRequest.h>
+#include <aws/iottwinmaker/model/ListWorkspacesRequest.h>
 /* End of service model headers required in IoTTwinMakerClient header */
 
 namespace Aws

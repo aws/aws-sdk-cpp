@@ -56,6 +56,12 @@
 #include <aws/kms/model/UpdateCustomKeyStoreResult.h>
 #include <aws/kms/model/VerifyResult.h>
 #include <aws/kms/model/VerifyMacResult.h>
+#include <aws/kms/model/ListAliasesRequest.h>
+#include <aws/kms/model/DescribeCustomKeyStoresRequest.h>
+#include <aws/kms/model/GenerateRandomRequest.h>
+#include <aws/kms/model/RetireGrantRequest.h>
+#include <aws/kms/model/ListKeysRequest.h>
+#include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KMSClient header */
 

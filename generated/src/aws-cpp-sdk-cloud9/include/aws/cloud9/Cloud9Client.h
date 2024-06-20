@@ -213,13 +213,13 @@ namespace Cloud9
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DescribeEnvironmentMemberships">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEnvironmentMembershipsOutcome DescribeEnvironmentMemberships(const Model::DescribeEnvironmentMembershipsRequest& request) const;
+        virtual Model::DescribeEnvironmentMembershipsOutcome DescribeEnvironmentMemberships(const Model::DescribeEnvironmentMembershipsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEnvironmentMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEnvironmentMembershipsRequestT = Model::DescribeEnvironmentMembershipsRequest>
-        Model::DescribeEnvironmentMembershipsOutcomeCallable DescribeEnvironmentMembershipsCallable(const DescribeEnvironmentMembershipsRequestT& request) const
+        Model::DescribeEnvironmentMembershipsOutcomeCallable DescribeEnvironmentMembershipsCallable(const DescribeEnvironmentMembershipsRequestT& request = {}) const
         {
             return SubmitCallable(&Cloud9Client::DescribeEnvironmentMemberships, request);
         }
@@ -228,7 +228,7 @@ namespace Cloud9
          * An Async wrapper for DescribeEnvironmentMemberships that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEnvironmentMembershipsRequestT = Model::DescribeEnvironmentMembershipsRequest>
-        void DescribeEnvironmentMembershipsAsync(const DescribeEnvironmentMembershipsRequestT& request, const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEnvironmentMembershipsAsync(const DescribeEnvironmentMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEnvironmentMembershipsRequestT& request = {}) const
         {
             return SubmitAsync(&Cloud9Client::DescribeEnvironmentMemberships, request, handler, context);
         }
@@ -291,13 +291,13 @@ namespace Cloud9
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListEnvironments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
+        virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListEnvironments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request) const
+        Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitCallable(&Cloud9Client::ListEnvironments, request);
         }
@@ -306,7 +306,7 @@ namespace Cloud9
          * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListEnvironmentsRequestT = Model::ListEnvironmentsRequest>
-        void ListEnvironmentsAsync(const ListEnvironmentsRequestT& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListEnvironmentsAsync(const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEnvironmentsRequestT& request = {}) const
         {
             return SubmitAsync(&Cloud9Client::ListEnvironments, request, handler, context);
         }

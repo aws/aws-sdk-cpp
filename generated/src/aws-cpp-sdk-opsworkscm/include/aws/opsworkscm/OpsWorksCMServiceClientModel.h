@@ -37,6 +37,9 @@
 #include <aws/opsworkscm/model/UntagResourceResult.h>
 #include <aws/opsworkscm/model/UpdateServerResult.h>
 #include <aws/opsworkscm/model/UpdateServerEngineAttributesResult.h>
+#include <aws/opsworkscm/model/DescribeServersRequest.h>
+#include <aws/opsworkscm/model/DescribeAccountAttributesRequest.h>
+#include <aws/opsworkscm/model/DescribeBackupsRequest.h>
 /* End of service model headers required in OpsWorksCMClient header */
 
 namespace Aws

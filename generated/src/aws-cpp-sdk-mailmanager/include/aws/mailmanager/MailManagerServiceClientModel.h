@@ -65,6 +65,13 @@
 #include <aws/mailmanager/model/UpdateRelayResult.h>
 #include <aws/mailmanager/model/UpdateRuleSetResult.h>
 #include <aws/mailmanager/model/UpdateTrafficPolicyResult.h>
+#include <aws/mailmanager/model/ListTrafficPoliciesRequest.h>
+#include <aws/mailmanager/model/ListArchivesRequest.h>
+#include <aws/mailmanager/model/ListRelaysRequest.h>
+#include <aws/mailmanager/model/ListAddonInstancesRequest.h>
+#include <aws/mailmanager/model/ListIngressPointsRequest.h>
+#include <aws/mailmanager/model/ListRuleSetsRequest.h>
+#include <aws/mailmanager/model/ListAddonSubscriptionsRequest.h>
 /* End of service model headers required in MailManagerClient header */
 
 namespace Aws

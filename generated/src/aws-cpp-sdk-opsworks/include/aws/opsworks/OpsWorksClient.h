@@ -10,8 +10,6 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworks/OpsWorksServiceClientModel.h>
-#include <aws/opsworks/model/DescribeOperatingSystemsRequest.h>
-#include <aws/opsworks/model/DescribeMyUserProfileRequest.h>
 
 namespace Aws
 {
@@ -824,13 +822,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request) const;
+        virtual Model::DescribeAgentVersionsOutcome DescribeAgentVersions(const Model::DescribeAgentVersionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeAgentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAgentVersionsRequestT = Model::DescribeAgentVersionsRequest>
-        Model::DescribeAgentVersionsOutcomeCallable DescribeAgentVersionsCallable(const DescribeAgentVersionsRequestT& request) const
+        Model::DescribeAgentVersionsOutcomeCallable DescribeAgentVersionsCallable(const DescribeAgentVersionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeAgentVersions, request);
         }
@@ -839,7 +837,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeAgentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAgentVersionsRequestT = Model::DescribeAgentVersionsRequest>
-        void DescribeAgentVersionsAsync(const DescribeAgentVersionsRequestT& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAgentVersionsAsync(const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAgentVersionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeAgentVersions, request, handler, context);
         }
@@ -855,13 +853,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request) const;
+        virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeApps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeAppsRequestT = Model::DescribeAppsRequest>
-        Model::DescribeAppsOutcomeCallable DescribeAppsCallable(const DescribeAppsRequestT& request) const
+        Model::DescribeAppsOutcomeCallable DescribeAppsCallable(const DescribeAppsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeApps, request);
         }
@@ -870,7 +868,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeApps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeAppsRequestT = Model::DescribeAppsRequest>
-        void DescribeAppsAsync(const DescribeAppsRequestT& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeAppsAsync(const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeAppsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeApps, request, handler, context);
         }
@@ -886,13 +884,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request) const;
+        virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCommands that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCommandsRequestT = Model::DescribeCommandsRequest>
-        Model::DescribeCommandsOutcomeCallable DescribeCommandsCallable(const DescribeCommandsRequestT& request) const
+        Model::DescribeCommandsOutcomeCallable DescribeCommandsCallable(const DescribeCommandsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeCommands, request);
         }
@@ -901,7 +899,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeCommands that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCommandsRequestT = Model::DescribeCommandsRequest>
-        void DescribeCommandsAsync(const DescribeCommandsRequestT& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCommandsAsync(const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCommandsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeCommands, request, handler, context);
         }
@@ -918,13 +916,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request) const;
+        virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeDeploymentsRequestT = Model::DescribeDeploymentsRequest>
-        Model::DescribeDeploymentsOutcomeCallable DescribeDeploymentsCallable(const DescribeDeploymentsRequestT& request) const
+        Model::DescribeDeploymentsOutcomeCallable DescribeDeploymentsCallable(const DescribeDeploymentsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeDeployments, request);
         }
@@ -933,7 +931,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeDeploymentsRequestT = Model::DescribeDeploymentsRequest>
-        void DescribeDeploymentsAsync(const DescribeDeploymentsRequestT& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeDeploymentsAsync(const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDeploymentsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeDeployments, request, handler, context);
         }
@@ -953,13 +951,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEcsClustersOutcome DescribeEcsClusters(const Model::DescribeEcsClustersRequest& request) const;
+        virtual Model::DescribeEcsClustersOutcome DescribeEcsClusters(const Model::DescribeEcsClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEcsClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEcsClustersRequestT = Model::DescribeEcsClustersRequest>
-        Model::DescribeEcsClustersOutcomeCallable DescribeEcsClustersCallable(const DescribeEcsClustersRequestT& request) const
+        Model::DescribeEcsClustersOutcomeCallable DescribeEcsClustersCallable(const DescribeEcsClustersRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeEcsClusters, request);
         }
@@ -968,7 +966,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeEcsClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEcsClustersRequestT = Model::DescribeEcsClustersRequest>
-        void DescribeEcsClustersAsync(const DescribeEcsClustersRequestT& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEcsClustersAsync(const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEcsClustersRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeEcsClusters, request, handler, context);
         }
@@ -986,13 +984,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeElasticIpsOutcome DescribeElasticIps(const Model::DescribeElasticIpsRequest& request) const;
+        virtual Model::DescribeElasticIpsOutcome DescribeElasticIps(const Model::DescribeElasticIpsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeElasticIps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeElasticIpsRequestT = Model::DescribeElasticIpsRequest>
-        Model::DescribeElasticIpsOutcomeCallable DescribeElasticIpsCallable(const DescribeElasticIpsRequestT& request) const
+        Model::DescribeElasticIpsOutcomeCallable DescribeElasticIpsCallable(const DescribeElasticIpsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeElasticIps, request);
         }
@@ -1001,7 +999,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeElasticIps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeElasticIpsRequestT = Model::DescribeElasticIpsRequest>
-        void DescribeElasticIpsAsync(const DescribeElasticIpsRequestT& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeElasticIpsAsync(const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeElasticIpsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeElasticIps, request, handler, context);
         }
@@ -1017,13 +1015,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request) const;
+        virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeElasticLoadBalancers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeElasticLoadBalancersRequestT = Model::DescribeElasticLoadBalancersRequest>
-        Model::DescribeElasticLoadBalancersOutcomeCallable DescribeElasticLoadBalancersCallable(const DescribeElasticLoadBalancersRequestT& request) const
+        Model::DescribeElasticLoadBalancersOutcomeCallable DescribeElasticLoadBalancersCallable(const DescribeElasticLoadBalancersRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeElasticLoadBalancers, request);
         }
@@ -1032,7 +1030,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeElasticLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeElasticLoadBalancersRequestT = Model::DescribeElasticLoadBalancersRequest>
-        void DescribeElasticLoadBalancersAsync(const DescribeElasticLoadBalancersRequestT& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeElasticLoadBalancersAsync(const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeElasticLoadBalancersRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeElasticLoadBalancers, request, handler, context);
         }
@@ -1048,13 +1046,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
+        virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeInstancesRequestT = Model::DescribeInstancesRequest>
-        Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const DescribeInstancesRequestT& request) const
+        Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const DescribeInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeInstances, request);
         }
@@ -1063,7 +1061,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeInstancesRequestT = Model::DescribeInstancesRequest>
-        void DescribeInstancesAsync(const DescribeInstancesRequestT& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeInstancesAsync(const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeInstances, request, handler, context);
         }
@@ -1080,13 +1078,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request) const;
+        virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLayers that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeLayersRequestT = Model::DescribeLayersRequest>
-        Model::DescribeLayersOutcomeCallable DescribeLayersCallable(const DescribeLayersRequestT& request) const
+        Model::DescribeLayersOutcomeCallable DescribeLayersCallable(const DescribeLayersRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeLayers, request);
         }
@@ -1095,7 +1093,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeLayers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeLayersRequestT = Model::DescribeLayersRequest>
-        void DescribeLayersAsync(const DescribeLayersRequestT& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeLayersAsync(const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLayersRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeLayers, request, handler, context);
         }
@@ -1198,13 +1196,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePermissionsOutcome DescribePermissions(const Model::DescribePermissionsRequest& request) const;
+        virtual Model::DescribePermissionsOutcome DescribePermissions(const Model::DescribePermissionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePermissions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePermissionsRequestT = Model::DescribePermissionsRequest>
-        Model::DescribePermissionsOutcomeCallable DescribePermissionsCallable(const DescribePermissionsRequestT& request) const
+        Model::DescribePermissionsOutcomeCallable DescribePermissionsCallable(const DescribePermissionsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribePermissions, request);
         }
@@ -1213,7 +1211,7 @@ namespace OpsWorks
          * An Async wrapper for DescribePermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePermissionsRequestT = Model::DescribePermissionsRequest>
-        void DescribePermissionsAsync(const DescribePermissionsRequestT& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePermissionsAsync(const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePermissionsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribePermissions, request, handler, context);
         }
@@ -1229,13 +1227,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request) const;
+        virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeRaidArrays that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeRaidArraysRequestT = Model::DescribeRaidArraysRequest>
-        Model::DescribeRaidArraysOutcomeCallable DescribeRaidArraysCallable(const DescribeRaidArraysRequestT& request) const
+        Model::DescribeRaidArraysOutcomeCallable DescribeRaidArraysCallable(const DescribeRaidArraysRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeRaidArrays, request);
         }
@@ -1244,7 +1242,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeRaidArrays that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeRaidArraysRequestT = Model::DescribeRaidArraysRequest>
-        void DescribeRaidArraysAsync(const DescribeRaidArraysRequestT& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeRaidArraysAsync(const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRaidArraysRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeRaidArrays, request, handler, context);
         }
@@ -1291,13 +1289,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeServiceErrorsOutcome DescribeServiceErrors(const Model::DescribeServiceErrorsRequest& request) const;
+        virtual Model::DescribeServiceErrorsOutcome DescribeServiceErrors(const Model::DescribeServiceErrorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeServiceErrors that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeServiceErrorsRequestT = Model::DescribeServiceErrorsRequest>
-        Model::DescribeServiceErrorsOutcomeCallable DescribeServiceErrorsCallable(const DescribeServiceErrorsRequestT& request) const
+        Model::DescribeServiceErrorsOutcomeCallable DescribeServiceErrorsCallable(const DescribeServiceErrorsRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeServiceErrors, request);
         }
@@ -1306,7 +1304,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeServiceErrors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeServiceErrorsRequestT = Model::DescribeServiceErrorsRequest>
-        void DescribeServiceErrorsAsync(const DescribeServiceErrorsRequestT& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeServiceErrorsAsync(const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeServiceErrorsRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeServiceErrors, request, handler, context);
         }
@@ -1384,13 +1382,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
+        virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeStacks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeStacksRequestT = Model::DescribeStacksRequest>
-        Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const DescribeStacksRequestT& request) const
+        Model::DescribeStacksOutcomeCallable DescribeStacksCallable(const DescribeStacksRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeStacks, request);
         }
@@ -1399,7 +1397,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeStacks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeStacksRequestT = Model::DescribeStacksRequest>
-        void DescribeStacksAsync(const DescribeStacksRequestT& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeStacksAsync(const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeStacksRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeStacks, request, handler, context);
         }
@@ -1445,13 +1443,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeUserProfilesOutcome DescribeUserProfiles(const Model::DescribeUserProfilesRequest& request) const;
+        virtual Model::DescribeUserProfilesOutcome DescribeUserProfiles(const Model::DescribeUserProfilesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeUserProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeUserProfilesRequestT = Model::DescribeUserProfilesRequest>
-        Model::DescribeUserProfilesOutcomeCallable DescribeUserProfilesCallable(const DescribeUserProfilesRequestT& request) const
+        Model::DescribeUserProfilesOutcomeCallable DescribeUserProfilesCallable(const DescribeUserProfilesRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeUserProfiles, request);
         }
@@ -1460,7 +1458,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeUserProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeUserProfilesRequestT = Model::DescribeUserProfilesRequest>
-        void DescribeUserProfilesAsync(const DescribeUserProfilesRequestT& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeUserProfilesAsync(const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeUserProfilesRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeUserProfiles, request, handler, context);
         }
@@ -1476,13 +1474,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
+        virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVolumes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVolumesRequestT = Model::DescribeVolumesRequest>
-        Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const DescribeVolumesRequestT& request) const
+        Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const DescribeVolumesRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::DescribeVolumes, request);
         }
@@ -1491,7 +1489,7 @@ namespace OpsWorks
          * An Async wrapper for DescribeVolumes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVolumesRequestT = Model::DescribeVolumesRequest>
-        void DescribeVolumesAsync(const DescribeVolumesRequestT& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVolumesAsync(const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVolumesRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::DescribeVolumes, request, handler, context);
         }
@@ -2332,13 +2330,13 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateMyUserProfileOutcome UpdateMyUserProfile(const Model::UpdateMyUserProfileRequest& request) const;
+        virtual Model::UpdateMyUserProfileOutcome UpdateMyUserProfile(const Model::UpdateMyUserProfileRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateMyUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateMyUserProfileRequestT = Model::UpdateMyUserProfileRequest>
-        Model::UpdateMyUserProfileOutcomeCallable UpdateMyUserProfileCallable(const UpdateMyUserProfileRequestT& request) const
+        Model::UpdateMyUserProfileOutcomeCallable UpdateMyUserProfileCallable(const UpdateMyUserProfileRequestT& request = {}) const
         {
             return SubmitCallable(&OpsWorksClient::UpdateMyUserProfile, request);
         }
@@ -2347,7 +2345,7 @@ namespace OpsWorks
          * An Async wrapper for UpdateMyUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateMyUserProfileRequestT = Model::UpdateMyUserProfileRequest>
-        void UpdateMyUserProfileAsync(const UpdateMyUserProfileRequestT& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateMyUserProfileAsync(const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateMyUserProfileRequestT& request = {}) const
         {
             return SubmitAsync(&OpsWorksClient::UpdateMyUserProfile, request, handler, context);
         }

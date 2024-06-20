@@ -29,6 +29,9 @@
 #include <aws/arc-zonal-shift/model/UpdatePracticeRunConfigurationResult.h>
 #include <aws/arc-zonal-shift/model/UpdateZonalAutoshiftConfigurationResult.h>
 #include <aws/arc-zonal-shift/model/UpdateZonalShiftResult.h>
+#include <aws/arc-zonal-shift/model/ListManagedResourcesRequest.h>
+#include <aws/arc-zonal-shift/model/ListAutoshiftsRequest.h>
+#include <aws/arc-zonal-shift/model/ListZonalShiftsRequest.h>
 /* End of service model headers required in ARCZonalShiftClient header */
 
 namespace Aws

@@ -25,6 +25,8 @@
 #include <aws/account/model/GetRegionOptStatusResult.h>
 #include <aws/account/model/ListRegionsResult.h>
 #include <aws/account/model/StartPrimaryEmailUpdateResult.h>
+#include <aws/account/model/GetContactInformationRequest.h>
+#include <aws/account/model/ListRegionsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in AccountClient header */
 

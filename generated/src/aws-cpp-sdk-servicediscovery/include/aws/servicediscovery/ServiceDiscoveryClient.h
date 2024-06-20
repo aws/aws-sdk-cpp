@@ -525,13 +525,13 @@ namespace ServiceDiscovery
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request) const;
+        virtual Model::ListNamespacesOutcome ListNamespaces(const Model::ListNamespacesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListNamespaces that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListNamespacesRequestT = Model::ListNamespacesRequest>
-        Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const ListNamespacesRequestT& request) const
+        Model::ListNamespacesOutcomeCallable ListNamespacesCallable(const ListNamespacesRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceDiscoveryClient::ListNamespaces, request);
         }
@@ -540,7 +540,7 @@ namespace ServiceDiscovery
          * An Async wrapper for ListNamespaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListNamespacesRequestT = Model::ListNamespacesRequest>
-        void ListNamespacesAsync(const ListNamespacesRequestT& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListNamespacesAsync(const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNamespacesRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::ListNamespaces, request, handler, context);
         }
@@ -551,13 +551,13 @@ namespace ServiceDiscovery
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListOperations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
+        virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListOperations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListOperationsRequestT = Model::ListOperationsRequest>
-        Model::ListOperationsOutcomeCallable ListOperationsCallable(const ListOperationsRequestT& request) const
+        Model::ListOperationsOutcomeCallable ListOperationsCallable(const ListOperationsRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceDiscoveryClient::ListOperations, request);
         }
@@ -566,7 +566,7 @@ namespace ServiceDiscovery
          * An Async wrapper for ListOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListOperationsRequestT = Model::ListOperationsRequest>
-        void ListOperationsAsync(const ListOperationsRequestT& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListOperationsAsync(const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOperationsRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::ListOperations, request, handler, context);
         }
@@ -577,13 +577,13 @@ namespace ServiceDiscovery
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
+        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request) const
+        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request = {}) const
         {
             return SubmitCallable(&ServiceDiscoveryClient::ListServices, request);
         }
@@ -592,7 +592,7 @@ namespace ServiceDiscovery
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        void ListServicesAsync(const ListServicesRequestT& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServicesAsync(const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServicesRequestT& request = {}) const
         {
             return SubmitAsync(&ServiceDiscoveryClient::ListServices, request, handler, context);
         }

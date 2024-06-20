@@ -44,6 +44,7 @@
 #include <aws/verifiedpermissions/model/UpdatePolicyResult.h>
 #include <aws/verifiedpermissions/model/UpdatePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/UpdatePolicyTemplateResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
 /* End of service model headers required in VerifiedPermissionsClient header */
 
 namespace Aws

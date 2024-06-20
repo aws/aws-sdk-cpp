@@ -854,13 +854,13 @@ namespace ResilienceHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessments">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppAssessmentsOutcome ListAppAssessments(const Model::ListAppAssessmentsRequest& request) const;
+        virtual Model::ListAppAssessmentsOutcome ListAppAssessments(const Model::ListAppAssessmentsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAppAssessments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppAssessmentsRequestT = Model::ListAppAssessmentsRequest>
-        Model::ListAppAssessmentsOutcomeCallable ListAppAssessmentsCallable(const ListAppAssessmentsRequestT& request) const
+        Model::ListAppAssessmentsOutcomeCallable ListAppAssessmentsCallable(const ListAppAssessmentsRequestT& request = {}) const
         {
             return SubmitCallable(&ResilienceHubClient::ListAppAssessments, request);
         }
@@ -869,7 +869,7 @@ namespace ResilienceHub
          * An Async wrapper for ListAppAssessments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppAssessmentsRequestT = Model::ListAppAssessmentsRequest>
-        void ListAppAssessmentsAsync(const ListAppAssessmentsRequestT& request, const ListAppAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppAssessmentsAsync(const ListAppAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppAssessmentsRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListAppAssessments, request, handler, context);
         }
@@ -1070,13 +1070,13 @@ namespace ResilienceHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListApps">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
+        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListApps that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request) const
+        Model::ListAppsOutcomeCallable ListAppsCallable(const ListAppsRequestT& request = {}) const
         {
             return SubmitCallable(&ResilienceHubClient::ListApps, request);
         }
@@ -1085,7 +1085,7 @@ namespace ResilienceHub
          * An Async wrapper for ListApps that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAppsRequestT = Model::ListAppsRequest>
-        void ListAppsAsync(const ListAppsRequestT& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAppsAsync(const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppsRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListApps, request, handler, context);
         }
@@ -1096,13 +1096,13 @@ namespace ResilienceHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListRecommendationTemplatesOutcome ListRecommendationTemplates(const Model::ListRecommendationTemplatesRequest& request) const;
+        virtual Model::ListRecommendationTemplatesOutcome ListRecommendationTemplates(const Model::ListRecommendationTemplatesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListRecommendationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListRecommendationTemplatesRequestT = Model::ListRecommendationTemplatesRequest>
-        Model::ListRecommendationTemplatesOutcomeCallable ListRecommendationTemplatesCallable(const ListRecommendationTemplatesRequestT& request) const
+        Model::ListRecommendationTemplatesOutcomeCallable ListRecommendationTemplatesCallable(const ListRecommendationTemplatesRequestT& request = {}) const
         {
             return SubmitCallable(&ResilienceHubClient::ListRecommendationTemplates, request);
         }
@@ -1111,7 +1111,7 @@ namespace ResilienceHub
          * An Async wrapper for ListRecommendationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListRecommendationTemplatesRequestT = Model::ListRecommendationTemplatesRequest>
-        void ListRecommendationTemplatesAsync(const ListRecommendationTemplatesRequestT& request, const ListRecommendationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListRecommendationTemplatesAsync(const ListRecommendationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRecommendationTemplatesRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListRecommendationTemplates, request, handler, context);
         }
@@ -1122,13 +1122,13 @@ namespace ResilienceHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResiliencyPoliciesOutcome ListResiliencyPolicies(const Model::ListResiliencyPoliciesRequest& request) const;
+        virtual Model::ListResiliencyPoliciesOutcome ListResiliencyPolicies(const Model::ListResiliencyPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResiliencyPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResiliencyPoliciesRequestT = Model::ListResiliencyPoliciesRequest>
-        Model::ListResiliencyPoliciesOutcomeCallable ListResiliencyPoliciesCallable(const ListResiliencyPoliciesRequestT& request) const
+        Model::ListResiliencyPoliciesOutcomeCallable ListResiliencyPoliciesCallable(const ListResiliencyPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&ResilienceHubClient::ListResiliencyPolicies, request);
         }
@@ -1137,7 +1137,7 @@ namespace ResilienceHub
          * An Async wrapper for ListResiliencyPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResiliencyPoliciesRequestT = Model::ListResiliencyPoliciesRequest>
-        void ListResiliencyPoliciesAsync(const ListResiliencyPoliciesRequestT& request, const ListResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResiliencyPoliciesAsync(const ListResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResiliencyPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListResiliencyPolicies, request, handler, context);
         }
@@ -1174,13 +1174,13 @@ namespace ResilienceHub
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListSuggestedResiliencyPoliciesOutcome ListSuggestedResiliencyPolicies(const Model::ListSuggestedResiliencyPoliciesRequest& request) const;
+        virtual Model::ListSuggestedResiliencyPoliciesOutcome ListSuggestedResiliencyPolicies(const Model::ListSuggestedResiliencyPoliciesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListSuggestedResiliencyPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListSuggestedResiliencyPoliciesRequestT = Model::ListSuggestedResiliencyPoliciesRequest>
-        Model::ListSuggestedResiliencyPoliciesOutcomeCallable ListSuggestedResiliencyPoliciesCallable(const ListSuggestedResiliencyPoliciesRequestT& request) const
+        Model::ListSuggestedResiliencyPoliciesOutcomeCallable ListSuggestedResiliencyPoliciesCallable(const ListSuggestedResiliencyPoliciesRequestT& request = {}) const
         {
             return SubmitCallable(&ResilienceHubClient::ListSuggestedResiliencyPolicies, request);
         }
@@ -1189,7 +1189,7 @@ namespace ResilienceHub
          * An Async wrapper for ListSuggestedResiliencyPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListSuggestedResiliencyPoliciesRequestT = Model::ListSuggestedResiliencyPoliciesRequest>
-        void ListSuggestedResiliencyPoliciesAsync(const ListSuggestedResiliencyPoliciesRequestT& request, const ListSuggestedResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListSuggestedResiliencyPoliciesAsync(const ListSuggestedResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSuggestedResiliencyPoliciesRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListSuggestedResiliencyPolicies, request, handler, context);
         }

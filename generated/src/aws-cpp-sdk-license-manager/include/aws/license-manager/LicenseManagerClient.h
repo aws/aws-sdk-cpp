@@ -742,13 +742,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetServiceSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetServiceSettingsOutcome GetServiceSettings(const Model::GetServiceSettingsRequest& request) const;
+        virtual Model::GetServiceSettingsOutcome GetServiceSettings(const Model::GetServiceSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetServiceSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetServiceSettingsRequestT = Model::GetServiceSettingsRequest>
-        Model::GetServiceSettingsOutcomeCallable GetServiceSettingsCallable(const GetServiceSettingsRequestT& request) const
+        Model::GetServiceSettingsOutcomeCallable GetServiceSettingsCallable(const GetServiceSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::GetServiceSettings, request);
         }
@@ -757,7 +757,7 @@ namespace LicenseManager
          * An Async wrapper for GetServiceSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetServiceSettingsRequestT = Model::GetServiceSettingsRequest>
-        void GetServiceSettingsAsync(const GetServiceSettingsRequestT& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetServiceSettingsAsync(const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetServiceSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::GetServiceSettings, request, handler, context);
         }
@@ -796,13 +796,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDistributedGrantsOutcome ListDistributedGrants(const Model::ListDistributedGrantsRequest& request) const;
+        virtual Model::ListDistributedGrantsOutcome ListDistributedGrants(const Model::ListDistributedGrantsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListDistributedGrants that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListDistributedGrantsRequestT = Model::ListDistributedGrantsRequest>
-        Model::ListDistributedGrantsOutcomeCallable ListDistributedGrantsCallable(const ListDistributedGrantsRequestT& request) const
+        Model::ListDistributedGrantsOutcomeCallable ListDistributedGrantsCallable(const ListDistributedGrantsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListDistributedGrants, request);
         }
@@ -811,7 +811,7 @@ namespace LicenseManager
          * An Async wrapper for ListDistributedGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListDistributedGrantsRequestT = Model::ListDistributedGrantsRequest>
-        void ListDistributedGrantsAsync(const ListDistributedGrantsRequestT& request, const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListDistributedGrantsAsync(const ListDistributedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDistributedGrantsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListDistributedGrants, request, handler, context);
         }
@@ -848,13 +848,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLicenseConfigurationsOutcome ListLicenseConfigurations(const Model::ListLicenseConfigurationsRequest& request) const;
+        virtual Model::ListLicenseConfigurationsOutcome ListLicenseConfigurations(const Model::ListLicenseConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLicenseConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLicenseConfigurationsRequestT = Model::ListLicenseConfigurationsRequest>
-        Model::ListLicenseConfigurationsOutcomeCallable ListLicenseConfigurationsCallable(const ListLicenseConfigurationsRequestT& request) const
+        Model::ListLicenseConfigurationsOutcomeCallable ListLicenseConfigurationsCallable(const ListLicenseConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListLicenseConfigurations, request);
         }
@@ -863,7 +863,7 @@ namespace LicenseManager
          * An Async wrapper for ListLicenseConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLicenseConfigurationsRequestT = Model::ListLicenseConfigurationsRequest>
-        void ListLicenseConfigurationsAsync(const ListLicenseConfigurationsRequestT& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLicenseConfigurationsAsync(const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLicenseConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListLicenseConfigurations, request, handler, context);
         }
@@ -874,13 +874,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConversionTasks">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLicenseConversionTasksOutcome ListLicenseConversionTasks(const Model::ListLicenseConversionTasksRequest& request) const;
+        virtual Model::ListLicenseConversionTasksOutcome ListLicenseConversionTasks(const Model::ListLicenseConversionTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLicenseConversionTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLicenseConversionTasksRequestT = Model::ListLicenseConversionTasksRequest>
-        Model::ListLicenseConversionTasksOutcomeCallable ListLicenseConversionTasksCallable(const ListLicenseConversionTasksRequestT& request) const
+        Model::ListLicenseConversionTasksOutcomeCallable ListLicenseConversionTasksCallable(const ListLicenseConversionTasksRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListLicenseConversionTasks, request);
         }
@@ -889,7 +889,7 @@ namespace LicenseManager
          * An Async wrapper for ListLicenseConversionTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLicenseConversionTasksRequestT = Model::ListLicenseConversionTasksRequest>
-        void ListLicenseConversionTasksAsync(const ListLicenseConversionTasksRequestT& request, const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLicenseConversionTasksAsync(const ListLicenseConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLicenseConversionTasksRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListLicenseConversionTasks, request, handler, context);
         }
@@ -899,13 +899,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLicenseManagerReportGeneratorsOutcome ListLicenseManagerReportGenerators(const Model::ListLicenseManagerReportGeneratorsRequest& request) const;
+        virtual Model::ListLicenseManagerReportGeneratorsOutcome ListLicenseManagerReportGenerators(const Model::ListLicenseManagerReportGeneratorsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLicenseManagerReportGenerators that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLicenseManagerReportGeneratorsRequestT = Model::ListLicenseManagerReportGeneratorsRequest>
-        Model::ListLicenseManagerReportGeneratorsOutcomeCallable ListLicenseManagerReportGeneratorsCallable(const ListLicenseManagerReportGeneratorsRequestT& request) const
+        Model::ListLicenseManagerReportGeneratorsOutcomeCallable ListLicenseManagerReportGeneratorsCallable(const ListLicenseManagerReportGeneratorsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListLicenseManagerReportGenerators, request);
         }
@@ -914,7 +914,7 @@ namespace LicenseManager
          * An Async wrapper for ListLicenseManagerReportGenerators that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLicenseManagerReportGeneratorsRequestT = Model::ListLicenseManagerReportGeneratorsRequest>
-        void ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsRequestT& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLicenseManagerReportGeneratorsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListLicenseManagerReportGenerators, request, handler, context);
         }
@@ -975,13 +975,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLicensesOutcome ListLicenses(const Model::ListLicensesRequest& request) const;
+        virtual Model::ListLicensesOutcome ListLicenses(const Model::ListLicensesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLicenses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLicensesRequestT = Model::ListLicensesRequest>
-        Model::ListLicensesOutcomeCallable ListLicensesCallable(const ListLicensesRequestT& request) const
+        Model::ListLicensesOutcomeCallable ListLicensesCallable(const ListLicensesRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListLicenses, request);
         }
@@ -990,7 +990,7 @@ namespace LicenseManager
          * An Async wrapper for ListLicenses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLicensesRequestT = Model::ListLicensesRequest>
-        void ListLicensesAsync(const ListLicensesRequestT& request, const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLicensesAsync(const ListLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLicensesRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListLicenses, request, handler, context);
         }
@@ -1003,13 +1003,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReceivedGrantsOutcome ListReceivedGrants(const Model::ListReceivedGrantsRequest& request) const;
+        virtual Model::ListReceivedGrantsOutcome ListReceivedGrants(const Model::ListReceivedGrantsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReceivedGrants that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReceivedGrantsRequestT = Model::ListReceivedGrantsRequest>
-        Model::ListReceivedGrantsOutcomeCallable ListReceivedGrantsCallable(const ListReceivedGrantsRequestT& request) const
+        Model::ListReceivedGrantsOutcomeCallable ListReceivedGrantsCallable(const ListReceivedGrantsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListReceivedGrants, request);
         }
@@ -1018,7 +1018,7 @@ namespace LicenseManager
          * An Async wrapper for ListReceivedGrants that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReceivedGrantsRequestT = Model::ListReceivedGrantsRequest>
-        void ListReceivedGrantsAsync(const ListReceivedGrantsRequestT& request, const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReceivedGrantsAsync(const ListReceivedGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReceivedGrantsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListReceivedGrants, request, handler, context);
         }
@@ -1054,13 +1054,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReceivedLicensesOutcome ListReceivedLicenses(const Model::ListReceivedLicensesRequest& request) const;
+        virtual Model::ListReceivedLicensesOutcome ListReceivedLicenses(const Model::ListReceivedLicensesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReceivedLicenses that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReceivedLicensesRequestT = Model::ListReceivedLicensesRequest>
-        Model::ListReceivedLicensesOutcomeCallable ListReceivedLicensesCallable(const ListReceivedLicensesRequestT& request) const
+        Model::ListReceivedLicensesOutcomeCallable ListReceivedLicensesCallable(const ListReceivedLicensesRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListReceivedLicenses, request);
         }
@@ -1069,7 +1069,7 @@ namespace LicenseManager
          * An Async wrapper for ListReceivedLicenses that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReceivedLicensesRequestT = Model::ListReceivedLicensesRequest>
-        void ListReceivedLicensesAsync(const ListReceivedLicensesRequestT& request, const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReceivedLicensesAsync(const ListReceivedLicensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReceivedLicensesRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListReceivedLicenses, request, handler, context);
         }
@@ -1080,13 +1080,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListReceivedLicensesForOrganizationOutcome ListReceivedLicensesForOrganization(const Model::ListReceivedLicensesForOrganizationRequest& request) const;
+        virtual Model::ListReceivedLicensesForOrganizationOutcome ListReceivedLicensesForOrganization(const Model::ListReceivedLicensesForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListReceivedLicensesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListReceivedLicensesForOrganizationRequestT = Model::ListReceivedLicensesForOrganizationRequest>
-        Model::ListReceivedLicensesForOrganizationOutcomeCallable ListReceivedLicensesForOrganizationCallable(const ListReceivedLicensesForOrganizationRequestT& request) const
+        Model::ListReceivedLicensesForOrganizationOutcomeCallable ListReceivedLicensesForOrganizationCallable(const ListReceivedLicensesForOrganizationRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListReceivedLicensesForOrganization, request);
         }
@@ -1095,7 +1095,7 @@ namespace LicenseManager
          * An Async wrapper for ListReceivedLicensesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListReceivedLicensesForOrganizationRequestT = Model::ListReceivedLicensesForOrganizationRequest>
-        void ListReceivedLicensesForOrganizationAsync(const ListReceivedLicensesForOrganizationRequestT& request, const ListReceivedLicensesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListReceivedLicensesForOrganizationAsync(const ListReceivedLicensesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListReceivedLicensesForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListReceivedLicensesForOrganization, request, handler, context);
         }
@@ -1106,13 +1106,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListResourceInventory">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListResourceInventoryOutcome ListResourceInventory(const Model::ListResourceInventoryRequest& request) const;
+        virtual Model::ListResourceInventoryOutcome ListResourceInventory(const Model::ListResourceInventoryRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListResourceInventory that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListResourceInventoryRequestT = Model::ListResourceInventoryRequest>
-        Model::ListResourceInventoryOutcomeCallable ListResourceInventoryCallable(const ListResourceInventoryRequestT& request) const
+        Model::ListResourceInventoryOutcomeCallable ListResourceInventoryCallable(const ListResourceInventoryRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListResourceInventory, request);
         }
@@ -1121,7 +1121,7 @@ namespace LicenseManager
          * An Async wrapper for ListResourceInventory that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListResourceInventoryRequestT = Model::ListResourceInventoryRequest>
-        void ListResourceInventoryAsync(const ListResourceInventoryRequestT& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListResourceInventoryAsync(const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListResourceInventoryRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListResourceInventory, request, handler, context);
         }
@@ -1157,13 +1157,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTokensOutcome ListTokens(const Model::ListTokensRequest& request) const;
+        virtual Model::ListTokensOutcome ListTokens(const Model::ListTokensRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTokens that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTokensRequestT = Model::ListTokensRequest>
-        Model::ListTokensOutcomeCallable ListTokensCallable(const ListTokensRequestT& request) const
+        Model::ListTokensOutcomeCallable ListTokensCallable(const ListTokensRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::ListTokens, request);
         }
@@ -1172,7 +1172,7 @@ namespace LicenseManager
          * An Async wrapper for ListTokens that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTokensRequestT = Model::ListTokensRequest>
-        void ListTokensAsync(const ListTokensRequestT& request, const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTokensAsync(const ListTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTokensRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::ListTokens, request, handler, context);
         }
@@ -1370,13 +1370,13 @@ namespace LicenseManager
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateServiceSettingsOutcome UpdateServiceSettings(const Model::UpdateServiceSettingsRequest& request) const;
+        virtual Model::UpdateServiceSettingsOutcome UpdateServiceSettings(const Model::UpdateServiceSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for UpdateServiceSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename UpdateServiceSettingsRequestT = Model::UpdateServiceSettingsRequest>
-        Model::UpdateServiceSettingsOutcomeCallable UpdateServiceSettingsCallable(const UpdateServiceSettingsRequestT& request) const
+        Model::UpdateServiceSettingsOutcomeCallable UpdateServiceSettingsCallable(const UpdateServiceSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&LicenseManagerClient::UpdateServiceSettings, request);
         }
@@ -1385,7 +1385,7 @@ namespace LicenseManager
          * An Async wrapper for UpdateServiceSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename UpdateServiceSettingsRequestT = Model::UpdateServiceSettingsRequest>
-        void UpdateServiceSettingsAsync(const UpdateServiceSettingsRequestT& request, const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void UpdateServiceSettingsAsync(const UpdateServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateServiceSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&LicenseManagerClient::UpdateServiceSettings, request, handler, context);
         }

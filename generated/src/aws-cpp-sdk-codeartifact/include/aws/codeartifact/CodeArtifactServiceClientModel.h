@@ -66,6 +66,8 @@
 #include <aws/codeartifact/model/UpdatePackageGroupOriginConfigurationResult.h>
 #include <aws/codeartifact/model/UpdatePackageVersionsStatusResult.h>
 #include <aws/codeartifact/model/UpdateRepositoryResult.h>
+#include <aws/codeartifact/model/ListRepositoriesRequest.h>
+#include <aws/codeartifact/model/ListDomainsRequest.h>
 /* End of service model headers required in CodeArtifactClient header */
 
 namespace Aws

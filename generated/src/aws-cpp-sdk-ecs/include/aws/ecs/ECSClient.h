@@ -137,13 +137,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request) const;
+        virtual Model::CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateCluster that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateClusterRequestT = Model::CreateClusterRequest>
-        Model::CreateClusterOutcomeCallable CreateClusterCallable(const CreateClusterRequestT& request) const
+        Model::CreateClusterOutcomeCallable CreateClusterCallable(const CreateClusterRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::CreateCluster, request);
         }
@@ -152,7 +152,7 @@ namespace ECS
          * An Async wrapper for CreateCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateClusterRequestT = Model::CreateClusterRequest>
-        void CreateClusterAsync(const CreateClusterRequestT& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateClusterAsync(const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateClusterRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::CreateCluster, request, handler, context);
         }
@@ -647,13 +647,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCapacityProvidersOutcome DescribeCapacityProviders(const Model::DescribeCapacityProvidersRequest& request) const;
+        virtual Model::DescribeCapacityProvidersOutcome DescribeCapacityProviders(const Model::DescribeCapacityProvidersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCapacityProviders that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeCapacityProvidersRequestT = Model::DescribeCapacityProvidersRequest>
-        Model::DescribeCapacityProvidersOutcomeCallable DescribeCapacityProvidersCallable(const DescribeCapacityProvidersRequestT& request) const
+        Model::DescribeCapacityProvidersOutcomeCallable DescribeCapacityProvidersCallable(const DescribeCapacityProvidersRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::DescribeCapacityProviders, request);
         }
@@ -662,7 +662,7 @@ namespace ECS
          * An Async wrapper for DescribeCapacityProviders that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeCapacityProvidersRequestT = Model::DescribeCapacityProvidersRequest>
-        void DescribeCapacityProvidersAsync(const DescribeCapacityProvidersRequestT& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeCapacityProvidersAsync(const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityProvidersRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::DescribeCapacityProviders, request, handler, context);
         }
@@ -672,13 +672,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request) const;
+        virtual Model::DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request) const
+        Model::DescribeClustersOutcomeCallable DescribeClustersCallable(const DescribeClustersRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::DescribeClusters, request);
         }
@@ -687,7 +687,7 @@ namespace ECS
          * An Async wrapper for DescribeClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeClustersRequestT = Model::DescribeClustersRequest>
-        void DescribeClustersAsync(const DescribeClustersRequestT& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeClustersAsync(const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeClustersRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::DescribeClusters, request, handler, context);
         }
@@ -840,13 +840,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
          * API Reference</a></p>
          */
-        virtual Model::DiscoverPollEndpointOutcome DiscoverPollEndpoint(const Model::DiscoverPollEndpointRequest& request) const;
+        virtual Model::DiscoverPollEndpointOutcome DiscoverPollEndpoint(const Model::DiscoverPollEndpointRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DiscoverPollEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DiscoverPollEndpointRequestT = Model::DiscoverPollEndpointRequest>
-        Model::DiscoverPollEndpointOutcomeCallable DiscoverPollEndpointCallable(const DiscoverPollEndpointRequestT& request) const
+        Model::DiscoverPollEndpointOutcomeCallable DiscoverPollEndpointCallable(const DiscoverPollEndpointRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::DiscoverPollEndpoint, request);
         }
@@ -855,7 +855,7 @@ namespace ECS
          * An Async wrapper for DiscoverPollEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DiscoverPollEndpointRequestT = Model::DiscoverPollEndpointRequest>
-        void DiscoverPollEndpointAsync(const DiscoverPollEndpointRequestT& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DiscoverPollEndpointAsync(const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DiscoverPollEndpointRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::DiscoverPollEndpoint, request, handler, context);
         }
@@ -925,13 +925,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAccountSettingsOutcome ListAccountSettings(const Model::ListAccountSettingsRequest& request) const;
+        virtual Model::ListAccountSettingsOutcome ListAccountSettings(const Model::ListAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAccountSettingsRequestT = Model::ListAccountSettingsRequest>
-        Model::ListAccountSettingsOutcomeCallable ListAccountSettingsCallable(const ListAccountSettingsRequestT& request) const
+        Model::ListAccountSettingsOutcomeCallable ListAccountSettingsCallable(const ListAccountSettingsRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListAccountSettings, request);
         }
@@ -940,7 +940,7 @@ namespace ECS
          * An Async wrapper for ListAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAccountSettingsRequestT = Model::ListAccountSettingsRequest>
-        void ListAccountSettingsAsync(const ListAccountSettingsRequestT& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAccountSettingsAsync(const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAccountSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListAccountSettings, request, handler, context);
         }
@@ -982,13 +982,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
+        virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListClusters that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request) const
+        Model::ListClustersOutcomeCallable ListClustersCallable(const ListClustersRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListClusters, request);
         }
@@ -997,7 +997,7 @@ namespace ECS
          * An Async wrapper for ListClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListClustersRequestT = Model::ListClustersRequest>
-        void ListClustersAsync(const ListClustersRequestT& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListClusters, request, handler, context);
         }
@@ -1013,13 +1013,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContainerInstancesOutcome ListContainerInstances(const Model::ListContainerInstancesRequest& request) const;
+        virtual Model::ListContainerInstancesOutcome ListContainerInstances(const Model::ListContainerInstancesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContainerInstances that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContainerInstancesRequestT = Model::ListContainerInstancesRequest>
-        Model::ListContainerInstancesOutcomeCallable ListContainerInstancesCallable(const ListContainerInstancesRequestT& request) const
+        Model::ListContainerInstancesOutcomeCallable ListContainerInstancesCallable(const ListContainerInstancesRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListContainerInstances, request);
         }
@@ -1028,7 +1028,7 @@ namespace ECS
          * An Async wrapper for ListContainerInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContainerInstancesRequestT = Model::ListContainerInstancesRequest>
-        void ListContainerInstancesAsync(const ListContainerInstancesRequestT& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContainerInstancesAsync(const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContainerInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListContainerInstances, request, handler, context);
         }
@@ -1039,13 +1039,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
+        virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListServices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request) const
+        Model::ListServicesOutcomeCallable ListServicesCallable(const ListServicesRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListServices, request);
         }
@@ -1054,7 +1054,7 @@ namespace ECS
          * An Async wrapper for ListServices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListServicesRequestT = Model::ListServicesRequest>
-        void ListServicesAsync(const ListServicesRequestT& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListServicesAsync(const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListServicesRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListServices, request, handler, context);
         }
@@ -1127,13 +1127,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request) const;
+        virtual Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTaskDefinitionFamilies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTaskDefinitionFamiliesRequestT = Model::ListTaskDefinitionFamiliesRequest>
-        Model::ListTaskDefinitionFamiliesOutcomeCallable ListTaskDefinitionFamiliesCallable(const ListTaskDefinitionFamiliesRequestT& request) const
+        Model::ListTaskDefinitionFamiliesOutcomeCallable ListTaskDefinitionFamiliesCallable(const ListTaskDefinitionFamiliesRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListTaskDefinitionFamilies, request);
         }
@@ -1142,7 +1142,7 @@ namespace ECS
          * An Async wrapper for ListTaskDefinitionFamilies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTaskDefinitionFamiliesRequestT = Model::ListTaskDefinitionFamiliesRequest>
-        void ListTaskDefinitionFamiliesAsync(const ListTaskDefinitionFamiliesRequestT& request, const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTaskDefinitionFamiliesAsync(const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTaskDefinitionFamiliesRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListTaskDefinitionFamilies, request, handler, context);
         }
@@ -1155,13 +1155,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTaskDefinitionsOutcome ListTaskDefinitions(const Model::ListTaskDefinitionsRequest& request) const;
+        virtual Model::ListTaskDefinitionsOutcome ListTaskDefinitions(const Model::ListTaskDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTaskDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTaskDefinitionsRequestT = Model::ListTaskDefinitionsRequest>
-        Model::ListTaskDefinitionsOutcomeCallable ListTaskDefinitionsCallable(const ListTaskDefinitionsRequestT& request) const
+        Model::ListTaskDefinitionsOutcomeCallable ListTaskDefinitionsCallable(const ListTaskDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListTaskDefinitions, request);
         }
@@ -1170,7 +1170,7 @@ namespace ECS
          * An Async wrapper for ListTaskDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTaskDefinitionsRequestT = Model::ListTaskDefinitionsRequest>
-        void ListTaskDefinitionsAsync(const ListTaskDefinitionsRequestT& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTaskDefinitionsAsync(const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTaskDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListTaskDefinitions, request, handler, context);
         }
@@ -1183,13 +1183,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          */
-        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
+        virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListTasks that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request) const
+        Model::ListTasksOutcomeCallable ListTasksCallable(const ListTasksRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::ListTasks, request);
         }
@@ -1198,7 +1198,7 @@ namespace ECS
          * An Async wrapper for ListTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListTasksRequestT = Model::ListTasksRequest>
-        void ListTasksAsync(const ListTasksRequestT& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListTasksAsync(const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTasksRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListTasks, request, handler, context);
         }
@@ -1338,13 +1338,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
          * API Reference</a></p>
          */
-        virtual Model::RegisterContainerInstanceOutcome RegisterContainerInstance(const Model::RegisterContainerInstanceRequest& request) const;
+        virtual Model::RegisterContainerInstanceOutcome RegisterContainerInstance(const Model::RegisterContainerInstanceRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RegisterContainerInstance that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename RegisterContainerInstanceRequestT = Model::RegisterContainerInstanceRequest>
-        Model::RegisterContainerInstanceOutcomeCallable RegisterContainerInstanceCallable(const RegisterContainerInstanceRequestT& request) const
+        Model::RegisterContainerInstanceOutcomeCallable RegisterContainerInstanceCallable(const RegisterContainerInstanceRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::RegisterContainerInstance, request);
         }
@@ -1353,7 +1353,7 @@ namespace ECS
          * An Async wrapper for RegisterContainerInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename RegisterContainerInstanceRequestT = Model::RegisterContainerInstanceRequest>
-        void RegisterContainerInstanceAsync(const RegisterContainerInstanceRequestT& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void RegisterContainerInstanceAsync(const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RegisterContainerInstanceRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::RegisterContainerInstance, request, handler, context);
         }
@@ -1586,13 +1586,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
          * API Reference</a></p>
          */
-        virtual Model::SubmitContainerStateChangeOutcome SubmitContainerStateChange(const Model::SubmitContainerStateChangeRequest& request) const;
+        virtual Model::SubmitContainerStateChangeOutcome SubmitContainerStateChange(const Model::SubmitContainerStateChangeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SubmitContainerStateChange that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SubmitContainerStateChangeRequestT = Model::SubmitContainerStateChangeRequest>
-        Model::SubmitContainerStateChangeOutcomeCallable SubmitContainerStateChangeCallable(const SubmitContainerStateChangeRequestT& request) const
+        Model::SubmitContainerStateChangeOutcomeCallable SubmitContainerStateChangeCallable(const SubmitContainerStateChangeRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::SubmitContainerStateChange, request);
         }
@@ -1601,7 +1601,7 @@ namespace ECS
          * An Async wrapper for SubmitContainerStateChange that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SubmitContainerStateChangeRequestT = Model::SubmitContainerStateChangeRequest>
-        void SubmitContainerStateChangeAsync(const SubmitContainerStateChangeRequestT& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SubmitContainerStateChangeAsync(const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SubmitContainerStateChangeRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::SubmitContainerStateChange, request, handler, context);
         }
@@ -1613,13 +1613,13 @@ namespace ECS
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
          * API Reference</a></p>
          */
-        virtual Model::SubmitTaskStateChangeOutcome SubmitTaskStateChange(const Model::SubmitTaskStateChangeRequest& request) const;
+        virtual Model::SubmitTaskStateChangeOutcome SubmitTaskStateChange(const Model::SubmitTaskStateChangeRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SubmitTaskStateChange that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SubmitTaskStateChangeRequestT = Model::SubmitTaskStateChangeRequest>
-        Model::SubmitTaskStateChangeOutcomeCallable SubmitTaskStateChangeCallable(const SubmitTaskStateChangeRequestT& request) const
+        Model::SubmitTaskStateChangeOutcomeCallable SubmitTaskStateChangeCallable(const SubmitTaskStateChangeRequestT& request = {}) const
         {
             return SubmitCallable(&ECSClient::SubmitTaskStateChange, request);
         }
@@ -1628,7 +1628,7 @@ namespace ECS
          * An Async wrapper for SubmitTaskStateChange that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SubmitTaskStateChangeRequestT = Model::SubmitTaskStateChangeRequest>
-        void SubmitTaskStateChangeAsync(const SubmitTaskStateChangeRequestT& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SubmitTaskStateChangeAsync(const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SubmitTaskStateChangeRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::SubmitTaskStateChange, request, handler, context);
         }

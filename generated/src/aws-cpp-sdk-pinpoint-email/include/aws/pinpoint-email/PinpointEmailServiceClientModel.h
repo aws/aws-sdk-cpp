@@ -60,6 +60,15 @@
 #include <aws/pinpoint-email/model/TagResourceResult.h>
 #include <aws/pinpoint-email/model/UntagResourceResult.h>
 #include <aws/pinpoint-email/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
+#include <aws/pinpoint-email/model/ListConfigurationSetsRequest.h>
+#include <aws/pinpoint-email/model/GetAccountRequest.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpsRequest.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsRequest.h>
+#include <aws/pinpoint-email/model/ListDedicatedIpPoolsRequest.h>
+#include <aws/pinpoint-email/model/ListEmailIdentitiesRequest.h>
+#include <aws/pinpoint-email/model/PutAccountSendingAttributesRequest.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsRequest.h>
 /* End of service model headers required in PinpointEmailClient header */
 
 namespace Aws

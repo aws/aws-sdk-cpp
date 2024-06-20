@@ -57,6 +57,12 @@
 #include <aws/mturk-requester/model/UpdateHITTypeOfHITResult.h>
 #include <aws/mturk-requester/model/UpdateNotificationSettingsResult.h>
 #include <aws/mturk-requester/model/UpdateQualificationTypeResult.h>
+#include <aws/mturk-requester/model/ListReviewableHITsRequest.h>
+#include <aws/mturk-requester/model/ListWorkerBlocksRequest.h>
+#include <aws/mturk-requester/model/ListBonusPaymentsRequest.h>
+#include <aws/mturk-requester/model/ListHITsRequest.h>
+#include <aws/mturk-requester/model/GetAccountBalanceRequest.h>
+#include <aws/mturk-requester/model/ListQualificationRequestsRequest.h>
 /* End of service model headers required in MTurkClient header */
 
 namespace Aws

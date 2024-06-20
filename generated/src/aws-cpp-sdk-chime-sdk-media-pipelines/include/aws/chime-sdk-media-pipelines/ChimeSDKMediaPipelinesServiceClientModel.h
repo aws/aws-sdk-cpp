@@ -42,6 +42,10 @@
 #include <aws/chime-sdk-media-pipelines/model/UntagResourceResult.h>
 #include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineConfigurationResult.h>
 #include <aws/chime-sdk-media-pipelines/model/UpdateMediaPipelineKinesisVideoStreamPoolResult.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelineKinesisVideoStreamPoolsRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ChimeSDKMediaPipelinesClient header */
 

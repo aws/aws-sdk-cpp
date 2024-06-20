@@ -42,6 +42,10 @@
 #include <aws/apptest/model/UpdateTestCaseResult.h>
 #include <aws/apptest/model/UpdateTestConfigurationResult.h>
 #include <aws/apptest/model/UpdateTestSuiteResult.h>
+#include <aws/apptest/model/ListTestSuitesRequest.h>
+#include <aws/apptest/model/ListTestRunsRequest.h>
+#include <aws/apptest/model/ListTestConfigurationsRequest.h>
+#include <aws/apptest/model/ListTestCasesRequest.h>
 /* End of service model headers required in AppTestClient header */
 
 namespace Aws

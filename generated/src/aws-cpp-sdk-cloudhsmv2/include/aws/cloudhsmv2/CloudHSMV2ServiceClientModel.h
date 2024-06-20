@@ -33,6 +33,8 @@
 #include <aws/cloudhsmv2/model/RestoreBackupResult.h>
 #include <aws/cloudhsmv2/model/TagResourceResult.h>
 #include <aws/cloudhsmv2/model/UntagResourceResult.h>
+#include <aws/cloudhsmv2/model/DescribeClustersRequest.h>
+#include <aws/cloudhsmv2/model/DescribeBackupsRequest.h>
 /* End of service model headers required in CloudHSMV2Client header */
 
 namespace Aws

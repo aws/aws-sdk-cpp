@@ -288,13 +288,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
+        virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateBuild that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateBuildRequestT = Model::CreateBuildRequest>
-        Model::CreateBuildOutcomeCallable CreateBuildCallable(const CreateBuildRequestT& request) const
+        Model::CreateBuildOutcomeCallable CreateBuildCallable(const CreateBuildRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::CreateBuild, request);
         }
@@ -303,7 +303,7 @@ namespace GameLift
          * An Async wrapper for CreateBuild that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateBuildRequestT = Model::CreateBuildRequest>
-        void CreateBuildAsync(const CreateBuildRequestT& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateBuildAsync(const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateBuildRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::CreateBuild, request, handler, context);
         }
@@ -903,13 +903,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateScript">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request) const;
+        virtual Model::CreateScriptOutcome CreateScript(const Model::CreateScriptRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateScript that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateScriptRequestT = Model::CreateScriptRequest>
-        Model::CreateScriptOutcomeCallable CreateScriptCallable(const CreateScriptRequestT& request) const
+        Model::CreateScriptOutcomeCallable CreateScriptCallable(const CreateScriptRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::CreateScript, request);
         }
@@ -918,7 +918,7 @@ namespace GameLift
          * An Async wrapper for CreateScript that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateScriptRequestT = Model::CreateScriptRequest>
-        void CreateScriptAsync(const CreateScriptRequestT& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateScriptAsync(const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateScriptRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::CreateScript, request, handler, context);
         }
@@ -1721,13 +1721,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request) const;
+        virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeEC2InstanceLimits that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeEC2InstanceLimitsRequestT = Model::DescribeEC2InstanceLimitsRequest>
-        Model::DescribeEC2InstanceLimitsOutcomeCallable DescribeEC2InstanceLimitsCallable(const DescribeEC2InstanceLimitsRequestT& request) const
+        Model::DescribeEC2InstanceLimitsOutcomeCallable DescribeEC2InstanceLimitsCallable(const DescribeEC2InstanceLimitsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeEC2InstanceLimits, request);
         }
@@ -1736,7 +1736,7 @@ namespace GameLift
          * An Async wrapper for DescribeEC2InstanceLimits that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeEC2InstanceLimitsRequestT = Model::DescribeEC2InstanceLimitsRequest>
-        void DescribeEC2InstanceLimitsAsync(const DescribeEC2InstanceLimitsRequestT& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeEC2InstanceLimitsAsync(const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEC2InstanceLimitsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeEC2InstanceLimits, request, handler, context);
         }
@@ -1762,13 +1762,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFleetAttributesOutcome DescribeFleetAttributes(const Model::DescribeFleetAttributesRequest& request) const;
+        virtual Model::DescribeFleetAttributesOutcome DescribeFleetAttributes(const Model::DescribeFleetAttributesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFleetAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFleetAttributesRequestT = Model::DescribeFleetAttributesRequest>
-        Model::DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const DescribeFleetAttributesRequestT& request) const
+        Model::DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const DescribeFleetAttributesRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeFleetAttributes, request);
         }
@@ -1777,7 +1777,7 @@ namespace GameLift
          * An Async wrapper for DescribeFleetAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFleetAttributesRequestT = Model::DescribeFleetAttributesRequest>
-        void DescribeFleetAttributesAsync(const DescribeFleetAttributesRequestT& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFleetAttributesAsync(const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFleetAttributesRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeFleetAttributes, request, handler, context);
         }
@@ -1809,13 +1809,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest& request) const;
+        virtual Model::DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFleetCapacity that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFleetCapacityRequestT = Model::DescribeFleetCapacityRequest>
-        Model::DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const DescribeFleetCapacityRequestT& request) const
+        Model::DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const DescribeFleetCapacityRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeFleetCapacity, request);
         }
@@ -1824,7 +1824,7 @@ namespace GameLift
          * An Async wrapper for DescribeFleetCapacity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFleetCapacityRequestT = Model::DescribeFleetCapacityRequest>
-        void DescribeFleetCapacityAsync(const DescribeFleetCapacityRequestT& request, const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFleetCapacityAsync(const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFleetCapacityRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeFleetCapacity, request, handler, context);
         }
@@ -2043,13 +2043,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeFleetUtilizationOutcome DescribeFleetUtilization(const Model::DescribeFleetUtilizationRequest& request) const;
+        virtual Model::DescribeFleetUtilizationOutcome DescribeFleetUtilization(const Model::DescribeFleetUtilizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeFleetUtilization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeFleetUtilizationRequestT = Model::DescribeFleetUtilizationRequest>
-        Model::DescribeFleetUtilizationOutcomeCallable DescribeFleetUtilizationCallable(const DescribeFleetUtilizationRequestT& request) const
+        Model::DescribeFleetUtilizationOutcomeCallable DescribeFleetUtilizationCallable(const DescribeFleetUtilizationRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeFleetUtilization, request);
         }
@@ -2058,7 +2058,7 @@ namespace GameLift
          * An Async wrapper for DescribeFleetUtilization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeFleetUtilizationRequestT = Model::DescribeFleetUtilizationRequest>
-        void DescribeFleetUtilizationAsync(const DescribeFleetUtilizationRequestT& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeFleetUtilizationAsync(const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFleetUtilizationRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeFleetUtilization, request, handler, context);
         }
@@ -2193,13 +2193,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGameSessionDetailsOutcome DescribeGameSessionDetails(const Model::DescribeGameSessionDetailsRequest& request) const;
+        virtual Model::DescribeGameSessionDetailsOutcome DescribeGameSessionDetails(const Model::DescribeGameSessionDetailsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGameSessionDetails that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGameSessionDetailsRequestT = Model::DescribeGameSessionDetailsRequest>
-        Model::DescribeGameSessionDetailsOutcomeCallable DescribeGameSessionDetailsCallable(const DescribeGameSessionDetailsRequestT& request) const
+        Model::DescribeGameSessionDetailsOutcomeCallable DescribeGameSessionDetailsCallable(const DescribeGameSessionDetailsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeGameSessionDetails, request);
         }
@@ -2208,7 +2208,7 @@ namespace GameLift
          * An Async wrapper for DescribeGameSessionDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGameSessionDetailsRequestT = Model::DescribeGameSessionDetailsRequest>
-        void DescribeGameSessionDetailsAsync(const DescribeGameSessionDetailsRequestT& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGameSessionDetailsAsync(const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGameSessionDetailsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeGameSessionDetails, request, handler, context);
         }
@@ -2257,13 +2257,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGameSessionQueuesOutcome DescribeGameSessionQueues(const Model::DescribeGameSessionQueuesRequest& request) const;
+        virtual Model::DescribeGameSessionQueuesOutcome DescribeGameSessionQueues(const Model::DescribeGameSessionQueuesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGameSessionQueues that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGameSessionQueuesRequestT = Model::DescribeGameSessionQueuesRequest>
-        Model::DescribeGameSessionQueuesOutcomeCallable DescribeGameSessionQueuesCallable(const DescribeGameSessionQueuesRequestT& request) const
+        Model::DescribeGameSessionQueuesOutcomeCallable DescribeGameSessionQueuesCallable(const DescribeGameSessionQueuesRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeGameSessionQueues, request);
         }
@@ -2272,7 +2272,7 @@ namespace GameLift
          * An Async wrapper for DescribeGameSessionQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGameSessionQueuesRequestT = Model::DescribeGameSessionQueuesRequest>
-        void DescribeGameSessionQueuesAsync(const DescribeGameSessionQueuesRequestT& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGameSessionQueuesAsync(const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGameSessionQueuesRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeGameSessionQueues, request, handler, context);
         }
@@ -2307,13 +2307,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeGameSessionsOutcome DescribeGameSessions(const Model::DescribeGameSessionsRequest& request) const;
+        virtual Model::DescribeGameSessionsOutcome DescribeGameSessions(const Model::DescribeGameSessionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeGameSessions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeGameSessionsRequestT = Model::DescribeGameSessionsRequest>
-        Model::DescribeGameSessionsOutcomeCallable DescribeGameSessionsCallable(const DescribeGameSessionsRequestT& request) const
+        Model::DescribeGameSessionsOutcomeCallable DescribeGameSessionsCallable(const DescribeGameSessionsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeGameSessions, request);
         }
@@ -2322,7 +2322,7 @@ namespace GameLift
          * An Async wrapper for DescribeGameSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeGameSessionsRequestT = Model::DescribeGameSessionsRequest>
-        void DescribeGameSessionsAsync(const DescribeGameSessionsRequestT& request, const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeGameSessionsAsync(const DescribeGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeGameSessionsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeGameSessions, request, handler, context);
         }
@@ -2425,13 +2425,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMatchmakingConfigurationsOutcome DescribeMatchmakingConfigurations(const Model::DescribeMatchmakingConfigurationsRequest& request) const;
+        virtual Model::DescribeMatchmakingConfigurationsOutcome DescribeMatchmakingConfigurations(const Model::DescribeMatchmakingConfigurationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMatchmakingConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeMatchmakingConfigurationsRequestT = Model::DescribeMatchmakingConfigurationsRequest>
-        Model::DescribeMatchmakingConfigurationsOutcomeCallable DescribeMatchmakingConfigurationsCallable(const DescribeMatchmakingConfigurationsRequestT& request) const
+        Model::DescribeMatchmakingConfigurationsOutcomeCallable DescribeMatchmakingConfigurationsCallable(const DescribeMatchmakingConfigurationsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeMatchmakingConfigurations, request);
         }
@@ -2440,7 +2440,7 @@ namespace GameLift
          * An Async wrapper for DescribeMatchmakingConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeMatchmakingConfigurationsRequestT = Model::DescribeMatchmakingConfigurationsRequest>
-        void DescribeMatchmakingConfigurationsAsync(const DescribeMatchmakingConfigurationsRequestT& request, const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeMatchmakingConfigurationsAsync(const DescribeMatchmakingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMatchmakingConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeMatchmakingConfigurations, request, handler, context);
         }
@@ -2456,13 +2456,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMatchmakingRuleSetsOutcome DescribeMatchmakingRuleSets(const Model::DescribeMatchmakingRuleSetsRequest& request) const;
+        virtual Model::DescribeMatchmakingRuleSetsOutcome DescribeMatchmakingRuleSets(const Model::DescribeMatchmakingRuleSetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMatchmakingRuleSets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeMatchmakingRuleSetsRequestT = Model::DescribeMatchmakingRuleSetsRequest>
-        Model::DescribeMatchmakingRuleSetsOutcomeCallable DescribeMatchmakingRuleSetsCallable(const DescribeMatchmakingRuleSetsRequestT& request) const
+        Model::DescribeMatchmakingRuleSetsOutcomeCallable DescribeMatchmakingRuleSetsCallable(const DescribeMatchmakingRuleSetsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeMatchmakingRuleSets, request);
         }
@@ -2471,7 +2471,7 @@ namespace GameLift
          * An Async wrapper for DescribeMatchmakingRuleSets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeMatchmakingRuleSetsRequestT = Model::DescribeMatchmakingRuleSetsRequest>
-        void DescribeMatchmakingRuleSetsAsync(const DescribeMatchmakingRuleSetsRequestT& request, const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeMatchmakingRuleSetsAsync(const DescribeMatchmakingRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMatchmakingRuleSetsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeMatchmakingRuleSets, request, handler, context);
         }
@@ -2494,13 +2494,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribePlayerSessionsOutcome DescribePlayerSessions(const Model::DescribePlayerSessionsRequest& request) const;
+        virtual Model::DescribePlayerSessionsOutcome DescribePlayerSessions(const Model::DescribePlayerSessionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribePlayerSessions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribePlayerSessionsRequestT = Model::DescribePlayerSessionsRequest>
-        Model::DescribePlayerSessionsOutcomeCallable DescribePlayerSessionsCallable(const DescribePlayerSessionsRequestT& request) const
+        Model::DescribePlayerSessionsOutcomeCallable DescribePlayerSessionsCallable(const DescribePlayerSessionsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribePlayerSessions, request);
         }
@@ -2509,7 +2509,7 @@ namespace GameLift
          * An Async wrapper for DescribePlayerSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribePlayerSessionsRequestT = Model::DescribePlayerSessionsRequest>
-        void DescribePlayerSessionsAsync(const DescribePlayerSessionsRequestT& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribePlayerSessionsAsync(const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribePlayerSessionsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribePlayerSessions, request, handler, context);
         }
@@ -2626,13 +2626,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVpcPeeringAuthorizationsOutcome DescribeVpcPeeringAuthorizations(const Model::DescribeVpcPeeringAuthorizationsRequest& request) const;
+        virtual Model::DescribeVpcPeeringAuthorizationsOutcome DescribeVpcPeeringAuthorizations(const Model::DescribeVpcPeeringAuthorizationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVpcPeeringAuthorizations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVpcPeeringAuthorizationsRequestT = Model::DescribeVpcPeeringAuthorizationsRequest>
-        Model::DescribeVpcPeeringAuthorizationsOutcomeCallable DescribeVpcPeeringAuthorizationsCallable(const DescribeVpcPeeringAuthorizationsRequestT& request) const
+        Model::DescribeVpcPeeringAuthorizationsOutcomeCallable DescribeVpcPeeringAuthorizationsCallable(const DescribeVpcPeeringAuthorizationsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeVpcPeeringAuthorizations, request);
         }
@@ -2641,7 +2641,7 @@ namespace GameLift
          * An Async wrapper for DescribeVpcPeeringAuthorizations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVpcPeeringAuthorizationsRequestT = Model::DescribeVpcPeeringAuthorizationsRequest>
-        void DescribeVpcPeeringAuthorizationsAsync(const DescribeVpcPeeringAuthorizationsRequestT& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVpcPeeringAuthorizationsAsync(const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcPeeringAuthorizationsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeVpcPeeringAuthorizations, request, handler, context);
         }
@@ -2660,13 +2660,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest& request) const;
+        virtual Model::DescribeVpcPeeringConnectionsOutcome DescribeVpcPeeringConnections(const Model::DescribeVpcPeeringConnectionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVpcPeeringConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DescribeVpcPeeringConnectionsRequestT = Model::DescribeVpcPeeringConnectionsRequest>
-        Model::DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const DescribeVpcPeeringConnectionsRequestT& request) const
+        Model::DescribeVpcPeeringConnectionsOutcomeCallable DescribeVpcPeeringConnectionsCallable(const DescribeVpcPeeringConnectionsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::DescribeVpcPeeringConnections, request);
         }
@@ -2675,7 +2675,7 @@ namespace GameLift
          * An Async wrapper for DescribeVpcPeeringConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DescribeVpcPeeringConnectionsRequestT = Model::DescribeVpcPeeringConnectionsRequest>
-        void DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequestT& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcPeeringConnectionsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeVpcPeeringConnections, request, handler, context);
         }
@@ -2868,13 +2868,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
+        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request) const
+        Model::ListAliasesOutcomeCallable ListAliasesCallable(const ListAliasesRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListAliases, request);
         }
@@ -2883,7 +2883,7 @@ namespace GameLift
          * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListAliasesRequestT = Model::ListAliasesRequest>
-        void ListAliasesAsync(const ListAliasesRequestT& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListAliasesAsync(const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAliasesRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListAliases, request, handler, context);
         }
@@ -2902,13 +2902,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request) const;
+        virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListBuilds that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListBuildsRequestT = Model::ListBuildsRequest>
-        Model::ListBuildsOutcomeCallable ListBuildsCallable(const ListBuildsRequestT& request) const
+        Model::ListBuildsOutcomeCallable ListBuildsCallable(const ListBuildsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListBuilds, request);
         }
@@ -2917,7 +2917,7 @@ namespace GameLift
          * An Async wrapper for ListBuilds that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListBuildsRequestT = Model::ListBuildsRequest>
-        void ListBuildsAsync(const ListBuildsRequestT& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListBuildsAsync(const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBuildsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListBuilds, request, handler, context);
         }
@@ -2977,13 +2977,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitions">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListContainerGroupDefinitionsOutcome ListContainerGroupDefinitions(const Model::ListContainerGroupDefinitionsRequest& request) const;
+        virtual Model::ListContainerGroupDefinitionsOutcome ListContainerGroupDefinitions(const Model::ListContainerGroupDefinitionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListContainerGroupDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListContainerGroupDefinitionsRequestT = Model::ListContainerGroupDefinitionsRequest>
-        Model::ListContainerGroupDefinitionsOutcomeCallable ListContainerGroupDefinitionsCallable(const ListContainerGroupDefinitionsRequestT& request) const
+        Model::ListContainerGroupDefinitionsOutcomeCallable ListContainerGroupDefinitionsCallable(const ListContainerGroupDefinitionsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListContainerGroupDefinitions, request);
         }
@@ -2992,7 +2992,7 @@ namespace GameLift
          * An Async wrapper for ListContainerGroupDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListContainerGroupDefinitionsRequestT = Model::ListContainerGroupDefinitionsRequest>
-        void ListContainerGroupDefinitionsAsync(const ListContainerGroupDefinitionsRequestT& request, const ListContainerGroupDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListContainerGroupDefinitionsAsync(const ListContainerGroupDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContainerGroupDefinitionsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListContainerGroupDefinitions, request, handler, context);
         }
@@ -3019,13 +3019,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
+        virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListFleets that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListFleetsRequestT = Model::ListFleetsRequest>
-        Model::ListFleetsOutcomeCallable ListFleetsCallable(const ListFleetsRequestT& request) const
+        Model::ListFleetsOutcomeCallable ListFleetsCallable(const ListFleetsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListFleets, request);
         }
@@ -3034,7 +3034,7 @@ namespace GameLift
          * An Async wrapper for ListFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListFleetsRequestT = Model::ListFleetsRequest>
-        void ListFleetsAsync(const ListFleetsRequestT& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListFleetsAsync(const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFleetsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListFleets, request, handler, context);
         }
@@ -3044,13 +3044,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListGameServerGroupsOutcome ListGameServerGroups(const Model::ListGameServerGroupsRequest& request) const;
+        virtual Model::ListGameServerGroupsOutcome ListGameServerGroups(const Model::ListGameServerGroupsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListGameServerGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListGameServerGroupsRequestT = Model::ListGameServerGroupsRequest>
-        Model::ListGameServerGroupsOutcomeCallable ListGameServerGroupsCallable(const ListGameServerGroupsRequestT& request) const
+        Model::ListGameServerGroupsOutcomeCallable ListGameServerGroupsCallable(const ListGameServerGroupsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListGameServerGroups, request);
         }
@@ -3059,7 +3059,7 @@ namespace GameLift
          * An Async wrapper for ListGameServerGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListGameServerGroupsRequestT = Model::ListGameServerGroupsRequest>
-        void ListGameServerGroupsAsync(const ListGameServerGroupsRequestT& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListGameServerGroupsAsync(const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListGameServerGroupsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListGameServerGroups, request, handler, context);
         }
@@ -3101,13 +3101,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListLocations">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListLocationsOutcome ListLocations(const Model::ListLocationsRequest& request) const;
+        virtual Model::ListLocationsOutcome ListLocations(const Model::ListLocationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListLocations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListLocationsRequestT = Model::ListLocationsRequest>
-        Model::ListLocationsOutcomeCallable ListLocationsCallable(const ListLocationsRequestT& request) const
+        Model::ListLocationsOutcomeCallable ListLocationsCallable(const ListLocationsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListLocations, request);
         }
@@ -3116,7 +3116,7 @@ namespace GameLift
          * An Async wrapper for ListLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListLocationsRequestT = Model::ListLocationsRequest>
-        void ListLocationsAsync(const ListLocationsRequestT& request, const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListLocationsAsync(const ListLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLocationsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListLocations, request, handler, context);
         }
@@ -3131,13 +3131,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListScripts">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListScriptsOutcome ListScripts(const Model::ListScriptsRequest& request) const;
+        virtual Model::ListScriptsOutcome ListScripts(const Model::ListScriptsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for ListScripts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename ListScriptsRequestT = Model::ListScriptsRequest>
-        Model::ListScriptsOutcomeCallable ListScriptsCallable(const ListScriptsRequestT& request) const
+        Model::ListScriptsOutcomeCallable ListScriptsCallable(const ListScriptsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::ListScripts, request);
         }
@@ -3146,7 +3146,7 @@ namespace GameLift
          * An Async wrapper for ListScripts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename ListScriptsRequestT = Model::ListScriptsRequest>
-        void ListScriptsAsync(const ListScriptsRequestT& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void ListScriptsAsync(const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListScriptsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::ListScripts, request, handler, context);
         }
@@ -3521,13 +3521,13 @@ namespace GameLift
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
          * API Reference</a></p>
          */
-        virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
+        virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for SearchGameSessions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename SearchGameSessionsRequestT = Model::SearchGameSessionsRequest>
-        Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const SearchGameSessionsRequestT& request) const
+        Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const SearchGameSessionsRequestT& request = {}) const
         {
             return SubmitCallable(&GameLiftClient::SearchGameSessions, request);
         }
@@ -3536,7 +3536,7 @@ namespace GameLift
          * An Async wrapper for SearchGameSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename SearchGameSessionsRequestT = Model::SearchGameSessionsRequest>
-        void SearchGameSessionsAsync(const SearchGameSessionsRequestT& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void SearchGameSessionsAsync(const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const SearchGameSessionsRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::SearchGameSessions, request, handler, context);
         }
