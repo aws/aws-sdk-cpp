@@ -121,7 +121,11 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
                 shouldAllow = !addresses.empty();
                 hostResolved = true;
               }
-              hostResolverCV.notify_one();
+              else
+              {
+                std::unique_lock<std::mutex> lock(hostResolverMutex);
+                hostResolverCV.notify_one();
+              }
             };
           pHostResolver->ResolveHost(authority.c_str(), onHostResolved);
           std::unique_lock<std::mutex> lock(hostResolverMutex);
