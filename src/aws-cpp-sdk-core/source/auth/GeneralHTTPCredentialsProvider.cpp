@@ -120,6 +120,7 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
                 std::unique_lock<std::mutex> lock(hostResolverMutex);
                 shouldAllow = !addresses.empty();
                 hostResolved = true;
+                hostResolverCV.notify_one();
               }
               else
               {
