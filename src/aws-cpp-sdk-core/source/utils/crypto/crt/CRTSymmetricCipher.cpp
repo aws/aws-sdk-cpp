@@ -85,7 +85,9 @@ namespace Aws
 
             void CRTSymmetricCipher::Reset()
             {
+                m_lastFetchedTag = GetTag();
                 m_cipher.Reset();
+                m_cipher.SetTag(Crt::ByteCursorFromArray(m_lastFetchedTag.GetUnderlyingData(), m_lastFetchedTag.GetLength()));
             }
 
             bool CRTSymmetricCipher::Good() const

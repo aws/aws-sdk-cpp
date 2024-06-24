@@ -270,10 +270,10 @@ TEST_F(AES_GCM_TEST, TestBadTagCausesFailure)
     ASSERT_TRUE(*cipher);
 
     const_cast<CryptoBuffer&>(cipher->GetTag())[8] = 0;
-
     cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_FALSE(*cipher);
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
 }
 
