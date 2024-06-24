@@ -8,6 +8,7 @@
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/AttachmentsConfiguration.h>
+#include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,19 @@ namespace Model
     inline UpdateApplicationRequest& WithAttachmentsConfiguration(const AttachmentsConfiguration& value) { SetAttachmentsConfiguration(value); return *this;}
     inline UpdateApplicationRequest& WithAttachmentsConfiguration(AttachmentsConfiguration&& value) { SetAttachmentsConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An option to allow end users to create and use Amazon Q Apps in the web
+     * experience.</p>
+     */
+    inline const QAppsConfiguration& GetQAppsConfiguration() const{ return m_qAppsConfiguration; }
+    inline bool QAppsConfigurationHasBeenSet() const { return m_qAppsConfigurationHasBeenSet; }
+    inline void SetQAppsConfiguration(const QAppsConfiguration& value) { m_qAppsConfigurationHasBeenSet = true; m_qAppsConfiguration = value; }
+    inline void SetQAppsConfiguration(QAppsConfiguration&& value) { m_qAppsConfigurationHasBeenSet = true; m_qAppsConfiguration = std::move(value); }
+    inline UpdateApplicationRequest& WithQAppsConfiguration(const QAppsConfiguration& value) { SetQAppsConfiguration(value); return *this;}
+    inline UpdateApplicationRequest& WithQAppsConfiguration(QAppsConfiguration&& value) { SetQAppsConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -135,6 +149,9 @@ namespace Model
 
     AttachmentsConfiguration m_attachmentsConfiguration;
     bool m_attachmentsConfigurationHasBeenSet = false;
+
+    QAppsConfiguration m_qAppsConfiguration;
+    bool m_qAppsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

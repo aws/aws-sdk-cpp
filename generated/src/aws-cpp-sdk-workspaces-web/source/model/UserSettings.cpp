@@ -25,6 +25,8 @@ UserSettings::UserSettings() :
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_customerManagedKeyHasBeenSet(false),
+    m_deepLinkAllowed(EnabledType::NOT_SET),
+    m_deepLinkAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -48,6 +50,8 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
     m_customerManagedKeyHasBeenSet(false),
+    m_deepLinkAllowed(EnabledType::NOT_SET),
+    m_deepLinkAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -106,6 +110,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_customerManagedKey = jsonValue.GetString("customerManagedKey");
 
     m_customerManagedKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deepLinkAllowed"))
+  {
+    m_deepLinkAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("deepLinkAllowed"));
+
+    m_deepLinkAllowedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
@@ -201,6 +212,11 @@ JsonValue UserSettings::Jsonize() const
   {
    payload.WithString("customerManagedKey", m_customerManagedKey);
 
+  }
+
+  if(m_deepLinkAllowedHasBeenSet)
+  {
+   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
   }
 
   if(m_disconnectTimeoutInMinutesHasBeenSet)

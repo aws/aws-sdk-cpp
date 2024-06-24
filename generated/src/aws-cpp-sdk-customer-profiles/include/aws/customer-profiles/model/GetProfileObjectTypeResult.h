@@ -129,6 +129,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The amount of provisioned profile object max count available.</p>
+     */
+    inline int GetMaxAvailableProfileObjectCount() const{ return m_maxAvailableProfileObjectCount; }
+    inline void SetMaxAvailableProfileObjectCount(int value) { m_maxAvailableProfileObjectCount = value; }
+    inline GetProfileObjectTypeResult& WithMaxAvailableProfileObjectCount(int value) { SetMaxAvailableProfileObjectCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of profile object max count assigned to the object type.</p>
+     */
+    inline int GetMaxProfileObjectCount() const{ return m_maxProfileObjectCount; }
+    inline void SetMaxProfileObjectCount(int value) { m_maxProfileObjectCount = value; }
+    inline GetProfileObjectTypeResult& WithMaxProfileObjectCount(int value) { SetMaxProfileObjectCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A map of the name and ObjectType field.</p>
      */
     inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
@@ -226,6 +244,10 @@ namespace Model
     bool m_allowProfileCreation;
 
     Aws::String m_sourceLastUpdatedTimestampFormat;
+
+    int m_maxAvailableProfileObjectCount;
+
+    int m_maxProfileObjectCount;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
 

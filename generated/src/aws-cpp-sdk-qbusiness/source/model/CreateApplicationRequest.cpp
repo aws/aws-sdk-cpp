@@ -21,7 +21,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_attachmentsConfigurationHasBeenSet(false)
+    m_attachmentsConfigurationHasBeenSet(false),
+    m_qAppsConfigurationHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_attachmentsConfigurationHasBeenSet)
   {
    payload.WithObject("attachmentsConfiguration", m_attachmentsConfiguration.Jsonize());
+
+  }
+
+  if(m_qAppsConfigurationHasBeenSet)
+  {
+   payload.WithObject("qAppsConfiguration", m_qAppsConfiguration.Jsonize());
 
   }
 

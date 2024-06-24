@@ -93,6 +93,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>The amount of profile object max count assigned to the object type.</p>
+     */
+    inline int GetMaxProfileObjectCount() const{ return m_maxProfileObjectCount; }
+    inline bool MaxProfileObjectCountHasBeenSet() const { return m_maxProfileObjectCountHasBeenSet; }
+    inline void SetMaxProfileObjectCount(int value) { m_maxProfileObjectCountHasBeenSet = true; m_maxProfileObjectCount = value; }
+    inline ListProfileObjectTypeItem& WithMaxProfileObjectCount(int value) { SetMaxProfileObjectCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of provisioned profile object max count available.</p>
+     */
+    inline int GetMaxAvailableProfileObjectCount() const{ return m_maxAvailableProfileObjectCount; }
+    inline bool MaxAvailableProfileObjectCountHasBeenSet() const { return m_maxAvailableProfileObjectCountHasBeenSet; }
+    inline void SetMaxAvailableProfileObjectCount(int value) { m_maxAvailableProfileObjectCountHasBeenSet = true; m_maxAvailableProfileObjectCount = value; }
+    inline ListProfileObjectTypeItem& WithMaxAvailableProfileObjectCount(int value) { SetMaxAvailableProfileObjectCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -122,6 +142,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet = false;
+
+    int m_maxProfileObjectCount;
+    bool m_maxProfileObjectCountHasBeenSet = false;
+
+    int m_maxAvailableProfileObjectCount;
+    bool m_maxAvailableProfileObjectCountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

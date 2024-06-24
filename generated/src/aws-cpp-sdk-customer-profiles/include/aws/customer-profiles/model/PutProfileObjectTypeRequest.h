@@ -155,6 +155,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The amount of profile object max count assigned to the object type</p>
+     */
+    inline int GetMaxProfileObjectCount() const{ return m_maxProfileObjectCount; }
+    inline bool MaxProfileObjectCountHasBeenSet() const { return m_maxProfileObjectCountHasBeenSet; }
+    inline void SetMaxProfileObjectCount(int value) { m_maxProfileObjectCountHasBeenSet = true; m_maxProfileObjectCount = value; }
+    inline PutProfileObjectTypeRequest& WithMaxProfileObjectCount(int value) { SetMaxProfileObjectCount(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A map of the name and ObjectType field.</p>
      */
     inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
@@ -232,6 +242,9 @@ namespace Model
 
     Aws::String m_sourceLastUpdatedTimestampFormat;
     bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
+
+    int m_maxProfileObjectCount;
+    bool m_maxProfileObjectCountHasBeenSet = false;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
     bool m_fieldsHasBeenSet = false;
