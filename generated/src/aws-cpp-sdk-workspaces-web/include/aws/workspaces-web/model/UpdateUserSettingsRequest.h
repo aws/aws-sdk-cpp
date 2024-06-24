@@ -83,6 +83,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether the user can use deep links that open automatically when
+     * connecting to a session.</p>
+     */
+    inline const EnabledType& GetDeepLinkAllowed() const{ return m_deepLinkAllowed; }
+    inline bool DeepLinkAllowedHasBeenSet() const { return m_deepLinkAllowedHasBeenSet; }
+    inline void SetDeepLinkAllowed(const EnabledType& value) { m_deepLinkAllowedHasBeenSet = true; m_deepLinkAllowed = value; }
+    inline void SetDeepLinkAllowed(EnabledType&& value) { m_deepLinkAllowedHasBeenSet = true; m_deepLinkAllowed = std::move(value); }
+    inline UpdateUserSettingsRequest& WithDeepLinkAllowed(const EnabledType& value) { SetDeepLinkAllowed(value); return *this;}
+    inline UpdateUserSettingsRequest& WithDeepLinkAllowed(EnabledType&& value) { SetDeepLinkAllowed(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The amount of time that a streaming session remains active after users
      * disconnect.</p>
      */
@@ -178,6 +191,9 @@ namespace Model
 
     EnabledType m_copyAllowed;
     bool m_copyAllowedHasBeenSet = false;
+
+    EnabledType m_deepLinkAllowed;
+    bool m_deepLinkAllowedHasBeenSet = false;
 
     int m_disconnectTimeoutInMinutes;
     bool m_disconnectTimeoutInMinutesHasBeenSet = false;

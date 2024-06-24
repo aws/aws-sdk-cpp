@@ -160,8 +160,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the previous end user text input message in a
-     * conversation.</p>
+     * <p>The identifier of the previous system message in a conversation.</p>
      */
     inline const Aws::String& GetParentMessageId() const{ return m_parentMessageId; }
     inline bool ParentMessageIdHasBeenSet() const { return m_parentMessageIdHasBeenSet; }

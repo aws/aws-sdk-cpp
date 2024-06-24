@@ -133,7 +133,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags to add to the browser settings resource. A tag is a key-value
+     * <p>The tags to add to the IP access settings resource. A tag is a key-value
      * pair.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }

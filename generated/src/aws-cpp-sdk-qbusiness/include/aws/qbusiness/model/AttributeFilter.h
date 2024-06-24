@@ -115,8 +115,7 @@ namespace Model
      * <p>Returns <code>true</code> when a document contains any of the specified
      * document attributes or metadata fields. Supported for the following <a
      * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     * <code>stringListValue</code> and <code>stringValue</code>.</p>
+     * attribute value types</a>: <code>stringListValue</code>.</p>
      */
     inline const DocumentAttribute& GetContainsAny() const{ return m_containsAny; }
     inline bool ContainsAnyHasBeenSet() const { return m_containsAnyHasBeenSet; }

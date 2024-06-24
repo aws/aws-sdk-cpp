@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/AppliedAttachmentsConfiguration.h>
+#include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +190,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Settings for whether end users can create and use Amazon Q Apps in the web
+     * experience.</p>
+     */
+    inline const QAppsConfiguration& GetQAppsConfiguration() const{ return m_qAppsConfiguration; }
+    inline void SetQAppsConfiguration(const QAppsConfiguration& value) { m_qAppsConfiguration = value; }
+    inline void SetQAppsConfiguration(QAppsConfiguration&& value) { m_qAppsConfiguration = std::move(value); }
+    inline GetApplicationResult& WithQAppsConfiguration(const QAppsConfiguration& value) { SetQAppsConfiguration(value); return *this;}
+    inline GetApplicationResult& WithQAppsConfiguration(QAppsConfiguration&& value) { SetQAppsConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -223,6 +236,8 @@ namespace Model
     ErrorDetail m_error;
 
     AppliedAttachmentsConfiguration m_attachmentsConfiguration;
+
+    QAppsConfiguration m_qAppsConfiguration;
 
     Aws::String m_requestId;
   };

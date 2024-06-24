@@ -22,6 +22,8 @@ UserSettingsSummary::UserSettingsSummary() :
     m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_deepLinkAllowed(EnabledType::NOT_SET),
+    m_deepLinkAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -42,6 +44,8 @@ UserSettingsSummary::UserSettingsSummary(JsonView jsonValue) :
     m_cookieSynchronizationConfigurationHasBeenSet(false),
     m_copyAllowed(EnabledType::NOT_SET),
     m_copyAllowedHasBeenSet(false),
+    m_deepLinkAllowed(EnabledType::NOT_SET),
+    m_deepLinkAllowedHasBeenSet(false),
     m_disconnectTimeoutInMinutes(0),
     m_disconnectTimeoutInMinutesHasBeenSet(false),
     m_downloadAllowed(EnabledType::NOT_SET),
@@ -73,6 +77,13 @@ UserSettingsSummary& UserSettingsSummary::operator =(JsonView jsonValue)
     m_copyAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("copyAllowed"));
 
     m_copyAllowedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deepLinkAllowed"))
+  {
+    m_deepLinkAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("deepLinkAllowed"));
+
+    m_deepLinkAllowedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("disconnectTimeoutInMinutes"))
@@ -140,6 +151,11 @@ JsonValue UserSettingsSummary::Jsonize() const
   if(m_copyAllowedHasBeenSet)
   {
    payload.WithString("copyAllowed", EnabledTypeMapper::GetNameForEnabledType(m_copyAllowed));
+  }
+
+  if(m_deepLinkAllowedHasBeenSet)
+  {
+   payload.WithString("deepLinkAllowed", EnabledTypeMapper::GetNameForEnabledType(m_deepLinkAllowed));
   }
 
   if(m_disconnectTimeoutInMinutesHasBeenSet)

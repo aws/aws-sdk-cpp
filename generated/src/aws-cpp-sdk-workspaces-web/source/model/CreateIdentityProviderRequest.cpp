@@ -19,7 +19,8 @@ CreateIdentityProviderRequest::CreateIdentityProviderRequest() :
     m_identityProviderNameHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
-    m_portalArnHasBeenSet(false)
+    m_portalArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,17 @@ Aws::String CreateIdentityProviderRequest::SerializePayload() const
   if(m_portalArnHasBeenSet)
   {
    payload.WithString("portalArn", m_portalArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

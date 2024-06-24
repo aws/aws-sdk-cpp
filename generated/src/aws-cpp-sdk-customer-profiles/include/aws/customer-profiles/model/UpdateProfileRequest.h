@@ -80,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique account number that you have given to the customer.</p>
+     * <p>An account number that you have given to the customer.</p>
      */
     inline const Aws::String& GetAccountNumber() const{ return m_accountNumber; }
     inline bool AccountNumberHasBeenSet() const { return m_accountNumberHasBeenSet; }
