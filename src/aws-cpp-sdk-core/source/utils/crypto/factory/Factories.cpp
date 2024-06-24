@@ -376,7 +376,11 @@ public:
         if (aad)
         {
             auto aadCur = Aws::Crt::ByteCursorFromArray(aad->GetUnderlyingData(), aad->GetLength());
-            return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, Aws::Crt::Optional<Aws::Crt::ByteCursor>(), Aws::Crt::Optional<Aws::Crt::ByteCursor>(), aadCur));
+            const auto cipher = Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag,
+                Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur,
+                    Aws::Crt::Optional<Aws::Crt::ByteCursor>(),
+                    aadCur));
+            return cipher;
         }
 
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur));
@@ -398,7 +402,12 @@ public:
         Aws::Crt::Optional<Aws::Crt::ByteCursor> tagCur = tag.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
         Aws::Crt::Optional<Aws::Crt::ByteCursor> aadCur = aad.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
 
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, tagCur, aadCur));
+        auto cipher = Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, aadCur);
+        if (cipher && tagCur.has_value())
+        {
+            cipher.SetTag(tagCur.value());
+        }
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, std::move(cipher));
 #else
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
