@@ -60,8 +60,8 @@ namespace Model
    * and <code>MemoryMiB</code>. All other attributes are optional. Any unspecified
    * optional attribute is set to its default.</p>  <p>For more information,
    * see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-   * an Auto Scaling group using attribute-based instance type selection</a> in the
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
+   * a mixed instances group using attribute-based instance type selection</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>. For help determining which instance
    * types match your attributes before you apply them to your Auto Scaling group,
    * see <a

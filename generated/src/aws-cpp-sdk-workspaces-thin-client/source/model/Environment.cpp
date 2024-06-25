@@ -42,7 +42,8 @@ Environment::Environment() :
     m_updatedAtHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deviceCreationTagsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Environment::Environment(JsonView jsonValue) :
     m_updatedAtHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deviceCreationTagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -213,6 +215,16 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deviceCreationTags"))
+  {
+    Aws::Map<Aws::String, JsonView> deviceCreationTagsJsonMap = jsonValue.GetObject("deviceCreationTags").GetAllObjects();
+    for(auto& deviceCreationTagsItem : deviceCreationTagsJsonMap)
+    {
+      m_deviceCreationTags[deviceCreationTagsItem.first] = deviceCreationTagsItem.second.AsString();
+    }
+    m_deviceCreationTagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -330,6 +342,17 @@ JsonValue Environment::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_deviceCreationTagsHasBeenSet)
+  {
+   JsonValue deviceCreationTagsJsonMap;
+   for(auto& deviceCreationTagsItem : m_deviceCreationTags)
+   {
+     deviceCreationTagsJsonMap.WithString(deviceCreationTagsItem.first, deviceCreationTagsItem.second);
+   }
+   payload.WithObject("deviceCreationTags", std::move(deviceCreationTagsJsonMap));
 
   }
 

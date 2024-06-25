@@ -189,6 +189,26 @@ namespace Model
     inline CreateEnvironmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateEnvironmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A map of the key-value pairs of the tag or tags to assign to the newly
+     * created devices for this environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDeviceCreationTags() const{ return m_deviceCreationTags; }
+    inline bool DeviceCreationTagsHasBeenSet() const { return m_deviceCreationTagsHasBeenSet; }
+    inline void SetDeviceCreationTags(const Aws::Map<Aws::String, Aws::String>& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags = value; }
+    inline void SetDeviceCreationTags(Aws::Map<Aws::String, Aws::String>&& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags = std::move(value); }
+    inline CreateEnvironmentRequest& WithDeviceCreationTags(const Aws::Map<Aws::String, Aws::String>& value) { SetDeviceCreationTags(value); return *this;}
+    inline CreateEnvironmentRequest& WithDeviceCreationTags(Aws::Map<Aws::String, Aws::String>&& value) { SetDeviceCreationTags(std::move(value)); return *this;}
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(const Aws::String& key, const Aws::String& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(key, value); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(Aws::String&& key, const Aws::String& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(std::move(key), value); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(const Aws::String& key, Aws::String&& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(key, std::move(value)); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(Aws::String&& key, Aws::String&& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(std::move(key), std::move(value)); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(const char* key, Aws::String&& value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(key, std::move(value)); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(Aws::String&& key, const char* value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(std::move(key), value); return *this; }
+    inline CreateEnvironmentRequest& AddDeviceCreationTags(const char* key, const char* value) { m_deviceCreationTagsHasBeenSet = true; m_deviceCreationTags.emplace(key, value); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
@@ -220,6 +240,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_deviceCreationTags;
+    bool m_deviceCreationTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,7 +159,7 @@ namespace Model
      * policy. When a cooldown period is specified here, it overrides the default
      * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>Default: None</p>
      */
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p>Indicates whether the scaling policy is enabled or disabled. The default is
      * enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disable
      * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */

@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the Amazon Machine Image (AMI) that was assigned during
      * registration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find
      * a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not
      * required.</p>
@@ -78,8 +78,8 @@ namespace Model
     /**
      * <p>The name of the key pair. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for
+     * Linux Instances</i>.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
@@ -95,9 +95,9 @@ namespace Model
     /**
      * <p>A list that contains the security group IDs to assign to the instances in the
      * Auto Scaling group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control
-     * traffic to resources using security groups</a> in the <i>Amazon Virtual Private
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html">Control
+     * traffic to your Amazon Web Services resources using security groups</a> in the
+     * <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
@@ -168,9 +168,8 @@ namespace Model
      * device mapping.</p> <p>To create a launch configuration with a block device
      * mapping or override any other instance attributes, specify them as part of the
      * same request.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating
-     * a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html">Create
+     * a launch configuration</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -264,7 +263,7 @@ namespace Model
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
-     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * monitoring for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> 
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
@@ -326,7 +325,7 @@ namespace Model
      * instance types. Additional fees are incurred when you enable EBS optimization
      * for an instance type that is not EBS-optimized by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
@@ -346,10 +345,11 @@ namespace Model
      * assign a public IPv4 address on the subnet.</p> <p>If you specify
      * <code>true</code>, each instance in the Auto Scaling group receives a unique
      * public IPv4 address. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>If you specify this property, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Provide
+     * network connectivity for your Auto Scaling instances using Amazon VPC</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>If you specify this property,
+     * you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you
+     * create your group.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
@@ -364,13 +364,10 @@ namespace Model
      * isolated, single-tenant hardware and can only be launched into a VPC. To launch
      * dedicated instances into a shared tenancy VPC (a VPC with the instance placement
      * tenancy attribute set to <code>default</code>), you must set the value of this
-     * property to <code>dedicated</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
-     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you specify <code>PlacementTenancy</code>, you
-     * must specify at least one subnet for <code>VPCZoneIdentifier</code> when you
-     * create your group.</p> <p>Valid values: <code>default</code> |
-     * <code>dedicated</code> </p>
+     * property to <code>dedicated</code>.</p> <p>If you specify
+     * <code>PlacementTenancy</code>, you must specify at least one subnet for
+     * <code>VPCZoneIdentifier</code> when you create your group.</p> <p>Valid values:
+     * <code>default</code> | <code>dedicated</code> </p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
@@ -385,8 +382,8 @@ namespace Model
     ///@{
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
-     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configure
+     * the instance metadata options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }

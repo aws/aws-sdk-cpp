@@ -22,7 +22,8 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
     m_maintenanceWindowHasBeenSet(false),
     m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
     m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false)
+    m_desiredSoftwareSetIdHasBeenSet(false),
+    m_deviceCreationTagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,17 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_desiredSoftwareSetIdHasBeenSet)
   {
    payload.WithString("desiredSoftwareSetId", m_desiredSoftwareSetId);
+
+  }
+
+  if(m_deviceCreationTagsHasBeenSet)
+  {
+   JsonValue deviceCreationTagsJsonMap;
+   for(auto& deviceCreationTagsItem : m_deviceCreationTags)
+   {
+     deviceCreationTagsJsonMap.WithString(deviceCreationTagsItem.first, deviceCreationTagsItem.second);
+   }
+   payload.WithObject("deviceCreationTags", std::move(deviceCreationTagsJsonMap));
 
   }
 

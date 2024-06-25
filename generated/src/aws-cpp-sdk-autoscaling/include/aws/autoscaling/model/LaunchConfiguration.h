@@ -93,7 +93,8 @@ namespace Model
     /**
      * <p>The name of the key pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * EC2 key pairs and Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide for
+     * Linux Instances</i>.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
@@ -109,9 +110,9 @@ namespace Model
     /**
      * <p>A list that contains the security groups to assign to the instances in the
      * Auto Scaling group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-     * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html">Control
+     * traffic to your Amazon Web Services resources using security groups</a> in the
+     * <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
@@ -226,7 +227,7 @@ namespace Model
      * the instances at launch. By default, the block devices specified in the block
      * device mapping for the AMI are used. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     * Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
@@ -244,7 +245,7 @@ namespace Model
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
-     * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * monitoring for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
@@ -260,8 +261,9 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot price. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting
-     * Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Requesting
+     * Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
@@ -308,8 +310,8 @@ namespace Model
     /**
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
      * (<code>true</code>) or not (<code>false</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
+     * EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
@@ -326,9 +328,9 @@ namespace Model
      * address on the subnet. If the instance is launched into a nondefault subnet, the
      * default is not to assign a public IPv4 address, unless you enabled the option to
      * assign a public IPv4 address on the subnet. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Provide
+     * network connectivity for your Auto Scaling instances using Amazon VPC</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
@@ -340,11 +342,7 @@ namespace Model
     /**
      * <p>The tenancy of the instance, either <code>default</code> or
      * <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on
-     * isolated, single-tenant hardware and can only be launched into a VPC.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
-     * instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * isolated, single-tenant hardware and can only be launched into a VPC.</p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
@@ -359,8 +357,8 @@ namespace Model
     ///@{
     /**
      * <p>The metadata options for the instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
-     * the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configure
+     * the instance metadata options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
     inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }

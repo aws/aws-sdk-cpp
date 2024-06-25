@@ -76,8 +76,9 @@ namespace Model
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>If you specify
      * <code>Granularity</code> and don't specify any metrics, all metrics are
      * enabled.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
-     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-metrics.html">Amazon
+     * CloudWatch metrics for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
