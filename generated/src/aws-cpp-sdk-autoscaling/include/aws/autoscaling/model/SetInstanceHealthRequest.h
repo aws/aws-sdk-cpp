@@ -74,8 +74,9 @@ namespace Model
      * call respects the grace period. Set this to <code>False</code>, to have the call
      * not respect the grace period associated with the group.</p> <p>For more
      * information about the health check grace period, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
-     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline bool GetShouldRespectGracePeriod() const{ return m_shouldRespectGracePeriod; }
     inline bool ShouldRespectGracePeriodHasBeenSet() const { return m_shouldRespectGracePeriodHasBeenSet; }

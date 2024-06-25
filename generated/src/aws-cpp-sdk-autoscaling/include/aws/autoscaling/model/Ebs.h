@@ -75,10 +75,10 @@ namespace Model
     ///@{
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Valid values:
+     * <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     * <code>sc1</code> | <code>gp3</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
@@ -112,12 +112,12 @@ namespace Model
      * <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> </ul> <p>For <code>io1</code> volumes, we guarantee
      * 64,000 IOPS only for <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS. </p> <p> <code>Iops</code> is supported when the volume type is
-     * <code>gp3</code> or <code>io1</code> and required only when the volume type is
-     * <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
-     * <code>st1</code>, or <code>sc1</code> volumes.) </p>
+     * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances
+     * built on the Amazon Web Services Nitro System</a>. Other instance families
+     * guarantee performance up to 32,000 IOPS. </p> <p> <code>Iops</code> is supported
+     * when the volume type is <code>gp3</code> or <code>io1</code> and required only
+     * when the volume type is <code>io1</code>. (Not used with <code>standard</code>,
+     * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
     inline int GetIops() const{ return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
@@ -130,15 +130,16 @@ namespace Model
      * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>. If your AMI uses encrypted volumes, you can also only launch
-     * it on supported instance types.</p>  <p>If you are creating a volume from
-     * a snapshot, you cannot create an unencrypted volume from an encrypted snapshot.
-     * Also, you cannot specify a KMS key ID when using a launch configuration.</p>
-     * <p>If you enable encryption by default, the EBS volumes that you create are
-     * always encrypted, either using the Amazon Web Services managed KMS key or a
-     * customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
-     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html">Requirements
+     * for Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>. If your AMI
+     * uses encrypted volumes, you can also only launch it on supported instance
+     * types.</p>  <p>If you are creating a volume from a snapshot, you cannot
+     * create an unencrypted volume from an encrypted snapshot. Also, you cannot
+     * specify a KMS key ID when using a launch configuration.</p> <p>If you enable
+     * encryption by default, the EBS volumes that you create are always encrypted,
+     * either using the Amazon Web Services managed KMS key or a customer-managed KMS
+     * key, regardless of whether the snapshot was encrypted. </p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
      * Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p> 

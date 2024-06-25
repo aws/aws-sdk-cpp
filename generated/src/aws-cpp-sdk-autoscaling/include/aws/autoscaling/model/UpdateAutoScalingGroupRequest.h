@@ -142,7 +142,7 @@ namespace Model
      * <p> <i>Only needed if you use simple scaling policies.</i> </p> <p>The amount of
      * time, in seconds, between one scaling activity ending and another one starting
      * due to simple scaling policies. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -173,10 +173,10 @@ namespace Model
      * valid values are <code>EC2</code>, <code>ELB</code>, and
      * <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and
      * cannot be disabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Only specify <code>EC2</code> if you must clear a value that
-     * was previously set.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health
+     * checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Only specify <code>EC2</code> if you must clear a
+     * value that was previously set.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
@@ -246,8 +246,8 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
-     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Configure
+     * termination policies for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
      * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
      * <code>NewestInstance</code> | <code>OldestInstance</code> |
@@ -270,7 +270,7 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
      * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -346,8 +346,8 @@ namespace Model
      * <p>The unit of measurement for the value specified for desired capacity. Amazon
      * EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based
      * instance type selection only. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-     * an Auto Scaling group using attribute-based instance type selection</a> in the
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-mixed-instances-group-attribute-based-instance-type-selection.html">Create
+     * a mixed instances group using attribute-based instance type selection</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>By default, Amazon EC2 Auto
      * Scaling specifies <code>units</code>, which translates into number of
      * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |

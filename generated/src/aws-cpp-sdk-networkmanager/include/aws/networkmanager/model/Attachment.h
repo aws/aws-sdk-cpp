@@ -13,6 +13,7 @@
 #include <aws/networkmanager/model/ProposedNetworkFunctionGroupChange.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/networkmanager/model/Tag.h>
+#include <aws/networkmanager/model/AttachmentError.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,20 @@ namespace Model
     inline Attachment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
     inline Attachment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the error associated with the attachment request.</p>
+     */
+    inline const Aws::Vector<AttachmentError>& GetLastModificationErrors() const{ return m_lastModificationErrors; }
+    inline bool LastModificationErrorsHasBeenSet() const { return m_lastModificationErrorsHasBeenSet; }
+    inline void SetLastModificationErrors(const Aws::Vector<AttachmentError>& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = value; }
+    inline void SetLastModificationErrors(Aws::Vector<AttachmentError>&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = std::move(value); }
+    inline Attachment& WithLastModificationErrors(const Aws::Vector<AttachmentError>& value) { SetLastModificationErrors(value); return *this;}
+    inline Attachment& WithLastModificationErrors(Aws::Vector<AttachmentError>&& value) { SetLastModificationErrors(std::move(value)); return *this;}
+    inline Attachment& AddLastModificationErrors(const AttachmentError& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(value); return *this; }
+    inline Attachment& AddLastModificationErrors(AttachmentError&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_coreNetworkId;
@@ -301,6 +316,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::Vector<AttachmentError> m_lastModificationErrors;
+    bool m_lastModificationErrorsHasBeenSet = false;
   };
 
 } // namespace Model

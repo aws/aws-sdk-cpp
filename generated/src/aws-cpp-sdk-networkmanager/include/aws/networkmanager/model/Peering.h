@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/networkmanager/model/Tag.h>
+#include <aws/networkmanager/model/PeeringError.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,20 @@ namespace Model
     inline Peering& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
     inline Peering& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the error associated with the Connect peer request.</p>
+     */
+    inline const Aws::Vector<PeeringError>& GetLastModificationErrors() const{ return m_lastModificationErrors; }
+    inline bool LastModificationErrorsHasBeenSet() const { return m_lastModificationErrorsHasBeenSet; }
+    inline void SetLastModificationErrors(const Aws::Vector<PeeringError>& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = value; }
+    inline void SetLastModificationErrors(Aws::Vector<PeeringError>&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = std::move(value); }
+    inline Peering& WithLastModificationErrors(const Aws::Vector<PeeringError>& value) { SetLastModificationErrors(value); return *this;}
+    inline Peering& WithLastModificationErrors(Aws::Vector<PeeringError>&& value) { SetLastModificationErrors(std::move(value)); return *this;}
+    inline Peering& AddLastModificationErrors(const PeeringError& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(value); return *this; }
+    inline Peering& AddLastModificationErrors(PeeringError&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_coreNetworkId;
@@ -206,6 +221,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    Aws::Vector<PeeringError> m_lastModificationErrors;
+    bool m_lastModificationErrorsHasBeenSet = false;
   };
 
 } // namespace Model

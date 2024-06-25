@@ -820,7 +820,22 @@ namespace Model
     u7i_12tb_224xlarge,
     u7in_16tb_224xlarge,
     u7in_24tb_224xlarge,
-    u7in_32tb_224xlarge
+    u7in_32tb_224xlarge,
+    u7ib_12tb_224xlarge,
+    c7gn_metal,
+    r8g_medium,
+    r8g_large,
+    r8g_xlarge,
+    r8g_2xlarge,
+    r8g_4xlarge,
+    r8g_8xlarge,
+    r8g_12xlarge,
+    r8g_16xlarge,
+    r8g_24xlarge,
+    r8g_48xlarge,
+    r8g_metal_24xl,
+    r8g_metal_48xl,
+    mac2_m1ultra_metal
   };
 
 namespace InstanceTypeMapper

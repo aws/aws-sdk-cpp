@@ -37,7 +37,8 @@ Attachment::Attachment() :
     m_proposedSegmentChangeHasBeenSet(false),
     m_proposedNetworkFunctionGroupChangeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_lastModificationErrorsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ Attachment::Attachment(JsonView jsonValue) :
     m_proposedSegmentChangeHasBeenSet(false),
     m_proposedNetworkFunctionGroupChangeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_lastModificationErrorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +184,16 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModificationErrors"))
+  {
+    Aws::Utils::Array<JsonView> lastModificationErrorsJsonList = jsonValue.GetArray("LastModificationErrors");
+    for(unsigned lastModificationErrorsIndex = 0; lastModificationErrorsIndex < lastModificationErrorsJsonList.GetLength(); ++lastModificationErrorsIndex)
+    {
+      m_lastModificationErrors.push_back(lastModificationErrorsJsonList[lastModificationErrorsIndex].AsObject());
+    }
+    m_lastModificationErrorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -284,6 +296,17 @@ JsonValue Attachment::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModificationErrorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lastModificationErrorsJsonList(m_lastModificationErrors.size());
+   for(unsigned lastModificationErrorsIndex = 0; lastModificationErrorsIndex < lastModificationErrorsJsonList.GetLength(); ++lastModificationErrorsIndex)
+   {
+     lastModificationErrorsJsonList[lastModificationErrorsIndex].AsObject(m_lastModificationErrors[lastModificationErrorsIndex].Jsonize());
+   }
+   payload.WithArray("LastModificationErrors", std::move(lastModificationErrorsJsonList));
+
   }
 
   return payload;

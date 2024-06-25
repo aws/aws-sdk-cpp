@@ -11,6 +11,7 @@
 #include <aws/networkmanager/model/ConnectPeerConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/model/Tag.h>
+#include <aws/networkmanager/model/ConnectPeerError.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,20 @@ namespace Model
     inline ConnectPeer& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
     inline ConnectPeer& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the error associated with the attachment request.</p>
+     */
+    inline const Aws::Vector<ConnectPeerError>& GetLastModificationErrors() const{ return m_lastModificationErrors; }
+    inline bool LastModificationErrorsHasBeenSet() const { return m_lastModificationErrorsHasBeenSet; }
+    inline void SetLastModificationErrors(const Aws::Vector<ConnectPeerError>& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = value; }
+    inline void SetLastModificationErrors(Aws::Vector<ConnectPeerError>&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors = std::move(value); }
+    inline ConnectPeer& WithLastModificationErrors(const Aws::Vector<ConnectPeerError>& value) { SetLastModificationErrors(value); return *this;}
+    inline ConnectPeer& WithLastModificationErrors(Aws::Vector<ConnectPeerError>&& value) { SetLastModificationErrors(std::move(value)); return *this;}
+    inline ConnectPeer& AddLastModificationErrors(const ConnectPeerError& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(value); return *this; }
+    inline ConnectPeer& AddLastModificationErrors(ConnectPeerError&& value) { m_lastModificationErrorsHasBeenSet = true; m_lastModificationErrors.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_coreNetworkId;
@@ -190,6 +205,9 @@ namespace Model
 
     Aws::String m_subnetArn;
     bool m_subnetArnHasBeenSet = false;
+
+    Aws::Vector<ConnectPeerError> m_lastModificationErrors;
+    bool m_lastModificationErrorsHasBeenSet = false;
   };
 
 } // namespace Model

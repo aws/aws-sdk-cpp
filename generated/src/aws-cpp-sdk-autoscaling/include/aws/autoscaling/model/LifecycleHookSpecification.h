@@ -139,10 +139,10 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
      * specified notification target. For information about creating this role, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure
-     * a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>Valid only if the notification target is an Amazon SNS
-     * topic or an Amazon SQS queue.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html">Prepare
+     * to add a lifecycle hook to your Auto Scaling group</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid only if the notification target is an
+     * Amazon SNS topic or an Amazon SQS queue.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
