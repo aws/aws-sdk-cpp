@@ -39,6 +39,7 @@ namespace Model
     class ${operation.name}Handler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const ${operation.name}InitialResponse&)> ${operation.name}InitialResponseCallback;
+        typedef std::function<void(const ${operation.name}InitialResponse&, const Utils::Event::InitialResponseType)> ${operation.name}InitialResponseCallbackEx;
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
 #if($eventShape.isException())
@@ -59,7 +60,22 @@ namespace Model
 
         ${exportMacro} virtual void OnEvent() override;
 
-        inline void SetInitialResponseCallback(const ${operation.name}InitialResponseCallback& callback) { m_onInitialResponse = callback; }
+        ///@{
+        /**
+         * Sets an initial response callback. This callback gets called on the initial ${operation.name} Operation response.
+         *   This can be either "initial-response" decoded event frame or decoded HTTP headers received on connection.
+         *   This callback may get called more than once (i.e. on connection headers received and then on the initial-response event received).
+         * @param callback
+         */
+        inline void SetInitialResponseCallbackEx(const ${operation.name}InitialResponseCallbackEx& callback) { m_onInitialResponse = callback; }
+        /**
+         * Sets an initial response callback (a legacy one that does not distinguish whether response originates from headers or from the event).
+         */
+        inline void SetInitialResponseCallback(const ${operation.name}InitialResponseCallback& noArgCallback)
+        {
+            m_onInitialResponse = [noArgCallback](const ${operation.name}InitialResponse& rs, const Utils::Event::InitialResponseType) { return noArgCallback(rs); };
+        }
+        ///@}
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
@@ -68,12 +84,14 @@ namespace Model
 #end
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
+        inline ${operation.name}InitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
+
     private:
         ${exportMacro} void HandleEventInMessage();
         ${exportMacro} void HandleErrorInMessage();
         ${exportMacro} void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
-        ${operation.name}InitialResponseCallback m_onInitialResponse;
+        ${operation.name}InitialResponseCallbackEx m_onInitialResponse;
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
 #if(!$eventMemberEntry.value.shape.isException())

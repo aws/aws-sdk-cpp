@@ -134,14 +134,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectSource.vm", StandardCharsets.UTF_8.name());
             }
 
-            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
-                Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
-                    context.put("operation", op);
-                    break;
-                }
-            }
-
+            context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppViewHelper.class);
