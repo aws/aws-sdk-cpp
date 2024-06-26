@@ -27,7 +27,10 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)$initializers
+${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = jsonValue;
 }

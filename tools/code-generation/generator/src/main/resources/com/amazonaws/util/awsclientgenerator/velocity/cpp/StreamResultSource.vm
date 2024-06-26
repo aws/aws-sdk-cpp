@@ -49,7 +49,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator=(${typeInfo.className}&& 
    return *this;
 }
 
-${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)$initializers
+${typeInfo.className}::${typeInfo.className}(Aws::AmazonWebServiceResult<ResponseStream>&& result)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = std::move(result);
 }

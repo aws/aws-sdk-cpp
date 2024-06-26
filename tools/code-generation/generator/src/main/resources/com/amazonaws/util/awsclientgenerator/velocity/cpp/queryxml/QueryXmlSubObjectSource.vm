@@ -29,7 +29,10 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(const XmlNode& xmlNode)$initializers
+${typeInfo.className}::${typeInfo.className}(const XmlNode& xmlNode)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
 {
   *this = xmlNode;
 }
