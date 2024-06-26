@@ -38,6 +38,7 @@
 #include <aws/controltower/model/ListControlOperationsRequest.h>
 #include <aws/controltower/model/ListEnabledBaselinesRequest.h>
 #include <aws/controltower/model/ListEnabledControlsRequest.h>
+#include <aws/controltower/model/ListLandingZoneOperationsRequest.h>
 #include <aws/controltower/model/ListLandingZonesRequest.h>
 #include <aws/controltower/model/ListTagsForResourceRequest.h>
 #include <aws/controltower/model/ResetEnabledBaselineRequest.h>
@@ -641,6 +642,33 @@ ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEna
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnabledControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/list-enabled-controls");
       return ListEnabledControlsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListLandingZoneOperationsOutcome ControlTowerClient::ListLandingZoneOperations(const ListLandingZoneOperationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListLandingZoneOperations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLandingZoneOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListLandingZoneOperations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListLandingZoneOperations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLandingZoneOperations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListLandingZoneOperationsOutcome>(
+    [&]()-> ListLandingZoneOperationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLandingZoneOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-landingzone-operations");
+      return ListLandingZoneOperationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -91,7 +91,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Auto participant recording configuration object attached to the stage.</p>
+     * <p>Configuration object for individual participant recording, to attach to the
+     * new stage.</p>
      */
     inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
     inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }

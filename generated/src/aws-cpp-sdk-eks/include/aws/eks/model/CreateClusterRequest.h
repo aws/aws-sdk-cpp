@@ -221,6 +221,20 @@ namespace Model
     inline CreateClusterRequest& WithAccessConfig(const CreateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
     inline CreateClusterRequest& WithAccessConfig(CreateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If you set this value to <code>False</code> when creating a cluster, the
+     * default networking add-ons will not be installed.</p> <p>The default networking
+     * addons include vpc-cni, coredns, and kube-proxy.</p> <p>Use this option when you
+     * plan to install third-party alternative add-ons or self-manage the default
+     * networking add-ons.</p>
+     */
+    inline bool GetBootstrapSelfManagedAddons() const{ return m_bootstrapSelfManagedAddons; }
+    inline bool BootstrapSelfManagedAddonsHasBeenSet() const { return m_bootstrapSelfManagedAddonsHasBeenSet; }
+    inline void SetBootstrapSelfManagedAddons(bool value) { m_bootstrapSelfManagedAddonsHasBeenSet = true; m_bootstrapSelfManagedAddons = value; }
+    inline CreateClusterRequest& WithBootstrapSelfManagedAddons(bool value) { SetBootstrapSelfManagedAddons(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -255,6 +269,9 @@ namespace Model
 
     CreateAccessConfigRequest m_accessConfig;
     bool m_accessConfigHasBeenSet = false;
+
+    bool m_bootstrapSelfManagedAddons;
+    bool m_bootstrapSelfManagedAddonsHasBeenSet = false;
   };
 
 } // namespace Model

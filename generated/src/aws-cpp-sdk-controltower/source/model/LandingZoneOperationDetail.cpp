@@ -20,6 +20,7 @@ namespace Model
 
 LandingZoneOperationDetail::LandingZoneOperationDetail() : 
     m_endTimeHasBeenSet(false),
+    m_operationIdentifierHasBeenSet(false),
     m_operationType(LandingZoneOperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -31,6 +32,7 @@ LandingZoneOperationDetail::LandingZoneOperationDetail() :
 
 LandingZoneOperationDetail::LandingZoneOperationDetail(JsonView jsonValue) : 
     m_endTimeHasBeenSet(false),
+    m_operationIdentifierHasBeenSet(false),
     m_operationType(LandingZoneOperationType::NOT_SET),
     m_operationTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -48,6 +50,13 @@ LandingZoneOperationDetail& LandingZoneOperationDetail::operator =(JsonView json
     m_endTime = jsonValue.GetString("endTime");
 
     m_endTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operationIdentifier"))
+  {
+    m_operationIdentifier = jsonValue.GetString("operationIdentifier");
+
+    m_operationIdentifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operationType"))
@@ -88,6 +97,12 @@ JsonValue LandingZoneOperationDetail::Jsonize() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_operationIdentifierHasBeenSet)
+  {
+   payload.WithString("operationIdentifier", m_operationIdentifier);
+
   }
 
   if(m_operationTypeHasBeenSet)

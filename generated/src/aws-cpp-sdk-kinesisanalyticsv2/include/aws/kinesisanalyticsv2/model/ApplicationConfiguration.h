@@ -10,6 +10,7 @@
 #include <aws/kinesisanalyticsv2/model/EnvironmentProperties.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationCodeConfiguration.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfiguration.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationSystemRollbackConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ZeppelinApplicationConfiguration.h>
 #include <aws/kinesisanalyticsv2/model/VpcConfiguration.h>
@@ -111,6 +112,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const ApplicationSystemRollbackConfiguration& GetApplicationSystemRollbackConfiguration() const{ return m_applicationSystemRollbackConfiguration; }
+    inline bool ApplicationSystemRollbackConfigurationHasBeenSet() const { return m_applicationSystemRollbackConfigurationHasBeenSet; }
+    inline void SetApplicationSystemRollbackConfiguration(const ApplicationSystemRollbackConfiguration& value) { m_applicationSystemRollbackConfigurationHasBeenSet = true; m_applicationSystemRollbackConfiguration = value; }
+    inline void SetApplicationSystemRollbackConfiguration(ApplicationSystemRollbackConfiguration&& value) { m_applicationSystemRollbackConfigurationHasBeenSet = true; m_applicationSystemRollbackConfiguration = std::move(value); }
+    inline ApplicationConfiguration& WithApplicationSystemRollbackConfiguration(const ApplicationSystemRollbackConfiguration& value) { SetApplicationSystemRollbackConfiguration(value); return *this;}
+    inline ApplicationConfiguration& WithApplicationSystemRollbackConfiguration(ApplicationSystemRollbackConfiguration&& value) { SetApplicationSystemRollbackConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The array of descriptions of VPC configurations available to the
      * application.</p>
@@ -153,6 +164,9 @@ namespace Model
 
     ApplicationSnapshotConfiguration m_applicationSnapshotConfiguration;
     bool m_applicationSnapshotConfigurationHasBeenSet = false;
+
+    ApplicationSystemRollbackConfiguration m_applicationSystemRollbackConfiguration;
+    bool m_applicationSystemRollbackConfigurationHasBeenSet = false;
 
     Aws::Vector<VpcConfiguration> m_vpcConfigurations;
     bool m_vpcConfigurationsHasBeenSet = false;

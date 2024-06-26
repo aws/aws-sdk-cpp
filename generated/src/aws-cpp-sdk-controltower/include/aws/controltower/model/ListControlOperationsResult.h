@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns a list of output from control operations. PLACEHOLDER </p>
+     * <p>Returns a list of output from control operations. </p>
      */
     inline const Aws::Vector<ControlOperationSummary>& GetControlOperations() const{ return m_controlOperations; }
     inline void SetControlOperations(const Aws::Vector<ControlOperationSummary>& value) { m_controlOperations = value; }

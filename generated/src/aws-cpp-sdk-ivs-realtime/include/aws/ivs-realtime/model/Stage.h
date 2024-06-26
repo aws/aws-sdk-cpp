@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ivs-realtime/model/AutoParticipantRecordingConfiguration.h>
+#include <aws/ivs-realtime/model/StageEndpoints.h>
 #include <utility>
 
 namespace Aws
@@ -107,7 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Auto-participant-recording configuration object attached to the stage.</p>
+     * <p>Configuration object for individual participant recording, attached to the
+     * stage.</p>
      */
     inline const AutoParticipantRecordingConfiguration& GetAutoParticipantRecordingConfiguration() const{ return m_autoParticipantRecordingConfiguration; }
     inline bool AutoParticipantRecordingConfigurationHasBeenSet() const { return m_autoParticipantRecordingConfigurationHasBeenSet; }
@@ -115,6 +117,18 @@ namespace Model
     inline void SetAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { m_autoParticipantRecordingConfigurationHasBeenSet = true; m_autoParticipantRecordingConfiguration = std::move(value); }
     inline Stage& WithAutoParticipantRecordingConfiguration(const AutoParticipantRecordingConfiguration& value) { SetAutoParticipantRecordingConfiguration(value); return *this;}
     inline Stage& WithAutoParticipantRecordingConfiguration(AutoParticipantRecordingConfiguration&& value) { SetAutoParticipantRecordingConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Summary information about various endpoints for a stage.</p>
+     */
+    inline const StageEndpoints& GetEndpoints() const{ return m_endpoints; }
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
+    inline void SetEndpoints(const StageEndpoints& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
+    inline void SetEndpoints(StageEndpoints&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
+    inline Stage& WithEndpoints(const StageEndpoints& value) { SetEndpoints(value); return *this;}
+    inline Stage& WithEndpoints(StageEndpoints&& value) { SetEndpoints(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -132,6 +146,9 @@ namespace Model
 
     AutoParticipantRecordingConfiguration m_autoParticipantRecordingConfiguration;
     bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
+
+    StageEndpoints m_endpoints;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

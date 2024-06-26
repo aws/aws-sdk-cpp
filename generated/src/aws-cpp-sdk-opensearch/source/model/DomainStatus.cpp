@@ -56,7 +56,8 @@ DomainStatus::DomainStatus() :
     m_softwareUpdateOptionsHasBeenSet(false),
     m_domainProcessingStatus(DomainProcessingStatusType::NOT_SET),
     m_domainProcessingStatusHasBeenSet(false),
-    m_modifyingPropertiesHasBeenSet(false)
+    m_modifyingPropertiesHasBeenSet(false),
+    m_aIMLOptionsHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ DomainStatus::DomainStatus(JsonView jsonValue) :
     m_softwareUpdateOptionsHasBeenSet(false),
     m_domainProcessingStatus(DomainProcessingStatusType::NOT_SET),
     m_domainProcessingStatusHasBeenSet(false),
-    m_modifyingPropertiesHasBeenSet(false)
+    m_modifyingPropertiesHasBeenSet(false),
+    m_aIMLOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -341,6 +343,13 @@ DomainStatus& DomainStatus::operator =(JsonView jsonValue)
     m_modifyingPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AIMLOptions"))
+  {
+    m_aIMLOptions = jsonValue.GetObject("AIMLOptions");
+
+    m_aIMLOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -555,6 +564,12 @@ JsonValue DomainStatus::Jsonize() const
      modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject(m_modifyingProperties[modifyingPropertiesIndex].Jsonize());
    }
    payload.WithArray("ModifyingProperties", std::move(modifyingPropertiesJsonList));
+
+  }
+
+  if(m_aIMLOptionsHasBeenSet)
+  {
+   payload.WithObject("AIMLOptions", m_aIMLOptions.Jsonize());
 
   }
 

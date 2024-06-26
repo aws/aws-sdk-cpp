@@ -25,6 +25,7 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription() :
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
     m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
+    m_applicationSystemRollbackConfigurationDescriptionHasBeenSet(false),
     m_vpcConfigurationDescriptionsHasBeenSet(false),
     m_zeppelinApplicationConfigurationDescriptionHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription(JsonVie
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
     m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
+    m_applicationSystemRollbackConfigurationDescriptionHasBeenSet(false),
     m_vpcConfigurationDescriptionsHasBeenSet(false),
     m_zeppelinApplicationConfigurationDescriptionHasBeenSet(false)
 {
@@ -85,6 +87,13 @@ ApplicationConfigurationDescription& ApplicationConfigurationDescription::operat
     m_applicationSnapshotConfigurationDescription = jsonValue.GetObject("ApplicationSnapshotConfigurationDescription");
 
     m_applicationSnapshotConfigurationDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationSystemRollbackConfigurationDescription"))
+  {
+    m_applicationSystemRollbackConfigurationDescription = jsonValue.GetObject("ApplicationSystemRollbackConfigurationDescription");
+
+    m_applicationSystemRollbackConfigurationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcConfigurationDescriptions"))
@@ -144,6 +153,12 @@ JsonValue ApplicationConfigurationDescription::Jsonize() const
   if(m_applicationSnapshotConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("ApplicationSnapshotConfigurationDescription", m_applicationSnapshotConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_applicationSystemRollbackConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationSystemRollbackConfigurationDescription", m_applicationSystemRollbackConfigurationDescription.Jsonize());
 
   }
 

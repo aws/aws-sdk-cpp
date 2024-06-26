@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Object specifying an auto-participant-recording configuration.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Object specifying a configuration for individual participant
+   * recording.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/AutoParticipantRecordingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,10 +42,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>ARN of the <a>StorageConfiguration</a> resource to use for auto participant
-     * recording. Default: "" (empty string, no storage configuration is specified).
-     * Individual participant recording cannot be started unless a storage
-     * configuration is specified, when a <a>Stage</a> is created or updated.</p>
+     * <p>ARN of the <a>StorageConfiguration</a> resource to use for individual
+     * participant recording. Default: <code>""</code> (empty string, no storage
+     * configuration is specified). Individual participant recording cannot be started
+     * unless a storage configuration is specified, when a <a>Stage</a> is created or
+     * updated.</p>
      */
     inline const Aws::String& GetStorageConfigurationArn() const{ return m_storageConfigurationArn; }
     inline bool StorageConfigurationArnHasBeenSet() const { return m_storageConfigurationArnHasBeenSet; }

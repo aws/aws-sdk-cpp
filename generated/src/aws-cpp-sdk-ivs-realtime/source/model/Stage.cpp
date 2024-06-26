@@ -23,7 +23,8 @@ Stage::Stage() :
     m_nameHasBeenSet(false),
     m_activeSessionIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoParticipantRecordingConfigurationHasBeenSet(false)
+    m_autoParticipantRecordingConfigurationHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Stage::Stage(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_activeSessionIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoParticipantRecordingConfigurationHasBeenSet(false)
+    m_autoParticipantRecordingConfigurationHasBeenSet(false),
+    m_endpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_autoParticipantRecordingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("endpoints"))
+  {
+    m_endpoints = jsonValue.GetObject("endpoints");
+
+    m_endpointsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue Stage::Jsonize() const
   if(m_autoParticipantRecordingConfigurationHasBeenSet)
   {
    payload.WithObject("autoParticipantRecordingConfiguration", m_autoParticipantRecordingConfiguration.Jsonize());
+
+  }
+
+  if(m_endpointsHasBeenSet)
+  {
+   payload.WithObject("endpoints", m_endpoints.Jsonize());
 
   }
 

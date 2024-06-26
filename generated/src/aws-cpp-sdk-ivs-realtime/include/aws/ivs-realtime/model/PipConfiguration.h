@@ -46,7 +46,8 @@ namespace Model
     /**
      * <p>This attribute name identifies the featured slot. A participant with this
      * attribute set to <code>"true"</code> (as a string value) in
-     * <a>ParticipantTokenConfiguration</a> is placed in the featured slot.</p>
+     * <a>ParticipantTokenConfiguration</a> is placed in the featured slot. Default:
+     * <code>""</code> (no featured participant).</p>
      */
     inline const Aws::String& GetFeaturedParticipantAttribute() const{ return m_featuredParticipantAttribute; }
     inline bool FeaturedParticipantAttributeHasBeenSet() const { return m_featuredParticipantAttributeHasBeenSet; }
@@ -71,8 +72,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines how video fits within the participant tile. Default:
-     * <code>COVER</code>. </p>
+     * <p>Defines how video content fits within the participant tile: <code>FILL</code>
+     * (stretched), <code>COVER</code> (cropped), or <code>CONTAIN</code>
+     * (letterboxed). Default: <code>COVER</code>.</p>
      */
     inline const VideoFillMode& GetVideoFillMode() const{ return m_videoFillMode; }
     inline bool VideoFillModeHasBeenSet() const { return m_videoFillModeHasBeenSet; }
@@ -95,9 +97,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies the PiP slot. A participant with this attribute set to
-     * <code>"true"</code> (as a string value) in <a>ParticipantTokenConfiguration</a>
-     * is placed in the PiP slot.</p>
+     * <p>Specifies the participant for the PiP window. A participant with this
+     * attribute set to <code>"true"</code> (as a string value) in
+     * <a>ParticipantTokenConfiguration</a> is placed in the PiP slot. Default:
+     * <code>""</code> (no PiP participant).</p>
      */
     inline const Aws::String& GetPipParticipantAttribute() const{ return m_pipParticipantAttribute; }
     inline bool PipParticipantAttributeHasBeenSet() const { return m_pipParticipantAttributeHasBeenSet; }
@@ -111,8 +114,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines PiP behavior when all participants have left. Default:
-     * <code>STATIC</code>.</p>
+     * <p>Defines PiP behavior when all participants have left: <code>STATIC</code>
+     * (maintains original position/size) or <code>DYNAMIC</code> (expands to full
+     * composition). Default: <code>STATIC</code>.</p>
      */
     inline const PipBehavior& GetPipBehavior() const{ return m_pipBehavior; }
     inline bool PipBehaviorHasBeenSet() const { return m_pipBehaviorHasBeenSet; }
