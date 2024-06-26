@@ -119,38 +119,51 @@ namespace Aws
          * Set the response stream factory.
          */
         void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = factory; }
+
+        ///@{
+        /**
+         * Sets the closure for headers received event.
+         */
+        inline virtual void SetHeadersReceivedEventHandler(const Aws::Http::HeadersReceivedEventHandler& headersReceivedEventHandler) { m_onHeadersReceived = headersReceivedEventHandler; }
+        inline virtual void SetHeadersReceivedEventHandler(Aws::Http::HeadersReceivedEventHandler&& headersReceivedEventHandler) { m_onHeadersReceived = std::move(headersReceivedEventHandler); }
+        ///@}
+
+        ///@{
         /**
          * Register closure for data received event.
          */
         inline virtual void SetDataReceivedEventHandler(const Aws::Http::DataReceivedEventHandler& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
+        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
+        ///@}
+
+        ///@{
         /**
-         * register closure for data sent event
+         * Register closure for data sent event
          */
         inline virtual void SetDataSentEventHandler(const Aws::Http::DataSentEventHandler& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
+        ///@}
+
+        ///@{
         /**
          * Register closure for  handling whether or not to continue a request.
          */
         inline virtual void SetContinueRequestHandler(const Aws::Http::ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
-        /**
-         * Register closure for data received event.
-         */
-        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
-        /**
-         * register closure for data sent event
-         */
-        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
-        /**
-         * Register closure for handling whether or not to cancel a request.
-         */
         inline virtual void SetContinueRequestHandler(Aws::Http::ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
+        ///@}
+
+        ///@{
         /**
          * Register closure for notification that a request is being retried
          */
         inline virtual void SetRequestRetryHandler(const RequestRetryHandler& handler) { m_requestRetryHandler = handler; }
-        /**
-         * Register closure for notification that a request is being retried
-         */
         inline virtual void SetRequestRetryHandler(RequestRetryHandler&& handler) { m_requestRetryHandler = std::move(handler); }
+        ///@}
+
+        /**
+         * get closure for headers received event.
+         */
+        inline virtual const Aws::Http::HeadersReceivedEventHandler& GetHeadersReceivedEventHandler() const { return m_onHeadersReceived; }
         /**
          * get closure for data received event.
          */
@@ -201,6 +214,7 @@ namespace Aws
     private:
         Aws::IOStreamFactory m_responseStreamFactory;
 
+        Aws::Http::HeadersReceivedEventHandler m_onHeadersReceived;
         Aws::Http::DataReceivedEventHandler m_onDataReceived;
         Aws::Http::DataSentEventHandler m_onDataSent;
         Aws::Http::ContinueRequestHandler m_continueRequest;

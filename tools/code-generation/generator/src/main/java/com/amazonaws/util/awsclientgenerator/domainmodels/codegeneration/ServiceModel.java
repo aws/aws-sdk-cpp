@@ -61,6 +61,16 @@ public class ServiceModel {
         return operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
     }
 
+    public Operation getOperationForRequestShapeName(String requestShapeName) {
+        for (Map.Entry<String, Operation> opEntry : operations.entrySet()) {
+            Operation op = opEntry.getValue();
+            if (op.getRequest() != null && op.getRequest().getShape().getName() == requestShapeName) {
+                return op;
+            }
+        }
+        return null;
+    }
+
     String endpointRules;
     EndpointTests endpointTests;
     ClientContextParams clientContextParams;

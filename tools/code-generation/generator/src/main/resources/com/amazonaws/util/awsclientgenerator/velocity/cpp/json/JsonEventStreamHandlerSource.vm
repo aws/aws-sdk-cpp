@@ -29,10 +29,11 @@ namespace Model
 
     ${operation.name}Handler::${operation.name}Handler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const ${operation.name}InitialResponse&)
+        m_onInitialResponse = [&](const ${operation.name}InitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
-                "${operation.name} initial response received.");
+                "${operation.name} initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
@@ -108,18 +109,11 @@ namespace Model
         }
         switch (${operation.name}EventMapper::Get${operation.name}EventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
-        
-        case ${operation.name}EventType::INITIAL_RESPONSE: 
-        {
-            JsonValue json(GetEventPayloadAsString());
-            if (!json.WasParseSuccessful())
-            {
-                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper ${operation.name}InitialResponse object from the response in JSON format.");
-                break;
-            }
 
-            ${operation.name}InitialResponse event(json.View());
-            m_onInitialResponse(event);
+        case ${operation.name}EventType::INITIAL_RESPONSE:
+        {
+            ${operation.name}InitialResponse event(GetEventHeadersAsHttpHeaders());
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 

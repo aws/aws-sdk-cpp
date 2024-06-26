@@ -26,10 +26,11 @@ namespace Model
 
     ${operation.name}Handler::${operation.name}Handler() : EventStreamHandler()
     {
-        m_onInitialResponse = [&](const ${operation.name}InitialResponse&)
+        m_onInitialResponse = [&](const ${operation.name}InitialResponse&, const Utils::Event::InitialResponseType eventType)
         {
             AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
-                "${operation.name} initial response received.");
+                "${operation.name} initial response received from "
+                << (eventType == Utils::Event::InitialResponseType::ON_EVENT ? "event" : "http headers"));
         };
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
@@ -106,7 +107,7 @@ namespace Model
         switch (${operation.name}EventMapper::Get${operation.name}EventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
 
-        case ${operation.name}EventType::INITIAL_RESPONSE: 
+        case ${operation.name}EventType::INITIAL_RESPONSE:
         {
             auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
             if (!xmlDoc.WasParseSuccessful())
@@ -115,7 +116,7 @@ namespace Model
                 break;
             }
             ${operation.name}InitialResponse event(xmlDoc.GetRootElement());
-            m_onInitialResponse(event);
+            m_onInitialResponse(event, Utils::Event::InitialResponseType::ON_EVENT);
             break;
         }   
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())

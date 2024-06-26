@@ -317,6 +317,9 @@ public class CppViewHelper {
             }
         }
 
+        if(shape.isEvent() && shape.getName().endsWith("InitialResponse")) {
+            headers.add("<aws/core/http/HttpTypes.h>");
+        }
         if(includeUtilityHeader) {
             headers.add("<utility>");
         }
