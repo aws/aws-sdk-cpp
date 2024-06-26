@@ -29,6 +29,15 @@ using namespace Aws;
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
 ${typeInfo.className}::${typeInfo.className}()$initializers
 {
+#if ($typeInfo.shape.isRequest() && $operation.result && $operation.result.shape.hasEventStreamMembers())
+    AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
+    {
+        auto& initialResponseHandler = m_handler.GetInitialResponseCallbackEx();
+        if (initialResponseHandler) {
+            initialResponseHandler(${operation.name}InitialResponse(response->GetHeaders()), Utils::Event::InitialResponseType::ON_RESPONSE);
+        }
+    });
+#end
 }
 
 #if($shape.hasEventStreamMembers())

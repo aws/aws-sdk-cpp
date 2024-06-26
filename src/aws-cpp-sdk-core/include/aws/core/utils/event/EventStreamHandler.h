@@ -21,6 +21,12 @@ namespace Aws
     {
         namespace Event
         {
+            enum class InitialResponseType
+            {
+                ON_EVENT,
+                ON_RESPONSE
+            };
+
             /**
              * Handler of event stream.
              * Includes context and callback function while scanning the event stream.
@@ -128,6 +134,20 @@ namespace Aws
                 }
 
                 inline virtual const Aws::Utils::Event::EventHeaderValueCollection& GetEventHeaders() { return m_message.GetEventHeaders(); }
+
+                inline virtual const Http::HeaderValueCollection GetEventHeadersAsHttpHeaders() const
+                {
+                    Http::HeaderValueCollection output;
+                    using SrcT = Aws::Utils::Event::EventHeaderValueCollection::value_type;
+                    using DstT = Http::HeaderValueCollection::value_type;
+                    std::transform(m_message.GetEventHeaders().cbegin(), m_message.GetEventHeaders().cend(),
+                                   std::inserter(output, output.end()),
+                                   [](const SrcT& src)
+                                   {
+                                       return DstT(src.first, src.second.ToString());
+                                   });
+                    return output;
+                }
 
                 /**
                  * Entry point of all callback functions.

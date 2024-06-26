@@ -459,15 +459,7 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
         Shape shape = shapeEntry.getValue();
         VelocityContext context = createContext(serviceModel);
         context.put("shape", shape);
-        if (shape.isRequest()) {
-            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
-                Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
-                    context.put("operation", op);
-                    break;
-                }
-            }
-        }
+        context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
         context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
         context.put("CppViewHelper", CppViewHelper.class);
         return makeFile(template, context, fileName, true);

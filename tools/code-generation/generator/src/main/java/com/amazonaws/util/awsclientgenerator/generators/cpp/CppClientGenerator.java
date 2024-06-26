@@ -363,13 +363,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
 
         if (shape.isRequest()) {
-            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
-                Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
-                    context.put("operation", op);
-                    break;
-                }
-            }
+            context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
         }
 
         return null;

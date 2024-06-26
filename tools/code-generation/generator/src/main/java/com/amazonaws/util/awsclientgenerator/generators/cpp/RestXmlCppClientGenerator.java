@@ -134,14 +134,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
                 (shape.isResult() && shape.hasEventStreamMembers()))) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
-
-            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
-                Operation op = opEntry.getValue();
-                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
-                    context.put("operation", op);
-                    break;
-                }
-            }
+            context.put("operation", serviceModel.getOperationForRequestShapeName(shape.getName()));
 
             if (shape.isRequest() && shape.hasStreamMembers()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
