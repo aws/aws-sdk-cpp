@@ -15,7 +15,8 @@
 
 #define TEST_PREFIX "IntegrationTest_"
 
-class CloudfrontKeyValueStoreTest : public ::testing::Test
+//Test takes ~15 minutes, it is a manual test.
+class DISABLED_CloudfrontKeyValueStoreTest : public ::testing::Test
 {
 
 public:
@@ -30,9 +31,8 @@ protected:
     }
 };
 
-TEST_F(CloudfrontKeyValueStoreTest, TestListKeysUsesSigV4A)
+TEST_F(DISABLED_CloudfrontKeyValueStoreTest, TestListKeysUsesSigV4A)
 {
-  GTEST_SKIP() << "Test takes ~15 minutes, it is a manual test.";
 
   Aws::String kvsArn;
 
